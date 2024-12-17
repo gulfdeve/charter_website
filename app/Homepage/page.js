@@ -2,7 +2,9 @@
 import { useRef, useEffect } from "react";
 import EmblaCarousel from "embla-carousel";
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
-
+import WhyChooseUs from "@/app/components/WhyChooseUs";
+import Aboutus from "@/app/components/Aboutus";
+import Reviews from "@/app/components/Reviews";
 export default function EmblaCarouselComponent() {
   const emblaRef = useRef(null);
   const emblaInstance = useRef(null);
@@ -88,7 +90,7 @@ export default function EmblaCarouselComponent() {
         "Canapés & Snacks (additional charges apply)",
       ],
     },
-    
+
     // Add more yachts as needed
   ];
 
@@ -397,13 +399,18 @@ export default function EmblaCarouselComponent() {
         </div>
         <div className="flex flex-col items-center sm:items-start sm:justify-start justify-center bg-[#0D2343] px-5 xl:px-32 xl:py-12 py-5 md:h-[443px] xl:h-[452px] lg:h-[404px]">
           <h1 className="font-Montserrat text-[#e1ae48] text-center font-bold text-2xl xl:text-3xl py-7">
-          EXCLUSIVE OFFERS
+            EXCLUSIVE OFFERS
           </h1>
           <p className="font-Montserrat text-white text-center sm:text-left  text-md  sm:text-sm xl:text-md pb-10">
-          Dubai is a true yachting heaven with azure blue waters and beautiful skyscrapers. Take your loved ones to sea. We bring to you deals from day charter, yacht parties to overnight yacht rentals. Don’t miss to explore the special discount for Emirates platinum , Business councils & FAZAA members.
+            Dubai is a true yachting heaven with azure blue waters and beautiful
+            skyscrapers. Take your loved ones to sea. We bring to you deals from
+            day charter, yacht parties to overnight yacht rentals. Don’t miss to
+            explore the special discount for Emirates platinum , Business
+            councils & FAZAA members.
           </p>
           <p className="font-Montserrat text-white text-center sm:text-left text-md sm:text-sm xl:text-md  pb-10">
-          Find your ideal boat with great deals and confirm your booking instantly.
+            Find your ideal boat with great deals and confirm your booking
+            instantly.
           </p>
           <button className="flex flex-row items-center sm:text-left justify-center py-2 px-6 md:py-2 md:px-4   outline-[#e1ae48] outline-double rounded-md bg-[#0d2343] text-[#e1ae48] font-Montserrat font-bold text-[20px] md:text-sm xl:text-lg">
             EXPLORE ALL OFFERS
@@ -422,19 +429,41 @@ export default function EmblaCarouselComponent() {
 
         <div className="flex flex-col items-center sm:items-start sm:justify-start justify-center  bg-[#e1ae48] px-5 xl:px-32 xl:py-12 py-5 md:h-[443px] xl:h-[452px] lg:h-[404px]">
           <h1 className="font-Montserrat text-[#0D2343] text-center font-bold text-2xl xl:text-3xl py-7">
-          WATER SPORTS ADD ON’s
+            WATER SPORTS ADD ON’s
           </h1>
           <p className="font-Montserrat text-[#0D2343] text-center sm:text-left  text-md  sm:text-sm xl:text-md pb-10">
-          Holidays in Dubai offers a great mix of fun, adventure, breath taking places and special moments. It’s truly amazing to cruise the beautiful coastline with the speed jet boat or fly high on waters with fly boarding. Find plenty of water activities at the best price and make your excursion even more exciting.
+            Holidays in Dubai offers a great mix of fun, adventure, breath
+            taking places and special moments. It’s truly amazing to cruise the
+            beautiful coastline with the speed jet boat or fly high on waters
+            with fly boarding. Find plenty of water activities at the best price
+            and make your excursion even more exciting.
           </p>
           <p className="font-Montserrat text-[#0D2343] text-center sm:text-left text-md sm:text-sm xl:text-md  pb-10">
-          Book your watersports together with boat charter at the best price.
+            Book your watersports together with boat charter at the best price.
           </p>
           <button className="flex flex-row items-center sm:text-left justify-center py-2 px-6 md:py-2 md:px-4   outline-[#0D2343] outline-double rounded-md bg-[#e1ae48] text-[#0D2343] font-Montserrat font-bold text-[20px] md:text-sm xl:text-lg">
             EXPLORE OUR WATER ACTIVITIES
           </button>
         </div>
       </div>
+      <WhyChooseUs />
+      <div className=" h-[40vh]">
+  {/* Scrollable Background */}
+  <div
+    className="w-full h-[50vh] bg-cover bg-fixed lg:bg-top bg-center"
+    style={{
+      backgroundImage: "url('YachtSun.webp')",
+        // Ensure the background is behind the content
+    }}
+    
+  ></div>
+
+  {/* Fixed Content */}
+</div>
+
+<Aboutus />
+<Reviews/>
+
     </>
   );
 }
