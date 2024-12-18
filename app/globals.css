@@ -43,3 +43,38 @@ body {
 }
 
 
+.counter-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  margin: 2rem 0;
+}
+
+.counter-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.embla1 {
+  position: relative;
+  overflow: hidden;
+}
+.embla__viewport1 {
+  overflow: hidden;
+  width: 100%;
+}
+.embla__containe1r {
+  display: flex;
+  flex-direction: row;
+}
+.embla__slide1 {
+  flex: 0 0 33%; /* Each slide occupies full viewport */
+  min-width: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
