@@ -181,6 +181,9 @@ export default function Navbar() {
                     ))}
                 </ul>
               </li>
+              <li>
+                <Link className="header_links" href={"/watersports"}>WATER SPORTS</Link>
+              </li>
               {/* OFFERS */}
               <li>
                 <Link className="header_links" href={"/offers"}>OFFERS</Link>
