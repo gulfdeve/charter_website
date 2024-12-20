@@ -45,12 +45,14 @@ export default function Navbar() {
       <div className="md:block hidden">
         <nav className="p-4 bg-white text-black flex items-center justify-center xl:gap-96 md:gap-24 ">
           <h1 className="text-xl font-bold">
-            <img src="./CentaurusLogo.png" alt="Centaurus Logo" />
+            <Link href="/">
+              <img src="./CentaurusLogo.png" alt="Centaurus Logo" />
+            </Link>
           </h1>
           <div className="flex items-center justify-end">
-            <button className="flex flex-row items-center justify-center py-2 w-full md:py-2 md:px-4 rounded-md bg-[#e1ae48] text-[#0d2343] hover:bg-[#0d2343] hover:text-[#e1ae48] font-Montserrat font-bold text-base md:text-sm xl:text-lg transition-all duration-300">
+            <Link href="/contact" className="flex flex-row items-center justify-center py-2 w-full md:py-2 md:px-4 rounded-md bg-[#e1ae48] text-[#0d2343] hover:bg-[#0d2343] hover:text-[#e1ae48] font-Montserrat font-bold text-base md:text-sm xl:text-lg transition-all duration-300">
               CONTACT US
-            </button>
+            </Link>
             <div className="flex flex-row px-8 gap-8">
               {/* Email Icon */}
               <Link href="mailto:example@example.com">
@@ -152,23 +154,6 @@ export default function Navbar() {
                 <li>SHARED TOURS</li>
               </Link>
               {/* EXPERIENCES with Dropdown */}
-              {/* PRIVATE YACHTS with Dropdown */}
-              <li className="relative group">
-                <span className="cursor-pointer p-5">PRIVATE YACHTS</span>
-                <ul className="absolute p-5 space-y-5 left-0 mt-5 w-60 bg-white text-black border shadow-lg hidden group-hover:block z-20 group-hover:scale-105 transition-transform duration-300">
-                  {!loading &&
-                    data?.products?.map((product) => (
-                      <Link
-                        href={`/yacht-rentals/${product.slug}`}
-                        key={product.id}
-                      >
-                        <li className="cursor-pointer text-base font-normal text-gray-500 font-Montserrat">
-                          {product.title}
-                        </li>
-                      </Link>
-                    ))}
-                </ul>
-              </li>
 
               {/* EXPERIENCES with Dropdown */}
               <li className="relative group">
