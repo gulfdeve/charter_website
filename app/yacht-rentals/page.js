@@ -10,7 +10,7 @@ const Tabs = () => {
   const [yachts, setYachts] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const { language } = useLanguage();
-   const { data, loading, error } = useData();
+  const { data, loading, error } = useData();
 
   const handleTabClick = (tab) => {
     setActiveTab(tab);
@@ -19,7 +19,9 @@ const Tabs = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch("https://www.centauruscharter.com/api/api_new/basic");
+        const response = await fetch(
+          "https://www.centauruscharter.com/api/api_new/basic"
+        );
         const data = await response.json();
 
         // Map the fetched products to include category
@@ -28,10 +30,12 @@ const Tabs = () => {
 
           // Add custom logic to assign categories
           if (item.per_hour_price > 4000) category.push("premium");
-          if (item.slug === "56ft-lagoona" || item.slug === "61ft-silvercreek") {
+          if (
+            item.slug === "56ft-lagoona" ||
+            item.slug === "61ft-silvercreek"
+          ) {
             category.push("bestSellers");
           }
-          
 
           return {
             id: item.id,
@@ -57,15 +61,21 @@ const Tabs = () => {
   }, []);
 
   const renderContent = () => {
-    const filteredYachts = yachts.filter((yacht) => yacht.category.includes(activeTab));
+    const filteredYachts = yachts.filter((yacht) =>
+      yacht.category.includes(activeTab)
+    );
 
     if (isLoading) {
       return <div className="text-center mt-20">Loading...</div>;
     }
     if (loading) return <div>Loading...</div>;
- if (error) return <div>Error: {error}</div>;
+    if (error) return <div>Error: {error}</div>;
     if (filteredYachts.length === 0) {
-      return <div className="text-center mt-20">No yachts found for this category.</div>;
+      return (
+        <div className="text-center mt-20">
+          No yachts found for this category.
+        </div>
+      );
     }
 
     return (
@@ -80,21 +90,28 @@ const Tabs = () => {
               className="rounded-2xl mt-5 h-[174px] md:h-[300px] object-cover"
               alt={yacht.title}
             />
-            
+
             <div className="flex flex-col items-start py-3">
-            <Link href={`yacht-rentals/${yacht.slug}`}>
-              <h1 className="text-[#0D2343] font-Montserrat text-xl font-bold xl:pt-6 md:pb-2 hover:text-blue-600 transition-all duration-300 cursor-pointer py-1 md:py-0">
-                {yacht.title}
-              </h1>
+              <Link href={`yacht-rentals/${yacht.slug}`}>
+                <h1 className="text-[#0D2343] font-Montserrat text-xl font-bold xl:pt-6 md:pb-2 hover:text-blue-600 transition-all duration-300 cursor-pointer py-1 md:py-0">
+                  {yacht.title}
+                </h1>
               </Link>
               <p className="font-Montserrat text-xs text-[#0D2343] text-left">
                 Length:
-                <span className="font-Montserrat text-[#0D2343] font-bold"> {yacht.length}</span> |
-                Guests:
-                <span className="font-Montserrat text-[#0D2343] font-bold"> {yacht.guests}</span>
+                <span className="font-Montserrat text-[#0D2343] font-bold">
+                  {" "}
+                  {yacht.length}
+                </span>{" "}
+                | Guests:
+                <span className="font-Montserrat text-[#0D2343] font-bold">
+                  {" "}
+                  {yacht.guests}
+                </span>
               </p>
               <h1 className="font-Montserrat text-[#0D2343] font-bold text-xl pt-5 pb-2">
-                AED {yacht.price} <span className="font-Montserrat text-[#0D2343]">Per Hour</span>
+                AED {yacht.price}{" "}
+                <span className="font-Montserrat text-[#0D2343]">Per Hour</span>
               </h1>
               <button className="flex flex-row items-center justify-center py-2 w-full md:py-2 md:px-4 rounded-md bg-[#e1ae48] text-[#0d2343] hover:bg-[#0d2343] hover:text-[#e1ae48] font-Montserrat font-bold text-base md:text-sm xl:text-lg transition-all duration-300">
                 Book Now

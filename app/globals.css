@@ -18,6 +18,9 @@
 .header_links {
   @apply text-primary-yellow hover:text-primary-yellow-dark text-primary-yellow hover:text-yellow-600 font-bold tracking-wide uppercase text-base;
 }
+.header_dropdown_links {
+  @apply p-2 px-4 cursor-pointer text-base font-normal text-gray-500 font-Montserrat hover:bg-slate-200
+}
 
 body {
   color: var(--foreground);

@@ -112,7 +112,7 @@ export default function Navbar() {
 
         {/* Second Navbar (Sticky) */}
         <nav
-          className={`p-5 w-full bg-[#0D2343] text-[#e1ae48] font-Montserrat font-bold ${
+          className={`w-full bg-[#0D2343] text-[#e1ae48] font-Montserrat font-bold ${
             isSticky ? "h-20 sticky top-0 z-50" : ""
           }`}
         >
@@ -127,17 +127,21 @@ export default function Navbar() {
               </li>
 
               {/* PRIVATE YACHTS with Dropdown */}
-              {/* PRIVATE YACHTS with Dropdown */}
               <li className="relative group">
-                <Link href="/yacht-rentals" className="header_links cursor-pointer p-5">PRIVATE YACHTS</Link>
-                <ul className="absolute p-5 space-y-5 left-0 mt-5 w-60 bg-white text-black border shadow-lg hidden group-hover:block z-20 group-hover:scale-105 transition-transform duration-300">
+                <Link href="/yacht-rentals" className="header_links cursor-pointer p-5 flex items-center">
+                PRIVATE YACHTS
+                <svg className="ml-2 w-6 h-6 transform group-hover:rotate-180 transition-transform duration-300" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
+                </svg>
+                </Link>
+                <ul className="absolute space-y-5 left-0 w-60 bg-white text-black border shadow-lg hidden group-hover:block z-20 group-hover:scale-105 transition-transform duration-300">
                   {!loading &&
                     data?.products?.map((product) => (
                       <Link
                         href={`/yacht-rentals/${product.slug}`}
                         key={product.id}
                       >
-                        <li className="p-2 cursor-pointer text-base font-normal text-gray-500 font-Montserrat">
+                        <li className="header_dropdown_links">
                           {product.title}
                         </li>
                       </Link>
@@ -157,15 +161,20 @@ export default function Navbar() {
 
               {/* EXPERIENCES with Dropdown */}
               <li className="relative group">
-                <span className="header_links cursor-pointer p-5">EXPERIENCES</span>
-                <ul className="absolute p-5 space-y-5 left-0 mt-5 w-60 bg-white text-black border shadow-lg hidden group-hover:block z-20 group-hover:scale-105 transition-transform duration-300">
+                <Link href="yacht-rentals" className="header_links cursor-pointer p-5 flex items-center">
+                  EXPERIENCES
+                  <svg className="ml-2 w-6 h-6 transform group-hover:rotate-180 transition-transform duration-300" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
+                </svg>
+                  </Link>
+                <ul className="absolute space-y-5 left-0 w-80 bg-white text-black border shadow-lg hidden group-hover:block z-20 group-hover:scale-105 transition-transform duration-300">
                   {!loading &&
                     data?.experiences?.map((experience) => (
                       <Link
                         href={`/yacht-trips/${experience.slug}`}
                         key={experience.id}
                       >
-                        <li className="cursor-pointer text-base font-normal text-gray-500 font-Montserrat">
+                        <li className="header_dropdown_links">
                           {experience.translations[language].title}
                         </li>
                       </Link>
