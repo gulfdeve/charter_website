@@ -39,7 +39,6 @@ export default function Navbar() {
     };
   }, []);
 
-
   return (
     <>
       {/* First Navbar */}
@@ -54,15 +53,20 @@ export default function Navbar() {
             </button>
             <div className="flex flex-row px-8 gap-8">
               {/* Email Icon */}
-<Link href="mailto:example@example.com">
-  <MdMail size={30} className="text-[#e1ae48] hover:text-[#0d2343]" />
-</Link>
+              <Link href="mailto:example@example.com">
+                <MdMail
+                  size={30}
+                  className="text-[#e1ae48] hover:text-[#0d2343]"
+                />
+              </Link>
 
-{/* WhatsApp Icon */}
-<Link href="https://wa.me/1234567890">
-  <IoLogoWhatsapp size={30} className="text-[#e1ae48] hover:text-[#0d2343]" />
-</Link>
-
+              {/* WhatsApp Icon */}
+              <Link href="https://wa.me/1234567890">
+                <IoLogoWhatsapp
+                  size={30}
+                  className="text-[#e1ae48] hover:text-[#0d2343]"
+                />
+              </Link>
             </div>
             {/* Language Dropdown */}
             <div
@@ -106,9 +110,10 @@ export default function Navbar() {
 
         {/* Second Navbar (Sticky) */}
         <nav
-          className={`p-5 w-full bg-[#0D2343] text-[#e1ae48] font-Montserrat font-bold ${isSticky ? "h-20 sticky top-0 z-50" : "h-14"}`}
+          className={`p-5 w-full bg-[#0D2343] text-[#e1ae48] font-Montserrat font-bold ${
+            isSticky ? "h-20 sticky top-0 z-50" : "h-14"
+          }`}
         >
-
           <div className="flex flex-row items-center justify-center">
             <ul className="flex flex-row items-center justify-center gap-6  xl:gap-[5rem] text-[12px]">
               <li
@@ -120,21 +125,23 @@ export default function Navbar() {
               </li>
 
               {/* PRIVATE YACHTS with Dropdown */}
-             {/* PRIVATE YACHTS with Dropdown */}
-<li className="relative group">
-  <span className="cursor-pointer p-5">PRIVATE YACHTS</span>
-  <ul className="absolute p-5 space-y-5 left-0 mt-5 w-60 bg-white text-black border shadow-lg hidden group-hover:block z-20 group-hover:scale-105 transition-transform duration-300">
-    {!loading &&
-      data?.products?.map((product) => (
-        <Link href={`/yacht-rentals/${product.slug}`} key={product.id}>
-          <li className="cursor-pointer text-base font-normal text-gray-500 font-Montserrat">
-            {product.title}
-          </li>
-        </Link>
-      ))}
-  </ul>
-</li>
-
+              {/* PRIVATE YACHTS with Dropdown */}
+              <li className="relative group">
+                <span className="cursor-pointer p-5">PRIVATE YACHTS</span>
+                <ul className="absolute p-5 space-y-5 left-0 mt-5 w-60 bg-white text-black border shadow-lg hidden group-hover:block z-20 group-hover:scale-105 transition-transform duration-300">
+                  {!loading &&
+                    data?.products?.map((product) => (
+                      <Link
+                        href={`/yacht-rentals/${product.slug}`}
+                        key={product.id}
+                      >
+                        <li className="cursor-pointer text-base font-normal text-gray-500 font-Montserrat">
+                          {product.title}
+                        </li>
+                      </Link>
+                    ))}
+                </ul>
+              </li>
 
               {/* BUY A YACHT */}
               <Link href={"yacht-sale-for-dubai"}>
@@ -146,22 +153,27 @@ export default function Navbar() {
               </Link>
               {/* EXPERIENCES with Dropdown */}
               {/* PRIVATE YACHTS with Dropdown */}
-<li className="relative group">
-  <span className="cursor-pointer p-5">PRIVATE YACHTS</span>
-  <ul className="absolute p-5 space-y-5 left-0 mt-5 w-60 bg-white text-black border shadow-lg hidden group-hover:block z-20 group-hover:scale-105 transition-transform duration-300">
-    {!loading &&
-      data?.products?.map((product) => (
-        <Link href={`/yacht-rentals/${product.slug}`} key={product.id}>
-          <li className="cursor-pointer text-base font-normal text-gray-500 font-Montserrat">
-            {product.title}
-          </li>
-        </Link>
-      ))}
-  </ul>
-</li>
+              <li className="relative group">
+                <span className="cursor-pointer p-5">PRIVATE YACHTS</span>
+                <ul className="absolute p-5 space-y-5 left-0 mt-5 w-60 bg-white text-black border shadow-lg hidden group-hover:block z-20 group-hover:scale-105 transition-transform duration-300">
+                  {!loading &&
+                    data?.products?.map((product) => (
+                      <Link
+                        href={`/yacht-rentals/${product.slug}`}
+                        key={product.id}
+                      >
+                        <li className="cursor-pointer text-base font-normal text-gray-500 font-Montserrat">
+                          {product.title}
+                        </li>
+                      </Link>
+                    ))}
+                </ul>
+              </li>
 
               {/* OFFERS */}
-              <li>OFFERS</li>
+              <li>
+                <Link href={"/offers"}>OFFERS</Link>
+              </li>
               {/* NEWYEAR */}
               <li>NEWYEAR</li>
             </ul>
@@ -182,16 +194,12 @@ export default function Navbar() {
             <div className="flex items-center gap-2">
               {/* WhatsApp Icon */}
               <Link href="https://wa.me/1234567890" passHref>
-                
-                  <IoLogoWhatsapp className="text-blue-500 w-6 h-6" />
-                
+                <IoLogoWhatsapp className="text-blue-500 w-6 h-6" />
               </Link>
 
               {/* Phone Icon */}
               <Link href="tel:1234567890" passHref>
-                
-                  <FaPhoneAlt className="text-blue-500 w-5 h-5" />
-                
+                <FaPhoneAlt className="text-blue-500 w-5 h-5" />
               </Link>
               {/* Language Selector */}
               <select
