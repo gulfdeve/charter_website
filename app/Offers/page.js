@@ -1,6 +1,6 @@
 import React from "react";
 import Sociallink from "@/app/components/Sociallink";
-import Image from "next/image";
+
 import { FaWhatsapp } from "react-icons/fa";
 
 const offers = [
@@ -36,13 +36,13 @@ const offers = [
 
 const page = () => {
   return (
-    <div className="bg-white h-full w-full">
+    <><div className="bg-white h-full w-full">
       <div className="flex flex-col items-center justify-center py-10 ">
         <h1 className="font-Montserrat text-[#0D2343] text-center font-bold text-4xl pb-4">
           YACHT OFFERS AND DEALS IN DUBAI
         </h1>
       </div>
-      <div className="grid grid-col-1 md:grid-cols-2 md:px-4 xl:px-52 gap-7">
+      <div className="grid grid-col-1 md:grid-cols-2 md:px-4 xl:px-52 gap-7 pb-16">
         {offers.map((offer) => (
           <div
             key={offer.id}
@@ -51,8 +51,7 @@ const page = () => {
             <img
               src={offer.image}
               alt={offer.title}
-              className="rounded-md h-[300px] w-full object-cover"
-            />
+              className="rounded-md h-[300px] w-full object-cover" />
             <div className="flex flex-col  justify-start px-5 lg:px-0">
               <h1 className="text-[#232629] font-Montserrat text-2xl font-bold pt-4">
                 {offer.title}
@@ -84,7 +83,7 @@ const page = () => {
           </div>
         ))}
       </div>
-    </div>
+    </div><Sociallink /></>
   );
 };
 

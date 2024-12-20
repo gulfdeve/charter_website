@@ -24,7 +24,7 @@ const Counters = () => {
 
     const ratingInterval = setInterval(() => {
       if (ratingCount < 5) {
-        setRatingCount((prevCount) => prevCount + 0.1);
+        setRatingCount((prevCount) => prevCount + 0);
       } else {
         clearInterval(ratingInterval);
       }

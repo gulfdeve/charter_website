@@ -7,6 +7,7 @@ import Aboutus from "@/app/components/Aboutus";
 import Reviews from "@/app/components/Reviews";
 import Counters from "@/app/components/Counters";
 import LocationCarousel from "@/app/components/LocationCarousel";
+import Video from "@/app/components/Video";
 export default function EmblaCarouselComponent() {
   const emblaRef = useRef(null);
   const emblaInstance = useRef(null);
@@ -108,8 +109,12 @@ export default function EmblaCarouselComponent() {
   const scrollNext = () => emblaInstance.current?.scrollNext();
 
   return (
+
     <>
-      <div className="flex flex-col items-center justify-center py-10 ">
+    <div>
+    <Video/>
+    </div>
+      <div className="flex flex-col items-center justify-center py-10 2xl:pt-20 2xl:py-0 ">
         <h1 className="font-Montserrat text-[#0D2343] text-center font-bold text-4xl pb-4">
           YACHT RENTAL DUBAI
         </h1>
@@ -237,9 +242,10 @@ export default function EmblaCarouselComponent() {
           </div>
         </div>
       </div>
+      {/* DESKTOP */}
       <div className="md:block hidden">
         <div className="container mx-auto p-6">
-          <div className="grid grid-col-1 md:grid-cols-2 p-6 gap-10">
+          <div className="grid grid-col-1 md:grid-cols-2 p-6 2xl:px-56 2xl:gap-14 gap-10">
             {yachtData.map((yacht, index) => (
               <div
                 key={index}

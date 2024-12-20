@@ -2,7 +2,7 @@ import { MdLocationOn } from "react-icons/md";
 import { IoCallSharp } from "react-icons/io5";
 import { FaWhatsapp } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
-import Sociallink from "@/app/components/Sociallink";
+
 export default function Page() {
   return (
     <>
@@ -12,8 +12,7 @@ export default function Page() {
         </div>
         <div className="flex flex-col items-center justify-center py-10 ">
           <h1 className="font-Montserrat text-[#0D2343] text-center font-bold text-4xl pb-4">
-         the contact form for your inquiries or requests. Our team will
-            c    {" "}
+         
            CONTACT US
           </h1>
 
@@ -147,7 +146,7 @@ export default function Page() {
 
         </div>
       </div>
-      <Sociallink />
+      
     </>
   );
 }

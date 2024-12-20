@@ -6,6 +6,7 @@ import { Montserrat } from 'next/font/google'
 import Navbar from "@/app/components/Navbar"
 import { LanguageProvider } from "./context/LanguageContext";
 import {DataProvider} from "./context/DataContext"
+import Sociallink from "@/app/components/Sociallink";
 const montserrat = Montserrat({
   subsets: ['latin'],
   variable: '--font-montserrat',
@@ -34,6 +35,7 @@ export default function RootLayout({
         {children}
         </LanguageProvider>
         </DataProvider>
+        <Sociallink/>
       </body>
     </html>
   );
