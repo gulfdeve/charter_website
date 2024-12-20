@@ -113,7 +113,7 @@ export default function Navbar() {
         {/* Second Navbar (Sticky) */}
         <nav
           className={`p-5 w-full bg-[#0D2343] text-[#e1ae48] font-Montserrat font-bold ${
-            isSticky ? "h-20 sticky top-0 z-50" : "h-14"
+            isSticky ? "h-20 sticky top-0 z-50" : ""
           }`}
         >
           <div className="flex flex-row items-center justify-center">
@@ -129,7 +129,7 @@ export default function Navbar() {
               {/* PRIVATE YACHTS with Dropdown */}
               {/* PRIVATE YACHTS with Dropdown */}
               <li className="relative group">
-                <span className="cursor-pointer p-5">PRIVATE YACHTS</span>
+                <Link href="/yacht-rentals" className="header_links cursor-pointer p-5">PRIVATE YACHTS</Link>
                 <ul className="absolute p-5 space-y-5 left-0 mt-5 w-60 bg-white text-black border shadow-lg hidden group-hover:block z-20 group-hover:scale-105 transition-transform duration-300">
                   {!loading &&
                     data?.products?.map((product) => (
@@ -137,7 +137,7 @@ export default function Navbar() {
                         href={`/yacht-rentals/${product.slug}`}
                         key={product.id}
                       >
-                        <li className="cursor-pointer text-base font-normal text-gray-500 font-Montserrat">
+                        <li className="p-2 cursor-pointer text-base font-normal text-gray-500 font-Montserrat">
                           {product.title}
                         </li>
                       </Link>
@@ -146,18 +146,18 @@ export default function Navbar() {
               </li>
 
               {/* BUY A YACHT */}
-              <Link href={"yacht-sale-for-dubai"}>
+              <Link className="header_links" href={"yachts-for-sale-dubai"}>
                 <li>BUY A YACHT</li>
               </Link>
               {/* SHARED TOURS */}
-              <Link href={"shared-yacht-tours-dubai"}>
+              <Link className="header_links" href={"shared-yacht-tours-dubai"}>
                 <li>SHARED TOURS</li>
               </Link>
               {/* EXPERIENCES with Dropdown */}
 
               {/* EXPERIENCES with Dropdown */}
               <li className="relative group">
-                <span className="cursor-pointer p-5">EXPERIENCES</span>
+                <span className="header_links cursor-pointer p-5">EXPERIENCES</span>
                 <ul className="absolute p-5 space-y-5 left-0 mt-5 w-60 bg-white text-black border shadow-lg hidden group-hover:block z-20 group-hover:scale-105 transition-transform duration-300">
                   {!loading &&
                     data?.experiences?.map((experience) => (
@@ -174,10 +174,10 @@ export default function Navbar() {
               </li>
               {/* OFFERS */}
               <li>
-                <Link href={"/offers"}>OFFERS</Link>
+                <Link className="header_links" href={"/offers"}>OFFERS</Link>
               </li>
               {/* NEWYEAR */}
-              <li>NEWYEAR</li>
+              {/* <li>NEWYEAR</li> */}
             </ul>
           </div>
         </nav>
@@ -258,7 +258,7 @@ export default function Navbar() {
                     </ul>
                   )}
                 </li>
-                <Link href={"yacht-sale-for-dubai"}>
+                <Link href={"yachts-for-sale-dubai"}>
                   <li className="font-bold cursor-pointer hover:text-blue-500">
                     BUY A YACHT
                   </li>

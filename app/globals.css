@@ -15,6 +15,10 @@
   }
 }
 
+.header_links {
+  @apply text-primary-yellow hover:text-primary-yellow-dark text-primary-yellow hover:text-yellow-600 font-bold tracking-wide uppercase text-base;
+}
+
 body {
   color: var(--foreground);
   background: var(--background);
