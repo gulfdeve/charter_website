@@ -170,6 +170,23 @@ export default function Navbar() {
                 </ul>
               </li>
 
+              {/* EXPERIENCES with Dropdown */}
+              <li className="relative group">
+                <span className="cursor-pointer p-5">EXPERIENCES</span>
+                <ul className="absolute p-5 space-y-5 left-0 mt-5 w-60 bg-white text-black border shadow-lg hidden group-hover:block z-20 group-hover:scale-105 transition-transform duration-300">
+                  {!loading &&
+                    data?.experiences?.map((experience) => (
+                      <Link
+                        href={`/yacht-trips/${experience.slug}`}
+                        key={experience.id}
+                      >
+                        <li className="cursor-pointer text-base font-normal text-gray-500 font-Montserrat">
+                          {experience.translations[language].title}
+                        </li>
+                      </Link>
+                    ))}
+                </ul>
+              </li>
               {/* OFFERS */}
               <li>
                 <Link href={"/offers"}>OFFERS</Link>
