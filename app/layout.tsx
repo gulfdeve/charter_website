@@ -7,6 +7,7 @@ import Navbar from "@/app/components/Navbar"
 import { LanguageProvider } from "./context/LanguageContext";
 import {DataProvider} from "./context/DataContext"
 import Sociallink from "@/app/components/Sociallink";
+import FirstFooter from "@/app/components/FirstFooter";
 const montserrat = Montserrat({
   subsets: ['latin'],
   variable: '--font-montserrat',
@@ -36,6 +37,7 @@ export default function RootLayout({
         </LanguageProvider>
         </DataProvider>
         <Sociallink/>
+        <FirstFooter />
       </body>
     </html>
   );
