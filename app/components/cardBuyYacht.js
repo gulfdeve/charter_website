@@ -1,0 +1,88 @@
+import React from 'react';
+
+const YachtCard = ({ yacht }) => {
+  return (
+    <div className="bg-white rounded-lg shadow-lg overflow-hidden">
+      <img 
+        src={yacht.image} 
+        alt={yacht.name}
+        className="w-full h-64 object-cover"
+      />
+      
+      <div className="p-6">
+        <h2 className="text-2xl font-bold text-navy-900 mb-4">{yacht.name}</h2>
+        
+        <div className="grid grid-cols-2 gap-6 mb-6">
+          <div>
+            <p className="text-blue-600 font-medium mb-1">Build:</p>
+            <p className="text-gray-900 font-bold">{yacht.build}</p>
+          </div>
+          <div>
+            <p className="text-blue-600 font-medium mb-1">Cabins:</p>
+            <p className="text-gray-900 font-bold">{yacht.cabins}</p>
+          </div>
+          <div>
+            <p className="text-blue-600 font-medium mb-1">Length:</p>
+            <p className="text-gray-900 font-bold">{yacht.length}</p>
+          </div>
+          <div>
+            <p className="text-blue-600 font-medium mb-1">Guests:</p>
+            <p className="text-gray-900 font-bold">{yacht.guests}</p>
+          </div>
+          <div>
+            <p className="text-blue-600 font-medium mb-1">Year:</p>
+            <p className="text-gray-900 font-bold">{yacht.year}</p>
+          </div>
+          <div>
+            <p className="text-blue-600 font-medium mb-1">Price:</p>
+            <p className="text-gray-900 font-bold">{yacht.price}</p>
+          </div>
+        </div>
+        
+        <div className="grid grid-cols-2 gap-4">
+          <button className="bg-navy-900 text-yellow-400 font-bold py-3 px-4 rounded hover:bg-navy-800 transition-colors">
+            KNOW MORE
+          </button>
+          <button className="bg-navy-900 text-yellow-400 font-bold py-3 px-4 rounded hover:bg-navy-800 transition-colors">
+            INQUIRE NOW
+          </button>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+const YachtListings = () => {
+  const yachts = [
+    {
+      name: "88 FT YACHT SUNSEEKER",
+      build: "88 FT YACHT SUNSEEKER",
+      cabins: "4",
+      length: "86.7 FT / 26.43 M",
+      guests: "8",
+      year: "2024",
+      price: "UPON REQUEST",
+      image: "/api/placeholder/800/400"
+    },
+    {
+      name: "78 FT YACHTCRANCHI",
+      build: "78 FT YACHTCRANCHI",
+      cabins: "4",
+      length: "82.6 FT / 25.18 M",
+      guests: "8",
+      year: "2022",
+      price: "UPON REQUEST",
+      image: "/api/placeholder/800/400"
+    }
+  ];
+
+  return (
+    <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto p-4">
+      {yachts.map((yacht, index) => (
+        <YachtCard key={index} yacht={yacht} />
+      ))}
+    </div>
+  );
+};
+
+export default YachtListings;
