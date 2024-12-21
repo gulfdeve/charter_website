@@ -184,6 +184,9 @@ export default function Navbar() {
               <li>
                 <Link className="header_links" href={"/watersports"}>WATER SPORTS</Link>
               </li>
+              <li>
+                <Link className="header_links" href={"/events"}>Events</Link>
+              </li>
               {/* OFFERS */}
               <li>
                 <Link className="header_links" href={"/offers"}>OFFERS</Link>

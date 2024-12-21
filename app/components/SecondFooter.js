@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import React from 'react'
 
 const SecondFooter = () => {
@@ -18,8 +19,8 @@ const SecondFooter = () => {
                 </div>
             </div>
             <div className="flex lg:flex-col gap-5 lg:gap-2 text-[#969696]">
-                <a href="" className="hover:underline">Terms and Conditions</a>
-                <a href="" className="hover:underline">Privacy Policy</a>
+                <Link href="/terms-and-condition" className="hover:underline">Terms and Conditions</Link>
+                <Link href="/privacy-and-policy" className="hover:underline">Privacy Policy</Link>
             </div>
         </div>
     </div>

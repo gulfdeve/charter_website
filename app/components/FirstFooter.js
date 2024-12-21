@@ -31,7 +31,7 @@ const FirstFooter = () => {
                 <li className="mb-2">
                   <Link
                     className="text-[#969696] hover:text-[#2a93d5] transition-colors duration-200"
-                    href="/yacht_rentals"
+                    href="/yacht-rentals"
                   >
                     Yacht Rentals
                   </Link>
@@ -57,7 +57,7 @@ const FirstFooter = () => {
                     className="text-[#969696] hover:text-[#2a93d5] transition-colors duration-200"
                     href="/events"
                   >
-                    EVENTS
+                    Events
                   </Link>
                 </li>
                 <li className="mb-2">
@@ -73,7 +73,7 @@ const FirstFooter = () => {
                     className="text-[#969696] hover:text-[#2a93d5] transition-colors duration-200"
                     href="/contact"
                   >
-                    CONTACT US
+                    Contact us
                   </Link>
                 </li>
                 <li className="mb-2">
