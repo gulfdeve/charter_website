@@ -43,12 +43,12 @@ export default function Navbar() {
     <>
       {/* First Navbar */}
       <div className="md:block hidden">
-        <nav className="container mx-auto p-4 bg-white text-black flex items-center justify-center xl:gap-96 md:gap-24 ">
-          <h1 className="text-xl font-bold">
+        <nav className="container mx-auto p-4 bg-white text-black flex items-center justify-between xl:gap-96 md:gap-24 ">
+          <div className="text-xl font-bold">
             <Link href="/">
               <img src="./CentaurusLogo.png" alt="Centaurus Logo" />
             </Link>
-          </h1>
+          </div>
           <div className="flex items-center justify-end">
             <Link href="/contact" className="flex flex-row items-center justify-center py-2 w-full md:py-2 md:px-4 rounded-md bg-[#e1ae48] text-[#0d2343] hover:bg-[#0d2343] hover:text-[#e1ae48] font-Montserrat font-bold text-base md:text-sm xl:text-lg transition-all duration-300">
               CONTACT US
@@ -150,13 +150,17 @@ export default function Navbar() {
               </li>
 
               {/* BUY A YACHT */}
+              <li>
               <Link className={`header_links cursor-pointer flex items-center ${isSticky ? "p-8": "p-5"} `} href={"yachts-for-sale-dubai"}>
                 <li>BUY A YACHT</li>
               </Link>
+              </li>
               {/* SHARED TOURS */}
+              <li>
               <Link className={`header_links cursor-pointer flex items-center ${isSticky ? "p-8": "p-5"} `} href={"shared-yacht-tours-dubai"}>
                 <li>SHARED TOURS</li>
               </Link>
+              </li>
               {/* EXPERIENCES with Dropdown */}
 
               {/* EXPERIENCES with Dropdown */}
