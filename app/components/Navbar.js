@@ -25,7 +25,7 @@ export default function Navbar() {
   };
 
   const handleScroll = () => {
-    if (window.scrollY > 100) {
+    if (window.scrollY > 150) {
       setSticky(true);
     } else {
       setSticky(false);
@@ -43,7 +43,7 @@ export default function Navbar() {
     <>
       {/* First Navbar */}
       <div className="md:block hidden">
-        <nav className="p-4 bg-white text-black flex items-center justify-center xl:gap-96 md:gap-24 ">
+        <nav className="container mx-auto p-4 bg-white text-black flex items-center justify-center xl:gap-96 md:gap-24 ">
           <h1 className="text-xl font-bold">
             <Link href="/">
               <img src="./CentaurusLogo.png" alt="Centaurus Logo" />
@@ -111,16 +111,16 @@ export default function Navbar() {
         </nav>
 
         {/* Second Navbar (Sticky) */}
+        {/* add sticky class to the navbar when scrolling */}
+        <div className={`bg-[#0d2343] w-full ${isSticky ? "fixed top-0 z-50 transition-all ": ""} `}>
         <nav
-          className={`w-full bg-[#0D2343] text-[#e1ae48] font-Montserrat font-bold ${
-            isSticky ? "h-20 sticky top-0 z-50" : ""
-          }`}
+          className={`container mx-auto  text-[#e1ae48] font-Montserrat font-bold`}
         >
-          <div className="flex flex-row items-center justify-center">
-            <ul className="flex flex-row items-center justify-center gap-6  xl:gap-[5rem] text-[12px]">
+          <div className="">
+            <ul className="flex flex-row items-center justify-between">
               <li
                 className={`transition-opacity  ${
-                  isSticky ? "w-44  opacity-100" : "w-0 opacity-0 absolute"
+                  isSticky ? "opacity-100" : "w-0 opacity-0 absolute"
                 }`}
               >
                 <img src="./CentaurusLogoWhite.png" alt="Logo" />
@@ -128,7 +128,7 @@ export default function Navbar() {
 
               {/* PRIVATE YACHTS with Dropdown */}
               <li className="relative group">
-                <Link href="/yacht-rentals" className="header_links cursor-pointer p-5 flex items-center">
+                <Link href="/yacht-rentals" className={`header_links cursor-pointer flex items-center ${isSticky ? "p-8": "p-5"} `}>
                 PRIVATE YACHTS
                 <svg className="ml-2 w-6 h-6 transform group-hover:rotate-180 transition-transform duration-300" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
@@ -150,18 +150,18 @@ export default function Navbar() {
               </li>
 
               {/* BUY A YACHT */}
-              <Link className="header_links" href={"yachts-for-sale-dubai"}>
+              <Link className={`header_links cursor-pointer flex items-center ${isSticky ? "p-8": "p-5"} `} href={"yachts-for-sale-dubai"}>
                 <li>BUY A YACHT</li>
               </Link>
               {/* SHARED TOURS */}
-              <Link className="header_links" href={"shared-yacht-tours-dubai"}>
+              <Link className={`header_links cursor-pointer flex items-center ${isSticky ? "p-8": "p-5"} `} href={"shared-yacht-tours-dubai"}>
                 <li>SHARED TOURS</li>
               </Link>
               {/* EXPERIENCES with Dropdown */}
 
               {/* EXPERIENCES with Dropdown */}
               <li className="relative group">
-                <Link href="/yacht-trips" className="header_links cursor-pointer p-5 flex items-center">
+                <Link href="/yacht-trips" className={`header_links cursor-pointer flex items-center ${isSticky ? "p-8": "p-5"} `}>
                   EXPERIENCES
                   <svg className="ml-2 w-6 h-6 transform group-hover:rotate-180 transition-transform duration-300" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
@@ -182,20 +182,21 @@ export default function Navbar() {
                 </ul>
               </li>
               <li>
-                <Link className="header_links" href={"/watersports"}>WATER SPORTS</Link>
+                <Link className={`header_links cursor-pointer flex items-center ${isSticky ? "p-8": "p-5"} `} href={"/watersports"}>WATER SPORTS</Link>
               </li>
               <li>
-                <Link className="header_links" href={"/events"}>Events</Link>
+                <Link className={`header_links cursor-pointer flex items-center ${isSticky ? "p-8": "p-5"} `} href={"/events"}>Events</Link>
               </li>
               {/* OFFERS */}
               <li>
-                <Link className="header_links" href={"/offers"}>OFFERS</Link>
+                <Link className={`header_links cursor-pointer flex items-center ${isSticky ? "p-8": "p-5"} `} href={"/offers"}>OFFERS</Link>
               </li>
               {/* NEWYEAR */}
               {/* <li>NEWYEAR</li> */}
             </ul>
           </div>
         </nav>
+        </div>
 
         {/* Logo Added to Sticky Navbar */}
       </div>
