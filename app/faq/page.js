@@ -1,7 +1,7 @@
 
 "use client";
 import { useState } from "react";
-import Sociallink from "../app/components/Sociallink"
+import Sociallink from "@/app/components/Sociallink";
 const page = () => {
     const [activeIndex, setActiveIndex] = useState(null);
 
