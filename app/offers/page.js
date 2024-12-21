@@ -50,16 +50,16 @@ const page = () => {
           {data?.offers?.map((offer) => (
             <div
               key={offer.id}
-              className="flex flex-col justify-start lg:justify-between rounded-md bg-white px-3 xl:px-6 shadow-xl"
+              className="flex flex-col justify-start lg:justify-between rounded-md bg-white shadow-xl"
             >
               <Link href={`/offers/${offer.slug}`}>
 			  <img
                 src={`https://www.centauruscharter.com/product/images/${offer.image}`}
                 alt={offer.translations.en.title}
-                className="rounded-md h-[300px] w-full object-cover"
+                className="rounded-t-md w-full object-cover"
               />
 			  </Link>
-              <div className="flex flex-col  justify-start px-5 lg:px-0">
+              <div className="flex flex-col  justify-start px-5 lg:px-5">
 			  <Link href={`/offers/${offer.slug}`}><h1 className="text-[#232629] font-Montserrat text-2xl font-bold pt-4">
                   {offer.translations.en.title}
                 </h1>
