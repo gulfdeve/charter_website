@@ -80,14 +80,16 @@ const page = () => {
             className="flex flex-col justify-start lg:justify-between rounded-md bg-white px-2 shadow-xl"
           >
             {/* Image with object-cover for proper scaling */}
+            <Link href={`/yacht-trips/slug`}>
             <img
               src={offer.image}
               alt={offer.title}
               className="rounded-md h-[300px] w-full object-cover"
             />
+            </Link>
             <div className="felx flex-col items-start justify-start px-5 ">
               {/* Title with Link */}
-              <Link href={`/yacht-trips/${offer.title.toLowerCase().replace(/ /g, "-")}`}>
+              <Link href={`/yacht-trips/slug`}>
                 <h1 className="text-[#232629] font-Montserrat text-2xl font-bold pt-6 hover:text-blue-600 transition-all duration-300 cursor-pointer">
                   {offer.title}
                 </h1>
@@ -108,10 +110,8 @@ const page = () => {
                   </div>
                 </div>
                 {/* Button with Link */}
-                <Link href={`/yacht-trips/${offer.title.toLowerCase().replace(/ /g, "-")}`}>
-                  <button className="flex flex-row items-center justify-center py-2 px-4 xl:px-5 xl:py-3 rounded-md bg-[#0d2343] text-[#e1ae48] font-Montserrat font-bold text-sm xl:text-lg">
+                  <Link href={`/yacht-trips/${offer.title.toLowerCase().replace(/ /g, "-")}`} className="flex flex-row items-center justify-center py-2 px-4 xl:px-5 xl:py-3 rounded-md bg-[#0d2343] text-[#e1ae48] font-Montserrat font-bold text-sm xl:text-lg">
                     KNOW MORE
-                  </button>
                 </Link>
               </div>
             </div>
