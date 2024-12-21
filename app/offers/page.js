@@ -1,10 +1,10 @@
+"use client";
 import React from "react";
 import { FaWhatsapp } from "react-icons/fa";
+import { useData } from "../context/DataContext";
 
-/*get offers data from basic api*/
 
-
-const offers = [
+/*const offers = [
   {
     id: 1,
     image: "./YachtOffer1.webp",
@@ -33,9 +33,12 @@ const offers = [
     note: "*SUBJECT TO AVAILIBILITY",
     validity: "31 January 2025",
   },
-];
+];*/
+
 
 const page = () => {
+  const { data, loading, error } = useData();
+
   return (
     <>
       <div className="bg-white h-full w-full">
@@ -45,19 +48,19 @@ const page = () => {
           </h1>
         </div>
         <div className="grid grid-col-1 md:grid-cols-2 md:px-4 xl:px-52 gap-7 pb-16">
-          {offers.map((offer) => (
+          {data?.offers?.map((offer) => (
             <div
               key={offer.id}
               className="flex flex-col justify-start lg:justify-between rounded-md bg-white px-3 xl:px-6 shadow-xl"
             >
               <img
-                src={offer.image}
-                alt={offer.title}
+                src={`https://www.centauruscharter.com/product/images/${offer.image}`}
+                alt={offer.translations.en.title}
                 className="rounded-md h-[300px] w-full object-cover"
               />
               <div className="flex flex-col  justify-start px-5 lg:px-0">
                 <h1 className="text-[#232629] font-Montserrat text-2xl font-bold pt-4">
-                  {offer.title}
+                  {offer.translations.en.title}
                 </h1>
                 <p className="text-[#232629] font-Montserrat font-bold text-xs pt-2 pb-16">
                   {offer.note}
