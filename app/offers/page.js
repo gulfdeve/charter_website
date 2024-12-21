@@ -2,7 +2,7 @@
 import React from "react";
 import { FaWhatsapp } from "react-icons/fa";
 import { useData } from "../context/DataContext";
-
+import Link from "next/link";
 
 /*const offers = [
   {
@@ -35,7 +35,6 @@ import { useData } from "../context/DataContext";
   },
 ];*/
 
-
 const page = () => {
   const { data, loading, error } = useData();
 
@@ -53,15 +52,18 @@ const page = () => {
               key={offer.id}
               className="flex flex-col justify-start lg:justify-between rounded-md bg-white px-3 xl:px-6 shadow-xl"
             >
-              <img
+              <Link href={`/offers/${offer.slug}`}>
+			  <img
                 src={`https://www.centauruscharter.com/product/images/${offer.image}`}
                 alt={offer.translations.en.title}
                 className="rounded-md h-[300px] w-full object-cover"
               />
+			  </Link>
               <div className="flex flex-col  justify-start px-5 lg:px-0">
-                <h1 className="text-[#232629] font-Montserrat text-2xl font-bold pt-4">
+			  <Link href={`/offers/${offer.slug}`}><h1 className="text-[#232629] font-Montserrat text-2xl font-bold pt-4">
                   {offer.translations.en.title}
                 </h1>
+				</Link>
                 <p className="text-[#232629] font-Montserrat font-bold text-xs pt-2 pb-16">
                   {offer.note}
                 </p>
@@ -80,9 +82,9 @@ const page = () => {
                       <FaWhatsapp className="xs:text-xl text-lg  mr-1" />
                       WHATSAPP
                     </button>
-                    <button className="flex flex-row items-center justify-center py-2 px-6 md:py-2 md:px-4  rounded-md bg-[#0d2343] text-[#e1ae48] font-Montserrat font-bold text-[10px] md:text-sm xl:text-lg">
+                    <Link href={`/offers/${offer.slug}`} className="flex flex-row items-center justify-center py-2 px-6 md:py-2 md:px-4  rounded-md bg-[#0d2343] text-[#e1ae48] font-Montserrat font-bold text-[10px] md:text-sm xl:text-lg">
                       KNOW MORE
-                    </button>
+                    </Link>
                   </div>
                 </div>
               </div>
