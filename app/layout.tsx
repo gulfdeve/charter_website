@@ -8,6 +8,8 @@ import { LanguageProvider } from "./context/LanguageContext";
 import {DataProvider} from "./context/DataContext"
 import Sociallink from "@/app/components/Sociallink";
 import FirstFooter from "@/app/components/FirstFooter";
+import SecondFooter from "@/app/components/SecondFooter";
+import CopyrightFooter from "@/app/components/CopyrightFooter";
 const montserrat = Montserrat({
   subsets: ['latin'],
   variable: '--font-montserrat',
@@ -38,6 +40,8 @@ export default function RootLayout({
         </DataProvider>
         <Sociallink/>
         <FirstFooter />
+        <SecondFooter />
+        <CopyrightFooter />
       </body>
     </html>
   );
