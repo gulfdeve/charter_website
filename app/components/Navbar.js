@@ -19,13 +19,14 @@ export default function Navbar() {
   const toggleSubmenu = (index) => {
     setSubmenuOpen(submenuOpen === index ? null : index);
   };
+
   const handleLanguageChange = (lang) => {
     changeLanguage(lang);
     setDropdownOpen(false);
   };
 
   const handleScroll = () => {
-    if (window.scrollY > 150) {
+    if (window.scrollY > 100) {
       setSticky(true);
     } else {
       setSticky(false);
@@ -43,34 +44,23 @@ export default function Navbar() {
     <>
       {/* First Navbar */}
       <div className="md:block hidden">
-        <nav className="container mx-auto p-4 bg-white text-black flex items-center justify-between xl:gap-96 md:gap-24 ">
-          <div className="text-xl font-bold">
-            <Link href="/">
-              <img src="./CentaurusLogo.png" alt="Centaurus Logo" />
-            </Link>
-          </div>
+        <nav className="p-4 container mx-auto bg-white text-black flex items-center justify-between xl:gap-96 md:gap-24">
+          <h1 className="text-xl font-bold">
+            <img src="./CentaurusLogo.png" alt="Centaurus Logo" className="cursor-pointer" />
+          </h1>
           <div className="flex items-center justify-end">
-            <Link
-              href="/contact"
-              className="flex flex-row items-center justify-center py-2 w-full md:py-2 md:px-4 rounded-md bg-[#e1ae48] text-[#0d2343] hover:bg-[#0d2343] hover:text-[#e1ae48] font-Montserrat font-bold text-base md:text-sm xl:text-lg transition-all duration-300"
-            >
+            <button className="flex flex-row items-center justify-center py-2 w-full md:py-2 md:px-4 rounded-md bg-[#e1ae48] text-[#0d2343] hover:bg-[#0d2343] hover:text-[#e1ae48] font-Montserrat font-bold text-base md:text-sm xl:text-lg transition-all duration-300">
               CONTACT US
-            </Link>
+            </button>
             <div className="flex flex-row px-8 gap-8">
               {/* Email Icon */}
               <Link href="mailto:example@example.com">
-                <MdMail
-                  size={30}
-                  className="text-[#e1ae48] hover:text-[#0d2343]"
-                />
+                <MdMail size={30} className="text-[#e1ae48] hover:text-[#0d2343]" />
               </Link>
 
               {/* WhatsApp Icon */}
               <Link href="https://wa.me/1234567890">
-                <IoLogoWhatsapp
-                  size={30}
-                  className="text-[#e1ae48] hover:text-[#0d2343]"
-                />
+                <IoLogoWhatsapp size={30} className="text-[#e1ae48] hover:text-[#0d2343]" />
               </Link>
             </div>
             {/* Language Dropdown */}
@@ -85,7 +75,7 @@ export default function Navbar() {
               </div>
               {/* Dropdown Menu */}
               {isDropdownOpen && (
-                <ul className="absolute right-0  w-32 bg-white border rounded-md shadow-lg z-20">
+                <ul className="absolute right-0 w-32 bg-white border rounded-md shadow-lg z-20">
                   <li
                     onClick={() => handleLanguageChange("en")}
                     className="flex items-center gap-2 p-2 cursor-pointer hover:bg-gray-200"
@@ -112,176 +102,125 @@ export default function Navbar() {
             </div>
           </div>
         </nav>
+      
 
-        {/* Second Navbar (Sticky) */}
-        {/* add sticky class to the navbar when scrolling */}
-        <div
+      {/* Second Navbar (Sticky) */}
+      <div
           className={`bg-[#0d2343] w-full ${
             isSticky ? "fixed top-0 z-50 transition-all " : ""
           } `}
         >
-          <nav
-            className={`container mx-auto  text-[#e1ae48] font-Montserrat font-bold`}
-          >
-            <div className="">
-              <ul className="flex flex-row items-center justify-between">
-                <li
-                  className={`transition-opacity  ${
-                    isSticky ? "opacity-100" : "w-0 opacity-0 absolute"
-                  }`}
-                >
-                  <img src="./CentaurusLogoWhite.png" alt="Logo" />
-                </li>
+      <nav
+        className={` w-full bg-[#0D2343] text-[#e1ae48] font-Montserrat font-bold ${isSticky ? " p-3 lg:p-2 xl:h-20 md:h-16 sticky top-0 z-50" : "h-14 p-0.5"}`}
+      >
+        <div className="flex flex-row items-center justify-center">
+          <ul className={`flex flex-row items-center justify-center gap-6 xl:gap-[5rem] 2xl:gap-[7rem] text-[12px] md:text-[7px] ${isSticky ? "2xl:text-[18px] xl:text-[12px] md:text-[7px]" : " 2xl:text-[18px] xl:text-[12px] md:text-[9px] lg:text-[10px]"}`}>
+            <li
+              className={`transition-opacity ${isSticky ? "w-44 md:w-28 xl:w-44 2xl:w-48 opacity-100" : "w-0 opacity-0 absolute"}`}
+            >
+              <img src="./CentaurusLogoWhite.png" alt="Logo" />
+            </li>
 
-                {/* PRIVATE YACHTS with Dropdown */}
-                <li className="relative group">
-                  <Link
-                    href="/yacht-rentals"
-                    className={`header_links cursor-pointer flex items-center ${
-                      isSticky ? "p-8" : "p-5"
-                    } `}
-                  >
-                    PRIVATE YACHTS
-                    <svg
-                      className="ml-2 w-6 h-6 transform group-hover:rotate-180 transition-transform duration-300"
-                      xmlns="http://www.w3.org/2000/svg"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth="2"
-                        d="M19 9l-7 7-7-7"
-                      />
-                    </svg>
-                  </Link>
-                  <ul className="absolute space-y-5 left-0 w-60 bg-white text-black border shadow-lg hidden group-hover:block z-20 group-hover:scale-105 transition-transform duration-300">
-                    {!loading &&
-                      data?.products?.map((product) => (
-                        <Link
-                          href={`/yacht-rentals/${product.slug}`}
-                          key={product.id}
-                        >
-                          <li className="header_dropdown_links">
-                            {product.title}
-                          </li>
-                        </Link>
-                      ))}
-                  </ul>
-                </li>
+            {/* PRIVATE YACHTS with Dropdown */}
+           
+<li className="relative group">
+  <span className="flex items-center justify-between cursor-pointer p-5 gap-1">
+    PRIVATE YACHTS
+    <svg
+      className="w-5 h-5 transform group-hover:rotate-180 transition-transform duration-300"
+      xmlns="http://www.w3.org/2000/svg"
+      fill="none"
+      viewBox="0 0 24 24"
+      stroke="currentColor"
+    >
+      <path
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="2"
+        d="M19 9l-7 7-7-7"
+      />
+    </svg>
+  </span>
+  <ul className="absolute top-[85%] p-3 left-0 w-60 bg-white text-black border shadow-lg hidden group-hover:block z-20">
+    {!loading &&
+      data?.products?.map((product) => (
+        <Link href={`/yacht-rentals/${product.slug}`} key={product.id}>
+          <li className="py-2 px-4 cursor-pointer text-base font-normal text-gray-500 font-Montserrat hover:bg-gray-200">
+            {product.title}
+          </li>
+        </Link>
+      ))}
+  </ul>
+</li>
 
-                {/* BUY A YACHT */}
-                <li>
-                  <Link
-                    className={`header_links cursor-pointer flex items-center ${
-                      isSticky ? "p-8" : "p-5"
-                    } `}
-                    href={"yachts-for-sale-dubai"}
-                  >
-                    BUY A YACHT
-                  </Link>
-                </li>
-                {/* SHARED TOURS */}
-                <li>
-                  <Link
-                    className={`header_links cursor-pointer flex items-center ${
-                      isSticky ? "p-8" : "p-5"
-                    } `}
-                    href={"shared-yacht-tours-dubai"}
-                  >
-                    SHARED TOURS
-                  </Link>
-                </li>
-                {/* EXPERIENCES with Dropdown */}
 
-                {/* EXPERIENCES with Dropdown */}
-                <li className="relative group">
-                  <Link
-                    href="/yacht-trips"
-                    className={`header_links cursor-pointer flex items-center ${
-                      isSticky ? "p-8" : "p-5"
-                    } `}
-                  >
-                    EXPERIENCES
-                    <svg
-                      className="ml-2 w-6 h-6 transform group-hover:rotate-180 transition-transform duration-300"
-                      xmlns="http://www.w3.org/2000/svg"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth="2"
-                        d="M19 9l-7 7-7-7"
-                      />
-                    </svg>
-                  </Link>
-                  <ul className="absolute space-y-5 left-0 w-80 bg-white text-black border shadow-lg hidden group-hover:block z-20 group-hover:scale-105 transition-transform duration-300">
-                    {!loading &&
-                      data?.experiences?.map((experience) => (
-                        <Link
-                          href={`/yacht-trips/${experience.slug}`}
-                          key={experience.id}
-                        >
-                          <li className="header_dropdown_links">
-                            {experience.translations[language].title}
-                          </li>
-                        </Link>
-                      ))}
-                  </ul>
-                </li>
-                <li>
-                  <Link
-                    className={`header_links cursor-pointer flex items-center ${
-                      isSticky ? "p-8" : "p-5"
-                    } `}
-                    href={"/watersports"}
-                  >
-                    WATER SPORTS
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    className={`header_links cursor-pointer flex items-center ${
-                      isSticky ? "p-8" : "p-5"
-                    } `}
-                    href={"/events"}
-                  >
-                    Events
-                  </Link>
-                </li>
-                {/* OFFERS */}
-                <li>
-                  <Link
-                    className={`header_links cursor-pointer flex items-center ${
-                      isSticky ? "p-8" : "p-5"
-                    } `}
-                    href={"/offers"}
-                  >
-                    OFFERS
-                  </Link>
-                </li>
-                {/* NEWYEAR */}
-                {/* <li>NEWYEAR</li> */}
+
+
+
+            {/* BUY A YACHT */}
+            <Link href={"/yachts-for-sale-dubai"}>
+              <li>BUY A YACHT</li>
+            </Link>
+            {/* SHARED TOURS */}
+            <Link href={"/shared-yacht-tours-dubai"}>
+              <li>SHARED TOURS</li>
+            </Link>
+            {/* EXPERIENCES with Dropdown */}
+            <li className="relative group">
+              <span className="flex items-center justify-between cursor-pointer p-5 gap-1">EXPERIENCES
+              <svg
+      className="w-5 h-5 transform group-hover:rotate-180 transition-transform duration-300"
+      xmlns="http://www.w3.org/2000/svg"
+      fill="none"
+      viewBox="0 0 24 24"
+      stroke="currentColor"
+    >
+      <path
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="2"
+        d="M19 9l-7 7-7-7"
+      />
+    </svg>
+              </span>
+              <ul className="absolute top-[65%] p-5 space-y-5 left-0 mt-5 w-60 bg-white text-black border shadow-lg hidden group-hover:block z-20 group-hover:scale-105 transition-transform duration-300">
+                {!loading &&
+                  data?.experiences?.map((experience) => (
+                    <Link href={`/yacht-trips/${experience.slug}`} key={experience.id}>
+                      <li className="py-2 px-4 cursor-pointer text-base font-normal text-gray-500 font-Montserrat hover:bg-gray-200">
+                        {experience.translations[language].title}
+                      </li>
+                    </Link>
+                  ))}
               </ul>
-            </div>
-          </nav>
-        </div>
+            </li>
 
-        {/* Logo Added to Sticky Navbar */}
+            {/* OFFERS */}
+            <Link href={"/offers"}>
+            <li>OFFERS</li>
+            </Link>
+            <Link href={"/watersports"}>          
+              <li>WATER SPORTS</li>
+              </Link>
+            {/* NEWYEAR */}
+            <Link href={"/newyear"}>
+            <li>NEWYEAR</li>
+            </Link>
+          </ul>
+        </div>
+      </nav>
       </div>
+      </div>
+      {/* Mobile Navbar */}
       <div className="md:hidden block">
         <nav className="bg-[#0d2343] w-full h-14 p-3">
           <div className="flex items-center justify-between">
             {/* Logo */}
-            <div className="w-36 pr-3">
+            <Link href={"/"}>
+            <div className="w-32 pr-3">
               <img src="./CentaurusLogoWhite.png" alt="Logo" />
             </div>
-
+            </Link>
             {/* Icons and Dropdown Trigger */}
             <div className="flex items-center gap-2">
               {/* WhatsApp Icon */}
@@ -293,6 +232,7 @@ export default function Navbar() {
               <Link href="tel:1234567890" passHref>
                 <FaPhoneAlt className="text-blue-500 w-5 h-5" />
               </Link>
+
               {/* Language Selector */}
               <select
                 value={language}
@@ -303,6 +243,7 @@ export default function Navbar() {
                 <option value="ar">Arabic</option>
                 <option value="ru">Russian</option>
               </select>
+
               {/* Hamburger Menu */}
               <div
                 className="w-8 cursor-pointer"
@@ -313,7 +254,7 @@ export default function Navbar() {
             </div>
           </div>
 
-          {/* Dropdown Menu */}
+          {/* Mobile Dropdown Menu */}
           {mobileDropdownOpen && (
             <div
               className="absolute top-11 right-0 bg-white text-black w-full mt-3 shadow-lg"
@@ -335,34 +276,23 @@ export default function Navbar() {
                     <ul className="pl-4 pt-3 space-y-3">
                       {!loading &&
                         data?.products?.map((product) => (
-                          <Link href={`/yacht-rentals/${product.slug}`}>
-                            <li
-                              key={product.id}
-                              className="cursor-pointer text-xs font-normal text-gray-500 font-Montserrat"
-                            >
+                          <Link href={`/yacht-rentals/${product.slug}`} key={product.id}>
+                            <li className="cursor-pointer text-xs font-normal text-gray-500 font-Montserrat">
                               {product.title}
                             </li>
                           </Link>
                         ))}
-                      <li className="cursor-pointer text-black">Submenu 2</li>
                     </ul>
                   )}
                 </li>
-                <Link href={"yachts-for-sale-dubai"}>
-                  <li className="font-bold cursor-pointer hover:text-blue-500">
-                    BUY A YACHT
-                  </li>
+                <Link href={"/yacht-sale-for-dubai"}>
+                  <li className="font-bold cursor-pointer hover:text-blue-500">BUY A YACHT</li>
                 </Link>
                 <Link href={"shared-yacht-tours-dubai"}>
-                  <li className="font-bold cursor-pointer hover:text-blue-500">
-                    SHARED TOURS
-                  </li>
+                  <li className="font-bold cursor-pointer hover:text-blue-500">SHARED TOURS</li>
                 </Link>
-                <li className="font-bold cursor-pointer ">
-                  <div
-                    className="flex justify-between items-center"
-                    onClick={() => toggleSubmenu(1)}
-                  >
+                <li className="font-bold cursor-pointer">
+                  <div className="flex justify-between items-center" onClick={() => toggleSubmenu(1)}>
                     <Link href={"/yacht-trips"}>EXPERIENCES</Link>
                     <span className="text-black">
                       <MdKeyboardArrowDown />
@@ -372,11 +302,8 @@ export default function Navbar() {
                     <ul className="pl-4 pt-3 space-y-3">
                       {!loading &&
                         data?.experiences?.map((experience) => (
-                          <Link href={`/yacht-trips/${experience.slug}`}>
-                            <li
-                              key={experience.id}
-                              className="cursor-pointer text-xs font-normal text-gray-500 font-Montserrat"
-                            >
+                          <Link href={`/yacht-trips/${experience.slug}`} key={experience.id}>
+                            <li className="cursor-pointer text-xs font-normal text-gray-500 font-Montserrat">
                               {experience.translations[language].title}
                             </li>
                           </Link>
@@ -385,14 +312,10 @@ export default function Navbar() {
                   )}
                 </li>
                 <Link href={"/offers"}>
-                  <li className="font-bold cursor-pointer hover:text-blue-500">
-                    OFFERS
-                  </li>
+                <li className="font-bold cursor-pointer hover:text-blue-500">OFFERS</li>
                 </Link>
-                <Link href={"new-year-yacht-party"}>
-                  <li className="font-bold cursor-pointer hover:text-blue-500">
-                    NEW YEAR
-                  </li>
+                <Link href={"/newyear"}>
+                <li className="font-bold cursor-pointer hover:text-blue-500">NEWYEAR</li>
                 </Link>
               </ul>
             </div>
