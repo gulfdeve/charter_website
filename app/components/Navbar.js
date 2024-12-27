@@ -33,6 +33,7 @@ export default function Navbar() {
     }
   };
 
+
   useEffect(() => {
     window.addEventListener("scroll", handleScroll);
     return () => {
@@ -43,7 +44,7 @@ export default function Navbar() {
   return (
     <>
       {/* First Navbar */}
-      <div className="md:block hidden">
+      <div className="lg:block hidden">
         <nav className="p-4 container mx-auto bg-white text-black flex items-center justify-between xl:gap-96 md:gap-24">
           <h1 className="text-xl font-bold">
             <img src="./CentaurusLogo.png" alt="Centaurus Logo" className="cursor-pointer" />
@@ -114,7 +115,7 @@ export default function Navbar() {
         className={` w-full bg-[#0D2343] text-[#e1ae48] font-Montserrat font-bold ${isSticky ? " p-3 lg:p-2 xl:h-20 md:h-16 sticky top-0 z-50" : "h-14 p-0.5"}`}
       >
         <div className="flex flex-row items-center justify-center">
-          <ul className={`flex flex-row items-center justify-center gap-6 xl:gap-[5rem] 2xl:gap-[7rem] text-[12px] md:text-[7px] ${isSticky ? "2xl:text-[18px] xl:text-[12px] md:text-[7px]" : " 2xl:text-[18px] xl:text-[12px] md:text-[9px] lg:text-[10px]"}`}>
+          <ul className={`flex flex-row items-center justify-center gap-6 xl:gap-[3rem] 2xl:gap-[7rem] text-[11px] md:text-[7px] ${isSticky ? "2xl:text-[18px] xl:text-[11px] md:text-[7px]" : " 2xl:text-[18px] xl:text-[12px] md:text-[9px] lg:text-[10px]"}`}>
             <li
               className={`transition-opacity ${isSticky ? "w-44 md:w-28 xl:w-44 2xl:w-48 opacity-100" : "w-0 opacity-0 absolute"}`}
             >
@@ -127,7 +128,7 @@ export default function Navbar() {
   <span className="flex items-center justify-between cursor-pointer p-5 gap-1">
     PRIVATE YACHTS
     <svg
-      className="w-5 h-5 transform group-hover:rotate-180 transition-transform duration-300"
+      className="xl:w-5 lg:w-4 h-5 lg:h-4 transform group-hover:rotate-180 transition-transform duration-300"
       xmlns="http://www.w3.org/2000/svg"
       fill="none"
       viewBox="0 0 24 24"
@@ -150,6 +151,7 @@ export default function Navbar() {
           </li>
         </Link>
       ))}
+      
   </ul>
 </li>
 
@@ -169,7 +171,7 @@ export default function Navbar() {
             <li className="relative group">
               <span className="flex items-center justify-between cursor-pointer p-5 gap-1">EXPERIENCES
               <svg
-      className="w-5 h-5 transform group-hover:rotate-180 transition-transform duration-300"
+      className="w-5 h-5 lg:w-4 lg:h-4 transform group-hover:rotate-180 transition-transform duration-300"
       xmlns="http://www.w3.org/2000/svg"
       fill="none"
       viewBox="0 0 24 24"
@@ -184,15 +186,21 @@ export default function Navbar() {
     </svg>
               </span>
               <ul className="absolute top-[65%] p-5 space-y-5 left-0 mt-5 w-60 bg-white text-black border shadow-lg hidden group-hover:block z-20 group-hover:scale-105 transition-transform duration-300">
-                {!loading &&
-                  data?.experiences?.map((experience) => (
-                    <Link href={`/yacht-trips/${experience.slug}`} key={experience.id}>
-                      <li className="py-2 px-4 cursor-pointer text-base font-normal text-gray-500 font-Montserrat hover:bg-gray-200">
-                        {experience.translations[language].title}
-                      </li>
-                    </Link>
-                  ))}
-              </ul>
+  {!loading &&
+    data?.experiences?.map((experience) => {
+      const title =
+        experience.translations?.[language]?.title ||
+        experience.translations?.en?.title ||
+        "Untitled";
+      return (
+        <Link href={`/yacht-trips/${experience.slug}`} key={experience.id}>
+          <li className="cursor-pointer text-xs font-normal text-gray-500 font-Montserrat">
+            {title}
+          </li>
+        </Link>
+      );
+    })}
+</ul>
             </li>
 
             {/* OFFERS */}
@@ -212,7 +220,7 @@ export default function Navbar() {
       </div>
       </div>
       {/* Mobile Navbar */}
-      <div className="md:hidden block">
+      <div className="lg:hidden block">
         <nav className="bg-[#0d2343] w-full h-14 p-3">
           <div className="flex items-center justify-between">
             {/* Logo */}

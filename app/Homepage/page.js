@@ -8,10 +8,14 @@ import Reviews from "@/app/components/Reviews";
 import Counters from "@/app/components/Counters";
 import LocationCarousel from "@/app/components/LocationCarousel";
 import Video from "@/app/components/Video";
+import { useData } from "../context/DataContext";
+import { useLanguage } from "@/app/context/LanguageContext";
+import Link from "next/link";
 export default function EmblaCarouselComponent() {
   const emblaRef = useRef(null);
   const emblaInstance = useRef(null);
-
+  const { data, loading, error } = useData();
+  const { language } = useLanguage();
   const slides = [
     {
       image: "/yacht-rentals/56ftLagoona1.jpg", // Image path
@@ -145,18 +149,19 @@ export default function EmblaCarouselComponent() {
               ref={emblaRef}
             >
               <div className="embla__container flex shadow-2xl shadow-black">
-                {slides.map((slide, index) => (
+              {!loading &&
+      data?.products?.map((product) => (
                   <div
-                    key={index}
+                    key={product.id}
                     className="embla__slide min-w-full flex flex-col items-center justify-center"
                   >
                     {/* Image */}
                     <h1 className="font-Montserrat font-bold text-2xl mb-5">
-                      Lagoona yacht
+                    {product.translations[language].name_of_yacht}
                     </h1>
                     <img
-                      src={slide.image}
-                      alt={`Slide ${index + 1}`}
+                      src={`https://www.centauruscharter.com/product/images/${product.image}`}
+                      alt="yacht"
                       className="w-full h-auto xl:h-5/6 object-cover rounded-lg"
                     />
                     {/* Caption */}
@@ -168,7 +173,7 @@ export default function EmblaCarouselComponent() {
                             Model:
                           </span>
                           <span className="font-semibold font-Montserrat text-sm text-[#e1ae48]">
-                            Majesty
+                          {product.translations[language].model}
                           </span>
                         </div>
                         {/* Length */}
@@ -177,7 +182,7 @@ export default function EmblaCarouselComponent() {
                             Length:
                           </span>
                           <span className="font-semibold font-Montserrat text-sm text-[#e1ae48]">
-                            56 Feet
+                          {product.translations[language].size}
                           </span>
                         </div>
                         {/* Guests */}
@@ -186,16 +191,16 @@ export default function EmblaCarouselComponent() {
                             Guests:
                           </span>
                           <span className="font-semibold font-Montserrat text-sm text-[#e1ae48]">
-                            21
+                          {product.translations[language].guests}
                           </span>
                         </div>
                         {/* Good For */}
                         <div className="bg-[#e1ae48] text-[#0d2343] xl:w-36 p-2 flex flex-col items-center">
                           <span className="  font-Montserrat text-sm">
-                            Good For:
+                            Per Hour:
                           </span>
                           <span className="font-semibold font-Montserrat text-sm">
-                            Birthday/Parties
+                          {product.per_hour_price} +VAT
                           </span>
                         </div>
                       </div>
@@ -215,10 +220,12 @@ export default function EmblaCarouselComponent() {
                         Book Now
                       </button>
                       <div className="flex items-center justify-center ">
+                      <Link href={'https://centaurusint.net/?utm_source=centauruscharter&utm_medium=logo_text&utm_campaign=branding'}>
                         <img
                           src="./centaurus_link.svg"
                           className="w-[10rem] mt-3"
                         />
+                        </Link>
                       </div>
                     </div>
                   </div>
@@ -246,27 +253,28 @@ export default function EmblaCarouselComponent() {
       <div className="md:block hidden">
         <div className="container mx-auto p-6">
           <div className="grid grid-col-1 md:grid-cols-2 p-6 2xl:px-56 2xl:gap-14 gap-10">
-            {yachtData.map((yacht, index) => (
+          {!loading &&
+      data?.products?.map((product) => (
               <div
-                key={index}
+                key={product.id}
                 className="flex flex-col border border-gray-400 xl:p-10 p-5 rounded-lg"
               >
                 <h1 className="font-Montserrat xl:text-4xl text-3xl font-bold">
-                  {yacht.title}
+                {product.translations[language].name_of_yacht}
                 </h1>
                 <img
-                  src={yacht.image}
+                  src={`https://www.centauruscharter.com/product/images/${product.image}`}
                   className="rounded-lg xl:w-[32rem] w-[25rem] mt-3"
                 />
 
                 <div className="grid grid-cols-2 lg:grid-cols-4 md:grid-cols-1 items-center gap-0 rounded-lg lg:w-[25rem] xl:w-[23rem] shadow-md mb-7 mt-5">
                   {/* Model */}
-                  <div className="bg-[#0d2343] text-white p-1 xl:p-2 flex flex-col items-center xl:rounded-l-lg">
+                  <div className="bg-[#0d2343] text-white p-1 xl:p-2.5 flex flex-col items-center xl:rounded-l-lg">
                     <span className="font-bold font-Montserrat text-sm">
                       Model:
                     </span>
-                    <span className="font-semibold font-Montserrat text-sm text-[#e1ae48]">
-                      {yacht.model}
+                    <span className="font-semibold font-Montserrat text-sm xl:text-xs text-[#e1ae48]">
+                    {product.translations[language].model}
                     </span>
                   </div>
 
@@ -276,7 +284,7 @@ export default function EmblaCarouselComponent() {
                       Length:
                     </span>
                     <span className="font-semibold font-Montserrat text-sm text-[#e1ae48]">
-                      {yacht.length}
+                    {product.translations[language].size}
                     </span>
                   </div>
 
@@ -286,15 +294,15 @@ export default function EmblaCarouselComponent() {
                       Guests:
                     </span>
                     <span className="font-semibold font-Montserrat text-sm text-[#e1ae48]">
-                      {yacht.guests}
+                    {product.translations[language].guests}
                     </span>
                   </div>
 
                   {/* Good For */}
                   <div className="bg-[#e1ae48] text-[#0d2343] xl:w-56 p-1 xl:p-2 flex flex-col items-center xl:rounded-r-lg">
-                    <span className="font-Montserrat text-sm">Good For:</span>
+                    <span className="font-Montserrat text-sm">Per Hour:</span>
                     <span className="font-semibold font-Montserrat text-sm">
-                      {yacht.goodFor}
+                    {product.per_hour_price} +VAT
                     </span>
                   </div>
                 </div>
@@ -305,21 +313,25 @@ export default function EmblaCarouselComponent() {
                       Trip inclusions from 3 hours onwards:
                     </h1>
                     <ol className="list-disc ml-7 text-xs font-bold">
-                      {yacht.inclusions.map((inclusion, idx) => (
-                        <li key={idx}>{inclusion}</li>
-                      ))}
+                   <li> Hops, Wines, Bubbly Drinks, Coffee, Tea, Water, & Softdrinks</li>
+       <li> Transfer (upon request)</li>
+       <li> Canapés & Snacks (additional charges apply)</li>
                     </ol>
                   </div>
+                 
                   <div>
+                  <Link href={'https://centaurusint.net/?utm_source=centauruscharter&utm_medium=logo_text&utm_campaign=branding'}>
                     <img
                       src="./centaurus_link.svg"
                       className="w-[10rem] xl:mt-3"
                     />
+                    </Link>
                   </div>
                 </div>
-
+             
                 <div className="flex flex-row justify-between items-center xl:w-[32rem] mt-3">
                   <div>
+                    
                     <button className="flex flex-row items-center justify-center mt-4 py-2 w-full md:py-2 md:px-4 rounded-md bg-[#e1ae48] text-[#0d2343] hover:bg-[#0d2343] hover:text-[#e1ae48] font-Montserrat font-bold text-base md:text-sm xl:text-lg transition-all duration-300">
                       Book Now
                     </button>

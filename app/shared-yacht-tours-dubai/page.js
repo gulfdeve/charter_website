@@ -79,43 +79,37 @@ const Page = () => {
                 <h1 className="text-primary-blue font-Montserrat font-bold text-2xl py-2">
                   {tour.title}
                 </h1>
-                <div className="flex flex-row gap-2">
-                  <FaClock size={35} className="text-primary-blue" />
-                  <h1 className="font-Montserrat text-primary-blue">
-                    <span className="font-bold">Cruising Time:</span>{" "}
-                    {tour.cruisingTime}
-                  </h1>
-                </div>
-                <div className="flex flex-row gap-2">
-                  <IoMan size={35} className="text-primary-blue " />
-                  <h1 className="font-Montserrat text-primary-blue">
-                    <span className="font-bold">Adult (12+):</span>{" "}
-                    {tour.adultPrice}
-                  </h1>
-                </div>
-                <div className="flex flex-row gap-2">
-                  <FaChild  className="text-primary-blue md:text-[6rem] text-[5rem] pl-1" />
-                  <h1 className="font-Montserrat text-primary-blue text-sm">
-                    <span className="font-bold">Live BBQ:</span> {tour.liveBBQ}
-                  </h1>
-                </div>
-                <div className="flex flex-row gap-2">
-                  <MdOutlineLocalDining
-                    
-                    className="text-primary-blue md:text-[4rem] text-[3rem]"
-                  />
-                  <h1 className="font-Montserrat text-primary-blue ">
-                    <span className="font-bold">Cruising Route:</span>{" "}
-                    {tour.cruisingRoute}
-                  </h1>
-                </div>
-                <div className="flex flex-row gap-2">
-                  <FaCameraRetro size={35} className="text-primary-blue" />
-                  <h1 className="font-Montserrat text-primary-blue">
-                    <span className="font-bold">Departure Point:</span>{" "}
-                    {tour.departurePoint}
-                  </h1>
-                </div>
+                <div className="flex flex-row gap-2 items-start">
+  <FaClock size={35} className="text-primary-blue" />
+  <h1 className="font-Montserrat text-primary-blue">
+    <span className="font-bold">Cruising Time:</span> {tour.cruisingTime}
+  </h1>
+</div>
+<div className="flex flex-row gap-2 items-start">
+  <IoMan size={35} className="text-primary-blue " />
+  <h1 className="font-Montserrat text-primary-blue">
+    <span className="font-bold">Adult (12+):</span> {tour.adultPrice}
+  </h1>
+</div>
+<div className="flex flex-row gap-2 items-start">
+  <FaChild className="text-primary-blue md:text-[6rem] text-[5rem] pl-1" />
+  <h1 className="font-Montserrat text-primary-blue text-sm">
+    <span className="font-bold">Live BBQ:</span> {tour.liveBBQ}
+  </h1>
+</div>
+<div className="flex flex-row gap-2 items-start">
+  <MdOutlineLocalDining className="text-primary-blue md:text-[4rem] text-[3rem]" />
+  <h1 className="font-Montserrat text-primary-blue">
+    <span className="font-bold">Cruising Route:</span> {tour.cruisingRoute}
+  </h1>
+</div>
+<div className="flex flex-row gap-2 items-start">
+  <FaCameraRetro size={35} className="text-primary-blue" />
+  <h1 className="font-Montserrat text-primary-blue">
+    <span className="font-bold">Departure Point:</span> {tour.departurePoint}
+  </h1>
+</div>
+
                 <button className="flex flex-row items-center justify-center mt-4 py-2 w-full md:py-2 md:px-4 rounded-md bg-[#e1ae48] text-[#0d2343] hover:bg-[#0d2343] hover:text-[#e1ae48] font-Montserrat font-bold text-base md:text-sm xl:text-lg transition-all duration-300">
                   Book Now
                 </button>
@@ -220,6 +214,7 @@ const Page = () => {
         
                         </div></div>
         </div>
+        <nycard/>
       </div>
     </>
   );
