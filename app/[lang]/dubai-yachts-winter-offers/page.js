@@ -1,5 +1,5 @@
 import React from "react";
-import Videosharedtours from "../components/Video-sharedtours";
+import Videosharedtours from "../../components/Video-sharedtours";
 import { FaWhatsapp } from "react-icons/fa";
 const Page = () => {
   const yachts = [

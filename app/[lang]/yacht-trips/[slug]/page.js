@@ -2,7 +2,7 @@ import React from "react";
 import { IoIosPricetag } from "react-icons/io";
 import { FaWhatsapp } from "react-icons/fa";
 import Link from "next/link";
-import Route from "../../components/Route";
+import Route from "@/app/components/Route";
 const page = async ({ params }) => {
   const { slug } = await params;
   const offers = [

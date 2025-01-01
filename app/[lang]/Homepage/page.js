@@ -8,7 +8,7 @@ import Reviews from "@/app/components/Reviews";
 import Counters from "@/app/components/Counters";
 import LocationCarousel from "@/app/components/LocationCarousel";
 import Video from "@/app/components/Video";
-import { useData } from "../context/DataContext";
+import { useData } from "../../context/DataContext";
 import { useLanguage } from "@/app/context/LanguageContext";
 import Link from "next/link";
 export default function EmblaCarouselComponent() {

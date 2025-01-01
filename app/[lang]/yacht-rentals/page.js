@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { useLanguage } from "@/app/context/LanguageContext";
 import { useEffect, useState } from "react";
-import { useData } from "../context/DataContext";
+import { useData } from '@/app/context/DataContext';
 
 const Tabs = () => {
   const [activeTab, setActiveTab] = useState("allYachts");

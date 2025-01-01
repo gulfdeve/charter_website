@@ -1,5 +1,5 @@
 import React from 'react'
-import YachtCarousal from '../components/YachtCarousel'
+import YachtCarousal from '../../components/YachtCarousel'
 
 const AboutPage = () => {
   return (
