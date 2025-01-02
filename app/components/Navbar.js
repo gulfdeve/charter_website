@@ -24,14 +24,28 @@ export default function Navbar() {
   };
 
   const handleLanguageChange = (lang) => {
-    const segments = pathname.split("/");
-    segments[1] = lang; // Replace the language in the URL path
-    const newPath = segments.join("/");
-    router.push(newPath);
+    let segments = pathname.split("/");
+  
+    if (lang === "en") {
+      // Redirect to homepage without language code when the language is English
+      router.push("/");
+    } else {
+      // For non-English languages, add the language code in the second segment of the URL
+      if (segments[1]) {
+        segments[1] = lang;
+      } else {
+        segments.splice(1, 0, lang);
+      }
+      const newPath = segments.join("/");
+      router.push(newPath);
+    }
+  
     changeLanguage(lang);
     localStorage.setItem("selectedLanguage", lang);
     setDropdownOpen(false);
   };
+  
+
 
   const handleScroll = () => {
     if (window.scrollY > 100) {
@@ -69,7 +83,7 @@ export default function Navbar() {
             </Link>
           </h1>
           <div className="flex items-center justify-end">
-            <button className="flex flex-row items-center justify-center py-2 w-full md:py-2 md:px-4 rounded-md bg-[#e1ae48] text-[#0d2343] hover:bg-[#0d2343] hover:text-[#e1ae48] font-Montserrat font-bold text-base md:text-sm xl:text-lg transition-all duration-300">
+            <button className="flex flex-row items-center justify-center font-RedHatDisplay py-2 w-full md:py-2 md:px-4 rounded-md bg-[#e1ae48] text-[#0d2343] hover:bg-[#0d2343] hover:text-[#e1ae48] font-Montserrat font-bold text-base md:text-sm xl:text-lg transition-all duration-300">
               CONTACT US
             </button>
             <div className="flex flex-row px-8 gap-8">
@@ -117,7 +131,7 @@ export default function Navbar() {
                     Arabic
                   </li>
                   <li
-                    onClick={() => ("ru")}
+                    onClick={() => handleLanguageChange("ru")}
                     className="flex items-center gap-2 p-2 cursor-pointer hover:bg-gray-200"
                   >
                     <img src="/ru.svg" alt="Russian" className="w-4 h-4" />
@@ -199,59 +213,58 @@ export default function Navbar() {
 
                 {/* BUY A YACHT */}
                 <Link href={`/${language}/yachts-for-sale-dubai`}>
-                  <li>BUY A YACHT</li>
+                  <li className="pr-5">BUY A YACHT</li>
                 </Link>
                 {/* SHARED TOURS */}
-                <Link href={`/${language}shared-yacht-tours-dubai`}>
-                  <li>SHARED TOURS</li>
+                <Link href={`/${language}/shared-yacht-tours-dubai`}>
+                  <li className="pr-5">SHARED TOURS</li>
                 </Link>
                 {/* EXPERIENCES with Dropdown */}
                 <li className="relative group">
-  <span className="flex items-center justify-between cursor-pointer p-5 gap-1">
-    <Link href={`/${language}/yacht-trips`}>EXPERIENCES</Link>
-    <svg
-      className="w-5 h-5 lg:w-4 lg:h-4 transform group-hover:rotate-180 transition-transform duration-300"
-      xmlns="http://www.w3.org/2000/svg"
-      fill="none"
-      viewBox="0 0 24 24"
-      stroke="currentColor"
-    >
-      <path
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        strokeWidth="2"
-        d="M19 9l-7 7-7-7"
-      />
-    </svg>
-  </span>
-  <ul className="absolute top-[85%] left-0 w-60 bg-white text-black border shadow-lg hidden group-hover:block z-20 gap-3 p-5">
-    {!loading &&
-      data?.experiences?.map((experience) => {
-        const title =
-          experience.translations?.[language]?.title ||
-          experience.translations?.en?.title ||
-          "Untitled";
-        return (
-          <Link
-            href={`/${language}/yacht-trips/${experience.slug}`}
-            key={experience.id}
-          >
-            <li className="cursor-pointer text-sm font-normal text-gray-500 font-Montserrat py-2 hover:bg-gray-200">
-              {title}
-            </li>
-          </Link>
-        );
-      })}
-  </ul>
-</li>
-
+                  <span className="flex items-center justify-between cursor-pointer p-5 gap-1">
+                    <Link href={`/${language}/yacht-trips`}>EXPERIENCES</Link>
+                    <svg
+                      className="w-5 h-5 lg:w-4 lg:h-4 transform group-hover:rotate-180 transition-transform duration-300"
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth="2"
+                        d="M19 9l-7 7-7-7"
+                      />
+                    </svg>
+                  </span>
+                  <ul className="absolute top-[85%] left-0 w-60 bg-white text-black border shadow-lg hidden group-hover:block z-20 gap-3 p-5">
+                    {!loading &&
+                      data?.experiences?.map((experience) => {
+                        const title =
+                          experience.translations?.[language]?.title ||
+                          experience.translations?.en?.title ||
+                          "Untitled";
+                        return (
+                          <Link
+                            href={`/${language}/yacht-trips/${experience.slug}`}
+                            key={experience.id}
+                          >
+                            <li className="cursor-pointer text-sm font-normal text-gray-500 font-Montserrat py-2 hover:bg-gray-200">
+                              {title}
+                            </li>
+                          </Link>
+                        );
+                      })}
+                  </ul>
+                </li>
 
                 {/* OFFERS */}
                 <Link href={`/${language}/offers`}>
-                  <li>OFFERS</li>
+                  <li className="pr-5">OFFERS</li>
                 </Link>
                 <Link href={`/${language}/watersports`}>
-                  <li>WATER SPORTS</li>
+                  <li className="pr-5">WATER SPORTS</li>
                 </Link>
                 {/* NEWYEAR */}
                 <Link href={`/${language}/newyear`}>

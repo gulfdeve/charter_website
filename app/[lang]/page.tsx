@@ -1,4 +1,5 @@
-import Homepage from "./[lang]/Homepage/page"
+import Homepage from "./Homepage/page"
+
 export default function Home() {
   return (
 <Homepage/>

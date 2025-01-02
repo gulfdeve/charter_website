@@ -1,7 +1,8 @@
 "use client";
 import React from "react";
 import { FaWhatsapp } from "react-icons/fa";
-import { useData } from "../context/DataContext";
+import { useData } from '@/app/context/DataContext';
+import { useLanguage } from "@/app/context/LanguageContext";
 import Link from "next/link";
 
 /*const offers = [
@@ -37,6 +38,7 @@ import Link from "next/link";
 
 const page = () => {
   const { data, loading, error } = useData();
+  const { language, changeLanguage } = useLanguage();
 
   return (
     <>
@@ -52,16 +54,16 @@ const page = () => {
               key={offer.id}
               className="flex flex-col justify-start lg:justify-between rounded-md bg-white shadow-xl"
             >
-              <Link href={`/offers/${offer.slug}`}>
+              <Link href={`/${language}/offers/${offer.slug}`}>
 			  <img
                 src={`https://www.centauruscharter.com/product/images/${offer.image}`}
-                alt={offer.translations.en.title}
+                alt={offer.translations[language].title}
                 className="rounded-t-md w-full object-cover"
               />
 			  </Link>
               <div className="flex flex-col  justify-start px-5 lg:px-5">
-			  <Link href={`/offers/${offer.slug}`}><h1 className="text-[#232629] font-Montserrat text-2xl font-bold pt-4">
-                  {offer.translations.en.title}
+			  <Link href={`/${language}/offers/${offer.slug}`}><h1 className="text-[#232629] font-Montserrat text-2xl font-bold pt-4">
+                  {offer.translations[language].title}
                 </h1>
 				</Link>
                 <p className="text-[#232629] font-Montserrat font-bold text-xs pt-2 pb-16">
@@ -82,7 +84,7 @@ const page = () => {
                       <FaWhatsapp className="xs:text-xl text-lg  mr-1" />
                       WHATSAPP
                     </button>
-                    <Link href={`/offers/${offer.slug}`} className="flex flex-row items-center justify-center py-2 px-6 md:py-2 md:px-4  rounded-md bg-[#0d2343] text-[#e1ae48] font-Montserrat font-bold text-[10px] md:text-sm xl:text-lg">
+                    <Link href={`/${language}/offers/${offer.slug}`} className="flex flex-row items-center justify-center py-2 px-6 md:py-2 md:px-4  rounded-md bg-[#0d2343] text-[#e1ae48] font-Montserrat font-bold text-[10px] md:text-sm xl:text-lg">
                       KNOW MORE
                     </Link>
                   </div>
