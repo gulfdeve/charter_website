@@ -8,10 +8,10 @@ import Reviews from "@/app/components/Reviews";
 import Counters from "@/app/components/Counters";
 import LocationCarousel from "@/app/components/LocationCarousel";
 import Video from "@/app/components/Video";
-import { useData } from "../../context/DataContext";
+import { useData } from "@/app/context/DataContext"
 import { useLanguage } from "@/app/context/LanguageContext";
 import Link from "next/link";
-export default function EmblaCarouselComponent() {
+export default function Home() {
   const emblaRef = useRef(null);
   const emblaInstance = useRef(null);
   const { data, loading, error } = useData();
@@ -118,7 +118,7 @@ export default function EmblaCarouselComponent() {
     <div>
     <Video/>
     </div>
-      <div className="flex flex-col items-center justify-center py-10 2xl:pt-20 2xl:py-0 ">
+      <div className="flex flex-col bg-white items-center justify-center py-10 2xl:pt-20 2xl:py-0 ">
         <h1 className="font-Montserrat text-[#0D2343] text-center font-bold text-4xl pb-4">
           YACHT RENTAL DUBAI
         </h1>

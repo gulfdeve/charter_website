@@ -25,10 +25,10 @@ export default function Navbar() {
 
   const handleLanguageChange = (lang) => {
     let segments = pathname.split("/");
-  
+    
     if (lang === "en") {
       // Redirect to homepage without language code when the language is English
-      router.push("/");
+      router.replace("/");
     } else {
       // For non-English languages, add the language code in the second segment of the URL
       if (segments[1]) {
@@ -37,13 +37,30 @@ export default function Navbar() {
         segments.splice(1, 0, lang);
       }
       const newPath = segments.join("/");
-      router.push(newPath);
+      router.replace(newPath);
     }
   
     changeLanguage(lang);
     localStorage.setItem("selectedLanguage", lang);
     setDropdownOpen(false);
+  
+    // Reload the page to apply changes
+    window.location.reload();
   };
+  
+  
+  useEffect(() => {
+    const savedLanguage = localStorage.getItem("selectedLanguage") || "en";
+  
+    // If saved language is English, ensure URL defaults to "/"
+    if (savedLanguage === "en" && pathname !== "/") {
+      router.push("/");
+    } else if (savedLanguage !== "en" && !pathname.startsWith(`/${savedLanguage}`)) {
+      router.push(`/${savedLanguage}`);
+    }
+  
+    changeLanguage(savedLanguage);
+  }, [pathname, changeLanguage, router]);
   
 
 
@@ -56,12 +73,7 @@ export default function Navbar() {
   };
 
   // Initialize language from localStorage on page load
-  useEffect(() => {
-    const savedLanguage = localStorage.getItem("selectedLanguage");
-    if (savedLanguage) {
-      changeLanguage(savedLanguage);
-    }
-  }, []);
+  
   useEffect(() => {
     window.addEventListener("scroll", handleScroll);
     return () => {
@@ -152,13 +164,13 @@ export default function Navbar() {
           <nav
             className={` w-full bg-[#0D2343] text-[#e1ae48] font-Montserrat font-bold ${
               isSticky
-                ? " p-3 lg:p-2 xl:h-20 md:h-16 sticky top-0 z-50"
-                : "h-14 p-0.5"
+                ? " p-3  lg:p-2 xl:h-20 md:h-16 sticky top-0 z-50"
+                : "h-14 2xl:h-20 p-0.5"
             }`}
           >
             <div className="flex flex-row items-center justify-center">
               <ul
-                className={`flex flex-row items-center justify-center gap-6 xl:gap-[3rem] 2xl:gap-[7rem] text-[11px] md:text-[7px] ${
+                className={`flex flex-row items-center justify-center gap-6 xl:gap-[3rem] 2xl:gap-[3rem] text-[11px] md:text-[7px] ${
                   isSticky
                     ? "2xl:text-[18px] xl:text-[11px] md:text-[7px]"
                     : " 2xl:text-[18px] xl:text-[12px] md:text-[9px] lg:text-[10px]"
