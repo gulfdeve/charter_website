@@ -25,38 +25,64 @@ export default function Navbar() {
 
   const handleLanguageChange = (lang) => {
     let segments = pathname.split("/");
-    
-    if (lang === "en") {
-      // Redirect to homepage without language code when the language is English
-      router.replace("/");
-    } else {
-      // For non-English languages, add the language code in the second segment of the URL
-      if (segments[1]) {
-        segments[1] = lang;
+  
+    // If changing to a non-English language, replace "en" with the new language code
+    if (lang !== "en") {
+      if (segments[1] === "en") {
+        segments[1] = lang;  // Replace "en" with the selected language
+      } else if (segments.length === 1 || segments[1] === "en") {
+        segments.splice(1, 1, lang);  // Insert the new language code
       } else {
-        segments.splice(1, 0, lang);
+        segments.splice(1, 0, lang);  // Insert language code if it doesn't exist
       }
-      const newPath = segments.join("/");
-      router.replace(newPath);
+    } 
+    // If the language is English, ensure "en" stays in the URL (never remove it), but remove "en" only on the root page
+    else if (segments[1] !== "en") {
+      if (segments.length === 1) {
+        segments.unshift("en"); // Add "en" for root if not present
+      } else {
+        segments.splice(1, 0, "en"); // Add "en" at the second position for other pages
+      }
     }
   
-    changeLanguage(lang);
+    // Special logic for when switching to "en" on the homepage
+    if (lang === "en" && pathname === "/") {
+      segments.splice(1, 1); // Remove "en" on the homepage
+    }
+  
+    const newPath = segments.join("/");
+    router.replace(newPath);  // Change the URL without reloading the page
+  
+    // Save selected language to localStorage
     localStorage.setItem("selectedLanguage", lang);
-    setDropdownOpen(false);
   
-    // Reload the page to apply changes
-    window.location.reload();
+    // Update the context
+    changeLanguage(lang);
+  
+    // Reload the page after a slight delay for a better user experience
+    setTimeout(() => {
+      window.location.reload();
+    }, 100);
   };
-  
   
   useEffect(() => {
     const savedLanguage = localStorage.getItem("selectedLanguage") || "en";
   
-    // If saved language is English, ensure URL defaults to "/"
-    if (savedLanguage === "en" && pathname !== "/") {
-      router.push("/");
-    } else if (savedLanguage !== "en" && !pathname.startsWith(`/${savedLanguage}`)) {
-      router.push(`/${savedLanguage}`);
+    // If the saved language is not in the URL, update the URL accordingly
+    if (savedLanguage !== "en" && !pathname.startsWith(`/${savedLanguage}`)) {
+      const newPath = `/${savedLanguage}${pathname.slice(3)}`;  // Add the saved language to the current path
+      router.push(newPath);
+    }
+  
+    // Ensure "en" stays in the URL when it's selected, but remove it on the homepage
+    if (savedLanguage === "en" && !pathname.startsWith("/en") && pathname !== "/") {
+      const newPath = `/en${pathname.slice(3)}`;
+      router.push(newPath);  // Make sure "en" is always part of the URL when English is selected
+    }
+  
+    if (savedLanguage === "en" && pathname === "/") {
+      const newPath = pathname.slice(3); // Remove "en" if we are on the homepage
+      router.push(newPath);  // Remove "en" on homepage only
     }
   
     changeLanguage(savedLanguage);

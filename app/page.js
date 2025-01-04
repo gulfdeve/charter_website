@@ -105,8 +105,13 @@ export default function Home() {
     if (emblaRef.current) {
       emblaInstance.current = EmblaCarousel(emblaRef.current, { loop: true });
     }
-
-    return () => emblaInstance.current && emblaInstance.current.destroy();
+  
+    // Return a cleanup function if needed
+    return () => {
+      if (emblaInstance.current) {
+        emblaInstance.current.destroy(); // Properly destroy the instance if it exists
+      }
+    };
   }, []);
 
   const scrollPrev = () => emblaInstance.current?.scrollPrev();
