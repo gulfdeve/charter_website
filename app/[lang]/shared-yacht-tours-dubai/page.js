@@ -1,6 +1,7 @@
 "use client";
 import React from "react";
 import Videosharedtours from "@/app/components/Video-sharedtours";
+import Nycard from "@/app/components/Nycard";
 import {
   FaClock,
   FaChild,
@@ -214,7 +215,7 @@ const Page = () => {
         
                         </div></div>
         </div>
-        <nycard/>
+        <Nycard/>
       </div>
     </>
   );

@@ -1,10 +1,11 @@
 import Link from 'next/link';
 import React from 'react';
-
+import { useLanguage } from "@/app/context/LanguageContext";
 const YachtCard = ({ yacht }) => {
+  const { language, changeLanguage } = useLanguage();
   return (
     <div className="bg-white rounded-lg shadow-lg overflow-hidden px-2">
-      <Link href="/yachts-for-sale-dubai/88ft-sunseeker">
+      <Link href={`/${language}/yachts-for-sale-dubai/88ft-sunseeker`}>
       <img 
         src={yacht.image} 
         alt={yacht.name}
@@ -13,7 +14,7 @@ const YachtCard = ({ yacht }) => {
       </Link>
       
       <div className="p-6">
-        <Link href="/yachts-for-sale-dubai/88ft-sunseeker">
+        <Link href={`/${language}/yachts-for-sale-dubai/88ft-sunseeker`}>
         <h2 className="text-2xl font-bold text-navy-900 mb-4 font-Montserrat">{yacht.name}</h2>
         </Link>
         

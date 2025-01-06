@@ -1,10 +1,15 @@
+"use client"
 import React from "react";
 import Link from "next/link";
+import { useLanguage } from "@/app/context/LanguageContext";
+import { useData } from "@/app/context/DataContext";
 
 const FirstFooter = () => {
+  const { language } = useLanguage();
+  const { data, loading, error } = useData();
   return (
     <>
-      <footer className="text-sm bg-[#1D1D1D] py-10">
+      <footer className="text-sm bg-[#1D1D1D] py-10 font-Montserrat">
         <div className="p-4 container mx-auto">
           <div className=" grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-8 ">
             <div>
@@ -23,7 +28,7 @@ const FirstFooter = () => {
                 <li className="mb-2">
                   <Link
                     className="text-[#969696] hover:text-[#2a93d5] transition-colors duration-200"
-                    href="/aboutus"
+                    href={`/${language}/aboutus`}
                   >
                     About
                   </Link>
@@ -31,7 +36,7 @@ const FirstFooter = () => {
                 <li className="mb-2">
                   <Link
                     className="text-[#969696] hover:text-[#2a93d5] transition-colors duration-200"
-                    href="/yacht-rentals"
+                    href={`/${language}/yacht-rentals`}
                   >
                     Yacht Rentals
                   </Link>
@@ -39,7 +44,7 @@ const FirstFooter = () => {
                 <li className="mb-2">
                   <Link
                     className="text-[#969696] hover:text-[#2a93d5] transition-colors duration-200"
-                    href="/watersports"
+                    href={`/${language}/watersports`}
                   >
                     Watersports
                   </Link>
@@ -47,7 +52,7 @@ const FirstFooter = () => {
                 <li className="mb-2">
                   <Link
                     className="text-[#969696] hover:text-[#2a93d5] transition-colors duration-200"
-                    href="/offers"
+                    href={`/${language}/offers`}
                   >
                     Offers
                   </Link>
@@ -55,7 +60,7 @@ const FirstFooter = () => {
                 <li className="mb-2">
                   <Link
                     className="text-[#969696] hover:text-[#2a93d5] transition-colors duration-200"
-                    href="/events"
+                    href={`/${language}/events`}
                   >
                     Events
                   </Link>
@@ -63,7 +68,7 @@ const FirstFooter = () => {
                 <li className="mb-2">
                   <Link
                     className="text-[#969696] hover:text-[#2a93d5] transition-colors duration-200"
-                    href="/faq"
+                    href={`/${language}/faq`}
                   >
                     FAQ
                   </Link>
@@ -71,7 +76,7 @@ const FirstFooter = () => {
                 <li className="mb-2">
                   <Link
                     className="text-[#969696] hover:text-[#2a93d5] transition-colors duration-200"
-                    href="/contact"
+                    href={`/${language}/contact`}
                   >
                     Contact us
                   </Link>
@@ -88,143 +93,50 @@ const FirstFooter = () => {
             </div>
             <div>
               <h3 className="text-lg text-white font-semibold mb-4">
+              <Link href={`/${language}/yacht-rentals`}>
                 Our Luxury Yachts
+                </Link>
               </h3>
               <ul>
-                <li className="mb-2">
-                  <Link
-                    className="text-[#969696] hover:text-[#2a93d5] transition-colors duration-200"
-                    href="/yacht-rentals/56ft-lagoona"
-                  >
-                    56 Ft Yacht - Lagoona
-                  </Link>
+              {!loading &&
+                      data?.products?.map((product) => (
+                        <Link
+                          href={`/${language}/yacht-rentals/${product.slug}`}
+                          key={product.id}
+                        >
+                <li className="mb-2 text-[#969696] hover:text-[#2a93d5] transition-colors duration-200">
+                  
+                  {product.title}
+                  
                 </li>
-                <li className="mb-2">
-                  <Link
-                    className="text-[#969696] hover:text-[#2a93d5] transition-colors duration-200"
-                    href="/yacht-rentals/36ft-Storm"
-                  >
-                    36 Ft Yacht - Storm
-                  </Link>
-                </li>
-                <li className="mb-2">
-                  <Link
-                    className="text-[#969696] hover:text-[#2a93d5] transition-colors duration-200"
-                    href="/yacht-rentals/36ft-thunder"
-                  >
-                    36 Ft Yacht - Thunder
-                  </Link>
-                </li>
-                <li className="mb-2">
-                  <Link
-                    className="text-[#969696] hover:text-[#2a93d5] transition-colors duration-200"
-                    href="/yacht-rentals/56ft-vassia"
-                  >
-                    56 Ft Yacht - Vassia
-                  </Link>
-                </li>
-                <li className="mb-2">
-                  <Link
-                    className="text-[#969696] hover:text-[#2a93d5] transition-colors duration-200"
-                    href="/yacht-rentals/58ft-etosha"
-                  >
-                    58 Ft Yacht - Etosha
-                  </Link>
-                </li>
-                <li className="mb-2">
-                  <Link
-                    className="text-[#969696] hover:text-[#2a93d5] transition-colors duration-200"
-                    href="/yacht-rentals/61ft-silvercreek"
-                  >
-                    61 Ft Yacht - Silver Creek
-                  </Link>
-                </li>
-                <li className="mb-2">
-                  <Link
-                    className="text-[#969696] hover:text-[#2a93d5] transition-colors duration-200"
-                    href="/yacht-rentals/77ft-dionysos"
-                  >
-                    77 Ft Yacht - Dionysos
-                  </Link>
-                </li>
-                <li className="mb-2">
-                  <Link
-                    className="text-[#969696] hover:text-[#2a93d5] transition-colors duration-200"
-                    href="/yacht-rentals/118ft-poseidon"
-                  >
-                    118 Ft Yacht - Poseidon
-                  </Link>
-                </li>
+                </Link>
+              ))}
+                
               </ul>
             </div>
             <div>
-              <h3 className="text-lg text-white font-semibold mb-4">EXPERIENCES</h3>
+              <h3 className="text-lg text-white font-semibold mb-4">
+                <Link href={`/${language}/yacht-trips`}>EXPERIENCES</Link></h3>
               <ul>
-                <li className="mb-2">
-                  <Link
-                    className="text-[#969696] hover:text-[#2a93d5] transition-colors duration-200"
-                    href="/enYacht Wedding Trips"
-                  >
-                    Yacht Wedding Trips
-                  </Link>
-                </li>
-                <li className="mb-2">
-                  <a
-                    className="text-[#969696] hover:text-[#2a93d5] transition-colors duration-200"
-                    href="/enNight Party"
-                  >
-                    Night Party
-                  </a>
-                </li>
-                <li className="mb-2">
-                  <a
-                    className="text-[#969696] hover:text-[#2a93d5] transition-colors duration-200"
-                    href="/enfishing_trips"
-                  >
-                    Fishing Trips
-                  </a>
-                </li>
-                <li className="mb-2">
-                  <a
-                    className="text-[#969696] hover:text-[#2a93d5] transition-colors duration-200"
-                    href="/enbirthday_party_yacht"
-                  >
-                    Birthday Party Yacht
-                  </a>
-                </li>
-                <li className="mb-2">
-                  <a
-                    className="text-[#969696] hover:text-[#2a93d5] transition-colors duration-200"
-                    href="/enCorporate Events"
-                  >
-                    Corporate Events
-                  </a>
-                </li>
-                <li className="mb-2">
-                  <a
-                    className="text-[#969696] hover:text-[#2a93d5] transition-colors duration-200"
-                    href="/enPrivate Events"
-                  >
-                    Private Events
-                  </a>
-                </li>
-                <li className="mb-2">
-                  <a
-                    className="text-[#969696] hover:text-[#2a93d5] transition-colors duration-200"
-                    href="/enYacht For Anniversary &amp; Proposal"
-                  >
-                    Yacht For Anniversary &amp; Proposal
-                  </a>
-                </li>
-                <li className="mb-2">
-                  <a
-                    className="text-[#969696] hover:text-[#2a93d5] transition-colors duration-200"
-                    href="/ensunset_cruise"
-                  >
-                    Sunset Cruise
-                  </a>
-                </li>
-              </ul>
+              {!loading &&
+                      data?.experiences?.map((experience) => {
+                        const title =
+                          experience.translations?.[language]?.title ||
+                          experience.translations?.en?.title ||
+                          "Untitled";
+                        return (
+                          <Link
+                            href={`/${language}/yacht-trips/${experience.slug}`}
+                            key={experience.id}
+                          >
+                            <li className=" mb-2 text-[#969696] hover:text-[#2a93d5] transition-colors duration-200">
+                              {title}
+                            </li>
+                          </Link>
+                        );
+                      })}
+                  </ul>
+               
             </div>
             <div>
               <h3 className="text-lg text-white font-semibold mb-4">
@@ -246,11 +158,9 @@ const FirstFooter = () => {
                   </svg>
                   <div>
                     <p className="text-[#969696] hover:text-[#2a93d5]">
-                      Marina Walk (Near Spinneys)
+                    <a href="https://www.google.com/maps/place/CENTAURUS+CHARTER+-+Yachts+%26+Boats+Rental+Dubai+Harbour/@25.097395,55.1431033,15z/data=!4m6!3m5!1s0x3e5f6b1f6453e121:0x45035717db6c3954!8m2!3d25.0948183!4d55.1390062!16s%2Fg%2F11kb9bzw9v?hl=en&entry=ttu&g_ep=EgoyMDI1MDEwMS4wIKXMDSoASAFQAw%3D%3D">    Marina Walk (Near Spinneys)<br/> Dubai, United Arab Emirates</a>
                     </p>
-                    <p className="text-[#969696] hover:text-[#2a93d5]">
-                      Dubai, United Arab Emirates
-                    </p>
+                   
                   </div>
                 </div>
                 <div className="mb-2 flex gap-2">
@@ -268,11 +178,9 @@ const FirstFooter = () => {
                   </svg>
                   <div>
                     <p className="text-[#969696] hover:text-[#2a93d5]">
-                      Dubai Harbour Marina
+                    <a href="https://www.google.com/maps/place/CENTAURUS+CHARTER+-+Yachts+%26+Boats+Rental+Dubai+Harbour/@25.097395,55.1431033,15z/data=!4m6!3m5!1s0x3e5f6b1f6453e121:0x45035717db6c3954!8m2!3d25.0948183!4d55.1390062!16s%2Fg%2F11kb9bzw9v?hl=en&entry=ttu&g_ep=EgoyMDI1MDEwMS4wIKXMDSoASAFQAw%3D%3D">  Dubai Harbour Marina<br/> Dubai, United Arab Emirates</a>
                     </p>
-                    <p className="text-[#969696] hover:text-[#2a93d5]">
-                      Dubai, United Arab Emirates
-                    </p>
+                    
                   </div>
                 </div>
                 <div className="mb-2 flex gap-2">
@@ -290,11 +198,9 @@ const FirstFooter = () => {
                   </svg>
                   <div>
                     <p className="text-[#969696] hover:text-[#2a93d5]">
-                      Berth No AB05 - near Harbour Bridge - Dubai Harbour
+                    <a href="https://www.google.com/maps/place/CENTAURUS+CHARTER+-+Yachts+%26+Boats+Rental+Dubai+Harbour/@25.097395,55.1431033,15z/data=!4m6!3m5!1s0x3e5f6b1f6453e121:0x45035717db6c3954!8m2!3d25.0948183!4d55.1390062!16s%2Fg%2F11kb9bzw9v?hl=en&entry=ttu&g_ep=EgoyMDI1MDEwMS4wIKXMDSoASAFQAw%3D%3D">  Berth No AB05 - near Harbour Bridge - Dubai Harbour<br/> Dubai, United Arab Emirates</a>
                     </p>
-                    <p className="text-[#969696] hover:text-[#2a93d5]">
-                      Dubai, United Arab Emirates
-                    </p>
+                    
                   </div>
                 </div>
                 <div className="mb-2 flex gap-2">
@@ -312,12 +218,10 @@ const FirstFooter = () => {
                   </svg>
                   <div>
                     <p className="text-[#969696] hover:text-[#2a93d5]">
-                      Dubai Harbour Marina, Berth No A-G36 Near Dockmaster 1
-                      Building
+                    <a href="https://www.google.com/maps/place/CENTAURUS+CHARTER+-+Yachts+%26+Boats+Rental+Dubai+Harbour/@25.097395,55.1431033,15z/data=!4m6!3m5!1s0x3e5f6b1f6453e121:0x45035717db6c3954!8m2!3d25.0948183!4d55.1390062!16s%2Fg%2F11kb9bzw9v?hl=en&entry=ttu&g_ep=EgoyMDI1MDEwMS4wIKXMDSoASAFQAw%3D%3D">  Dubai Harbour Marina, Berth No A-G36 Near Dockmaster 1
+                      Building<br/> Dubai, United Arab Emirates</a>
                     </p>
-                    <p className="text-[#969696] hover:text-[#2a93d5]">
-                      Dubai, United Arab Emirates
-                    </p>
+                    
                   </div>
                 </div>
                 <div className="mb-2 flex gap-2"></div>

@@ -5,6 +5,7 @@ import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 import WhyChooseUs from "@/app/components/WhyChooseUs";
 import Aboutus from "@/app/components/Aboutus";
 import Reviews from "@/app/components/Reviews";
+
 import Counters from "@/app/components/Counters";
 import LocationCarousel from "@/app/components/LocationCarousel";
 import Video from "@/app/components/Video";
@@ -488,6 +489,7 @@ export default function Home() {
 
 <Aboutus />
 <Reviews/>
+
 <Counters/>
 <LocationCarousel/>
     </>

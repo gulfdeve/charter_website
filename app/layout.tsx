@@ -36,12 +36,13 @@ export default function RootLayout({
         <Navbar/>
         
         {children}
-        </LanguageProvider>
-        </DataProvider>
+       
         <Sociallink/>
         <FirstFooter />
         <SecondFooter />
         <CopyrightFooter />
+        </LanguageProvider>
+        </DataProvider>
       </body>
     </html>
   );

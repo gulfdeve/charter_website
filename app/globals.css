@@ -67,6 +67,24 @@ body {
   justify-content: center;
   align-items: center;
 }
+/* REVIEW */
+
+.emblar {
+  position: relative;
+  overflow: hidden;
+}
+.embla__containerr {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem; /* Adjust spacing between reviews */
+}
+.embla__slider {
+  flex: 0 0 48%; /* Two reviews visible at once */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 
 
 .counter-container {
@@ -113,3 +131,19 @@ body {
 .custom-shadow {
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
+/* Custom class for viewport */
+.custom-embla__viewport {
+  overflow: hidden;
+}
+
+/* Custom class for container */
+.custom-embla__container {
+  display: flex;
+}
+
+/* Custom class for each slide */
+.custom-embla__slide {
+  flex: 0 0 50%;
+  padding: 20px;
+}
+

@@ -29,7 +29,7 @@ export default function Videonewyear() {
           setPlayerReady(true);
         }
       } catch (error) {
-        console.error("Error loading Wistia scripts:", error);
+        console.log("Error loading Wistia scripts:", error);
       }
     };
 
