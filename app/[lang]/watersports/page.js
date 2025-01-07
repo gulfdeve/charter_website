@@ -2,7 +2,7 @@ import React from "react";
 
 const YachtTrips = () => {
   return (
-    <div className="max-w-7xl mx-auto py-8 px-4">
+    <div className="max-w-7xl mx-auto py-8 px-4 font-Montserrat">
       {/* Header */}
       <h1 className="text-4xl font-bold text-center text-primary-blue pb-8 pt-6">
         YACHT TRIPS & EXPERIENCES IN DUBAI

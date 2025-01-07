@@ -5,7 +5,15 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --font-montserrat: 'Montserrat', sans-serif;
 }
+/* globals.css */
+
+
+body {
+  font-family: var(--font-montserrat);
+}
+
 
 @media (prefers-color-scheme: dark) {
   :root {
@@ -17,9 +25,9 @@
 .blue-solid-button {
   @apply  py-3 px-6
           text-base font-bold tracking-wide
-          text-primary-yellow bg-primary-blue
+          text-primary-yellow font-Montserrat bg-primary-blue
           hover:bg-primary-yellow hover:text-primary-blue hover:scale-105
-          rounded-xl shadow
+          rounded-md shadow
           transition duration-150 ease-in-out transform ;
 }
 .yellow-solid-button {
@@ -27,7 +35,7 @@
           text-base font-bold tracking-wide
           text-primary-blue bg-primary-yellow
           hover:bg-primary-blue hover:text-primary-yellow hover:scale-105
-          rounded-xl shadow
+          rounded-md shadow font-Montserrat
           transition duration-150 ease-in-out transform ;
 }
 .header_links {

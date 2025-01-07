@@ -24,7 +24,7 @@ export default {
         'xl': '1280px',
         // => @media (min-width: 1280px) { ... }
   
-        '2xl': '1736px',
+        '2xl': '1536px',
         // => @media (min-width: 1536px) { ... }
       },
       colors: {
@@ -37,7 +37,7 @@ export default {
         "text-primary-white": "#969696",
       },
       fontFamily: {
-        // Montserrat : ['Montserrat','sans'],
+        sans: ['var(--font-montserrat)', 'sans-serif'],
         Montserrat: ["var(--font-montserrat)"],
       },
     },

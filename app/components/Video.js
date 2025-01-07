@@ -42,7 +42,7 @@ export default function Video() {
   }, []);
 
   return (
-    <div className="relative mx-auto w-full h-[500px] lg:h-[900px] overflow-hidden">
+    <div className="relative mx-auto w-full h-[300px] lg:h-[700px] overflow-hidden">
       {/* Wistia Video as Background */}
       <style>
         {`
@@ -62,21 +62,21 @@ export default function Video() {
       </div>
 
       {/* Content Overlay */}
-      <div className="absolute inset-0 z-10 flex flex-col items-center md:items-start justify-center top-[32%] s:top-[44%] md:-top-[12%] lg:-top-[46%] xl:-top-[12%] text-white text-center p-2 md:px-14 lg:px-24 xl:pl-64">
-        <h1 className="text-3xl font-bold mb-4 text-black md:text-white font-Montserrat xl:text-5xl 2xl:text-7xl text-shadow">
+      <div className="absolute inset-0 z-10 flex flex-col items-center  justify-center top-[32%] s:top-[44%] md:-top-[12%] lg:-top-[46%] xl:-top-[12%] text-white text-center p-2 md:px-14 lg:px-24 ">
+        <h1 className="text-3xl font-bold mb-4 text-black md:text-white font-Montserrat xl:text-4xl 2xl:text-5xl text-shadow">
           Yacht Touring Redefined
         </h1>
         <h1 className="text-sm xl:text-xl font-bold mb-4 xl:mb-8 text-black md:text-white font-Montserrat 2xl:text-4xl text-shadow">
           Yacht Rental in Dubai for Unforgettable Moments
         </h1>
-        <h2 className="text-sm mb-6 xl:mb-8 font-Montserrat md:text-white text-black md:text-left xl:text-xl 2xl:text-3xl text-shadow">
+        <h2 className="text-sm mb-6 xl:mb-8 text-center font-Montserrat md:text-white text-black  xl:text-lg 2xl:text-xl text-shadow">
           Hottest event this season<br />NYE Party New Year's Eve 2024 On a Luxury Yacht
         </h2>
-        <h2 className="text-sm mb-6 xl:mb-8 font-Montserrat text-black md:text-white xl:text-xl 2xl:text-3xl text-shadow">
+        <h2 className="text-sm mb-6 xl:mb-8 font-Montserrat text-black md:text-white xl:text-lg 2xl:text-xl text-shadow">
           Starting at AED1799
         </h2>
-        <button className="px-6 py-2 xl:text-xl 2xl:text-3xl  2xl:px-8 2xl:py-4 font-Montserrat bg-[#0d2343] text-[#e1ae48] font-semibold rounded hover:bg-blue-500">
-          NYE TICKETS
+        <button className="blue-solid-button">
+          GET OFFER
         </button>
       </div>
     </div>

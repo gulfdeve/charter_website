@@ -110,7 +110,7 @@ export default function Navbar() {
     <>
       {/* First Navbar */}
       <div className="lg:block hidden">
-        <nav className="p-4 container mx-auto bg-white text-black flex items-center justify-between xl:gap-96 md:gap-24">
+        <nav className="p-4 container mx-auto bg-white text-black flex items-center justify-between xl:gap-64 2xl:gap-64 md:gap-24">
           <h1 className="text-xl font-bold">
             <Link href={"/"}>
               <img
@@ -191,15 +191,15 @@ export default function Navbar() {
             className={` w-full bg-[#0D2343] text-[#e1ae48] font-Montserrat font-bold ${
               isSticky
                 ? " p-3  lg:p-2 xl:h-20 md:h-16 sticky top-0 z-50"
-                : "h-14 2xl:h-20 p-0.5"
+                : "h-14 2xl:h-16  2xl:p-1"
             }`}
           >
             <div className="flex flex-row items-center justify-center">
               <ul
                 className={`flex flex-row items-center justify-center gap-6 xl:gap-[3rem] 2xl:gap-[3rem] text-[11px] md:text-[7px] ${
                   isSticky
-                    ? "2xl:text-[18px] xl:text-[11px] md:text-[7px]"
-                    : " 2xl:text-[18px] xl:text-[12px] md:text-[9px] lg:text-[10px]"
+                    ? "2xl:text-[15px] xl:text-[11px] md:text-[7px]"
+                    : " 2xl:text-[15px] xl:text-[12px] md:text-[9px] lg:text-[10px]"
                 }`}
               >
                 <li
@@ -262,7 +262,7 @@ export default function Navbar() {
                   <span className="flex items-center justify-between cursor-pointer p-5 gap-1">
                     <Link href={`/${language}/yacht-trips`}>EXPERIENCES</Link>
                     <svg
-                      className="w-5 h-5 lg:w-4 lg:h-4 transform group-hover:rotate-180 transition-transform duration-300"
+                      className="w-5 h-5 xl:w-5 xl:w-5 lg:w-4 lg:h-4 transform group-hover:rotate-180 transition-transform duration-300"
                       xmlns="http://www.w3.org/2000/svg"
                       fill="none"
                       viewBox="0 0 24 24"
@@ -276,7 +276,7 @@ export default function Navbar() {
                       />
                     </svg>
                   </span>
-                  <ul className="absolute top-[85%] left-0 w-60 bg-white text-black border shadow-lg hidden group-hover:block z-20 gap-3 p-5">
+                  <ul className="absolute top-[85%] p-3 left-0 w-60 bg-white text-black border shadow-lg hidden group-hover:block z-20">
                     {!loading &&
                       data?.experiences?.map((experience) => {
                         const title =
@@ -288,7 +288,7 @@ export default function Navbar() {
                             href={`/${language}/yacht-trips/${experience.slug}`}
                             key={experience.id}
                           >
-                            <li className="cursor-pointer text-sm font-normal text-gray-500 font-Montserrat py-2 hover:bg-gray-200">
+                            <li className="py-2 px-4 cursor-pointer text-base font-normal text-gray-500 font-Montserrat hover:bg-gray-200">
                               {title}
                             </li>
                           </Link>

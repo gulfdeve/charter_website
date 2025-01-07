@@ -4,7 +4,7 @@ const page = () => {
   return (
     <div>
       {" "}
-      <div className="flex flex-col items-center justify-center py-10 ">
+      <div className="flex flex-col items-center justify-center py-10 font-Montserrat">
         <h1 className="font-Montserrat text-[#0D2343] text-center font-bold text-4xl">
           JET SKI
         </h1>

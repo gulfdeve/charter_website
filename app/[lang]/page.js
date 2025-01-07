@@ -332,7 +332,7 @@ export default function EmblaCarouselComponent() {
                 <div className="flex flex-row justify-between items-center xl:w-[32rem] mt-3">
                   <div>
                     
-                    <button className="flex flex-row items-center justify-center mt-4 py-2 w-full md:py-2 md:px-4 rounded-md bg-[#e1ae48] text-[#0d2343] hover:bg-[#0d2343] hover:text-[#e1ae48] font-Montserrat font-bold text-base md:text-sm xl:text-lg transition-all duration-300">
+                    <button className="yellow-solid-button">
                       Book Now
                     </button>
                   </div>

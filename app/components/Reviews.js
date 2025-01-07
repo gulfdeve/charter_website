@@ -96,8 +96,9 @@ const Reviews = () => {
                       WHAT OUR GUESTS SAY
                   </h1>
               </div>
-              <div className="flex flex-col items-center justify-center relative">
+              <div className="flex flex-col items-center justify-center  ">
                   {/* Fixed Box on the left */}
+                  <div className="flex flex-row items-center justify-center container relative">
                   <div className="absolute xl:left-94 lg:left-7 lg:top-1/2 lg:-translate-y-1/2 bg-white p-6  rounded-md shadow-md w-44 z-20">
 
                       <Link href="https://www.tripadvisor.com/Attraction_Review-g295424-d15699786-Reviews-Centaurus_Yachts_Boats_Dubai-Dubai_Emirate_of_Dubai.html">
@@ -166,13 +167,14 @@ const Reviews = () => {
                           </button>
                           <div className="p-2 flex flex-col items-center z-20">
                               <Link href="https://www.tripadvisor.com/Attraction_Review-g295424-d15699786-Reviews-Centaurus_Yachts_Boats_Dubai-Dubai_Emirate_of_Dubai.html">
-                                  <button className="flex flex-row items-center justify-center py-1 px-6 md:py-2 md:px-8 border-4 border-[#0d2343] rounded-md bg-[#050505] hover:bg-[#0d2343] text-[#e1ae48] font-Montserrat font-bold text-base md:text-sm xl:text-base transition-all duration-300">
+                                  <button className="blue-solid-button">
                                       Write A Review
                                   </button>
                               </Link>
                           </div>
                       </div>
                   </div>
+              </div>
               </div>
           </div>
       </div><div className="xl:hidden block">
