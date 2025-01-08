@@ -88,7 +88,7 @@ export default  function Home({params}) {
   ];
   return (
     <>
-      <div className="container mx-auto p-6">
+      <div className="container mx-auto p-20">
         {/* Title */}
         <h1 className="text-4xl font-Montserrat font-bold text-center mb-4 mt-5">
      {product.title}

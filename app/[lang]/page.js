@@ -5,13 +5,14 @@ import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 import WhyChooseUs from "@/app/components/WhyChooseUs";
 import Aboutus from "@/app/components/Aboutus";
 import Reviews from "@/app/components/Reviews";
+
 import Counters from "@/app/components/Counters";
 import LocationCarousel from "@/app/components/LocationCarousel";
 import Video from "@/app/components/Video";
-import { useData } from "../context/DataContext";
+import { useData } from "@/app/context/DataContext"
 import { useLanguage } from "@/app/context/LanguageContext";
 import Link from "next/link";
-export default function EmblaCarouselComponent() {
+export default function Home() {
   const emblaRef = useRef(null);
   const emblaInstance = useRef(null);
   const { data, loading, error } = useData();
@@ -105,8 +106,13 @@ export default function EmblaCarouselComponent() {
     if (emblaRef.current) {
       emblaInstance.current = EmblaCarousel(emblaRef.current, { loop: true });
     }
-
-    return () => emblaInstance.current && emblaInstance.current.destroy();
+  
+    // Return a cleanup function if needed
+    return () => {
+      if (emblaInstance.current) {
+        emblaInstance.current.destroy(); // Properly destroy the instance if it exists
+      }
+    };
   }, []);
 
   const scrollPrev = () => emblaInstance.current?.scrollPrev();
@@ -118,7 +124,8 @@ export default function EmblaCarouselComponent() {
     <div>
     <Video/>
     </div>
-      <div className="flex flex-col bg-white items-center justify-center py-10 2xl:pt-20 2xl:py-0 ">
+    
+      <div className="flex flex-col bg-white items-center justify-center pb-10 2xl:pt-20 2xl:py-0 ">
         <h1 className="font-Montserrat text-[#0D2343] text-center font-bold text-4xl pb-4">
           YACHT RENTAL DUBAI
         </h1>
@@ -126,7 +133,7 @@ export default function EmblaCarouselComponent() {
           Enjoy your Luxury Yacht Experience
         </h1>
 
-        <p className="font-Montserrat text-[#848484] text-center  text-base  px-3 lg:px-12 xl:px-56">
+        <p className="font-Montserrat text-[#848484] text-center  text-base  px-3 xl:px-44 mx-auto container">
           Centaurus Charter is a yacht rental company in Dubai that offers range
           of private yachts and boats for those who like glamorous, a taste of
           luxury & cruiser that bring forth a wonderful yachting experience. Let
@@ -139,6 +146,7 @@ export default function EmblaCarouselComponent() {
           us.
         </p>
       </div>
+      
       <div className="md:hidden block">
         <div className="container mx-auto p-6 ">
           {/* Carousel */}
@@ -252,7 +260,7 @@ export default function EmblaCarouselComponent() {
       {/* DESKTOP */}
       <div className="md:block hidden">
         <div className="container mx-auto p-6">
-          <div className="grid grid-col-1 md:grid-cols-2 p-6 2xl:px-56 2xl:gap-14 gap-10">
+          <div className="grid grid-col-1 md:grid-cols-2 p-6 2xl:px-36 2xl:gap-14 gap-10">
           {!loading &&
       data?.products?.map((product) => (
               <div
@@ -332,7 +340,7 @@ export default function EmblaCarouselComponent() {
                 <div className="flex flex-row justify-between items-center xl:w-[32rem] mt-3">
                   <div>
                     
-                    <button className="yellow-solid-button">
+                    <button className="flex flex-row items-center justify-center mt-4 py-2 w-full md:py-2 md:px-4 rounded-md bg-[#e1ae48] text-[#0d2343] hover:bg-[#0d2343] hover:text-[#e1ae48] font-Montserrat font-bold text-base md:text-sm xl:text-lg transition-all duration-300">
                       Book Now
                     </button>
                   </div>
@@ -347,16 +355,16 @@ export default function EmblaCarouselComponent() {
           </div>
         </div>
       </div>
-      <div className="flex flex-col  md:flex-row-reverse items-center justify-center">
-        <div>
+      <div className="flex flex-col  md:flex-row-reverse items-center justify-center ">
+        <div className="">
           <div className="">
             <img
               src="/LUXURY YACHT CHARTER.webp"
-              className="xl:w-[210rem] sm:w-[170rem] md:h-[443px] xl:h-[452px] lg:h-[404px]"
+              className="xl:w-[160rem] sm:w-[170rem] md:h-[443px] xl:h-[452px] lg:h-[404px]"
             />
           </div>
         </div>
-        <div className="flex flex-col items-center sm:items-start sm:justify-start justify-center bg-[#0D2343] px-5 xl:px-32 xl:py-12 py-5 md:h-[443px] xl:h-[452px] lg:h-[404px]">
+        <div className="flex flex-col items-center sm:items-start sm:justify-start justify-center bg-[#0D2343] px-5 xl:px-32 xl:py-12 py-5 md:h-[443px] xl:w-[230rem] xl:h-[452px] lg:h-[404px]">
           <h1 className="font-Montserrat text-[#e1ae48] text-center font-bold text-2xl xl:text-3xl py-7">
             LUXURY YACHT RENTALS
           </h1>
@@ -387,7 +395,7 @@ export default function EmblaCarouselComponent() {
           </div>
         </div>
 
-        <div className="flex flex-col items-center sm:items-start sm:justify-start justify-center  bg-[#e1ae48] px-5 xl:px-32 xl:py-12 py-5 md:h-[443px] xl:h-[452px] lg:h-[404px]">
+        <div className="flex flex-col items-center sm:items-start sm:justify-start justify-center  bg-[#e1ae48] px-5 xl:px-32 xl:py-12 py-5 md:h-[443px] xl:w-[230rem] xl:h-[452px] lg:h-[404px]">
           <h1 className="font-Montserrat text-[#0D2343] text-center font-bold text-2xl xl:text-3xl py-7">
             CUSTOMIZED YACHT TRIPS
           </h1>
@@ -417,7 +425,7 @@ export default function EmblaCarouselComponent() {
             />
           </div>
         </div>
-        <div className="flex flex-col items-center sm:items-start sm:justify-start justify-center bg-[#0D2343] px-5 xl:px-32 xl:py-12 py-5 md:h-[443px] xl:h-[452px] lg:h-[404px]">
+        <div className="flex flex-col items-center sm:items-start sm:justify-start justify-center bg-[#0D2343] px-5 xl:px-32 xl:py-12 py-5 md:h-[443px] xl:w-[230rem] xl:h-[452px] lg:h-[404px]">
           <h1 className="font-Montserrat text-[#e1ae48] text-center font-bold text-2xl xl:text-3xl py-7">
             EXCLUSIVE OFFERS
           </h1>
@@ -447,7 +455,7 @@ export default function EmblaCarouselComponent() {
           </div>
         </div>
 
-        <div className="flex flex-col items-center sm:items-start sm:justify-start justify-center  bg-[#e1ae48] px-5 xl:px-32 xl:py-12 py-5 md:h-[443px] xl:h-[452px] lg:h-[404px]">
+        <div className="flex flex-col items-center sm:items-start sm:justify-start justify-center  bg-[#e1ae48] px-5 xl:px-32 xl:py-12 py-5 md:h-[443px] xl:w-[230rem] xl:h-[452px] lg:h-[404px]">
           <h1 className="font-Montserrat text-[#0D2343] text-center font-bold text-2xl xl:text-3xl py-7">
             WATER SPORTS ADD ON’s
           </h1>
@@ -483,6 +491,7 @@ export default function EmblaCarouselComponent() {
 
 <Aboutus />
 <Reviews/>
+
 <Counters/>
 <LocationCarousel/>
     </>
