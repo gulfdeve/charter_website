@@ -103,16 +103,16 @@ export default function Home({ params }) {
             className="embla__viewport overflow-hidden rounded-lg"
             ref={emblaRef}
           >
-            <div className="embla__container flex">
+            <div className="embla__container flex  ">
               {product.gallery.map((item, index) => (
                 <div
                   key={index}
-                  className="embla__slide min-w-full flex justify-center items-center"
+                  className="embla__slide min-w-full flex justify-center items-center "
                 >
                   <img
                     src={`https://www.centauruscharter.com/product/galleryimages/${item.image}`}
                     alt={`Slide ${index + 1}`}
-                    className="w-full  h-auto xl:h-5/6 object-cover rounded-lg"
+                    className="w-full  h-auto xl:h-5/6 max-w-7xl object-cover rounded-lg"
                   />
                 </div>
               ))}
@@ -121,14 +121,15 @@ export default function Home({ params }) {
         </div>
 
         {/* Thumbnails and Navigation */}
+        
         <div className="xl:-mt-4 mt-4 flex justify-center relative">
           {/* Thumbnails */}
-          <div className="flex space-x-2 relative">
+          <div className="flex space-x-2 max-w-7xl relative">
             {product.gallery.map((item, index) => (
               <button
                 key={index}
                 onClick={() => emblaInstance.current?.scrollTo(index)}
-                className="w-full h-10 xl:w-full xl:h-full bg-gray-200 rounded overflow-hidden hover:ring-2 ring-blue-500"
+                className="w-full h-10  xl:w-full xl:h-full bg-gray-200 rounded overflow-hidden hover:ring-2 ring-blue-500"
               >
                 <img
                   src={`https://www.centauruscharter.com/product/galleryimages/${item.image}`}
@@ -239,12 +240,12 @@ export default function Home({ params }) {
 <div className="md:block hidden">
           <div className="flex items-center justify-center w-full my-6 xl:px-36 lg:px-20 ">
             <hr className="flex-grow border-primary-yellow-dark" />
-            <span className="px-4 text-3xl 2xl:text-5xl font-semibold font-Montserrat text-black">
+            <span className="px-4 text-3xl 2xl:text-3xl font-semibold font-Montserrat text-black">
             88 ft Yacht Sunseeker
             </span>
             <hr className="flex-grow border-primary-yellow-dark " />
           </div>
-          <p className="font-Montserrat text-black text-lg 2xl:text-2xl pt-2 pb-5 xl:px-36 lg:px-20 md:px-16 text-center">
+          <p className="font-Montserrat text-black text-lg 2xl:text-lg pt-2 pb-5 xl:px-36 lg:px-20 md:px-16 text-center">
           Step into a world of luxury with the 2024 Sunseeker 88, a masterpiece of seductive styling and smart, practical spaces. If you’re looking to buy a yacht in Dubai, this stunning yacht features a built-in hardtop and a cleverly configured interior that offers unparalleled comfort and elegance. The improved, sumptuous master cabin layout ensures a luxurious retreat, while the Beach Club with its innovative X-TEND™ sunbed at the aft promises relaxation and enjoyment. For those aiming to buy a luxury yacht, the 88 ft Sunseeker is an icon worthy of your immediate attention. Don't miss this opportunity to buy a boat in Dubai and experience the pinnacle of maritime luxury.
           </p>
         </div>

@@ -43,7 +43,7 @@ export default function Videosharedtours() {
   }, []);
 
   return (
-    <div className="relative mx-auto w-full h-[413px] lg:h-[780px] md:h-[330px] overflow-hidden">
+    <div className="relative mx-auto w-full h-[413px] lg:h-[590px] md:h-[330px] overflow-hidden">
       {/* Wistia Video as Background */}
       <style>
         {`
@@ -64,18 +64,18 @@ export default function Videosharedtours() {
 
       {/* Content Overlay */}
       <div className="absolute inset-0 z-10 flex flex-col items-center pt-40 md:pt-0 justify-center top-1/5 text-white text-center p-2">
-        <h1 className="text-3xl font-bold mb-2 text-black md:text-white font-Montserrat xl:text-4xl 2xl:text-5xl text-shadow">
-        Luxury Shared Experience
+        <h1 className="text-2xl font-bold mb-2 text-black md:text-white font-Montserrat xl:text-4xl 2xl:text-4xl text-shadow">
+        All-Inclusive Sharing Yacht Trips In Dub
         </h1>
-        <h1 className="text-sm xl:text-3xl  mb-4 xl:mb-3 text-black md:text-white font-Montserrat 2xl:text-4xl ">
-        Including drinks and food
+        <h1 className="text-sm xl:text-xl  mb-4 xl:mb-3 text-black md:text-white font-Montserrat 2xl:text-2xl ">
+        Buy 1 Get 1 Free
         </h1>
        
         <h2 className="text-sm mb-6 xl:mb-8 font-Montserrat text-black md:text-white xl:text-3xl 2xl:text-3xl text-shadow">
         From AED 149
         </h2>
-        <button className="px-6 py-2 xl:text-xl 2xl:text-3xl  2xl:px-8 2xl:py-4 font-Montserrat bg-[#0d2343] text-[#e1ae48] font-semibold rounded hover:bg-blue-500">
-          NYE TICKETS
+        <button className="blue-solid-button">
+          GET THE OFFER NOW
         </button>
       </div>
 

@@ -17,60 +17,43 @@ const Tabs = () => {
   };
 
   useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await fetch(
-          "https://www.centauruscharter.com/api/api_new/basic"
-        );
-        const data = await response.json();
+    if (data?.products) {
+      const mappedYachts = data.products.map((item) => {
+        let category = ["allYachts"]; // Default category
 
-        // Map the fetched products to include category
-        const mappedYachts = data.products.map((item) => {
-          let category = ["allYachts"]; // Default category
+        // Add custom logic to assign categories
+        if (item.per_hour_price > 4000) category.push("premium");
+        if (
+          item.slug === "56ft-lagoona" ||
+          item.slug === "61ft-silvercreek"
+        ) {
+          category.push("bestSellers");
+        }
 
-          // Add custom logic to assign categories
-          if (item.per_hour_price > 4000) category.push("premium");
-          if (
-            item.slug === "56ft-lagoona" ||
-            item.slug === "61ft-silvercreek"
-          ) {
-            category.push("bestSellers");
-          }
+        return {
+          id: item.id,
+          image: `https://www.centauruscharter.com/product/images/${item.image}`, // Adjust image path if needed
+          title: item.translations[language].name_of_yacht,
+          slug: item.slug,
+          fareharbor_id: item.fareharbor_id,
+          length: item.translations[language].size,
+          guests: item.translations[language].guests, // Example of adding guests dynamically
+          price: item.per_hour_price,
+          category,
+        };
+      });
 
-          return {
-            id: item.id,
-            image: `https://www.centauruscharter.com/product/images/${item.image}`, // Adjust image path if needed
-            title: item.title,
-            slug: item.slug,
-            fareharbor_id: item.fareharbor_id,
-            length: `${item.slug.split("-")[0]} Feet`,
-            guests: item.translations.en.guests, // Example of adding guests dynamically
-            price: item.per_hour_price,
-            category,
-          };
-        });
-
-        setYachts(mappedYachts);
-        setIsLoading(false);
-      } catch (error) {
-        console.log("Error fetching data:", error);
-        setIsLoading(false);
-      }
-    };
-
-    fetchData();
-  }, []);
+      setYachts(mappedYachts);
+    }
+  }, [data]);
 
   const renderContent = () => {
     const filteredYachts = yachts.filter((yacht) =>
       yacht.category.includes(activeTab)
     );
 
-    if (isLoading) {
-      return <div className="text-center mt-20">Loading...</div>;
-    }
-    if (loading) return <div>Loading...</div>;
-    if (error) return <div>Error: {error}</div>;
+    if (loading) return <div className="text-center mt-20">Loading...</div>;
+    if (error) return <div className="text-center mt-20">Error: {error}</div>;
     if (filteredYachts.length === 0) {
       return (
         <div className="text-center mt-20">
@@ -81,7 +64,7 @@ const Tabs = () => {
     const currentUrl = typeof window !== 'undefined' ? window.location.href : '';
 
     return (
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 py-10 gap-10 xl:px-32">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 py-10 gap-10 xl:px-32 container mx-auto">
         {filteredYachts.map((yacht) => (
           <div
             key={yacht.id}

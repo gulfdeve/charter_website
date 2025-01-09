@@ -17,90 +17,9 @@ export default function Home() {
   const emblaInstance = useRef(null);
   const { data, loading, error } = useData();
   const { language } = useLanguage();
-  const slides = [
-    {
-      image: "/yacht-rentals/56ftLagoona1.jpg", // Image path
-      title: "Luxury Yacht 1",
-      description:
-        "Experience ultimate comfort and luxury on our 56ft Lagoona.",
-    },
-    {
-      image: "/yacht-rentals/56ftLagoona2.jpg",
-      title: "Luxury Yacht 2",
-      description: "Relax on the stunning coastline with top-tier amenities.",
-    },
-    {
-      image: "/yacht-rentals/56ftLagoona3.jpg",
-      title: "Luxury Yacht 3",
-      description: "Unwind and enjoy the best sailing experience.",
-    },
-    {
-      image: "/yacht-rentals/56ftLagoona4.jpg",
-      title: "Luxury Yacht 4",
-      description: "A perfect blend of luxury and performance.",
-    },
-    {
-      image: "/yacht-rentals/56ftLagoona5.jpg",
-      title: "Luxury Yacht 5",
-      description: "Indulge in world-class service and stunning views.",
-    },
-  ];
-  const yachtData = [
-    {
-      title: "56 Ft Yacht - Lagoona",
-      image: "homepage.webp",
-      model: "Majesty",
-      length: "56 Feet",
-      guests: 21,
-      goodFor: "Birthday/Parties",
-      inclusions: [
-        "Hops, Wines, Bubbly Drinks, Coffee, Tea, Water, & Softdrinks",
-        "Transfer (upon request)",
-        "Canapés & Snacks (additional charges apply)",
-      ],
-    },
-    {
-      title: "56 Ft Yacht - Lagoona",
-      image: "homepage.webp",
-      model: "Majesty",
-      length: "56 Feet",
-      guests: 21,
-      goodFor: "Birthday/Parties",
-      inclusions: [
-        "Hops, Wines, Bubbly Drinks, Coffee, Tea, Water, & Softdrinks",
-        "Transfer (upon request)",
-        "Canapés & Snacks (additional charges apply)",
-      ],
-    },
-    {
-      title: "56 Ft Yacht - Lagoona",
-      image: "homepage.webp",
-      model: "Majesty",
-      length: "56 Feet",
-      guests: 21,
-      goodFor: "Birthday/Parties",
-      inclusions: [
-        "Hops, Wines, Bubbly Drinks, Coffee, Tea, Water, & Softdrinks",
-        "Transfer (upon request)",
-        "Canapés & Snacks (additional charges apply)",
-      ],
-    },
-    {
-      title: "56 Ft Yacht - Lagoona",
-      image: "homepage.webp",
-      model: "Majesty",
-      length: "56 Feet",
-      guests: 21,
-      goodFor: "Birthday/Parties",
-      inclusions: [
-        "Hops, Wines, Bubbly Drinks, Coffee, Tea, Water, & Softdrinks",
-        "Transfer (upon request)",
-        "Canapés & Snacks (additional charges apply)",
-      ],
-    },
-
+ 
     // Add more yachts as needed
-  ];
+ 
 
   useEffect(() => {
     if (emblaRef.current) {

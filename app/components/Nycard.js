@@ -48,7 +48,7 @@ const Nycard = () => {
 
   return (
     <div>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-7 px-10 xl:px-56 2xl:px-[30rem] py-10 rounded-lg">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-7 xl:px-44 2xl:px- container mx-auto py-10 rounded-lg">
         {yachts.map((yacht) => (
           <div key={yacht.id} className='rounded-lg'>
             <div className="relative">

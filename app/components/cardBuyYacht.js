@@ -46,7 +46,7 @@ const YachtCard = ({ yacht }) => {
         </div>
         
         <div className="grid grid-cols-2 gap-4">
-          <Link href="yachts-for-sale-dubai/88ft-sunseeker" className="blue-solid-button font-Montserrat">
+          <Link href="yachts-for-sale-dubai/88ft-sunseeker" className="blue-solid-button text-center font-Montserrat">
             KNOW MORE
           </Link>
           <button className="blue-solid-button font-Montserrat">

@@ -81,8 +81,8 @@ export default function YachtCarousal() {
         <h1 className="font-Montserrat text-[#0D2343] text-center font-bold text-4xl pb-4">
           EXPLORE OUR YACHT
         </h1>
-      </div>
-      <div className="relative w-full h-full overflow-hidden bg-primary-yellow xl:px-32 2xl:px-96 py-10">
+    
+      <div className="relative w-full h-full overflow-hidden bg-primary-yellow xl:px-32 container mx-auto py-10">
         {/* Carousel Viewport */}
         <div
           className="embla__viewport1 lg:block hidden "
@@ -123,7 +123,7 @@ export default function YachtCarousal() {
             {!loading &&
               data?.products?.map((product) => (
                 <div key={product.id} className="embla__slide p-4 ">
-                  <div className="relative bg-gray-200 rounded-lg overflow-hidden shadow-lg">
+                  <div className="relative bg-gray-200  overflow-hidden shadow-lg">
                     <img
                       src={`https://www.centauruscharter.com/product/images/${product.image}`}
                       className="h-[27rem] rounded-xl"
@@ -151,17 +151,18 @@ export default function YachtCarousal() {
 
         {/* Navigation Buttons */}
         <button
-          className="absolute left-2 2xl:left-80 lg:left-32 top-1/2 transform -translate-y-1/2 bg-gray-800 text-white w-10 aspect-square rounded-full flex items-center justify-center hover:bg-gray-700 z-10"
+          className="absolute left-2  lg:left-32 top-1/2 transform -translate-y-1/2 bg-gray-800 text-white w-14 aspect-square rounded-full flex items-center justify-center hover:bg-gray-700 z-10"
           onClick={scrollPrevDesktop}
         >
-          <IoIosArrowBack size={24} />
+          <IoIosArrowBack size={30} />
         </button>
         <button
-          className="absolute right-2 2xl:right-80 lg:right-32 top-1/2 transform -translate-y-1/2 bg-gray-800 text-white w-10 aspect-square rounded-full flex items-center justify-center hover:bg-gray-700 z-10"
+          className="absolute right-4  lg:right-32 top-1/2 transform -translate-y-1/2 bg-gray-800 text-white w-14 aspect-square rounded-full flex items-center justify-center hover:bg-gray-700 z-10"
           onClick={scrollNextDesktop}
         >
-          <IoIosArrowForward size={24} />
+          <IoIosArrowForward size={30} />
         </button>
+      </div>
       </div>
     </>
   );

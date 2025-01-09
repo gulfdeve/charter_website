@@ -66,21 +66,21 @@ export default  function Home({params}) {
   }
 
   const yachtDetails = [
-    { label: "Size", value: product.translations.en.size },
-    { label: "Decks", value: product.translations.en.decks },
-    { label: "Capacity", value: product.translations.en.maximum_guest },
+    { label: "Size", value: product.translations[language].size },
+    { label: "Decks", value: product.translations[language].decks },
+    { label: "Capacity", value: product.translations[language].maximum_guest },
     { label: "Duration", value: "Minimum 1 Hour" },
-    { label: "Cabin", value: product.translations.en.cabin },
+    { label: "Cabin", value: product.translations[language].cabin },
     {
       label: "Kitchen Equipment",
-      value: product.translations.en.kitchen_equipment,
+      value: product.translations[language].kitchen_equipment,
     },
     {
       label: "Music System",
-      value: product.translations.en.music_system,
+      value: product.translations[language].music_system,
     },
-    { label: "No of Staff", value: product.translations.en.no_of_staff },
-    { label: "Location", value: product.translations.en.location },
+    { label: "No of Staff", value: product.translations[language].no_of_staff },
+    { label: "Location", value: product.translations[language].location },
     {
       label: "Extras",
       value: "Drinks Included (Bubbly drinks, Soft drinks, Coffee & Water)",
@@ -91,7 +91,7 @@ export default  function Home({params}) {
       <div className="container mx-auto p-20">
         {/* Title */}
         <h1 className="text-4xl font-Montserrat font-bold text-center mb-4 mt-5">
-     {product.title}
+     {product.translations[language].name_of_yacht}
         </h1>
         <p className="text-xl font-Montserrat  text-center mb-4">Dubai Luxury Yacht</p>
         {/* Embla Carousel */}
@@ -110,7 +110,7 @@ export default  function Home({params}) {
                   <img
                     src={`https://www.centauruscharter.com/product/galleryimages/${item.image}`}
                     alt={`Slide ${index + 1}`}
-                    className="w-full  h-auto xl:h-5/6 object-cover rounded-lg"
+                    className="w-full  h-auto xl:h-5/6 max-w-7xl object-cover rounded-lg"
                   />
                 </div>
               ))}
@@ -121,7 +121,7 @@ export default  function Home({params}) {
         {/* Thumbnails and Navigation */}
         <div className="xl:-mt-4 mt-4 flex justify-center relative">
           {/* Thumbnails */}
-          <div className="flex space-x-2 relative">
+          <div className="flex space-x-2 max-w-7xl relative">
           {product.gallery.map((item, index) => (
               <button
                 key={index}
@@ -165,14 +165,14 @@ export default  function Home({params}) {
           <div className="bg-[#0d2343] text-white p-2 flex flex-col items-center">
             <span className="font-bold font-Montserrat text-sm">Length:</span>
             <span className="font-semibold font-Montserrat text-sm text-[#e1ae48] xl:text-xl">
-            {product.translations.en.size}
+            {product.translations[language].size}
             </span>
           </div>
           {/* Guests */}
           <div className="bg-[#0d2343] text-white p-2 flex flex-col items-center">
             <span className="font-bold font-Montserrat text-sm">Guests:</span>
             <span className="font-semibold font-Montserrat text-sm text-[#e1ae48] xl:text-xl">
-            {product.translations.en.guests}
+            {product.translations[language].guests}
             </span>
           </div>
           {/* Good For */}

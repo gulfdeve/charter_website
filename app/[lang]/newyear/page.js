@@ -5,7 +5,8 @@ const Page = () => {
   return (
     <div className="bg-white bg-opacity-90 w-full min-h-screen">
       <Videonewyear />
-      <div className="bg-[url('/nye24.webp')] bg-cover bg-center bg-no-repeat min-h-screen">
+      <div className="bg-[url('/nye24.webp')] bg-cover bg-center bg-no-repeat min-h-screen ">
+      <div className="container mx-auto">
         <div className="flex flex-col items-center justify-center pb-10 ">
           <h1 className="font-Montserrat text-primary-yellow text-center font-bold text-4xl lg:px-5 xl:text-5xl pb-4 pt-12">
             NEW YEAR'S EVE CELEBRATION ON A LUXURY YACHT
@@ -151,9 +152,11 @@ const Page = () => {
             </button>
           </div>
         </div>
+        </div>
         <Nycard />
       </div>
-      <div className="bg-black w-full h-full">
+      <div className="bg-black w-full h-full  ">
+        <div className="container mx-auto">
         <div className="flex flex-col items-center justify-center px-7">
           <h1 className="font-Montserrat text-primary-yellow text-lg font-bold text-center ">
             EXTRA SERVICES ON DEMAND
@@ -211,7 +214,7 @@ const Page = () => {
           <h1 className="font-Montserrat text-white text-xs  text-center py-4 px-3">
           To secure the best deal for your New Year's Eve celebration on the water, reach out to us today.
           </h1>
-          
+          </div>
         </div>
       </div>
 
@@ -241,6 +244,7 @@ const Page = () => {
         
         </div>
       </div>
+    
     </div>
   );
 };
