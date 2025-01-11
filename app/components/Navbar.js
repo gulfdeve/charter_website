@@ -315,134 +315,161 @@ export default function Navbar() {
       </div>
       {/* Mobile Navbar */}
       <div className="lg:hidden block">
-        <nav className="bg-[#0d2343] w-full h-14 p-3">
-          <div className="flex items-center justify-between">
-            {/* Logo */}
-            <Link href={"/"}>
-              <div className="w-32 pr-3">
-                <img src="./CentaurusLogoWhite.png" alt="Logo" />
-              </div>
-            </Link>
-            {/* Icons and Dropdown Trigger */}
-            <div className="flex items-center gap-2">
-              {/* WhatsApp Icon */}
-              <Link href="https://wa.me/1234567890" passHref>
-                <IoLogoWhatsapp className="text-blue-500 w-6 h-6" />
-              </Link>
+  <nav className="bg-[#0d2343] w-full h-14 p-3">
+    <div className="flex items-center justify-between">
+      {/* Logo */}
+      <Link href={"/"}>
+        <div className="w-32 pr-3">
+          <img src="./CentaurusLogoWhite.png" alt="Logo" />
+        </div>
+      </Link>
+      {/* Icons and Dropdown Trigger */}
+      <div className="flex items-center gap-2">
+        {/* WhatsApp Icon */}
+        <Link href="https://wa.me/1234567890" passHref>
+          <IoLogoWhatsapp className="text-blue-500 w-6 h-6" />
+        </Link>
 
-              {/* Phone Icon */}
-              <Link href="tel:1234567890" passHref>
-                <FaPhoneAlt className="text-blue-500 w-5 h-5" />
-              </Link>
+        {/* Phone Icon */}
+        <Link href="tel:1234567890" passHref>
+          <FaPhoneAlt className="text-blue-500 w-5 h-5" />
+        </Link>
 
-              {/* Language Selector */}
-              <select
-                value={language}
-                onChange={(e) => handleLanguageChange(e.target.value)}
-                className="p-1 rounded text-white text-xs font-Montserrat bg-blue-500"
-              >
-                <option value="en">English</option>
-                <option value="ar">Arabic</option>
-                <option value="ru">Russian</option>
-              </select>
+        {/* Language Selector */}
+        <select
+          value={language}
+          onChange={(e) => handleLanguageChange(e.target.value)}
+          className="p-1 rounded text-white text-xs font-Montserrat bg-blue-500"
+        >
+          <option value="en">English</option>
+          <option value="ar">Arabic</option>
+          <option value="ru">Russian</option>
+        </select>
 
-              {/* Hamburger Menu */}
-              <div
-                className="w-8 cursor-pointer"
-                onClick={() => setMobileDropdownOpen(!mobileDropdownOpen)}
-              >
-                <img src="/download.svg" alt="Menu" />
-              </div>
-            </div>
-          </div>
-
-          {/* Mobile Dropdown Menu */}
-          {mobileDropdownOpen && (
-            <div
-              className="absolute top-11 right-0 bg-white text-black w-full mt-3 shadow-lg"
-              style={{ zIndex: 999 }}
-            >
-              <ul className="flex flex-col p-4 gap-4 font-Montserrat">
-                {/* Menu Items */}
-                <li className="font-bold cursor-pointer hover:text-blue-500">
-                  <div
-                    className="flex justify-between items-center"
-                    onClick={() => toggleSubmenu(0)}
-                  >
-                    <Link href={`/${language}/yacht-rentals`}>
-                      PRIVATE YACHTS
-                    </Link>
-                    <span className="text-black">
-                      <MdKeyboardArrowDown />
-                    </span>
-                  </div>
-                  {submenuOpen === 0 && (
-                    <ul className="pl-4 pt-3 space-y-3">
-                      {!loading &&
-                        data?.products?.map((product) => (
-                          <Link
-                            href={`/${language}/yacht-rentals/${product.slug}`}
-                            key={product.id}
-                          >
-                            <li className="cursor-pointer text-xs font-normal text-gray-500 font-Montserrat">
-                              {product.title}
-                            </li>
-                          </Link>
-                        ))}
-                    </ul>
-                  )}
-                </li>
-                <Link href={`/${language}/yacht-sale-for-dubai`}>
-                  <li className="font-bold cursor-pointer hover:text-blue-500">
-                    BUY A YACHT
-                  </li>
-                </Link>
-                <Link href={`/${language}shared-yacht-tours-dubai`}>
-                  <li className="font-bold cursor-pointer hover:text-blue-500">
-                    SHARED TOURS
-                  </li>
-                </Link>
-                <li className="font-bold cursor-pointer">
-                  <div
-                    className="flex justify-between items-center"
-                    onClick={() => toggleSubmenu(1)}
-                  >
-                    <Link href={`/${language}/yacht-trips`}>EXPERIENCES</Link>
-                    <span className="text-black">
-                      <MdKeyboardArrowDown />
-                    </span>
-                  </div>
-                  {submenuOpen === 1 && (
-                    <ul className="pl-4 pt-3 space-y-3">
-                      {!loading &&
-                        data?.experiences?.map((experience) => (
-                          <Link
-                            href={`/${language}/yacht-trips/${experience.slug}`}
-                            key={experience.id}
-                          >
-                            <li className="cursor-pointer text-xs font-normal text-gray-500 font-Montserrat">
-                              {experience.translations[language].title}
-                            </li>
-                          </Link>
-                        ))}
-                    </ul>
-                  )}
-                </li>
-                <Link href={`/${language}/offers`}>
-                  <li className="font-bold cursor-pointer hover:text-blue-500">
-                    OFFERS
-                  </li>
-                </Link>
-                <Link href={`/${language}/newyear`}>
-                  <li className="font-bold cursor-pointer hover:text-blue-500">
-                    NEWYEAR
-                  </li>
-                </Link>
-              </ul>
-            </div>
-          )}
-        </nav>
+        {/* Hamburger Menu */}
+        <div
+          className="w-8 cursor-pointer"
+          onClick={() => setMobileDropdownOpen(!mobileDropdownOpen)}
+        >
+          <img src="/download.svg" alt="Menu" />
+        </div>
       </div>
+    </div>
+
+    {/* Mobile Dropdown Menu */}
+    {mobileDropdownOpen && (
+      <div
+        className="absolute top-11 right-0 bg-white text-black w-full mt-3 shadow-lg"
+        style={{ zIndex: 999 }}
+      >
+        <ul className="flex flex-col p-4 gap-4 font-Montserrat">
+          {/* Menu Items */}
+          <li className="font-bold cursor-pointer hover:text-blue-500">
+            <div
+              className="flex justify-between items-center"
+              onClick={() => toggleSubmenu(0)}
+            >
+              <Link href={`/${language}/yacht-rentals`} passHref>
+                <span onClick={() => setMobileDropdownOpen(false)}>
+                  PRIVATE YACHTS
+                </span>
+              </Link>
+              <span className="text-black">
+                <MdKeyboardArrowDown />
+              </span>
+            </div>
+            {submenuOpen === 0 && (
+              <ul className="pl-4 pt-3 space-y-3">
+                {!loading &&
+                  data?.products?.map((product) => (
+                    <Link
+                      href={`/${language}/yacht-rentals/${product.slug}`}
+                      key={product.id}
+                      passHref
+                    >
+                      <li
+                        className="cursor-pointer text-xs font-normal text-gray-500 font-Montserrat"
+                        onClick={() => setMobileDropdownOpen(false)}
+                      >
+                        {product.title}
+                      </li>
+                    </Link>
+                  ))}
+              </ul>
+            )}
+          </li>
+          <Link href={`/${language}/yacht-sale-for-dubai`} passHref>
+            <li
+              className="font-bold cursor-pointer hover:text-blue-500"
+              onClick={() => setMobileDropdownOpen(false)}
+            >
+              BUY A YACHT
+            </li>
+          </Link>
+          <Link href={`/${language}shared-yacht-tours-dubai`} passHref>
+            <li
+              className="font-bold cursor-pointer hover:text-blue-500"
+              onClick={() => setMobileDropdownOpen(false)}
+            >
+              SHARED TOURS
+            </li>
+          </Link>
+          <li className="font-bold cursor-pointer">
+            <div
+              className="flex justify-between items-center"
+              onClick={() => toggleSubmenu(1)}
+            >
+              <Link href={`/${language}/yacht-trips`} passHref>
+                <span onClick={() => setMobileDropdownOpen(false)}>
+                  EXPERIENCES
+                </span>
+              </Link>
+              <span className="text-black">
+                <MdKeyboardArrowDown />
+              </span>
+            </div>
+            {submenuOpen === 1 && (
+              <ul className="pl-4 pt-3 space-y-3">
+                {!loading &&
+                  data?.experiences?.map((experience) => (
+                    <Link
+                      href={`/${language}/yacht-trips/${experience.slug}`}
+                      key={experience.id}
+                      passHref
+                    >
+                      <li
+                        className="cursor-pointer text-xs font-normal text-gray-500 font-Montserrat"
+                        onClick={() => setMobileDropdownOpen(false)}
+                      >
+                        {experience.translations[language].title}
+                      </li>
+                    </Link>
+                  ))}
+              </ul>
+            )}
+          </li>
+          <Link href={`/${language}/offers`} passHref>
+            <li
+              className="font-bold cursor-pointer hover:text-blue-500"
+              onClick={() => setMobileDropdownOpen(false)}
+            >
+              OFFERS
+            </li>
+          </Link>
+          <Link href={`/${language}/newyear`} passHref>
+            <li
+              className="font-bold cursor-pointer hover:text-blue-500"
+              onClick={() => setMobileDropdownOpen(false)}
+            >
+              NEWYEAR
+            </li>
+          </Link>
+        </ul>
+      </div>
+    )}
+  </nav>
+</div>
+
     </>
   );
 }

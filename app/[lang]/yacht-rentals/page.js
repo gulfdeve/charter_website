@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { useLanguage } from "@/app/context/LanguageContext";
 import { useEffect, useState } from "react";
-import { useData } from '@/app/context/DataContext';
+import { useData } from "@/app/context/DataContext";
 
 const Tabs = () => {
   const [activeTab, setActiveTab] = useState("allYachts");
@@ -61,23 +61,37 @@ const Tabs = () => {
         </div>
       );
     }
-    const currentUrl = typeof window !== 'undefined' ? window.location.href : '';
+    const currentUrl = typeof window !== "undefined" ? window.location.href : "";
 
     return (
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 py-10 gap-10 xl:px-32 container mx-auto">
         {filteredYachts.map((yacht) => (
           <div
             key={yacht.id}
-            className="flex flex-col justify-center px-5 bg-white rounded-2xl shadow-2xl h-auto"
+            className="flex flex-col justify-center px-5 bg-white rounded-2xl shadow-2xl h-auto relative"
           >
+            {/* Badge */}
+            {yacht.category.includes("bestSellers") && (
+              <div className="absolute top-11 left-[20px] bg-primary-blue text-primary-yellow text-md  font-Montserrat py-1 px-2 ">
+                BEST SELLER
+              </div>
+            )}
+            {yacht.category.includes("premium") && (
+              <div className="absolute top-11 left-[20px] bg-primary-blue text-primary-yellow text-md  font-Montserrat py-1 px-2 ">
+                PREMIUM
+              </div>
+            )}
+
+            {/* Image */}
             <Link href={`yacht-rentals/${yacht.slug}`}>
-            <img
-              src={yacht.image}
-              className="rounded-2xl mt-5 h-[174px] md:h-[300px] object-cover"
-              alt={yacht.title}
-            />
+              <img
+                src={yacht.image}
+                className="rounded-2xl mt-5 h-[174px] md:h-[300px] object-cover"
+                alt={yacht.title}
+              />
             </Link>
 
+            {/* Content */}
             <div className="flex flex-col items-start py-3">
               <Link href={`yacht-rentals/${yacht.slug}`}>
                 <h1 className="text-[#0D2343] font-Montserrat text-xl font-bold xl:pt-6 md:pb-2 hover:text-blue-600 transition-all duration-300 cursor-pointer py-1 md:py-0">
@@ -100,7 +114,12 @@ const Tabs = () => {
                 AED {yacht.price}{" "}
                 <span className="font-Montserrat text-[#0D2343]">Per Hour</span>
               </h1>
-              <a href={`https://fareharbor.com/embeds/book/centauruscharter/items/${yacht.fareharbor_id}/?full-items=yes&flow=645487&back=${encodeURIComponent(currentUrl)}`} className="flex flex-row items-center justify-center py-2 w-full md:py-2 md:px-4 rounded-md bg-[#e1ae48] text-[#0d2343] hover:bg-[#0d2343] hover:text-[#e1ae48] font-Montserrat font-bold text-base md:text-sm xl:text-lg transition-all duration-300">
+              <a
+                href={`https://fareharbor.com/embeds/book/centauruscharter/items/${yacht.fareharbor_id}/?full-items=yes&flow=645487&back=${encodeURIComponent(
+                  currentUrl
+                )}`}
+                className="flex flex-row items-center justify-center py-2 w-full md:py-2 md:px-4 rounded-md bg-[#e1ae48] text-[#0d2343] hover:bg-[#0d2343] hover:text-[#e1ae48] font-Montserrat font-bold text-base md:text-sm xl:text-lg transition-all duration-300"
+              >
                 Book Now
               </a>
             </div>

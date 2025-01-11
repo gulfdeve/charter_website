@@ -6,8 +6,9 @@ import { IoIosArrowForward } from "react-icons/io";
 import { FaQuestionCircle } from "react-icons/fa";
 import { FaWhatsapp } from "react-icons/fa";
 import { useLanguage } from "@/app/context/LanguageContext";
+import Route from "@/app/components/Route"
 import { use } from "react";
- 
+import YachtCarousal from "@/app/components/YachtCarousel"; 
 
 export default  function Home({params}) {
    // Get the router object
@@ -88,7 +89,7 @@ export default  function Home({params}) {
   ];
   return (
     <>
-      <div className="container mx-auto p-20">
+      <div className="max-w-7xl mx-auto p-5 ">
         {/* Title */}
         <h1 className="text-4xl font-Montserrat font-bold text-center mb-4 mt-5">
      {product.translations[language].name_of_yacht}
@@ -119,14 +120,14 @@ export default  function Home({params}) {
         </div>
 
         {/* Thumbnails and Navigation */}
-        <div className="xl:-mt-4 mt-4 flex justify-center relative">
+        <div className="xl:-mt-4 mt-4  relative">
           {/* Thumbnails */}
-          <div className="flex space-x-2 max-w-7xl relative">
+          <div className="overflow-x-auto flex space-x-2 max-w-7xl relative">
           {product.gallery.map((item, index) => (
               <button
                 key={index}
                 onClick={() => emblaInstance.current?.scrollTo(index)}
-                className="w-full h-10 xl:w-full xl:h-full bg-gray-200 rounded overflow-hidden hover:ring-2 ring-blue-500"
+                className="w-full h-10 xl:w-full xl:h-24 bg-gray-200 rounded overflow-hidden hover:ring-2 ring-blue-500"
               >
                 <img
                   src={`https://www.centauruscharter.com/product/galleryimages/${item.image}`}
@@ -153,7 +154,7 @@ export default  function Home({params}) {
             </button>
           </div>
         </div>
-        <div className="grid grid-cols-1 lg:grid-cols-5 md:grid-cols-1 items-center gap-0 rounded-lg w-full overflow-hidden shadow-md mb-7 mt-6 ">
+        <div className="grid grid-cols-1 lg:grid-cols-5 md:grid-cols-1 items-center gap-0 rounded-lg w-full overflow-hidden shadow-md mb-7 mt-6 max-w-7xl mx-auto">
           {/* Model */}
           <div className="bg-[#0d2343] text-white p-2 flex flex-col items-center ">
             <span className="font-bold font-Montserrat text-sm ">Model:</span>
@@ -190,7 +191,7 @@ export default  function Home({params}) {
             </button>
           </div>
         </div>
-        <div className="flex flex-col lg:flex-row  w-full items-start lg:justify-between">
+        <div className="flex flex-col lg:flex-row  w-full items-start lg:justify-between py-10">
           {/* Left Column: Yacht Details Text */}
           <div className="flex flex-col lg:items-start w-full lg:justify-start lg:w-1/2">
             <p className="font-Montserrat text-sm text-left">
@@ -276,7 +277,8 @@ export default  function Home({params}) {
        
 
       </div>
-      
+      <Route/>
+      <YachtCarousal/>
     </>
   );
 }

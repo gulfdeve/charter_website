@@ -4,6 +4,7 @@ import EmblaCarousel from "embla-carousel";
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 import { useData } from "../context/DataContext";
 import { useLanguage } from "@/app/context/LanguageContext";
+
 import Link from "next/link";
 const TEMPORARY_DATA = [
   {
@@ -77,7 +78,7 @@ export default function YachtCarousal() {
 
   return (
     <>
-      <div className="flex flex-col items-center justify-center bg-primary-yellow pt-10 ">
+      <div className="flex flex-col items-center justify-center bg-primary-yellow pt-10 p-5">
         <h1 className="font-Montserrat text-[#0D2343] text-center font-bold text-4xl pb-4">
           EXPLORE OUR YACHT
         </h1>
@@ -93,16 +94,16 @@ export default function YachtCarousal() {
             {!loading &&
               data?.products?.map((product) => (
                 <div key={product.id} className="embla__slide1  p-4 ">
-                  <div className="relative bg-gray-200 rounded-lg shadow-lg space-y-3">
+                  <div className="relative bg-gray-200 shadow-lg space-y-3">
                     <img
                       src={`https://www.centauruscharter.com/product/images/${product.image}`}
-                      className="h-[27rem] rounded-xl"
+                      className="h-[27rem] "
                     />
                     <div className="absolute bottom-0 left-0 w-full bg-black bg-opacity-20 p-4 text-white">
                       <h3 className="text-4xl font-Montserrat font-bold text-left">
                         {product.translations[language].name_of_yacht}
                       </h3>
-                      <p className="text-md font-Montserrat  text-left">
+                      <p className="text-md font-Montserrat text-bol text-left">
                         {product.translations[language].slider_text}
                       </p>
 
@@ -126,7 +127,7 @@ export default function YachtCarousal() {
                   <div className="relative bg-gray-200  overflow-hidden shadow-lg">
                     <img
                       src={`https://www.centauruscharter.com/product/images/${product.image}`}
-                      className="h-[27rem] rounded-xl"
+                      className="h-[27rem] "
                     />
 
                     <div className="absolute bottom-0 left-0 w-full bg-black bg-opacity-10 p-4 text-white">

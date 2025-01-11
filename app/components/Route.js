@@ -2,7 +2,7 @@ import React from 'react'
 
 const Route = () => {
   return (
-    <div><div className="bg-[#0d2343] w-full h-auto ">
+    <div><div className="bg-[#0d2343] w-full h-auto py-10">
     <div className="flex flex-col items-center justify-center pt-10 gap-5 lg:p-6 lg:mx-auto container">
         <h1 className="font-Montserrat text-center text-[#e1ae48] text-4xl font-bold">
           CRUISING ROUTE
@@ -57,9 +57,10 @@ const Route = () => {
         </button>
         </div>
       </div>
-      <div className="flex flex-col lg:items-end px-4 gap-5 lg:w-1/2 lg:pt-10">
-          <img src="./Route-map.jpg"/>
-          <button className="flex flex-row items-center justify-center py-1 px-6 md:py-2 md:px-8  border-4 border-[#e1ae48] rounded-md bg-[#0d2343]  hover:bg-[#0d2343] text-[#e1ae48] font-Montserrat font-bold text-base md:text-sm xl:text-base transition-all duration-300">
+      <div className="flex flex-col lg:items-center px-4 gap-5 lg:w-1/2 lg:pt-10 ">
+          <img src="/Route-map.jpg"/>
+          
+          <button className="flex flex-col items-center justify-center py-1 px-6 md:py-2 md:px-8  border-4 border-[#e1ae48] rounded-md bg-[#0d2343]  hover:bg-[#0d2343] text-[#e1ae48] font-Montserrat font-bold text-base md:text-sm xl:text-base transition-all duration-300">
          Download
         </button>
       </div>

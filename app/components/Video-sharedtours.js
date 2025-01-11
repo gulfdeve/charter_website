@@ -43,7 +43,7 @@ export default function Videosharedtours() {
   }, []);
 
   return (
-    <div className="relative mx-auto w-full h-[413px] lg:h-[590px] md:h-[330px] overflow-hidden">
+    <div className="relative mx-auto w-full h-[413px] lg:h-[590px] md:h-[430px] overflow-hidden">
       {/* Wistia Video as Background */}
       <style>
         {`
@@ -62,23 +62,22 @@ export default function Videosharedtours() {
         )}
       </div>
 
-      {/* Content Overlay */}
-      <div className="absolute inset-0 z-10 flex flex-col items-center pt-40 md:pt-0 justify-center top-1/5 text-white text-center p-2">
-        <h1 className="text-2xl font-bold mb-2 text-black md:text-white font-Montserrat xl:text-4xl 2xl:text-4xl text-shadow">
-        All-Inclusive Sharing Yacht Trips In Dub
+      <div className="absolute inset-0 z-10 flex flex-col items-center  justify-center top-[32%] s:top-[42%] md:-top-[22%] lg:-top-[46%] xl:-top-[0%] text-white text-center p-2 md:px-14 lg:px-24 ">
+        <h1 className="text-3xl font-bold mb-4 text-black md:text-white font-Montserrat xl:text-xl 2xl:text-3xl text-shadow">
+          
+All-Inclusive Sharing Yacht Trips In Dubai
         </h1>
-        <h1 className="text-sm xl:text-xl  mb-4 xl:mb-3 text-black md:text-white font-Montserrat 2xl:text-2xl ">
+        <h1 className="text-sm xl:text-xl font-bold mb-4  text-black md:text-white font-Montserrat 2xl:text-xl text-shadow">
         Buy 1 Get 1 Free
         </h1>
-       
-        <h2 className="text-sm mb-6 xl:mb-8 font-Montserrat text-black md:text-white xl:text-3xl 2xl:text-3xl text-shadow">
-        From AED 149
-        </h2>
+        <h1 className="text-sm xl:text-xl font-bold mb-4 text-black md:text-white font-Montserrat 2xl:text-xl text-shadow">
+        Starting AED 149
+        </h1>
+        
         <button className="blue-solid-button">
-          GET THE OFFER NOW
-        </button>
+          GET THE OFFER NOW!
+         </button>
       </div>
-
     </div>
   );
 }

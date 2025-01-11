@@ -3,6 +3,7 @@ import React from "react";
 import { FaWhatsapp } from "react-icons/fa";
 import { useData } from '@/app/context/DataContext';
 import { useLanguage } from "@/app/context/LanguageContext";
+import YachtCarousal from "@/app/components/YachtCarousel"
 import Link from "next/link";
 
 /*const offers = [
@@ -92,8 +93,23 @@ const page = () => {
               </div>
             </div>
           ))}
+
         </div>
       </div>
+      <div className="max-w-7xl mx-auto px-3 py-5 ">
+          <p className="font-Montserrat text-gray-500 text-md ">
+            Dubai is a popular destination for yachting. The Arabian coastline
+            is lined with beautiful azure beaches and top attractions, which are
+            perfect for leisure trips and intimate celebrations. Centaurus
+            Charter has a versatile range of yachts and boats in Dubai that are
+            suitable for any event. Our captain & crew has years of experience,
+            can customize your trip as per your choices and is always eager to
+            help.<br/><br/> Experience yachting life with end-to-end personalized
+            services, stunning views of the surroundings with plenty of
+            watersports for your next excursion.
+          </p>
+        </div>
+        <YachtCarousal/>
     </>
   );
 };

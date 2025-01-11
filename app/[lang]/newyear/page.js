@@ -171,37 +171,37 @@ const Page = () => {
         </div>
         <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-6 gap-3 px-4 xl:px-10">
           <div>
-            <img src="drinks.webp" />
+            <img src="/drinks.webp" />
             <h1 className="font-Montserrat text-white font-bold text-sm py-7 text-center">
               Premium Drinks
             </h1>
           </div>
           <div>
-            <img src="Catering.webp" />
+            <img src="/Catering.webp" />
             <h1 className="font-Montserrat text-white font-bold text-sm py-7 text-center">
               Catering Service
             </h1>
           </div>
           <div>
-            <img src="decorations.webp" />
+            <img src="/decorations.webp" />
             <h1 className="font-Montserrat text-white font-bold text-sm py-7 text-center">
               Party Decoration
             </h1>
           </div>
           <div>
-            <img src="cake.webp" />
+            <img src="/cake.webp" />
             <h1 className="font-Montserrat text-white font-bold text-sm py-7 text-center">
               New Year Cake
             </h1>
           </div>
           <div>
-            <img src="DJ.webp" />
+            <img src="/DJ.webp" />
             <h1 className="font-Montserrat text-white font-bold text-sm py-7 text-center">
               Professional DJ Services
             </h1>
           </div>
           <div>
-            <img src="photographer.webp" />
+            <img src="/photographer.webp" />
             <h1 className="font-Montserrat text-white font-bold text-sm py-7 text-center px-3">
               Photographer & Videographer Service
             </h1>
