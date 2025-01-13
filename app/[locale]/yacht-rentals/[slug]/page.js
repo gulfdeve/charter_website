@@ -6,30 +6,33 @@ import { IoIosArrowForward } from "react-icons/io";
 import { FaQuestionCircle } from "react-icons/fa";
 import { FaWhatsapp } from "react-icons/fa";
 import { useLanguage } from "@/app/context/LanguageContext";
-import Route from "@/app/components/Route"
+import Route from "@/app/components/Route";
 import { use } from "react";
-import YachtCarousal from "@/app/components/YachtCarousel"; 
+import YachtCarousal from "@/app/components/YachtCarousel";
 
-export default  function Home({params}) {
-   // Get the router object
-  const  { slug } = use(params);  // Get the slug from the URL
+export default function Home({ params }) {
+  // Get the router object
+  const { slug } = use(params); // Get the slug from the URL
   const emblaRef = useRef(null);
   const emblaInstance = useRef(null);
   const [product, setProduct] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
+  const [activeIndex, setActiveIndex] = useState(0);
+  const thumbnailRef = useRef(null);
   const { language } = useLanguage();
-  const slides = [
-    "/yacht-rentals/56ftLagoona1.jpg", // Replace with your image paths
-    "/yacht-rentals/56ftLagoona2.jpg",
-    "/yacht-rentals/56ftLagoona3.jpg",
-    "/yacht-rentals/56ftLagoona4.jpg",
-    "/yacht-rentals/56ftLagoona5.jpg",
-    "/yacht-rentals/56ftLagoona4.jpg",
-    "/yacht-rentals/56ftLagoona5.jpg",
-  ];
+  useEffect(() => {
+    if (thumbnailRef.current) {
+      const thumbnails = thumbnailRef.current.children;
+      const thumbnailWidth = thumbnails[0]?.offsetWidth || 0;
+  
+      // Ensure the active thumbnail is centered within the visible range of 5 thumbnails
+      thumbnailRef.current.scrollLeft =
+        thumbnailWidth * Math.max(activeIndex - 5, 0); // Adjust based on active index
+    }
+  }, [activeIndex]);
 
   useEffect(() => {
-    if (!slug) return;  // Wait for the slug to be available
+    if (!slug) return; // Wait for the slug to be available
     const fetchData = async () => {
       try {
         const response = await fetch(
@@ -46,7 +49,7 @@ export default  function Home({params}) {
       }
     };
     fetchData();
-  }, [slug]);  // Fetch when the slug changes
+  }, [slug]); // Fetch when the slug changes
 
   useEffect(() => {
     if (emblaRef.current) {
@@ -92,9 +95,11 @@ export default  function Home({params}) {
       <div className="max-w-7xl mx-auto p-5 ">
         {/* Title */}
         <h1 className="text-4xl font-Montserrat font-bold text-center mb-4 mt-5">
-     {product.translations[language].name_of_yacht}
+          {product.translations[language].name_of_yacht}
         </h1>
-        <p className="text-xl font-Montserrat  text-center mb-4">Dubai Luxury Yacht</p>
+        <p className="text-xl font-Montserrat  text-center mb-4">
+          Dubai Luxury Yacht
+        </p>
         {/* Embla Carousel */}
         <div className="embla relative">
           {/* Viewport */}
@@ -103,10 +108,10 @@ export default  function Home({params}) {
             ref={emblaRef}
           >
             <div className="embla__container flex">
-            {product.gallery.map((item, index) => (
+              {product.gallery.map((item, index) => (
                 <div
                   key={index}
-                  className="embla__slide min-w-full flex justify-center items-center"
+                  className="embla__slide min-w-full flex justify-center items-center  pb-5 lg:pb-0"
                 >
                   <img
                     src={`https://www.centauruscharter.com/product/galleryimages/${item.image}`}
@@ -119,41 +124,69 @@ export default  function Home({params}) {
           </div>
         </div>
 
-        {/* Thumbnails and Navigation */}
-        <div className="xl:-mt-4 mt-4  relative">
-          {/* Thumbnails */}
-          <div className="overflow-x-auto flex space-x-2 max-w-7xl relative">
-          {product.gallery.map((item, index) => (
-              <button
-                key={index}
-                onClick={() => emblaInstance.current?.scrollTo(index)}
-                className="w-full h-10 xl:w-full xl:h-24 bg-gray-200 rounded overflow-hidden hover:ring-2 ring-blue-500"
-              >
-                <img
-                  src={`https://www.centauruscharter.com/product/galleryimages/${item.image}`}
-                  alt={`Thumbnail ${index + 1}`}
-                  className="w-full h-full object-cover"
-                />
-              </button>
-            ))}
+        <div className="relative">
+  {/* Previous Button */}
+  <button
+    className="absolute left-0 top-1/2 transform -translate-y-1/2 bg-[#d4cfce] text-white p-1 xl:p-2 rounded-full hover:bg-gray-700 z-10"
+    onClick={() => {
+      emblaInstance.current?.scrollPrev();
+      setActiveIndex((prev) => Math.max(prev - 1, 0));
+    }}
+  >
+    <IoIosArrowBack className="text-black" />
+  </button>
 
-            {/* Previous Button */}
-            <button
-              className="absolute left-[0rem] top-1/2 transform -translate-y-1/2 bg-[#d4cfce] text-white p-1 xl:p-2 rounded-full hover:bg-gray-700 z-10"
-              onClick={scrollPrev}
-            >
-              <IoIosArrowBack className="text-black" />
-            </button>
+  {/* Thumbnails */}
+  <div
+    ref={thumbnailRef} // Reference to the thumbnail container
+    className="overflow-x-auto flex space-x-2 max-w-7xl relative scrollbar-hidden"
+    style={{
+      scrollSnapType: 'x mandatory', // Add snap effect for better scrolling experience
+      scrollBehavior: 'smooth',
+      msOverflowStyle: 'none', // Hide scrollbar in IE
+      scrollbarWidth: 'none', // Smooth scrolling for better experience
+    }}
+  >
+    {product.gallery.map((item, index) => (
+      <button
+        key={index}
+        onClick={() => {
+          emblaInstance.current?.scrollTo(index);
+          setActiveIndex(index); // Update the active index
+        }}
+        className={`w-1/5 lg:h-36  bg-gray-200 rounded overflow-hidden ${
+          activeIndex === index
+            ? "ring-2 ring-blue-500"
+            : "hover:ring-2 ring-blue-500"
+        }`}
+        style={{
+          flexShrink: 0, // Prevent thumbnails from shrinking
+          scrollSnapAlign: 'center', // Align each thumbnail in the center while scrolling
+        }}
+      >
+        <img
+          src={`https://www.centauruscharter.com/product/galleryimages/${item.image}`}
+          alt={`Thumbnail ${index + 1}`}
+          className="w-full h-full object-cover"
+        />
+      </button>
+    ))}
+  </div>
 
-            {/* Next Button */}
-            <button
-              className="absolute right-[0rem] top-1/2 transform -translate-y-1/2 bg-[#d4cfce] text-white p-1 xl:p-2 rounded-full hover:bg-gray-700 z-10"
-              onClick={scrollNext}
-            >
-              <IoIosArrowForward className="text-black" />
-            </button>
-          </div>
-        </div>
+  {/* Next Button */}
+  <button
+    className="absolute right-0 top-1/2 transform -translate-y-1/2 bg-[#d4cfce] text-white p-1 xl:p-2 rounded-full hover:bg-gray-700 z-10"
+    onClick={() => {
+      emblaInstance.current?.scrollNext();
+      setActiveIndex((prev) =>
+        Math.min(prev + 1, product.gallery.length - 1)
+      );
+    }}
+  >
+    <IoIosArrowForward className="text-black" />
+  </button>
+</div>
+
         <div className="grid grid-cols-1 lg:grid-cols-5 md:grid-cols-1 items-center gap-0 rounded-lg w-full overflow-hidden shadow-md mb-7 mt-6 max-w-7xl mx-auto">
           {/* Model */}
           <div className="bg-[#0d2343] text-white p-2 flex flex-col items-center ">
@@ -166,14 +199,14 @@ export default  function Home({params}) {
           <div className="bg-[#0d2343] text-white p-2 flex flex-col items-center">
             <span className="font-bold font-Montserrat text-sm">Length:</span>
             <span className="font-semibold font-Montserrat text-sm text-[#e1ae48] xl:text-xl">
-            {product.translations[language].size}
+              {product.translations[language].size}
             </span>
           </div>
           {/* Guests */}
           <div className="bg-[#0d2343] text-white p-2 flex flex-col items-center">
             <span className="font-bold font-Montserrat text-sm">Guests:</span>
             <span className="font-semibold font-Montserrat text-sm text-[#e1ae48] xl:text-xl">
-            {product.translations[language].guests}
+              {product.translations[language].guests}
             </span>
           </div>
           {/* Good For */}
@@ -182,7 +215,7 @@ export default  function Home({params}) {
               Price Per Hour:
             </span>
             <span className="font-semibold font-Montserrat text-sm text-[#e1ae48] xl:text-xl">
-            {product.per_hour_price}
+              {product.per_hour_price}
             </span>
           </div>
           <div className="bg-[#0d2343] text-[#0d2343]  p-2 flex flex-col items-center">
@@ -224,17 +257,21 @@ export default  function Home({params}) {
               What to expect
             </h2>
             <ol className="list-disc font-Montserrat text-sm lg:pl-6">
-            {product.translations.en.key_features.split('\n').map((item, index) => (
-    <li key={index} dangerouslySetInnerHTML={{ __html: item }} />
-  ))}
+              {product.translations.en.key_features
+                .split("\n")
+                .map((item, index) => (
+                  <li key={index} dangerouslySetInnerHTML={{ __html: item }} />
+                ))}
             </ol>
             <h2 className="font-Montserrat text-sm text-black font-bold">
               Ideal for:
             </h2>
             <ol className="list-disc font-Montserrat text-left text-sm lg:pl-6">
-            {product.translations.en.ideal_for.split('\n').map((item, index) => (
-    <li key={index} dangerouslySetInnerHTML={{ __html: item }} />
-  ))}
+              {product.translations.en.ideal_for
+                .split("\n")
+                .map((item, index) => (
+                  <li key={index} dangerouslySetInnerHTML={{ __html: item }} />
+                ))}
             </ol>
             <h2 className="font-Montserrat text-sm text-black pt-4">
               Hire Dubai luxury yachts for your impeccable holiday.
@@ -274,11 +311,9 @@ export default  function Home({params}) {
             </div>
           </div>
         </div>
-       
-
       </div>
-      <Route/>
-      <YachtCarousal/>
+      <Route />
+      <YachtCarousal />
     </>
   );
 }
