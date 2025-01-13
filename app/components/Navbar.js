@@ -81,40 +81,54 @@ export default function Navbar() {
             </div>
             {/* Language Dropdown */}
             <div
-              className="relative"
-              onMouseEnter={() => setDropdownOpen(true)}
-              onMouseLeave={() => setDropdownOpen(false)}
-            >
-              {/* Trigger */}
-              <div className="p-3 rounded text-black font-Montserrat cursor-pointer scale-105">
-                {locale.toUpperCase()}
-              </div>
-              {/* Dropdown Menu */}
-              {isDropdownOpen && (
-                <ul className="absolute right-0 w-32 bg-white border rounded-md shadow-lg z-20">
-                  <li
-                    onClick={() => handleLanguageChange("en")}
-                    className="flex items-center gap-2 p-2 cursor-pointer hover:bg-gray-200"
-                  >
-                    <img src="/uk.svg" alt="English" className="w-4 h-4" />
-                    English
-                  </li>
-                  <li
-                    onClick={() => handleLanguageChange("ar")}
-                    className="flex items-center gap-2 p-2 cursor-pointer hover:bg-gray-200"
-                  >
-                    <img src="/uae.svg" alt="Arabic" className="w-4 h-4" />
-                    Arabic
-                  </li>
-                  <Link className="bg-gray-300" href={pathname} locale="ru">
-                    <li className="flex items-center gap-2 p-2 cursor-pointer hover:bg-gray-200">
-                      <img src="/ru.svg" alt="Russian" className="w-4 h-4" />
-                      Russian
-                    </li>
-                  </Link>
-                </ul>
-              )}
-            </div>
+  className="relative"
+  onMouseEnter={() => setDropdownOpen(true)}
+  onMouseLeave={() => setDropdownOpen(false)}
+>
+  {/* Trigger */}
+  <div className="p-3 rounded text-black font-Montserrat cursor-pointer scale-105 flex items-center gap-2">
+    <img
+      src={
+        locale === "en"
+          ? "/uk.svg"
+          : locale === "ar"
+          ? "/uae.svg"
+          : locale === "ru"
+          ? "/ru.svg"
+          : ""
+      }
+      alt={locale}
+      className="w-4 h-4"
+    />
+    {locale.toUpperCase()}
+  </div>
+  {/* Dropdown Menu */}
+  {isDropdownOpen && (
+    <ul className="absolute right-0 w-32 bg-white border rounded-md shadow-lg z-20">
+      <li
+        onClick={() => handleLanguageChange("en")}
+        className="flex items-center gap-2 p-2 cursor-pointer hover:bg-gray-200"
+      >
+        <img src="/uk.svg" alt="English" className="w-4 h-4" />
+        English
+      </li>
+      <li
+        onClick={() => handleLanguageChange("ar")}
+        className="flex items-center gap-2 p-2 cursor-pointer hover:bg-gray-200"
+      >
+        <img src="/uae.svg" alt="Arabic" className="w-4 h-4" />
+        Arabic
+      </li>
+      <Link className="bg-gray-300" href={pathname} locale="ru">
+        <li className="flex items-center gap-2 p-2 cursor-pointer hover:bg-gray-200">
+          <img src="/ru.svg" alt="Russian" className="w-4 h-4" />
+          Russian
+        </li>
+      </Link>
+    </ul>
+  )}
+</div>
+
           </div>
         </nav>
 
