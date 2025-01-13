@@ -1,9 +1,11 @@
 "use client";
+import { useLocale, useTranslations } from "next-intl";
 import React, { useEffect } from "react";
 import { FaWhatsapp } from "react-icons/fa";
 import YachtListings from "@/app/components/cardBuyYacht";
 
 const Page = () => {
+  const t = useTranslations();
   useEffect(() => {
     const script1 = document.createElement("script");
     script1.src = "https://fast.wistia.com/player.js";
@@ -40,7 +42,7 @@ const Page = () => {
       <div className="bg-white w-full h-auto">
         <div className="bg-white rounded-lg p-8 max-w-7xl mx-auto my-8 shadow-buy-yacht">
           <h1 className="text-4xl font-bold text-center text-gray-900 mb-8 font-Montserrat">
-            FIND YOUR DREAM YACHT
+            FIND YOUR DREAM YACHT {t("navbar.private-yachts")}  
           </h1>
 
           <p className="text-gray-700 text-lg text-center leading-relaxed font-Montserrat">

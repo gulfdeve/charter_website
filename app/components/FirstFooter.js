@@ -1,12 +1,19 @@
-"use client"
+"use client";
 import React from "react";
-import Link from "next/link";
+
 import { useLanguage } from "@/app/context/LanguageContext";
 import { useData } from "@/app/context/DataContext";
+import { Link } from "@/app/i18n/routing";
+
+import { useLocale, useTranslations } from "next-intl";
 
 const FirstFooter = () => {
   const { language } = useLanguage();
+  const locale = useLocale();
   const { data, loading, error } = useData();
+
+  const t = useTranslations();
+
   return (
     <>
       <footer className="text-sm bg-[#1D1D1D] py-10 font-Montserrat">
@@ -22,63 +29,63 @@ const FirstFooter = () => {
                     className="text-[#969696] hover:text-[#2a93d5] transition-colors duration-200"
                     href="/"
                   >
-                    Home
+                    {t('navbar.home')}
                   </Link>
                 </li>
                 <li className="mb-2">
                   <Link
                     className="text-[#969696] hover:text-[#2a93d5] transition-colors duration-200"
-                    href={`/${language}/aboutus`}
+                    href={`/aboutus`}
                   >
-                    About
+                    {t('navbar.about')}
                   </Link>
                 </li>
                 <li className="mb-2">
                   <Link
                     className="text-[#969696] hover:text-[#2a93d5] transition-colors duration-200"
-                    href={`/${language}/yacht-rentals`}
+                    href={`/yacht-rentals`}
                   >
-                    Yacht Rentals
+                    {t('navbar.yacht-rentals')}
                   </Link>
                 </li>
                 <li className="mb-2">
                   <Link
                     className="text-[#969696] hover:text-[#2a93d5] transition-colors duration-200"
-                    href={`/${language}/watersports`}
+                    href={`/watersports`}
                   >
-                    Watersports
+                    {t('navbar.water-sports')}
                   </Link>
                 </li>
                 <li className="mb-2">
                   <Link
                     className="text-[#969696] hover:text-[#2a93d5] transition-colors duration-200"
-                    href={`/${language}/offers`}
+                    href={`/offers`}
                   >
-                    Offers
+                    {t('navbar.offers')}
                   </Link>
                 </li>
                 <li className="mb-2">
                   <Link
                     className="text-[#969696] hover:text-[#2a93d5] transition-colors duration-200"
-                    href={`/${language}/events`}
+                    href={`/events`}
                   >
-                    Events
+                    {t('navbar.events')}
                   </Link>
                 </li>
                 <li className="mb-2">
                   <Link
                     className="text-[#969696] hover:text-[#2a93d5] transition-colors duration-200"
-                    href={`/${language}/faq`}
+                    href={`/faq`}
                   >
-                    FAQ
+                    {t('navbar.faq')}
                   </Link>
                 </li>
                 <li className="mb-2">
                   <Link
                     className="text-[#969696] hover:text-[#2a93d5] transition-colors duration-200"
-                    href={`/${language}/contact`}
+                    href={`/contact`}
                   >
-                    Contact us
+                    {t('navbar.contact-us')}
                   </Link>
                 </li>
                 <li className="mb-2">
@@ -86,57 +93,48 @@ const FirstFooter = () => {
                     className="text-[#969696] hover:text-[#2a93d5] transition-colors duration-200"
                     href="https://www.centauruscharter.com/public/pdf/Centaurus-Charter-Profile-2023.pdf"
                   >
-                    Company Profile
+                    {t('navbar.company-profile')}
                   </a>
                 </li>
               </ul>
             </div>
             <div>
               <h3 className="text-lg text-white font-semibold mb-4">
-              <Link href={`/${language}/yacht-rentals`}>
-                Our Luxury Yachts
-                </Link>
+                <Link href={`/yacht-rentals`}>Our Luxury Yachts</Link>
               </h3>
               <ul>
-              {!loading &&
-                      data?.products?.map((product) => (
-                        <Link
-                          href={`/${language}/yacht-rentals/${product.slug}`}
-                          key={product.id}
-                        >
-                <li className="mb-2 text-[#969696] hover:text-[#2a93d5] transition-colors duration-200">
-                  
-                  {product.title}
-                  
-                </li>
-                </Link>
-              ))}
-                
+                {!loading &&
+                  data?.products?.map((product) => (
+                    <Link
+                      href={`/yacht-rentals/${product.slug}`}
+                      key={product.id}
+                    >
+                      <li className="mb-2 text-[#969696] hover:text-[#2a93d5] transition-colors duration-200">
+                        {product.translations?.[locale]?.name_of_yacht}
+                      </li>
+                    </Link>
+                  ))}
               </ul>
             </div>
             <div>
               <h3 className="text-lg text-white font-semibold mb-4">
-                <Link href={`/${language}/yacht-trips`}>EXPERIENCES</Link></h3>
+                <Link href={`/yacht-trips`}>{t('navbar.experiences')}</Link>
+              </h3>
               <ul>
-              {!loading &&
-                      data?.experiences?.map((experience) => {
-                        const title =
-                          experience.translations?.[language]?.title ||
-                          experience.translations?.en?.title ||
-                          "Untitled";
-                        return (
-                          <Link
-                            href={`/${language}/yacht-trips/${experience.slug}`}
-                            key={experience.id}
-                          >
-                            <li className=" mb-2 text-[#969696] hover:text-[#2a93d5] transition-colors duration-200">
-                              {title}
-                            </li>
-                          </Link>
-                        );
-                      })}
-                  </ul>
-               
+                {!loading &&
+                  data?.experiences?.map((experience) => {
+                    return (
+                      <Link
+                        href={`/yacht-trips/${experience.slug}`}
+                        key={experience.id}
+                      >
+                        <li className=" mb-2 text-[#969696] hover:text-[#2a93d5] transition-colors duration-200">
+                          {experience.translations?.[locale]?.title}
+                        </li>
+                      </Link>
+                    );
+                  })}
+              </ul>
             </div>
             <div>
               <h3 className="text-lg text-white font-semibold mb-4">
@@ -158,9 +156,12 @@ const FirstFooter = () => {
                   </svg>
                   <div>
                     <p className="text-[#969696] hover:text-[#2a93d5]">
-                    <a href="https://www.google.com/maps/place/CENTAURUS+CHARTER+-+Yachts+%26+Boats+Rental+Dubai+Harbour/@25.097395,55.1431033,15z/data=!4m6!3m5!1s0x3e5f6b1f6453e121:0x45035717db6c3954!8m2!3d25.0948183!4d55.1390062!16s%2Fg%2F11kb9bzw9v?hl=en&entry=ttu&g_ep=EgoyMDI1MDEwMS4wIKXMDSoASAFQAw%3D%3D">    Marina Walk (Near Spinneys)<br/> Dubai, United Arab Emirates</a>
+                      <a href="https://www.google.com/maps/place/CENTAURUS+CHARTER+-+Yachts+%26+Boats+Rental+Dubai+Harbour/@25.097395,55.1431033,15z/data=!4m6!3m5!1s0x3e5f6b1f6453e121:0x45035717db6c3954!8m2!3d25.0948183!4d55.1390062!16s%2Fg%2F11kb9bzw9v?hl=en&entry=ttu&g_ep=EgoyMDI1MDEwMS4wIKXMDSoASAFQAw%3D%3D">
+                        {" "}
+                        Marina Walk (Near Spinneys)
+                        <br /> Dubai, United Arab Emirates
+                      </a>
                     </p>
-                   
                   </div>
                 </div>
                 <div className="mb-2 flex gap-2">
@@ -178,9 +179,12 @@ const FirstFooter = () => {
                   </svg>
                   <div>
                     <p className="text-[#969696] hover:text-[#2a93d5]">
-                    <a href="https://www.google.com/maps/place/CENTAURUS+CHARTER+-+Yachts+%26+Boats+Rental+Dubai+Harbour/@25.097395,55.1431033,15z/data=!4m6!3m5!1s0x3e5f6b1f6453e121:0x45035717db6c3954!8m2!3d25.0948183!4d55.1390062!16s%2Fg%2F11kb9bzw9v?hl=en&entry=ttu&g_ep=EgoyMDI1MDEwMS4wIKXMDSoASAFQAw%3D%3D">  Dubai Harbour Marina<br/> Dubai, United Arab Emirates</a>
+                      <a href="https://www.google.com/maps/place/CENTAURUS+CHARTER+-+Yachts+%26+Boats+Rental+Dubai+Harbour/@25.097395,55.1431033,15z/data=!4m6!3m5!1s0x3e5f6b1f6453e121:0x45035717db6c3954!8m2!3d25.0948183!4d55.1390062!16s%2Fg%2F11kb9bzw9v?hl=en&entry=ttu&g_ep=EgoyMDI1MDEwMS4wIKXMDSoASAFQAw%3D%3D">
+                        {" "}
+                        Dubai Harbour Marina
+                        <br /> Dubai, United Arab Emirates
+                      </a>
                     </p>
-                    
                   </div>
                 </div>
                 <div className="mb-2 flex gap-2">
@@ -198,9 +202,12 @@ const FirstFooter = () => {
                   </svg>
                   <div>
                     <p className="text-[#969696] hover:text-[#2a93d5]">
-                    <a href="https://www.google.com/maps/place/CENTAURUS+CHARTER+-+Yachts+%26+Boats+Rental+Dubai+Harbour/@25.097395,55.1431033,15z/data=!4m6!3m5!1s0x3e5f6b1f6453e121:0x45035717db6c3954!8m2!3d25.0948183!4d55.1390062!16s%2Fg%2F11kb9bzw9v?hl=en&entry=ttu&g_ep=EgoyMDI1MDEwMS4wIKXMDSoASAFQAw%3D%3D">  Berth No AB05 - near Harbour Bridge - Dubai Harbour<br/> Dubai, United Arab Emirates</a>
+                      <a href="https://www.google.com/maps/place/CENTAURUS+CHARTER+-+Yachts+%26+Boats+Rental+Dubai+Harbour/@25.097395,55.1431033,15z/data=!4m6!3m5!1s0x3e5f6b1f6453e121:0x45035717db6c3954!8m2!3d25.0948183!4d55.1390062!16s%2Fg%2F11kb9bzw9v?hl=en&entry=ttu&g_ep=EgoyMDI1MDEwMS4wIKXMDSoASAFQAw%3D%3D">
+                        {" "}
+                        Berth No AB05 - near Harbour Bridge - Dubai Harbour
+                        <br /> Dubai, United Arab Emirates
+                      </a>
                     </p>
-                    
                   </div>
                 </div>
                 <div className="mb-2 flex gap-2">
@@ -218,10 +225,13 @@ const FirstFooter = () => {
                   </svg>
                   <div>
                     <p className="text-[#969696] hover:text-[#2a93d5]">
-                    <a href="https://www.google.com/maps/place/CENTAURUS+CHARTER+-+Yachts+%26+Boats+Rental+Dubai+Harbour/@25.097395,55.1431033,15z/data=!4m6!3m5!1s0x3e5f6b1f6453e121:0x45035717db6c3954!8m2!3d25.0948183!4d55.1390062!16s%2Fg%2F11kb9bzw9v?hl=en&entry=ttu&g_ep=EgoyMDI1MDEwMS4wIKXMDSoASAFQAw%3D%3D">  Dubai Harbour Marina, Berth No A-G36 Near Dockmaster 1
-                      Building<br/> Dubai, United Arab Emirates</a>
+                      <a href="https://www.google.com/maps/place/CENTAURUS+CHARTER+-+Yachts+%26+Boats+Rental+Dubai+Harbour/@25.097395,55.1431033,15z/data=!4m6!3m5!1s0x3e5f6b1f6453e121:0x45035717db6c3954!8m2!3d25.0948183!4d55.1390062!16s%2Fg%2F11kb9bzw9v?hl=en&entry=ttu&g_ep=EgoyMDI1MDEwMS4wIKXMDSoASAFQAw%3D%3D">
+                        {" "}
+                        Dubai Harbour Marina, Berth No A-G36 Near Dockmaster 1
+                        Building
+                        <br /> Dubai, United Arab Emirates
+                      </a>
                     </p>
-                    
                   </div>
                 </div>
                 <div className="mb-2 flex gap-2"></div>

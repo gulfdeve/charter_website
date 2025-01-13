@@ -1,4 +1,5 @@
 "use client";
+import { useLocale, useTranslations } from "next-intl";
 import { useRef, useEffect } from "react";
 import EmblaCarousel from "embla-carousel";
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
@@ -9,10 +10,12 @@ import Reviews from "@/app/components/Reviews";
 import Counters from "@/app/components/Counters";
 import LocationCarousel from "@/app/components/LocationCarousel";
 import Video from "@/app/components/Video";
-import { useData } from "@/app/context/DataContext"
+import { useData } from "@/app/context/DataContext";
 import { useLanguage } from "@/app/context/LanguageContext";
-import Link from "next/link";
+// import Link from "next/link";
+import { useRouter, usePathname, Link } from "../i18n/routing";
 export default function Home() {
+  const t = useTranslations();
   const emblaRef = useRef(null);
   const emblaInstance = useRef(null);
   const { data, loading, error } = useData();
@@ -106,7 +109,7 @@ export default function Home() {
     if (emblaRef.current) {
       emblaInstance.current = EmblaCarousel(emblaRef.current, { loop: true });
     }
-  
+
     // Return a cleanup function if needed
     return () => {
       if (emblaInstance.current) {
@@ -119,15 +122,14 @@ export default function Home() {
   const scrollNext = () => emblaInstance.current?.scrollNext();
 
   return (
-
     <>
-    <div>
-    <Video/>
-    </div>
-    
+      <div>
+        <Video />
+      </div>
+
       <div className="flex flex-col bg-white items-center justify-center pb-10 2xl:pt-20 2xl:py-0 ">
         <h1 className="font-Montserrat text-[#0D2343] text-center font-bold text-4xl pb-4">
-          YACHT RENTAL DUBAI
+          YACHT RENTAL DUBAI {t("navbar.private-yachts")}
         </h1>
         <h1 className="font-Montserrat text-[#0D2343] text-center  text-4xl pb-16">
           Enjoy your Luxury Yacht Experience
@@ -146,7 +148,7 @@ export default function Home() {
           us.
         </p>
       </div>
-      
+
       <div className="md:hidden block">
         <div className="container mx-auto p-6 ">
           {/* Carousel */}
@@ -157,87 +159,93 @@ export default function Home() {
               ref={emblaRef}
             >
               <div className="embla__container flex shadow-2xl shadow-black">
-              {!loading &&
-      data?.products?.map((product) => (
-                  <div
-                    key={product.id}
-                    className="embla__slide min-w-full flex flex-col items-center justify-center"
-                  >
-                    {/* Image */}
-                    <h1 className="font-Montserrat font-bold text-2xl mb-5">
-                    {product.translations[language].name_of_yacht}
-                    </h1>
-                    <img
-                      src={`https://www.centauruscharter.com/product/images/${product.image}`}
-                      alt="yacht"
-                      className="w-full h-auto xl:h-5/6 object-cover rounded-lg"
-                    />
-                    {/* Caption */}
-                    <div className="mt-4 text-center">
-                      <div className="grid grid-cols-2 lg:grid-cols-4 md:grid-cols-2 items-center gap-0 rounded-lg w-full overflow-hidden shadow-md mb-7">
-                        {/* Model */}
-                        <div className="bg-[#0d2343] text-white p-2 flex flex-col items-center ">
-                          <span className="font-bold font-Montserrat text-sm">
-                            Model:
-                          </span>
-                          <span className="font-semibold font-Montserrat text-sm text-[#e1ae48]">
-                          {product.translations[language].model}
-                          </span>
+                {!loading &&
+                  data?.products?.map((product) => (
+                    <div
+                      key={product.id}
+                      className="embla__slide min-w-full flex flex-col items-center justify-center"
+                    >
+                      {/* Image */}
+                      <h1 className="font-Montserrat font-bold text-2xl mb-5">
+                        {product.translations[language].name_of_yacht}
+                      </h1>
+                      <img
+                        src={`https://www.centauruscharter.com/product/images/${product.image}`}
+                        alt="yacht"
+                        className="w-full h-auto xl:h-5/6 object-cover rounded-lg"
+                      />
+                      {/* Caption */}
+                      <div className="mt-4 text-center">
+                        <div className="grid grid-cols-2 lg:grid-cols-4 md:grid-cols-2 items-center gap-0 rounded-lg w-full overflow-hidden shadow-md mb-7">
+                          {/* Model */}
+                          <div className="bg-[#0d2343] text-white p-2 flex flex-col items-center ">
+                            <span className="font-bold font-Montserrat text-sm">
+                              Model:
+                            </span>
+                            <span className="font-semibold font-Montserrat text-sm text-[#e1ae48]">
+                              {product.translations[language].model}
+                            </span>
+                          </div>
+                          {/* Length */}
+                          <div className="bg-[#0d2343] text-white p-2 flex flex-col items-center">
+                            <span className="font-bold font-Montserrat text-sm">
+                              Length:
+                            </span>
+                            <span className="font-semibold font-Montserrat text-sm text-[#e1ae48]">
+                              {product.translations[language].size}
+                            </span>
+                          </div>
+                          {/* Guests */}
+                          <div className="bg-[#0d2343] text-white p-2 flex flex-col items-center">
+                            <span className="font-bold font-Montserrat text-sm">
+                              Guests:
+                            </span>
+                            <span className="font-semibold font-Montserrat text-sm text-[#e1ae48]">
+                              {product.translations[language].guests}
+                            </span>
+                          </div>
+                          {/* Good For */}
+                          <div className="bg-[#e1ae48] text-[#0d2343] xl:w-36 p-2 flex flex-col items-center">
+                            <span className="  font-Montserrat text-sm">
+                              Per Hour:
+                            </span>
+                            <span className="font-semibold font-Montserrat text-sm">
+                              {product.per_hour_price} +VAT
+                            </span>
+                          </div>
                         </div>
-                        {/* Length */}
-                        <div className="bg-[#0d2343] text-white p-2 flex flex-col items-center">
-                          <span className="font-bold font-Montserrat text-sm">
-                            Length:
-                          </span>
-                          <span className="font-semibold font-Montserrat text-sm text-[#e1ae48]">
-                          {product.translations[language].size}
-                          </span>
+                        <h3 className="text-md font-bold font-Montserrat">
+                          Trip inclusions from 3 hours onwards:
+                        </h3>
+                        <p className="text-sm text-black font-Montserrat">
+                          Hops, Wines, Bubbly Drinks, Coffee, Tea, Water, &
+                          Softdrinks
+                          <br />
+                          Transfer (upon request)
+                          <br />
+                          Canapés & Snacks (additional charges apply)
+                        </p>
+                        <p className="text-blue-400 text-xs mt-3">
+                          T&C's apply
+                        </p>
+                        <button className="flex flex-row items-center justify-center mt-4 py-2 w-full md:py-2 md:px-4 rounded-md bg-[#e1ae48] text-[#0d2343] hover:bg-[#0d2343] hover:text-[#e1ae48] font-Montserrat font-bold text-base md:text-sm xl:text-lg transition-all duration-300">
+                          Book Now
+                        </button>
+                        <div className="flex items-center justify-center ">
+                          <Link
+                            href={
+                              "https://centaurusint.net/?utm_source=centauruscharter&utm_medium=logo_text&utm_campaign=branding"
+                            }
+                          >
+                            <img
+                              src="./centaurus_link.svg"
+                              className="w-[10rem] mt-3"
+                            />
+                          </Link>
                         </div>
-                        {/* Guests */}
-                        <div className="bg-[#0d2343] text-white p-2 flex flex-col items-center">
-                          <span className="font-bold font-Montserrat text-sm">
-                            Guests:
-                          </span>
-                          <span className="font-semibold font-Montserrat text-sm text-[#e1ae48]">
-                          {product.translations[language].guests}
-                          </span>
-                        </div>
-                        {/* Good For */}
-                        <div className="bg-[#e1ae48] text-[#0d2343] xl:w-36 p-2 flex flex-col items-center">
-                          <span className="  font-Montserrat text-sm">
-                            Per Hour:
-                          </span>
-                          <span className="font-semibold font-Montserrat text-sm">
-                          {product.per_hour_price} +VAT
-                          </span>
-                        </div>
-                      </div>
-                      <h3 className="text-md font-bold font-Montserrat">
-                        Trip inclusions from 3 hours onwards:
-                      </h3>
-                      <p className="text-sm text-black font-Montserrat">
-                        Hops, Wines, Bubbly Drinks, Coffee, Tea, Water, &
-                        Softdrinks
-                        <br />
-                        Transfer (upon request)
-                        <br />
-                        Canapés & Snacks (additional charges apply)
-                      </p>
-                      <p className="text-blue-400 text-xs mt-3">T&C's apply</p>
-                      <button className="flex flex-row items-center justify-center mt-4 py-2 w-full md:py-2 md:px-4 rounded-md bg-[#e1ae48] text-[#0d2343] hover:bg-[#0d2343] hover:text-[#e1ae48] font-Montserrat font-bold text-base md:text-sm xl:text-lg transition-all duration-300">
-                        Book Now
-                      </button>
-                      <div className="flex items-center justify-center ">
-                      <Link href={'https://centaurusint.net/?utm_source=centauruscharter&utm_medium=logo_text&utm_campaign=branding'}>
-                        <img
-                          src="./centaurus_link.svg"
-                          className="w-[10rem] mt-3"
-                        />
-                        </Link>
                       </div>
                     </div>
-                  </div>
-                ))}
+                  ))}
               </div>
             </div>
 
@@ -261,97 +269,104 @@ export default function Home() {
       <div className="md:block hidden">
         <div className="container mx-auto p-6">
           <div className="grid grid-col-1 md:grid-cols-2 p-6 2xl:px-36 2xl:gap-14 gap-10">
-          {!loading &&
-      data?.products?.map((product) => (
-              <div
-                key={product.id}
-                className="flex flex-col border border-gray-400 xl:p-10 p-5 rounded-lg"
-              >
-                <h1 className="font-Montserrat xl:text-4xl text-3xl font-bold">
-                {product.translations[language].name_of_yacht}
-                </h1>
-                <img
-                  src={`https://www.centauruscharter.com/product/images/${product.image}`}
-                  className="rounded-lg xl:w-[32rem] w-[25rem] mt-3"
-                />
+            {!loading &&
+              data?.products?.map((product) => (
+                <div
+                  key={product.id}
+                  className="flex flex-col border border-gray-400 xl:p-10 p-5 rounded-lg"
+                >
+                  <h1 className="font-Montserrat xl:text-4xl text-3xl font-bold">
+                    {product.translations[language].name_of_yacht}
+                  </h1>
+                  <img
+                    src={`https://www.centauruscharter.com/product/images/${product.image}`}
+                    className="rounded-lg xl:w-[32rem] w-[25rem] mt-3"
+                  />
 
-                <div className="grid grid-cols-2 lg:grid-cols-4 md:grid-cols-1 items-center gap-0 rounded-lg lg:w-[25rem] xl:w-[23rem] shadow-md mb-7 mt-5">
-                  {/* Model */}
-                  <div className="bg-[#0d2343] text-white p-1 xl:p-2.5 flex flex-col items-center xl:rounded-l-lg">
-                    <span className="font-bold font-Montserrat text-sm">
-                      Model:
-                    </span>
-                    <span className="font-semibold font-Montserrat text-sm xl:text-xs text-[#e1ae48]">
-                    {product.translations[language].model}
-                    </span>
+                  <div className="grid grid-cols-2 lg:grid-cols-4 md:grid-cols-1 items-center gap-0 rounded-lg lg:w-[25rem] xl:w-[23rem] shadow-md mb-7 mt-5">
+                    {/* Model */}
+                    <div className="bg-[#0d2343] text-white p-1 xl:p-2.5 flex flex-col items-center xl:rounded-l-lg">
+                      <span className="font-bold font-Montserrat text-sm">
+                        Model:
+                      </span>
+                      <span className="font-semibold font-Montserrat text-sm xl:text-xs text-[#e1ae48]">
+                        {product.translations[language].model}
+                      </span>
+                    </div>
+
+                    {/* Length */}
+                    <div className="bg-[#0d2343] text-white p-1 xl:p-2 flex flex-col items-center">
+                      <span className="font-bold font-Montserrat text-sm">
+                        Length:
+                      </span>
+                      <span className="font-semibold font-Montserrat text-sm text-[#e1ae48]">
+                        {product.translations[language].size}
+                      </span>
+                    </div>
+
+                    {/* Guests */}
+                    <div className="bg-[#0d2343] text-white p-1 xl:p-2 flex flex-col items-center">
+                      <span className="font-bold font-Montserrat text-sm">
+                        Guests:
+                      </span>
+                      <span className="font-semibold font-Montserrat text-sm text-[#e1ae48]">
+                        {product.translations[language].guests}
+                      </span>
+                    </div>
+
+                    {/* Good For */}
+                    <div className="bg-[#e1ae48] text-[#0d2343] xl:w-56 p-1 xl:p-2 flex flex-col items-center xl:rounded-r-lg">
+                      <span className="font-Montserrat text-sm">Per Hour:</span>
+                      <span className="font-semibold font-Montserrat text-sm">
+                        {product.per_hour_price} +VAT
+                      </span>
+                    </div>
                   </div>
 
-                  {/* Length */}
-                  <div className="bg-[#0d2343] text-white p-1 xl:p-2 flex flex-col items-center">
-                    <span className="font-bold font-Montserrat text-sm">
-                      Length:
-                    </span>
-                    <span className="font-semibold font-Montserrat text-sm text-[#e1ae48]">
-                    {product.translations[language].size}
-                    </span>
+                  <div className="flex flex-row justify-between items-center xl:w-[32rem]">
+                    <div>
+                      <h1 className="font-Montserrat font-bold">
+                        Trip inclusions from 3 hours onwards:
+                      </h1>
+                      <ol className="list-disc ml-7 text-xs font-bold">
+                        <li>
+                          {" "}
+                          Hops, Wines, Bubbly Drinks, Coffee, Tea, Water, &
+                          Softdrinks
+                        </li>
+                        <li> Transfer (upon request)</li>
+                        <li> Canapés & Snacks (additional charges apply)</li>
+                      </ol>
+                    </div>
+
+                    <div>
+                      <Link
+                        href={
+                          "https://centaurusint.net/?utm_source=centauruscharter&utm_medium=logo_text&utm_campaign=branding"
+                        }
+                      >
+                        <img
+                          src="./centaurus_link.svg"
+                          className="w-[10rem] xl:mt-3"
+                        />
+                      </Link>
+                    </div>
                   </div>
 
-                  {/* Guests */}
-                  <div className="bg-[#0d2343] text-white p-1 xl:p-2 flex flex-col items-center">
-                    <span className="font-bold font-Montserrat text-sm">
-                      Guests:
-                    </span>
-                    <span className="font-semibold font-Montserrat text-sm text-[#e1ae48]">
-                    {product.translations[language].guests}
-                    </span>
-                  </div>
-
-                  {/* Good For */}
-                  <div className="bg-[#e1ae48] text-[#0d2343] xl:w-56 p-1 xl:p-2 flex flex-col items-center xl:rounded-r-lg">
-                    <span className="font-Montserrat text-sm">Per Hour:</span>
-                    <span className="font-semibold font-Montserrat text-sm">
-                    {product.per_hour_price} +VAT
-                    </span>
+                  <div className="flex flex-row justify-between items-center xl:w-[32rem] mt-3">
+                    <div>
+                      <button className="flex flex-row items-center justify-center mt-4 py-2 w-full md:py-2 md:px-4 rounded-md bg-[#e1ae48] text-[#0d2343] hover:bg-[#0d2343] hover:text-[#e1ae48] font-Montserrat font-bold text-base md:text-sm xl:text-lg transition-all duration-300">
+                        Book Now
+                      </button>
+                    </div>
+                    <div className="flex flex-col items-center justify-center">
+                      <h3 className="font-Montserrat text-blue-500 text-xs text-center mt-4 mr-3">
+                        T&C’s Apply
+                      </h3>
+                    </div>
                   </div>
                 </div>
-
-                <div className="flex flex-row justify-between items-center xl:w-[32rem]">
-                  <div>
-                    <h1 className="font-Montserrat font-bold">
-                      Trip inclusions from 3 hours onwards:
-                    </h1>
-                    <ol className="list-disc ml-7 text-xs font-bold">
-                   <li> Hops, Wines, Bubbly Drinks, Coffee, Tea, Water, & Softdrinks</li>
-       <li> Transfer (upon request)</li>
-       <li> Canapés & Snacks (additional charges apply)</li>
-                    </ol>
-                  </div>
-                 
-                  <div>
-                  <Link href={'https://centaurusint.net/?utm_source=centauruscharter&utm_medium=logo_text&utm_campaign=branding'}>
-                    <img
-                      src="./centaurus_link.svg"
-                      className="w-[10rem] xl:mt-3"
-                    />
-                    </Link>
-                  </div>
-                </div>
-             
-                <div className="flex flex-row justify-between items-center xl:w-[32rem] mt-3">
-                  <div>
-                    
-                    <button className="flex flex-row items-center justify-center mt-4 py-2 w-full md:py-2 md:px-4 rounded-md bg-[#e1ae48] text-[#0d2343] hover:bg-[#0d2343] hover:text-[#e1ae48] font-Montserrat font-bold text-base md:text-sm xl:text-lg transition-all duration-300">
-                      Book Now
-                    </button>
-                  </div>
-                  <div className="flex flex-col items-center justify-center">
-                    <h3 className="font-Montserrat text-blue-500 text-xs text-center mt-4 mr-3">
-                      T&C’s Apply
-                    </h3>
-                  </div>
-                </div>
-              </div>
-            ))}
+              ))}
           </div>
         </div>
       </div>
@@ -476,24 +491,23 @@ export default function Home() {
       </div>
       <WhyChooseUs />
       <div className=" h-[40vh]">
-  {/* Scrollable Background */}
-  <div
-    className="w-full h-[50vh] bg-cover bg-fixed lg:bg-top bg-center"
-    style={{
-      backgroundImage: "url('YachtSun.webp')",
-        // Ensure the background is behind the content
-    }}
-    
-  ></div>
+        {/* Scrollable Background */}
+        <div
+          className="w-full h-[50vh] bg-cover bg-fixed lg:bg-top bg-center"
+          style={{
+            backgroundImage: "url('YachtSun.webp')",
+            // Ensure the background is behind the content
+          }}
+        ></div>
 
-  {/* Fixed Content */}
-</div>
+        {/* Fixed Content */}
+      </div>
 
-<Aboutus />
-<Reviews/>
+      <Aboutus />
+      <Reviews />
 
-<Counters/>
-<LocationCarousel/>
+      <Counters />
+      <LocationCarousel />
     </>
   );
 }
