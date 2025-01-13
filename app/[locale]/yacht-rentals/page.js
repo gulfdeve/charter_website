@@ -64,7 +64,7 @@ const Tabs = () => {
     const currentUrl = typeof window !== "undefined" ? window.location.href : "";
 
     return (
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 py-10 gap-10 xl:px-32 container mx-auto">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 pb-10 gap-10 xl:px-32 container mx-auto">
         {filteredYachts.map((yacht) => (
           <div
             key={yacht.id}
@@ -86,7 +86,7 @@ const Tabs = () => {
             <Link href={`yacht-rentals/${yacht.slug}`}>
               <img
                 src={yacht.image}
-                className="rounded-2xl mt-5 h-[174px] md:h-[300px] object-cover"
+                className="rounded-2xl mt-5 h-[250px] md:h-[300px] w-full object-cover"
                 alt={yacht.title}
               />
             </Link>
@@ -136,7 +136,7 @@ const Tabs = () => {
           LUXURY YACHT RENTALS DUBAI
         </h1>
       </div>
-      <div className="flex justify-center items-center gap-6 text-lg font-semibold py-2 px-2">
+      <div className="flex justify-center items-center gap-6 text-lg font-semibold py-2  md:py-7 px-2">
         {/* Tabs */}
         <button
           className={`${
