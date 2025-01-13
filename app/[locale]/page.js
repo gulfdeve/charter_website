@@ -384,11 +384,12 @@ export default function Home() {
           <div className="">
             <img
               src="/LUXURY YACHT CHARTER.webp"
-              className="xl:w-[160rem] sm:w-[170rem] md:h-[443px] xl:h-[452px] lg:h-[404px]"
+              className="xl:w-[240rem] sm:w-[170rem] lg:w-[160rem] md:h-[443px] xl:h-[452px] lg:h-[404px]"
             />
           </div>
         </div>
-        <div className="flex flex-col items-center sm:items-start sm:justify-start justify-center bg-[#0D2343] px-5 xl:px-32 xl:py-12 py-5 md:h-[443px] xl:w-[230rem] xl:h-[452px] lg:h-[404px]">
+        <div className="flex flex-col items-center sm:items-start sm:justify-start justify-center bg-[#0D2343] px-5 xl:px-32 xl:py-12 py-5 md:h-[443px] xl:w-[395rem] lg:w-[250rem] xl:h-[452px] lg:h-[404px]">
+        
           <h1 className="font-Montserrat text-[#e1ae48] text-center font-bold text-2xl xl:text-3xl py-7">
             LUXURY YACHT RENTALS
           </h1>
@@ -419,7 +420,7 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="flex flex-col items-center sm:items-start sm:justify-start justify-center  bg-[#e1ae48] px-5 xl:px-32 xl:py-12 py-5 md:h-[443px] xl:w-[230rem] xl:h-[452px] lg:h-[404px]">
+        <div className="flex flex-col items-center sm:items-start sm:justify-start justify-center  bg-[#e1ae48] px-5 xl:px-32 xl:py-12 py-5 md:h-[443px] xl:w-[277rem] xl:h-[452px] lg:h-[404px]">
           <h1 className="font-Montserrat text-[#0D2343] text-center font-bold text-2xl xl:text-3xl py-7">
             CUSTOMIZED YACHT TRIPS
           </h1>
@@ -449,7 +450,7 @@ export default function Home() {
             />
           </div>
         </div>
-        <div className="flex flex-col items-center sm:items-start sm:justify-start justify-center bg-[#0D2343] px-5 xl:px-32 xl:py-12 py-5 md:h-[443px] xl:w-[230rem] xl:h-[452px] lg:h-[404px]">
+        <div className="flex flex-col items-center sm:items-start sm:justify-start justify-center bg-[#0D2343] px-5 xl:px-32 xl:py-12 py-5 md:h-[443px] xl:w-[287rem]  xl:h-[452px] lg:h-[404px]">
           <h1 className="font-Montserrat text-[#e1ae48] text-center font-bold text-2xl xl:text-3xl py-7">
             EXCLUSIVE OFFERS
           </h1>
@@ -479,7 +480,7 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="flex flex-col items-center sm:items-start sm:justify-start justify-center  bg-[#e1ae48] px-5 xl:px-32 xl:py-12 py-5 md:h-[443px] xl:w-[230rem] xl:h-[452px] lg:h-[404px]">
+        <div className="flex flex-col items-center sm:items-start sm:justify-start justify-center  bg-[#e1ae48] px-5 xl:px-32 xl:py-12 py-5 md:h-[443px] xl:w-[250rem] xl:h-[452px] lg:h-[404px]">
           <h1 className="font-Montserrat text-[#0D2343] text-center font-bold text-2xl xl:text-3xl py-7">
             WATER SPORTS ADD ON’s
           </h1>

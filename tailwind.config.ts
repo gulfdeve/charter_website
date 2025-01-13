@@ -8,6 +8,9 @@ export default {
   ],
   theme: {
     extend: {
+      textShadow: {
+        inner: 'inset 2px 2px 4px rgba(0, 0, 0, 0.6)', // Example inner shadow
+      },
       screens: {
         'xxs': '320px',
         'xs': '375px',

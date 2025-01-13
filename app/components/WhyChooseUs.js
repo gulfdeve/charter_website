@@ -2,7 +2,7 @@ import React from "react";
 
 const WhyChooseUs = () => {
   return (
-    <div className="bg-white h-auto w- bg-fixed container mx-auto">
+    <div className="bg-white h-auto  bg-fixed container mx-auto py-10">
       <h1 className="font-Montserrat text-[#848484] text-center font-bold text-3xl pt-12 pb-7">
         WHY CHOOSE CENTARUS CHARTER
       </h1>
