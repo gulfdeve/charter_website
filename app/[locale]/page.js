@@ -275,13 +275,17 @@ export default function Home() {
                   key={product.id}
                   className="flex flex-col border border-gray-400 xl:p-10 p-5 rounded-lg"
                 >
+                  <Link  href={`/yacht-rentals/${product.slug}`}>
                   <h1 className="font-Montserrat xl:text-4xl text-3xl font-bold">
                     {product.translations[language].name_of_yacht}
                   </h1>
+                  </Link>
+                  <Link  href={`/yacht-rentals/${product.slug}`}>
                   <img
                     src={`https://www.centauruscharter.com/product/images/${product.image}`}
                     className="rounded-lg xl:w-[32rem] w-[25rem] mt-3"
                   />
+                  </Link>
 
                   <div className="grid grid-cols-2 lg:grid-cols-4 md:grid-cols-1 items-center gap-0 rounded-lg lg:w-[25rem] xl:w-[23rem] shadow-md mb-7 mt-5">
                     {/* Model */}
@@ -355,9 +359,14 @@ export default function Home() {
 
                   <div className="flex flex-row justify-between items-center xl:w-[32rem] mt-3">
                     <div>
+                    <a
+                href={`https://fareharbor.com/embeds/book/centauruscharter/items/${product.fareharbor_id}/?full-items=yes&flow=645487&back=${encodeURIComponent(
+                
+                )}`}>
                       <button className="flex flex-row items-center justify-center mt-4 py-2 w-full md:py-2 md:px-4 rounded-md bg-[#e1ae48] text-[#0d2343] hover:bg-[#0d2343] hover:text-[#e1ae48] font-Montserrat font-bold text-base md:text-sm xl:text-lg transition-all duration-300">
                         Book Now
                       </button>
+                      </a>
                     </div>
                     <div className="flex flex-col items-center justify-center">
                       <h3 className="font-Montserrat text-blue-500 text-xs text-center mt-4 mr-3">

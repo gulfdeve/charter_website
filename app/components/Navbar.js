@@ -160,7 +160,9 @@ export default function Navbar() {
                       : "w-0 opacity-0 absolute"
                   }`}
                 >
+                  <Link href={"/"}>
                   <img src="./CentaurusLogoWhite.png" alt="Logo" />
+                  </Link>
                 </li>
 
                 {/* PRIVATE YACHTS with Dropdown */}
