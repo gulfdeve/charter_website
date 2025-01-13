@@ -100,7 +100,9 @@ body {
   align-items: center;
 }
 
-
+.bg-black-gradient{
+  background: linear-gradient(0deg, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 100%);
+}
 
 .counter-container {
   display: flex;
