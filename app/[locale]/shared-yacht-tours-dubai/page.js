@@ -51,7 +51,7 @@ const Page = () => {
     <>
       <Videosharedtours />
       <div className="bg-white h-full w-full">
-        <div className="flex flex-col items-center justify-center pb-10 pt-20 ">
+        <div className="flex flex-col items-center justify-center pb-10 pt-20 container mx-auto ">
           <h1 className="font-Montserrat text-primary-blue text-center font-bold text-xl lg:text-3xl pb-4">
             SHARED YACHT TOURS IN DUBAI
           </h1>

@@ -101,7 +101,7 @@ body {
 }
 
 .bg-black-gradient{
-  background: linear-gradient(0deg, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 100%);
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.9) 30%, rgba(0, 0, 0, 0) 100%);
 }
 
 .counter-container {

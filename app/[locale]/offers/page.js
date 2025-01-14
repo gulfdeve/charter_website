@@ -43,7 +43,7 @@ const page = () => {
 
   return (
     <>
-      <div className="bg-white h-full w-full">
+      <div className="bg-white h-full w-full container mx-auto">
         <div className="flex flex-col items-center justify-center py-10 ">
           <h1 className="font-Montserrat text-[#0D2343] text-center font-bold text-4xl pb-4">
             YACHT OFFERS AND DEALS IN DUBAI

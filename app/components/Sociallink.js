@@ -4,10 +4,10 @@ import Link from 'next/link';  // Import Next.js Link component
 
 const Sociallink = () => {
   return (
-    <div className="bg-[#1B498F] w-full h-[20rem] lg:h-[8rem] flex flex-col lg:flex-row items-center justify-center">
+    <div className="bg-[#1B498F] w-full h-[20rem] lg:h-[8rem] flex flex-col lg:flex-row items-center justify-center ">
       {/* Mobile Version */}
-      <div className="block lg:hidden">
-        <div className="flex flex-row items-center justify-center gap-5">
+      <div className="block lg:hidden ">
+        <div className="flex flex-row items-center justify-center gap-5 container mx-auto">
           <Link href="https://www.facebook.com" passHref target="_blank">
             <Image src="/Facebook.png" alt="Facebook" width={26} height={26} />
           </Link>
@@ -49,7 +49,7 @@ const Sociallink = () => {
 
       {/* Desktop Version */}
       <div className="lg:block hidden">
-        <div className="flex flex-row items-center justify-between lg:px-12 gap-20">
+        <div className="flex flex-row items-center justify-between lg:px-12 gap-20 container mx-auto">
           <div className="flex flex-col items-start justify-center">
             <h1 className="font-Montserrat text-white lg:text-sm xl:text-lg font-bold pt-2.5">
               Amazing Offers just for you

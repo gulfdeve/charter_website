@@ -131,7 +131,7 @@ const Tabs = () => {
 
   return (
     <div className="w-full bg-white">
-      <div className="flex flex-col items-center justify-center pt-10 ">
+      <div className="flex flex-col items-center justify-center pt-10 container mx-auto ">
         <h1 className="font-Montserrat text-[#0D2343] text-center font-bold text-4xl pb-4">
           LUXURY YACHT RENTALS DUBAI
         </h1>

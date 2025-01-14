@@ -1,1 +1,5 @@
-<svg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'><path stroke='rgba(255, 255, 255, 0.5)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/></svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" id="Hamburger">
+  <g fill="#ffffff" class="color134563 svgShape">
+    <path d="M8.2 13h47.5v6.3H8.2zM8.2 28.8h47.5v6.4H8.2zM8.2 44.7h47.5V51H8.2z" fill="#000000" class="color000000 svgShape"></path>
+  </g>
+</svg>

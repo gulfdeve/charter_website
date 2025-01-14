@@ -1,18 +1,18 @@
 "use client";
 import { useLocale, useTranslations } from "next-intl";
-import { useEffect, useState } from "react";
+import { useEffect, useState,useRef } from "react";
 import { FaPhoneAlt } from "react-icons/fa";
 import { IoLogoWhatsapp } from "react-icons/io5";
 import { MdKeyboardArrowDown, MdMail } from "react-icons/md";
 import { useData } from "../context/DataContext";
 import { useRouter, usePathname, Link } from "../i18n/routing";
-
+import { GiHamburgerMenu } from "react-icons/gi";
 export default function Navbar() {
   const t = useTranslations();
   const locale = useLocale();
   const pathname = usePathname();
   const router = useRouter();
-
+  const [istheDropdownOpen, setIsDropdownOpen] = useState(false);
   const [isDropdownOpen, setDropdownOpen] = useState(false);
   const [isSticky, setSticky] = useState(false);
   const [mobileDropdownOpen, setMobileDropdownOpen] = useState(false);
@@ -44,6 +44,26 @@ export default function Navbar() {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
+   const languages = [
+    { code: "en", name: "English", flag: "/uk.svg" },
+    { code: "ar", name: "Arabic", flag: "/uae.svg" },
+    { code: "ru", name: "Russian", flag: "/ru.svg" },
+  ];
+
+  const currentLanguage = languages.find((lang) => lang.code === locale);
+    const dropdownRef = useRef(null);
+
+ useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+        setIsDropdownOpen(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
+
   return (
     <>
       {/* First Navbar */}
@@ -81,54 +101,53 @@ export default function Navbar() {
             </div>
             {/* Language Dropdown */}
             <div
-  className="relative"
-  onMouseEnter={() => setDropdownOpen(true)}
-  onMouseLeave={() => setDropdownOpen(false)}
->
-  {/* Trigger */}
-  <div className="p-3 rounded text-black font-Montserrat cursor-pointer scale-105 flex items-center gap-2">
-    <img
-      src={
-        locale === "en"
-          ? "/uk.svg"
-          : locale === "ar"
-          ? "/uae.svg"
-          : locale === "ru"
-          ? "/ru.svg"
-          : ""
-      }
-      alt={locale}
-      className="w-4 h-4"
-    />
-    {locale.toUpperCase()}
-  </div>
-  {/* Dropdown Menu */}
-  {isDropdownOpen && (
-    <ul className="absolute right-0 w-32 bg-white border rounded-md shadow-lg z-20">
-      <li
-        onClick={() => handleLanguageChange("en")}
-        className="flex items-center gap-2 p-2 cursor-pointer hover:bg-gray-200"
-      >
-        <img src="/uk.svg" alt="English" className="w-4 h-4" />
-        English
-      </li>
-      <li
-        onClick={() => handleLanguageChange("ar")}
-        className="flex items-center gap-2 p-2 cursor-pointer hover:bg-gray-200"
-      >
-        <img src="/uae.svg" alt="Arabic" className="w-4 h-4" />
-        Arabic
-      </li>
-      <Link className="bg-gray-300" href={pathname} locale="ru">
-        <li className="flex items-center gap-2 p-2 cursor-pointer hover:bg-gray-200">
-          <img src="/ru.svg" alt="Russian" className="w-4 h-4" />
-          Russian
-        </li>
-      </Link>
-    </ul>
-  )}
-</div>
-
+              className="relative"
+              onMouseEnter={() => setDropdownOpen(true)}
+              onMouseLeave={() => setDropdownOpen(false)}
+            >
+              {/* Trigger */}
+              <div className="p-3 rounded text-black font-Montserrat cursor-pointer scale-105 flex items-center gap-2">
+                <img
+                  src={
+                    locale === "en"
+                      ? "/uk.svg"
+                      : locale === "ar"
+                      ? "/uae.svg"
+                      : locale === "ru"
+                      ? "/ru.svg"
+                      : ""
+                  }
+                  alt={locale}
+                  className="w-4 h-4"
+                />
+                {locale.toUpperCase()}
+              </div>
+              {/* Dropdown Menu */}
+              {isDropdownOpen && (
+                <ul className="absolute right-0 w-32 bg-white border rounded-md shadow-lg z-20">
+                  <li
+                    onClick={() => handleLanguageChange("en")}
+                    className="flex items-center gap-2 p-2 cursor-pointer hover:bg-gray-200"
+                  >
+                    <img src="/uk.svg" alt="English" className="w-4 h-4" />
+                    English
+                  </li>
+                  <li
+                    onClick={() => handleLanguageChange("ar")}
+                    className="flex items-center gap-2 p-2 cursor-pointer hover:bg-gray-200"
+                  >
+                    <img src="/uae.svg" alt="Arabic" className="w-4 h-4" />
+                    Arabic
+                  </li>
+                  <Link className="bg-gray-300" href={pathname} locale="ru">
+                    <li className="flex items-center gap-2 p-2 cursor-pointer hover:bg-gray-200">
+                      <img src="/ru.svg" alt="Russian" className="w-4 h-4" />
+                      Russian
+                    </li>
+                  </Link>
+                </ul>
+              )}
+            </div>
           </div>
         </nav>
 
@@ -161,7 +180,7 @@ export default function Navbar() {
                   }`}
                 >
                   <Link href={"/"}>
-                  <img src="./CentaurusLogoWhite.png" alt="Logo" />
+                    <img src="./CentaurusLogoWhite.png" alt="Logo" />
                   </Link>
                 </li>
 
@@ -205,18 +224,18 @@ export default function Navbar() {
 
                 {/* BUY A YACHT */}
                 <Link href={`/yachts-for-sale-dubai`}>
-                  <li className="pr-5">{t('navbar.buy-a-yacht')}</li>
+                  <li className="pr-5">{t("navbar.buy-a-yacht")}</li>
                 </Link>
                 {/* SHARED TOURS */}
                 <Link href={`/shared-yacht-tours-dubai`}>
-                  <li className="pr-5">{t('navbar.shared-tours')}</li>
+                  <li className="pr-5">{t("navbar.shared-tours")}</li>
                 </Link>
                 {/* EXPERIENCES with Dropdown */}
                 <li className="relative group">
                   <span className="flex items-center justify-between cursor-pointer p-5 gap-1">
-                    <Link href={`/yacht-trips`}>{t('navbar.experiences')}</Link>
+                    <Link href={`/yacht-trips`}>{t("navbar.experiences")}</Link>
                     <svg
-                      className="w-5 h-5 xl:w-5 xl:w-5 lg:w-4 lg:h-4 transform group-hover:rotate-180 transition-transform duration-300"
+                      className="w-5 h-5 lg:w-4 lg:h-4 transform group-hover:rotate-180 transition-transform duration-300"
                       xmlns="http://www.w3.org/2000/svg"
                       fill="none"
                       viewBox="0 0 24 24"
@@ -249,14 +268,14 @@ export default function Navbar() {
 
                 {/* OFFERS */}
                 <Link href={`/offers`}>
-                  <li className="pr-5">{t('navbar.offers')}</li>
+                  <li className="pr-5">{t("navbar.offers")}</li>
                 </Link>
                 <Link href={`/watersports`}>
-                  <li className="pr-5">{t('navbar.water-sports')}</li>
+                  <li className="pr-5">{t("navbar.water-sports")}</li>
                 </Link>
                 {/* NEWYEAR */}
                 <Link href={`/newyear`}>
-                  <li>{t('navbar.new-year')}</li>
+                  <li>{t("navbar.new-year")}</li>
                 </Link>
               </ul>
             </div>
@@ -277,31 +296,54 @@ export default function Navbar() {
             <div className="flex items-center gap-2">
               {/* WhatsApp Icon */}
               <Link href="https://wa.me/1234567890" passHref>
-                <IoLogoWhatsapp className="text-blue-500 w-6 h-6" />
+                <img src="/whatsapp.svg" className="text-blue-500 w-6 h-6" />
               </Link>
 
               {/* Phone Icon */}
               <Link href="tel:1234567890" passHref>
-                <FaPhoneAlt className="text-blue-500 w-5 h-5" />
+                <FaPhoneAlt className="text-white w-5 h-5" />
               </Link>
 
               {/* Language Selector */}
-              <select
-                value={locale}
-                onChange={(e) => handleLanguageChange(e.target.value)}
-                className="p-1 rounded text-white text-xs font-Montserrat bg-blue-500"
-              >
-                <option value="en">English</option>
-                <option value="ar">Arabic</option>
-                <option value="ru">Russian</option>
-              </select>
+          <div className="relative" ref={dropdownRef}>
+      {/* Trigger Button */}
+      <button
+        onClick={() => setIsDropdownOpen((prev) => !prev)}
+        className="flex items-center gap-2 p-1 rounded text-white text-sm font-Montserrat"
+      >
+        <img
+          src={currentLanguage?.flag}
+          alt={currentLanguage?.name}
+          className="w-6 h-6"
+        />
+      </button>
 
+      {/* Dropdown Menu */}
+      {istheDropdownOpen && (
+        <ul className="absolute -right-14 top-11 w-48 text-center bg-white border  font-bold text-primary-blue font-Montserrat shadow-lg z-20">
+          {languages.map((lang) => (
+            <li
+              key={lang.code}
+              onClick={() => {
+                handleLanguageChange(lang.code);
+                setIsDropdownOpen(false);
+              }}
+              className={`flex justify-center items-center gap-2 p-2 cursor-pointer  hover:bg-gray-200 ${
+                lang.code === locale ? "bg-gray-100 font-bold " : ""
+              }`}
+            >
+              {lang.name.toUpperCase()} - {lang.code.toUpperCase()}
+            </li>
+          ))}
+        </ul>
+      )}
+    </div>
               {/* Hamburger Menu */}
               <div
                 className="w-8 cursor-pointer"
                 onClick={() => setMobileDropdownOpen(!mobileDropdownOpen)}
               >
-                <img src="/download.svg" alt="Menu" />
+               <GiHamburgerMenu size={30} className="text-white" />
               </div>
             </div>
           </div>
@@ -319,7 +361,12 @@ export default function Navbar() {
                     className="flex justify-between items-center"
                     onClick={() => toggleSubmenu(0)}
                   >
-                    <Link href={`/yacht-rentals`}>{t('navbar.private-yachts')}</Link>
+                    <Link
+                      href={`/yacht-rentals`}
+                      onClick={() => setMobileDropdownOpen(false)}
+                    >
+                      {t("navbar.private-yachts")}
+                    </Link>
                     <span className="text-black">
                       <MdKeyboardArrowDown />
                     </span>
@@ -331,8 +378,9 @@ export default function Navbar() {
                           <Link
                             href={`/yacht-rentals/${product.slug}`}
                             key={product.id}
+                            onClick={() => setMobileDropdownOpen(false)}
                           >
-                            <li className="cursor-pointer text-xs font-normal text-gray-500 font-Montserrat">
+                            <li className="cursor-pointer text-sm mt-2 font-normal text-gray-500 font-Montserrat">
                               {product.title}
                             </li>
                           </Link>
@@ -340,14 +388,20 @@ export default function Navbar() {
                     </ul>
                   )}
                 </li>
-                <Link href={`/yacht-sale-for-dubai`}>
+                <Link
+                  href={`/yacht-sale-for-dubai`}
+                  onClick={() => setMobileDropdownOpen(false)}
+                >
                   <li className="font-bold cursor-pointer hover:text-blue-500">
-                    {t('navbar.buy-a-yacht')}
+                    {t("navbar.buy-a-yacht")}
                   </li>
                 </Link>
-                <Link href={`shared-yacht-tours-dubai`}>
+                <Link
+                  href={`/shared-yacht-tours-dubai`}
+                  onClick={() => setMobileDropdownOpen(false)}
+                >
                   <li className="font-bold cursor-pointer hover:text-blue-500">
-                    {t('navbar.shared-tours')}
+                    {t("navbar.shared-tours")}
                   </li>
                 </Link>
                 <li className="font-bold cursor-pointer">
@@ -355,7 +409,12 @@ export default function Navbar() {
                     className="flex justify-between items-center"
                     onClick={() => toggleSubmenu(1)}
                   >
-                    <Link href={`/yacht-trips`}>{t('navbar.experiences')}</Link>
+                    <Link
+                      href={`/yacht-trips`}
+                      onClick={() => setMobileDropdownOpen(false)}
+                    >
+                      {t("navbar.experiences")}
+                    </Link>
                     <span className="text-black">
                       <MdKeyboardArrowDown />
                     </span>
@@ -367,8 +426,9 @@ export default function Navbar() {
                           <Link
                             href={`/yacht-trips/${experience.slug}`}
                             key={experience.id}
+                            onClick={() => setMobileDropdownOpen(false)}
                           >
-                            <li className="cursor-pointer text-xs font-normal text-gray-500 font-Montserrat">
+                            <li className="cursor-pointer text-sm mt-2 font-normal text-gray-500 font-Montserrat">
                               {experience.translations[locale].title}
                             </li>
                           </Link>
@@ -376,14 +436,20 @@ export default function Navbar() {
                     </ul>
                   )}
                 </li>
-                <Link href={`/offers`}>
+                <Link
+                  href={`/offers`}
+                  onClick={() => setMobileDropdownOpen(false)}
+                >
                   <li className="font-bold cursor-pointer hover:text-blue-500">
-                    {t('navbar.offers')}
+                    {t("navbar.offers")}
                   </li>
                 </Link>
-                <Link href={`/newyear`}>
+                <Link
+                  href={`/newyear`}
+                  onClick={() => setMobileDropdownOpen(false)}
+                >
                   <li className="font-bold cursor-pointer hover:text-blue-500">
-                    {t('navbar.new-year')}
+                    {t("navbar.new-year")}
                   </li>
                 </Link>
               </ul>

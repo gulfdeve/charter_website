@@ -93,20 +93,19 @@ export default function YachtCarousal() {
               {/* Slides */}
               {!loading &&
                 data?.products?.map((product) => (
-                  <div key={product.id} className="embla__slide1 p-4">
-                    <div className="relative bg-gray-200 shadow-lg space-y-5">
+                  <div key={product.id} className="embla__slide1  p-4">
+                    <div className="relative bg-transparent shadow-lg rounded-lg overflow-hidden space-y-5">
                       <img
                         src={`https://www.centauruscharter.com/product/images/${product.image}`}
-                        className="h-[27rem]"
+                        className="h-[27rem] rounded-lg"
                       />
-                      <div className="absolute bottom-0 left-0 w-full bg-black-gradient p-4 text-white">
+                      <div className="absolute bottom-0 left-0 w-full bg-black-gradient p-4 text-white rounded-lg">
                         <h3 className="text-4xl font-Montserrat font-bold text-left mb-3">
                           {product.translations[language].name_of_yacht}
                         </h3>
                         <p className="text-md font-Montserrat font-semibold text-left mb-3">
                           {product.translations[language].slider_text}
                         </p>
-
                         <Link href={`/yacht-rentals/${product.slug}`}>
                           <button className="yellow-solid-button">
                             Book Now
