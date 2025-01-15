@@ -98,7 +98,7 @@ const Reviews = () => {
     </h1>
   </div>
 
-<div className="flex flex-row items-stretch justify-center container mx-auto relative gap-14">
+<div className="flex flex-row items-stretch justify-center container mx-auto relative gap-7">
   {/* TripAdvisor Container */}
  <div className="pt-[3.3rem]">
   <div className="bg-white p-6 rounded-md shadow-md w-44   h-[225px] z-20 flex flex-col justify-center items-center">

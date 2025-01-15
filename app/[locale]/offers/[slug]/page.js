@@ -1,6 +1,18 @@
-import React from "react";
+'use client'
+import React, { useState } from "react";
 import { FaWhatsapp } from "react-icons/fa";
+import Modal2 from "@/app/components/Modal2";
+
 const page = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const handlequote = () => {
+    setIsModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+  };
   return (
     <>
       <div className="felx flex-col items-center justify-center px-4 xl:px-44">
@@ -44,12 +56,16 @@ const page = () => {
               <FaWhatsapp size={20} />
               WHATSAPP US
             </button>
-            <button className="flex items-center justify-center gap-2 px-4 py-3 bg-primary-blue text-primary-yellow border border-primary-yellow-dark  font-bold rounded-md hover:bg-primary-blue-2 transition">
+            <button 
+             onClick={handlequote}
+            className="flex items-center justify-center gap-2 px-4 py-3 bg-primary-blue text-primary-yellow border border-primary-yellow-dark  font-bold rounded-md hover:bg-primary-blue-2 transition">
               GET A QUOTE
             </button>
           </div>
         </div>
       </div>
+      <Modal2 isModalOpen={isModalOpen} closeModal={closeModal} />
+    
     </>
   );
 };

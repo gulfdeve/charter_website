@@ -11,7 +11,7 @@ import { NextIntlClientProvider } from "next-intl";
 import { getLocale, getMessages } from "next-intl/server";
 import { routing } from "../i18n/routing";
 import { notFound } from "next/navigation";
-
+import 'react-phone-input-2/lib/style.css';
 const montserrat = Montserrat({
   subsets: ["latin"],
   variable: "--font-montserrat",

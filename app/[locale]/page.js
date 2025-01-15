@@ -1,12 +1,12 @@
 "use client";
 import { useLocale, useTranslations } from "next-intl";
-import { useRef, useEffect } from "react";
+import { useRef, useEffect ,useState} from "react";
 import EmblaCarousel from "embla-carousel";
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 import WhyChooseUs from "@/app/components/WhyChooseUs";
 import Aboutus from "@/app/components/Aboutus";
 import Reviews from "@/app/components/Reviews";
-
+import Modal from "@/app/components/Modal"
 import Counters from "@/app/components/Counters";
 import LocationCarousel from "@/app/components/LocationCarousel";
 import Video from "@/app/components/Video";
@@ -17,93 +17,19 @@ import { useRouter, usePathname, Link } from "../i18n/routing";
 export default function Home() {
   const t = useTranslations();
   const emblaRef = useRef(null);
+  const [isModalVisible, setIsModalVisible] = useState(false);
   const emblaInstance = useRef(null);
   const { data, loading, error } = useData();
   const { language } = useLanguage();
-  const slides = [
-    {
-      image: "/yacht-rentals/56ftLagoona1.jpg", // Image path
-      title: "Luxury Yacht 1",
-      description:
-        "Experience ultimate comfort and luxury on our 56ft Lagoona.",
-    },
-    {
-      image: "/yacht-rentals/56ftLagoona2.jpg",
-      title: "Luxury Yacht 2",
-      description: "Relax on the stunning coastline with top-tier amenities.",
-    },
-    {
-      image: "/yacht-rentals/56ftLagoona3.jpg",
-      title: "Luxury Yacht 3",
-      description: "Unwind and enjoy the best sailing experience.",
-    },
-    {
-      image: "/yacht-rentals/56ftLagoona4.jpg",
-      title: "Luxury Yacht 4",
-      description: "A perfect blend of luxury and performance.",
-    },
-    {
-      image: "/yacht-rentals/56ftLagoona5.jpg",
-      title: "Luxury Yacht 5",
-      description: "Indulge in world-class service and stunning views.",
-    },
-  ];
-  const yachtData = [
-    {
-      title: "56 Ft Yacht - Lagoona",
-      image: "homepage.webp",
-      model: "Majesty",
-      length: "56 Feet",
-      guests: 21,
-      goodFor: "Birthday/Parties",
-      inclusions: [
-        "Hops, Wines, Bubbly Drinks, Coffee, Tea, Water, & Softdrinks",
-        "Transfer (upon request)",
-        "Canapés & Snacks (additional charges apply)",
-      ],
-    },
-    {
-      title: "56 Ft Yacht - Lagoona",
-      image: "homepage.webp",
-      model: "Majesty",
-      length: "56 Feet",
-      guests: 21,
-      goodFor: "Birthday/Parties",
-      inclusions: [
-        "Hops, Wines, Bubbly Drinks, Coffee, Tea, Water, & Softdrinks",
-        "Transfer (upon request)",
-        "Canapés & Snacks (additional charges apply)",
-      ],
-    },
-    {
-      title: "56 Ft Yacht - Lagoona",
-      image: "homepage.webp",
-      model: "Majesty",
-      length: "56 Feet",
-      guests: 21,
-      goodFor: "Birthday/Parties",
-      inclusions: [
-        "Hops, Wines, Bubbly Drinks, Coffee, Tea, Water, & Softdrinks",
-        "Transfer (upon request)",
-        "Canapés & Snacks (additional charges apply)",
-      ],
-    },
-    {
-      title: "56 Ft Yacht - Lagoona",
-      image: "homepage.webp",
-      model: "Majesty",
-      length: "56 Feet",
-      guests: 21,
-      goodFor: "Birthday/Parties",
-      inclusions: [
-        "Hops, Wines, Bubbly Drinks, Coffee, Tea, Water, & Softdrinks",
-        "Transfer (upon request)",
-        "Canapés & Snacks (additional charges apply)",
-      ],
-    },
 
-    // Add more yachts as needed
-  ];
+  useEffect(() => {
+    // Show modal when the page loads
+    setIsModalVisible(true);
+  }, []);
+
+  const closeModal = () => {
+    setIsModalVisible(false);
+  };
 
   useEffect(() => {
     if (emblaRef.current) {
@@ -123,6 +49,9 @@ export default function Home() {
 
   return (
     <>
+    <div>
+    <Modal show={isModalVisible} onClose={closeModal} />
+    
       <div>
         <Video />
       </div>
@@ -518,6 +447,7 @@ export default function Home() {
 
       <Counters />
       <LocationCarousel />
+      </div>
     </>
   );
 }
