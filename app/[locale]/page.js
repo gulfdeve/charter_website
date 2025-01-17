@@ -12,6 +12,7 @@ import LocationCarousel from "@/app/components/LocationCarousel";
 import Video from "@/app/components/Video";
 import { useData } from "@/app/context/DataContext";
 import { useLanguage } from "@/app/context/LanguageContext";
+import BookNowButton from "@/app/components/BookNowButton"
 // import Link from "next/link";
 import { useRouter, usePathname, Link } from "../i18n/routing";
 export default function Home() {
@@ -288,14 +289,16 @@ export default function Home() {
 
                   <div className="flex flex-row justify-between items-center xl:w-[32rem] mt-3">
                     <div>
+                   
+
                     <a
-                href={`https://fareharbor.com/embeds/book/centauruscharter/items/${product.fareharbor_id}/?full-items=yes&flow=645487&back=${encodeURIComponent(
-                
-                )}`}>
-                      <button className="flex flex-row items-center justify-center mt-4 py-2 w-full md:py-2 md:px-4 rounded-md bg-[#e1ae48] text-[#0d2343] hover:bg-[#0d2343] hover:text-[#e1ae48] font-Montserrat font-bold text-base md:text-sm xl:text-lg transition-all duration-300">
-                        Book Now
-                      </button>
-                      </a>
+  href={`https://fareharbor.com/embeds/book/centauruscharter/items/${product.fareharbor_id}/?full-items=yes&flow=645487`}
+  target="_self"
+  rel="noopener noreferrer"
+>
+  Book Now
+</a>
+
                     </div>
                     <div className="flex flex-col items-center justify-center">
                       <h3 className="font-Montserrat text-blue-500 text-xs text-center mt-4 mr-3">

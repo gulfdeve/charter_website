@@ -168,3 +168,18 @@ body {
   padding: 20px;
 }
 
+/* Modal Animations */
+.modal-container {
+  opacity: 0;
+  transform: translateY(-50px);
+}
+
+.modal-container.fade-slide-down {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.modal-container.fade-slide-up {
+  opacity: 0;
+  transform: translateY(50px);
+}

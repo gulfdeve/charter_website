@@ -9,6 +9,8 @@ import { useLanguage } from "@/app/context/LanguageContext";
 import Route from "@/app/components/Route";
 import { use } from "react";
 import YachtCarousal from "@/app/components/YachtCarousel";
+import { useLocale, useTranslations } from "next-intl";
+
 
 export default function Home({ params }) {
   // Get the router object
@@ -19,7 +21,7 @@ export default function Home({ params }) {
   const [isLoading, setIsLoading] = useState(true);
   const [activeIndex, setActiveIndex] = useState(0);
   const thumbnailRef = useRef(null);
-  const { language } = useLanguage();
+  const locale = useLocale();
   useEffect(() => {
     if (thumbnailRef.current) {
       const thumbnails = thumbnailRef.current.children;
@@ -70,21 +72,21 @@ export default function Home({ params }) {
   }
 
   const yachtDetails = [
-    { label: "Size", value: product.translations[language].size },
-    { label: "Decks", value: product.translations[language].decks },
-    { label: "Capacity", value: product.translations[language].maximum_guest },
+    { label: "Size", value: product.translations?.[locale]?.size },
+    { label: "Decks", value: product.translations?.[locale]?.decks },
+    { label: "Capacity", value: product.translations?.[locale]?.maximum_guest },
     { label: "Duration", value: "Minimum 1 Hour" },
-    { label: "Cabin", value: product.translations[language].cabin },
+    { label: "Cabin", value: product.translations?.[locale]?.cabin },
     {
       label: "Kitchen Equipment",
-      value: product.translations[language].kitchen_equipment,
+      value: product.translations?.[locale]?.kitchen_equipment,
     },
     {
       label: "Music System",
-      value: product.translations[language].music_system,
+      value: product.translations?.[locale]?.music_system,
     },
-    { label: "No of Staff", value: product.translations[language].no_of_staff },
-    { label: "Location", value: product.translations[language].location },
+    { label: "No of Staff", value: product.translations?.[locale]?.no_of_staff },
+    { label: "Location", value: product.translations?.[locale]?.location },
     {
       label: "Extras",
       value: "Drinks Included (Bubbly drinks, Soft drinks, Coffee & Water)",
@@ -95,7 +97,7 @@ export default function Home({ params }) {
       <div className="max-w-7xl mx-auto p-5 ">
         {/* Title */}
         <h1 className="text-4xl font-Montserrat font-bold text-center mb-4 mt-5">
-          {product.translations[language].name_of_yacht}
+          {product.translations?.[locale]?.name_of_yacht}
         </h1>
         <p className="text-xl font-Montserrat  text-center mb-4">
           Dubai Luxury Yacht
@@ -192,21 +194,21 @@ export default function Home({ params }) {
           <div className="bg-[#0d2343] text-white p-2 flex flex-col items-center ">
             <span className="font-bold font-Montserrat text-sm ">Model:</span>
             <span className="font-semibold font-Montserrat text-sm text-[#e1ae48] xl:text-xl">
-              {product.translations[language].model}
+              {product.translations?.[locale]?.model}
             </span>
           </div>
           {/* Length */}
           <div className="bg-[#0d2343] text-white p-2 flex flex-col items-center">
             <span className="font-bold font-Montserrat text-sm">Length:</span>
             <span className="font-semibold font-Montserrat text-sm text-[#e1ae48] xl:text-xl">
-              {product.translations[language].size}
+              {product.translations?.[locale]?.size}
             </span>
           </div>
           {/* Guests */}
           <div className="bg-[#0d2343] text-white p-2 flex flex-col items-center">
             <span className="font-bold font-Montserrat text-sm">Guests:</span>
             <span className="font-semibold font-Montserrat text-sm text-[#e1ae48] xl:text-xl">
-              {product.translations[language].guests}
+              {product.translations?.[locale]?.guests}
             </span>
           </div>
           {/* Good For */}

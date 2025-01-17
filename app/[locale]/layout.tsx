@@ -11,6 +11,7 @@ import { NextIntlClientProvider } from "next-intl";
 import { getLocale, getMessages } from "next-intl/server";
 import { routing } from "../i18n/routing";
 import { notFound } from "next/navigation";
+import {FareHarborProvider} from "@/app/context/FareHarborContext"
 import 'react-phone-input-2/lib/style.css';
 const montserrat = Montserrat({
   subsets: ["latin"],
@@ -45,7 +46,9 @@ export default async function RootLayout({
           <DataProvider>
             <LanguageProvider>
               <Navbar />
+              <FareHarborProvider>
               {children}
+              </FareHarborProvider>
               <Sociallink />
               <FirstFooter />
               <SecondFooter />

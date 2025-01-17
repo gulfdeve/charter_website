@@ -4,13 +4,15 @@ import Link from "next/link";
 import { useLanguage } from "@/app/context/LanguageContext";
 import { useEffect, useState } from "react";
 import { useData } from "@/app/context/DataContext";
+import { useLocale, useTranslations } from "next-intl";
 
 const Tabs = () => {
   const [activeTab, setActiveTab] = useState("allYachts");
   const [yachts, setYachts] = useState([]);
-  const [isLoading, setIsLoading] = useState(true);
+
   const { language } = useLanguage();
   const { data, loading, error } = useData();
+  const locale = useLocale();
 
   const handleTabClick = (tab) => {
     setActiveTab(tab);
@@ -33,11 +35,11 @@ const Tabs = () => {
         return {
           id: item.id,
           image: `https://www.centauruscharter.com/product/images/${item.image}`, // Adjust image path if needed
-          title: item.translations[language].name_of_yacht,
+          title: item.translations?.[locale]?.name_of_yacht,
           slug: item.slug,
           fareharbor_id: item.fareharbor_id,
-          length: item.translations[language].size,
-          guests: item.translations[language].guests, // Example of adding guests dynamically
+          length: item.translations?.[locale]?.size,
+          guests: item.translations?.[locale]?.guests, // Example of adding guests dynamically
           price: item.per_hour_price,
           category,
         };
