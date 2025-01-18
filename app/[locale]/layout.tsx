@@ -1,6 +1,7 @@
 import { Montserrat } from "next/font/google";
 import "../globals.css";
 import Navbar from "@/app/components/Navbar";
+import FareHarborLoader from '@/app/components/FareHarborLoader';
 import { LanguageProvider } from "../context/LanguageContext";
 import { DataProvider } from "../context/DataContext";
 import Sociallink from "@/app/components/Sociallink";
@@ -53,6 +54,7 @@ export default async function RootLayout({
               <FirstFooter />
               <SecondFooter />
               <CopyrightFooter />
+              <FareHarborLoader />
             </LanguageProvider>
           </DataProvider>
         </NextIntlClientProvider>

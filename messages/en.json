@@ -14,5 +14,9 @@
     "home": "Home",
     "about": "About",
     "yacht-rentals": "Yacht Rentals"
+  },
+  "footer": {
+    "reach-out-to-us": "REACH OUT TO US",
+    "centaurus-charter": "Centaurus Charter"
   }
 }

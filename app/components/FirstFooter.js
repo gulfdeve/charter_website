@@ -21,7 +21,7 @@ const FirstFooter = () => {
           <div className=" grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-8 ">
             <div>
               <h3 className="text-lg text-white font-semibold mb-4">
-                Centaurus Charter
+                {t('footer.centaurus-charter')}
               </h3>
               <ul>
                 <li className="mb-2">
@@ -138,7 +138,7 @@ const FirstFooter = () => {
             </div>
             <div>
               <h3 className="text-lg text-white font-semibold mb-4">
-                REACH OUT TO US
+                {t('footer.reach-out-to-us')}
               </h3>
               <ul className="flex flex-col gap-2">
                 <div className="mb-2 flex gap-2">

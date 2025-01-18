@@ -14,5 +14,9 @@
     "home": "Дом",
     "about": "О",
     "yacht-rentals": "Аренда яхт"
+  },
+  "footer": {
+    "reach-out-to-us": "ОБРАЩАЙТЕСЬ К НАМ",
+    "centaurus-charter": "Устав Центавра"
   }
 }
