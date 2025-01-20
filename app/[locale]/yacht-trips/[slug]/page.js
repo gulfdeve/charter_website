@@ -46,11 +46,11 @@ const page = async ({ params }) => {
   return (
     <><div className="bg-white h-full w-full">
       <div className="flex flex-col items-center justify-center pt-10 ">
-        <h1 className="font-Montserrat text-[#0D2343] text-center font-bold text-4xl pb-4">
+        <h1 className="font-Montserrat text-[#0D2343] text-center font-bold text-4xl pb-10">
           YACHT TRIPS & EXPERIENCES IN DUBAI
         </h1>
       </div>
-      <div className="grid grid-col-1 md:grid-cols-1 md:px-4 xl:px-48 2xl:px-[40rem] gap-7">
+      <div className="grid grid-col-1 md:grid-cols-1 md:px-4 xl:px-44  gap-7 container mx-auto pb-10">
         {offers.map((offer) => (
           <div
             key={offer.id}
