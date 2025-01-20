@@ -1,46 +1,17 @@
 "use client";
 import React from "react";
+import { useEffect } from "react";
 import { FaWhatsapp } from "react-icons/fa";
 import { useData } from '@/app/context/DataContext';
 import { useLanguage } from "@/app/context/LanguageContext";
 import YachtCarousal from "@/app/components/YachtCarousel"
 import Link from "next/link";
 
-/*const offers = [
-  {
-    id: 1,
-    image: "./YachtOffer1.webp",
-    title: "UAE RESIDENT YACHT OFFERS",
-    note: "*SUBJECT TO AVAILIBILITY",
-    validity: "31 January 2025",
-  },
-  {
-    id: 2,
-    image: "./YachtOffer2.webp",
-    title: "EMIRATES STAFF DISCOUNT",
-    note: "*SUBJECT TO AVAILIBILITY",
-    validity: "31 January 2025",
-  },
-  {
-    id: 3,
-    image: "./YachtOffer3.webp",
-    title: "FAZAA DISCOUNT",
-    note: "*SUBJECT TO AVAILIBILITY",
-    validity: "31 January 2025",
-  },
-  {
-    id: 4,
-    image: "./YachtOffer4.webp",
-    title: "BUSINESS COUNCIL MEMBERS OFFER",
-    note: "*SUBJECT TO AVAILIBILITY",
-    validity: "31 January 2025",
-  },
-];*/
 
-const page = () => {
+const page = ({params}) => {
   const { data, loading, error } = useData();
   const { language, changeLanguage } = useLanguage();
-
+ 
   return (
     <>
       <div className="bg-white h-full w-full container mx-auto">

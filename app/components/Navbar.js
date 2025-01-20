@@ -166,10 +166,10 @@ export default function Navbar() {
           >
             <div className="flex flex-row items-center justify-center">
               <ul
-                className={`flex flex-row items-center justify-center gap-6 xl:gap-[3rem] 2xl:gap-[3rem] text-[11px] md:text-[7px] ${
+                className={`flex flex-row items-center justify-center gap-6 xl:gap-[3rem] 2xl:gap-[3rem] text-[11px] md:text-[12px] ${
                   isSticky
-                    ? "2xl:text-[15px] xl:text-[11px] md:text-[7px]"
-                    : " 2xl:text-[15px] xl:text-[12px] md:text-[9px] lg:text-[10px]"
+                    ? "2xl:text-[15px] xl:text-[11px] md:text-[11px]"
+                    : " 2xl:text-[15px] xl:text-[12px] md:text-[11px] lg:text-[12px]"
                 }`}
               >
                 <li
@@ -192,7 +192,7 @@ export default function Navbar() {
                       {t("navbar.private-yachts")}
                     </Link>
                     <svg
-                      className="xl:w-5 lg:w-4 h-5 lg:h-4 transform group-hover:rotate-180 transition-transform duration-300"
+                      className="xl:w-5 lg:w-5 h-5 lg:h-5 transform group-hover:rotate-180 transition-transform duration-300"
                       xmlns="http://www.w3.org/2000/svg"
                       fill="none"
                       viewBox="0 0 24 24"
@@ -235,7 +235,7 @@ export default function Navbar() {
                   <span className="flex items-center justify-between cursor-pointer p-5 gap-1">
                     <Link href={`/yacht-trips`}>{t("navbar.experiences")}</Link>
                     <svg
-                      className="w-5 h-5 lg:w-4 lg:h-4 transform group-hover:rotate-180 transition-transform duration-300"
+                      className="w-5 h-5 lg:w-5 lg:h-5 transform group-hover:rotate-180 transition-transform duration-300"
                       xmlns="http://www.w3.org/2000/svg"
                       fill="none"
                       viewBox="0 0 24 24"

@@ -262,7 +262,7 @@ export default function Home() {
                       <h1 className="font-Montserrat font-bold">
                         Trip inclusions from 3 hours onwards:
                       </h1>
-                      <ol className="list-disc ml-7 text-xs font-bold">
+                      <ol className="list-disc ml-7 text-xs font-bold font-Montserrat">
                         <li>
                           {" "}
                           Hops, Wines, Bubbly Drinks, Coffee, Tea, Water, &
@@ -288,20 +288,21 @@ export default function Home() {
                   </div>
 
                   <div className="flex flex-row justify-between items-center xl:w-[32rem] mt-3">
-                    <div>
+                    <div className="pt-3">
                    
 
                     <a
   href={`https://fareharbor.com/embeds/book/centauruscharter/items/${product.fareharbor_id}/?full-items=yes&flow=645487`}
   target="_self"
   rel="noopener noreferrer"
+  className="yellow-solid-button "
 >
   Book Now
 </a>
 
                     </div>
                     <div className="flex flex-col items-center justify-center">
-                      <h3 className="font-Montserrat text-blue-500 text-xs text-center mt-4 mr-3">
+                      <h3 className="font-Montserrat text-blue-500 text-xs text-center mt-6 mr-3">
                         T&C’s Apply
                       </h3>
                     </div>
