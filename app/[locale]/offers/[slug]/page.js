@@ -28,7 +28,7 @@ const Page = ({params}) => {
 
   return (
     <>
-      <div className="felx flex-col items-center justify-center px-4 xl:px-44">
+      <div className="felx flex-col items-center justify-center px-4 xl:px-44 container mx-auto">
         <div className="flex items-center justify-center py-10">
           <img
             src={`https://www.centauruscharter.com/product/images/${offer.image}`}
@@ -36,7 +36,7 @@ const Page = ({params}) => {
             className=""
           />
         </div>
-        <h1 className="font-Montserrat text-black text-left py-3">
+        <h1 className="font-Montserrat text-black text-left py-3 xl:px-10">
           <ul>
           {offer.translations?.[locale]?.description
             .split("\n")
@@ -46,8 +46,8 @@ const Page = ({params}) => {
             </ul>
         </h1>
 
-      </div>
-      <div className="py-5 xl:px-32">
+     
+      <div className="py-5 xl:px-10">
         <div className="flex flex-col md:flex-row rounded-lg md:px-10 xl:px-44 items-center gap-5 justify-center md:justify-between bg-transparent md:bg-primary-blue py-3">
           <button className="text-white font-Montserrat font-bold bg-primary-blue px-5 py-3 text-xl rounded">
             Validity Until: {offer.validity}
@@ -68,6 +68,7 @@ const Page = ({params}) => {
           </div>
         </div>
       </div>
+       </div>
       <Modal2 isModalOpen={isModalOpen} closeModal={closeModal} />
     </>
   );
