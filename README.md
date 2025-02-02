@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import { Montserrat } from "next/font/google";
 import "../globals.css";
 import Navbar from "@/app/components/Navbar";
@@ -97,3 +98,6 @@ export default async function RootLayout({
   );
 }
 
+=======
+test9
+>>>>>>> eb9e4a7bfb40eaf4e99c72432cd6d75204f8a092
