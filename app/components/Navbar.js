@@ -158,15 +158,15 @@ export default function Navbar() {
           } `}
         >
           <nav
-            className={` w-full bg-[#0D2343] text-[#e1ae48] font-Montserrat font-bold ${
+            className={` container m-auto bg-[#0D2343] text-[#e1ae48] font-Montserrat font-bold ${
               isSticky
                 ? " p-3  lg:p-2 xl:h-20 md:h-16 sticky top-0 z-50"
-                : "h-14 2xl:h-16  2xl:p-1"
+                : "h-14 2xl:h-16 "
             }`}
           >
             <div className="flex flex-row items-center justify-center">
               <ul
-                className={`flex flex-row items-center justify-center gap-6 xl:gap-[3rem] 2xl:gap-[3rem] text-[11px] md:text-[12px] ${
+                className={`flex flex-row items-center justify-around gap-6 xl:gap-[3rem] 2xl:gap-[3rem] text-[11px] md:text-[12px] ${
                   isSticky
                     ? "2xl:text-[15px] xl:text-[11px] md:text-[11px]"
                     : " 2xl:text-[15px] xl:text-[12px] md:text-[11px] lg:text-[12px]"
@@ -187,8 +187,8 @@ export default function Navbar() {
                 {/* PRIVATE YACHTS with Dropdown */}
 
                 <li className="relative group">
-                  <span className="flex items-center justify-between cursor-pointer p-5 gap-1">
-                    <Link href={`/yacht-rentals`}>
+                  <span className="flex items-center justify-between cursor-pointer gap-1">
+                    <Link className="p-5" href={`/yacht-rentals`}>
                       {t("navbar.private-yachts")}
                     </Link>
                     <svg
