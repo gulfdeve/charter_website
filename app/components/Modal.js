@@ -1,16 +1,17 @@
 import React, { useState, useEffect } from "react";
 
 const Modal = ({ show, onClose }) => {
-  const [isVisible, setIsVisible] = useState(show);
+  const [isVisible, setIsVisible] = useState(false);
   const [animationState, setAnimationState] = useState(""); // To manage animation classes
 
   useEffect(() => {
     const isSubmitted = getCookie("emailSubmitted");
-    if (isSubmitted) {
-      setIsVisible(false);
-    } else {
-      setIsVisible(true);
-      setAnimationState("fade-slide-down"); // Trigger show animation
+    const isClosed = getCookie("modalClosed");
+    if (!isSubmitted && !isClosed) {
+      setTimeout(() => {
+        setIsVisible(true);
+        setAnimationState("fade-slide-down"); // Trigger show animation
+      }, 5000); // Show modal after 5 seconds
     }
   }, []);
 
@@ -24,6 +25,7 @@ const Modal = ({ show, onClose }) => {
   };
 
   const closeWithAnimation = () => {
+    setCookie("modalClosed", "true", 15); // Store cookie when closing
     setAnimationState("fade-slide-up"); // Trigger hide animation
     setTimeout(() => {
       setIsVisible(false);
@@ -51,7 +53,7 @@ const Modal = ({ show, onClose }) => {
   if (!isVisible) return null;
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
+    <div className={`fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50 ${animationState}`}>
       <div
         className={`modal-container w-full max-w-3xl h-[30rem] bg-white rounded-lg overflow-hidden shadow-lg transform transition-all duration-500 ${animationState}`}
       >
@@ -69,10 +71,6 @@ const Modal = ({ show, onClose }) => {
             <h2 className="text-3xl text-center text-primary-blue font-Montserrat px-5">
               Join Our <span className="font-bold">Newsletter</span>
             </h2>
-            <h3 className="text-4xl font-bold text-center text-primary-blue mt-2 font-Montserrat">
-              
-              
-            </h3>
             <p className="mt-4 text-primary-blue text-center text-xl px-7 font-Montserrat">
               Get the latest updates & special offers.
             </p>

@@ -48,6 +48,7 @@ export default function Navbar() {
     { code: "en", name: "English", flag: "/uk.svg" },
     { code: "ar", name: "Arabic", flag: "/uae.svg" },
     { code: "ru", name: "Russian", flag: "/ru.svg" },
+    { code: "zh", name: "Chinese", flag: "/zh.svg" },
   ];
 
   const currentLanguage = languages.find((lang) => lang.code === locale);
@@ -90,7 +91,9 @@ export default function Navbar() {
                   className="text-[#e1ae48] hover:text-[#0d2343]"
                 />
               </Link>
-
+              <Link href="tel:1234567890" passHref>
+                <FaPhoneAlt  size={23}  className="text-[#e1ae48] hover:text-[#0d2343] mt-1" />
+              </Link>
               {/* WhatsApp Icon */}
               <Link href="https://wa.me/1234567890">
                 <IoLogoWhatsapp
@@ -115,7 +118,9 @@ export default function Navbar() {
                       ? "/uae.svg"
                       : locale === "ru"
                       ? "/ru.svg"
-                      : ""
+                      :  locale === "zh"
+                      ? "/zh.svg"
+                      : null
                   }
                   alt={locale}
                   className="w-4 h-4"
@@ -124,25 +129,31 @@ export default function Navbar() {
               </div>
               {/* Dropdown Menu */}
               {isDropdownOpen && (
-                <ul className="absolute right-0 w-32 bg-white border rounded-md shadow-lg z-20">
+                <ul className="absolute right-0 w-44 bg-white border font-Montserrat rounded-md shadow-lg z-20">
                   <li
                     onClick={() => handleLanguageChange("en")}
                     className="flex items-center gap-2 p-2 cursor-pointer hover:bg-gray-200"
                   >
                     <img src="/uk.svg" alt="English" className="w-4 h-4" />
-                    English
+                    ENGLISH - EN
                   </li>
                   <li
                     onClick={() => handleLanguageChange("ar")}
                     className="flex items-center gap-2 p-2 cursor-pointer hover:bg-gray-200"
                   >
                     <img src="/uae.svg" alt="Arabic" className="w-4 h-4" />
-                    Arabic
+                    ARABIC - AR
                   </li>
                   <Link className="bg-gray-300" href={pathname} locale="ru">
                     <li className="flex items-center gap-2 p-2 cursor-pointer hover:bg-gray-200">
                       <img src="/ru.svg" alt="Russian" className="w-4 h-4" />
-                      Russian
+                      RUSSIAN - RU
+                    </li>
+                  </Link>
+                  <Link className="bg-gray-300" href={pathname} locale="zh">
+                    <li className="flex items-center gap-2 p-2 cursor-pointer hover:bg-gray-200">
+                      <img src="/zh.svg" alt="Russian" className="w-4 h-4" />
+                    CHINESE - ZH
                     </li>
                   </Link>
                 </ul>
@@ -209,27 +220,29 @@ export default function Navbar() {
                   <ul className="absolute top-[85%] left-0 w-60 bg-white text-black border shadow-lg hidden group-hover:block z-20">
                     {!loading &&
                       data?.products?.map((product) => (
-                        <Link
-                          href={`/yacht-rentals/${product.slug}`}
-                          key={product.id}
-                        >
+                        
                           <li className="py-2 px-4 cursor-pointer text-base font-normal text-gray-500 font-Montserrat hover:bg-gray-200">
                             {/* {product.title} */}
-                            {product.translations?.[locale]?.name_of_yacht}
-                          </li>
+                            <Link
+                          href={`/yacht-rentals/${product.slug}`}
+                          key={product.id}
+                        >    {product.translations?.[locale]?.name_of_yacht}
+                        
                         </Link>
+                          </li>
+                        
                       ))}
                   </ul>
                 </li>
 
                 {/* BUY A YACHT */}
-                <Link href={`/yachts-for-sale-dubai`}>
-                  <li className="pr-5">{t("navbar.buy-a-yacht")}</li>
-                </Link>
+               
+                  <li className="pr-5"> <Link href={`/yachts-for-sale-dubai`}>{t("navbar.buy-a-yacht")}</Link></li>
+             
                 {/* SHARED TOURS */}
-                <Link href={`/shared-yacht-tours-dubai`}>
-                  <li className="pr-5">{t("navbar.shared-tours")}</li>
-                </Link>
+               
+                  <li className="pr-5"> <Link href={`/shared-yacht-tours-dubai`}>{t("navbar.shared-tours")}</Link></li>
+                
                 {/* EXPERIENCES with Dropdown */}
                 <li className="relative group">
                   <span className="flex items-center justify-between cursor-pointer p-5 gap-1">
@@ -253,30 +266,30 @@ export default function Navbar() {
                     {!loading &&
                       data?.experiences?.map((experience) => {
                         return (
-                          <Link
+                        
+                            <li className="py-2 px-4 cursor-pointer text-base font-normal text-gray-500 font-Montserrat hover:bg-gray-200">
+                              <Link
                             href={`/yacht-trips/${experience.slug}`}
                             key={experience.id}
-                          >
-                            <li className="py-2 px-4 cursor-pointer text-base font-normal text-gray-500 font-Montserrat hover:bg-gray-200">
-                              {experience.translations?.[locale]?.title}
+                          > {experience.translations?.[locale]?.title}</Link>
                             </li>
-                          </Link>
+                          
                         );
                       })}
                   </ul>
                 </li>
 
                 {/* OFFERS */}
-                <Link href={`/offers`}>
-                  <li className="pr-5">{t("navbar.offers")}</li>
-                </Link>
-                <Link href={`/watersports`}>
-                  <li className="pr-5">{t("navbar.water-sports")}</li>
-                </Link>
+              
+                  <li className="pr-5">  <Link href={`/offers`}>{t("navbar.offers")}      </Link></li>
+          
+                
+                  <li className="pr-5"><Link href={`/watersports`}>{t("navbar.water-sports")}</Link></li>
+                
                 {/* NEWYEAR */}
-                <Link href={`/newyear`}>
-                  <li>{t("navbar.new-year")}</li>
-                </Link>
+                
+                  <li><Link href={`/newyear`}>{t("navbar.new-year")}</Link></li>
+                
               </ul>
             </div>
           </nav>
@@ -287,11 +300,13 @@ export default function Navbar() {
         <nav className="bg-[#0d2343] w-full h-14 p-3">
           <div className="flex items-center justify-between">
             {/* Logo */}
-            <Link href={"/"}>
+            
               <div className="w-32 pr-3">
+              <Link href={"/"}>
                 <img src="./CentaurusLogoWhite.png" alt="Logo" />
+                </Link>
               </div>
-            </Link>
+            
             {/* Icons and Dropdown Trigger */}
             <div className="flex items-center gap-2">
               {/* WhatsApp Icon */}
@@ -375,15 +390,17 @@ export default function Navbar() {
                     <ul className="pl-4 pt-3 space-y-3">
                       {!loading &&
                         data?.products?.map((product) => (
-                          <Link
+                        
+                            <li className="cursor-pointer text-sm mt-2 font-normal text-gray-500 font-Montserrat">
+                                <Link
                             href={`/yacht-rentals/${product.slug}`}
                             key={product.id}
                             onClick={() => setMobileDropdownOpen(false)}
                           >
-                            <li className="cursor-pointer text-sm mt-2 font-normal text-gray-500 font-Montserrat">
                               {product.title}
+                              </Link>
                             </li>
-                          </Link>
+                        
                         ))}
                     </ul>
                   )}
@@ -396,14 +413,14 @@ export default function Navbar() {
                     {t("navbar.buy-a-yacht")}
                   </li>
                 </Link>
-                <Link
+                
+                  <li className="font-bold cursor-pointer hover:text-blue-500">
+                  <Link
                   href={`/shared-yacht-tours-dubai`}
                   onClick={() => setMobileDropdownOpen(false)}
-                >
-                  <li className="font-bold cursor-pointer hover:text-blue-500">
-                    {t("navbar.shared-tours")}
+                >  {t("navbar.shared-tours")}</Link>
                   </li>
-                </Link>
+                
                 <li className="font-bold cursor-pointer">
                   <div
                     className="flex justify-between items-center"
@@ -423,35 +440,36 @@ export default function Navbar() {
                     <ul className="pl-4 pt-3 space-y-3">
                       {!loading &&
                         data?.experiences?.map((experience) => (
-                          <Link
+                          
+                            <li className="cursor-pointer text-sm mt-2 font-normal text-gray-500 font-Montserrat">
+                           <Link
                             href={`/yacht-trips/${experience.slug}`}
                             key={experience.id}
                             onClick={() => setMobileDropdownOpen(false)}
-                          >
-                            <li className="cursor-pointer text-sm mt-2 font-normal text-gray-500 font-Montserrat">
-                              {experience.translations[locale].title}
-                            </li>
+                          >   {experience.translations[locale].title}
                           </Link>
+                            </li>
+                          
                         ))}
                     </ul>
                   )}
                 </li>
-                <Link
+                
+                  <li className="font-bold cursor-pointer hover:text-blue-500">
+                  <Link
                   href={`/offers`}
                   onClick={() => setMobileDropdownOpen(false)}
-                >
-                  <li className="font-bold cursor-pointer hover:text-blue-500">
-                    {t("navbar.offers")}
+                >    {t("navbar.offers")}</Link>
                   </li>
-                </Link>
-                <Link
+                
+                
+                  <li className="font-bold cursor-pointer hover:text-blue-500">
+                  <Link
                   href={`/newyear`}
                   onClick={() => setMobileDropdownOpen(false)}
-                >
-                  <li className="font-bold cursor-pointer hover:text-blue-500">
-                    {t("navbar.new-year")}
+                >   {t("navbar.new-year")}</Link>
                   </li>
-                </Link>
+                
               </ul>
             </div>
           )}
