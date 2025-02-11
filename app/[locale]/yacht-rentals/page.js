@@ -1,70 +1,171 @@
 "use client";
 
+import React, { useEffect, useRef, useState } from "react";
 import Link from "next/link";
-import { useLanguage } from "@/app/context/LanguageContext";
-import { useEffect, useState, useRef } from "react";
-import { useData } from "@/app/context/DataContext";
-import { useLocale, useTranslations } from "next-intl";
-import { FaArrowLeft, FaArrowRight, FaYoutube } from "react-icons/fa";
 import EmblaCarousel from "embla-carousel";
+import { FaArrowLeft, FaArrowRight, FaYoutube } from "react-icons/fa";
+import { useData } from "@/app/context/DataContext";
+import { useLanguage } from "@/app/context/LanguageContext";
+import { useLocale } from "next-intl";
 
+/* 
+  YachtCard Component:
+  - Receives a single yacht object as prop.
+  - Creates its own carousel using a ref and an Embla instance.
+  - Renders navigation buttons (only if more than one image exists).
+*/
+const YachtCard = ({ yacht }) => {
+  const emblaRef = useRef(null);
+  const emblaApi = useRef(null);
+
+  useEffect(() => {
+    if (emblaRef.current) {
+      // Initialize the carousel on the container referenced by emblaRef.
+      emblaApi.current = EmblaCarousel(emblaRef.current, { loop: true });
+    }
+    // Clean up on unmount.
+    return () => {
+      if (emblaApi.current) {
+        emblaApi.current.destroy();
+      }
+    };
+  }, [yacht]);
+
+  const scrollPrev = () => {
+    if (emblaApi.current) emblaApi.current.scrollPrev();
+  };
+
+  const scrollNext = () => {
+    if (emblaApi.current) emblaApi.current.scrollNext();
+  };
+
+  return (
+    <div className="flex flex-col justify-center px-5 bg-white rounded-2xl shadow-2xl h-auto relative">
+      <div className="relative">
+        {/* Embla Carousel Container */}
+        <div className="overflow-hidden rounded-2xl" ref={emblaRef}>
+          {/* The inner wrapper must have display:flex so that slides line up horizontally. */}
+          <div className="flex">
+            {yacht.images.map((img, index) => (
+              <div key={index} className="min-w-full">
+                <img
+                  src={`https://www.centauruscharter.com/product/galleryimages/${img}`}
+                  alt={`Slide ${index + 1}`}
+                  className="rounded-2xl mt-5 h-[250px] md:h-[300px] w-full object-cover"
+                />
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Navigation Buttons – show only if more than one image */}
+        {yacht.images.length > 1 && (
+          <>
+            <button
+              onClick={scrollPrev}
+              className="absolute top-1/2 left-2 transform -translate-y-1/2 bg-white p-2 rounded-full shadow-md"
+            >
+              <FaArrowLeft />
+            </button>
+            <button
+              onClick={scrollNext}
+              className="absolute top-1/2 right-2 transform -translate-y-1/2 bg-white p-2 rounded-full shadow-md"
+            >
+              <FaArrowRight />
+            </button>
+          </>
+        )}
+
+        {/* Optional Badges */}
+        {yacht.category.includes("bestSellers") && (
+          <div className="absolute top-11 left-0 bg-primary-blue text-primary-yellow text-md font-Montserrat py-1 px-2">
+            BEST SELLER
+          </div>
+        )}
+        {yacht.category.includes("premium") && (
+          <div className="absolute top-11 left-0 bg-primary-blue text-primary-yellow text-md font-Montserrat py-1 px-2">
+            PREMIUM
+          </div>
+        )}
+        <div className="absolute top-11 right-2">
+          <FaYoutube size={40} className="text-[#ff0033]" />
+        </div>
+      </div>
+
+      {/* Yacht Details */}
+      <div className="flex flex-col items-start py-3">
+        <Link href={`yacht-rentals/${yacht.slug}`}>
+          <h1 className="text-[#0D2343] font-Montserrat text-xl font-bold xl:pt-6 md:pb-2 hover:text-blue-600 transition-all duration-300 cursor-pointer py-1 md:py-0">
+            {yacht.title}
+          </h1>
+        </Link>
+        <p className="font-Montserrat text-xs text-[#0D2343] text-left">
+          Length:{" "}
+          <span className="font-bold">{yacht.length}</span> | Guests:{" "}
+          <span className="font-bold">{yacht.guests}</span>
+        </p>
+        <h1 className="font-Montserrat text-[#0D2343] font-bold text-xl pt-5 pb-2">
+          AED {yacht.price} <span className="text-[#0D2343]">Per Hour</span>
+        </h1>
+        <a
+          href={`https://fareharbor.com/embeds/book/centauruscharter/items/${yacht.fareharbor_id}/?full-items=yes&flow=645487&back=${encodeURIComponent(
+            typeof window !== "undefined" ? window.location.href : ""
+          )}`}
+          className="flex flex-row items-center justify-center py-2 w-full md:py-2 md:px-4 rounded-md bg-[#e1ae48] text-[#0d2343] hover:bg-[#0d2343] hover:text-[#e1ae48] font-Montserrat font-bold text-base md:text-sm xl:text-lg transition-all duration-300"
+        >
+          Book Now
+        </a>
+      </div>
+    </div>
+  );
+};
+
+/*
+  Tabs Component:
+  - Fetches yacht data from context.
+  - Maps the data to include a list of images for each yacht.
+  - Filters yachts by active tab and renders a list of YachtCard components.
+*/
 const Tabs = () => {
   const [activeTab, setActiveTab] = useState("allYachts");
   const [yachts, setYachts] = useState([]);
-  const emblaRef = useRef(null);
-  const [emblaApi, setEmblaApi] = useState(null);
   const { language } = useLanguage();
   const { data, loading, error } = useData();
   const locale = useLocale();
 
-  const handleTabClick = (tab) => {
-    setActiveTab(tab);
-  };
-
   useEffect(() => {
     if (data?.products) {
+      // Map each product to include its gallery images as an array.
       const mappedYachts = data.products.map((item) => {
-        let category = ["allYachts"]; // Default category
-
-        // Add custom logic to assign categories
+        let category = ["allYachts"];
         if (item.per_hour_price > 4000) category.push("premium");
-        if (item.slug === "56ft-lagoona" || item.slug === "61ft-silvercreek") {
+        if (["56ft-lagoona", "61ft-silvercreek"].includes(item.slug)) {
           category.push("bestSellers");
         }
-
         return {
           id: item.id,
-          image: `https://www.centauruscharter.com/product/images/${item.image}`, // Adjust image path if needed
+          images: item.gallery?.map((img) => img.image) || [],
           title: item.translations?.[locale]?.name_of_yacht,
           slug: item.slug,
           fareharbor_id: item.fareharbor_id,
           length: item.translations?.[locale]?.size,
-          guests: item.translations?.[locale]?.guests, // Example of adding guests dynamically
+          guests: item.translations?.[locale]?.guests,
           price: item.per_hour_price,
           category,
         };
       });
-
       setYachts(mappedYachts);
     }
-  }, [data]);
+  }, [data, locale]);
 
-  useEffect(() => {
-    if (emblaRef.current) {
-      const emblaInstance = EmblaCarousel(emblaRef.current, { loop: true });
-      setEmblaApi(emblaInstance);
-    }
-  }, []);
-
-  const scrollPrev = () => emblaApi && emblaApi.scrollPrev();
-  const scrollNext = () => emblaApi && emblaApi.scrollNext();
   const renderContent = () => {
     const filteredYachts = yachts.filter((yacht) =>
       yacht.category.includes(activeTab)
     );
-
-    if (loading) return <div className="text-center mt-20">Loading...</div>;
-    if (error) return <div className="text-center mt-20">Error: {error}</div>;
+    if (loading)
+      return <div className="text-center mt-20">Loading...</div>;
+    if (error)
+      return <div className="text-center mt-20">Error: {error}</div>;
     if (filteredYachts.length === 0) {
       return (
         <div className="text-center mt-20">
@@ -72,101 +173,10 @@ const Tabs = () => {
         </div>
       );
     }
-    const currentUrl =
-      typeof window !== "undefined" ? window.location.href : "";
-
     return (
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 pb-10 gap-10 xl:px-32 container mx-auto">
         {filteredYachts.map((yacht) => (
-          <div
-            key={yacht.id}
-            className="flex flex-col justify-center px-5 bg-white rounded-2xl shadow-2xl h-auto relative"
-          >
-            {/* Badge */}
-          
-            {/* YouTube Button */}
-           
-
-            {/* Image */}
-            <div className="relative">
-              <div className="overflow-hidden rounded-2xl" ref={emblaRef}>
-                <div className="flex">
-              
-                    <div  className="flex-[0_0_100%] min-w-0">
-                      <img
-                        src={yacht.image}
-                        className="rounded-2xl mt-5 h-[250px] md:h-[300px] w-full object-cover"
-                        alt={`Slide `}
-                      />
-                    </div>
-                  
-                </div>
-              </div>
-
-              {/* Navigation Buttons */}
-              <button
-                onClick={scrollPrev}
-                className="absolute top-1/2 left-2 transform -translate-y-1/2 bg-white p-2 rounded-full shadow-md"
-              >
-                <FaArrowLeft />
-              </button>
-              <button
-                onClick={scrollNext}
-                className="absolute top-1/2 right-2 transform -translate-y-1/2 bg-white p-2 rounded-full shadow-md"
-              >
-                <FaArrowRight />
-              </button>
-              {yacht.category.includes("bestSellers") && (
-              <div className="absolute top-11 left-[0px] bg-primary-blue text-primary-yellow text-md  font-Montserrat py-1 px-2 ">
-                BEST SELLER
-              </div>
-            )}
-            {yacht.category.includes("premium") && (
-              <div className="absolute top-11 left-[0px] bg-primary-blue text-primary-yellow text-md  font-Montserrat py-1 px-2 ">
-                PREMIUM
-              </div>
-            )}
-              <div className="absolute top-11 right-2  " >
-            <FaYoutube size={40} className="text-[#ff0033] "/>
-            </div>
-            </div>
-
-
-            {/* Content */}
-            <div className="flex flex-col items-start py-3">
-              <Link href={`yacht-rentals/${yacht.slug}`}>
-                <h1 className="text-[#0D2343] font-Montserrat text-xl font-bold xl:pt-6 md:pb-2 hover:text-blue-600 transition-all duration-300 cursor-pointer py-1 md:py-0">
-                  {yacht.title}
-                </h1>
-              </Link>
-              <p className="font-Montserrat text-xs text-[#0D2343] text-left">
-                Length:
-                <span className="font-Montserrat text-[#0D2343] font-bold">
-                  {" "}
-                  {yacht.length}
-                </span>{" "}
-                | Guests:
-                <span className="font-Montserrat text-[#0D2343] font-bold">
-                  {" "}
-                  {yacht.guests}
-                </span>
-              </p>
-              <h1 className="font-Montserrat text-[#0D2343] font-bold text-xl pt-5 pb-2">
-                AED {yacht.price}{" "}
-                <span className="font-Montserrat text-[#0D2343]">Per Hour</span>
-              </h1>
-              <a
-                href={`https://fareharbor.com/embeds/book/centauruscharter/items/${
-                  yacht.fareharbor_id
-                }/?full-items=yes&flow=645487&back=${encodeURIComponent(
-                  currentUrl
-                )}`}
-                className="flex flex-row items-center justify-center py-2 w-full md:py-2 md:px-4 rounded-md bg-[#e1ae48] text-[#0d2343] hover:bg-[#0d2343] hover:text-[#e1ae48] font-Montserrat font-bold text-base md:text-sm xl:text-lg transition-all duration-300"
-              >
-                Book Now
-              </a>
-            </div>
-          </div>
+          <YachtCard key={yacht.id} yacht={yacht} />
         ))}
       </div>
     );
@@ -174,40 +184,18 @@ const Tabs = () => {
 
   return (
     <div className="w-full bg-white">
-      <div className="flex flex-col items-center justify-center pt-10 container mx-auto ">
+      <div className="flex flex-col items-center justify-center pt-10 container mx-auto">
         <h1 className="font-Montserrat text-[#0D2343] text-center font-bold text-4xl pb-4">
           LUXURY YACHT RENTALS DUBAI
         </h1>
       </div>
-      <div className="flex justify-center items-center gap-6 text-lg font-semibold py-2  md:py-7 px-2">
-        {/* Tabs */}
-        <button
-          className={`${
-            activeTab === "allYachts" ? "text-blue-500" : "text-black"
-          } hover:text-blue-500 font-Montserrat`}
-          onClick={() => handleTabClick("allYachts")}
-        >
-          ALL YACHTS
-        </button>
-        <button
-          className={`${
-            activeTab === "bestSellers" ? "text-blue-500" : "text-black"
-          } hover:text-blue-500 font-Montserrat`}
-          onClick={() => handleTabClick("bestSellers")}
-        >
+      <div className="flex justify-center items-center gap-6 text-lg font-semibold py-2 md:py-7 px-2">
+        <button onClick={() => setActiveTab("allYachts")}>ALL YACHTS</button>
+        <button onClick={() => setActiveTab("bestSellers")}>
           BEST SELLERS
         </button>
-        <button
-          className={`${
-            activeTab === "premium" ? "text-blue-500" : "text-black"
-          } hover:text-blue-500 font-Montserrat`}
-          onClick={() => handleTabClick("premium")}
-        >
-          PREMIUM
-        </button>
+        <button onClick={() => setActiveTab("premium")}>PREMIUM</button>
       </div>
-
-      {/* Content Section */}
       <div className="p-6 text-center">{renderContent()}</div>
     </div>
   );
