@@ -119,11 +119,11 @@ const Nycard = () => {
                   </button>
                 ) : (
                   <>
-                  <div className='flex flex-col md:flex-row gap-5'>
-                    <button className="flex items-center justify-center gap-2 w-full px-4 py-2 md:text-sm font-Montserrat bg-primary-yellow text-primary-blue border border-primary-yellow-dark font-bold rounded-md hover:bg-primary-yellow-dark transition">
+                  <div className='flex flex-col items-center justify-center md:flex-row gap-5'>
+                    <button className="yellow-solid-button  md:text-sm">
                       WHATSAPP US
                     </button>
-                    <button className="flex items-center justify-center gap-2 w-full px-4 py-2 md:text-sm font-Montserrat bg-primary-yellow text-primary-blue border border-primary-yellow-dark font-bold rounded-md hover:bg-primary-yellow-dark transition">
+                    <button className="yellow-solid-button md:text-sm ">
                       BOOK NOW
                     </button>
                     </div>

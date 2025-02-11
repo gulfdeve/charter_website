@@ -2,14 +2,17 @@
 
 import Link from "next/link";
 import { useLanguage } from "@/app/context/LanguageContext";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import { useData } from "@/app/context/DataContext";
 import { useLocale, useTranslations } from "next-intl";
+import { FaArrowLeft, FaArrowRight, FaYoutube } from "react-icons/fa";
+import EmblaCarousel from "embla-carousel";
 
 const Tabs = () => {
   const [activeTab, setActiveTab] = useState("allYachts");
   const [yachts, setYachts] = useState([]);
-
+  const emblaRef = useRef(null);
+  const [emblaApi, setEmblaApi] = useState(null);
   const { language } = useLanguage();
   const { data, loading, error } = useData();
   const locale = useLocale();
@@ -25,10 +28,7 @@ const Tabs = () => {
 
         // Add custom logic to assign categories
         if (item.per_hour_price > 4000) category.push("premium");
-        if (
-          item.slug === "56ft-lagoona" ||
-          item.slug === "61ft-silvercreek"
-        ) {
+        if (item.slug === "56ft-lagoona" || item.slug === "61ft-silvercreek") {
           category.push("bestSellers");
         }
 
@@ -49,6 +49,15 @@ const Tabs = () => {
     }
   }, [data]);
 
+  useEffect(() => {
+    if (emblaRef.current) {
+      const emblaInstance = EmblaCarousel(emblaRef.current, { loop: true });
+      setEmblaApi(emblaInstance);
+    }
+  }, []);
+
+  const scrollPrev = () => emblaApi && emblaApi.scrollPrev();
+  const scrollNext = () => emblaApi && emblaApi.scrollNext();
   const renderContent = () => {
     const filteredYachts = yachts.filter((yacht) =>
       yacht.category.includes(activeTab)
@@ -63,7 +72,8 @@ const Tabs = () => {
         </div>
       );
     }
-    const currentUrl = typeof window !== "undefined" ? window.location.href : "";
+    const currentUrl =
+      typeof window !== "undefined" ? window.location.href : "";
 
     return (
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 pb-10 gap-10 xl:px-32 container mx-auto">
@@ -73,25 +83,54 @@ const Tabs = () => {
             className="flex flex-col justify-center px-5 bg-white rounded-2xl shadow-2xl h-auto relative"
           >
             {/* Badge */}
-            {yacht.category.includes("bestSellers") && (
-              <div className="absolute top-11 left-[20px] bg-primary-blue text-primary-yellow text-md  font-Montserrat py-1 px-2 ">
+          
+            {/* YouTube Button */}
+           
+
+            {/* Image */}
+            <div className="relative">
+              <div className="overflow-hidden rounded-2xl" ref={emblaRef}>
+                <div className="flex">
+              
+                    <div  className="flex-[0_0_100%] min-w-0">
+                      <img
+                        src={yacht.image}
+                        className="rounded-2xl mt-5 h-[250px] md:h-[300px] w-full object-cover"
+                        alt={`Slide `}
+                      />
+                    </div>
+                  
+                </div>
+              </div>
+
+              {/* Navigation Buttons */}
+              <button
+                onClick={scrollPrev}
+                className="absolute top-1/2 left-2 transform -translate-y-1/2 bg-white p-2 rounded-full shadow-md"
+              >
+                <FaArrowLeft />
+              </button>
+              <button
+                onClick={scrollNext}
+                className="absolute top-1/2 right-2 transform -translate-y-1/2 bg-white p-2 rounded-full shadow-md"
+              >
+                <FaArrowRight />
+              </button>
+              {yacht.category.includes("bestSellers") && (
+              <div className="absolute top-11 left-[0px] bg-primary-blue text-primary-yellow text-md  font-Montserrat py-1 px-2 ">
                 BEST SELLER
               </div>
             )}
             {yacht.category.includes("premium") && (
-              <div className="absolute top-11 left-[20px] bg-primary-blue text-primary-yellow text-md  font-Montserrat py-1 px-2 ">
+              <div className="absolute top-11 left-[0px] bg-primary-blue text-primary-yellow text-md  font-Montserrat py-1 px-2 ">
                 PREMIUM
               </div>
             )}
+              <div className="absolute top-11 right-2  " >
+            <FaYoutube size={40} className="text-[#ff0033] "/>
+            </div>
+            </div>
 
-            {/* Image */}
-            <Link href={`yacht-rentals/${yacht.slug}`}>
-              <img
-                src={yacht.image}
-                className="rounded-2xl mt-5 h-[250px] md:h-[300px] w-full object-cover"
-                alt={yacht.title}
-              />
-            </Link>
 
             {/* Content */}
             <div className="flex flex-col items-start py-3">
@@ -117,7 +156,9 @@ const Tabs = () => {
                 <span className="font-Montserrat text-[#0D2343]">Per Hour</span>
               </h1>
               <a
-                href={`https://fareharbor.com/embeds/book/centauruscharter/items/${yacht.fareharbor_id}/?full-items=yes&flow=645487&back=${encodeURIComponent(
+                href={`https://fareharbor.com/embeds/book/centauruscharter/items/${
+                  yacht.fareharbor_id
+                }/?full-items=yes&flow=645487&back=${encodeURIComponent(
                   currentUrl
                 )}`}
                 className="flex flex-row items-center justify-center py-2 w-full md:py-2 md:px-4 rounded-md bg-[#e1ae48] text-[#0d2343] hover:bg-[#0d2343] hover:text-[#e1ae48] font-Montserrat font-bold text-base md:text-sm xl:text-lg transition-all duration-300"

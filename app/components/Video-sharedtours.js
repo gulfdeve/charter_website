@@ -43,7 +43,7 @@ export default function Videosharedtours() {
   }, []);
 
   return (
-    <div className="relative mx-auto w-full h-[413px] lg:h-[590px] md:h-[430px] overflow-hidden">
+    <div className="relative mx-auto w-full h-[413px] sm:h-[560px] s:h-[500px] lg:h-[590px] md:h-[430px] overflow-hidden">
       {/* Wistia Video as Background */}
       <style>
         {`
@@ -62,7 +62,7 @@ export default function Videosharedtours() {
         )}
       </div>
 
-      <div className="absolute inset-0 z-10 flex flex-col items-center  justify-center top-[32%] s:top-[42%] md:-top-[22%] lg:-top-[46%] xl:-top-[0%] text-white text-center p-2 md:px-14 lg:px-24 ">
+      <div className="absolute inset-0 z-10 flex flex-col items-center  justify-center top-[32%] sm:top-[42%] s:top-[49%] md:-top-[22%] lg:-top-[46%] xl:-top-[0%] text-white text-center p-2 md:px-14 lg:px-24 ">
         <h1 className="text-3xl font-bold mb-4 text-black md:text-white font-Montserrat xl:text-xl 2xl:text-3xl text-shadow">
           
 All-Inclusive Sharing Yacht Trips In Dubai

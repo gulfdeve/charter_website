@@ -28,7 +28,7 @@ export default function Home({ params }) {
     if (thumbnailRef.current) {
       const thumbnails = thumbnailRef.current.children;
       const thumbnailWidth = thumbnails[0]?.offsetWidth || 0;
-      thumbnailRef.current.scrollLeft = thumbnailWidth * Math.max(activeIndex - 5, 0);
+      thumbnailRef.current.scrollLeft = thumbnailWidth * Math.max(activeIndex - 0, 0);
     }
   }, [activeIndex]);
 

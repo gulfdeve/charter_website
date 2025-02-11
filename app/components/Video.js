@@ -42,7 +42,7 @@ export default function Video() {
   }, []);
 
   return (
-    <div className="video-layout h-[550px] lg:h-[900px] ">
+    <div className="video-layout h-[413px] sm:h-[700px] s:h-[600px] lg:h-[900px] md:h-[430px] ">
       {/* Wistia Video as Background */}
       <style>
         {`
@@ -62,7 +62,7 @@ export default function Video() {
       </div>
 
       {/* Content Overlay */}
-      <div className="absolute inset-0 z-10 flex flex-col items-center  justify-center top-[32%] s:top-[42%] md:-top-[22%] lg:-top-[46%] xl:-top-[20%] text-white text-center p-2 md:px-14 lg:px-24 ">
+      <div className="absolute inset-0 z-10 flex flex-col items-center  justify-center top-[32%] s:top-[49%] md:-top-[22%] lg:-top-[46%] xl:-top-[20%] text-white text-center p-2 md:px-14 lg:px-24 ">
         <h1 className="text-3xl font-bold mb-4 text-black md:text-white font-Montserrat xl:text-4xl 2xl:text-5xl text-shadow">
           Yacht Touring Redefined
         </h1>

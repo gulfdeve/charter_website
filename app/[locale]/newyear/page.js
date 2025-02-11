@@ -16,7 +16,7 @@ const Page = () => {
             New year's Offer on Yacht you don't want to miss
           </p>
         </div>
-        <div className="flex flex-col lg:flex-row items-center justify-center md:px-10 xl:px-64 rounded-3xl overflow-hidden">
+        <div className="flex flex-col lg:flex-row items-center justify-center md:px-10 xl:px-40 2xl:px-40 rounded-3xl overflow-hidden">
           <div>
             <img
               src="/mainNYE.webp"
@@ -42,7 +42,7 @@ const Page = () => {
                 <h1 className="font-Montserrat text-[#0D2343] text-center text-md sm:text-sm xl:text-md xl:px-5">
                   Ticket price starts at
                 </h1>
-                <h1 className="font-Montserrat text-primary-blue-2 font-bold text-center text-3xl py-3 xl:px-5">
+                <h1 className="font-Montserrat text-primary-blue-2 font-bold text-center text-3xl py-3 ">
                   AED 1,799
                 </h1>
                 <h1 className="font-Montserrat text-[#0D2343] text-center text-md sm:text-sm xl:text-md pb-5 xl:px-5">
@@ -65,31 +65,21 @@ const Page = () => {
           </span>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 px-4 py-10 xl:px-52">
-          <div>
-            <img src="/LIVE DJ & DANCE FLOOR.webp" className="rounded-t-xl" />
-            <h1 className="bg-primary-yellow text-primary-blue-2 text-center font-Montserrat text-xl font-bold p-5 rounded-b-xl md:px-10 lg:px-0 ">
-              LIVE DJ & DANCE FLOOR
-            </h1>
-          </div>
-          <div>
-            <img src="/SPECTACULARVIEWS.webp" className="rounded-t-xl" />
-            <h1 className="bg-primary-yellow text-primary-blue-2 text-center font-Montserrat text-xl font-bold p-5 rounded-b-xl md:px-10 lg:px-0 ">
-              SPECTACULAR VIEWS
-            </h1>
-          </div>
-          <div>
-            <img src="/PREMIUM DRINKS.webp" className="rounded-t-xl" />
-            <h1 className="bg-primary-yellow text-primary-blue-2 text-center font-Montserrat text-xl font-bold p-5 rounded-b-xl md:px-10 lg:px-10 ">
-              PREMIUM DRINKS
-            </h1>
-          </div>
-          <div>
-            <img src="/GOURMET FOOD.webp" className="rounded-t-xl" />
-            <h1 className="bg-primary-yellow text-primary-blue-2 text-center font-Montserrat text-xl font-bold p-5 rounded-b-xl md:px-10 lg:px-0 ">
-              GOURMET FOOD
-            </h1>
-          </div>
-        </div>
+  {[
+    { src: "/LIVE DJ & DANCE FLOOR.webp", text: "LIVE DJ & DANCE FLOOR" },
+    { src: "/SPECTACULARVIEWS.webp", text: "SPECTACULAR VIEWS" },
+    { src: "/PREMIUM DRINKS.webp", text: "PREMIUM DRINKS" },
+    { src: "/GOURMET FOOD.webp", text: "GOURMET FOOD" },
+  ].map((item, index) => (
+    <div key={index} className="flex flex-col">
+      <img src={item.src} className="rounded-t-xl w-full" />
+      <h1 className="bg-primary-yellow text-primary-blue-2 text-center font-Montserrat text-xl font-bold p-5 rounded-b-xl md:px-10 lg:px-0 h-20 flex items-center justify-center">
+        {item.text}
+      </h1>
+    </div>
+  ))}
+</div>
+
         <div className="lg:px-48 px-5">
           <div className="flex flex-col items-center justify-center w-full mt-10 mb-5 px-10">
             <h1 className="px-4 text-xl 2xl:text-4xl font-semibold font-Montserrat text-primary-yellow">
