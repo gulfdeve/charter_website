@@ -19,10 +19,6 @@ const Modal = ({ show, onClose }) => {
 
     const isSubmitted = getCookie("emailSubmitted");
     const isClosed = getCookie("modalClosed");
-<<<<<<< HEAD
-
-=======
->>>>>>> f4e5764feb605d8e471303ac1dbe6b46f1cad2e5
     if (!isSubmitted && !isClosed) {
       setTimeout(() => {
         setIsVisible(true);
