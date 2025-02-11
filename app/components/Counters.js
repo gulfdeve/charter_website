@@ -1,33 +1,46 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
 
 const Counters = () => {
   const [yearsCount, setYearsCount] = useState(0);
   const [guestsCount, setGuestsCount] = useState(0);
   const [ratingCount, setRatingCount] = useState(0);
+  const [hasStarted, setHasStarted] = useState(false);
+  const sectionRef = useRef(null);
 
   useEffect(() => {
-    const yearsInterval = setInterval(() => {
-      if (yearsCount < 9) {
-        setYearsCount((prevCount) => prevCount + 1);
-      } else {
-        clearInterval(yearsInterval);
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting && !hasStarted) {
+          setHasStarted(true);
+        }
+      },
+      { threshold: 0.5 } // Adjust visibility threshold (50% visible)
+    );
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
+    return () => {
+      if (sectionRef.current) {
+        observer.unobserve(sectionRef.current);
       }
+    };
+  }, [hasStarted]);
+
+  useEffect(() => {
+    if (!hasStarted) return;
+
+    const yearsInterval = setInterval(() => {
+      setYearsCount((prev) => (prev < 9 ? prev + 1 : 9));
     }, 100);
 
     const guestsInterval = setInterval(() => {
-      if (guestsCount < 150000) {
-        setGuestsCount((prevCount) => prevCount + 1000);
-      } else {
-        clearInterval(guestsInterval);
-      }
+      setGuestsCount((prev) => (prev < 150000 ? prev + 1000 : 150000));
     }, 10);
 
     const ratingInterval = setInterval(() => {
-      if (ratingCount < 5) {
-        setRatingCount((prevCount) => prevCount + 0);
-      } else {
-        clearInterval(ratingInterval);
-      }
+      setRatingCount((prev) => (prev < 5 ? prev + 0.1 : 5));
     }, 50);
 
     return () => {
@@ -35,10 +48,14 @@ const Counters = () => {
       clearInterval(guestsInterval);
       clearInterval(ratingInterval);
     };
-  }, [yearsCount, guestsCount, ratingCount]);
+  }, [hasStarted]);
 
   return (
-    <div className="flex items-center justify-center w-full h-[50vh] bg-cover bg-fixed lg:bg-top bg-center" style={{ backgroundImage: "url('/counterbg.webp')" }}>
+    <div
+      ref={sectionRef}
+      className="flex items-center justify-center w-full h-[50vh] bg-cover bg-fixed lg:bg-top bg-center"
+      style={{ backgroundImage: "url('/counterbg.webp')" }}
+    >
       <div className="container mx-auto px-6 lg:px-0">
         <div className="grid grid-cols-3 lg:grid-cols-3 gap-12">
           <div className="counter-item flex flex-col items-center gap-5">

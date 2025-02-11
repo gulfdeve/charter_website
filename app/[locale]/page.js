@@ -12,9 +12,8 @@ import LocationCarousel from "@/app/components/LocationCarousel";
 import Video from "@/app/components/Video";
 import { useData } from "@/app/context/DataContext";
 import { useLanguage } from "@/app/context/LanguageContext";
-import BookNowButton from "@/app/components/BookNowButton"
-// import Link from "next/link";
-import { useRouter, usePathname, Link } from "../i18n/routing";
+import { Link } from "../i18n/routing";
+
 export default function Home() {
   const t = useTranslations();
   const emblaRef = useRef(null);
@@ -317,7 +316,7 @@ export default function Home() {
           <div className="">
             <img
               src="/LUXURY YACHT CHARTER.webp"
-              className="xl:w-[240rem] sm:w-[170rem] lg:w-[160rem] md:h-[443px] xl:h-[452px] lg:h-[404px]"
+              className="xl:w-[380rem] sm:w-[170rem] lg:w-[160rem] md:h-[443px] xl:h-[452px] lg:h-[404px]"
             />
           </div>
         </div>
@@ -348,7 +347,7 @@ export default function Home() {
           <div className="">
             <img
               src="/CUSTOMIZEDEXPERIENCES.webp"
-              className="xl:w-[240rem] sm:w-[170rem] lg:w-[160rem] md:h-[443px] xl:h-[452px] lg:h-[404px]"
+              className="xl:w-[260rem] sm:w-[170rem] lg:w-[160rem] md:h-[443px] xl:h-[452px] lg:h-[404px]"
             />
           </div>
         </div>
@@ -379,7 +378,7 @@ export default function Home() {
           <div className="">
             <img
               src="/EXCLUSIVEOFFERS.webp"
-              className="xl:w-[175rem] sm:w-[170rem] lg:w-[140rem] md:h-[443px] xl:h-[452px] lg:h-[404px]"
+              className="xl:w-[270rem] sm:w-[170rem] lg:w-[140rem] md:h-[443px] xl:h-[452px] lg:h-[404px]"
             />
           </div>
         </div>
@@ -408,7 +407,7 @@ export default function Home() {
           <div className="">
             <img
               src="/WATERACTIVITIES.webp"
-              className="xl:w-[210rem] sm:w-[170rem] lg:w-[140rem] md:h-[443px] xl:h-[452px] lg:h-[404px]"
+              className="xl:w-[240rem] sm:w-[170rem] lg:w-[140rem] md:h-[443px] xl:h-[452px] lg:h-[404px]"
             />
           </div>
         </div>

@@ -12,7 +12,7 @@ const Aboutus = () => {
     <h1 className="font-Montserrat text-3xl py-5 xl:pb-14 xl:pt-2 text-[#e1ae48] font-bold text-center lg:text-left">
       About Us
     </h1>
-    <p className="font-Montserrat text-white text-center pb-7 lg:text-left lg:text-sm lg:pr-32 xl:pr-52">
+    <p className="font-Montserrat text-white text-center pb-7 lg:text-left lg:text-sm lg:pr-32 xl:pr-72">
       Centaurus Charter was established in 2013 and offers Leisure boats and
       Yacht Rentals in Dubai. The fully-crewed luxury yacht charters as well
       as full-service event planning, are conveniently located in Dubai
