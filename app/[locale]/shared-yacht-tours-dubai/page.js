@@ -235,7 +235,6 @@ const Page = () => {
             </div>
           </div>
         </div>
-        <Nycard />
       </div>
     </>
   );

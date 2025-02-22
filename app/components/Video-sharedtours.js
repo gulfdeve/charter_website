@@ -1,4 +1,4 @@
-'use client'
+"use client";
 import React, { useEffect, useState } from "react";
 
 export default function Videosharedtours() {
@@ -20,7 +20,11 @@ export default function Videosharedtours() {
     const loadWistiaScripts = async () => {
       try {
         await loadScript("https://fast.wistia.com/player.js");
-        await loadScript("https://fast.wistia.com/embed/rbm8fusw7r.js", "module", true);
+        await loadScript(
+          "https://fast.wistia.com/embed/rbm8fusw7r.js",
+          "module",
+          true
+        );
         setScriptsLoaded(true);
 
         // Wait for the custom element to be defined
@@ -63,20 +67,17 @@ export default function Videosharedtours() {
       </div>
 
       <div className="absolute inset-0 z-10 flex flex-col items-center  justify-center top-[32%] sm:top-[42%] s:top-[49%] md:-top-[22%] lg:-top-[46%] xl:-top-[0%] text-white text-center p-2 md:px-14 lg:px-24 ">
-        <h1 className="text-3xl font-bold mb-4 text-black md:text-white font-Montserrat xl:text-xl 2xl:text-3xl text-shadow">
-          
-All-Inclusive Sharing Yacht Trips In Dubai
+        <h1 className="text-4xl font-bold mb-4 text-black md:text-white font-Montserrat xl:text-xl 2xl:text-4xl text-shadow">
+          All-Inclusive Sharing Yacht Trips In Dubai
         </h1>
-        <h1 className="text-sm xl:text-xl font-bold mb-4  text-black md:text-white font-Montserrat 2xl:text-xl text-shadow">
-        Buy 1 Get 1 Free
+        <h1 className="text-sm xl:text-2xl mb-1  text-black md:text-white font-Montserrat 2xl:text-3xl text-shadow">
+          Buy 1 Get 1 Free
         </h1>
-        <h1 className="text-sm xl:text-xl font-bold mb-4 text-black md:text-white font-Montserrat 2xl:text-xl text-shadow">
-        Starting AED 149
+        <h1 className="text-sm xl:text-2xl mb-4 text-black md:text-white font-Montserrat 2xl:text-3xl text-shadow">
+          Starting AED 149
         </h1>
-        
-        <button className="blue-solid-button">
-          GET THE OFFER NOW!
-         </button>
+
+        <button className="blue-solid-button">GET THE OFFER NOW!</button>
       </div>
     </div>
   );

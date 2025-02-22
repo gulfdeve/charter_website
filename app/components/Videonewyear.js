@@ -63,6 +63,16 @@ export default function Videonewyear() {
       </div>
 
       {/* Content Overlay */}
+      <div className="absolute inset-0 z-10 flex flex-col items-center  justify-center top-[32%] sm:top-[42%] s:top-[49%] md:-top-[22%] lg:-top-[46%] xl:-top-[0%] text-white text-center p-2 md:px-14 lg:px-24 ">
+        <h1 className="text-4xl font-bold mb-4 text-black md:text-white font-Montserrat xl:text-xl 2xl:text-4xl text-shadow">
+        NEW YEAR'S EVE YACHT PARTY IN DUBAI
+        </h1>
+        <h1 className="text-sm xl:text-2xl mb-4 text-black md:text-white font-Montserrat 2xl:text-3xl text-shadow">
+        Celebrate the most glamorous night of the year
+        </h1>
+
+        <button className="blue-solid-button">BOOK NOW</button>
+      </div>
      
     </div>
   );
