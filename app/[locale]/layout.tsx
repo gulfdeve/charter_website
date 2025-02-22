@@ -12,6 +12,7 @@ import { NextIntlClientProvider } from "next-intl";
 import { getMessages } from "next-intl/server";
 import { routing } from "../i18n/routing";
 import { notFound } from "next/navigation";
+import TopLoader from '@/app/components/TopLoader';
 import { FareHarborProvider } from "@/app/context/FareHarborContext";
 import 'react-phone-input-2/lib/style.css';
 
@@ -46,6 +47,7 @@ export default async function RootLayout({
         <link rel="canonical" href={canonicalUrl} />
       </head>
       <body className={`${montserrat.variable}`}>
+      <TopLoader />
         <NextIntlClientProvider locale={locale} messages={messages}>
           <DataProvider>
             <LanguageProvider>
