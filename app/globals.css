@@ -56,6 +56,15 @@ body {
   @apply flex items-center justify-center gap-2 px-8 py-2 bg-primary-blue hover:scale-105 hover:bg-primary-yellow hover:text-primary-blue text-primary-yellow border-2 border-primary-yellow tracking-wide font-bold rounded-md transition duration-150 ease-in-out transform font-Montserrat;
 }
 
+footer a {
+  color: #969696;
+}
+footer a:hover {
+  color: white;
+  text-decoration: underline;
+}
+
+
 .shadow-buy-yacht {
   box-shadow: rgba(17, 17, 26, 0.1) 0px 0px 16px;
 }
