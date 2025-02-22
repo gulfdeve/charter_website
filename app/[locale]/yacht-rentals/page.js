@@ -48,11 +48,14 @@ const YachtCard = ({ yacht }) => {
           <div className="flex">
             {yacht.images.map((img, index) => (
               <div key={index} className="min-w-full">
-                <img
+                <Link href={`yacht
+				-rentals/${yacht.slug}`}>
+				<img
                   src={`https://www.centauruscharter.com/product/galleryimages/${img}`}
                   alt={`Slide ${index + 1}`}
                   className="rounded-2xl h-[250px] md:h-[300px] w-full object-cover"
                 />
+				</Link>
               </div>
             ))}
           </div>
@@ -63,13 +66,13 @@ const YachtCard = ({ yacht }) => {
           <>
             <button
               onClick={scrollPrev}
-              className="absolute top-1/2 left-2 transform -translate-y-1/2 bg-white p-2 rounded-full shadow-md"
+              className="bg-primary-blue text-primary-yellow hover:bg-primary-yellow hover:text-primary-blue transition duration-150 ease-in-out transform absolute top-1/2 left-2 transform -translate-y-1/2 p-2 rounded-full shadow-md"
             >
               <FaArrowLeft />
             </button>
             <button
               onClick={scrollNext}
-              className="absolute top-1/2 right-2 transform -translate-y-1/2 bg-white p-2 rounded-full shadow-md"
+              className="bg-primary-blue text-primary-yellow hover:bg-primary-yellow hover:text-primary-blue transition duration-150 ease-in-out transform absolute top-1/2 right-2 transform -translate-y-1/2 p-2 rounded-full shadow-md"
             >
               <FaArrowRight />
             </button>
@@ -87,8 +90,8 @@ const YachtCard = ({ yacht }) => {
             PREMIUM
           </div>
         )}
-        <div className="absolute top-11 right-2">
-          <FaYoutube size={40} className="text-[#ff0033]" />
+        <div className="absolute top-2 right-2">
+          <FaYoutube size={36} className="text-[#ff0033]" />
         </div>
       </div>
 
