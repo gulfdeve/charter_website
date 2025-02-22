@@ -38,6 +38,7 @@ export default {
         "primary-yellow": "#E1BA4D",
         "primary-yellow-dark": "rgb(234 174 6)",
         "text-primary-white": "#969696",
+        "text-primary-black": "#212529",
       },
       fontFamily: {
         sans: ['var(--font-montserrat)', 'sans-serif'],

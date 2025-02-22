@@ -316,7 +316,7 @@ export default function Navbar() {
 
                 <li
                   className={`pr-5 uppercase ${
-                    pathname === "/offers" ? "text-white" : ""
+                    pathname === "/offers" || pathname.startsWith("/offers/") ? "text-white" : ""
                   }`}
                 >
                   {" "}
@@ -325,7 +325,7 @@ export default function Navbar() {
 
                 <li
                   className={`pr-5 uppercase ${
-                    pathname === "/events" ? "text-white" : ""
+                    pathname === "/events" || pathname.startsWith("/events/") ? "text-white" : ""
                   }`}
                 >
                   {" "}
@@ -334,7 +334,7 @@ export default function Navbar() {
 
                 <li
                   className={`pr-5 uppercase ${
-                    pathname === "/watersports" ? "text-white" : ""
+                    pathname === "/watersports" || pathname.startsWith("/watersports/") ? "text-white" : ""
                   }`}
                 >
                   <Link href={`/watersports`}>{t("navbar.water-sports")}</Link>

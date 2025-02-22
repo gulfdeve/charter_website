@@ -27,7 +27,13 @@ const Page = ({ params }) => {
 
   return (
     <>
-      <div className="felx flex-col items-center justify-center px-4 xl:px-44 container mx-auto">
+      <div className="flex flex-col items-center justify-center max-w-7xl mx-auto py-10 text-primary-black">
+        <h1 className="font-Montserrat text-4xl font-bold text-center">
+          {event.translations?.[locale]?.title}
+        </h1>
+        <h2 className="font-Montserrat text-xl font-bold text-center">
+          {event.translations?.[locale]?.heading_2}
+        </h2>
         <div className="flex items-center justify-center py-10">
           <img
             src={`https://www.centauruscharter.com/product/images/${event.image}`}
@@ -45,7 +51,7 @@ const Page = ({ params }) => {
           </ul>
         </h1>
 
-        <div className="py-10 max-w-7xl mx-auto">
+        <div className="py-10 w-full">
           <div className="flex flex-col md:flex-row rounded-lg items-center  gap-5 justify-center  md:justify-between bg-transparent md:bg-primary-blue p-5">
             <p className="text-white font-Montserrat font-bold bg-primary-blue text-xl rounded">
               Validity Until: {event.validity}
@@ -57,10 +63,7 @@ const Page = ({ params }) => {
                   WHATSAPP US
                 </button>
               </a>
-              <button
-                onClick={handleQuote}
-                className="blue-lined-button"
-              >
+              <button onClick={handleQuote} className="blue-lined-button">
                 GET A QUOTE
               </button>
             </div>
