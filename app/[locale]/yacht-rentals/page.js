@@ -40,7 +40,7 @@ const YachtCard = ({ yacht }) => {
   };
 
   return (
-    <div className="flex flex-col justify-center px-5 bg-white rounded-2xl shadow-2xl h-auto relative">
+    <div className="flex flex-col justify-center bg-white rounded-2xl shadow-custom h-auto relative p-4">
       <div className="relative">
         {/* Embla Carousel Container */}
         <div className="overflow-hidden rounded-2xl" ref={emblaRef}>
@@ -51,7 +51,7 @@ const YachtCard = ({ yacht }) => {
                 <img
                   src={`https://www.centauruscharter.com/product/galleryimages/${img}`}
                   alt={`Slide ${index + 1}`}
-                  className="rounded-2xl mt-5 h-[250px] md:h-[300px] w-full object-cover"
+                  className="rounded-2xl h-[250px] md:h-[300px] w-full object-cover"
                 />
               </div>
             ))}
@@ -93,22 +93,24 @@ const YachtCard = ({ yacht }) => {
       </div>
 
       {/* Yacht Details */}
-      <div className="flex flex-col items-start py-3">
+      <div className="flex flex-col items-start pt-3">
         <Link href={`yacht-rentals/${yacht.slug}`}>
-          <h1 className="text-[#0D2343] font-Montserrat text-xl font-bold xl:pt-6 md:pb-2 hover:text-blue-600 transition-all duration-300 cursor-pointer py-1 md:py-0">
+          <h1 className="text-[#0D2343] font-Montserrat text-xl font-bold py-4 hover:text-blue-600 transition-all duration-300 cursor-pointer">
             {yacht.title}
           </h1>
         </Link>
+		
         <p className="font-Montserrat text-xs text-[#0D2343] text-left">
-          Length:{" "}
-          <span className="font-bold">{yacht.length}</span> | Guests:{" "}
+		Model: <span className="font-bold">{yacht.model}</span> | Length: <span className="font-bold">{yacht.length}</span> | Guests:{" "}
           <span className="font-bold">{yacht.guests}</span>
         </p>
         <h1 className="font-Montserrat text-[#0D2343] font-bold text-xl pt-5 pb-2">
           AED {yacht.price} <span className="text-[#0D2343]">Per Hour</span>
         </h1>
         <a
-          href={`https://fareharbor.com/embeds/book/centauruscharter/items/${yacht.fareharbor_id}/?full-items=yes&flow=645487&back=${encodeURIComponent(
+          href={`https://fareharbor.com/embeds/book/centauruscharter/items/${
+            yacht.fareharbor_id
+          }/?full-items=yes&flow=645487&back=${encodeURIComponent(
             typeof window !== "undefined" ? window.location.href : ""
           )}`}
           className="flex flex-row items-center justify-center py-2 w-full md:py-2 md:px-4 rounded-md bg-[#e1ae48] text-[#0d2343] hover:bg-[#0d2343] hover:text-[#e1ae48] font-Montserrat font-bold text-base md:text-sm xl:text-lg transition-all duration-300"
@@ -149,6 +151,7 @@ const Tabs = () => {
           slug: item.slug,
           fareharbor_id: item.fareharbor_id,
           length: item.translations?.[locale]?.size,
+		  model: item.translations?.[locale]?.model,
           guests: item.translations?.[locale]?.guests,
           price: item.per_hour_price,
           category,
@@ -162,10 +165,8 @@ const Tabs = () => {
     const filteredYachts = yachts.filter((yacht) =>
       yacht.category.includes(activeTab)
     );
-    if (loading)
-      return <div className="text-center mt-20">Loading...</div>;
-    if (error)
-      return <div className="text-center mt-20">Error: {error}</div>;
+    if (loading) return <div className="text-center mt-20">Loading...</div>;
+    if (error) return <div className="text-center mt-20">Error: {error}</div>;
     if (filteredYachts.length === 0) {
       return (
         <div className="text-center mt-20">
@@ -189,7 +190,7 @@ const Tabs = () => {
           LUXURY YACHT RENTALS DUBAI
         </h1>
       </div>
-      <div className="flex justify-center items-center gap-6 text-lg font-semibold py-2 md:py-7 px-2">
+      <div className="flex justify-center items-center gap-6 text-lg font-semibold py-2 md:py-7 px-2 font-Montserrat">
         <button onClick={() => setActiveTab("allYachts")}>ALL YACHTS</button>
         <button onClick={() => setActiveTab("bestSellers")}>
           BEST SELLERS
