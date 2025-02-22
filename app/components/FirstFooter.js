@@ -105,7 +105,7 @@ const FirstFooter = () => {
               <ul>
                 {!loading &&
                   data?.products?.map((product) => (
-                    <li className="mb-2 text-[#969696]  transition-colors duration-200">
+                    <li key={product.id} className="mb-2 text-[#969696]  transition-colors duration-200">
                       <Link
                         href={`/yacht-rentals/${product.slug}`}
                         key={product.id}
@@ -124,7 +124,7 @@ const FirstFooter = () => {
                 {!loading &&
                   data?.experiences?.map((experience) => {
                     return (
-                      <li className=" mb-2 text-[#969696]  transition-colors duration-200">
+                      <li key={experience.id} className=" mb-2 text-[#969696]  transition-colors duration-200">
                         <Link
                           href={`/yacht-trips/${experience.slug}`}
                           key={experience.id}
