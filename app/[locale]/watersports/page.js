@@ -13,7 +13,7 @@ const YachtTrips = () => {
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         {/* Experience Card: Jet Ski */}
         <div className="bg-white rounded-lg shadow-lg overflow-hidden">
-          <a href="https://charter.selldobuy.com/public/en/watersports/jet-ski">
+          <a href="">
             <img
               src="https://www.centauruscharter.com/product/images/1653474985JET%20SKI%20THUMB.webp"
               alt="Jet Ski"
@@ -54,7 +54,7 @@ const YachtTrips = () => {
 
         {/* Experience Card: Donut Boat Ride */}
         <div className="bg-white rounded-lg shadow-lg overflow-hidden">
-          <a href="https://charter.selldobuy.com/public/en/watersports/donut-boat">
+          <a href="">
             <img
               src="https://www.centauruscharter.com/product/images/1653475012DONUT%20BOAT%20RIDE%20Thumb.webp"
               alt="Donut Boat Ride"
