@@ -73,7 +73,7 @@ export default function Navbar() {
           <h1 className="text-xl font-bold">
             <Link href={"/"}>
               <img
-                src="./CentaurusLogo.png"
+                src="/CentaurusLogo.png"
                 alt="Centaurus Logo"
                 className="cursor-pointer"
               />
@@ -194,7 +194,7 @@ export default function Navbar() {
                   }`}
                 >
                   <Link href={"/"}>
-                    <img src="./CentaurusLogoWhite.png" alt="Logo" />
+                    <img src="/CentaurusLogoWhite.png" alt="Logo" />
                   </Link>
                 </li>
 
@@ -203,7 +203,7 @@ export default function Navbar() {
                 <li className="relative group">
                   <span
                     className={`flex items-center justify-between cursor-pointer p-5 gap-1 ${
-                      pathname === "/yacht-rentals" ? "text-white" : ""
+                      pathname === "/yacht-rentals" || pathname.startsWith("/yacht-rentals/") ? "text-white" : ""
                     }`}
                   >
                     <Link href={`/yacht-rentals`}>
@@ -274,7 +274,7 @@ export default function Navbar() {
                 <li className="relative group">
                   <span
                     className={`flex items-center justify-between cursor-pointer p-5 gap-1 ${
-                      pathname === "/yacht-trips" ? "text-white" : ""
+                      pathname === "/yacht-trips" || pathname.startsWith("/yacht-trips/") ? "text-white" : ""
                     }`}
                   >
                     <Link href={`/yacht-trips`}>{t("navbar.experiences")}</Link>
@@ -362,7 +362,7 @@ export default function Navbar() {
 
             <div className="w-32 pr-3">
               <Link href={"/"}>
-                <img src="./CentaurusLogoWhite.png" alt="Logo" />
+                <img src="/CentaurusLogoWhite.png" alt="Logo" />
               </Link>
             </div>
 
