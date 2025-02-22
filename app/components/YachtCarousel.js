@@ -94,20 +94,22 @@ export default function YachtCarousal() {
               {!loading &&
                 data?.products?.map((product) => (
                   <div key={product.id} className="embla__slide1  p-4">
-                    <div className="relative bg-transparent shadow-lg rounded-lg overflow-hidden space-y-5">
+                    <div className="relative bg-transparent rounded-lg overflow-hidden space-y-5">
                       <img
-                        src={`https://www.centauruscharter.com/product/images/${product.image}`}
+                        src={`https://www.centauruscharter.com/product/images/${product.thumbnail_image}`}
                         className="h-[27rem] rounded-lg"
                       />
                       <div className="absolute bottom-0 left-0 w-full bg-black-gradient p-4 text-white rounded-lg">
-                        <h3 className="text-4xl font-Montserrat font-bold text-left mb-3">
-                          {product.translations[language].name_of_yacht}
+                        <h3 className="text-3xl font-Montserrat font-bold text-left mb-3">
+						<Link href={`/yacht-rentals/${product.slug}`}>
+						  {product.translations[language].name_of_yacht}
+						  </Link>
                         </h3>
-                        <p className="text-md font-Montserrat font-semibold text-left mb-3">
+                        <p className="text-md font-Montserrat text-left mb-3">
                           {product.translations[language].slider_text}
                         </p>
                         <Link href={`/yacht-rentals/${product.slug}`}>
-                          <button className="yellow-solid-button">
+                          <button className="yellow-solid-button uppercase">
                             Book Now
                           </button>
                         </Link>
@@ -126,15 +128,17 @@ export default function YachtCarousal() {
               {!loading &&
                 data?.products?.map((product) => (
                   <div key={product.id} className="embla__slide p-4 ">
-                    <div className="relative bg-gray-200  overflow-hidden shadow-lg">
+                    <div className="relative bg-gray-200  overflow-hidden">
                       <img
-                        src={`https://www.centauruscharter.com/product/images/${product.image}`}
+                        src={`https://www.centauruscharter.com/product/images/${product.thumbnail_image}`}
                         className="h-[27rem] "
                       />
 
                       <div className="absolute bottom-0 left-0 w-full bg-black bg-opacity-10 p-4 text-white">
                         <h3 className="text-4xl font-Montserrat font-bold text-left">
-                          {product.translations[language].name_of_yacht}
+                          <Link href={`/yacht-rentals/${product.slug}`}>
+						  {product.translations[language].name_of_yacht}
+						  </Link>
                         </h3>
                         <p className="text-xl font-Montserrat font-bold text-left">
                           {product.translations[language].slider_text}
@@ -154,13 +158,13 @@ export default function YachtCarousal() {
 
           {/* Navigation Buttons */}
           <button
-            className="absolute left-2  lg:left-32 top-1/2 transform -translate-y-1/2 bg-gray-800 text-white w-14 aspect-square rounded-full flex items-center justify-center hover:bg-gray-700 z-10"
+            className="bg-primary-blue text-primary-yellow hover:bg-primary-yellow hover:text-primary-blue transition duration-150 ease-in-out transform absolute left-2  lg:left-32 top-1/2 transform -translate-y-1/2 bg-gray-800 text-white w-14 aspect-square rounded-full flex items-center justify-center hover:bg-gray-700 z-10"
             onClick={scrollPrevDesktop}
           >
             <IoIosArrowBack size={30} />
           </button>
           <button
-            className="absolute right-4  lg:right-32 top-1/2 transform -translate-y-1/2 bg-gray-800 text-white w-14 aspect-square rounded-full flex items-center justify-center hover:bg-gray-700 z-10"
+            className="bg-primary-blue text-primary-yellow hover:bg-primary-yellow hover:text-primary-blue transition duration-150 ease-in-out transform absolute right-4  lg:right-32 top-1/2 transform -translate-y-1/2 bg-gray-800 text-white w-14 aspect-square rounded-full flex items-center justify-center hover:bg-gray-700 z-10"
             onClick={scrollNextDesktop}
           >
             <IoIosArrowForward size={30} />
