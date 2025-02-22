@@ -11,13 +11,13 @@ const page = () => {
 
   return (
     <>
-      <div className="bg-white h-full w-full">
+      <div className="max-w-7xl mx-auto">
         <div className="flex flex-col items-center justify-center py-10">
-          <h1 className="font-Montserrat text-[#0D2343] text-center font-bold text-4xl pb-4">
+          <h1 className="font-Montserrat text-[#0D2343] text-center font-bold text-4xl">
             YACHT TRIPS & EXPERIENCES IN DUBAI
           </h1>
         </div>
-        <div className="grid grid-col-1 md:grid-cols-2 md:px-4 xl:px-52 gap-7 pb-16">
+        <div className="grid grid-col-1 md:grid-cols-2 md:px-4 gap-7 pb-16">
           {!loading &&
             data?.experiences?.map((experience) => {
               const title =
@@ -28,25 +28,26 @@ const page = () => {
               return (
                 <div
                   key={experience.id}
-                  className="flex flex-col justify-start lg:justify-between rounded-md bg-white px-2 shadow-xl"
+                  className="flex flex-col justify-start lg:justify-between rounded-md bg-white shadow-xl"
                 >
                   {/* Image with object-cover for proper scaling */}
                   <Link href={`/yacht-trips/${experience.slug}`}>
                     <img
-                      src={`https://www.centauruscharter.com/product/images/${experience.thumbnail_image}`}
+                      src={`https://www.centauruscharter.com/product/images/${experience.image}`}
                       alt="yacht"
-                      className="rounded-md h-[300px] w-full object-cover"
+                      className="rounded-tl-md rounded-tr-md w-full object-cover"
                     />
                   </Link>
                   <div className="felx flex-col items-start justify-start px-5">
                     {/* Title with Link */}
-                    <Link href={`/yacht-trips/${experience.slug}`}>
-                      <h1 className="text-[#232629] font-Montserrat text-2xl font-bold pt-6 hover:text-blue-600 transition-all duration-300 cursor-pointer">
+
+                    <h1 className="text-[#232629] font-Montserrat text-2xl font-bold pt-6 hover:text-blue-600 transition-all duration-300 cursor-pointer">
+                      <Link href={`/yacht-trips/${experience.slug}`}>
                         {title}
-                      </h1>
-                    </Link>
+                      </Link>
+                    </h1>
                     <p className="text-[#848484] font-Montserrat text-md pt-2 pb-9">
-                      {experience.preview_text}
+                      {experience.translations[language].preivew_text}
                     </p>
                     <div className="bg-[#232629] w-full h-[0.05rem]"></div>
                     <div className="flex flex-row items-center justify-between">
@@ -63,7 +64,7 @@ const page = () => {
                       {/* Button with Link */}
                       <Link
                         href={`/yacht-trips/${experience.slug}`}
-                        className="flex flex-row items-center justify-center py-2 px-4 xl:px-5 xl:py-3 rounded-md bg-[#0d2343] text-[#e1ae48] font-Montserrat font-bold text-sm xl:text-lg"
+                        className="blue-solid-button"
                       >
                         KNOW MORE
                       </Link>
@@ -81,7 +82,9 @@ const page = () => {
             Charter has a versatile range of yachts and boats in Dubai that are
             suitable for any event. Our captain & crew has years of experience,
             can customize your trip as per your choices and is always eager to
-            help.<br/><br/> Experience yachting life with end-to-end personalized
+            help.
+            <br />
+            <br /> Experience yachting life with end-to-end personalized
             services, stunning views of the surroundings with plenty of
             watersports for your next excursion.
           </p>
