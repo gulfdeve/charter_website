@@ -91,7 +91,7 @@ export default function Navbar() {
                   className="text-[#e1ae48] hover:text-[#0d2343]"
                 />
               </Link>
-              <Link href="tel:1234567890" passHref>
+              <Link href="tel:1234567890">
                 <FaPhoneAlt
                   size={23}
                   className="text-[#e1ae48] hover:text-[#0d2343] mt-1"
@@ -369,12 +369,12 @@ export default function Navbar() {
             {/* Icons and Dropdown Trigger */}
             <div className="flex items-center gap-2">
               {/* WhatsApp Icon */}
-              <Link href="https://wa.me/1234567890" passHref>
+              <Link href="https://wa.me/1234567890">
                 <img src="/whatsapp.svg" className="text-blue-500 w-6 h-6" />
               </Link>
 
               {/* Phone Icon */}
-              <Link href="tel:1234567890" passHref>
+              <Link href="tel:1234567890">
                 <FaPhoneAlt className="text-white w-5 h-5" />
               </Link>
 

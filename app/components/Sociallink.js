@@ -8,22 +8,22 @@ const Sociallink = () => {
       {/* Mobile Version */}
       <div className="block lg:hidden ">
         <div className="flex flex-row items-center justify-center gap-5 container mx-auto">
-          <a href="https://www.facebook.com/centauruscharteryachtsrental/" passHref target="_blank">
+          <a href="https://www.facebook.com/centauruscharteryachtsrental/" target="_blank">
             <Image src="/Facebook.png" alt="Facebook" width={30} height={30} />
           </a>
-          <a href="https://twitter.com/centaurscharter" passHref target="_blank">
+          <a href="https://twitter.com/centaurscharter" target="_blank">
             <Image src="/Twitter.png" alt="Twitter" width={30} height={30} />
           </a>
-          <a href="https://www.instagram.com/centauruscharter/" passHref target="_blank">
+          <a href="https://www.instagram.com/centauruscharter/" target="_blank">
             <Image src="/Instagram.png" alt="Instagram" width={30} height={30} />
           </a>
-          <a href="https://www.pinterest.com/centauruscharteryachtsdubai/" passHref target="_blank">
+          <a href="https://www.pinterest.com/centauruscharteryachtsdubai/" target="_blank">
             <Image src="/Pinterest.png" alt="Pinterest" width={30} height={30} />
           </a>
-          <a href="https://www.linkedin.com/company/centauruscharter" passHref target="_blank">
+          <a href="https://www.linkedin.com/company/centauruscharter" target="_blank">
             <Image src="/LinkedIn.png" alt="LinkedIn" width={30} height={30} />
           </a>
-          <a href="https://www.youtube.com/channel/UCcvuO64sGm4HxfNMZRYfScQ?view_as=subscriber" passHref target="_blank">
+          <a href="https://www.youtube.com/channel/UCcvuO64sGm4HxfNMZRYfScQ?view_as=subscriber" target="_blank">
             <Image src="/Youtube.png" alt="Youtube" width={30} height={30} />
           </a>
         </div>
@@ -59,22 +59,22 @@ const Sociallink = () => {
             </h1>
           </div>
           <div className="flex flex-row items-center justify-center gap-5">
-            <a href="https://www.facebook.com/centauruscharteryachtsrental/" passHref target="_blank">
+            <a href="https://www.facebook.com/centauruscharteryachtsrental/" target="_blank">
               <Image src="/Facebook.png" alt="Facebook" width={30} height={30} />
             </a>
-            <a href="https://twitter.com/centaurscharter" passHref target="_blank">
+            <a href="https://twitter.com/centaurscharter" target="_blank">
               <Image src="/Twitter.png" alt="Twitter" width={30} height={30} />
             </a>
-            <a href="https://www.instagram.com/centauruscharter/" passHref target="_blank">
+            <a href="https://www.instagram.com/centauruscharter/" target="_blank">
               <Image src="/Instagram.png" alt="Instagram" width={30} height={30} />
             </a>
-            <a href="https://www.pinterest.com/centauruscharteryachtsdubai/" passHref target="_blank">
+            <a href="https://www.pinterest.com/centauruscharteryachtsdubai/" target="_blank">
               <Image src="/Pinterest.png" alt="Pinterest" width={30} height={30} />
             </a>
-            <a href="https://www.linkedin.com/company/centauruscharter" passHref target="_blank">
+            <a href="https://www.linkedin.com/company/centauruscharter" target="_blank">
               <Image src="/LinkedIn.png" alt="LinkedIn" width={30} height={30} />
             </a>
-            <a href="https://www.youtube.com/channel/UCcvuO64sGm4HxfNMZRYfScQ?view_as=subscriber" passHref target="_blank">
+            <a href="https://www.youtube.com/channel/UCcvuO64sGm4HxfNMZRYfScQ?view_as=subscriber" target="_blank">
               <Image src="/Youtube.png" alt="Youtube" width={30} height={30} />
             </a>
           </div>

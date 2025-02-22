@@ -1,0 +1,48 @@
+"use client";
+import React from "react";
+
+const OffersSkeletonCard = () => (
+  <div className="flex flex-col justify-start lg:justify-between rounded-md bg-white shadow-xl animate-pulse">
+    <div className="h-64 bg-gray-200 rounded-t-md w-full" /> {/* Image placeholder */}
+    <div className="flex flex-col justify-start px-5 lg:px-5">
+      <div className="h-8 bg-gray-200 rounded-md w-3/4 mt-4" /> {/* Title placeholder */}
+      <div className="h-4 bg-gray-200 rounded-md w-1/2 mt-2 mb-16" /> {/* Note placeholder */}
+      <div className="bg-[#232629] w-full h-[0.05rem]" />
+      <div className="flex flex-row items-center justify-between py-10">
+        <div className="flex flex-col items-start justify-start">
+          <div className="h-12 bg-gray-200 rounded-md w-32" /> {/* Validity placeholder */}
+        </div>
+        <div className="flex xl:flex-row flex-col items-center justify-end gap-3">
+          <div className="h-10 bg-gray-200 rounded-md w-32" /> {/* WhatsApp button placeholder */}
+          <div className="h-10 bg-gray-200 rounded-md w-32" /> {/* Know More button placeholder */}
+        </div>
+      </div>
+    </div>
+  </div>
+);
+
+const loading = () => {
+  return (
+    <>
+      <div className="max-w-7xl mx-auto">
+        <div className="flex flex-col items-center justify-center py-10">
+          <div className="h-12 bg-gray-200 rounded-md w-3/4 md:w-1/2 animate-pulse" /> {/* Title placeholder */}
+        </div>
+        <div className="grid grid-col-1 md:grid-cols-2 md:px-4 gap-7 pb-16 container mx-auto">
+          {[1, 2, 3, 4].map((index) => (
+            <OffersSkeletonCard key={index} />
+          ))}
+        </div>
+      </div>
+      <div className="max-w-7xl mx-auto px-3 py-5">
+        <div className="space-y-3 animate-pulse">
+          <div className="h-4 bg-gray-200 rounded-md w-full" />
+          <div className="h-4 bg-gray-200 rounded-md w-5/6" />
+          <div className="h-4 bg-gray-200 rounded-md w-4/6" />
+        </div>
+      </div>
+    </>
+  );
+};
+
+export default loading;
