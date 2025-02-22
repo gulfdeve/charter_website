@@ -8,24 +8,24 @@ const Sociallink = () => {
       {/* Mobile Version */}
       <div className="block lg:hidden ">
         <div className="flex flex-row items-center justify-center gap-5 container mx-auto">
-          <Link href="https://www.facebook.com" passHref target="_blank">
-            <Image src="/Facebook.png" alt="Facebook" width={26} height={26} />
-          </Link>
-          <Link href="https://www.twitter.com" passHref target="_blank">
-            <Image src="/Twitter.png" alt="Twitter" width={26} height={26} />
-          </Link>
-          <Link href="https://www.instagram.com" passHref target="_blank">
-            <Image src="/Instagram.png" alt="Instagram" width={26} height={26} />
-          </Link>
-          <Link href="https://www.pinterest.com" passHref target="_blank">
-            <Image src="/Pinterest.png" alt="Pinterest" width={26} height={26} />
-          </Link>
-          <Link href="https://www.linkedin.com" passHref target="_blank">
-            <Image src="/LinkedIn.png" alt="LinkedIn" width={26} height={26} />
-          </Link>
-          <Link href="https://www.youtube.com" passHref target="_blank">
-            <Image src="/Youtube.png" alt="Youtube" width={26} height={26} />
-          </Link>
+          <a href="https://www.facebook.com/centauruscharteryachtsrental/" passHref target="_blank">
+            <Image src="/Facebook.png" alt="Facebook" width={30} height={30} />
+          </a>
+          <a href="https://twitter.com/centaurscharter" passHref target="_blank">
+            <Image src="/Twitter.png" alt="Twitter" width={30} height={30} />
+          </a>
+          <a href="https://www.instagram.com/centauruscharter/" passHref target="_blank">
+            <Image src="/Instagram.png" alt="Instagram" width={30} height={30} />
+          </a>
+          <a href="https://www.pinterest.com/centauruscharteryachtsdubai/" passHref target="_blank">
+            <Image src="/Pinterest.png" alt="Pinterest" width={30} height={30} />
+          </a>
+          <a href="https://www.linkedin.com/company/centauruscharter" passHref target="_blank">
+            <Image src="/LinkedIn.png" alt="LinkedIn" width={30} height={30} />
+          </a>
+          <a href="https://www.youtube.com/channel/UCcvuO64sGm4HxfNMZRYfScQ?view_as=subscriber" passHref target="_blank">
+            <Image src="/Youtube.png" alt="Youtube" width={30} height={30} />
+          </a>
         </div>
         <div className="flex flex-col items-center justify-center">
           <h1 className="font-Montserrat text-white text-lg font-bold pt-2.5">
@@ -59,24 +59,24 @@ const Sociallink = () => {
             </h1>
           </div>
           <div className="flex flex-row items-center justify-center gap-5">
-            <Link href="https://www.facebook.com" passHref target="_blank">
-              <Image src="/Facebook.png" alt="Facebook" width={26} height={26} />
-            </Link>
-            <Link href="https://www.twitter.com" passHref target="_blank">
-              <Image src="/Twitter.png" alt="Twitter" width={26} height={26} />
-            </Link>
-            <Link href="https://www.instagram.com" passHref target="_blank">
-              <Image src="/Instagram.png" alt="Instagram" width={26} height={26} />
-            </Link>
-            <Link href="https://www.pinterest.com" passHref target="_blank">
-              <Image src="/Pinterest.png" alt="Pinterest" width={26} height={26} />
-            </Link>
-            <Link href="https://www.linkedin.com" passHref target="_blank">
-              <Image src="/LinkedIn.png" alt="LinkedIn" width={26} height={26} />
-            </Link>
-            <Link href="https://www.youtube.com" passHref target="_blank">
-              <Image src="/Youtube.png" alt="Youtube" width={26} height={26} />
-            </Link>
+            <a href="https://www.facebook.com/centauruscharteryachtsrental/" passHref target="_blank">
+              <Image src="/Facebook.png" alt="Facebook" width={30} height={30} />
+            </a>
+            <a href="https://twitter.com/centaurscharter" passHref target="_blank">
+              <Image src="/Twitter.png" alt="Twitter" width={30} height={30} />
+            </a>
+            <a href="https://www.instagram.com/centauruscharter/" passHref target="_blank">
+              <Image src="/Instagram.png" alt="Instagram" width={30} height={30} />
+            </a>
+            <a href="https://www.pinterest.com/centauruscharteryachtsdubai/" passHref target="_blank">
+              <Image src="/Pinterest.png" alt="Pinterest" width={30} height={30} />
+            </a>
+            <a href="https://www.linkedin.com/company/centauruscharter" passHref target="_blank">
+              <Image src="/LinkedIn.png" alt="LinkedIn" width={30} height={30} />
+            </a>
+            <a href="https://www.youtube.com/channel/UCcvuO64sGm4HxfNMZRYfScQ?view_as=subscriber" passHref target="_blank">
+              <Image src="/Youtube.png" alt="Youtube" width={30} height={30} />
+            </a>
           </div>
           <div className="flex items-center">
             <input
