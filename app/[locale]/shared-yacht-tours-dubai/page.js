@@ -175,7 +175,7 @@ const Page = () => {
             <li>Guests under 18 years old must be accompanied by an adult.</li>
           </ul>
         </div>
-        <div className="flex flex-col  md:flex-row-reverse items-center justify-center py-10">
+        <div className="flex flex-col  md:flex-row-reverse items-center justify-center">
           <div>
             <div className="">
               <img
@@ -219,17 +219,17 @@ const Page = () => {
             </p>
           </div>
         </div>
-        <div className="py-5 xl:px-32 container mx-auto">
-          <div className="flex flex-col md:flex-row rounded-lg md:px-10 xl:px-44 items-center  gap-5 justify-center  md:justify-between bg-transparent md:bg-primary-blue py-5">
-            <button className="text-white font-Montserrat font-bold bg-primary-blue px-5 py-3 text-xl rounded">
+        <div className="py-10 max-w-7xl mx-auto">
+          <div className="flex flex-col md:flex-row rounded-lg items-center  gap-5 justify-center  md:justify-between bg-transparent md:bg-primary-blue p-5">
+            <p className="text-white font-Montserrat font-bold bg-primary-blue text-xl rounded">
               Enjoy a luxurious shared yacht adventure!
-            </button>
+            </p>
             <div className=" flex md:flex-row md:gap-10">
-              <button className="flex items-center justify-center gap-2 px-4 py-3 bg-primary-blue text-primary-yellow border border-primary-yellow-dark  font-bold rounded-md hover:bg-primary-blue-2 transition">
+              <button className="blue-lined-button">
                 <FaWhatsapp size={20} />
                 WHATSAPP US
               </button>
-              <button className="flex items-center justify-center gap-2 px-4 py-3 bg-primary-blue text-primary-yellow border border-primary-yellow-dark  font-bold rounded-md hover:bg-primary-blue-2 transition">
+              <button className="blue-lined-button">
                 GET A QUOTE
               </button>
             </div>
