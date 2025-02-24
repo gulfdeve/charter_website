@@ -57,14 +57,14 @@ export default function Home() {
       </div>
 
       <div className="flex flex-col bg-white items-center justify-center pb-10 2xl:pt-20 2xl:py-0 ">
-        <h1 className="font-Montserrat text-[#0D2343] text-center font-bold text-4xl pb-4">
+        <h1 className=" text-[#0D2343] text-center font-bold text-4xl pb-4">
           YACHT RENTAL DUBAI {t("navbar.private-yachts")}
         </h1>
-        <h1 className="font-Montserrat text-[#0D2343] text-center  text-4xl pb-16">
+        <h1 className=" text-[#0D2343] text-center  text-4xl pb-16">
           Enjoy your Luxury Yacht Experience
         </h1>
 
-        <p className="font-Montserrat text-[#848484] text-center  text-base  px-3 xl:px-44 mx-auto container">
+        <p className=" text-[#848484] text-center  text-base  px-3 xl:px-44 mx-auto container">
           Centaurus Charter is a yacht rental company in Dubai that offers range
           of private yachts and boats for those who like glamorous, a taste of
           luxury & cruiser that bring forth a wonderful yachting experience. Let
@@ -95,7 +95,7 @@ export default function Home() {
                       className="embla__slide min-w-full flex flex-col items-center justify-center"
                     >
                       {/* Image */}
-                      <h1 className="font-Montserrat font-bold text-2xl mb-5">
+                      <h1 className=" font-bold text-2xl mb-5">
                         {product.translations[language].name_of_yacht}
                       </h1>
                       <img
@@ -108,45 +108,45 @@ export default function Home() {
                         <div className="grid grid-cols-2 lg:grid-cols-4 md:grid-cols-2 items-center gap-0 rounded-lg w-full overflow-hidden shadow-md mb-7">
                           {/* Model */}
                           <div className="bg-[#0d2343] text-white p-2 flex flex-col items-center ">
-                            <span className="font-bold font-Montserrat text-sm">
+                            <span className="font-bold  text-sm">
                               Model:
                             </span>
-                            <span className="font-semibold font-Montserrat text-sm text-[#e1ae48]">
+                            <span className="font-semibold  text-sm text-[#e1ae48]">
                               {product.translations[language].model}
                             </span>
                           </div>
                           {/* Length */}
                           <div className="bg-[#0d2343] text-white p-2 flex flex-col items-center">
-                            <span className="font-bold font-Montserrat text-sm">
+                            <span className="font-bold  text-sm">
                               Length:
                             </span>
-                            <span className="font-semibold font-Montserrat text-sm text-[#e1ae48]">
+                            <span className="font-semibold  text-sm text-[#e1ae48]">
                               {product.translations[language].size}
                             </span>
                           </div>
                           {/* Guests */}
                           <div className="bg-[#0d2343] text-white p-2 flex flex-col items-center">
-                            <span className="font-bold font-Montserrat text-sm">
+                            <span className="font-bold  text-sm">
                               Guests:
                             </span>
-                            <span className="font-semibold font-Montserrat text-sm text-[#e1ae48]">
+                            <span className="font-semibold  text-sm text-[#e1ae48]">
                               {product.translations[language].guests}
                             </span>
                           </div>
                           {/* Good For */}
                           <div className="bg-[#e1ae48] text-[#0d2343] xl:w-36 p-2 flex flex-col items-center">
-                            <span className="  font-Montserrat text-sm">
+                            <span className="   text-sm">
                               Per Hour:
                             </span>
-                            <span className="font-semibold font-Montserrat text-sm">
+                            <span className="font-semibold  text-sm">
                               {product.per_hour_price} +VAT
                             </span>
                           </div>
                         </div>
-                        <h3 className="text-md font-bold font-Montserrat">
+                        <h3 className="text-md font-bold ">
                           Trip inclusions from 3 hours onwards:
                         </h3>
-                        <p className="text-sm text-black font-Montserrat">
+                        <p className="text-sm text-black ">
                           Hops, Wines, Bubbly Drinks, Coffee, Tea, Water, &
                           Softdrinks
                           <br />
@@ -157,7 +157,7 @@ export default function Home() {
                         <p className="text-blue-400 text-xs mt-3">
                           T&C's apply
                         </p>
-                        <button className="flex flex-row items-center justify-center mt-4 py-2 w-full md:py-2 md:px-4 rounded-md bg-[#e1ae48] text-[#0d2343] hover:bg-[#0d2343] hover:text-[#e1ae48] font-Montserrat font-bold text-base md:text-sm xl:text-lg transition-all duration-300">
+                        <button className="flex flex-row items-center justify-center mt-4 py-2 w-full md:py-2 md:px-4 rounded-md bg-[#e1ae48] text-[#0d2343] hover:bg-[#0d2343] hover:text-[#e1ae48]  font-bold text-base md:text-sm xl:text-lg transition-all duration-300">
                           Book Now
                         </button>
                         <div className="flex items-center justify-center ">
@@ -205,7 +205,7 @@ export default function Home() {
                   className="flex flex-col border border-gray-400 xl:p-10 p-5 rounded-lg"
                 >
                   <Link  href={`/yacht-rentals/${product.slug}`}>
-                  <h1 className="font-Montserrat xl:text-4xl text-3xl font-bold">
+                  <h1 className=" xl:text-4xl text-3xl font-bold">
                     {product.translations[language].name_of_yacht}
                   </h1>
                   </Link>
@@ -219,38 +219,38 @@ export default function Home() {
                   <div className="grid grid-cols-2 lg:grid-cols-4 md:grid-cols-1 items-center gap-0 rounded-lg lg:w-[25rem] xl:w-[23rem] shadow-md mb-7 mt-5">
                     {/* Model */}
                     <div className="bg-[#0d2343] text-white p-1 xl:p-2.5 flex flex-col items-center xl:rounded-l-lg">
-                      <span className="font-bold font-Montserrat text-sm">
+                      <span className="font-bold  text-sm">
                         Model:
                       </span>
-                      <span className="font-semibold font-Montserrat text-sm xl:text-xs text-[#e1ae48]">
+                      <span className="font-semibold  text-sm xl:text-xs text-[#e1ae48]">
                         {product.translations[language].model}
                       </span>
                     </div>
 
                     {/* Length */}
                     <div className="bg-[#0d2343] text-white p-1 xl:p-2 flex flex-col items-center">
-                      <span className="font-bold font-Montserrat text-sm">
+                      <span className="font-bold  text-sm">
                         Length:
                       </span>
-                      <span className="font-semibold font-Montserrat text-sm text-[#e1ae48]">
+                      <span className="font-semibold  text-sm text-[#e1ae48]">
                         {product.translations[language].size}
                       </span>
                     </div>
 
                     {/* Guests */}
                     <div className="bg-[#0d2343] text-white p-1 xl:p-2 flex flex-col items-center">
-                      <span className="font-bold font-Montserrat text-sm">
+                      <span className="font-bold  text-sm">
                         Guests:
                       </span>
-                      <span className="font-semibold font-Montserrat text-sm text-[#e1ae48]">
+                      <span className="font-semibold  text-sm text-[#e1ae48]">
                         {product.translations[language].guests}
                       </span>
                     </div>
 
                     {/* Good For */}
                     <div className="bg-[#e1ae48] text-[#0d2343] xl:w-56 p-1 xl:p-2 flex flex-col items-center xl:rounded-r-lg">
-                      <span className="font-Montserrat text-sm">Per Hour:</span>
-                      <span className="font-semibold font-Montserrat text-sm">
+                      <span className=" text-sm">Per Hour:</span>
+                      <span className="font-semibold  text-sm">
                         {product.per_hour_price} +VAT
                       </span>
                     </div>
@@ -258,10 +258,10 @@ export default function Home() {
 
                   <div className="flex flex-row justify-between items-center xl:w-[32rem]">
                     <div>
-                      <h1 className="font-Montserrat font-bold">
+                      <h1 className=" font-bold">
                         Trip inclusions from 3 hours onwards:
                       </h1>
-                      <ol className="list-disc ml-7 text-xs font-bold font-Montserrat">
+                      <ol className="list-disc ml-7 text-xs font-bold ">
                         <li>
                           {" "}
                           Hops, Wines, Bubbly Drinks, Coffee, Tea, Water, &
@@ -301,7 +301,7 @@ export default function Home() {
 
                     </div>
                     <div className="flex flex-col items-center justify-center">
-                      <h3 className="font-Montserrat text-blue-500 text-xs text-center mt-6 mr-3">
+                      <h3 className=" text-blue-500 text-xs text-center mt-6 mr-3">
                         T&C’s Apply
                       </h3>
                     </div>
@@ -322,10 +322,10 @@ export default function Home() {
         </div>
         <div className="flex flex-col items-center sm:items-start sm:justify-start justify-center bg-[#0D2343] px-5 xl:px-32 xl:py-12 py-5 md:h-[443px] xl:w-[395rem] lg:w-[250rem] xl:h-[452px] lg:h-[404px]">
         
-          <h1 className="font-Montserrat text-[#e1ae48] text-center font-bold text-2xl xl:text-3xl py-7">
+          <h1 className=" text-[#e1ae48] text-center font-bold text-2xl xl:text-3xl py-7">
             LUXURY YACHT RENTALS
           </h1>
-          <p className="font-Montserrat text-white text-center sm:text-left  text-md  sm:text-sm xl:text-md pb-10">
+          <p className=" text-white text-center sm:text-left  text-md  sm:text-sm xl:text-md pb-10">
             Marvel with the beauty of Dubai on a luxury yacht. Explore our
             yachts in Dubai Marina and Dubai Harbor Marina with excellent
             conditions, full of luxurious amenities, flexible booking timings,
@@ -333,11 +333,11 @@ export default function Home() {
             top attractions – Burj Al Arab, Atlantis The Palm, JBR, Ain Dubai,
             Bluewaters Island and much more.
           </p>
-          <p className="font-Montserrat text-white text-center sm:text-left text-md sm:text-sm xl:text-md  pb-10">
+          <p className=" text-white text-center sm:text-left text-md sm:text-sm xl:text-md  pb-10">
             Welcome your guests in a warm atmosphere with pure elegance and
             style.
           </p>
-          <button className="flex flex-row items-center sm:text-left justify-center py-2 px-6 md:py-2 md:px-4   outline-[#e1ae48] outline-double rounded-md bg-[#0d2343] text-[#e1ae48] font-Montserrat font-bold text-[20px] md:text-sm xl:text-lg">
+          <button className="flex flex-row items-center sm:text-left justify-center py-2 px-6 md:py-2 md:px-4   outline-[#e1ae48] outline-double rounded-md bg-[#0d2343] text-[#e1ae48]  font-bold text-[20px] md:text-sm xl:text-lg">
             EXPLORE OUR YACHTS
           </button>
         </div>
@@ -353,10 +353,10 @@ export default function Home() {
         </div>
 
         <div className="flex flex-col items-center sm:items-start sm:justify-start justify-center  bg-[#e1ae48] px-5 xl:px-32 xl:py-12 py-5 md:h-[443px] xl:w-[277rem] xl:h-[452px] lg:h-[404px]">
-          <h1 className="font-Montserrat text-[#0D2343] text-center font-bold text-2xl xl:text-3xl py-7">
+          <h1 className=" text-[#0D2343] text-center font-bold text-2xl xl:text-3xl py-7">
             CUSTOMIZED YACHT TRIPS
           </h1>
-          <p className="font-Montserrat text-[#0D2343] text-center sm:text-left  text-md  sm:text-sm xl:text-md pb-10">
+          <p className=" text-[#0D2343] text-center sm:text-left  text-md  sm:text-sm xl:text-md pb-10">
             Centaurus Charter has something for everyone. Embark on a sunset
             cruise, catch some fish, celebrate milestones, woo your loved one or
             take your colleagues to a different team meeting; rent a yacht in
@@ -364,11 +364,11 @@ export default function Home() {
             Dubai luxury yacht for parties, fishing trips or romantic getaway in
             Dubai.
           </p>
-          <p className="font-Montserrat text-[#0D2343] text-center sm:text-left text-md sm:text-sm xl:text-md  pb-10">
+          <p className=" text-[#0D2343] text-center sm:text-left text-md sm:text-sm xl:text-md  pb-10">
             Celebrate Birthday Parties, Wedding Anniversary, Marriage proposals
             or Corporate Events on private yachts.
           </p>
-          <button className="flex flex-row items-center sm:text-left justify-center py-2 px-6 md:py-2 md:px-4   outline-[#0D2343] outline-double rounded-md bg-[#e1ae48] text-[#0D2343] font-Montserrat font-bold text-[20px] md:text-sm xl:text-lg">
+          <button className="flex flex-row items-center sm:text-left justify-center py-2 px-6 md:py-2 md:px-4   outline-[#0D2343] outline-double rounded-md bg-[#e1ae48] text-[#0D2343]  font-bold text-[20px] md:text-sm xl:text-lg">
             EXPLORE OUR EXPERIENCES
           </button>
         </div>
@@ -383,21 +383,21 @@ export default function Home() {
           </div>
         </div>
         <div className="flex flex-col items-center sm:items-start sm:justify-start justify-center bg-[#0D2343] px-5 xl:px-32 xl:py-12 py-5 md:h-[443px] xl:w-[287rem]  xl:h-[452px] lg:h-[404px]">
-          <h1 className="font-Montserrat text-[#e1ae48] text-center font-bold text-2xl xl:text-3xl py-7">
+          <h1 className=" text-[#e1ae48] text-center font-bold text-2xl xl:text-3xl py-7">
             EXCLUSIVE OFFERS
           </h1>
-          <p className="font-Montserrat text-white text-center sm:text-left  text-md  sm:text-sm xl:text-md pb-10">
+          <p className=" text-white text-center sm:text-left  text-md  sm:text-sm xl:text-md pb-10">
             Dubai is a true yachting heaven with azure blue waters and beautiful
             skyscrapers. Take your loved ones to sea. We bring to you deals from
             day charter, yacht parties to overnight yacht rentals. Don’t miss to
             explore the special discount for Emirates platinum , Business
             councils & FAZAA members.
           </p>
-          <p className="font-Montserrat text-white text-center sm:text-left text-md sm:text-sm xl:text-md  pb-10">
+          <p className=" text-white text-center sm:text-left text-md sm:text-sm xl:text-md  pb-10">
             Find your ideal boat with great deals and confirm your booking
             instantly.
           </p>
-          <button className="flex flex-row items-center sm:text-left justify-center py-2 px-6 md:py-2 md:px-4   outline-[#e1ae48] outline-double rounded-md bg-[#0d2343] text-[#e1ae48] font-Montserrat font-bold text-[20px] md:text-sm xl:text-lg">
+          <button className="flex flex-row items-center sm:text-left justify-center py-2 px-6 md:py-2 md:px-4   outline-[#e1ae48] outline-double rounded-md bg-[#0d2343] text-[#e1ae48]  font-bold text-[20px] md:text-sm xl:text-lg">
             EXPLORE ALL OFFERS
           </button>
         </div>
@@ -413,20 +413,20 @@ export default function Home() {
         </div>
 
         <div className="flex flex-col items-center sm:items-start sm:justify-start justify-center  bg-[#e1ae48] px-5 xl:px-32 xl:py-12 py-5 md:h-[443px] xl:w-[250rem] xl:h-[452px] lg:h-[404px]">
-          <h1 className="font-Montserrat text-[#0D2343] text-center font-bold text-2xl xl:text-3xl py-7">
+          <h1 className=" text-[#0D2343] text-center font-bold text-2xl xl:text-3xl py-7">
             WATER SPORTS ADD ON’s
           </h1>
-          <p className="font-Montserrat text-[#0D2343] text-center sm:text-left  text-md  sm:text-sm xl:text-md pb-10">
+          <p className=" text-[#0D2343] text-center sm:text-left  text-md  sm:text-sm xl:text-md pb-10">
             Holidays in Dubai offers a great mix of fun, adventure, breath
             taking places and special moments. It’s truly amazing to cruise the
             beautiful coastline with the speed jet boat or fly high on waters
             with fly boarding. Find plenty of water activities at the best price
             and make your excursion even more exciting.
           </p>
-          <p className="font-Montserrat text-[#0D2343] text-center sm:text-left text-md sm:text-sm xl:text-md  pb-10">
+          <p className=" text-[#0D2343] text-center sm:text-left text-md sm:text-sm xl:text-md  pb-10">
             Book your watersports together with boat charter at the best price.
           </p>
-          <button className="flex flex-row items-center sm:text-left justify-center py-2 px-6 md:py-2 md:px-4   outline-[#0D2343] outline-double rounded-md bg-[#e1ae48] text-[#0D2343] font-Montserrat font-bold text-[20px] md:text-sm xl:text-lg">
+          <button className="flex flex-row items-center sm:text-left justify-center py-2 px-6 md:py-2 md:px-4   outline-[#0D2343] outline-double rounded-md bg-[#e1ae48] text-[#0D2343]  font-bold text-[20px] md:text-sm xl:text-lg">
             EXPLORE OUR WATER ACTIVITIES
           </button>
         </div>

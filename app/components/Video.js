@@ -63,16 +63,16 @@ export default function Video() {
 
       {/* Content Overlay */}
       <div className="absolute inset-0 z-10 flex flex-col items-center  justify-center top-[32%] s:top-[49%] md:-top-[22%] lg:-top-[46%] xl:-top-[20%] text-white text-center p-2 md:px-14 lg:px-24 ">
-        <h1 className="text-3xl font-bold mb-4 text-black md:text-white font-Montserrat xl:text-4xl 2xl:text-5xl text-shadow">
+        <h1 className="text-3xl font-bold mb-4 text-black md:text-white  xl:text-4xl 2xl:text-5xl text-shadow">
           Yacht Touring Redefined
         </h1>
-        <h1 className="text-sm xl:text-xl font-bold mb-4 xl:mb-8 text-black md:text-white font-Montserrat 2xl:text-4xl text-shadow">
+        <h1 className="text-sm xl:text-xl font-bold mb-4 xl:mb-8 text-black md:text-white  2xl:text-4xl text-shadow">
           Yacht Rental in Dubai for Unforgettable Moments
         </h1>
-        <h2 className="text-sm mb-6 xl:mb-8 text-center font-Montserrat md:text-white text-black  xl:text-lg 2xl:text-xl text-shadow">
+        <h2 className="text-sm mb-6 xl:mb-8 text-center  md:text-white text-black  xl:text-lg 2xl:text-xl text-shadow">
           Hottest event this season<br />NYE Party New Year's Eve 2024 On a Luxury Yacht
         </h2>
-        <h2 className="text-sm mb-6 xl:mb-8 font-Montserrat text-black md:text-white xl:text-lg 2xl:text-xl md:text-shadow">
+        <h2 className="text-sm mb-6 xl:mb-8  text-black md:text-white xl:text-lg 2xl:text-xl md:text-shadow">
           Starting at AED1799
         </h2>
         <button className="blue-solid-button">

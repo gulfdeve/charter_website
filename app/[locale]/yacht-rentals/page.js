@@ -81,12 +81,12 @@ const YachtCard = ({ yacht }) => {
 
         {/* Optional Badges */}
         {yacht.category.includes("bestSellers") && (
-          <div className="absolute top-11 left-0 bg-primary-blue text-primary-yellow text-md font-Montserrat py-1 px-2">
+          <div className="absolute top-11 left-0 bg-primary-blue text-primary-yellow text-md  py-1 px-2">
             BEST SELLER
           </div>
         )}
         {yacht.category.includes("premium") && (
-          <div className="absolute top-11 left-0 bg-primary-blue text-primary-yellow text-md font-Montserrat py-1 px-2">
+          <div className="absolute top-11 left-0 bg-primary-blue text-primary-yellow text-md  py-1 px-2">
             PREMIUM
           </div>
         )}
@@ -98,16 +98,16 @@ const YachtCard = ({ yacht }) => {
       {/* Yacht Details */}
       <div className="flex flex-col items-start pt-3">
         <Link href={`yacht-rentals/${yacht.slug}`}>
-          <h1 className="text-[#0D2343] font-Montserrat text-xl font-bold py-4 hover:text-blue-600 transition-all duration-300 cursor-pointer">
+          <h1 className="text-[#0D2343]  text-xl font-bold py-4 hover:text-blue-600 transition-all duration-300 cursor-pointer">
             {yacht.title}
           </h1>
         </Link>
 		
-        <p className="font-Montserrat text-xs text-[#0D2343] text-left">
+        <p className=" text-xs text-[#0D2343] text-left">
 		Model: <span className="font-bold">{yacht.model}</span> | Length: <span className="font-bold">{yacht.length}</span> | Guests:{" "}
           <span className="font-bold">{yacht.guests}</span>
         </p>
-        <h1 className="font-Montserrat text-[#0D2343] font-bold text-xl pt-5 pb-2">
+        <h1 className=" text-[#0D2343] font-bold text-xl pt-5 pb-2">
           AED {yacht.price} <span className="text-[#0D2343]">Per Hour</span>
         </h1>
         <a
@@ -116,7 +116,7 @@ const YachtCard = ({ yacht }) => {
           }/?full-items=yes&flow=645487&back=${encodeURIComponent(
             typeof window !== "undefined" ? window.location.href : ""
           )}`}
-          className="flex flex-row items-center justify-center py-2 w-full md:py-2 md:px-4 rounded-md bg-[#e1ae48] text-[#0d2343] hover:bg-[#0d2343] hover:text-[#e1ae48] font-Montserrat font-bold text-base md:text-sm xl:text-lg transition-all duration-300"
+          className="flex flex-row items-center justify-center py-2 w-full md:py-2 md:px-4 rounded-md bg-[#e1ae48] text-[#0d2343] hover:bg-[#0d2343] hover:text-[#e1ae48]  font-bold text-base md:text-sm xl:text-lg transition-all duration-300"
         >
           Book Now
         </a>
@@ -189,11 +189,11 @@ const Tabs = () => {
   return (
     <div className="w-full bg-white">
       <div className="flex flex-col items-center justify-center pt-10 container mx-auto">
-        <h1 className="font-Montserrat text-[#0D2343] text-center font-bold text-4xl pb-4">
+        <h1 className=" text-[#0D2343] text-center font-bold text-4xl pb-4">
           LUXURY YACHT RENTALS DUBAI
         </h1>
       </div>
-      <div className="flex justify-center items-center gap-6 text-lg font-semibold py-2 md:py-7 px-2 font-Montserrat">
+      <div className="flex justify-center items-center gap-6 text-lg font-semibold py-2 md:py-7 px-2 ">
         <button onClick={() => setActiveTab("allYachts")}>ALL YACHTS</button>
         <button onClick={() => setActiveTab("bestSellers")}>
           BEST SELLERS

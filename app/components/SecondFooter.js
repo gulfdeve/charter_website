@@ -6,7 +6,7 @@ const SecondFooter = () => {
     <div className="bg-[#0E2243]">
       <div className="flex justify-between flex-col gap-10 lg:flex-row lg:gap-0 items-center p-4 container mx-auto ">
         <div className="flex flex-col gap-2">
-          <p className="text-[#969696] text-center font-Montserrat lg:text-start">
+          <p className="text-[#969696] text-center  lg:text-start">
             Official Partner
           </p>
           <a href="https://centaurusint.net/" target="_blank">
@@ -45,13 +45,13 @@ const SecondFooter = () => {
         <div className="flex lg:flex-col justify-between gap-4 xs:gap-10 lg:gap-2 text-[#969696]">
           <Link
             href="/terms-and-condition"
-            className="hover:underline font-Montserrat text-xs xs:text-sm xs:pr-0"
+            className="hover:underline  text-xs xs:text-sm xs:pr-0"
           >
             Terms and Conditions
           </Link>
           <Link
             href="/privacy-and-policy"
-            className="hover:underline font-Montserrat text-xs xs:text-sm xs:pr-10"
+            className="hover:underline  text-xs xs:text-sm xs:pr-10"
           >
             Privacy Policy
           </Link>

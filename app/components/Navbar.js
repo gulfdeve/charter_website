@@ -80,7 +80,7 @@ export default function Navbar() {
             </Link>
           </h1>
           <div className="flex items-center justify-end">
-            <button className="flex flex-row items-center justify-center font-RedHatDisplay py-2 w-full md:py-2 md:px-4 rounded-md bg-[#e1ae48] text-[#0d2343] hover:bg-[#0d2343] hover:text-[#e1ae48] font-Montserrat font-bold text-base md:text-sm xl:text-lg transition-all duration-300">
+            <button className="flex flex-row items-center justify-center font-RedHatDisplay py-2 w-full md:py-2 md:px-4 rounded-md bg-[#e1ae48] text-[#0d2343] hover:bg-[#0d2343] hover:text-[#e1ae48]  font-bold text-base md:text-sm xl:text-lg transition-all duration-300">
               <Link href={"/contact"}>{t("navbar.contact-us")}</Link>
             </button>
             <div className="flex flex-row px-8 gap-8">
@@ -112,7 +112,7 @@ export default function Navbar() {
               onMouseLeave={() => setDropdownOpen(false)}
             >
               {/* Trigger */}
-              <div className="p-3 rounded text-black font-Montserrat cursor-pointer scale-105 flex items-center gap-2">
+              <div className="p-3 rounded text-black  cursor-pointer scale-105 flex items-center gap-2">
                 <img
                   src={
                     locale === "en"
@@ -132,7 +132,7 @@ export default function Navbar() {
               </div>
               {/* Dropdown Menu */}
               {isDropdownOpen && (
-                <ul className="absolute right-0 w-44 bg-white border font-Montserrat rounded-md shadow-lg z-20">
+                <ul className="absolute right-0 w-44 bg-white border  rounded-md shadow-lg z-20">
                   <li
                     onClick={() => handleLanguageChange("en")}
                     className="flex items-center gap-2 p-2 cursor-pointer hover:bg-gray-200"
@@ -172,7 +172,7 @@ export default function Navbar() {
           } `}
         >
           <nav
-            className={` w-full bg-[#0D2343] text-[#e1ae48] font-Montserrat font-bold ${
+            className={` w-full bg-[#0D2343] text-[#e1ae48]  font-bold ${
               isSticky
                 ? " p-3  lg:p-2 xl:h-20 md:h-16 sticky top-0 z-50"
                 : "h-14 2xl:h-16  2xl:p-1"
@@ -229,7 +229,7 @@ export default function Navbar() {
                       data?.products?.map((product) => (
                         <li
                           key={product.id}
-                          className="py-2 px-4 cursor-pointer text-base font-normal text-gray-500 font-Montserrat hover:bg-gray-200"
+                          className="py-2 px-4 cursor-pointer text-base font-normal text-gray-500  hover:bg-gray-200"
                         >
                           {/* {product.title} */}
                           <Link
@@ -299,7 +299,7 @@ export default function Navbar() {
                         return (
                           <li
                             key={experience.id}
-                            className="py-2 px-4 cursor-pointer text-base font-normal text-gray-500 font-Montserrat hover:bg-gray-200"
+                            className="py-2 px-4 cursor-pointer text-base font-normal text-gray-500  hover:bg-gray-200"
                           >
                             <Link
                               href={`/yacht-trips/${experience.slug}`}
@@ -383,7 +383,7 @@ export default function Navbar() {
                 {/* Trigger Button */}
                 <button
                   onClick={() => setIsDropdownOpen((prev) => !prev)}
-                  className="flex items-center gap-2 p-1 rounded text-white text-sm font-Montserrat"
+                  className="flex items-center gap-2 p-1 rounded text-white text-sm "
                 >
                   <img
                     src={currentLanguage?.flag}
@@ -394,7 +394,7 @@ export default function Navbar() {
 
                 {/* Dropdown Menu */}
                 {istheDropdownOpen && (
-                  <ul className="absolute -right-14 top-11 w-48 text-center bg-white border  font-bold text-primary-blue font-Montserrat shadow-lg z-20">
+                  <ul className="absolute -right-14 top-11 w-48 text-center bg-white border  font-bold text-primary-blue  shadow-lg z-20">
                     {languages.map((lang) => (
                       <li
                         key={lang.code}
@@ -428,7 +428,7 @@ export default function Navbar() {
               className="absolute top-11 right-0 bg-white text-black w-full mt-3 shadow-lg"
               style={{ zIndex: 999 }}
             >
-              <ul className="flex flex-col p-4 gap-4 font-Montserrat">
+              <ul className="flex flex-col p-4 gap-4 ">
                 {/* Menu Items */}
                 <li className="font-bold cursor-pointer hover:text-blue-500">
                   <div
@@ -449,7 +449,7 @@ export default function Navbar() {
                     <ul className="pl-4 pt-3 space-y-3">
                       {!loading &&
                         data?.products?.map((product) => (
-                          <li className="cursor-pointer text-sm mt-2 font-normal text-gray-500 font-Montserrat">
+                          <li className="cursor-pointer text-sm mt-2 font-normal text-gray-500 ">
                             <Link
                               href={`/yacht-rentals/${product.slug}`}
                               key={product.id}
@@ -500,7 +500,7 @@ export default function Navbar() {
                     <ul className="pl-4 pt-3 space-y-3">
                       {!loading &&
                         data?.experiences?.map((experience) => (
-                          <li className="cursor-pointer text-sm mt-2 font-normal text-gray-500 font-Montserrat">
+                          <li className="cursor-pointer text-sm mt-2 font-normal text-gray-500 ">
                             <Link
                               href={`/yacht-trips/${experience.slug}`}
                               key={experience.id}

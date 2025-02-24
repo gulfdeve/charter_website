@@ -28,10 +28,10 @@ const Page = ({ params }) => {
   return (
     <>
       <div className="flex flex-col items-center justify-center max-w-7xl mx-auto py-10 text-primary-black">
-        <h1 className="font-Montserrat text-4xl font-bold text-center">
+        <h1 className=" text-4xl font-bold text-center">
           {event.translations?.[locale]?.title}
         </h1>
-        <h2 className="font-Montserrat text-xl font-bold text-center">
+        <h2 className=" text-xl font-bold text-center">
           {event.translations?.[locale]?.heading_2}
         </h2>
         <div className="flex items-center justify-center py-10">
@@ -41,7 +41,7 @@ const Page = ({ params }) => {
             className=""
           />
         </div>
-        <h1 className="font-Montserrat text-black text-left py-3 xl:px-10">
+        <h1 className=" text-black text-left py-3 xl:px-10">
           <ul>
             {event.translations?.[locale]?.description
               .split("\n")
@@ -53,7 +53,7 @@ const Page = ({ params }) => {
 
         <div className="py-10 w-full">
           <div className="flex flex-col md:flex-row rounded-lg items-center  gap-5 justify-center  md:justify-between bg-transparent md:bg-primary-blue p-5">
-            <p className="text-white font-Montserrat font-bold bg-primary-blue text-xl rounded">
+            <p className="text-white  font-bold bg-primary-blue text-xl rounded">
               Validity Until: {event.validity}
             </p>
             <div className="flex flex-col md:flex-row md:gap-10 gap-5">

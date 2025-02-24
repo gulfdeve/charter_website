@@ -13,7 +13,7 @@ const page = () => {
     <>
       <div className="max-w-7xl mx-auto">
         <div className="flex flex-col items-center justify-center py-10">
-          <h1 className="font-Montserrat text-[#0D2343] text-center font-bold text-4xl">
+          <h1 className=" text-[#0D2343] text-center font-bold text-4xl">
             YACHT TRIPS & EXPERIENCES IN DUBAI
           </h1>
         </div>
@@ -41,12 +41,12 @@ const page = () => {
                   <div className="felx flex-col items-start justify-start px-5">
                     {/* Title with Link */}
 
-                    <h1 className="text-[#232629] font-Montserrat text-2xl font-bold pt-6 hover:text-blue-600 transition-all duration-300 cursor-pointer">
+                    <h1 className="text-[#232629]  text-2xl font-bold pt-6 hover:text-blue-600 transition-all duration-300 cursor-pointer">
                       <Link href={`/yacht-trips/${experience.slug}`}>
                         {title}
                       </Link>
                     </h1>
-                    <p className="text-[#848484] font-Montserrat text-md pt-2 pb-9">
+                    <p className="text-[#848484]  text-md pt-2 pb-9">
                       {experience.translations[language].preivew_text}
                     </p>
                     <div className="bg-[#232629] w-full h-[0.05rem]"></div>
@@ -54,7 +54,7 @@ const page = () => {
                       <div className="flex flex-row items-center justify-evenly gap-4 py-5">
                         <IoIosPricetag className="text-3xl lg:text-5xl" />
                         <div className="flex flex-col items-start justify-start">
-                          <h1 className="text-[#232629] font-Montserrat font-bold text-sm xl:text-base">
+                          <h1 className="text-[#232629]  font-bold text-sm xl:text-base">
                             Starting
                             <br />
                             <span className="xl:text-xl">AED 3120</span>
@@ -75,7 +75,7 @@ const page = () => {
             })}
         </div>
         <div className="max-w-7xl mx-auto px-3 ">
-          <p className="font-Montserrat text-gray-500 text-md ">
+          <p className=" text-gray-500 text-md ">
             Dubai is a popular destination for yachting. The Arabian coastline
             is lined with beautiful azure beaches and top attractions, which are
             perfect for leisure trips and intimate celebrations. Centaurus
@@ -99,16 +99,16 @@ const page = () => {
           />
         </div>
         <div className="flex flex-col items-center lg:items-start lg:p-12 justify-center bg-[#E2BA4D] w-full lg:w-1/2 lg:h-[27rem] h-[35rem]">
-          <h1 className="font-Montserrat text-[#0D2343] text-5xl lg:text-4xl lg:pb-4 font-bold text-center px-6 lg:px-0">
+          <h1 className=" text-[#0D2343] text-5xl lg:text-4xl lg:pb-4 font-bold text-center px-6 lg:px-0">
             Exclusive Offers
           </h1>
-          <p className="font-Montserrat text-[#0D2343] text-center lg:text-left text-base  px-11 lg:w-[25rem] lg:px-0 xl: py-10">
+          <p className=" text-[#0D2343] text-center lg:text-left text-base  px-11 lg:w-[25rem] lg:px-0 xl: py-10">
             When you book your next yacht tour, you can take an advantage of
             wide selection of offers and discounts by Centaurus yachts. From
             summer offers, birthday party to membership discounts we have all
             for you.
           </p>
-          <button className="px-5 py-3 bg-[#0D2343] text-white text-xl font-Montserrat font-bold rounded-md ">
+          <button className="px-5 py-3 bg-[#0D2343] text-white text-xl  font-bold rounded-md ">
             EXPLORE ALL OFFERS
           </button>
         </div>
@@ -116,14 +116,14 @@ const page = () => {
         <div></div>
       </div>
       <div className="flex flex-col items-center justify-center bg-[#0D2343] w-full h-[23rem] lg:h-[17rem] xxs:h-[27rem] ">
-        <h1 className="font-Montserrat text-[#E2BA4D] text-3xl lg:text-4xl lg:pt-8 font-bold text-center px-6 lg:px-0">
+        <h1 className=" text-[#E2BA4D] text-3xl lg:text-4xl lg:pt-8 font-bold text-center px-6 lg:px-0">
           Tailor your Yacht Charter Experience in Dubai
         </h1>
-        <p className="font-Montserrat text-white text-center  text-base  px-5  lg:px-0  py-10">
+        <p className=" text-white text-center  text-base  px-5  lg:px-0  py-10">
           Live your life in a new way and get in touch with our agent for your
           customized tours
         </p>
-        <button className="px-5 py-3 bg-[#E2BA4D] text-[#0D2343] text-xl font-Montserrat font-bold rounded-md ">
+        <button className="px-5 py-3 bg-[#E2BA4D] text-[#0D2343] text-xl  font-bold rounded-md ">
           CONTACT US
         </button>
       </div>

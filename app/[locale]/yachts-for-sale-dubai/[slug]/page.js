@@ -90,10 +90,10 @@ export default function Home({ params }) {
     <>
       <div className="container mx-auto p-6">
         {/* Title */}
-        <h1 className="text-4xl font-Montserrat font-bold text-center mb-4 mt-5">
+        <h1 className="text-4xl  font-bold text-center mb-4 mt-5">
           {product.title}
         </h1>
-        <p className="text-xl font-Montserrat  text-center mb-4">
+        <p className="text-xl   text-center mb-4">
           Dubai Luxury Yacht
         </p>
         {/* Embla Carousel */}
@@ -161,25 +161,25 @@ export default function Home({ params }) {
   <div className="flex flex-col lg:flex-row w-full max-w-6xl rounded-xl overflow-hidden shadow-lg">
     {/* Upon Request Section */}
     <div className="flex flex-col items-center justify-center bg-[#1a428a] w-full lg:w-1/2 p-5 h-full lg:pb-60">
-      <h1 className="font-Montserrat text-white text-3xl font-bold text-center py-7 px-3">
+      <h1 className=" text-white text-3xl font-bold text-center py-7 px-3">
         UPON REQUEST
       </h1>
       <div className="w-full h-0.5 bg-gray-500"></div>
       <div className="flex flex-row items-center lg:items-start justify-between gap-5 pt-4 lg:pt-12">
-        <h3 className="text-lg text-white font-Montserrat">CONDITION:</h3>
-        <h3 className="text-lg text-white font-Montserrat font-bold">NEW</h3>
+        <h3 className="text-lg text-white ">CONDITION:</h3>
+        <h3 className="text-lg text-white  font-bold">NEW</h3>
       </div>
       <div className="flex flex-row items-center lg:items-start justify-between gap-5 pt-4 lg:pt-10">
-        <h3 className="text-lg text-white font-Montserrat">YEAR:</h3>
-        <h3 className="text-lg text-white font-Montserrat font-bold">2024</h3>
+        <h3 className="text-lg text-white ">YEAR:</h3>
+        <h3 className="text-lg text-white  font-bold">2024</h3>
       </div>
       <div className="flex flex-row items-center lg:items-start justify-between gap-5 pt-4 lg:pt-10">
-        <h3 className="text-lg text-white font-Montserrat">LOCATION:</h3>
-        <h3 className="text-lg text-white font-Montserrat font-bold">DUBAI</h3>
+        <h3 className="text-lg text-white ">LOCATION:</h3>
+        <h3 className="text-lg text-white  font-bold">DUBAI</h3>
       </div>
       <div className="flex flex-row items-center lg:items-start justify-between gap-5 pt-4 lg:pt-10 pb-10">
-        <h3 className="text-lg text-white font-Montserrat">AVAILIBILITY:</h3>
-        <h3 className="text-lg text-white font-Montserrat font-bold">AVAILABLE</h3>
+        <h3 className="text-lg text-white ">AVAILIBILITY:</h3>
+        <h3 className="text-lg text-white  font-bold">AVAILABLE</h3>
       </div>
       <button className="flex items-center justify-center gap-2 px-4 py-3 bg-[#e1ae48] text-[#0d2343] font-bold rounded-md hover:bg-yellow-600 transition">
         CHAT WITH US
@@ -188,50 +188,50 @@ export default function Home({ params }) {
 
     {/* Technical Specs Section */}
     <div className="flex flex-col  bg-white w-full lg:h-[51%] lg:w-1/2 p-5 xl:px-24 lg:px-7 shadow-2xl">
-      <h1 className="font-Montserrat text-[#1a428a] text-3xl font-bold text-center py-7 px-3">
+      <h1 className=" text-[#1a428a] text-3xl font-bold text-center py-7 px-3">
         TECHNICAL SPECS
       </h1>
       <div className="w-full h-0.5 bg-gray-500"></div>
       <div className="grid grid-cols-1 lg:grid-cols-2 md:grid-cols-2 gap-6 lg:gap-2 pt-4">
         <div>
-          <h3 className="text-lg text-[#1a428a] font-Montserrat">LENGTH:</h3>
-          <h3 className="text-lg text-[#1a428a] font-Montserrat font-bold">86.7 FT / 26.43 M</h3>
+          <h3 className="text-lg text-[#1a428a] ">LENGTH:</h3>
+          <h3 className="text-lg text-[#1a428a]  font-bold">86.7 FT / 26.43 M</h3>
         </div>
         <div>
-          <h3 className="text-lg text-[#1a428a] font-Montserrat">MAX SPEED:</h3>
-          <h3 className="text-lg text-[#1a428a] font-Montserrat font-bold">28 KNOTS</h3>
+          <h3 className="text-lg text-[#1a428a] ">MAX SPEED:</h3>
+          <h3 className="text-lg text-[#1a428a]  font-bold">28 KNOTS</h3>
         </div>
         <div>
-          <h3 className="text-lg text-[#1a428a] font-Montserrat">BEAM:</h3>
-          <h3 className="text-lg text-[#1a428a] font-Montserrat font-bold">21.3 FT / 6.49 M</h3>
+          <h3 className="text-lg text-[#1a428a] ">BEAM:</h3>
+          <h3 className="text-lg text-[#1a428a]  font-bold">21.3 FT / 6.49 M</h3>
         </div>
         <div>
-          <h3 className="text-lg text-[#1a428a] font-Montserrat">CRUISING SPEED:</h3>
-          <h3 className="text-lg text-[#1a428a] font-Montserrat font-bold">12 KNOTS</h3>
+          <h3 className="text-lg text-[#1a428a] ">CRUISING SPEED:</h3>
+          <h3 className="text-lg text-[#1a428a]  font-bold">12 KNOTS</h3>
         </div>
         <div>
-          <h3 className="text-lg text-[#1a428a] font-Montserrat">BUILDER:</h3>
-          <h3 className="text-lg text-[#1a428a] font-Montserrat font-bold">SUNSEEKER</h3>
+          <h3 className="text-lg text-[#1a428a] ">BUILDER:</h3>
+          <h3 className="text-lg text-[#1a428a]  font-bold">SUNSEEKER</h3>
         </div>
         <div>
-          <h3 className="text-lg text-[#1a428a] font-Montserrat">WATER CAPACITY:</h3>
-          <h3 className="text-lg text-[#1a428a] font-Montserrat font-bold">1400 L / 369.84 US GAL</h3>
+          <h3 className="text-lg text-[#1a428a] ">WATER CAPACITY:</h3>
+          <h3 className="text-lg text-[#1a428a]  font-bold">1400 L / 369.84 US GAL</h3>
         </div>
         <div>
-          <h3 className="text-lg text-[#1a428a] font-Montserrat">YEAR BUILD:</h3>
-          <h3 className="text-lg text-[#1a428a] font-Montserrat font-bold">2024</h3>
+          <h3 className="text-lg text-[#1a428a] ">YEAR BUILD:</h3>
+          <h3 className="text-lg text-[#1a428a]  font-bold">2024</h3>
         </div>
         <div>
-          <h3 className="text-lg text-[#1a428a] font-Montserrat">FUEL CAPACITY:</h3>
-          <h3 className="text-lg text-[#1a428a] font-Montserrat font-bold">11000 L / 2905.89 US GAL</h3>
+          <h3 className="text-lg text-[#1a428a] ">FUEL CAPACITY:</h3>
+          <h3 className="text-lg text-[#1a428a]  font-bold">11000 L / 2905.89 US GAL</h3>
         </div>
         <div>
-          <h3 className="text-lg text-[#1a428a] font-Montserrat">PROPULSION:</h3>
-          <h3 className="text-lg text-[#1a428a] font-Montserrat font-bold">SHAFTS</h3>
+          <h3 className="text-lg text-[#1a428a] ">PROPULSION:</h3>
+          <h3 className="text-lg text-[#1a428a]  font-bold">SHAFTS</h3>
         </div>
         <div>
-          <h3 className="text-lg text-[#1a428a] font-Montserrat">ENGINE:</h3>
-          <h3 className="text-lg text-[#1a428a] font-Montserrat font-bold">TWIN MTU 10V 2000 M96L SHAFT (2 X 1622PS), TWIN MTU 12V 2000 M96L SHAFT (2 X 1950PS), TWIN MTU 12V M96X SHAFT (2 X 2000PS)</h3>
+          <h3 className="text-lg text-[#1a428a] ">ENGINE:</h3>
+          <h3 className="text-lg text-[#1a428a]  font-bold">TWIN MTU 10V 2000 M96L SHAFT (2 X 1622PS), TWIN MTU 12V 2000 M96L SHAFT (2 X 1950PS), TWIN MTU 12V M96X SHAFT (2 X 2000PS)</h3>
         </div>
       </div>
     </div>
@@ -240,12 +240,12 @@ export default function Home({ params }) {
 <div className="md:block hidden">
           <div className="flex items-center justify-center w-full my-6 xl:px-36 lg:px-20 ">
             <hr className="flex-grow border-primary-yellow-dark" />
-            <span className="px-4 text-3xl 2xl:text-3xl font-semibold font-Montserrat text-black">
+            <span className="px-4 text-3xl 2xl:text-3xl font-semibold  text-black">
             88 ft Yacht Sunseeker
             </span>
             <hr className="flex-grow border-primary-yellow-dark " />
           </div>
-          <p className="font-Montserrat text-black text-lg 2xl:text-lg pt-2 pb-5 xl:px-36 lg:px-20 md:px-16 text-center">
+          <p className=" text-black text-lg 2xl:text-lg pt-2 pb-5 xl:px-36 lg:px-20 md:px-16 text-center">
           Step into a world of luxury with the 2024 Sunseeker 88, a masterpiece of seductive styling and smart, practical spaces. If you’re looking to buy a yacht in Dubai, this stunning yacht features a built-in hardtop and a cleverly configured interior that offers unparalleled comfort and elegance. The improved, sumptuous master cabin layout ensures a luxurious retreat, while the Beach Club with its innovative X-TEND™ sunbed at the aft promises relaxation and enjoyment. For those aiming to buy a luxury yacht, the 88 ft Sunseeker is an icon worthy of your immediate attention. Don't miss this opportunity to buy a boat in Dubai and experience the pinnacle of maritime luxury.
           </p>
         </div>

@@ -99,15 +99,15 @@ const page = () => {
           <img src="./FAQ.jpg" className="w-full" />
         </div>
         <div className="flex flex-col items-center justify-center py-10">
-          <h1 className="font-Montserrat text-[#0D2343] text-center font-bold text-4xl">
+          <h1 className=" text-[#0D2343] text-center font-bold text-4xl">
             {" "}
             FREQUENTLY ASKED QUESTIONS
           </h1>
-          <p className="font-Montserrat text-black text-center font-bold text-3xl py-3 px-10">
+          <p className=" text-black text-center font-bold text-3xl py-3 px-10">
             {" "}
             Everything you need to know about yacht charter
           </p>
-          <p className="font-Montserrat text-[#848484] text-center  text-base  px-3 lg:px-12 xl:px-56">
+          <p className=" text-[#848484] text-center  text-base  px-3 lg:px-12 xl:px-56">
             A luxury yacht rental is the best choice for anyone who wants to enjoy
             a day on the water. There are a lot of Insta-worthy spots that can be
             seen from the water. Got a question? Find the answers below to most
@@ -132,7 +132,7 @@ const page = () => {
               >
                 <button
                   onClick={() => toggleAnswer(index)}
-                  className={`w-full text-left text-lg md:text-lg font-bold  font-Montserrat flex justify-between items-center focus:outline-none ${
+                  className={`w-full text-left text-lg md:text-lg font-bold   flex justify-between items-center focus:outline-none ${
                     activeIndex === index ? "text-[#0D2343]" : "text-[#E2BA4D]"
                   }`}
                 >
@@ -146,7 +146,7 @@ const page = () => {
                     activeIndex === index ? "max-h-40" : "max-h-0"
                   }`}
                 >
-                  <p className="bg-white px-4 py-3 text-gray-600  font-Montserrat text-xs md:text-xs mt-3">
+                  <p className="bg-white px-4 py-3 text-gray-600   text-xs md:text-xs mt-3">
                     {faq.answer}
                   </p>
                 </div>
@@ -163,16 +163,16 @@ const page = () => {
             />
           </div>
           <div className="flex flex-col items-center lg:items-start lg:p-12 justify-center bg-[#E2BA4D] w-full lg:w-1/2 lg:h-[27rem] h-[35rem]">
-            <h1 className="font-Montserrat text-[#0D2343] text-5xl lg:text-4xl lg:pb-4 font-bold text-center px-6 lg:px-0">
+            <h1 className=" text-[#0D2343] text-5xl lg:text-4xl lg:pb-4 font-bold text-center px-6 lg:px-0">
               Exclusive Offers
             </h1>
-            <p className="font-Montserrat text-[#0D2343] text-center lg:text-left text-base  px-11 lg:w-[25rem] lg:px-0 xl: py-10">
+            <p className=" text-[#0D2343] text-center lg:text-left text-base  px-11 lg:w-[25rem] lg:px-0 xl: py-10">
               When you book your next yacht tour, you can take an advantage of
               wide selection of offers and discounts by Centaurus yachts. From
               summer offers, birthday party to membership discounts we have all
               for you.
             </p>
-            <button className="px-5 py-3 bg-[#0D2343] text-white text-xl font-Montserrat font-bold rounded-md ">
+            <button className="px-5 py-3 bg-[#0D2343] text-white text-xl  font-bold rounded-md ">
               EXPLORE ALL OFFERS
             </button>
           </div>
@@ -181,14 +181,14 @@ const page = () => {
         </div>
   
         <div className="flex flex-col items-center justify-center bg-[#0D2343] w-full h-[23rem] lg:h-[17rem] xxs:h-[27rem] ">
-          <h1 className="font-Montserrat text-[#E2BA4D] text-3xl lg:text-4xl lg:pt-8 font-bold text-center px-6 lg:px-0">
+          <h1 className=" text-[#E2BA4D] text-3xl lg:text-4xl lg:pt-8 font-bold text-center px-6 lg:px-0">
             Tailor your Yacht Charter Experience in Dubai
           </h1>
-          <p className="font-Montserrat text-white text-center  text-base  px-5  lg:px-0  py-10">
+          <p className=" text-white text-center  text-base  px-5  lg:px-0  py-10">
             Live your life in a new way and get in touch with our agent for your
             customized tours
           </p>
-          <button className="px-5 py-3 bg-[#E2BA4D] text-[#0D2343] text-xl font-Montserrat font-bold rounded-md ">
+          <button className="px-5 py-3 bg-[#E2BA4D] text-[#0D2343] text-xl  font-bold rounded-md ">
               CONTACT US
             </button>
         </div>
