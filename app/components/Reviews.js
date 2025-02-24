@@ -109,7 +109,7 @@ const Reviews = () => {
                   <div className="flex flex-col items-center justify-center -space-y-3">
                     <RxBorderDotted className="text-green-600 text-center text-5xl -mt-3" />
                     <h1 className=" font-bold text-xs">176 Reviews</h1>
-                    <img src="/TripAdvisor.svg" className="w-24 pt-5" />
+                    <img src="/TripAdvisor.png" className="w-24 pt-5" />
                   </div>
                 </Link>
               </div>
@@ -229,7 +229,7 @@ const Reviews = () => {
                     <h1 className=" font-bold text-xs">176 Reviews</h1>
                     <img
                       alt="tripadvisor logo"
-                      src="/TripAdvisor.svg"
+                      src="/TripAdvisor.png"
                       className="w-24 pt-5"
                     />
                   </div>
@@ -272,7 +272,7 @@ const Reviews = () => {
                   <h1 className=" font-bold text-xs">176 Reviews</h1>
                   <img
                     alt="tripadvisor logo"
-                    src="/TripAdvisor.svg"
+                    src="/TripAdvisor.png"
                     className="w-24 pt-5"
                   />
                 </div>
