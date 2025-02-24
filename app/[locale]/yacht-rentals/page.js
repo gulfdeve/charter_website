@@ -65,12 +65,14 @@ const YachtCard = ({ yacht }) => {
         {yacht.images.length > 1 && (
           <>
             <button
+            aria-label="go previous slide"
               onClick={scrollPrev}
               className="bg-primary-blue text-primary-yellow hover:bg-primary-yellow hover:text-primary-blue transition duration-150 ease-in-out transform absolute top-1/2 left-2 transform -translate-y-1/2 p-2 rounded-full shadow-md"
             >
               <FaArrowLeft />
             </button>
             <button
+            aria-label="go next slide"
               onClick={scrollNext}
               className="bg-primary-blue text-primary-yellow hover:bg-primary-yellow hover:text-primary-blue transition duration-150 ease-in-out transform absolute top-1/2 right-2 transform -translate-y-1/2 p-2 rounded-full shadow-md"
             >
