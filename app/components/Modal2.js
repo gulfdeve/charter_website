@@ -42,7 +42,7 @@ const Modal2 = ({ isModalOpen, closeModal }) => {
                 placeholder="Full Name"
                 value={fullName}
                 onChange={(e) => setFullName(e.target.value)}
-                className="w-full border outline outline-primary-blue bg-gray-100 border-primary-blue font-Montserrat placeholder:font-Montserrat rounded-md p-3 "
+                className="w-full border outline outline-primary-blue bg-gray-100 border-primary-blue  placeholder: rounded-md p-3 "
               />
 
              
@@ -51,7 +51,7 @@ const Modal2 = ({ isModalOpen, closeModal }) => {
                   country="ae" 
                   value={phoneNumber}
                   onChange={setPhoneNumber}
-                  className="flex-1 outline outline-primary-blue rounded-md bg-gray-100 font-Montserrat placeholder:font-Montserrat"
+                  className="flex-1 outline outline-primary-blue rounded-md bg-gray-100  placeholder:"
                   placeholder="Enter phone number"
                   inputStyle={{
                     width: "100%",
@@ -80,7 +80,7 @@ const Modal2 = ({ isModalOpen, closeModal }) => {
                 placeholder="Email Address"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                className="w-full border outline outline-primary-blue bg-gray-100 border-primary-blue font-Montserrat placeholder:font-Montserrat rounded-md p-3"
+                className="w-full border outline outline-primary-blue bg-gray-100 border-primary-blue  placeholder: rounded-md p-3"
               />
 
               <textarea
@@ -88,7 +88,7 @@ const Modal2 = ({ isModalOpen, closeModal }) => {
                 value={message}
                 onChange={(e) => setMessage(e.target.value)}
                 rows="8" // Set the number of rows to 12
-                className="w-full border outline outline-primary-blue bg-gray-100 border-primary-blue font-Montserrat placeholder:font-Montserrat rounded-md p-3"
+                className="w-full border outline outline-primary-blue bg-gray-100 border-primary-blue  placeholder: rounded-md p-3"
               />
 
               <button type="submit" className="blue-solid-button">

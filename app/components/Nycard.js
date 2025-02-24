@@ -54,41 +54,41 @@ const Nycard = () => {
             <div className="relative">
               <img src={yacht.image} alt={yacht.name} className='rounded-t-3xl'/>
               {yacht.isSold === 1 && (
-                <div className="absolute top-1/2 font-Montserrat left-0 w-full bg-primary-yellow-dark bg-opacity-80 text-white font-bold text-xl text-center py-2">
+                <div className="absolute top-1/2  left-0 w-full bg-primary-yellow-dark bg-opacity-80 text-white font-bold text-xl text-center py-2">
                   SOLD OUT
                 </div>
               )}
             </div>
             <div className="bg-primary-yellow-dark p-2">
-              <h1 className="font-Montserrat text-center text-2xl text-primary-blue font-bold">
+              <h1 className=" text-center text-2xl text-primary-blue font-bold">
                 {yacht.name}
               </h1>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 bg-white p-2  gap-5">
               <div className="flex flex-row items-center justify-between  p-4 md:p-2 px-16 md:px-4 outline md:outline-none outline-primary-blue">
                 <FaShip className="text-4xl md:text-3xl text-primary-yellow" />
-                <h1 className="text-center md:text-sm font-Montserrat text-primary-blue">
+                <h1 className="text-center md:text-sm  text-primary-blue">
                   Model<br />
                   <span className="font-bold">{yacht.model}</span>
                 </h1>
               </div>
               <div className="flex flex-row items-center justify-between p-4 md:p-2 px-16 md:px-4 outline outline-primary-blue md:outline-none">
                 <FaClock className="text-4xl md:text-3xl text-primary-yellow" />
-                <h1 className="text-center md:text-sm font-Montserrat text-primary-blue">
+                <h1 className="text-center md:text-sm  text-primary-blue">
                   {yacht.timings}<br />
                   <span className="font-bold">TIMINGS</span>
                 </h1>
               </div>
               <div className="flex flex-row items-center justify-between p-4 md:p-2 px-16 md:px-4 outline outline-primary-blue md:outline-none">
                 <IoIosPeople className="text-4xl md:text-3xl text-primary-yellow" />
-                <h1 className="text-center md:text-sm font-Montserrat text-primary-blue">
+                <h1 className="text-center md:text-sm  text-primary-blue">
                   {yacht.capacity}<br />
                   <span className="font-bold">CAPACITY</span>
                 </h1>
               </div>
               <div className="flex flex-row items-center justify-between p-4 md:p-2 px-16 md:px-4 outline outline-primary-blue  md:outline-none">
                 <FaBed className="text-4xl md:text-3xl text-primary-yellow" />
-                <h1 className="text-center font-Montserrat text-primary-blue">
+                <h1 className="text-center  text-primary-blue">
                   {yacht.cabins}<br />
                   <span className="font-bold md:text-sm">CABINS</span>
                 </h1>
@@ -96,25 +96,25 @@ const Nycard = () => {
             </div>
             <div className="bg-white p-5 rounded-b-3xl">
               <div className="bg-primary-blue outline outline-primary-yellow p-3 space-y-2">
-                <h1 className="font-Montserrat text-primary-yellow text-center font-bold">
+                <h1 className=" text-primary-yellow text-center font-bold">
                   PACKAGE INCLUSIONS:
                 </h1>
-                <h1 className="font-Montserrat text-white text-center text-sm">
+                <h1 className=" text-white text-center text-sm">
                   {yacht.packageInclusions}
                 </h1>
               </div>
               <div className="flex flex-row items-center justify-center p-3">
                 <IoMdPricetag className="text-5xl md:text-4xl text-primary-yellow" />
-                <h1 className="font-Montserrat text-primary-blue font-bold text-3xl text-center">
+                <h1 className=" text-primary-blue font-bold text-3xl text-center">
                   {yacht.price}
                 </h1>
               </div>
-              <h3 className="font-Montserrat text-primary-blue text-lg text-center">
+              <h3 className=" text-primary-blue text-lg text-center">
                 {yacht.rate}
               </h3>
               <div className="space-y-3 py-3">
                 {yacht.isSold === 1 ? (
-                  <button className="flex items-center justify-center w-full px-4 py-3 font-Montserrat bg-gray-400 text-white font-bold rounded-md">
+                  <button className="flex items-center justify-center w-full px-4 py-3  bg-gray-400 text-white font-bold rounded-md">
                     SOLD OUT
                   </button>
                 ) : (

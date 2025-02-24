@@ -70,10 +70,10 @@ const Page = () => {
       <div className="bg-white h-full w-full">
         <div className="container mx-auto">
           <div className="flex flex-col items-center justify-center py-10">
-            <h1 className="font-Montserrat text-primary-blue text-center font-bold text-2xl pb-4">
+            <h1 className=" text-primary-blue text-center font-bold text-2xl pb-4">
               UAE RESIDENTS YACHT OFFERS
             </h1>
-            <p className="font-Montserrat text-primary-blue text-sm text-center">
+            <p className=" text-primary-blue text-sm text-center">
               EXPLORE EXCLUSIVE WINTER YACHT RENTAL DEALS IN DUBAI WITH
               CENTAURUS CHARTER. BOOK YOUR LUXURIOUS YACHT CHARTER NOW AND ENJOY
               SPECIAL OFFERS THIS SEASON.
@@ -84,25 +84,25 @@ const Page = () => {
               <table className="w-full border-collapse border border-gray-300 md:text-sm lg:text-sm">
                 <thead>
                   <tr className="bg-[#0D2343] text-white">
-                    <th className="border border-transparent p-3 font-Montserrat text-primary-yellow">
+                    <th className="border border-transparent p-3  text-primary-yellow">
                       YACHT
                     </th>
-                    <th className="border border-transparent p-3 font-Montserrat text-primary-yellow">
+                    <th className="border border-transparent p-3  text-primary-yellow">
                       CAPACITY
                     </th>
-                    <th className="border border-transparent p-3 font-Montserrat text-primary-yellow">
+                    <th className="border border-transparent p-3  text-primary-yellow">
                       REGULAR RATE/HOUR
                     </th>
-                    <th className="border border-transparent p-3 font-Montserrat text-primary-yellow">
+                    <th className="border border-transparent p-3  text-primary-yellow">
                       DISCOUNTED 2-HOUR RATE
                     </th>
-                    <th className="border border-transparent p-3 font-Montserrat text-primary-yellow">
+                    <th className="border border-transparent p-3  text-primary-yellow">
                       DISCOUNTED 3-HOUR RATE
                     </th>
-                    <th className="border border-transparent p-3 font-Montserrat text-primary-yellow">
+                    <th className="border border-transparent p-3  text-primary-yellow">
                       DISCOUNTED 4-HOUR RATE
                     </th>
-                    <th className="border border-transparent p-3 font-Montserrat text-primary-yellow">
+                    <th className="border border-transparent p-3  text-primary-yellow">
                       BOOKING
                     </th>
                   </tr>
@@ -115,25 +115,25 @@ const Page = () => {
                         index % 2 === 0 ? "bg-white" : "bg-gray-100"
                       } text-center text-sm`}
                     >
-                      <td className="border border-black p-2 font-Montserrat font-bold">
+                      <td className="border border-black p-2  font-bold">
                         {yacht.name}
                       </td>
-                      <td className="border border-black p-2 font-Montserrat font-bold">
+                      <td className="border border-black p-2  font-bold">
                         {yacht.capacity}
                       </td>
-                      <td className="border border-black p-2 font-Montserrat font-bold">
+                      <td className="border border-black p-2  font-bold">
                         {yacht.ratePerHour}
                       </td>
-                      <td className="border border-black p-2 font-Montserrat font-bold">
+                      <td className="border border-black p-2  font-bold">
                         {yacht.rate2Hours}
                       </td>
-                      <td className="border border-black p-2 font-Montserrat font-bold">
+                      <td className="border border-black p-2  font-bold">
                         {yacht.rate3Hours}
                       </td>
-                      <td className="border border-black p-2 font-Montserrat font-bold">
+                      <td className="border border-black p-2  font-bold">
                         {yacht.rate4Hours}
                       </td>
-                      <td className="border border-black p-2 font-Montserrat font-bold bg-primary-yellow">
+                      <td className="border border-black p-2  font-bold bg-primary-yellow">
                         <button className="bg-[#e1ae48] text-black py-1 px-10 rounded-lg hover:bg-[#d49d3f] transition-all">
                           Book Now
                         </button>
@@ -145,16 +145,16 @@ const Page = () => {
             </div>
           </div>
           <div className="flex flex-col  px-4 xl:px-44">
-            <h3 className="text-black font-Montserrat text-center font-bold">
+            <h3 className="text-black  text-center font-bold">
               INCLUSIONS: WATER, SOFT DRINKS, WINES, AND BEERS.
             </h3>
             <div className="bg-primary-blue-2 p-4 ">
-              <h3 className="font-Montserrat font-bold text-center text-white text-sm">
+              <h3 className=" font-bold text-center text-white text-sm">
                 DISCOUNTED RATES ARE VALID FOR BOOKINGS FROM 6AM-2PM (MORNING
                 TRIPS) & 8 PM ONWARDS (NIGHT TRIPS)
               </h3>
             </div>
-            <h3 className="font-Montserrat text-left py-5">
+            <h3 className=" text-left py-5">
               DISCOVER DUBAI BY DAY OR UNDER THE STARS WITH OUR EXCLUSIVE
               MORNING AND NIGHT YACHT TOURS. FOR A LIMITED TIME, ENJOY 20% OFF
               ON 2-HOUR BOOKINGS AND A GENEROUS 40% OFF FOR BOOKINGS OF 3 HOURS
@@ -162,10 +162,10 @@ const Page = () => {
               ENJOY THE VIBRANT SKYLINE AT NIGHT, WE HAVE THE PERFECT TOUR TO
               SUIT YOUR NEEDS.
             </h3>
-            <h1 className="text-2xl font-Montserrat text-left py-2">
+            <h1 className="text-2xl  text-left py-2">
               Discover Our Winter Yacht Charter Offers in Dubai
             </h1>
-            <h3 className="font-Montserrat text-sm text-left py-2">
+            <h3 className=" text-sm text-left py-2">
               Are you ready to explore the crystal waters of Dubai this winter
               season? Centaurus Charter presents yacht charter special offers to
               give you the ultimate experience on the Arabian Gulf. Whether you
@@ -173,10 +173,10 @@ const Page = () => {
               yacht deals are perfect for any event.
             </h3>
 
-            <h1 className="text-2xl font-Montserrat text-left py-2">
+            <h1 className="text-2xl  text-left py-2">
               Morning Yacht Trips (6 AM - 2 PM) - Start Your Day on the Water
             </h1>
-            <p className="font-Montserrat text-sm text-left py-2">
+            <p className=" text-sm text-left py-2">
               Begin your day with the refreshing sea breeze and the breathtaking
               skyline on one of our morning yacht tours. From 6 AM to 2 PM, we
               provide a serene yet luxurious journey, ideal for early risers who
@@ -186,10 +186,10 @@ const Page = () => {
               fully equipped to ensure your comfort and pleasure, offering you a
               top-notch experience to start your day.
             </p>
-            <h1 className="text-2xl font-Montserrat text-left py-2">
+            <h1 className="text-2xl  text-left py-2">
               Night Yacht Cruises (8 PM Onwards) - Sail Under the Stars
             </h1>
-            <p className="font-Montserrat text-sm text-left py-2">
+            <p className=" text-sm text-left py-2">
               Experience the magic of city skyline illuminated under the night
               sky with our exclusive night cruises. Our evening trips, starting
               at 8 PM, are ideal for romantic getaways, fun gatherings, or
@@ -199,17 +199,17 @@ const Page = () => {
               40% off for trips lasting 3 hours or more. Let Centaurus Charter
               be your guide to an unforgettable evening on the water.
             </p>
-            <h1 className="text-2xl font-Montserrat text-left py-2">
+            <h1 className="text-2xl  text-left py-2">
               Why Choose Centaurus Charter for Yacht Rentals in Dubai?
             </h1>
-            <p className="font-Montserrat text-sm text-left py-2">
+            <p className=" text-sm text-left py-2">
               Centaurus Charter takes pride in delivering premium experiences
               with yacht bookings. Our yachts come with modern features, a
               skilled crew, and flexible options to make your trip special.
               Whether it's a casual day trip or an extravagant night out, our
               team is dedicated to making every moment special
             </p>
-            <ul className="list-disc font-Montserrat text-black pl-3">
+            <ul className="list-disc  text-black pl-3">
               <li>
                 Customized Experiences: Create your perfect cruise with
                 catering, entertainment, and custom décor.
@@ -224,10 +224,10 @@ const Page = () => {
               </li>
             </ul>
 
-            <h1 className="text-2xl font-Montserrat text-left py-2">
+            <h1 className="text-2xl  text-left py-2">
               Special Offers and Booking Details
             </h1>
-            <p className="font-Montserrat text-sm text-left py-2">
+            <p className=" text-sm text-left py-2">
               To make the most of our yacht charter special offers, we recommend
               booking in advance, as slots fill up quickly during the winter
               time. Our team is available to assist you with all your booking
@@ -236,25 +236,25 @@ const Page = () => {
               packages to fit your needs, making your time on board
               unforgettable.
             </p>
-            <h1 className="text-2xl font-Montserrat text-left py-2">
+            <h1 className="text-2xl  text-left py-2">
               Plan Your Next Yacht Adventure
             </h1>
-            <p className="font-Montserrat text-sm text-left py-2">
+            <p className=" text-sm text-left py-2">
               Don’t miss out on these limited-time winter yacht rental
               promotions. Save up to 40% on extended trips that promise
               unforgettable moments on the water. Book Now and experience the
               best luxury yacht rental Dubai has to offer, with Centaurus
               Charter leading the way!
             </p>
-            <p className="font-Montserrat text-sm text-center py-2">
+            <p className=" text-sm text-center py-2">
               T&Cs apply. Don't miss out—book now to take advantage of these
               incredible winter savings!
             </p>
             <div className="flex flex-col item-center justify-center py-10 px-5">
-              <h1 className="font-Montserrat text-primary-blue-2 font-bold text-center">
+              <h1 className=" text-primary-blue-2 font-bold text-center">
                 TERMS & CONDITION
               </h1>
-              <ul className="list-disc md:list-none text-center font-Montserrat text-primary-blue text-sm pl-4 pt-5 space-y-2">
+              <ul className="list-disc md:list-none text-center  text-primary-blue text-sm pl-4 pt-5 space-y-2">
                 <li>The Winter Offer is valid until 31 January 2025.</li>
                 <li>This offer cannot be combined with other promotions.</li>
                 <li>⁠A minimum booking duration of 2 hours is required.</li>
@@ -269,13 +269,13 @@ const Page = () => {
                 <li>⁠Terms are subject to change without prior notice.</li>
               </ul>
             </div>
-            <h3 className="text-black font-Montserrat text-center font-bold">
+            <h3 className="text-black  text-center font-bold">
               RESERVE YOUR SPOT TODAY AND INDULGE IN A MEMORABLE YACHT
               ADVENTURES ONLY WITH CENTAURUS CHARTER!
             </h3>
             <div className="py-5 ">
               <div className="flex flex-col md:flex-row rounded-lg md:px-10 xl:px-5 items-center  gap-5 justify-center  md:justify-between bg-transparent md:bg-primary-blue py-3">
-                <button className="text-white font-Montserrat font-bold bg-primary-blue px-5 py-3 text-xl rounded">
+                <button className="text-white  font-bold bg-primary-blue px-5 py-3 text-xl rounded">
                   REACH OUT TO US
                 </button>
                 <div className=" flex flex-col md:flex-row md:gap-10 gap-5">

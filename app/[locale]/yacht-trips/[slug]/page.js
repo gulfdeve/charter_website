@@ -46,7 +46,7 @@ const page = async ({ params }) => {
   return (
     <><div className="bg-white h-full w-full">
       <div className="flex flex-col items-center justify-center pt-10 ">
-        <h1 className="font-Montserrat text-[#0D2343] text-center font-bold text-4xl pb-10">
+        <h1 className=" text-[#0D2343] text-center font-bold text-4xl pb-10">
           YACHT TRIPS & EXPERIENCES IN DUBAI
         </h1>
       </div>
@@ -68,42 +68,42 @@ const page = async ({ params }) => {
                   .toLowerCase()
                   .replace(/ /g, "-")}`}
               >
-                <h1 className="text-[#0D2343] font-Montserrat text-2xl font-bold xl:pt-6  pt-6 md:pb-2 hover:text-blue-600 transition-all duration-300 cursor-pointer py-5 md:py-0">
+                <h1 className="text-[#0D2343]  text-2xl font-bold xl:pt-6  pt-6 md:pb-2 hover:text-blue-600 transition-all duration-300 cursor-pointer py-5 md:py-0">
                   {offer.title}
                 </h1>
               </Link>
               <div className="grid grid-cols-1 lg:grid-cols-4 md:grid-cols-2 items-center gap-0 rounded-lg w-full overflow-hidden shadow-md mb-7">
                 {/* Model */}
                 <div className="bg-[#0d2343] text-white p-2 flex flex-col items-center ">
-                  <span className="font-bold font-Montserrat text-sm">
+                  <span className="font-bold  text-sm">
                     Model:
                   </span>
-                  <span className="font-semibold font-Montserrat text-sm text-[#e1ae48]">
+                  <span className="font-semibold  text-sm text-[#e1ae48]">
                     Majesty
                   </span>
                 </div>
                 {/* Length */}
                 <div className="bg-[#0d2343] text-white p-2 flex flex-col items-center">
-                  <span className="font-bold font-Montserrat text-sm">
+                  <span className="font-bold  text-sm">
                     Length:
                   </span>
-                  <span className="font-semibold font-Montserrat text-sm text-[#e1ae48]">
+                  <span className="font-semibold  text-sm text-[#e1ae48]">
                     56 Feet
                   </span>
                 </div>
                 {/* Guests */}
                 <div className="bg-[#0d2343] text-white p-2 flex flex-col items-center">
-                  <span className="font-bold font-Montserrat text-sm">
+                  <span className="font-bold  text-sm">
                     Guests:
                   </span>
-                  <span className="font-semibold font-Montserrat text-sm text-[#e1ae48]">
+                  <span className="font-semibold  text-sm text-[#e1ae48]">
                     21
                   </span>
                 </div>
                 {/* Good For */}
                 <div className="bg-[#e1ae48] text-[#0d2343] xl:w-36 p-2 flex flex-col items-center">
-                  <span className="  font-Montserrat text-sm">Good For:</span>
-                  <span className="font-semibold font-Montserrat text-sm">
+                  <span className="   text-sm">Good For:</span>
+                  <span className="font-semibold  text-sm">
                     Birthday/Parties
                   </span>
                 </div>
@@ -115,13 +115,13 @@ const page = async ({ params }) => {
                 <div className="flex flex-row items-center justify-evenly gap-1 xl:gap-3 py-5">
                   <IoIosPricetag className="text-3xl lg:text-3xl" />
                   <div className="flex flex-col items-start justify-start">
-                    <h1 className="text-black font-Montserrat font-bold s:text-sm text-xs xl:text-lg">
+                    <h1 className="text-black  font-bold s:text-sm text-xs xl:text-lg">
                       3 Hours Rate
                       <br />
                       <span className="xl:text-xl text-[#232629] text-xs">
                         {offer.validity}
                       </span>
-                      <span className="text-[#e1ae48] s:text-sm font-Montserrat text-xs">
+                      <span className="text-[#e1ae48] s:text-sm  text-xs">
                         {" "}
                         +VAT
                       </span>
@@ -131,11 +131,11 @@ const page = async ({ params }) => {
 
                 {/* Buttons Section */}
                 <div className="flex xl:flex-row flex-col items-center justify-end gap-3 ">
-                  <button className="flex flex-row items-center justify-center py-2 px-4  rounded-md bg-[#0d2343] text-[#e1ae48] font-Montserrat font-bold text-[10px] md:text-xs xl:text-lg">
+                  <button className="flex flex-row items-center justify-center py-2 px-4  rounded-md bg-[#0d2343] text-[#e1ae48]  font-bold text-[10px] md:text-xs xl:text-lg">
                     <FaWhatsapp className="xs:text-xl text-lg  mr-1" />
                     WHATSAPP
                   </button>
-                  <button className="flex flex-row items-center justify-center py-2 px-6 md:py-2 md:px-4  rounded-md bg-[#0d2343] text-[#e1ae48] font-Montserrat font-bold text-[10px] md:text-sm xl:text-lg">
+                  <button className="flex flex-row items-center justify-center py-2 px-6 md:py-2 md:px-4  rounded-md bg-[#0d2343] text-[#e1ae48]  font-bold text-[10px] md:text-sm xl:text-lg">
                     KNOW MORE
                   </button>
                 </div>

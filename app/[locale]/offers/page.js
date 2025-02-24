@@ -19,7 +19,7 @@ const page = ({ params }) => {
     <>
       <div className="max-w-7xl mx-auto">
         <div className="flex flex-col items-center justify-center py-10 ">
-          <h1 className="font-Montserrat text-[#0D2343] text-center font-bold text-4xl">
+          <h1 className=" text-[#0D2343] text-center font-bold text-4xl">
             YACHT OFFERS AND DEALS IN DUBAI
           </h1>
         </div>
@@ -37,18 +37,18 @@ const page = ({ params }) => {
                 />
               </Link>
               <div className="flex flex-col  justify-start px-5 lg:px-5">
-                <h1 className="text-[#232629] font-Montserrat text-2xl font-bold pt-4">
+                <h1 className="text-[#232629]  text-2xl font-bold pt-4">
                   <Link href={`/${language}/offers/${offer.slug}`}>
                     {offer.translations[language].title}
                   </Link>
                 </h1>
-                <p className="text-[#232629] font-Montserrat font-bold text-xs pt-2 pb-16">
+                <p className="text-[#232629]  font-bold text-xs pt-2 pb-16">
                   {offer.note}
                 </p>
                 <div className="bg-[#232629] w-full h-[0.05rem]"></div>
                 <div className="flex flex-row items-center justify-between">
                   <div className="flex flex-col items-start justify-start py-10">
-                    <h1 className="text-[#232629] font-Montserrat font-bold text-sm xl:text-lg">
+                    <h1 className="text-[#232629]  font-bold text-sm xl:text-lg">
                       Validity Until:
                       <br />
                       {offer.validity}
@@ -74,7 +74,7 @@ const page = ({ params }) => {
         </div>
       </div>
       <div className="max-w-7xl mx-auto px-3 py-5 ">
-        <p className="font-Montserrat text-gray-500 text-md ">
+        <p className=" text-gray-500 text-md ">
           Dubai is a popular destination for yachting. The Arabian coastline is
           lined with beautiful azure beaches and top attractions, which are
           perfect for leisure trips and intimate celebrations. Centaurus Charter

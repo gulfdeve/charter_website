@@ -1,8 +1,11 @@
-
 import "./globals.css";
+import { Montserrat } from "next/font/google";
+import 'react-phone-input-2/lib/style.css';
 
-
-
+const montserrat = Montserrat({
+  subsets: ["latin"],
+  variable: "--font-montserrat",
+});
 
 export const metadata = {
   title: "Centaurus Charter",
@@ -12,7 +15,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body>
+      <body className={`${montserrat.variable}`}>
         {children}
       </body>
     </html>

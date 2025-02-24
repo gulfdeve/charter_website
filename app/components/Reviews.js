@@ -93,7 +93,7 @@ const Reviews = () => {
       <div className="xl:block hidden">
         <div className="bg-gray-200 w-full h-auto py-20 px-4">
   <div>
-    <h1 className="font-Montserrat text-[#0D2343] text-center font-bold text-4xl pb-4">
+    <h1 className=" text-[#0D2343] text-center font-bold text-4xl pb-4">
       WHAT OUR GUESTS SAY
     </h1>
   </div>
@@ -103,12 +103,12 @@ const Reviews = () => {
  <div className="pt-[3.3rem]">
   <div className="bg-white p-6 rounded-md shadow-md w-44   h-[225px] z-20 flex flex-col justify-center items-center">
     <Link href="https://www.tripadvisor.com/Attraction_Review-g295424-d15699786-Reviews-Centaurus_Yachts_Boats_Dubai-Dubai_Emirate_of_Dubai.html">
-      <h1 className="font-Montserrat font-bold text-center text-sm underline">
+      <h1 className=" font-bold text-center text-sm underline">
         Centaurus Yachts & Boats Dubai
       </h1>
       <div className="flex flex-col items-center justify-center -space-y-3">
         <RxBorderDotted className="text-green-600 text-center text-5xl -mt-3" />
-        <h1 className="font-Montserrat font-bold text-xs">176 Reviews</h1>
+        <h1 className=" font-bold text-xs">176 Reviews</h1>
         <img src="/TripAdvisor.svg" className="w-24 pt-5" />
       </div>
     </Link>
@@ -131,8 +131,8 @@ const Reviews = () => {
                   className="w-14 rounded-full"
                 />
                 <div className="flex flex-col items-start">
-                  <h1 className="font-Montserrat">{slide.name}</h1>
-                  <h3 className="font-Montserrat text-xs">{slide.date}</h3>
+                  <h1 className="">{slide.name}</h1>
+                  <h3 className=" text-xs">{slide.date}</h3>
                 </div>
               </div>
               <div className="flex flex-row py-1 gap-2">
@@ -140,8 +140,8 @@ const Reviews = () => {
                   <FaStar key={index} />
                 ))}
               </div>
-              <h1 className="font-Montserrat text-sm py-1">{slide.title}</h1>
-              <p className="font-Montserrat text-xs">{slide.content}</p>
+              <h1 className=" text-sm py-1">{slide.title}</h1>
+              <p className=" text-xs">{slide.content}</p>
             </div>
           </div>
         ))}
@@ -177,7 +177,7 @@ const Reviews = () => {
       <div className="xl:hidden block">
         <div className="bg-gray-200 w-full h-auto py-20 px-4">
           <div>
-            <h1 className="font-Montserrat text-[#0D2343] text-center font-bold text-4xl pb-4">
+            <h1 className=" text-[#0D2343] text-center font-bold text-4xl pb-4">
               WHAT OUR GUESTS SAY
             </h1>
           </div>
@@ -197,8 +197,8 @@ const Reviews = () => {
                         className="w-14 rounded-full"
                       />
                       <div className="flex flex-col items-start">
-                        <h1 className="font-Montserrat">{review.name}</h1>
-                        <h3 className="font-Montserrat text-xs">
+                        <h1 className="">{review.name}</h1>
+                        <h3 className=" text-xs">
                           {review.date}
                         </h3>
                       </div>
@@ -208,10 +208,10 @@ const Reviews = () => {
                         <FaStar key={index} />
                       ))}
                     </div>
-                    <h1 className="font-Montserrat text-sm py-1">
+                    <h1 className=" text-sm py-1">
                       {review.title}
                     </h1>
-                    <p className="font-Montserrat text-xs">{review.content}</p>
+                    <p className=" text-xs">{review.content}</p>
                   </div>
                 </div>
               ))}
@@ -220,12 +220,12 @@ const Reviews = () => {
             <div className="lg:block hidden">
               <div className="flex flex-col justify-center w-[20rem] md:w-full lg:ml-4 mt-4 lg:mt-4 lg:absolute xl:left-60 lg:left-32 lg:top-1/2 lg:-translate-y-1/2 lg:w-44 lg:p-3 lg:h-[225px] bg-white h-32 text-center rounded-lg">
                 <Link href="https://www.tripadvisor.com/Attraction_Review-g295424-d15699786-Reviews-Centaurus_Yachts_Boats_Dubai-Dubai_Emirate_of_Dubai.html">
-                  <h1 className="font-Montserrat font-bold text-sm underline">
+                  <h1 className=" font-bold text-sm underline">
                     Centaurus Yachts & Boats Dubai
                   </h1>
                   <div className="flex flex-col items-center justify-center -space-y-3">
                     <RxBorderDotted className="text-green-600 text-center text-5xl -mt-3" />
-                    <h1 className="font-Montserrat font-bold text-xs">
+                    <h1 className=" font-bold text-xs">
                       176 Reviews
                     </h1>
                     <img src="/TripAdvisor.svg" className="w-24 pt-5" />
@@ -250,7 +250,7 @@ const Reviews = () => {
             </button>
             <div className=" p-2 flex flex-col items-center z-20 ">
               <Link href="https://www.tripadvisor.com/Attraction_Review-g295424-d15699786-Reviews-Centaurus_Yachts_Boats_Dubai-Dubai_Emirate_of_Dubai.html">
-                <button className="flex flex-row items-center justify-center py-1 px-6 md:py-2 md:px-8 border-4 border-[#0d2343] rounded-md bg-[#050505] hover:bg-[#0d2343] text-[#e1ae48] font-Montserrat font-bold text-base md:text-sm xl:text-base transition-all duration-300">
+                <button className="flex flex-row items-center justify-center py-1 px-6 md:py-2 md:px-8 border-4 border-[#0d2343] rounded-md bg-[#050505] hover:bg-[#0d2343] text-[#e1ae48]  font-bold text-base md:text-sm xl:text-base transition-all duration-300">
                   Write A Review
                 </button>
               </Link>
@@ -259,12 +259,12 @@ const Reviews = () => {
           <div className="lg:hidden block ">
             <div className="flex flex-col justify-center w-full md:w-full lg:ml-4 mt-4 lg:mt-4 lg:absolute xl:left-60 lg:left-32 lg:top-1/2 lg:-translate-y-1/2 lg:w-44 lg:p-3 lg:h-[225px] bg-white h-32 text-center rounded-lg">
               <Link href="https://www.tripadvisor.com/Attraction_Review-g295424-d15699786-Reviews-Centaurus_Yachts_Boats_Dubai-Dubai_Emirate_of_Dubai.html">
-                <h1 className="font-Montserrat font-bold text-sm underline">
+                <h1 className=" font-bold text-sm underline">
                   Centaurus Yachts & Boats Dubai
                 </h1>
                 <div className="flex flex-col items-center justify-center -space-y-3">
                   <RxBorderDotted className="text-green-600 text-center text-5xl -mt-3" />
-                  <h1 className="font-Montserrat font-bold text-xs">
+                  <h1 className=" font-bold text-xs">
                     176 Reviews
                   </h1>
                   <img src="/TripAdvisor.svg" className="w-24 pt-5" />

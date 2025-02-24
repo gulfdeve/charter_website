@@ -11,12 +11,12 @@ export default function Page() {
           <img src="./Contactheader.webp" className="w-full" />
         </div>
         <div className="flex flex-col items-center justify-center py-10 ">
-          <h1 className="font-Montserrat text-[#0D2343] text-center font-bold text-4xl pb-4">
+          <h1 className=" text-[#0D2343] text-center font-bold text-4xl pb-4">
          
            CONTACT US
           </h1>
 
-          <p className="font-Montserrat text-[#848484] text-center  text-base  px-3 lg:px-12 xl:px-56">
+          <p className=" text-[#848484] text-center  text-base  px-3 lg:px-12 xl:px-56">
             We at Centaurus Charter are well experienced to meet the
             expectations of your next yachting adventure in Dubai. Please fill
             ontact you shortly.
@@ -30,28 +30,28 @@ export default function Page() {
                 <input
                   type="text"
                   placeholder="Your Name"
-                  className="w-full xl:w-[50rem] p-3 border-4 placeholder:font-Montserrat border-[#0D2343]  rounded-md bg-[#f5f5f5] text-gray-600 focus:outline-none focus:border-[#0D2343]"
+                  className="w-full xl:w-[50rem] p-3 border-4 placeholder: border-[#0D2343]  rounded-md bg-[#f5f5f5] text-gray-600 focus:outline-none focus:border-[#0D2343]"
                 />
               </div>
               <div>
                 <input
                   type="email"
                   placeholder="Your Email"
-                  className="w-full p-3 border-4 placeholder:font-Montserrat border-[#0D2343] rounded-md bg-[#f5f5f5] text-gray-600 focus:outline-none focus:border-[#0D2343]"
+                  className="w-full p-3 border-4 placeholder: border-[#0D2343] rounded-md bg-[#f5f5f5] text-gray-600 focus:outline-none focus:border-[#0D2343]"
                 />
               </div>
               <div>
                 <input
                   type="tel"
                   placeholder="Your Phone"
-                  className="w-full p-3 border-4 placeholder:font-Montserrat border-[#0D2343] rounded-md bg-[#f5f5f5] text-gray-600 focus:outline-none focus:border-[#0D2343]"
+                  className="w-full p-3 border-4 placeholder: border-[#0D2343] rounded-md bg-[#f5f5f5] text-gray-600 focus:outline-none focus:border-[#0D2343]"
                 />
               </div>
               <div>
                 <textarea
                   placeholder="Your Message"
                   rows={4}
-                  className="w-full p-3 border-4 placeholder:font-Montserrat border-[#0D2343] rounded-md bg-[#f5f5f5] text-gray-600 focus:outline-none focus:border-[#0D2343]"
+                  className="w-full p-3 border-4 placeholder: border-[#0D2343] rounded-md bg-[#f5f5f5] text-gray-600 focus:outline-none focus:border-[#0D2343]"
                 ></textarea>
               </div>
               {/* Checkboxes */}
@@ -90,7 +90,7 @@ export default function Page() {
               <div className="text-left">
                 <button
                   type="submit"
-                  className="px-6 py-3 bg-[#1B498F] text-white font-Montserrat rounded-md hover:bg-[#0D2343] transition duration-200"
+                  className="px-6 py-3 bg-[#1B498F] text-white  rounded-md hover:bg-[#0D2343] transition duration-200"
                 >
                   SEND MESSAGE
                 </button>
@@ -102,7 +102,7 @@ export default function Page() {
   {/* Location */}
   <div className="flex flex-row items-start justify-start">
     <MdLocationOn className="text-5xl" />
-    <h1 className="text-sm font-Montserrat w-[16rem] xs:w-[19rem] pl-5">
+    <h1 className="text-sm  w-[16rem] xs:w-[19rem] pl-5">
       Office 907 ETA Star's Al Manara Tower 6, Marasi Drive Street Business Bay,
       Za'beel, Dubai United Arab Emirates
     </h1>
@@ -113,9 +113,9 @@ export default function Page() {
     <IoCallSharp className="text-5xl" />
     <a
       href="tel:+97143521833"
-      className="text-sm font-Montserrat w-[14rem] xs:w-[19rem] pl-5 text-blue-600 "
+      className="text-sm  w-[14rem] xs:w-[19rem] pl-5 text-blue-600 "
     >
-      <span className="font-Montserrat text-black">Office:</span>  +971 4 352 1833
+      <span className=" text-black">Office:</span>  +971 4 352 1833
     </a>
   </div>
 
@@ -124,11 +124,11 @@ export default function Page() {
     <FaWhatsapp className="text-5xl" />
     <a
       href="https://wa.me/971524901269"
-      className="text-sm font-Montserrat w-[16rem] xs:w-[19rem] pl-5 text-blue-600 "
+      className="text-sm  w-[16rem] xs:w-[19rem] pl-5 text-blue-600 "
       target="_blank"
       rel="noopener noreferrer"
     >
-      <span className="font-Montserrat text-black">WhatsApp:</span>  +971 52 490 1269
+      <span className=" text-black">WhatsApp:</span>  +971 52 490 1269
     </a>
   </div>
 
@@ -137,9 +137,9 @@ export default function Page() {
     <MdEmail className="text-5xl" />
     <a
       href="mailto:info@centauruscharter.com"
-      className="text-sm font-Montserrat w-[16rem] xs:w-[19rem] pl-5 text-blue-600 "
+      className="text-sm  w-[16rem] xs:w-[19rem] pl-5 text-blue-600 "
     >
-     <span className="font-Montserrat text-black">Email:</span>  info@centauruscharter.com
+     <span className=" text-black">Email:</span>  info@centauruscharter.com
     </a>
   </div>
 </div>

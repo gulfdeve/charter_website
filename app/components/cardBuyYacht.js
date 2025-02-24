@@ -15,41 +15,41 @@ const YachtCard = ({ yacht }) => {
       
       <div className="p-6">
         <Link href={`/${language}/yachts-for-sale-dubai/88ft-sunseeker`}>
-        <h2 className="text-2xl font-bold text-navy-900 mb-4 font-Montserrat">{yacht.name}</h2>
+        <h2 className="text-2xl font-bold text-navy-900 mb-4 ">{yacht.name}</h2>
         </Link>
         
         <div className="grid grid-cols-2 gap-6 mb-6">
           <div className='border-b-2 border-gray-200'>
-            <p className="text-[#125589] font-medium mb-1 font-Montserrat">Build:</p>
-            <p className="text-gray-900 font-bold font-Montserrat">{yacht.build}</p>
+            <p className="text-[#125589] font-medium mb-1 ">Build:</p>
+            <p className="text-gray-900 font-bold ">{yacht.build}</p>
           </div>
           <div className='border-b-2 border-gray-200'>
-            <p className="text-[#125589] font-medium mb-1 font-Montserrat">Cabins:</p>
-            <p className="text-gray-900 font-bold font-Montserrat">{yacht.cabins}</p>
+            <p className="text-[#125589] font-medium mb-1 ">Cabins:</p>
+            <p className="text-gray-900 font-bold ">{yacht.cabins}</p>
           </div>
           <div className='border-b-2 border-gray-200'>
-            <p className="text-[#125589] font-medium mb-1 font-Montserrat">Length:</p>
-            <p className="text-gray-900 font-bold font-Montserrat">{yacht.length}</p>
+            <p className="text-[#125589] font-medium mb-1 ">Length:</p>
+            <p className="text-gray-900 font-bold ">{yacht.length}</p>
           </div>
           <div className='border-b-2 border-gray-200'>
-            <p className="text-[#125589] font-medium mb-1 font-Montserrat">Guests:</p>
-            <p className="text-gray-900 font-bold font-Montserrat">{yacht.guests}</p>
+            <p className="text-[#125589] font-medium mb-1 ">Guests:</p>
+            <p className="text-gray-900 font-bold ">{yacht.guests}</p>
           </div>
           <div className='border-b-2 border-gray-200'>
-            <p className="text-[#125589] font-medium mb-1 font-Montserrat">Year:</p>
-            <p className="text-gray-900 font-bold font-Montserrat">{yacht.year}</p>
+            <p className="text-[#125589] font-medium mb-1 ">Year:</p>
+            <p className="text-gray-900 font-bold ">{yacht.year}</p>
           </div>
           <div className='border-b-2 border-gray-200'>
-            <p className="text-[#125589] font-medium mb-1 font-Montserrat">Price:</p>
-            <p className="text-gray-900 font-bold font-Montserrat">{yacht.price}</p>
+            <p className="text-[#125589] font-medium mb-1 ">Price:</p>
+            <p className="text-gray-900 font-bold ">{yacht.price}</p>
           </div>
         </div>
         
         <div className="grid grid-cols-2 gap-4">
-          <Link href="yachts-for-sale-dubai/88ft-sunseeker" className="blue-solid-button text-center font-Montserrat">
+          <Link href="yachts-for-sale-dubai/88ft-sunseeker" className="blue-solid-button text-center ">
             KNOW MORE
           </Link>
-          <button className="blue-solid-button font-Montserrat">
+          <button className="blue-solid-button ">
             INQUIRE NOW
           </button>
         </div>

@@ -73,7 +73,7 @@ export default function EmblaCarouselComponent() {
   return (
     <div className="flex flex-col items-center container mx-auto">
       <div className="flex flex-col items-center justify-center">
-        <h1 className="font-Montserrat text-[#0D2343] text-center font-bold text-4xl py-10">
+        <h1 className=" text-[#0D2343] text-center font-bold text-4xl py-10">
           YACHT LOCATION
         </h1>
       </div>
@@ -92,10 +92,10 @@ export default function EmblaCarouselComponent() {
                     loading="lazy"
                   ></iframe>
                   <div className="absolute bottom-0 left-0 w-full bg-black bg-opacity-30 p-4 text-white">
-                    <h3 className="text-4xl font-Montserrat font-bold text-center">
+                    <h3 className="text-4xl  font-bold text-center">
                       {item.title}
                     </h3>
-                    <p className="text-xl font-Montserrat font-bold text-center">
+                    <p className="text-xl  font-bold text-center">
                       {item.description}
                     </p>
                   </div>
@@ -134,10 +134,10 @@ export default function EmblaCarouselComponent() {
                     loading="lazy"
                   ></iframe>
                   <div className="absolute bottom-0 left-0 w-full bg-black bg-opacity-30 p-4 text-white">
-                    <h3 className="text-4xl font-Montserrat font-bold text-center">
+                    <h3 className="text-4xl  font-bold text-center">
                       {item.title}
                     </h3>
-                    <p className="text-xl font-Montserrat font-bold text-center">
+                    <p className="text-xl  font-bold text-center">
                       {item.description}
                     </p>
                   </div>

@@ -14,7 +14,7 @@ return (
 <>
     <div className="max-w-7xl mx-auto">
         <div className="flex flex-col items-center justify-center py-10 ">
-            <h1 className="font-Montserrat text-[#0D2343] text-center font-bold text-4xl">
+            <h1 className=" text-[#0D2343] text-center font-bold text-4xl">
                 YACHT EVENTS DUBAI
             </h1>
         </div>
@@ -26,18 +26,18 @@ return (
                     alt={event.translations[language].title} className="rounded-t-md w-full object-cover" />
                 </Link>
                 <div className="flex flex-col  justify-start px-5 lg:px-5">
-                    <h1 className="text-[#232629] font-Montserrat text-2xl font-bold pt-4">
+                    <h1 className="text-[#232629]  text-2xl font-bold pt-4">
                         <Link href={`/${language}/events/${event.slug}`}>
                         {event.translations[language].title}
                         </Link>
                     </h1>
-                    <p className="text-[#232629] font-Montserrat font-bold text-base pt-2 pb-16">
+                    <p className="text-[#232629]  font-bold text-base pt-2 pb-16">
                       {event.translations[language].heading_2}
                     </p>
                     <div className="bg-[#232629] w-full h-[0.05rem]"></div>
                     <div className="flex flex-row items-center justify-between">
                         <div className="flex flex-col items-start justify-start py-10">
-                            <h1 className="text-[#232629] font-Montserrat font-bold text-sm xl:text-lg">
+                            <h1 className="text-[#232629]  font-bold text-sm xl:text-lg">
                                 Validity Until:
                                 <br />
                                 {event.validity}
@@ -61,7 +61,7 @@ return (
         </div>
     </div>
     <div className="max-w-7xl mx-auto px-3 py-5 ">
-        <p className="font-Montserrat text-gray-500 text-md ">
+        <p className=" text-gray-500 text-md ">
             Experience the perfect fusion of luxury, elegance, and unforgettable moments on the glistening waters of
             Dubai. As a premier destination for hosting extraordinary events, parties, and exclusive gatherings, Dubai
             offers a captivating backdrop for yacht events like no other. Whether you seek a lavish party, after party,

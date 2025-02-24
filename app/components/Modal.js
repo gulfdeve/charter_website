@@ -71,10 +71,10 @@ const Modal = ({ show, onClose }) => {
         <div className="flex h-full">
           {/* Left Section */}
           <div className="md:basis-1/2 flex flex-col p-6 justify-center items-center gap-5">
-            <h2 className="text-3xl text-center text-primary-blue font-Montserrat px-5">
+            <h2 className="text-3xl text-center text-primary-blue  px-5">
               Join Our <span className="font-bold">Newsletter</span>
             </h2>
-            <p className="mt-4 text-primary-blue text-center text-xl px-7 font-Montserrat">
+            <p className="mt-4 text-primary-blue text-center text-xl px-7 ">
               Get the latest updates & special offers.
             </p>
             <form className="mt-4 w-full" onSubmit={handleSubmit}>
@@ -82,12 +82,12 @@ const Modal = ({ show, onClose }) => {
                 type="email"
                 name="email"
                 placeholder="Email"
-                className="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none ring-2 ring-primary-blue placeholder:font-Montserrat"
+                className="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none ring-2 ring-primary-blue placeholder:"
                 required
               />
               <button
                 type="submit"
-                className="w-full px-4 py-2 p-3 mt-8 text-2xl font-Montserrat text-white bg-primary-blue rounded-full"
+                className="w-full px-4 py-2 p-3 mt-8 text-2xl  text-white bg-primary-blue rounded-full"
               >
                 Sign Up
               </button>

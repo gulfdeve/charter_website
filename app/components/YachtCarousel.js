@@ -79,7 +79,7 @@ export default function YachtCarousal() {
   return (
     <>
       <div className="flex flex-col items-center justify-center bg-primary-yellow pt-10 p-5">
-        <h1 className="font-Montserrat text-[#0D2343] text-center font-bold text-4xl pt-2">
+        <h1 className=" text-[#0D2343] text-center font-bold text-4xl pt-2">
           EXPLORE OUR YACHT
         </h1>
 
@@ -100,12 +100,12 @@ export default function YachtCarousal() {
                         className="h-[27rem] rounded-lg"
                       />
                       <div className="absolute bottom-0 left-0 w-full bg-black-gradient p-4 text-white rounded-lg">
-                        <h3 className="text-3xl font-Montserrat font-bold text-left mb-3">
+                        <h3 className="text-3xl  font-bold text-left mb-3">
 						<Link href={`/yacht-rentals/${product.slug}`}>
 						  {product.translations[language].name_of_yacht}
 						  </Link>
                         </h3>
-                        <p className="text-md font-Montserrat text-left mb-3">
+                        <p className="text-md  text-left mb-3">
                           {product.translations[language].slider_text}
                         </p>
                         <Link href={`/yacht-rentals/${product.slug}`}>
@@ -135,17 +135,17 @@ export default function YachtCarousal() {
                       />
 
                       <div className="absolute bottom-0 left-0 w-full bg-black bg-opacity-10 p-4 text-white">
-                        <h3 className="text-4xl font-Montserrat font-bold text-left">
+                        <h3 className="text-4xl  font-bold text-left">
                           <Link href={`/yacht-rentals/${product.slug}`}>
 						  {product.translations[language].name_of_yacht}
 						  </Link>
                         </h3>
-                        <p className="text-xl font-Montserrat font-bold text-left">
+                        <p className="text-xl  font-bold text-left">
                           {product.translations[language].slider_text}
                         </p>
 
                         <Link href={`/yacht-rentals/${product.slug}`}>
-                          <button className="flex flex-row items-center justify-center py-1 px-6 md:py-2 md:px-8  border-4 border-[#e1ae48] rounded-md bg-primary-yellow  hover:bg-primary-yellow-dark text-primary-blue font-Montserrat font-bold text-base md:text-sm xl:text-base transition-all duration-300">
+                          <button className="flex flex-row items-center justify-center py-1 px-6 md:py-2 md:px-8  border-4 border-[#e1ae48] rounded-md bg-primary-yellow  hover:bg-primary-yellow-dark text-primary-blue  font-bold text-base md:text-sm xl:text-base transition-all duration-300">
                             Book Now
                           </button>
                         </Link>

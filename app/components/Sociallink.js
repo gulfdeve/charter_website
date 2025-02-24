@@ -28,10 +28,10 @@ const Sociallink = () => {
           </a>
         </div>
         <div className="flex flex-col items-center justify-center">
-          <h1 className="font-Montserrat text-white text-lg font-bold pt-2.5">
+          <h1 className=" text-white text-lg font-bold pt-2.5">
             Amazing Offers just for you
           </h1>
-          <h1 className="font-Montserrat text-white text-lg pb-2 text-center">
+          <h1 className=" text-white text-lg pb-2 text-center">
             Sign up to receive amazing offers and tips
           </h1>
         </div>
@@ -39,9 +39,9 @@ const Sociallink = () => {
           <input
             type="email"
             placeholder="Your Email"
-            className="flex-grow px-6 py-4 xxs:px-1 md:px-8 xxs:text-xs text-sm sm:text-lg font-Montserrat font-bold text-gray-700 border border-black focus:outline-none placeholder:font-Montserrat placeholder:text-lg placeholder:text-gray-700"
+            className="flex-grow px-6 py-4 xxs:px-1 md:px-8 xxs:text-xs text-sm sm:text-lg  font-bold text-gray-700 border border-black focus:outline-none placeholder: placeholder:text-lg placeholder:text-gray-700"
           />
-          <button className="bg-gray-300 px-8 py-3 xxs:py-3.5 xxs:px-2 xxs:text-sm xs:px-3 md:py-4 text-lg sm:text-lg font-Montserrat font-bold text-gray-800 hover:bg-gray-400 border border-black">
+          <button className="bg-gray-300 px-8 py-3 xxs:py-3.5 xxs:px-2 xxs:text-sm xs:px-3 md:py-4 text-lg sm:text-lg  font-bold text-gray-800 hover:bg-gray-400 border border-black">
             SIGN UP
           </button>
         </div>
@@ -51,10 +51,10 @@ const Sociallink = () => {
       <div className="lg:block hidden">
         <div className="flex flex-row items-center justify-between lg:px-12 gap-20 container mx-auto">
           <div className="flex flex-col items-start justify-center">
-            <h1 className="font-Montserrat text-white lg:text-sm xl:text-lg font-bold pt-2.5">
+            <h1 className=" text-white lg:text-sm xl:text-lg font-bold pt-2.5">
               Amazing Offers just for you
             </h1>
-            <h1 className="font-Montserrat text-white xl:text-lg lg:text-sm pb-2">
+            <h1 className=" text-white xl:text-lg lg:text-sm pb-2">
               Sign up to receive amazing offers and tips
             </h1>
           </div>
@@ -82,9 +82,9 @@ const Sociallink = () => {
             <input
               type="email"
               placeholder="Your Email"
-              className="px-1 py-2 xl:text-lg xl:px-2 text-sm sm:text-lg font-Montserrat font-bold text-gray-700 border border-black focus:outline-none placeholder:font-Montserrat placeholder:text-lg placeholder:text-gray-700"
+              className="px-1 py-2 xl:text-lg xl:px-2 text-sm sm:text-lg  font-bold text-gray-700 border border-black focus:outline-none placeholder: placeholder:text-lg placeholder:text-gray-700"
             />
-            <button className="bg-gray-300 px-7 py-1 xl:py-2 xl:text-lg lg:text-sm font-Montserrat font-bold text-gray-800 hover:bg-gray-400 border border-black">
+            <button className="bg-gray-300 px-7 py-1 xl:py-2 xl:text-lg lg:text-sm  font-bold text-gray-800 hover:bg-gray-400 border border-black">
               SIGN UP
             </button>
           </div>

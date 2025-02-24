@@ -33,7 +33,7 @@ body {
 .blue-solid-button {
   @apply  py-3 px-6
           text-base font-bold tracking-wide
-          text-primary-yellow font-Montserrat bg-primary-blue
+          text-primary-yellow bg-primary-blue
           hover:bg-primary-yellow hover:text-primary-blue hover:scale-105
           rounded-md shadow
           transition duration-150 ease-in-out transform ;
@@ -43,7 +43,7 @@ body {
           text-base font-bold tracking-wide
           text-primary-blue bg-primary-yellow
           hover:bg-primary-blue hover:text-primary-yellow hover:scale-105
-          rounded-md shadow font-Montserrat
+          rounded-md shadow
           transition duration-150 ease-in-out transform ;
 }
 .header_links {
@@ -53,7 +53,7 @@ body {
   @apply p-2 px-4 cursor-pointer text-base font-normal text-gray-500 hover:bg-slate-200
 }
 .blue-lined-button {
-  @apply flex items-center justify-center gap-2 px-8 py-2 bg-primary-blue hover:scale-105 hover:bg-primary-yellow hover:text-primary-blue text-primary-yellow border-2 border-primary-yellow tracking-wide font-bold rounded-md transition duration-150 ease-in-out transform font-Montserrat;
+  @apply flex items-center justify-center gap-2 px-8 py-2 bg-primary-blue hover:scale-105 hover:bg-primary-yellow hover:text-primary-blue text-primary-yellow border-2 border-primary-yellow tracking-wide font-bold rounded-md transition duration-150 ease-in-out transform;
 }
 
 footer a {
@@ -70,12 +70,6 @@ footer a:hover {
 }
 .shadow-custom {
   box-shadow: 5px 5px 15px 7px #cfcfcf;
-}
-
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
 }
 
 /* CSS (Add this to your Tailwind-compatible stylesheet) */
