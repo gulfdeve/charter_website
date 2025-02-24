@@ -17,33 +17,32 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
 export async function generateMetadata({
   params,
 }: {
-    params: Promise<{ slug: string; locale: string }>;
+  params: Promise<{ slug: string; locale: string }>;
 }): Promise<Metadata> {
   const { slug, locale } = await params;
   const resolvedLocale = locale || "en"; // Default to English if locale is missing
 
   try {
-    const response = await fetch(
-      "https://www.centauruscharter.com/api/api_new/basic"
-    );
+    const response = await fetch("https://www.centauruscharter.com/api/api_new/basic");
     const data = await response.json();
 
-    // Match metadata using dynamic slug
+    // Attempt to get metadata for watersports/{slug}
     const metaData = data?.meta_tags?.[`watersports/${slug}`]?.[resolvedLocale]?.[0];
 
-    if (!metaData) {
-      console.warn(`No metadata found for watersports/${slug} in locale: ${resolvedLocale}`);
-      return {
-        title: "Default Title",
-        description: "Default Description",
-        keywords: "default, keywords",
-      };
-    }
+    // Fallback: If no metadata found, try general "watersports" metadata
+    const metaFallback = data?.meta_tags?.["home"]?.[resolvedLocale]?.[0];
+
+    // Final metadata selection with default values as the last resort
+    const finalMeta = metaData || metaFallback || {
+      meta_title: "Default Title",
+      meta_description: "Default Description",
+      meta_keywords: "default, keywords",
+    };
 
     return {
-      title: metaData.meta_title || "Default Title",
-      description: metaData.meta_description || "Default Description",
-      keywords: metaData.meta_keywords || "default, keywords",
+      title: finalMeta.meta_title || "Default Title",
+      description: finalMeta.meta_description || "Default Description",
+      keywords: finalMeta.meta_keywords || "default, keywords",
     };
   } catch (error) {
     console.error("Error fetching metadata:", error);

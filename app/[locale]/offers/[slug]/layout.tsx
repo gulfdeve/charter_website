@@ -6,7 +6,21 @@ interface Metadata {
   keywords?: string;
 }
 
-const Layout = ({ children }: { children: React.ReactNode }) => {
+interface APIMetaData {
+  meta_title?: string;
+  meta_description?: string;
+  meta_keywords?: string;
+}
+
+interface APIResponse {
+  meta_tags?: {
+    [key: string]: {
+      [locale: string]: APIMetaData[];
+    };
+  };
+}
+
+const Layout = ({ children }: { children: React.ReactNode }): JSX.Element => {
   return (
     <div>
       <main>{children}</main>
@@ -23,16 +37,16 @@ export async function generateMetadata({
   const resolvedLocale = locale || "en"; // Default to English if locale is missing
 
   try {
-    const response = await fetch(
-      "https://www.centauruscharter.com/api/api_new/basic"
-    );
-    const data = await response.json();
+    const response = await fetch("https://www.centauruscharter.com/api/api_new/basic");
+    const data: APIResponse = await response.json();
 
-    // Match metadata using dynamic slug
-    const metaData = data?.meta_tags?.[`offers/${slug}`]?.[resolvedLocale]?.[0];
+    // Match metadata using dynamic slug or fallback to "home"
+    const metaData: APIMetaData | undefined = 
+      data?.meta_tags?.[`offers/${slug}`]?.[resolvedLocale]?.[0] ||
+      data?.meta_tags?.["home"]?.[resolvedLocale]?.[0]; // Fallback to "home"
 
     if (!metaData) {
-      console.warn(`No metadata found for watersports/${slug} in locale: ${resolvedLocale}`);
+      console.warn(`No metadata found for offers/${slug} in locale: ${resolvedLocale}, using default.`);
       return {
         title: "Default Title",
         description: "Default Description",

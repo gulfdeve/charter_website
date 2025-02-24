@@ -1,8 +1,9 @@
+import { headers } from "next/headers";
 import { Montserrat } from "next/font/google";
-import Script from 'next/script';
+import Script from "next/script";
 import "../globals.css";
 import Navbar from "@/app/components/Navbar";
-import FareHarborLoader from '@/app/components/FareHarborLoader';
+import FareHarborLoader from "@/app/components/FareHarborLoader";
 import { LanguageProvider } from "../context/LanguageContext";
 import { DataProvider } from "../context/DataContext";
 import Sociallink from "@/app/components/Sociallink";
@@ -13,9 +14,9 @@ import { NextIntlClientProvider } from "next-intl";
 import { getMessages } from "next-intl/server";
 import { routing } from "../i18n/routing";
 import { notFound } from "next/navigation";
-import TopLoader from '@/app/components/TopLoader';
+import TopLoader from "@/app/components/TopLoader";
 import { FareHarborProvider } from "@/app/context/FareHarborContext";
-import 'react-phone-input-2/lib/style.css';
+import "react-phone-input-2/lib/style.css";
 
 const montserrat = Montserrat({
   subsets: ["latin"],
@@ -31,16 +32,29 @@ export default async function RootLayout({
 }) {
   const { locale, slug } = await params;
 
-  // Ensure that the incoming `locale` is valid
-  if (!routing.locales.includes(locale as any)) {
+  // Check that locale is supported (assuming routing.locales is something like ["en", "ar", "ru", "zh"])
+  if (!routing.locales.includes(locale as "en" | "ar" | "ru" | "zh")) {
     notFound();
   }
 
   const messages = await getMessages();
 
-  // Generate the canonical URL dynamically
-  const baseUrl = "https://www.centauruscharter.com";
-  const canonicalUrl = slug ? `${baseUrl}/${slug.join("/")}` : baseUrl;
+  // Define defaultLocale – adjust as needed.
+  const defaultLocale = "en";
+  const localePrefix = locale === defaultLocale ? "" : `/${locale}`;
+
+  // Reconstruct asPath from slug.
+  // If no slug is passed, default to "/" which becomes an empty string in canonical URL.
+  const asPath = slug && slug.length > 0 ? "/" + slug.join("/") : "/";
+  const pathPart = asPath === "/" ? "" : asPath;
+
+  // Use request headers to determine current host and protocol.
+  const reqHeaders = headers();
+  const host = (await reqHeaders).get("host") || "localhost:3000";
+  const protocol = (await reqHeaders).get("x-forwarded-proto") || "https";
+
+  // Construct canonical URL as: protocol://host + localePrefix + pathPart
+  const canonicalUrl = `${protocol}://${host}${localePrefix}${pathPart}`;
 
   return (
     <html lang={locale}>
@@ -65,14 +79,12 @@ export default async function RootLayout({
         />
       </head>
       <body className={`${montserrat.variable}`}>
-      <TopLoader />
+        <TopLoader />
         <NextIntlClientProvider locale={locale} messages={messages}>
           <DataProvider>
             <LanguageProvider>
               <Navbar />
-              <FareHarborProvider>
-                {children}
-              </FareHarborProvider>
+              <FareHarborProvider>{children}</FareHarborProvider>
               <Sociallink />
               <FirstFooter />
               <SecondFooter />

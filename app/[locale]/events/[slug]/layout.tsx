@@ -4,9 +4,32 @@ import { useLocale } from "next-intl";
 interface Metadata {
   title: string;
   description: string;
+  keywords?: string;
 }
 
-const Layout = ({ children }: { children: React.ReactNode }) => {
+interface EventTranslation {
+  meta_title?: string;
+  meta_description?: string;
+  meta_keyword?: string;
+}
+
+interface Event {
+  slug: string;
+  translations?: {
+    [locale: string]: EventTranslation;
+  };
+}
+
+interface APIResponse {
+  events?: Event[];
+  meta_tags?: {
+    [key: string]: {
+      [locale: string]: EventTranslation;
+    };
+  };
+}
+
+const Layout = ({ children }: { children: React.ReactNode }): JSX.Element => {
   return (
     <div>
       <main>{children}</main>
@@ -14,49 +37,47 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
   );
 };
 
-// Updated generateMetadata to expect params as a Promise.
-// (This aligns with the LayoutProps type expected by Next.js.)
 export async function generateMetadata({
   params,
 }: {
   params: Promise<{ slug: string; locale: string }>;
-}) {
-  // Await the params promise to get the actual values.
+}): Promise<Metadata> {
   const { slug, locale } = await params;
-  const resolvedLocale = locale || 'en'; // Fallback if locale is not set
+  const resolvedLocale = locale || "en"; // Default to English if locale is missing
 
   try {
-    const response = await fetch(
-      'https://www.centauruscharter.com/api/api_new/basic'
-    );
-    const data = await response.json();
+    const response = await fetch("https://www.centauruscharter.com/api/api_new/basic");
+    const data: APIResponse = await response.json();
 
-    // Find the event by slug (no need to await a synchronous .find())
-    const event = data?.events?.find(
-      (item: { slug: string }) => item.slug === slug
+    // Find the event by slug
+    const event: Event | undefined = data?.events?.find(
+      (item) => item.slug === slug
     );
 
-    if (!event) {
-      console.warn(`No event found for slug: ${slug}`);
+    // If event metadata is missing, fallback to "home"
+    const translations = event?.translations?.[resolvedLocale] ||
+                         data?.meta_tags?.["home"]?.[resolvedLocale];
+
+    if (!translations) {
+      console.warn(`No metadata found for event '${slug}' or 'home' in locale: ${resolvedLocale}`);
       return {
-        title: 'Default Title',
-        description: 'Default Description',
+        title: "Default Title",
+        description: "Default Description",
+        keywords: "Meta Keywords",
       };
     }
 
     return {
-      title: event.translations?.[resolvedLocale]?.meta_title || 'Default Title',
-      description:
-        event.translations?.[resolvedLocale]?.meta_description ||
-        'Default Description',
-        keywords: event.translations?.[resolvedLocale]?.meta_keyword || 'Meta Keywords'
-
+      title: translations.meta_title || "Default Title",
+      description: translations.meta_description || "Default Description",
+      keywords: translations.meta_keyword || "Meta Keywords",
     };
   } catch (error) {
-    console.error('Error fetching metadata:', error);
+    console.error("Error fetching metadata:", error);
     return {
-      title: 'Default Title',
-      description: 'Default Description',
+      title: "Default Title",
+      description: "Default Description",
+      keywords: "Meta Keywords",
     };
   }
 }
