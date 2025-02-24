@@ -6,9 +6,14 @@ import { useData } from "@/app/context/DataContext";
 import { useLanguage } from "@/app/context/LanguageContext";
 import YachtCarousal from "@/app/components/YachtCarousel";
 import Link from "next/link";
+import Loading from "./loading";
 const page = ({ params }) => {
 const { data, loading, error } = useData();
 const { language, changeLanguage } = useLanguage();
+
+if(loading){
+    return <Loading />;
+}
 
 return (
 <>

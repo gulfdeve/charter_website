@@ -5,6 +5,7 @@ import { FaWhatsapp } from "react-icons/fa";
 import Modal2 from "@/app/components/Modal2";
 import { useData } from "@/app/context/DataContext";
 import { useLocale, useTranslations } from "next-intl";
+import Loading from "./loading";
 const Page = ({ params }) => {
   const { slug } = use(params); // Get slug from the URL
   const { data, loading, error } = useData();
@@ -20,6 +21,10 @@ const Page = ({ params }) => {
   const closeModal = () => {
     setIsModalOpen(false);
   };
+
+  if (loading) {
+    return <Loading />;
+  }
 
   if (loading) return <div>Loading...</div>;
   if (error) return <div>Error: {error.message}</div>;

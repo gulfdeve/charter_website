@@ -1,0 +1,51 @@
+"use client";
+import React from "react";
+
+const Loading = () => {
+  return (
+    <div className="max-w-7xl mx-auto">
+      {/* Header Skeleton */}
+      <div className="flex flex-col items-center justify-center py-10">
+        <div className="h-10 w-64 bg-gray-200 animate-pulse rounded"></div>
+      </div>
+
+      {/* Events Grid Skeleton */}
+      <div className="grid grid-col-1 md:grid-cols-2 md:px-4 gap-7 pb-16 container mx-auto">
+        {[1, 2, 3, 4].map((item) => (
+          <div key={item} className="flex flex-col justify-start lg:justify-between rounded-md bg-white shadow-xl">
+            {/* Image Skeleton */}
+            <div className="h-64 w-full bg-gray-200 animate-pulse rounded-t-md"></div>
+            
+            <div className="flex flex-col justify-start px-5 lg:px-5">
+              {/* Title Skeleton */}
+              <div className="h-8 w-3/4 bg-gray-200 animate-pulse rounded mt-4"></div>
+              
+              {/* Description Skeleton */}
+              <div className="h-6 w-full bg-gray-200 animate-pulse rounded mt-2 mb-16"></div>
+              
+              <div className="bg-[#232629] w-full h-[0.05rem]"></div>
+              
+              {/* Footer Section Skeleton */}
+              <div className="flex flex-row items-center justify-between py-10">
+                <div className="h-12 w-32 bg-gray-200 animate-pulse rounded"></div>
+                
+                {/* Buttons Skeleton */}
+                <div className="flex xl:flex-row flex-col items-center justify-end gap-3">
+                  <div className="h-10 w-32 bg-gray-200 animate-pulse rounded"></div>
+                  <div className="h-10 w-32 bg-gray-200 animate-pulse rounded"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      {/* Bottom Text Skeleton */}
+      <div className="max-w-7xl mx-auto px-3 py-5">
+        <div className="h-32 w-full bg-gray-200 animate-pulse rounded"></div>
+      </div>
+    </div>
+  );
+};
+
+export default Loading;
