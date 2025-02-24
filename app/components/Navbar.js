@@ -70,7 +70,7 @@ export default function Navbar() {
       {/* First Navbar */}
       <div className="lg:block hidden">
         <nav className="p-4 container mx-auto bg-white text-black flex items-center justify-between xl:gap-64 2xl:gap-64 md:gap-24">
-          <h1 className="text-xl font-bold">
+          <div className="text-xl font-bold">
             <Link href={"/"}>
               <img
                 src="/CentaurusLogo.png"
@@ -78,7 +78,7 @@ export default function Navbar() {
                 className="cursor-pointer"
               />
             </Link>
-          </h1>
+          </div>
           <div className="flex items-center justify-end">
             <button className="flex flex-row items-center justify-center font-RedHatDisplay py-2 w-full md:py-2 md:px-4 rounded-md bg-[#e1ae48] text-[#0d2343] hover:bg-[#0d2343] hover:text-[#e1ae48]  font-bold text-base md:text-sm xl:text-lg transition-all duration-300">
               <Link href={"/contact"}>{t("navbar.contact-us")}</Link>
