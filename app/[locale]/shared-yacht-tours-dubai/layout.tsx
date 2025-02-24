@@ -38,6 +38,7 @@ export async function generateMetadata({
     return {
       title: finalMeta.meta_title || "Default Title",
       description: finalMeta.meta_description || "Default Description",
+      keywords: finalMeta.meta_keywords
     };
   } catch (error) {
     console.error("Error fetching metadata:", error);

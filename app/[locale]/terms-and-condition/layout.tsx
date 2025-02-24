@@ -28,6 +28,7 @@ export async function generateMetadata({
     const finalMeta = metaData || metaHome || {
       meta_title: "Default Title",
       meta_description: "Default Description",
+
     };
 
     return {
