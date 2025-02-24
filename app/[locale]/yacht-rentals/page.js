@@ -7,7 +7,7 @@ import { FaArrowLeft, FaArrowRight, FaYoutube } from "react-icons/fa";
 import { useData } from "@/app/context/DataContext";
 import { useLanguage } from "@/app/context/LanguageContext";
 import { useLocale } from "next-intl";
-
+import Loading from "./loading";
 /* 
   YachtCard Component:
   - Receives a single yacht object as prop.
@@ -15,6 +15,10 @@ import { useLocale } from "next-intl";
   - Renders navigation buttons (only if more than one image exists).
 */
 const YachtCard = ({ yacht }) => {
+
+  const { data, loading, error } = useData();
+  const { language, changeLanguage } = useLanguage();
+
   const emblaRef = useRef(null);
   const emblaApi = useRef(null);
 
@@ -38,6 +42,10 @@ const YachtCard = ({ yacht }) => {
   const scrollNext = () => {
     if (emblaApi.current) emblaApi.current.scrollNext();
   };
+
+  if(loading){
+    return <Loading />;
+  }
 
   return (
     <div className="flex flex-col justify-center bg-white rounded-2xl shadow-custom h-auto relative p-4">
@@ -140,6 +148,8 @@ const Tabs = () => {
   const { data, loading, error } = useData();
   const locale = useLocale();
 
+
+
   useEffect(() => {
     if (data?.products) {
       // Map each product to include its gallery images as an array.
@@ -167,6 +177,11 @@ const Tabs = () => {
   }, [data, locale]);
 
   const renderContent = () => {
+
+    if(loading){
+      return <Loading />;
+    }
+
     const filteredYachts = yachts.filter((yacht) =>
       yacht.category.includes(activeTab)
     );
