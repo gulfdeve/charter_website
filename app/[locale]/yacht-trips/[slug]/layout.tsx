@@ -1,9 +1,9 @@
-import React from 'react';
-import { useLocale } from "next-intl";
+import React from "react";
 
 interface Metadata {
   title: string;
   description: string;
+  keywords?: string;
 }
 
 const Layout = ({ children }: { children: React.ReactNode }) => {
@@ -14,40 +14,43 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
   );
 };
 
-// Updated generateMetadata to expect params as a Promise
 export async function generateMetadata({
   params,
 }: {
   params: Promise<{ slug: string; locale: string }>;
-}) {
-  // Await the params to resolve the slug and locale values.
+}): Promise<Metadata> {
   const { slug, locale } = await params;
-  const resolvedLocale = locale || 'en'; // Ensure locale is set with a fallback
+  const resolvedLocale = locale || "en"; // Default to English if locale is missing
 
   try {
-    const response = await fetch('https://www.centauruscharter.com/api/api_new/basic');
+    const response = await fetch(
+      "https://www.centauruscharter.com/api/api_new/basic"
+    );
     const data = await response.json();
 
-    // Find the experience by slug with a check to prevent errors
-    const experience = data?.experiences?.find((item: { slug: string }) => item.slug === slug);
+    // Match metadata using dynamic slug
+    const metaData = data?.meta_tags?.[`yacht-trips/${slug}`]?.[resolvedLocale]?.[0];
 
-    if (!experience) {
-      console.warn(`No experience found for slug: ${slug}`);
+    if (!metaData) {
+      console.warn(`No metadata found for yacht-trips/${slug} in locale: ${resolvedLocale}`);
       return {
-        title: 'Default Title',
-        description: 'Default Description',
+        title: "Default Title",
+        description: "Default Description",
+        keywords: "default, keywords",
       };
     }
 
     return {
-      title: experience.translations?.[resolvedLocale]?.meta.title || 'Default Title',
-      description: experience.translations?.[resolvedLocale]?.meta.description || 'Default Description',
+      title: metaData.meta_title || "Default Title",
+      description: metaData.meta_description || "Default Description",
+      keywords: metaData.meta_keywords || "default, keywords",
     };
   } catch (error) {
-    console.error('Error fetching metadata:', error);
+    console.error("Error fetching metadata:", error);
     return {
-      title: 'Default Title',
-      description: 'Default Description',
+      title: "Default Title",
+      description: "Default Description",
+      keywords: "default, keywords",
     };
   }
 }

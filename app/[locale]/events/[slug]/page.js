@@ -5,7 +5,7 @@ import { FaWhatsapp } from "react-icons/fa";
 import Modal2 from "@/app/components/Modal2";
 import { useData } from "@/app/context/DataContext";
 import { useLocale, useTranslations } from "next-intl";
-const Page = ({ params }) => {
+const page = ({ params }) => {
   const { slug } = use(params); // Get slug from the URL
   const { data, loading, error } = useData();
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -75,4 +75,4 @@ const Page = ({ params }) => {
   );
 };
 
-export default Page;
+export default page;
