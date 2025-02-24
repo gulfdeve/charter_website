@@ -8,7 +8,7 @@ const CopyrightFooter = () => {
             new Date().getFullYear()
             } Centaurus Passenger Yachts &amp; Boats Rental LLC, All rights reserved.
         </div>
-        <img src="/CentaurusLogoWhite.png" alt="Centaurus Passenger Yachts & Boats Rental LLC" className="w-32 md:w-auto" />
+        <img src="/CentaurusLogoWhite.png" alt="centaurus charter logo" className="w-32 md:w-auto" />
     </div>
   )
 }

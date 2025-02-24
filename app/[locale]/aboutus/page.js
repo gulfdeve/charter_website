@@ -5,7 +5,7 @@ const AboutPage = () => {
   return (
     <><div className="bg-white w-full h-full">
       <div>
-        <img src="./AboutUsHeader.png" className="w-full" />
+        <img alt="about us" src="./AboutUsHeader.png" className="w-full" />
       </div>
       <div className="flex flex-col items-center justify-center py-10 ">
         <h1 className=" text-[#0D2343] text-center font-bold text-4xl pb-4">
@@ -24,6 +24,7 @@ const AboutPage = () => {
         <div>
           <div className="">
             <img
+            alt="about us"
               src="/About us 1.png"
               className="xl:w-[270rem] sm:w-[170rem] md:h-[443px] xl:h-[452px] lg:h-[404px]" />
           </div>
@@ -42,6 +43,7 @@ const AboutPage = () => {
         <div>
           <div className="">
             <img
+            alt="about us group"
               src="/About us group.png"
               className="xl:w-[230rem] sm:w-[170rem] md:h-[643px] xl:h-[752px] lg:h-[604px] 2xl:h-[1052px] xl:px-12 " />
           </div>

@@ -92,87 +92,92 @@ const Reviews = () => {
     <>
       <div className="xl:block hidden">
         <div className="bg-gray-200 w-full h-auto py-20 px-4">
-  <div>
-    <h1 className=" text-[#0D2343] text-center font-bold text-4xl pb-4">
-      WHAT OUR GUESTS SAY
-    </h1>
-  </div>
+          <div>
+            <h1 className=" text-[#0D2343] text-center font-bold text-4xl pb-4">
+              WHAT OUR GUESTS SAY
+            </h1>
+          </div>
 
-<div className="flex flex-row items-stretch justify-center container mx-auto relative gap-7">
-  {/* TripAdvisor Container */}
- <div className="pt-[3.3rem]">
-  <div className="bg-white p-6 rounded-md shadow-md w-44   h-[225px] z-20 flex flex-col justify-center items-center">
-    <Link href="https://www.tripadvisor.com/Attraction_Review-g295424-d15699786-Reviews-Centaurus_Yachts_Boats_Dubai-Dubai_Emirate_of_Dubai.html">
-      <h1 className=" font-bold text-center text-sm underline">
-        Centaurus Yachts & Boats Dubai
-      </h1>
-      <div className="flex flex-col items-center justify-center -space-y-3">
-        <RxBorderDotted className="text-green-600 text-center text-5xl -mt-3" />
-        <h1 className=" font-bold text-xs">176 Reviews</h1>
-        <img src="/TripAdvisor.svg" className="w-24 pt-5" />
-      </div>
-    </Link>
-  </div>
-</div>
-  {/* Review Carousel */}
-  <div className="w-full max-w-4xl mt-8 flex flex-col items-center">
-    <div className="custom-embla__viewport overflow-hidden" ref={viewportRef}>
-      <div className="custom-embla__container flex">
-        {slidesData.map((slide) => (
-          <div
-            key={slide.id}
-            className="custom-embla__slide flex-[0_0_50%] text-left p-4 rounded-md mx-2"
-          >
-            <div className="bg-white h-[225px] flex flex-col items-start p-5 rounded-lg">
-              <div className="flex flex-row gap-5">
-                <img
-                  src="Profile.jpg"
-                  alt="Profile"
-                  className="w-14 rounded-full"
-                />
-                <div className="flex flex-col items-start">
-                  <h1 className="">{slide.name}</h1>
-                  <h3 className=" text-xs">{slide.date}</h3>
+          <div className="flex flex-row items-stretch justify-center container mx-auto relative gap-7">
+            {/* TripAdvisor Container */}
+            <div className="pt-[3.3rem]">
+              <div className="bg-white p-6 rounded-md shadow-md w-44   h-[225px] z-20 flex flex-col justify-center items-center">
+                <Link href="https://www.tripadvisor.com/Attraction_Review-g295424-d15699786-Reviews-Centaurus_Yachts_Boats_Dubai-Dubai_Emirate_of_Dubai.html">
+                  <h1 className=" font-bold text-center text-sm underline">
+                    Centaurus Yachts & Boats Dubai
+                  </h1>
+                  <div className="flex flex-col items-center justify-center -space-y-3">
+                    <RxBorderDotted className="text-green-600 text-center text-5xl -mt-3" />
+                    <h1 className=" font-bold text-xs">176 Reviews</h1>
+                    <img alt="tripadvisor logo" src="/Tripadvisor.png" className="w-24 pt-5" />
+                  </div>
+                </Link>
+              </div>
+            </div>
+            {/* Review Carousel */}
+            <div className="w-full max-w-4xl mt-8 flex flex-col items-center">
+              <div
+                className="custom-embla__viewport overflow-hidden"
+                ref={viewportRef}
+              >
+                <div className="custom-embla__container flex">
+                  {slidesData.map((slide) => (
+                    <div
+                      key={slide.id}
+                      className="custom-embla__slide flex-[0_0_50%] text-left p-4 rounded-md mx-2"
+                    >
+                      <div className="bg-white h-[225px] flex flex-col items-start p-5 rounded-lg">
+                        <div className="flex flex-row gap-5">
+                          <img
+                            src="Profile.jpg"
+                            alt="Profile"
+                            className="w-14 rounded-full"
+                          />
+                          <div className="flex flex-col items-start">
+                            <h1 className="">{slide.name}</h1>
+                            <h3 className=" text-xs">{slide.date}</h3>
+                          </div>
+                        </div>
+                        <div className="flex flex-row py-1 gap-2">
+                          {Array.from({ length: slide.rating }, (_, index) => (
+                            <FaStar key={index} />
+                          ))}
+                        </div>
+                        <h1 className=" text-sm py-1">{slide.title}</h1>
+                        <p className=" text-xs">{slide.content}</p>
+                      </div>
+                    </div>
+                  ))}
                 </div>
               </div>
-              <div className="flex flex-row py-1 gap-2">
-                {Array.from({ length: slide.rating }, (_, index) => (
-                  <FaStar key={index} />
-                ))}
+
+              {/* Navigation Buttons */}
+              <div className="flex justify-center space-x-4 mt-4">
+                <button
+                  aria-label="go previous review"
+                  className="bg-gray-800 text-white p-2 lg:p-5 rounded-full hover:bg-gray-700"
+                  onClick={scrollPrev}
+                >
+                  <IoIosArrowBack size={20} />
+                </button>
+                <button
+                  aria-label="go next review"
+                  className="bg-gray-800 text-white p-2 lg:p-5 rounded-full hover:bg-gray-700"
+                  onClick={scrollNext}
+                >
+                  <IoIosArrowForward size={20} />
+                </button>
+                <div className="p-2 flex flex-col items-center z-20">
+                  <Link href="https://www.tripadvisor.com/Attraction_Review-g295424-d15699786-Reviews-Centaurus_Yachts_Boats_Dubai-Dubai_Emirate_of_Dubai.html">
+                    <button className="blue-solid-button">
+                      Write A Review
+                    </button>
+                  </Link>
+                </div>
               </div>
-              <h1 className=" text-sm py-1">{slide.title}</h1>
-              <p className=" text-xs">{slide.content}</p>
             </div>
           </div>
-        ))}
-      </div>
-    </div>
-
-    {/* Navigation Buttons */}
-    <div className="flex justify-center space-x-4 mt-4">
-      <button
-        className="bg-gray-800 text-white p-2 lg:p-5 rounded-full hover:bg-gray-700"
-        onClick={scrollPrev}
-      >
-        <IoIosArrowBack size={20} />
-      </button>
-      <button
-        className="bg-gray-800 text-white p-2 lg:p-5 rounded-full hover:bg-gray-700"
-        onClick={scrollNext}
-      >
-        <IoIosArrowForward size={20} />
-      </button>
-      <div className="p-2 flex flex-col items-center z-20">
-        <Link href="https://www.tripadvisor.com/Attraction_Review-g295424-d15699786-Reviews-Centaurus_Yachts_Boats_Dubai-Dubai_Emirate_of_Dubai.html">
-          <button className="blue-solid-button">Write A Review</button>
-        </Link>
-      </div>
-    </div>
-  </div>
-</div>
-
-</div>
-
+        </div>
       </div>
       <div className="xl:hidden block">
         <div className="bg-gray-200 w-full h-auto py-20 px-4">
@@ -192,15 +197,13 @@ const Reviews = () => {
                   <div className="bg-white w-[18rem] lg:w-[28rem] h-[225px] flex flex-col items-start p-5 rounded-lg">
                     <div className="flex flex-row gap-5">
                       <img
-                        src="Profile.jpg"
                         alt="Profile"
+                        src="Profile.jpg"
                         className="w-14 rounded-full"
                       />
                       <div className="flex flex-col items-start">
                         <h1 className="">{review.name}</h1>
-                        <h3 className=" text-xs">
-                          {review.date}
-                        </h3>
+                        <h3 className=" text-xs">{review.date}</h3>
                       </div>
                     </div>
                     <div className="flex flex-row py-1 gap-2">
@@ -208,9 +211,7 @@ const Reviews = () => {
                         <FaStar key={index} />
                       ))}
                     </div>
-                    <h1 className=" text-sm py-1">
-                      {review.title}
-                    </h1>
+                    <h1 className=" text-sm py-1">{review.title}</h1>
                     <p className=" text-xs">{review.content}</p>
                   </div>
                 </div>
@@ -225,10 +226,12 @@ const Reviews = () => {
                   </h1>
                   <div className="flex flex-col items-center justify-center -space-y-3">
                     <RxBorderDotted className="text-green-600 text-center text-5xl -mt-3" />
-                    <h1 className=" font-bold text-xs">
-                      176 Reviews
-                    </h1>
-                    <img src="/TripAdvisor.svg" className="w-24 pt-5" />
+                    <h1 className=" font-bold text-xs">176 Reviews</h1>
+                    <img
+                      alt="tripadvisor logo"
+                      src="/Tripadvisor.png"
+                      className="w-24 pt-5"
+                    />
                   </div>
                 </Link>
               </div>
@@ -237,12 +240,14 @@ const Reviews = () => {
 
           <div className="flex items-center justify-center mt-4 gap-2 ">
             <button
+              aria-label="go previous review"
               className="bg-gray-800 text-white p-2 lg:p-5 rounded-full hover:bg-gray-700"
               onClick={scrollPrevMob}
             >
               <IoIosArrowBack size={20} />
             </button>
             <button
+              aria-label="go next review"
               className="bg-gray-800 text-white p-2 lg:p-5 rounded-full hover:bg-gray-700"
               onClick={scrollNextMob}
             >
@@ -264,10 +269,12 @@ const Reviews = () => {
                 </h1>
                 <div className="flex flex-col items-center justify-center -space-y-3">
                   <RxBorderDotted className="text-green-600 text-center text-5xl -mt-3" />
-                  <h1 className=" font-bold text-xs">
-                    176 Reviews
-                  </h1>
-                  <img src="/TripAdvisor.svg" className="w-24 pt-5" />
+                  <h1 className=" font-bold text-xs">176 Reviews</h1>
+                  <img
+                    alt="tripadvisor logo"
+                    src="/Tripadvisor.png"
+                    className="w-24 pt-5"
+                  />
                 </div>
               </Link>
             </div>

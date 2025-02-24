@@ -158,12 +158,14 @@ export default function YachtCarousal() {
 
           {/* Navigation Buttons */}
           <button
+          aria-label="go previous slide"
             className="bg-primary-blue text-primary-yellow hover:bg-primary-yellow hover:text-primary-blue transition duration-150 ease-in-out transform absolute left-2  lg:left-32 top-1/2 transform -translate-y-1/2 bg-gray-800 text-white w-14 aspect-square rounded-full flex items-center justify-center hover:bg-gray-700 z-10"
             onClick={scrollPrevDesktop}
           >
             <IoIosArrowBack size={30} />
           </button>
           <button
+          aria-label="go next slide"
             className="bg-primary-blue text-primary-yellow hover:bg-primary-yellow hover:text-primary-blue transition duration-150 ease-in-out transform absolute right-4  lg:right-32 top-1/2 transform -translate-y-1/2 bg-gray-800 text-white w-14 aspect-square rounded-full flex items-center justify-center hover:bg-gray-700 z-10"
             onClick={scrollNextDesktop}
           >

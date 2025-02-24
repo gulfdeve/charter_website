@@ -11,8 +11,8 @@ const SecondFooter = () => {
           </p>
           <a href="https://centaurusint.net/" target="_blank">
             <img
-              src="/Centaurus International.png"
               alt="Centaurus International"
+              src="/Centaurus International.png"
             />
           </a>
         </div>
@@ -21,25 +21,25 @@ const SecondFooter = () => {
             href="https://play.google.com/store/apps/details?id=com.centaurus.charter&hl=en"
             target="_blank"
           >
-            <img src="/gplay.svg" className="w-[9rem]" />
+            <img alt="google play logo" src="/gplay.svg" className="w-[9rem]" />
           </a>
           <a
             href="https://apps.apple.com/us/app/centaurus-charter/id6447861141"
             target="_blank"
           >
-            <img src="/appstore.svg " className="w-28" />
+            <img alt="app store logo" src="/appstore.svg " className="w-28" />
           </a>
         </div>
         <div className="flex flex-row  md:flex-row items-center md:items-start gap-16 xs:gap-9 ">
           <div className="flex flex-col xs:flex-row gap-3">
-            <img src="/Google.png" />
+            <img alt="google logo" src="/Google.png" />
 
-            <img src="/Tripadvisor.png" />
+            <img alt="tripadvisor logo" src="/Tripadvisor.png" />
           </div>
           <div className="flex flex-col xs:flex-row items-center  gap-3">
-            <img src="/Cash.png" />
-            <img src="/Visa.png" />
-            <img src="/Mastercard.png" />
+            <img alt="cash logo" src="/Cash.png" />
+            <img alt="visa logo" src="/Visa.png" />
+            <img alt="mastercard logo" src="/Mastercard.png" />
           </div>
         </div>
         <div className="flex lg:flex-col justify-between gap-4 xs:gap-10 lg:gap-2 text-[#969696]">

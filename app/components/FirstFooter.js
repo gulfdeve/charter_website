@@ -105,7 +105,10 @@ const FirstFooter = () => {
               <ul>
                 {!loading &&
                   data?.products?.map((product) => (
-                    <li key={product.id} className="mb-2 text-[#969696]  transition-colors duration-200">
+                    <li
+                      key={product.id}
+                      className="mb-2 text-[#969696]  transition-colors duration-200"
+                    >
                       <Link
                         href={`/yacht-rentals/${product.slug}`}
                         key={product.id}
@@ -124,7 +127,10 @@ const FirstFooter = () => {
                 {!loading &&
                   data?.experiences?.map((experience) => {
                     return (
-                      <li key={experience.id} className=" mb-2 text-[#969696]  transition-colors duration-200">
+                      <li
+                        key={experience.id}
+                        className=" mb-2 text-[#969696]  transition-colors duration-200"
+                      >
                         <Link
                           href={`/yacht-trips/${experience.slug}`}
                           key={experience.id}
@@ -141,7 +147,7 @@ const FirstFooter = () => {
                 {t("footer.reach-out-to-us")}
               </h3>
               <ul className="flex flex-col gap-2">
-                <div className="mb-2 flex gap-2">
+                <li className="mb-2 flex gap-2">
                   <svg
                     stroke="currentColor"
                     fill="currentColor"
@@ -154,17 +160,13 @@ const FirstFooter = () => {
                   >
                     <path d="M172.268 501.67C26.97 291.031 0 269.413 0 192 0 85.961 85.961 0 192 0s192 85.961 192 192c0 77.413-26.97 99.031-172.268 309.67-9.535 13.774-29.93 13.773-39.464 0zM192 272c44.183 0 80-35.817 80-80s-35.817-80-80-80-80 35.817-80 80 35.817 80 80 80z"></path>
                   </svg>
-                  <div>
-                    <p className="text-[#969696] ">
-                      <a href="https://www.google.com/maps/place/CENTAURUS+CHARTER+-+Yachts+%26+Boats+Rental+Dubai+Harbour/@25.097395,55.1431033,15z/data=!4m6!3m5!1s0x3e5f6b1f6453e121:0x45035717db6c3954!8m2!3d25.0948183!4d55.1390062!16s%2Fg%2F11kb9bzw9v?hl=en&entry=ttu&g_ep=EgoyMDI1MDEwMS4wIKXMDSoASAFQAw%3D%3D">
-                        {" "}
-                        Marina Walk (Near Spinneys)
-                        <br /> Dubai, United Arab Emirates
-                      </a>
-                    </p>
-                  </div>
-                </div>
-                <div className="mb-2 flex gap-2">
+                  <a href="https://www.google.com/maps/place/CENTAURUS+CHARTER+-+Yachts+%26+Boats+Rental+Dubai+Harbour/@25.097395,55.1431033,15z/data=!4m6!3m5!1s0x3e5f6b1f6453e121:0x45035717db6c3954!8m2!3d25.0948183!4d55.1390062!16s%2Fg%2F11kb9bzw9v?hl=en&entry=ttu&g_ep=EgoyMDI1MDEwMS4wIKXMDSoASAFQAw%3D%3D">
+                    {" "}
+                    Marina Walk (Near Spinneys)
+                    <br /> Dubai, United Arab Emirates
+                  </a>
+                </li>
+                <li className="mb-2 flex gap-2">
                   <svg
                     stroke="currentColor"
                     fill="currentColor"
@@ -177,17 +179,13 @@ const FirstFooter = () => {
                   >
                     <path d="M172.268 501.67C26.97 291.031 0 269.413 0 192 0 85.961 85.961 0 192 0s192 85.961 192 192c0 77.413-26.97 99.031-172.268 309.67-9.535 13.774-29.93 13.773-39.464 0zM192 272c44.183 0 80-35.817 80-80s-35.817-80-80-80-80 35.817-80 80 35.817 80 80 80z"></path>
                   </svg>
-                  <div>
-                    <p className="text-[#969696] ">
                       <a href="https://www.google.com/maps/place/CENTAURUS+CHARTER+-+Yachts+%26+Boats+Rental+Dubai+Harbour/@25.097395,55.1431033,15z/data=!4m6!3m5!1s0x3e5f6b1f6453e121:0x45035717db6c3954!8m2!3d25.0948183!4d55.1390062!16s%2Fg%2F11kb9bzw9v?hl=en&entry=ttu&g_ep=EgoyMDI1MDEwMS4wIKXMDSoASAFQAw%3D%3D">
                         {" "}
                         Dubai Harbour Marina
                         <br /> Dubai, United Arab Emirates
                       </a>
-                    </p>
-                  </div>
-                </div>
-                <div className="mb-2 flex gap-2">
+                </li>
+                <li className="mb-2 flex gap-2">
                   <svg
                     stroke="currentColor"
                     fill="currentColor"
@@ -200,17 +198,13 @@ const FirstFooter = () => {
                   >
                     <path d="M172.268 501.67C26.97 291.031 0 269.413 0 192 0 85.961 85.961 0 192 0s192 85.961 192 192c0 77.413-26.97 99.031-172.268 309.67-9.535 13.774-29.93 13.773-39.464 0zM192 272c44.183 0 80-35.817 80-80s-35.817-80-80-80-80 35.817-80 80 35.817 80 80 80z"></path>
                   </svg>
-                  <div>
-                    <p className="text-[#969696] ">
                       <a href="https://www.google.com/maps/place/CENTAURUS+CHARTER+-+Yachts+%26+Boats+Rental+Dubai+Harbour/@25.097395,55.1431033,15z/data=!4m6!3m5!1s0x3e5f6b1f6453e121:0x45035717db6c3954!8m2!3d25.0948183!4d55.1390062!16s%2Fg%2F11kb9bzw9v?hl=en&entry=ttu&g_ep=EgoyMDI1MDEwMS4wIKXMDSoASAFQAw%3D%3D">
                         {" "}
                         Berth No AB05 - near Harbour Bridge - Dubai Harbour
                         <br /> Dubai, United Arab Emirates
                       </a>
-                    </p>
-                  </div>
-                </div>
-                <div className="mb-2 flex gap-2">
+                </li>
+                <li className="mb-2 flex gap-2">
                   <svg
                     stroke="currentColor"
                     fill="currentColor"
@@ -223,18 +217,13 @@ const FirstFooter = () => {
                   >
                     <path d="M172.268 501.67C26.97 291.031 0 269.413 0 192 0 85.961 85.961 0 192 0s192 85.961 192 192c0 77.413-26.97 99.031-172.268 309.67-9.535 13.774-29.93 13.773-39.464 0zM192 272c44.183 0 80-35.817 80-80s-35.817-80-80-80-80 35.817-80 80 35.817 80 80 80z"></path>
                   </svg>
-                  <div>
-                    <p className="text-[#969696] ">
                       <a href="https://www.google.com/maps/place/CENTAURUS+CHARTER+-+Yachts+%26+Boats+Rental+Dubai+Harbour/@25.097395,55.1431033,15z/data=!4m6!3m5!1s0x3e5f6b1f6453e121:0x45035717db6c3954!8m2!3d25.0948183!4d55.1390062!16s%2Fg%2F11kb9bzw9v?hl=en&entry=ttu&g_ep=EgoyMDI1MDEwMS4wIKXMDSoASAFQAw%3D%3D">
                         {" "}
                         Dubai Harbour Marina, Berth No A-G36 Near Dockmaster 1
                         Building
                         <br /> Dubai, United Arab Emirates
                       </a>
-                    </p>
-                  </div>
-                </div>
-                <div className="mb-2 flex gap-2"></div>
+                </li>
                 <li className="mb-2 flex items-start">
                   <svg
                     stroke="currentColor"
@@ -248,13 +237,15 @@ const FirstFooter = () => {
                   >
                     <path d="M493.4 24.6l-104-24c-11.3-2.6-22.9 3.3-27.5 13.9l-48 112c-4.2 9.8-1.4 21.3 6.9 28l60.6 49.6c-36 76.7-98.9 140.5-177.2 177.2l-49.6-60.6c-6.8-8.3-18.2-11.1-28-6.9l-112 48C3.9 366.5-2 378.1.6 389.4l24 104C27.1 504.2 36.7 512 48 512c256.1 0 464-207.5 464-464 0-11.2-7.7-20.9-18.6-23.4z"></path>
                   </svg>
-                  <div>
-                    <a href="tel:+97143521833">+971 4 352 1833</a><br />
-                    <a href="tel:+971524901269">+971 52 490 1269</a><br />
+                  <p>
+                    <a href="tel:+97143521833">+971 4 352 1833</a>
+                    <br />
+                    <a href="tel:+971524901269">+971 52 490 1269</a>
+                    <br />
                     <a href="mailto:info@centauruscharter.com">
                       info@centauruscharter.com
                     </a>
-                  </div>
+                  </p>
                 </li>
               </ul>
             </div>
