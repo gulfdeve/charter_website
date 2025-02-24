@@ -1,9 +1,9 @@
-import React from 'react';
-import { useLocale } from "next-intl";
+import React from "react";
 
 interface Metadata {
   title: string;
   description: string;
+  keywords?: string;
 }
 
 const Layout = ({ children }: { children: React.ReactNode }) => {
@@ -14,44 +14,44 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
   );
 };
 
-
 export async function generateMetadata({
-    params,
-  }: {
-    params: Promise<{ slug: string; locale: string }>;
-  }) {
-    const { locale } = await params;
-    const resolvedLocale = locale || "en"; // Default to English if locale is missing
-  
-    try {
-      const response = await fetch(
-        "https://www.centauruscharter.com/api/api_new/basic"
-      );
-      const data = await response.json();
-  
-    
-      const metaData = data?.meta_tags?.["watersports"]?.[resolvedLocale]?.[0];
-  
-      if (!metaData) {
-        console.warn(`No metadata found for yacht-trips in locale: ${resolvedLocale}`);
-        return {
-          title: "Default Title",
-          description: "Default Description",
-        };
-      }
-  
-      return {
-        title: metaData.meta_title || "Default Title",
-        description: metaData.meta_description || "Default Description",
-        keywords: metaData.meta_keywords || "default, keywords",
-      };
-    } catch (error) {
-      console.error("Error fetching metadata:", error);
-      return {
-        title: "Default Title",
-        description: "Default Description",
-      };
-    }
+  params,
+}: {
+  params: Promise<{ slug: string; locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  const resolvedLocale = locale || "en"; // Default to English if locale is missing
+
+  try {
+    const response = await fetch("https://www.centauruscharter.com/api/api_new/basic");
+    const data = await response.json();
+
+    // Attempt to get metadata for "watersports"
+    const metaData = data?.meta_tags?.["watersports"]?.[resolvedLocale]?.[0];
+
+    // Fallback to "home" metadata if "watersports" is missing
+    const metaFallback = data?.meta_tags?.["home"]?.[resolvedLocale]?.[0];
+
+    // Final metadata selection with default values as the last resort
+    const finalMeta = metaData || metaFallback || {
+      meta_title: "Default Title",
+      meta_description: "Default Description",
+      meta_keywords: "default, keywords",
+    };
+
+    return {
+      title: finalMeta.meta_title || "Default Title",
+      description: finalMeta.meta_description || "Default Description",
+      keywords: finalMeta.meta_keywords || "default, keywords",
+    };
+  } catch (error) {
+    console.error("Error fetching metadata:", error);
+    return {
+      title: "Default Title",
+      description: "Default Description",
+      keywords: "default, keywords",
+    };
   }
-  
+}
+
 export default Layout;

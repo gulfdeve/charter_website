@@ -6,7 +6,21 @@ interface Metadata {
   keywords?: string;
 }
 
-const Layout = ({ children }: { children: React.ReactNode }) => {
+interface APIMetaData {
+  meta_title?: string;
+  meta_description?: string;
+  meta_keywords?: string;
+}
+
+interface APIResponse {
+  meta_tags?: {
+    [key: string]: {
+      [locale: string]: APIMetaData[];
+    };
+  };
+}
+
+const Layout = ({ children }: { children: React.ReactNode }): JSX.Element => {
   return (
     <div>
       <main>{children}</main>
@@ -23,27 +37,31 @@ export async function generateMetadata({
   const resolvedLocale = locale || "en"; // Default to English if locale is missing
 
   try {
-    const response = await fetch(
-      "https://www.centauruscharter.com/api/api_new/basic"
-    );
-    const data = await response.json();
+    const response = await fetch("https://www.centauruscharter.com/api/api_new/basic");
+    const data: APIResponse = await response.json();
 
-    // Match metadata using dynamic slug
-    const metaData = data?.meta_tags?.[`yacht-trips/${slug}`]?.[resolvedLocale]?.[0];
+    // Attempt to get metadata dynamically for yacht-trips/{slug}
+    const metaYachtTrips: APIMetaData | undefined =
+      data?.meta_tags?.[`yacht-trips/${slug}`]?.[resolvedLocale]?.[0];
+    
+    // Fallback to general "yacht-trips" metadata if specific slug is missing
+  
 
-    if (!metaData) {
-      console.warn(`No metadata found for yacht-trips/${slug} in locale: ${resolvedLocale}`);
-      return {
-        title: "Default Title",
-        description: "Default Description",
-        keywords: "default, keywords",
-      };
-    }
+    // Fallback to "home" metadata if none are found
+    const metaHome: APIMetaData | undefined =
+      data?.meta_tags?.["home"]?.[resolvedLocale]?.[0];
+
+    // Ensure `finalMeta` is always assigned a value
+    const finalMeta: APIMetaData = metaYachtTrips  || metaHome || {
+      meta_title: "Default Title",
+      meta_description: "Default Description",
+      meta_keywords: "default, keywords",
+    };
 
     return {
-      title: metaData.meta_title || "Default Title",
-      description: metaData.meta_description || "Default Description",
-      keywords: metaData.meta_keywords || "default, keywords",
+      title: finalMeta.meta_title || "Default Title",
+      description: finalMeta.meta_description || "Default Description",
+      keywords: finalMeta.meta_keywords || "default, keywords",
     };
   } catch (error) {
     console.error("Error fetching metadata:", error);

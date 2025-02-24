@@ -1,4 +1,7 @@
-import Script from 'next/script';
+import { headers } from "next/headers";
+import { Montserrat } from "next/font/google";
+import Script from "next/script";
+import "../globals.css";
 import Navbar from "@/app/components/Navbar";
 import FareHarborLoader from "@/app/components/FareHarborLoader";
 import { LanguageProvider } from "../context/LanguageContext";
@@ -13,8 +16,14 @@ import { routing } from "../i18n/routing";
 import { notFound } from "next/navigation";
 import TopLoader from "@/app/components/TopLoader";
 import { FareHarborProvider } from "@/app/context/FareHarborContext";
+import "react-phone-input-2/lib/style.css";
 
-export default async function LocaleLayout({
+const montserrat = Montserrat({
+  subsets: ["latin"],
+  variable: "--font-montserrat",
+});
+
+export default async function RootLayout({
   children,
   params,
 }: {
@@ -23,78 +32,68 @@ export default async function LocaleLayout({
 }) {
   const { locale, slug } = await params;
 
-  if (!routing.locales.includes(locale as any)) {
+  // Check that locale is supported (assuming routing.locales is something like ["en", "ar", "ru", "zh"])
+  if (!routing.locales.includes(locale as "en" | "ar" | "ru" | "zh")) {
     notFound();
   }
 
   const messages = await getMessages();
-  const baseUrl = "https://www.centauruscharter.com";
-  const canonicalUrl = slug ? `${baseUrl}/${slug.join("/")}` : baseUrl;
 
-  // Fetch metadata for "yacht-trips" dynamically
-  let metaTitle = "Default Title";
-  let metaDescription = "Default Description";
-  let metaKeywords = "default, keywords";
+  // Define defaultLocale – adjust as needed.
+  const defaultLocale = "en";
+  const localePrefix = locale === defaultLocale ? "" : `/${locale}`;
 
-  try {
-    const response = await fetch(
-      "https://www.centauruscharter.com/api/api_new/basic"
-    );
-    const data = await response.json();
+  // Reconstruct asPath from slug.
+  // If no slug is passed, default to "/" which becomes an empty string in canonical URL.
+  const asPath = slug && slug.length > 0 ? "/" + slug.join("/") : "/";
+  const pathPart = asPath === "/" ? "" : asPath;
 
-    const metaData = data?.meta_tags?.["home"]?.[locale]?.[0];
+  // Use request headers to determine current host and protocol.
+  const reqHeaders = headers();
+  const host = (await reqHeaders).get("host") || "localhost:3000";
+  const protocol = (await reqHeaders).get("x-forwarded-proto") || "https";
 
-    if (metaData) {
-      metaTitle = metaData.meta_title || metaTitle;
-      metaDescription = metaData.meta_description || metaDescription;
-      metaKeywords = metaData.meta_keywords || metaKeywords;
-    } else {
-      console.warn(`No metadata found for yacht-trips in locale: ${locale}`);
-    }
-  } catch (error) {
-    console.error("Error fetching metadata:", error);
-  }
+  // Construct canonical URL as: protocol://host + localePrefix + pathPart
+  const canonicalUrl = `${protocol}://${host}${localePrefix}${pathPart}`;
 
   return (
-
-    <>
-      <title>{metaTitle}</title>
-        <meta name="description" content={metaDescription} />
-        <meta name="keywords" content={metaKeywords} />
+    <html lang={locale}>
+      <head>
         <link rel="canonical" href={canonicalUrl} />
-      <Script
-        strategy="afterInteractive"
-        src="https://www.googletagmanager.com/gtag/js?id=UA-131086702-1&AW-761360769"
-      />
-      <Script
-        id="google-analytics"
-        strategy="afterInteractive"
-        dangerouslySetInnerHTML={{
-          __html: `
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', 'UA-131086702-1');
-            gtag('config', 'AW-761360769');
-          `,
-        }}
-      />
-      <TopLoader />
-      <NextIntlClientProvider locale={locale} messages={messages}>
-        <DataProvider>
-          <LanguageProvider>
-            <Navbar />
-            <FareHarborProvider>
-              {children}
-            </FareHarborProvider>
-            <Sociallink />
-            <FirstFooter />
-            <SecondFooter />
-            <CopyrightFooter />
-            <FareHarborLoader />
-          </LanguageProvider>
-        </DataProvider>
-      </NextIntlClientProvider>
-    </>
+        <Script
+          strategy="afterInteractive"
+          src="https://www.googletagmanager.com/gtag/js?id=UA-131086702-1&AW-761360769"
+        />
+        <Script
+          id="google-analytics"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'UA-131086702-1');
+              gtag('config', 'AW-761360769');
+            `,
+          }}
+        />
+      </head>
+      <body className={`${montserrat.variable}`}>
+        <TopLoader />
+        <NextIntlClientProvider locale={locale} messages={messages}>
+          <DataProvider>
+            <LanguageProvider>
+              <Navbar />
+              <FareHarborProvider>{children}</FareHarborProvider>
+              <Sociallink />
+              <FirstFooter />
+              <SecondFooter />
+              <CopyrightFooter />
+              <FareHarborLoader />
+            </LanguageProvider>
+          </DataProvider>
+        </NextIntlClientProvider>
+      </body>
+    </html>
   );
 }
