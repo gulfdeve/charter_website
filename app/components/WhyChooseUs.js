@@ -9,7 +9,7 @@ const WhyChooseUs = () => {
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 lg:px-5 xl:px-44">
         <div className="flex flex-col items-center justify-center py-5 ">
           <div className="border border-[#848484] rounded-full p-14 aspect-square flex items-center justify-center">
-            <img src="/LuxuryExperienceBadge.png" className="w-16" />
+            <img alt="luxury experience badge" src="/LuxuryExperienceBadge.png" className="w-16" />
           </div>
           <h1 className=" text-[#848484] text-xl py-3">
             Luxury Experience
@@ -20,7 +20,7 @@ const WhyChooseUs = () => {
         </div>
         <div className="flex flex-col items-center justify-center py- ">
           <div className="border border-[#848484] rounded-full p-14 aspect-square flex items-center justify-center">
-            <img src="/FleetofYachts.png" className="w-16" />
+            <img alt="fleet of yachts" src="/FleetofYachts.png" className="w-16" />
           </div>
           <h1 className=" text-[#848484] text-xl py-3">
           Fleet of Yachts
@@ -31,7 +31,7 @@ const WhyChooseUs = () => {
         </div>
         <div className="flex flex-col items-center justify-center py-5">
           <div className="border border-[#848484] rounded-full p-14 aspect-square flex items-center justify-center">
-            <img src="/CertifiedCrew.png" className="w-16" />
+            <img alt="certified crew" src="/CertifiedCrew.png" className="w-16" />
           </div>
           <h1 className=" text-[#848484] text-xl py-3">
           Certified Crew
@@ -44,7 +44,7 @@ const WhyChooseUs = () => {
         </div>
         <div className="flex flex-col items-center justify-center py-5">
           <div className="border border-[#848484] rounded-full p-14 aspect-square flex items-center justify-center">
-            <img src="/LuxuryExperienceBadge.png" className="w-16" />
+            <img alt="luxury experience badge" src="/LuxuryExperienceBadge.png" className="w-16" />
           </div>
           <h1 className=" text-[#848484] text-xl py-3">
           Quality Service

@@ -8,7 +8,7 @@ export default function Page() {
     <>
       <div className="bg-white w-full h-full">
         <div>
-          <img src="./Contactheader.webp" className="w-full" />
+          <img alt="contact header banner" src="./Contactheader.webp" className="w-full" />
         </div>
         <div className="flex flex-col items-center justify-center py-10 ">
           <h1 className=" text-[#0D2343] text-center font-bold text-4xl pb-4">

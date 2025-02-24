@@ -74,7 +74,7 @@ export default function Navbar() {
             <Link href={"/"}>
               <img
                 src="/CentaurusLogo.png"
-                alt="Centaurus Logo"
+                alt="Centaurus charter Logo"
                 className="cursor-pointer"
               />
             </Link>
@@ -155,7 +155,7 @@ export default function Navbar() {
                   </Link>
                   <Link className="bg-gray-300" href={pathname} locale="zh">
                     <li className="flex items-center gap-2 p-2 cursor-pointer hover:bg-gray-200">
-                      <img src="/zh.svg" alt="Russian" className="w-4 h-4" />
+                      <img src="/zh.svg" alt="Chinese" className="w-4 h-4" />
                       CHINESE - ZH
                     </li>
                   </Link>
@@ -194,7 +194,7 @@ export default function Navbar() {
                   }`}
                 >
                   <Link href={"/"}>
-                    <img src="/CentaurusLogoWhite.png" alt="Logo" />
+                    <img src="/CentaurusLogoWhite.png" alt="centaurus charter logo" />
                   </Link>
                 </li>
 
@@ -362,7 +362,7 @@ export default function Navbar() {
 
             <div className="w-32 pr-3">
               <Link href={"/"}>
-                <img src="/CentaurusLogoWhite.png" alt="Logo" />
+                <img src="/CentaurusLogoWhite.png" alt="centaurus charter logo" />
               </Link>
             </div>
 
@@ -370,7 +370,7 @@ export default function Navbar() {
             <div className="flex items-center gap-2">
               {/* WhatsApp Icon */}
               <Link href="https://wa.me/1234567890">
-                <img src="/whatsapp.svg" className="text-blue-500 w-6 h-6" />
+                <img alt="whatsapp logo" src="/whatsapp.svg" className="text-blue-500 w-6 h-6" />
               </Link>
 
               {/* Phone Icon */}

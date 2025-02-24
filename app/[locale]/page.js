@@ -100,7 +100,7 @@ export default function Home() {
                       </h1>
                       <img
                         src={`https://www.centauruscharter.com/product/images/${product.image}`}
-                        alt="yacht"
+                        alt={product.translations[language].name_of_yacht}
                         className="w-full h-auto xl:h-5/6 object-cover rounded-lg"
                       />
                       {/* Caption */}
@@ -167,6 +167,7 @@ export default function Home() {
                             }
                           >
                             <img
+                            alt="centaurus international logo"
                               src="./centaurus_link.svg"
                               className="w-[10rem] mt-3"
                             />
@@ -212,6 +213,7 @@ export default function Home() {
                   <Link  href={`/yacht-rentals/${product.slug}`}>
                   <img
                     src={`https://www.centauruscharter.com/product/images/${product.image}`}
+                    alt={product.translations[language].name_of_yacht}
                     className="rounded-lg xl:w-[32rem] w-[25rem] mt-3"
                   />
                   </Link>
@@ -279,6 +281,7 @@ export default function Home() {
                         }
                       >
                         <img
+                        alt="centaurus international logo"
                           src="./centaurus_link.svg"
                           className="w-[10rem] xl:mt-3"
                         />
@@ -315,6 +318,7 @@ export default function Home() {
         <div className="">
           <div className="">
             <img
+            alt="luxury yacht charter"
               src="/LUXURY YACHT CHARTER.webp"
               className="xl:w-[380rem] sm:w-[170rem] lg:w-[160rem] md:h-[443px] xl:h-[452px] lg:h-[404px]"
             />
@@ -346,6 +350,7 @@ export default function Home() {
         <div>
           <div className="">
             <img
+            alt="customized yacht trips"
               src="/CUSTOMIZEDEXPERIENCES.webp"
               className="xl:w-[260rem] sm:w-[170rem] lg:w-[160rem] md:h-[443px] xl:h-[452px] lg:h-[404px]"
             />
@@ -377,6 +382,7 @@ export default function Home() {
         <div>
           <div className="">
             <img
+            alt="exclusive offers"
               src="/EXCLUSIVEOFFERS.webp"
               className="xl:w-[270rem] sm:w-[170rem] lg:w-[140rem] md:h-[443px] xl:h-[452px] lg:h-[404px]"
             />
@@ -406,6 +412,7 @@ export default function Home() {
         <div>
           <div className="">
             <img
+            alt="water activities"
               src="/WATERACTIVITIES.webp"
               className="xl:w-[240rem] sm:w-[170rem] lg:w-[140rem] md:h-[443px] xl:h-[452px] lg:h-[404px]"
             />
