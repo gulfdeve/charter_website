@@ -85,7 +85,7 @@ export default function EmblaCarouselComponent() {
             {TEMPORARY_DATA.map((item) => (
               <div key={item.id} className="embla__slide1">
                 <div className="relative bg-gray-200 overflow-hidden shadow-lg">
-                  <iframe
+                  <iframe title="google maps location"
                     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3613.2080337682214!2d55.1390062!3d25.094818299999996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f6b1f6453e121%3A0x45035717db6c3954!2sCENTAURUS%20CHARTER%20-%20Yachts%20%26%20Boats%20Rental%20Dubai%20Harbour!5e0!3m2!1sen!2s!4v1734525244924!5m2!1sen!2s"
                     width="400"
                     height="450"
@@ -129,7 +129,7 @@ export default function EmblaCarouselComponent() {
             {TEMPORARY_DATA.map((item) => (
               <div key={item.id} className="embla__slide p-4">
                 <div className="relative bg-gray-200 overflow-hidden shadow-lg">
-                  <iframe
+                  <iframe title="google maps location"
                     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3613.2080337682214!2d55.1390062!3d25.094818299999996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f6b1f6453e121%3A0x45035717db6c3954!2sCENTAURUS%20CHARTER%20-%20Yachts%20%26%20Boats%20Rental%20Dubai%20Harbour!5e0!3m2!1sen!2s!4v1734525244924!5m2!1sen!2s"
                     width="400"
                     height="450"

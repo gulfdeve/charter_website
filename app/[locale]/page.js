@@ -181,12 +181,14 @@ export default function Home() {
 
             {/* Navigation Buttons */}
             <button
+            aria-label="go previous slide"
               className="absolute left-4 top-36 xs:top-1/4 transform -translate-y-1/2 bg-gray-800 text-white p-2 rounded-full hover:bg-gray-700"
               onClick={scrollPrev}
             >
               <IoIosArrowBack size={20} />
             </button>
             <button
+            aria-label="go next slide"
               className="absolute right-4 top-36 xs:top-1/4 transform -translate-y-1/2 bg-gray-800 text-white p-2 rounded-full hover:bg-gray-700"
               onClick={scrollNext}
             >
