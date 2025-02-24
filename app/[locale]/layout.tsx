@@ -1,4 +1,5 @@
 import { Montserrat } from "next/font/google";
+import Script from 'next/script';
 import "../globals.css";
 import Navbar from "@/app/components/Navbar";
 import FareHarborLoader from '@/app/components/FareHarborLoader';
@@ -45,6 +46,23 @@ export default async function RootLayout({
     <html lang={locale}>
       <head>
         <link rel="canonical" href={canonicalUrl} />
+        <Script
+          strategy="afterInteractive"
+          src="https://www.googletagmanager.com/gtag/js?id=UA-131086702-1&AW-761360769"
+        />
+        <Script
+          id="google-analytics"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'UA-131086702-1');
+              gtag('config', 'AW-761360769');
+            `,
+          }}
+        />
       </head>
       <body className={`${montserrat.variable}`}>
       <TopLoader />
