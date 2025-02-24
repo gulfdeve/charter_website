@@ -37,22 +37,22 @@ const page = ({ params }) => {
                 />
               </Link>
               <div className="flex flex-col  justify-start px-5 lg:px-5">
-                <h1 className="text-[#232629]  text-2xl font-bold pt-4">
+                <h2 className="text-[#232629]  text-2xl font-bold pt-4">
                   <Link href={`/${language}/offers/${offer.slug}`}>
                     {offer.translations[language].title}
                   </Link>
-                </h1>
+                </h2>
                 <p className="text-[#232629]  font-bold text-xs pt-2 pb-16">
                   {offer.note}
                 </p>
                 <div className="bg-[#232629] w-full h-[0.05rem]"></div>
                 <div className="flex flex-row items-center justify-between">
                   <div className="flex flex-col items-start justify-start py-10">
-                    <h1 className="text-[#232629]  font-bold text-sm xl:text-lg">
+                    <p className="text-[#232629]  font-bold text-sm xl:text-lg">
                       Validity Until:
                       <br />
                       {offer.validity}
-                    </h1>
+                    </p>
                   </div>
                   {/* Buttons Section */}
                   <div className="flex xl:flex-row flex-col items-center justify-end gap-3 ">

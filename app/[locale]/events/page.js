@@ -31,11 +31,11 @@ return (
                     alt={event.translations[language].title} className="rounded-t-md w-full object-cover" />
                 </Link>
                 <div className="flex flex-col  justify-start px-5 lg:px-5">
-                    <h1 className="text-[#232629]  text-2xl font-bold pt-4">
+                    <h2 className="text-[#232629]  text-2xl font-bold pt-4">
                         <Link href={`/${language}/events/${event.slug}`}>
                         {event.translations[language].title}
                         </Link>
-                    </h1>
+                    </h2>
                     <p className="text-[#232629]  font-bold text-base pt-2 pb-16">
                       {event.translations[language].heading_2}
                     </p>

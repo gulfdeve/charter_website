@@ -28,12 +28,12 @@ const Sociallink = () => {
           </a>
         </div>
         <div className="flex flex-col items-center justify-center">
-          <h1 className=" text-white text-lg font-bold pt-2.5">
+          <p className=" text-white text-lg font-bold pt-2.5">
             Amazing Offers just for you
-          </h1>
-          <h1 className=" text-white text-lg pb-2 text-center">
+          </p>
+          <p className=" text-white text-lg pb-2 text-center">
             Sign up to receive amazing offers and tips
-          </h1>
+          </p>
         </div>
         <div className="flex items-center overflow-hidden max-w-md xxs:px-2">
           <input
@@ -51,12 +51,12 @@ const Sociallink = () => {
       <div className="lg:block hidden">
         <div className="flex flex-row items-center justify-between lg:px-12 gap-20 container mx-auto">
           <div className="flex flex-col items-start justify-center">
-            <h1 className=" text-white lg:text-sm xl:text-lg font-bold pt-2.5">
+            <p className=" text-white lg:text-sm xl:text-lg font-bold pt-2.5">
               Amazing Offers just for you
-            </h1>
-            <h1 className=" text-white xl:text-lg lg:text-sm pb-2">
+            </p>
+            <p className=" text-white xl:text-lg lg:text-sm pb-2">
               Sign up to receive amazing offers and tips
-            </h1>
+            </p>
           </div>
           <div className="flex flex-row items-center justify-center gap-5">
             <a href="https://www.facebook.com/centauruscharteryachtsrental/" target="_blank">
