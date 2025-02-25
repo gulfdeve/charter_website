@@ -224,16 +224,17 @@ export default function Navbar() {
                       />
                     </svg>
                   </span>
-                  <ul className="absolute top-[85%] left-0 w-60 bg-white text-black border shadow-lg hidden group-hover:block z-20">
+                  <ul className="absolute top-[85%] left-0 w-60 bg-white text-black shadow-lg hidden group-hover:block z-20">
                     {!loading &&
                       data?.products?.map((product) => (
                         <li
                           key={product.id}
-                          className="py-2 px-4 cursor-pointer text-base font-normal text-gray-500  hover:bg-gray-200"
+                          className="cursor-pointer text-base font-normal text-gray-500 hover:font-bold hover:bg-primary-blue hover:text-primary-yellow"
                         >
                           {/* {product.title} */}
                           <Link
                             href={`/yacht-rentals/${product.slug}`}
+                            className="py-2 px-4 block"
                             key={product.id}
                           >
                             {" "}
@@ -293,17 +294,18 @@ export default function Navbar() {
                       />
                     </svg>
                   </span>
-                  <ul className="absolute top-[85%] left-0 w-60 bg-white text-black border shadow-lg hidden group-hover:block z-20">
+                  <ul className="absolute top-[85%] left-0 w-60 bg-white text-black shadow-lg hidden group-hover:block z-20">
                     {!loading &&
                       data?.experiences?.map((experience) => {
                         return (
                           <li
                             key={experience.id}
-                            className="py-2 px-4 cursor-pointer text-base font-normal text-gray-500  hover:bg-gray-200"
+                            className="cursor-pointer text-base font-normal text-gray-500 hover:font-bold hover:bg-primary-blue hover:text-primary-yellow"
                           >
                             <Link
                               href={`/yacht-trips/${experience.slug}`}
                               key={experience.id}
+                              className="py-2 px-4 block"
                             >
                               {" "}
                               {experience.translations?.[locale]?.title}
