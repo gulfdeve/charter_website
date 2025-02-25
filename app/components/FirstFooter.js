@@ -20,9 +20,9 @@ const FirstFooter = () => {
         <div className="p-4 container mx-auto">
           <div className=" grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-8 ">
             <div>
-              <h3 className="text-lg text-white font-semibold mb-4">
+              <div className="text-lg text-white font-semibold mb-4">
                 {t("footer.centaurus-charter")}
-              </h3>
+              </div>
               <ul>
                 <li className="mb-2">
                   <Link
@@ -99,9 +99,9 @@ const FirstFooter = () => {
               </ul>
             </div>
             <div>
-              <h3 className="text-lg text-white font-semibold mb-4">
+              <div className="text-lg text-white font-semibold mb-4">
                 Our Luxury Yachts
-              </h3>
+              </div>
               <ul>
                 {!loading &&
                   data?.products?.map((product) => (
@@ -120,9 +120,9 @@ const FirstFooter = () => {
               </ul>
             </div>
             <div>
-              <h3 className="text-lg text-white font-semibold mb-4">
+              <div className="text-lg text-white font-semibold mb-4">
                 {t("navbar.experiences")}
-              </h3>
+              </div>
               <ul>
                 {!loading &&
                   data?.experiences?.map((experience) => {
@@ -143,9 +143,9 @@ const FirstFooter = () => {
               </ul>
             </div>
             <div>
-              <h3 className="text-lg text-white font-semibold mb-4">
+              <div className="text-lg text-white font-semibold mb-4">
                 {t("footer.reach-out-to-us")}
-              </h3>
+              </div>
               <ul className="flex flex-col gap-2">
                 <li className="mb-2 flex gap-2">
                   <svg
@@ -250,9 +250,9 @@ const FirstFooter = () => {
               </ul>
             </div>
             <div>
-              <h3 className="text-lg text-white font-semibold mb-4">
+              <div className="text-lg text-white font-semibold mb-4">
                 For Enquiries
-              </h3>
+              </div>
               <ul>
                 <li className="flex flex-col">
                   <p className="text-[#969696]  font-semibold py-3">
