@@ -56,7 +56,8 @@ export default function Home() {
         <Video />
       </div>
 
-      <div className="flex flex-col bg-white items-center justify-center pb-10 2xl:pt-20 2xl:py-0 ">
+      <div className="flex flex-col bg-white items-center justify-center pb-10 xl:pt-20
+       2xl:pt-20 2xl:py-0 ">
         <h1 className=" text-[#0D2343] text-center font-bold text-4xl pb-4">
           YACHT RENTAL DUBAI {t("navbar.private-yachts")}
         </h1>
@@ -77,127 +78,11 @@ export default function Home() {
           us.
         </p>
       </div>
+        
 
-      <div className="md:hidden block">
-        <div className="container mx-auto p-6 ">
-          {/* Carousel */}
-          <div className="embla relative">
-            {/* Viewport */}
-            <div
-              className="embla__viewport overflow-hidden rounded-lg"
-              ref={emblaRef}
-            >
-              <div className="embla__container flex shadow-2xl shadow-black">
-                {!loading &&
-                  data?.products?.map((product) => (
-                    <div
-                      key={product.id}
-                      className="embla__slide min-w-full flex flex-col items-center justify-center"
-                    >
-                      {/* Image */}
-                      <h1 className=" font-bold text-2xl mb-5">
-                        {product.translations[language].name_of_yacht}
-                      </h1>
-                      <img
-                        src={`https://www.centauruscharter.com/product/images/${product.image}`}
-                        alt={product.translations[language].name_of_yacht}
-                        className="w-full h-auto xl:h-5/6 object-cover rounded-lg"
-                      />
-                      {/* Caption */}
-                      <div className="mt-4 text-center">
-                        <div className="grid grid-cols-2 lg:grid-cols-4 md:grid-cols-2 items-center gap-0 rounded-lg w-full overflow-hidden shadow-md mb-7">
-                          {/* Model */}
-                          <div className="bg-[#0d2343] text-white p-2 flex flex-col items-center ">
-                            <span className="font-bold  text-sm">
-                              Model:
-                            </span>
-                            <span className="font-semibold  text-sm text-[#e1ae48]">
-                              {product.translations[language].model}
-                            </span>
-                          </div>
-                          {/* Length */}
-                          <div className="bg-[#0d2343] text-white p-2 flex flex-col items-center">
-                            <span className="font-bold  text-sm">
-                              Length:
-                            </span>
-                            <span className="font-semibold  text-sm text-[#e1ae48]">
-                              {product.translations[language].size}
-                            </span>
-                          </div>
-                          {/* Guests */}
-                          <div className="bg-[#0d2343] text-white p-2 flex flex-col items-center">
-                            <span className="font-bold  text-sm">
-                              Guests:
-                            </span>
-                            <span className="font-semibold  text-sm text-[#e1ae48]">
-                              {product.translations[language].guests}
-                            </span>
-                          </div>
-                          {/* Good For */}
-                          <div className="bg-[#e1ae48] text-[#0d2343] xl:w-36 p-2 flex flex-col items-center">
-                            <span className="   text-sm">
-                              Per Hour:
-                            </span>
-                            <span className="font-semibold  text-sm">
-                              {product.per_hour_price} +VAT
-                            </span>
-                          </div>
-                        </div>
-                        <h3 className="text-md font-bold ">
-                          Trip inclusions from 3 hours onwards:
-                        </h3>
-                        <p className="text-sm text-black ">
-                          Hops, Wines, Bubbly Drinks, Coffee, Tea, Water, &
-                          Softdrinks
-                          <br />
-                          Transfer (upon request)
-                          <br />
-                          Canapés & Snacks (additional charges apply)
-                        </p>
-                        <p className="text-blue-400 text-xs mt-3">
-                          T&C's apply
-                        </p>
-                        <button className="flex flex-row items-center justify-center mt-4 py-2 w-full md:py-2 md:px-4 rounded-md bg-[#e1ae48] text-[#0d2343] hover:bg-[#0d2343] hover:text-[#e1ae48]  font-bold text-base md:text-sm xl:text-lg transition-all duration-300">
-                          Book Now
-                        </button>
-                        <div className="flex items-center justify-center ">
-                          <Link
-                            href={
-                              "https://centaurusint.net/?utm_source=centauruscharter&utm_medium=logo_text&utm_campaign=branding"
-                            }
-                          >
-                            <img
-                              src="./centaurus_link.svg"
-                              alt="centaurus link"
-                              className="w-[10rem] mt-3"
-                            />
-                          </Link>
-                        </div>
-                      </div>
-                    </div>
-                  ))}
-              </div>
-            </div>
-
-            {/* Navigation Buttons */}
-            <button
-              className="absolute left-4 top-36 xs:top-1/4 transform -translate-y-1/2 bg-gray-800 text-white p-2 rounded-full hover:bg-gray-700"
-              onClick={scrollPrev}
-            >
-              <IoIosArrowBack size={20} />
-            </button>
-            <button
-              className="absolute right-4 top-36 xs:top-1/4 transform -translate-y-1/2 bg-gray-800 text-white p-2 rounded-full hover:bg-gray-700"
-              onClick={scrollNext}
-            >
-              <IoIosArrowForward size={20} />
-            </button>
-          </div>
-        </div>
-      </div>
       {/* DESKTOP */}
-      <div className="md:block hidden">
-        <div className="container mx-auto p-6">
+      <div className="">
+        <div className="container mx-auto  lg:p-6">
           <div className="grid grid-col-1 md:grid-cols-2 p-6 2xl:px-36 2xl:gap-14 gap-10">
             {!loading &&
               data?.products?.map((product) => (
