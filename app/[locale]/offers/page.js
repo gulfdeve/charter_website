@@ -38,6 +38,7 @@ const page = ({ params }) => {
                   width={450}
                   height={0}
                   style={{ height: "auto" }}
+                  priority={true}
                 />
               </Link>
               <div className="flex flex-col  justify-start px-5 lg:px-5">
