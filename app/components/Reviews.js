@@ -93,9 +93,9 @@ const Reviews = () => {
       <div className="xl:block hidden">
         <div className="bg-gray-200 w-full h-auto py-20 px-4">
           <div>
-            <h1 className=" text-[#0D2343] text-center font-bold text-4xl pb-4">
+            <h2 className=" text-[#0D2343] text-center font-bold text-4xl pb-4">
               WHAT OUR GUESTS SAY
-            </h1>
+            </h2>
           </div>
 
           <div className="flex flex-row items-stretch justify-center container mx-auto relative gap-7">
@@ -108,7 +108,7 @@ const Reviews = () => {
                   </h1>
                   <div className="flex flex-col items-center justify-center -space-y-3">
                     <RxBorderDotted className="text-green-600 text-center text-5xl -mt-3" />
-                    <h1 className=" font-bold text-xs">176 Reviews</h1>
+                    <span className=" font-bold text-xs">176 Reviews</span>
                     <img alt="tripadvisor logo" src="/Tripadvisor.png" className="w-24 pt-5" />
                   </div>
                 </Link>
@@ -134,8 +134,8 @@ const Reviews = () => {
                             className="w-14 rounded-full"
                           />
                           <div className="flex flex-col items-start">
-                            <h1 className="">{slide.name}</h1>
-                            <h3 className=" text-xs">{slide.date}</h3>
+                            <span className="">{slide.name}</span>
+                            <span className=" text-xs">{slide.date}</span>
                           </div>
                         </div>
                         <div className="flex flex-row py-1 gap-2">
@@ -143,7 +143,7 @@ const Reviews = () => {
                             <FaStar key={index} />
                           ))}
                         </div>
-                        <h1 className=" text-sm py-1">{slide.title}</h1>
+                        <p className=" text-sm py-1">{slide.title}</p>
                         <p className=" text-xs">{slide.content}</p>
                       </div>
                     </div>
