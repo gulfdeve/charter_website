@@ -11,9 +11,11 @@ const SecondFooter = () => {
             Official Partner
           </p>
           <a href="https://centaurusint.net/" target="_blank">
-            <img
+            <Image
+              src="/Centaurus-Internatioanl-Horizontal-white.webp"
               alt="Centaurus International"
-              src="/Centaurus International.png"
+              width={152}
+              height={100}
             />
           </a>
         </div>
@@ -23,7 +25,7 @@ const SecondFooter = () => {
             target="_blank"
           >
             <Image
-              src="/Google store.webp"
+              src="/Google store@2x.webp"
               alt="google play logo"
               width={152}
               height={100}
@@ -35,7 +37,7 @@ const SecondFooter = () => {
             target="_blank"
           >
             <Image
-              src="/Apple Store.webp"
+              src="/Apple Store@2x.webp"
               alt="app store logo"
               width={152}
               height={100}
