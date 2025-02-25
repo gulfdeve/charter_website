@@ -12,7 +12,8 @@ const CopyrightFooter = () => {
             src="/CentaurusLogoWhite.png"
             alt="centaurus charter logo"
             width={200}
-            height={100}
+            height={0}
+            style={{ height: "auto" }}
         />
     </div>
   )

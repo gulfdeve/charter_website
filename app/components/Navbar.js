@@ -200,7 +200,8 @@ export default function Navbar() {
                       src="/CentaurusLogoWhite.png"
                       alt="centaurus charter logo"
                       width={200}
-                      height={100}
+                      height={0}
+                      style={{ height: "auto" }}
                     />
                   </Link>
                 </li>
@@ -375,7 +376,8 @@ export default function Navbar() {
                   src="/CentaurusLogoWhite.png" 
                   alt="centaurus charter logo" 
                   width={200}
-                  height={100}
+                  height={0}
+                  style={{ height: "auto" }}
                 />
               </Link>
             </div>
