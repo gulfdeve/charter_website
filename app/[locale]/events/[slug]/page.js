@@ -70,7 +70,8 @@ const page = ({ params }) => {
           </div>
         </div>
       </div>
-      <Modal2 isModalOpen={isModalOpen} closeModal={closeModal} />
+      <Modal2 isModalOpen={isModalOpen} closeModal={closeModal}  idName="events_id"
+        idValue={event.id}/>
     </>
   );
 };

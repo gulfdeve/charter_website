@@ -13,7 +13,7 @@ const Page = ({ params }) => {
   const locale = useLocale();
   // Find the offer by slug
   const offer = data?.offers?.find((offer) => offer.slug === slug);
-
+ 
   const handleQuote = () => {
     setIsModalOpen(true);
   };
@@ -62,17 +62,19 @@ const Page = ({ params }) => {
                   WHATSAPP US
                 </button>
               </a>
-              <button
-                onClick={handleQuote}
-                className="blue-lined-button"
-              >
+              <button onClick={handleQuote} className="blue-lined-button">
                 GET A QUOTE
               </button>
             </div>
           </div>
         </div>
       </div>
-      <Modal2 isModalOpen={isModalOpen} closeModal={closeModal} />
+      <Modal2
+        isModalOpen={isModalOpen}
+        closeModal={closeModal}
+        idName="offers_id"
+        idValue={offer.id}
+      />
     </>
   );
 };

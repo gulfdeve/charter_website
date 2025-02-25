@@ -13,22 +13,36 @@ export default function Navbar() {
   const locale = useLocale();
   const pathname = usePathname();
   const router = useRouter();
+
   const [istheDropdownOpen, setIsDropdownOpen] = useState(false);
   const [isDropdownOpen, setDropdownOpen] = useState(false);
   const [isSticky, setSticky] = useState(false);
   const [mobileDropdownOpen, setMobileDropdownOpen] = useState(false);
-  const [submenuOpen, setSubmenuOpen] = useState(null); // Tracks open submenu
+  const [submenuOpen, setSubmenuOpen] = useState(null);
+
+  // Fetch your data here
   const { data, loading, error } = useData();
 
+
+  const settingsItem = data?.settings?.[0];
+  const {
+    header_email,
+    header_phone_number_url,
+    header_whatsapp_url,
+  } = settingsItem || {};
+
+  // Handle submenus
   const toggleSubmenu = (index) => {
     setSubmenuOpen(submenuOpen === index ? null : index);
   };
 
+  // Handle language changes
   const handleLanguageChange = (lang) => {
     router.replace(pathname, { locale: lang });
     setDropdownOpen(false);
   };
 
+  // Sticky navbar logic
   const handleScroll = () => {
     if (window.scrollY > 100) {
       setSticky(true);
@@ -37,24 +51,23 @@ export default function Navbar() {
     }
   };
 
-  // Initialize language from localStorage on page load
-
   useEffect(() => {
     window.addEventListener("scroll", handleScroll);
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
+
+  // Language settings
   const languages = [
     { code: "en", name: "English", flag: "/uk.svg" },
     { code: "ar", name: "Arabic", flag: "/uae.svg" },
     { code: "ru", name: "Russian", flag: "/ru.svg" },
     { code: "zh", name: "Chinese", flag: "/zh.svg" },
   ];
-
   const currentLanguage = languages.find((lang) => lang.code === locale);
-  const dropdownRef = useRef(null);
 
+  const dropdownRef = useRef(null);
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
@@ -65,6 +78,14 @@ export default function Navbar() {
     document.addEventListener("mousedown", handleClickOutside);
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
+
+  // Show a loading or error state if needed
+  if (loading) {
+    return <div>Loading...</div>;
+  }
+  if (error) {
+    return <div>Error loading data.</div>;
+  }
 
   return (
     <>
@@ -82,31 +103,49 @@ export default function Navbar() {
             </Link>
           </div>
           <div className="flex items-center justify-end">
-            <Link aria-label="contact us icon" href={"/contact"} className="flex flex-row items-center justify-center yellow-solid-button">
+            <Link
+              aria-label="contact us icon"
+              href={"/contact"}
+              className="flex flex-row items-center justify-center yellow-solid-button"
+            >
               {t("navbar.contact-us")}
             </Link>
             <div className="flex flex-row px-8 gap-8">
               {/* Email Icon */}
-              <Link aria-label="email icon" href="mailto:example@example.com">
+              <Link
+                aria-label="email icon"
+                // Use the API value if available, otherwise fallback to "#"
+                href={header_email || "#"}
+              >
                 <MdMail
                   size={30}
                   className="text-[#e1ae48] hover:text-[#0d2343]"
                 />
               </Link>
-              <Link aria-label="phone icon" href="tel:1234567890">
+
+              {/* Phone Icon */}
+              <Link
+                aria-label="phone icon"
+                href={header_phone_number_url || "#"}
+              >
                 <FaPhoneAlt
                   size={23}
                   className="text-[#e1ae48] hover:text-[#0d2343] mt-1"
                 />
               </Link>
+
               {/* WhatsApp Icon */}
-              <Link aria-label="whatsapp icon" href="https://wa.me/1234567890">
+              <Link
+                aria-label="whatsapp icon"
+                href={header_whatsapp_url || "#"}
+              >
                 <IoLogoWhatsapp
                   size={30}
                   className="text-[#e1ae48] hover:text-[#0d2343]"
                 />
               </Link>
             </div>
+          
             {/* Language Dropdown */}
             <div
               className="relative"
