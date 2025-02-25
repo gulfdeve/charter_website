@@ -91,9 +91,9 @@ export default function Home() {
                   className="flex flex-col border border-gray-400 xl:p-10 p-5 rounded-lg"
                 >
                   <Link  href={`/yacht-rentals/${product.slug}`}>
-                  <h1 className=" xl:text-4xl text-3xl font-bold">
+                  <h2 className=" xl:text-4xl text-3xl font-bold">
                     {product.translations[language].name_of_yacht}
-                  </h1>
+                  </h2>
                   </Link>
                   <Link  href={`/yacht-rentals/${product.slug}`}>
                   <img
@@ -145,9 +145,9 @@ export default function Home() {
 
                   <div className="flex flex-row justify-between items-center xl:w-[32rem]">
                     <div>
-                      <h1 className=" font-bold">
+                      <div className=" font-bold">
                         Trip inclusions from 3 hours onwards:
-                      </h1>
+                      </div>
                       <ol className="list-disc ml-7 text-xs font-bold ">
                         <li>
                           {" "}
@@ -189,9 +189,9 @@ export default function Home() {
 
                     </div>
                     <div className="flex flex-col items-center justify-center">
-                      <h3 className=" text-blue-500 text-xs text-center mt-6 mr-3">
+                      <span className=" text-blue-500 text-xs text-center mt-6 mr-3">
                         T&C’s Apply
-                      </h3>
+                      </span>
                     </div>
                   </div>
                 </div>
@@ -211,9 +211,9 @@ export default function Home() {
         </div>
         <div className="flex flex-col items-center sm:items-start sm:justify-start justify-center bg-[#0D2343] px-5 xl:px-32 xl:py-12 py-5 md:h-[443px] xl:w-[395rem] lg:w-[250rem] xl:h-[452px] lg:h-[404px]">
         
-          <h1 className=" text-[#e1ae48] text-center font-bold text-2xl xl:text-3xl py-7">
+          <h2 className=" text-[#e1ae48] text-center font-bold text-2xl xl:text-3xl py-7">
             LUXURY YACHT RENTALS
-          </h1>
+          </h2>
           <p className=" text-white text-center sm:text-left  text-md  sm:text-sm xl:text-md pb-10">
             Marvel with the beauty of Dubai on a luxury yacht. Explore our
             yachts in Dubai Marina and Dubai Harbor Marina with excellent
@@ -243,9 +243,9 @@ export default function Home() {
         </div>
 
         <div className="flex flex-col items-center sm:items-start sm:justify-start justify-center  bg-[#e1ae48] px-5 xl:px-32 xl:py-12 py-5 md:h-[443px] xl:w-[277rem] xl:h-[452px] lg:h-[404px]">
-          <h1 className=" text-[#0D2343] text-center font-bold text-2xl xl:text-3xl py-7">
+          <h2 className=" text-[#0D2343] text-center font-bold text-2xl xl:text-3xl py-7">
             CUSTOMIZED YACHT TRIPS
-          </h1>
+          </h2>
           <p className=" text-[#0D2343] text-center sm:text-left  text-md  sm:text-sm xl:text-md pb-10">
             Centaurus Charter has something for everyone. Embark on a sunset
             cruise, catch some fish, celebrate milestones, woo your loved one or
@@ -274,9 +274,9 @@ export default function Home() {
           </div>
         </div>
         <div className="flex flex-col items-center sm:items-start sm:justify-start justify-center bg-[#0D2343] px-5 xl:px-32 xl:py-12 py-5 md:h-[443px] xl:w-[287rem]  xl:h-[452px] lg:h-[404px]">
-          <h1 className=" text-[#e1ae48] text-center font-bold text-2xl xl:text-3xl py-7">
+          <h2 className=" text-[#e1ae48] text-center font-bold text-2xl xl:text-3xl py-7">
             EXCLUSIVE OFFERS
-          </h1>
+          </h2>
           <p className=" text-white text-center sm:text-left  text-md  sm:text-sm xl:text-md pb-10">
             Dubai is a true yachting heaven with azure blue waters and beautiful
             skyscrapers. Take your loved ones to sea. We bring to you deals from
@@ -305,9 +305,9 @@ export default function Home() {
         </div>
 
         <div className="flex flex-col items-center sm:items-start sm:justify-start justify-center  bg-[#e1ae48] px-5 xl:px-32 xl:py-12 py-5 md:h-[443px] xl:w-[250rem] xl:h-[452px] lg:h-[404px]">
-          <h1 className=" text-[#0D2343] text-center font-bold text-2xl xl:text-3xl py-7">
+          <h2 className=" text-[#0D2343] text-center font-bold text-2xl xl:text-3xl py-7">
             WATER SPORTS ADD ON’s
-          </h1>
+          </h2>
           <p className=" text-[#0D2343] text-center sm:text-left  text-md  sm:text-sm xl:text-md pb-10">
             Holidays in Dubai offers a great mix of fun, adventure, breath
             taking places and special moments. It’s truly amazing to cruise the

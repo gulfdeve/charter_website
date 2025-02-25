@@ -7,12 +7,7 @@ import { MdKeyboardArrowDown, MdMail } from "react-icons/md";
 import { useData } from "../context/DataContext";
 import { useRouter, usePathname, Link } from "../i18n/routing";
 import { GiHamburgerMenu } from "react-icons/gi";
-
-
-
-// Example hook that fetches your data
-
-
+import Image from "next/image";
 export default function Navbar() {
   const t = useTranslations();
   const locale = useLocale();
@@ -98,11 +93,12 @@ export default function Navbar() {
       <div className="lg:block hidden">
         <nav className="p-4 container mx-auto bg-white text-black flex items-center justify-between xl:gap-64 2xl:gap-64 md:gap-24">
           <div className="text-xl font-bold">
-            <Link href="/">
-              <img
+            <Link href={"/"}>
+              <Image 
                 src="/CentaurusLogo.png"
                 alt="Centaurus charter Logo"
-                className="cursor-pointer"
+                width={200}
+                height={100}
               />
             </Link>
           </div>
@@ -239,7 +235,13 @@ export default function Navbar() {
                   }`}
                 >
                   <Link href={"/"}>
-                    <img src="/CentaurusLogoWhite.png" alt="centaurus charter logo" />
+                    <Image 
+                      src="/CentaurusLogoWhite.png"
+                      alt="centaurus charter logo"
+                      width={200}
+                      height={0}
+                      style={{ height: "auto" }}
+                    />
                   </Link>
                 </li>
 
@@ -409,7 +411,13 @@ export default function Navbar() {
 
             <div className="w-32 pr-3">
               <Link href={"/"}>
-                <img src="/CentaurusLogoWhite.png" alt="centaurus charter logo" />
+                <Image 
+                  src="/CentaurusLogoWhite.png" 
+                  alt="centaurus charter logo" 
+                  width={200}
+                  height={0}
+                  style={{ height: "auto" }}
+                />
               </Link>
             </div>
 
@@ -417,7 +425,12 @@ export default function Navbar() {
             <div className="flex items-center gap-2">
               {/* WhatsApp Icon */}
               <Link href="https://wa.me/1234567890">
-                <img alt="whatsapp logo" src="/whatsapp.svg" className="text-blue-500 w-6 h-6" />
+                <Image 
+                  src="/whatsapp.svg"
+                  alt="whatsapp logo"
+                  width={24}
+                  height={24}
+                />
               </Link>
 
               {/* Phone Icon */}

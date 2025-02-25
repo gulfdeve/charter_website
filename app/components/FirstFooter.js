@@ -20,9 +20,9 @@ const FirstFooter = () => {
         <div className="p-4 container mx-auto">
           <div className=" grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-8 ">
             <div>
-              <h3 className="text-lg text-white font-semibold mb-4">
+              <div className="text-lg text-white font-semibold mb-4">
                 {t("footer.centaurus-charter")}
-              </h3>
+              </div>
               <ul>
                 <li className="mb-2">
                   <Link
@@ -99,9 +99,9 @@ const FirstFooter = () => {
               </ul>
             </div>
             <div>
-              <h3 className="text-lg text-white font-semibold mb-4">
+              <div className="text-lg text-white font-semibold mb-4">
                 Our Luxury Yachts
-              </h3>
+              </div>
               <ul>
                 {!loading &&
                   data?.products?.map((product) => (
@@ -120,9 +120,9 @@ const FirstFooter = () => {
               </ul>
             </div>
             <div>
-              <h3 className="text-lg text-white font-semibold mb-4">
+              <div className="text-lg text-white font-semibold mb-4">
                 {t("navbar.experiences")}
-              </h3>
+              </div>
               <ul>
                 {!loading &&
                   data?.experiences?.map((experience) => {
@@ -143,9 +143,9 @@ const FirstFooter = () => {
               </ul>
             </div>
             <div>
-              <h3 className="text-lg text-white font-semibold mb-4">
+              <div className="text-lg text-white font-semibold mb-4">
                 {t("footer.reach-out-to-us")}
-              </h3>
+              </div>
               <ul className="flex flex-col gap-2">
                 <li className="mb-2 flex gap-2">
                   <svg
@@ -238,11 +238,11 @@ const FirstFooter = () => {
                     <path d="M493.4 24.6l-104-24c-11.3-2.6-22.9 3.3-27.5 13.9l-48 112c-4.2 9.8-1.4 21.3 6.9 28l60.6 49.6c-36 76.7-98.9 140.5-177.2 177.2l-49.6-60.6c-6.8-8.3-18.2-11.1-28-6.9l-112 48C3.9 366.5-2 378.1.6 389.4l24 104C27.1 504.2 36.7 512 48 512c256.1 0 464-207.5 464-464 0-11.2-7.7-20.9-18.6-23.4z"></path>
                   </svg>
                   <p>
-                    <a href="tel:+97143521833">+971 4 352 1833</a>
+                    <a className="mb-2 inline-block" href="tel:+97143521833">+971 4 352 1833</a>
                     <br />
-                    <a href="tel:+971524901269">+971 52 490 1269</a>
+                    <a className="mb-2 inline-block" href="tel:+971524901269">+971 52 490 1269</a>
                     <br />
-                    <a href="mailto:info@centauruscharter.com">
+                    <a className="mb-2 inline-block" href="mailto:info@centauruscharter.com">
                       info@centauruscharter.com
                     </a>
                   </p>
@@ -250,47 +250,47 @@ const FirstFooter = () => {
               </ul>
             </div>
             <div>
-              <h3 className="text-lg text-white font-semibold mb-4">
+              <div className="text-lg text-white font-semibold mb-4">
                 For Enquiries
-              </h3>
+              </div>
               <ul>
                 <li className="flex flex-col">
                   <p className="text-[#969696]  font-semibold py-3">
                     English / Russian
                   </p>
-                  <a href="tel:+971505484685">+971 50 548 4685</a>
-                  <a href="tel:+971502484678">+971 50 248 4678</a>
-                  <a href="tel:+971502014225">+971 50 201 4225</a>
+                  <a className="mb-2 inline-block" href="tel:+971505484685">+971 50 548 4685</a>
+                  <a className="mb-2 inline-block" href="tel:+971502484678">+971 50 248 4678</a>
+                  <a className="mb-2 inline-block" href="tel:+971502014225">+971 50 201 4225</a>
                 </li>
                 <li className="flex flex-col">
                   <p className="text-[#969696]  font-semibold py-3">
                     English / Spanish / Portuguese
                   </p>
-                  <a href="tel:+971567277387">+971 56 727 7387</a>
+                  <a className="mb-2 inline-block" href="tel:+971567277387">+971 56 727 7387</a>
                 </li>
                 <li className="flex flex-col">
                   <p className="text-[#969696]  font-semibold py-3">
                     English / Chinese
                   </p>
-                  <a href="tel:+971506484625">+971 50 648 4625</a>
+                  <a className="mb-2 inline-block" href="tel:+971506484625">+971 50 648 4625</a>
                 </li>
                 <li className="flex flex-col">
                   <p className="text-[#969696]  font-semibold py-3">
                     English / Arabic
                   </p>
-                  <a href="tel:+971565017078">+971 56 501 7078</a>
+                  <a className="mb-2 inline-block" href="tel:+971565017078">+971 56 501 7078</a>
                 </li>
                 <li className="flex flex-col">
                   <p className="text-[#969696]  font-semibold py-3">
                     English / Filipino
                   </p>
-                  <a href="tel:+971565017057">+971 56 501 7057</a>
+                  <a className="mb-2 inline-block" href="tel:+971565017057">+971 56 501 7057</a>
                 </li>
                 <li className="flex flex-col">
                   <p className="text-[#969696]  font-semibold py-3">
                     English / Hindi
                   </p>
-                  <a href="tel:+971501452203">+971 50 145 2203</a>
+                  <a className="mb-2 inline-block" href="tel:+971501452203">+971 50 145 2203</a>
                 </li>
               </ul>
             </div>

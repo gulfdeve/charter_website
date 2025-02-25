@@ -108,18 +108,18 @@ const YachtCard = ({ yacht }) => {
       {/* Yacht Details */}
       <div className="flex flex-col items-start pt-3">
         <Link href={`yacht-rentals/${yacht.slug}`}>
-          <h1 className="text-[#0D2343]  text-xl font-bold py-4 hover:text-blue-600 transition-all duration-300 cursor-pointer">
+          <h2 className="text-[#0D2343]  text-xl font-bold py-4 hover:text-blue-600 transition-all duration-300 cursor-pointer">
             {yacht.title}
-          </h1>
+          </h2>
         </Link>
 		
         <p className=" text-xs text-[#0D2343] text-left">
 		Model: <span className="font-bold">{yacht.model}</span> | Length: <span className="font-bold">{yacht.length}</span> | Guests:{" "}
           <span className="font-bold">{yacht.guests}</span>
         </p>
-        <h1 className=" text-[#0D2343] font-bold text-xl pt-5 pb-2">
+        <p className=" text-[#0D2343] font-bold text-xl pt-5 pb-2">
           AED {yacht.price} <span className="text-[#0D2343]">Per Hour</span>
-        </h1>
+        </p>
         <a
           href={`https://fareharbor.com/embeds/book/centauruscharter/items/${
             yacht.fareharbor_id
