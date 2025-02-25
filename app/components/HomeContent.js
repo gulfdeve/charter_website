@@ -78,9 +78,8 @@ export default function Home() {
           us.
         </p>
       </div>
-
-     
         
+
       {/* DESKTOP */}
       <div className="">
         <div className="container mx-auto  lg:p-6">
@@ -99,6 +98,7 @@ export default function Home() {
                   <Link  href={`/yacht-rentals/${product.slug}`}>
                   <img
                     src={`https://www.centauruscharter.com/product/images/${product.image}`}
+                    alt={product.translations[language].name_of_yacht}
                     className="rounded-lg xl:w-[32rem] w-[25rem] mt-3"
                   />
                   </Link>
@@ -167,6 +167,7 @@ export default function Home() {
                       >
                         <img
                           src="./centaurus_link.svg"
+                          alt="centaurus link"
                           className="w-[10rem] xl:mt-3"
                         />
                       </Link>
@@ -203,6 +204,7 @@ export default function Home() {
           <div className="">
             <img
               src="/LUXURY YACHT CHARTER.webp"
+              alt="luxury yacht charter"
               className="xl:w-[380rem] sm:w-[170rem] lg:w-[160rem] md:h-[443px] xl:h-[452px] lg:h-[404px]"
             />
           </div>
@@ -234,6 +236,7 @@ export default function Home() {
           <div className="">
             <img
               src="/CUSTOMIZEDEXPERIENCES.webp"
+              alt="customized experiences"
               className="xl:w-[260rem] sm:w-[170rem] lg:w-[160rem] md:h-[443px] xl:h-[452px] lg:h-[404px]"
             />
           </div>
@@ -265,6 +268,7 @@ export default function Home() {
           <div className="">
             <img
               src="/EXCLUSIVEOFFERS.webp"
+              alt="exclusive offers"
               className="xl:w-[270rem] sm:w-[170rem] lg:w-[140rem] md:h-[443px] xl:h-[452px] lg:h-[404px]"
             />
           </div>
@@ -294,6 +298,7 @@ export default function Home() {
           <div className="">
             <img
               src="/WATERACTIVITIES.webp"
+              alt="water activities"
               className="xl:w-[240rem] sm:w-[170rem] lg:w-[140rem] md:h-[443px] xl:h-[452px] lg:h-[404px]"
             />
           </div>

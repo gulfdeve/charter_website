@@ -1,5 +1,6 @@
 import Link from "next/link";
 import React from "react";
+import Image from "next/image";
 
 const SecondFooter = () => {
   return (
@@ -21,13 +22,24 @@ const SecondFooter = () => {
             href="https://play.google.com/store/apps/details?id=com.centaurus.charter&hl=en"
             target="_blank"
           >
-            <img alt="google play logo" src="/gplay.svg" className="w-[9rem]" />
+            <Image
+              src="/Google store.webp"
+              alt="google play logo"
+              width={152}
+              height={100}
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" 
+            />
           </a>
           <a
             href="https://apps.apple.com/us/app/centaurus-charter/id6447861141"
             target="_blank"
           >
-            <img alt="app store logo" src="/appstore.svg " className="w-28" />
+            <Image
+              src="/Apple Store.webp"
+              alt="app store logo"
+              width={152}
+              height={100}
+            />
           </a>
         </div>
         <div className="flex flex-row  md:flex-row items-center md:items-start gap-16 xs:gap-9 ">
