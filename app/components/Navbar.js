@@ -376,7 +376,7 @@ export default function Navbar() {
               </Link>
 
               {/* Phone Icon */}
-              <Link href="tel:1234567890">
+              <Link aria-label="phone icon" href="tel:1234567890">
                 <FaPhoneAlt className="text-white w-5 h-5" />
               </Link>
 
