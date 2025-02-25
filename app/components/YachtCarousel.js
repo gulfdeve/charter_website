@@ -130,9 +130,15 @@ return (
                     data?.products?.map((product) => (
                     <div key={product.id} className="embla__slide p-4 ">
                         <div className="relative bg-gray-200  overflow-hidden">
-                            <img alt={product.translations[language].name_of_yacht}
-                                src={`https://www.centauruscharter.com/product/images/${product.thumbnail_image}`}
-                                className="h-[27rem] " />
+							<Image 
+								src={`https://www.centauruscharter.com/product/images/${product.thumbnail_image}`}
+								alt={product.translations[language].name_of_yacht}
+								width={450}
+								height={0}
+								className="h-[27rem] rounded-lg"
+								style={{ height: "auto" }}
+								loading="lazy"
+							/>
 
                             <div className="absolute bottom-0 left-0 w-full bg-black bg-opacity-10 p-4 text-white">
                                 <h3 className="text-4xl  font-bold text-left">
