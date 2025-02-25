@@ -73,9 +73,9 @@ export default function EmblaCarouselComponent() {
   return (
     <div className="flex flex-col items-center container mx-auto">
       <div className="flex flex-col items-center justify-center">
-        <h1 className=" text-[#0D2343] text-center font-bold text-4xl py-10">
+        <h2 className=" text-[#0D2343] text-center font-bold text-4xl py-10">
           YACHT LOCATION
-        </h1>
+        </h2>
       </div>
 
       {/* Desktop Carousel */}

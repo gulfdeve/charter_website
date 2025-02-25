@@ -11,9 +11,11 @@ const SecondFooter = () => {
             Official Partner
           </p>
           <a href="https://centaurusint.net/" target="_blank">
-            <img
+            <Image
+              src="/Centaurus-Internatioanl-Horizontal-white.webp"
               alt="Centaurus International"
-              src="/Centaurus International.png"
+              width={152}
+              height={100}
             />
           </a>
         </div>
@@ -23,7 +25,7 @@ const SecondFooter = () => {
             target="_blank"
           >
             <Image
-              src="/Google store.webp"
+              src="/Google store@2x.webp"
               alt="google play logo"
               width={152}
               height={100}
@@ -35,7 +37,7 @@ const SecondFooter = () => {
             target="_blank"
           >
             <Image
-              src="/Apple Store.webp"
+              src="/Apple Store@2x.webp"
               alt="app store logo"
               width={152}
               height={100}
@@ -44,14 +46,41 @@ const SecondFooter = () => {
         </div>
         <div className="flex flex-row  md:flex-row items-center md:items-start gap-16 xs:gap-9 ">
           <div className="flex flex-col xs:flex-row gap-3">
-            <img alt="google logo" src="/Google.png" />
+            <Image 
+              src="/Google.png"
+              alt="google logo"
+              width={80}
+              height={100}
+            />
 
-            <img alt="tripadvisor logo" src="/Tripadvisor.png" />
+            <Image
+              src="/Tripadvisor.png"
+              alt="tripadvisor logo"
+              width={80}
+              height={100}
+            />
           </div>
           <div className="flex flex-col xs:flex-row items-center  gap-3">
-            <img alt="cash logo" src="/Cash.png" />
-            <img alt="visa logo" src="/Visa.png" />
-            <img alt="mastercard logo" src="/Mastercard.png" />
+            <Image
+              src="/Cash.png"
+              alt="cash logo"
+              width={45}
+              height={100}
+            />
+
+            <Image 
+              src="/Visa.png"
+              alt="visa logo"
+              width={45}
+              height={100}
+            />
+
+            <Image 
+              src="/Mastercard.png"
+              alt="mastercard logo"
+              width={45}
+              height={100}
+            />
           </div>
         </div>
         <div className="flex lg:flex-col justify-between gap-4 xs:gap-10 lg:gap-2 text-[#969696]">
