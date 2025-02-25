@@ -96,6 +96,7 @@ export default function YachtCarousal() {
                   <div key={product.id} className="embla__slide1  p-4">
                     <div className="relative bg-transparent rounded-lg overflow-hidden space-y-5">
                       <img
+                      alt={product.translations[language].name_of_yacht}
                         src={`https://www.centauruscharter.com/product/images/${product.thumbnail_image}`}
                         className="h-[27rem] rounded-lg"
                       />
@@ -130,6 +131,7 @@ export default function YachtCarousal() {
                   <div key={product.id} className="embla__slide p-4 ">
                     <div className="relative bg-gray-200  overflow-hidden">
                       <img
+                      alt={product.translations[language].name_of_yacht}
                         src={`https://www.centauruscharter.com/product/images/${product.thumbnail_image}`}
                         className="h-[27rem] "
                       />
