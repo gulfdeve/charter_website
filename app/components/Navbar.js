@@ -386,7 +386,12 @@ export default function Navbar() {
             <div className="flex items-center gap-2">
               {/* WhatsApp Icon */}
               <Link href="https://wa.me/1234567890">
-                <img alt="whatsapp logo" src="/whatsapp.svg" className="text-blue-500 w-6 h-6" />
+                <Image 
+                  src="/whatsapp.svg"
+                  alt="whatsapp logo"
+                  width={24}
+                  height={24}
+                />
               </Link>
 
               {/* Phone Icon */}

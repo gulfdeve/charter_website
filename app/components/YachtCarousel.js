@@ -101,6 +101,7 @@ return (
 								height={0}
 								className="h-[27rem] rounded-lg"
 								style={{ height: "auto" }}
+								loading="lazy"
 							/>
                             <div className="absolute bottom-0 left-0 w-full bg-black-gradient p-4 text-white rounded-lg">
                                 <h3 className="text-3xl  font-bold text-left mb-3">
