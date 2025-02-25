@@ -103,9 +103,9 @@ const Reviews = () => {
             <div className="pt-[3.3rem]">
               <div className="bg-white p-6 rounded-md shadow-md w-44   h-[225px] z-20 flex flex-col justify-center items-center">
                 <Link href="https://www.tripadvisor.com/Attraction_Review-g295424-d15699786-Reviews-Centaurus_Yachts_Boats_Dubai-Dubai_Emirate_of_Dubai.html">
-                  <h1 className=" font-bold text-center text-sm underline">
+                  <span className=" font-bold text-center text-sm underline">
                     Centaurus Yachts & Boats Dubai
-                  </h1>
+                  </span>
                   <div className="flex flex-col items-center justify-center -space-y-3">
                     <RxBorderDotted className="text-green-600 text-center text-5xl -mt-3" />
                     <span className=" font-bold text-xs">176 Reviews</span>
