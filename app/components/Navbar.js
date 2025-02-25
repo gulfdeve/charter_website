@@ -7,6 +7,7 @@ import { MdKeyboardArrowDown, MdMail } from "react-icons/md";
 import { useData } from "../context/DataContext";
 import { useRouter, usePathname, Link } from "../i18n/routing";
 import { GiHamburgerMenu } from "react-icons/gi";
+import Image from "next/image";
 export default function Navbar() {
   const t = useTranslations();
   const locale = useLocale();
@@ -72,10 +73,11 @@ export default function Navbar() {
         <nav className="p-4 container mx-auto bg-white text-black flex items-center justify-between xl:gap-64 2xl:gap-64 md:gap-24">
           <div className="text-xl font-bold">
             <Link href={"/"}>
-              <img
+              <Image 
                 src="/CentaurusLogo.png"
                 alt="Centaurus charter Logo"
-                className="cursor-pointer"
+                width={200}
+                height={100}
               />
             </Link>
           </div>
@@ -194,7 +196,12 @@ export default function Navbar() {
                   }`}
                 >
                   <Link href={"/"}>
-                    <img src="/CentaurusLogoWhite.png" alt="centaurus charter logo" />
+                    <Image 
+                      src="/CentaurusLogoWhite.png"
+                      alt="centaurus charter logo"
+                      width={200}
+                      height={100}
+                    />
                   </Link>
                 </li>
 
@@ -364,7 +371,12 @@ export default function Navbar() {
 
             <div className="w-32 pr-3">
               <Link href={"/"}>
-                <img src="/CentaurusLogoWhite.png" alt="centaurus charter logo" />
+                <Image 
+                  src="/CentaurusLogoWhite.png" 
+                  alt="centaurus charter logo" 
+                  width={200}
+                  height={100}
+                />
               </Link>
             </div>
 
