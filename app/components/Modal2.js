@@ -98,7 +98,7 @@ const Modal2 = ({ isModalOpen, closeModal, idName, idValue }) => {
 
   return (
     <div className="fixed inset-0 bg-gray-500 bg-opacity-50 flex items-center justify-center z-50">
-      <div className="bg-white rounded-lg shadow-lg w-full max-w-6xl h-[34rem] p-6 relative">
+      <div className="bg-white h-fit rounded-lg shadow-lg w-full max-w-6xl   p-9 lg:p-6 relative">
         {/* Success Bar (absolute, on top of modal) */}
         {submissionSuccess && (
           <div className="absolute top-0 left-0 right-0 bg-green-500 text-white p-3 text-center">
@@ -114,8 +114,8 @@ const Modal2 = ({ isModalOpen, closeModal, idName, idValue }) => {
           &times;
         </button>
 
-        <div className="grid grid-cols-2 gap-5">
-          <div className="rounded-lg overflow-hidden">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+          <div className="rounded-lg overflow-hidden hidden md:block">
             <img
               src="/modal2.jpg"
               alt="Yacht Image"
@@ -123,7 +123,7 @@ const Modal2 = ({ isModalOpen, closeModal, idName, idValue }) => {
             />
           </div>
 
-          <div className="pr-10">
+          <div className="lg:pr-10 pr-5">
             <form onSubmit={handleSubmit} className="space-y-4">
               {/* Full Name */}
               <div>
