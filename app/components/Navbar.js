@@ -80,25 +80,25 @@ export default function Navbar() {
             </Link>
           </div>
           <div className="flex items-center justify-end">
-            <button className="flex flex-row items-center justify-center font-RedHatDisplay py-2 w-full md:py-2 md:px-4 rounded-md bg-[#e1ae48] text-[#0d2343] hover:bg-[#0d2343] hover:text-[#e1ae48]  font-bold text-base md:text-sm xl:text-lg transition-all duration-300">
-              <Link href={"/contact"}>{t("navbar.contact-us")}</Link>
-            </button>
+            <Link aria-label="contact us icon" href={"/contact"} className="flex flex-row items-center justify-center yellow-solid-button">
+              {t("navbar.contact-us")}
+            </Link>
             <div className="flex flex-row px-8 gap-8">
               {/* Email Icon */}
-              <Link href="mailto:example@example.com">
+              <Link aria-label="email icon" href="mailto:example@example.com">
                 <MdMail
                   size={30}
                   className="text-[#e1ae48] hover:text-[#0d2343]"
                 />
               </Link>
-              <Link href="tel:1234567890">
+              <Link aria-label="phone icon" href="tel:1234567890">
                 <FaPhoneAlt
                   size={23}
                   className="text-[#e1ae48] hover:text-[#0d2343] mt-1"
                 />
               </Link>
               {/* WhatsApp Icon */}
-              <Link href="https://wa.me/1234567890">
+              <Link aria-label="whatsapp icon" href="https://wa.me/1234567890">
                 <IoLogoWhatsapp
                   size={30}
                   className="text-[#e1ae48] hover:text-[#0d2343]"
