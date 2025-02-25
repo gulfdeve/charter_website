@@ -15,13 +15,14 @@ export const DataProvider = ({ children }) => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
-  // Fetch the data from the API
+  // Fetch the data from the local file in the public folder
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch('https://www.centauruscharter.com/api/api_new/basic');
+        // Load from local JSON file instead of API
+        const response = await fetch('/data.json');
         if (!response.ok) {
-          throw new Error('Failed to fetch data');
+          throw new Error('Failed to fetch local data');
         }
         const result = await response.json();
         setData(result);
