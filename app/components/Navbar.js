@@ -222,7 +222,7 @@ export default function Navbar() {
                       pathname === "/yacht-rentals" || pathname.startsWith("/yacht-rentals/") ? "text-white" : ""
                     }`}
                   >
-                    <Link className="py-6 inline-block hover:text-white" href={`/yacht-rentals`}>
+                    <Link className="py-6 inline-block tracking-wider hover:text-white" href={`/yacht-rentals`}>
                       {t("navbar.private-yachts")}
                     </Link>
                     <svg
@@ -269,7 +269,7 @@ export default function Navbar() {
                   }`}
                 >
                   {" "}
-                  <Link className="py-6 inline-block hover:text-white" href={`/yachts-for-sale-dubai`}>
+                  <Link className="py-6 inline-block tracking-wider hover:text-white" href={`/yachts-for-sale-dubai`}>
                     {t("navbar.buy-a-yacht")}
                   </Link>
                 </li>
@@ -282,7 +282,7 @@ export default function Navbar() {
                   }`}
                 >
                   {" "}
-                  <Link className="py-6 inline-block hover:text-white" href={`/shared-yacht-tours-dubai`}>
+                  <Link className="py-6 inline-block tracking-wider hover:text-white" href={`/shared-yacht-tours-dubai`}>
                     {t("navbar.shared-tours")}
                   </Link>
                 </li>
@@ -294,7 +294,7 @@ export default function Navbar() {
                       pathname === "/yacht-trips" || pathname.startsWith("/yacht-trips/") ? "text-white" : ""
                     }`}
                   >
-                    <Link className="py-6 inline-block hover:text-white" href={`/yacht-trips`}>{t("navbar.experiences")}</Link>
+                    <Link className="py-6 inline-block tracking-wider hover:text-white" href={`/yacht-trips`}>{t("navbar.experiences")}</Link>
                     <svg
                       className="w-5 h-5 lg:w-5 lg:h-5 transform group-hover:rotate-180 transition-transform duration-300"
                       xmlns="http://www.w3.org/2000/svg"
@@ -338,7 +338,7 @@ export default function Navbar() {
                   }`}
                 >
                   {" "}
-                  <Link className="py-6 inline-block hover:text-white" href={`/offers`}>{t("navbar.offers")} </Link>
+                  <Link className="py-6 inline-block tracking-wider hover:text-white" href={`/offers`}>{t("navbar.offers")} </Link>
                 </li>
 
                 <li
@@ -347,7 +347,7 @@ export default function Navbar() {
                   }`}
                 >
                   {" "}
-                  <Link className="py-6 inline-block hover:text-white" href={`/events`}>Events</Link>
+                  <Link className="py-6 inline-block tracking-wider hover:text-white" href={`/events`}>Events</Link>
                 </li>
 
                 <li
@@ -355,7 +355,7 @@ export default function Navbar() {
                     pathname === "/watersports" || pathname.startsWith("/watersports/") ? "text-white" : ""
                   }`}
                 >
-                  <Link className="py-6 inline-block hover:text-white" href={`/watersports`}>{t("navbar.water-sports")}</Link>
+                  <Link className="py-6 inline-block tracking-wider hover:text-white" href={`/watersports`}>{t("navbar.water-sports")}</Link>
                 </li>
 
                 {/* NEWYEAR */}
@@ -365,7 +365,7 @@ export default function Navbar() {
                     pathname === "/newyear" ? "text-white" : ""
                   }`}
                 >
-                  <Link className="py-6 inline-block hover:text-white" href={`/newyear`}>{t("navbar.new-year")}</Link>
+                  <Link className="py-6 inline-block tracking-wider hover:text-white" href={`/newyear`}>{t("navbar.new-year")}</Link>
                 </li>
               </ul>
             </div>

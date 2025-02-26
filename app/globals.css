@@ -32,7 +32,7 @@ body {
 
 .blue-solid-button {
   @apply  py-3 px-6
-          text-base font-bold tracking-wide
+          text-base font-bold tracking-wider uppercase
           text-primary-yellow bg-primary-blue
           hover:bg-primary-yellow hover:text-primary-blue hover:scale-105
           rounded-md shadow
@@ -40,7 +40,7 @@ body {
 }
 .yellow-solid-button {
   @apply  py-3 px-6
-          text-base font-bold tracking-wide
+          text-base font-bold tracking-wider uppercase
           text-primary-blue bg-primary-yellow
           hover:bg-primary-blue hover:text-primary-yellow hover:scale-105
           rounded-md shadow
