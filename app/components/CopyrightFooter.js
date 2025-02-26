@@ -1,5 +1,5 @@
 import React from 'react'
-
+import Image from 'next/image'
 const CopyrightFooter = () => {
   return (
     <div className="bg-[#1D1D1D] p-4 flex flex-row md:flex-row w-full items-center justify-center gap-8">
@@ -8,7 +8,13 @@ const CopyrightFooter = () => {
             new Date().getFullYear()
             } Centaurus Passenger Yachts &amp; Boats Rental LLC, All rights reserved.
         </div>
-        <img src="/CentaurusLogoWhite.png" alt="centaurus charter logo" className="w-32 md:w-auto" />
+        <Image
+            src="/CentaurusLogoWhite.png"
+            alt="centaurus charter logo"
+            width={200}
+            height={0}
+            style={{ height: "auto" }}
+        />
     </div>
   )
 }
