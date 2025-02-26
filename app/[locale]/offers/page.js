@@ -24,6 +24,7 @@ const page = ({ params }) => {
             YACHT OFFERS AND DEALS IN DUBAI
           </h1>
         </div>
+
         <div className="grid grid-col-1 md:grid-cols-2 md:px-4 gap-7 pb-16 container mx-auto">
           {data?.offers?.map((offer) => (
             <div

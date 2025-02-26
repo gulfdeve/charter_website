@@ -238,11 +238,11 @@ export default function Home({ params }) {
                 </tbody>
               </table>
               <div className="flex flex-col lg:flex-row justify-center gap-4 mt-10">
-                <button className="flex items-center justify-center gap-2 px-4 py-2 bg-[#e1ae48] text-[#0d2343] font-bold rounded-md hover:bg-yellow-600 transition">
+                <button className="yellow-solid-button flex items-center justify-center gap-2">
                   <FaQuestionCircle size={20} />
                   ASK A QUESTION
                 </button>
-                <button className="flex items-center justify-center gap-2 px-4 py-3 bg-[#e1ae48] text-[#0d2343] font-bold rounded-md hover:bg-yellow-600 transition">
+                <button className="yellow-solid-button flex items-center justify-center gap-2">
                   <FaWhatsapp size={20} />
                   CHAT WITH US
                 </button>

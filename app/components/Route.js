@@ -61,7 +61,7 @@ const Route = () => {
             <div className="w-full bg-white h-0.5 my-14 "></div>
             <h1 className=" text-left text-white text-lg px-4 xl:px-0 xl:pb-6">If you want a tailored cruise, please don't hesitate to contact us. We will gladly assist you with your requirements.</h1>
             <div className="flex flex-col items-start justify-center px-7 xl:px-0 py-3">
-              <button className="flex flex-row items-center justify-center py-1 px-6 md:py-2 md:px-8  border-4 border-[#e1ae48] rounded-md bg-[#0d2343]  hover:bg-[#0d2343] text-[#e1ae48]  font-bold text-base md:text-sm xl:text-base transition-all duration-300">
+              <button className="blue-lined-button">
                 Get a Quote
               </button>
             </div>
@@ -69,7 +69,7 @@ const Route = () => {
           <div className="flex flex-col lg:items-center lg:justify-start px-4 gap-5 lg:w-2/3 lg:pt-10 ">
             <img src="/Route-map.jpg" />
 
-            <button className="flex flex-col items-center justify-center py-1 px-6 md:py-2 md:px-8  border-4 border-[#e1ae48] rounded-md bg-[#0d2343]  hover:bg-[#0d2343] text-[#e1ae48]  font-bold text-base md:text-sm xl:text-base transition-all duration-300">
+            <button className="blue-lined-button">
               Download Map
             </button>
           </div>
