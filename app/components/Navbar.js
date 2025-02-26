@@ -81,7 +81,11 @@ export default function Navbar() {
         <nav className="p-4 container mx-auto bg-white text-black flex items-center justify-between xl:gap-64 2xl:gap-64 md:gap-24">
           <div className="text-xl font-bold">
             <Link href={"/"}>
+<<<<<<<<< Temporary merge branch 1
               <Image 
+=========
+              <img
+>>>>>>>>> Temporary merge branch 2
                 src="/CentaurusLogo.png"
                 alt="Centaurus charter Logo"
                 width={200}
