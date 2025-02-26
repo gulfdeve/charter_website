@@ -184,13 +184,13 @@ export default function Navbar() {
           <nav
             className={` w-full bg-[#0D2343] text-[#e1ae48]  font-bold ${
               isSticky
-                ? " p-3  lg:p-2 xl:h-20 md:h-16 sticky top-0 z-50"
-                : "h-14 2xl:h-16  2xl:p-1"
+                ? " sticky top-0 z-50"
+                : ""
             }`}
           >
-            <div className="flex flex-row items-center justify-center">
+            <div className="container mx-auto">
               <ul
-                className={`flex flex-row items-center justify-center gap-6 xl:gap-[3rem] 2xl:gap-[3rem] text-[11px] md:text-[12px] ${
+                className={`flex flex-row items-center justify-around text-[11px] md:text-[12px] ${
                   isSticky
                     ? "2xl:text-[15px] xl:text-[11px] md:text-[11px]"
                     : " 2xl:text-[15px] xl:text-[12px] md:text-[11px] lg:text-[12px]"
@@ -218,11 +218,11 @@ export default function Navbar() {
 
                 <li className="relative group">
                   <span
-                    className={`flex items-center justify-between cursor-pointer p-5 gap-1 ${
+                    className={`flex items-center justify-between cursor-pointer gap-1 ${
                       pathname === "/yacht-rentals" || pathname.startsWith("/yacht-rentals/") ? "text-white" : ""
                     }`}
                   >
-                    <Link href={`/yacht-rentals`}>
+                    <Link className="py-6 inline-block hover:text-white" href={`/yacht-rentals`}>
                       {t("navbar.private-yachts")}
                     </Link>
                     <svg
@@ -264,12 +264,12 @@ export default function Navbar() {
                 {/* BUY A YACHT */}
 
                 <li
-                  className={`pr-5 uppercase ${
+                  className={`uppercase ${
                     pathname === "/yachts-for-sale-dubai" ? "text-white" : ""
                   }`}
                 >
                   {" "}
-                  <Link href={`/yachts-for-sale-dubai`}>
+                  <Link className="py-6 inline-block hover:text-white" href={`/yachts-for-sale-dubai`}>
                     {t("navbar.buy-a-yacht")}
                   </Link>
                 </li>
@@ -277,12 +277,12 @@ export default function Navbar() {
                 {/* SHARED TOURS */}
 
                 <li
-                  className={`pr-5 uppercase ${
+                  className={`uppercase ${
                     pathname === "/shared-yacht-tours-dubai" ? "text-white" : ""
                   }`}
                 >
                   {" "}
-                  <Link href={`/shared-yacht-tours-dubai`}>
+                  <Link className="py-6 inline-block hover:text-white" href={`/shared-yacht-tours-dubai`}>
                     {t("navbar.shared-tours")}
                   </Link>
                 </li>
@@ -290,11 +290,11 @@ export default function Navbar() {
                 {/* EXPERIENCES with Dropdown */}
                 <li className="relative group">
                   <span
-                    className={`flex items-center justify-between cursor-pointer p-5 gap-1 ${
+                    className={`flex items-center justify-between cursor-pointer gap-1 ${
                       pathname === "/yacht-trips" || pathname.startsWith("/yacht-trips/") ? "text-white" : ""
                     }`}
                   >
-                    <Link href={`/yacht-trips`}>{t("navbar.experiences")}</Link>
+                    <Link className="py-6 inline-block hover:text-white" href={`/yacht-trips`}>{t("navbar.experiences")}</Link>
                     <svg
                       className="w-5 h-5 lg:w-5 lg:h-5 transform group-hover:rotate-180 transition-transform duration-300"
                       xmlns="http://www.w3.org/2000/svg"
@@ -333,39 +333,39 @@ export default function Navbar() {
                 </li>
 
                 <li
-                  className={`pr-5 uppercase ${
+                  className={`uppercase ${
                     pathname === "/offers" || pathname.startsWith("/offers/") ? "text-white" : ""
                   }`}
                 >
                   {" "}
-                  <Link href={`/offers`}>{t("navbar.offers")} </Link>
+                  <Link className="py-6 inline-block hover:text-white" href={`/offers`}>{t("navbar.offers")} </Link>
                 </li>
 
                 <li
-                  className={`pr-5 uppercase ${
+                  className={`uppercase ${
                     pathname === "/events" || pathname.startsWith("/events/") ? "text-white" : ""
                   }`}
                 >
                   {" "}
-                  <Link href={`/events`}>Events</Link>
+                  <Link className="py-6 inline-block hover:text-white" href={`/events`}>Events</Link>
                 </li>
 
                 <li
-                  className={`pr-5 uppercase ${
+                  className={`uppercase ${
                     pathname === "/watersports" || pathname.startsWith("/watersports/") ? "text-white" : ""
                   }`}
                 >
-                  <Link href={`/watersports`}>{t("navbar.water-sports")}</Link>
+                  <Link className="py-6 inline-block hover:text-white" href={`/watersports`}>{t("navbar.water-sports")}</Link>
                 </li>
 
                 {/* NEWYEAR */}
 
                 <li
-                  className={`pr-5 uppercase ${
+                  className={`uppercase ${
                     pathname === "/newyear" ? "text-white" : ""
                   }`}
                 >
-                  <Link href={`/newyear`}>{t("navbar.new-year")}</Link>
+                  <Link className="py-6 inline-block hover:text-white" href={`/newyear`}>{t("navbar.new-year")}</Link>
                 </li>
               </ul>
             </div>
