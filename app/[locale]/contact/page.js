@@ -6,7 +6,7 @@ import { MdEmail } from "react-icons/md";
 export default function Page() {
   return (
     <>
-      <div className="bg-white w-full h-full">
+      <div className="bg-white w-full h-full mt-14 md:mt-0">
         <div>
           <img alt="contact header banner" src="./Contactheader.webp" className="w-full" />
         </div>

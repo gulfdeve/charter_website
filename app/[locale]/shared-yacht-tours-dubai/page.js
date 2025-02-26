@@ -50,7 +50,7 @@ const Page = () => {
       <Videosharedtours />
 
       {/* Main Container */}
-      <div className="bg-white h-full w-full">
+      <div className="bg-white h-full w-full ">
         {/* Top Heading */}
         <div className="flex flex-col items-center justify-center pb-10 pt-20 container mx-auto">
           <h1 className="text-primary-blue text-center font-bold text-xl lg:text-3xl pb-4">

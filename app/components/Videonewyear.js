@@ -43,7 +43,7 @@ export default function Videonewyear() {
   }, []);
 
   return (
-    <div className="relative mx-auto w-full h-[138px] s:h-[156px] lg:h-[350px] xl:h-[526px] overflow-hidden">
+    <div className="relative mx-auto w-full h-[138px] s:h-[156px] md:h-[280px] lg:h-[350px] xl:h-[526px] overflow-hidden mt-14 md:mt-0">
       {/* Wistia Video as Background */}
       <style>
         {`
@@ -63,7 +63,8 @@ export default function Videonewyear() {
       </div>
 
       {/* Content Overlay */}
-      <div className="absolute inset-0 z-10 flex flex-col items-center  justify-center top-[32%] sm:top-[42%] s:top-[49%] md:-top-[22%] lg:-top-[46%] xl:-top-[0%] text-white text-center p-2 md:px-14 lg:px-24 ">
+      <div className="hidden lg:block">
+      <div className="absolute inset-0 z-10 flex flex-col items-center  justify-center top-[32%] sm:top-[42%] s:top-[49%] md:-top-[22%] lg:-top-[6%] xl:-top-[0%] text-white text-center p-2 md:px-14 lg:px-24 ">
         <h1 className="text-4xl font-bold mb-4 text-black md:text-white  xl:text-xl 2xl:text-4xl text-shadow">
         NEW YEAR'S EVE YACHT PARTY IN DUBAI
         </h1>
@@ -72,6 +73,7 @@ export default function Videonewyear() {
         </h1>
 
         <button className="blue-solid-button">BOOK NOW</button>
+      </div>
       </div>
      
     </div>

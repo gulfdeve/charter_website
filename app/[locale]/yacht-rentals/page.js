@@ -8,6 +8,7 @@ import { useData } from "@/app/context/DataContext";
 import { useLanguage } from "@/app/context/LanguageContext";
 import { useLocale } from "next-intl";
 import Loading from "./loading";
+import ExperienceCarousal from "@/app/components/ExperienceCarousal";
 /* 
   YachtCard Component:
   - Receives a single yacht object as prop.
@@ -15,7 +16,6 @@ import Loading from "./loading";
   - Renders navigation buttons (only if more than one image exists).
 */
 const YachtCard = ({ yacht }) => {
-
   const { data, loading, error } = useData();
   const { language, changeLanguage } = useLanguage();
 
@@ -43,95 +43,100 @@ const YachtCard = ({ yacht }) => {
     if (emblaApi.current) emblaApi.current.scrollNext();
   };
 
-  if(loading){
+  if (loading) {
     return <Loading />;
   }
 
   return (
-    <div className="flex flex-col justify-center bg-white rounded-2xl shadow-custom h-auto relative p-4">
-      <div className="relative">
-        {/* Embla Carousel Container */}
-        <div className="overflow-hidden rounded-2xl" ref={emblaRef}>
-          {/* The inner wrapper must have display:flex so that slides line up horizontally. */}
-          <div className="flex">
-            {yacht.images.map((img, index) => (
-              <div key={index} className="min-w-full">
-                <Link href={`yacht
-				-rentals/${yacht.slug}`}>
-				<img
-                  src={`https://www.centauruscharter.com/product/galleryimages/${img}`}
-                  alt={`Slide ${index + 1}`}
-                  className="rounded-2xl h-[250px] md:h-[300px] w-full object-cover"
-                />
-				</Link>
-              </div>
-            ))}
+    <>
+      <div className="flex flex-col justify-center bg-white rounded-2xl shadow-custom h-auto relative p-4 ">
+        <div className="relative">
+          {/* Embla Carousel Container */}
+          <div className="overflow-hidden rounded-2xl" ref={emblaRef}>
+            {/* The inner wrapper must have display:flex so that slides line up horizontally. */}
+            <div className="flex">
+              {yacht.images.map((img, index) => (
+                <div key={index} className="min-w-full">
+                  <Link
+                    href={`yacht
+				-rentals/${yacht.slug}`}
+                  >
+                    <img
+                      src={`https://www.centauruscharter.com/product/galleryimages/${img}`}
+                      alt={`Slide ${index + 1}`}
+                      className="rounded-2xl h-[250px] md:h-[300px] w-full object-cover"
+                    />
+                  </Link>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Navigation Buttons – show only if more than one image */}
+          {yacht.images.length > 1 && (
+            <>
+              <button
+                aria-label="go previous slide"
+                onClick={scrollPrev}
+                className="bg-primary-blue text-primary-yellow hover:bg-primary-yellow hover:text-primary-blue transition duration-150 ease-in-out transform absolute top-1/2 left-2 transform -translate-y-1/2 p-2 rounded-full shadow-md"
+              >
+                <FaArrowLeft />
+              </button>
+              <button
+                aria-label="go next slide"
+                onClick={scrollNext}
+                className="bg-primary-blue text-primary-yellow hover:bg-primary-yellow hover:text-primary-blue transition duration-150 ease-in-out transform absolute top-1/2 right-2 transform -translate-y-1/2 p-2 rounded-full shadow-md"
+              >
+                <FaArrowRight />
+              </button>
+            </>
+          )}
+
+          {/* Optional Badges */}
+          {yacht.category.includes("bestSellers") && (
+            <div className="absolute top-11 left-0 bg-primary-blue text-primary-yellow text-md  py-1 px-2">
+              BEST SELLER
+            </div>
+          )}
+          {yacht.category.includes("premium") && (
+            <div className="absolute top-11 left-0 bg-primary-blue text-primary-yellow text-md  py-1 px-2">
+              PREMIUM
+            </div>
+          )}
+          <div className="absolute top-2 right-2">
+            <FaYoutube size={36} className="text-[#ff0033]" />
           </div>
         </div>
 
-        {/* Navigation Buttons – show only if more than one image */}
-        {yacht.images.length > 1 && (
-          <>
-            <button
-            aria-label="go previous slide"
-              onClick={scrollPrev}
-              className="bg-primary-blue text-primary-yellow hover:bg-primary-yellow hover:text-primary-blue transition duration-150 ease-in-out transform absolute top-1/2 left-2 transform -translate-y-1/2 p-2 rounded-full shadow-md"
-            >
-              <FaArrowLeft />
-            </button>
-            <button
-            aria-label="go next slide"
-              onClick={scrollNext}
-              className="bg-primary-blue text-primary-yellow hover:bg-primary-yellow hover:text-primary-blue transition duration-150 ease-in-out transform absolute top-1/2 right-2 transform -translate-y-1/2 p-2 rounded-full shadow-md"
-            >
-              <FaArrowRight />
-            </button>
-          </>
-        )}
+        {/* Yacht Details */}
+        <div className="flex flex-col items-start pt-3">
+          <Link href={`yacht-rentals/${yacht.slug}`}>
+            <h2 className="text-[#0D2343]  text-xl font-bold py-4 hover:text-blue-600 transition-all duration-300 cursor-pointer">
+              {yacht.title}
+            </h2>
+          </Link>
 
-        {/* Optional Badges */}
-        {yacht.category.includes("bestSellers") && (
-          <div className="absolute top-11 left-0 bg-primary-blue text-primary-yellow text-md  py-1 px-2">
-            BEST SELLER
-          </div>
-        )}
-        {yacht.category.includes("premium") && (
-          <div className="absolute top-11 left-0 bg-primary-blue text-primary-yellow text-md  py-1 px-2">
-            PREMIUM
-          </div>
-        )}
-        <div className="absolute top-2 right-2">
-          <FaYoutube size={36} className="text-[#ff0033]" />
+          <p className=" text-xs text-[#0D2343] text-left">
+            Model: <span className="font-bold">{yacht.model}</span> | Length:{" "}
+            <span className="font-bold">{yacht.length}</span> | Guests:{" "}
+            <span className="font-bold">{yacht.guests}</span>
+          </p>
+          <p className=" text-[#0D2343] font-bold text-xl pt-5 pb-2">
+            AED {yacht.price} <span className="text-[#0D2343]">Per Hour</span>
+          </p>
+          <a
+            href={`https://fareharbor.com/embeds/book/centauruscharter/items/${
+              yacht.fareharbor_id
+            }/?full-items=yes&flow=645487&back=${encodeURIComponent(
+              typeof window !== "undefined" ? window.location.href : ""
+            )}`}
+            className="flex flex-row items-center justify-center py-2 w-full md:py-2 md:px-4 rounded-md bg-[#e1ae48] text-[#0d2343] hover:bg-[#0d2343] hover:text-[#e1ae48]  font-bold text-base md:text-sm xl:text-lg transition-all duration-300"
+          >
+            Book Now
+          </a>
         </div>
       </div>
-
-      {/* Yacht Details */}
-      <div className="flex flex-col items-start pt-3">
-        <Link href={`yacht-rentals/${yacht.slug}`}>
-          <h2 className="text-[#0D2343]  text-xl font-bold py-4 hover:text-blue-600 transition-all duration-300 cursor-pointer">
-            {yacht.title}
-          </h2>
-        </Link>
-		
-        <p className=" text-xs text-[#0D2343] text-left">
-		Model: <span className="font-bold">{yacht.model}</span> | Length: <span className="font-bold">{yacht.length}</span> | Guests:{" "}
-          <span className="font-bold">{yacht.guests}</span>
-        </p>
-        <p className=" text-[#0D2343] font-bold text-xl pt-5 pb-2">
-          AED {yacht.price} <span className="text-[#0D2343]">Per Hour</span>
-        </p>
-        <a
-          href={`https://fareharbor.com/embeds/book/centauruscharter/items/${
-            yacht.fareharbor_id
-          }/?full-items=yes&flow=645487&back=${encodeURIComponent(
-            typeof window !== "undefined" ? window.location.href : ""
-          )}`}
-          className="flex flex-row items-center justify-center py-2 w-full md:py-2 md:px-4 rounded-md bg-[#e1ae48] text-[#0d2343] hover:bg-[#0d2343] hover:text-[#e1ae48]  font-bold text-base md:text-sm xl:text-lg transition-all duration-300"
-        >
-          Book Now
-        </a>
-      </div>
-    </div>
+    </>
   );
 };
 
@@ -147,8 +152,6 @@ const Tabs = () => {
   const { language } = useLanguage();
   const { data, loading, error } = useData();
   const locale = useLocale();
-
-
 
   useEffect(() => {
     if (data?.products) {
@@ -166,7 +169,7 @@ const Tabs = () => {
           slug: item.slug,
           fareharbor_id: item.fareharbor_id,
           length: item.translations?.[locale]?.size,
-		  model: item.translations?.[locale]?.model,
+          model: item.translations?.[locale]?.model,
           guests: item.translations?.[locale]?.guests,
           price: item.per_hour_price,
           category,
@@ -177,8 +180,7 @@ const Tabs = () => {
   }, [data, locale]);
 
   const renderContent = () => {
-
-    if(loading){
+    if (loading) {
       return <Loading />;
     }
 
@@ -204,7 +206,7 @@ const Tabs = () => {
   };
 
   return (
-    <div className="w-full bg-white">
+    <div className="w-full bg-white mt-14 lg:mt-0 ">
       <div className="flex flex-col items-center justify-center pt-10 container mx-auto">
         <h1 className=" text-[#0D2343] text-center font-bold text-4xl pb-4">
           LUXURY YACHT RENTALS DUBAI
@@ -218,6 +220,9 @@ const Tabs = () => {
         <button onClick={() => setActiveTab("premium")}>PREMIUM</button>
       </div>
       <div className="p-6 text-center">{renderContent()}</div>
+      <div className="mt-10">
+        <ExperienceCarousal />
+      </div>
     </div>
   );
 };

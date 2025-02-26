@@ -3,7 +3,7 @@ import YachtCarousal from '../../components/YachtCarousel'
 
 const AboutPage = () => {
   return (
-    <><div className="bg-white w-full h-full">
+    <><div className="bg-white w-full h-full mt-14 md:mt-0">
       <div>
         <img alt="about us" src="./AboutUsHeader.png" className="w-full" />
       </div>

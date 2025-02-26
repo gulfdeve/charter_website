@@ -90,7 +90,7 @@ export default function Home({ params }) {
 
   return (
     <>
-      <div className="max-w-7xl mx-auto p-5">
+      <div className="max-w-7xl mx-auto p-5 mt-14 lg:mt-0 ">
         {/* Title */}
         <h1 className="text-4xl font-bold text-center mb-4 mt-5">
           {product.translations?.[locale]?.name_of_yacht}

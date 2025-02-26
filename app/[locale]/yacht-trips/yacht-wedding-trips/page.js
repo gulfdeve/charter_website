@@ -45,7 +45,7 @@ const page = () => {
         <Videosharedtours/>
       </div> */}
        {isClient && (
-      <div className="bg-white h-full w-full">
+      <div className="bg-white h-full w-full mt-14 md:mt-0">
         <div className="flex flex-col items-center justify-center pb-10 pt-10">
           <h1 className=" text-primary-blue text-center  text-xl pb-4">
             YACHT WEDDING CHARTER
@@ -114,7 +114,7 @@ const page = () => {
           </p>
         </div>
         <div className="xl:px-44 px-8 py-10">
-          <div className="flex flex-col  lg:flex-row-reverse items-center justify-center lg:justify-start lg:gap-0  custom-shadow rounded-lg bg-primary-blue overflow-hidden lg:h-[18rem] xl:h-[23rem] 2xl:h-[29rem]">
+          <div className="flex flex-col  lg:flex-row-reverse items-center justify-center lg:justify-start lg:gap-0  custom-shadow rounded-lg bg-primary-blue overflow-hidden lg:h-[18rem] xl:h-[20rem] 2xl:h-[29rem]">
             <div className="w-full lg:w-1/2 xl:w-1/2">
               <img
                 src="/Inquire-Now.webp"
