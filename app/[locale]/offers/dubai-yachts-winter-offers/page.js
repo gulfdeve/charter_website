@@ -67,7 +67,7 @@ const Page = () => {
   return (
     <div>
       <Videosharedtours />
-      <div className="bg-white h-full w-full">
+      <div className="bg-white h-full w-full mt-14 md:mt-0">
         <div className="container mx-auto">
           <div className="flex flex-col items-center justify-center py-10">
             <h1 className=" text-primary-blue text-center font-bold text-2xl pb-4">

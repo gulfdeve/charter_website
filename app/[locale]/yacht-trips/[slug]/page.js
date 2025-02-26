@@ -44,7 +44,7 @@ const page = async ({ params }) => {
   ];
 
   return (
-    <><div className="bg-white h-full w-full">
+    <><div className="bg-white h-full w-full mt-14 md:mt-0">
       <div className="flex flex-col items-center justify-center pt-10 ">
         <h1 className=" text-[#0D2343] text-center font-bold text-4xl pb-10">
           YACHT TRIPS & EXPERIENCES IN DUBAI

@@ -94,7 +94,7 @@ const page = () => {
     ];
   
     return (
-      <div className="bg-white w-full h-full">
+      <div className="bg-white w-full h-full mt-14 md:mt-0">
         <div>
           <img src="./FAQ.jpg" className="w-full" />
         </div>

@@ -42,7 +42,7 @@ export default function Video() {
   }, []);
 
   return (
-    <div className="video-layout h-[550px] sm:h-[700px] s:h-[600px] lg:h-[600px] md:h-[430px] 3xl:h-[1000px]  ">
+    <div className="video-layout h-[550px] sm:h-[700px] s:h-[600px] lg:h-[600px] md:h-[430px] 3xl:h-[1000px] mt-14 lg:mt-0 ">
       {/* Wistia Video as Background */}
       <style>
         {`

@@ -3,7 +3,7 @@ import Videonewyear from "@/app/components/Videonewyear";
 import Nycard from "@/app/components/Nycard";
 const Page = () => {
   return (
-    <div className="bg-white bg-opacity-90 w-full min-h-screen">
+    <div className="bg-white bg-opacity-90 w-full min-h-screen mt-14 md:mt-0">
       <Videonewyear />
       <div className="bg-[url('/nye24.webp')] bg-cover bg-center bg-no-repeat min-h-screen ">
       <div className="container mx-auto">

@@ -3,7 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 const page = () => {
   return (
-   <div className="bg-white w-full h-full">
+   <div className="bg-white w-full h-full mt-14 md:mt-0">
     <div>
       <Image
         src="/terms.jpg"

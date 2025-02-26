@@ -32,7 +32,7 @@ const Page = ({ params }) => {
 
   return (
     <>
-      <div className="felx flex-col items-center justify-center px-4 xl:px-44 container mx-auto">
+      <div className="felx flex-col items-center justify-center px-4 xl:px-44 container mx-auto mt-14 md:mt-0">
         <div className="flex items-center justify-center py-10">
           <img
             src={`https://www.centauruscharter.com/product/images/${offer.image}`}
@@ -51,8 +51,8 @@ const Page = ({ params }) => {
         </h1>
 
         <div className="py-10 max-w-7xl mx-auto">
-          <div className="flex flex-col md:flex-row rounded-lg items-center  gap-5 justify-center  md:justify-between bg-transparent md:bg-primary-blue p-5">
-            <p className="text-white  font-bold bg-primary-blue text-xl rounded">
+          <div className="flex flex-col md:flex-row rounded-lg items-center  gap-5 justify-center  md:justify-between bg-primary-blue p-5">
+            <p className="text-white  text-center md:text-left font-bold bg-primary-blue text-xl rounded ">
               Validity Until: {offer.validity}
             </p>
             <div className="flex flex-col md:flex-row md:gap-10 gap-5">

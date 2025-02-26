@@ -43,7 +43,7 @@ export default function Videoweddingtrip() {
   }, []);
 
   return (
-    <div className="relative mx-auto w-full h-[413px] lg:h-[780px] md:h-[330px] overflow-hidden">
+    <div className="relative mx-auto w-full h-[413px] lg:h-[780px] md:h-[330px] overflow-hidden mt-14 md:mt-0">
       {/* Wistia Video as Background */}
       <style>
         {`

@@ -2,7 +2,7 @@ import React from "react";
 import { FaWhatsapp } from "react-icons/fa";
 const page = () => {
   return (
-    <div>
+    <div className="mt-14 md:mt-0">
       {" "}
       <div className="flex flex-col items-center justify-center py-10 ">
         <h1 className=" text-[#0D2343] text-center font-bold text-4xl">

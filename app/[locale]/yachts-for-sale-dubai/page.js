@@ -33,14 +33,16 @@ const Page = () => {
             display: block;
             filter: blur(5px);
             padding-top: 36.67%;
+            margin-top:3.5rem;
+            
           }
         `}
       </style>
-      <div>
+      <div className="mt-14 md:mt-0 ">
         <wistia-player media-id="sar3sqhjcf" seo="false"></wistia-player>
       </div>
-      <div className="bg-white w-full h-auto">
-        <div className="bg-white rounded-lg p-8 max-w-7xl mx-auto my-8 shadow-buy-yacht">
+      <div className="bg-white w-full h-auto ">
+        <div className="bg-white rounded-lg p-8 max-w-7xl mx-auto my-8 shadow-buy-yacht mt-14 lg:mt-0 ">
           <h1 className="text-4xl font-bold text-center text-gray-900 mb-8 ">
             FIND YOUR DREAM YACHT {t("navbar.private-yachts")}  
           </h1>

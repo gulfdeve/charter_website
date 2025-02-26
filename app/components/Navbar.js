@@ -81,7 +81,7 @@ export default function Navbar() {
         <nav className="p-4 container mx-auto bg-white text-black flex items-center justify-between xl:gap-64 2xl:gap-64 md:gap-24">
           <div className="text-xl font-bold">
             <Link href={"/"}>
-              <Image 
+              <Image
                 src="/CentaurusLogo.png"
                 alt="Centaurus charter Logo"
                 width={200}
@@ -374,209 +374,204 @@ export default function Navbar() {
       </div>
       {/* Mobile Navbar */}
       <div className="lg:hidden block">
-        <nav className="bg-[#0d2343] w-full h-14 p-3">
-          <div className="flex items-center justify-between">
-            {/* Logo */}
-
-            <div className="w-32 pr-3">
-              <Link href={"/"}>
-                <Image 
-                  src="/CentaurusLogoWhite.png" 
-                  alt="centaurus charter logo" 
-                  width={200}
-                  height={0}
-                  style={{ height: "auto" }}
-                />
-              </Link>
-            </div>
-
-            {/* Icons and Dropdown Trigger */}
-            <div className="flex items-center gap-2">
-              {/* WhatsApp Icon */}
-              <Link href="https://wa.me/1234567890">
-                <Image 
-                  src="/whatsapp.svg"
-                  alt="whatsapp logo"
-                  width={24}
-                  height={24}
-                />
-              </Link>
-
-              {/* Phone Icon */}
-              <Link aria-label="phone icon" href="tel:1234567890">
-                <FaPhoneAlt className="text-white w-5 h-5" />
-              </Link>
-
-              {/* Language Selector */}
-              <div className="relative" ref={dropdownRef}>
-                {/* Trigger Button */}
-                <button
-                  onClick={() => setIsDropdownOpen((prev) => !prev)}
-                  className="flex items-center gap-2 p-1 rounded text-white text-sm "
-                >
-                  <img
-                    src={currentLanguage?.flag}
-                    alt={currentLanguage?.name}
-                    className="w-6 h-6"
-                  />
-                </button>
-
-                {/* Dropdown Menu */}
-                {istheDropdownOpen && (
-                  <ul className="absolute -right-14 top-11 w-48 text-center bg-white border  font-bold text-primary-blue  shadow-lg z-20">
-                    {languages.map((lang) => (
-                      <li
-                        key={lang.code}
-                        onClick={() => {
-                          handleLanguageChange(lang.code);
-                          setIsDropdownOpen(false);
-                        }}
-                        className={`flex justify-center items-center gap-2 p-2 cursor-pointer  hover:bg-gray-200 ${
-                          lang.code === locale ? "bg-gray-100 font-bold " : ""
-                        }`}
-                      >
-                        {lang.name.toUpperCase()} - {lang.code.toUpperCase()}
-                      </li>
-                    ))}
-                  </ul>
-                )}
-              </div>
-              {/* Hamburger Menu */}
-              <div
-                className="w-8 cursor-pointer"
-                onClick={() => setMobileDropdownOpen(!mobileDropdownOpen)}
-              >
-                <GiHamburgerMenu size={30} className="text-white" />
-              </div>
-            </div>
-          </div>
-
-          {/* Mobile Dropdown Menu */}
-          {mobileDropdownOpen && (
-            <div
-              className="absolute top-11 right-0 bg-white text-black w-full mt-3 shadow-lg"
-              style={{ zIndex: 999 }}
-            >
-              <ul className="flex flex-col p-4 gap-4 ">
-                {/* Menu Items */}
-                <li className="font-bold cursor-pointer hover:text-blue-500">
-                  <div
-                    className="flex justify-between items-center"
-                    onClick={() => toggleSubmenu(0)}
-                  >
-                    <Link
-                      href={`/yacht-rentals`}
-                      onClick={() => setMobileDropdownOpen(false)}
-                    >
-                      {t("navbar.private-yachts")}
-                    </Link>
-                    <span className="text-black">
-                      <MdKeyboardArrowDown />
-                    </span>
-                  </div>
-                  {submenuOpen === 0 && (
-                    <ul className="pl-4 pt-3 space-y-3">
-                      {!loading &&
-                        data?.products?.map((product) => (
-                          <li className="cursor-pointer text-sm mt-2 font-normal text-gray-500 ">
-                            <Link
-                              href={`/yacht-rentals/${product.slug}`}
-                              key={product.id}
-                              onClick={() => setMobileDropdownOpen(false)}
-                            >
-                              {product.title}
-                            </Link>
-                          </li>
-                        ))}
-                    </ul>
-                  )}
-                </li>
-                <Link
-                  href={`/yacht-sale-for-dubai`}
-                  onClick={() => setMobileDropdownOpen(false)}
-                >
-                  <li className="font-bold cursor-pointer hover:text-blue-500">
-                    {t("navbar.buy-a-yacht")}
-                  </li>
-                </Link>
-
-                <li className="font-bold cursor-pointer hover:text-blue-500">
-                  <Link
-                    href={`/shared-yacht-tours-dubai`}
-                    onClick={() => setMobileDropdownOpen(false)}
-                  >
-                    {" "}
-                    {t("navbar.shared-tours")}
-                  </Link>
-                </li>
-
-                <li className="font-bold cursor-pointer">
-                  <div
-                    className="flex justify-between items-center"
-                    onClick={() => toggleSubmenu(1)}
-                  >
-                    <Link
-                      href={`/yacht-trips`}
-                      onClick={() => setMobileDropdownOpen(false)}
-                    >
-                      {t("navbar.experiences")}
-                    </Link>
-                    <span className="text-black">
-                      <MdKeyboardArrowDown />
-                    </span>
-                  </div>
-                  {submenuOpen === 1 && (
-                    <ul className="pl-4 pt-3 space-y-3">
-                      {!loading &&
-                        data?.experiences?.map((experience) => (
-                          <li className="cursor-pointer text-sm mt-2 font-normal text-gray-500 ">
-                            <Link
-                              href={`/yacht-trips/${experience.slug}`}
-                              key={experience.id}
-                              onClick={() => setMobileDropdownOpen(false)}
-                            >
-                              {" "}
-                              {experience.translations[locale].title}
-                            </Link>
-                          </li>
-                        ))}
-                    </ul>
-                  )}
-                </li>
-
-                <li className="font-bold cursor-pointer hover:text-blue-500">
-                  <Link
-                    href={`/offers`}
-                    onClick={() => setMobileDropdownOpen(false)}
-                  >
-                    {" "}
-                    {t("navbar.offers")}
-                  </Link>
-                </li>
-                <li className="font-bold cursor-pointer hover:text-blue-500">
-                  <Link
-                    href={`/events`}
-                    onClick={() => setMobileDropdownOpen(false)}
-                  >
-                    {" "}
-                    {t("navbar.events")}
-                  </Link>
-                </li>
-
-                <li className="font-bold cursor-pointer hover:text-blue-500">
-                  <Link
-                    href={`/newyear`}
-                    onClick={() => setMobileDropdownOpen(false)}
-                  >
-                    {" "}
-                    {t("navbar.new-year")}
-                  </Link>
-                </li>
-              </ul>
-            </div>
-          )}
-        </nav>
+  <nav className="bg-[#0d2343] w-full h-14 p-3 fixed top-0 z-50">
+    <div className="flex items-center justify-between">
+      {/* Logo */}
+      <div className="w-32 pr-3">
+        <Link href={"/"}>
+          <Image 
+            src="/CentaurusLogoWhite.png" 
+            alt="centaurus charter logo" 
+            width={200}
+            height={0}
+            style={{ height: "auto" }}
+          />
+        </Link>
       </div>
+
+      {/* Icons and Dropdown Trigger */}
+      <div className="flex items-center gap-2">
+        {/* WhatsApp Icon */}
+        <Link href="https://wa.me/1234567890">
+          <Image 
+            src="/whatsapp.svg"
+            alt="whatsapp logo"
+            width={24}
+            height={24}
+          />
+        </Link>
+
+        {/* Phone Icon */}
+        <Link aria-label="phone icon" href="tel:1234567890">
+          <FaPhoneAlt className="text-white w-5 h-5" />
+        </Link>
+
+        {/* Language Selector */}
+        <div className="relative" ref={dropdownRef}>
+          {/* Trigger Button */}
+          <button
+            onClick={() => setIsDropdownOpen((prev) => !prev)}
+            className="flex items-center gap-2 p-1 rounded text-white text-sm"
+          >
+            <img
+              src={currentLanguage?.flag}
+              alt={currentLanguage?.name}
+              className="w-6 h-6"
+            />
+          </button>
+
+          {/* Dropdown Menu */}
+          {istheDropdownOpen && (
+            <ul className="absolute -right-14 top-11 w-48 text-center bg-white border font-bold text-primary-blue shadow-lg z-20">
+              {languages.map((lang) => (
+                <li
+                  key={lang.code}
+                  onClick={() => {
+                    handleLanguageChange(lang.code);
+                    setIsDropdownOpen(false);
+                  }}
+                  className={`flex justify-center items-center gap-2 p-2 cursor-pointer hover:bg-gray-200 ${
+                    lang.code === locale ? "bg-gray-100 font-bold" : ""
+                  }`}
+                >
+                  {lang.name.toUpperCase()} - {lang.code.toUpperCase()}
+                </li>
+              ))}
+            </ul>
+          )}
+        </div>
+        {/* Hamburger Menu */}
+        <div
+          className="w-8 cursor-pointer"
+          onClick={() => setMobileDropdownOpen(!mobileDropdownOpen)}
+        >
+          <GiHamburgerMenu size={30} className="text-white" />
+        </div>
+      </div>
+    </div>
+
+    {/* Mobile Dropdown Menu */}
+    {mobileDropdownOpen && (
+      <div
+        className="absolute top-11 right-0 bg-white text-black w-full mt-3 shadow-lg"
+        style={{ zIndex: 999 }}
+      >
+        <ul className="flex flex-col p-4 gap-4">
+          {/* Menu Items */}
+          <li className="font-bold cursor-pointer hover:text-blue-500">
+            <div
+              className="flex justify-between items-center"
+              onClick={() => toggleSubmenu(0)}
+            >
+              <Link
+                href={`/yacht-rentals`}
+                onClick={() => setMobileDropdownOpen(false)}
+              >
+                {t("navbar.private-yachts")}
+              </Link>
+              <span className="text-black">
+                <MdKeyboardArrowDown />
+              </span>
+            </div>
+            {submenuOpen === 0 && (
+              <ul className="pl-4 pt-3 space-y-3">
+                {!loading &&
+                  data?.products?.map((product) => (
+                    <li className="cursor-pointer text-sm mt-2 font-normal text-gray-500">
+                      <Link
+                        href={`/yacht-rentals/${product.slug}`}
+                        key={product.id}
+                        onClick={() => setMobileDropdownOpen(false)}
+                      >
+                        {product.title}
+                      </Link>
+                    </li>
+                  ))}
+              </ul>
+            )}
+          </li>
+          <Link
+            href={`/yacht-sale-for-dubai`}
+            onClick={() => setMobileDropdownOpen(false)}
+          >
+            <li className="font-bold cursor-pointer hover:text-blue-500">
+              {t("navbar.buy-a-yacht")}
+            </li>
+          </Link>
+
+          <li className="font-bold cursor-pointer hover:text-blue-500">
+            <Link
+              href={`/shared-yacht-tours-dubai`}
+              onClick={() => setMobileDropdownOpen(false)}
+            >
+              {t("navbar.shared-tours")}
+            </Link>
+          </li>
+
+          <li className="font-bold cursor-pointer">
+            <div
+              className="flex justify-between items-center"
+              onClick={() => toggleSubmenu(1)}
+            >
+              <Link
+                href={`/yacht-trips`}
+                onClick={() => setMobileDropdownOpen(false)}
+              >
+                {t("navbar.experiences")}
+              </Link>
+              <span className="text-black">
+                <MdKeyboardArrowDown />
+              </span>
+            </div>
+            {submenuOpen === 1 && (
+              <ul className="pl-4 pt-3 space-y-3">
+                {!loading &&
+                  data?.experiences?.map((experience) => (
+                    <li className="cursor-pointer text-sm mt-2 font-normal text-gray-500">
+                      <Link
+                        href={`/yacht-trips/${experience.slug}`}
+                        key={experience.id}
+                        onClick={() => setMobileDropdownOpen(false)}
+                      >
+                        {experience.translations[locale].title}
+                      </Link>
+                    </li>
+                  ))}
+              </ul>
+            )}
+          </li>
+
+          <li className="font-bold cursor-pointer hover:text-blue-500">
+            <Link
+              href={`/offers`}
+              onClick={() => setMobileDropdownOpen(false)}
+            >
+              {t("navbar.offers")}
+            </Link>
+          </li>
+          <li className="font-bold cursor-pointer hover:text-blue-500">
+            <Link
+              href={`/events`}
+              onClick={() => setMobileDropdownOpen(false)}
+            >
+              {t("navbar.events")}
+            </Link>
+          </li>
+
+          <li className="font-bold cursor-pointer hover:text-blue-500">
+            <Link
+              href={`/newyear`}
+              onClick={() => setMobileDropdownOpen(false)}
+            >
+              {t("navbar.new-year")}
+            </Link>
+          </li>
+        </ul>
+      </div>
+    )}
+  </nav>
+</div>
+
     </>
   );
 }
