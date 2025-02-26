@@ -553,6 +553,15 @@ export default function Navbar() {
                     {t("navbar.offers")}
                   </Link>
                 </li>
+                <li className="font-bold cursor-pointer hover:text-blue-500">
+                  <Link
+                    href={`/events`}
+                    onClick={() => setMobileDropdownOpen(false)}
+                  >
+                    {" "}
+                    {t("navbar.events")}
+                  </Link>
+                </li>
 
                 <li className="font-bold cursor-pointer hover:text-blue-500">
                   <Link

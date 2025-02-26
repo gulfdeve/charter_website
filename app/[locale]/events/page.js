@@ -17,12 +17,15 @@ if(loading){
 
 return (
 <>
-    <div className="max-w-7xl mx-auto">
-        <div className="flex flex-col items-center justify-center py-10 ">
-            <h1 className=" text-[#0D2343] text-center font-bold text-4xl">
-                YACHT EVENTS DUBAI
-            </h1>
+    <div className="max-w-7xl mx-auto px-4">
+
+        <div className="py-10">
+          <h1 className=" text-primary-blue text-center font-bold text-2xl md:text-4xl">
+          YACHT EVENTS DUBAI
+          </h1>
         </div>
+
+
         <div className="grid grid-col-1 md:grid-cols-2 md:px-4 gap-7 pb-16 container mx-auto">
             {data?.events?.map((event) => (
             <div key={event.id} className="flex flex-col justify-start lg:justify-between rounded-md bg-white shadow-xl">
