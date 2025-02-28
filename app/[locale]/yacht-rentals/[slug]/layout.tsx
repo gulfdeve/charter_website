@@ -1,4 +1,5 @@
 import React from "react";
+import { useLocale } from "next-intl";
 
 interface Metadata {
   title: string;
@@ -6,13 +7,39 @@ interface Metadata {
   keywords?: string;
 }
 
-const Layout = ({ children }: { children: React.ReactNode }) => {
+interface APIMetaData {
+  slug?: string;
+  meta_title?: string | null;
+  meta_description?: string | null;
+  meta_keywords?: string | null;
+}
+
+interface APIResponse {
+  meta_tags?: {
+    [key: string]: {
+      [locale: string]: APIMetaData[];
+    };
+  };
+}
+
+const Layout = ({ children }: { children: React.ReactNode }): JSX.Element => {
   return (
     <div>
       <main>{children}</main>
     </div>
   );
-};
+}
+
+/**
+ * Returns the metadata object if it has a non-empty meta_title.
+ * Otherwise, returns undefined.
+ */
+function getValidMeta(meta?: APIMetaData): APIMetaData | undefined {
+  if (meta && meta.meta_title && meta.meta_title.trim() !== "") {
+    return meta;
+  }
+  return undefined;
+}
 
 export async function generateMetadata({
   params,
@@ -20,29 +47,46 @@ export async function generateMetadata({
   params: Promise<{ slug: string; locale: string }>;
 }): Promise<Metadata> {
   const { slug, locale } = await params;
-  const resolvedLocale = locale || "en"; // Default to English if locale is missing
+  const resolvedLocale = locale || "en";
 
   try {
     const response = await fetch("https://www.centauruscharter.com/api/api_new/basic");
-    const data = await response.json();
+    const data: APIResponse = await response.json();
 
-    // Attempt to get metadata for "yacht-rentals/{slug}"
-    const metaData = data?.meta_tags?.[`yacht-rentals/${slug}`]?.[resolvedLocale]?.[0];
+    // Log the complete data fetched from the backend
+    
 
-    // Fallback to "home" metadata if "yacht-rentals/{slug}" is missing
-    const metaFallback = data?.meta_tags?.["home"]?.[resolvedLocale]?.[0];
+    // Attempt to get metadata for the specific yacht rental
+    const metaYachtRentals: APIMetaData | undefined =
+      data?.meta_tags?.[`yacht-rentals/${slug}`]?.[resolvedLocale]?.[0];
+  
 
-    // Final metadata selection with default values as the last resort
-    const finalMeta = metaData || metaFallback || {
-      meta_title: "Default Title",
-      meta_description: "Default Description",
-      meta_keywords: "default, keywords",
-    };
+    // Fallback to "home" metadata if specific data is missing/invalid
+    const metaHome: APIMetaData | undefined =
+      data?.meta_tags?.["home"]?.[resolvedLocale]?.[0];
+   
+
+    // Fallback to general "yacht-rentals" metadata if above are missing/invalid
+    const metaYachtRentalsGeneral: APIMetaData | undefined =
+      data?.meta_tags?.["yacht-rentals"]?.[resolvedLocale]?.[0];
+ 
+
+    // New fallback chain: specific -> home -> general -> default
+    const finalMeta: APIMetaData =
+      getValidMeta(metaYachtRentals) ||
+      getValidMeta(metaHome) ||
+      getValidMeta(metaYachtRentalsGeneral) || {
+        meta_title: "Default Title",
+        meta_description: "Default Description",
+        meta_keywords: "default, keywords",
+      };
+
+
 
     return {
-      title: finalMeta.meta_title || "Default Title",
-      description: finalMeta.meta_description || "Default Description",
-      keywords: finalMeta.meta_keywords || "default, keywords",
+      title: finalMeta.meta_title ?? "Default Title",
+      description: finalMeta.meta_description ?? "Default Description",
+      keywords: finalMeta.meta_keywords ?? "default, keywords",
     };
   } catch (error) {
     console.error("Error fetching metadata:", error);

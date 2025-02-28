@@ -8,9 +8,10 @@ interface Metadata {
 }
 
 interface EventTranslation {
-  meta_title?: string;
-  meta_description?: string;
-  meta_keyword?: string;
+  meta_title?: string | null;
+  meta_description?: string | null;
+  meta_keyword?: string | null;
+  meta_keywords?: string | null;
 }
 
 interface Event {
@@ -24,7 +25,7 @@ interface APIResponse {
   events?: Event[];
   meta_tags?: {
     [key: string]: {
-      [locale: string]: EventTranslation;
+      [locale: string]: EventTranslation | EventTranslation[];
     };
   };
 }
@@ -43,37 +44,49 @@ export async function generateMetadata({
   params: Promise<{ slug: string; locale: string }>;
 }): Promise<Metadata> {
   const { slug, locale } = await params;
-  const resolvedLocale = locale || "en"; // Default to English if locale is missing
+  const resolvedLocale = locale || "en";
+ 
 
   try {
     const response = await fetch("https://www.centauruscharter.com/api/api_new/basic");
     const data: APIResponse = await response.json();
+    
 
     // Find the event by slug
-    const event: Event | undefined = data?.events?.find(
-      (item) => item.slug === slug
-    );
+    const event: Event | undefined = data?.events?.find((item) => item.slug === slug);
+    
+    // Retrieve event translations (or default to an empty object)
+    const eventTranslations: EventTranslation = event?.translations?.[resolvedLocale] || {};
+    
 
-    // If event metadata is missing, fallback to "home"
-    const translations = event?.translations?.[resolvedLocale] ||
-                         data?.meta_tags?.["home"]?.[resolvedLocale];
+    // Retrieve home translations as fallback (if available)
+    const homeTranslationsRaw = data?.meta_tags?.["home"]?.[resolvedLocale];
+    const homeTranslations: EventTranslation = Array.isArray(homeTranslationsRaw)
+      ? homeTranslationsRaw[0]
+      : homeTranslationsRaw || {};
+    
 
-    if (!translations) {
-      console.warn(`No metadata found for event '${slug}' or 'home' in locale: ${resolvedLocale}`);
-      return {
-        title: "Default Title",
-        description: "Default Description",
-        keywords: "Meta Keywords",
-      };
-    }
+    // Field-by-field fallback only using original meta fields
+    const title =
+      eventTranslations.meta_title ||
+      homeTranslations.meta_title ||
+      "Default Title";
+    const description =
+      eventTranslations.meta_description ||
+      homeTranslations.meta_description ||
+      "Default Description";
+    const keywords =
+      eventTranslations.meta_keyword ||
+      eventTranslations.meta_keywords ||
+      homeTranslations.meta_keyword ||
+      homeTranslations.meta_keywords ||
+      "Meta Keywords";
 
-    return {
-      title: translations.meta_title || "Default Title",
-      description: translations.meta_description || "Default Description",
-      keywords: translations.meta_keyword || "Meta Keywords",
-    };
+    const finalMetadata = { title, description, keywords };
+  
+    return finalMetadata;
   } catch (error) {
-    console.error("Error fetching metadata:", error);
+    console.log("Error fetching metadata:", error);
     return {
       title: "Default Title",
       description: "Default Description",

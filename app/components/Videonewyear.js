@@ -43,7 +43,7 @@ export default function Videonewyear() {
   }, []);
 
   return (
-    <div className="relative mx-auto w-full h-[138px] s:h-[156px] md:h-[280px] lg:h-[350px] xl:h-[526px] overflow-hidden mt-14 md:mt-0">
+    <div className="relative mx-auto w-full h-[116px] s:h-[156px] md:h-[280px] lg:h-[350px] xl:h-[526px] overflow-hidden mt-14 md:mt-0">
       {/* Wistia Video as Background */}
       <style>
         {`
