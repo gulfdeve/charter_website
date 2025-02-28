@@ -5,7 +5,7 @@ import Videosharedtours from "@/app/components/Video-sharedtours";
 import { FaClock, FaCameraRetro, FaWhatsapp, FaChild } from "react-icons/fa";
 import { IoLocationSharp, IoMan } from "react-icons/io5";
 import { MdOutlineLocalDining } from "react-icons/md";
-import YachtCarousal from '@/app/components/YachtCarousel'
+import YachtCarousal from "@/app/components/YachtCarousel";
 // Example data
 const toursData = [
   {
@@ -138,7 +138,7 @@ const Page = () => {
 
                 {/* Live BBQ */}
                 <div className="flex flex-row gap-2 items-center">
-                  <MdOutlineLocalDining className="text-primary-blue-2  text-[6rem] sm:text-[3rem] lg:text-6rem" />
+                  <MdOutlineLocalDining className="text-primary-blue-2  text-[6rem] sm:text-[3rem] lg:text-[6rem]" />
                   <h1 className="text-primary-blue-2 text-sm">
                     <span className="font-bold">Live BBQ:</span> {tour.liveBBQ}
                   </h1>
@@ -155,12 +155,11 @@ const Page = () => {
 
                 {/* Departure Point */}
                 <div className="flex flex-row gap-2 items-center ">
-                  <IoLocationSharp
-                    size={32}
-                    className="text-primary-blue-2 "
-                  />
+                  <IoLocationSharp size={32} className="text-primary-blue-2 " />
                   <h1 className="text-primary-blue-2 text-sm">
-                    <span className="font-bold text-primary-blue-2">Departure Point:</span>{" "}
+                    <span className="font-bold text-primary-blue-2">
+                      Departure Point:
+                    </span>{" "}
                     {tour.departurePoint}
                   </h1>
                 </div>
@@ -171,7 +170,11 @@ const Page = () => {
             ))}
           </div>
         </div>
-<div className="flex items-center justify-center bg-primary-blue-2 max-w-3xl mx-auto text-center"><h1 className="text-white text-md font-bold">PREMIUM DRINKS ARE AVAILABLE FOR PURCHASE ON BOARD</h1></div>
+        <div className="flex items-center justify-center bg-primary-blue-2 max-w-3xl mx-auto text-center">
+          <h1 className="text-white text-md md:text-xl font-bold">
+            PREMIUM DRINKS ARE AVAILABLE FOR PURCHASE ON BOARD
+          </h1>
+        </div>
         {/* HIGHLIGHTS */}
         <div className="flex items-center justify-center w-full my-6">
           <hr className="flex-grow border-primary-yellow-dark" />
@@ -275,11 +278,11 @@ const Page = () => {
 
         {/* CTA Section */}
         <div className="py-10 max-w-7xl mx-auto">
-          <div className="flex flex-col md:flex-row rounded-lg items-center gap-5 justify-center md:justify-between bg-transparent md:bg-primary-blue p-5">
-            <p className="text-white font-bold bg-primary-blue text-xl rounded">
+          <div className="flex flex-col md:flex-row rounded-lg items-center gap-5 justify-center md:justify-between bg-primary-blue md:bg-primary-blue p-5">
+            <p className="text-white text-center md:text-left font-bold bg-primary-blue text-xl rounded">
               Enjoy a luxurious shared yacht adventure!
             </p>
-            <div className="flex md:flex-row md:gap-10">
+            <div className="flex flex-col md:flex-row md:gap-10 space-y">
               <button className="blue-lined-button">
                 <FaWhatsapp size={20} />
                 WHATSAPP US
@@ -288,9 +291,8 @@ const Page = () => {
             </div>
           </div>
         </div>
-
       </div>
-    <YachtCarousal/>
+      <YachtCarousal />
     </>
   );
 };
