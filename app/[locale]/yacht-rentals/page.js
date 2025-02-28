@@ -111,18 +111,18 @@ const YachtCard = ({ yacht }) => {
         {/* Yacht Details */}
         <div className="flex flex-col items-start pt-3">
           <Link href={`yacht-rentals/${yacht.slug}`}>
-            <h2 className="text-[#0D2343]  text-xl font-bold py-4 hover:text-blue-600 transition-all duration-300 cursor-pointer">
+            <h2 className="text-primary-blue  text-xl font-bold py-4 hover:text-blue-600 transition-all duration-300 cursor-pointer">
               {yacht.title}
             </h2>
           </Link>
 
-          <p className=" text-xs text-[#0D2343] text-left">
+          <p className=" text-xs text-primary-blue text-left">
             Model: <span className="font-bold">{yacht.model}</span> | Length:{" "}
             <span className="font-bold">{yacht.length}</span> | Guests:{" "}
             <span className="font-bold">{yacht.guests}</span>
           </p>
-          <p className=" text-[#0D2343] font-bold text-xl pt-5 pb-2">
-            AED {yacht.price} <span className="text-[#0D2343]">Per Hour</span>
+          <p className=" text-primary-blue font-bold text-xl pt-5 pb-2">
+            AED {yacht.price} <span className="text-primary-blue">Per Hour</span>
           </p>
           <a
             href={`https://fareharbor.com/embeds/book/centauruscharter/items/${
@@ -130,7 +130,7 @@ const YachtCard = ({ yacht }) => {
             }/?full-items=yes&flow=645487&back=${encodeURIComponent(
               typeof window !== "undefined" ? window.location.href : ""
             )}`}
-            className="flex flex-row items-center justify-center py-2 w-full md:py-2 md:px-4 rounded-md bg-[#e1ae48] text-[#0d2343] hover:bg-[#0d2343] hover:text-[#e1ae48]  font-bold text-base md:text-sm xl:text-lg transition-all duration-300"
+            className="flex flex-row items-center justify-center py-2 w-full md:py-2 md:px-4 rounded-md bg-primary-yellow text-primary-blue hover:bg-primary-blue hover:text-primary-yellow  font-bold text-base md:text-sm xl:text-lg transition-all duration-300"
           >
             Book Now
           </a>
@@ -208,7 +208,7 @@ const Tabs = () => {
   return (
     <div className="w-full bg-white mt-14 lg:mt-0 ">
       <div className="flex flex-col items-center justify-center pt-10 container mx-auto">
-        <h1 className=" text-[#0D2343] text-center font-bold text-4xl pb-4">
+        <h1 className=" text-primary-blue text-center font-bold text-4xl pb-4">
           LUXURY YACHT RENTALS DUBAI
         </h1>
       </div>

@@ -110,7 +110,7 @@ const Page = () => {
               />
             </div>
           </div>
-          <div className="flex flex-col items-center sm:items-start sm:justify-start justify-center bg-[#0D2343] px-5 xl:px-20 xl:py-12 py-5 md:h-[530px] xl:h-[452px]  lg:h-[460px]">
+          <div className="flex flex-col items-center sm:items-start sm:justify-start justify-center bg-primary-blue px-5 xl:px-20 xl:py-12 py-5 md:h-[530px] xl:h-[452px]  lg:h-[460px]">
             <h1 className=" text-white text-center font-bold text-2xl xl:text-3xl py-7">
               The Buying Process
             </h1>
@@ -175,7 +175,7 @@ const Page = () => {
         REACH OUT TO US
       </button>
       <div className="">
-  <button className="flex items-center justify-center gap-2 px-4 py-3 bg-[#e1ae48] text-[#0d2343]  font-bold rounded-md hover:bg-yellow-600 transition">
+  <button className="flex items-center justify-center gap-2 px-4 py-3 bg-primary-yellow text-primary-blue  font-bold rounded-md hover:bg-yellow-600 transition">
                   <FaWhatsapp size={20} />
                   WHATSAPP US
                 </button>

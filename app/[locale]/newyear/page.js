@@ -23,14 +23,14 @@ const Page = () => {
               className="xl:w-[140rem] sm:w-[170rem] lg:w-[160rem] md:h-[543px] xl:h-[552px] lg:h-[504px] rounded-3xl lg:rounded-none"
             />
           </div>
-          <div className="flex flex-col items-center justify-center bg-[#e1ae48] px-5 py-5 xl:w-[140rem] sm:w-[43rem] lg:w-[160rem] md:h-[541px] xl:h-[552px] lg:h-[504px] lg:rounded-none rounded-3xl md:px-10">
+          <div className="flex flex-col items-center justify-center bg-primary-yellow px-5 py-5 xl:w-[140rem] sm:w-[43rem] lg:w-[160rem] md:h-[541px] xl:h-[552px] lg:h-[504px] lg:rounded-none rounded-3xl md:px-10">
             <h1 className=" text-primary-blue-2 text-center font-bold text-2xl xl:text-3xl pt-7 pb-3">
               NYE YACHT PARTY TICKETS
             </h1>
-            <p className=" text-[#0D2343] text-center text-md sm:text-sm xl:text-md pb-10">
+            <p className=" text-primary-blue text-center text-md sm:text-sm xl:text-md pb-10">
               31 December 2024 | Dubai Harbour | 9 PM - 3 AM
             </p>
-            <p className=" text-[#0D2343] text-center text-md sm:text-sm xl:text-md pb-10 xl:px-5">
+            <p className=" text-primary-blue text-center text-md sm:text-sm xl:text-md pb-10 xl:px-5">
               Celebrate New Year’s Eve in ultimate style aboard a luxury yacht
               in Dubai! Enjoy a night of glamour, non-stop entertainment,
               premium food and drinks, and breathtaking views of the city’s
@@ -39,13 +39,13 @@ const Page = () => {
             </p>
             <div className="flex flex-col lg:flex-row items-center justify-center lg:gap-5">
               <div className="flex flex-col items-center justify-center">
-                <h1 className=" text-[#0D2343] text-center text-md sm:text-sm xl:text-md xl:px-5">
+                <h1 className=" text-primary-blue text-center text-md sm:text-sm xl:text-md xl:px-5">
                   Ticket price starts at
                 </h1>
                 <h1 className=" text-primary-blue-2 font-bold text-center text-3xl py-3 ">
                   AED 1,799
                 </h1>
-                <h1 className=" text-[#0D2343] text-center text-md sm:text-sm xl:text-md pb-5 xl:px-5">
+                <h1 className=" text-primary-blue text-center text-md sm:text-sm xl:text-md pb-5 xl:px-5">
                   per person
                 </h1>
               </div>
@@ -53,7 +53,7 @@ const Page = () => {
                 GET YOUR TICKETS NOW
               </button>
             </div>
-            <h1 className=" text-[#0D2343] text-center text-md sm:text-sm xl:text-md pt-5 xl:px-5">
+            <h1 className=" text-primary-blue text-center text-md sm:text-sm xl:text-md pt-5 xl:px-5">
               Limited tickets are available.
               <br /> T&Cs apply.
             </h1>

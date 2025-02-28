@@ -3,9 +3,9 @@ import React from "react";
 const Route = () => {
   return (
     <div>
-      <div className="bg-[#0d2343] w-full h-auto py-10 xl:px-44 md:px-6 px-2">
+      <div className="bg-primary-blue w-full h-auto py-10 xl:px-44 md:px-6 px-2">
         <div className="flex flex-col items-center justify-center pt-10 gap-5 lg:p-6 lg:mx-auto container">
-          <h1 className=" text-center text-[#e1ae48] text-4xl font-bold">
+          <h1 className=" text-center text-primary-yellow text-4xl font-bold">
           CRUISING ROUTE
           </h1>
 

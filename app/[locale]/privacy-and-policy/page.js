@@ -16,7 +16,7 @@ const page = () => {
           />
         </div>
         <div className="flex items-center justify-center pt-10 lg:px-32">
-            <h1 className=" text-[#0D2343] text-center font-bold text-3xl md:text-4xl ">
+            <h1 className=" text-primary-blue text-center font-bold text-3xl md:text-4xl ">
             {" "}
            PRIVACY POLICY
           </h1>   

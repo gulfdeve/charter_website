@@ -8,11 +8,11 @@ const AboutPage = () => {
         <img alt="about us" src="./AboutUsHeader.png" className="w-full" />
       </div>
       <div className="flex flex-col items-center justify-center py-10 ">
-        <h1 className=" text-[#0D2343] text-center font-bold text-4xl pb-4">
+        <h1 className=" text-primary-blue text-center font-bold text-4xl pb-4">
 
           ABOUT US
         </h1>
-        <h1 className=" text-[#0D2343] text-center  text-4xl pb-4">
+        <h1 className=" text-primary-blue text-center  text-4xl pb-4">
 
           Experience Dubai from the Sea
         </h1>
@@ -29,8 +29,8 @@ const AboutPage = () => {
               className="xl:w-[270rem] sm:w-[170rem] md:h-[443px] xl:h-[452px] lg:h-[404px]" />
           </div>
         </div>
-        <div className="flex flex-col items-center sm:items-start sm:justify-start justify-center bg-[#0D2343] px-5 xl:px-32 xl:py-12 py-5 md:h-[443px] xl:h-[452px] lg:h-[404px]">
-          <h1 className=" text-[#e1ae48] text-left font-bold text-2xl xl:text-3xl py-7">
+        <div className="flex flex-col items-center sm:items-start sm:justify-start justify-center bg-primary-blue px-5 xl:px-32 xl:py-12 py-5 md:h-[443px] xl:h-[452px] lg:h-[404px]">
+          <h1 className=" text-primary-yellow text-left font-bold text-2xl xl:text-3xl py-7">
             OFFERING A WIDE SELECTION OF LUXURY YACHTS
           </h1>
           <p className=" text-white text-center sm:text-left  text-md  sm:text-sm xl:text-md pb-10">

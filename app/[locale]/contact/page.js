@@ -11,7 +11,7 @@ export default function Page() {
           <img alt="contact header banner" src="./Contactheader.webp" className="w-full" />
         </div>
         <div className="flex flex-col items-center justify-center py-10 ">
-          <h1 className=" text-[#0D2343] text-center font-bold text-4xl pb-4">
+          <h1 className=" text-primary-blue text-center font-bold text-4xl pb-4">
          
            CONTACT US
           </h1>
@@ -60,7 +60,7 @@ export default function Page() {
                   <input
                     type="checkbox"
                     id="updates"
-                    className="mt-1 h-4 w-4 text-[#0D2343] focus:ring-2 focus:ring-[#0D2343] border-gray-300 rounded"
+                    className="mt-1 h-4 w-4 text-primary-blue focus:ring-2 focus:ring-[#0D2343] border-gray-300 rounded"
                   />
                   <label htmlFor="updates" className="text-sm leading-5">
                     I would like to sign up to receive email updates from
@@ -75,7 +75,7 @@ export default function Page() {
                   <input
                     type="checkbox"
                     id="terms"
-                    className="mt-1 h-4 w-4 text-[#0D2343] focus:ring-2 focus:ring-[#0D2343] border-gray-300 rounded"
+                    className="mt-1 h-4 w-4 text-primary-blue focus:ring-2 focus:ring-[#0D2343] border-gray-300 rounded"
                   />
                   <label htmlFor="terms" className="text-sm leading-5">
                     I can confirm I have read and accepted the{" "}
@@ -90,7 +90,7 @@ export default function Page() {
               <div className="text-left">
                 <button
                   type="submit"
-                  className="px-6 py-3 bg-[#1B498F] text-white  rounded-md hover:bg-[#0D2343] transition duration-200"
+                  className="px-6 py-3 bg-[#1B498F] text-white  rounded-md hover:bg-primary-blue transition duration-200"
                 >
                   SEND MESSAGE
                 </button>
