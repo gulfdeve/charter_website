@@ -16,6 +16,7 @@ import { notFound } from "next/navigation";
 import TopLoader from '@/app/components/TopLoader';
 import { FareHarborProvider } from "@/app/context/FareHarborContext";
 import 'react-phone-input-2/lib/style.css';
+import { headers } from 'next/headers';
 
 const montserrat = Montserrat({
   subsets: ["latin"],
@@ -31,16 +32,21 @@ export default async function RootLayout({
 }) {
   const { locale, slug } = await params;
 
-  // Ensure that the incoming `locale` is valid
+  // Validate locale
   if (!routing.locales.includes(locale as any)) {
     notFound();
   }
 
   const messages = await getMessages();
 
-  // Generate the canonical URL dynamically
+  // Define your base URL.
   const baseUrl = "https://www.centauruscharter.com";
-  const canonicalUrl = slug ? `${baseUrl}/${slug.join("/")}` : baseUrl;
+  // Read the current pathname from the header (set by middleware).
+  const currentPath = (await headers()).get("x-current-path");
+  // Use the middleware header if available; otherwise, fallback to the slug-based path.
+  const canonicalUrl = currentPath
+    ? `${baseUrl}${currentPath}`
+    : (slug ? `${baseUrl}/${slug.join("/")}` : baseUrl);
 
   return (
     <html lang={locale}>
@@ -65,7 +71,7 @@ export default async function RootLayout({
         />
       </head>
       <body className={`${montserrat.variable}`}>
-      <TopLoader />
+        <TopLoader />
         <NextIntlClientProvider locale={locale} messages={messages}>
           <DataProvider>
             <LanguageProvider>

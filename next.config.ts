@@ -8,6 +8,7 @@ const nextConfig: NextConfig = {
   images: {
     domains: ["www.centauruscharter.com"], // Allow external images from this domain
   },
+ 
 };
 
 export default withNextIntl(nextConfig);
