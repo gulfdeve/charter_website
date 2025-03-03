@@ -1,7 +1,8 @@
 import React, { useEffect, useRef, useState } from "react";
 import EmblaCarousel from "embla-carousel";
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
-import Link from "next/link";
+// import Link from "next/link";
+import { useRouter, usePathname, Link } from "@/app/i18n/routing";
 import { FaStar } from "react-icons/fa";
 import { RxBorderDotted } from "react-icons/rx";
 const Reviews = () => {
@@ -93,7 +94,7 @@ const Reviews = () => {
       <div className="xl:block hidden">
         <div className="bg-gray-200 w-full h-auto py-20 px-4">
           <div>
-            <h2 className=" text-[#0D2343] text-center font-bold text-4xl pb-4">
+            <h2 className=" text-primary-blue text-center font-bold text-4xl pb-4">
               WHAT OUR GUESTS SAY
             </h2>
           </div>
@@ -182,7 +183,7 @@ const Reviews = () => {
       <div className="xl:hidden block">
         <div className="bg-gray-200 w-full h-auto py-20 px-4">
           <div>
-            <h1 className=" text-[#0D2343] text-center font-bold text-4xl pb-4">
+            <h1 className=" text-primary-blue text-center font-bold text-4xl pb-4">
               WHAT OUR GUESTS SAY
             </h1>
           </div>
@@ -255,7 +256,7 @@ const Reviews = () => {
             </button>
             <div className=" p-2 flex flex-col items-center z-20 ">
               <Link href="https://www.tripadvisor.com/Attraction_Review-g295424-d15699786-Reviews-Centaurus_Yachts_Boats_Dubai-Dubai_Emirate_of_Dubai.html">
-                <button className="flex flex-row items-center justify-center py-1 px-6 md:py-2 md:px-8 border-4 border-[#0d2343] rounded-md bg-[#050505] hover:bg-[#0d2343] text-[#e1ae48]  font-bold text-base md:text-sm xl:text-base transition-all duration-300">
+                <button className="flex flex-row items-center justify-center py-1 px-6 md:py-2 md:px-8 border-4 border-[#0d2343] rounded-md bg-[#050505] hover:bg-primary-blue text-primary-yellow  font-bold text-base md:text-sm xl:text-base transition-all duration-300">
                   Write A Review
                 </button>
               </Link>

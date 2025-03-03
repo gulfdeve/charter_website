@@ -26,7 +26,7 @@ const FirstFooter = () => {
 
   return (
     <>
-      <footer className="text-sm bg-[#1D1D1D] py-10 ">
+      <footer className="text-sm bg-primary-black py-10 ">
         <div className="p-4 container mx-auto">
           <div className=" grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-8 ">
             <div>

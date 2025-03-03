@@ -5,7 +5,8 @@ import { FaWhatsapp } from "react-icons/fa";
 import { useData } from "@/app/context/DataContext";
 import { useLanguage } from "@/app/context/LanguageContext";
 import YachtCarousal from "@/app/components/YachtCarousel";
-import Link from "next/link";
+// import Link from "next/link";
+import { useRouter, usePathname, Link } from "@/app/i18n/routing";
 import Loading from "./loading";
 const page = ({ params }) => {
 const { data, loading, error } = useData();
@@ -19,7 +20,7 @@ return (
 <>
     <div className="max-w-7xl mx-auto mt-14 md:mt-0">
         <div className="flex flex-col items-center justify-center py-10 ">
-            <h1 className=" text-[#0D2343] text-center font-bold text-4xl">
+            <h1 className=" text-primary-blue text-center font-bold text-4xl">
                 YACHT EVENTS DUBAI
             </h1>
         </div>
@@ -28,13 +29,13 @@ return (
         <div className="grid grid-col-1 md:grid-cols-2 md:px-4 gap-7 pb-16 container mx-auto">
             {data?.events?.map((event) => (
             <div key={event.id} className="flex flex-col justify-start lg:justify-between rounded-md bg-white shadow-xl">
-                <Link href={`/${language}/events/${event.slug}`}>
+                <Link href={`/events/${event.slug}`}>
                 <img src={`https://www.centauruscharter.com/product/images/${event.image}`}
                     alt={event.translations[language].title} className="rounded-t-md w-full object-cover" />
                 </Link>
                 <div className="flex flex-col  justify-start px-5 lg:px-5">
                     <h2 className="text-[#232629]  text-2xl font-bold pt-4">
-                        <Link href={`/${language}/events/${event.slug}`}>
+                        <Link href={`/events/${event.slug}`}>
                         {event.translations[language].title}
                         </Link>
                     </h2>
@@ -57,7 +58,7 @@ return (
                                 <FaWhatsapp className="xs:text-xl text-lg  mr-1" />
                                 WHATSAPP
                             </a>
-                            <Link href={`/${language}/events/${event.slug}`} className="blue-solid-button">
+                            <Link href={`/events/${event.slug}`} className="blue-solid-button">
                             KNOW MORE
                             </Link>
                         </div>

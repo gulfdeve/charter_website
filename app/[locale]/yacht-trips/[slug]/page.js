@@ -1,7 +1,8 @@
 import React from "react";
 import { IoIosPricetag } from "react-icons/io";
 import { FaWhatsapp } from "react-icons/fa";
-import Link from "next/link";
+// import Link from "next/link";
+import { useRouter, usePathname, Link } from "@/app/i18n/routing";
 import Route from "@/app/components/Route";
 const page = async ({ params }) => {
   const { slug } = await params;
@@ -46,7 +47,7 @@ const page = async ({ params }) => {
   return (
     <><div className="bg-white h-full w-full mt-14 md:mt-0">
       <div className="flex flex-col items-center justify-center pt-10 ">
-        <h1 className=" text-[#0D2343] text-center font-bold text-4xl pb-10">
+        <h1 className=" text-primary-blue text-center font-bold text-4xl pb-10">
           YACHT TRIPS & EXPERIENCES IN DUBAI
         </h1>
       </div>
@@ -64,44 +65,44 @@ const page = async ({ params }) => {
             <div className="flex flex-col  justify-center px-3 xl:px-6 ">
               {/* Title with Link */}
               <Link
-                href={`/yachttrip/${offer.title
+                href={`/yacht-trips/${offer.title
                   .toLowerCase()
                   .replace(/ /g, "-")}`}
               >
-                <h1 className="text-[#0D2343]  text-2xl font-bold xl:pt-6  pt-6 md:pb-2 hover:text-blue-600 transition-all duration-300 cursor-pointer py-5 md:py-0">
+                <h1 className="text-primary-blue  text-2xl font-bold xl:pt-6  pt-6 md:pb-2 hover:text-blue-600 transition-all duration-300 cursor-pointer py-5 md:py-0">
                   {offer.title}
                 </h1>
               </Link>
               <div className="grid grid-cols-1 lg:grid-cols-4 md:grid-cols-2 items-center gap-0 rounded-lg w-full overflow-hidden shadow-md mb-7">
                 {/* Model */}
-                <div className="bg-[#0d2343] text-white p-2 flex flex-col items-center ">
+                <div className="bg-primary-blue text-white p-2 flex flex-col items-center ">
                   <span className="font-bold  text-sm">
                     Model:
                   </span>
-                  <span className="font-semibold  text-sm text-[#e1ae48]">
+                  <span className="font-semibold  text-sm text-primary-yellow">
                     Majesty
                   </span>
                 </div>
                 {/* Length */}
-                <div className="bg-[#0d2343] text-white p-2 flex flex-col items-center">
+                <div className="bg-primary-blue text-white p-2 flex flex-col items-center">
                   <span className="font-bold  text-sm">
                     Length:
                   </span>
-                  <span className="font-semibold  text-sm text-[#e1ae48]">
+                  <span className="font-semibold  text-sm text-primary-yellow">
                     56 Feet
                   </span>
                 </div>
                 {/* Guests */}
-                <div className="bg-[#0d2343] text-white p-2 flex flex-col items-center">
+                <div className="bg-primary-blue text-white p-2 flex flex-col items-center">
                   <span className="font-bold  text-sm">
                     Guests:
                   </span>
-                  <span className="font-semibold  text-sm text-[#e1ae48]">
+                  <span className="font-semibold  text-sm text-primary-yellow">
                     21
                   </span>
                 </div>
                 {/* Good For */}
-                <div className="bg-[#e1ae48] text-[#0d2343] xl:w-36 p-2 flex flex-col items-center">
+                <div className="bg-primary-yellow text-primary-blue xl:w-36 p-2 flex flex-col items-center">
                   <span className="   text-sm">Good For:</span>
                   <span className="font-semibold  text-sm">
                     Birthday/Parties
@@ -121,7 +122,7 @@ const page = async ({ params }) => {
                       <span className="xl:text-xl text-[#232629] text-xs">
                         {offer.validity}
                       </span>
-                      <span className="text-[#e1ae48] s:text-sm  text-xs">
+                      <span className="text-primary-yellow s:text-sm  text-xs">
                         {" "}
                         +VAT
                       </span>
@@ -131,11 +132,11 @@ const page = async ({ params }) => {
 
                 {/* Buttons Section */}
                 <div className="flex xl:flex-row flex-col items-center justify-end gap-3 ">
-                  <button className="flex flex-row items-center justify-center py-2 px-4  rounded-md bg-[#0d2343] text-[#e1ae48]  font-bold text-[10px] md:text-xs xl:text-lg">
+                  <button className="flex flex-row items-center justify-center py-2 px-4  rounded-md bg-primary-blue text-primary-yellow  font-bold text-[10px] md:text-xs xl:text-lg">
                     <FaWhatsapp className="xs:text-xl text-lg  mr-1" />
                     WHATSAPP
                   </button>
-                  <button className="flex flex-row items-center justify-center py-2 px-6 md:py-2 md:px-4  rounded-md bg-[#0d2343] text-[#e1ae48]  font-bold text-[10px] md:text-sm xl:text-lg">
+                  <button className="flex flex-row items-center justify-center py-2 px-6 md:py-2 md:px-4  rounded-md bg-primary-blue text-primary-yellow  font-bold text-[10px] md:text-sm xl:text-lg">
                     KNOW MORE
                   </button>
                 </div>

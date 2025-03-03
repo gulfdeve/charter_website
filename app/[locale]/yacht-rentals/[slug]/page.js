@@ -170,32 +170,32 @@ export default function Home({ params }) {
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-5 md:grid-cols-1 items-center gap-0 rounded-lg w-full overflow-hidden shadow-md mb-7 mt-6 max-w-7xl mx-auto">
-          <div className="bg-[#0d2343] text-white p-2 flex flex-col items-center">
+          <div className="bg-primary-blue text-white p-2 flex flex-col items-center">
             <span className="font-bold text-sm">Model:</span>
-            <span className="font-semibold text-sm text-[#e1ae48] xl:text-xl">
+            <span className="font-semibold text-sm text-primary-yellow xl:text-xl">
               {product.translations?.[locale]?.model}
             </span>
           </div>
-          <div className="bg-[#0d2343] text-white p-2 flex flex-col items-center">
+          <div className="bg-primary-blue text-white p-2 flex flex-col items-center">
             <span className="font-bold text-sm">Length:</span>
-            <span className="font-semibold text-sm text-[#e1ae48] xl:text-xl">
+            <span className="font-semibold text-sm text-primary-yellow xl:text-xl">
               {product.translations?.[locale]?.size}
             </span>
           </div>
-          <div className="bg-[#0d2343] text-white p-2 flex flex-col items-center">
+          <div className="bg-primary-blue text-white p-2 flex flex-col items-center">
             <span className="font-bold text-sm">Guests:</span>
-            <span className="font-semibold text-sm text-[#e1ae48] xl:text-xl">
+            <span className="font-semibold text-sm text-primary-yellow xl:text-xl">
               {product.translations?.[locale]?.guests}
             </span>
           </div>
-          <div className="bg-[#0d2343] p-2 flex flex-col items-center">
+          <div className="bg-primary-blue p-2 flex flex-col items-center">
             <span className="text-sm text-white">Price Per Hour:</span>
-            <span className="font-semibold text-sm text-[#e1ae48] xl:text-xl">
+            <span className="font-semibold text-sm text-primary-yellow xl:text-xl">
               {product.per_hour_price}
             </span>
           </div>
-          <div className="bg-[#0d2343] text-[#0d2343] p-2 flex flex-col items-center">
-            <button className="flex flex-row items-center justify-center py-1 px-6 md:py-2 md:px-8 border-4 border-[#e1ae48] rounded-md bg-[#0d2343] hover:bg-[#0d2343] text-[#e1ae48] font-bold text-base md:text-sm xl:text-base transition-all duration-300">
+          <div className="bg-primary-blue text-primary-blue p-2 flex flex-col items-center">
+            <button className="flex flex-row items-center justify-center py-1 px-6 md:py-2 md:px-8 border-4 border-[#e1ae48] rounded-md bg-primary-blue hover:bg-primary-blue text-primary-yellow font-bold text-base md:text-sm xl:text-base transition-all duration-300">
               Book Now
             </button>
           </div>

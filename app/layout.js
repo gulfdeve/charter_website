@@ -18,11 +18,6 @@ export default async function RootLayout({ children, params }) {
     notFound();
   }
 
-  return (
-    <html lang={locale}>
-      <body className={`${montserrat.variable}`}>
-        {children}
-      </body>
-    </html>
-  );
+export default function RootLayout({ children }) {
+  return children;
 }

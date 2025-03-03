@@ -85,6 +85,7 @@ export default function Navbar() {
                 src="/CentaurusLogo.png"
                 alt="Centaurus charter Logo"
                 width={200}
+                priority={true}
                 height={100}
               />
             </Link>
@@ -98,20 +99,20 @@ export default function Navbar() {
               <Link aria-label="email icon"  href={header_email || "#"}>
                 <MdMail
                   size={30}
-                  className="text-[#e1ae48] hover:text-[#0d2343]"
+                  className="text-primary-yellow hover:text-primary-blue"
                 />
               </Link>
               <Link aria-label="phone icon" href={header_phone_number_url || "#"}>
                 <FaPhoneAlt
                   size={23}
-                  className="text-[#e1ae48] hover:text-[#0d2343] mt-1"
+                  className="text-primary-yellow hover:text-primary-blue mt-1"
                 />
               </Link>
               {/* WhatsApp Icon */}
               <Link aria-label="whatsapp icon"     href={header_whatsapp_url || "#"}>
                 <IoLogoWhatsapp
                   size={30}
-                  className="text-[#e1ae48] hover:text-[#0d2343]"
+                  className="text-primary-yellow hover:text-primary-blue"
                 />
               </Link>
             </div>
@@ -177,12 +178,12 @@ export default function Navbar() {
 
         {/* Second Navbar (Sticky) */}
         <div
-          className={`bg-[#0d2343] w-full ${
+          className={`bg-primary-blue w-full ${
             isSticky ? "fixed top-0 z-50 transition-all " : ""
           } `}
         >
           <nav
-            className={` w-full bg-[#0D2343] text-[#e1ae48]  font-bold ${
+            className={` w-full bg-primary-blue text-primary-yellow  font-bold ${
               isSticky
                 ? " sticky top-0 z-50"
                 : ""
@@ -374,7 +375,7 @@ export default function Navbar() {
       </div>
       {/* Mobile Navbar */}
       <div className="lg:hidden block">
-  <nav className="bg-[#0d2343] w-full h-14 p-3 fixed top-0 z-50">
+  <nav className="bg-primary-blue w-full h-14 p-3 fixed top-0 z-50">
     <div className="flex items-center justify-between">
       {/* Logo */}
       <div className="w-32 pr-3">

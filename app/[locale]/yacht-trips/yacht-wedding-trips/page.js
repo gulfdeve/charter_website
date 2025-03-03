@@ -1,7 +1,8 @@
 "use client";
 import React from "react";
 import Videoweddingtrip from "@/app/components/Videoweddingtrip";
-import Link from "next/link";
+// import Link from "next/link";
+import { useRouter, usePathname, Link } from "@/app/i18n/routing";
 import Videosharedtours from "@/app/components/Video-sharedtours";
 import { FaWhatsapp } from "react-icons/fa";
 import YachtCarousel from "@/app/components/YachtCarousel"
@@ -60,7 +61,7 @@ const page = () => {
               key={yacht.id}
               className="flex flex-col justify-center px-5 bg-white rounded-2xl shadow-2xl h-auto"
             >
-              <Link href={`yacht-rentals/${yacht.slug}`}>
+              <Link href={`/yacht-rentals/${yacht.slug}`}>
                 <img
                   src={yacht.image}
                   className="rounded-2xl mt-5 h-[174px] md:h-[300px] object-cover"
@@ -69,26 +70,26 @@ const page = () => {
               </Link>
 
               <div className="flex flex-col items-center py-3">
-                <Link href={`yacht-rentals/${yacht.slug}`}>
-                  <h1 className="text-[#0D2343]  text-xl font-bold xl:pt-6 md:pb-2 hover:text-blue-600 transition-all duration-300 cursor-pointer py-1 md:py-0">
+                <Link href={`/yacht-rentals/${yacht.slug}`}>
+                  <h1 className="text-primary-blue  text-xl font-bold xl:pt-6 md:pb-2 hover:text-blue-600 transition-all duration-300 cursor-pointer py-1 md:py-0">
                     {yacht.title}
                   </h1>
                 </Link>
-                <p className=" text-xs text-[#0D2343] text-left">
+                <p className=" text-xs text-primary-blue text-left">
                   Length:
-                  <span className=" text-[#0D2343] font-bold">
+                  <span className=" text-primary-blue font-bold">
                     {" "}
                     {yacht.length}
                   </span>{" "}
                   | Guests:
-                  <span className=" text-[#0D2343] font-bold">
+                  <span className=" text-primary-blue font-bold">
                     {" "}
                     {yacht.guests}
                   </span>
                 </p>
-                <h1 className=" text-[#0D2343] font-bold text-xl pt-5 pb-2">
+                <h1 className=" text-primary-blue font-bold text-xl pt-5 pb-2">
                   AED {yacht.price}{" "}
-                  <span className=" text-[#0D2343]">
+                  <span className=" text-primary-blue">
                     Per Hour
                   </span>
                 </h1>
@@ -98,7 +99,7 @@ const page = () => {
                   }/?full-items=yes&flow=645487&back=${encodeURIComponent(
                     "http://example.com"
                   )}`}
-                  className="flex flex-row items-center justify-center py-2 w-full md:py-2 md:px-4 rounded-md bg-[#e1ae48] text-[#0d2343] hover:bg-[#0d2343] hover:text-[#e1ae48]  font-bold text-base md:text-sm xl:text-lg transition-all duration-300"
+                  className="flex flex-row items-center justify-center py-2 w-full md:py-2 md:px-4 rounded-md bg-primary-yellow text-primary-blue hover:bg-primary-blue hover:text-primary-yellow  font-bold text-base md:text-sm xl:text-lg transition-all duration-300"
                 >
                   Book Now
                 </a>
@@ -201,7 +202,7 @@ const page = () => {
               />
             </div>
           </div>
-          <div className="flex flex-col items-center sm:items-start sm:justify-start justify-center bg-[#0D2343] px-5  xl:px-20 xl:py-12 py-5  md:h-[670px] xl:h-[600px] lg:h-[560px]">
+          <div className="flex flex-col items-center sm:items-start sm:justify-start justify-center bg-primary-blue px-5  xl:px-20 xl:py-12 py-5  md:h-[670px] xl:h-[600px] lg:h-[560px]">
             <h1 className=" text-white text-center  text-2xl xl:text-3xl pt-7">
             Why Choose Us
             </h1>

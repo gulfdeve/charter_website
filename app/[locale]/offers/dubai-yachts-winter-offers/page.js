@@ -83,7 +83,7 @@ const Page = () => {
             <div className="overflow-x-auto">
               <table className="w-full border-collapse border border-gray-300 md:text-sm lg:text-sm">
                 <thead>
-                  <tr className="bg-[#0D2343] text-white">
+                  <tr className="bg-primary-blue text-white">
                     <th className="border border-transparent p-3  text-primary-yellow">
                       YACHT
                     </th>
@@ -134,7 +134,7 @@ const Page = () => {
                         {yacht.rate4Hours}
                       </td>
                       <td className="border border-black p-2  font-bold bg-primary-yellow">
-                        <button className="bg-[#e1ae48] text-black py-1 px-10 rounded-lg hover:bg-[#d49d3f] transition-all">
+                        <button className="bg-primary-yellow text-black py-1 px-10 rounded-lg hover:bg-[#d49d3f] transition-all">
                           Book Now
                         </button>
                       </td>

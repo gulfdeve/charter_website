@@ -181,7 +181,7 @@ export default function Home({ params }) {
         <h3 className="text-lg text-white ">AVAILIBILITY:</h3>
         <h3 className="text-lg text-white  font-bold">AVAILABLE</h3>
       </div>
-      <button className="flex items-center justify-center gap-2 px-4 py-3 bg-[#e1ae48] text-[#0d2343] font-bold rounded-md hover:bg-yellow-600 transition">
+      <button className="flex items-center justify-center gap-2 px-4 py-3 bg-primary-yellow text-primary-blue font-bold rounded-md hover:bg-yellow-600 transition">
         CHAT WITH US
       </button>
     </div>

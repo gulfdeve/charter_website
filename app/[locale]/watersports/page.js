@@ -6,7 +6,8 @@ import { useData } from "@/app/context/DataContext";
 import { useLanguage } from "@/app/context/LanguageContext";
 import YachtCarousal from "@/app/components/YachtCarousel";
 import LocationCarousel from "@/app/components/LocationCarousel";
-import Link from "next/link";
+// import Link from "next/link";
+import { useRouter, usePathname, Link } from "@/app/i18n/routing";
 
 const page = ({ params }) => {
 const { data, loading, error } = useData();
@@ -16,7 +17,7 @@ return (
 <>
     <div className="max-w-7xl mx-auto mt-14 md:mt-0">
         <div className="flex flex-col items-center justify-center py-10 ">
-            <h1 className=" text-[#0D2343] text-center font-bold text-4xl">
+            <h1 className=" text-primary-blue text-center font-bold text-4xl">
                 WATERSPORTS ADD-ON DUBAI
             </h1>
         </div>
@@ -24,13 +25,13 @@ return (
             {data?.packages?.map((package_a) => (
             <div key={package_a.id}
                 className="flex flex-col justify-start lg:justify-between rounded-md bg-white shadow-xl">
-                <Link href={`/${language}/watersports/${package_a.slug}`}>
+                <Link href={`/watersports/${package_a.slug}`}>
                 <img src={`https://www.centauruscharter.com/product/images/${package_a.image}`}
                     alt={package_a.translations[language].title} className="rounded-t-md w-full object-cover" />
                 </Link>
                 <div className="flex flex-col  justify-start px-5 lg:px-5">
                     <h2 className="text-[#232629]  text-2xl font-bold pt-4">
-                        <Link href={`/${language}/watersports/${package_a.slug}`}>
+                        <Link href={`/watersports/${package_a.slug}`}>
                         {package_a.translations[language].title}
                         </Link>
                     </h2>
@@ -86,16 +87,16 @@ return (
         </div>
         <div
             className="flex flex-col items-center lg:items-start lg:p-12 justify-center bg-[#E2BA4D] w-full lg:w-1/2 lg:h-[27rem] h-[35rem]">
-            <h2 className=" text-[#0D2343] text-5xl lg:text-4xl lg:pb-4 font-bold text-center px-6 lg:px-0">
+            <h2 className=" text-primary-blue text-5xl lg:text-4xl lg:pb-4 font-bold text-center px-6 lg:px-0">
                 Exclusive Offers
             </h2>
-            <p className=" text-[#0D2343] text-center lg:text-left text-base  px-11 lg:w-[25rem] lg:px-0 xl: py-10">
+            <p className=" text-primary-blue text-center lg:text-left text-base  px-11 lg:w-[25rem] lg:px-0 xl: py-10">
                 When you book your next yacht tour, you can take an advantage of
                 wide selection of offers and discounts by Centaurus yachts. From
                 summer offers, birthday party to membership discounts we have all
                 for you.
             </p>
-            <button className="px-5 py-3 bg-[#0D2343] text-white text-xl  font-bold rounded-md ">
+            <button className="px-5 py-3 bg-primary-blue text-white text-xl  font-bold rounded-md ">
                 EXPLORE ALL OFFERS
             </button>
         </div>
@@ -104,7 +105,7 @@ return (
     </div>
 
     <div
-        className="flex flex-col items-center justify-center bg-[#0D2343] w-full h-[23rem] lg:h-[17rem] xxs:h-[27rem] ">
+        className="flex flex-col items-center justify-center bg-primary-blue w-full h-[23rem] lg:h-[17rem] xxs:h-[27rem] ">
         <h2 className=" text-[#E2BA4D] text-3xl lg:text-4xl lg:pt-8 font-bold text-center px-6 lg:px-0">
             Tailor your Yacht Charter Experience in Dubai
         </h2>
@@ -112,7 +113,7 @@ return (
             Live your life in a new way and get in touch with our agent for your
             customized tours
         </p>
-        <button className="px-5 py-3 bg-[#E2BA4D] text-[#0D2343] text-xl  font-bold rounded-md ">
+        <button className="px-5 py-3 bg-[#E2BA4D] text-primary-blue text-xl  font-bold rounded-md ">
             CONTACT US
         </button>
     </div>

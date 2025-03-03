@@ -1,6 +1,7 @@
 import React from 'react'
 import Image from "next/image";
-import Link from "next/link";
+// import Link from "next/link";
+import { useRouter, usePathname, Link } from "@/app/i18n/routing";
 const page = () => {
   return (
    <div className="bg-white w-full h-full mt-14 md:mt-0">
@@ -16,7 +17,7 @@ const page = () => {
     </div>
    
         <div className="flex items-center justify-center pt-10 lg:px-32">
-        <h1 className=" text-[#0D2343] text-center font-bold text-4xl ">
+        <h1 className=" text-primary-blue text-center font-bold text-4xl ">
         {" "}
         TERMS AND CONDITION
       </h1>   
