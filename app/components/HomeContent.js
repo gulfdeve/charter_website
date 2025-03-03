@@ -21,6 +21,7 @@ export default function Home() {
   const emblaInstance = useRef(null);
   const { data, loading, error } = useData();
   const { language } = useLanguage();
+  const locale = useLocale();
 
   useEffect(() => {
     // Show modal when the page loads
@@ -92,13 +93,13 @@ export default function Home() {
                 >
                   <Link  href={`/yacht-rentals/${product.slug}`}>
                   <h2 className=" xl:text-4xl text-3xl font-bold">
-                    {product.translations[language].name_of_yacht}
+                    {product.translations?.[locale].name_of_yacht}
                   </h2>
                   </Link>
                   <Link  href={`/yacht-rentals/${product.slug}`}>
                   <img
                     src={`https://www.centauruscharter.com/product/images/${product.image}`}
-                    alt={product.translations[language].name_of_yacht}
+                    alt={product.translations?.[locale].name_of_yacht}
                     className="rounded-lg xl:w-[32rem] w-[25rem] mt-3"
                   />
                   </Link>
@@ -110,7 +111,7 @@ export default function Home() {
                         Model:
                       </span>
                       <span className="font-semibold  text-sm xl:text-xs text-[#e1ae48]">
-                        {product.translations[language].model}
+                        {product.translations?.[locale].model}
                       </span>
                     </div>
 
@@ -120,7 +121,7 @@ export default function Home() {
                         Length:
                       </span>
                       <span className="font-semibold  text-sm text-[#e1ae48]">
-                        {product.translations[language].size}
+                        {product.translations?.[locale].size}
                       </span>
                     </div>
 
@@ -130,7 +131,7 @@ export default function Home() {
                         Guests:
                       </span>
                       <span className="font-semibold  text-sm text-[#e1ae48]">
-                        {product.translations[language].guests}
+                        {product.translations?.[locale].guests}
                       </span>
                     </div>
 

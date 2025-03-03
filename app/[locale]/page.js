@@ -1,6 +1,7 @@
 import HomeContent from "@/app/components/HomeContent"
-export async function generateMetadata() {
-  const locale = 'en';
+export async function generateMetadata({params}) {
+  const { locale } = await params;
+  const resolvedLocale = locale || "en"; 
 
   let metaTitle = "Default Title";
   let metaDescription = "Default Description";
@@ -10,7 +11,7 @@ export async function generateMetadata() {
     const res = await fetch("https://www.centauruscharter.com/api/api_new/basic");
     const data = await res.json();
     // Fetch metadata for "home" using the locale
-    const metaData = data?.meta_tags?.["home"]?.[locale]?.[0];
+    const metaData = data?.meta_tags?.["home"]?.[resolvedLocale]?.[0];
 
     if (metaData) {
       metaTitle = metaData.meta_title || metaTitle;

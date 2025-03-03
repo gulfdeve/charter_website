@@ -44,7 +44,7 @@ export async function generateMetadata({
   params: Promise<{ slug: string; locale: string }>;
 }): Promise<Metadata> {
   const { slug, locale } = await params;
-  const resolvedLocale = locale || "en";
+  const resolvedLocale = locale 
  
 
   try {
