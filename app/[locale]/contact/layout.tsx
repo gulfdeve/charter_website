@@ -4,24 +4,9 @@ import { useLocale } from "next-intl";
 interface Metadata {
   title: string;
   description: string;
-  keywords?: string;
 }
 
-interface APIMetaData {
-  meta_title?: string;
-  meta_description?: string;
-  meta_keywords?: string;
-}
-
-interface APIResponse {
-  meta_tags?: {
-    [key: string]: {
-      [locale: string]: APIMetaData[];
-    };
-  };
-}
-
-const Layout = ({ children }: { children: React.ReactNode }): JSX.Element => {
+const Layout = ({ children }: { children: React.ReactNode }) => {
   return (
     <div>
       <main>{children}</main>
@@ -33,37 +18,33 @@ export async function generateMetadata({
   params,
 }: {
   params: Promise<{ slug: string; locale: string }>;
-}): Promise<Metadata> {
+}) {
   const { locale } = await params;
   const resolvedLocale = locale || "en"; // Default to English if locale is missing
 
   try {
     const response = await fetch("https://www.centauruscharter.com/api/api_new/basic");
-    const data: APIResponse = await response.json();
+    const data = await response.json();
 
-    const metaFAQ: APIMetaData | undefined =
-      data?.meta_tags?.["faq"]?.[resolvedLocale]?.[0];
-    const metaHome: APIMetaData | undefined =
-      data?.meta_tags?.["home"]?.[resolvedLocale]?.[0];
+    const metaData = data?.meta_tags?.["contact"]?.[resolvedLocale]?.[0];
+    const metaHome = data?.meta_tags?.["home"]?.[resolvedLocale]?.[0];
 
-    // Ensure `finalMeta` is always assigned a value
-    const finalMeta: APIMetaData = metaFAQ || metaHome || {
+    // Use "shared-yacht-tours-dubai" metadata if available, otherwise fallback to "home"
+    const finalMeta = metaData || metaHome || {
       meta_title: "Default Title",
       meta_description: "Default Description",
-      meta_keywords: "default, keywords",
     };
 
     return {
       title: finalMeta.meta_title || "Default Title",
       description: finalMeta.meta_description || "Default Description",
-      keywords: finalMeta.meta_keywords || "default, keywords",
+      keywords: finalMeta.meta_keywords
     };
   } catch (error) {
     console.error("Error fetching metadata:", error);
     return {
       title: "Default Title",
       description: "Default Description",
-      keywords: "default, keywords",
     };
   }
 }

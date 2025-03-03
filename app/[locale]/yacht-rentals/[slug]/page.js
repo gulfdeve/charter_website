@@ -1,16 +1,12 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
 import EmblaCarousel from "embla-carousel";
-import { IoIosArrowBack } from "react-icons/io";
-import { IoIosArrowForward } from "react-icons/io";
-import { FaQuestionCircle } from "react-icons/fa";
-import { FaWhatsapp } from "react-icons/fa";
-import { useLanguage } from "@/app/context/LanguageContext";
+import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
+import { FaQuestionCircle, FaWhatsapp } from "react-icons/fa";
 import Route from "@/app/components/Route";
-import { use } from "react";
 import YachtCarousal from "@/app/components/YachtCarousel";
-import { useLocale, useTranslations } from "next-intl";
-import generateMetadata from '@/app/components/metadataYacht'
+import { useLocale } from "next-intl";
+import { use } from "react";
 
 export default function Home({ params }) {
   const { slug } = use(params);
@@ -22,14 +18,16 @@ export default function Home({ params }) {
   const thumbnailRef = useRef(null);
   const locale = useLocale();
 
+  // Scroll thumbnails container so active thumbnail is visible.
   useEffect(() => {
     if (thumbnailRef.current) {
       const thumbnails = thumbnailRef.current.children;
       const thumbnailWidth = thumbnails[0]?.offsetWidth || 0;
-      thumbnailRef.current.scrollLeft = thumbnailWidth * Math.max(activeIndex - 0, 0);
+      thumbnailRef.current.scrollLeft = thumbnailWidth * activeIndex;
     }
   }, [activeIndex]);
 
+  // Fetch product data based on slug.
   useEffect(() => {
     if (!slug) return;
     const fetchData = async () => {
@@ -47,14 +45,19 @@ export default function Home({ params }) {
     fetchData();
   }, [slug]);
 
-  // Initialize Embla Carousel and set up autoplay every 3 seconds.
+  // Initialize Embla Carousel with loop mode and set up autoplay.
   useEffect(() => {
     if (emblaRef.current && product) {
       emblaInstance.current = EmblaCarousel(emblaRef.current, { loop: true });
+      
+      // Listen for Embla's "select" event to update activeIndex.
+      emblaInstance.current.on("select", () => {
+        const index = emblaInstance.current.selectedScrollSnap();
+        setActiveIndex(index);
+      });
+
       const autoplayInterval = setInterval(() => {
         emblaInstance.current.scrollNext();
-        // Update activeIndex for thumbnail highlighting:
-        setActiveIndex((prev) => (prev + 1) % product.gallery.length);
       }, 3000);
 
       return () => {
@@ -90,18 +93,22 @@ export default function Home({ params }) {
 
   return (
     <>
-      <div className="max-w-7xl mx-auto p-5 mt-14 lg:mt-0 ">
+      <div className="max-w-7xl mx-auto p-5 mt-14 lg:mt-0">
         {/* Title */}
         <h1 className="text-4xl font-bold text-center mb-4 mt-5">
           {product.translations?.[locale]?.name_of_yacht}
         </h1>
         <p className="text-xl text-center mb-4">Dubai Luxury Yacht</p>
+
         {/* Embla Carousel */}
         <div className="embla relative">
           <div className="embla__viewport overflow-hidden rounded-lg" ref={emblaRef}>
             <div className="embla__container flex">
               {product.gallery.map((item, index) => (
-                <div key={index} className="embla__slide min-w-full flex justify-center items-center pb-5 lg:pb-0">
+                <div
+                  key={index}
+                  className="embla__slide min-w-full flex justify-center items-center pb-5 lg:pb-0"
+                >
                   <img
                     src={`https://www.centauruscharter.com/product/galleryimages/${item.image}`}
                     alt={`Slide ${index + 1}`}
@@ -113,13 +120,11 @@ export default function Home({ params }) {
           </div>
         </div>
 
+        {/* Navigation and Thumbnails */}
         <div className="relative">
           <button
             className="absolute left-0 top-1/2 transform -translate-y-1/2 bg-[#d4cfce] text-white p-1 xl:p-2 rounded-full hover:bg-gray-700 z-10"
-            onClick={() => {
-              scrollPrev();
-              setActiveIndex((prev) => Math.max(prev - 1, 0));
-            }}
+            onClick={scrollPrev}
           >
             <IoIosArrowBack className="text-black" />
           </button>
@@ -128,25 +133,24 @@ export default function Home({ params }) {
             ref={thumbnailRef}
             className="overflow-x-auto flex space-x-2 max-w-7xl relative scrollbar-hidden"
             style={{
-              scrollSnapType: 'x mandatory',
-              scrollBehavior: 'smooth',
-              msOverflowStyle: 'none',
-              scrollbarWidth: 'none',
+              scrollSnapType: "x mandatory",
+              scrollBehavior: "smooth",
+              msOverflowStyle: "none",
+              scrollbarWidth: "none",
             }}
           >
             {product.gallery.map((item, index) => (
               <button
                 key={index}
-                onClick={() => {
-                  emblaInstance.current?.scrollTo(index);
-                  setActiveIndex(index);
-                }}
+                onClick={() => emblaInstance.current?.scrollTo(index)}
                 className={`w-1/5 lg:h-36 bg-gray-200 rounded overflow-hidden ${
-                  activeIndex === index ? "ring-2 ring-blue-500" : "hover:ring-2 ring-blue-500"
+                  activeIndex === index
+                    ? "ring-2 ring-blue-500"
+                    : "hover:ring-2 ring-blue-500"
                 }`}
                 style={{
                   flexShrink: 0,
-                  scrollSnapAlign: 'center',
+                  scrollSnapAlign: "center",
                 }}
               >
                 <img
@@ -160,15 +164,13 @@ export default function Home({ params }) {
 
           <button
             className="absolute right-0 top-1/2 transform -translate-y-1/2 bg-[#d4cfce] text-white p-1 xl:p-2 rounded-full hover:bg-gray-700 z-10"
-            onClick={() => {
-              scrollNext();
-              setActiveIndex((prev) => Math.min(prev + 1, product.gallery.length - 1));
-            }}
+            onClick={scrollNext}
           >
             <IoIosArrowForward className="text-black" />
           </button>
         </div>
 
+        {/* Yacht Details */}
         <div className="grid grid-cols-1 lg:grid-cols-5 md:grid-cols-1 items-center gap-0 rounded-lg w-full overflow-hidden shadow-md mb-7 mt-6 max-w-7xl mx-auto">
           <div className="bg-primary-blue text-white p-2 flex flex-col items-center">
             <span className="font-bold text-sm">Model:</span>
@@ -201,6 +203,7 @@ export default function Home({ params }) {
           </div>
         </div>
 
+        {/* Yacht Description and Details */}
         <div className="flex flex-col lg:flex-row w-full items-start lg:justify-between py-10">
           <div className="flex flex-col lg:items-start w-full lg:justify-start lg:w-1/2">
             <p className="text-sm text-left">

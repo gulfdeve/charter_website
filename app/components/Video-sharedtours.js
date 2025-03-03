@@ -66,7 +66,7 @@ export default function Videosharedtours() {
         )}
       </div>
 
-      <div className="absolute inset-0 z-10 flex flex-col items-center  justify-center top-[32%] sm:top-[51%] s:top-[49%] md:top-[57%] lg:-top-[35%] xl:-top-[10%]  text-white text-center p-2 md:px-14 lg:px-24 ">
+      <div className="absolute inset-0 z-10 flex flex-col items-center  justify-center top-[32%] sm:top-[51%] s:top-[49%] md:top-[57%] lg:-top-[35%] xl:-top-[2%]  text-white text-center p-2 md:px-14 lg:px-24 ">
         <h1 className="text-4xl font-bold mb-4 text-primary-blue-2 lg:text-white  xl:text-xl 2xl:text-4xl text-shadow">
           All-Inclusive Sharing Yacht Trips In Dubai
         </h1>

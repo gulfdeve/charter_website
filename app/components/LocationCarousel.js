@@ -52,8 +52,8 @@ export default function LocationCarousel() {
         align: "start",
         loop: true,
       });
-      const autoplayDesktop = setInterval(() => {
-        emblaDesktopInstance.current?.scrollNext();
+      const autoplay = setInterval(() => {
+        emblaInstance.current?.scrollNext();
       }, 3000);
       return () => {
         clearInterval(autoplay);
@@ -73,10 +73,9 @@ export default function LocationCarousel() {
         </h2>
       </div>
 
-      {/* Desktop Carousel */}
-      <div className="relative w-full overflow-hidden lg:pb-9 xl:px-66 2xl:px-66 hidden lg:block">
-        <div className="embla__viewport1" ref={emblaDesktopRef}>
-          <div className="embla__container1 flex">
+      <div className="relative w-full overflow-hidden lg:pb-9 xl:px-20">
+        <div className="embla__viewport" ref={emblaRef}>
+          <div className="embla__container flex">
             {TEMPORARY_DATA.map((item) => (
               <div
                 key={item.id}
@@ -86,7 +85,7 @@ export default function LocationCarousel() {
                   <iframe
                     title="google maps location"
                     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3613.2080337682214!2d55.1390062!3d25.094818299999996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f6b1f6453e121%3A0x45035717db6c3954!2sCENTAURUS%20CHARTER%20-%20Yachts%20%26%20Boats%20Rental%20Dubai%20Harbour!5e0!3m2!1sen!2s!4v1734525244924!5m2!1sen!2s"
-                    width="400"
+                    width="500"
                     height="450"
                     loading="lazy"
                     className="w-full"
@@ -119,51 +118,6 @@ export default function LocationCarousel() {
           onClick={scrollNext}
         >
           <IoIosArrowForward size={30} />
-        </button>
-      </div>
-
-      {/* Mobile Carousel */}
-      <div className="relative w-full overflow-hidden lg:hidden block py-10">
-        <div className="embla__viewport" ref={emblaMobileRef}>
-          <div className="embla__container flex">
-            {TEMPORARY_DATA.map((item) => (
-              <div key={item.id} className="embla__slide p-4">
-                <div className="relative bg-gray-200 overflow-hidden shadow-lg">
-                  <iframe
-                    title="google maps location"
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3613.2080337682214!2d55.1390062!3d25.094818299999996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f6b1f6453e121%3A0x45035717db6c3954!2sCENTAURUS%20CHARTER%20-%20Yachts%20%26%20Boats%20Rental%20Dubai%20Harbour!5e0!3m2!1sen!2s!4v1734525244924!5m2!1sen!2s"
-                    width="400"
-                    height="450"
-                    loading="lazy"
-                  ></iframe>
-                  <div className="absolute bottom-0 left-0 w-full bg-black bg-opacity-30 p-4 text-white">
-                    <h3 className="text-4xl font-bold text-center">
-                      {item.title}
-                    </h3>
-                    <p className="text-xl font-bold text-center">
-                      {item.description}
-                    </p>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        {/* Mobile Navigation Buttons */}
-        <button
-          aria-label="go previous slide"
-          className="bg-primary-blue text-primary-yellow hover:bg-primary-yellow hover:text-primary-blue transition duration-150 ease-in-out absolute left-2 top-1/2 -translate-y-1/2 bg-gray-800 text-white w-12 aspect-square rounded-full flex items-center justify-center hover:bg-gray-700 z-10"
-          onClick={scrollPrevMobile}
-        >
-          <IoIosArrowBack size={24} />
-        </button>
-        <button
-          aria-label="go next slide"
-          className="bg-primary-blue text-primary-yellow hover:bg-primary-yellow hover:text-primary-blue transition duration-150 ease-in-out absolute right-2 top-1/2 -translate-y-1/2 bg-gray-800 text-white w-12 aspect-square rounded-full flex items-center justify-center hover:bg-gray-700 z-10"
-          onClick={scrollNextMobile}
-        >
-          <IoIosArrowForward size={24} />
         </button>
       </div>
     </div>
