@@ -1,7 +1,8 @@
 "use client";
 import React from "react";
 import Videoweddingtrip from "@/app/components/Videoweddingtrip";
-import Link from "next/link";
+// import Link from "next/link";
+import { useRouter, usePathname, Link } from "@/app/i18n/routing";
 import Videosharedtours from "@/app/components/Video-sharedtours";
 import { FaWhatsapp } from "react-icons/fa";
 import YachtCarousel from "@/app/components/YachtCarousel"
@@ -60,7 +61,7 @@ const page = () => {
               key={yacht.id}
               className="flex flex-col justify-center px-5 bg-white rounded-2xl shadow-2xl h-auto"
             >
-              <Link href={`yacht-rentals/${yacht.slug}`}>
+              <Link href={`/yacht-rentals/${yacht.slug}`}>
                 <img
                   src={yacht.image}
                   className="rounded-2xl mt-5 h-[174px] md:h-[300px] object-cover"
@@ -69,7 +70,7 @@ const page = () => {
               </Link>
 
               <div className="flex flex-col items-center py-3">
-                <Link href={`yacht-rentals/${yacht.slug}`}>
+                <Link href={`/yacht-rentals/${yacht.slug}`}>
                   <h1 className="text-primary-blue  text-xl font-bold xl:pt-6 md:pb-2 hover:text-blue-600 transition-all duration-300 cursor-pointer py-1 md:py-0">
                     {yacht.title}
                   </h1>

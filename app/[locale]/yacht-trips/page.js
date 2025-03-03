@@ -1,7 +1,8 @@
 "use client";
 import React from "react";
 import { IoIosPricetag } from "react-icons/io";
-import Link from "next/link";
+// import Link from "next/link";
+import { useRouter, usePathname, Link } from "@/app/i18n/routing";
 import { useLanguage } from "@/app/context/LanguageContext";
 import { useData } from "@/app/context/DataContext";
 

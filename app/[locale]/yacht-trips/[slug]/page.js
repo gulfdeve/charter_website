@@ -1,7 +1,8 @@
 import React from "react";
 import { IoIosPricetag } from "react-icons/io";
 import { FaWhatsapp } from "react-icons/fa";
-import Link from "next/link";
+// import Link from "next/link";
+import { useRouter, usePathname, Link } from "@/app/i18n/routing";
 import Route from "@/app/components/Route";
 const page = async ({ params }) => {
   const { slug } = await params;
@@ -64,7 +65,7 @@ const page = async ({ params }) => {
             <div className="flex flex-col  justify-center px-3 xl:px-6 ">
               {/* Title with Link */}
               <Link
-                href={`/yachttrip/${offer.title
+                href={`/yacht-trips/${offer.title
                   .toLowerCase()
                   .replace(/ /g, "-")}`}
               >

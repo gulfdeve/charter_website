@@ -6,7 +6,8 @@ import { useData } from "@/app/context/DataContext";
 import { useLanguage } from "@/app/context/LanguageContext";
 import YachtCarousal from "@/app/components/YachtCarousel";
 import LocationCarousel from "@/app/components/LocationCarousel";
-import Link from "next/link";
+// import Link from "next/link";
+import { useRouter, usePathname, Link } from "@/app/i18n/routing";
 
 const page = ({ params }) => {
 const { data, loading, error } = useData();
@@ -24,13 +25,13 @@ return (
             {data?.packages?.map((package_a) => (
             <div key={package_a.id}
                 className="flex flex-col justify-start lg:justify-between rounded-md bg-white shadow-xl">
-                <Link href={`/${language}/watersports/${package_a.slug}`}>
+                <Link href={`/watersports/${package_a.slug}`}>
                 <img src={`https://www.centauruscharter.com/product/images/${package_a.image}`}
                     alt={package_a.translations[language].title} className="rounded-t-md w-full object-cover" />
                 </Link>
                 <div className="flex flex-col  justify-start px-5 lg:px-5">
                     <h2 className="text-[#232629]  text-2xl font-bold pt-4">
-                        <Link href={`/${language}/watersports/${package_a.slug}`}>
+                        <Link href={`/watersports/${package_a.slug}`}>
                         {package_a.translations[language].title}
                         </Link>
                     </h2>

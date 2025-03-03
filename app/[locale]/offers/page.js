@@ -5,7 +5,8 @@ import { FaWhatsapp } from "react-icons/fa";
 import { useData } from "@/app/context/DataContext";
 import { useLanguage } from "@/app/context/LanguageContext";
 import YachtCarousal from "@/app/components/YachtCarousel";
-import Link from "next/link";
+// import Link from "next/link";
+import { useRouter, usePathname, Link } from "@/app/i18n/routing";
 import Loading from "./loading";
 import Image from "next/image";
 const page = ({ params }) => {
@@ -31,7 +32,7 @@ const page = ({ params }) => {
               key={offer.id}
               className="flex flex-col justify-start lg:justify-between rounded-md bg-white shadow-xl"
             >
-              <Link href={`/${language}/offers/${offer.slug}`}>
+              <Link href={`/offers/${offer.slug}`}>
                 <Image 
                   src={`https://www.centauruscharter.com/product/images/${offer.image}`}
                   alt={offer.translations[language].title}
@@ -44,7 +45,7 @@ const page = ({ params }) => {
               </Link>
               <div className="flex flex-col  justify-start px-5 lg:px-5">
                 <h2 className="text-[#232629]  text-2xl font-bold pt-4">
-                  <Link href={`/${language}/offers/${offer.slug}`}>
+                  <Link href={`/offers/${offer.slug}`}>
                     {offer.translations[language].title}
                   </Link>
                 </h2>
@@ -67,7 +68,7 @@ const page = ({ params }) => {
                       WHATSAPP
                     </a>
                     <Link
-                      href={`/${language}/offers/${offer.slug}`}
+                      href={`/offers/${offer.slug}`}
                       className="blue-solid-button"
                     >
                       KNOW MORE

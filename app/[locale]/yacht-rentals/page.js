@@ -1,7 +1,8 @@
 "use client";
 
 import React, { useEffect, useRef, useState } from "react";
-import Link from "next/link";
+// import Link from "next/link";
+import { useRouter, usePathname, Link } from "@/app/i18n/routing";
 import EmblaCarousel from "embla-carousel";
 import { FaArrowLeft, FaArrowRight, FaYoutube } from "react-icons/fa";
 import { useData } from "@/app/context/DataContext";
