@@ -56,7 +56,7 @@ export default function EmblaCarouselComponent() {
       });
       const autoplayDesktop = setInterval(() => {
         emblaDesktopInstance.current?.scrollNext();
-      }, 3000);
+      }, 10000);
       return () => {
         clearInterval(autoplayDesktop);
         emblaDesktopInstance.current?.destroy();
@@ -96,7 +96,7 @@ export default function EmblaCarouselComponent() {
       </div>
 
       {/* Desktop Carousel */}
-      <div className="relative w-full overflow-hidden lg:pb-9 xl:px-66 2xl:px-66 hidden lg:block">
+      <div className="relative max-w-7xl overflow-hidden lg:pb-9 xl:px-66 2xl:px-66 hidden lg:block">
         <div className="embla__viewport1" ref={emblaDesktopRef}>
           <div className="embla__container1 flex">
             {TEMPORARY_DATA.map((item) => (
@@ -105,11 +105,11 @@ export default function EmblaCarouselComponent() {
                   <iframe
                     title="google maps location"
                     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3613.2080337682214!2d55.1390062!3d25.094818299999996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f6b1f6453e121%3A0x45035717db6c3954!2sCENTAURUS%20CHARTER%20-%20Yachts%20%26%20Boats%20Rental%20Dubai%20Harbour!5e0!3m2!1sen!2s!4v1734525244924!5m2!1sen!2s"
-                    width="400"
-                    height="450"
+                    width="380"
+                    height="380"
                     loading="lazy"
                   ></iframe>
-                  <div className="absolute bottom-0 left-0 w-full bg-black bg-opacity-30 p-4 text-white">
+                  <div className="location-carousel absolute bottom-0 left-0 w-full bg-black bg-opacity-30 p-4 text-white">
                     <h3 className="text-4xl font-bold text-center">
                       {item.title}
                     </h3>
@@ -150,11 +150,11 @@ export default function EmblaCarouselComponent() {
                   <iframe
                     title="google maps location"
                     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3613.2080337682214!2d55.1390062!3d25.094818299999996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f6b1f6453e121%3A0x45035717db6c3954!2sCENTAURUS%20CHARTER%20-%20Yachts%20%26%20Boats%20Rental%20Dubai%20Harbour!5e0!3m2!1sen!2s!4v1734525244924!5m2!1sen!2s"
-                    width="400"
-                    height="450"
+                    width="380"
+                    height="380"
                     loading="lazy"
                   ></iframe>
-                  <div className="absolute bottom-0 left-0 w-full bg-black bg-opacity-30 p-4 text-white">
+                  <div className="location-carousel absolute bottom-0 left-0 w-full bg-black bg-opacity-30 p-4 text-white">
                     <h3 className="text-4xl font-bold text-center">
                       {item.title}
                     </h3>
