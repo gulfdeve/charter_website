@@ -85,6 +85,7 @@ export default function Navbar() {
                 src="/CentaurusLogo.png"
                 alt="Centaurus charter Logo"
                 width={200}
+                priority={true}
                 height={100}
               />
             </Link>

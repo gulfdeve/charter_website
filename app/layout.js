@@ -10,11 +10,5 @@ const montserrat = Montserrat({
 
 
 export default function RootLayout({ children }) {
-  return (
-    <html lang="en">
-      <body className={`${montserrat.variable}`}>
-        {children}
-      </body>
-    </html>
-  );
+  return children;
 }
