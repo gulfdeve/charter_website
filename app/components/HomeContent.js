@@ -14,6 +14,7 @@ import { useData } from "@/app/context/DataContext";
 import { useLanguage } from "@/app/context/LanguageContext";
 import { Link } from "../i18n/routing";
 import Image from "next/image";
+import Yachtmobilecarousal from '@/app/components/Yachtmobilecarousal'
 
 export default function Home() {
   const t = useTranslations();
@@ -83,7 +84,7 @@ export default function Home() {
         
 
       {/* DESKTOP */}
-      <div className="">
+      <div className="hidden md:block">
         <div className="container mx-auto  lg:p-6">
           <div className="grid grid-col-1 md:grid-cols-2 p-6 2xl:px-36 2xl:gap-14 gap-10">
             {!loading &&
@@ -203,6 +204,10 @@ export default function Home() {
               ))}
           </div>
         </div>
+      </div>
+      <div className="md:hidden block">
+        <Yachtmobilecarousal/>
+
       </div>
       <div className="flex flex-col  md:flex-row-reverse items-center justify-center ">
         <div className="">

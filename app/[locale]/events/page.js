@@ -5,6 +5,7 @@ import { FaWhatsapp } from "react-icons/fa";
 import { useData } from "@/app/context/DataContext";
 import { useLanguage } from "@/app/context/LanguageContext";
 import YachtCarousal from "@/app/components/YachtCarousel";
+import Eventmobilecarousal from '@/app/components/EventMobilecarousal'
 // import Link from "next/link";
 import { useRouter, usePathname, Link } from "@/app/i18n/routing";
 import Loading from "./loading";
@@ -20,13 +21,13 @@ return (
 <>
     <div className="max-w-7xl mx-auto mt-14 md:mt-0">
         <div className="flex flex-col items-center justify-center py-10 ">
-            <h1 className=" text-primary-blue text-center font-bold text-4xl">
+            <h1 className=" text-primary-blue text-center font-bold md:text-4xl ">
                 YACHT EVENTS DUBAI
             </h1>
         </div>
 
-
-        <div className="grid grid-col-1 md:grid-cols-2 md:px-4 gap-7 pb-16 container mx-auto">
+        <div className="hidden md:block">
+        <div className="grid grid-col-1 md:grid-cols-2 md:px-4 gap-7 pb-4 container mx-auto">
             {data?.events?.map((event) => (
             <div key={event.id} className="flex flex-col justify-start lg:justify-between rounded-md bg-white shadow-xl">
                 <Link href={`/events/${event.slug}`}>
@@ -39,7 +40,7 @@ return (
                         {event.translations[language].title}
                         </Link>
                     </h2>
-                    <p className="text-[#232629]  font-bold text-base pt-2 pb-16">
+                    <p className="text-[#232629]  font-bold text-base pt-2 pb-4">
                       {event.translations[language].heading_2}
                     </p>
                     <div className="bg-[#232629] w-full h-[0.05rem]"></div>
@@ -67,8 +68,12 @@ return (
             </div>
             ))}
         </div>
+        </div>
+        <div className="block md:hidden">
+<Eventmobilecarousal/>
+</div>
     </div>
-    <div className="max-w-7xl mx-auto px-3 py-5 ">
+    <div className="max-w-7xl mx-auto px-3 pb-5  ">
         <p className=" text-gray-500 text-md ">
             Experience the perfect fusion of luxury, elegance, and unforgettable moments on the glistening waters of
             Dubai. As a premier destination for hosting extraordinary events, parties, and exclusive gatherings, Dubai
