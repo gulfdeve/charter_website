@@ -5,6 +5,7 @@ import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 import { useData } from "../context/DataContext";
 import { useLanguage } from "@/app/context/LanguageContext";
 import Image from "next/image";
+
 // import Link from "next/link";
 import { useRouter, usePathname, Link } from "@/app/i18n/routing";
 
