@@ -54,7 +54,7 @@ return (
                                 <p className="text-[#232629]  font-bold text-sm xl:text-base">
                                     Starting
                                     <br />
-                                    <span className="xl:text-xl">AED 3120</span>
+                                    <span className="xl:text-xl">AED {experience.amount}</span>
                                 </p>
                             </div>
                         </div>

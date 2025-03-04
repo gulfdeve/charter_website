@@ -1485,219 +1485,6 @@
       }
     },
     {
-      "id": 20,
-      "title": "77 Ft Yacht - Dionysos",
-      "image": "17025566991664188921Dionysos 564x400.webp",
-      "slug": "77ft-dionysos",
-      "per_hour_price": 8400,
-      "fareharbor_id": "366044",
-      "thumbnail_image": "1737100238Thumbnail-Dionysos.webp",
-      "gallery": [
-        {
-          "id": 815,
-          "image": "1652104654Dionysos 1.jpg",
-          "alt_tag": null
-        },
-        {
-          "id": 816,
-          "image": "1652104654Dionysos 2.jpg",
-          "alt_tag": null
-        },
-        {
-          "id": 817,
-          "image": "1652104654Dionysos 3.jpg",
-          "alt_tag": null
-        },
-        {
-          "id": 818,
-          "image": "1652104654Dionysos 4.jpg",
-          "alt_tag": null
-        },
-        {
-          "id": 819,
-          "image": "1652104654Dionysos 5.jpg",
-          "alt_tag": null
-        },
-        {
-          "id": 820,
-          "image": "1652104654Dionysos 6.jpg",
-          "alt_tag": null
-        },
-        {
-          "id": 821,
-          "image": "1652104654Dionysos 7.jpg",
-          "alt_tag": null
-        },
-        {
-          "id": 822,
-          "image": "1652104654Dionysos 8.jpg",
-          "alt_tag": null
-        },
-        {
-          "id": 823,
-          "image": "1652104654Dionysos 9.jpg",
-          "alt_tag": null
-        },
-        {
-          "id": 824,
-          "image": "1652104654Dionysos 10_.jpg",
-          "alt_tag": null
-        },
-        {
-          "id": 825,
-          "image": "1652104654Dionysos 11.jpg",
-          "alt_tag": null
-        },
-        {
-          "id": 826,
-          "image": "1652104654Dionysos 12.jpg",
-          "alt_tag": null
-        },
-        {
-          "id": 827,
-          "image": "1652104654Dionysos 13.jpg",
-          "alt_tag": null
-        },
-        {
-          "id": 828,
-          "image": "1652104654Dionysos 14.jpg",
-          "alt_tag": null
-        },
-        {
-          "id": 829,
-          "image": "1652104654Dionysos 15.jpg",
-          "alt_tag": null
-        },
-        {
-          "id": 830,
-          "image": "1652104654Dionysos 16.jpg",
-          "alt_tag": null
-        },
-        {
-          "id": 831,
-          "image": "1652104654Dionysos 17.jpg",
-          "alt_tag": null
-        },
-        {
-          "id": 832,
-          "image": "1652104654Dionysos 18.jpg",
-          "alt_tag": null
-        },
-        {
-          "id": 833,
-          "image": "1652104654Dionysos 19.jpg",
-          "alt_tag": null
-        },
-        {
-          "id": 834,
-          "image": "1652104654Dionysos 20.jpg",
-          "alt_tag": null
-        }
-      ],
-      "translations": {
-        "ar": {
-          "name_of_yacht": "77 Ft Yacht - Dionysos",
-          "size": "77 Feet",
-          "decks": "Lower and Upper (2 Decks)",
-          "yacht_specification": "4 Bedrooms, Saloon Hall, 3 Restrooms,  1 Kitchen, Front-end Sundeck, Sitting Area, Flybridge",
-          "maximum_guest": "20 Guests",
-          "kitchen_equipment": "Electric Grill, Microwave Oven, Refrigerator",
-          "music_system": "Available on board. Connecting Devices: Bluetooth & AUX Cable",
-          "availability": "According To Yacht Availability",
-          "no_of_staff": "1 Captain, 2 Crew",
-          "location": "D-A18 Berth, Dubai Harbour Marina (Near Bar Du Port)",
-          "model": "Majesty",
-          "good_for": "Family Events",
-          "cabin": "4",
-          "guests": "20",
-          "key_features": "<li>Fully AC yacht with all Amenities</li> <li>Outstanding Charter Services</li> <li>Dancefloor and Socializing Space</li> <li>Celebration in Style</li> <li>Exploring Enchanting Places</li>",
-          "preivew_text": "A perfect choice for family cruising, parties, and corporate events, our Majesty 77 Luxury Yacht offers plenty of space for entertaining and relaxing. This Yacht can accommodate up to 12 guests for Private cruising, featuring a fully equipped galley, offering a luxurious home at sea.",
-          "heading_2": "Luxury Yacht Charter Dubai",
-          "ideal_for": "<li>Luxury Cruising</li> <li>Festive Gatherings</li> <li><a href=\"https://www.centauruscharter.com/new-year-yacht-party-dubai\">New Year Party </a>/ Christmas Party</li>",
-          "description_after_features": "Indulge in fun on the sea by booking this luxury yacht.",
-          "slider_text": "A real head turner yacht with sleek look accommodating up to 20 guests",
-          "meta_title": "Luxury Yacht Charter in Dubai  –  Book 77ft yacht Dionysos",
-          "meta_description": "An impressive luxury yacht available for rent at Dubai Harbour Marina. Charter yacht for cruising, festive celebrations, New Year party. Book with Centaurus",
-          "meta_keyword": "Luxury Yacht Charter, luxury yacht charter dubai, charter yacht"
-        },
-        "en": {
-          "name_of_yacht": "77 Ft Yacht - Dionysos",
-          "size": "77 Feet",
-          "decks": "Lower and Upper (2 Decks)",
-          "yacht_specification": "4 Bedrooms, Saloon Hall, 3 Restrooms,  1 Kitchen, Front-end Sundeck, Sitting Area, Flybridge",
-          "maximum_guest": "20 Guests",
-          "kitchen_equipment": "Electric Grill, Microwave Oven, Refrigerator",
-          "music_system": "Available on board. Connecting Devices: Bluetooth & AUX Cable",
-          "availability": "According To Yacht Availability",
-          "no_of_staff": "1 Captain, 2 Crew",
-          "location": "D-A18 Berth, Dubai Harbour Marina (Near Bar Du Port)",
-          "model": "Majesty",
-          "good_for": "Family Events",
-          "cabin": "4",
-          "guests": "20",
-          "key_features": "<li>Fully AC yacht with all Amenities</li> <li>Outstanding Charter Services</li> <li>Dancefloor and Socializing Space</li> <li>Celebration in Style</li> <li>Exploring Enchanting Places</li>",
-          "preivew_text": "A perfect choice for family cruising, parties, and corporate events, our Majesty 77 Luxury Yacht offers plenty of space for entertaining and relaxing. This Yacht can accommodate up to 12 guests for Private cruising, featuring a fully equipped galley, offering a luxurious home at sea.",
-          "heading_2": "Luxury Yacht Charter Dubai",
-          "ideal_for": "<li>Luxury Cruising</li> <li>Festive Gatherings</li> <li><a href=\"https://www.centauruscharter.com/new-year-yacht-party-dubai\">New Year Party </a>/ Christmas Party</li>",
-          "description_after_features": "Indulge in fun on the sea by booking this luxury yacht.",
-          "slider_text": "A real head turner yacht with sleek look accommodating up to 20 guests",
-          "meta_title": "Luxury Yacht Charter in Dubai  –  Book 77ft yacht Dionysos",
-          "meta_description": "An impressive luxury yacht available for rent at Dubai Harbour Marina. Charter yacht for cruising, festive celebrations, New Year party. Book with Centaurus",
-          "meta_keyword": "Luxury Yacht Charter, luxury yacht charter dubai, charter yacht"
-        },
-        "ru": {
-          "name_of_yacht": "77-футовая яхта - Dionysos (Дионис)",
-          "size": "77 футов",
-          "decks": "Lower and Upper (2 Decks)",
-          "yacht_specification": "4 Bedrooms, Saloon Hall, 3 Restrooms,  1 Kitchen, Front-end Sundeck, Sitting Area, Flybridge",
-          "maximum_guest": "20 Guests",
-          "kitchen_equipment": "Electric Grill, Microwave Oven, Refrigerator",
-          "music_system": "Available on board. Connecting Devices: Bluetooth & AUX Cable",
-          "availability": "According To Yacht Availability",
-          "no_of_staff": "1 Captain, 2 Crew",
-          "location": "D-A18 Berth, Dubai Harbour Marina (Near Bar Du Port)",
-          "model": "Мэджести",
-          "good_for": "Семейного Отдыха",
-          "cabin": "4",
-          "guests": "20 чел.",
-          "key_features": "<li>Fully AC yacht with all amenities</li> \t<li>Outstanding charter services</li> \t<li>Dancefloor and socializing space</li> \t<li>Celebration in style</li> \t<li>Exploring enchanting places</li>",
-          "preivew_text": "Идеальный выбор для семейного круиза, вечеринок и корпоративных мероприятий. наша роскошная яхта Majesty 77 предлагает много места для развлечений и отдыха. Эта яхта может вместить до 12 гостей для частного круиза, с полностью оборудованным камбузом. Другими словами; Роскошный дом на воде.",
-          "heading_2": "Luxury Yacht Charter Dubai",
-          "ideal_for": "<li>Luxury cruising</li> \t<li>Festive gatherings</li> \t<li><a href=\"https://www.centauruscharter.com/new-year-yacht-party-dubai\">New year party</a>/ Christmas Party</li>",
-          "description_after_features": "Indulge into fun on sea by booking this luxury yacht.",
-          "slider_text": "Элитная яхта вместимостью до 20 чел.",
-          "meta_title": "Luxury Yacht Charter in Dubai  –  Book 77ft yacht Dionysos",
-          "meta_description": "An impressive luxury yacht available for rent at Dubai Harbour Marina. Charter yacht for cruising, festive celebrations, New Year party. Book with Centaurus",
-          "meta_keyword": "Luxury Yacht Charter, luxury yacht charter dubai, charter yacht"
-        },
-        "zh": {
-          "name_of_yacht": "77 尺游艇 - Dionysos",
-          "size": "77尺",
-          "decks": "下层和上层（2 层）",
-          "yacht_specification": "4 Bedrooms, Saloon Hall, 3 Restrooms,  1 Kitchen, Front-end Sundeck, Sitting Area, Flybridge",
-          "maximum_guest": "20 位客人",
-          "kitchen_equipment": "电烤炉, 微波炉, 冰箱",
-          "music_system": "船上可用。连接设备：蓝牙和 AUX 电缆",
-          "availability": "According To Yacht Availability",
-          "no_of_staff": "1名船长，2名船员",
-          "location": "D-A18 Berth, Dubai Harbour Marina (Near Bar Du Port)",
-          "model": "Majesty",
-          "good_for": "家庭宴会",
-          "cabin": "4间客舱",
-          "guests": "20",
-          "key_features": "<li>•配备所有设施的全空调游艇</li> <li>•卓越的包船服务</li> <li>•舞池和社交空间</li> <li>•有格调的 庆祝</li> <li>•探索迷人的地方</li>",
-          "preivew_text": "我们的 Majesty 77 豪华游艇是家庭巡游、派对和公司活动的完美选择，提供充足的娱乐和放松空间。进行私人巡航时，这艘游艇最多可容纳 12 位客人住宿，配备设备齐全的厨房，在海上提供豪华的家。",
-          "heading_2": "迪拜豪华游艇租赁",
-          "ideal_for": "<li>•豪华游轮 •</li> <li>节日聚会</li> <li>新年/圣诞派对</li>",
-          "description_after_features": "预订这艘豪华游艇，尽情享受海上乐趣。",
-          "slider_text": "真正的快速转向游艇，外观时尚， 最多可容纳 20 位客人",
-          "meta_title": "Luxury Yacht Charter in Dubai  –  Book 77ft yacht Dionysos",
-          "meta_description": "An impressive luxury yacht available for rent at Dubai Harbour Marina. Charter yacht for cruising, festive celebrations, New Year party. Book with Centaurus",
-          "meta_keyword": "Luxury Yacht Charter, luxury yacht charter dubai, charter yacht"
-        }
-      }
-    },
-    {
       "id": 24,
       "title": "118 Ft Yacht - Poseidon",
       "image": "17025567341677049461mega-yacht-cruise.webp",
@@ -1894,9 +1681,9 @@
   "offers": [
     {
       "id": 27,
-      "image": "1737983784BUSINESS COUNCIL.webp",
+      "image": "1740820755BUSINESS COUNCIL.webp",
       "slug": "business-council",
-      "validity": "2025-02-28",
+      "validity": "2025-03-31",
       "amount": 0,
       "whatsapp_url": "https://wa.link/iplrkp",
       "translations": {
@@ -1924,9 +1711,9 @@
     },
     {
       "id": 24,
-      "image": "1737983824FAZAA.webp",
+      "image": "1740820773FAZAA.webp",
       "slug": "fazaa-card",
-      "validity": "2025-02-28",
+      "validity": "2025-03-31",
       "amount": 0,
       "whatsapp_url": "https://wa.link/c10kxf",
       "translations": {
@@ -1956,7 +1743,7 @@
       "id": 26,
       "image": "1740121659Emirates Platinum Card Offer-WEB.webp",
       "slug": "emirates-staff",
-      "validity": "2025-02-28",
+      "validity": "2025-03-31",
       "amount": 595,
       "whatsapp_url": "https://wa.link/rh3rf3",
       "translations": {
@@ -1984,9 +1771,9 @@
     },
     {
       "id": 42,
-      "image": "1737983750WINTER OFFER.webp",
+      "image": "1740820811WINTER OFFER.webp",
       "slug": "dubai-yachts-winter-offers",
-      "validity": "2025-02-28",
+      "validity": "2025-03-31",
       "amount": 950,
       "whatsapp_url": "https://wa.link/2c29ae",
       "translations": {
@@ -2015,26 +1802,160 @@
   ],
   "experiences": [
     {
-      "id": 5,
-      "image": "17022813921650438739sunset cruiese.webp",
-      "slug": "sunset",
-      "thumbnail_image": "17290628901663660194sunset cruiese.webp",
+      "id": 12,
+      "image": "1695108131wedding.webp",
+      "slug": "yacht-wedding-trips",
+      "thumbnail_image": "1737535695Wedding Thumbnail.webp",
+      "whatsapp_url": "https://wa.link/4buk27",
+      "amount": 3500,
+      "yachts": "6%5000%4,20%33600%4,24%40000%4",
       "translations": {
         "en": {
-          "title": "SUNSET CRUISE",
-          "preivew_text": "Spend time cruising around the scenic places on a sunset yacht"
+          "title": "Yacht Wedding Trips",
+          "preivew_text": "Your Perfect Yacht Wedding in Dubai"
         },
         "ar": {
-          "title": "SUNSET CRUISE",
-          "preivew_text": "Spend time cruising around the scenic places on a sunset yacht"
+          "title": "Yacht Wedding Trips",
+          "preivew_text": "Your Perfect Yacht Wedding in Dubai"
         },
         "ru": {
-          "title": "SUNSET CRUISE",
-          "preivew_text": "Spend time cruising around the scenic places on a sunset yacht"
+          "title": "Yacht Wedding Trips",
+          "preivew_text": "Your Perfect Yacht Wedding in Dubai"
         },
         "zh": {
-          "title": "SUNSET CRUISE",
-          "preivew_text": "Spend time cruising around the scenic places on a sunset yacht"
+          "title": "Yacht Wedding Trips",
+          "preivew_text": "Your Perfect Yacht Wedding in Dubai"
+        }
+      }
+    },
+    {
+      "id": 11,
+      "image": "1737536806Night Yacht Party.webp",
+      "slug": "night-party",
+      "thumbnail_image": "1737536806Night Yacht Party Thumbnail.webp",
+      "whatsapp_url": "https://wa.link/c8ptw0",
+      "amount": 3120,
+      "yachts": "1%3120%0%3,5%3450%0%3,2%3240%0%3,6%3750%0%3,20%25200%0%3,24%30000%0%3",
+      "translations": {
+        "en": {
+          "title": "NIGHT PARTY",
+          "preivew_text": "Get the vibrant night party on a luxurious yacht"
+        },
+        "ar": {
+          "title": "NIGHT PARTY",
+          "preivew_text": "Get the vibrant night party on a luxurious yacht"
+        },
+        "ru": {
+          "title": "NIGHT PARTY",
+          "preivew_text": "Get the vibrant night party on a luxurious yacht"
+        },
+        "zh": {
+          "title": "NIGHT PARTY",
+          "preivew_text": "Get the vibrant night party on a luxurious yacht"
+        }
+      }
+    },
+    {
+      "id": 10,
+      "image": "17022814351652439264fishing trip.webp",
+      "slug": "fishing",
+      "thumbnail_image": "17290629471663659975fishing trip.webp",
+      "whatsapp_url": "https://wa.link/3zkkvm",
+      "amount": 1725,
+      "yachts": "27%2380%0%4,18%2380%0%4,1%4160%0%4,5%4600%0%4,2%4320%0%4,6%5000%0%4",
+      "translations": {
+        "en": {
+          "title": "FISHING TRIP",
+          "preivew_text": "Have a deep sea fishing experience aboard a boat"
+        },
+        "ar": {
+          "title": "FISHING TRIP",
+          "preivew_text": "Have a deep sea fishing experience aboard a boat"
+        },
+        "zh": {
+          "title": "FISHING TRIP",
+          "preivew_text": "Have a deep sea fishing experience aboard a boat"
+        }
+      }
+    },
+    {
+      "id": 9,
+      "image": "1737534825Birthday.webp",
+      "slug": "birthday-party",
+      "thumbnail_image": "1737534556Birthday Party Thumbnail.webp",
+      "whatsapp_url": "https://wa.link/lwe2a4",
+      "amount": 3120,
+      "yachts": "1%3120%0%3,5%3450%0%3,2%3240%0%3,6%3750%0%3,20%25200%0%3",
+      "translations": {
+        "en": {
+          "title": "BIRTHDAY PARTY",
+          "preivew_text": "Invite your mates and throw a yacht B'Day party in style"
+        },
+        "ar": {
+          "title": "BIRTHDAY PARTY",
+          "preivew_text": null
+        },
+        "ru": {
+          "title": "BIRTHDAY PARTY",
+          "preivew_text": "Invite your mates and throw a yacht B'Day party in style"
+        },
+        "zh": {
+          "title": "BIRTHDAY PARTY",
+          "preivew_text": "Invite your mates and throw a yacht B'Day party in style"
+        }
+      }
+    },
+    {
+      "id": 7,
+      "image": "17022814111652446184corporate event.webp",
+      "slug": "corporate",
+      "thumbnail_image": "17290636451663674326corporate event.webp",
+      "whatsapp_url": "https://wa.link/phcowl",
+      "amount": 3120,
+      "yachts": "1%3120%0%3,5%3450%0%3,2%3240%0%3,6%3750%0%3,20%25200%0%3,24%30000%0%3",
+      "translations": {
+        "en": {
+          "title": "CORPORATE EVENTS",
+          "preivew_text": "Organize your business parties and events on a stylish yacht"
+        },
+        "ar": {
+          "title": "CORPORATE EVENTS",
+          "preivew_text": null
+        },
+        "ru": {
+          "title": "CORPORATE EVENTS",
+          "preivew_text": "Organize your business parties and events on a stylish yacht"
+        },
+        "zh": {
+          "title": "CORPORATE EVENTS",
+          "preivew_text": "Organize your business parties and events on a stylish yacht"
+        }
+      }
+    },
+    {
+      "id": 8,
+      "image": "1737535139Private Events.webp",
+      "slug": "private",
+      "thumbnail_image": "1737535139Private Events Thumbnail.webp",
+      "whatsapp_url": "https://wa.link/xhsh8b",
+      "amount": 3120,
+      "yachts": "1%3120%0%3,5%3450%0%3,2%3240%0%3,6%3750%0%3,20%25200%0%3,24%30000%0%3",
+      "translations": {
+        "en": {
+          "title": "PRIVATE EVENTS",
+          "preivew_text": "Celebrate your occasions on the glittering waters"
+        },
+        "ar": {
+          "title": "PRIVATE EVENTS",
+          "preivew_text": null
+        },
+        "ru": {
+          "title": "PRIVATE EVENTS",
+          "preivew_text": "Celebrate your occasions on the glittering waters"
+        },
+        "zh": {
+          "title": "PRIVATE EVENTS",
+          "preivew_text": null
         }
       }
     },
@@ -2043,6 +1964,9 @@
       "image": "17022814031650438816anniversary & proposal.webp",
       "slug": "anniversary",
       "thumbnail_image": "17290629631663675904anniversary & proposal.webp",
+      "whatsapp_url": "https://wa.link/if2ty1",
+      "amount": 3120,
+      "yachts": "1%3120%0%3,5%3450%0%3,2%3240%0%3,6%3750%0%3,20%25200%0%3",
       "translations": {
         "en": {
           "title": "YACHT FOR ANNIVERSARY & PROPOSAL",
@@ -2063,142 +1987,29 @@
       }
     },
     {
-      "id": 8,
-      "image": "1737535139Private Events.webp",
-      "slug": "private",
-      "thumbnail_image": "1737535139Private Events Thumbnail.webp",
+      "id": 5,
+      "image": "17022813921650438739sunset cruiese.webp",
+      "slug": "sunset",
+      "thumbnail_image": "17290628901663660194sunset cruiese.webp",
+      "whatsapp_url": "https://wa.link/fu1les",
+      "amount": 3120,
+      "yachts": "1%3120%0%3,5%3450%0%3,2%3240%0%3,6%3750%0%3,20%25200%0%3",
       "translations": {
         "en": {
-          "title": "PRIVATE EVENTS",
-          "preivew_text": "Celebrate your occasions on the glittering waters"
+          "title": "SUNSET CRUISE",
+          "preivew_text": "Spend time cruising around the scenic places on a sunset yacht"
         },
         "ar": {
-          "title": "PRIVATE EVENTS",
-          "preivew_text": null
+          "title": "SUNSET CRUISE",
+          "preivew_text": "Spend time cruising around the scenic places on a sunset yacht"
         },
         "ru": {
-          "title": "PRIVATE EVENTS",
-          "preivew_text": "Celebrate your occasions on the glittering waters"
+          "title": "SUNSET CRUISE",
+          "preivew_text": "Spend time cruising around the scenic places on a sunset yacht"
         },
         "zh": {
-          "title": "PRIVATE EVENTS",
-          "preivew_text": null
-        }
-      }
-    },
-    {
-      "id": 7,
-      "image": "17022814111652446184corporate event.webp",
-      "slug": "corporate",
-      "thumbnail_image": "17290636451663674326corporate event.webp",
-      "translations": {
-        "en": {
-          "title": "CORPORATE EVENTS",
-          "preivew_text": "Organize your business parties and events on a stylish yacht"
-        },
-        "ar": {
-          "title": "CORPORATE EVENTS",
-          "preivew_text": null
-        },
-        "ru": {
-          "title": "CORPORATE EVENTS",
-          "preivew_text": "Organize your business parties and events on a stylish yacht"
-        },
-        "zh": {
-          "title": "CORPORATE EVENTS",
-          "preivew_text": "Organize your business parties and events on a stylish yacht"
-        }
-      }
-    },
-    {
-      "id": 9,
-      "image": "1737534825Birthday.webp",
-      "slug": "birthday-party",
-      "thumbnail_image": "1737534556Birthday Party Thumbnail.webp",
-      "translations": {
-        "en": {
-          "title": "BIRTHDAY PARTY",
-          "preivew_text": "Invite your mates and throw a yacht B'Day party in style"
-        },
-        "ar": {
-          "title": "BIRTHDAY PARTY",
-          "preivew_text": null
-        },
-        "ru": {
-          "title": "BIRTHDAY PARTY",
-          "preivew_text": "Invite your mates and throw a yacht B'Day party in style"
-        },
-        "zh": {
-          "title": "BIRTHDAY PARTY",
-          "preivew_text": "Invite your mates and throw a yacht B'Day party in style"
-        }
-      }
-    },
-    {
-      "id": 10,
-      "image": "17022814351652439264fishing trip.webp",
-      "slug": "fishing",
-      "thumbnail_image": "17290629471663659975fishing trip.webp",
-      "translations": {
-        "en": {
-          "title": "FISHING TRIP",
-          "preivew_text": "Have a deep sea fishing experience aboard a boat"
-        },
-        "ar": {
-          "title": "FISHING TRIP",
-          "preivew_text": "Have a deep sea fishing experience aboard a boat"
-        },
-        "zh": {
-          "title": "FISHING TRIP",
-          "preivew_text": "Have a deep sea fishing experience aboard a boat"
-        }
-      }
-    },
-    {
-      "id": 11,
-      "image": "1737536806Night Yacht Party.webp",
-      "slug": "night-party",
-      "thumbnail_image": "1737536806Night Yacht Party Thumbnail.webp",
-      "translations": {
-        "en": {
-          "title": "NIGHT PARTY",
-          "preivew_text": "Get the vibrant night party on a luxurious yacht"
-        },
-        "ar": {
-          "title": "NIGHT PARTY",
-          "preivew_text": "Get the vibrant night party on a luxurious yacht"
-        },
-        "ru": {
-          "title": "NIGHT PARTY",
-          "preivew_text": "Get the vibrant night party on a luxurious yacht"
-        },
-        "zh": {
-          "title": "NIGHT PARTY",
-          "preivew_text": "Get the vibrant night party on a luxurious yacht"
-        }
-      }
-    },
-    {
-      "id": 12,
-      "image": "1695108131wedding.webp",
-      "slug": "yacht-wedding-trips",
-      "thumbnail_image": "1737535695Wedding Thumbnail.webp",
-      "translations": {
-        "en": {
-          "title": "Yacht Wedding Trips",
-          "preivew_text": "Your Perfect Yacht Wedding in Dubai"
-        },
-        "ar": {
-          "title": "Yacht Wedding Trips",
-          "preivew_text": "Your Perfect Yacht Wedding in Dubai"
-        },
-        "ru": {
-          "title": "Yacht Wedding Trips",
-          "preivew_text": "Your Perfect Yacht Wedding in Dubai"
-        },
-        "zh": {
-          "title": "Yacht Wedding Trips",
-          "preivew_text": "Your Perfect Yacht Wedding in Dubai"
+          "title": "SUNSET CRUISE",
+          "preivew_text": "Spend time cruising around the scenic places on a sunset yacht"
         }
       }
     }
