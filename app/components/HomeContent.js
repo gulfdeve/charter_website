@@ -91,7 +91,7 @@ export default function Home() {
               data?.products?.map((product) => (
                 <div
                   key={product.id}
-                  className="flex flex-col border border-gray-400 xl:p-10 p-5 rounded-lg shadow-custom"
+                  className="flex flex-col border border-gray-400 xl:p-10 3xl:p-16 p-5 rounded-lg shadow-custom"
                 >
                   <Link  href={`/yacht-rentals/${product.slug}`}>
                   <h2 className=" xl:text-4xl text-3xl font-bold">
