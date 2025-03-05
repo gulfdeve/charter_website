@@ -5,7 +5,7 @@ import { IoIosPricetag } from "react-icons/io";
 import { useRouter, usePathname, Link } from "@/app/i18n/routing";
 import { useLanguage } from "@/app/context/LanguageContext";
 import { useData } from "@/app/context/DataContext";
-
+import ExperienceMobilecarousal from "@/app/components/ExperienceMobilecarousal"
 const page = () => {
 const { data, loading, error } = useData();
 const { language } = useLanguage();
@@ -14,10 +14,11 @@ return (
 <>
     <div className="max-w-7xl mx-auto mt-14 md:mt-0">
         <div className="flex flex-col items-center justify-center py-10">
-            <h1 className=" text-primary-blue text-center font-bold text-4xl">
+            <h1 className=" text-primary-blue text-center font-bold text-xl">
                 YACHT TRIPS & EXPERIENCES IN DUBAI
             </h1>
         </div>
+        <div className="md:block hidden">
         <div className="grid grid-col-1 md:grid-cols-2 md:px-4 gap-7 pb-16">
             {!loading &&
             data?.experiences?.map((experience) => {
@@ -67,6 +68,10 @@ return (
             </div>
             );
             })}
+        </div>
+        </div>
+        <div className="md:hidden block">
+            <ExperienceMobilecarousal/>
         </div>
         <div className="max-w-7xl mx-auto px-3 ">
             <p className=" text-gray-500 text-md ">

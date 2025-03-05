@@ -41,11 +41,11 @@ const TEMPORARY_DATA = [
   },
 ];
 
-export default function LocationCarousel() {
+// Mobile Version: Uses updated card design and responsive widths
+function MobileCarousel() {
   const emblaRef = useRef(null);
   const emblaInstance = useRef(null);
 
-  // Initialize Embla carousel with loop and autoplay
   useEffect(() => {
     if (emblaRef.current) {
       emblaInstance.current = EmblaCarousel(emblaRef.current, {
@@ -66,7 +66,81 @@ export default function LocationCarousel() {
   const scrollNext = () => emblaInstance.current?.scrollNext();
 
   return (
-    <div className="flex flex-col items-center container mx-auto">
+    <div className="container mx-auto md:px-4 pb-16 md:hidden">
+      {/* Optional heading */}
+      <div className="flex flex-col items-center justify-center py-10">
+        <h2 className="text-primary-blue text-center font-bold text-4xl">
+          YACHT LOCATION
+        </h2>
+      </div>
+
+      <div className="relative">
+        {/* Embla viewport */}
+        <div ref={emblaRef} className="overflow-hidden px-3 py-5 ">
+          {/* Embla container */}
+          <div className="flex gap-4 px-3">
+            {TEMPORARY_DATA.map((item) => (
+              <div
+                key={item.id}
+                // Control how many cards appear at once (85%, 50%, 40%, etc.)
+                className="flex-[0_0_80%] md:flex-[0_0_50%] lg:flex-[0_0_40%]"
+              >
+                <div className="bg-white shadow-md rounded-md overflow-hidden h-full">
+                  {/* Map iframe (top) */}
+                  <div className="relative w-full h-52 p-4">
+                    <iframe
+                      title="google maps location"
+                      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3613.2080337682214!2d55.1390062!3d25.094818299999996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f6b1f6453e121%3A0x45035717db6c3954!2sCENTAURUS%20CHARTER%20-%20Yachts%20%26%20Boats%20Rental%20Dubai%20Harbour!5e0!3m2!1sen!2s!4v1734525244924!5m2!1sen!2s"
+                      className="absolute inset-0 w-full h-full"
+                      loading="lazy"
+                    ></iframe>
+                  </div>
+                  
+                  {/* Card text (bottom) */}
+                  <div className="p-4 text-center">
+                    <h3 className="text-lg font-bold text-gray-800">
+                      {item.title}
+                    </h3>
+                    <p className="text-sm text-gray-600">{item.subTitle}</p>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+        {/* Navigation Buttons */}
+       
+      </div>
+    </div>
+  );
+}
+
+// Desktop Version: Keeps your original design code
+function DesktopCarousel() {
+  const emblaRef = useRef(null);
+  const emblaInstance = useRef(null);
+
+  useEffect(() => {
+    if (emblaRef.current) {
+      emblaInstance.current = EmblaCarousel(emblaRef.current, {
+        align: "start",
+        loop: true,
+      });
+      const autoplay = setInterval(() => {
+        emblaInstance.current?.scrollNext();
+      }, 3000);
+      return () => {
+        clearInterval(autoplay);
+        emblaInstance.current?.destroy();
+      };
+    }
+  }, []);
+
+  const scrollPrev = () => emblaInstance.current?.scrollPrev();
+  const scrollNext = () => emblaInstance.current?.scrollNext();
+
+  return (
+    <div className="flex flex-col items-center container mx-auto hidden lg:block">
       <div className="flex flex-col items-center justify-center">
         <h2 className="text-primary-blue text-center font-bold text-4xl py-10">
           YACHT LOCATION
@@ -121,5 +195,14 @@ export default function LocationCarousel() {
         </button>
       </div>
     </div>
+  );
+}
+
+export default function LocationCarousel() {
+  return (
+    <>
+      <MobileCarousel />
+      <DesktopCarousel />
+    </>
   );
 }

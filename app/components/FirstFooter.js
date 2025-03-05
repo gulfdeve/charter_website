@@ -3,7 +3,10 @@ import React, { useState } from "react";
 import { useLocale, useTranslations } from "next-intl";
 import { Link } from "@/app/i18n/routing";
 import { useData } from "@/app/context/DataContext";
-
+import { FaPhoneAlt } from "react-icons/fa";
+import { FaWhatsapp } from "react-icons/fa";
+import { MdEmail } from "react-icons/md";
+import { FaMapMarkerAlt } from "react-icons/fa";
 export default function FirstFooter() {
   const [openIndex, setOpenIndex] = useState(null);
 
@@ -116,134 +119,58 @@ export default function FirstFooter() {
     {
       title: t("footer.reach-out-to-us"),
       content: (
-        <ul className="flex flex-col gap-2 text-[#969696]">
-          <li className="mb-2 flex items-center md:justify-start justify-center gap-2">
-            <svg
-              stroke="currentColor"
-              fill="currentColor"
-              strokeWidth="0"
-              viewBox="0 0 384 512"
-              className="w-[24px] text-[#969696]"
-              height="1em"
-              width="1em"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path d="M172.268 501.67C26.97 291.031 0 269.413 0 192 0 85.961 85.961 0 192 0s192 85.961 192 192c0 77.413-26.97 99.031-172.268 309.67-9.535 13.774-29.93 13.773-39.464 0zM192 272c44.183 0 80-35.817 80-80s-35.817-80-80-80-80 35.817-80 80 35.817 80 80 80z"></path>
-            </svg>
+        <ul className="text-[#969696] space-y-3">
+        {[
+          {
+            address: "Marina Walk (Near Spinneys)",
+            location: "Dubai, United Arab Emirates",
+          },
+          {
+            address: "Dubai Harbour Marina",
+            location: "Dubai, United Arab Emirates",
+          },
+          {
+            address: "Berth No AB05 - near Harbour Bridge - Dubai Harbour",
+            location: "Dubai, United Arab Emirates",
+          },
+          {
+            address:
+              "Dubai Harbour Marina, Berth No A-G36 Near Dockmaster 1 Building",
+            location: "Dubai, United Arab Emirates",
+          },
+        ].map((item, index) => (
+          <li key={index} className="flex items-start gap-3">
+            <FaMapMarkerAlt className="w-5 h-5 flex-shrink-0 text-[#969696]" />
             <a
               href="https://www.google.com/maps/place/CENTAURUS+CHARTER+-+Yachts+%26+Boats+Rental+Dubai+Harbour"
-              onClick={scrollToTop}
-              className="text-center"
+              className="hover:text-white"
             >
-              Marina Walk (Near Spinneys)
-              <br /> Dubai, United Arab Emirates
-            </a>
-          </li>
-          <li className="mb-2 flex items-center md:justify-start justify-center gap-2">
-            <svg
-              stroke="currentColor"
-              fill="currentColor"
-              strokeWidth="0"
-              viewBox="0 0 384 512"
-              className="w-[24px] text-[#969696]"
-              height="1em"
-              width="1em"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path d="M172.268 501.67C26.97 291.031 0 269.413 0 192 0 85.961 85.961 0 192 0s192 85.961 192 192c0 77.413-26.97 99.031-172.268 309.67-9.535 13.774-29.93 13.773-39.464 0zM192 272c44.183 0 80-35.817 80-80s-35.817-80-80-80-80 35.817-80 80 35.817 80 80 80z"></path>
-            </svg>
-            <a
-              href="https://www.google.com/maps/place/CENTAURUS+CHARTER+-+Yachts+%26+Boats+Rental+Dubai+Harbour"
-              onClick={scrollToTop}
-              className="text-center"
-            >
-              Dubai Harbour Marina
-              <br /> Dubai, United Arab Emirates
-            </a>
-          </li>
-          <li className="mb-2 flex items-center md:justify-start justify-center gap-2">
-            <svg
-              stroke="currentColor"
-              fill="currentColor"
-              strokeWidth="0"
-              viewBox="0 0 384 512"
-              className="w-[24px] text-[#969696]"
-              height="1em"
-              width="1em"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path d="M172.268 501.67C26.97 291.031 0 269.413 0 192 0 85.961 85.961 0 192 0s192 85.961 192 192c0 77.413-26.97 99.031-172.268 309.67-9.535 13.774-29.93 13.773-39.464 0zM192 272c44.183 0 80-35.817 80-80s-35.817-80-80-80-80 35.817-80 80 35.817 80 80 80z"></path>
-            </svg>
-            <a
-              href="https://www.google.com/maps/place/CENTAURUS+CHARTER+-+Yachts+%26+Boats+Rental+Dubai+Harbour"
-              onClick={scrollToTop}
-              className="text-center"
-            >
-              Berth No AB05 - near Harbour Bridge - Dubai Harbour
-              <br /> Dubai, United Arab Emirates
-            </a>
-          </li>
-          <li className="mb-2 flex items-start md:justify-start justify-center gap-2">
-            <svg
-              stroke="currentColor"
-              fill="currentColor"
-              strokeWidth="0"
-              viewBox="0 0 384 512"
-              className="w-[24px] text-[#969696]"
-              height="1em"
-              width="1em"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path d="M172.268 501.67C26.97 291.031 0 269.413 0 192 0 85.961 85.961 0 192 0s192 85.961 192 192c0 77.413-26.97 99.031-172.268 309.67-9.535 13.774-29.93 13.773-39.464 0zM192 272c44.183 0 80-35.817 80-80s-35.817-80-80-80-80 35.817-80 80 35.817 80 80 80z"></path>
-            </svg>
-            <a
-              href="https://www.google.com/maps/place/CENTAURUS+CHARTER+-+Yachts+%26+Boats+Rental+Dubai+Harbour"
-              onClick={scrollToTop}
-              className="text-center"
-            >
-              Dubai Harbour Marina, Berth No A-G36 Near Dockmaster 1 Building
-              <br /> Dubai, United Arab Emirates
-            </a>
-          </li>
-          <li className="mb-2 flex flex-col items-center justify-start text-left md:text-center">
-            <svg
-              stroke="currentColor"
-              fill="currentColor"
-              strokeWidth="0"
-              viewBox="0 0 512 512"
-              className="w-[24px] text-[#969696] mb-1"
-              height="1em"
-              width="1em"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path d="M493.4 24.6l-104-24c-11.3-2.6-22.9 3.3-27.5 13.9l-48 112c-4.2 9.8-1.4 21.3 6.9 28l60.6 49.6c-36 76.7-98.9 140.5-177.2 177.2l-49.6-60.6c-6.8-8.3-18.2-11.1-28-6.9l-112 48C3.9 366.5-2 378.1.6 389.4l24 104C27.1 504.2 36.7 512 48 512c256.1 0 464-207.5 464-464 0-11.2-7.7-20.9-18.6-23.4z"></path>
-            </svg>
-            <p>
-              <a
-                className="inline-block"
-                href="tel:+97143521833"
-                onClick={scrollToTop}
-              >
-                +971 4 352 1833
-              </a>
+              {item.address}
               <br />
-              <a
-                className="inline-block"
-                href="tel:+971524901269"
-                onClick={scrollToTop}
-              >
-                +971 52 490 1269
-              </a>
-              <br />
-              <a
-                className="inline-block"
-                href="mailto:info@centauruscharter.com"
-                onClick={scrollToTop}
-              >
-                info@centauruscharter.com
-              </a>
-            </p>
+              {item.location}
+            </a>
           </li>
+        ))}
+          <ul className="text-[#969696] space-y-2">
+      <li className="flex items-center space-x-2">
+        <FaPhoneAlt className="w-5 h-5" />
+        <a href="tel:+97143521833" className="hover:text-white">
+          +971 4 352 1833
+        </a>
+      </li>
+      <li className="flex items-center space-x-2">
+        <FaWhatsapp className="w-5 h-5" />
+        <a href="tel:+971524901269" className="hover:text-white">
+          +971 52 490 1269
+        </a>
+      </li>
+      <li className="flex items-center space-x-2">
+        <MdEmail className="w-5 h-5" />
+        <a href="mailto:info@centauruscharter.com" className="hover:text-white">
+          info@centauruscharter.com
+        </a>
+      </li>
+    </ul>
         </ul>
       ),
     },
@@ -251,7 +178,7 @@ export default function FirstFooter() {
       title: "For Enquiries",
       content: (
         <ul className="text-[#969696]">
-          <li className="flex flex-col md:items-start items-center text-center">
+          <li className="flex flex-col md:items-start items-center text-center md:text-left">
             <p className="font-semibold py-3">English / Russian</p>
             <a className="mb-2 inline-block" href="tel:+971505484685" onClick={scrollToTop}>
               +971 50 548 4685
@@ -263,31 +190,31 @@ export default function FirstFooter() {
               +971 50 201 4225
             </a>
           </li>
-          <li className="flex flex-col md:items-start items-center text-center">
+          <li className="flex flex-col md:items-start items-center text-center md:text-left">
             <p className="font-semibold py-3">English / Spanish / Portuguese</p>
             <a className="mb-2 inline-block" href="tel:+971567277387" onClick={scrollToTop}>
               +971 56 727 7387
             </a>
           </li>
-          <li className="flex flex-col md:items-start items-center text-center">
+          <li className="flex flex-col md:items-start items-center text-center md:text-left">
             <p className="font-semibold py-3">English / Chinese</p>
             <a className="mb-2 inline-block" href="tel:+971506484625" onClick={scrollToTop}>
               +971 50 648 4625
             </a>
           </li>
-          <li className="flex flex-col md:items-start items-center text-center">
+          <li className="flex flex-col md:items-start items-center text-center md:text-left">
             <p className="font-semibold py-3">English / Arabic</p>
             <a className="mb-2 inline-block" href="tel:+971565017078" onClick={scrollToTop}>
               +971 56 501 7078
             </a>
           </li>
-          <li className="flex flex-col md:items-start items-center text-center">
+          <li className="flex flex-col md:items-start items-center text-center md:text-left">
             <p className="font-semibold py-3">English / Filipino</p>
             <a className="mb-2 inline-block" href="tel:+971565017057" onClick={scrollToTop}>
               +971 56 501 7057
             </a>
           </li>
-          <li className="flex flex-col md:items-start items-center text-center">
+          <li className="flex flex-col md:items-start items-center text-center md:text-left">
             <p className="font-semibold py-3">English / Hindi</p>
             <a className="mb-2 inline-block" href="tel:+971501452203" onClick={scrollToTop}>
               +971 50 145 2203
