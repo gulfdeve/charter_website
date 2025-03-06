@@ -8,7 +8,7 @@ import { FaArrowLeft, FaArrowRight, FaYoutube } from "react-icons/fa";
 import { useData } from "@/app/context/DataContext";
 import { useLanguage } from "@/app/context/LanguageContext";
 import { useLocale } from "next-intl";
-import Loading from "./loading";
+// import Loading from "./loading";
 import ExperienceCarousal from "@/app/components/ExperienceCarousal";
 /* 
   YachtCard Component:
@@ -44,9 +44,9 @@ const YachtCard = ({ yacht }) => {
     if (emblaApi.current) emblaApi.current.scrollNext();
   };
 
-  if (loading) {
-    return <Loading />;
-  }
+  // if (loading) {
+  //   return <Loading />;
+  // }
 
   return (
     <>

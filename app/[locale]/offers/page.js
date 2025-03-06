@@ -7,15 +7,15 @@ import { useLanguage } from "@/app/context/LanguageContext";
 import YachtCarousal from "@/app/components/YachtCarousel";
 // import Link from "next/link";
 import { useRouter, usePathname, Link } from "@/app/i18n/routing";
-import Loading from "./loading";
+// import Loading from "./loading";
 import Image from "next/image";
 const page = ({ params }) => {
   const { data, loading, error } = useData();
   const { language, changeLanguage } = useLanguage();
 
-  if (loading) {
-    return <Loading />;
-  }
+  // if (loading) {
+  //   return <Loading />;
+  // }
 
   return (
     <>
