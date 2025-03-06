@@ -1,4 +1,6 @@
 import React from "react";
+import fs from "fs/promises";
+import path from "path";
 
 interface Metadata {
   title: string;
@@ -17,16 +19,21 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
 export async function generateMetadata({
   params,
 }: {
-    params: Promise<{ slug: string; locale: string }>;
+  params: Promise<{ slug: string; locale: string }>;
 }): Promise<Metadata> {
   const { slug, locale } = await params;
   const resolvedLocale = locale || "en"; // Default to English if locale is missing
 
   try {
-    const response = await fetch(
-      "https://www.centauruscharter.com/api/api_new/basic"
-    );
-    const data = await response.json();
+
+    // Path to your JSON file in the public directory
+    const dataPath = path.join(process.cwd(), 'public', 'data.json');
+
+    // Read the file
+    const jsonData = await fs.readFile(dataPath, 'utf8');
+    const data = JSON.parse(jsonData);
+
+    console.log("Reading from local data.json");
 
     // Match metadata using dynamic slug
     const metaData = data?.meta_tags?.[`yachts-for-sale-dubai/${slug}`]?.[resolvedLocale]?.[0];

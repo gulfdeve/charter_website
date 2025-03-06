@@ -1,5 +1,7 @@
 import React from "react";
 import { useLocale } from "next-intl";
+import fs from "fs/promises";
+import path from "path";
 
 interface Metadata {
   title: string;
@@ -38,13 +40,20 @@ export async function generateMetadata({
   const resolvedLocale = locale || "en"; // Default to English if locale is missing
 
   try {
-    const response = await fetch("https://www.centauruscharter.com/api/api_new/basic");
-    const data: APIResponse = await response.json();
+
+    // Path to your JSON file in the public directory
+    const dataPath = path.join(process.cwd(), 'public', 'data.json');
+
+    // Read the file
+    const jsonData = await fs.readFile(dataPath, 'utf8');
+    const data = JSON.parse(jsonData);
+
+    console.log("Reading from local data.json");
 
     // Attempt to get metadata dynamically for yacht-rentals/{slug}
     const metaYachtRentals: APIMetaData | undefined =
       data?.meta_tags?.[`yacht-rentals/${slug}`]?.[resolvedLocale]?.[0];
-    
+
     // Fallback to "yacht-rentals" metadata if individual slug is missing
     const metaYachtRentalsGeneral: APIMetaData | undefined =
       data?.meta_tags?.["yacht-rentals"]?.[resolvedLocale]?.[0];

@@ -1,4 +1,6 @@
 import React from "react";
+import path from "path";
+import fs from "fs/promises";
 
 interface Metadata {
   title: string;
@@ -23,8 +25,15 @@ export async function generateMetadata({
   const resolvedLocale = locale || "en"; // Default to English if locale is missing
 
   try {
-    const response = await fetch("https://www.centauruscharter.com/api/api_new/basic");
-    const data = await response.json();
+
+    // Path to your JSON file in the public directory
+    const dataPath = path.join(process.cwd(), 'public', 'data.json');
+
+    // Read the file
+    const jsonData = await fs.readFile(dataPath, 'utf8');
+    const data = JSON.parse(jsonData);
+
+    console.log("Reading from local data.json");
 
     // Attempt to get metadata for watersports/{slug}
     const metaData = data?.meta_tags?.[`watersports/${slug}`]?.[resolvedLocale]?.[0];

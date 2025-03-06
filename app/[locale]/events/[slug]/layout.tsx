@@ -1,5 +1,7 @@
 import React from 'react';
 import { useLocale } from "next-intl";
+import fs from 'fs/promises';
+import path from 'path';
 
 interface Metadata {
   title: string;
@@ -48,8 +50,15 @@ export async function generateMetadata({
  
 
   try {
-    const response = await fetch("https://www.centauruscharter.com/api/api_new/basic");
-    const data: APIResponse = await response.json();
+
+        // Path to your JSON file in the public directory
+        const dataPath = path.join(process.cwd(), 'public', 'data.json');
+    
+        // Read the file
+        const jsonData = await fs.readFile(dataPath, 'utf8');
+        const data = JSON.parse(jsonData);
+        
+        console.log("Reading from local data.json");
     
 
     // Find the event by slug

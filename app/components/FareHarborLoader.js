@@ -20,7 +20,6 @@ const FareHarborLoader = () => {
     // Add event listener for all clicks on links starting with "https://fareharbor.com"
     const handleClick = (event) => {
       const target = event.target;
-      console.log("coming here clicked");
 
       // Check if the clicked element is a link and its href starts with the desired URL
       if (
@@ -28,8 +27,6 @@ const FareHarborLoader = () => {
         (target.tagName === 'IMG' && target.closest('a') && target.closest('a').href.startsWith('https://fareharbor.com'))
       ) {
         event.preventDefault(); // Prevent the link from redirecting immediately
-        console.log("coming here clicked2");
-        console.log('FareHarbor link clicked, loading script...');
 
         // Load the FareHarbor script and wait for it to load
         loadFareHarborScript(() => {

@@ -1,5 +1,7 @@
 import React from 'react';
 import { useLocale } from "next-intl";
+import fs from 'fs/promises';
+import path from 'path';
 
 interface Metadata {
   title: string;
@@ -24,8 +26,15 @@ export async function generateMetadata({
   const resolvedLocale = locale || "en"; // Default to English if locale is missing
 
   try {
-    const response = await fetch("https://www.centauruscharter.com/api/api_new/basic");
-    const data = await response.json();
+
+    // Path to your JSON file in the public directory
+    const dataPath = path.join(process.cwd(), 'public', 'data.json');
+
+    // Read the file
+    const jsonData = await fs.readFile(dataPath, 'utf8');
+    const data = JSON.parse(jsonData);
+
+    console.log("Reading from local data.json");
 
     const metaData = data?.meta_tags?.["dubai-yachts-winter-offers"]?.[resolvedLocale]?.[0];
     const metaHome = data?.meta_tags?.["home"]?.[resolvedLocale]?.[0];

@@ -1,4 +1,7 @@
 import HomeContent from "@/app/components/HomeContent"
+import path from 'path';
+import fs from 'fs/promises';
+
 export async function generateMetadata({params}) {
   const { locale } = await params;
   const resolvedLocale = locale || "en"; 
@@ -8,8 +11,15 @@ export async function generateMetadata({params}) {
   let metaKeywords = "default, keywords";
 
   try {
-    const res = await fetch("https://www.centauruscharter.com/api/api_new/basic");
-    const data = await res.json();
+    // Path to your JSON file in the public directory
+    const dataPath = path.join(process.cwd(), 'public', 'data.json');
+    
+    // Read the file
+    const jsonData = await fs.readFile(dataPath, 'utf8');
+    const data = JSON.parse(jsonData);
+    
+    console.log("Reading from local data.json");
+    
     // Fetch metadata for "home" using the locale
     const metaData = data?.meta_tags?.["home"]?.[resolvedLocale]?.[0];
 
@@ -21,7 +31,7 @@ export async function generateMetadata({params}) {
       console.warn(`No metadata found for home in locale: ${locale}`);
     }
   } catch (error) {
-    console.error("Error fetching metadata:", error);
+    console.error("Error reading metadata from data.json:", error);
   }
 
   return {
@@ -33,6 +43,7 @@ export async function generateMetadata({params}) {
     },
   };
 }
+
 export default function Home() {
   return <HomeContent />;
 }
