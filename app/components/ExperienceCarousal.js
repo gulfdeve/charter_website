@@ -53,7 +53,7 @@ export default function ExperienceCarousal() {
                   <div className="relative bg-transparent rounded-lg overflow-hidden space-y-5">
                     <Image
                       src={`https://www.centauruscharter.com/product/images/${experience.thumbnail_image}`}
-                      alt={experience.translations[language].name_of_yacht}
+                      alt={experience.translations[language].title}
                       width={450}
                       height={0}
                       className="w-full h-[24rem] rounded-lg object-cover"
