@@ -62,7 +62,8 @@ export async function generateMetadata({
     
 
     // Find the event by slug
-    const event: Event | undefined = data?.events?.find((item) => item.slug === slug);
+    // const event: Event | undefined = data?.events?.find((item) => item.slug === slug);
+    const event: Event | undefined = data?.events?.find((item: Event) => item.slug === slug);
     
     // Retrieve event translations (or default to an empty object)
     const eventTranslations: EventTranslation = event?.translations?.[resolvedLocale] || {};
