@@ -21,6 +21,7 @@ export const DataProvider = ({ children }) => {
       try {
         // Load from local JSON file instead of API
         const response = await fetch('/data.json');
+        console.log("fetching data from dataContext");
         if (!response.ok) {
           throw new Error('Failed to fetch local data');
         }
