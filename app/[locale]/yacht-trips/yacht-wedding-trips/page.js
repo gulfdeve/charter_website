@@ -6,46 +6,19 @@ import { useRouter, usePathname, Link } from "@/app/i18n/routing";
 import Videosharedtours from "@/app/components/Video-sharedtours";
 import { FaWhatsapp } from "react-icons/fa";
 import YachtCarousel from "@/app/components/YachtCarousel"
+import { useData } from "@/app/context/DataContext";
+import { useLocale, useTranslations } from "next-intl";
 const page = () => {
-  const filteredYachts = [
-    {
-      id: 1,
-      slug: "luxury-yacht-1",
-      image: "https://via.placeholder.com/300x200",
-      title: "Luxury Yacht 1",
-      length: "30m",
-      guests: 15,
-      price: 1000,
-      fareharbor_id: "12345",
-    },
-    {
-      id: 2,
-      slug: "luxury-yacht-2",
-      image: "https://via.placeholder.com/300x200",
-      title: "Luxury Yacht 2",
-      length: "25m",
-      guests: 10,
-      price: 800,
-      fareharbor_id: "12346",
-    },
-    {
-      id: 3,
-      slug: "luxury-yacht-3",
-      image: "https://via.placeholder.com/300x200",
-      title: "Luxury Yacht 3",
-      length: "40m",
-      guests: 20,
-      price: 1500,
-      fareharbor_id: "12347",
-    },
-  ];
-  const isClient = typeof window !== "undefined";
+    const { data, loading, error } = useData();
+    const locale = useLocale();
+ 
+
   return (
     <>
       {/* <div>
         <Videosharedtours/>
       </div> */}
-       {isClient && (
+     
       <div className="bg-white h-full w-full mt-14 md:mt-0">
         <div className="flex flex-col items-center justify-center pb-10 pt-10">
           <h1 className=" text-primary-blue text-center  text-xl pb-4">
@@ -56,46 +29,52 @@ const page = () => {
           </p>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3  gap-10 xl:px-44">
-          {filteredYachts.map((yacht) => (
+        {!loading &&
+                      data?.products?.map((product) => (
             <div
-              key={yacht.id}
+              key={product.id}
               className="flex flex-col justify-center px-5 bg-white rounded-2xl shadow-2xl h-auto"
             >
-              <Link href={`/yacht-rentals/${yacht.slug}`}>
+              <Link href={`/yacht-rentals/${product.slug}`}>
                 <img
-                  src={yacht.image}
+                  src={`https://www.centauruscharter.com/product/images/${product.image}`}
                   className="rounded-2xl mt-5 h-[174px] md:h-[300px] object-cover"
-                  alt={yacht.title}
+                  alt={product.translations?.[locale].name_of_yacht}
                 />
               </Link>
 
               <div className="flex flex-col items-center py-3">
-                <Link href={`/yacht-rentals/${yacht.slug}`}>
+                <Link href={`/yacht-rentals/${product.slug}`}>
                   <h1 className="text-primary-blue  text-xl font-bold xl:pt-6 md:pb-2 hover:text-blue-600 transition-all duration-300 cursor-pointer py-1 md:py-0">
-                    {yacht.title}
+                  {product.translations?.[locale]?.name_of_yacht}
                   </h1>
                 </Link>
                 <p className=" text-xs text-primary-blue text-left">
-                  Length:
+                Model:
                   <span className=" text-primary-blue font-bold">
                     {" "}
-                    {yacht.length}
+                    {product.translations?.[locale]?.model}
+                  </span>{" "}
+                | Length:
+                  <span className=" text-primary-blue font-bold">
+                    {" "}
+                    {product.translations?.[locale]?.size}
                   </span>{" "}
                   | Guests:
                   <span className=" text-primary-blue font-bold">
                     {" "}
-                    {yacht.guests}
+                    {product.translations?.[locale]?.guests}
                   </span>
                 </p>
                 <h1 className=" text-primary-blue font-bold text-xl pt-5 pb-2">
-                  AED {yacht.price}{" "}
+                  AED  {product.per_hour_price}{" "}
                   <span className=" text-primary-blue">
                     Per Hour
                   </span>
                 </h1>
                 <a
                   href={`https://fareharbor.com/embeds/book/centauruscharter/items/${
-                    yacht.fareharbor_id
+                    product.fareharbor_id
                   }/?full-items=yes&flow=645487&back=${encodeURIComponent(
                     "http://example.com"
                   )}`}
@@ -263,7 +242,7 @@ const page = () => {
         </div>
         <YachtCarousel/>
       </div>
-)}
+
     </>
         
   );
