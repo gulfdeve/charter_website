@@ -6,7 +6,7 @@ import { useData } from "@/app/context/DataContext";
 import { useLanguage } from "@/app/context/LanguageContext";
 import YachtCarousal from "@/app/components/YachtCarousel";
 import LocationCarousel from "@/app/components/LocationCarousel";
-// import Link from "next/link";
+import WatersportCarousal from "@/app/components/WatersportCarousal"
 import { useRouter, usePathname, Link } from "@/app/i18n/routing";
 
 const page = ({ params }) => {
@@ -21,6 +21,9 @@ return (
                 WATERSPORTS ADD-ON DUBAI
             </h1>
         </div>
+        <div className="md:block hidden">
+
+        
         <div className="grid grid-col-1 md:grid-cols-2 md:px-4 gap-7 pb-16 container mx-auto">
             {data?.packages?.map((package_a) => (
             <div key={package_a.id}
@@ -61,6 +64,10 @@ return (
             </div>
             ))}
         </div>
+    </div>
+    <div className="md:hidden block">
+        <WatersportCarousal/>
+    </div>
     </div>
     <div className="max-w-7xl mx-auto px-3 py-5 ">
         <p className=" text-gray-500 text-md ">

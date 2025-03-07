@@ -9,6 +9,8 @@ import YachtCarousal from "@/app/components/YachtCarousel";
 import { useRouter, usePathname, Link } from "@/app/i18n/routing";
 // import Loading from "./loading";
 import Image from "next/image";
+import OfferMobilecarousal from '@/app/components/OfferMobilecarousal';
+
 const page = ({ params }) => {
   const { data, loading, error } = useData();
   const { language, changeLanguage } = useLanguage();
@@ -25,8 +27,8 @@ const page = ({ params }) => {
             YACHT OFFERS AND DEALS IN DUBAI
           </h1>
         </div>
-
-        <div className="grid grid-col-1 md:grid-cols-2 md:px-4 gap-7 pb-16 container mx-auto">
+<div className="md:block hidden">
+        <div className="grid grid-col-1 md:grid-cols-2 md:px-4 gap-7 pb-16 container mx-auto ">
           {data?.offers?.map((offer) => (
             <div
               key={offer.id}
@@ -79,6 +81,11 @@ const page = ({ params }) => {
             </div>
           ))}
         </div>
+      </div>
+      </div>
+      <div className="block md:hidden">
+        <OfferMobilecarousal/>
+
       </div>
       <div className="max-w-7xl mx-auto px-3 py-5 ">
         <p className=" text-gray-500 text-md ">
