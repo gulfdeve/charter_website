@@ -3,12 +3,14 @@ import React from "react";
 import { IoIosPricetag } from "react-icons/io";
 // import Link from "next/link";
 import { useRouter, usePathname, Link } from "@/app/i18n/routing";
-import { useLanguage } from "@/app/context/LanguageContext";
+
+import { useLocale } from "next-intl";
 import { useData } from "@/app/context/DataContext";
 import ExperienceMobilecarousal from "@/app/components/ExperienceMobilecarousal"
 const page = () => {
 const { data, loading, error } = useData();
-const { language } = useLanguage();
+
+const locale = useLocale
 
 return (
 <>
@@ -23,7 +25,7 @@ return (
             {!loading &&
             data?.experiences?.map((experience) => {
             const title =
-            experience.translations?.[language]?.title ||
+            experience.translations?.[locale]?.title ||
             experience.translations?.en?.title ||
             "Untitled";
 
@@ -45,7 +47,7 @@ return (
                         </Link>
                     </h2>
                     <p className="text-[#848484]  text-md pt-2 pb-9">
-                        {experience.translations[language].preivew_text}
+                        {experience.translations[locale].preivew_text}
                     </p>
                     <div className="bg-[#232629] w-full h-[0.05rem]"></div>
                     <div className="flex flex-row items-center justify-between">

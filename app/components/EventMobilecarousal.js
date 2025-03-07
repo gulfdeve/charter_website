@@ -41,7 +41,7 @@ export default function EventCarousel() {
                     <img
                       src={`https://www.centauruscharter.com/product/images/${event.image}`}
                       alt={event.translations[locale].title}
-                      className="rounded-t-md w-full h-[22rem] object-cover"
+                      className="rounded-tl-md rounded-tr-md w-full object-cover"
                     />
                   </Link>
                   <div className="flex flex-col justify-start px-5 lg:px-5 flex-grow">
