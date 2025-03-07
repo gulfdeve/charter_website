@@ -1,7 +1,7 @@
 import React from 'react';
 import { useLocale } from "next-intl";
-import fs from 'fs/promises';
 import path from 'path';
+import fs from 'fs/promises';
 
 interface Metadata {
   title: string;
@@ -35,7 +35,7 @@ export async function generateMetadata({
 
     console.log("Reading from local data.json");
 
-    const metaData = data?.meta_tags?.["terms-and-condition"]?.[resolvedLocale]?.[0];
+    const metaData = data?.meta_tags?.["terms-and-conditions"]?.[resolvedLocale]?.[0];
     const metaHome = data?.meta_tags?.["home"]?.[resolvedLocale]?.[0];
 
     // Use "shared-yacht-tours-dubai" metadata if available, otherwise fallback to "home"

@@ -1,7 +1,7 @@
 import React from 'react';
 import { useLocale } from "next-intl";
-import fs from 'fs/promises';
 import path from 'path';
+import fs from 'fs/promises';
 
 interface Metadata {
   title: string;
@@ -35,10 +35,10 @@ export async function generateMetadata({
 
     console.log("Reading from local data.json");
 
-    const metaData = data?.meta_tags?.["privacy-and-policy"]?.[resolvedLocale]?.[0];
+    const metaData = data?.meta_tags?.["privacy-and-poolicy"]?.[resolvedLocale]?.[0];
     const metaHome = data?.meta_tags?.["home"]?.[resolvedLocale]?.[0];
 
-    // Use "privacy-and-policy" metadata if available, otherwise fallback to "home"
+    // Use "shared-yacht-tours-dubai" metadata if available, otherwise fallback to "home"
     const finalMeta = metaData || metaHome || {
       meta_title: "Default Title",
       meta_description: "Default Description",
@@ -47,7 +47,7 @@ export async function generateMetadata({
     return {
       title: finalMeta.meta_title || "Default Title",
       description: finalMeta.meta_description || "Default Description",
-      keywords: finalMeta.meta_keywords || "default, keywords",
+      keywords: finalMeta.meta_keywords
     };
   } catch (error) {
     console.error("Error fetching metadata:", error);
