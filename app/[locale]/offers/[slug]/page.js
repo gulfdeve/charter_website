@@ -33,7 +33,7 @@ const Page = ({ params }) => {
 
   return (
     <>
-      <div className="felx flex-col items-center justify-center px-4 xl:px-44 container mx-auto mt-14 md:mt-0">
+      <div className="max-w-7xl mx-auto flex flex-col items-center justify-center mt-14 md:mt-0">
         
         <PageTitleHeading title={offer.translations?.[locale]?.title} />
         
@@ -41,7 +41,7 @@ const Page = ({ params }) => {
           <img
             src={`https://www.centauruscharter.com/product/images/${offer.image}`}
             alt={offer.name}
-            className=""
+            className="w-full"
           />
         </div>
           <ul>
@@ -52,7 +52,7 @@ const Page = ({ params }) => {
               ))}
           </ul>
 
-        <div className="py-10 max-w-7xl mx-auto">
+        <div className="py-10 w-full">
           <div className="flex flex-col md:flex-row rounded-lg items-center  gap-5 justify-center  md:justify-between bg-primary-blue p-5">
             <p className="text-white  text-center md:text-left font-bold bg-primary-blue text-xl rounded ">
               Validity Until: {offer.validity}
