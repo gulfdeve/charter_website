@@ -62,12 +62,12 @@ export default function YachtCarousal() {
                       loading="lazy"
                     />
                     <div className="absolute bottom-0 left-0 w-full bg-black-gradient p-4 text-white rounded-lg">
-                      <h3 className="text-3xl font-bold text-left mb-3">
+                      <h3 className="text-xl font-bold text-left mb-3">
                         <Link href={`/yacht-rentals/${product.slug}`}>
                           {product.translations[locale].name_of_yacht}
                         </Link>
                       </h3>
-                      <p className="text-md text-left mb-3">
+                      <p className="text-sm text-left mb-3">
                         {product.translations[locale].slider_text}
                       </p>
                       <Link href={`/yacht-rentals/${product.slug}`}>
