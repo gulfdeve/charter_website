@@ -42,7 +42,6 @@ const page = ({ params }) => {
             className=""
           />
         </div>
-        <h1 className=" text-black text-left py-3 xl:px-10">
           <ul>
             {event.translations?.[locale]?.description
               .split("\n")
@@ -50,8 +49,8 @@ const page = ({ params }) => {
                 <li key={index} dangerouslySetInnerHTML={{ __html: item }} />
               ))}
           </ul>
-        </h1>
 
+        
         <div className="py-10 w-full">
           <div className="flex flex-col md:flex-row rounded-lg items-center  gap-5 justify-center  md:justify-between bg-transparent md:bg-primary-blue p-5">
             <p className="text-white  font-bold bg-primary-blue text-xl rounded">
@@ -70,6 +69,7 @@ const page = ({ params }) => {
             </div>
           </div>
         </div>
+        
       </div>
       
      
