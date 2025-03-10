@@ -27,7 +27,7 @@ return (
         <div className="hidden md:block">
         <div className="grid grid-col-1 md:grid-cols-2 md:px-4 gap-7 pb-4 container mx-auto">
             {data?.events?.map((event) => (
-            <div key={event.id} className="flex flex-col justify-start lg:justify-between rounded-md bg-white shadow-xl">
+            <div key={event.id} className="flex flex-col justify-start lg:justify-between rounded-md bg-white custom-shadow">
                 <Link href={`/events/${event.slug}`}>
                 <img src={`https://www.centauruscharter.com/product/images/${event.image}`}
                     alt={event.translations[language].title} className="rounded-t-md w-full object-cover" />
@@ -41,10 +41,11 @@ return (
                     <p className="text-[#232629]  font-bold text-base pt-2 pb-4">
                       {event.translations[language].heading_2}
                     </p>
+                    <p className="text-red-500 py-2 font-bold">Limited Slots Available</p>
                     <div className="bg-[#232629] w-full h-[0.05rem]"></div>
                     <div className="flex flex-row items-center justify-between">
                         <div className="flex flex-col items-start justify-start py-10">
-                            <p className="text-[#232629]  font-bold text-sm xl:text-lg">
+                            <p className="text-red-500  font-bold text-sm xl:text-lg">
                                 Validity Until:
                                 <br />
                                 {event.validity}
@@ -71,7 +72,7 @@ return (
 <Eventmobilecarousal/>
 </div>
     </div>
-    <div className="max-w-7xl mx-auto px-3 pb-5  ">
+    <div className="max-w-7xl mx-auto px-3 py-5 pb-8">
         <p className=" text-gray-500 text-md ">
             Experience the perfect fusion of luxury, elegance, and unforgettable moments on the glistening waters of
             Dubai. As a premier destination for hosting extraordinary events, parties, and exclusive gatherings, Dubai

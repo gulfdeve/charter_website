@@ -23,17 +23,14 @@ const page = ({ params }) => {
   return (
     <>
       <div className="max-w-7xl mx-auto mt-14 md:mt-0">
-
-
         <PageTitleHeading title="YACHT OFFERS AND DEALS IN DUBAI" />
 
-
         <div className="md:block hidden">
-          <div className="grid grid-col-1 md:grid-cols-2 md:px-4 gap-7 pb-16 container mx-auto ">
+          <div className="grid grid-col-1 md:grid-cols-2 md:px-4 gap-7 pb-8 container mx-auto ">
             {data?.offers?.map((offer) => (
               <div
                 key={offer.id}
-                className="flex flex-col justify-start lg:justify-between rounded-md bg-white shadow-xl"
+                className="flex flex-col justify-start lg:justify-between rounded-md bg-white custom-shadow"
               >
                 <Link href={`/offers/${offer.slug}`}>
                   <Image
@@ -54,6 +51,9 @@ const page = ({ params }) => {
                   </h2>
                   <p className="text-[#232629]  font-bold text-xs pt-2 pb-16">
                     {offer.note}
+                  </p>
+                  <p className="text-sm py-2 font-bold">
+                    *SUBJECT TO AVAILABILITY{" "}
                   </p>
                   <div className="bg-[#232629] w-full h-[0.05rem]"></div>
                   <div className="flex flex-row items-center justify-between">
@@ -91,18 +91,19 @@ const page = ({ params }) => {
       <div className="block md:hidden">
         <OfferMobilecarousal />
       </div>
-      <div className="max-w-7xl mx-auto px-3 py-5 ">
+      <div className="max-w-7xl mx-auto px-3 py-5 pb-8">
         <p className=" text-gray-500 text-md ">
-          Dubai is a popular destination for yachting. The Arabian coastline is
-          lined with beautiful azure beaches and top attractions, which are
-          perfect for leisure trips and intimate celebrations. Centaurus Charter
-          has a versatile range of yachts and boats in Dubai that are suitable
-          for any event. Our captain & crew has years of experience, can
-          customize your trip as per your choices and is always eager to help.
+          Centaurus Charter offers range of membership discounts &{" "}
+          <strong>yacht deals</strong> to adorn the beautiful yachting
+          destinations. The best way to enjoy your dream vacation is a day out
+          on the waters. Have fun in the sun, spend the day cruising or enjoy
+          weekend boat parties. Upgrade your cruising experience with our
+          extreme water sports activities, lip smacking BBQ or seafood platters,
+          tempting cakes, bubbly drinks, fresh flowers & balloon decoration
+          packages at extra cost. We offer a wide range of yachts for every
+          occasion. You deserve nothing but the best.
           <br />
-          <br /> Experience yachting life with end-to-end personalized services,
-          stunning views of the surroundings with plenty of watersports for your
-          next excursion.
+          <br /> <strong>Charter a yacht</strong> with our best deal.
         </p>
       </div>
       <YachtCarousal />

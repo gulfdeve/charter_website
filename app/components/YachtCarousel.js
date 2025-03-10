@@ -37,12 +37,12 @@ export default function YachtCarousal() {
   const scrollNext = () => emblaInstance.current?.scrollNext();
 
   return (
-    <div className="flex flex-col items-center justify-center bg-primary-yellow pt-10 p-5">
-      <h2 className="text-primary-blue text-center font-bold text-4xl pt-2">
+    <div className="flex flex-col items-center justify-center bg-primary-yellow">
+      <h2 className="text-primary-blue text-center font-bold text-4xl py-10">
         EXPLORE OUR YACHT
       </h2>
       <div className="md:block hidden">
-      <div className="relative w-full h-full overflow-hidden bg-primary-yellow xl:px-32 container mx-auto py-10">
+      <div className="relative max-w-7xl h-full overflow-hidden bg-primary-yellow container mx-auto">
         {/* Single Embla Carousel */}
         <div className="embla__viewport" ref={emblaRef}>
           <div className="embla__container flex">
@@ -50,7 +50,7 @@ export default function YachtCarousal() {
               data?.products?.map((product) => (
                 <div
                   key={product.id}
-                  className="embla__slide p-4 w-full lg:basis-[calc(100%/3)] flex-none"
+                  className="embla__slide w-full lg:basis-[calc(100%/3)] flex-none"
                 >
                   <div className="relative bg-transparent rounded-lg overflow-hidden space-y-5">
                     <Image
@@ -84,14 +84,14 @@ export default function YachtCarousal() {
         {/* Navigation Buttons */}
         <button
           aria-label="go previous slide"
-          className="bg-primary-blue text-primary-yellow hover:bg-primary-yellow hover:text-primary-blue transition duration-150 ease-in-out absolute left-2 lg:left-32 top-1/2 -translate-y-1/2 bg-gray-800 text-white w-14 aspect-square rounded-full flex items-center justify-center hover:bg-gray-700 z-10"
+          className="bg-primary-blue text-primary-yellow hover:bg-primary-yellow hover:text-primary-blue transition duration-150 ease-in-out absolute left-2 top-1/2 -translate-y-1/2 bg-gray-800 text-white w-14 aspect-square rounded-full flex items-center justify-center hover:bg-gray-700 z-10"
           onClick={scrollPrev}
         >
           <IoIosArrowBack size={30} />
         </button>
         <button
           aria-label="go next slide"
-          className="bg-primary-blue text-primary-yellow hover:bg-primary-yellow hover:text-primary-blue transition duration-150 ease-in-out absolute right-4 lg:right-32 top-1/2 -translate-y-1/2 bg-gray-800 text-white w-14 aspect-square rounded-full flex items-center justify-center hover:bg-gray-700 z-10"
+          className="bg-primary-blue text-primary-yellow hover:bg-primary-yellow hover:text-primary-blue transition duration-150 ease-in-out absolute right-4 top-1/2 -translate-y-1/2 bg-gray-800 text-white w-14 aspect-square rounded-full flex items-center justify-center hover:bg-gray-700 z-10"
           onClick={scrollNext}
         >
           <IoIosArrowForward size={30} />
@@ -102,6 +102,7 @@ export default function YachtCarousal() {
         <YachtmobCarousel/>
 
       </div>
+      <div className="pt-12"></div>
     </div>
   );
 }

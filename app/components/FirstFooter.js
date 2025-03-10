@@ -35,48 +35,80 @@ export default function FirstFooter() {
       content: (
         <ul>
           <li className="mb-2">
-            <Link href="/" onClick={scrollToTop} className="text-text-primary-white">
+            <Link
+              href="/"
+              onClick={scrollToTop}
+              className="text-text-primary-white capitalize"
+            >
               {t("navbar.home")}
             </Link>
           </li>
           <li className="mb-2">
-            <Link href="/aboutus" onClick={scrollToTop} className="text-text-primary-white">
+            <Link
+              href="/aboutus"
+              onClick={scrollToTop}
+              className="text-text-primary-white capitalize"
+            >
               {t("navbar.about")}
             </Link>
           </li>
           <li className="mb-2">
-            <Link href="/yacht-rentals" onClick={scrollToTop} className="text-text-primary-white">
+            <Link
+              href="/yacht-rentals"
+              onClick={scrollToTop}
+              className="text-text-primary-white capitalize"
+            >
               {t("navbar.yacht-rentals")}
             </Link>
           </li>
           <li className="mb-2">
-            <Link href="/watersports" onClick={scrollToTop} className="text-text-primary-white">
+            <Link
+              href="/watersports"
+              onClick={scrollToTop}
+              className="text-text-primary-white capitalize"
+            >
               {t("navbar.water-sports")}
             </Link>
           </li>
           <li className="mb-2">
-            <Link href="/offers" onClick={scrollToTop} className="text-text-primary-white">
+            <Link
+              href="/offers"
+              onClick={scrollToTop}
+              className="text-text-primary-white capitalize"
+            >
               {t("navbar.offers")}
             </Link>
           </li>
           <li className="mb-2">
-            <Link href="/events" onClick={scrollToTop} className="text-text-primary-white">
+            <Link
+              href="/events"
+              onClick={scrollToTop}
+              className="text-text-primary-white capitalize"
+            >
               {t("navbar.events")}
             </Link>
           </li>
           <li className="mb-2">
-            <Link href="/faq" onClick={scrollToTop} className="text-text-primary-white">
+            <Link
+              href="/faq"
+              onClick={scrollToTop}
+              className="text-text-primary-white capitalize"
+            >
               {t("navbar.faq")}
             </Link>
           </li>
           <li className="mb-2">
-            <Link href="/contact" onClick={scrollToTop} className="text-text-primary-white">
+            <Link
+              href="/contact"
+              onClick={scrollToTop}
+              className="text-text-primary-white capitalize"
+            >
               {t("navbar.contact-us")}
             </Link>
           </li>
           <li className="mb-2">
             <a
-              className="text-text-primary-white"
+              className="text-text-primary-white capitalize"
               href="https://www.centauruscharter.com/public/pdf/Centaurus-Charter-Profile-2023.pdf"
               onClick={scrollToTop}
             >
@@ -93,7 +125,10 @@ export default function FirstFooter() {
           {!loading &&
             data?.products?.map((product) => (
               <li key={product.id} className="mb-2 text-text-primary-white">
-                <Link href={`/yacht-rentals/${product.slug}`} onClick={scrollToTop}>
+                <Link
+                  href={`/yacht-rentals/${product.slug}`}
+                  onClick={scrollToTop}
+                >
                   {product.translations?.[locale]?.name_of_yacht}
                 </Link>
               </li>
@@ -108,7 +143,10 @@ export default function FirstFooter() {
           {!loading &&
             data?.experiences?.map((experience) => (
               <li key={experience.id} className="mb-2 text-text-primary-white">
-                <Link href={`/yacht-trips/${experience.slug}`} onClick={scrollToTop}>
+                <Link
+                  href={`/yacht-trips/${experience.slug}`}
+                  onClick={scrollToTop}
+                >
                   {experience.translations?.[locale]?.title}
                 </Link>
               </li>
@@ -120,57 +158,60 @@ export default function FirstFooter() {
       title: t("footer.reach-out-to-us"),
       content: (
         <ul className="text-text-primary-white space-y-3">
-        {[
-          {
-            address: "Marina Walk (Near Spinneys)",
-            location: "Dubai, United Arab Emirates",
-          },
-          {
-            address: "Dubai Harbour Marina",
-            location: "Dubai, United Arab Emirates",
-          },
-          {
-            address: "Berth No AB05 - near Harbour Bridge - Dubai Harbour",
-            location: "Dubai, United Arab Emirates",
-          },
-          {
-            address:
-              "Dubai Harbour Marina, Berth No A-G36 Near Dockmaster 1 Building",
-            location: "Dubai, United Arab Emirates",
-          },
-        ].map((item, index) => (
-          <li key={index} className="flex items-start gap-3">
-            <FaMapMarkerAlt className="w-5 h-5 flex-shrink-0 text-text-primary-white" />
-            <a
-              href="https://www.google.com/maps/place/CENTAURUS+CHARTER+-+Yachts+%26+Boats+Rental+Dubai+Harbour"
-              className="hover:text-white"
-            >
-              {item.address}
-              <br />
-              {item.location}
-            </a>
-          </li>
-        ))}
+          {[
+            {
+              address: "Marina Walk (Near Spinneys)",
+              location: "Dubai, United Arab Emirates",
+            },
+            {
+              address: "Dubai Harbour Marina",
+              location: "Dubai, United Arab Emirates",
+            },
+            {
+              address: "Berth No AB05 - near Harbour Bridge - Dubai Harbour",
+              location: "Dubai, United Arab Emirates",
+            },
+            {
+              address:
+                "Dubai Harbour Marina, Berth No A-G36 Near Dockmaster 1 Building",
+              location: "Dubai, United Arab Emirates",
+            },
+          ].map((item, index) => (
+            <li key={index} className="flex items-start gap-3 items-center">
+              <FaMapMarkerAlt className="w-5 h-5 flex-shrink-0 text-text-primary-white" />
+              <a
+                href="https://www.google.com/maps/place/CENTAURUS+CHARTER+-+Yachts+%26+Boats+Rental+Dubai+Harbour"
+                className="hover:text-white"
+              >
+                {item.address}
+                <br />
+                {item.location}
+              </a>
+            </li>
+          ))}
           <ul className="text-text-primary-white space-y-2">
-      <li className="flex items-center space-x-2">
-        <FaPhoneAlt className="w-5 h-5" />
-        <a href="tel:+97143521833" className="hover:text-white">
-          +971 4 352 1833
-        </a>
-      </li>
-      <li className="flex items-center space-x-2">
-        <FaWhatsapp className="w-5 h-5" />
-        <a href="tel:+971524901269" className="hover:text-white">
-          +971 52 490 1269
-        </a>
-      </li>
-      <li className="flex items-center space-x-2">
-        <MdEmail className="w-5 h-5" />
-        <a href="mailto:info@centauruscharter.com" className="hover:text-white">
-          info@centauruscharter.com
-        </a>
-      </li>
-    </ul>
+            <li className="flex items-center space-x-2">
+              <FaPhoneAlt className="w-5 h-5" />
+              <a href="tel:+97143521833" className="hover:text-white">
+                +971 4 352 1833
+              </a>
+            </li>
+            <li className="flex items-center space-x-2">
+              <FaWhatsapp className="w-5 h-5" />
+              <a href="tel:+971524901269" className="hover:text-white">
+                +971 52 490 1269
+              </a>
+            </li>
+            <li className="flex items-center space-x-2">
+              <MdEmail className="w-5 h-5" />
+              <a
+                href="mailto:info@centauruscharter.com"
+                className="hover:text-white"
+              >
+                info@centauruscharter.com
+              </a>
+            </li>
+          </ul>
         </ul>
       ),
     },
@@ -180,46 +221,77 @@ export default function FirstFooter() {
         <ul className="text-text-primary-white">
           <li className="flex flex-col md:items-start items-center text-center md:text-left">
             <p className="font-semibold py-3">English / Russian</p>
-            <a className="mb-2 inline-block" href="tel:+971505484685" onClick={scrollToTop}>
+            <a
+              className="mb-2 inline-block"
+              href="tel:+971505484685"
+              onClick={scrollToTop}
+            >
               +971 50 548 4685
             </a>
-            <a className="mb-2 inline-block" href="tel:+971502484678" onClick={scrollToTop}>
+            <a
+              className="mb-2 inline-block"
+              href="tel:+971502484678"
+              onClick={scrollToTop}
+            >
               +971 50 248 4678
             </a>
-            <a className="mb-2 inline-block" href="tel:+971502014225" onClick={scrollToTop}>
+            <a
+              className="mb-2 inline-block"
+              href="tel:+971502014225"
+              onClick={scrollToTop}
+            >
               +971 50 201 4225
             </a>
           </li>
           <li className="flex flex-col md:items-start items-center text-center md:text-left">
             <p className="font-semibold py-3">English / Spanish / Portuguese</p>
-            <a className="mb-2 inline-block" href="tel:+971567277387" onClick={scrollToTop}>
+            <a
+              className="mb-2 inline-block"
+              href="tel:+971567277387"
+              onClick={scrollToTop}
+            >
               +971 56 727 7387
             </a>
           </li>
-          <li className="flex flex-col md:items-start items-center text-center md:text-left">
+          {/* <li className="flex flex-col md:items-start items-center text-center md:text-left">
             <p className="font-semibold py-3">English / Chinese</p>
             <a className="mb-2 inline-block" href="tel:+971506484625" onClick={scrollToTop}>
               +971 50 648 4625
             </a>
-          </li>
+          </li> */}
           <li className="flex flex-col md:items-start items-center text-center md:text-left">
             <p className="font-semibold py-3">English / Arabic</p>
-            <a className="mb-2 inline-block" href="tel:+971565017078" onClick={scrollToTop}>
+            <a
+              className="mb-2 inline-block"
+              href="tel:+971565017078"
+              onClick={scrollToTop}
+            >
               +971 56 501 7078
+            </a>
+            <a
+              className="mb-2 inline-block"
+              href="tel:++971501452203"
+              onClick={scrollToTop}
+            >
+              +971 50 145 2203
             </a>
           </li>
           <li className="flex flex-col md:items-start items-center text-center md:text-left">
             <p className="font-semibold py-3">English / Filipino</p>
-            <a className="mb-2 inline-block" href="tel:+971565017057" onClick={scrollToTop}>
+            <a
+              className="mb-2 inline-block"
+              href="tel:+971565017057"
+              onClick={scrollToTop}
+            >
               +971 56 501 7057
             </a>
           </li>
-          <li className="flex flex-col md:items-start items-center text-center md:text-left">
+          {/* <li className="flex flex-col md:items-start items-center text-center md:text-left">
             <p className="font-semibold py-3">English / Hindi</p>
             <a className="mb-2 inline-block" href="tel:+971501452203" onClick={scrollToTop}>
               +971 50 145 2203
             </a>
-          </li>
+          </li> */}
         </ul>
       ),
     },

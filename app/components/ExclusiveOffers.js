@@ -3,7 +3,7 @@ import { Link } from "../i18n/routing";
 
 const ExclusiveOffers = () => {
   return (
-    <div className="flex  flex-col lg:flex-row items-center justify-between pt-24">
+    <div className="flex  flex-col lg:flex-row items-center justify-between">
     <div className="overflow-hidden w-full lg:w-1/2 lg:h-[27rem] h-[350px] sm:h-[200px] md:h-[250px]">
         <img src="/footer-exclusive-offer.webp" className="w-full  h-full object-cover object-left"
             alt="Footer Exclusive Offer" />

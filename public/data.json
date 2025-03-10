@@ -2018,23 +2018,39 @@
     {
       "id": 6,
       "image": "1653474985JET SKI THUMB.webp",
+      "alt_tag": "Boy enjoying thrilling Yamaha Waverunners 1100cc jet ski in Dubai",
       "slug": "jet-ski",
       "amount": 900,
+      "whatsapp_url": "https://api.whatsapp.com/send/?phone=00971567277387&text&app_absent=0",
+      "thumbnail_image": "1663654485Jetski.jpg",
+      "fareharbor_boat_id": "340265",
       "translations": {
         "ar": {
           "title": "مزلجة مائية",
+          "description": "استمتع برحلة Waverunner المذهلة في دبي من خلال جولة جيت سكي الفريدة. إذا كنت تحب السرعة ، فهذا النشاط لك! إنه ممتع ومثير! اشعر بالإثارة واستمتع ببعض الأدرينالين العالي في زلاجات ياماها النفاثة التي يتم صيانتها جيدًا مع رحلة بحرية. في منطقة ركوب الخيل ذات المناظر الخلابة على شاطئ البحر ، نحن أحد مواقع تأجير الجت سكي في دبي مارينا الشهيرة.\r\n\r\nهذه الرحلة لا تتطلب أي تدريب. قباطنتنا مؤهلون تمامًا وسيقدمون لك مقدمة قبل الإقلاع. كل ما تحتاجه هو أن تكون واثقًا من مهاراتك في السباحة. نحن نعمل منذ أكثر من 8 سنوات ونقدم أسعارًا تنافسية لجميع خدماتنا ، كما يمكنك اختيار مدة الركوب. فريقنا المحترف موجود دائمًا هنا لتقديم أفضل خدمة عملاء والإجابة على أي أسئلة قد تطرأ أثناء عملية الحجز. جاهز للذهاب؟ استكشف بحر العرب بلا حدود.\r\n\r\nتتوفر هذه الجولات الرائعة فقط مع حجوزات اليخوت.",
+          "ride": "جت سكي 1800 سي سي",
+          "duration": "1 ساعة",
           "preview_text": "اجعل قلبك يتسابق مع هذه الرياضات المائية الترفيهية استمتع برحلة"
         },
         "en": {
           "title": "JET SKI",
+          "description": "Enjoy an amazing Waverunner ride in Dubai with our unique Jet Ski tour. If you like speed, this activity is for you! It's fun, exciting! Feel the thrill and have some high adrenaline fun on our well maintained <b>Yamaha Jet Skis</b> with cruise. At our scenic beachside riding area, we are one of the popular Dubai Marina <b>jet ski rentals</b>.<br><br> This ride doesn't require any training. Our captains are fully qualified and will provide an introduction to you before taking off. All you need is to be confident in your swimming skills. We have been in business for over 8 years and offer competitive pricing for all our services and also you can choose the duration of ride. Our professional team is always here to provide best customer service and answer any questions that might come up during your booking process. Ready to Go? Explore the Arabian sea without limits.<br><br> These remarkable rides are only available with <a href=\"https://www.centauruscharter.com/\">yacht bookings</a>.",
+          "ride": "Jet Ski 1800cc",
+          "duration": "1 Hour",
           "preview_text": "Get your heart racing with this recreational water sports"
         },
         "ru": {
           "title": "ГИДРОЦИКЛ",
+          "description": "Насладитесь потрясающей поездкой в Дубае с нашим уникальным туром на гидроцикле. Если вам нравится скорость, это занятие для вас! Это весело, захватывающе! Почувствуйте острые ощущения и получите заряд адреналина на наших гидроциклах Yamaha. В живописном районе на пляже мы являемся одним из популярных пунктов проката гидроциклов на Дубай Марине.\r\n<br>\r\n<br>\r\nЭта поездка не требует специальной подготовки. Наши капитаны полностью квалифицированы и проведут инструктаж перед поездкой. Все, что вам нужно, это быть уверенным в своих навыках плавания. Мы работаем более 8 лет и предлагаем конкурентоспособные цены на все наши услуги, а также вы можете выбрать продолжительность поездки. Наша профессиональная команда всегда готова предоставить лучший сервис и ответить на любые вопросы, которые могут возникнуть в процессе бронирования. Готов? Исследуйте Персидский залив без ограничений.",
+          "ride": "ГИДРОЦИКЛ 1800cc",
+          "duration": "1 Час",
           "preview_text": "Заставь сердце биться чаще с этим интенсивным водным спортом"
         },
         "zh": {
           "title": "喷气滑水",
+          "description": "参加我们独特的摩托艇之旅，在迪拜享受令人惊叹的 Waverunner 之旅。如果你喜欢速度，这个活动适合你！很好玩，很刺激！在我们维护良好的带巡航的雅马哈摩托艇上感受刺激并享受肾上腺素飙升的乐趣。在我们风景秀丽的海滨骑行区，我们是最受欢迎的迪拜码头摩托艇租赁提供商之一。\r\n<br><br>\r\n这次骑行不需要任何训练。我们的机长完全合格，起飞前会为您做详细介绍。您所需要的是对自己的游泳技巧充满信心。我们已经开展业务超过 8 年，并为我们的所有服务提供有竞争力的价格，您也可以选择骑行时长。我们的专业团队随时为您提供最佳的客户服务，并回答您在预订过程中可能出现的任何问题。准备好出发？无限探索阿拉伯海。<br><br>\r\n这些非凡的游乐设施仅适用于游艇预订。",
+          "ride": "喷气滑水1800cc",
+          "duration": "1小时",
           "preview_text": "通过这项休闲水上运动让您心跳加速"
         }
       }
@@ -2042,23 +2058,39 @@
     {
       "id": 9,
       "image": "1653475012DONUT BOAT RIDE Thumb.webp",
+      "alt_tag": "Friends having fun on high speed watersports Donut boat in Dubai",
       "slug": "donut-boat",
       "amount": 840,
+      "whatsapp_url": "https://api.whatsapp.com/send/?phone=00971567277387&text&app_absent=0",
+      "thumbnail_image": "1663676044Donut-Boat.jpg",
+      "fareharbor_boat_id": "1",
       "translations": {
         "ar": {
           "title": "ركوب القارب دونات",
+          "description": "واحدة من أعظم الإصدارات لهذه الرياضات المائية المثيرة ؛ يمنحك الفرصة لتجربة هذه القوارب عالية الأداء والمغامرة حقًا والمرح للغاية. استمتع بيومك في الإمارات ؛ مما يمنحك اندفاع الأدرينالين. استأجر قارب ويليامز النفاث السريع مع رحلة اليخت بسعر لا يهزم من Centaurus Charter.\r\n\r\nتشتهر دبي بجمالها ، وهي جنة لمن يحب الاستكشاف. يقدم Centaurus أفضل قارب نفاث سريع في دبي. لأكثر من 8 سنوات ، كانوا يوجهون الزوار في جميع أنحاء الخليج العربي ، مع قباطنة الخبراء وأعضاء الطاقم الودودين. سنأخذك إلى العديد من المواقع الشهيرة ، حتى تتمكن من تجربة ثقافتها الغنية وجمالها الخلاب مباشرة. سيرحب بك موظفونا الودودون بحرارة ويتأكدون من أن رحلتك ممتعة بقدر ما هي مثيرة.\r\n\r\nطارد السرعة واجعل الأمواج في البحر.",
+          "ride": "ركوب القارب دونات",
+          "duration": "1 ساعة",
           "preview_text": "طارد السرعة بينما تستمتع على متن قوارب دونات"
         },
         "en": {
           "title": "DONUT BOAT RIDE",
+          "description": "<strong>Donut Ride</strong> is a one of the best <strong>water sports activity</strong> which became popular in recent years. <strong>Donut Boat Ride</strong> water sports is an activity game sitting on a donut, rocked and pulled by speed boat. This ride is safe from teens to adults. Get some excitement and fun to the next level. Book this incredible experience with your yacht.<br><br> Centaurus Charter is a unique boat hire company that offers the <a href=\"https://www.centauruscharter.com/yacht-rentals/61ft-silvercreek\">boat tour in Dubai</a>. Enjoy some of the most fabulous views while sailing through turquoise waters, framed by stunning attractions. Glide past hidden coves and be enchanted by golden sunsets. You&#39;re in for a ride of a lifetime. There&#39;s no better way to start your day than with a ride on our boats. Whether you want to start your day with a smile or end it on high note, our boats are always there to provide you with the best experience possible - one that&#39;s guaranteed to make your heart soar.<br><br> Hire this adventurous activity along with your tours at best cost from Centaurus boat rentals.",
+          "ride": "Donut Boat",
+          "duration": "1 Hour",
           "preview_text": "Chase the speed while having fun on donut boats"
         },
         "ru": {
           "title": "Лодка- пончик",
+          "description": "Donut Ride — один из лучших видов водного спорта, который стал популярным в последние годы. Забронируйте это невероятное развличение на своей яхте.\r\n<br>\r\n<br>\r\nCentaurus Charter — это уникальная компания по аренде яхт, которая предлагает экскурсии в Дубае. Насладитесь одними из самых невероятных видов во время плавания по бирюзовым водам в окружении потрясающих достопримечательностей. Хотите ли вы начать свой день с улыбки или закончить его на высокой ноте, наши яхты всегда готовы предоставить вам наилучшие впечатления, которые гарантированно заставят ваше сердце биться чаще.\r\n<br>\r\n<br>\r\nАрендуйте это приключение вместе с вашими турами по лучшей цене в прокате яхт Centaurus.",
+          "ride": "Лодка- пончик",
+          "duration": "1 час",
           "preview_text": "Почувствуй скорость"
         },
         "zh": {
           "title": "甜甜圈船之旅",
+          "description": "甜甜圈骑行是近年来流行的最好的水上运动之一。 甜甜圈骑行水上运动是一项坐在甜甜圈上的活动游戏，由快艇摇晃和拉动。这次骑行对青少年到成人都是安全的。获得一个新的水平兴奋和乐趣。用您的游艇预订这次令人难以置信的体验。\r\n<br><br>\r\nCentaurus Charter 是一家独特的船只租赁公司，提供迪拜的乘船游览。在碧绿的海水中航行，欣赏迷人的风景。滑过隐藏的海湾，欣赏迷人的金色日落。您将踏上一生难忘的旅程。没有比乘坐我们的船开始新的一天的更好的方式了。无论您想以微笑开始新的一天还是以高调结束新的一天，我们的船总是在那里为您提供最好的体验 - 保证让您的兴奋飙升。\r\n<br><br>\r\n以最优惠的价格租用 Centaurus 船只，让这项冒险活动与您的旅行相伴而生。",
+          "ride": "甜甜圈船之旅",
+          "duration": "1小时",
           "preview_text": "在甜甜圈船上玩乐的同时追逐速度"
         }
       }
@@ -2066,23 +2098,39 @@
     {
       "id": 10,
       "image": "1653475028BANANA BOAT THUMB.webp",
+      "alt_tag": "Thrillseekers having adrenaline-pumping experience on banana boat ride in the middle of the water in Dubai",
       "slug": "banana-boat",
       "amount": 840,
+      "whatsapp_url": "https://api.whatsapp.com/send/?phone=00971567277387&text&app_absent=0",
+      "thumbnail_image": "1663676027Banana Boat.jpg",
+      "fareharbor_boat_id": "1",
       "translations": {
         "ar": {
           "title": "قارب الموز",
+          "description": "ستمنحك ركوب الموز كل السرعة والإثارة والإثارة الرطبة التي يمكنك تحملها. يمكن أن تستوعب القارب المثير ما يصل إلى خمسة أشخاص ويتم سحبها خلف جت سكي قوي. استرخِ جسمك وأنت تنزلق بسهولة عبر المياه اللازوردية. استكشف بعضًا من أكثر المناظر الطبيعية الخلابة في يومك المثالي على المياه. ستكون هذه الرحلة تجربة لا تُنسى لك ولأصدقائك.\r\n\r\nالطريقة الوحيدة للاستمتاع بعطلتك ؛ احجز هذا النشاط الرائع مع طراد المقصورة الخاص بك. ظل Centaurus Charter يصنع الذكريات على مدى السنوات الثماني الماضية ، ونحن نبذل قصارى جهدنا لتوفير أنشطة مائية مناسبة للعائلة. نحن نستخدم قوارب في أفضل حالة لضمان سلامتك وراحة بالك أثناء رحلتك.\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\nاستأجر أيًا من اليخوت الفاخرة لدينا مع قارب الموز الخاص بك في دبي.",
+          "ride": "قارب الموز",
+          "duration": "30 دقيقة",
           "preview_text": "ضرب أمواج الخليج العربي على متن قارب الموز"
         },
         "en": {
           "title": "BANANA BOAT",
+          "description": "The banana ride will give you all the speed, thrills and wet excitement you can handle. The thrilling raft can accommodate up to five persons and is pulled behind a powerful Jet Ski. Relax your body as you glide effortlessly through the azure waters. Explore some of the most picturesque landscape on your perfect day out on waters. This ride will be an unforgettable experience for you and your friends.<br><br> The only way to enjoy your holiday; book this marvelous activity with your cabin cruiser. Centaurus Charter has been making memories for the last 8 years and we do our best to give provide family-friendly water activities. We use boats that are in top condition to ensure your safety and peace of mind during your journey. <br><br>Charter any of our <a href=\"https://www.centauruscharter.com/yacht-rentals\">luxury yacht</a> along with your <strong>banana boating</strong> in Dubai.",
+          "ride": "Banana Boat",
+          "duration": "30 Minutes",
           "preview_text": "Hit the waves of Arabian Gulf on a banana boat"
         },
         "ru": {
           "title": "Лодка – банан",
+          "description": "От поездки на банане вы получите острые ощущения. Вместимость банана до 5 человек. Исследуйте один из самых живописных пейзажей в Дубае. Эта поездка станет незабываемым впечатлением для вас и ваших друзей.\r\n<br>\r\n<br>\r\nЗабронируй свое невероятное путишествие уже сейчас. Centaurus Charter создает воспоминания в течение 8 лет, и мы делаем все возможное, чтобы обеспечить водные развлечения для всей семьи. Мы используем яхты, которые находятся в отличном состоянии, чтобы обеспечить вашу безопасность и спокойствие во время путешествия.\r\n<br> <br> Арендуйте любую из наших <a href=\"https://www.centauruscharter.com/yacht-rentals\"></a> роскошных яхт вместе с катанием на банане в Дубае.",
+          "ride": "Лодка – банан",
+          "duration": "30 минут",
           "preview_text": "Покори волны Персидского залива на лодке-банане"
         },
         "zh": {
           "title": "香蕉船",
+          "description": "香蕉船将为您带来您可以应付的所有速度、刺激和湿漉漉的兴奋。惊险的木筏最多可容纳五人，由强大的喷气滑水拽着。在蔚蓝的海水中轻松滑行，放松身体。在您完美的水上一天探索一些最美丽的风景。对于您和您的朋友来说，这次骑行将是一次难忘的经历。<br><br>\r\n享受假期的唯一方式；用您的客舱巡洋舰预订这项奇妙的活动。 Centaurus Charter 在过去 8 年中一直给客人留下美好的回忆，我们尽最大努力提供适合家庭的水上活动。我们使用处于最佳状态的船只，以确保您在旅途中的安全和安心。<br><br>\r\n\r\n在迪拜租用我们的任何一艘豪华游艇以及您的香蕉船。",
+          "ride": "香蕉船",
+          "duration": "30分钟",
           "preview_text": "乘坐香蕉船在阿拉伯湾的海浪中挥洒"
         }
       }
@@ -2090,70 +2138,45 @@
     {
       "id": 11,
       "image": "1653475039FLYBOARD Thumb.webp",
+      "alt_tag": "Boy flying like a superhero with flyboard watersports in Dubai",
       "slug": "flyboard",
       "amount": 1050,
+      "whatsapp_url": "https://api.whatsapp.com/send/?phone=00971567277387&text&app_absent=0",
+      "thumbnail_image": "1663676064Flyboard.jpg",
+      "fareharbor_boat_id": "1",
       "translations": {
         "ar": {
           "title": "فلاي بورد",
+          "description": "دعونا نطير عاليا! هل حلمت يومًا بالطيران مثل البطل الخارق برحلة تعمل بالطاقة النفاثة أو أردت أن تكون قادرًا على السباحة أيضًا؟ نحن سوف؛ الآن يمكنك تحقيق أحلامك النهائية في الطيران مع في دبي أثناء استئجار زورق آلي فلاي بورد. ستجعلك Jetpack تحلق على ارتفاع يصل إلى 10 أمتار ، أو تقفز أو تقلب في الخليج العربي.\r\n\r\nيقدم  Centaurus Charter مجموعة من الرياضات المائية التي لن تجدها في أي مكان آخر. اصعد على متن الطائرة وانطلق في الهواء بسرعة عالية. تصفح موجتنا الاصطناعية وأنت تستمتع ببعض أجمل مناظر المدينة. جرب هذا النشاط على المياه الصافية النقية بسعر رائع. تعزيز تجربة الأنشطة المائية الخاصة بك مع Centaurus.",
+          "ride": "فلاي بورد",
+          "duration": "1 ساعة",
           "preview_text": "حلق عالياً في مياه دبي مثل سوبرمان"
         },
         "en": {
           "title": "FLYBOARD",
+          "description": "Let&rsquo;s fly high! Have you ever dreamed of flying like a superhero with jet-powered flight or wanted to be able to swim as well? Well; now you can achieve your ultimate dreams of flight with <strong>flyboarding in dubai</strong> while renting a motorboat. The jetpack will make you fly up to 10 meters high, jump or even flip on Arabian gulf.<br><br> Centaurus Charter offers a range of watersports you won&#39;t find anywhere else. Board our flyboard and be propelled into the air at high speed. Surf our artificial wave as you enjoy some of city&rsquo;s most beautiful views. Experience this activity on the crystal clear waters at a great price. Enhance your <a href=\"https://www.centauruscharter.com/watersports\">water activities</a> experience with Centaurus.",
+          "ride": "Fly Board",
+          "duration": "1 Hour",
           "preview_text": "Soar high on Dubai waters like a superman"
         },
         "ru": {
           "title": "Флайборд",
+          "description": "Давай взлетим высоко! Вы когда-нибудь мечтали летать как супергерой? Что ж,теперь вы можете осуществить свои мечты о полете на флайборде в Дубае. Реактивный ранец заставит вас взлететь на высоту до 10 метров, прыгнуть или даже перевернуться над Персидским заливом.\r\n<br>\r\n<br>\r\nCentaurus Charter предлагает целый ряд водных видов спорта, которых вы больше нигде не найдете. Расширьте свои возможности для занятий водными видами спорта с Centaurus.",
+          "ride": "Флайборд",
+          "duration": "1 час",
           "preview_text": "взлетайте над водами Дубая, как супермен"
         },
         "zh": {
           "title": "水上飞板",
+          "description": "让我们飞得更高！您是否曾经梦想过像超级英雄一样乘坐喷气式飞机飞行，或者也想游泳？现在，您可以在迪拜租用摩托艇，通过水上飞板实现您的终极飞行梦想。喷气背包可以让你飞到 10 米高，在阿拉伯海湾跳跃甚至翻转。<br><br>\r\nCentaurus Charter 提供一系列您在其他任何地方都找不到的水上运动。登上我们的水上飞板并被高速推进到空中。一边欣赏城市最美丽的景色，一边在我们的人造海浪冲浪。以优惠的价格在清澈的海水中体验这项活动。使用 Centaurus 增强您的水上活动体验。",
+          "ride": "水上飞板",
+          "duration": "1小时",
           "preview_text": "像超人一样在迪拜水域翱翔"
         }
       }
     }
   ],
   "events": [
-    {
-      "id": 44,
-      "image": "1740030969yacht party-web.webp",
-      "slug": "super-yacht-party-dubai",
-      "whatsapp_url": "https://wa.me/971547928626?text=Hi!%20I'd%20like%20to%20enquire%20about%20the%20Women's%20Day%20yacht%20party%20March%208th.",
-      "validity": "2025-03-08",
-      "translations": {
-        "ar": {
-          "title": "International Women's Day Yacht Party",
-          "heading_2": null,
-          "description": "🌸 <b>International Women's Day Yacht Party🌸</b><br><br> <b>A Night of Celebration, Empowerment & Unforgettable Moments!</b><br> Join us for an exclusive <b>International Women’s Day Yacht Party</b>—a night dedicated to celebrating the power, beauty, and achievements of women from all walks of life! Set sail on a luxury yacht and indulge in an evening of music, drinks, and stunning views of Dubai’s skyline.<br><br> 📅 <b>Date:</b> 8 March 2025<br> ⏰ <b>Time:</b> 8:00 PM - 11:00 PM<br> 📍 <b>Location:</b> Boarding from Dubai Harbour Marina — 7:30 PM<br><br> ✨<b>What’s Included?</b><br> <b>✔ Unlimited Drinks & Canapés</b>  – Sip on your favorite beverages and enjoy a selection of gourmet bites.<br> <b>✔ Live DJ Performance by DJ Fobiya</b>  – Feel the rhythm as one of the best DJs sets the perfect vibe for the night!<br> <b>✔ Breathtaking Views</b>  – Experience the magic of Dubai at night, cruising along its sparkling waters.<br> <b>✔ Luxury Experience</b>  – Celebrate in style aboard a premium yacht with top-notch service.<br><br> 🎟 <b>Ticket Prices:</b><br> 👫 <b>Couple:</b> AED 349<br> 🕺<b> Gents:</b> AED 299<br> 💃<b> Ladies:</b> AED 149<br>  (T&Cs apply)<br><br> 💜 <b>Celebrate the strength, elegance, and achievements of women with an unforgettable night on the water!</b> Gather your friends, dress to impress, and let’s toast to empowerment, unity, and joy!<br><br> 📩 <b>Book Your Spot Now!</b> Spaces are limited. Secure your tickets today.",
-          "meta_title": "Dubai Super Yacht Party | Weekend Luxury Cruise Experience - Book Now",
-          "meta_description": "Join us for an exclusive Super Yacht Party in Dubai and enjoy your weekends with luxury, entertainment, and stunning views. Multiple time slots available. Book your spot today!",
-          "meta_keyword": "yacht party dubai, yacht party, party yacht rental dubai"
-        },
-        "en": {
-          "title": "International Women's Day Yacht Party",
-          "heading_2": "08 March 2025 | 8:00 PM-11:00 PM",
-          "description": "🌸 <b>International Women's Day Yacht Party🌸</b><br><br> <b>A Night of Celebration, Empowerment & Unforgettable Moments!</b><br> Join us for an exclusive <b>International Women’s Day Yacht Party</b>—a night dedicated to celebrating the power, beauty, and achievements of women from all walks of life! Set sail on a luxury yacht and indulge in an evening of music, drinks, and stunning views of Dubai’s skyline.<br><br> 📅 <b>Date:</b> 8 March 2025<br> ⏰ <b>Time:</b> 8:00 PM - 11:00 PM<br> 📍 <b>Location:</b> Boarding from Dubai Harbour Marina — 7:30 PM<br><br> ✨<b>What’s Included?</b><br> <b>✔ Unlimited Drinks & Canapés</b>  – Sip on your favorite beverages and enjoy a selection of gourmet bites.<br> <b>✔ Live DJ Performance by DJ Fobiya</b>  – Feel the rhythm as one of the best DJs sets the perfect vibe for the night!<br> <b>✔ Breathtaking Views</b>  – Experience the magic of Dubai at night, cruising along its sparkling waters.<br> <b>✔ Luxury Experience</b>  – Celebrate in style aboard a premium yacht with top-notch service.<br><br> 🎟 <b>Ticket Prices:</b><br> 👫 <b>Couple:</b> AED 349<br> 🕺<b> Gents:</b> AED 299<br> 💃<b> Ladies:</b> AED 149<br>  (T&Cs apply)<br><br> 💜 <b>Celebrate the strength, elegance, and achievements of women with an unforgettable night on the water!</b> Gather your friends, dress to impress, and let’s toast to empowerment, unity, and joy!<br><br> 📩 <b>Book Your Spot Now!</b> Spaces are limited. Secure your tickets today.",
-          "meta_title": "Dubai Super Yacht Party | Weekend Luxury Cruise Experience - Book Now",
-          "meta_description": "Join us for an exclusive Super Yacht Party in Dubai and enjoy your weekends with luxury, entertainment, and stunning views. Multiple time slots available. Book your spot today!",
-          "meta_keyword": "yacht party dubai, yacht party, party yacht rental dubai"
-        },
-        "ru": {
-          "title": "Yacht Party in DubaiInternational Women's Day Yacht Party",
-          "heading_2": "08 March 2025 | 8:00 PM-11:00 PM",
-          "description": "🌸 <b>International Women's Day Yacht Party🌸</b><br><br> <b>A Night of Celebration, Empowerment & Unforgettable Moments!</b><br> Join us for an exclusive <b>International Women’s Day Yacht Party</b>—a night dedicated to celebrating the power, beauty, and achievements of women from all walks of life! Set sail on a luxury yacht and indulge in an evening of music, drinks, and stunning views of Dubai’s skyline.<br><br> 📅 <b>Date:</b> 8 March 2025<br> ⏰ <b>Time:</b> 8:00 PM - 11:00 PM<br> 📍 <b>Location:</b> Boarding from Dubai Harbour Marina — 7:30 PM<br><br> ✨<b>What’s Included?</b><br> <b>✔ Unlimited Drinks & Canapés</b>  – Sip on your favorite beverages and enjoy a selection of gourmet bites.<br> <b>✔ Live DJ Performance by DJ Fobiya</b>  – Feel the rhythm as one of the best DJs sets the perfect vibe for the night!<br> <b>✔ Breathtaking Views</b>  – Experience the magic of Dubai at night, cruising along its sparkling waters.<br> <b>✔ Luxury Experience</b>  – Celebrate in style aboard a premium yacht with top-notch service.<br><br> 🎟 <b>Ticket Prices:</b><br> 👫 <b>Couple:</b> AED 349<br> 🕺<b> Gents:</b> AED 299<br> 💃<b> Ladies:</b> AED 149<br>  (T&Cs apply)<br><br> 💜 <b>Celebrate the strength, elegance, and achievements of women with an unforgettable night on the water!</b> Gather your friends, dress to impress, and let’s toast to empowerment, unity, and joy!<br><br> 📩 <b>Book Your Spot Now!</b> Spaces are limited. Secure your tickets today.",
-          "meta_title": "Dubai Super Yacht Party | Weekend Luxury Cruise Experience - Book Now",
-          "meta_description": "Join us for an exclusive Super Yacht Party in Dubai and enjoy your weekends with luxury, entertainment, and stunning views. Multiple time slots available. Book your spot today!",
-          "meta_keyword": "yacht party dubai, yacht party, party yacht rental dubai"
-        },
-        "zh": {
-          "title": "International Women's Day Yacht Party",
-          "heading_2": "08 March 2025 | 8:00 PM-11:00 PM",
-          "description": "🌸 <b>International Women's Day Yacht Party🌸</b><br><br> <b>A Night of Celebration, Empowerment & Unforgettable Moments!</b><br> Join us for an exclusive <b>International Women’s Day Yacht Party</b>—a night dedicated to celebrating the power, beauty, and achievements of women from all walks of life! Set sail on a luxury yacht and indulge in an evening of music, drinks, and stunning views of Dubai’s skyline.<br><br> 📅 <b>Date:</b> 8 March 2025<br> ⏰ <b>Time:</b> 8:00 PM - 11:00 PM<br> 📍 <b>Location:</b> Boarding from Dubai Harbour Marina — 7:30 PM<br><br> ✨<b>What’s Included?</b><br> <b>✔ Unlimited Drinks & Canapés</b>  – Sip on your favorite beverages and enjoy a selection of gourmet bites.<br> <b>✔ Live DJ Performance by DJ Fobiya</b>  – Feel the rhythm as one of the best DJs sets the perfect vibe for the night!<br> <b>✔ Breathtaking Views</b>  – Experience the magic of Dubai at night, cruising along its sparkling waters.<br> <b>✔ Luxury Experience</b>  – Celebrate in style aboard a premium yacht with top-notch service.<br><br> 🎟 <b>Ticket Prices:</b><br> 👫 <b>Couple:</b> AED 349<br> 🕺<b> Gents:</b> AED 299<br> 💃<b> Ladies:</b> AED 149<br>  (T&Cs apply)<br><br> 💜 <b>Celebrate the strength, elegance, and achievements of women with an unforgettable night on the water!</b> Gather your friends, dress to impress, and let’s toast to empowerment, unity, and joy!<br><br> 📩 <b>Book Your Spot Now!</b> Spaces are limited. Secure your tickets today.",
-          "meta_title": "Dubai Super Yacht Party | Weekend Luxury Cruise Experience - Book Now",
-          "meta_description": "Join us for an exclusive Super Yacht Party in Dubai and enjoy your weekends with luxury, entertainment, and stunning views. Multiple time slots available. Book your spot today!",
-          "meta_keyword": "yacht party dubai, yacht party, party yacht rental dubai"
-        }
-      }
-    },
     {
       "id": 47,
       "image": "1740135415Iftar Yacht tours.webp",
