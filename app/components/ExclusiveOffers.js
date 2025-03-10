@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from "../i18n/routing";
 
 const ExclusiveOffers = () => {
   return (
@@ -18,9 +19,9 @@ const ExclusiveOffers = () => {
             summer offers, birthday party to membership discounts we have all
             for you.
         </p>
-        <button className="px-5 py-3 bg-primary-blue text-white text-xl  font-bold rounded-md ">
+        <Link href="/offers" className="px-5 py-3 bg-primary-blue text-white text-xl  font-bold rounded-md ">
             EXPLORE ALL OFFERS
-        </button>
+        </Link>
     </div>
 
     <div></div>

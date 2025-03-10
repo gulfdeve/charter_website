@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "../i18n/routing";
 
 const TailorYachtExperience = () => {
   return (
@@ -10,9 +11,9 @@ const TailorYachtExperience = () => {
         Live your life in a new way and get in touch with our agent for your
         customized tours
       </p>
-      <button className="px-5 py-3 bg-primary-yellow text-primary-blue text-xl  font-bold rounded-md ">
+      <Link href="/contact" className="px-5 py-3 bg-primary-yellow text-primary-blue text-xl  font-bold rounded-md ">
         CONTACT US
-      </button>
+      </Link>
     </div>
   );
 };

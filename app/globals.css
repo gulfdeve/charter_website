@@ -59,6 +59,65 @@ body {
   @apply flex items-center justify-center gap-2 px-8 py-2 bg-primary-yellow hover:scale-105 hover:bg-primary-blue hover:text-primary-yellow text-primary-blue border-2 border-primary-blue tracking-wide font-bold rounded-md transition duration-150 ease-in-out transform;
 }
 
+h1 {
+  @apply text-4xl font-bold tracking-tight;
+}
+
+h2 {
+  @apply text-3xl font-bold tracking-tight;
+}
+
+h3 {
+  @apply text-2xl font-bold;
+}
+
+h4 {
+  @apply text-xl font-semibold;
+}
+
+h5 {
+  @apply text-lg font-semibold;
+}
+
+h6 {
+  @apply text-base font-semibold;
+}
+
+p {
+  @apply text-base leading-relaxed;
+}
+
+/* Responsive adjustments for larger screens */
+@screen md {
+  h1 {
+    @apply text-5xl;
+  }
+
+  h2 {
+    @apply text-4xl;
+  }
+
+  h3 {
+    @apply text-3xl;
+  }
+
+  h4 {
+    @apply text-2xl;
+  }
+
+  h5 {
+    @apply text-xl;
+  }
+
+  h6 {
+    @apply text-lg;
+  }
+
+  p {
+    @apply text-lg;
+  }
+}
+
 footer a {
   color: #969696;
 }
