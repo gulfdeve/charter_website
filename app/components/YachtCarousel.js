@@ -39,7 +39,7 @@ export default function YachtCarousal() {
   return (
     <div className="flex flex-col items-center justify-center bg-primary-yellow">
       <h2 className="text-primary-blue text-center font-bold text-4xl py-10">
-        EXPLORE OUR YACHT
+        EXPLORE OUR YACHTS
       </h2>
       <div className="md:block hidden">
       <div className="relative max-w-7xl h-full overflow-hidden bg-primary-yellow container mx-auto">
