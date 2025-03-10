@@ -5,6 +5,7 @@ import { FaWhatsapp } from "react-icons/fa";
 import Modal2 from "@/app/components/Modal2";
 import { useData } from "@/app/context/DataContext";
 import { useLocale, useTranslations } from "next-intl";
+import PageTitleHeading from "@/app/components/PageTitleHeading";
 // import Loading from "./loading";
 const Page = ({ params }) => {
   const { slug } = use(params); // Get slug from the URL
@@ -33,7 +34,10 @@ const Page = ({ params }) => {
   return (
     <>
       <div className="felx flex-col items-center justify-center px-4 xl:px-44 container mx-auto mt-14 md:mt-0">
-        <div className="flex items-center justify-center py-10">
+        
+        <PageTitleHeading title={offer.translations?.[locale]?.title} />
+        
+        <div className="flex items-center justify-center pb-10">
           <img
             src={`https://www.centauruscharter.com/product/images/${offer.image}`}
             alt={offer.name}
