@@ -25,7 +25,7 @@ export default function OfferCarousel() {
       });
       const autoplay = setInterval(() => {
         emblaInstance.current?.scrollNext();
-      }, 3000);
+      }, 10000);
       return () => {
         clearInterval(autoplay);
         emblaInstance.current?.destroy();

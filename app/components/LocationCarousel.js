@@ -54,7 +54,7 @@ function MobileCarousel() {
       });
       const autoplay = setInterval(() => {
         emblaInstance.current?.scrollNext();
-      }, 100000);
+      }, 10000);
       return () => {
         clearInterval(autoplay);
         emblaInstance.current?.destroy();
@@ -128,7 +128,7 @@ function DesktopCarousel() {
       });
       const autoplay = setInterval(() => {
         emblaInstance.current?.scrollNext();
-      }, 100000);
+      }, 10000);
       return () => {
         clearInterval(autoplay);
         emblaInstance.current?.destroy();

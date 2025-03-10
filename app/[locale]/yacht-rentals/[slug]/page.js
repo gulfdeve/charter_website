@@ -58,7 +58,7 @@ export default function Home({ params }) {
 
       const autoplayInterval = setInterval(() => {
         emblaInstance.current.scrollNext();
-      }, 3000);
+      }, 10000);
 
       return () => {
         clearInterval(autoplayInterval);
