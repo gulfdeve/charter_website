@@ -98,7 +98,7 @@ return (
                 alt="Footer Exclusive Offer" />
         </div>
         <div
-            className="flex flex-col items-center lg:items-start lg:p-12 justify-center bg-[#E2BA4D] w-full lg:w-1/2 lg:h-[27rem] h-[35rem]">
+            className="flex flex-col items-center lg:items-start lg:p-12 justify-center bg-primary-yellow w-full lg:w-1/2 lg:h-[27rem] h-[35rem]">
             <h2 className=" text-primary-blue text-5xl lg:text-4xl lg:pb-4 font-bold text-center px-6 lg:px-0">
                 Exclusive Offers
             </h2>

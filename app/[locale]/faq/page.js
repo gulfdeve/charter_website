@@ -127,14 +127,14 @@ const page = () => {
                 key={index}
                 className={`  transition-colors duration-200  shadow-md py-3 px-3 ${
                   activeIndex === index
-                    ? "bg-[#E2BA4D] rounded-t-lg"
+                    ? "bg-primary-yellow rounded-t-lg"
                     : "bg-primary-blue rounded-lg"
                 }`}
               >
                 <button
                   onClick={() => toggleAnswer(index)}
                   className={`w-full text-left text-lg md:text-lg font-bold   flex justify-between items-center focus:outline-none ${
-                    activeIndex === index ? "text-primary-blue" : "text-[#E2BA4D]"
+                    activeIndex === index ? "text-primary-blue" : "text-primary-yellow"
                   }`}
                 >
                   {faq.question}
@@ -163,7 +163,7 @@ const page = () => {
               alt="Footer Exclusive Offer"
             />
           </div>
-          <div className="flex flex-col items-center lg:items-start lg:p-12 justify-center bg-[#E2BA4D] w-full lg:w-1/2 lg:h-[27rem] h-[35rem]">
+          <div className="flex flex-col items-center lg:items-start lg:p-12 justify-center bg-primary-yellow w-full lg:w-1/2 lg:h-[27rem] h-[35rem]">
             <h1 className=" text-primary-blue text-5xl lg:text-4xl lg:pb-4 font-bold text-center px-6 lg:px-0">
               Exclusive Offers
             </h1>

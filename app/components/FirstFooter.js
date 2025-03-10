@@ -35,48 +35,48 @@ export default function FirstFooter() {
       content: (
         <ul>
           <li className="mb-2">
-            <Link href="/" onClick={scrollToTop} className="text-[#969696]">
+            <Link href="/" onClick={scrollToTop} className="text-text-primary-white">
               {t("navbar.home")}
             </Link>
           </li>
           <li className="mb-2">
-            <Link href="/aboutus" onClick={scrollToTop} className="text-[#969696]">
+            <Link href="/aboutus" onClick={scrollToTop} className="text-text-primary-white">
               {t("navbar.about")}
             </Link>
           </li>
           <li className="mb-2">
-            <Link href="/yacht-rentals" onClick={scrollToTop} className="text-[#969696]">
+            <Link href="/yacht-rentals" onClick={scrollToTop} className="text-text-primary-white">
               {t("navbar.yacht-rentals")}
             </Link>
           </li>
           <li className="mb-2">
-            <Link href="/watersports" onClick={scrollToTop} className="text-[#969696]">
+            <Link href="/watersports" onClick={scrollToTop} className="text-text-primary-white">
               {t("navbar.water-sports")}
             </Link>
           </li>
           <li className="mb-2">
-            <Link href="/offers" onClick={scrollToTop} className="text-[#969696]">
+            <Link href="/offers" onClick={scrollToTop} className="text-text-primary-white">
               {t("navbar.offers")}
             </Link>
           </li>
           <li className="mb-2">
-            <Link href="/events" onClick={scrollToTop} className="text-[#969696]">
+            <Link href="/events" onClick={scrollToTop} className="text-text-primary-white">
               {t("navbar.events")}
             </Link>
           </li>
           <li className="mb-2">
-            <Link href="/faq" onClick={scrollToTop} className="text-[#969696]">
+            <Link href="/faq" onClick={scrollToTop} className="text-text-primary-white">
               {t("navbar.faq")}
             </Link>
           </li>
           <li className="mb-2">
-            <Link href="/contact" onClick={scrollToTop} className="text-[#969696]">
+            <Link href="/contact" onClick={scrollToTop} className="text-text-primary-white">
               {t("navbar.contact-us")}
             </Link>
           </li>
           <li className="mb-2">
             <a
-              className="text-[#969696]"
+              className="text-text-primary-white"
               href="https://www.centauruscharter.com/public/pdf/Centaurus-Charter-Profile-2023.pdf"
               onClick={scrollToTop}
             >
@@ -92,7 +92,7 @@ export default function FirstFooter() {
         <ul>
           {!loading &&
             data?.products?.map((product) => (
-              <li key={product.id} className="mb-2 text-[#969696]">
+              <li key={product.id} className="mb-2 text-text-primary-white">
                 <Link href={`/yacht-rentals/${product.slug}`} onClick={scrollToTop}>
                   {product.translations?.[locale]?.name_of_yacht}
                 </Link>
@@ -107,7 +107,7 @@ export default function FirstFooter() {
         <ul>
           {!loading &&
             data?.experiences?.map((experience) => (
-              <li key={experience.id} className="mb-2 text-[#969696]">
+              <li key={experience.id} className="mb-2 text-text-primary-white">
                 <Link href={`/yacht-trips/${experience.slug}`} onClick={scrollToTop}>
                   {experience.translations?.[locale]?.title}
                 </Link>
@@ -119,7 +119,7 @@ export default function FirstFooter() {
     {
       title: t("footer.reach-out-to-us"),
       content: (
-        <ul className="text-[#969696] space-y-3">
+        <ul className="text-text-primary-white space-y-3">
         {[
           {
             address: "Marina Walk (Near Spinneys)",
@@ -140,7 +140,7 @@ export default function FirstFooter() {
           },
         ].map((item, index) => (
           <li key={index} className="flex items-start gap-3">
-            <FaMapMarkerAlt className="w-5 h-5 flex-shrink-0 text-[#969696]" />
+            <FaMapMarkerAlt className="w-5 h-5 flex-shrink-0 text-text-primary-white" />
             <a
               href="https://www.google.com/maps/place/CENTAURUS+CHARTER+-+Yachts+%26+Boats+Rental+Dubai+Harbour"
               className="hover:text-white"
@@ -151,7 +151,7 @@ export default function FirstFooter() {
             </a>
           </li>
         ))}
-          <ul className="text-[#969696] space-y-2">
+          <ul className="text-text-primary-white space-y-2">
       <li className="flex items-center space-x-2">
         <FaPhoneAlt className="w-5 h-5" />
         <a href="tel:+97143521833" className="hover:text-white">
@@ -177,7 +177,7 @@ export default function FirstFooter() {
     {
       title: "For Enquiries",
       content: (
-        <ul className="text-[#969696]">
+        <ul className="text-text-primary-white">
           <li className="flex flex-col md:items-start items-center text-center md:text-left">
             <p className="font-semibold py-3">English / Russian</p>
             <a className="mb-2 inline-block" href="tel:+971505484685" onClick={scrollToTop}>
