@@ -99,20 +99,20 @@ export default function Navbar() {
               <Link aria-label="email icon"  href={header_email || "#"}>
                 <MdMail
                   size={30}
-                  className="text-primary-yellow hover:text-primary-blue"
+                  className="text-primary-yellow hover:text-primary-blue hover:scale-110"
                 />
               </Link>
               <Link aria-label="phone icon" href={header_phone_number_url || "#"}>
                 <FaPhoneAlt
                   size={23}
-                  className="text-primary-yellow hover:text-primary-blue mt-1"
+                  className="text-primary-yellow hover:text-primary-blue mt-1  hover:scale-110"
                 />
               </Link>
               {/* WhatsApp Icon */}
               <Link aria-label="whatsapp icon"     href={header_whatsapp_url || "#"}>
                 <IoLogoWhatsapp
                   size={30}
-                  className="text-primary-yellow hover:text-primary-blue"
+                  className="text-primary-yellow hover:text-primary-blue  hover:scale-110"
                 />
               </Link>
             </div>
