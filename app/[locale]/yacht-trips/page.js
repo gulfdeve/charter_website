@@ -9,6 +9,8 @@ import { useData } from "@/app/context/DataContext";
 import ExperienceMobilecarousal from "@/app/components/ExperienceMobilecarousal"
 import TailorYachtExperience from "@/app/components/TailorYachtExperience"
 import ExclusiveOffers from "../../components/ExclusiveOffers";
+import Page from "../contact/page";
+import PageTitleHeading from "@/app/components/PageTitleHeading";
 const page = () => {
 const { data, loading, error } = useData();
 
@@ -17,11 +19,9 @@ const locale = useLocale
 return (
 <>
     <div className="max-w-7xl mx-auto mt-14 md:mt-0">
-        <div className="flex flex-col items-center justify-center py-10">
-            <h1 className=" text-primary-blue text-center font-bold text-xl">
-                YACHT TRIPS & EXPERIENCES IN DUBAI
-            </h1>
-        </div>
+
+        <PageTitleHeading title="YACHT TRIPS & EXPERIENCES IN DUBAI" />
+
         <div className="md:block hidden">
         <div className="grid grid-col-1 md:grid-cols-2 md:px-4 gap-7 pb-16">
             {!loading &&

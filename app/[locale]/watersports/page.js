@@ -10,6 +10,7 @@ import WatersportCarousal from "@/app/components/WatersportCarousal"
 import { useRouter, usePathname, Link } from "@/app/i18n/routing";
 import TailorYachtExperience from "@/app/components/TailorYachtExperience";
 import ExclusiveOffers from "@/app/components/ExclusiveOffers";
+import PageTitleHeading from "@/app/components/PageTitleHeading";
 
 const page = ({ params }) => {
 const { data, loading, error } = useData();
@@ -18,11 +19,9 @@ const { language, changeLanguage } = useLanguage();
 return (
 <>
     <div className="max-w-7xl mx-auto mt-14 md:mt-0">
-        <div className="flex flex-col items-center justify-center py-10 ">
-            <h1 className=" text-primary-blue text-center font-bold text-4xl">
-                WATERSPORTS ADD-ON DUBAI
-            </h1>
-        </div>
+
+        <PageTitleHeading title="WATERSPORTS ADD-ON DUBAI" />
+
         <div className="md:block hidden">
 
         

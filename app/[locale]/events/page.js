@@ -6,6 +6,7 @@ import { useData } from "@/app/context/DataContext";
 import { useLanguage } from "@/app/context/LanguageContext";
 import YachtCarousal from "@/app/components/YachtCarousel";
 import Eventmobilecarousal from '@/app/components/EventMobilecarousal'
+import PageTitleHeading from "@/app/components/PageTitleHeading";
 // import Link from "next/link";
 import { useRouter, usePathname, Link } from "@/app/i18n/routing";
 // import Loading from "./loading";
@@ -20,11 +21,8 @@ const { language, changeLanguage } = useLanguage();
 return (
 <>
     <div className="max-w-7xl mx-auto mt-14 md:mt-0">
-        <div className="flex flex-col items-center justify-center py-10 ">
-            <h1 className=" text-primary-blue text-center font-bold md:text-4xl ">
-                YACHT EVENTS DUBAI
-            </h1>
-        </div>
+
+        <PageTitleHeading title="YACHT EVENTS DUBAI" />
 
         <div className="hidden md:block">
         <div className="grid grid-col-1 md:grid-cols-2 md:px-4 gap-7 pb-4 container mx-auto">
