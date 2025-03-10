@@ -54,7 +54,7 @@ function MobileCarousel() {
       });
       const autoplay = setInterval(() => {
         emblaInstance.current?.scrollNext();
-      }, 10000);
+      }, 100000);
       return () => {
         clearInterval(autoplay);
         emblaInstance.current?.destroy();
@@ -66,7 +66,7 @@ function MobileCarousel() {
   const scrollNext = () => emblaInstance.current?.scrollNext();
 
   return (
-    <div className="container mx-auto md:px-4 pb-16 md:hidden">
+    <div className="max-w-7xl mx-auto md:px-4 pb-16 lg:hidden">
       {/* Optional heading */}
       <div className="flex flex-col items-center justify-center py-10">
         <h2 className="text-primary-blue text-center font-bold text-4xl">
@@ -128,7 +128,7 @@ function DesktopCarousel() {
       });
       const autoplay = setInterval(() => {
         emblaInstance.current?.scrollNext();
-      }, 10000);
+      }, 100000);
       return () => {
         clearInterval(autoplay);
         emblaInstance.current?.destroy();
@@ -140,27 +140,27 @@ function DesktopCarousel() {
   const scrollNext = () => emblaInstance.current?.scrollNext();
 
   return (
-    <div className="flex flex-col items-center container mx-auto hidden lg:block">
+    <div className="max-w-7xl mx-auto flex flex-col items-center container mx-auto hidden lg:block">
       <div className="flex flex-col items-center justify-center">
         <h2 className="text-primary-blue text-center font-bold text-4xl py-10">
           YACHT LOCATION
         </h2>
       </div>
 
-      <div className="relative w-full overflow-hidden lg:pb-9 xl:px-20">
+      <div className="relative w-full overflow-hidden">
         <div className="embla__viewport" ref={emblaRef}>
           <div className="embla__container flex">
             {TEMPORARY_DATA.map((item) => (
               <div
                 key={item.id}
-                className="embla__slide p-5 w-full lg:basis-[calc(100%/3)] flex-none"
+                className="embla__slide px-5 w-full lg:basis-[calc(100%/3)] flex-none"
               >
                 <div className="relative bg-gray-200 overflow-hidden shadow-lg w-96">
                   <iframe
                     title="google maps location"
                     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3613.2080337682214!2d55.1390062!3d25.094818299999996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f6b1f6453e121%3A0x45035717db6c3954!2sCENTAURUS%20CHARTER%20-%20Yachts%20%26%20Boats%20Rental%20Dubai%20Harbour!5e0!3m2!1sen!2s!4v1734525244924!5m2!1sen!2s"
-                    width="500"
-                    height="450"
+                    width="400"
+                    height="400"
                     loading="lazy"
                     className="w-full"
                   ></iframe>
@@ -181,19 +181,20 @@ function DesktopCarousel() {
         {/* Navigation Buttons */}
         <button
           aria-label="go previous slide"
-          className="bg-primary-blue text-primary-yellow hover:bg-primary-yellow hover:text-primary-blue transition duration-150 ease-in-out absolute left-2 lg:left-32 top-1/2 -translate-y-1/2 bg-gray-800 text-white w-14 aspect-square rounded-full flex items-center justify-center hover:bg-gray-700 z-10"
+          className="bg-primary-blue text-primary-yellow hover:bg-primary-yellow hover:text-primary-blue transition duration-150 ease-in-out absolute left-2 top-1/2 -translate-y-1/2 bg-gray-800 text-white w-14 aspect-square rounded-full flex items-center justify-center hover:bg-gray-700 z-10"
           onClick={scrollPrev}
         >
           <IoIosArrowBack size={30} />
         </button>
         <button
           aria-label="go next slide"
-          className="bg-primary-blue text-primary-yellow hover:bg-primary-yellow hover:text-primary-blue transition duration-150 ease-in-out absolute right-2 lg:right-32 top-1/2 -translate-y-1/2 bg-gray-800 text-white w-14 aspect-square rounded-full flex items-center justify-center hover:bg-gray-700 z-10"
+          className="bg-primary-blue text-primary-yellow hover:bg-primary-yellow hover:text-primary-blue transition duration-150 ease-in-out absolute right-2 top-1/2 -translate-y-1/2 bg-gray-800 text-white w-14 aspect-square rounded-full flex items-center justify-center hover:bg-gray-700 z-10"
           onClick={scrollNext}
         >
           <IoIosArrowForward size={30} />
         </button>
       </div>
+      <div className="pt-12"></div>
     </div>
   );
 }
