@@ -10,6 +10,7 @@ import { useLanguage } from "@/app/context/LanguageContext";
 import { useLocale } from "next-intl";
 import Loading from "./loading";
 import ExperienceCarousal from "@/app/components/ExperienceCarousal";
+import PageTitleHeading from "../../components/PageTitleHeading";
 /* 
   YachtCard Component:
   - Receives a single yacht object as prop.
@@ -208,11 +209,9 @@ const Tabs = () => {
 
   return (
     <div className="w-full bg-white mt-14 lg:mt-0 ">
-      <div className="flex flex-col items-center justify-center pt-10 container mx-auto">
-        <h1 className=" text-primary-blue text-center font-bold text-4xl pb-4">
-          LUXURY YACHT RENTALS DUBAI
-        </h1>
-      </div>
+      <PageTitleHeading title="LUXURY YACHT RENTALS DUBAI" />
+
+
       <div className="flex justify-center items-center gap-6 text-lg font-semibold py-2 md:py-7 px-2 ">
         <button onClick={() => setActiveTab("allYachts")}>ALL YACHTS</button>
         <button onClick={() => setActiveTab("bestSellers")}>
