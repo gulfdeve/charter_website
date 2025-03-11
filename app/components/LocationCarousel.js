@@ -6,39 +6,38 @@ const TEMPORARY_DATA = [
   {
     id: 1,
     title: "Dubai Marina",
-    description: "Thunder, Vassia & Etosha",
+    description: "(Thunder, Vassia & Etosha)",
+    src: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3613.4605443824817!2d55.1474643!3d25.086266999999996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f6b4a39b0235d%3A0xd464874a98c88514!2sCentaurus%20Charter%3A%20Luxury%20Yacht%20Rental%20Dubai%20Marina!5e0!3m2!1sen!2sae!4v1693488363219!5m2!1sen!2sae",
     image: "https://via.placeholder.com/400x200?text=Dubai+Marina",
   },
   {
     id: 2,
     title: "Dubai Marina Harbour",
-    description: "Lagoona & Silver Creek",
+    description: "(Lagoona & Silver Creek)",
+    src: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3613.34346928787!2d55.1430654!3d25.090232099999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f6b6195d88cb9%3A0xb959a4fe54f444df!2sCENTAURUS%20CHARTER%20-%20Yachts%20%26%20Boats%20Rental%20Dubai%20Harbour!5e0!3m2!1sen!2sae!4v1693488420055!5m2!1sen!2sae",
     image: "https://via.placeholder.com/400x200?text=Dubai+Marina+Harbour",
   },
   {
     id: 3,
     title: "Dubai Harbour Marina",
-    description: "Poseidon",
+    description: "(Poseidon)",
+    src: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3613.232177136002!2d55.139939399999996!3d25.094000800000003!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f6b1f6453e121%3A0x45035717db6c3954!2sCENTAURUS%20CHARTER%20-%20Yachts%20%26%20Boats%20Rental%20Dubai%20Harbour!5e0!3m2!1sen!2sae!4v1693488469422!5m2!1sen!2sae",
     image: "https://via.placeholder.com/400x200?text=Dubai+Harbour+Marina",
   },
   {
     id: 4,
-    title: "Palm Jumeirah",
-    description: "Atlantis, Pearl & Ruby",
+    title: "Dubai Harbour Marina",
+    description: "(Dionysos)",
+    src: "https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3612.5516095536605!2d55.14394699999999!3d25.098374!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMjXCsDA1JzU0LjIiTiA1NcKwMDgnMzguMiJF!5e0!3m2!1sen!2sae!4v1733380389487!5m2!1sen!2sae",
     image: "https://via.placeholder.com/400x200?text=Palm+Jumeirah",
   },
   {
     id: 5,
-    title: "Burj Al Arab",
-    description: "Luxury Views",
+    title: "Dubai Harbour Marina",
+    description: "(Storm)",
+    src: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3613.251813199369!2d55.139273499999994!3d25.093335899999996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f6bc74a6d5101%3A0x112933f2a040054c!2sCENTAURUS%20CHARTER%20-%20Yachts%20%26%20Boats%20Rental%20Dubai%20Harbour!5e0!3m2!1sen!2sae!4v1693488505230!5m2!1sen!2sae",
     image: "https://via.placeholder.com/400x200?text=Burj+Al+Arab",
-  },
-  {
-    id: 6,
-    title: "The World Islands",
-    description: "Private Yachts",
-    image: "https://via.placeholder.com/400x200?text=The+World+Islands",
-  },
+  }
 ];
 
 // Mobile Version: Uses updated card design and responsive widths
@@ -90,7 +89,7 @@ function MobileCarousel() {
                   <div className="relative w-full h-52 p-4">
                     <iframe
                       title="google maps location"
-                      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3613.2080337682214!2d55.1390062!3d25.094818299999996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f6b1f6453e121%3A0x45035717db6c3954!2sCENTAURUS%20CHARTER%20-%20Yachts%20%26%20Boats%20Rental%20Dubai%20Harbour!5e0!3m2!1sen!2s!4v1734525244924!5m2!1sen!2s"
+                      src={item.src}
                       className="absolute inset-0 w-full h-full"
                       loading="lazy"
                     ></iframe>
@@ -158,7 +157,7 @@ function DesktopCarousel() {
                 <div className="relative bg-gray-200 overflow-hidden shadow-lg w-96">
                   <iframe
                     title="google maps location"
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3613.2080337682214!2d55.1390062!3d25.094818299999996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f6b1f6453e121%3A0x45035717db6c3954!2sCENTAURUS%20CHARTER%20-%20Yachts%20%26%20Boats%20Rental%20Dubai%20Harbour!5e0!3m2!1sen!2s!4v1734525244924!5m2!1sen!2s"
+                    src={item.src}
                     width="400"
                     height="400"
                     loading="lazy"
