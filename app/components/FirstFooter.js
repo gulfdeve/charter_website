@@ -360,6 +360,8 @@ export default function FirstFooter() {
           })}
         </div>
       </div>
+      <a href="https://fareharbor.com/embeds/book/centauruscharter/?full-items=yes" className="yellow-solid-button fixed fixed-btn right-4 bottom-4">BOOK YOUR YACHT</a>
     </footer>
+
   );
 }
