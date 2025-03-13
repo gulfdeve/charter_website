@@ -12,6 +12,8 @@ const page = ({ params }) => {
   const locale = useLocale();
   // Find the event by slug
   const event = data?.events?.find((event) => event.slug === slug);
+  console.log(event);
+  console.log(locale);
 
   const handleQuote = () => {
     setIsModalOpen(true);
