@@ -1809,6 +1809,158 @@
       "whatsapp_url": "https://wa.link/4buk27",
       "amount": 3500,
       "yachts": "6%5000%4,20%33600%4,24%40000%4",
+      "yachts_data": [
+        {
+          "yacht_id": "6",
+          "yacht_price": "5000",
+          "yacht_before_price": "4",
+          "hours": "",
+          "yacht_image": "17025564681670496933main.webp",
+          "fareharbor_id": "340286",
+          "translations": {
+            "en": [
+              {
+                "name_of_yacht": "61 Ft Yacht - Silver Creek",
+                "locale": "en",
+                "model": "Majesty",
+                "size": "61 Feet",
+                "guests": "30",
+                "good_for": "Corporate Events"
+              }
+            ],
+            "ar": [
+              {
+                "name_of_yacht": "يخت 61 قدم- سلفر كريك",
+                "locale": "ar",
+                "model": "ماجيستي",
+                "size": "61 قدم",
+                "guests": "30 شخص",
+                "good_for": "Corporate Events"
+              }
+            ],
+            "ru": [
+              {
+                "name_of_yacht": "61 футов – Сильвер Крик",
+                "locale": "ru",
+                "model": "Мэджести",
+                "size": "61 Футов",
+                "guests": "30 чел.",
+                "good_for": "Корпоративов"
+              }
+            ],
+            "zh": [
+              {
+                "name_of_yacht": "61英尺游艇-银溪",
+                "locale": "zh",
+                "model": "Majesty",
+                "size": "61尺",
+                "guests": "30",
+                "good_for": "商务晚会"
+              }
+            ]
+          }
+        },
+        {
+          "yacht_id": "20",
+          "yacht_price": "33600",
+          "yacht_before_price": "4",
+          "hours": "",
+          "yacht_image": "17025566991664188921Dionysos 564x400.webp",
+          "fareharbor_id": "366044",
+          "translations": {
+            "en": [
+              {
+                "name_of_yacht": "77 Ft Yacht - Dionysos",
+                "locale": "en",
+                "model": "Majesty",
+                "size": "77 Feet",
+                "guests": "20",
+                "good_for": "Family Events"
+              }
+            ],
+            "ar": [
+              {
+                "name_of_yacht": "77 Ft Yacht - Dionysos",
+                "locale": "ar",
+                "model": "Majesty",
+                "size": "77 Feet",
+                "guests": "20",
+                "good_for": "Family Events"
+              }
+            ],
+            "ru": [
+              {
+                "name_of_yacht": "77-футовая яхта - Dionysos (Дионис)",
+                "locale": "ru",
+                "model": "Мэджести",
+                "size": "77 футов",
+                "guests": "20 чел.",
+                "good_for": "Семейного Отдыха"
+              }
+            ],
+            "zh": [
+              {
+                "name_of_yacht": "77 尺游艇 - Dionysos",
+                "locale": "zh",
+                "model": "Majesty",
+                "size": "77尺",
+                "guests": "20",
+                "good_for": "家庭宴会"
+              }
+            ]
+          }
+        },
+        {
+          "yacht_id": "24",
+          "yacht_price": "40000",
+          "yacht_before_price": "4",
+          "hours": "",
+          "yacht_image": "17025567341677049461mega-yacht-cruise.webp",
+          "fareharbor_id": "417962",
+          "translations": {
+            "en": [
+              {
+                "name_of_yacht": "118 Ft Yacht - Poseidon",
+                "locale": "en",
+                "model": "Hatteras",
+                "size": "118 Feet",
+                "guests": "100",
+                "good_for": "Corporate Events"
+              }
+            ],
+            "ar": [
+              {
+                "name_of_yacht": "يخت 118 قدم- بوسايدون",
+                "locale": "ar",
+                "model": "هاتيراس",
+                "size": "118 قدم",
+                "guests": "100 شخص",
+                "good_for": "Corporate Events"
+              }
+            ],
+            "ru": [
+              {
+                "name_of_yacht": "118 футов – Посейдон",
+                "locale": "ru",
+                "model": "Хаттерас",
+                "size": "118 Футов",
+                "guests": "100 чел.",
+                "good_for": "Корпоративные мероприятия"
+              }
+            ],
+            "zh": [
+              {
+                "name_of_yacht": "118 尺游艇 -  Poseidon",
+                "locale": "zh",
+                "model": "Hatteras",
+                "size": "118尺",
+                "guests": "100",
+                "good_for": "企业活动"
+              }
+            ]
+          }
+        }
+      ],
       "translations": {
         "en": {
           "title": "Yacht Wedding Trips",
@@ -1840,6 +1992,308 @@
       "whatsapp_url": "https://wa.link/c8ptw0",
       "amount": 3120,
       "yachts": "1%3120%0%3,5%3450%0%3,2%3240%0%3,6%3750%0%3,20%25200%0%3,24%30000%0%3",
+      "yachts_data": [
+        {
+          "yacht_id": "1",
+          "yacht_price": "3120",
+          "yacht_before_price": "0",
+          "hours": "3",
+          "yacht_image": "170255634316729298171664187571Vassia 564x400.webp",
+          "fareharbor_id": "340265",
+          "translations": {
+            "en": [
+              {
+                "name_of_yacht": "56 Ft Yacht - Vassia",
+                "locale": "en",
+                "model": "Majesty",
+                "size": "56 Feet",
+                "guests": "28",
+                "good_for": "Birthday/Parties"
+              }
+            ],
+            "ar": [
+              {
+                "name_of_yacht": "يخت 56 قدم- فاسيا",
+                "locale": "ar",
+                "model": "ماجيستي",
+                "size": "56 قدم",
+                "guests": "28 شخص",
+                "good_for": "Birthday/Parties"
+              }
+            ],
+            "ru": [
+              {
+                "name_of_yacht": "56-футовая яхта - Vassia (Вася)",
+                "locale": "ru",
+                "model": "Мэджести",
+                "size": "56 футов",
+                "guests": "28 чел.",
+                "good_for": "Дни Рождения/Вечеринки"
+              }
+            ],
+            "zh": [
+              {
+                "name_of_yacht": "56尺 游艇- Vassia",
+                "locale": "zh",
+                "model": "Majesty",
+                "size": "56 尺",
+                "guests": "28",
+                "good_for": "生日/派对"
+              }
+            ]
+          }
+        },
+        {
+          "yacht_id": "5",
+          "yacht_price": "3450",
+          "yacht_before_price": "0",
+          "hours": "3",
+          "yacht_image": "17025564411664181639Lagoona 564x400.webp",
+          "fareharbor_id": "340459",
+          "translations": {
+            "en": [
+              {
+                "name_of_yacht": "56 Ft Yacht - Lagoona",
+                "locale": "en",
+                "model": "Majesty",
+                "size": "56 Feet",
+                "guests": "28",
+                "good_for": "Sunset Cruise"
+              }
+            ],
+            "ar": [
+              {
+                "name_of_yacht": "يخت 56 قدم- لاغونا",
+                "locale": "ar",
+                "model": "ماجيستي",
+                "size": "56 قدم",
+                "guests": "28 شخص",
+                "good_for": "Sunset Cruise"
+              }
+            ],
+            "ru": [
+              {
+                "name_of_yacht": "56-футовая яхта – Lagoona (Лагуна)",
+                "locale": "ru",
+                "model": "Мэджести",
+                "size": "56 футов",
+                "guests": "28 чел.",
+                "good_for": "КРУИЗ НА ЗАКАТЕ"
+              }
+            ],
+            "zh": [
+              {
+                "name_of_yacht": "56 英尺游艇 - Lagoona",
+                "locale": "zh",
+                "model": "Majesty",
+                "size": "56尺",
+                "guests": "28",
+                "good_for": "日落巡航"
+              }
+            ]
+          }
+        },
+        {
+          "yacht_id": "2",
+          "yacht_price": "3240",
+          "yacht_before_price": "0",
+          "hours": "3",
+          "yacht_image": "17025563691664803714Vassia New 564x400.webp",
+          "fareharbor_id": "340280",
+          "translations": {
+            "en": [
+              {
+                "name_of_yacht": "58 Ft Yacht - Etosha",
+                "locale": "en",
+                "model": "Azimut",
+                "size": "58 Feet",
+                "guests": "28",
+                "good_for": "Celebrations"
+              }
+            ],
+            "ar": [
+              {
+                "name_of_yacht": "يخت 58 قدم- ايتوشا",
+                "locale": "ar",
+                "model": "أزيموت",
+                "size": "58 قدم",
+                "guests": "28 شخص",
+                "good_for": "Celebrations"
+              }
+            ],
+            "ru": [
+              {
+                "name_of_yacht": "58-футовая яхта Этоша",
+                "locale": "ru",
+                "model": "Азимут",
+                "size": "58 футов",
+                "guests": "28 чел.",
+                "good_for": "Праздников"
+              }
+            ],
+            "zh": [
+              {
+                "name_of_yacht": "58尺游艇-Etosha",
+                "locale": "zh",
+                "model": "Azimut",
+                "size": "58 尺",
+                "guests": "28",
+                "good_for": "庆祝"
+              }
+            ]
+          }
+        },
+        {
+          "yacht_id": "6",
+          "yacht_price": "3750",
+          "yacht_before_price": "0",
+          "hours": "3",
+          "yacht_image": "17025564681670496933main.webp",
+          "fareharbor_id": "340286",
+          "translations": {
+            "en": [
+              {
+                "name_of_yacht": "61 Ft Yacht - Silver Creek",
+                "locale": "en",
+                "model": "Majesty",
+                "size": "61 Feet",
+                "guests": "30",
+                "good_for": "Corporate Events"
+              }
+            ],
+            "ar": [
+              {
+                "name_of_yacht": "يخت 61 قدم- سلفر كريك",
+                "locale": "ar",
+                "model": "ماجيستي",
+                "size": "61 قدم",
+                "guests": "30 شخص",
+                "good_for": "Corporate Events"
+              }
+            ],
+            "ru": [
+              {
+                "name_of_yacht": "61 футов – Сильвер Крик",
+                "locale": "ru",
+                "model": "Мэджести",
+                "size": "61 Футов",
+                "guests": "30 чел.",
+                "good_for": "Корпоративов"
+              }
+            ],
+            "zh": [
+              {
+                "name_of_yacht": "61英尺游艇-银溪",
+                "locale": "zh",
+                "model": "Majesty",
+                "size": "61尺",
+                "guests": "30",
+                "good_for": "商务晚会"
+              }
+            ]
+          }
+        },
+        {
+          "yacht_id": "20",
+          "yacht_price": "25200",
+          "yacht_before_price": "0",
+          "hours": "3",
+          "yacht_image": "17025566991664188921Dionysos 564x400.webp",
+          "fareharbor_id": "366044",
+          "translations": {
+            "en": [
+              {
+                "name_of_yacht": "77 Ft Yacht - Dionysos",
+                "locale": "en",
+                "model": "Majesty",
+                "size": "77 Feet",
+                "guests": "20",
+                "good_for": "Family Events"
+              }
+            ],
+            "ar": [
+              {
+                "name_of_yacht": "77 Ft Yacht - Dionysos",
+                "locale": "ar",
+                "model": "Majesty",
+                "size": "77 Feet",
+                "guests": "20",
+                "good_for": "Family Events"
+              }
+            ],
+            "ru": [
+              {
+                "name_of_yacht": "77-футовая яхта - Dionysos (Дионис)",
+                "locale": "ru",
+                "model": "Мэджести",
+                "size": "77 футов",
+                "guests": "20 чел.",
+                "good_for": "Семейного Отдыха"
+              }
+            ],
+            "zh": [
+              {
+                "name_of_yacht": "77 尺游艇 - Dionysos",
+                "locale": "zh",
+                "model": "Majesty",
+                "size": "77尺",
+                "guests": "20",
+                "good_for": "家庭宴会"
+              }
+            ]
+          }
+        },
+        {
+          "yacht_id": "24",
+          "yacht_price": "30000",
+          "yacht_before_price": "0",
+          "hours": "3",
+          "yacht_image": "17025567341677049461mega-yacht-cruise.webp",
+          "fareharbor_id": "417962",
+          "translations": {
+            "en": [
+              {
+                "name_of_yacht": "118 Ft Yacht - Poseidon",
+                "locale": "en",
+                "model": "Hatteras",
+                "size": "118 Feet",
+                "guests": "100",
+                "good_for": "Corporate Events"
+              }
+            ],
+            "ar": [
+              {
+                "name_of_yacht": "يخت 118 قدم- بوسايدون",
+                "locale": "ar",
+                "model": "هاتيراس",
+                "size": "118 قدم",
+                "guests": "100 شخص",
+                "good_for": "Corporate Events"
+              }
+            ],
+            "ru": [
+              {
+                "name_of_yacht": "118 футов – Посейдон",
+                "locale": "ru",
+                "model": "Хаттерас",
+                "size": "118 Футов",
+                "guests": "100 чел.",
+                "good_for": "Корпоративные мероприятия"
+              }
+            ],
+            "zh": [
+              {
+                "name_of_yacht": "118 尺游艇 -  Poseidon",
+                "locale": "zh",
+                "model": "Hatteras",
+                "size": "118尺",
+                "guests": "100",
+                "good_for": "企业活动"
+              }
+            ]
+          }
+        }
+      ],
       "translations": {
         "en": {
           "title": "NIGHT PARTY",
@@ -1871,6 +2325,308 @@
       "whatsapp_url": "https://wa.link/3zkkvm",
       "amount": 1725,
       "yachts": "27%2380%0%4,18%2380%0%4,1%4160%0%4,5%4600%0%4,2%4320%0%4,6%5000%0%4",
+      "yachts_data": [
+        {
+          "yacht_id": "27",
+          "yacht_price": "2380",
+          "yacht_before_price": "0",
+          "hours": "4",
+          "yacht_image": "17025565231675080328564-x-400.webp",
+          "fareharbor_id": "429263",
+          "translations": {
+            "en": [
+              {
+                "name_of_yacht": "36 Ft Yacht - Storm",
+                "locale": "en",
+                "model": "Silver Craft",
+                "size": "36 feet",
+                "guests": "10",
+                "good_for": "Fishing"
+              }
+            ],
+            "ar": [
+              {
+                "name_of_yacht": "36 Ft Yacht - Storm",
+                "locale": "ar",
+                "model": "Silver Craft",
+                "size": "36 feet",
+                "guests": "10",
+                "good_for": "Fishing"
+              }
+            ],
+            "ru": [
+              {
+                "name_of_yacht": "36 Ft Yacht - Storm",
+                "locale": "ru",
+                "model": "Silver Craft",
+                "size": "36 feet",
+                "guests": "10 чел.",
+                "good_for": "Рыбалка"
+              }
+            ],
+            "zh": [
+              {
+                "name_of_yacht": "36尺高的游艇-Storm",
+                "locale": "zh",
+                "model": "Silver Craft",
+                "size": "36尺",
+                "guests": "10",
+                "good_for": "Fishing"
+              }
+            ]
+          }
+        },
+        {
+          "yacht_id": "18",
+          "yacht_price": "2380",
+          "yacht_before_price": "0",
+          "hours": "4",
+          "yacht_image": "17025565771672840456Main-image-564-x-400.webp",
+          "fareharbor_id": "353083",
+          "translations": {
+            "en": [
+              {
+                "name_of_yacht": "36 Ft Yacht - Thunder",
+                "locale": "en",
+                "model": "Silver Craft",
+                "size": "36 Feet",
+                "guests": "10",
+                "good_for": "Fishing"
+              }
+            ],
+            "ar": [
+              {
+                "name_of_yacht": "يخت 36 قدم – ثندر (رعد)",
+                "locale": "ar",
+                "model": "Silver Craft",
+                "size": "36FT",
+                "guests": "10",
+                "good_for": "Fishing"
+              }
+            ],
+            "ru": [
+              {
+                "name_of_yacht": "36-футовая яхта – Thunder (Гром)",
+                "locale": "ru",
+                "model": "Серебряное ремесло",
+                "size": "36 футов",
+                "guests": "10 чел.",
+                "good_for": "Рыбалка"
+              }
+            ],
+            "zh": [
+              {
+                "name_of_yacht": "36尺高的游艇-Thunder",
+                "locale": "zh",
+                "model": "Silver Craft",
+                "size": "36尺",
+                "guests": "10",
+                "good_for": "Fishing"
+              }
+            ]
+          }
+        },
+        {
+          "yacht_id": "1",
+          "yacht_price": "4160",
+          "yacht_before_price": "0",
+          "hours": "4",
+          "yacht_image": "170255634316729298171664187571Vassia 564x400.webp",
+          "fareharbor_id": "340265",
+          "translations": {
+            "en": [
+              {
+                "name_of_yacht": "56 Ft Yacht - Vassia",
+                "locale": "en",
+                "model": "Majesty",
+                "size": "56 Feet",
+                "guests": "28",
+                "good_for": "Birthday/Parties"
+              }
+            ],
+            "ar": [
+              {
+                "name_of_yacht": "يخت 56 قدم- فاسيا",
+                "locale": "ar",
+                "model": "ماجيستي",
+                "size": "56 قدم",
+                "guests": "28 شخص",
+                "good_for": "Birthday/Parties"
+              }
+            ],
+            "ru": [
+              {
+                "name_of_yacht": "56-футовая яхта - Vassia (Вася)",
+                "locale": "ru",
+                "model": "Мэджести",
+                "size": "56 футов",
+                "guests": "28 чел.",
+                "good_for": "Дни Рождения/Вечеринки"
+              }
+            ],
+            "zh": [
+              {
+                "name_of_yacht": "56尺 游艇- Vassia",
+                "locale": "zh",
+                "model": "Majesty",
+                "size": "56 尺",
+                "guests": "28",
+                "good_for": "生日/派对"
+              }
+            ]
+          }
+        },
+        {
+          "yacht_id": "5",
+          "yacht_price": "4600",
+          "yacht_before_price": "0",
+          "hours": "4",
+          "yacht_image": "17025564411664181639Lagoona 564x400.webp",
+          "fareharbor_id": "340459",
+          "translations": {
+            "en": [
+              {
+                "name_of_yacht": "56 Ft Yacht - Lagoona",
+                "locale": "en",
+                "model": "Majesty",
+                "size": "56 Feet",
+                "guests": "28",
+                "good_for": "Sunset Cruise"
+              }
+            ],
+            "ar": [
+              {
+                "name_of_yacht": "يخت 56 قدم- لاغونا",
+                "locale": "ar",
+                "model": "ماجيستي",
+                "size": "56 قدم",
+                "guests": "28 شخص",
+                "good_for": "Sunset Cruise"
+              }
+            ],
+            "ru": [
+              {
+                "name_of_yacht": "56-футовая яхта – Lagoona (Лагуна)",
+                "locale": "ru",
+                "model": "Мэджести",
+                "size": "56 футов",
+                "guests": "28 чел.",
+                "good_for": "КРУИЗ НА ЗАКАТЕ"
+              }
+            ],
+            "zh": [
+              {
+                "name_of_yacht": "56 英尺游艇 - Lagoona",
+                "locale": "zh",
+                "model": "Majesty",
+                "size": "56尺",
+                "guests": "28",
+                "good_for": "日落巡航"
+              }
+            ]
+          }
+        },
+        {
+          "yacht_id": "2",
+          "yacht_price": "4320",
+          "yacht_before_price": "0",
+          "hours": "4",
+          "yacht_image": "17025563691664803714Vassia New 564x400.webp",
+          "fareharbor_id": "340280",
+          "translations": {
+            "en": [
+              {
+                "name_of_yacht": "58 Ft Yacht - Etosha",
+                "locale": "en",
+                "model": "Azimut",
+                "size": "58 Feet",
+                "guests": "28",
+                "good_for": "Celebrations"
+              }
+            ],
+            "ar": [
+              {
+                "name_of_yacht": "يخت 58 قدم- ايتوشا",
+                "locale": "ar",
+                "model": "أزيموت",
+                "size": "58 قدم",
+                "guests": "28 شخص",
+                "good_for": "Celebrations"
+              }
+            ],
+            "ru": [
+              {
+                "name_of_yacht": "58-футовая яхта Этоша",
+                "locale": "ru",
+                "model": "Азимут",
+                "size": "58 футов",
+                "guests": "28 чел.",
+                "good_for": "Праздников"
+              }
+            ],
+            "zh": [
+              {
+                "name_of_yacht": "58尺游艇-Etosha",
+                "locale": "zh",
+                "model": "Azimut",
+                "size": "58 尺",
+                "guests": "28",
+                "good_for": "庆祝"
+              }
+            ]
+          }
+        },
+        {
+          "yacht_id": "6",
+          "yacht_price": "5000",
+          "yacht_before_price": "0",
+          "hours": "4",
+          "yacht_image": "17025564681670496933main.webp",
+          "fareharbor_id": "340286",
+          "translations": {
+            "en": [
+              {
+                "name_of_yacht": "61 Ft Yacht - Silver Creek",
+                "locale": "en",
+                "model": "Majesty",
+                "size": "61 Feet",
+                "guests": "30",
+                "good_for": "Corporate Events"
+              }
+            ],
+            "ar": [
+              {
+                "name_of_yacht": "يخت 61 قدم- سلفر كريك",
+                "locale": "ar",
+                "model": "ماجيستي",
+                "size": "61 قدم",
+                "guests": "30 شخص",
+                "good_for": "Corporate Events"
+              }
+            ],
+            "ru": [
+              {
+                "name_of_yacht": "61 футов – Сильвер Крик",
+                "locale": "ru",
+                "model": "Мэджести",
+                "size": "61 Футов",
+                "guests": "30 чел.",
+                "good_for": "Корпоративов"
+              }
+            ],
+            "zh": [
+              {
+                "name_of_yacht": "61英尺游艇-银溪",
+                "locale": "zh",
+                "model": "Majesty",
+                "size": "61尺",
+                "guests": "30",
+                "good_for": "商务晚会"
+              }
+            ]
+          }
+        }
+      ],
       "translations": {
         "en": {
           "title": "FISHING TRIP",
@@ -1897,6 +2653,258 @@
       "whatsapp_url": "https://wa.link/lwe2a4",
       "amount": 3120,
       "yachts": "1%3120%0%3,5%3450%0%3,2%3240%0%3,6%3750%0%3,20%25200%0%3",
+      "yachts_data": [
+        {
+          "yacht_id": "1",
+          "yacht_price": "3120",
+          "yacht_before_price": "0",
+          "hours": "3",
+          "yacht_image": "170255634316729298171664187571Vassia 564x400.webp",
+          "fareharbor_id": "340265",
+          "translations": {
+            "en": [
+              {
+                "name_of_yacht": "56 Ft Yacht - Vassia",
+                "locale": "en",
+                "model": "Majesty",
+                "size": "56 Feet",
+                "guests": "28",
+                "good_for": "Birthday/Parties"
+              }
+            ],
+            "ar": [
+              {
+                "name_of_yacht": "يخت 56 قدم- فاسيا",
+                "locale": "ar",
+                "model": "ماجيستي",
+                "size": "56 قدم",
+                "guests": "28 شخص",
+                "good_for": "Birthday/Parties"
+              }
+            ],
+            "ru": [
+              {
+                "name_of_yacht": "56-футовая яхта - Vassia (Вася)",
+                "locale": "ru",
+                "model": "Мэджести",
+                "size": "56 футов",
+                "guests": "28 чел.",
+                "good_for": "Дни Рождения/Вечеринки"
+              }
+            ],
+            "zh": [
+              {
+                "name_of_yacht": "56尺 游艇- Vassia",
+                "locale": "zh",
+                "model": "Majesty",
+                "size": "56 尺",
+                "guests": "28",
+                "good_for": "生日/派对"
+              }
+            ]
+          }
+        },
+        {
+          "yacht_id": "5",
+          "yacht_price": "3450",
+          "yacht_before_price": "0",
+          "hours": "3",
+          "yacht_image": "17025564411664181639Lagoona 564x400.webp",
+          "fareharbor_id": "340459",
+          "translations": {
+            "en": [
+              {
+                "name_of_yacht": "56 Ft Yacht - Lagoona",
+                "locale": "en",
+                "model": "Majesty",
+                "size": "56 Feet",
+                "guests": "28",
+                "good_for": "Sunset Cruise"
+              }
+            ],
+            "ar": [
+              {
+                "name_of_yacht": "يخت 56 قدم- لاغونا",
+                "locale": "ar",
+                "model": "ماجيستي",
+                "size": "56 قدم",
+                "guests": "28 شخص",
+                "good_for": "Sunset Cruise"
+              }
+            ],
+            "ru": [
+              {
+                "name_of_yacht": "56-футовая яхта – Lagoona (Лагуна)",
+                "locale": "ru",
+                "model": "Мэджести",
+                "size": "56 футов",
+                "guests": "28 чел.",
+                "good_for": "КРУИЗ НА ЗАКАТЕ"
+              }
+            ],
+            "zh": [
+              {
+                "name_of_yacht": "56 英尺游艇 - Lagoona",
+                "locale": "zh",
+                "model": "Majesty",
+                "size": "56尺",
+                "guests": "28",
+                "good_for": "日落巡航"
+              }
+            ]
+          }
+        },
+        {
+          "yacht_id": "2",
+          "yacht_price": "3240",
+          "yacht_before_price": "0",
+          "hours": "3",
+          "yacht_image": "17025563691664803714Vassia New 564x400.webp",
+          "fareharbor_id": "340280",
+          "translations": {
+            "en": [
+              {
+                "name_of_yacht": "58 Ft Yacht - Etosha",
+                "locale": "en",
+                "model": "Azimut",
+                "size": "58 Feet",
+                "guests": "28",
+                "good_for": "Celebrations"
+              }
+            ],
+            "ar": [
+              {
+                "name_of_yacht": "يخت 58 قدم- ايتوشا",
+                "locale": "ar",
+                "model": "أزيموت",
+                "size": "58 قدم",
+                "guests": "28 شخص",
+                "good_for": "Celebrations"
+              }
+            ],
+            "ru": [
+              {
+                "name_of_yacht": "58-футовая яхта Этоша",
+                "locale": "ru",
+                "model": "Азимут",
+                "size": "58 футов",
+                "guests": "28 чел.",
+                "good_for": "Праздников"
+              }
+            ],
+            "zh": [
+              {
+                "name_of_yacht": "58尺游艇-Etosha",
+                "locale": "zh",
+                "model": "Azimut",
+                "size": "58 尺",
+                "guests": "28",
+                "good_for": "庆祝"
+              }
+            ]
+          }
+        },
+        {
+          "yacht_id": "6",
+          "yacht_price": "3750",
+          "yacht_before_price": "0",
+          "hours": "3",
+          "yacht_image": "17025564681670496933main.webp",
+          "fareharbor_id": "340286",
+          "translations": {
+            "en": [
+              {
+                "name_of_yacht": "61 Ft Yacht - Silver Creek",
+                "locale": "en",
+                "model": "Majesty",
+                "size": "61 Feet",
+                "guests": "30",
+                "good_for": "Corporate Events"
+              }
+            ],
+            "ar": [
+              {
+                "name_of_yacht": "يخت 61 قدم- سلفر كريك",
+                "locale": "ar",
+                "model": "ماجيستي",
+                "size": "61 قدم",
+                "guests": "30 شخص",
+                "good_for": "Corporate Events"
+              }
+            ],
+            "ru": [
+              {
+                "name_of_yacht": "61 футов – Сильвер Крик",
+                "locale": "ru",
+                "model": "Мэджести",
+                "size": "61 Футов",
+                "guests": "30 чел.",
+                "good_for": "Корпоративов"
+              }
+            ],
+            "zh": [
+              {
+                "name_of_yacht": "61英尺游艇-银溪",
+                "locale": "zh",
+                "model": "Majesty",
+                "size": "61尺",
+                "guests": "30",
+                "good_for": "商务晚会"
+              }
+            ]
+          }
+        },
+        {
+          "yacht_id": "20",
+          "yacht_price": "25200",
+          "yacht_before_price": "0",
+          "hours": "3",
+          "yacht_image": "17025566991664188921Dionysos 564x400.webp",
+          "fareharbor_id": "366044",
+          "translations": {
+            "en": [
+              {
+                "name_of_yacht": "77 Ft Yacht - Dionysos",
+                "locale": "en",
+                "model": "Majesty",
+                "size": "77 Feet",
+                "guests": "20",
+                "good_for": "Family Events"
+              }
+            ],
+            "ar": [
+              {
+                "name_of_yacht": "77 Ft Yacht - Dionysos",
+                "locale": "ar",
+                "model": "Majesty",
+                "size": "77 Feet",
+                "guests": "20",
+                "good_for": "Family Events"
+              }
+            ],
+            "ru": [
+              {
+                "name_of_yacht": "77-футовая яхта - Dionysos (Дионис)",
+                "locale": "ru",
+                "model": "Мэджести",
+                "size": "77 футов",
+                "guests": "20 чел.",
+                "good_for": "Семейного Отдыха"
+              }
+            ],
+            "zh": [
+              {
+                "name_of_yacht": "77 尺游艇 - Dionysos",
+                "locale": "zh",
+                "model": "Majesty",
+                "size": "77尺",
+                "guests": "20",
+                "good_for": "家庭宴会"
+              }
+            ]
+          }
+        }
+      ],
       "translations": {
         "en": {
           "title": "BIRTHDAY PARTY",
@@ -1928,6 +2936,308 @@
       "whatsapp_url": "https://wa.link/phcowl",
       "amount": 3120,
       "yachts": "1%3120%0%3,5%3450%0%3,2%3240%0%3,6%3750%0%3,20%25200%0%3,24%30000%0%3",
+      "yachts_data": [
+        {
+          "yacht_id": "1",
+          "yacht_price": "3120",
+          "yacht_before_price": "0",
+          "hours": "3",
+          "yacht_image": "170255634316729298171664187571Vassia 564x400.webp",
+          "fareharbor_id": "340265",
+          "translations": {
+            "en": [
+              {
+                "name_of_yacht": "56 Ft Yacht - Vassia",
+                "locale": "en",
+                "model": "Majesty",
+                "size": "56 Feet",
+                "guests": "28",
+                "good_for": "Birthday/Parties"
+              }
+            ],
+            "ar": [
+              {
+                "name_of_yacht": "يخت 56 قدم- فاسيا",
+                "locale": "ar",
+                "model": "ماجيستي",
+                "size": "56 قدم",
+                "guests": "28 شخص",
+                "good_for": "Birthday/Parties"
+              }
+            ],
+            "ru": [
+              {
+                "name_of_yacht": "56-футовая яхта - Vassia (Вася)",
+                "locale": "ru",
+                "model": "Мэджести",
+                "size": "56 футов",
+                "guests": "28 чел.",
+                "good_for": "Дни Рождения/Вечеринки"
+              }
+            ],
+            "zh": [
+              {
+                "name_of_yacht": "56尺 游艇- Vassia",
+                "locale": "zh",
+                "model": "Majesty",
+                "size": "56 尺",
+                "guests": "28",
+                "good_for": "生日/派对"
+              }
+            ]
+          }
+        },
+        {
+          "yacht_id": "5",
+          "yacht_price": "3450",
+          "yacht_before_price": "0",
+          "hours": "3",
+          "yacht_image": "17025564411664181639Lagoona 564x400.webp",
+          "fareharbor_id": "340459",
+          "translations": {
+            "en": [
+              {
+                "name_of_yacht": "56 Ft Yacht - Lagoona",
+                "locale": "en",
+                "model": "Majesty",
+                "size": "56 Feet",
+                "guests": "28",
+                "good_for": "Sunset Cruise"
+              }
+            ],
+            "ar": [
+              {
+                "name_of_yacht": "يخت 56 قدم- لاغونا",
+                "locale": "ar",
+                "model": "ماجيستي",
+                "size": "56 قدم",
+                "guests": "28 شخص",
+                "good_for": "Sunset Cruise"
+              }
+            ],
+            "ru": [
+              {
+                "name_of_yacht": "56-футовая яхта – Lagoona (Лагуна)",
+                "locale": "ru",
+                "model": "Мэджести",
+                "size": "56 футов",
+                "guests": "28 чел.",
+                "good_for": "КРУИЗ НА ЗАКАТЕ"
+              }
+            ],
+            "zh": [
+              {
+                "name_of_yacht": "56 英尺游艇 - Lagoona",
+                "locale": "zh",
+                "model": "Majesty",
+                "size": "56尺",
+                "guests": "28",
+                "good_for": "日落巡航"
+              }
+            ]
+          }
+        },
+        {
+          "yacht_id": "2",
+          "yacht_price": "3240",
+          "yacht_before_price": "0",
+          "hours": "3",
+          "yacht_image": "17025563691664803714Vassia New 564x400.webp",
+          "fareharbor_id": "340280",
+          "translations": {
+            "en": [
+              {
+                "name_of_yacht": "58 Ft Yacht - Etosha",
+                "locale": "en",
+                "model": "Azimut",
+                "size": "58 Feet",
+                "guests": "28",
+                "good_for": "Celebrations"
+              }
+            ],
+            "ar": [
+              {
+                "name_of_yacht": "يخت 58 قدم- ايتوشا",
+                "locale": "ar",
+                "model": "أزيموت",
+                "size": "58 قدم",
+                "guests": "28 شخص",
+                "good_for": "Celebrations"
+              }
+            ],
+            "ru": [
+              {
+                "name_of_yacht": "58-футовая яхта Этоша",
+                "locale": "ru",
+                "model": "Азимут",
+                "size": "58 футов",
+                "guests": "28 чел.",
+                "good_for": "Праздников"
+              }
+            ],
+            "zh": [
+              {
+                "name_of_yacht": "58尺游艇-Etosha",
+                "locale": "zh",
+                "model": "Azimut",
+                "size": "58 尺",
+                "guests": "28",
+                "good_for": "庆祝"
+              }
+            ]
+          }
+        },
+        {
+          "yacht_id": "6",
+          "yacht_price": "3750",
+          "yacht_before_price": "0",
+          "hours": "3",
+          "yacht_image": "17025564681670496933main.webp",
+          "fareharbor_id": "340286",
+          "translations": {
+            "en": [
+              {
+                "name_of_yacht": "61 Ft Yacht - Silver Creek",
+                "locale": "en",
+                "model": "Majesty",
+                "size": "61 Feet",
+                "guests": "30",
+                "good_for": "Corporate Events"
+              }
+            ],
+            "ar": [
+              {
+                "name_of_yacht": "يخت 61 قدم- سلفر كريك",
+                "locale": "ar",
+                "model": "ماجيستي",
+                "size": "61 قدم",
+                "guests": "30 شخص",
+                "good_for": "Corporate Events"
+              }
+            ],
+            "ru": [
+              {
+                "name_of_yacht": "61 футов – Сильвер Крик",
+                "locale": "ru",
+                "model": "Мэджести",
+                "size": "61 Футов",
+                "guests": "30 чел.",
+                "good_for": "Корпоративов"
+              }
+            ],
+            "zh": [
+              {
+                "name_of_yacht": "61英尺游艇-银溪",
+                "locale": "zh",
+                "model": "Majesty",
+                "size": "61尺",
+                "guests": "30",
+                "good_for": "商务晚会"
+              }
+            ]
+          }
+        },
+        {
+          "yacht_id": "20",
+          "yacht_price": "25200",
+          "yacht_before_price": "0",
+          "hours": "3",
+          "yacht_image": "17025566991664188921Dionysos 564x400.webp",
+          "fareharbor_id": "366044",
+          "translations": {
+            "en": [
+              {
+                "name_of_yacht": "77 Ft Yacht - Dionysos",
+                "locale": "en",
+                "model": "Majesty",
+                "size": "77 Feet",
+                "guests": "20",
+                "good_for": "Family Events"
+              }
+            ],
+            "ar": [
+              {
+                "name_of_yacht": "77 Ft Yacht - Dionysos",
+                "locale": "ar",
+                "model": "Majesty",
+                "size": "77 Feet",
+                "guests": "20",
+                "good_for": "Family Events"
+              }
+            ],
+            "ru": [
+              {
+                "name_of_yacht": "77-футовая яхта - Dionysos (Дионис)",
+                "locale": "ru",
+                "model": "Мэджести",
+                "size": "77 футов",
+                "guests": "20 чел.",
+                "good_for": "Семейного Отдыха"
+              }
+            ],
+            "zh": [
+              {
+                "name_of_yacht": "77 尺游艇 - Dionysos",
+                "locale": "zh",
+                "model": "Majesty",
+                "size": "77尺",
+                "guests": "20",
+                "good_for": "家庭宴会"
+              }
+            ]
+          }
+        },
+        {
+          "yacht_id": "24",
+          "yacht_price": "30000",
+          "yacht_before_price": "0",
+          "hours": "3",
+          "yacht_image": "17025567341677049461mega-yacht-cruise.webp",
+          "fareharbor_id": "417962",
+          "translations": {
+            "en": [
+              {
+                "name_of_yacht": "118 Ft Yacht - Poseidon",
+                "locale": "en",
+                "model": "Hatteras",
+                "size": "118 Feet",
+                "guests": "100",
+                "good_for": "Corporate Events"
+              }
+            ],
+            "ar": [
+              {
+                "name_of_yacht": "يخت 118 قدم- بوسايدون",
+                "locale": "ar",
+                "model": "هاتيراس",
+                "size": "118 قدم",
+                "guests": "100 شخص",
+                "good_for": "Corporate Events"
+              }
+            ],
+            "ru": [
+              {
+                "name_of_yacht": "118 футов – Посейдон",
+                "locale": "ru",
+                "model": "Хаттерас",
+                "size": "118 Футов",
+                "guests": "100 чел.",
+                "good_for": "Корпоративные мероприятия"
+              }
+            ],
+            "zh": [
+              {
+                "name_of_yacht": "118 尺游艇 -  Poseidon",
+                "locale": "zh",
+                "model": "Hatteras",
+                "size": "118尺",
+                "guests": "100",
+                "good_for": "企业活动"
+              }
+            ]
+          }
+        }
+      ],
       "translations": {
         "en": {
           "title": "CORPORATE EVENTS",
@@ -1959,6 +3269,308 @@
       "whatsapp_url": "https://wa.link/xhsh8b",
       "amount": 3120,
       "yachts": "1%3120%0%3,5%3450%0%3,2%3240%0%3,6%3750%0%3,20%25200%0%3,24%30000%0%3",
+      "yachts_data": [
+        {
+          "yacht_id": "1",
+          "yacht_price": "3120",
+          "yacht_before_price": "0",
+          "hours": "3",
+          "yacht_image": "170255634316729298171664187571Vassia 564x400.webp",
+          "fareharbor_id": "340265",
+          "translations": {
+            "en": [
+              {
+                "name_of_yacht": "56 Ft Yacht - Vassia",
+                "locale": "en",
+                "model": "Majesty",
+                "size": "56 Feet",
+                "guests": "28",
+                "good_for": "Birthday/Parties"
+              }
+            ],
+            "ar": [
+              {
+                "name_of_yacht": "يخت 56 قدم- فاسيا",
+                "locale": "ar",
+                "model": "ماجيستي",
+                "size": "56 قدم",
+                "guests": "28 شخص",
+                "good_for": "Birthday/Parties"
+              }
+            ],
+            "ru": [
+              {
+                "name_of_yacht": "56-футовая яхта - Vassia (Вася)",
+                "locale": "ru",
+                "model": "Мэджести",
+                "size": "56 футов",
+                "guests": "28 чел.",
+                "good_for": "Дни Рождения/Вечеринки"
+              }
+            ],
+            "zh": [
+              {
+                "name_of_yacht": "56尺 游艇- Vassia",
+                "locale": "zh",
+                "model": "Majesty",
+                "size": "56 尺",
+                "guests": "28",
+                "good_for": "生日/派对"
+              }
+            ]
+          }
+        },
+        {
+          "yacht_id": "5",
+          "yacht_price": "3450",
+          "yacht_before_price": "0",
+          "hours": "3",
+          "yacht_image": "17025564411664181639Lagoona 564x400.webp",
+          "fareharbor_id": "340459",
+          "translations": {
+            "en": [
+              {
+                "name_of_yacht": "56 Ft Yacht - Lagoona",
+                "locale": "en",
+                "model": "Majesty",
+                "size": "56 Feet",
+                "guests": "28",
+                "good_for": "Sunset Cruise"
+              }
+            ],
+            "ar": [
+              {
+                "name_of_yacht": "يخت 56 قدم- لاغونا",
+                "locale": "ar",
+                "model": "ماجيستي",
+                "size": "56 قدم",
+                "guests": "28 شخص",
+                "good_for": "Sunset Cruise"
+              }
+            ],
+            "ru": [
+              {
+                "name_of_yacht": "56-футовая яхта – Lagoona (Лагуна)",
+                "locale": "ru",
+                "model": "Мэджести",
+                "size": "56 футов",
+                "guests": "28 чел.",
+                "good_for": "КРУИЗ НА ЗАКАТЕ"
+              }
+            ],
+            "zh": [
+              {
+                "name_of_yacht": "56 英尺游艇 - Lagoona",
+                "locale": "zh",
+                "model": "Majesty",
+                "size": "56尺",
+                "guests": "28",
+                "good_for": "日落巡航"
+              }
+            ]
+          }
+        },
+        {
+          "yacht_id": "2",
+          "yacht_price": "3240",
+          "yacht_before_price": "0",
+          "hours": "3",
+          "yacht_image": "17025563691664803714Vassia New 564x400.webp",
+          "fareharbor_id": "340280",
+          "translations": {
+            "en": [
+              {
+                "name_of_yacht": "58 Ft Yacht - Etosha",
+                "locale": "en",
+                "model": "Azimut",
+                "size": "58 Feet",
+                "guests": "28",
+                "good_for": "Celebrations"
+              }
+            ],
+            "ar": [
+              {
+                "name_of_yacht": "يخت 58 قدم- ايتوشا",
+                "locale": "ar",
+                "model": "أزيموت",
+                "size": "58 قدم",
+                "guests": "28 شخص",
+                "good_for": "Celebrations"
+              }
+            ],
+            "ru": [
+              {
+                "name_of_yacht": "58-футовая яхта Этоша",
+                "locale": "ru",
+                "model": "Азимут",
+                "size": "58 футов",
+                "guests": "28 чел.",
+                "good_for": "Праздников"
+              }
+            ],
+            "zh": [
+              {
+                "name_of_yacht": "58尺游艇-Etosha",
+                "locale": "zh",
+                "model": "Azimut",
+                "size": "58 尺",
+                "guests": "28",
+                "good_for": "庆祝"
+              }
+            ]
+          }
+        },
+        {
+          "yacht_id": "6",
+          "yacht_price": "3750",
+          "yacht_before_price": "0",
+          "hours": "3",
+          "yacht_image": "17025564681670496933main.webp",
+          "fareharbor_id": "340286",
+          "translations": {
+            "en": [
+              {
+                "name_of_yacht": "61 Ft Yacht - Silver Creek",
+                "locale": "en",
+                "model": "Majesty",
+                "size": "61 Feet",
+                "guests": "30",
+                "good_for": "Corporate Events"
+              }
+            ],
+            "ar": [
+              {
+                "name_of_yacht": "يخت 61 قدم- سلفر كريك",
+                "locale": "ar",
+                "model": "ماجيستي",
+                "size": "61 قدم",
+                "guests": "30 شخص",
+                "good_for": "Corporate Events"
+              }
+            ],
+            "ru": [
+              {
+                "name_of_yacht": "61 футов – Сильвер Крик",
+                "locale": "ru",
+                "model": "Мэджести",
+                "size": "61 Футов",
+                "guests": "30 чел.",
+                "good_for": "Корпоративов"
+              }
+            ],
+            "zh": [
+              {
+                "name_of_yacht": "61英尺游艇-银溪",
+                "locale": "zh",
+                "model": "Majesty",
+                "size": "61尺",
+                "guests": "30",
+                "good_for": "商务晚会"
+              }
+            ]
+          }
+        },
+        {
+          "yacht_id": "20",
+          "yacht_price": "25200",
+          "yacht_before_price": "0",
+          "hours": "3",
+          "yacht_image": "17025566991664188921Dionysos 564x400.webp",
+          "fareharbor_id": "366044",
+          "translations": {
+            "en": [
+              {
+                "name_of_yacht": "77 Ft Yacht - Dionysos",
+                "locale": "en",
+                "model": "Majesty",
+                "size": "77 Feet",
+                "guests": "20",
+                "good_for": "Family Events"
+              }
+            ],
+            "ar": [
+              {
+                "name_of_yacht": "77 Ft Yacht - Dionysos",
+                "locale": "ar",
+                "model": "Majesty",
+                "size": "77 Feet",
+                "guests": "20",
+                "good_for": "Family Events"
+              }
+            ],
+            "ru": [
+              {
+                "name_of_yacht": "77-футовая яхта - Dionysos (Дионис)",
+                "locale": "ru",
+                "model": "Мэджести",
+                "size": "77 футов",
+                "guests": "20 чел.",
+                "good_for": "Семейного Отдыха"
+              }
+            ],
+            "zh": [
+              {
+                "name_of_yacht": "77 尺游艇 - Dionysos",
+                "locale": "zh",
+                "model": "Majesty",
+                "size": "77尺",
+                "guests": "20",
+                "good_for": "家庭宴会"
+              }
+            ]
+          }
+        },
+        {
+          "yacht_id": "24",
+          "yacht_price": "30000",
+          "yacht_before_price": "0",
+          "hours": "3",
+          "yacht_image": "17025567341677049461mega-yacht-cruise.webp",
+          "fareharbor_id": "417962",
+          "translations": {
+            "en": [
+              {
+                "name_of_yacht": "118 Ft Yacht - Poseidon",
+                "locale": "en",
+                "model": "Hatteras",
+                "size": "118 Feet",
+                "guests": "100",
+                "good_for": "Corporate Events"
+              }
+            ],
+            "ar": [
+              {
+                "name_of_yacht": "يخت 118 قدم- بوسايدون",
+                "locale": "ar",
+                "model": "هاتيراس",
+                "size": "118 قدم",
+                "guests": "100 شخص",
+                "good_for": "Corporate Events"
+              }
+            ],
+            "ru": [
+              {
+                "name_of_yacht": "118 футов – Посейдон",
+                "locale": "ru",
+                "model": "Хаттерас",
+                "size": "118 Футов",
+                "guests": "100 чел.",
+                "good_for": "Корпоративные мероприятия"
+              }
+            ],
+            "zh": [
+              {
+                "name_of_yacht": "118 尺游艇 -  Poseidon",
+                "locale": "zh",
+                "model": "Hatteras",
+                "size": "118尺",
+                "guests": "100",
+                "good_for": "企业活动"
+              }
+            ]
+          }
+        }
+      ],
       "translations": {
         "en": {
           "title": "PRIVATE EVENTS",
@@ -1990,6 +3602,258 @@
       "whatsapp_url": "https://wa.link/if2ty1",
       "amount": 3120,
       "yachts": "1%3120%0%3,5%3450%0%3,2%3240%0%3,6%3750%0%3,20%25200%0%3",
+      "yachts_data": [
+        {
+          "yacht_id": "1",
+          "yacht_price": "3120",
+          "yacht_before_price": "0",
+          "hours": "3",
+          "yacht_image": "170255634316729298171664187571Vassia 564x400.webp",
+          "fareharbor_id": "340265",
+          "translations": {
+            "en": [
+              {
+                "name_of_yacht": "56 Ft Yacht - Vassia",
+                "locale": "en",
+                "model": "Majesty",
+                "size": "56 Feet",
+                "guests": "28",
+                "good_for": "Birthday/Parties"
+              }
+            ],
+            "ar": [
+              {
+                "name_of_yacht": "يخت 56 قدم- فاسيا",
+                "locale": "ar",
+                "model": "ماجيستي",
+                "size": "56 قدم",
+                "guests": "28 شخص",
+                "good_for": "Birthday/Parties"
+              }
+            ],
+            "ru": [
+              {
+                "name_of_yacht": "56-футовая яхта - Vassia (Вася)",
+                "locale": "ru",
+                "model": "Мэджести",
+                "size": "56 футов",
+                "guests": "28 чел.",
+                "good_for": "Дни Рождения/Вечеринки"
+              }
+            ],
+            "zh": [
+              {
+                "name_of_yacht": "56尺 游艇- Vassia",
+                "locale": "zh",
+                "model": "Majesty",
+                "size": "56 尺",
+                "guests": "28",
+                "good_for": "生日/派对"
+              }
+            ]
+          }
+        },
+        {
+          "yacht_id": "5",
+          "yacht_price": "3450",
+          "yacht_before_price": "0",
+          "hours": "3",
+          "yacht_image": "17025564411664181639Lagoona 564x400.webp",
+          "fareharbor_id": "340459",
+          "translations": {
+            "en": [
+              {
+                "name_of_yacht": "56 Ft Yacht - Lagoona",
+                "locale": "en",
+                "model": "Majesty",
+                "size": "56 Feet",
+                "guests": "28",
+                "good_for": "Sunset Cruise"
+              }
+            ],
+            "ar": [
+              {
+                "name_of_yacht": "يخت 56 قدم- لاغونا",
+                "locale": "ar",
+                "model": "ماجيستي",
+                "size": "56 قدم",
+                "guests": "28 شخص",
+                "good_for": "Sunset Cruise"
+              }
+            ],
+            "ru": [
+              {
+                "name_of_yacht": "56-футовая яхта – Lagoona (Лагуна)",
+                "locale": "ru",
+                "model": "Мэджести",
+                "size": "56 футов",
+                "guests": "28 чел.",
+                "good_for": "КРУИЗ НА ЗАКАТЕ"
+              }
+            ],
+            "zh": [
+              {
+                "name_of_yacht": "56 英尺游艇 - Lagoona",
+                "locale": "zh",
+                "model": "Majesty",
+                "size": "56尺",
+                "guests": "28",
+                "good_for": "日落巡航"
+              }
+            ]
+          }
+        },
+        {
+          "yacht_id": "2",
+          "yacht_price": "3240",
+          "yacht_before_price": "0",
+          "hours": "3",
+          "yacht_image": "17025563691664803714Vassia New 564x400.webp",
+          "fareharbor_id": "340280",
+          "translations": {
+            "en": [
+              {
+                "name_of_yacht": "58 Ft Yacht - Etosha",
+                "locale": "en",
+                "model": "Azimut",
+                "size": "58 Feet",
+                "guests": "28",
+                "good_for": "Celebrations"
+              }
+            ],
+            "ar": [
+              {
+                "name_of_yacht": "يخت 58 قدم- ايتوشا",
+                "locale": "ar",
+                "model": "أزيموت",
+                "size": "58 قدم",
+                "guests": "28 شخص",
+                "good_for": "Celebrations"
+              }
+            ],
+            "ru": [
+              {
+                "name_of_yacht": "58-футовая яхта Этоша",
+                "locale": "ru",
+                "model": "Азимут",
+                "size": "58 футов",
+                "guests": "28 чел.",
+                "good_for": "Праздников"
+              }
+            ],
+            "zh": [
+              {
+                "name_of_yacht": "58尺游艇-Etosha",
+                "locale": "zh",
+                "model": "Azimut",
+                "size": "58 尺",
+                "guests": "28",
+                "good_for": "庆祝"
+              }
+            ]
+          }
+        },
+        {
+          "yacht_id": "6",
+          "yacht_price": "3750",
+          "yacht_before_price": "0",
+          "hours": "3",
+          "yacht_image": "17025564681670496933main.webp",
+          "fareharbor_id": "340286",
+          "translations": {
+            "en": [
+              {
+                "name_of_yacht": "61 Ft Yacht - Silver Creek",
+                "locale": "en",
+                "model": "Majesty",
+                "size": "61 Feet",
+                "guests": "30",
+                "good_for": "Corporate Events"
+              }
+            ],
+            "ar": [
+              {
+                "name_of_yacht": "يخت 61 قدم- سلفر كريك",
+                "locale": "ar",
+                "model": "ماجيستي",
+                "size": "61 قدم",
+                "guests": "30 شخص",
+                "good_for": "Corporate Events"
+              }
+            ],
+            "ru": [
+              {
+                "name_of_yacht": "61 футов – Сильвер Крик",
+                "locale": "ru",
+                "model": "Мэджести",
+                "size": "61 Футов",
+                "guests": "30 чел.",
+                "good_for": "Корпоративов"
+              }
+            ],
+            "zh": [
+              {
+                "name_of_yacht": "61英尺游艇-银溪",
+                "locale": "zh",
+                "model": "Majesty",
+                "size": "61尺",
+                "guests": "30",
+                "good_for": "商务晚会"
+              }
+            ]
+          }
+        },
+        {
+          "yacht_id": "20",
+          "yacht_price": "25200",
+          "yacht_before_price": "0",
+          "hours": "3",
+          "yacht_image": "17025566991664188921Dionysos 564x400.webp",
+          "fareharbor_id": "366044",
+          "translations": {
+            "en": [
+              {
+                "name_of_yacht": "77 Ft Yacht - Dionysos",
+                "locale": "en",
+                "model": "Majesty",
+                "size": "77 Feet",
+                "guests": "20",
+                "good_for": "Family Events"
+              }
+            ],
+            "ar": [
+              {
+                "name_of_yacht": "77 Ft Yacht - Dionysos",
+                "locale": "ar",
+                "model": "Majesty",
+                "size": "77 Feet",
+                "guests": "20",
+                "good_for": "Family Events"
+              }
+            ],
+            "ru": [
+              {
+                "name_of_yacht": "77-футовая яхта - Dionysos (Дионис)",
+                "locale": "ru",
+                "model": "Мэджести",
+                "size": "77 футов",
+                "guests": "20 чел.",
+                "good_for": "Семейного Отдыха"
+              }
+            ],
+            "zh": [
+              {
+                "name_of_yacht": "77 尺游艇 - Dionysos",
+                "locale": "zh",
+                "model": "Majesty",
+                "size": "77尺",
+                "guests": "20",
+                "good_for": "家庭宴会"
+              }
+            ]
+          }
+        }
+      ],
       "translations": {
         "en": {
           "title": "YACHT FOR ANNIVERSARY & PROPOSAL",
@@ -2021,6 +3885,258 @@
       "whatsapp_url": "https://wa.link/fu1les",
       "amount": 3120,
       "yachts": "1%3120%0%3,5%3450%0%3,2%3240%0%3,6%3750%0%3,20%25200%0%3",
+      "yachts_data": [
+        {
+          "yacht_id": "1",
+          "yacht_price": "3120",
+          "yacht_before_price": "0",
+          "hours": "3",
+          "yacht_image": "170255634316729298171664187571Vassia 564x400.webp",
+          "fareharbor_id": "340265",
+          "translations": {
+            "en": [
+              {
+                "name_of_yacht": "56 Ft Yacht - Vassia",
+                "locale": "en",
+                "model": "Majesty",
+                "size": "56 Feet",
+                "guests": "28",
+                "good_for": "Birthday/Parties"
+              }
+            ],
+            "ar": [
+              {
+                "name_of_yacht": "يخت 56 قدم- فاسيا",
+                "locale": "ar",
+                "model": "ماجيستي",
+                "size": "56 قدم",
+                "guests": "28 شخص",
+                "good_for": "Birthday/Parties"
+              }
+            ],
+            "ru": [
+              {
+                "name_of_yacht": "56-футовая яхта - Vassia (Вася)",
+                "locale": "ru",
+                "model": "Мэджести",
+                "size": "56 футов",
+                "guests": "28 чел.",
+                "good_for": "Дни Рождения/Вечеринки"
+              }
+            ],
+            "zh": [
+              {
+                "name_of_yacht": "56尺 游艇- Vassia",
+                "locale": "zh",
+                "model": "Majesty",
+                "size": "56 尺",
+                "guests": "28",
+                "good_for": "生日/派对"
+              }
+            ]
+          }
+        },
+        {
+          "yacht_id": "5",
+          "yacht_price": "3450",
+          "yacht_before_price": "0",
+          "hours": "3",
+          "yacht_image": "17025564411664181639Lagoona 564x400.webp",
+          "fareharbor_id": "340459",
+          "translations": {
+            "en": [
+              {
+                "name_of_yacht": "56 Ft Yacht - Lagoona",
+                "locale": "en",
+                "model": "Majesty",
+                "size": "56 Feet",
+                "guests": "28",
+                "good_for": "Sunset Cruise"
+              }
+            ],
+            "ar": [
+              {
+                "name_of_yacht": "يخت 56 قدم- لاغونا",
+                "locale": "ar",
+                "model": "ماجيستي",
+                "size": "56 قدم",
+                "guests": "28 شخص",
+                "good_for": "Sunset Cruise"
+              }
+            ],
+            "ru": [
+              {
+                "name_of_yacht": "56-футовая яхта – Lagoona (Лагуна)",
+                "locale": "ru",
+                "model": "Мэджести",
+                "size": "56 футов",
+                "guests": "28 чел.",
+                "good_for": "КРУИЗ НА ЗАКАТЕ"
+              }
+            ],
+            "zh": [
+              {
+                "name_of_yacht": "56 英尺游艇 - Lagoona",
+                "locale": "zh",
+                "model": "Majesty",
+                "size": "56尺",
+                "guests": "28",
+                "good_for": "日落巡航"
+              }
+            ]
+          }
+        },
+        {
+          "yacht_id": "2",
+          "yacht_price": "3240",
+          "yacht_before_price": "0",
+          "hours": "3",
+          "yacht_image": "17025563691664803714Vassia New 564x400.webp",
+          "fareharbor_id": "340280",
+          "translations": {
+            "en": [
+              {
+                "name_of_yacht": "58 Ft Yacht - Etosha",
+                "locale": "en",
+                "model": "Azimut",
+                "size": "58 Feet",
+                "guests": "28",
+                "good_for": "Celebrations"
+              }
+            ],
+            "ar": [
+              {
+                "name_of_yacht": "يخت 58 قدم- ايتوشا",
+                "locale": "ar",
+                "model": "أزيموت",
+                "size": "58 قدم",
+                "guests": "28 شخص",
+                "good_for": "Celebrations"
+              }
+            ],
+            "ru": [
+              {
+                "name_of_yacht": "58-футовая яхта Этоша",
+                "locale": "ru",
+                "model": "Азимут",
+                "size": "58 футов",
+                "guests": "28 чел.",
+                "good_for": "Праздников"
+              }
+            ],
+            "zh": [
+              {
+                "name_of_yacht": "58尺游艇-Etosha",
+                "locale": "zh",
+                "model": "Azimut",
+                "size": "58 尺",
+                "guests": "28",
+                "good_for": "庆祝"
+              }
+            ]
+          }
+        },
+        {
+          "yacht_id": "6",
+          "yacht_price": "3750",
+          "yacht_before_price": "0",
+          "hours": "3",
+          "yacht_image": "17025564681670496933main.webp",
+          "fareharbor_id": "340286",
+          "translations": {
+            "en": [
+              {
+                "name_of_yacht": "61 Ft Yacht - Silver Creek",
+                "locale": "en",
+                "model": "Majesty",
+                "size": "61 Feet",
+                "guests": "30",
+                "good_for": "Corporate Events"
+              }
+            ],
+            "ar": [
+              {
+                "name_of_yacht": "يخت 61 قدم- سلفر كريك",
+                "locale": "ar",
+                "model": "ماجيستي",
+                "size": "61 قدم",
+                "guests": "30 شخص",
+                "good_for": "Corporate Events"
+              }
+            ],
+            "ru": [
+              {
+                "name_of_yacht": "61 футов – Сильвер Крик",
+                "locale": "ru",
+                "model": "Мэджести",
+                "size": "61 Футов",
+                "guests": "30 чел.",
+                "good_for": "Корпоративов"
+              }
+            ],
+            "zh": [
+              {
+                "name_of_yacht": "61英尺游艇-银溪",
+                "locale": "zh",
+                "model": "Majesty",
+                "size": "61尺",
+                "guests": "30",
+                "good_for": "商务晚会"
+              }
+            ]
+          }
+        },
+        {
+          "yacht_id": "20",
+          "yacht_price": "25200",
+          "yacht_before_price": "0",
+          "hours": "3",
+          "yacht_image": "17025566991664188921Dionysos 564x400.webp",
+          "fareharbor_id": "366044",
+          "translations": {
+            "en": [
+              {
+                "name_of_yacht": "77 Ft Yacht - Dionysos",
+                "locale": "en",
+                "model": "Majesty",
+                "size": "77 Feet",
+                "guests": "20",
+                "good_for": "Family Events"
+              }
+            ],
+            "ar": [
+              {
+                "name_of_yacht": "77 Ft Yacht - Dionysos",
+                "locale": "ar",
+                "model": "Majesty",
+                "size": "77 Feet",
+                "guests": "20",
+                "good_for": "Family Events"
+              }
+            ],
+            "ru": [
+              {
+                "name_of_yacht": "77-футовая яхта - Dionysos (Дионис)",
+                "locale": "ru",
+                "model": "Мэджести",
+                "size": "77 футов",
+                "guests": "20 чел.",
+                "good_for": "Семейного Отдыха"
+              }
+            ],
+            "zh": [
+              {
+                "name_of_yacht": "77 尺游艇 - Dionysos",
+                "locale": "zh",
+                "model": "Majesty",
+                "size": "77尺",
+                "guests": "20",
+                "good_for": "家庭宴会"
+              }
+            ]
+          }
+        }
+      ],
       "translations": {
         "en": {
           "title": "SUNSET CRUISE",

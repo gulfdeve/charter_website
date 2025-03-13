@@ -18,7 +18,9 @@ const page = ({ params }) => {
   const experience = data?.experiences?.find(
     (experience) => experience.slug === slug
   );
+  console.log(locale);
   console.log(experience);
+
 
   if (loading) return <div>Loading...</div>;
   if (error) return <div>Error: {error.message}</div>;
@@ -72,26 +74,26 @@ const page = ({ params }) => {
           </h1>
         </div>
         <div className="grid grid-col-1 md:grid-cols-1 md:px-4 xl:px-44  gap-7 container mx-auto pb-10">
-          {offers.map((offer) => (
-            <div
-              key={offer.id}
+          
+          {
+            experience.yachts_data.map((yacht) => (
+              <div
+              key={yacht.yacht_id}
               className="flex flex-col md:flex-row justify-start  rounded-md bg-white px-2 custom-shadow"
             >
               {/* Image with object-cover for proper scaling */}
               <img
-                src={offer.image}
-                alt={offer.title}
+                src={`https://www.centauruscharter.com/product/images/${yacht.yacht_image}`}
+                alt={yacht.translations?.[locale]?.[0]?.name_of_yacht}
                 className="rounded-md w-[35rem] md:w-[25rem] xl:w-[35rem]  xl:h-[400px] md:h-[300px] h-[400px]  object-cover"
               />
               <div className="flex flex-col  justify-center px-3 xl:px-6 ">
                 {/* Title with Link */}
                 <Link
-                  href={`/yacht-trips/${offer.title
-                    .toLowerCase()
-                    .replace(/ /g, "-")}`}
+                  href="/"
                 >
-                  <h1 className="text-primary-blue  text-2xl font-bold xl:pt-6  pt-6 md:pb-2 hover:text-blue-600 transition-all duration-300 cursor-pointer py-5 md:py-0">
-                    {offer.title}
+                  <h1 className="text-primary-blue  text-2xl font-bold xl:pt-6  pt-6 md:pb-2 transition-all duration-300 cursor-pointer py-5 md:py-0">
+                  {yacht.translations?.[locale]?.[0]?.name_of_yacht}
                   </h1>
                 </Link>
                 <div className="grid grid-cols-1 lg:grid-cols-4 md:grid-cols-2 items-center gap-0 rounded-lg w-full overflow-hidden shadow-md mb-7">
@@ -99,28 +101,29 @@ const page = ({ params }) => {
                   <div className="bg-primary-blue text-white p-2 flex flex-col items-center ">
                     <span className="font-bold  text-sm">Model:</span>
                     <span className="font-semibold  text-sm text-primary-yellow">
-                      Majesty
+                    {yacht.translations?.[locale]?.[0]?.model}
                     </span>
                   </div>
                   {/* Length */}
                   <div className="bg-primary-blue text-white p-2 flex flex-col items-center">
                     <span className="font-bold  text-sm">Length:</span>
                     <span className="font-semibold  text-sm text-primary-yellow">
-                      56 Feet
+                      {yacht.translations?.[locale]?.[0]?.size}
                     </span>
                   </div>
                   {/* Guests */}
                   <div className="bg-primary-blue text-white p-2 flex flex-col items-center">
                     <span className="font-bold  text-sm">Guests:</span>
                     <span className="font-semibold  text-sm text-primary-yellow">
-                      21
+                      {yacht.translations?.[locale]?.[0]?.guests}
                     </span>
                   </div>
                   {/* Good For */}
                   <div className="bg-primary-yellow text-primary-blue xl:w-36 p-2 flex flex-col items-center">
                     <span className="   text-sm">Good For:</span>
                     <span className="font-semibold  text-sm">
-                      Birthday/Parties
+                      {/* Birthday/Parties */}
+                      {yacht.translations?.[locale]?.[0]?.good_for}
                     </span>
                   </div>
                 </div>
@@ -132,10 +135,10 @@ const page = ({ params }) => {
                     <IoIosPricetag className="text-3xl lg:text-3xl" />
                     <div className="flex flex-col items-start justify-start">
                       <h1 className="text-black  font-bold s:text-sm text-xs xl:text-lg">
-                        3 Hours Rate
+                        {yacht.hours} Hours Rate
                         <br />
                         <span className="xl:text-xl text-[#232629] text-xs">
-                          {offer.validity}
+                          {yacht.yacht_price.toLocaleString()}
                         </span>
                         <span className="text-primary-yellow s:text-sm  text-xs">
                           {" "}
@@ -147,18 +150,18 @@ const page = ({ params }) => {
 
                   {/* Buttons Section */}
                   <div className="flex xl:flex-row flex-col items-center justify-end gap-3 ">
-                    <button className="blue-solid-button flex">
+                    <a href={experience.whatsapp_url} target="_blank" className="blue-solid-button flex">
                       <FaWhatsapp className="xs:text-xl text-lg  mr-1" />
                       WHATSAPP
-                    </button>
-                    <button className="blue-solid-button flex">
+                    </a>
+                    <a href={`https://fareharbor.com/embeds/book/centauruscharter/items/${yacht.fareharbor_id}/?full-items=yes&flow=645487`} className="blue-solid-button flex">
                       KNOW MORE
-                    </button>
+                    </a>
                   </div>
                 </div>
               </div>
             </div>
-          ))}
+            ))}   
         </div>
 
         <div className="max-w-7xl mx-auto px-3 md:px-16 2xl:px-0 py-5 ">
