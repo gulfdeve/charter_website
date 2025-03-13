@@ -27,8 +27,7 @@ const page = ({ params }) => {
 
   return (
     <>
- 
-      <div className="flex flex-col items-center justify-center max-w-7xl mx-auto py-10 text-primary-black mt-14 md:mt-0">
+      <div className="max-w-7xl mx-auto px-10 py-10 flex flex-col items-center justify-center text-primary-black mt-14 md:mt-0">
         <h1 className=" text-4xl font-bold text-center">
           {event.translations?.[locale]?.title}
         </h1>
@@ -42,18 +41,17 @@ const page = ({ params }) => {
             className=""
           />
         </div>
-          <ul>
-            {event.translations?.[locale]?.description
-              .split("\n")
-              .map((item, index) => (
-                <li key={index} dangerouslySetInnerHTML={{ __html: item }} />
-              ))}
-          </ul>
+        <ul>
+          {event.translations?.[locale]?.description
+            .split("\n")
+            .map((item, index) => (
+              <li key={index} dangerouslySetInnerHTML={{ __html: item }} />
+            ))}
+        </ul>
 
-        
         <div className="py-10 w-full">
-          <div className="flex flex-col md:flex-row rounded-lg items-center  gap-5 justify-center  md:justify-between bg-transparent md:bg-primary-blue p-5">
-            <p className="text-white  font-bold bg-primary-blue text-xl rounded">
+          <div className="flex flex-col md:flex-row rounded-lg items-center  gap-5 justify-center  md:justify-between bg-primary-blue p-5">
+            <p className="text-white  text-center md:text-left font-bold bg-primary-blue text-xl rounded ">
               Validity Until: {event.validity}
             </p>
             <div className="flex flex-col md:flex-row md:gap-10 gap-5">
@@ -69,12 +67,16 @@ const page = ({ params }) => {
             </div>
           </div>
         </div>
-        
+
+
       </div>
-      
-     
-      <Modal2 isModalOpen={isModalOpen} closeModal={closeModal}  idName="events_id"
-        idValue={event.id}/>
+
+      <Modal2
+        isModalOpen={isModalOpen}
+        closeModal={closeModal}
+        idName="events_id"
+        idValue={event.id}
+      />
     </>
   );
 };

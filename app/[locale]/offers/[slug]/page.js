@@ -33,7 +33,7 @@ const Page = ({ params }) => {
 
   return (
     <>
-      <div className="max-w-7xl mx-auto flex flex-col items-center justify-center mt-14 md:mt-0">
+      <div className="max-w-7xl mx-auto px-10 flex flex-col items-center justify-center mt-14 md:mt-0">
         
         <PageTitleHeading title={offer.translations?.[locale]?.title} />
         
@@ -70,6 +70,8 @@ const Page = ({ params }) => {
             </div>
           </div>
         </div>
+
+        
       </div>
       <Modal2
         isModalOpen={isModalOpen}
