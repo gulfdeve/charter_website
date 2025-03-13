@@ -29,6 +29,10 @@ const page = () => {
                   experience.translations?.[locale]?.title ||
                   experience.translations?.en?.title ||
                   "Untitled";
+                  const preivew_text =
+                  experience.translations?.[locale]?.preivew_text ||
+                  experience.translations?.en?.preivew_text ||
+                  "Untitled";
 
                 return (
                   <div
@@ -46,13 +50,13 @@ const page = () => {
                     <div className="felx flex-col items-start justify-start px-5">
                       {/* Title with Link */}
 
-                      <h2 className="text-[#232629]  text-2xl font-bold pt-6 hover:text-blue-600 transition-all duration-300 cursor-pointer">
+                      <h2 className="text-[#232629]  text-2xl font-bold pt-6 transition-all duration-300 cursor-pointer">
                         <Link href={`/yacht-trips/${experience.slug}`}>
                           {title}
                         </Link>
                       </h2>
                       <p className="text-[#848484]  text-md pt-2 pb-9">
-                        {/* {experience.translations[locale].preivew_text} */}
+                        {preivew_text}
                       </p>
                       <div className="bg-[#232629] w-full h-[0.05rem]"></div>
                       <div className="flex flex-row items-center justify-between">
@@ -63,7 +67,7 @@ const page = () => {
                               Starting
                               <br />
                               <span className="xl:text-xl">
-                                AED {experience.amount}
+                                AED {experience.amount.toLocaleString()}
                               </span>
                             </p>
                           </div>

@@ -58,6 +58,10 @@ body {
 .yellow-lined-button {
   @apply flex items-center justify-center gap-2 px-8 py-2 bg-primary-yellow hover:scale-105 hover:bg-primary-blue hover:text-primary-yellow text-primary-blue border-2 border-primary-blue tracking-wide font-bold rounded-md transition duration-150 ease-in-out transform;
 }
+a:hover {
+  /* text-decoration: underline; */
+  color: none;
+}
 
 /*h1 {
   @apply text-4xl font-bold tracking-tight;
