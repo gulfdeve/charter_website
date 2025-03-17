@@ -18,11 +18,11 @@ export default function Videosharedtours() {
     const loadWistiaScripts = () => {
       // Load scripts in parallel instead of sequentially
       const playerScript = loadScript("https://fast.wistia.com/player.js");
-      const embedScript = loadScript(
-        "https://fast.wistia.com/embed/rbm8fusw7r.js",
-        "module",
-        true
-      );
+      // const embedScript = loadScript(
+      //   "https://fast.wistia.com/embed/rbm8fusw7r.js",
+      //   "module",
+      //   true
+      // );
       
       // Set scripts as loaded when player.js is ready (main dependency)
       playerScript.onload = () => {
@@ -41,7 +41,7 @@ export default function Videosharedtours() {
       };
       
       playerScript.onerror = (error) => console.log("Error loading Wistia player script:", error);
-      embedScript.onerror = (error) => console.log("Error loading Wistia embed script:", error);
+      // embedScript.onerror = (error) => console.log("Error loading Wistia embed script:", error);
     };
 
     loadWistiaScripts();
