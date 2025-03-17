@@ -361,13 +361,13 @@ export default function Navbar() {
 
                 {/* NEWYEAR */}
 
-                <li
+                {/* <li
                   className={`uppercase ${
                     pathname === "/newyear" ? "text-white" : ""
                   }`}
                 >
                   <Link className="py-6 inline-block tracking-wider hover:text-white" href={`/newyear`}>{t("navbar.new-year")}</Link>
-                </li>
+                </li> */}
               </ul>
             </div>
           </nav>
