@@ -15,6 +15,7 @@ import { useLanguage } from "@/app/context/LanguageContext";
 import { Link } from "../i18n/routing";
 import Image from "next/image";
 import Yachtmobilecarousal from '@/app/components/Yachtmobilecarousal'
+import VideoLocal from "@/app/components/VideoLocal";
 
 export default function Home() {
   const t = useTranslations();
@@ -56,7 +57,9 @@ export default function Home() {
     <Modal show={isModalVisible} onClose={closeModal} />
     
       <div>
-        <Video />
+      
+        {/* <Video /> */}
+        <VideoLocal filename="/Seasonal Tour _ Luxury Tours.mp4" section="home" />
       </div>
 
       <div className="flex flex-col bg-white items-center justify-center pb-10 xl:pt-20

@@ -2,6 +2,7 @@
 import React from "react";
 import Videosharedtours from "@/app/components/Video-sharedtours";
 import WistiaVideo from "@/app/components/WistiaVideo";
+import VideoLocal from "@/app/components/VideoLocal";
 // React Icons
 import { FaClock, FaCameraRetro, FaWhatsapp, FaChild } from "react-icons/fa";
 import { IoLocationSharp, IoMan } from "react-icons/io5";
@@ -49,7 +50,8 @@ const Page = () => {
     <>
       {/* Hero Video or Banner */}
       {/* <Videosharedtours /> */}
-      <WistiaVideo video_id="x5zlv6005o" />
+      {/* <WistiaVideo video_id="x5zlv6005o" /> */}
+      <VideoLocal filename="/shared yacht tours.mp4" section="shared-tours" />
 
       {/* Main Container */}
       <div className="bg-white h-full w-full ">

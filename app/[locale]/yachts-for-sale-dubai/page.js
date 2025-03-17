@@ -3,44 +3,14 @@ import { useLocale, useTranslations } from "next-intl";
 import React, { useEffect } from "react";
 import { FaWhatsapp } from "react-icons/fa";
 import YachtListings from "@/app/components/cardBuyYacht";
+import VideoLocal from "@/app/components/VideoLocal";
 
 const Page = () => {
   const t = useTranslations();
-  useEffect(() => {
-    const script1 = document.createElement("script");
-    script1.src = "https://fast.wistia.com/player.js";
-    script1.async = true;
-    document.body.appendChild(script1);
-
-    const script2 = document.createElement("script");
-    script2.src = "https://fast.wistia.com/embed/sar3sqhjcf.js";
-    script2.async = true;
-    script2.type = "module";
-    document.body.appendChild(script2);
-
-    return () => {
-      document.body.removeChild(script1);
-      document.body.removeChild(script2);
-    };
-  }, []);
 
   return (
     <>
-      <style>
-        {`
-          wistia-player[media-id='sar3sqhjcf']:not(:defined) {
-            background: center / contain no-repeat url('https://fast.wistia.com/embed/medias/sar3sqhjcf/swatch');
-            display: block;
-            filter: blur(5px);
-            padding-top: 36.67%;
-            margin-top:3.5rem;
-            
-          }
-        `}
-      </style>
-      <div className="mt-14 md:mt-0 ">
-        <wistia-player media-id="sar3sqhjcf" seo="false"></wistia-player>
-      </div>
+<VideoLocal filename="/buy-sell-yacht-video.mp4" section="buy-yacht" />
       <div className="bg-white w-full h-auto ">
         <div className="bg-white rounded-lg p-8 max-w-7xl mx-auto my-8 shadow-buy-yacht mt-14 lg:mt-0 ">
           <h1 className="text-4xl font-bold text-center text-gray-900 mb-8 ">
