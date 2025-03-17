@@ -1,6 +1,7 @@
 "use client";
 import React from "react";
 import Videosharedtours from "@/app/components/Video-sharedtours";
+import WistiaVideo from "@/app/components/WistiaVideo";
 // React Icons
 import { FaClock, FaCameraRetro, FaWhatsapp, FaChild } from "react-icons/fa";
 import { IoLocationSharp, IoMan } from "react-icons/io5";
@@ -47,7 +48,8 @@ const Page = () => {
   return (
     <>
       {/* Hero Video or Banner */}
-      <Videosharedtours />
+      {/* <Videosharedtours /> */}
+      <WistiaVideo video_id="x5zlv6005o" />
 
       {/* Main Container */}
       <div className="bg-white h-full w-full ">
