@@ -6,35 +6,42 @@ export default function Videosharedtours() {
   const [playerReady, setPlayerReady] = useState(false);
 
   useEffect(() => {
-    const loadScript = (src, type = "text/javascript", isModule = false) =>
-      new Promise((resolve, reject) => {
-        const script = document.createElement("script");
-        script.src = src;
-        script.async = true;
-        script.type = isModule ? "module" : type;
-        script.onload = () => resolve(true);
-        script.onerror = (error) => reject(error);
-        document.body.appendChild(script);
-      });
+    const loadScript = (src, type = "text/javascript", isModule = false) => {
+      const script = document.createElement("script");
+      script.src = src;
+      script.async = true;
+      script.type = isModule ? "module" : type;
+      document.body.appendChild(script);
+      return script;
+    };
 
-    const loadWistiaScripts = async () => {
-      try {
-        await loadScript("https://fast.wistia.com/player.js");
-        await loadScript(
-          "https://fast.wistia.com/embed/rbm8fusw7r.js",
-          "module",
-          true
-        );
+    const loadWistiaScripts = () => {
+      // Load scripts in parallel instead of sequentially
+      const playerScript = loadScript("https://fast.wistia.com/player.js");
+      const embedScript = loadScript(
+        "https://fast.wistia.com/embed/rbm8fusw7r.js",
+        "module",
+        true
+      );
+      
+      // Set scripts as loaded when player.js is ready (main dependency)
+      playerScript.onload = () => {
         setScriptsLoaded(true);
-
-        // Wait for the custom element to be defined
+        
+        // Check if custom element is defined
         if (window.customElements) {
-          await customElements.whenDefined("wistia-player");
-          setPlayerReady(true);
+          if (customElements.get('wistia-player')) {
+            setPlayerReady(true);
+          } else {
+            customElements.whenDefined("wistia-player")
+              .then(() => setPlayerReady(true))
+              .catch(err => console.error("Error with custom element:", err));
+          }
         }
-      } catch (error) {
-        console.log("Error loading Wistia scripts:", error);
-      }
+      };
+      
+      playerScript.onerror = (error) => console.log("Error loading Wistia player script:", error);
+      embedScript.onerror = (error) => console.log("Error loading Wistia embed script:", error);
     };
 
     loadWistiaScripts();
@@ -47,7 +54,7 @@ export default function Videosharedtours() {
   }, []);
 
   return (
-    <div className="relative mx-auto w-full h-[413px] sm:h-[560px] s:h-[425px] lg:h-[590px] md:h-[560px] xl:h-[590px] 3xl:h-[660px] overflow-hidden mt-14 md:mt-0">
+    <div className="w-full mx-auto relative">
       {/* Wistia Video as Background */}
       <style>
         {`
@@ -58,7 +65,7 @@ export default function Videosharedtours() {
           }
         `}
       </style>
-      <div className="absolute inset-0 z-0" style={{ pointerEvents: "none" }}>
+      <div className="" style={{ pointerEvents: "none" }}>
         {scriptsLoaded && playerReady ? (
           <wistia-player media-id="x5zlv6005o" seo="false"></wistia-player>
         ) : (
@@ -66,7 +73,7 @@ export default function Videosharedtours() {
         )}
       </div>
 
-      <div className="absolute inset-0 z-10 flex flex-col items-center  justify-center top-[32%] sm:top-[51%] s:top-[49%] md:top-[57%] lg:-top-[35%] xl:-top-[2%]  text-white text-center p-2 md:px-14 lg:px-24 ">
+      <div className="block text-center mt-10 lg:absolute lg:-translate-x-2/4 lg:-translate-y-2/4 lg:left-2/4 lg:top-2/4 lg:mt-0">
         <h1 className="text-4xl font-bold mb-4 text-primary-blue-2 lg:text-white  xl:text-xl 2xl:text-4xl text-shadow">
           All-Inclusive Sharing Yacht Trips In Dubai
         </h1>
@@ -76,7 +83,6 @@ export default function Videosharedtours() {
         <h1 className="text-sm xl:text-2xl mb-4 text-primary-blue-2 lg:text-white  2xl:text-3xl text-shadow">
           Starting AED 149
         </h1>
-
         <button className="blue-solid-button">GET THE OFFER NOW!</button>
       </div>
     </div>
