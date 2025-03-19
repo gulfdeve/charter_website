@@ -41,4 +41,4 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 INTL-INSTRUCTIONS.md
-*.mp4
+# *.mp4
