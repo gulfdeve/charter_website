@@ -246,7 +246,7 @@ export default function Navbar() {
                       data?.products?.map((product) => (
                         <li
                           key={product.id}
-                          className="cursor-pointer text-base font-normal text-gray-500 hover:font-bold hover:bg-primary-blue hover:text-primary-yellow"
+                          className="cursor-pointer text-base font-normal text-gray-500 hover:bg-gray-200"
                         >
                           {/* {product.title} */}
                           <Link
@@ -317,7 +317,7 @@ export default function Navbar() {
                         return (
                           <li
                             key={experience.id}
-                            className="cursor-pointer text-base font-normal text-gray-500 hover:font-bold hover:bg-primary-blue hover:text-primary-yellow"
+                            className="cursor-pointer text-base font-normal text-gray-500 hover:bg-gray-200"
                           >
                             <Link
                               href={`/yacht-trips/${experience.slug}`}
