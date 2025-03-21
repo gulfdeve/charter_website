@@ -108,6 +108,7 @@ export default function Home() {
                     className="rounded-lg xl:w-[32rem] w-[25rem] mt-3"
                     width={400}
                     height={400}
+					className="w-full rounded-lg"
                   />
 
                   </Link>
@@ -152,7 +153,7 @@ export default function Home() {
                     </div>
                   </div>
 
-                  <div className="flex flex-row justify-between items-center xl:w-[32rem]">
+                  <div className="flex flex-row justify-between items-center">
                     <div>
                       <div className=" font-bold">
                         Trip inclusions from 3 hours onwards:
@@ -183,7 +184,7 @@ export default function Home() {
                     </div>
                   </div>
 
-                  <div className="flex flex-row justify-between items-center xl:w-[32rem] mt-3">
+                  <div className="flex flex-row justify-between items-center mt-3">
                     <div className="pt-3">
                    
 
