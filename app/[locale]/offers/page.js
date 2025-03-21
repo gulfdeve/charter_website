@@ -1,29 +1,42 @@
-"use client";
 import React from "react";
-import { useEffect } from "react";
 import { FaWhatsapp } from "react-icons/fa";
-import { useData } from "@/app/context/DataContext";
-import { useLanguage } from "@/app/context/LanguageContext";
-import YachtCarousal from "@/app/components/YachtCarousel";
-// import Link from "next/link";
-import { useRouter, usePathname, Link } from "@/app/i18n/routing";
-// import Loading from "./loading";
+import { useLocale, useTranslations } from "next-intl";
 import Image from "next/image";
+import { Link } from "@/app/i18n/routing";
+import YachtCarousal from "@/app/components/YachtCarousel";
 import OfferMobilecarousal from "@/app/components/OfferMobilecarousal";
 import PageTitleHeading from "@/app/components/PageTitleHeading";
+import ClientButtons from "@/app/components/ClientButtons";
 
-const page = ({ params }) => {
-  const { data, loading, error } = useData();
-  const { language, changeLanguage } = useLanguage();
+// Fetch data server-side
+async function getData() {
+  try {
+    const response = await fetch(process.env.NEXT_PUBLIC_BASE_URL + '/data.json', { cache: 'no-store' });
+    if (!response.ok) {
+      throw new Error('Failed to fetch data');
+    }
+    return response.json();
+  } catch (error) {
+    console.error('Error fetching data:', error);
+    return { offers: [] };
+  }
+}
 
-  // if (loading) {
-  //   return <Loading />;
-  // }
+// Import getTranslations instead of useTranslations
+import { getTranslations } from 'next-intl/server';
+
+export default async function OffersPage({ params }) {
+  const data = await getData();
+  const language = params.locale || "en";
+
+  // Use getTranslations instead of useTranslations
+  const t = await getTranslations();
 
   return (
     <>
       <div className="max-w-7xl mx-auto mt-14 md:mt-0">
         <PageTitleHeading title="YACHT OFFERS AND DEALS IN DUBAI" />
+        {/* <p>{t("navbar.contact-us")}</p> */}
 
         <div className="md:block hidden">
           <div className="grid grid-col-1 md:grid-cols-2 md:px-4 gap-7 pb-8 container mx-auto ">
@@ -43,13 +56,13 @@ const page = ({ params }) => {
                     priority={true}
                   />
                 </Link>
-                <div className="flex flex-col  justify-start px-5 lg:px-5">
-                  <h2 className="text-[#232629]  text-2xl font-bold pt-4">
+                <div className="flex flex-col justify-start px-5 lg:px-5">
+                  <h2 className="text-[#232629] text-2xl font-bold pt-4">
                     <Link href={`/offers/${offer.slug}`}>
                       {offer.translations[language].title}
                     </Link>
                   </h2>
-                  <p className="text-[#232629]  font-bold text-xs pt-2 pb-16">
+                  <p className="text-[#232629] font-bold text-xs pt-2 pb-16">
                     {offer.note}
                   </p>
                   <p className="text-sm py-2 font-bold">
@@ -58,29 +71,13 @@ const page = ({ params }) => {
                   <div className="bg-[#232629] w-full h-[0.05rem]"></div>
                   <div className="flex flex-row items-center justify-between">
                     <div className="flex flex-col items-start justify-start py-10">
-                      <p className="text-[#232629]  font-bold text-sm xl:text-lg">
+                      <p className="text-[#232629] font-bold text-sm xl:text-lg">
                         Validity Until:
                         <br />
                         {offer.validity}
                       </p>
                     </div>
-                    {/* Buttons Section */}
-                    <div className="flex xl:flex-row flex-col items-center justify-end gap-3 ">
-                      <a
-                        href={`${offer.whatsapp_url}`}
-                        target="_blank"
-                        className="blue-solid-button flex items-center"
-                      >
-                        <FaWhatsapp className="xs:text-xl text-lg  mr-1" />
-                        WHATSAPP
-                      </a>
-                      <Link
-                        href={`/offers/${offer.slug}`}
-                        className="blue-solid-button"
-                      >
-                        KNOW MORE
-                      </Link>
-                    </div>
+                    <ClientButtons offer={offer} />
                   </div>
                 </div>
               </div>
@@ -109,6 +106,4 @@ const page = ({ params }) => {
       <YachtCarousal />
     </>
   );
-};
-
-export default page;
+}
