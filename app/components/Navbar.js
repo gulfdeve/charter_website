@@ -78,7 +78,7 @@ export default function Navbar() {
     <>
       {/* First Navbar */}
       <div className="lg:block hidden">
-        <nav className="p-4 container mx-auto bg-white text-black flex items-center justify-between xl:gap-64 2xl:gap-64 md:gap-24">
+        <nav className="py-4 container mx-auto bg-white text-black flex items-center justify-between xl:gap-64 2xl:gap-64 md:gap-24">
           <div className="text-xl font-bold">
             <Link href={"/"}>
               <Image
@@ -191,7 +191,7 @@ export default function Navbar() {
           >
             <div className="container mx-auto">
               <ul
-                className={`flex flex-row items-center justify-around text-[11px] md:text-[12px] ${
+                className={`flex flex-row items-center justify-between text-[11px] md:text-[12px] ${
                   isSticky
                     ? "2xl:text-[15px] xl:text-[11px] md:text-[11px]"
                     : " 2xl:text-[15px] xl:text-[12px] md:text-[11px] lg:text-[12px]"
