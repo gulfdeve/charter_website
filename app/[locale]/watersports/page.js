@@ -82,10 +82,8 @@ return (
             or an easygoing day on the water, we've got something for everyone.
             <br />
             <br />{" "}
-            <strong>
                 For a perfect excursion with friends and family, book your yachts
                 with water sports activity in Dubai today.
-            </strong>
         </p>
     </div>
 
