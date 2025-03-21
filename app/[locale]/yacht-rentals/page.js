@@ -96,18 +96,18 @@ const YachtCard = ({ yacht }) => {
 
           {/* Optional Badges */}
           {yacht.category.includes("bestSellers") && (
-            <div className="absolute top-11 left-0 bg-primary-blue text-primary-yellow text-md  py-1 px-2">
+            <div className="absolute top-4 left-0 bg-primary-blue text-primary-yellow text-md  py-0.5 px-2">
               BEST SELLER
             </div>
           )}
           {yacht.category.includes("premium") && (
-            <div className="absolute top-11 left-0 bg-primary-blue text-primary-yellow text-md  py-1 px-2">
-              PREMIUM
+            <div className="absolute top-4 left-0 bg-primary-blue text-primary-yellow text-md  py-0.5 px-2">
+              PREMIUM YACHT
             </div>
           )}
-          <div className="absolute top-2 right-2">
+          {/* <div className="absolute top-2 right-2">
             <FaYoutube size={36} className="text-[#ff0033]" />
-          </div>
+          </div> */}
         </div>
 
         {/* Yacht Details */}
@@ -118,13 +118,14 @@ const YachtCard = ({ yacht }) => {
             </h2>
           </Link>
 
-          <p className=" text-xs text-primary-blue text-left">
+          <p className=" text-sm text-primary-blue text-left">
             Model: <span className="font-bold">{yacht.model}</span> | Length:{" "}
             <span className="font-bold">{yacht.length}</span> | Guests:{" "}
             <span className="font-bold">{yacht.guests}</span>
           </p>
           <p className=" text-primary-blue font-bold text-xl pt-5 pb-2">
-            AED {yacht.price} <span className="text-primary-blue">Per Hour</span>
+            AED {yacht.price}{" "}
+            <span className="text-primary-blue">Per Hour</span>
           </p>
           <a
             href={`https://fareharbor.com/embeds/book/centauruscharter/items/${
@@ -199,18 +200,35 @@ const Tabs = () => {
       );
     }
     return (
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 pb-10 gap-10 container mx-auto">
-        {filteredYachts.map((yacht) => (
-          <YachtCard key={yacht.id} yacht={yacht} />
-        ))}
-      </div>
+      <>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 pb-10 gap-6 container mx-auto">
+          {filteredYachts.map((yacht) => (
+            <YachtCard key={yacht.id} yacht={yacht} />
+          ))}
+        </div>
+        <div className="container text-left mx-auto px-3 py-5 pb-8">
+          <p className=" text-gray-500 text-md ">
+            A <strong>luxury yacht rental</strong> is the perfect way to enjoy an experience
+            tailored to your specific needs. We offer the best luxury yacht
+            experiences in UAE. Whether you're looking for a luxurious getaway
+            or want a boat for a special event like a wedding, honeymoon,
+            birthday party - we have just what you need. Centaurus offers
+            extensive fleet of yachts that offers something for every taste and
+            budget. Our experienced team with knowledge of the local waters can
+            help you plan an extraordinary experience.
+            <br />
+            <br /> A wide range of itineraries and destinations available, from
+            the Dubai Marina to Burj Al Arab. <strong>Renting a yacht</strong> in Dubai Marina or
+            Dubai Harbor is made hassle free by booking online instantly
+          </p>
+        </div>
+      </>
     );
   };
 
   return (
     <div className="w-full bg-white mt-14 lg:mt-0 ">
       <PageTitleHeading title="LUXURY YACHT RENTALS DUBAI" />
-
 
       <div className="flex justify-center items-center gap-6 text-lg font-semibold py-2 md:py-7 px-2 ">
         <button onClick={() => setActiveTab("allYachts")}>ALL YACHTS</button>
