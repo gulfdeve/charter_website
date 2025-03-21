@@ -164,7 +164,7 @@ const page = ({ params }) => {
             ))}   
         </div>
 
-        <div className="max-w-7xl mx-auto px-3 md:px-16 2xl:px-0 py-5 ">
+        <div className="container mx-auto py-5 ">
           <p
             className="text-gray-500 text-md"
             dangerouslySetInnerHTML={{

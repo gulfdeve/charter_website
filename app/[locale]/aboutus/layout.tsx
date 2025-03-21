@@ -25,9 +25,7 @@ interface APIResponse {
 
 const Layout = ({ children }: { children: React.ReactNode }): JSX.Element => {
   return (
-    <div>
       <main>{children}</main>
-    </div>
   );
 };
 

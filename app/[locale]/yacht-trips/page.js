@@ -89,7 +89,8 @@ const page = () => {
         <div className="md:hidden block">
           <ExperienceMobilecarousal />
         </div>
-        <div className="max-w-7xl mx-auto px-3 py-5 pb-8">
+      </div>
+	  <div className="container mx-auto py-5 pb-8">
           <p className=" text-gray-500 text-md ">
             Dubai is a popular destination for yachting. The Arabian coastline
             is lined with beautiful azure beaches and top attractions, which are
@@ -104,7 +105,6 @@ const page = () => {
             watersports for your next excursion.
           </p>
         </div>
-      </div>
 
       <ExclusiveOffers />
 

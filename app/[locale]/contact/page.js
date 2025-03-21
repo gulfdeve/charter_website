@@ -76,7 +76,8 @@ export default function Page() {
             We at Centaurus Charter are well experienced to meet the expectations of your next yachting adventure in Dubai. Please fill contact you shortly.
           </p>
         </div>
-        <div className="flex flex-col md:flex-row-reverse items-center md:justify-end 2xl:justify-center xl:pl-32 md:gap-10 py-10">
+
+        <div className="container mx-auto flex flex-col md:flex-row-reverse items-center md:justify-end 2xl:justify-center md:gap-10 py-10">
           <div className="flex justify-center md:justify-start items-center md:items-start bg-white">
             <div className="w-full p-6 bg-white">
               <form onSubmit={handleSubmit} className="space-y-4">
@@ -181,7 +182,7 @@ export default function Page() {
               </form>
             </div>
           </div>
-          <div className="flex flex-col items-center justify-center pl-7 space-y-7 md:-mt-40">
+          <div className="flex flex-col items-center justify-center space-y-7 md:-mt-40">
             <div className="flex flex-row items-start justify-start">
               <MdLocationOn className="text-5xl" />
               <h1 className="text-sm w-[16rem] xs:w-[19rem] pl-5">

@@ -8,6 +8,7 @@ import { FaClock, FaCameraRetro, FaWhatsapp, FaChild } from "react-icons/fa";
 import { IoLocationSharp, IoMan } from "react-icons/io5";
 import { MdOutlineLocalDining } from "react-icons/md";
 import YachtCarousal from "@/app/components/YachtCarousel";
+import FareHarborCalendar from "@/app/components/FareHarborCalendar";
 // Example data
 const toursData = [
   {
@@ -64,7 +65,13 @@ const Page = () => {
             Luxury Experience that's Affordable: Set Sail and Experience Dubai,
             From Morning till Night
           </p>
+		  <p>
+		  Experience the ultimate Dubai yacht tour with our exclusive daily cruises, available three times a day—midday, sunset, and night. Whether you want to soak up the sun, witness the breathtaking skyline at golden hour, or enjoy the city lights shimmering over the sea, our yacht tours offer the perfect escape. Each tour is designed to provide a luxurious and unforgettable experience on the water. Below, you'll find detailed cards for each tour, covering everything from itinerary to inclusions. If you're ready to book, check the calendar beside for available dates and secure your spot today!
+
+
+		  </p>
         </div>
+		<FareHarborCalendar />
 
         {/* Seasonal Tours Header */}
         <div>
@@ -281,7 +288,7 @@ const Page = () => {
         </div>
 
         {/* CTA Section */}
-        <div className="py-10 max-w-7xl mx-auto">
+        <div className="py-10 container mx-auto">
           <div className="flex flex-col md:flex-row rounded-lg items-center gap-5 justify-center md:justify-between bg-primary-blue md:bg-primary-blue p-5">
             <p className="text-white text-center md:text-left font-bold bg-primary-blue text-xl rounded">
               Enjoy a luxurious shared yacht adventure!

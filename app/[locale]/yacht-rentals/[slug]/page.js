@@ -93,7 +93,7 @@ export default function Home({ params }) {
 
   return (
     <>
-      <div className="max-w-7xl mx-auto p-5 mt-14 lg:mt-0">
+      <div className="container mx-auto p-5 mt-14 lg:mt-0">
         {/* Title */}
         <h1 className="text-4xl font-bold text-center mb-4 mt-5">
           {product.translations?.[locale]?.name_of_yacht}
@@ -171,7 +171,7 @@ export default function Home({ params }) {
         </div>
 
         {/* Yacht Details */}
-        <div className="grid grid-cols-1 lg:grid-cols-5 md:grid-cols-1 items-center gap-0 rounded-lg w-full overflow-hidden shadow-md mb-7 mt-6 max-w-7xl mx-auto">
+        <div className="grid grid-cols-1 lg:grid-cols-5 md:grid-cols-1 items-center gap-0 rounded-lg w-full overflow-hidden shadow-md mb-7 mt-6 mx-auto">
           <div className="bg-primary-blue text-white p-2 flex flex-col items-center">
             <span className="font-bold text-sm">Model:</span>
             <span className="font-semibold text-sm text-primary-yellow xl:text-xl">

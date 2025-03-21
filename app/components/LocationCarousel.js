@@ -65,7 +65,7 @@ function MobileCarousel() {
   const scrollNext = () => emblaInstance.current?.scrollNext();
 
   return (
-    <div className="max-w-7xl mx-auto md:px-4 pb-16 lg:hidden">
+    <div className="container mx-auto md:px-4 pb-16 lg:hidden">
       {/* Optional heading */}
       <div className="flex flex-col items-center justify-center py-10">
         <h2 className="text-primary-blue text-center font-bold text-4xl">

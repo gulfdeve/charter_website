@@ -20,12 +20,12 @@ const { language, changeLanguage } = useLanguage();
 
 return (
 <>
-    <div className="max-w-7xl mx-auto mt-14 md:mt-0">
+    <div className="container mx-auto mt-14 md:mt-0">
 
         <PageTitleHeading title="YACHT EVENTS DUBAI" />
 
         <div className="hidden md:block">
-        <div className="grid grid-col-1 md:grid-cols-2 md:px-4 gap-7 pb-4 container mx-auto">
+        <div className="grid grid-col-1 md:grid-cols-2 gap-7 pb-4">
             {data?.events?.map((event) => (
             <div key={event.id} className="flex flex-col justify-start lg:justify-between rounded-md bg-white custom-shadow">
                 <Link href={`/events/${event.slug}`}>
@@ -72,7 +72,7 @@ return (
 <Eventmobilecarousal/>
 </div>
     </div>
-    <div className="max-w-7xl mx-auto px-3 py-5 pb-8">
+    <div className="container mx-auto px-3 py-5 pb-8">
         <p className=" text-gray-500 text-md ">
             Experience the perfect fusion of luxury, elegance, and unforgettable moments on the glistening waters of
             Dubai. As a premier destination for hosting extraordinary events, parties, and exclusive gatherings, Dubai

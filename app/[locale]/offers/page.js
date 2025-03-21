@@ -34,12 +34,12 @@ export default async function OffersPage({ params }) {
 
   return (
     <>
-      <div className="max-w-7xl mx-auto mt-14 md:mt-0">
+      <div className="container mx-auto mt-14 md:mt-0">
         <PageTitleHeading title="YACHT OFFERS AND DEALS IN DUBAI" />
         {/* <p>{t("navbar.contact-us")}</p> */}
 
         <div className="md:block hidden">
-          <div className="grid grid-col-1 md:grid-cols-2 md:px-4 gap-7 pb-8 container mx-auto ">
+          <div className="grid grid-col-1 md:grid-cols-2 gap-7 pb-8">
             {data?.offers?.map((offer) => (
               <div
                 key={offer.id}
@@ -88,7 +88,7 @@ export default async function OffersPage({ params }) {
       <div className="block md:hidden">
         <OfferMobilecarousal />
       </div>
-      <div className="max-w-7xl mx-auto px-3 py-5 pb-8">
+      <div className="container mx-auto px-3 py-5 pb-8">
         <p className=" text-gray-500 text-md ">
           Centaurus Charter offers range of membership discounts &{" "}
           <strong>yacht deals</strong> to adorn the beautiful yachting

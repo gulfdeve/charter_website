@@ -42,7 +42,7 @@ export default function YachtCarousal() {
         EXPLORE OUR YACHTS
       </h2>
       <div className="md:block hidden">
-      <div className="relative max-w-7xl h-full overflow-hidden bg-primary-yellow container mx-auto">
+      <div className="relative container h-full overflow-hidden bg-primary-yellow mx-auto">
         {/* Single Embla Carousel */}
         <div className="embla__viewport" ref={emblaRef}>
           <div className="embla__container flex">
