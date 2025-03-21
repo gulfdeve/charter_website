@@ -57,17 +57,18 @@ const page = () => {
       <div>
         <Videoresidentoffers />
       </div>
-      <div className="flex flex-col items-center justify-center py-10">
+      <div className="container mx-auto flex flex-col items-center justify-center py-10">
         <h1 className=" text-primary-blue text-center font-bold text-2xl pb-4">
           EXCLUSIVE 40% DISCOUNT FOR UAE RESIDENTS
         </h1>
-        <p className=" text-primary-blue text-lg text-center lg:px-56">
+        <p className=" text-primary-blue text-lg text-center">
           EXPERIENCE THE ULTIMATE IN LUXURY YACHT RENTALS AT UNBEATABLE PRICES,
           EXCLUSIVELY FOR UAE RESIDENTS. ENJOY A PERFECT BLEND OF QUALITY AND
           AFFORDABILITY, PROMISING A UNIQUE AND UNFORGETTABLE ADVENTURE ON THE
           WATER.
         </p>
       </div>
+
       <div className="container mx-auto p-2 lg:p-20 py-6">
         <div className="overflow-x-auto">
           <table className="w-full border-collapse border border-gray-300 md:text-sm lg:text-sm">
@@ -133,7 +134,7 @@ const page = () => {
           </table>
         </div>
       </div>
-      <div className="flex flex-col  px-4 xl:px-44">
+      <div className="container mx-auto flex flex-col  px-4">
         <h3 className="text-black  text-center font-bold">
           INCLUSIONS: WATER, SOFT DRINKS, WINES, AND BEERS.
         </h3>
@@ -151,7 +152,7 @@ const page = () => {
           YACHT TOUR. WATERSPORTS ARE ALSO AVAILABLE ON REQUEST.
         </h3>
       </div>
-      <div className="max-w-7xl mx-auto">
+      <div className="container mx-auto">
       <hr className="my-5 border border-primary-blue"></hr>
       </div>
       <div className="flex flex-col items-center justify-center py-10">
@@ -230,7 +231,7 @@ const page = () => {
           </table>
         </div>
       </div>
-      <div className="flex flex-col  px-4 xl:px-44">
+      <div className="container mx-auto flex flex-col  px-4">
         <h3 className="text-black  text-center font-bold">
           INCLUSIONS: WATER, SOFT DRINKS, WINES, AND BEERS.
         </h3>
@@ -248,7 +249,7 @@ const page = () => {
           YACHT TOUR. WATERSPORTS ARE ALSO AVAILABLE ON REQUEST.
         </h3>
       </div>
-      <div className="max-w-7xl mx-auto">
+      <div className="container mx-auto">
      
       </div>
       <div className="flex flex-col item-center justify-center py-10 px-5">
@@ -270,7 +271,7 @@ const page = () => {
                 <li>⁠Terms are subject to change without prior notice.</li>
               </ul>
             </div>
-            <section className="w-full p-4 max-w-7xl mx-auto space-y-10">
+            <section className="w-full p-4 container mx-auto space-y-10">
       {/* Outer container with gold background */}
       
       <div className="bg-primary-yellow flex items-center justify-between rounded-xl px-6 py-3">

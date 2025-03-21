@@ -83,7 +83,7 @@ const YachtListings = () => {
   ];
 
   return (
-    <div className="grid md:grid-cols-2 gap-8 max-w-7xl mx-auto my-8">
+    <div className="grid md:grid-cols-2 gap-8 container mx-auto my-8">
       {yachts.map((yacht, index) => (
         <YachtCard key={index} yacht={yacht} />
       ))}

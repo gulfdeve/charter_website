@@ -124,7 +124,7 @@ export default function Home({ params }) {
         
         <div className="xl:-mt-4 mt-4 flex justify-center relative">
           {/* Thumbnails */}
-          <div className="flex space-x-2 max-w-7xl relative">
+          <div className="flex space-x-2 container relative">
             {product.gallery.map((item, index) => (
               <button
                 key={index}

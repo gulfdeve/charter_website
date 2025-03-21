@@ -131,7 +131,7 @@ export default function Home({ params }) {
 
           <div
             ref={thumbnailRef}
-            className="overflow-x-auto flex space-x-2 max-w-7xl relative scrollbar-hidden"
+            className="overflow-x-auto flex space-x-2 container relative scrollbar-hidden"
             style={{
               scrollSnapType: "x mandatory",
               scrollBehavior: "smooth",
