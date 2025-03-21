@@ -299,7 +299,7 @@ export default function FirstFooter() {
 
   return (
     <footer className="text-sm bg-primary-black py-10">
-      <div className="p-4 container mx-auto">
+      <div className="py-4 container mx-auto">
         {/** DESKTOP / LARGER SCREENS (Grid) **/}
         <div className="hidden md:grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-8">
           {footerSections.map((section, index) => (

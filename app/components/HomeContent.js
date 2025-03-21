@@ -71,7 +71,7 @@ export default function Home() {
           Enjoy your Luxury Yacht Experience
         </h1>
 
-        <p className=" text-[#848484] text-center  text-base  px-3 xl:px-44 mx-auto container">
+        <p className=" text-[#848484] text-center  text-base  px-3 mx-auto container">
           Centaurus Charter is a yacht rental company in Dubai that offers range
           of private yachts and boats for those who like glamorous, a taste of
           luxury & cruiser that bring forth a wonderful yachting experience. Let
@@ -89,7 +89,7 @@ export default function Home() {
       {/* DESKTOP */}
       <div className="hidden md:block">
         <div className="container mx-auto  lg:p-6">
-          <div className="grid grid-col-1 md:grid-cols-2 p-6 2xl:px-36 2xl:gap-14 gap-10">
+          <div className="grid grid-col-1 md:grid-cols-2 gap-10">
             {!loading &&
               data?.products?.map((product) => (
                 <div

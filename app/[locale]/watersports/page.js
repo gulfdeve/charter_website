@@ -18,14 +18,14 @@ const { language, changeLanguage } = useLanguage();
 
 return (
 <>
-    <div className="max-w-7xl mx-auto mt-14 md:mt-0">
+    <div className="container mx-auto mt-14 md:mt-0">
 
         <PageTitleHeading title="WATERSPORTS ADD-ON DUBAI" />
 
         <div className="md:block hidden">
 
         
-        <div className="grid grid-col-1 md:grid-cols-2 md:px-4 gap-7 pb-8 container mx-auto">
+        <div className="grid grid-col-1 md:grid-cols-2 gap-7 pb-8 container mx-auto">
             {data?.packages?.map((package_a) => (
             <div key={package_a.id}
                 className="flex flex-col justify-start lg:justify-between rounded-md bg-white custom-shadow">

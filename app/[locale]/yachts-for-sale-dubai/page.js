@@ -26,7 +26,7 @@ const Page = () => {
           </p>
         </div>
         <YachtListings />
-        <div className="xl:px-44 px-8 py-10 container mx-auto">
+        <div className="container mx-auto">
           <div className="flex flex-col  lg:flex-row items-center justify-center lg:justify-start lg:gap-0  custom-shadow rounded-lg bg-white overflow-hidden lg:h-[25rem] xl:h-[25rem] 2xl:h-[25rem]">
             <div className="w-full lg:w-1/2 xl:w-1/2">
               <img
@@ -118,7 +118,7 @@ const Page = () => {
           </p>
         </div>
         </div>
-        <div className="xl:px-44 px-8 py-10 container mx-auto">
+        <div className="container mx-auto">
   <div className="flex flex-col lg:flex-row-reverse items-center justify-center lg:justify-start lg:gap-0 custom-shadow rounded-lg bg-white overflow-hidden lg:h-[25rem] xl:h-[25rem] 2xl:h-[28rem]">  {/* Set container height */}
     <div className="w-full lg:w-1/2 xl:w-1/2 flex h-full">
       <img

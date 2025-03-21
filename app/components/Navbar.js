@@ -241,7 +241,7 @@ export default function Navbar() {
                       />
                     </svg>
                   </span>
-                  <ul className="absolute top-[85%] left-0 w-60 bg-white text-black shadow-lg hidden group-hover:block z-20">
+                  <ul className="absolute top-[85%] left-0 w-80 bg-white text-black shadow-lg hidden group-hover:block z-20">
                     {!loading &&
                       data?.products?.map((product) => (
                         <li
@@ -311,7 +311,7 @@ export default function Navbar() {
                       />
                     </svg>
                   </span>
-                  <ul className="absolute top-[85%] left-0 w-60 bg-white text-black shadow-lg hidden group-hover:block z-20">
+                  <ul className="absolute top-[85%] left-0 w-80 bg-white text-black shadow-lg hidden group-hover:block z-20">
                     {!loading &&
                       data?.experiences?.map((experience) => {
                         return (
