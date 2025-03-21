@@ -58,6 +58,9 @@ body {
 .yellow-lined-button {
   @apply flex items-center justify-center gap-2 px-8 py-2 bg-primary-yellow hover:scale-105 hover:bg-primary-blue hover:text-primary-yellow text-primary-blue border-2 border-primary-blue tracking-wide font-bold rounded-md transition duration-150 ease-in-out transform;
 }
+.container {
+  @apply px-6
+}
 .text-video-new {
   position: absolute;
   top: 50%;

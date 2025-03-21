@@ -29,7 +29,7 @@ const page = ({ params }) => {
 
   return (
     <>
-      <div className="max-w-7xl mx-auto px-10 py-10 flex flex-col items-center justify-center text-primary-black mt-14 md:mt-0">
+      <div className="container mx-auto px-10 py-10 flex flex-col items-center justify-center text-primary-black mt-14 md:mt-0">
         <h1 className=" text-4xl font-bold text-center">
           {event.translations?.[locale]?.title}
         </h1>

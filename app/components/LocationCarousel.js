@@ -139,7 +139,7 @@ function DesktopCarousel() {
   const scrollNext = () => emblaInstance.current?.scrollNext();
 
   return (
-    <div className="max-w-7xl mx-auto flex flex-col items-center container mx-auto hidden lg:block">
+    <div className="container mx-auto flex flex-col items-center container mx-auto hidden lg:block">
       <div className="flex flex-col items-center justify-center">
         <h2 className="text-primary-blue text-center font-bold text-4xl py-10">
           YACHT LOCATION

@@ -40,7 +40,7 @@ export default function ExperienceCarousal() {
         EXPLORE MORE YACHT TRIPS & EXPERIENCES
       </h2>
       <div className="hidden md:block">
-        <div className="relative w-full h-full overflow-hidden bg-primary-yellow xl:px-32 container mx-auto py-10">
+        <div className="relative w-full h-full overflow-hidden bg-primary-yellow container mx-auto py-10">
           {/* Single Embla Carousel */}
           <div className="embla__viewport" ref={emblaRef}>
             <div className="embla__container flex">
@@ -83,14 +83,14 @@ export default function ExperienceCarousal() {
           {/* Navigation Buttons */}
           <button
             aria-label="go previous slide"
-            className="bg-primary-blue text-primary-yellow hover:bg-primary-yellow hover:text-primary-blue transition duration-150 ease-in-out absolute left-2 lg:left-32 top-1/2 -translate-y-1/2 bg-gray-800 text-white w-14 aspect-square rounded-full flex items-center justify-center hover:bg-gray-700 z-10"
+            className="bg-primary-blue text-primary-yellow  transition duration-150 ease-in-out absolute left-2 lg:left-0 top-1/2 -translate-y-1/2 bg-gray-800 text-white w-14 aspect-square rounded-full flex items-center justify-center  z-10"
             onClick={scrollPrev}
           >
             <IoIosArrowBack size={30} />
           </button>
           <button
             aria-label="go next slide"
-            className="bg-primary-blue text-primary-yellow hover:bg-primary-yellow hover:text-primary-blue transition duration-150 ease-in-out absolute right-4 lg:right-32 top-1/2 -translate-y-1/2 bg-gray-800 text-white w-14 aspect-square rounded-full flex items-center justify-center hover:bg-gray-700 z-10"
+            className="bg-primary-blue text-primary-yellow transition duration-150 ease-in-out absolute right-4 lg:right-0 top-1/2 -translate-y-1/2 bg-gray-800 text-white w-14 aspect-square rounded-full flex items-center justify-center  z-10"
             onClick={scrollNext}
           >
             <IoIosArrowForward size={30} />

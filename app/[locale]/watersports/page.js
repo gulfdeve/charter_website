@@ -25,7 +25,7 @@ return (
         <div className="md:block hidden">
 
         
-        <div className="grid grid-col-1 md:grid-cols-2 gap-7 pb-8 container mx-auto">
+        <div className="grid grid-col-1 md:grid-cols-2 gap-7 pb-8">
             {data?.packages?.map((package_a) => (
             <div key={package_a.id}
                 className="flex flex-col justify-start lg:justify-between rounded-md bg-white custom-shadow">
@@ -70,7 +70,7 @@ return (
         <WatersportCarousal/>
     </div>
     </div>
-    <div className="max-w-7xl mx-auto px-3 py-5 pb-8">
+    <div className="container mx-auto px-3 py-5 pb-8">
         <p className=" text-gray-500 text-md ">
             Explore the beautiful coastline of the Arabian Gulf, the sun warming
             your skin, water lapping at your feet, and a warm breeze whispering in

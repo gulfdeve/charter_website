@@ -18,11 +18,11 @@ const page = () => {
 
   return (
     <>
-      <div className="max-w-7xl mx-auto mt-14 md:mt-0">
+      <div className="container mx-auto mt-14 md:mt-0">
         <PageTitleHeading title="YACHT TRIPS & EXPERIENCES IN DUBAI" />
 
         <div className="md:block hidden">
-          <div className="grid grid-col-1 md:grid-cols-2 md:px-4 gap-7 pb-16">
+          <div className="grid grid-col-1 md:grid-cols-2 gap-7 pb-16">
             {!loading &&
               data?.experiences?.map((experience) => {
                 const title =

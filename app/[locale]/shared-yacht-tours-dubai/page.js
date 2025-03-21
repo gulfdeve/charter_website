@@ -79,7 +79,7 @@ const Page = () => {
 
         {/* Seasonal Tours Cards */}
         <div>
-          <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-3 py-10 gap-5 px-3 xl:px-32 container mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-3 py-10 gap-5 container mx-auto">
             {toursData.map((tour, index) => (
               <div
                 key={index}
@@ -187,7 +187,7 @@ const Page = () => {
           </span>
           <hr className="flex-grow border-primary-yellow-dark" />
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-5 px-4 py-10 xl:px-52 container mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-5 px-4 py-10 container mx-auto">
           <div>
             <img src="/BBQ.webp" alt="Live BBQ" />
             <h1 className="bg-primary-blue-2 text-primary-yellow text-center text-md  font-bold p-2 rounded-b-lg">

@@ -1,86 +1,71 @@
-"use client";
-import React, { useState, useEffect } from "react";
-import { use } from "react";
+import React from "react";
 import { FaWhatsapp } from "react-icons/fa";
-import Modal2 from "@/app/components/Modal2";
-import { useData } from "@/app/context/DataContext";
-import { useLocale, useTranslations } from "next-intl";
+import Image from "next/image";
+import { getTranslations } from 'next-intl/server';
 import PageTitleHeading from "@/app/components/PageTitleHeading";
-// import Loading from "./loading";
-const Page = ({ params }) => {
-  const { slug } = use(params); // Get slug from the URL
-  const { data, loading, error } = useData();
-  const [isModalOpen, setIsModalOpen] = useState(false);
-  const locale = useLocale();
+import OfferClientActions from "@/app/components/OfferClientActions";
+
+// Fetch data server-side
+async function getData() {
+  try {
+    const response = await fetch(process.env.NEXT_PUBLIC_BASE_URL + '/data.json', { cache: 'no-store' });
+    if (!response.ok) {
+      throw new Error('Failed to fetch data');
+    }
+    return response.json();
+  } catch (error) {
+    console.error('Error fetching data:', error);
+    return { offers: [] };
+  }
+}
+
+export default async function OfferDetailPage({ params }) {
+  const { slug, locale } = params;
+  const data = await getData();
+  const language = locale || "en";
+  
   // Find the offer by slug
   const offer = data?.offers?.find((offer) => offer.slug === slug);
- 
-  const handleQuote = () => {
-    setIsModalOpen(true);
-  };
-
-  const closeModal = () => {
-    setIsModalOpen(false);
-  };
-
-  // if (loading) {
-  //   return <Loading />;
-  // }
-
-  if (loading) return <div>Loading...</div>;
-  if (error) return <div>Error: {error.message}</div>;
+  
+  // Use getTranslations instead of useTranslations
+  const t = await getTranslations();
+  
   if (!offer) return <div>No offer found for this slug.</div>;
 
   return (
     <>
-      <div className="max-w-7xl mx-auto px-10 flex flex-col items-center justify-center mt-14 md:mt-0">
+      <div className="container mx-auto px-10 flex flex-col items-center justify-center mt-14 md:mt-0">
         
-        <PageTitleHeading title={offer.translations?.[locale]?.title} />
+        <PageTitleHeading title={offer.translations?.[language]?.title} />
         
         <div className="flex items-center justify-center pb-10">
-          <img
-            src={`https://www.centauruscharter.com/product/images/${offer.image}`}
-            alt={offer.name}
-            className="w-full"
-          />
+		<Image
+        src={`https://www.centauruscharter.com/product/images/${offer.image}`}
+        alt={offer.translations?.[language]?.title || "Offer image"}
+        className="w-full h-auto" // Full width, height adjusts automatically
+        width={1024} // Intrinsic width
+        height={512} // Intrinsic height
+        layout="responsive" // Makes the image scale proportionally
+        priority={true} // Prioritize loading for above-the-fold images
+      />
         </div>
-          <ul>
-            {offer.translations?.[locale]?.description
-              .split("\n")
-              .map((item, index) => (
-                <li key={index} dangerouslySetInnerHTML={{ __html: item }} />
-              ))}
-          </ul>
+        <ul>
+          {offer.translations?.[language]?.description
+            .split("\n")
+            .map((item, index) => (
+              <li key={index} dangerouslySetInnerHTML={{ __html: item }} />
+            ))}
+        </ul>
 
         <div className="py-10 w-full">
-          <div className="flex flex-col md:flex-row rounded-lg items-center  gap-5 justify-center  md:justify-between bg-primary-blue p-5">
-            <p className="text-white  text-center md:text-left font-bold bg-primary-blue text-xl rounded ">
+          <div className="flex flex-col md:flex-row rounded-lg items-center gap-5 justify-center md:justify-between bg-primary-blue p-5">
+            <p className="text-white text-center md:text-left font-bold bg-primary-blue text-xl rounded">
               Validity Until: {offer.validity}
             </p>
-            <div className="flex flex-col md:flex-row md:gap-10 gap-5">
-              <a href={offer.whatsapp_url}>
-                <button className="blue-lined-button">
-                  <FaWhatsapp size={20} />
-                  WHATSAPP US
-                </button>
-              </a>
-              <button onClick={handleQuote} className="blue-lined-button">
-                GET A QUOTE
-              </button>
-            </div>
+            <OfferClientActions offer={offer} />
           </div>
         </div>
-
-        
       </div>
-      <Modal2
-        isModalOpen={isModalOpen}
-        closeModal={closeModal}
-        idName="offers_id"
-        idValue={offer.id}
-      />
     </>
   );
-};
-
-export default Page;
+}

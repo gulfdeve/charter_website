@@ -27,7 +27,7 @@ const Page = () => {
   if (!packageItem) return <p>No package found for {slug}</p>;
 
   return (
-    <div className="max-w-7xl mx-auto px-10">
+    <div className="container mx-auto px-10">
       <PageTitleHeading title={packageItem.translations[locale].title} />
 
       <div className="flex flex-col lg:flex-row justify-center gap-10">

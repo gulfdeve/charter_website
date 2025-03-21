@@ -73,13 +73,13 @@ const page = ({ params }) => {
             {experience.translations?.[locale]?.title}
           </h1>
         </div>
-        <div className="grid grid-col-1 md:grid-cols-1 md:px-4 xl:px-44  gap-7 container mx-auto pb-10">
+        <div className="grid grid-col-1 md:grid-cols-1 md:px-4  gap-7 container mx-auto pb-10">
           
           {
             experience.yachts_data.map((yacht) => (
               <div
               key={yacht.yacht_id}
-              className="flex flex-col md:flex-row justify-start  rounded-md bg-white px-2 custom-shadow"
+              className="flex flex-col md:flex-row justify-start  rounded-md bg-white custom-shadow"
             >
               {/* Image with object-cover for proper scaling */}
               <img
