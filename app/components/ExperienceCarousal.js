@@ -23,7 +23,7 @@ export default function ExperienceCarousal() {
       });
       const autoplay = setInterval(() => {
         emblaInstance.current?.scrollNext();
-      }, 10000);
+      }, 100000000);
       return () => {
         clearInterval(autoplay);
         emblaInstance.current?.destroy();
@@ -35,8 +35,8 @@ export default function ExperienceCarousal() {
   const scrollNext = () => emblaInstance.current?.scrollNext();
 
   return (
-    <div className="flex flex-col items-center justify-center bg-primary-yellow pt-10 p-5">
-      <h2 className="text-primary-blue text-center font-bold text-4xl pt-2">
+    <div className="flex flex-col items-center justify-center bg-primary-yellow pt-10">
+      <h2 className="container text-primary-blue text-center font-bold text-4xl pt-2">
         EXPLORE MORE YACHT TRIPS & EXPERIENCES
       </h2>
       <div className="hidden md:block">
@@ -48,7 +48,7 @@ export default function ExperienceCarousal() {
                 data?.experiences?.map((experience) => (
                   <div
                     key={experience.id}
-                    className="embla__slide p-4 w-full lg:basis-[calc(100%/3)] flex-none"
+                    className="embla__slide p-4 w-full lg:basis-[calc(100%/3)] md:basis-[calc(100%/2)] flex-none"
                   >
                     <div className="relative bg-transparent rounded-lg overflow-hidden space-y-5">
                       <Image
