@@ -6,7 +6,7 @@ const WhyChooseUs = () => {
       <h2 className=" text-[#848484] text-center font-bold text-3xl pt-12 pb-7">
         WHY CHOOSE CENTARUS CHARTER
       </h2>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 lg:px-5 xl:px-44">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
         <div className="flex flex-col items-center justify-center py-5 ">
           <div className="border border-[#848484] rounded-full p-14 aspect-square flex items-center justify-center">
             <img alt="luxury experience badge" src="/Luxury Experience Badge.png" className="w-16" />
@@ -14,7 +14,7 @@ const WhyChooseUs = () => {
           <h3 className=" text-[#848484] text-xl py-3">
             Luxury Experience
           </h3>
-          <p className=" text-[#848484]   text-center xl:px-6">
+          <p className=" text-[#848484]   text-center">
             Hire our yachts for an unforgettable luxurious experience on sea
           </p>
         </div>
@@ -25,7 +25,7 @@ const WhyChooseUs = () => {
           <h3 className=" text-[#848484] text-xl py-3">
           Fleet of Yachts
           </h3>
-          <p className=" text-[#848484] xl:px-6  text-center">
+          <p className=" text-[#848484]  text-center">
           Charter from the selection of private yachts and boats in Dubai
           </p>
         </div>

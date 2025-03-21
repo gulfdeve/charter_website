@@ -6,7 +6,7 @@ import Image from "next/image";
 const SecondFooter = () => {
   return (
     <div className="bg-primary-blue-3">
-      <div className="flex justify-between flex-col gap-10 lg:flex-row lg:gap-0 items-center p-4 container mx-auto ">
+      <div className="flex justify-between flex-col gap-10 lg:flex-row lg:gap-10 items-center p-4 container mx-auto ">
         <div className="flex flex-col gap-2">
           <p className="text-text-primary-white text-center  lg:text-start">
             Official Partner
@@ -45,45 +45,18 @@ const SecondFooter = () => {
             />
           </a>
         </div>
-        <div className="flex flex-row  md:flex-row items-center md:items-start gap-16 xs:gap-9 ">
-          <div className="flex flex-col xs:flex-row gap-3">
-            <Image 
-              src="/Google.png"
-              alt="google logo"
-              width={80}
-              height={100}
-            />
-
-            <Image
-              src="/Tripadvisor.png"
-              alt="tripadvisor logo"
-              width={80}
-              height={100}
-            />
-          </div>
-          <div className="flex flex-col xs:flex-row items-center  gap-3">
-            <Image
-              src="/Cash.png"
-              alt="cash logo"
-              width={45}
-              height={100}
-            />
-
-            <Image 
-              src="/Visa.png"
-              alt="visa logo"
-              width={45}
-              height={100}
-            />
-
-            <Image 
-              src="/Mastercard.png"
-              alt="mastercard logo"
-              width={45}
-              height={100}
-            />
-          </div>
-        </div>
+{/* For Google and TripAdvisor logos */}
+<div className="flex flex-row md:flex-row items-center gap-16 xs:gap-9">
+  <div className="flex flex-row gap-3"> {/* Changed to always be flex-row */}
+    <Image src="/Google.png" alt="google logo" width={80} height={100} />
+    <Image src="/Tripadvisor.png" alt="tripadvisor logo" width={80} height={100} />
+  </div>
+  <div className="flex flex-row items-center gap-3"> {/* Changed to always be flex-row */}
+    <Image src="/Cash.png" alt="cash logo" width={45} height={100} />
+    <Image src="/Visa.png" alt="visa logo" width={45} height={100} />
+    <Image src="/Mastercard.png" alt="mastercard logo" width={45} height={100} />
+  </div>
+</div>
         <div className="flex lg:flex-col justify-between gap-4 xs:gap-10 lg:gap-2 text-text-primary-white">
           <Link
             href="/terms-and-condition"

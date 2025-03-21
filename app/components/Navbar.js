@@ -391,7 +391,7 @@ export default function Navbar() {
       </div>
 
       {/* Icons and Dropdown Trigger */}
-      <div className="flex items-center gap-2">
+      <div className="flex items-center gap-6">
         {/* WhatsApp Icon */}
         <Link href="https://wa.me/1234567890">
           <Image 
@@ -559,14 +559,23 @@ export default function Navbar() {
             </Link>
           </li>
 
-          <li className="font-bold cursor-pointer hover:text-blue-500">
+		  <li className="font-bold cursor-pointer hover:text-blue-500">
+            <Link
+              href={`/watersports`}
+              onClick={() => setMobileDropdownOpen(false)}
+            >
+              {t("navbar.water-sports")}
+            </Link>
+          </li>
+
+          {/* <li className="font-bold cursor-pointer hover:text-blue-500">
             <Link
               href={`/newyear`}
               onClick={() => setMobileDropdownOpen(false)}
             >
               {t("navbar.new-year")}
             </Link>
-          </li>
+          </li> */}
         </ul>
       </div>
     )}
