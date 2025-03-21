@@ -9,10 +9,12 @@ export default async function NotFoundPage() {
   const messages = await getMessages(locale);
 
   return (
-    <NextIntlClientProvider locale={locale} messages={messages}>.
-
-      <NotFoundClient />
-     
-    </NextIntlClientProvider>
+    <html lang="en">
+      <body>
+        <NextIntlClientProvider locale={locale} messages={messages}>
+          <NotFoundClient />
+        </NextIntlClientProvider>
+      </body>
+    </html>
   );
 }
