@@ -12,9 +12,9 @@ export default {
         inner: 'inset 2px 2px 4px rgba(0, 0, 0, 0.6)', // Example inner shadow
       },
       screens: {
-        // 'xxs': '320px',
-        // 'xs': '375px',
-        // 's': '425px',
+        'xxs': '320px',
+        'xs': '375px',
+        's': '425px',
         'sm': '640px',
         // => @media (min-width: 640px) { ... }
   

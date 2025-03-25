@@ -64,10 +64,10 @@ export default function Home() {
 
       <div className="flex flex-col bg-white items-center justify-center pb-10 xl:pt-20
        2xl:pt-20 2xl:py-0 ">
-        <h1 className=" text-primary-blue text-center font-bold text-4xl pb-4">
+        <h1 className=" text-primary-blue text-center font-bold lg:text-4xl md:text-3xl sm:text-2xl xxs:text-3xl md:p-4 pb-4 px-3">
           YACHT RENTAL DUBAI {t("navbar.private-yachts")}
         </h1>
-        <h1 className=" text-primary-blue text-center  text-4xl pb-16">
+        <h1 className=" text-primary-blue text-center lg:text-4xl md:text-3xl sm:text-2xl xxs:text-xl pb-16">
           Enjoy your Luxury Yacht Experience
         </h1>
 
