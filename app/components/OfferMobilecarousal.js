@@ -39,7 +39,7 @@ export default function OfferCarousel() {
   return (
     <div className="container mx-auto md:px-4 pb-16">
     {/* Embla "viewport" container */}
-    <div ref={emblaRef} className="overflow-hidden px-3 py-5">
+    <div ref={emblaRef} className="overflow-hidden px-2 py-5">
       {/* Embla "container" for slides: using flex for horizontal layout */}
       <div className="flex gap-4 px-3">
         {!loading &&
@@ -82,7 +82,7 @@ export default function OfferCarousel() {
                 </div>
                 <div className="flex flex-row items-center justify-between px-5 pb-5">
                   {/* Buttons */}
-                  <div className="flex flex-row items-center justify-end gap-3">
+                  <div className="flex flex-col sm:flex-row items-center justify-end gap-2">
                     <a
                       href={`${offer.whatsapp_url}`}
                       target="_blank"

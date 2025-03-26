@@ -14,7 +14,7 @@ export default function VideoLocal({filename, section}) {
   }, []);
 
   return (
-    <div className="w-full mx-auto relative">
+    <div className="w-full mx-auto relative xxs:pt-14 md:pt-0">
       {/* Local Video as Background */}
       <div className="" style={{ pointerEvents: "none" }}>
         <video

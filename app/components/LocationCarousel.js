@@ -77,7 +77,7 @@ function MobileCarousel() {
         {/* Embla viewport */}
         <div ref={emblaRef} className="overflow-hidden px-3 py-5 ">
           {/* Embla container */}
-          <div className="flex gap-4 px-3">
+          <div className="flex gap-4 px-2">
             {TEMPORARY_DATA.map((item) => (
               <div
                 key={item.id}

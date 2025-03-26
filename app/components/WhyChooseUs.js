@@ -3,8 +3,8 @@ import React from "react";
 const WhyChooseUs = () => {
   return (
     <div className="bg-white h-auto  bg-fixed container mx-auto py-10">
-      <h2 className=" text-[#848484] text-center font-bold xxs:text-3xl sm:text:2xl md:text-3xl lg:text-4xl pt-12 pb-7">
-        WHY CHOOSE CENTARUS CHARTER
+      <h2 className=" text-[#848484] text-center font-bold text-xl sm:text:2xl md:text-3xl lg:text-4xl pt-12 pb-7">
+        WHY CHOOSE <br className="sm:hidden"></br> CENTARUS CHARTER
       </h2>
       <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 text-center xxs:gap-5">
         <div className="flex flex-col items-center xxs:justify-start md:justify-center md:py-5 ">

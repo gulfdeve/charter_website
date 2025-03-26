@@ -59,19 +59,19 @@ const Counters = () => {
       <div className="container mx-auto px-6 lg:px-0">
         <div className="grid grid-cols-3 lg:grid-cols-3 gap-12">
           <div className="counter-item flex flex-col items-center gap-5">
-            <img alt="calendar icon" src="/calendar.png" className="h-8 lg:h-12 mb-4" />
+            <img alt="calendar icon" src="/calendar.png" className="h-6 sm:h-8 lg:h-12 mb-4" />
             <div className=" text-2xl lg:text-6xl  font-bold text-white">{yearsCount.toFixed(0)}</div>
-            <div className="text-lg lg:text-2xl  font-medium text-white text-center">YEARS IN BUSINESS</div>
+            <div className="text-sm md:text-lg lg:text-2xl  font-medium text-white text-center">YEARS IN BUSINESS</div>
           </div>
           <div className="counter-item flex flex-col items-center gap-5">
-            <img alt="smiley icon" src="/smiley.png" className="h-8 lg:h-12 mb-4" />
+            <img alt="smiley icon" src="/smiley.png" className="h-6 sm:h-8 lg:h-12 mb-4" />
             <div className=" text-2xl lg:text-6xl  font-bold text-white">{guestsCount.toLocaleString()}</div>
-            <div className="text-lg lg:text-2xl  font-medium text-white text-center">HAPPY GUESTS</div>
+            <div className="text-sm md:text-lg lg:text-2xl  font-medium text-white text-center">HAPPY GUESTS</div>
           </div>
           <div className="counter-item flex flex-col items-center gap-5">
-            <img alt="stars icon" src="/stars.png" className="h-8 lg:h-12 mb-4" />
+            <img alt="stars icon" src="/stars.png" className="h-6 sm:h-8 lg:h-12 mb-4" />
             <div className=" text-2xl lg:text-6xl  font-bold text-white">{ratingCount.toFixed(1)}</div>
-            <div className="text-lg lg:text-2xl  font-medium text-white text-center">SERVICE RATING</div>
+            <div className="text-sm md:text-lg lg:text-2xl  font-medium text-white text-center">SERVICE RATING</div>
           </div>
         </div>
       </div>

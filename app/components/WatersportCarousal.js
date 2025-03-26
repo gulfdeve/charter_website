@@ -28,7 +28,7 @@ export default function WatersportCarousal() {
       {/* Embla "viewport" container */}
       <div ref={emblaRef} className="overflow-hidden px-3 py-5">
         {/* Embla "container" for slides: using flex for horizontal layout */}
-        <div className="flex gap-4 px-3">
+        <div className="flex gap-4 px-2">
           {!loading &&
             data?.packages?.map((package_a) => {
               // Fallback title logic
@@ -54,7 +54,7 @@ export default function WatersportCarousal() {
                     </Link>
 
                     {/* Card Content */}
-                    <div className="flex flex-col items-start justify-start px-5">
+                    <div className="flex flex-col items-start justify-start sm:px-5 xxs:px-3">
                       <h2 className="text-[#232629] text-xl font-bold pt-6 hover:text-blue-600 transition-all duration-300 cursor-pointer">
                         <Link href={`/yacht-trips/${package_a.slug}`}>
                           {title}

@@ -21,7 +21,7 @@ const page = () => {
      
       <div className="bg-white h-full w-full mt-14 md:mt-0">
         <div className="flex flex-col items-center justify-center pb-10 pt-10">
-          <h1 className=" text-primary-blue text-center  text-xl pb-4">
+          <h1 className=" text-primary-blue font-bold text-center  text-xl pb-4">
             YACHT WEDDING CHARTER
           </h1>
           <p className=" text-primary-blue text-sm text-center">

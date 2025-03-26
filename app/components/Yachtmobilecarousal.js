@@ -23,7 +23,7 @@ export default function YachtmobileCarousal() {
   }, [embla]);
 
   return (
-    <div className="container mx-auto lg:p-6">
+    <div className="container mx-auto py-12 lg:p-6 md:px-6 xxs:px-2">
       {/* Embla "viewport" container */}
       <div ref={emblaRef} className="overflow-hidden md:px-3 md:py-5 xxs:px-2">
         {/* Embla "container" for slides: use flex + partial widths */}
@@ -35,7 +35,7 @@ export default function YachtmobileCarousal() {
                 // This width ensures one full card + part of the next is visible
                 className="flex-[0_0_85%] md:flex-[0_0_50%] lg:flex-[0_0_40%]"
               >
-                <div className="flex flex-col border border-gray-400 xl:p-10 md:p-5 xxs:p-3 xxs:pb-5 rounded-lg shadow-custom">
+                <div className="flex flex-col border border-gray-400 xl:p-10 md:p-5 xxs:p-3 xxs:pb-5 rounded-lg shadow-none">
                   {/* Yacht Title */}
                   <Link href={`/yacht-rentals/${product.slug}`}>
                     <h2 className="xl:text-4xl md:text-lg xxs:text-sm text-xl font-bold">

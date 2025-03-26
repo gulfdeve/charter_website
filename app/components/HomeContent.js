@@ -62,12 +62,12 @@ export default function Home() {
         <VideoLocal filename="/Seasonal Tour _ Luxury Tours.mp4" section="home" />
       </div>
 
-      <div className="flex flex-col bg-white items-center justify-center pb-10 xl:pt-20
+      <div className="flex flex-col bg-white items-center justify-center lg:pt-12 xl:pt-20
        2xl:pt-20 2xl:py-0 ">
         <h1 className=" text-primary-blue text-center font-bold lg:text-4xl md:text-3xl sm:text-2xl xxs:text-3xl md:p-4 pb-4 px-3">
           YACHT RENTAL DUBAI {t("navbar.private-yachts")}
         </h1>
-        <h1 className=" text-primary-blue text-center lg:text-4xl md:text-3xl sm:text-2xl xxs:text-xl pb-16">
+        <h1 className=" text-primary-blue text-center lg:text-4xl md:text-3xl sm:text-2xl xxs:text-xl xxs:pb-6 md:pb-12">
           Enjoy your Luxury Yacht Experience
         </h1>
 
@@ -88,8 +88,8 @@ export default function Home() {
 
       {/* DESKTOP */}
       <div className="hidden md:block">
-        <div className="container mx-auto  lg:p-6">
-          <div className="grid grid-col-1 md:grid-cols-2 gap-10">
+        <div className="container mx-auto md:py-12 lg:p-6 lg:py-24">
+          <div className="grid grid-col-1 md:grid-cols-2 lg:gap-10 md:gap-4">
             {!loading &&
               data?.products?.map((product) => (
                 <div
@@ -97,7 +97,7 @@ export default function Home() {
                   className="flex flex-col border border-gray-400 xl:p-8 3xl:p-16 p-5 rounded-lg shadow-custom"
                 >
                   <Link  href={`/yacht-rentals/${product.slug}`}>
-                  <h2 className=" xl:text-4xl text-3xl font-bold">
+                  <h2 className="xl:text-4xl md:text-lg  font-bold">
                     {product.translations?.[locale].name_of_yacht}
                   </h2>
                   </Link>
@@ -105,7 +105,7 @@ export default function Home() {
                   <Image 
                     src={`https://www.centauruscharter.com/product/images/${product.image}`}
                     alt={product.translations?.[locale].name_of_yacht}
-                    className="w-full rounded-lg rounded-lg xl:w-[32rem] w-[25rem] mt-3"
+                    className="w-full rounded-lg rounded-lg w-full mt-3"
                     width={400}
                     height={400}
                   />
@@ -239,7 +239,7 @@ export default function Home() {
             Welcome your guests in a warm atmosphere with pure elegance and
             style.
           </p>
-          <button className="flex flex-row items-center sm:text-left justify-center py-2 px-6 md:py-2 md:px-4   outline-[#e1ae48] outline-double rounded-md bg-primary-blue text-primary-yellow  font-bold text-[20px] md:text-sm xl:text-lg">
+          <button className="flex flex-row items-center sm:text-left justify-center mb-4 py-2 px-6 md:py-2 md:px-4   outline-[#e1ae48] outline-double rounded-md bg-primary-blue text-primary-yellow  font-bold text-[20px] md:text-sm xl:text-lg">
             EXPLORE OUR YACHTS
           </button>
         </div>
@@ -271,7 +271,7 @@ export default function Home() {
             Celebrate Birthday Parties, Wedding Anniversary, Marriage proposals
             or Corporate Events on private yachts.
           </p>
-          <button className="flex flex-row items-center sm:text-left justify-center py-2 px-6 md:py-2 md:px-4   outline-[#0D2343] outline-double rounded-md bg-primary-yellow text-primary-blue  font-bold text-[20px] md:text-sm xl:text-lg">
+          <button className="flex flex-row items-center sm:text-left justify-center mb-4 py-2 px-6 md:py-2 md:px-4   outline-[#0D2343] outline-double rounded-md bg-primary-yellow text-primary-blue  font-bold text-[20px] md:text-sm xl:text-lg">
             EXPLORE OUR EXPERIENCES
           </button>
         </div>
@@ -301,7 +301,7 @@ export default function Home() {
             Find your ideal boat with great deals and confirm your booking
             instantly.
           </p>
-          <button className="flex flex-row items-center sm:text-left justify-center py-2 px-6 md:py-2 md:px-4   outline-[#e1ae48] outline-double rounded-md bg-primary-blue text-primary-yellow  font-bold text-[20px] md:text-sm xl:text-lg">
+          <button className="flex flex-row items-center sm:text-left justify-center mb-4 py-2 px-6 md:py-2 md:px-4   outline-[#e1ae48] outline-double rounded-md bg-primary-blue text-primary-yellow  font-bold text-[20px] md:text-sm xl:text-lg">
             EXPLORE ALL OFFERS
           </button>
         </div>
@@ -331,7 +331,7 @@ export default function Home() {
           <p className=" text-primary-blue text-center sm:text-left text-md sm:text-sm xl:text-md  pb-10">
             Book your watersports together with boat charter at the best price.
           </p>
-          <button className="flex flex-row items-center sm:text-left justify-center py-2 px-6 md:py-2 md:px-4   outline-[#0D2343] outline-double rounded-md bg-primary-yellow text-primary-blue  font-bold text-[20px] md:text-sm xl:text-lg">
+          <button className="flex flex-row items-center sm:text-left justify-center mb-4 py-2 px-6 md:py-2 md:px-4   outline-[#0D2343] outline-double rounded-md bg-primary-yellow text-primary-blue  font-bold text-[20px] md:text-sm xl:text-lg">
             EXPLORE OUR WATER ACTIVITIES
           </button>
         </div>
