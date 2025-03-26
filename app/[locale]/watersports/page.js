@@ -1,5 +1,6 @@
 "use client";
 import React from "react";
+import { IoIosPricetag } from "react-icons/io";
 import { useEffect } from "react";
 import { FaWhatsapp } from "react-icons/fa";
 import { useData } from "@/app/context/DataContext";
@@ -42,21 +43,18 @@ return (
                     <p className="text-[#232629]  text-base pt-2 pb-4">
                         {package_a.translations[language].preview_text}
                     </p>
-                    <div className="flex items-center justify-between mt-2 py-8 border-t-2">
-                        <div className="gap-1 sm:gap-3 flex items-center">
-                            <svg className="w-8 h-8 sm:w-12 sm:h-12 text-primary-blue" aria-hidden="true"
-                                xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-                                <path
-                                    d="M18.045 3.007 12.31 3a1.965 1.965 0 0 0-1.4.585l-7.33 7.394a2 2 0 0 0 0 2.805l6.573 6.631a1.957 1.957 0 0 0 1.4.585 1.965 1.965 0 0 0 1.4-.585l7.409-7.477A2 2 0 0 0 21 11.479v-5.5a2.972 2.972 0 0 0-2.955-2.972Zm-2.452 6.438a1 1 0 1 1 0-2 1 1 0 0 1 0 2Z">
-                                </path>
-                            </svg>
-                            <div className="flex flex-col ">
-                                <span className="text-sm font-medium text-gray-500">
+                    <div className="bg-[#232629] w-full h-[0.05rem]"></div>
+                        <div className="flex flex-row items-center justify-between">
+                        <div className="flex flex-row items-center justify-evenly gap-4 py-5">
+                            <IoIosPricetag className="text-3xl lg:text-5xl" />
+                            <div className="flex flex-col items-start justify-start">
+                                <p className="text-[#232629]  font-bold text-sm xl:text-base">
                                     Starting
-                                </span>
-                                <span className="text-xl font-bold text-gray-900">
+                                    <br />
+                                <span className="xl:text-xl">
                                     AED {package_a.amount.toLocaleString()}
                                 </span>
+                                </p>
                             </div>
                         </div>
                         <button className="blue-solid-button">KNOW MORE</button>

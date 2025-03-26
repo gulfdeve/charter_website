@@ -48,14 +48,14 @@ export default function YachtmobileCarousal() {
                     <Image
                       src={`https://www.centauruscharter.com/product/images/${product.image}`}
                       alt={product.translations?.[locale].name_of_yacht}
-                      className="rounded-lg xl:w-[32rem] w-[25rem] mt-3"
+                      className="rounded-lg xl:w-[32rem] w-full mt-3"
                       width={400}
                       height={400}
                     />
                   </Link>
 
                   {/* Model / Length / Guests / Price */}
-                  <div className="grid grid-cols-4 lg:grid-cols-4 md:grid-cols-1 s:grid-cols-4 xxs:grid-cols-2 items-center gap-0 rounded-lg shadow-md mb-7 mt-5">
+                  <div className="grid grid-cols-2 lg:grid-cols-4 items-center gap-0 rounded-lg shadow-md mb-7 mt-5">
                     {/* Model */}
                     <div className="bg-primary-blue text-white p-1 xl:p-2.5 flex flex-col items-center xl:rounded-l-lg">
                       <span className="font-bold xxs:text-[0.5rem] xs:text-[0.6rem]">

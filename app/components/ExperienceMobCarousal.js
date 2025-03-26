@@ -41,9 +41,9 @@ export default function YachtmobCarousel() {
 
       <div className="relative">
         {/* Embla viewport */}
-        <div ref={emblaRef} className="overflow-hidden px-3 py-5 ">
+        <div ref={emblaRef} className="overflow-hidden py-5 ">
           {/* Embla container */}
-          <div className="flex  px-3">
+          <div className="flex  px-1">
             {!loading &&
               data?.experiences?.map((experience) => (
                 <div
@@ -53,7 +53,7 @@ export default function YachtmobCarousel() {
                 >
                   <div
                     key={experience.id}
-                    className="embla__slide p-4 w-full lg:basis-[calc(100%/3)] flex-none"
+                    className="embla__slide p-3 w-full lg:basis-[calc(100%/3)] flex-none"
                   >
                     <div className="relative bg-transparent rounded-lg overflow-hidden space-y-5">
                       <Image
@@ -65,7 +65,7 @@ export default function YachtmobCarousel() {
                         loading="lazy"
                       />
                       <div className="absolute bottom-0 left-0 w-full bg-black-gradient p-4 text-white rounded-lg">
-                        <h3 className="text-3xl font-bold text-left mb-3">
+                        <h3 className="text-lg font-bold text-left mb-3">
                           <Link href={`/yacht-trips/${experience.slug}`}>
                             {experience.translations[locale].title}
                           </Link>

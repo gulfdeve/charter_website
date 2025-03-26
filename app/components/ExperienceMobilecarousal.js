@@ -24,7 +24,7 @@ export default function ExperiencesCarousel() {
   }, [embla]);
 
   return (
-    <div className="container mx-auto lg:p-6 md:px-6 xxs:px-2">
+    <div className="container mx-auto px-2 md:px-6 lg:p-6  ">
       {/* Embla "viewport" container */}
       <div ref={emblaRef} className="overflow-hidden sm:px-3 py-5">
         {/* Embla "container" for slides: using flex for horizontal layout */}
@@ -54,8 +54,8 @@ export default function ExperiencesCarousel() {
                     </Link>
 
                     {/* Card Content */}
-                    <div className="flex flex-col items-start justify-start sm:px-5 xxs:px-3">
-                      <h2 className="text-[#232629] xxs:text-xs s:text-base sm:text-xl font-bold pt-6 hover:text-blue-600 transition-all duration-300 cursor-pointer">
+                    <div className="flex flex-col items-start justify-start px-3 sm:px-5">
+                      <h2 className="text-[#232629] text-base sm:text-xl font-bold pt-6 hover:text-blue-600 transition-all duration-300 cursor-pointer">
                         <Link href={`/yacht-trips/${experience.slug}`}>
                           {title}
                         </Link>

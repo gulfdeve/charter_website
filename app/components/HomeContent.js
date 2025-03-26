@@ -64,10 +64,10 @@ export default function Home() {
 
       <div className="flex flex-col bg-white items-center justify-center lg:pt-12 xl:pt-20
        2xl:pt-20 2xl:py-0 ">
-        <h1 className=" text-primary-blue text-center font-bold lg:text-4xl md:text-3xl sm:text-2xl xxs:text-3xl md:p-4 pb-4 px-3">
+        <h1 className=" text-primary-blue text-center font-bold text-3xl sm:text-2xl md:text-3xl lg:text-4xl md:p-4 pb-4 px-3">
           YACHT RENTAL DUBAI {t("navbar.private-yachts")}
         </h1>
-        <h1 className=" text-primary-blue text-center lg:text-4xl md:text-3xl sm:text-2xl xxs:text-xl xxs:pb-6 md:pb-12">
+        <h1 className=" text-primary-blue text-center text-xl sm:text-2xl md:text-3xl lg:text-4xl  pb-6 md:pb-12">
           Enjoy your Luxury Yacht Experience
         </h1>
 
@@ -112,7 +112,7 @@ export default function Home() {
 
                   </Link>
 
-                  <div className="grid grid-cols-2 lg:grid-cols-4 md:grid-cols-1 items-center gap-0 rounded-lg shadow-md mb-7 mt-5">
+                  <div className="grid grid-cols-2 lg:grid-cols-4 items-center gap-0 rounded-lg shadow-md mb-7 mt-5">
                     {/* Model */}
                     <div className="bg-primary-blue text-white p-1 xl:p-2.5 flex flex-col items-center xl:rounded-l-lg">
                       <span className="font-bold  text-sm">
