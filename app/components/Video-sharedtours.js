@@ -54,7 +54,7 @@ export default function Videosharedtours() {
   }, []);
 
   return (
-    <div className="w-full mx-auto relative">
+    <div className="w-full mx-auto relative pt-14">
       {/* Wistia Video as Background */}
       <style>
         {`

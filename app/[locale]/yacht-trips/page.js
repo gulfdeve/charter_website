@@ -65,7 +65,7 @@ const page = () => {
                           <div className="flex flex-col items-start justify-start">
                             <p className="text-[#232629]  font-bold text-sm xl:text-base">
                               Starting
-                              <br />
+                              <br className="hidden sm:block"/>
                               <span className="xl:text-xl">
                                 AED {experience.amount.toLocaleString()}
                               </span>

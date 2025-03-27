@@ -94,7 +94,7 @@ const Reviews = () => {
       <div className="xl:block hidden">
         <div className="bg-gray-200 w-full h-auto py-20 px-4">
           <div>
-            <h2 className=" text-primary-blue text-center font-bold text-4xl pb-4">
+            <h2 className=" text-primary-blue text-center font-bold xxs:text-2xl sm:text:2xl md:text-3xl lg:text-4xl pb-4">
               WHAT OUR GUESTS SAY
             </h2>
           </div>
@@ -183,7 +183,7 @@ const Reviews = () => {
       <div className="xl:hidden block">
         <div className="bg-gray-200 w-full h-auto py-20 px-4">
           <div>
-            <h1 className=" text-primary-blue text-center font-bold text-4xl pb-4">
+            <h1 className=" text-primary-blue text-center font-bold text-xl sm:text:2xl md:text-3xl lg:text-4xl pb-4">
               WHAT OUR GUESTS SAY
             </h1>
           </div>

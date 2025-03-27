@@ -230,14 +230,14 @@ const Tabs = () => {
     <div className="w-full bg-white mt-14 lg:mt-0 ">
       <PageTitleHeading title="LUXURY YACHT RENTALS DUBAI" />
 
-      <div className="flex justify-center items-center gap-6 text-lg font-semibold py-2 md:py-7 px-2 ">
+      <div className="flex justify-center items-center gap-8 md:gap-8 text-xs sm:text-base md:text-lg font-semibold py-2 pb-10 md:py-7 px-2 ">
         <button onClick={() => setActiveTab("allYachts")}>ALL YACHTS</button>
         <button onClick={() => setActiveTab("bestSellers")}>
           BEST SELLERS
         </button>
         <button onClick={() => setActiveTab("premium")}>PREMIUM</button>
       </div>
-      <div className="p-6 text-center">{renderContent()}</div>
+      <div className="p-0 md:p-6 text-center">{renderContent()}</div>
       <div className="mt-10">
         <ExperienceCarousal />
       </div>

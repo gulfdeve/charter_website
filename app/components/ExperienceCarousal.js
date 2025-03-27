@@ -36,7 +36,7 @@ export default function ExperienceCarousal() {
 
   return (
     <div className="flex flex-col items-center justify-center bg-primary-yellow pt-10">
-      <h2 className="container text-primary-blue text-center font-bold text-4xl pt-2">
+      <h2 className="container text-primary-blue text-center font-bold text-xl sm:text:2xl md:text-3xl lg:text-4xl pt-2 ">
         EXPLORE MORE YACHT TRIPS & EXPERIENCES
       </h2>
       <div className="hidden md:block">

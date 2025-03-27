@@ -23,9 +23,9 @@ export default function YachtmobileCarousal() {
   }, [embla]);
 
   return (
-    <div className="container mx-auto lg:p-6">
+    <div className="container mx-auto py-12 lg:p-6 md:px-6 xxs:px-2">
       {/* Embla "viewport" container */}
-      <div ref={emblaRef} className="overflow-hidden px-3 py-5">
+      <div ref={emblaRef} className="overflow-hidden md:px-3 md:py-5 xxs:px-2">
         {/* Embla "container" for slides: use flex + partial widths */}
         <div className="flex gap-4 px-3">
           {!loading &&
@@ -35,10 +35,10 @@ export default function YachtmobileCarousal() {
                 // This width ensures one full card + part of the next is visible
                 className="flex-[0_0_85%] md:flex-[0_0_50%] lg:flex-[0_0_40%]"
               >
-                <div className="flex flex-col border border-gray-400 xl:p-10 p-5 rounded-lg shadow-custom">
+                <div className="flex flex-col border border-gray-400 xl:p-10 md:p-5 xxs:p-3 xxs:pb-5 rounded-lg shadow-none">
                   {/* Yacht Title */}
                   <Link href={`/yacht-rentals/${product.slug}`}>
-                    <h2 className="xl:text-4xl text-xl font-bold">
+                    <h2 className="xl:text-4xl md:text-lg xxs:text-sm text-xl font-bold">
                       {product.translations?.[locale].name_of_yacht}
                     </h2>
                   </Link>
@@ -48,14 +48,14 @@ export default function YachtmobileCarousal() {
                     <Image
                       src={`https://www.centauruscharter.com/product/images/${product.image}`}
                       alt={product.translations?.[locale].name_of_yacht}
-                      className="rounded-lg xl:w-[32rem] w-[25rem] mt-3"
+                      className="rounded-lg xl:w-[32rem] w-full mt-3"
                       width={400}
                       height={400}
                     />
                   </Link>
 
                   {/* Model / Length / Guests / Price */}
-                  <div className="grid grid-cols-4 lg:grid-cols-4 md:grid-cols-1 items-center gap-0 rounded-lg shadow-md mb-7 mt-5">
+                  <div className="grid grid-cols-2 lg:grid-cols-4 items-center gap-0 rounded-lg shadow-md mb-7 mt-5">
                     {/* Model */}
                     <div className="bg-primary-blue text-white p-1 xl:p-2.5 flex flex-col items-center xl:rounded-l-lg">
                       <span className="font-bold xxs:text-[0.5rem] xs:text-[0.6rem]">
@@ -97,7 +97,7 @@ export default function YachtmobileCarousal() {
                   {/* Trip Inclusions & Partner Link */}
                   <div className="flex flex-row justify-between items-center xl:w-[32rem]">
                     <div>
-                      <div className="font-bold">Inclusions</div>
+                      <div className="font-bold md:text-base xxs:text-sm">Inclusions</div>
                       <ol className="list-disc ml-7 text-xs font-bold">
                         <li>
                           Hops, Wines, Bubbly Drinks, Coffee, Tea, Water, &
@@ -116,7 +116,7 @@ export default function YachtmobileCarousal() {
                   </div>
 
                   {/* Book Now & T&C */}
-                  <div className="flex flex-row justify-between items-center xl:w-[32rem] mt-3">
+                  <div className="flex s:flex-row xxs:flex-col-reverse justify-between items-center xl:w-[32rem] mt-3">
                     <div className="pt-3">
                       <a
                         href={`https://fareharbor.com/embeds/book/centauruscharter/items/${product.fareharbor_id}/?full-items=yes&flow=645487`}
@@ -153,7 +153,7 @@ export default function YachtmobileCarousal() {
         </div>
       </div>
 
-      <div className="flex items-center justify-center pb-5 px-6">
+      <div className="flex items-center justify-center py-5 px-6">
         <button className="yellow-solid-button w-full ">
           {" "}
           BOOK YOUR YACHT

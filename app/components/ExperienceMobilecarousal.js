@@ -24,11 +24,11 @@ export default function ExperiencesCarousel() {
   }, [embla]);
 
   return (
-    <div className="container mx-auto md:px-4 pb-16">
+    <div className="container mx-auto px-2 md:px-6 lg:p-6  ">
       {/* Embla "viewport" container */}
-      <div ref={emblaRef} className="overflow-hidden px-3 py-5">
+      <div ref={emblaRef} className="overflow-hidden sm:px-3 py-5">
         {/* Embla "container" for slides: using flex for horizontal layout */}
-        <div className="flex gap-4 px-3">
+        <div className="flex gap-4 px-2">
           {!loading &&
             data?.experiences?.map((experience) => {
               // Fallback title logic
@@ -43,7 +43,7 @@ export default function ExperiencesCarousel() {
                   // Adjust the width to control how many cards appear at once / partial next card
                   className="flex-[0_0_85%] md:flex-[0_0_50%] lg:flex-[0_0_40%]"
                 >
-                  <div className="flex flex-col justify-start lg:justify-between rounded-md bg-white shadow-xl h-full overflow-hidden">
+                  <div className="flex flex-col justify-start lg:justify-between rounded-md bg-white h-full overflow-hidden border border-gray-400 md:border-none xl:p-10 shadow-none">
                     {/* Image */}
                     <Link href={`/yacht-trips/${experience.slug}`}>
                       <img
@@ -54,8 +54,8 @@ export default function ExperiencesCarousel() {
                     </Link>
 
                     {/* Card Content */}
-                    <div className="flex flex-col items-start justify-start px-5">
-                      <h2 className="text-[#232629] text-xl font-bold pt-6 hover:text-blue-600 transition-all duration-300 cursor-pointer">
+                    <div className="flex flex-col items-start justify-start px-3 sm:px-5">
+                      <h2 className="text-[#232629] text-base sm:text-xl font-bold pt-6 hover:text-blue-600 transition-all duration-300 cursor-pointer">
                         <Link href={`/yacht-trips/${experience.slug}`}>
                           {title}
                         </Link>
@@ -64,25 +64,25 @@ export default function ExperiencesCarousel() {
                       <p className="text-[#848484] text-xs pt-2 pb-9">
                         {experience.translations?.[locale]?.preivew_text}
                       </p>
-
+                
                       <div className="bg-[#232629] w-full h-[0.05rem]" />
 
-                      <div className="flex flex-row items-center w-full py-5">
-                        <div className="flex flex-row items-center gap-4">
-                          <IoIosPricetag className="text-3xl lg:text-5xl" />
+                      <div className="flex gap-3 sm:gap-0 flex-col sm:flex-row items-center w-full py-5">
+                        <div className="flex flex-row items-center gap-1 sm:gap-4">
+                          <IoIosPricetag className="text-2xl lg:text-5xl" />
                           <div className="flex flex-col">
                             <p className="text-[#232629] font-bold text-xs xl:text-base">
                               Starting
-                              <br />
-                              <span className="text-xs">AED 3120</span>
+                              <br className="hidden sm:block" />
+                              <span className="text-xs pl-1 sm:pl-0">AED 3120</span>
                             </p>
                           </div>
                         </div>
                         {/* Wrap the Know More button in a div with ml-auto */}
-                        <div className="ml-auto">
+                        <div className="sm:ml-auto">
                           <Link
                             href={`/yacht-trips/${experience.slug}`}
-                            className="py-2 px-4 xxs:text-[0.45rem] xs:text-xs font-bold uppercase text-primary-yellow bg-primary-blue hover:bg-primary-yellow hover:text-primary-blue hover:scale-105 rounded-md shadow transition duration-150 ease-in-out transform"
+                            className="py-2 px-4 text-[0.75rem] xs:text-xs font-bold uppercase text-primary-yellow bg-primary-blue hover:bg-primary-yellow hover:text-primary-blue hover:scale-105 rounded-md shadow transition duration-150 ease-in-out transform"
                           >
                             KNOW MORE
                           </Link>

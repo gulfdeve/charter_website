@@ -68,7 +68,7 @@ function MobileCarousel() {
     <div className="container mx-auto md:px-4 pb-16 lg:hidden">
       {/* Optional heading */}
       <div className="flex flex-col items-center justify-center py-10">
-        <h2 className="text-primary-blue text-center font-bold text-4xl">
+        <h2 className="text-primary-blue text-center font-bold xxs:text-2xl sm:text:2xl md:text-3xl lg:text-4xl">
           YACHT LOCATION
         </h2>
       </div>
@@ -77,7 +77,7 @@ function MobileCarousel() {
         {/* Embla viewport */}
         <div ref={emblaRef} className="overflow-hidden px-3 py-5 ">
           {/* Embla container */}
-          <div className="flex gap-4 px-3">
+          <div className="flex gap-4 px-2">
             {TEMPORARY_DATA.map((item) => (
               <div
                 key={item.id}
