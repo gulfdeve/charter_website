@@ -118,7 +118,7 @@ const YachtCard = ({ yacht }) => {
             </h2>
           </Link>
 
-          <p className=" text-sm text-primary-blue text-left">
+          <p className=" text-xs s:text-sm md:text-xs lg:text-sm text-primary-blue text-left">
             Model: <span className="font-bold">{yacht.model}</span> | Length:{" "}
             <span className="font-bold">{yacht.length}</span> | Guests:{" "}
             <span className="font-bold">{yacht.guests}</span>

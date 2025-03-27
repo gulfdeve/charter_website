@@ -73,7 +73,7 @@ export default function WatersportCarousal() {
                           <div className="flex flex-col">
                             <p className="text-[#232629] font-bold text-xs xl:text-base">
                               Starting
-                              <br class="hidden sm:block"/>
+                              <br className="hidden sm:block"/>
                               <span className="text-xs pl-1 sm:pl-0">AED 3120</span>
                             </p>
                           </div>

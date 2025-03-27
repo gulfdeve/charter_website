@@ -224,7 +224,7 @@ export default function Home() {
         </div>
         <div className="flex flex-col items-center sm:items-start sm:justify-start justify-center bg-primary-blue px-5 xl:px-32 xl:py-12 py-5 md:h-[443px] xl:w-[395rem] lg:w-[250rem] xl:h-[452px] lg:h-[404px]">
         
-          <h2 className=" text-primary-yellow text-center font-bold text-2xl xl:text-3xl py-7">
+          <h2 className=" text-primary-yellow text-center font-bold text-2xl xl:text-4xl py-7">
             LUXURY YACHT RENTALS
           </h2>
           <p className=" text-white text-center sm:text-left  text-md  sm:text-sm xl:text-md pb-10">
@@ -256,7 +256,7 @@ export default function Home() {
         </div>
 
         <div className="flex flex-col items-center sm:items-start sm:justify-start justify-center  bg-primary-yellow px-5 xl:px-32 xl:py-12 py-5 md:h-[443px] xl:w-[277rem] xl:h-[452px] lg:h-[404px]">
-          <h2 className=" text-primary-blue text-center font-bold text-2xl xl:text-3xl py-7">
+          <h2 className=" text-primary-blue text-center font-bold text-2xl xl:text-4xl py-7">
             CUSTOMIZED YACHT TRIPS
           </h2>
           <p className=" text-primary-blue text-center sm:text-left  text-md  sm:text-sm xl:text-md pb-10">

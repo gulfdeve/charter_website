@@ -95,10 +95,10 @@ export default function Home({ params }) {
     <>
       <div className="container mx-auto p-5 mt-14 lg:mt-0">
         {/* Title */}
-        <h1 className="text-4xl font-bold text-center mb-4 mt-5">
+        <h1 className="text-xl sm:text:2xl md:text-3xl lg:text-4xl font-bold text-center mb-4 mt-5">
           {product.translations?.[locale]?.name_of_yacht}
         </h1>
-        <p className="text-xl text-center mb-4">Dubai Luxury Yacht</p>
+        <p className="text-base sm:text:2xl lg:text-3xl text-center mb-4">Dubai Luxury Yacht</p>
 
         {/* Embla Carousel */}
         <div className="embla relative">
@@ -171,7 +171,7 @@ export default function Home({ params }) {
         </div>
 
         {/* Yacht Details */}
-        <div className="grid grid-cols-1 lg:grid-cols-5 md:grid-cols-1 items-center gap-0 rounded-lg w-full overflow-hidden shadow-md mb-7 mt-6 mx-auto">
+        <div className="grid grid-cols-2 lg:grid-cols-5 md:grid-cols-2 items-center gap-0 rounded-lg w-full overflow-hidden shadow-md mb-7 mt-6 mx-auto">
           <div className="bg-primary-blue text-white p-2 flex flex-col items-center">
             <span className="font-bold text-sm">Model:</span>
             <span className="font-semibold text-sm text-primary-yellow xl:text-xl">
@@ -196,7 +196,7 @@ export default function Home({ params }) {
               {product.per_hour_price}
             </span>
           </div>
-          <div className="bg-primary-blue text-primary-blue p-2 flex flex-col items-center">
+          <div className="bg-primary-blue text-primary-blue p-2 lg:p-1.5 xl:p-2 flex flex-col col-span-2 lg:col-span-1 items-center">
             <button className="flex flex-row items-center justify-center py-1 px-6 md:py-2 md:px-8 border-4 border-[#e1ae48] rounded-md bg-primary-blue hover:bg-primary-blue text-primary-yellow font-bold text-base md:text-sm xl:text-base transition-all duration-300">
               Book Now
             </button>
@@ -209,14 +209,14 @@ export default function Home({ params }) {
             <p className="text-sm text-left">
               Get ready for the best yachting holiday on Lagoona. Lagoona 56Ft yacht is an exceptionally well-maintained luxury yacht and gives the feel of a brand new yacht. This true icon can accommodate up to 24 guests and has a cruising range of 22 knots. This ocean-going fleet carries up to three professional yacht staff members– one captain and two crew members who will cater to your needs during your tour. The design boasts contemporary interiors, fully air-conditioned, modern equipment and ample space for a comfortable social zone. She has 3 guest cabins for your comfort – a master suite, a double bed cabin and a twin guest cabin along with 3 restrooms. The spacious saloon comes with extensive windows so you can enjoy the views of the Arabian coastline. The stylish galley is stocked with all essentials like cutlery, refrigerator, microwave oven, electric grill and our crew can help you with heating or grilling and serving the meals. The front deck of the yacht comes with comfy sun loungers so you can unwind and feel the fresh breeze. The upper deck is a great place to enjoy your favorite tunes, have gatherings, eat outdoors at a great dining space and have a party on the yacht. The aft deck is well equipped with cozy upholstery so you and your family can spend time close to the waters. If that isn't enough; Lagoona also features adventurous activities like jet skis, parasailing, speed jet boat and banana ride at an extra cost. Your charter base will be Dubai Harbour Marina.
             </p>
-            <h2 className="text-sm text-black font-bold pt-4">What to expect</h2>
-            <ol className="list-disc text-sm lg:pl-6">
+            <h2 className="text-md text-black font-bold py-4">What to expect</h2>
+            <ol className="list-disc text-sm lg:pl-6 space-y-4">
               {product.translations.en.key_features.split("\n").map((item, index) => (
                 <li key={index} dangerouslySetInnerHTML={{ __html: item }} />
               ))}
             </ol>
-            <h2 className="text-sm text-black font-bold">Ideal for:</h2>
-            <ol className="list-disc text-left text-sm lg:pl-6">
+            <h2 className="text-md text-black font-bold py-4">Ideal for:</h2>
+            <ol className="list-disc text-left text-sm lg:pl-6 space-y-4 ">
               {product.translations.en.ideal_for.split("\n").map((item, index) => (
                 <li key={index} dangerouslySetInnerHTML={{ __html: item }} />
               ))}
