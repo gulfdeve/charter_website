@@ -5,7 +5,7 @@ const Route = () => {
     <div>
       <div className="bg-primary-blue w-full h-auto py-10 xl:px-44 md:px-6 px-2">
         <div className="flex flex-col items-center justify-center pt-10 gap-5 lg:p-6 lg:mx-auto container">
-          <h2 className=" text-center text-primary-yellow text-4xl font-bold">
+          <h2 className="text-primary-yellow text-center font-bold text-2xl xl:text-3xl py-7">
           CRUISING ROUTE
           </h2>
 
