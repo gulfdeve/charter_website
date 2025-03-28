@@ -52,13 +52,13 @@ return (
                             </p>
                         </div>
                         {/* Buttons Section */}
-                        <div className="flex xl:flex-row flex-col items-center justify-end gap-3 ">
+                        <div className="flex xl:flex-row flex-col items-stretch justify-end gap-3 ">
                             <a href={`${event.whatsapp_url}`} target="_blank"
                                 className="blue-solid-button flex items-center">
-                                <FaWhatsapp className="xs:text-xl text-lg  mr-1" />
+                                <FaWhatsapp className="xs:text-xl text-lg  mr-1 text-center" />
                                 WHATSAPP
                             </a>
-                            <Link href={`/events/${event.slug}`} className="blue-solid-button">
+                            <Link href={`/events/${event.slug}`} className="blue-solid-button text-center">
                             KNOW MORE
                             </Link>
                         </div>

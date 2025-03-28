@@ -35,7 +35,7 @@ export default function EventCarousel() {
                 // This width shows one full event card plus a partial view of the next
                 className="flex-[0_0_85%] md:flex-[0_0_50%] lg:flex-[0_0_40%]"
               >
-                <div className="flex flex-col justify-between rounded-md bg-white shadow-xl max-h-[40rem] h-full overflow-hidden">
+                <div className="flex flex-col justify-start lg:justify-between rounded-md bg-white h-full overflow-hidden border border-gray-400 md:border-none xl:p-10 shadow-none">
                   {/* Event Image */}
                   <Link href={`/events/${event.slug}`}>
                     <img
@@ -68,17 +68,17 @@ export default function EventCarousel() {
                   </div>
                   <div className="flex flex-row items-center justify-between px-5 pb-5">
                     {/* Buttons */}
-                    <div className="flex flex-row items-center justify-end gap-3">
+                    <div className="w-full flex flex-col sm:flex-row items-center justify-end gap-2">
                       <a
                         href={`${event.whatsapp_url}`}
                         target="_blank"
-                        className="py-2 px-4 text-xs font-bold tracking-wider uppercase text-primary-yellow bg-primary-blue hover:bg-primary-yellow hover:text-primary-blue hover:scale-105 rounded-md shadow transition duration-150 ease-in-out transform flex items-center"
+                        className="w-full flex justify-center py-2 px-4 text-xs font-bold tracking-wider uppercase text-primary-yellow bg-primary-blue hover:bg-primary-yellow hover:text-primary-blue hover:scale-105 rounded-md shadow transition duration-150 ease-in-out transform items-center"
                       >
                         WHATSAPP
                       </a>
                       <Link
                         href={`/events/${event.slug}`}
-                        className="py-2 px-4 text-[0.68rem] font-bold uppercase text-primary-yellow bg-primary-blue hover:bg-primary-yellow hover:text-primary-blue hover:scale-105 rounded-md shadow transition duration-150 ease-in-out transform flex items-center"
+                        className="w-full flex justify-center py-2 px-4 text-[0.68rem] font-bold uppercase text-primary-yellow bg-primary-blue hover:bg-primary-yellow hover:text-primary-blue hover:scale-105 rounded-md shadow transition duration-150 ease-in-out transform items-center"
                       >
                         KNOW MORE
                       </Link>

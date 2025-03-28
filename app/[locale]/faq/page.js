@@ -100,12 +100,12 @@ const page = () => {
         <div>
           <img src="./FAQ.jpg" className="w-full" />
         </div>
-        <div className="flex flex-col items-center justify-center py-10">
-          <h1 className=" text-primary-blue text-center font-bold text-4xl">
+        <div className="container m-auto flex flex-col items-center justify-center py-10">
+          <h1 className=" text-primary-blue text-center font-bold text-xl sm:text:2xl md:text-3xl lg:text-4xl">
             {" "}
             FREQUENTLY ASKED QUESTIONS
           </h1>
-          <p className=" text-black text-center font-bold text-3xl py-3 px-10">
+          <p className=" text-black text-center text-xl sm:text-2xl md:text-3xl lg:text-4xl py-3 px-3 md:px-10">
             {" "}
             Everything you need to know about yacht charter
           </p>
@@ -120,7 +120,7 @@ const page = () => {
           </p>
         </div>
         <div
-          className={`w-full max-w-3xl lg:max-w-4xl xl:max-w-6xl mx-auto bg-white rounded-lg shadow-lg p-6 sm:p-8 md:p-1 `}
+          className={`container w-full max-w-3xl lg:max-w-4xl xl:max-w-6xl my-5 mx-auto bg-white rounded-lg shadow-lg p-6 sm:p-8 md:p-1 `}
         >
           <div className="space-y-6">
             {faqs.map((faq, index) => (
