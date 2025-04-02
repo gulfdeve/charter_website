@@ -30,10 +30,10 @@ const page = ({ params }) => {
   return (
     <>
       <div className="container mx-auto px-10 py-10 flex flex-col items-center justify-center text-primary-black mt-14 md:mt-0">
-        <h1 className=" text-4xl font-bold text-center">
+        <h1 className="text-xl sm:text:2xl md:text-3xl lg:text-4xl font-bold">
           {event.translations?.[locale]?.title}
         </h1>
-        <h2 className=" text-xl font-bold text-center">
+        <h2 className="text-base sm:text-xl font-bold text-center">
           {event.translations?.[locale]?.heading_2}
         </h2>
         <div className="flex items-center justify-center py-10">

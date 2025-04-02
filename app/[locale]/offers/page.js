@@ -62,7 +62,7 @@ export default async function OffersPage({ params }) {
                       {offer.translations[language].title}
                     </Link>
                   </h2>
-                  <p className="text-[#232629] font-bold text-xs pt-2 pb-16">
+                  <p className="text-[#232629] font-bold text-xs pt-2 pb-12">
                     {offer.note}
                   </p>
                   <p className="text-sm py-2 font-bold">
