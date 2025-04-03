@@ -235,18 +235,18 @@ const Page = () => {
 
         {/* Two-column (Image + Text) Section */}
         <div className="container mx-auto py-10">
-          <div className="flex flex-col lg:flex-row items-center justify-center md:px-10 xl:px-40 2xl:px-40 bg-white rounded-3xl overflow-hidden">
+          <div className="flex flex-col lg:flex-row items-center justify-center bg-white rounded-3xl overflow-hidden">
             {/* Left: Image */}
             <div className="rounded rounded-l-xl">
               <img
                 src="/F1TRACKSIDE.webp"
                 alt="F1 Trackside"
-                className="xl:w-[40rem] sm:w-[170rem] lg:w-[160rem] md:h-[543px] xl:h-[437px] lg:h-[504px]"
+                className="xl:w-[40rem] sm:w-[170rem] lg:w-[160rem] md:h-[543px] xl:h-[500px] lg:h-[504px]"
               />
             </div>
 
             {/* Right: Text & Content */}
-            <div className="flex flex-col items-center justify-center bg-primary-blue-2 px-5 py-5 xl:w-[40rem] sm:w-[43rem] lg:w-[160rem] md:h-[541px] xl:h-[437px] lg:h-[504px] md:px-10">
+            <div className="flex flex-col items-center justify-center bg-primary-blue-2 px-5 py-5 xl:w-[40rem] lg:w-[160rem] md:h-[541px] xl:h-[500px] lg:h-[504px] md:px-10">
               <h2 className="text-primary-yellow uppercase text-3xl font-bold text-center pb-1">
                 FORMULA 1 YACHT PARTY
               </h2>
@@ -271,7 +271,7 @@ const Page = () => {
       </section>
 
       {/* Carousel Section */}
-      <div className="px-4 py-10 xl:px-52">
+      <div className="container mx-auto ">
         <div ref={emblaRef} className="overflow-hidden relative">
           <div className="flex">
             {slides.map((item, index) => (
@@ -319,7 +319,7 @@ const Page = () => {
           F1 LUXURY YACHT CHARTER PACKAGES
         </h2>
         <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 xl:px-72">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-20">
             {yachtData.map((yacht) => (
               <div key={yacht.id} className="bg-white rounded-xl shadow-2xl overflow-hidden">
                 {/* Yacht Image */}
@@ -331,15 +331,15 @@ const Page = () => {
                   className="w-full h-auto object-cover"
                 />
                 <div className="p-6">
-                  <h3 className="text-xl font-bold text-black py-2">{yacht.title}</h3>
+                  <h3 className="text-base sm:text-xl font-bold text-black py-2">{yacht.title}</h3>
                   {/* Info Boxes */}
-                  <div className="grid grid-cols-2 gap-4 text-blue-900">
+                  <div className="grid grid-cols-2 gap-2 md:gap-4 text-blue-900">
                     {yacht.infoBoxes.map((box, index) => (
                       <div key={index} className="border-2 border-primary-blue rounded-lg flex items-center">
-                        <div className="p-3 flex items-center justify-center">
+                        <div className="p-1 sm:p-3 flex items-center justify-center">
                           <box.icon size={24} />
                         </div>
-                        <div className="h-12 border-r border-primary-blue" />
+                        <div className="hidden sm:block h-12 border-r border-primary-blue" />
                         <div className="p-1 text-center flex-1">
                           <div className="font-bold text-sm">{box.value}</div>
                           <div className="text-[0.6rem] uppercase">{box.label}</div>
@@ -386,8 +386,8 @@ const Page = () => {
         </p>
         <p className="mt-2 text-xl">
           For More Information and Viewing Feel Free To Contact:<br/>{" "}
-          <span className="whitespace-nowrap">
-          <strong> info@centauruscharter.com | +971 4325 1883 | +971 50 240 1269</strong>
+          <span className="">
+          <strong> info@centauruscharter.com | +971 4325 1883 | <br className='md:hidden'/>+971 50 240 1269</strong>
           </span>
         </p>
       </div>
@@ -407,7 +407,7 @@ const Page = () => {
         </div>
 
         {/* Right Column: Gold BG + Text */}
-        <div className="w-full md:w-1/2 bg-primary-yellow p-5 text-black flex flex-col justify-center py-3 ">
+        <div className=" container w-full md:w-1/2 bg-primary-yellow py-3 md:py-14 md:px-14 text-black flex flex-col justify-center  ">
           <h2 className="text-xl md:text-2xl font-bold mb-4">
             ABU DHABI GRAND PRIX 2025
           </h2>
@@ -452,7 +452,7 @@ const Page = () => {
        
 
         {/* Right Column: Gold BG + Text */}
-        <div className="w-full md:w-1/2 bg-primary-blue p-5 text-white flex flex-col justify-center py-3">
+        <div className="container w-full md:w-1/2 bg-primary-blue py-3 md:py-14 md:px-14 text-white flex flex-col justify-center">
           <h2 className="text-xl md:text-2xl font-bold mb-4">
           TRACKSIDE YACHT HOSPITALITY INCLUSIONS
           </h2>
