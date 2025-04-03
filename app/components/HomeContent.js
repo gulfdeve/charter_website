@@ -105,7 +105,7 @@ export default function Home() {
                   <Image 
                     src={`https://www.centauruscharter.com/product/images/${product.image}`}
                     alt={product.translations?.[locale].name_of_yacht}
-                    className="w-full rounded-lg rounded-lg w-full mt-3"
+                    className="w-full rounded-lg mt-3"
                     width={400}
                     height={400}
                   />
