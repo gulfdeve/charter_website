@@ -2,7 +2,7 @@
 import { useEffect, useRef, useState } from "react";
 import EmblaCarousel from "embla-carousel";
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
-import { FaQuestionCircle, FaWhatsapp } from "react-icons/fa";
+import { FaQuestionCircle, FaWhatsapp, FaMapMarkerAlt } from "react-icons/fa";
 import Route from "@/app/components/Route";
 import YachtCarousal from "@/app/components/YachtCarousel";
 import { useLocale } from "next-intl";
@@ -206,28 +206,6 @@ export default function Home({ params }) {
         {/* Yacht Description and Details */}
         <div className="flex flex-col lg:flex-row w-full items-start lg:justify-between py-10">
           <div className="flex flex-col lg:items-start w-full lg:justify-start lg:w-1/2">
-            <p className="text-sm text-left">
-              Get ready for the best yachting holiday on Lagoona. Lagoona 56Ft yacht is an exceptionally well-maintained luxury yacht and gives the feel of a brand new yacht. This true icon can accommodate up to 24 guests and has a cruising range of 22 knots. This ocean-going fleet carries up to three professional yacht staff members– one captain and two crew members who will cater to your needs during your tour. The design boasts contemporary interiors, fully air-conditioned, modern equipment and ample space for a comfortable social zone. She has 3 guest cabins for your comfort – a master suite, a double bed cabin and a twin guest cabin along with 3 restrooms. The spacious saloon comes with extensive windows so you can enjoy the views of the Arabian coastline. The stylish galley is stocked with all essentials like cutlery, refrigerator, microwave oven, electric grill and our crew can help you with heating or grilling and serving the meals. The front deck of the yacht comes with comfy sun loungers so you can unwind and feel the fresh breeze. The upper deck is a great place to enjoy your favorite tunes, have gatherings, eat outdoors at a great dining space and have a party on the yacht. The aft deck is well equipped with cozy upholstery so you and your family can spend time close to the waters. If that isn't enough; Lagoona also features adventurous activities like jet skis, parasailing, speed jet boat and banana ride at an extra cost. Your charter base will be Dubai Harbour Marina.
-            </p>
-            <h2 className="text-md text-black font-bold py-4">What to expect</h2>
-            <ol className="list-disc text-sm lg:pl-6 space-y-4">
-              {product.translations.en.key_features.split("\n").map((item, index) => (
-                <li key={index} dangerouslySetInnerHTML={{ __html: item }} />
-              ))}
-            </ol>
-            <h2 className="text-md text-black font-bold py-4">Ideal for:</h2>
-            <ol className="list-disc text-left text-sm lg:pl-6 space-y-4 ">
-              {product.translations.en.ideal_for.split("\n").map((item, index) => (
-                <li key={index} dangerouslySetInnerHTML={{ __html: item }} />
-              ))}
-            </ol>
-            <h2 className="text-sm text-black pt-4">
-              Hire Dubai luxury yachts for your impeccable holiday.
-            </h2>
-          </div>
-
-          <div className="flex items-start lg:items-end justify-end lg:w-1/2">
-            <div className="bg-white rounded-lg p-3 lg:p-6">
               <table className="w-full text-sm text-left text-gray-900">
                 <tbody>
                   {yachtDetails.map((detail, index) => (
@@ -240,7 +218,36 @@ export default function Home({ params }) {
                   ))}
                 </tbody>
               </table>
-              <div className="flex flex-col lg:flex-row justify-center gap-4 mt-10">
+          </div>
+
+          <div className="flex items-start justify-center ">
+            <div className="rounded-lg p-3 lg:p-6">
+            <h2 className="text-md text-black font-bold py-4">What to expect</h2>
+            <ol className="list-disc text-sm pl-6 space-y-4">
+              {product.translations.en.key_features.split("\n").map((item, index) => (
+                <li key={index} dangerouslySetInnerHTML={{ __html: item }} />
+              ))}
+            </ol>
+            <h2 className="text-md text-black font-bold py-4">Ideal for:</h2>
+            <ol className="list-disc text-left text-sm pl-6 space-y-4 ">
+              {product.translations.en.ideal_for.split("\n").map((item, index) => (
+                <li key={index} dangerouslySetInnerHTML={{ __html: item }} />
+              ))}
+            </ol>
+         
+              <div className="flex items-start gap-3 items-center mt-10">
+                <div>
+                  <FaMapMarkerAlt className="w-8 h-8 flex-shrink-0" />
+                </div>
+                <div className="uppercase"><p className="font-bold">Yacht location:</p>
+                <p className="text-blue-800"> 
+                  <a
+                          href="https://www.google.com/maps/place/CENTAURUS+CHARTER+-+Yachts+%26+Boats+Rental+Dubai+Harbour"
+                          className="hover:text-white" target="_blank"
+                          >U-32 berth dubai marina (near spinneys)
+                          </a> </p></div>
+              </div>
+              <div className="flex flex-col md:flex-row justify-center gap-4 mt-10">
                 <button className="yellow-solid-button flex items-center justify-center gap-2">
                   <FaQuestionCircle size={20} />
                   ASK A QUESTION
@@ -253,6 +260,20 @@ export default function Home({ params }) {
             </div>
           </div>
         </div>
+        <p className="text-sm text-center">
+              The 56 Ft <strong>private yacht</strong> is beautiful and versatile. A perfect <strong>yacht</strong> available for rental to celebrate any special occasion on the waters. This yacht is kept in top
+              condition with a cruising speed of 22 knots. Vassia is loaded with all guest amenities, a fully AC yacht and plenty of space for you and your guests. The overall
+              length is 56 Feet/17.6 meters can accommodate up to 21 guests and has 3 comfortable cabins with 6 sleeps.
+        <br/><br/>
+              In addition to this; it contains 3 separate heads. Also, there is one captain and two crew members on board to provide great service on your charter. Our fleet
+              features an array of outdoor and indoor areas. The outdoor dining area on the cockpit is sheltered by a hard-top and furnished with sofas, a table, an electric
+              BBQ and a great sound system to enjoy every moment on the sea. Sip your coffee or wine, relax on the front-deck sun loungers or party hard in the open
+              ocean. This wonderful party yacht rental is moored at <strong>Dubai Marina</strong> and ready to cruise.
+        </p>
+        <p className="text-sm text-center font-bold my-8">
+          Rent a yacht in Dubai Marina
+        </p>
+
       </div>
       <Route />
       <YachtCarousal />
