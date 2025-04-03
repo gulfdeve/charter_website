@@ -4,7 +4,7 @@ const Route = () => {
   return (
     <div>
       <div className="bg-primary-blue w-full h-auto py-10 xl:px-44 md:px-6 px-2">
-        <div className="flex flex-col items-center justify-center pt-10 gap-5 lg:p-6 lg:mx-auto container">
+        <div className="flex flex-col items-center justify-center pt-10 gap-5 py-6 mx-auto container">
           <h2 className="text-primary-yellow text-center font-bold text-2xl xl:text-3xl py-7">
           CRUISING ROUTE
           </h2>
@@ -13,65 +13,106 @@ const Route = () => {
           Discover Dubai from the sea like never before. Enjoy our cruising options just for you:
           </p>
         </div>
-        <div className="flex flex-col lg:flex-row justify-between lg:p-6 lg:mx-auto container">
-          <div className="  lg:w-[47.5rem]">
-            <div className="flex flex-col items-start justify-center px-4 py-3">
-              <h3 className=" text-left text-white text-lg">
-                Dubai Marine Cruise
-              </h3>
-              <ul className=" text-left text-white text-lg px-4 list-disc ">
+        <div className="container mx-auto">
+          <img className="w-full" src="/route-map-storm.webp" />
+          <div className="grid grid-cols-1 md:grid-cols-4">
+            <div className="flex flex-col items-start bg-red-100">
+              <div className="bg-red-700 p-5 text-white uppercase text-center w-full">
+                <h3 className="text-white text-lg font-bold">
+                  Marina Cruise
+                </h3>
+                <h3 className="text-white text-lg">
+                  1 hour yacht trip <br/>(60 mins)
+                </h3>
+              </div>
+              <ul className=" text-left text-base lg:text-lg py-5 px-10 list-disc font-bold">
                 <li>
-                1 Hour Yacht Trip (60 Mins)
+                Dubai Marina
                 </li>
                 <li>
-                Dubai Marina · Bluewaters Island · Ain Dubai · JBR
+                Bluewaters Island 
                 </li>
+                <li>Ain Dubai</li>
+                <li>JBR</li>
               </ul>
             </div>
-            <div className="flex flex-col items-start justify-center px-4 py-3">
-              <h3 className=" text-left text-white text-lg">
+            <div className="flex flex-col items-start bg-blue-100">
+              <div className="bg-primary-blue-2 p-5 text-white uppercase text-center w-full">
+                <h3 className="text-white text-lg font-bold">
                 Atlantis Cruise
-              </h3>
-              <ul className=" text-left text-white text-lg px-4 list-disc ">
-                <li>2 Hour Yacht Trip (120 Mins)</li>
-                <li>Dubai Marina · Bluewaters Island · Ain Dubai · JBR</li>
-                <li>Palm Jumeirah · Altantis</li>
+                </h3>
+                <h3 className="text-white text-lg">
+                  2 hours yacht trip <br/>(120 mins)
+                </h3>
+              </div>
+              <ul className=" text-left text-base lg:text-lg py-5 px-10 list-disc font-bold">
+                <li>
+                Dubai Marina
+                </li>
+                <li>
+                Bluewaters Island 
+                </li>
+                <li>Ain Dubai</li>
+                <li>JBR</li>
+                <li>Palm Jumeirah</li>
+                <li>Atlantis</li>
               </ul>
             </div>
-            <div className="flex flex-col items-start justify-center px-4 py-3">
-              <h3 className=" text-left text-white text-lg">
-                Burj Al Arab Cruise
-              </h3>
-              <ul className=" text-left text-white text-lg px-4 list-disc ">
-                <li>3 Hour Yacht Trip (180 Mins)</li>
-                <li>Dubai Marina · Bluewaters Island · Ain Dubai · JBR</li>
-                <li>Palm Jumeirah · Altantis · Burj Al Arab</li>
+            <div className="flex flex-col items-start bg-green-100">
+              <div className="bg-green-700 p-5 text-white uppercase text-center w-full">
+                <h3 className="text-white text-lg font-bold">
+                  Marina Cruise
+                </h3>
+                <h3 className="text-white text-lg">
+                  3 hours yacht trip <br/>(180 mins)
+                </h3>
+              </div>
+              <ul className=" text-left text-base lg:text-lg py-5 px-10 list-disc font-bold">
+                <li>
+                Dubai Marina
+                </li>
+                <li>
+                Bluewaters Island 
+                </li>
+                <li>Ain Dubai</li>
+                <li>JBR</li>
+                <li>Palm Jumeirah</li>
+                <li>Atlantis</li>
+                <li>Burj Al Arab</li>
               </ul>
             </div>
-            <div className="flex flex-col items-start justify-center px-4 py-3">
-              <h3 className=" text-left text-white text-lg">
-                Dubai Canal Cruise
-              </h3>
-              <ul className=" text-left text-white text-lg px-4 list-disc ">
-                <li>4 - 6 Hours Yacht Trip (240-360 Mins)</li>
-                <li>Dubai Marina · Bluewaters Island · Ain Dubai · JBR</li>
-                <li>Palm Jumeirah · Altantis · Burj Al Arab · Dubai Canal</li>
+            <div className="flex flex-col items-start bg-yellow-100">
+              <div className="bg-primary-yellow-dark p-5 text-white uppercase text-center w-full">
+                <h3 className="text-white text-lg font-bold">
+                  Marina Cruise
+                </h3>
+                <h3 className="text-white text-lg">
+                  1 hour yacht trip <br/>(60 mins)
+                </h3>
+              </div>
+              <ul className=" text-left text-base lg:text-lg py-5 px-10 list-disc font-bold">
+                <li>Dubai Marina</li>
+                <li>Bluewaters Island</li>
+                <li>Ain Dubai</li>
+                <li>JBR</li>
+                <li>Palm Jumeirah</li>
+                <li>Dubai Canal</li>
+                <li>Burj Khalifa view (from the Canal)</li>
               </ul>
             </div>
-            <div className="w-full bg-white h-0.5 my-14 "></div>
-            <p className=" text-left text-white text-lg px-4 xl:px-0 xl:pb-6">If you want a tailored cruise, please don't hesitate to contact us. We will gladly assist you with your requirements.</p>
-            <div className="flex flex-col items-start justify-center px-7 xl:px-0 py-3">
+            
+          </div>
+          <div className="flex flex-col ">
+            
+            <div className="flex flex-col gap-5 md:flex-row md:justify-center md:gap-12 mt-5">
+
               <button className="blue-lined-button">
                 Get a Quote
               </button>
+              <button className="blue-lined-button">
+                Download Map
+              </button>
             </div>
-          </div>
-          <div className="flex flex-col lg:items-center lg:justify-start px-4 gap-5 lg:w-2/3 lg:pt-10 ">
-            <img src="/Route-map.jpg" />
-
-            <button className="blue-lined-button">
-              Download Map
-            </button>
           </div>
         </div>
       </div>
