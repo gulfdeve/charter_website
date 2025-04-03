@@ -109,7 +109,7 @@ const page = () => {
             {" "}
             Everything you need to know about yacht charter
           </p>
-          <p className=" text-[#848484] text-center  text-base  px-3 lg:px-12 xl:px-56">
+          <p className=" text-[#848484] text-center  text-base ">
             A luxury yacht rental is the best choice for anyone who wants to enjoy
             a day on the water. There are a lot of Insta-worthy spots that can be
             seen from the water. Got a question? Find the answers below to most
@@ -120,13 +120,13 @@ const page = () => {
           </p>
         </div>
         <div
-          className={`container w-full max-w-3xl lg:max-w-4xl xl:max-w-6xl my-5 mx-auto bg-white rounded-lg shadow-lg p-6 sm:p-8 md:p-1 `}
+          className={`container my-5 mx-auto rounded-lg`}
         >
           <div className="space-y-6">
             {faqs.map((faq, index) => (
               <div
                 key={index}
-                className={`  transition-colors duration-200  shadow-md py-3 px-3 ${
+                className={`  transition-colors duration-200  shadow-md ${
                   activeIndex === index
                     ? "bg-primary-yellow rounded-t-lg"
                     : "bg-primary-blue rounded-lg"
@@ -134,7 +134,7 @@ const page = () => {
               >
                 <button
                   onClick={() => toggleAnswer(index)}
-                  className={`w-full text-left text-lg md:text-lg font-bold   flex justify-between items-center focus:outline-none ${
+                  className={`w-full text-left text-lg md:text-lg font-bold  py-3 px-3 block flex justify-between items-center focus:outline-none ${
                     activeIndex === index ? "text-primary-blue" : "text-primary-yellow"
                   }`}
                 >
