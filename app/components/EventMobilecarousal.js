@@ -23,11 +23,11 @@ export default function EventCarousel() {
   }, [embla]);
 
   return (
-    <div className="container mx-auto md:px-4 pb-16">
+    <div className="md:px-4 pb-16">
       {/* Embla "viewport" container */}
-      <div ref={emblaRef} className="overflow-hidden px-3 py-5">
+      <div ref={emblaRef} className="overflow-hidden py-5">
         {/* Embla "container" for slides: using flex for horizontal layout */}
-        <div className="flex gap-4 px-2">
+        <div className="flex gap-4">
           {!loading &&
             data?.events?.map((event) => (
               <div
