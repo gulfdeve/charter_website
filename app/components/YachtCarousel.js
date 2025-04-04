@@ -55,6 +55,7 @@ export default function YachtCarousal() {
                   <div className="relative bg-transparent rounded-lg overflow-hidden space-y-5">
                     <Image
                       src={`https://www.centauruscharter.com/product/images/${product.thumbnail_image}`}
+						// src='/Storm-thumbnail.webp'
                       alt={product.translations[locale].name_of_yacht}
                       width={450}
                       height={0}
