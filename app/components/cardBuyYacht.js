@@ -4,7 +4,7 @@ import { useLanguage } from "@/app/context/LanguageContext";
 const YachtCard = ({ yacht }) => {
   const { language, changeLanguage } = useLanguage();
   return (
-    <div className="bg-white rounded-lg shadow-lg overflow-hidden px-2">
+    <div className="bg-white rounded-lg border-2 md:border-0 md:shadow-lg overflow-hidden">
       <Link href={`/${language}/yachts-for-sale-dubai/88ft-sunseeker`}>
       <img 
         src={yacht.image} 
@@ -15,7 +15,7 @@ const YachtCard = ({ yacht }) => {
       
       <div className="p-6">
         <Link href={`/${language}/yachts-for-sale-dubai/88ft-sunseeker`}>
-        <h2 className="text-2xl font-bold text-navy-900 mb-4 ">{yacht.name}</h2>
+        <h2 className="text-base sm:text-xl font-bold text-navy-900 mb-4 ">{yacht.name}</h2>
         </Link>
         
         <div className="grid grid-cols-2 gap-6 mb-6">
@@ -45,7 +45,7 @@ const YachtCard = ({ yacht }) => {
           </div>
         </div>
         
-        <div className="grid grid-cols-2 gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <Link href="yachts-for-sale-dubai/88ft-sunseeker" className="blue-solid-button text-center ">
             KNOW MORE
           </Link>
