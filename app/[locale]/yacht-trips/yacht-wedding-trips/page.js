@@ -33,23 +33,23 @@ const page = () => {
                       data?.products?.map((product) => (
             <div
               key={product.id}
-              className="flex flex-col justify-center px-2 bg-white rounded-md shadow-2xl h-auto"
+              className="flex flex-col justify-stretch bg-white rounded-md shadow-2xl h-auto"
             >
               <Link href={`/yacht-rentals/${product.slug}`}>
                 <img
                   src={`https://www.centauruscharter.com/product/images/${product.image}`}
-                  className="rounded-md mt-2 w-full h-[174px] md:h-[300px] object-cover"
+                  className="rounded-t-md w-full object-contain"
                   alt={product.translations?.[locale].name_of_yacht}
                 />
               </Link>
-
-              <div className="flex flex-col items-center py-3">
+              <div className="flex flex-col justify-between flex-grow p-4">
+              <div className="flex flex-col">
                 <Link href={`/yacht-rentals/${product.slug}`}>
                   <h1 className="text-primary-blue text-base sm:text-xl font-bold xl:pt-6 md:pb-2 hover:text-blue-600 transition-all duration-300 cursor-pointer py-1 md:py-0">
                   {product.translations?.[locale]?.name_of_yacht}
                   </h1>
                 </Link>
-                <p className=" text-xs text-center text-primary-blue">
+                <p className="text-xs s:text-sm md:text-xs lg:text-sm text-primary-blue">
                 Model:
                   <span className=" text-primary-blue font-bold">
                     {" "}
@@ -66,24 +66,28 @@ const page = () => {
                     {product.translations?.[locale]?.guests}
                   </span>
                 </p>
-                <h1 className=" text-primary-blue font-bold text-base sm:text-xl pt-5 pb-2">
+                <h1 className=" text-primary-blue font-bold text-base sm:text-xl pt-4 pb-2">
                   AED  {product.per_hour_price}{" "}
                   <span className=" text-primary-blue">
                     Per Hour
                   </span>
                 </h1>
-                <a
+              
+              </div>
+              
+              <a
                   href={`https://fareharbor.com/embeds/book/centauruscharter/items/${
                     product.fareharbor_id
                   }/?full-items=yes&flow=645487&back=${encodeURIComponent(
                     "http://example.com"
                   )}`}
-                  className="flex flex-row items-center justify-center py-2 w-full md:py-2 md:px-4 rounded-md bg-primary-yellow text-primary-blue hover:bg-primary-blue hover:text-primary-yellow  font-bold text-base md:text-sm xl:text-lg transition-all duration-300"
+                  className="flex-row items-center justify-center text-center py-2 w-full md:py-2 md:px-4 rounded-md bg-primary-yellow text-primary-blue hover:bg-primary-blue hover:text-primary-yellow font-bold text-base md:text-sm xl:text-lg transition-all duration-300"
                 >
                   Book Now
                 </a>
-              </div>
+                </div>
             </div>
+           
           ))}
         </div>
         <div>
