@@ -18,7 +18,7 @@ export default function Home() {
   return (
     <><main className="min-h-screen bg-white">
       {/* Hero Section */}
-      <section className="relative w-full h-[33vh] md:h-[70vh] overflow-hidden">
+      <section className="container mx-auto relative w-full h-[33vh] md:h-[70vh] overflow-hidden">
         <div className="flex items-center justify-center pt-10">
           <Image
             src="/GEMS-Offer-Banner.png" // replace with your banner image
@@ -29,7 +29,7 @@ export default function Home() {
       </section>
 
       {/* Content Section */}
-      <section className="max-w-7xl mx-auto px-4 py-8">
+      <section className="container mx-auto px-4 py-8">
         {/* Headings */}
         <div className="text-center mb-8">
           <h3 className="text-xl md:text-2xl font-bold mb-2">
