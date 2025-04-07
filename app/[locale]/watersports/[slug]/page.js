@@ -30,9 +30,9 @@ const Page = () => {
     <div className="container mx-auto nav-space">
      
      
-      <div className="flex flex-col lg:flex-row justify-between items-center gap-5 pt-6 md:m-20 ">
+      <div className="flex flex-col lg:flex-row justify-between items-center gap-5 pt-6 md:mt-20 ">
         {/* First column (30%) */}
-        <div className="flex items-start lg:w-5/12">
+        <div className="flex items-start lg:w-7/12">
           <img
             src={`https://www.centauruscharter.com/product/images/${packageItem.image}`}
             alt={packageItem.translations[locale].title}
@@ -42,7 +42,7 @@ const Page = () => {
 
         {/* Second column (70%) */}
         
-        <div className="lg:w-7/12">
+        <div className="lg:w-5/12">
         <PageTitleHeading title={packageItem.translations[locale].title} className="py-0 lg:pt-0 pb-5" />
         <div className="text-center grid grid-cols-1  items-center gap-2  w-full overflow-hidden mb-7">
        <div className="grid grid-cols-1 sm:grid-cols-3 bg-primary-yellow-light rounded-lg text-primary-blue">
@@ -94,7 +94,7 @@ const Page = () => {
         
       </div>
 
-      <div className="flex flex-col md:flex-row items-stretch md:items-center text-center w-full justify-center">
+      <div className="flex flex-col xl:flex-row items-stretch xl:items-center text-center w-full justify-center">
         {/* WhatsApp Button */}
         <div className=" p-1 flex flex-col items-center">
           <a href={header_whatsapp_url || "#"} className="w-full blue-solid-button flex justify-center items-center gap-1 text-center">
