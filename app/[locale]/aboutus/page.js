@@ -3,7 +3,7 @@ import YachtCarousal from '../../components/YachtCarousel'
 
 const AboutPage = () => {
   return (
-    <><div className="bg-white w-full h-full mt-14 md:mt-0">
+    <><div className="bg-white w-full h-full nav-space">
       <div>
         <img alt="about us" src="./AboutUsHeader.png" className="w-full" />
       </div>
@@ -26,7 +26,7 @@ const AboutPage = () => {
             <img
             alt="about us"
               src="/About us 1.png"
-              className="xl:w-[270rem] sm:w-[170rem] md:h-[443px] xl:h-[452px] lg:h-[404px]" />
+              className="xl:w-[270rem] sm:w-[170rem] md:h-[443px] xl:h-[452px] lg:h-[404px] object-cover md:object-[80%_100%] lg:object-center" />
           </div>
         </div>
         <div className="flex flex-col items-center sm:items-start sm:justify-start justify-center bg-primary-blue px-5 xl:px-32 xl:py-12 py-5 md:h-[443px] xl:h-[452px] lg:h-[404px]">
@@ -39,16 +39,16 @@ const AboutPage = () => {
 
         </div>
       </div>
-      <div className="flex flex-col  md:flex-row-reverse items-center justify-center md:py-10 xl:pr-44">
+      <div className="flex flex-col  md:flex-row-reverse items-center justify-center">
         <div>
           <div className="">
             <img
             alt="about us group"
               src="/About us group.png"
-              className="xl:w-[230rem] sm:w-[170rem] md:h-[643px] xl:h-[752px] lg:h-[604px] 2xl:h-[1052px] xl:px-12 " />
+              className="xl:w-[230rem] w-[100rem] sm:h-[50rem] md:w-[200rem] md:h-[643px] xl:h-[752px] lg:h-[604px] 2xl:h-[850px] p-4 xl:px-12 object-cover lg:object-bottom" />
           </div>
         </div>
-        <div className="flex flex-col items-center sm:items-start sm:justify-start justify-center bg-transparent px-5 xl:px-32 xl:py-12 py-5 md:h-[643px] xl:h-[752px] lg:h-[604px] 2xl:h-[1052px]">
+        <div className="flex flex-col justify-center bg-transparent px-5 xl:px-32 xl:py-12 py-5 md:h-[643px] xl:h-[752px] lg:h-[604px] 2xl:h-[1052px]">
           <h1 className=" text-black text-left font-bold text-2xl xl:text-3xl py-7">
             ENJOY OUR
             <span className='text-yellow-400'>

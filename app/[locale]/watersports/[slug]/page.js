@@ -27,7 +27,7 @@ const Page = () => {
   if (!packageItem) return <p>No package found for {slug}</p>;
 
   return (
-    <div className="container mx-auto px-10">
+    <div className="container mx-auto nav-space">
       <PageTitleHeading title={packageItem.translations[locale].title} />
 
       <div className="flex flex-col lg:flex-row justify-center gap-10">
@@ -56,7 +56,8 @@ const Page = () => {
         </div>
       </div>
 
-      <div className="bg-primary-blue grid grid-cols-1 lg:grid-cols-5 md:grid-cols-1 items-center gap-0 rounded-lg w-full overflow-hidden mb-7 mt-10">
+      <div className="text-center bg-primary-blue grid grid-cols-1 lg:grid-cols-2 items-center gap-0 rounded-lg w-full overflow-hidden mb-7 mt-10">
+       <div className="grid grid-cols-1 sm:grid-cols-3">
         {/* Ride Title */}
         <div className="bg-primary-blue text-white p-2 flex flex-col items-center xl:rounded-l-lg">
           <span className="font-bold text-sm">Ride:</span>
@@ -78,17 +79,20 @@ const Page = () => {
             {packageItem.amount} AED
           </span>
         </div>
+        </div>
+        <div className="grid grid-cols-1  lg:grid-cols-2 items-center">
         {/* WhatsApp Button */}
         <div className="bg-primary-blue p-2 flex flex-col items-center">
-          <a href={header_whatsapp_url || "#"} className="blue-lined-button flex">
+          <a href={header_whatsapp_url || "#"} className="w-full blue-lined-button flex">
             <FaWhatsapp size={20} />
             WHATSAPP US
           </a>
         </div>
         {/* Book Now Button */}
         <div className="bg-primary-blue p-2 flex flex-col items-center xl:rounded-r-lg">
-          <a href="https://fareharbor.com/embeds/book/centauruscharter/?full-items=yes" className="blue-lined-button">BOOK NOW WITH {packageItem.translations[locale].title}</a>
+          <a href="https://fareharbor.com/embeds/book/centauruscharter/?full-items=yes" className="w-full blue-lined-button">BOOK NOW WITH {packageItem.translations[locale].title}</a>
         </div>
+      </div>
       </div>
     </div>
   );

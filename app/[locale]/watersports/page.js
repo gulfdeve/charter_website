@@ -19,7 +19,7 @@ const { language, changeLanguage } = useLanguage();
 
 return (
 <>
-    <div className="container mx-auto mt-14 md:mt-0">
+    <div className="container mx-auto nav-space">
 
         <PageTitleHeading title="WATERSPORTS ADD-ON DUBAI" />
 

@@ -34,7 +34,7 @@ export default async function OffersPage({ params }) {
 
   return (
     <>
-      <div className="container mx-auto mt-14 md:mt-0">
+      <div className="container mx-auto nav-space">
         <PageTitleHeading title="YACHT OFFERS AND DEALS IN DUBAI" />
         {/* <p>{t("navbar.contact-us")}</p> */}
 
