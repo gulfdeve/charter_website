@@ -4,7 +4,7 @@ import Image from "next/image";
 import { useRouter, usePathname, Link } from "@/app/i18n/routing";
 const page = () => {
   return (
-   <div className="bg-white w-full h-full mt-14 md:mt-0">
+   <div className="bg-white w-full h-full nav-space">
     <div>
       <Image
         src="/terms.jpg"

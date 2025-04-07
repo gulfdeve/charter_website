@@ -93,7 +93,7 @@ export default function Home({ params }) {
 
   return (
     <>
-      <div className="container mx-auto p-5 mt-14 lg:mt-0">
+      <div className="container mx-auto p-5 nav-space">
         {/* Title */}
         <h1 className="text-xl sm:text:2xl md:text-3xl lg:text-4xl font-bold text-center mb-4 mt-5">
           {product.translations?.[locale]?.name_of_yacht}

@@ -230,7 +230,7 @@ const Tabs = () => {
   };
 
   return (
-    <div className="w-full bg-white mt-14 lg:mt-0 ">
+    <div className="w-full bg-white nav-space ">
       <PageTitleHeading title="LUXURY YACHT RENTALS DUBAI" />
 
       <div className="flex justify-center items-center gap-8 md:gap-8 text-xs sm:text-base md:text-lg font-semibold py-2 pb-10 md:py-7 px-2 ">

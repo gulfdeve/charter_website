@@ -19,8 +19,8 @@ const page = () => {
         <Videosharedtours/>
       </div> */}
      
-      <div className="container mx-auto bg-white h-full w-full mt-14 md:mt-0">
-        <div className="flex flex-col items-center justify-center py-8 md:py-24 lg:py-14"> 
+      <div className="container mx-auto bg-white nav-space">
+        <div className="flex flex-col items-center justify-center py-12 lg:pt-14"> 
           <h1 className=" text-primary-blue text-center font-bold text-lg md:text-3xl lg:text-4xl pb-4">
             YACHT WEDDING CHARTER
           </h1>
