@@ -90,14 +90,14 @@ const Page = () => {
             {toursData.map((tour, index) => (
               <div
                 key={index}
-                className="bg-white rounded-lg shadow-lg hover:shadow-2xl transition-shadow duration-300 p-5 space-y-3"
+                className="bg-white rounded-lg shadow-lg hover:shadow-2xl transition-shadow duration-300 space-y-3"
               >
                 {/* Image Wrapper */}
                 <div className="relative">
                   <img
                     src={tour.image}
                     alt={tour.title}
-                    className="rounded-lg w-full"
+                    className="rounded-t-lg w-full"
                   />
 
                   {/* Overlay Container */}
@@ -116,12 +116,12 @@ const Page = () => {
                     </div>
                   </div>
                 </div>
-
+            <div className="px-4 pb-4">
                 {/* Card Text */}
-                <h1 className="text-primary-blue-2 text-center font-bold text-2xl py-2">
+                <h1 className="text-primary-blue-2 text-center font-bold text-2xl py-2 ">
                   {tour.title}
                 </h1>
-              <div className="flex flex-col ">
+              <div className="flex flex-col">
                 {/* Cruising Time */}
                 <div className="flex flex-row items-center justify-start">
                   <div className="p-2 pl-0">
@@ -190,6 +190,7 @@ const Page = () => {
 
                 {/* Book Now Button */}
                 <button className="yellow-solid-button w-full">Book Now</button>
+                </div>
               </div>
             ))}
           </div>
