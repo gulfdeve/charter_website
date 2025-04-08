@@ -86,13 +86,13 @@ export default function OfferCarousel() {
                     <a
                       href={`${offer.whatsapp_url}`}
                       target="_blank"
-                      className="w-full flex justify-center py-2 px-4 text-xs font-bold tracking-wider uppercase text-primary-yellow bg-primary-blue hover:bg-primary-yellow hover:text-primary-blue hover:scale-105 rounded-md shadow transition duration-150 ease-in-out transform items-center"
+                      className="w-full flex justify-center py-2 px-4 text-base md:text-sm xl:text-lg font-bold tracking-wider uppercase text-primary-yellow bg-primary-blue hover:bg-primary-yellow hover:text-primary-blue hover:scale-105 rounded-md shadow transition duration-150 ease-in-out transform items-center"
                     >
                       WHATSAPP
                     </a>
                     <Link
                       href={`/offers/${offer.slug}`}
-                      className="w-full flex justify-center py-2 px-4 text-[0.68rem] font-bold uppercase text-primary-yellow bg-primary-blue hover:bg-primary-yellow hover:text-primary-blue hover:scale-105 rounded-md shadow transition duration-150 ease-in-out transform text-center items-center"
+                      className="w-full flex justify-center py-2 px-4 text-base md:text-sm xl:text-lg font-bold uppercase text-primary-yellow bg-primary-blue hover:bg-primary-yellow hover:text-primary-blue hover:scale-105 rounded-md shadow transition duration-150 ease-in-out transform text-center items-center"
                     >
                       KNOW MORE
                     </Link>
