@@ -31,7 +31,7 @@ export default function YachtmobCarousel() {
   const scrollNext = () => emblaInstance.current?.scrollNext();
 
   return (
-    <div className="container mx-auto md:hidden">
+    <div className="container mx-auto lg:hidden">
       <div className="relative">
         {/* Embla viewport */}
         <div ref={emblaRef} className="overflow-hidden">

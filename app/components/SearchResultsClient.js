@@ -4,7 +4,13 @@ import React, { useRef, useState } from "react";
 import Link from "next/link";
 import Modal3 from "@/app/components/Modal3";
 
-export default function SearchResultsClient({ paginatedHits, currentPage, totalPages, previousPageLink, nextPageLink }) {
+export default function SearchResultsClient({
+  paginatedHits,
+  currentPage,
+  totalPages,
+  previousPageLink,
+  nextPageLink,
+}) {
   const modalRef = useRef(null);
   const [selectedVessel, setSelectedVessel] = useState(null);
 
@@ -15,18 +21,18 @@ export default function SearchResultsClient({ paginatedHits, currentPage, totalP
   };
 
   return (
-    <div className="mt-12 flex flex-col items-center justify-center px-4">
-      <h2 className="text-3xl font-semibold text-center mb-8">Search Results</h2>
+    <div className="mt-12 flex flex-col items-center justify-center px-4 container mx-auto">
+      <h2 className="text-2xl font-semibold text-center mb-6">Search Results</h2>
       {paginatedHits && paginatedHits.length > 0 ? (
         <>
-          <div className="flex flex-wrap justify-center gap-8">
+          <div className="flex flex-wrap justify-center gap-6">
             {paginatedHits.map((vessel, index) => (
               <div
                 key={index}
-                className="bg-white rounded-lg shadow-lg overflow-hidden  max-w-md w-full flex flex-col"
+                className="bg-white rounded-lg shadow-lg overflow-hidden max-w-sm w-full flex flex-col"
               >
                 <Link href={`/yachts-for-sale-dubai/${vessel.slug || "some-default"}`}>
-                  <div className="w-full h-64 overflow-hidden">
+                  <div className="w-full h-48 overflow-hidden">
                     <img
                       src={
                         vessel.hero
@@ -39,51 +45,60 @@ export default function SearchResultsClient({ paginatedHits, currentPage, totalP
                   </div>
                 </Link>
 
-                <div className="p-6 flex flex-col justify-between grow">
+                <div className="p-4 flex flex-col justify-between grow">
                   <Link href={`/yachts-for-sale-dubai/${vessel.slug || "some-default"}`}>
-                    <h2 className="text-2xl font-bold text-navy-900 mb-4">
+                    <h2 className="text-xl font-bold text-navy-900 mb-3">
                       {vessel.name || "Unnamed Yacht"}
                     </h2>
                   </Link>
 
-                  <div className="grid grid-cols-2 gap-6 mb-6">
-                    <div className="border-b-2 border-gray-200">
-                      <p className="text-[#125589] font-medium mb-1">Build:</p>
-                      <p className="text-gray-900 font-bold">{vessel.make || "N/A"}</p>
+                  <div className="grid grid-cols-2 gap-4 mb-4">
+                    <div className="border-b border-gray-200">
+                      <p className="text-[#125589] text-sm font-medium mb-1">Build:</p>
+                      <p className="text-gray-900 text-sm font-bold">{vessel.make || "N/A"}</p>
                     </div>
-                    <div className="border-b-2 border-gray-200">
-                      <p className="text-[#125589] font-medium mb-1">Cabins:</p>
-                      <p className="text-gray-900 font-bold">{vessel.cabins || "N/A"}</p>
+                    <div className="border-b border-gray-200">
+                      <p className="text-[#125589] text-sm font-medium mb-1">Cabins:</p>
+                      <p className="text-gray-900 text-sm font-bold">{vessel.cabins || "N/A"}</p>
                     </div>
-                    <div className="border-b-2 border-gray-200">
-                      <p className="text-[#125589] font-medium mb-1">Length:</p>
-                      <p className="text-gray-900 font-bold">{vessel.length || "N/A"}</p>
+                    <div className="border-b border-gray-200">
+                      <p className="text-[#125589] text-sm font-medium mb-1">Length:</p>
+                      <p className="text-gray-900 text-sm font-bold">{vessel.length || "N/A"}</p>
                     </div>
-                    <div className="border-b-2 border-gray-200">
-                      <p className="text-[#125589] font-medium mb-1">Guests:</p>
-                      <p className="text-gray-900 font-bold">{vessel.sleeps || "N/A"}</p>
+                    <div className="border-b border-gray-200">
+                      <p className="text-[#125589] text-sm font-medium mb-1">Guests:</p>
+                      <p className="text-gray-900 text-sm font-bold">{vessel.sleeps || "N/A"}</p>
                     </div>
-                    <div className="border-b-2 border-gray-200">
-                      <p className="text-[#125589] font-medium mb-1">Year:</p>
-                      <p className="text-gray-900 font-bold">{vessel.builtYear || "N/A"}</p>
+                    <div className="border-b border-gray-200">
+                      <p className="text-[#125589] text-sm font-medium mb-1">Year:</p>
+                      <p className="text-gray-900 text-sm font-bold">{vessel.builtYear || "N/A"}</p>
                     </div>
-                    <div className="border-b-2 border-gray-200">
-                      <p className="text-[#125589] font-medium mb-1">Price:</p>
-                      <p className="text-gray-900 font-bold">
+                    <div className="border-b border-gray-200">
+                      <p className="text-[#125589] text-sm font-medium mb-1">Price:</p>
+                      <p className="text-gray-900 text-sm font-bold">
                         {vessel.price ? `$${vessel.price.toLocaleString()}` : "N/A"}
                       </p>
                     </div>
                   </div>
 
-                  <div className="grid grid-cols-2 gap-4">
+                  <div className="grid grid-cols-2 gap-2">
                     <Link
                       href={`/yachts-for-sale-dubai/${vessel.slug || "some-default"}`}
-                      onClick={(e) => handleQuote(e, vessel)}
-                      className="blue-solid-button text-center"
+                 
+                      className="blue-solid-button  mt-5"
                     >
                       KNOW MORE
                     </Link>
-                    <button className="blue-solid-button">INQUIRE NOW</button>
+                    <button className="py-1 mt-5 
+          text-base font-bold tracking-wider uppercase
+          text-primary-yellow bg-primary-blue
+          hover:bg-primary-yellow hover:text-primary-blue hover:scale-105
+          rounded-md shadow
+          transition duration-150 ease-in-out transform "
+          onClick={(e) => handleQuote(e, vessel)}
+          >
+                      INQUIRE NOW
+                    </button>
                   </div>
                 </div>
               </div>
@@ -91,17 +106,23 @@ export default function SearchResultsClient({ paginatedHits, currentPage, totalP
           </div>
 
           {/* Pagination Controls */}
-          <div className="mt-8 pb-16 flex items-center space-x-4">
+          <div className="mt-6 pb-12 flex items-center space-x-4">
             {previousPageLink && (
-              <Link href={previousPageLink} className="px-4 py-2 bg-gray-200 hover:bg-gray-300 rounded">
+              <Link
+                href={previousPageLink}
+                className="px-4 py-2 bg-gray-200 hover:bg-gray-300 rounded text-sm"
+              >
                 Previous
               </Link>
             )}
-            <span>
+            <span className="text-sm">
               Page {currentPage} of {totalPages}
             </span>
             {nextPageLink && (
-              <Link href={nextPageLink} className="px-4 py-2 bg-gray-200 hover:bg-gray-300 rounded">
+              <Link
+                href={nextPageLink}
+                className="px-4 py-2 bg-gray-200 hover:bg-gray-300 rounded text-sm"
+              >
                 Next
               </Link>
             )}
