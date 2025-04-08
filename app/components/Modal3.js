@@ -95,7 +95,7 @@ const Modal3 = forwardRef(({ idName, idValue, selectedVessel }, ref) => {
   if (!isVisible) return null;
 
   return (
-    <div className="fixed inset-0 bg-gray-500 bg-opacity-50 flex items-center justify-center z-50">
+    <div className="fixed inset-0 bg-gray-500 bg-opacity-50 flex items-center justify-center z-50 px-5">
       <div className="bg-white h-fit rounded-lg shadow-lg w-full max-w-6xl p-9 lg:p-6 relative">
         {submissionSuccess && (
           <div className="absolute top-0 left-0 right-0 bg-green-500 text-white p-3 text-center">
@@ -110,7 +110,7 @@ const Modal3 = forwardRef(({ idName, idValue, selectedVessel }, ref) => {
           &times;
         </button>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-5 ">
           <div className="rounded-lg overflow-hidden hidden md:block">
             <img
               src="/modal2.jpg"
@@ -178,7 +178,7 @@ const Modal3 = forwardRef(({ idName, idValue, selectedVessel }, ref) => {
 
               <div>
                 <textarea
-                  placeholder="UAE Residents Yacht Offers"
+                  placeholder="Comments"
                   value={message}
                   onChange={(e) => setMessage(e.target.value)}
                   rows="8"

@@ -41,16 +41,16 @@ export default function YachtCarousal() {
       <h2 className="text-primary-blue text-center font-bold text-2xl xl:text-4xl py-7">
         EXPLORE OUR YACHTS
       </h2>
-      <div className="md:block hidden">
+      <div className="lg:block hidden">
       <div className="relative container h-full overflow-hidden bg-primary-yellow mx-auto">
         {/* Single Embla Carousel */}
         <div className="embla__viewport" ref={emblaRef}>
-          <div className="embla__container flex">
+          <div className="embla__container flex space-x-4">
             {!loading &&
               data?.products?.map((product) => (
                 <div
                   key={product.id}
-                  className="embla__slide w-full lg:basis-[calc(100%/3)] flex-none"
+                  className="embla__slide w-full lg:basis-[calc(100%/3)] flex-none  "
                 >
                   <div className="relative bg-transparent rounded-lg overflow-hidden space-y-5">
                     <Image
@@ -99,7 +99,7 @@ export default function YachtCarousal() {
         </button>
       </div>
       </div>
-      <div className="block md:hidden0">
+      <div className="block lg:hidden">
         <YachtmobCarousel/>
 
       </div>

@@ -35,15 +35,18 @@ export default function MultiDatePicker({ name }) {
         <FaChevronDown className="text-white" />
       </div>
 
-      <div className="absolute top-0 left-0 w-full h-full flex items-center">
+      <div className="absolute top-0 left-0 w-full h-full flex items-center bg-white">
         <DatePicker
           ref={datePickerRef}
           multiple
           value={selectedDates}
           onChange={(dates) => setSelectedDates(dates)}
           format="YYYY-MM-DD"
-          className="absolute inset-0 w-full h-full bg-white cursor-pointer"
-          calendarClassName="bg-white" // Added white background for calendar
+          // Adding inline style to force white background
+          style={{ backgroundColor: "white" }}
+          // You can keep the calendarClassName prop if you want to add additional classes,
+          // but inline style helps ensure the background color is applied.
+          calendarClassName="bg-white"
           onOpen={() => setIsOpen(true)}
           onClose={() => setIsOpen(false)}
         />
