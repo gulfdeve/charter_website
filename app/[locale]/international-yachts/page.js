@@ -1,9 +1,9 @@
 import fs from "fs";
 import jwt from "jsonwebtoken";
-import { FaCalendarAlt } from "react-icons/fa";
-// Import the client component
 import MultiDatePicker from "@/app/components/MultiDatePicker";
 import Link from "next/link";
+import SearchResultsClient from "@/app/components/SearchResultsClient";
+
 // --------------------
 // 1) fetchVessels function
 // --------------------
@@ -31,7 +31,7 @@ async function fetchVessels(searchParams) {
     algorithm: "RS256",
     header: { alg: "RS256", typ: "JWT", kid },
   });
-  console.log(token);
+
   // --- Build Query Params ---
   const queryObject = {
     name: searchParams.name || "",
@@ -79,8 +79,36 @@ export default async function VesselsPage({ searchParams }) {
     }
   }
 
+  // --------- Pagination Logic ----------
+  const currentPage = searchParams.page ? parseInt(searchParams.page) : 1;
+  const pageSize = 20;
+  let paginatedHits = [];
+  let totalPages = 1;
+  if (data && data.hits) {
+    totalPages = Math.ceil(data.hits.length / pageSize);
+    const startIndex = (currentPage - 1) * pageSize;
+    const endIndex = startIndex + pageSize;
+    paginatedHits = data.hits.slice(startIndex, endIndex);
+  }
+  
+  // Build page link function must be declared before usage
+  const buildPageLink = (pageNumber) => {
+    const cleanParams = Object.entries(searchParams).reduce((acc, [key, value]) => {
+      if (typeof value !== "symbol") {
+        acc[key] = value;
+      }
+      return acc;
+    }, {});
+    cleanParams.page = pageNumber;
+    return `?${new URLSearchParams(cleanParams).toString()}`;
+  };
+
+  // Pre-compute pagination links
+  const previousPageLink = currentPage > 1 ? buildPageLink(currentPage - 1) : null;
+  const nextPageLink = currentPage < totalPages ? buildPageLink(currentPage + 1) : null;
+
   return (
-    <div className="bg-white w-full h-full mt-14 md:mt-0">
+    <div className="bg-white w-full h-full mt-14 md:mt-0 mb-36">
       {/* --- HERO IMAGE (full-width at top) --- */}
       <div className="relative w-full h-[500px]">
         <img
@@ -98,11 +126,7 @@ export default async function VesselsPage({ searchParams }) {
 
       {/* --- SEARCH FORM --- */}
       <section className="max-w-6xl mx-auto px-4 pb-8">
-        <form
-          method="GET"
-          className="grid grid-cols-1 md:grid-cols-5 gap-4 items-end"
-        >
-          {/* Row 1 */}
+        <form method="GET" className="grid grid-cols-1 md:grid-cols-5 gap-4 items-end">
           {/* 1) VESSEL NAME */}
           <div className="relative">
             <input
@@ -254,121 +278,13 @@ export default async function VesselsPage({ searchParams }) {
 
       {/* --- SEARCH RESULTS --- */}
       {hasAnyParam && (
-        <div className="mt-12 flex flex-col items-center justify-center px-4">
-          <h2 className="text-3xl font-semibold text-center mb-8">
-            Search Results
-          </h2>
-          {data && data.hits && data.hits.length > 0 ? (
-            <div className="flex flex-wrap justify-center gap-8">
-              {data.hits.map((vessel, index) => (
-                <div
-                  key={index}
-                  className="bg-white rounded-lg shadow-lg overflow-hidden px-2 max-w-md w-full"
-                >
-                  {/* Image and clickable link */}
-                  <Link
-                    href={`/yachts-for-sale-dubai/${
-                      vessel.slug || "some-default"
-                    }`}
-                  >
-                    <img
-                      src={
-                        vessel.hero
-                          ? `https://radar.ankor.io${vessel.hero.replace(
-                              "{imageVariant}",
-                              "2560w"
-                            )}`
-                          : "/fallback-image.jpg"
-                      }
-                      alt={vessel.name || "Yacht Image"}
-                      className="w-full object-cover"
-                    />
-                  </Link>
-
-                  {/* Card content */}
-                  <div className="p-6">
-                    <Link
-                      href={`/yachts-for-sale-dubai/${
-                        vessel.slug || "some-default"
-                      }`}
-                    >
-                      <h2 className="text-2xl font-bold text-navy-900 mb-4">
-                        {vessel.name || "Unnamed Yacht"}
-                      </h2>
-                    </Link>
-
-                    <div className="grid grid-cols-2 gap-6 mb-6">
-                      <div className="border-b-2 border-gray-200">
-                        <p className="text-[#125589] font-medium mb-1 ">
-                          Build:
-                        </p>
-                        <p className="text-gray-900 font-bold ">
-                          {vessel.make || "N/A"}
-                        </p>
-                      </div>
-                      <div className="border-b-2 border-gray-200">
-                        <p className="text-[#125589] font-medium mb-1 ">
-                          Cabins:
-                        </p>
-                        <p className="text-gray-900 font-bold ">
-                          {vessel.cabins || "N/A"}
-                        </p>
-                      </div>
-                      <div className="border-b-2 border-gray-200">
-                        <p className="text-[#125589] font-medium mb-1 ">
-                          Length:
-                        </p>
-                        <p className="text-gray-900 font-bold ">
-                          {vessel.length || "N/A"}
-                        </p>
-                      </div>
-                      <div className="border-b-2 border-gray-200">
-                        <p className="text-[#125589] font-medium mb-1 ">
-                          Guests:
-                        </p>
-                        <p className="text-gray-900 font-bold ">
-                          {vessel.sleeps || "N/A"}
-                        </p>
-                      </div>
-                      <div className="border-b-2 border-gray-200">
-                        <p className="text-[#125589] font-medium mb-1 ">
-                          Year:
-                        </p>
-                        <p className="text-gray-900 font-bold ">
-                          {vessel.builtYear || "N/A"}
-                        </p>
-                      </div>
-                      <div className="border-b-2 border-gray-200">
-                        <p className="text-[#125589] font-medium mb-1 ">
-                          Price:
-                        </p>
-                        <p className="text-gray-900 font-bold ">
-                          {vessel.price || "N/A"}
-                        </p>
-                      </div>
-                    </div>
-
-                    <div className="grid grid-cols-2 gap-4">
-                      <Link
-                        href={`/yachts-for-sale-dubai/${
-                          vessel.slug || "some-default"
-                        }`}
-                        className="blue-solid-button text-center"
-                      >
-                        KNOW MORE
-                      </Link>
-                      <button className="blue-solid-button">INQUIRE NOW</button>
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
-          ) : (
-            <p className="text-center text-gray-500 dark:text-gray-400">
-              No results found.
-            </p>
-          )}
-        </div>
+        <SearchResultsClient
+          paginatedHits={paginatedHits}
+          currentPage={currentPage}
+          totalPages={totalPages}
+          previousPageLink={previousPageLink}
+          nextPageLink={nextPageLink}
+        />
       )}
     </div>
   );
