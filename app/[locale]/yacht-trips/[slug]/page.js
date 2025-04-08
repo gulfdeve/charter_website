@@ -79,15 +79,15 @@ const page = ({ params }) => {
             experience.yachts_data.map((yacht) => (
               <div
               key={yacht.yacht_id}
-              className="flex flex-col md:flex-row justify-start  rounded-md bg-white custom-shadow"
+              className="flex flex-col md:flex-row justify-start overflow-hidden rounded-md bg-white custom-shadow"
             >
               {/* Image with object-cover for proper scaling */}
               <img
                 src={`https://www.centauruscharter.com/product/images/${yacht.yacht_image}`}
                 alt={yacht.translations?.[locale]?.[0]?.name_of_yacht}
-                className="rounded-md w-[35rem] md:w-[25rem] xl:w-[35rem]  xl:h-[400px] h-[300px] md:h-full p-2 object-cover"
+                className=" w-full md:w-[25rem] xl:w-[35rem]  xl:h-[300px] md:h-full object-contain md:object-cover"
               />
-              <div className="w-full flex justify-stretch flex-col  justify-center px-3 xl:px-6 md:py-4 ">
+              <div className="w-full flex justify-stretch flex-col  justify-center px-4 xl:px-6 md:py-4 ">
                 {/* Title with Link */}
                 <Link
                   href="/"
@@ -129,9 +129,9 @@ const page = ({ params }) => {
                 </div>
 
                 <div className="bg-[#232629] w-full h-[0.05rem] "></div>
-                <div className="flex flex-row items-center justify-between w-full py-5 md:gap-3">
+                <div className="flex flex-col sm:flex-row flex-grow items-left lg:items-end justify-between w-full py-5 md:gap-3">
                   {/* Pricing Section */}
-                  <div className="flex flex-row items-center gap-1 xl:gap-3 py-5 text-left">
+                  <div className="flex flex-row items-center gap-1 xl:gap-3 py-5 lg:py-0 text-left">
                     <IoIosPricetag className="text-3xl lg:text-3xl" />
                     <div className="flex flex-col items-start justify-start text-left">
                       <h1 className="text-black  font-bold s:text-sm text-xs xl:text-lg">
@@ -149,12 +149,12 @@ const page = ({ params }) => {
                   </div>
 
                   {/* Buttons Section */}
-                  <div className="flex flex-col lg:flex-row items-center gap-3 ml-auto text-right w-auto">
-                    <a href={experience.whatsapp_url} target="_blank" className="py-2 px-4 text-xs font-bold tracking-wider uppercase text-primary-yellow bg-primary-blue hover:bg-primary-yellow hover:text-primary-blue hover:scale-105 rounded-md shadow transition duration-150 ease-in-out transform flex items-center">
+                  <div className="flex flex-col sm:flex-row md:flex-col lg:flex-row items-center gap-2 ml-auto text-right w-full sm:w-auto">
+                    <a href={experience.whatsapp_url} target="_blank" className="w-full flex items-center justify-center py-2 px-4 text-base md:text-sm xl:text-lg font-bold tracking-wider uppercase text-primary-yellow bg-primary-blue hover:bg-primary-yellow hover:text-primary-blue hover:scale-105 rounded-md shadow transition duration-150 ease-in-out transform">
                       <FaWhatsapp className="sm:text-md  mr-1" />
                       WHATSAPP
                     </a>
-                    <a href={`https://fareharbor.com/embeds/book/centauruscharter/items/${yacht.fareharbor_id}/?full-items=yes&flow=645487`} className="py-2 px-4 text-[0.68rem] font-bold uppercase text-primary-yellow bg-primary-blue hover:bg-primary-yellow hover:text-primary-blue hover:scale-105 rounded-md shadow transition duration-150 ease-in-out transform flex items-center">
+                    <a href={`https://fareharbor.com/embeds/book/centauruscharter/items/${yacht.fareharbor_id}/?full-items=yes&flow=645487`} className="w-full justify-center py-2 px-4 text-base md:text-sm xl:text-lg font-bold uppercase text-primary-yellow bg-primary-blue hover:bg-primary-yellow hover:text-primary-blue hover:scale-105 rounded-md shadow transition duration-150 ease-in-out transform flex flex-grow items-center">
                       KNOW MORE
                     </a>
                   </div>
@@ -164,7 +164,7 @@ const page = ({ params }) => {
             ))}   
         </div>
 
-        <div className="container mx-auto py-5 ">
+        <div className="container mx-auto py-5 md:py-10 ">
           <p
             className="text-gray-500 text-md"
             dangerouslySetInnerHTML={{
