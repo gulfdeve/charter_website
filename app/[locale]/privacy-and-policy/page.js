@@ -9,7 +9,6 @@ const page = () => {
           <Image
             src="/privacy.jpg"
             alt="termsheader"
-            layout="responsive"
             width={1920} // Set the original width
             height={1080} // Set the original height
             className="w-full" // Full width on the container

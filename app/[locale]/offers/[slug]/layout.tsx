@@ -1,6 +1,6 @@
+// app/[locale]/offers/[slug]/layout.tsx
 import React from "react";
-import path from "path";
-import fs from "fs/promises";
+import { fetchData } from '@/app/lib/fetchData';
 
 interface Metadata {
   title: string;
@@ -14,37 +14,27 @@ interface APIMetaData {
   meta_keywords?: string;
 }
 
-interface APIResponse {
-  meta_tags?: {
-    [key: string]: {
-      [locale: string]: APIMetaData[];
-    };
-  };
-}
-
 const Layout = ({ children }: { children: React.ReactNode }): JSX.Element => {
   return (
-      <main>{children}</main>
+    <main>{children}</main>
   );
 };
 
 export async function generateMetadata({
-  params,
-}: {
-  params: Promise<{ slug: string; locale: string }>;
-}): Promise<Metadata> {
-  const { slug, locale } = await params;
-  const resolvedLocale = locale || "en"; // Default to English if locale is missing
+	params,
+  }: {
+	params: Promise<{ slug: string; locale: string }>;
+  }): Promise<Metadata> {
+	const { slug, locale } = await params;
+	const resolvedLocale = locale || "en"; // Default to English if locale is missing
 
   try {
-    // Path to your JSON file in the public directory
-    const dataPath = path.join(process.cwd(), 'public', 'data.json');
-
-    // Read the file
-    const jsonData = await fs.readFile(dataPath, 'utf8');
-    const data = JSON.parse(jsonData);
-
-    console.log("Reading from local data.json");
+    // Use fetchData utility instead of reading from filesystem
+    const data = await fetchData();
+    
+    if (!data) {
+      throw new Error('Failed to fetch data');
+    }
 
     // Match metadata using dynamic slug or fallback to "home"
     const metaData: APIMetaData | undefined =

@@ -7,6 +7,7 @@ import Route from "@/app/components/Route";
 import YachtCarousal from "@/app/components/YachtCarousel";
 import { useLocale } from "next-intl";
 import { use } from "react";
+import { useData } from "@/app/context/DataContext";
 
 export default function Home({ params }) {
   const { slug } = use(params);
@@ -17,6 +18,7 @@ export default function Home({ params }) {
   const [activeIndex, setActiveIndex] = useState(0);
   const thumbnailRef = useRef(null);
   const locale = useLocale();
+  const { data, loading, error } = useData();
 
   // Scroll thumbnails container so active thumbnail is visible.
   useEffect(() => {
@@ -27,23 +29,16 @@ export default function Home({ params }) {
     }
   }, [activeIndex]);
 
-  // Fetch product data based on slug.
-  useEffect(() => {
-    if (!slug) return;
-    const fetchData = async () => {
-      try {
-        const response = await fetch("https://www.centauruscharter.com/api/api_new/basic");
-        const data = await response.json();
-        const yacht = data.products.find((item) => item.slug === slug);
-        setProduct(yacht);
-        setIsLoading(false);
-      } catch (error) {
-        console.log("Error fetching data:", error);
-        setIsLoading(false);
-      }
-    };
-    fetchData();
-  }, [slug]);
+ // Find product based on slug using DataContext
+ useEffect(() => {
+    if (!slug || loading) return;
+    
+    if (data && data.products) {
+      const yacht = data.products.find((item) => item.slug === slug);
+      setProduct(yacht);
+      setIsLoading(false);
+    }
+  }, [slug, data, loading]);
 
   // Initialize Embla Carousel with loop mode and set up autoplay.
   useEffect(() => {

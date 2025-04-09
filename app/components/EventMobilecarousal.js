@@ -1,3 +1,4 @@
+"use client";
 import { useEffect, useRef, useState } from "react";
 import EmblaCarousel from "embla-carousel";
 import Link from "next/link";
