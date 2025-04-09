@@ -63,7 +63,7 @@ const Modal3 = forwardRef(({ idName, idValue, selectedVessel }, ref) => {
         email: email,
         comments: fullMessage,
       });
-
+      queryParams.set("offers_id", "43");
       if (idName && idValue) {
         queryParams.set(idName, idValue);
       }
@@ -73,6 +73,7 @@ const Modal3 = forwardRef(({ idName, idValue, selectedVessel }, ref) => {
       const data = await response.json();
 
       if (response.ok) {
+        console.log(response)
         setSubmissionSuccess(true);
         setFullName("");
         setPhoneNumber("");
