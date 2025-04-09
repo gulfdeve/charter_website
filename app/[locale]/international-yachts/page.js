@@ -147,11 +147,18 @@ export default async function VesselsPage({ searchParams }) {
               <option value="" disabled hidden>
                 DESTINATION
               </option>
-              <option value="Abacos">Abacos</option>
-              <option value="Abu Dhabi">Abu Dhabi</option>
-              <option value="Aegean Sea">Aegean Sea</option>
-              <option value="Algarve">Algarve</option>
-              <option value="America">America</option>
+              <option value="Africa">Africa</option>
+              <option value="Antartica">Antartica</option>
+              <option value="Arabian Gulf">Arabian Gulf</option>
+              <option value="Australasia & South Pacific">Australasia & South Pacific</option>
+              <option value="Caribbean">Caribbean</option>
+              <option value="East Mediterranean">East Mediterranean</option>
+              <option value="Indian Ocean & South East Asia">Indian Ocean & South East Asia </option>
+              <option value="North America">North America</option>
+              <option value="Northern Europe">Northern Europe</option>
+              <option value="South & Central America">South & Central America</option>
+              <option value="West Mediterranean">West Mediterranean</option>
+           
             </select>
             <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center justify-center bg-primary-blue px-2">
               <svg
@@ -178,9 +185,15 @@ export default async function VesselsPage({ searchParams }) {
               <option value="" disabled hidden>
                 TYPE OF BOAT
               </option>
-              <option value="Sailboat">Sailboat</option>
-              <option value="Motor Yacht">Motor Yacht</option>
+              <option value="Sailboat">Gulet</option>
+              <option value="Motor ">Motor </option>
               <option value="Catamaran">Catamaran</option>
+              <option value="Sailing">Sailing</option>
+              <option value="Classic">Classic</option>
+              <option value="Power Catamaran">Power Catamaran</option>
+              <option value="Expedition">Expedition</option>
+              <option value="Classic">Classic</option>
+              <option value="Sport fishing">Sport Fishing</option>
             </select>
             <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center justify-center bg-primary-blue px-2">
               <svg
@@ -284,6 +297,7 @@ export default async function VesselsPage({ searchParams }) {
           totalPages={totalPages}
           previousPageLink={previousPageLink}
           nextPageLink={nextPageLink}
+          rentalPeriod={searchParams.rentalPeriod}
         />
       )}
     </div>
