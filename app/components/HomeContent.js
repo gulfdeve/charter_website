@@ -64,12 +64,12 @@ export default function Home() {
 
       <div className="flex flex-col bg-white items-center justify-center lg:pt-12 xl:pt-20
        2xl:pt-20 2xl:py-0 ">
-        <h1 className=" text-primary-blue text-center font-bold text-3xl sm:text-2xl md:text-3xl lg:text-4xl md:p-4 pb-4 px-3">
+        <h2 className=" text-primary-blue text-center font-bold text-3xl sm:text-2xl md:text-3xl lg:text-4xl md:p-4 pb-4 px-3">
           YACHT RENTAL DUBAI {t("navbar.private-yachts")}
-        </h1>
-        <h1 className=" text-primary-blue text-center text-xl sm:text-2xl md:text-3xl lg:text-4xl  pb-6 md:pb-12">
+        </h2>
+        <p className=" text-primary-blue text-center text-xl sm:text-2xl md:text-3xl lg:text-4xl  pb-6 md:pb-12">
           Enjoy your Luxury Yacht Experience
-        </h1>
+        </p>
 
         <p className=" text-[#848484] text-center  text-base  px-3 mx-auto container">
           Centaurus Charter is a yacht rental company in Dubai that offers range
@@ -97,9 +97,9 @@ export default function Home() {
                   className="flex flex-col border border-gray-400 xl:p-8 3xl:p-16 p-5 rounded-lg shadow-custom"
                 >
                   <Link  href={`/yacht-rentals/${product.slug}`}>
-                  <h2 className="xl:text-4xl md:text-lg  font-bold">
+                  <h3 className="xl:text-4xl md:text-lg  font-bold">
                     {product.translations?.[locale].name_of_yacht}
-                  </h2>
+                  </h3>
                   </Link>
                   <Link  href={`/yacht-rentals/${product.slug}`}>
                   <Image 

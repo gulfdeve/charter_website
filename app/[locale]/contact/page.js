@@ -186,9 +186,9 @@ export default function Page() {
             <div className="flex flex-row items-start justify-start">
               <div className="p-3 rounded-full bg-primary-blue-2">
               <MdLocationOn className="text-2xl text-primary-yellow" /> </div>
-              <h1 className="text-sm w-[16rem] xs:w-[19rem] pl-5 font-medium">
+              <p className="text-sm w-[16rem] xs:w-[19rem] pl-5 font-medium">
                 Office 907 ETA Star's Al Manara Tower 6, Marasi Drive Street Business Bay, Za'beel, Dubai United Arab Emirates
-              </h1>
+              </p>
             </div>
             <div className="flex flex-row items-center justify-start">
             <div className="p-3 rounded-full bg-primary-blue-2">

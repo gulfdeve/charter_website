@@ -90,10 +90,10 @@ export default function Home({ params }) {
     <>
       <div className="container mx-auto p-5 nav-space">
         {/* Title */}
-        <h1 className="text-xl sm:text:2xl md:text-3xl lg:text-4xl font-bold text-center mb-4 mt-5">
+        <h1 className="text-xl sm:text:2xl md:text-3xl lg:text-4xl text-center mb-5 mt-5 lg:mt-14 font-bold">Dubai Luxury Yacht</h1>
+        <h2 className="text-base sm:text:2xl lg:text-3xl text-center mb-4">
           {product.translations?.[locale]?.name_of_yacht}
-        </h1>
-        <p className="text-base sm:text:2xl lg:text-3xl text-center mb-4">Dubai Luxury Yacht</p>
+        </h2>
 
         {/* Embla Carousel */}
         <div className="embla relative">
