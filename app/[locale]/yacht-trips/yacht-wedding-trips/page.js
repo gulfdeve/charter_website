@@ -45,9 +45,9 @@ const page = () => {
               <div className="flex flex-col justify-between flex-grow p-4">
               <div className="flex flex-col">
                 <Link href={`/yacht-rentals/${product.slug}`}>
-                  <h1 className="text-primary-blue text-base sm:text-xl font-bold xl:pt-6 md:pb-2 hover:text-blue-600 transition-all duration-300 cursor-pointer py-1 md:py-0">
+                  <h2 className="text-primary-blue text-base sm:text-xl font-bold xl:pt-6 md:pb-2 hover:text-blue-600 transition-all duration-300 cursor-pointer py-1 md:py-0">
                   {product.translations?.[locale]?.name_of_yacht}
-                  </h1>
+                  </h2>
                 </Link>
                 <p className="text-xs s:text-sm md:text-xs lg:text-sm text-primary-blue">
                 Model:
@@ -66,12 +66,12 @@ const page = () => {
                     {product.translations?.[locale]?.guests}
                   </span>
                 </p>
-                <h1 className=" text-primary-blue font-bold text-base sm:text-xl pt-4 pb-2">
+                <p className=" text-primary-blue font-bold text-base sm:text-xl pt-4 pb-2">
                   AED  {product.per_hour_price}{" "}
                   <span className=" text-primary-blue">
                     Per Hour
                   </span>
-                </h1>
+                </p>
               
               </div>
               
@@ -106,9 +106,9 @@ const page = () => {
               />
             </div>
             <div className="w-full lg:w-1/2 flex flex-col items-center lg:rounded-r-xl lg:items-start justify-center text-center lg:text-left lg:px-16 px-6 py-5">
-              <h1 className=" text-white font-bold text-2xl 2xl:text-4xl pt-5">
+              <h2 className=" text-white font-bold text-2xl 2xl:text-4xl pt-5">
                 Let Us Make Your Dream Wedding Come True
-              </h1>
+              </h2>
               <p className=" text-white 2xl:text-2xl py-2 pb-5">
                 An unforgettable journey, turning your wedding dreams into
                 reality. Our yacht wedding charter redefines romance, offering
@@ -135,33 +135,33 @@ const page = () => {
           <div className="grid grid-cols-1 md:grid-cols-5  gap-5 ">
           <div>
             <img src="/BBQ.webp" />
-            <h1 className="bg-primary-blue-2 text-primary-yellow text-center  textsm  font-bold p-2 rounded-b-lg md:px-10 lg:px-0 ">
+            <h2 className="bg-primary-blue-2 text-primary-yellow text-center  textsm  font-bold p-2 rounded-b-lg md:px-10 lg:px-0 ">
               LIVE BBQ
-            </h1>
+            </h2>
           </div>
           <div>
             <img src="/Picturemoments.webp" />
-            <h1 className="bg-primary-blue-2 text-primary-yellow text-center  textsm  font-bold p-2 rounded-b-lg ">
+            <h2 className="bg-primary-blue-2 text-primary-yellow text-center  textsm  font-bold p-2 rounded-b-lg ">
             PREMIUM DRINKS
-            </h1>
+            </h2>
           </div>
           <div>
             <img src="/Amazing-View.webp" />
-            <h1 className="bg-primary-blue-2 text-primary-yellow text-center  textsm  font-bold p-2 rounded-b-lg ">
+            <h2 className="bg-primary-blue-2 text-primary-yellow text-center  textsm  font-bold p-2 rounded-b-lg ">
               AMAZING VIEW
-            </h1>
+            </h2>
           </div>
           <div>
             <img src="/Great-Food.webp" />
-            <h1 className="bg-primary-blue-2 text-primary-yellow text-center  textsm  font-bold p-2 rounded-b-lg md:px-10 lg:px-0 ">
+            <h2 className="bg-primary-blue-2 text-primary-yellow text-center  textsm  font-bold p-2 rounded-b-lg md:px-10 lg:px-0 ">
               GREAT FOOD
-            </h1>
+            </h2>
           </div>
           <div>
             <img src="/Amazing-View.webp" />
-            <h1 className="bg-primary-blue-2 text-primary-yellow text-center  text-sm font-bold p-2 rounded-b-lg ">
+            <h2 className="bg-primary-blue-2 text-primary-yellow text-center  text-sm font-bold p-2 rounded-b-lg ">
               AMAZING VIEW
-            </h1>
+            </h2>
           </div>
         </div>
         <div className="md:block hidden">
@@ -186,9 +186,9 @@ const page = () => {
             </div>
           </div>
           <div className="flex flex-col items-center sm:items-start sm:justify-start justify-center bg-primary-blue px-5  xl:px-20 xl:py-12 py-5  md:h-[670px] xl:h-[600px] lg:h-[560px]">
-            <h1 className=" text-white text-center  text-2xl xl:text-3xl pt-7">
+            <h2 className=" text-white text-center  text-2xl xl:text-3xl pt-7">
             Why Choose Us
-            </h1>
+            </h2>
             <h3 className="text-primary-yellow  text-2xl">
             Unmatched Elegance
             </h3>

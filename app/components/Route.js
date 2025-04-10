@@ -21,9 +21,9 @@ const Route = () => {
                 <h3 className="text-white text-lg font-bold">
                   Marina Cruise
                 </h3>
-                <h3 className="text-white text-lg">
+                <p className="text-white text-lg">
                   1 hour yacht trip <br/>(60 mins)
-                </h3>
+                </p>
               </div>
               <ul className=" text-left text-base lg:text-lg py-5 px-10 list-disc font-bold">
                 <li>
@@ -41,9 +41,9 @@ const Route = () => {
                 <h3 className="text-white text-lg font-bold">
                 Atlantis Cruise
                 </h3>
-                <h3 className="text-white text-lg">
+                <p className="text-white text-lg">
                   2 hours yacht trip <br/>(120 mins)
-                </h3>
+                </p>
               </div>
               <ul className=" text-left text-base lg:text-lg py-5 px-10 list-disc font-bold">
                 <li>
@@ -63,9 +63,9 @@ const Route = () => {
                 <h3 className="text-white text-lg font-bold">
                   Marina Cruise
                 </h3>
-                <h3 className="text-white text-lg">
+                <p className="text-white text-lg">
                   3 hours yacht trip <br/>(180 mins)
-                </h3>
+                </p>
               </div>
               <ul className=" text-left text-base lg:text-lg py-5 px-10 list-disc font-bold">
                 <li>
@@ -86,9 +86,9 @@ const Route = () => {
                 <h3 className="text-white text-lg font-bold">
                   Marina Cruise
                 </h3>
-                <h3 className="text-white text-lg">
+                <p className="text-white text-lg">
                   1 hour yacht trip <br/>(60 mins)
-                </h3>
+                </p>
               </div>
               <ul className=" text-left text-base lg:text-lg py-5 px-10 list-disc font-bold">
                 <li>Dubai Marina</li>

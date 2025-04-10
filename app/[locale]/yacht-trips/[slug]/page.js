@@ -92,9 +92,9 @@ const page = ({ params }) => {
                 <Link
                   href="/"
                 >
-                  <h1 className="text-primary-blue  text-xl xl:text-2xl font-bold xl:pt-6  pt-6 md:pb-2 transition-all duration-300 cursor-pointer py-5 md:py-0">
+                  <h2 className="text-primary-blue  text-xl xl:text-2xl font-bold xl:pt-6  pt-6 md:pb-2 transition-all duration-300 cursor-pointer py-5 md:py-0">
                   {yacht.translations?.[locale]?.[0]?.name_of_yacht}
-                  </h1>
+                  </h2>
                 </Link>
                 <div className="grid grid-cols-2 lg:grid-cols-4 items-stretch gap-0 rounded-lg w-full overflow-hidden shadow-md mb-7">
                 {/* Model */}
@@ -134,7 +134,7 @@ const page = ({ params }) => {
                   <div className="flex flex-row items-center gap-1 xl:gap-3 py-5 lg:py-0 text-left">
                     <IoIosPricetag className="text-3xl lg:text-3xl" />
                     <div className="flex flex-col items-start justify-start text-left">
-                      <h1 className="text-black  font-bold s:text-sm text-xs xl:text-lg">
+                      <p className="text-black  font-bold s:text-sm text-xs xl:text-lg">
                         {yacht.hours} Hours Rate
                         <br />
                         <span className="xl:text-xl text-[#232629] text-xs">
@@ -144,7 +144,7 @@ const page = ({ params }) => {
                           {" "}
                           +VAT
                         </span>
-                      </h1>
+                      </p>
                     </div>
                   </div>
 

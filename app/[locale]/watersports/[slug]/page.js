@@ -43,8 +43,13 @@ const Page = () => {
         {/* Second column (70%) */}
         
         <div className="lg:w-5/12">
-        <PageTitleHeading title={packageItem.translations[locale].title} className="py-0 lg:pt-0 pb-5" />
+        <PageTitleHeading title={packageItem.translations[locale].title} className="py-0 lg:pt-0 pb-3" />
+        <h3 className="text-gray-500 text-center font-bold mb-5">
+            {packageItem.translations[locale].preview_text}
+            <br />
+          </h3>
         <div className="text-center grid grid-cols-1  items-center gap-2  w-full overflow-hidden mb-7">
+       
        <div className="grid grid-cols-1 sm:grid-cols-3 bg-primary-yellow-light rounded-lg text-primary-blue">
         {/* Ride Title */}
         <div className=" p-2 flex flex-col items-center">
@@ -110,10 +115,6 @@ const Page = () => {
         </div>
       </div>
       <div className="py-12">
-      <h3 className="text-gray-500">
-            {packageItem.translations[locale].preview_text}
-            <br />
-          </h3>
           <p
             className="text-gray-500 text-md pb-6 md:pb-12 "
             dangerouslySetInnerHTML={{
