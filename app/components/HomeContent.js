@@ -6,7 +6,7 @@ import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 import WhyChooseUs from "@/app/components/WhyChooseUs";
 import Aboutus from "@/app/components/Aboutus";
 import Reviews from "@/app/components/Reviews";
-import Modal from "@/app/components/Modal"
+// import Modal from "@/app/components/Modal"
 import Counters from "@/app/components/Counters";
 import LocationCarousel from "@/app/components/LocationCarousel";
 import Video from "@/app/components/Video";
@@ -16,7 +16,7 @@ import { Link } from "../i18n/routing";
 import Image from "next/image";
 import Yachtmobilecarousal from '@/app/components/Yachtmobilecarousal'
 import VideoLocal from "@/app/components/VideoLocal";
-
+import ModalAfternoon from "@/app/components/ModalAfternoon";
 export default function Home() {
   const t = useTranslations();
   const emblaRef = useRef(null);
@@ -54,8 +54,8 @@ export default function Home() {
   return (
     <>
     <div>
-    <Modal show={isModalVisible} onClose={closeModal} />
-    
+    {/* <Modal show={isModalVisible} onClose={closeModal} /> */}
+    <ModalAfternoon show={isModalVisible} onClose={closeModal} />
       <div>
       
         {/* <Video /> */}

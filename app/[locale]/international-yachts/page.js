@@ -8,6 +8,7 @@ import SearchResultsClient from "@/app/components/SearchResultsClient";
 // 1) fetchVessels function
 // --------------------
 async function fetchVessels(searchParams) {
+  
   console.log("Received searchParams:", searchParams);
 
   // --- Generate JWT Token ---
@@ -67,7 +68,9 @@ async function fetchVessels(searchParams) {
 // --------------------
 // 2) Page Component
 // --------------------
+
 export default async function VesselsPage({ searchParams }) {
+  
   let data = null;
   const hasAnyParam = Object.keys(searchParams || {}).length > 0;
 
@@ -144,8 +147,8 @@ export default async function VesselsPage({ searchParams }) {
               defaultValue={searchParams.region || ""}
               className="block w-full appearance-none border border-gray-300 rounded-none py-2 px-3 pr-10 leading-tight focus:outline-none focus:ring-2 focus:ring-blue-500"
             >
-              <option value="" disabled hidden>
-                DESTINATION
+              <option value="" >
+                CHOOSE DESTINATION
               </option>
               <option value="Africa">Africa</option>
               <option value="Antartica">Antartica</option>
@@ -182,8 +185,8 @@ export default async function VesselsPage({ searchParams }) {
               defaultValue={searchParams.yachtType || ""}
               className="block w-full appearance-none border border-gray-300 rounded-none py-2 px-3 pr-10 leading-tight focus:outline-none focus:ring-2 focus:ring-blue-500"
             >
-              <option value="" disabled hidden>
-                TYPE OF BOAT
+              <option value=""  >
+                CHOOSE TYPE OF BOAT
               </option>
               <option value="Sailboat">Gulet</option>
               <option value="Motor ">Motor </option>
@@ -218,7 +221,7 @@ export default async function VesselsPage({ searchParams }) {
               className="block w-full appearance-none border border-gray-300 rounded-none py-2 px-3 pr-10 leading-tight focus:outline-none focus:ring-2 focus:ring-blue-500"
             >
               <option value="" disabled hidden>
-                TYPE OF CHARTER
+                CHOOSE TYPE OF CHARTER
               </option>
               <option value="Crewed">Crewed</option>
               <option value="Bareboat">Bareboat</option>
@@ -297,7 +300,7 @@ export default async function VesselsPage({ searchParams }) {
           totalPages={totalPages}
           previousPageLink={previousPageLink}
           nextPageLink={nextPageLink}
-          rentalPeriod={searchParams.rentalPeriod}
+        
         />
       )}
     </div>

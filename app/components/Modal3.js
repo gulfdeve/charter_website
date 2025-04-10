@@ -1,4 +1,4 @@
-import React, { useState, forwardRef, useImperativeHandle } from "react";
+import React, { useState, forwardRef, useImperativeHandle, useEffect } from "react";
 import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/style.css";
 
@@ -10,6 +10,11 @@ const Modal3 = forwardRef(({ idName, idValue, selectedVessel, rentalPeriod }, re
   const [message, setMessage] = useState("");
   const [errors, setErrors] = useState({});
   const [submissionSuccess, setSubmissionSuccess] = useState(false);
+
+  // Log rentalPeriod received in Modal3 when the component mounts or rentalPeriod changes.
+  useEffect(() => {
+    console.log("Modal3 received rentalPeriod:", rentalPeriod);
+  }, [rentalPeriod]);
 
   useImperativeHandle(ref, () => ({
     open: () => setIsVisible(true),
@@ -49,36 +54,47 @@ Length: ${selectedVessel.length || "N/A"}
 Year: ${selectedVessel.builtYear || "N/A"}
 Price: ${selectedVessel.price || "N/A"}
 Cabins: ${selectedVessel.cabins || "N/A"}
-Guests: ${selectedVessel.sleeps || "N/A"}
-      `
+Guests: ${selectedVessel.sleeps || "N/A"}`
+      : "";
+
+    // Format vessel id if available.
+    const vesselIdText = idName && idValue
+      ? `\nVessel ID (${idName}): ${idValue}`
       : "";
 
     // Format rental dates if available. Assume rentalPeriod is an array.
     const rentalDatesText = rentalPeriod && rentalPeriod.length > 0
-      ? `Rental Dates: ${Array.isArray(rentalPeriod) ? rentalPeriod.join(", ") : rentalPeriod}`
+      ? `\nRental Dates: ${Array.isArray(rentalPeriod) ? rentalPeriod.join(", ") : rentalPeriod}`
       : "";
 
-    // Combine user message, vessel details, and rental dates information.
-    const fullMessage = `${message}\n\n${vesselDetails}\n\n${rentalDatesText}`;
+    // Log rental dates before sending
+    console.log("Formatted rentalDatesText:", rentalDatesText);
+
+    // Combine user message, vessel details, vessel id, and rental dates.
+    const fullMessagePayload = `${message}\n\n${vesselDetails}${vesselIdText}${rentalDatesText}`;
+
+    // Prepare query parameters
+    const queryParams = new URLSearchParams({
+      name: fullName,
+      phone: phoneNumber,
+      email: email,
+      comments: fullMessagePayload,
+    });
+    queryParams.set("offers_id", "45");
+    if (idName && idValue) {
+      queryParams.set(idName, idValue);
+    }
+
+    // Log what is being sent for debugging purposes
+    console.log("Sending enquiry with query parameters:", queryParams.toString());
 
     try {
-      const queryParams = new URLSearchParams({
-        name: fullName,
-        phone: phoneNumber,
-        email: email,
-        comments: fullMessage,
-      });
-      queryParams.set("offers_id", "45");
-      if (idName && idValue) {
-        queryParams.set(idName, idValue);
-      }
-
       const url = `https://www.centauruscharter.com/api/api_new/save_enquiry?${queryParams}`;
       const response = await fetch(url, { method: "POST" });
       const data = await response.json();
 
       if (response.ok) {
-        console.log(response);
+        console.log("Response from server:", data);
         setSubmissionSuccess(true);
         setFullName("");
         setPhoneNumber("");
