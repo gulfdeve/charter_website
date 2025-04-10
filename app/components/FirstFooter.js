@@ -157,7 +157,7 @@ export default function FirstFooter() {
 	{
 		title: t("footer.reach-out-to-us"),
 		content: (
-		  <div className="px-4 pb-4">
+		  <div className="pb-4">
 			<ul className="text-text-primary-white space-y-4">
 			  {[
 				{
