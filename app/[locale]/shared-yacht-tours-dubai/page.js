@@ -9,6 +9,7 @@ import { IoLocationSharp, IoMan } from "react-icons/io5";
 import { MdOutlineLocalDining } from "react-icons/md";
 import YachtCarousal from "@/app/components/YachtCarousel";
 import FareHarborCalendar from "@/app/components/FareHarborCalendar";
+
 // Example data
 const toursData = [
   {
@@ -55,23 +56,36 @@ const Page = () => {
       <VideoLocal filename="/shared yacht tours.mp4" section="shared-tours" />
 
       {/* Main Container */}
-      <div className="bg-white h-full w-full ">
-        {/* Top Heading */}
-        <div className="flex flex-col items-center justify-center pb-10 pt-20 container mx-auto">
-          <h1 className="text-primary-blue text-center font-bold text-xl lg:text-3xl pb-4">
-            SHARED YACHT TOURS IN DUBAI
-          </h1>
-          <p className="text-primary-blue text-sm text-center">
-            Luxury Experience that's Affordable: Set Sail and Experience Dubai,
-            From Morning till Night
-          </p>
-		  <p>
-		  Experience the ultimate Dubai yacht tour with our exclusive daily cruises, available three times a day—midday, sunset, and night. Whether you want to soak up the sun, witness the breathtaking skyline at golden hour, or enjoy the city lights shimmering over the sea, our yacht tours offer the perfect escape. Each tour is designed to provide a luxurious and unforgettable experience on the water. Below, you'll find detailed cards for each tour, covering everything from itinerary to inclusions. If you're ready to book, check the calendar beside for available dates and secure your spot today!
+      <div className="bg-white h-full w-full">
+        {/* Top Heading with FareHarbor Calendar */}
+        <div className="container mx-auto py-20">
+          <div className="flex flex-col lg:flex-row items-center">
+            {/* Left Section - Text Content */}
+            <div className="w-full lg:w-1/2 flex flex-col items-center justify-center pb-10 lg:pb-0 lg:pr-8">
+              <h1 className="text-primary-blue text-center font-bold text-xl lg:text-3xl pb-4">
+                SHARED YACHT TOURS IN DUBAI
+              </h1>
+              <p className="text-primary-blue text-sm text-center">
+                Luxury Experience that's Affordable: Set Sail and Experience Dubai,
+                From Morning till Night
+              </p>
+              <p className="mt-4 text-center">
+                Experience the ultimate Dubai yacht tour with our exclusive daily cruises,
+                available three times a day—midday, sunset, and night. Whether you want to soak up the sun,
+                witness the breathtaking skyline at golden hour, or enjoy the city lights shimmering over the sea,
+                our yacht tours offer the perfect escape. Each tour is designed to provide a luxurious and unforgettable experience on the water.
+                Below, you'll find detailed cards for each tour, covering everything from itinerary to inclusions.
+                If you're ready to book, check the calendar beside for available dates and secure your spot today!
+              </p>
+            </div>
 
-
-		  </p>
+            {/* Right Section - FareHarbor Calendar */}
+            <div className="w-full lg:w-1/2 flex justify-center items-start">
+              {/* Instead of embedding the script tag directly, we call the imported component */}
+              <FareHarborCalendar />
+            </div>
+          </div>
         </div>
-		<FareHarborCalendar />
 
         {/* Seasonal Tours Header */}
         <div>
@@ -192,14 +206,19 @@ const Page = () => {
                 <button className="yellow-solid-button w-full">Book Now</button>
                 </div>
               </div>
-            ))}
-          </div>
+
+              {/* Book Now Button */}
+              <button className="yellow-solid-button w-full">Book Now</button>
+            </div>
+          ))}
         </div>
+
         <div className="flex items-center justify-center bg-primary-blue-2 max-w-3xl mx-auto text-center">
           <h1 className="text-white text-md md:text-xl font-bold">
             PREMIUM DRINKS ARE AVAILABLE FOR PURCHASE ON BOARD
           </h1>
         </div>
+
         {/* HIGHLIGHTS */}
         <div className="flex items-center justify-center w-full my-6">
           <hr className="flex-grow border-primary-yellow-dark" />
@@ -237,22 +256,12 @@ const Page = () => {
 
         {/* TERMS & CONDITION */}
         <div className="flex flex-col items-center justify-center py-10 px-5">
-          <h1 className="text-primary-blue-2 font-bold text-center">
-            TERMS & CONDITION
-          </h1>
+          <h1 className="text-primary-blue-2 font-bold text-center">TERMS & CONDITION</h1>
           <ul className="list-disc md:list-none text-center text-primary-blue text-sm pl-4 pt-5 space-y-2">
-            <li>
-              Rates do not include alcohol. An alcohol menu is available for
-              purchase on board.
-            </li>
+            <li>Rates do not include alcohol. An alcohol menu is available for purchase on board.</li>
             <li>Yacht allocation will be confirmed upon check in.</li>
-            <li>
-              Cruise routes are subject to change due to weather and wind
-              conditions.
-            </li>
-            <li>
-              Cruising times are subject to adjustments based on sunset timings.
-            </li>
+            <li>Cruise routes are subject to change due to weather and wind conditions.</li>
+            <li>Cruising times are subject to adjustments based on sunset timings.</li>
             <li>Rates cannot be combined with other offers.</li>
             <li>Guests under 18 years old must be accompanied by an adult.</li>
           </ul>
@@ -264,53 +273,33 @@ const Page = () => {
             <img
               src="/royal.webp"
               alt="Shared Yacht Tour"
-              className=" object-cover object-center xl:w-[250rem] sm:w-[170rem] md:h-[670px] xl:h-[650px] lg:h-[560px]"
+              className="object-cover object-center xl:w-[250rem] sm:w-[170rem] md:h-[670px] xl:h-[650px] lg:h-[560px]"
             />
           </div>
           <div className="flex flex-col items-center sm:items-start sm:justify-start justify-center bg-primary-blue-2 px-5 xl:p-32 xl:py-12 py-5 md:h-[600px] xl:h-[650px] lg:h-[560px]">
             <p className="text-white text-center sm:text-left text-md sm:text-sm xl:text-md py-10">
-              Experience Dubai's coastline in an entirely new light with our
-              exclusive shared yacht tours. Uniting the thrill of luxury
-              yachting with the ease of shared experiences, we offer you the
-              chance to enjoy the opulence of Dubai's waters without the
-              extravagant cost of chartering an entire yacht. Revel in the
-              stunning vistas, relish in the flavors of live BBQ, and savor
-              complimentary refreshments - all while forging unforgettable
-              memories with fellow adventurers.
+              Experience Dubai's coastline in an entirely new light with our exclusive shared yacht tours. Uniting the thrill of luxury yachting with the ease of shared experiences, we offer you the chance to enjoy the opulence of Dubai's waters without the extravagant cost of chartering an entire yacht. Revel in the stunning vistas, relish in the flavors of live BBQ, and savor complimentary refreshments - all while forging unforgettable memories with fellow adventurers.
             </p>
-            <h1 className="text-white text-center font-bold text-2xl xl:text-3xl">
-              Affordable Luxury
-            </h1>
+            <h1 className="text-white text-center font-bold text-2xl xl:text-3xl">Affordable Luxury</h1>
             <p className="text-white text-center sm:text-left text-md sm:text-sm xl:text-md pb-10">
-              Elevate your Dubai escapade without emptying your wallet. Our
-              shared yacht tours are meticulously crafted to provide a taste of
-              the high life at a fraction of the price. Share the journey, share
-              the splendor, and share the savings as you immerse yourself in the
-              lap of affordable luxury.
+              Elevate your Dubai escapade without emptying your wallet. Our shared yacht tours are meticulously crafted to provide a taste of the high life at a fraction of the price. Share the journey, share the splendor, and share the savings as you immerse yourself in the lap of affordable luxury.
             </p>
-            <h1 className="text-white text-center font-bold text-2xl xl:text-3xl">
-              Unmatched Amenities
-            </h1>
+            <h1 className="text-white text-center font-bold text-2xl xl:text-3xl">Unmatched Amenities</h1>
             <p className="text-white text-center sm:text-left text-md sm:text-sm xl:text-md pb-10">
-              Our commitment to your enjoyment knows no bounds. Indulge in the
-              expertise of our onboard culinary artists as they create a live
-              BBQ spectacle right before your eyes. Additionally, delight in our
-              selection of complimentary delicacies and beverages, ensuring that
-              your voyage is not just luxurious, but delicious too.
+              Our commitment to your enjoyment knows no bounds. Indulge in the expertise of our onboard culinary artists as they create a live BBQ spectacle right before your eyes. Additionally, delight in our selection of complimentary delicacies and beverages, ensuring that your voyage is not just luxurious, but delicious too.
             </p>
           </div>
         </div>
 
         {/* CTA Section */}
         <div className="py-10 container mx-auto">
-          <div className="flex flex-col md:flex-row rounded-lg items-center gap-5 justify-center md:justify-between bg-primary-blue md:bg-primary-blue p-5">
-            <p className="text-white text-center md:text-left font-bold bg-primary-blue text-xl rounded">
+          <div className="flex flex-col md:flex-row rounded-lg items-center gap-5 justify-center md:justify-between bg-primary-blue p-5">
+            <p className="text-white text-center md:text-left font-bold text-xl rounded">
               Enjoy a luxurious shared yacht adventure!
             </p>
             <div className="flex flex-col md:flex-row gap-2 md:gap-10 space-y">
               <button className="blue-lined-button">
-                <FaWhatsapp size={20} />
-                WHATSAPP US
+                <FaWhatsapp size={20} /> WHATSAPP US
               </button>
               <button className="blue-lined-button">GET A QUOTE</button>
             </div>

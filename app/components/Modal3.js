@@ -2,7 +2,7 @@ import React, { useState, forwardRef, useImperativeHandle } from "react";
 import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/style.css";
 
-const Modal3 = forwardRef(({ idName, idValue, selectedVessel }, ref) => {
+const Modal3 = forwardRef(({ idName, idValue, selectedVessel, rentalPeriod }, ref) => {
   const [isVisible, setIsVisible] = useState(false);
   const [fullName, setFullName] = useState("");
   const [phoneNumber, setPhoneNumber] = useState("");
@@ -42,19 +42,24 @@ const Modal3 = forwardRef(({ idName, idValue, selectedVessel }, ref) => {
     // Format vessel details
     const vesselDetails = selectedVessel
       ? `
-        Vessel Details:
-        Name: ${selectedVessel.name || "N/A"}
-        Build: ${selectedVessel.make || "N/A"}
-        Length: ${selectedVessel.length || "N/A"}
-        Year: ${selectedVessel.builtYear || "N/A"}
-        Price: ${selectedVessel.price || "N/A"}
-        Cabins: ${selectedVessel.cabins || "N/A"}
-        Guests: ${selectedVessel.sleeps || "N/A"}
+Vessel Details:
+Name: ${selectedVessel.name || "N/A"}
+Build: ${selectedVessel.make || "N/A"}
+Length: ${selectedVessel.length || "N/A"}
+Year: ${selectedVessel.builtYear || "N/A"}
+Price: ${selectedVessel.price || "N/A"}
+Cabins: ${selectedVessel.cabins || "N/A"}
+Guests: ${selectedVessel.sleeps || "N/A"}
       `
       : "";
 
-    // Combine user message with vessel details
-    const fullMessage = `${message}\n\n${vesselDetails}`;
+    // Format rental dates if available. Assume rentalPeriod is an array.
+    const rentalDatesText = rentalPeriod && rentalPeriod.length > 0
+      ? `Rental Dates: ${Array.isArray(rentalPeriod) ? rentalPeriod.join(", ") : rentalPeriod}`
+      : "";
+
+    // Combine user message, vessel details, and rental dates information.
+    const fullMessage = `${message}\n\n${vesselDetails}\n\n${rentalDatesText}`;
 
     try {
       const queryParams = new URLSearchParams({
@@ -63,7 +68,7 @@ const Modal3 = forwardRef(({ idName, idValue, selectedVessel }, ref) => {
         email: email,
         comments: fullMessage,
       });
-      queryParams.set("offers_id", "43");
+      queryParams.set("offers_id", "45");
       if (idName && idValue) {
         queryParams.set(idName, idValue);
       }
@@ -73,7 +78,7 @@ const Modal3 = forwardRef(({ idName, idValue, selectedVessel }, ref) => {
       const data = await response.json();
 
       if (response.ok) {
-        console.log(response)
+        console.log(response);
         setSubmissionSuccess(true);
         setFullName("");
         setPhoneNumber("");

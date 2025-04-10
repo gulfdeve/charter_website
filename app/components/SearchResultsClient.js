@@ -10,6 +10,7 @@ export default function SearchResultsClient({
   totalPages,
   previousPageLink,
   nextPageLink,
+  rentalPeriod
 }) {
   const modalRef = useRef(null);
   const [selectedVessel, setSelectedVessel] = useState(null);
@@ -137,6 +138,7 @@ export default function SearchResultsClient({
         idName="vessel_id"
         idValue={selectedVessel?.slug}
         selectedVessel={selectedVessel}
+        rentalPeriod={rentalPeriod}
       />
     </div>
   );
