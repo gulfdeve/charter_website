@@ -105,7 +105,7 @@ export default function Home() {
                   <Image 
                     src={`https://www.centauruscharter.com/product/images/${product.image}`}
                     alt={product.translations?.[locale].name_of_yacht}
-                    className="w-full rounded-lg rounded-lg w-full mt-3"
+                    className="w-full rounded-lg mt-3"
                     width={400}
                     height={400}
                   />
@@ -212,19 +212,25 @@ export default function Home() {
         <Yachtmobilecarousal/>
 
       </div>
+
+
+
+
+
+
       <div className="flex flex-col  md:flex-row-reverse items-center justify-center ">
         <div className="">
           <div className="">
             <img
               src="/LUXURY YACHT CHARTER.webp"
               alt="luxury yacht charter"
-              className="xl:w-[380rem] sm:w-[170rem] lg:w-[160rem] md:h-[443px] xl:h-[452px] lg:h-[404px]"
+              className="w-full h-full object-cover xl:w-[380rem] sm:w-[170rem] lg:w-[160rem] md:h-[443px] xl:h-[452px] lg:h-[404px]"
             />
           </div>
         </div>
         <div className="flex flex-col items-center sm:items-start sm:justify-start justify-center bg-primary-blue px-5 xl:px-32 xl:py-12 py-5 md:h-[443px] xl:w-[395rem] lg:w-[250rem] xl:h-[452px] lg:h-[404px]">
         
-          <h2 className=" text-primary-yellow text-center font-bold text-2xl xl:text-3xl py-7">
+          <h2 className=" text-primary-yellow text-center font-bold text-2xl xl:text-4xl py-7">
             LUXURY YACHT RENTALS
           </h2>
           <p className=" text-white text-center sm:text-left  text-md  sm:text-sm xl:text-md pb-10">
@@ -250,13 +256,13 @@ export default function Home() {
             <img
               src="/CUSTOMIZEDEXPERIENCES.webp"
               alt="customized experiences"
-              className="xl:w-[260rem] sm:w-[170rem] lg:w-[160rem] md:h-[443px] xl:h-[452px] lg:h-[404px]"
+              className="w-full h-full object-cover xl:w-[260rem] sm:w-[170rem] lg:w-[160rem] md:h-[443px] xl:h-[452px] lg:h-[404px]"
             />
           </div>
         </div>
 
         <div className="flex flex-col items-center sm:items-start sm:justify-start justify-center  bg-primary-yellow px-5 xl:px-32 xl:py-12 py-5 md:h-[443px] xl:w-[277rem] xl:h-[452px] lg:h-[404px]">
-          <h2 className=" text-primary-blue text-center font-bold text-2xl xl:text-3xl py-7">
+          <h2 className=" text-primary-blue text-center font-bold text-2xl xl:text-4xl py-7">
             CUSTOMIZED YACHT TRIPS
           </h2>
           <p className=" text-primary-blue text-center sm:text-left  text-md  sm:text-sm xl:text-md pb-10">
@@ -282,7 +288,7 @@ export default function Home() {
             <img
               src="/EXCLUSIVEOFFERS.webp"
               alt="exclusive offers"
-              className="xl:w-[270rem] sm:w-[170rem] lg:w-[140rem] md:h-[443px] xl:h-[452px] lg:h-[404px]"
+              className="w-full h-full object-cover xl:w-[270rem] sm:w-[170rem] lg:w-[140rem] md:h-[443px] xl:h-[452px] lg:h-[404px]"
             />
           </div>
         </div>
@@ -312,7 +318,7 @@ export default function Home() {
             <img
               src="/WATERACTIVITIES.webp"
               alt="water activities"
-              className="xl:w-[240rem] sm:w-[170rem] lg:w-[140rem] md:h-[443px] xl:h-[452px] lg:h-[404px]"
+              className="w-full h-full object-cover xl:w-[240rem] sm:w-[170rem] lg:w-[140rem] md:h-[443px] xl:h-[452px] lg:h-[404px]"
             />
           </div>
         </div>

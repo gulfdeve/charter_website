@@ -4,12 +4,11 @@ import Image from 'next/image'
 const page = () => {
     return (
         <>
-      <div className="bg-white w-full h-full mt-14 md:mt-0">
+      <div className="bg-white w-full h-full nav-space">
         <div>
           <Image
             src="/privacy.jpg"
             alt="termsheader"
-            layout="responsive"
             width={1920} // Set the original width
             height={1080} // Set the original height
             className="w-full" // Full width on the container

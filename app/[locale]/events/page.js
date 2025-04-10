@@ -1,92 +1,59 @@
-"use client";
+// app/[locale]/events/page.js
 import React from "react";
-import { useEffect } from "react";
 import { FaWhatsapp } from "react-icons/fa";
-import { useData } from "@/app/context/DataContext";
-import { useLanguage } from "@/app/context/LanguageContext";
 import YachtCarousal from "@/app/components/YachtCarousel";
-import Eventmobilecarousal from '@/app/components/EventMobilecarousal'
+import Eventmobilecarousal from '@/app/components/EventMobilecarousal';
 import PageTitleHeading from "@/app/components/PageTitleHeading";
-// import Link from "next/link";
-import { useRouter, usePathname, Link } from "@/app/i18n/routing";
-// import Loading from "./loading";
-const page = ({ params }) => {
-const { data, loading, error } = useData();
-const { language, changeLanguage } = useLanguage();
+import EventCard from "@/app/components/EventCard";
+import { usePathname, Link } from "@/app/i18n/routing";
+import { fetchData } from '@/app/lib/fetchData';
 
-// if(loading){
-//     return <Loading />;
-// }
 
-return (
-<>
-    <div className="container mx-auto mt-14 md:mt-0">
+export default async function Page({ params }) {
+	  // We need to await params before accessing its properties
+	  const resolvedParams = await params;
+	  const language = resolvedParams.locale || "en";
+  const data = await fetchData();
+  if (!data) {
+    return <div>Loading...</div>;
+  }
 
+  return (
+    <>
+      <div className="container mx-auto nav-space">
         <PageTitleHeading title="YACHT EVENTS DUBAI" />
 
         <div className="hidden md:block">
-        <div className="grid grid-col-1 md:grid-cols-2 gap-7 pb-4">
+          <div className="grid grid-col-1 md:grid-cols-2 gap-7 pb-4">
             {data?.events?.map((event) => (
-            <div key={event.id} className="flex flex-col justify-start lg:justify-between rounded-md bg-white custom-shadow">
-                <Link href={`/events/${event.slug}`}>
-                <img src={`https://www.centauruscharter.com/product/images/${event.image}`}
-                    alt={event.translations[language].title} className="rounded-t-md w-full object-cover" />
-                </Link>
-                <div className="flex flex-col  justify-start px-5 lg:px-5">
-                    <h2 className="text-[#232629]  text-2xl font-bold pt-4">
-                        <Link href={`/events/${event.slug}`}>
-                        {event.translations[language].title}
-                        </Link>
-                    </h2>
-                    <p className="text-[#232629]  font-bold text-base pt-2 pb-4">
-                      {event.translations[language].heading_2}
-                    </p>
-                    <p className="text-red-500 py-2 font-bold">Limited Slots Available</p>
-                    <div className="bg-[#232629] w-full h-[0.05rem]"></div>
-                    <div className="flex flex-row items-center justify-between">
-                        <div className="flex flex-col items-start justify-start py-10">
-                            <p className="text-red-500  font-bold text-sm xl:text-lg">
-                                Validity Until:
-                                <br />
-                                {event.validity}
-                            </p>
-                        </div>
-                        {/* Buttons Section */}
-                        <div className="flex xl:flex-row flex-col items-center justify-end gap-3 ">
-                            <a href={`${event.whatsapp_url}`} target="_blank"
-                                className="blue-solid-button flex items-center">
-                                <FaWhatsapp className="xs:text-xl text-lg  mr-1" />
-                                WHATSAPP
-                            </a>
-                            <Link href={`/events/${event.slug}`} className="blue-solid-button">
-                            KNOW MORE
-                            </Link>
-                        </div>
-                    </div>
-                </div>
-            </div>
+              <EventCard 
+                key={event.id} 
+                event={event} 
+                language={language} 
+              />
             ))}
+          </div>
         </div>
-        </div>
+        
         <div className="block md:hidden">
-<Eventmobilecarousal/>
-</div>
-    </div>
-    <div className="container mx-auto px-3 py-5 pb-8">
-        <p className=" text-gray-500 text-md ">
-            Experience the perfect fusion of luxury, elegance, and unforgettable moments on the glistening waters of
-            Dubai. As a premier destination for hosting extraordinary events, parties, and exclusive gatherings, Dubai
-            offers a captivating backdrop for yacht events like no other. Whether you seek a lavish party, after party,
-            a themed cruise, or a special celebration, immerse yourself in the excitement and glamour that awaits
-            onboard. Dance under the stars, savor exquisite cuisine, and let the vibrant atmosphere captivate your
-            senses.
-            <br />
-            <br /> <strong>Book your tickets, or reserve a table early to ensure your place for upcoming events.</strong>
+          <Eventmobilecarousal events={data?.events} language={language} />
+        </div>
+      </div>
+      
+      <div className="container mx-auto px-3 py-5 pb-8">
+        <p className="text-gray-500 text-md">
+          Experience the perfect fusion of luxury, elegance, and unforgettable moments on the glistening waters of
+          Dubai. As a premier destination for hosting extraordinary events, parties, and exclusive gatherings, Dubai
+          offers a captivating backdrop for yacht events like no other. Whether you seek a lavish party, after party,
+          a themed cruise, or a special celebration, immerse yourself in the excitement and glamour that awaits
+          onboard. Dance under the stars, savor exquisite cuisine, and let the vibrant atmosphere captivate your
+          senses.
+          <br />
+          <br /> <strong>Book your tickets, or reserve a table early to ensure your place for upcoming events.</strong>
         </p>
-    </div>
-    <YachtCarousal />
-</>
-);
-};
-
-export default page;
+      </div>
+      
+      <YachtCarousal />
+    </>
+  );
+}

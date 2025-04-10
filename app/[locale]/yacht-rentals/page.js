@@ -51,10 +51,10 @@ const YachtCard = ({ yacht }) => {
 
   return (
     <>
-      <div className="flex flex-col justify-center bg-white rounded-2xl shadow-custom h-auto relative p-4 ">
+      <div className="flex flex-col justify-between bg-white rounded-md shadow-2xl h-auto relative ">
         <div className="relative">
           {/* Embla Carousel Container */}
-          <div className="overflow-hidden rounded-2xl" ref={emblaRef}>
+          <div className="overflow-hidden rounded-t-md" ref={emblaRef}>
             {/* The inner wrapper must have display:flex so that slides line up horizontally. */}
             <div className="flex">
               {yacht.images.map((img, index) => (
@@ -66,7 +66,7 @@ const YachtCard = ({ yacht }) => {
                     <img
                       src={`https://www.centauruscharter.com/product/galleryimages/${img}`}
                       alt={`Slide ${index + 1}`}
-                      className="rounded-2xl h-[250px] md:h-[300px] w-full object-cover"
+                      className=" w-full object-contain"
                     />
                   </Link>
                 </div>
@@ -111,14 +111,15 @@ const YachtCard = ({ yacht }) => {
         </div>
 
         {/* Yacht Details */}
-        <div className="flex flex-col items-start pt-3">
+        <div className="flex flex-col justify-between flex-grow p-4">
+        <div className="flex flex-col items-start">
           <Link href={`yacht-rentals/${yacht.slug}`}>
-            <h2 className="text-primary-blue  text-xl font-bold py-4 hover:text-blue-600 transition-all duration-300 cursor-pointer">
+            <h2 className="text-primary-blue  text-xl font-bold pb-4 hover:text-blue-600 transition-all duration-300 cursor-pointer">
               {yacht.title}
             </h2>
           </Link>
 
-          <p className=" text-sm text-primary-blue text-left">
+          <p className=" text-xs s:text-sm md:text-xs lg:text-sm text-primary-blue text-left">
             Model: <span className="font-bold">{yacht.model}</span> | Length:{" "}
             <span className="font-bold">{yacht.length}</span> | Guests:{" "}
             <span className="font-bold">{yacht.guests}</span>
@@ -127,7 +128,9 @@ const YachtCard = ({ yacht }) => {
             AED {yacht.price}{" "}
             <span className="text-primary-blue">Per Hour</span>
           </p>
-          <a
+          
+        </div>
+        <a
             href={`https://fareharbor.com/embeds/book/centauruscharter/items/${
               yacht.fareharbor_id
             }/?full-items=yes&flow=645487&back=${encodeURIComponent(
@@ -137,7 +140,7 @@ const YachtCard = ({ yacht }) => {
           >
             Book Now
           </a>
-        </div>
+      </div>
       </div>
     </>
   );
@@ -227,7 +230,7 @@ const Tabs = () => {
   };
 
   return (
-    <div className="w-full bg-white mt-14 lg:mt-0 ">
+    <div className="w-full bg-white nav-space ">
       <PageTitleHeading title="LUXURY YACHT RENTALS DUBAI" />
 
       <div className="flex justify-center items-center gap-8 md:gap-8 text-xs sm:text-base md:text-lg font-semibold py-2 pb-10 md:py-7 px-2 ">

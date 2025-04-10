@@ -64,28 +64,28 @@ export default function Page() {
 
   return (
     <>
-      <div className="bg-white w-full h-full mt-14 md:mt-0">
+      <div className="bg-white w-full h-full nav-space">
         <div>
           <img alt="contact header banner" src="./Contactheader.webp" className="w-full" />
         </div>
         <div className="flex flex-col items-center justify-center py-10 ">
-          <h1 className="text-primary-blue text-center font-bold text-4xl pb-4">
+          <h1 className="text-primary-blue text-center font-bold text-xl sm:text:2xl md:text-3xl lg:text-4xl pb-4">
             CONTACT US
           </h1>
-          <p className="text-[#848484] text-center text-base px-3 lg:px-12 xl:px-56">
+          <p className="container text-[#848484] text-center text-base px-3 lg:px-12 xl:px-56">
             We at Centaurus Charter are well experienced to meet the expectations of your next yachting adventure in Dubai. Please fill contact you shortly.
           </p>
         </div>
 
-        <div className="container mx-auto flex flex-col md:flex-row-reverse items-center md:justify-end 2xl:justify-center md:gap-10 py-10">
-          <div className="flex justify-center md:justify-start items-center md:items-start bg-white">
-            <div className="w-full p-6 bg-white">
+        <div className="container mx-auto flex flex-col md:flex-row-reverse items-center md:justify-end 2xl:justify-center md:gap-4 lg:gap-20 py-10">
+          <div className="flex justify-center md:justify-start items-center md:items-start bg-white pb-12 md:pb-0">
+            <div className="w-full xl:w-[40rem] p-0 md:p-6 bg-white">
               <form onSubmit={handleSubmit} className="space-y-4">
                 <div>
                   <input
                     type="text"
                     placeholder="Your Name"
-                    className="w-full xl:w-[50rem] p-3 border-4 border-[#0D2343] rounded-md bg-[#f5f5f5] text-gray-600 focus:outline-none focus:border-[#0D2343]"
+                    className="w-full p-3 border-l-4 rounded-md bg-[#f5f5f5] text-gray-600 focus:outline-none border-[#1b498f] focus:border-primary-yellow focus:bg-[#f3f7fd] transition duration-200 ease-in-out"
                     value={fullName}
                     onChange={(e) => setFullName(e.target.value)}
                   />
@@ -95,7 +95,7 @@ export default function Page() {
                   <input
                     type="email"
                     placeholder="Your Email"
-                    className="w-full p-3 border-4 border-[#0D2343] rounded-md bg-[#f5f5f5] text-gray-600 focus:outline-none focus:border-[#0D2343]"
+                    className="w-full p-3 border-l-4 rounded-md bg-[#f5f5f5] text-gray-600 focus:outline-none border-[#1b498f] focus:border-primary-yellow focus:bg-[#f3f7fd] transition duration-200 ease-in-out"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                   />
@@ -108,7 +108,7 @@ export default function Page() {
                     value={phoneNumber}
                     onChange={setPhoneNumber}
                     placeholder="Enter phone number"
-                    className="flex-1 outline outline-primary-blue rounded-md bg-gray-100"
+                    className="flex-1  rounded-md bg-gray-100"
                     inputStyle={{
                       width: "100%",
                       padding: "20px",
@@ -132,7 +132,7 @@ export default function Page() {
                   <textarea
                     placeholder="Your Message"
                     rows={4}
-                    className="w-full p-3 border-4 border-[#0D2343] rounded-md bg-[#f5f5f5] text-gray-600 focus:outline-none focus:border-[#0D2343]"
+                    className="w-full p-3 border-l-4 rounded-md bg-[#f5f5f5] text-gray-600 focus:outline-none border-[#1b498f] focus:border-primary-yellow focus:bg-[#f3f7fd] transition duration-200 ease-in-out"
                     value={message}
                     onChange={(e) => setMessage(e.target.value)}
                   ></textarea>
@@ -182,38 +182,42 @@ export default function Page() {
               </form>
             </div>
           </div>
-          <div className="flex flex-col items-center justify-center space-y-7 md:-mt-40">
+          <div className="flex flex-col items-start md:items-center justify-center space-y-7 md:-mt-40">
             <div className="flex flex-row items-start justify-start">
-              <MdLocationOn className="text-5xl" />
-              <h1 className="text-sm w-[16rem] xs:w-[19rem] pl-5">
+              <div className="p-3 rounded-full bg-primary-blue-2">
+              <MdLocationOn className="text-2xl text-primary-yellow" /> </div>
+              <h1 className="text-sm w-[16rem] xs:w-[19rem] pl-5 font-medium">
                 Office 907 ETA Star's Al Manara Tower 6, Marasi Drive Street Business Bay, Za'beel, Dubai United Arab Emirates
               </h1>
             </div>
-            <div className="flex flex-row items-start justify-start">
-              <IoCallSharp className="text-5xl" />
+            <div className="flex flex-row items-center justify-start">
+            <div className="p-3 rounded-full bg-primary-blue-2">
+              <IoCallSharp className="text-2xl text-primary-yellow" /></div>
               <a
                 href="tel:+97143521833"
-                className="text-sm w-[14rem] xs:w-[19rem] pl-5 text-blue-600"
+                className="text-sm w-[14rem] xs:w-[19rem] pl-5 text-primary-blue-2 font-medium"
               >
                 <span className="text-black">Office:</span> +971 4 352 1833
               </a>
             </div>
-            <div className="flex flex-row items-start justify-start">
-              <FaWhatsapp className="text-5xl" />
+            <div className="flex flex-row items-center justify-start">
+            <div className="p-3 rounded-full bg-primary-blue-2">
+              <FaWhatsapp className="text-2xl text-primary-yellow" /> </div>
               <a
                 href="https://wa.me/971524901269"
-                className="text-sm w-[16rem] xs:w-[19rem] pl-5 text-blue-600"
+                className="text-sm w-[16rem] xs:w-[19rem] pl-5 text-primary-blue-2 font-medium"
                 target="_blank"
                 rel="noopener noreferrer"
               >
                 <span className="text-black">WhatsApp:</span> +971 52 490 1269
               </a>
             </div>
-            <div className="flex flex-row items-start justify-start">
-              <MdEmail className="text-5xl" />
+            <div className="flex flex-row items-center justify-start">
+            <div className="p-3 rounded-full bg-primary-blue-2">
+              <MdEmail className="text-2xl text-primary-yellow" /></div>
               <a
                 href="mailto:info@centauruscharter.com"
-                className="text-sm w-[16rem] xs:w-[19rem] pl-5 text-blue-600"
+                className="text-sm w-[16rem] xs:w-[19rem] pl-5 text-primary-blue-2 font-medium"
               >
                 <span className="text-black">Email:</span> info@centauruscharter.com
               </a>

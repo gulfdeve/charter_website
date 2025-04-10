@@ -99,85 +99,112 @@ const Page = () => {
         </div>
 
         {/* Seasonal Tours Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-3 py-10 gap-5 container mx-auto">
-          {toursData.map((tour, index) => (
-            <div
-              key={index}
-              className="bg-white rounded-lg shadow-lg hover:shadow-2xl transition-shadow duration-300 p-5 space-y-3"
-            >
-              {/* Image Wrapper */}
-              <div className="relative">
-                <img
-                  src={tour.image}
-                  alt={tour.title}
-                  className="rounded-lg w-full"
-                />
-                {/* Overlay Container */}
-                <div className="absolute top-2 shadow-sm">
-                  <div className="bg-primary-yellow px-3 py-1 rounded-sm">
-                    <h2 className="text-xl font-bold uppercase text-black">
-                      BUY 1 GET 1 FREE
-                    </h2>
-                  </div>
-                  <div className="bg-primary-blue px-3 py-1 rounded-sm">
-                    <p className="text-sm uppercase text-white">
-                      Every Sunday and Monday
-                    </p>
+        <div>
+          <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-3 py-10 gap-5 container mx-auto">
+            {toursData.map((tour, index) => (
+              <div
+                key={index}
+                className="bg-white rounded-lg shadow-lg hover:shadow-2xl transition-shadow duration-300 space-y-3"
+              >
+                {/* Image Wrapper */}
+                <div className="relative">
+                  <img
+                    src={tour.image}
+                    alt={tour.title}
+                    className="rounded-t-lg w-full"
+                  />
+
+                  {/* Overlay Container */}
+                  <div className="absolute top-2 shadow-sm">
+                    {/* BUY 1 GET 1 FREE (Yellow Background) */}
+                    <div className="bg-primary-yellow px-3 py-1 rounded-sm">
+                      <h2 className="text-xl font-bold uppercase text-black">
+                        BUY 1 GET 1 FREE
+                      </h2>
+                    </div>
+                    {/* EVERY SUNDAY AND MONDAY (Blue Background) */}
+                    <div className="bg-primary-blue px-3 py-1 rounded-sm">
+                      <p className="text-sm uppercase text-white">
+                        Every Sunday and Monday
+                      </p>
+                    </div>
                   </div>
                 </div>
-              </div>
-
-              {/* Card Text */}
-              <h1 className="text-primary-blue-2 text-center font-bold text-2xl py-2">
-                {tour.title}
-              </h1>
-
-              {/* Cruising Time */}
-              <div className="flex flex-row gap-2 items-center ml-1.5">
-                <FaClock size={25} className="text-primary-blue-2" />
-                <h1 className="text-primary-blue text-sm">
-                  <span className="font-bold">Cruising Time:</span> {tour.cruisingTime}
+            <div className="px-4 pb-4">
+                {/* Card Text */}
+                <h1 className="text-primary-blue-2 text-center font-bold text-2xl py-2 ">
+                  {tour.title}
                 </h1>
-              </div>
+              <div className="flex flex-col">
+                {/* Cruising Time */}
+                <div className="flex flex-row items-center justify-start">
+                  <div className="p-2 pl-0">
+                  <FaClock size={30} className="text-primary-blue-2" />
+                  </div>
+                  <h1 className="text-primary-blue-2 text-sm ml-3">
+                    <span className="font-bold">Cruising Time:</span>{" "}
+                    {tour.cruisingTime}
+                  </h1>
+                </div>
 
-              {/* Adult Pricing */}
-              <div className="flex flex-row gap-2 items-center">
-                <IoMan size={35} className="text-primary-blue-2" />
-                <h1 className="text-primary-blue-2 text-sm">
-                  <span className="font-bold">Adult (12+):</span> {tour.adultPrice}
-                </h1>
-              </div>
-              <div className="flex flex-row gap-2 items-center ml-0.5">
-                <FaChild size={30} className="text-primary-blue-2" />
-                <h1 className="text-primary-blue-2 text-sm">
-                  <span className="font-bold">Child (4-11):</span> {tour.childPrice}
-                </h1>
-              </div>
+                {/* Adult Pricing */}
+                <div className="flex flex-row items-center justify-start">
+                <div className="p-2 pl-0">
+                  <IoMan size={30} className="text-primary-blue-2" />
+                  </div>
+                  <h1 className="text-primary-blue-2 text-sm ml-3">
+                    <span className="font-bold">Adult (12+):</span>{" "}
+                    {tour.adultPrice}
+                  </h1>
+                </div>
+                <div className="flex flex-row items-center justify-start">
+                <div className="p-2 pl-0"> 
+                  <FaChild size={30} className="text-primary-blue-2" />
+                  </div>
+                  <h1 className="text-primary-blue-2 text-sm ml-3">
+                    <span className="font-bold">Child (4-11):</span>{" "}
+                    {tour.childPrice}
+                  </h1>
+                </div>
 
-              {/* Live BBQ */}
-              <div className="flex flex-row gap-2 items-center">
-                <MdOutlineLocalDining className="text-primary-blue-2 text-[6rem] sm:text-[3rem] lg:text-[6rem]" />
-                <h1 className="text-primary-blue-2 text-sm">
-                  <span className="font-bold">Live BBQ:</span> {tour.liveBBQ}
-                </h1>
-              </div>
+                {/* Live BBQ */}
+                <div className="flex flex-row items-center justify-start">
+                <div className="p-2 pl-0">
+                  <MdOutlineLocalDining size={30} className="text-primary-blue-2" />
+                  </div>
+                  <h1 className="text-primary-blue-2 text-sm ml-3">
+                    <span className="font-bold">Live BBQ:</span> {tour.liveBBQ}
+                  </h1>
+                </div>
 
-              {/* Cruising Route */}
-              <div className="flex flex-row gap-2.5 items-center ml-0.5">
-                <FaCameraRetro size={35} className="text-primary-blue-2" />
-                <h1 className="text-primary-blue-2 text-sm">
-                  <span className="font-bold">Cruising Route:</span> {tour.cruisingRoute}
-                </h1>
-              </div>
+                {/* Cruising Route */}
+                <div className="flex flex-row items-center justify-start">
+                <div className="p-2 pl-0">
+                  <FaCameraRetro size={30} className="text-primary-blue-2" />
+                  </div>
+                  <h1 className="text-primary-blue-2 text-sm ml-3">
+                    <span className="font-bold">Cruising Route:</span>{" "}
+                    {tour.cruisingRoute}
+                  </h1>
+                </div>
 
-              {/* Departure Point */}
-              <div className="flex flex-row gap-2 items-center">
-                <IoLocationSharp size={32} className="text-primary-blue-2" />
-                <h1 className="text-primary-blue-2 text-sm">
-                  <span className="font-bold text-primary-blue-2">
-                    Departure Point:
-                  </span> {tour.departurePoint}
-                </h1>
+                {/* Departure Point */}
+                <div className="flex flex-row items-center ">
+                <div className="p-2 pl-0">
+                  <IoLocationSharp size={30} className="text-primary-blue-2 " />
+                  </div>
+                  <h1 className="text-primary-blue-2 text-sm ml-3">
+                    <span className="font-bold text-primary-blue-2">
+                      Departure Point:
+                    </span>{" "}
+                    {tour.departurePoint}
+                  </h1>
+                </div>
+                </div>
+
+                {/* Book Now Button */}
+                <button className="yellow-solid-button w-full">Book Now</button>
+                </div>
               </div>
 
               {/* Book Now Button */}
@@ -200,28 +227,28 @@ const Page = () => {
           </span>
           <hr className="flex-grow border-primary-yellow-dark" />
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-5 px-4 py-10 container mx-auto">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-2 md:gap-5 px-4 py-10 container mx-auto">
           <div>
             <img src="/BBQ.webp" alt="Live BBQ" />
-            <h1 className="bg-primary-blue-2 text-primary-yellow text-center text-md font-bold p-2 rounded-b-lg">
+            <h1 className="bg-primary-blue-2 text-primary-yellow text-center text-xs sm:text-sm md:text-md  font-bold p-2 rounded-b-lg">
               LIVE BBQ
             </h1>
           </div>
           <div>
             <img src="/Picturemoments.webp" alt="Picture Moments" />
-            <h1 className="bg-primary-blue-2 text-primary-yellow text-center text-md font-bold p-2 rounded-b-lg">
+            <h1 className="bg-primary-blue-2 text-primary-yellow text-center text-xs sm:text-sm md:text-md  font-bold p-2 rounded-b-lg">
               PICTURE MOMENTS
             </h1>
           </div>
           <div>
             <img src="/Amazing-View.webp" alt="Amazing View" />
-            <h1 className="bg-primary-blue-2 text-primary-yellow text-center text-md font-bold p-2 rounded-b-lg">
+            <h1 className="bg-primary-blue-2 text-primary-yellow text-center text-xs sm:text-sm md:text-md font-bold p-2 rounded-b-lg">
               AMAZING VIEW
             </h1>
           </div>
           <div>
             <img src="/Great-Food.webp" alt="Great Food" />
-            <h1 className="bg-primary-blue-2 text-primary-yellow text-center text-md font-bold p-2 rounded-b-lg">
+            <h1 className="bg-primary-blue-2 text-primary-yellow text-center text-xs sm:text-sm md:text-md  font-bold p-2 rounded-b-lg">
               GREAT FOOD
             </h1>
           </div>
@@ -249,7 +276,7 @@ const Page = () => {
               className="object-cover object-center xl:w-[250rem] sm:w-[170rem] md:h-[670px] xl:h-[650px] lg:h-[560px]"
             />
           </div>
-          <div className="flex flex-col items-center sm:items-start sm:justify-start justify-center bg-primary-blue-2 px-5 xl:p-32 xl:py-12 py-5 md:h-[670px] xl:h-[650px] lg:h-[560px]">
+          <div className="flex flex-col items-center sm:items-start sm:justify-start justify-center bg-primary-blue-2 px-5 xl:p-32 xl:py-12 py-5 md:h-[600px] xl:h-[650px] lg:h-[560px]">
             <p className="text-white text-center sm:text-left text-md sm:text-sm xl:text-md py-10">
               Experience Dubai's coastline in an entirely new light with our exclusive shared yacht tours. Uniting the thrill of luxury yachting with the ease of shared experiences, we offer you the chance to enjoy the opulence of Dubai's waters without the extravagant cost of chartering an entire yacht. Revel in the stunning vistas, relish in the flavors of live BBQ, and savor complimentary refreshments - all while forging unforgettable memories with fellow adventurers.
             </p>
@@ -270,7 +297,7 @@ const Page = () => {
             <p className="text-white text-center md:text-left font-bold text-xl rounded">
               Enjoy a luxurious shared yacht adventure!
             </p>
-            <div className="flex flex-col md:flex-row md:gap-10 space-y">
+            <div className="flex flex-col md:flex-row gap-2 md:gap-10 space-y">
               <button className="blue-lined-button">
                 <FaWhatsapp size={20} /> WHATSAPP US
               </button>

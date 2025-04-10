@@ -1,7 +1,5 @@
 import React from 'react';
-import { useLocale } from "next-intl";
-import path from 'path';
-import fs from 'fs/promises';
+import { fetchData } from '@/app/lib/fetchData';
 
 interface Metadata {
   title: string;
@@ -15,25 +13,23 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
 };
 
 export async function generateMetadata({
-  params,
-}: {
-  params: Promise<{ slug: string; locale: string }>;
-}) {
-  const { locale } = await params;
-  const resolvedLocale = locale || "en"; // Default to English if locale is missing
+	params,
+  }: {
+	params: Promise<{ slug: string; locale: string }>;
+  }) {
+	const { locale } = await params;
+	const resolvedLocale = locale || "en"; // Default to English if locale is missing
 
   try {
 
-    // Path to your JSON file in the public directory
-    const dataPath = path.join(process.cwd(), 'public', 'data.json');
+    // Use fetchData utility instead of reading from filesystem
+    const data = await fetchData();
+    
+    if (!data) {
+      throw new Error('Failed to fetch data');
+    }
 
-    // Read the file
-    const jsonData = await fs.readFile(dataPath, 'utf8');
-    const data = JSON.parse(jsonData);
-
-    console.log("Reading from local data.json");
-
-    const metaData = data?.meta_tags?.["privacy-and-poolicy"]?.[resolvedLocale]?.[0];
+    const metaData = data?.meta_tags?.["privacy-and-policy"]?.[resolvedLocale]?.[0];
     const metaHome = data?.meta_tags?.["home"]?.[resolvedLocale]?.[0];
 
     // Use "shared-yacht-tours-dubai" metadata if available, otherwise fallback to "home"

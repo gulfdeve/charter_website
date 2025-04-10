@@ -38,7 +38,7 @@ export default function YachtCarousal() {
 
   return (
     <div className="flex flex-col items-center justify-center bg-primary-yellow">
-      <h2 className="text-primary-blue text-center font-bold text-4xl py-10">
+      <h2 className="text-primary-blue text-center font-bold text-2xl xl:text-4xl py-7">
         EXPLORE OUR YACHTS
       </h2>
       <div className="lg:block hidden">
@@ -55,6 +55,7 @@ export default function YachtCarousal() {
                   <div className="relative bg-transparent rounded-lg overflow-hidden space-y-5">
                     <Image
                       src={`https://www.centauruscharter.com/product/images/${product.thumbnail_image}`}
+						// src='/Storm-thumbnail.webp'
                       alt={product.translations[locale].name_of_yacht}
                       width={450}
                       height={0}

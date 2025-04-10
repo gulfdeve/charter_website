@@ -17,6 +17,7 @@ import TopLoader from '@/app/components/TopLoader';
 import { FareHarborProvider } from "@/app/context/FareHarborContext";
 import 'react-phone-input-2/lib/style.css';
 import { headers } from 'next/headers';
+import { fetchData } from '@/app/lib/fetchData';
 
 const montserrat = Montserrat({
   subsets: ["latin"],
@@ -31,6 +32,7 @@ export default async function RootLayout({
   params: Promise<{ locale: string; slug?: string[] }>;
 }) {
   const { locale, slug } = await params;
+  const serverData = await fetchData();
 
   // Validate locale
   if (!routing.locales.includes(locale as any)) {
@@ -73,7 +75,7 @@ export default async function RootLayout({
       <body className={`${montserrat.variable}`}>
         <TopLoader />
         <NextIntlClientProvider locale={locale} messages={messages}>
-          <DataProvider>
+          <DataProvider initialData={serverData}>
             <LanguageProvider>
               <Navbar />
               <FareHarborProvider>

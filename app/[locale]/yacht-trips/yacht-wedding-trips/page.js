@@ -19,37 +19,37 @@ const page = () => {
         <Videosharedtours/>
       </div> */}
      
-      <div className="bg-white h-full w-full mt-14 md:mt-0">
-        <div className="flex flex-col items-center justify-center pb-10 pt-10">
-          <h1 className=" text-primary-blue font-bold text-center  text-xl pb-4">
+      <div className="container mx-auto bg-white nav-space">
+        <div className="flex flex-col items-center justify-center py-12 lg:pt-14"> 
+          <h1 className=" text-primary-blue text-center font-bold text-lg md:text-3xl lg:text-4xl pb-4">
             YACHT WEDDING CHARTER
           </h1>
           <p className=" text-primary-blue text-sm text-center">
             Your Perfect Yacht Wedding in Dubai
           </p>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3  gap-10 xl:px-44">
+        <div className="md:container grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-7 md:gap-10">
         {!loading &&
                       data?.products?.map((product) => (
             <div
               key={product.id}
-              className="flex flex-col justify-center px-5 bg-white rounded-2xl shadow-2xl h-auto"
+              className="flex flex-col justify-stretch bg-white rounded-md shadow-2xl h-auto"
             >
               <Link href={`/yacht-rentals/${product.slug}`}>
                 <img
                   src={`https://www.centauruscharter.com/product/images/${product.image}`}
-                  className="rounded-2xl mt-5 h-[174px] md:h-[300px] object-cover"
+                  className="rounded-t-md w-full object-contain"
                   alt={product.translations?.[locale].name_of_yacht}
                 />
               </Link>
-
-              <div className="flex flex-col items-center py-3">
+              <div className="flex flex-col justify-between flex-grow p-4">
+              <div className="flex flex-col">
                 <Link href={`/yacht-rentals/${product.slug}`}>
-                  <h1 className="text-primary-blue  text-xl font-bold xl:pt-6 md:pb-2 hover:text-blue-600 transition-all duration-300 cursor-pointer py-1 md:py-0">
+                  <h1 className="text-primary-blue text-base sm:text-xl font-bold xl:pt-6 md:pb-2 hover:text-blue-600 transition-all duration-300 cursor-pointer py-1 md:py-0">
                   {product.translations?.[locale]?.name_of_yacht}
                   </h1>
                 </Link>
-                <p className=" text-xs text-primary-blue text-left">
+                <p className="text-xs s:text-sm md:text-xs lg:text-sm text-primary-blue">
                 Model:
                   <span className=" text-primary-blue font-bold">
                     {" "}
@@ -66,24 +66,28 @@ const page = () => {
                     {product.translations?.[locale]?.guests}
                   </span>
                 </p>
-                <h1 className=" text-primary-blue font-bold text-xl pt-5 pb-2">
+                <h1 className=" text-primary-blue font-bold text-base sm:text-xl pt-4 pb-2">
                   AED  {product.per_hour_price}{" "}
                   <span className=" text-primary-blue">
                     Per Hour
                   </span>
                 </h1>
-                <a
+              
+              </div>
+              
+              <a
                   href={`https://fareharbor.com/embeds/book/centauruscharter/items/${
                     product.fareharbor_id
                   }/?full-items=yes&flow=645487&back=${encodeURIComponent(
                     "http://example.com"
                   )}`}
-                  className="flex flex-row items-center justify-center py-2 w-full md:py-2 md:px-4 rounded-md bg-primary-yellow text-primary-blue hover:bg-primary-blue hover:text-primary-yellow  font-bold text-base md:text-sm xl:text-lg transition-all duration-300"
+                  className="flex-row items-center justify-center text-center py-2 w-full md:py-2 md:px-4 rounded-md bg-primary-yellow text-primary-blue hover:bg-primary-blue hover:text-primary-yellow font-bold text-base md:text-sm xl:text-lg transition-all duration-300"
                 >
                   Book Now
                 </a>
-              </div>
+                </div>
             </div>
+           
           ))}
         </div>
         <div>
@@ -93,8 +97,8 @@ const page = () => {
             passengers
           </p>
         </div>
-        <div className="xl:px-44 px-8 py-10">
-          <div className="flex flex-col  lg:flex-row-reverse items-center justify-center lg:justify-start lg:gap-0  custom-shadow rounded-lg bg-primary-blue overflow-hidden lg:h-[18rem] xl:h-[20rem] 2xl:h-[29rem]">
+        <div className="mt-10">
+          <div className="flex flex-col  lg:flex-row-reverse items-center justify-center lg:justify-start lg:gap-0  custom-shadow rounded-lg bg-primary-blue overflow-hidden ">
             <div className="w-full lg:w-1/2 xl:w-1/2">
               <img
                 src="/Inquire-Now.webp"
@@ -105,7 +109,7 @@ const page = () => {
               <h1 className=" text-white font-bold text-2xl 2xl:text-4xl pt-5">
                 Let Us Make Your Dream Wedding Come True
               </h1>
-              <p className=" text-white 2xl:text-2xl py-2">
+              <p className=" text-white 2xl:text-2xl py-2 pb-5">
                 An unforgettable journey, turning your wedding dreams into
                 reality. Our yacht wedding charter redefines romance, offering
                 an extraordinary backdrop for your special day.
@@ -128,7 +132,7 @@ const page = () => {
           Tailor your celebration to perfection with our customizable yacht wedding packages. From intimate ceremonies to grand affairs, our expert team ensures every detail reflects your unique love story, creating a day that's truly yours.
           </p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-5  gap-5 px-4  py-10 xl:px-52">
+          <div className="grid grid-cols-1 md:grid-cols-5  gap-5 ">
           <div>
             <img src="/BBQ.webp" />
             <h1 className="bg-primary-blue-2 text-primary-yellow text-center  textsm  font-bold p-2 rounded-b-lg md:px-10 lg:px-0 ">
@@ -174,10 +178,10 @@ const page = () => {
       </div>
       <div className="flex flex-col  md:flex-row items-center justify-center py-10">
           <div>
-            <div className="xl:w-[50rem] 2xl:w-[80rem] lg:w-[32rem] md:w-[23rem]">
+            <div className="xl:w-[30rem] 2xl:w-[40rem] lg:w-[32rem] md:w-[12rem]">
               <img
-                src="Marry-me-on-a-yacht!.webp"
-                className="w-full   md:h-[670px] xl:h-[600px] lg:h-[560px]"
+                src="Marry-me-on-a-yacht.webp"
+                className="md:h-[670px] xl:h-[600px] lg:h-[560px]"
               />
             </div>
           </div>
@@ -218,10 +222,10 @@ const page = () => {
           Create lasting memories with our yacht charter for weddings. Our photography and videography services capture every breathtaking moment against the stunning backdrop of the open sea, ensuring your wedding day is etched in time.
           </p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 xl:px-44 gap-6">
-<img src="/marryleft.webp" className="rounded-lg md:h-3/4 lg:ml-24 md:ml-16 "/>
-<img src="/marrycenter.webp" className="rounded-lg md:h-3/4 "/>
-<img src="/marryright.webp" className="rounded-lg md:h-3/4"/>
+          <div className="grid md:grid-cols-12 items-center gap-6">
+<img src="/marryleft.webp" className="rounded-lg md:col-span-3"/>
+<img src="/marrycenter.webp" className="rounded-lg md:col-span-6 "/>
+<img src="/marryright.webp" className="rounded-lg md:col-span-3"/>
           </div>
           <div className="py-5 xl:px-32 ">
         <div className="flex flex-col md:flex-row rounded-lg md:px-10 xl:px-44 items-center  gap-5 justify-center  md:justify-between bg-transparent md:bg-primary-blue py-5">
@@ -240,9 +244,9 @@ const page = () => {
         
                         </div></div>
         </div>
-        <YachtCarousel/>
+        
       </div>
-
+      <YachtCarousel/>
     </>
         
   );
