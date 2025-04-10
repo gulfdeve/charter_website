@@ -3,6 +3,7 @@ import React, { useState, useRef, useEffect } from "react";
 import { Link } from "@/app/i18n/routing";
 import EmblaCarousel from "embla-carousel";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
+import BookNowButton from "@/app/components/BookNowButton";
 
 const YachtCard = ({ yacht }) => {
   const emblaRef = useRef(null);
@@ -95,16 +96,7 @@ const YachtCard = ({ yacht }) => {
             AED {yacht.price} <span className="text-primary-blue">Per Hour</span>
           </p>
         </div>
-        <a
-          href={`https://fareharbor.com/embeds/book/centauruscharter/items/${
-            yacht.fareharbor_id
-          }/?full-items=yes&flow=645487&back=${encodeURIComponent(
-            typeof window !== "undefined" ? window.location.href : ""
-          )}`}
-          className="flex flex-row items-center justify-center py-2 w-full md:py-2 md:px-4 rounded-md bg-primary-yellow text-primary-blue hover:bg-primary-blue hover:text-primary-yellow font-bold text-base md:text-sm xl:text-lg transition-all duration-300"
-        >
-          Book Now
-        </a>
+        <BookNowButton fareharborId={yacht.fareharbor_id} />
       </div>
     </div>
   );
