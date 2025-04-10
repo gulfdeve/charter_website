@@ -216,6 +216,7 @@ export default function Navbar() {
                       alt="centaurus charter logo"
                       width={200}
                       height={0}
+					  priority={true}
                       style={{ height: "auto" }}
                     />
                   </Link>

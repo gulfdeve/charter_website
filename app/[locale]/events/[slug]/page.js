@@ -39,7 +39,7 @@ const page = ({ params }) => {
         <div className="flex items-center justify-center py-10">
           <img
             src={`https://www.centauruscharter.com/product/images/${event.image}`}
-            alt={event.name}
+            alt={event.translations?.[locale]?.title}
             className=""
           />
         </div>
