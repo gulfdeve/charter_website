@@ -6,7 +6,7 @@ export async function fetchData() {
       typeof window === "undefined"
         ? process.env.NEXT_PUBLIC_API_URL || "http://localhost:3000"
         : "";
-
+	console.log("using baseUrl: ", baseUrl);
     const response = await fetch(`${baseUrl}/api/get-data`, {
       cache: "no-store",
     });
