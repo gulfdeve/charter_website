@@ -6,7 +6,7 @@ export async function POST(req) {
 	  }
   
 	  const queryParams = new URLSearchParams({ email }).toString();
-	  const url = `https://www.centauruscharter.com/api/api_new/save_subscriber?${queryParams}`;
+	  const url = `${process.env.API_DOMAIN}/api/api_new/save_subscriber?${queryParams}`;
   
 	  const response = await fetch(url, { method: "POST" });
 	  const data = await response.json();

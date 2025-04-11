@@ -13,7 +13,7 @@ export default function WatersportsGrid({ packages, language }) {
         >
           <Link href={`/watersports/${package_a.slug}`}>
             <img
-              src={`https://www.centauruscharter.com/product/images/${package_a.image}`}
+              src={`https://www.centauruscharter.net/product/images/${package_a.image}`}
               alt={package_a.translations[language].title}
               className="rounded-t-md w-full object-cover"
             />

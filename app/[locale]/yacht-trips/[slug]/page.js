@@ -83,7 +83,7 @@ const page = ({ params }) => {
             >
               {/* Image with object-cover for proper scaling */}
               <img
-                src={`https://www.centauruscharter.com/product/images/${yacht.yacht_image}`}
+                src={`https://www.centauruscharter.net/product/images/${yacht.yacht_image}`}
                 alt={yacht.translations?.[locale]?.[0]?.name_of_yacht}
                 className=" w-full md:w-[25rem] xl:w-[35rem]  xl:h-[300px] md:h-full object-contain md:object-cover"
               />

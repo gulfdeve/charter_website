@@ -39,7 +39,7 @@ export default async function OffersPage({ params }) {
               >
                 <Link href={`/offers/${offer.slug}`}>
                   <Image
-                    src={`https://www.centauruscharter.com/product/images/${offer.image}`}
+                    src={`https://www.centauruscharter.net/product/images/${offer.image}`}
                     alt={offer.translations[language].title}
                     className="rounded-t-md w-full object-cover"
                     width={450}

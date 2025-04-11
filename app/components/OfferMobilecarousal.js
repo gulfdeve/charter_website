@@ -53,7 +53,7 @@ export default function OfferCarousel() {
                 {/* offer Image */}
                 <Link href={`/offers/${offer.slug}`}>
                   <img
-                    src={`https://www.centauruscharter.com/product/images/${offer.image}`}
+                    src={`https://www.centauruscharter.net/product/images/${offer.image}`}
                     alt={offer.translations[locale].title}
                     className="rounded-tl-md rounded-tr-md w-full object-cover"
                   />

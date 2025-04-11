@@ -109,7 +109,7 @@ export default function FirstFooter() {
           <li className="mb-2">
             <a
               className="text-text-primary-white capitalize"
-              href="https://www.centauruscharter.com/public/pdf/Centaurus-Charter-Profile-2023.pdf"
+              href="https://www.centauruscharter.net/public/pdf/Centaurus-Charter-Profile-2023.pdf"
               onClick={scrollToTop}
             >
               {t("navbar.company-profile")}

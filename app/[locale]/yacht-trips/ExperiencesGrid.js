@@ -23,7 +23,7 @@ export default function ExperiencesGrid({ experiences, locale }) {
           >
             <Link href={`/yacht-trips/${experience.slug}`}>
               <img
-                src={`https://www.centauruscharter.com/product/images/${experience.image}`}
+                src={`https://www.centauruscharter.net/product/images/${experience.image}`}
                 alt="yacht"
                 className="rounded-tl-md rounded-tr-md w-full object-cover"
               />

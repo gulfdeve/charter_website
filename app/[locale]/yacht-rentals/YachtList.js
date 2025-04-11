@@ -37,7 +37,7 @@ const YachtCard = ({ yacht }) => {
               <div key={index} className="min-w-full">
                 <Link href={`yacht-rentals/${yacht.slug}`}>
                   <img
-                    src={`https://www.centauruscharter.com/product/galleryimages/${img}`}
+                    src={`https://www.centauruscharter.net/product/galleryimages/${img}`}
                     alt={`Slide ${index + 1}`}
                     className="w-full object-contain"
                   />
