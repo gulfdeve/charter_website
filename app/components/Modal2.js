@@ -186,7 +186,7 @@ const Modal2 = ({ isModalOpen, closeModal, idName, idValue }) => {
               {/* Message / Comments */}
               <div>
                 <textarea
-                  placeholder="UAE Residents Yacht Offers"
+                  placeholder="Comments"
                   value={message}
                   onChange={(e) => setMessage(e.target.value)}
                   rows="8"

@@ -10,7 +10,8 @@ import { MdOutlineLocalDining } from "react-icons/md";
 import YachtCarousal from "@/app/components/YachtCarousel";
 import FareHarborCalendar from "@/app/components/FareHarborCalendar";
 import Modalsharedtours from "../../components/Modelsharedtours";
-
+import Modal2 from "@/app/components/Modal2";
+import Link from "next/link";
 // Example data
 const toursData = [
   {
@@ -50,6 +51,15 @@ const toursData = [
 
 const Page = () => {
   const [showDetails, setShowDetails] = useState(toursData.map(() => false));
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const handlequote = () => {
+    setIsModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+  };
 
   // Toggle details for a single card
   const toggleDetails = (index) => {
@@ -177,7 +187,7 @@ const Page = () => {
               >
                 <div className="flex flex-row gap-2 items-center ml-1.5 mb-4">
                   <FaClock size={25} className="text-primary-blue-2" />
-                  <h1 className="text-primary-blue text-sm">
+                  <h1 className="text-primary-blue-2 text-sm">
                     <span className="font-bold">Cruising Time:</span>{" "}
                     {tour.cruisingTime}
                   </h1>
@@ -363,13 +373,18 @@ const Page = () => {
               Enjoy a luxurious shared yacht adventure!
             </p>
             <div className="flex flex-col md:flex-row md:gap-10 space-y">
+              <Link href="https://wa.link/vpunoz">
               <button className="blue-lined-button">
                 <FaWhatsapp size={20} /> WHATSAPP US
               </button>
-              <button className="blue-lined-button">GET A QUOTE</button>
+              </Link>
+              <button onClick={handlequote} className="blue-lined-button">
+                GET A QUOTE
+              </button>
             </div>
           </div>
         </div>
+        <Modal2 isModalOpen={isModalOpen} closeModal={closeModal} />
       </div>
       <YachtCarousal />
     </>

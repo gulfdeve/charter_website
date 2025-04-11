@@ -18,6 +18,11 @@ const Modalsharedtours = () => {
     document.cookie = `${name}=${value};expires=${expires.toUTCString()};path=/`;
   };
 
+  // Helper to remove a cookie
+  const deleteCookie = (name) => {
+    document.cookie = `${name}=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;`;
+  };
+
   useEffect(() => {
     // Skip modal if cookie already exists
     if (getCookie("sharedToursModalClosed")) return;
@@ -37,6 +42,17 @@ const Modalsharedtours = () => {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, [isVisible]);
+
+  // Event to remove the cookie after a page refresh (or unload)
+  useEffect(() => {
+    const handleBeforeUnload = () => {
+      // This deletes the cookie when the page is refreshed or closed
+      deleteCookie("sharedToursModalClosed");
+    };
+
+    window.addEventListener("beforeunload", handleBeforeUnload);
+    return () => window.removeEventListener("beforeunload", handleBeforeUnload);
+  }, []);
 
   const handleClose = () => {
     setIsVisible(false);
