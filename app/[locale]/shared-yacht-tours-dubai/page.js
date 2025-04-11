@@ -59,230 +59,192 @@ const Page = () => {
   };
 
   return (
-    <>
-      {/* Hero Video or Banner */}
-      {/* <Videosharedtours /> */}
-      {/* <WistiaVideo video_id="x5zlv6005o" /> */}
+	<>
+    {/* Hero Video or Banner */}
+    <Modalsharedtours />
+    <VideoLocal filename="/shared yacht tours.mp4" section="shared-tours" />
 
-      <Modalsharedtours />
-      <VideoLocal filename="/shared yacht tours.mp4" section="shared-tours" />
-
-      {/* Main Container */}
-      <div className="bg-white h-full w-full">
-        {/* Top Heading with FareHarbor Calendar */}
-        <div className="container mx-auto py-20">
-          <div className="flex flex-col lg:flex-row items-center">
-            {/* Left Section - Text Content */}
-            <div className="w-full lg:w-1/2 flex flex-col items-center justify-center pb-10 lg:pb-0 lg:pr-8">
-              <h1 className="text-primary-blue text-center font-bold text-xl lg:text-3xl pb-4">
-                SHARED YACHT TOURS IN DUBAI
-              </h1>
-              <p className="text-primary-blue text-sm text-center">
-                Luxury Experience that's Affordable: Set Sail and Experience
-                Dubai, From Morning till Night
-              </p>
-              <p className="mt-4 text-center">
-                Experience the ultimate Dubai yacht tour with our exclusive
-                daily cruises, available three times a day—midday, sunset, and
-                night. Whether you want to soak up the sun, witness the
-                breathtaking skyline at golden hour, or enjoy the city lights
-                shimmering over the sea, our yacht tours offer the perfect
-                escape. Each tour is designed to provide a luxurious and
-                unforgettable experience on the water. Below, you'll find
-                detailed cards for each tour, covering everything from itinerary
-                to inclusions. If you're ready to book, check the calendar
-                beside for available dates and secure your spot today!
-              </p>
-            </div>
-
-            {/* Right Section - FareHarbor Calendar */}
-            <div className="w-full lg:w-1/2 flex justify-center items-start">
-              <FareHarborCalendar />
-            </div>
-          </div>
-        </div>
-
-        {/* Seasonal Tours Header */}
-        <div>
-          <div className="flex items-center justify-center w-full my-6">
-            <hr className="flex-grow border-primary-yellow-dark" />
-            <span className="px-4 text-2xl 2xl:text-2xl font-semibold text-primary-blue">
-              SEASONAL TOURS
-            </span>
-            <hr className="flex-grow border-primary-yellow-dark" />
-          </div>
-        </div>
-
-        {/* Card Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-3 py-10 gap-5 container mx-auto items-start">
-          {toursData.map((tour, index) => (
-            <div
-              key={index}
-              className="bg-white rounded-lg shadow-lg hover:shadow-2xl transition-shadow duration-300 p-5 space-y-3"
-            >
-              {/* Image Wrapper */}
-              <div className="relative">
-                <img
-                  src={tour.image}
-                  alt={tour.title}
-                  className="rounded-lg w-full"
-                />
-                {/* Overlay Container */}
-                <div className="absolute top-2 shadow-sm">
-                  <div className="bg-primary-yellow px-3 py-1 rounded-sm">
-                    <h2 className="text-xl font-bold uppercase text-black">
-                      BUY 1 GET 1 FREE
-                    </h2>
-                  </div>
-                  <div className="bg-primary-blue px-3 py-1 rounded-sm">
-                    <p className="text-sm uppercase text-white">
-                      Every Sunday and Monday
-                    </p>
-                  </div>
-                </div>
-              </div>
-
-              {/* Title and Toggle Button */}
-              <div className="text-center">
-                <h1 className="text-primary-blue-2 text-center font-bold text-2xl py-2">
-                  {tour.title}
-                </h1>
-                <button
-                  onClick={() => toggleDetails(index)}
-                  className="
-                    bg-gray-200
-                    text-primary-blue-2
-                    w-full
-                    py-2
-                  
-                    rounded
-                    font-bold
-                    text-sm
-                    hover:bg-gray-200
-                    transition-colors
-                    duration-300
-                    mb-2
-                  "
-                >
-                  {showDetails[index] ? "Hide Details" : "Show Details"}
-                </button>
-              </div>
-              <h1 className="text-primary-blue-2 text-sm ml-3">
-                <span className="font-bold">Cruising Time:</span>{" "}
-                {tour.cruisingTime}
-              </h1>
-            </div>
-
-              {/* Always Visible Content with Opacity Effect */}
-              <div
-                className={`
-                  transition-opacity duration-300
-                  ${!showDetails[index] ? "opacity-40" : "opacity-100"}
-                `}
-              >
-                <div className="flex flex-row gap-2 items-center ml-1.5 mb-4">
-                  <FaClock size={25} className="text-primary-blue-2" />
-                  <h1 className="text-primary-blue text-sm">
-                    <span className="font-bold">Cruising Time:</span>{" "}
-                    {tour.cruisingTime}
-                  </h1>
-                </div>
-
-                <div className="flex flex-row gap-2 items-center mb-4">
-                  <IoMan size={35} className="text-primary-blue-2" />
-                  <h1 className="text-primary-blue-2 text-sm">
-                    <span className="font-bold">Adult (12+):</span>{" "}
-                    {tour.adultPrice}
-                  </h1>
-                </div>
-
-                <div className="flex flex-row gap-2 items-center ml-0.5 mb-3">
-                  <FaChild size={30} className="text-primary-blue-2" />
-                  <h1 className="text-primary-blue-2 text-sm">
-                    <span className="font-bold">Child (4-11):</span>{" "}
-                    {tour.childPrice}
-                  </h1>
-                </div>
-              </div>
-              <h1 className="text-primary-blue-2 text-sm ml-3">
-                <span className="font-bold">Cruising Route:</span>{" "}
-                {tour.cruisingRoute}
-              </h1>
-            </div>
-              {/* Collapsible Details Section */}
-              <div
-                className={`
-                  transition-all duration-300 overflow-hidden
-                  ${
-                    showDetails[index]
-                      ? "max-h-[999px] opacity-100"
-                      : "max-h-0 opacity-0"
-                  }
-                `}
-              >
-                <div className=" space-y-4">
-                  <div className="flex flex-row gap-2 items-center">
-                    <MdOutlineLocalDining className="text-primary-blue-2 text-[6rem] sm:text-[3rem] lg:text-[6rem]" />
-                    <h1 className="text-primary-blue-2 text-sm">
-                      <span className="font-bold">Live BBQ:</span>{" "}
-                      {tour.liveBBQ}
-                    </h1>
-                  </div>
-
-                  <div className="flex flex-row gap-2.5 items-center ml-0.5">
-                    <FaCameraRetro size={35} className="text-primary-blue-2" />
-                    <h1 className="text-primary-blue-2 text-sm">
-                      <span className="font-bold">Cruising Route:</span>{" "}
-                      {tour.cruisingRoute}
-                    </h1>
-                  </div>
-
-                  <div className="flex flex-row gap-2 items-center">
-                    <IoLocationSharp
-                      size={32}
-                      className="text-primary-blue-2"
-                    />
-                    <h1 className="text-primary-blue-2 text-sm">
-                      <span className="font-bold text-primary-blue-2">
-                        Departure Point:
-                      </span>{" "}
-                      {tour.departurePoint}
-                    </h1>
-                  </div>
-                </div>
-              </div>
-              <h1 className="text-primary-blue-2 text-sm ml-3">
-                <span className="font-bold text-primary-blue-2">
-                  Departure Point:
-                </span>{" "}
-                {tour.departurePoint}
-              </h1>
-            </div>
+    {/* Main Container */}
+    <div className="bg-white h-full w-full">
+      {/* Top Heading with FareHarbor Calendar */}
+      <div className="container mx-auto py-20">
+        <div className="flex flex-col lg:flex-row items-center">
+          {/* Left Section - Text Content */}
+          <div className="w-full lg:w-1/2 flex flex-col items-center justify-center pb-10 lg:pb-0 lg:pr-8">
+            <h1 className="text-primary-blue text-center font-bold text-xl lg:text-3xl pb-4">
+              SHARED YACHT TOURS IN DUBAI
+            </h1>
+            <p className="text-primary-blue text-sm text-center">
+              Luxury Experience that's Affordable: Set Sail and Experience
+              Dubai, From Morning till Night
+            </p>
+            <p className="mt-4 text-center">
+              Experience the ultimate Dubai yacht tour with our exclusive
+              daily cruises, available three times a day—midday, sunset, and
+              night. Whether you want to soak up the sun, witness the
+              breathtaking skyline at golden hour, or enjoy the city lights
+              shimmering over the sea, our yacht tours offer the perfect
+              escape. Each tour is designed to provide a luxurious and
+              unforgettable experience on the water. Below, you'll find
+              detailed cards for each tour, covering everything from itinerary
+              to inclusions. If you're ready to book, check the calendar
+              beside for available dates and secure your spot today!
+            </p>
           </div>
 
-          {/* Book Now Button */}
-          <button className="yellow-solid-button w-full">Book Now</button>
+          {/* Right Section - FareHarbor Calendar */}
+          <div className="w-full lg:w-1/2 flex justify-center items-start">
+            <FareHarborCalendar />
+          </div>
         </div>
       </div>
-    ))}
-  </div>
-</div>
 
-        <div className="flex items-center justify-center bg-primary-blue-2 max-w-3xl mx-auto text-center">
-          <h1 className="text-white text-md md:text-xl font-bold">
-            PREMIUM DRINKS ARE AVAILABLE FOR PURCHASE ON BOARD
-          </h1>
-        </div>
-
-        {/* HIGHLIGHTS */}
+      {/* Seasonal Tours Header */}
+      <div>
         <div className="flex items-center justify-center w-full my-6">
           <hr className="flex-grow border-primary-yellow-dark" />
-          <span className="px-4 text-2xl 2xl:text-3xl font-semibold text-primary-blue">
-            HIGHLIGHTS
+          <span className="px-4 text-2xl 2xl:text-2xl font-semibold text-primary-blue">
+            SEASONAL TOURS
           </span>
           <hr className="flex-grow border-primary-yellow-dark" />
         </div>
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-2 md:gap-5 px-4 py-10 container mx-auto">
+      </div>
+
+      {/* Card Grid */}
+      <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-3 py-10 gap-5 container mx-auto items-start">
+        {toursData.map((tour, index) => (
+          <div
+            key={index}
+            className="bg-white rounded-lg shadow-lg hover:shadow-2xl transition-shadow duration-300 p-5 space-y-3"
+          >
+            {/* Image Wrapper */}
+            <div className="relative">
+              <img
+                src={tour.image}
+                alt={tour.title}
+                className="rounded-lg w-full"
+              />
+              {/* Overlay Container */}
+              <div className="absolute top-2 shadow-sm">
+                <div className="bg-primary-yellow px-3 py-1 rounded-sm">
+                  <h2 className="text-xl font-bold uppercase text-black">
+                    BUY 1 GET 1 FREE
+                  </h2>
+                </div>
+                <div className="bg-primary-blue px-3 py-1 rounded-sm">
+                  <p className="text-sm uppercase text-white">
+                    Every Sunday and Monday
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* Title and Toggle Button */}
+            <div className="text-center">
+              <h1 className="text-primary-blue-2 text-center font-bold text-2xl py-2">
+                {tour.title}
+              </h1>
+              <button
+                onClick={() => toggleDetails(index)}
+                className="bg-gray-200 text-primary-blue-2 w-full py-2 rounded font-bold text-sm hover:bg-gray-200 transition-colors duration-300 mb-2"
+              >
+                {showDetails[index] ? "Hide Details" : "Show Details"}
+              </button>
+            </div>
+
+            {/* Always Visible Content with Opacity Effect */}
+            <div
+              className={`transition-opacity duration-300 ${
+                !showDetails[index] ? "opacity-40" : "opacity-100"
+              }`}
+            >
+              <div className="flex flex-row gap-2 items-center ml-1.5 mb-4">
+                <FaClock size={25} className="text-primary-blue-2" />
+                <h1 className="text-primary-blue text-sm">
+                  <span className="font-bold">Cruising Time:</span>{" "}
+                  {tour.cruisingTime}
+                </h1>
+              </div>
+
+              <div className="flex flex-row gap-2 items-center mb-4">
+                <IoMan size={35} className="text-primary-blue-2" />
+                <h1 className="text-primary-blue-2 text-sm">
+                  <span className="font-bold">Adult (12+):</span>{" "}
+                  {tour.adultPrice}
+                </h1>
+              </div>
+
+              <div className="flex flex-row gap-2 items-center ml-0.5 mb-3">
+                <FaChild size={30} className="text-primary-blue-2" />
+                <h1 className="text-primary-blue-2 text-sm">
+                  <span className="font-bold">Child (4-11):</span>{" "}
+                  {tour.childPrice}
+                </h1>
+              </div>
+            </div>
+
+            {/* Cruising Route (always visible) */}
+            <h1 className="text-primary-blue-2 text-sm ml-3">
+              <span className="font-bold">Cruising Route:</span>{" "}
+              {tour.cruisingRoute}
+            </h1>
+
+            {/* Collapsible Details Section */}
+            <div
+              className={`transition-all duration-300 overflow-hidden ${
+                showDetails[index] ? "max-h-[999px] opacity-100" : "max-h-0 opacity-0"
+              }`}
+            >
+              <div className="space-y-4 mt-4">
+                <div className="flex flex-row gap-2 items-center">
+                  <MdOutlineLocalDining className="text-primary-blue-2 text-[6rem] sm:text-[3rem] lg:text-[6rem]" />
+                  <h1 className="text-primary-blue-2 text-sm">
+                    <span className="font-bold">Live BBQ:</span>{" "}
+                    {tour.liveBBQ}
+                  </h1>
+                </div>
+
+                <div className="flex flex-row gap-2.5 items-center ml-0.5">
+                  <FaCameraRetro size={35} className="text-primary-blue-2" />
+                  <h1 className="text-primary-blue-2 text-sm">
+                    <span className="font-bold">Photo Opportunities:</span>{" "}
+                    {tour.photoOps}
+                  </h1>
+                </div>
+
+                <div className="flex flex-row gap-2 items-center">
+                  <IoLocationSharp size={32} className="text-primary-blue-2" />
+                  <h1 className="text-primary-blue-2 text-sm">
+                    <span className="font-bold">Departure Point:</span>{" "}
+                    {tour.departurePoint}
+                  </h1>
+                </div>
+              </div>
+            </div>
+
+            {/* Book Now Button */}
+            <button className="yellow-solid-button w-full mt-4">Book Now</button>
+          </div>
+        ))}
+      </div>
+
+      {/* Premium Drinks Notice */}
+      <div className="flex items-center justify-center bg-primary-blue-2 max-w-3xl mx-auto text-center">
+        <h1 className="text-white text-md md:text-xl font-bold">
+          PREMIUM DRINKS ARE AVAILABLE FOR PURCHASE ON BOARD
+        </h1>
+      </div>
+
+      {/* HIGHLIGHTS */}
+      <div className="flex items-center justify-center w-full my-6">
+        <hr className="flex-grow border-primary-yellow-dark" />
+        <span className="px-4 text-2xl 2xl:text-3xl font-semibold text-primary-blue">
+          HIGHLIGHTS
+        </span>
+        <hr className="flex-grow border-primary-yellow-dark" />
+      </div>
+      
+	  <div className="grid grid-cols-2 md:grid-cols-4 gap-2 md:gap-5 px-4 py-10 container mx-auto">
           <div>
             <img src="/BBQ.webp" alt="Live BBQ" />
             <h1 className="bg-primary-blue-2 text-primary-yellow text-center text-xs sm:text-sm md:text-md  font-bold p-2 rounded-b-lg">
@@ -331,9 +293,8 @@ const Page = () => {
             <li>Guests under 18 years old must be accompanied by an adult.</li>
           </ul>
         </div>
-
-        {/* Split Section with Image + Text */}
-        <div className="flex flex-col md:flex-row-reverse items-center justify-center">
+		        {/* Split Section with Image + Text */}
+				<div className="flex flex-col md:flex-row-reverse items-center justify-center">
           <div className="hidden lg:block">
             <img
               src="/royal.webp"
@@ -374,8 +335,7 @@ const Page = () => {
             </p>
           </div>
         </div>
-
-        {/* CTA Section */}
+		{/* CTA Section */}
         <div className="py-10 container mx-auto">
           <div className="flex flex-col md:flex-row rounded-lg items-center gap-5 justify-center md:justify-between bg-primary-blue p-5">
             <p className="text-white text-center md:text-left font-bold text-xl rounded">
@@ -389,9 +349,9 @@ const Page = () => {
             </div>
           </div>
         </div>
-      </div>
-      <YachtCarousal />
-    </>
+    </div>
+    <YachtCarousal />
+  </>
   );
 };
 
