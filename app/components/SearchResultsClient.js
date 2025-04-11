@@ -19,8 +19,9 @@ export default function SearchResultsClient({
     e.preventDefault();
     setSelectedVessel(vessel);
     modalRef.current?.open();
+    
   };
-
+  console.log("rentalppp",rentalPeriod);
   return (
     <div className="mt-12 flex flex-col items-center justify-center px-4 container mx-auto">
       <h2 className="text-2xl font-semibold text-center mb-6">Search Results</h2>

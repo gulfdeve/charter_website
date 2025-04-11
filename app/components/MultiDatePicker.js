@@ -1,13 +1,41 @@
 "use client";
 
-import { useState, useRef } from "react";
-import DatePicker from "react-multi-date-picker";
+import { useState, useRef, useEffect } from "react";
+import DatePicker ,{ DateObject}from "react-multi-date-picker";
+
 import { FaChevronDown } from "react-icons/fa";
+import SearchResultsClient from "./SearchResultsClient";
+import Modal3 from "./Modal3";
 
 export default function MultiDatePicker({ name, init = [] }) {
-  const [selectedDates, setSelectedDates] = useState(init);
-  const [isOpen, setIsOpen] = useState(false);
   const datePickerRef = useRef(null);
+  const [selectedDates, setSelectedDates] = useState([]);
+  const [isOpen, setIsOpen] = useState(false);
+
+  // Load from localStorage on mount
+  useEffect(() => {
+    const stored = localStorage.getItem("selectedDates");
+    if (stored) {
+      try {
+        const parsed = JSON.parse(stored);
+        // Convert stored strings back to DateObject
+        const restoredDates = parsed.map((d) => new DateObject(d));
+        setSelectedDates(restoredDates);
+      } catch {
+        setSelectedDates([]);
+      }
+    } else {
+      setSelectedDates(init);
+    }
+  }, []);
+
+  // Save to localStorage whenever it changes
+  useEffect(() => {
+    if (selectedDates?.length) {
+      const serialized = selectedDates.map((d) => d?.toString?.()); // Save in format DateObject understands
+      localStorage.setItem("selectedDates", JSON.stringify(serialized));
+    }
+  }, [selectedDates]);
 
   const toggleCalendar = () => {
     if (!isOpen) {
@@ -18,6 +46,15 @@ export default function MultiDatePicker({ name, init = [] }) {
     setIsOpen(!isOpen);
   };
 
+  const renderDisplayText = () => {
+    if (selectedDates?.length === 2) {
+      return `${selectedDates[0]?.format?.("YYYY-MM-DD") || ""} to ${selectedDates[1]?.format?.("YYYY-MM-DD") || ""}`;
+    } else if (selectedDates?.length === 1) {
+      return selectedDates[0]?.format?.("YYYY-MM-DD") || "";
+    }
+    return "RENTAL PERIOD";
+  };
+
   return (
     <div className="relative">
       <button
@@ -25,9 +62,7 @@ export default function MultiDatePicker({ name, init = [] }) {
         onClick={toggleCalendar}
         className="block w-full appearance-none border border-gray-300 rounded-none px-3 pr-10 leading-tight focus:outline-none focus:ring-2 focus:ring-blue-500 bg-white text-gray-700 text-left relative z-10 h-10 overflow-hidden whitespace-nowrap truncate"
       >
-        {selectedDates?.length === 2
-          ? `${selectedDates[0]?.format?.("YYYY-MM-DD")} to ${selectedDates[1]?.format?.("YYYY-MM-DD")}`
-          : "RENTAL PERIOD"}
+        {renderDisplayText()}
       </button>
 
       <div
@@ -49,6 +84,9 @@ export default function MultiDatePicker({ name, init = [] }) {
           onOpen={() => setIsOpen(true)}
           onClose={() => setIsOpen(false)}
         />
+      </div>
+      <div className="hidden">
+        <Modal3 rentalPeriod={selectedDates} />
       </div>
     </div>
   );

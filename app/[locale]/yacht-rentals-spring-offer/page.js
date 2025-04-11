@@ -39,12 +39,12 @@ const YachtCard = ({ yacht }) => {
         <div className="absolute top-4  flex flex-col items-start">
           {/* BEST SELLER or PREMIUM YACHT if applicable */}
           {yacht.category.includes("bestSellers") && (
-            <div className="bg-black text-yellow-400 text-sm font-bold py-0.5 px-2 rounded-t">
+            <div className="bg-black text-primary-yellow text-sm font-bold py-0.5 px-2 rounded-t">
               BEST SELLER
             </div>
           )}
           {yacht.category.includes("premium") && (
-            <div className="bg-black text-yellow-400 text-sm font-bold py-0.5 px-2">
+            <div className="bg-black text-primary-yellow text-sm font-bold py-0.5 px-2">
               PREMIUM YACHT
             </div>
           )}
@@ -58,11 +58,11 @@ const YachtCard = ({ yacht }) => {
 
       {/* Yacht Details */}
       <div className="flex flex-col items-start pt-3">
-        <Link href={`yacht-rentals/${yacht.slug}`}>
+        
           <h2 className="text-primary-blue text-xl font-bold py-4 hover:text-blue-600 transition-all duration-300 cursor-pointer">
             {yacht.title}
           </h2>
-        </Link>
+       
         <p className="text-sm text-primary-blue text-left">
           Model: <span className="font-bold">{yacht.model}</span> | Length:{" "}
           <span className="font-bold">{yacht.length}</span> | Guests:{" "}
@@ -72,9 +72,7 @@ const YachtCard = ({ yacht }) => {
           AED {yacht.price} <span className="text-primary-blue">Per Hour</span>
         </p>
         <a
-          href={`https://fareharbor.com/embeds/book/centauruscharter/items/${yacht.fareharbor_id}/?full-items=yes&flow=645487&back=${encodeURIComponent(
-            typeof window !== "undefined" ? window.location.href : ""
-          )}`}
+          href={`https://wa.me/971547928626?text=Hi!%20I%20want%20to%20inquire%20about%20the%2030%2525%20Spring%20Offer%20for%20Lagoona`}
           className="flex flex-row items-center justify-center py-2 w-full md:py-2 md:px-4 rounded-md bg-primary-yellow text-primary-blue hover:bg-primary-blue hover:text-primary-yellow font-bold text-base md:text-sm xl:text-lg transition-all duration-300"
         >
           Book Now
@@ -184,7 +182,7 @@ export default function SpringOffer() {
       <h1 className="text-2xl md:text-4xl font-bold text-[#0B2946] mb-2 text-center">
         Centaurus Luxury Yacht Rentals
       </h1>
-      <h2 className="text-lg md:text-2xl font-semibold text-red-600 mb-6 text-center">
+      <h2 className="text-lg md:text-2xl  text-gray-700 mb-6 text-center">
         30% OFF Afternoon Yacht Charters!
       </h2>
 
