@@ -111,7 +111,7 @@ export default function YachtList({ yachts }) {
 
   return (
     <>
-      <div className="flex justify-center items-center gap-8 md:gap-8 text-xs sm:text-base md:text-lg font-semibold py-2 pb-10 md:py-7 px-2">
+      <div className="flex justify-center items-center gap-8 md:gap-8 text-xs sm:text-base md:text-lg font-semibold py-2 pb-10 md:py-2 px-2">
         <button onClick={() => setActiveTab("allYachts")}>ALL YACHTS</button>
         <button onClick={() => setActiveTab("bestSellers")}>BEST SELLERS</button>
         <button onClick={() => setActiveTab("premium")}>PREMIUM</button>

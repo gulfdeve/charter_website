@@ -1,7 +1,7 @@
 export async function GET() {
   try {
 	const url = `${process.env.API_DOMAIN}/api/api_new/basic`;
-	// console.log("using url: ", url);
+	console.log("using url: ", url);
     const response = await fetch(`${process.env.API_DOMAIN}/api/api_new/basic`);
     if (!response.ok) {
       return new Response(JSON.stringify({ error: "Failed to fetch data" }), {
