@@ -3,11 +3,13 @@ import { useLocale, useTranslations } from "next-intl";
 import { useEffect, useState, useRef } from "react";
 import { FaPhoneAlt } from "react-icons/fa";
 import { IoLogoWhatsapp } from "react-icons/io5";
-import { MdKeyboardArrowDown, MdMail } from "react-icons/md";
+import { MdMail } from "react-icons/md";
 import { useData } from "../context/DataContext";
 import { useRouter, usePathname, Link } from "../i18n/routing";
 import { GiHamburgerMenu } from "react-icons/gi";
 import Image from "next/image";
+import MobileNavbar from './MobileNavbar';
+
 export default function Navbar() {
   const t = useTranslations();
   const locale = useLocale();
@@ -20,13 +22,9 @@ export default function Navbar() {
   const [submenuOpen, setSubmenuOpen] = useState(null); // Tracks open submenu
   const { data, loading, error } = useData();
 
-
   const settingsItem = data?.settings?.[0];
-  const {
-    header_email,
-    header_phone_number_url,
-    header_whatsapp_url,
-  } = settingsItem || {};
+  const { header_email, header_phone_number_url, header_whatsapp_url } =
+    settingsItem || {};
 
   const toggleSubmenu = (index) => {
     setSubmenuOpen(submenuOpen === index ? null : index);
@@ -91,25 +89,35 @@ export default function Navbar() {
             </Link>
           </div>
           <div className="flex items-center justify-end">
-            <Link aria-label="contact us icon" href={"/contact"} className="flex flex-row items-center justify-center yellow-solid-button">
+            <Link
+              aria-label="contact us icon"
+              href={"/contact"}
+              className="flex flex-row items-center justify-center yellow-solid-button"
+            >
               {t("navbar.contact-us")}
             </Link>
             <div className="flex flex-row px-8 gap-8">
               {/* Email Icon */}
-              <Link aria-label="email icon"  href={header_email || "#"}>
+              <Link aria-label="email icon" href={header_email || "#"}>
                 <MdMail
                   size={30}
                   className="text-primary-yellow hover:text-primary-blue hover:scale-110"
                 />
               </Link>
-              <Link aria-label="phone icon" href={header_phone_number_url || "#"}>
+              <Link
+                aria-label="phone icon"
+                href={header_phone_number_url || "#"}
+              >
                 <FaPhoneAlt
                   size={23}
                   className="text-primary-yellow hover:text-primary-blue mt-1  hover:scale-110"
                 />
               </Link>
               {/* WhatsApp Icon */}
-              <Link aria-label="whatsapp icon"     href={header_whatsapp_url || "#"}>
+              <Link
+                aria-label="whatsapp icon"
+                href={header_whatsapp_url || "#"}
+              >
                 <IoLogoWhatsapp
                   size={30}
                   className="text-primary-yellow hover:text-primary-blue  hover:scale-110"
@@ -184,9 +192,7 @@ export default function Navbar() {
         >
           <nav
             className={` w-full bg-primary-blue text-primary-yellow  font-bold ${
-              isSticky
-                ? " sticky top-0 z-50"
-                : ""
+              isSticky ? " sticky top-0 z-50" : ""
             }`}
           >
             <div className="container mx-auto">
@@ -205,11 +211,12 @@ export default function Navbar() {
                   }`}
                 >
                   <Link href={"/"}>
-                    <Image 
+                    <Image
                       src="/CentaurusLogoWhite.png"
                       alt="centaurus charter logo"
                       width={200}
                       height={0}
+					  priority={true}
                       style={{ height: "auto" }}
                     />
                   </Link>
@@ -220,10 +227,16 @@ export default function Navbar() {
                 <li className="relative group">
                   <span
                     className={`flex items-center justify-between cursor-pointer gap-1 ${
-                      pathname === "/yacht-rentals" || pathname.startsWith("/yacht-rentals/") ? "text-white" : ""
+                      pathname === "/yacht-rentals" ||
+                      pathname.startsWith("/yacht-rentals/")
+                        ? "text-white"
+                        : ""
                     }`}
                   >
-                    <Link className="py-6 inline-block tracking-wider hover:text-white" href={`/yacht-rentals`}>
+                    <Link
+                      className="py-6 inline-block tracking-wider hover:text-white"
+                      href={`/yacht-rentals`}
+                    >
                       {t("navbar.private-yachts")}
                     </Link>
                     <svg
@@ -241,20 +254,17 @@ export default function Navbar() {
                       />
                     </svg>
                   </span>
-                  <ul className="absolute top-[85%] left-0 w-80 bg-white text-black shadow-lg hidden group-hover:block z-20">
+                  <ul className="absolute top-[85%] left-0 w-80 bg-white text-black shadow-lg rounded-lg overflow-hidden border border-gray-200 hidden group-hover:block z-50">
                     {!loading &&
                       data?.products?.map((product) => (
                         <li
                           key={product.id}
-                          className="cursor-pointer text-base font-normal text-gray-500 hover:bg-gray-200"
+                          className="cursor-pointer text-base font-medium text-gray-600 hover:text-white hover:bg-primary-blue transition-all duration-300"
                         >
-                          {/* {product.title} */}
                           <Link
                             href={`/yacht-rentals/${product.slug}`}
                             className="py-2 px-4 block"
-                            key={product.id}
                           >
-                            {" "}
                             {product.translations?.[locale]?.name_of_yacht}
                           </Link>
                         </li>
@@ -270,7 +280,10 @@ export default function Navbar() {
                   }`}
                 >
                   {" "}
-                  <Link className="py-6 inline-block tracking-wider hover:text-white" href={`/yachts-for-sale-dubai`}>
+                  <Link
+                    className="py-6 inline-block tracking-wider hover:text-white"
+                    href={`/yachts-for-sale-dubai`}
+                  >
                     {t("navbar.buy-a-yacht")}
                   </Link>
                 </li>
@@ -283,7 +296,10 @@ export default function Navbar() {
                   }`}
                 >
                   {" "}
-                  <Link className="py-6 inline-block tracking-wider hover:text-white" href={`/shared-yacht-tours-dubai`}>
+                  <Link
+                    className="py-6 inline-block tracking-wider hover:text-white"
+                    href={`/shared-yacht-tours-dubai`}
+                  >
                     {t("navbar.shared-tours")}
                   </Link>
                 </li>
@@ -292,10 +308,18 @@ export default function Navbar() {
                 <li className="relative group">
                   <span
                     className={`flex items-center justify-between cursor-pointer gap-1 ${
-                      pathname === "/yacht-trips" || pathname.startsWith("/yacht-trips/") ? "text-white" : ""
+                      pathname === "/yacht-trips" ||
+                      pathname.startsWith("/yacht-trips/")
+                        ? "text-white"
+                        : ""
                     }`}
                   >
-                    <Link className="py-6 inline-block tracking-wider hover:text-white" href={`/yacht-trips`}>{t("navbar.experiences")}</Link>
+                    <Link
+                      className="py-6 inline-block tracking-wider hover:text-white"
+                      href={`/yacht-trips`}
+                    >
+                      {t("navbar.experiences")}
+                    </Link>
                     <svg
                       className="w-5 h-5 lg:w-5 lg:h-5 transform group-hover:rotate-180 transition-transform duration-300"
                       xmlns="http://www.w3.org/2000/svg"
@@ -311,13 +335,13 @@ export default function Navbar() {
                       />
                     </svg>
                   </span>
-                  <ul className="absolute top-[85%] left-0 w-80 bg-white text-black shadow-lg hidden group-hover:block z-20">
+                  <ul className="absolute top-[85%] left-0 w-80 bg-white text-black shadow-lg rounded-lg overflow-hidden border border-gray-200 hidden group-hover:block z-50">
                     {!loading &&
                       data?.experiences?.map((experience) => {
                         return (
                           <li
                             key={experience.id}
-                            className="cursor-pointer text-base font-normal text-gray-500 hover:bg-gray-200"
+                            className="cursor-pointer text-base font-medium text-gray-600 hover:text-white hover:bg-primary-blue transition-all duration-300"
                           >
                             <Link
                               href={`/yacht-trips/${experience.slug}`}
@@ -335,28 +359,50 @@ export default function Navbar() {
 
                 <li
                   className={`uppercase ${
-                    pathname === "/offers" || pathname.startsWith("/offers/") ? "text-white" : ""
+                    pathname === "/offers" || pathname.startsWith("/offers/")
+                      ? "text-white"
+                      : ""
                   }`}
                 >
                   {" "}
-                  <Link className="py-6 inline-block tracking-wider hover:text-white" href={`/offers`}>{t("navbar.offers")} </Link>
+                  <Link
+                    className="py-6 inline-block tracking-wider hover:text-white"
+                    href={`/offers`}
+                  >
+                    {t("navbar.offers")}{" "}
+                  </Link>
                 </li>
 
                 <li
                   className={`uppercase ${
-                    pathname === "/events" || pathname.startsWith("/events/") ? "text-white" : ""
+                    pathname === "/events" || pathname.startsWith("/events/")
+                      ? "text-white"
+                      : ""
                   }`}
                 >
                   {" "}
-                  <Link className="py-6 inline-block tracking-wider hover:text-white" href={`/events`}>Events</Link>
+                  <Link
+                    className="py-6 inline-block tracking-wider hover:text-white"
+                    href={`/events`}
+                  >
+                    Events
+                  </Link>
                 </li>
 
                 <li
                   className={`uppercase ${
-                    pathname === "/watersports" || pathname.startsWith("/watersports/") ? "text-white" : ""
+                    pathname === "/watersports" ||
+                    pathname.startsWith("/watersports/")
+                      ? "text-white"
+                      : ""
                   }`}
                 >
-                  <Link className="py-6 inline-block tracking-wider hover:text-white" href={`/watersports`}>{t("navbar.water-sports")}</Link>
+                  <Link
+                    className="py-6 inline-block tracking-wider hover:text-white"
+                    href={`/watersports`}
+                  >
+                    {t("navbar.water-sports")}
+                  </Link>
                 </li>
 
                 {/* NEWYEAR */}
@@ -374,214 +420,17 @@ export default function Navbar() {
         </div>
       </div>
       {/* Mobile Navbar */}
-      <div className="lg:hidden block">
-  <nav className="bg-primary-blue w-full h-14 p-3 fixed top-0 z-50">
-    <div className="flex items-center justify-between">
-      {/* Logo */}
-      <div className="w-32 pr-3">
-        <Link href={"/"}>
-          <Image 
-            src="/CentaurusLogoWhite.png" 
-            alt="centaurus charter logo" 
-            width={200}
-            height={0}
-            style={{ height: "auto" }}
-          />
-        </Link>
-      </div>
-
-      {/* Icons and Dropdown Trigger */}
-      <div className="flex items-center gap-6">
-        {/* WhatsApp Icon */}
-        <Link href="https://wa.me/1234567890">
-          <Image 
-            src="/whatsapp.svg"
-            alt="whatsapp logo"
-            width={24}
-            height={24}
-          />
-        </Link>
-
-        {/* Phone Icon */}
-        <Link aria-label="phone icon" href="tel:1234567890">
-          <FaPhoneAlt className="text-white w-5 h-5" />
-        </Link>
-
-        {/* Language Selector */}
-        <div className="relative" ref={dropdownRef}>
-          {/* Trigger Button */}
-          <button
-            onClick={() => setIsDropdownOpen((prev) => !prev)}
-            className="flex items-center gap-2 p-1 rounded text-white text-sm"
-          >
-            <img
-              src={currentLanguage?.flag}
-              alt={currentLanguage?.name}
-              className="w-6 h-6"
-            />
-          </button>
-
-          {/* Dropdown Menu */}
-          {istheDropdownOpen && (
-            <ul className="absolute -right-14 top-11 w-48 text-center bg-white border font-bold text-primary-blue shadow-lg z-20">
-              {languages.map((lang) => (
-                <li
-                  key={lang.code}
-                  onClick={() => {
-                    handleLanguageChange(lang.code);
-                    setIsDropdownOpen(false);
-                  }}
-                  className={`flex justify-center items-center gap-2 p-2 cursor-pointer hover:bg-gray-200 ${
-                    lang.code === locale ? "bg-gray-100 font-bold" : ""
-                  }`}
-                >
-                  {lang.name.toUpperCase()} - {lang.code.toUpperCase()}
-                </li>
-              ))}
-            </ul>
-          )}
-        </div>
-        {/* Hamburger Menu */}
-        <div
-          className="w-8 cursor-pointer"
-          onClick={() => setMobileDropdownOpen(!mobileDropdownOpen)}
-        >
-          <GiHamburgerMenu size={30} className="text-white" />
-        </div>
-      </div>
-    </div>
-
-    {/* Mobile Dropdown Menu */}
-    {mobileDropdownOpen && (
-      <div
-        className="absolute top-11 right-0 bg-white text-black w-full mt-3 shadow-lg"
-        style={{ zIndex: 999 }}
-      >
-        <ul className="flex flex-col p-4 gap-4">
-          {/* Menu Items */}
-          <li className="font-bold cursor-pointer hover:text-blue-500">
-            <div
-              className="flex justify-between items-center"
-              onClick={() => toggleSubmenu(0)}
-            >
-              <Link
-                href={`/yacht-rentals`}
-                onClick={() => setMobileDropdownOpen(false)}
-              >
-                {t("navbar.private-yachts")}
-              </Link>
-              <span className="text-black">
-                <MdKeyboardArrowDown />
-              </span>
-            </div>
-            {submenuOpen === 0 && (
-              <ul className="pl-4 pt-3 space-y-3">
-                {!loading &&
-                  data?.products?.map((product) => (
-                    <li className="cursor-pointer text-sm mt-2 font-normal text-gray-500">
-                      <Link
-                        href={`/yacht-rentals/${product.slug}`}
-                        key={product.id}
-                        onClick={() => setMobileDropdownOpen(false)}
-                      >
-                        {product.title}
-                      </Link>
-                    </li>
-                  ))}
-              </ul>
-            )}
-          </li>
-          <Link
-            href={`/yacht-sale-for-dubai`}
-            onClick={() => setMobileDropdownOpen(false)}
-          >
-            <li className="font-bold cursor-pointer hover:text-blue-500">
-              {t("navbar.buy-a-yacht")}
-            </li>
-          </Link>
-
-          <li className="font-bold cursor-pointer hover:text-blue-500">
-            <Link
-              href={`/shared-yacht-tours-dubai`}
-              onClick={() => setMobileDropdownOpen(false)}
-            >
-              {t("navbar.shared-tours")}
-            </Link>
-          </li>
-
-          <li className="font-bold cursor-pointer">
-            <div
-              className="flex justify-between items-center"
-              onClick={() => toggleSubmenu(1)}
-            >
-              <Link
-                href={`/yacht-trips`}
-                onClick={() => setMobileDropdownOpen(false)}
-              >
-                {t("navbar.experiences")}
-              </Link>
-              <span className="text-black">
-                <MdKeyboardArrowDown />
-              </span>
-            </div>
-            {submenuOpen === 1 && (
-              <ul className="pl-4 pt-3 space-y-3">
-                {!loading &&
-                  data?.experiences?.map((experience) => (
-                    <li className="cursor-pointer text-sm mt-2 font-normal text-gray-500">
-                      <Link
-                        href={`/yacht-trips/${experience.slug}`}
-                        key={experience.id}
-                        onClick={() => setMobileDropdownOpen(false)}
-                      >
-                        {experience.translations[locale].title}
-                      </Link>
-                    </li>
-                  ))}
-              </ul>
-            )}
-          </li>
-
-          <li className="font-bold cursor-pointer hover:text-blue-500">
-            <Link
-              href={`/offers`}
-              onClick={() => setMobileDropdownOpen(false)}
-            >
-              {t("navbar.offers")}
-            </Link>
-          </li>
-          <li className="font-bold cursor-pointer hover:text-blue-500">
-            <Link
-              href={`/events`}
-              onClick={() => setMobileDropdownOpen(false)}
-            >
-              {t("navbar.events")}
-            </Link>
-          </li>
-
-		  <li className="font-bold cursor-pointer hover:text-blue-500">
-            <Link
-              href={`/watersports`}
-              onClick={() => setMobileDropdownOpen(false)}
-            >
-              {t("navbar.water-sports")}
-            </Link>
-          </li>
-
-          {/* <li className="font-bold cursor-pointer hover:text-blue-500">
-            <Link
-              href={`/newyear`}
-              onClick={() => setMobileDropdownOpen(false)}
-            >
-              {t("navbar.new-year")}
-            </Link>
-          </li> */}
-        </ul>
-      </div>
-    )}
-  </nav>
-</div>
-
+      <MobileNavbar 
+        currentLanguage={currentLanguage}
+        istheDropdownOpen={istheDropdownOpen}
+        setIsDropdownOpen={setIsDropdownOpen}
+        mobileDropdownOpen={mobileDropdownOpen}
+        setMobileDropdownOpen={setMobileDropdownOpen}
+        languages={languages}
+        handleLanguageChange={handleLanguageChange}
+        locale={locale}
+        toggleSubmenu={toggleSubmenu}
+      />
     </>
   );
 }

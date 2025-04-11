@@ -1,9 +1,9 @@
+// app/[locale]/page.js
 import HomeContent from "@/app/components/HomeContent"
-import path from 'path';
-import fs from 'fs/promises';
+import { fetchData } from '@/app/lib/fetchData';
 
 export async function generateMetadata({params}) {
-  const { locale } = await params;
+	const { locale } = await params;
   const resolvedLocale = locale || "en"; 
 
   let metaTitle = "Default Title";
@@ -11,14 +11,12 @@ export async function generateMetadata({params}) {
   let metaKeywords = "default, keywords";
 
   try {
-    // Path to your JSON file in the public directory
-    const dataPath = path.join(process.cwd(), 'public', 'data.json');
+    // Use fetchData utility instead of reading from filesystem
+    const data = await fetchData();
     
-    // Read the file
-    const jsonData = await fs.readFile(dataPath, 'utf8');
-    const data = JSON.parse(jsonData);
-    
-    console.log("Reading from local data.json");
+    if (!data) {
+      throw new Error('Failed to fetch data');
+    }
     
     // Fetch metadata for "home" using the locale
     const metaData = data?.meta_tags?.["home"]?.[resolvedLocale]?.[0];
@@ -28,10 +26,10 @@ export async function generateMetadata({params}) {
       metaDescription = metaData.meta_description || metaDescription;
       metaKeywords = metaData.meta_keywords || metaKeywords;
     } else {
-      console.warn(`No metadata found for home in locale: ${locale}`);
+      console.warn(`No metadata found for home in locale: ${resolvedLocale}`);
     }
   } catch (error) {
-    console.error("Error reading metadata from data.json:", error);
+    console.error("Error fetching metadata:", error);
   }
 
   return {
@@ -44,6 +42,11 @@ export async function generateMetadata({params}) {
   };
 }
 
-export default function Home() {
+export default async function Home() {
+  // You can also fetch data here if HomeContent needs it as a prop
+  // const data = await fetchData();
+  // return <HomeContent data={data} />;
+  
+  // Or if HomeContent uses the DataContext, you can leave it simple:
   return <HomeContent />;
 }

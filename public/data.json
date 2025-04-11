@@ -1485,6 +1485,219 @@
       }
     },
     {
+      "id": 20,
+      "title": "77 Ft Yacht - Dionysos",
+      "image": "17025566991664188921Dionysos 564x400.webp",
+      "slug": "77ft-dionysos",
+      "per_hour_price": 8400,
+      "fareharbor_id": "366044",
+      "thumbnail_image": "1737100238Thumbnail-Dionysos.webp",
+      "gallery": [
+        {
+          "id": 815,
+          "image": "1652104654Dionysos 1.jpg",
+          "alt_tag": null
+        },
+        {
+          "id": 816,
+          "image": "1652104654Dionysos 2.jpg",
+          "alt_tag": null
+        },
+        {
+          "id": 817,
+          "image": "1652104654Dionysos 3.jpg",
+          "alt_tag": null
+        },
+        {
+          "id": 818,
+          "image": "1652104654Dionysos 4.jpg",
+          "alt_tag": null
+        },
+        {
+          "id": 819,
+          "image": "1652104654Dionysos 5.jpg",
+          "alt_tag": null
+        },
+        {
+          "id": 820,
+          "image": "1652104654Dionysos 6.jpg",
+          "alt_tag": null
+        },
+        {
+          "id": 821,
+          "image": "1652104654Dionysos 7.jpg",
+          "alt_tag": null
+        },
+        {
+          "id": 822,
+          "image": "1652104654Dionysos 8.jpg",
+          "alt_tag": null
+        },
+        {
+          "id": 823,
+          "image": "1652104654Dionysos 9.jpg",
+          "alt_tag": null
+        },
+        {
+          "id": 824,
+          "image": "1652104654Dionysos 10_.jpg",
+          "alt_tag": null
+        },
+        {
+          "id": 825,
+          "image": "1652104654Dionysos 11.jpg",
+          "alt_tag": null
+        },
+        {
+          "id": 826,
+          "image": "1652104654Dionysos 12.jpg",
+          "alt_tag": null
+        },
+        {
+          "id": 827,
+          "image": "1652104654Dionysos 13.jpg",
+          "alt_tag": null
+        },
+        {
+          "id": 828,
+          "image": "1652104654Dionysos 14.jpg",
+          "alt_tag": null
+        },
+        {
+          "id": 829,
+          "image": "1652104654Dionysos 15.jpg",
+          "alt_tag": null
+        },
+        {
+          "id": 830,
+          "image": "1652104654Dionysos 16.jpg",
+          "alt_tag": null
+        },
+        {
+          "id": 831,
+          "image": "1652104654Dionysos 17.jpg",
+          "alt_tag": null
+        },
+        {
+          "id": 832,
+          "image": "1652104654Dionysos 18.jpg",
+          "alt_tag": null
+        },
+        {
+          "id": 833,
+          "image": "1652104654Dionysos 19.jpg",
+          "alt_tag": null
+        },
+        {
+          "id": 834,
+          "image": "1652104654Dionysos 20.jpg",
+          "alt_tag": null
+        }
+      ],
+      "translations": {
+        "ar": {
+          "name_of_yacht": "77 Ft Yacht - Dionysos",
+          "size": "77 Feet",
+          "decks": "Lower and Upper (2 Decks)",
+          "yacht_specification": "4 Bedrooms, Saloon Hall, 3 Restrooms,  1 Kitchen, Front-end Sundeck, Sitting Area, Flybridge",
+          "maximum_guest": "20 Guests",
+          "kitchen_equipment": "Electric Grill, Microwave Oven, Refrigerator",
+          "music_system": "Available on board. Connecting Devices: Bluetooth & AUX Cable",
+          "availability": "According To Yacht Availability",
+          "no_of_staff": "1 Captain, 2 Crew",
+          "location": "D-A18 Berth, Dubai Harbour Marina (Near Bar Du Port)",
+          "model": "Majesty",
+          "good_for": "Family Events",
+          "cabin": "4",
+          "guests": "20",
+          "key_features": "<li>Fully AC yacht with all Amenities</li> <li>Outstanding Charter Services</li> <li>Dancefloor and Socializing Space</li> <li>Celebration in Style</li> <li>Exploring Enchanting Places</li>",
+          "preivew_text": "A perfect choice for family cruising, parties, and corporate events, our Majesty 77 Luxury Yacht offers plenty of space for entertaining and relaxing. This Yacht can accommodate up to 12 guests for Private cruising, featuring a fully equipped galley, offering a luxurious home at sea.",
+          "heading_2": "Luxury Yacht Charter Dubai",
+          "ideal_for": "<li>Luxury Cruising</li> <li>Festive Gatherings</li> <li><a href=\"https://www.centauruscharter.com/new-year-yacht-party-dubai\">New Year Party </a>/ Christmas Party</li>",
+          "description_after_features": "Indulge in fun on the sea by booking this luxury yacht.",
+          "slider_text": "A real head turner yacht with sleek look accommodating up to 20 guests",
+          "meta_title": "Luxury Yacht Charter in Dubai  –  Book 77ft yacht Dionysos",
+          "meta_description": "An impressive luxury yacht available for rent at Dubai Harbour Marina. Charter yacht for cruising, festive celebrations, New Year party. Book with Centaurus",
+          "meta_keyword": "Luxury Yacht Charter, luxury yacht charter dubai, charter yacht"
+        },
+        "en": {
+          "name_of_yacht": "77 Ft Yacht - Dionysos",
+          "size": "77 Feet",
+          "decks": "Lower and Upper (2 Decks)",
+          "yacht_specification": "4 Bedrooms, Saloon Hall, 3 Restrooms,  1 Kitchen, Front-end Sundeck, Sitting Area, Flybridge",
+          "maximum_guest": "20 Guests",
+          "kitchen_equipment": "Electric Grill, Microwave Oven, Refrigerator",
+          "music_system": "Available on board. Connecting Devices: Bluetooth & AUX Cable",
+          "availability": "According To Yacht Availability",
+          "no_of_staff": "1 Captain, 2 Crew",
+          "location": "D-A18 Berth, Dubai Harbour Marina (Near Bar Du Port)",
+          "model": "Majesty",
+          "good_for": "Family Events",
+          "cabin": "4",
+          "guests": "20",
+          "key_features": "<li>Fully AC yacht with all Amenities</li> <li>Outstanding Charter Services</li> <li>Dancefloor and Socializing Space</li> <li>Celebration in Style</li> <li>Exploring Enchanting Places</li>",
+          "preivew_text": "A perfect choice for family cruising, parties, and corporate events, our Majesty 77 Luxury Yacht offers plenty of space for entertaining and relaxing. This Yacht can accommodate up to 12 guests for Private cruising, featuring a fully equipped galley, offering a luxurious home at sea.",
+          "heading_2": "Luxury Yacht Charter Dubai",
+          "ideal_for": "<li>Luxury Cruising</li> <li>Festive Gatherings</li> <li><a href=\"https://www.centauruscharter.com/new-year-yacht-party-dubai\">New Year Party </a>/ Christmas Party</li>",
+          "description_after_features": "Indulge in fun on the sea by booking this luxury yacht.",
+          "slider_text": "A real head turner yacht with sleek look accommodating up to 20 guests",
+          "meta_title": "Luxury Yacht Charter in Dubai  –  Book 77ft yacht Dionysos",
+          "meta_description": "An impressive luxury yacht available for rent at Dubai Harbour Marina. Charter yacht for cruising, festive celebrations, New Year party. Book with Centaurus",
+          "meta_keyword": "Luxury Yacht Charter, luxury yacht charter dubai, charter yacht"
+        },
+        "ru": {
+          "name_of_yacht": "77-футовая яхта - Dionysos (Дионис)",
+          "size": "77 футов",
+          "decks": "Lower and Upper (2 Decks)",
+          "yacht_specification": "4 Bedrooms, Saloon Hall, 3 Restrooms,  1 Kitchen, Front-end Sundeck, Sitting Area, Flybridge",
+          "maximum_guest": "20 Guests",
+          "kitchen_equipment": "Electric Grill, Microwave Oven, Refrigerator",
+          "music_system": "Available on board. Connecting Devices: Bluetooth & AUX Cable",
+          "availability": "According To Yacht Availability",
+          "no_of_staff": "1 Captain, 2 Crew",
+          "location": "D-A18 Berth, Dubai Harbour Marina (Near Bar Du Port)",
+          "model": "Мэджести",
+          "good_for": "Семейного Отдыха",
+          "cabin": "4",
+          "guests": "20 чел.",
+          "key_features": "<li>Fully AC yacht with all amenities</li> \t<li>Outstanding charter services</li> \t<li>Dancefloor and socializing space</li> \t<li>Celebration in style</li> \t<li>Exploring enchanting places</li>",
+          "preivew_text": "Идеальный выбор для семейного круиза, вечеринок и корпоративных мероприятий. наша роскошная яхта Majesty 77 предлагает много места для развлечений и отдыха. Эта яхта может вместить до 12 гостей для частного круиза, с полностью оборудованным камбузом. Другими словами; Роскошный дом на воде.",
+          "heading_2": "Luxury Yacht Charter Dubai",
+          "ideal_for": "<li>Luxury cruising</li> \t<li>Festive gatherings</li> \t<li><a href=\"https://www.centauruscharter.com/new-year-yacht-party-dubai\">New year party</a>/ Christmas Party</li>",
+          "description_after_features": "Indulge into fun on sea by booking this luxury yacht.",
+          "slider_text": "Элитная яхта вместимостью до 20 чел.",
+          "meta_title": "Luxury Yacht Charter in Dubai  –  Book 77ft yacht Dionysos",
+          "meta_description": "An impressive luxury yacht available for rent at Dubai Harbour Marina. Charter yacht for cruising, festive celebrations, New Year party. Book with Centaurus",
+          "meta_keyword": "Luxury Yacht Charter, luxury yacht charter dubai, charter yacht"
+        },
+        "zh": {
+          "name_of_yacht": "77 尺游艇 - Dionysos",
+          "size": "77尺",
+          "decks": "下层和上层（2 层）",
+          "yacht_specification": "4 Bedrooms, Saloon Hall, 3 Restrooms,  1 Kitchen, Front-end Sundeck, Sitting Area, Flybridge",
+          "maximum_guest": "20 位客人",
+          "kitchen_equipment": "电烤炉, 微波炉, 冰箱",
+          "music_system": "船上可用。连接设备：蓝牙和 AUX 电缆",
+          "availability": "According To Yacht Availability",
+          "no_of_staff": "1名船长，2名船员",
+          "location": "D-A18 Berth, Dubai Harbour Marina (Near Bar Du Port)",
+          "model": "Majesty",
+          "good_for": "家庭宴会",
+          "cabin": "4间客舱",
+          "guests": "20",
+          "key_features": "<li>•配备所有设施的全空调游艇</li> <li>•卓越的包船服务</li> <li>•舞池和社交空间</li> <li>•有格调的 庆祝</li> <li>•探索迷人的地方</li>",
+          "preivew_text": "我们的 Majesty 77 豪华游艇是家庭巡游、派对和公司活动的完美选择，提供充足的娱乐和放松空间。进行私人巡航时，这艘游艇最多可容纳 12 位客人住宿，配备设备齐全的厨房，在海上提供豪华的家。",
+          "heading_2": "迪拜豪华游艇租赁",
+          "ideal_for": "<li>•豪华游轮 •</li> <li>节日聚会</li> <li>新年/圣诞派对</li>",
+          "description_after_features": "预订这艘豪华游艇，尽情享受海上乐趣。",
+          "slider_text": "真正的快速转向游艇，外观时尚， 最多可容纳 20 位客人",
+          "meta_title": "Luxury Yacht Charter in Dubai  –  Book 77ft yacht Dionysos",
+          "meta_description": "An impressive luxury yacht available for rent at Dubai Harbour Marina. Charter yacht for cruising, festive celebrations, New Year party. Book with Centaurus",
+          "meta_keyword": "Luxury Yacht Charter, luxury yacht charter dubai, charter yacht"
+        }
+      }
+    },
+    {
       "id": 24,
       "title": "118 Ft Yacht - Poseidon",
       "image": "17025567341677049461mega-yacht-cruise.webp",
@@ -1681,9 +1894,9 @@
   "offers": [
     {
       "id": 27,
-      "image": "1740820755BUSINESS COUNCIL.webp",
+      "image": "1743067327BUSINESS COUNCIL.webp",
       "slug": "business-council",
-      "validity": "2025-03-31",
+      "validity": "2025-04-30",
       "amount": 0,
       "whatsapp_url": "https://wa.link/iplrkp",
       "translations": {
@@ -1711,11 +1924,11 @@
     },
     {
       "id": 24,
-      "image": "1740820773FAZAA.webp",
+      "image": "1743057685Fazza-Offer2025.webp",
       "slug": "fazaa-card",
-      "validity": "2025-03-31",
+      "validity": "2025-04-30",
       "amount": 0,
-      "whatsapp_url": "https://wa.link/c10kxf",
+      "whatsapp_url": "https://wa.link/2h2ly7",
       "translations": {
         "ar": {
           "title": "خصم فزعة",
@@ -1741,9 +1954,9 @@
     },
     {
       "id": 26,
-      "image": "1740121659Emirates Platinum Card Offer-WEB.webp",
+      "image": "1743067337EMIRATES PLATINUM.webp",
       "slug": "emirates-staff",
-      "validity": "2025-03-31",
+      "validity": "2025-04-30",
       "amount": 595,
       "whatsapp_url": "https://wa.link/rh3rf3",
       "translations": {
@@ -1771,30 +1984,30 @@
     },
     {
       "id": 42,
-      "image": "1740820811WINTER OFFER.webp",
+      "image": "1743067300WINTER OFFER.webp",
       "slug": "dubai-yachts-winter-offers",
-      "validity": "2025-03-31",
+      "validity": "2025-04-30",
       "amount": 950,
       "whatsapp_url": "https://wa.link/2c29ae",
       "translations": {
         "ar": {
           "title": "UAE Resident Yacht Offers",
-          "description": "Explore exclusive winter yacht rental deals in Dubai with Centaurus Charter. Book your luxurious yacht charter now and enjoy special offers this season. Discover Dubai by day or under the stars with our exclusive morning and night yacht tours. For a limited time, enjoy 20% off on 2-hour bookings and a generous 40% off for bookings of 3 hours or more. Whether you're looking to relax under the morning sun or enjoy the vibrant skyline at night, we have the perfect tour to suit your needs. Terms and conditions apply. Don't miss out—book now to take advantage of these incredible winter savings!",
+          "description": "Explore exclusive yacht rental deals in Dubai with Centaurus Charter. Book your luxurious yacht charter now and enjoy special offers this season. Discover Dubai by day or under the stars with our exclusive morning and night yacht tours. For a limited time, enjoy 20% off on 2-hour bookings and a generous 40% off for bookings of 3 hours or more. Whether you're looking to relax under the morning sun or enjoy the vibrant skyline at night, we have the perfect tour to suit your needs. Terms and conditions apply. Don't miss out—book now to take advantage of these incredible winter savings!",
           "offer_type": "20-40%"
         },
         "en": {
           "title": "UAE Resident Yacht Offers",
-          "description": "Explore exclusive winter yacht rental deals in Dubai with Centaurus Charter. Book your luxurious yacht charter now and enjoy special offers this season. Discover Dubai by day or under the stars with our exclusive morning and night yacht tours. For a limited time, enjoy 20% off on 2-hour bookings and a generous 40% off for bookings of 3 hours or more. Whether you're looking to relax under the morning sun or enjoy the vibrant skyline at night, we have the perfect tour to suit your needs. Terms and conditions apply. Don't miss out—book now to take advantage of these incredible winter savings!",
+          "description": "Explore exclusive yacht rental deals in Dubai with Centaurus Charter. Book your luxurious yacht charter now and enjoy special offers this season. Discover Dubai by day or under the stars with our exclusive morning and night yacht tours. For a limited time, enjoy 20% off on 2-hour bookings and a generous 40% off for bookings of 3 hours or more. Whether you're looking to relax under the morning sun or enjoy the vibrant skyline at night, we have the perfect tour to suit your needs. Terms and conditions apply. Don't miss out—book now to take advantage of these incredible winter savings!",
           "offer_type": "20-40%"
         },
         "ru": {
           "title": "UAE Resident Yacht Offers",
-          "description": "Explore exclusive winter yacht rental deals in Dubai with Centaurus Charter. Book your luxurious yacht charter now and enjoy special offers this season. Discover Dubai by day or under the stars with our exclusive morning and night yacht tours. For a limited time, enjoy 20% off on 2-hour bookings and a generous 40% off for bookings of 3 hours or more. Whether you're looking to relax under the morning sun or enjoy the vibrant skyline at night, we have the perfect tour to suit your needs. Terms and conditions apply. Don't miss out—book now to take advantage of these incredible winter savings!",
+          "description": "Explore exclusive yacht rental deals in Dubai with Centaurus Charter. Book your luxurious yacht charter now and enjoy special offers this season. Discover Dubai by day or under the stars with our exclusive morning and night yacht tours. For a limited time, enjoy 20% off on 2-hour bookings and a generous 40% off for bookings of 3 hours or more. Whether you're looking to relax under the morning sun or enjoy the vibrant skyline at night, we have the perfect tour to suit your needs. Terms and conditions apply. Don't miss out—book now to take advantage of these incredible winter savings!",
           "offer_type": "20-40%"
         },
         "zh": {
           "title": "UAE Resident Yacht Offers",
-          "description": "Explore exclusive winter yacht rental deals in Dubai with Centaurus Charter. Book your luxurious yacht charter now and enjoy special offers this season. Discover Dubai by day or under the stars with our exclusive morning and night yacht tours. For a limited time, enjoy 20% off on 2-hour bookings and a generous 40% off for bookings of 3 hours or more. Whether you're looking to relax under the morning sun or enjoy the vibrant skyline at night, we have the perfect tour to suit your needs. Terms and conditions apply. Don't miss out—book now to take advantage of these incredible winter savings!",
+          "description": "Explore exclusive yacht rental deals in Dubai with Centaurus Charter. Book your luxurious yacht charter now and enjoy special offers this season. Discover Dubai by day or under the stars with our exclusive morning and night yacht tours. For a limited time, enjoy 20% off on 2-hour bookings and a generous 40% off for bookings of 3 hours or more. Whether you're looking to relax under the morning sun or enjoy the vibrant skyline at night, we have the perfect tour to suit your needs. Terms and conditions apply. Don't miss out—book now to take advantage of these incredible winter savings!",
           "offer_type": "20-40%"
         }
       }
@@ -2323,12 +2536,12 @@
       "slug": "fishing",
       "thumbnail_image": "17290629471663659975fishing trip.webp",
       "whatsapp_url": "https://wa.link/3zkkvm",
-      "amount": 1725,
-      "yachts": "27%2380%0%4,18%2380%0%4,1%4160%0%4,5%4600%0%4,2%4320%0%4,6%5000%0%4",
+      "amount": 1785,
+      "yachts": "27%1785%0%4,18%1785%0%4,54%2250%0%4,1%3120%0%4,5%3450%0%4,2%3240%0%4,6%3750%0%4",
       "yachts_data": [
         {
           "yacht_id": "27",
-          "yacht_price": "2380",
+          "yacht_price": "1785",
           "yacht_before_price": "0",
           "hours": "4",
           "yacht_image": "17025565231675080328564-x-400.webp",
@@ -2378,7 +2591,7 @@
         },
         {
           "yacht_id": "18",
-          "yacht_price": "2380",
+          "yacht_price": "1785",
           "yacht_before_price": "0",
           "hours": "4",
           "yacht_image": "17025565771672840456Main-image-564-x-400.webp",
@@ -2427,8 +2640,58 @@
           }
         },
         {
+          "yacht_id": "54",
+          "yacht_price": "2250",
+          "yacht_before_price": "0",
+          "hours": "4",
+          "yacht_image": "1737034672Main image 564 x 400.webp",
+          "fareharbor_id": "583211",
+          "translations": {
+            "en": [
+              {
+                "name_of_yacht": "40 Ft Yacht Riverside",
+                "locale": "en",
+                "model": "Yamaha",
+                "size": "40 feet",
+                "guests": "12",
+                "good_for": "Fishing"
+              }
+            ],
+            "ar": [
+              {
+                "name_of_yacht": "40 Ft Yacht Riverside",
+                "locale": "ar",
+                "model": "Yamaha",
+                "size": "40 feet",
+                "guests": "12",
+                "good_for": "Fishing"
+              }
+            ],
+            "ru": [
+              {
+                "name_of_yacht": "40 Ft Yacht Riverside",
+                "locale": "ru",
+                "model": "Yamaha",
+                "size": "40 feet",
+                "guests": null,
+                "good_for": "Fishing"
+              }
+            ],
+            "zh": [
+              {
+                "name_of_yacht": "40 Ft Yacht Riverside",
+                "locale": "zh",
+                "model": "Yamaha",
+                "size": "40 feet",
+                "guests": null,
+                "good_for": "Fishing"
+              }
+            ]
+          }
+        },
+        {
           "yacht_id": "1",
-          "yacht_price": "4160",
+          "yacht_price": "3120",
           "yacht_before_price": "0",
           "hours": "4",
           "yacht_image": "170255634316729298171664187571Vassia 564x400.webp",
@@ -2478,7 +2741,7 @@
         },
         {
           "yacht_id": "5",
-          "yacht_price": "4600",
+          "yacht_price": "3450",
           "yacht_before_price": "0",
           "hours": "4",
           "yacht_image": "17025564411664181639Lagoona 564x400.webp",
@@ -2528,7 +2791,7 @@
         },
         {
           "yacht_id": "2",
-          "yacht_price": "4320",
+          "yacht_price": "3240",
           "yacht_before_price": "0",
           "hours": "4",
           "yacht_image": "17025563691664803714Vassia New 564x400.webp",
@@ -2578,7 +2841,7 @@
         },
         {
           "yacht_id": "6",
-          "yacht_price": "5000",
+          "yacht_price": "3750",
           "yacht_before_price": "0",
           "hours": "4",
           "yacht_image": "17025564681670496933main.webp",
@@ -2631,7 +2894,7 @@
         "en": {
           "title": "FISHING TRIP",
           "preivew_text": "Have a deep sea fishing experience aboard a boat",
-          "description": "We offer early morning fishing trips packages such as trolling and deep-sea to our valued customers. We provide the fishing equipments and grilling facilities to grill your catch.<br><br>\r\nWe are driven by the passion of fishing and by our desire to spoil our clients with fun and unforgettable trips. Aboard here; you will be free to enjoy your time as you please, whether that means catching fish, relaxing in the sun or cooking up your fish. Our deep sea fishing trips are for 4 hours usually early morning at 6 AM or 7 AM. In addition to it, transfer options are also available on request. Our expert captain and crew, who has years of experience, will take care of everything from preparing the bait to grill your catch aboard for breakfast in the morning. And as almost all of our boats are equipped with an ice machine, we'll make sure that your drinks are always cold and your fish are always fresh. The Centaurus yachts provides services like private hire and fishing tours 7 days a week depending on availability. We accept most major credit cards to make booking with us safe and easy. All bookings are made through our secure booking system, which features SSL protection for your personal information. <br><br>\r\n\r\nBook your <b>fishing charter in Dubai</b>. <br><br>\r\n\r\nOffer is not valid on pubic holidays and festive seasons & valid only for UAE residents (morning trip only.) T&Cs apply*"
+          "description": "We offer early morning fishing trips packages such as trolling and deep-sea to our valued customers. We provide the fishing equipments and grilling facilities to grill your catch.<br><br>\r\nWe are driven by the passion of fishing and by our desire to spoil our clients with fun and unforgettable trips. Aboard here; you will be free to enjoy your time as you please, whether that means catching fish, relaxing in the sun or cooking up your fish. Our deep sea fishing trips are for 4 hours usually early morning at 6 AM or 7 AM. In addition to it, transfer options are also available on request. Our expert captain and crew, who has years of experience, will take care of everything from preparing the bait to grill your catch aboard for breakfast in the morning. And as almost all of our boats are equipped with an ice machine, we'll make sure that your drinks are always cold and your fish are always fresh. The Centaurus yachts provides services like private hire and fishing tours 7 days a week depending on availability. We accept most major credit cards to make booking with us safe and easy. All bookings are made through our secure booking system, which features SSL protection for your personal information. <br><br>\r\n\r\nBook your <b>fishing charter in Dubai</b>. <br><br>\r\n\r\nOffer is not valid on pubic holidays and festive seasons & valid only for UAE residents (morning trip only.) T&Cs apply*<br><br>\r\nDisclaimer: The fishing yacht trip price is valid for all bookings made between 6:00 AM and 10:00 AM only. Prices may vary for bookings outside this time frame. Terms and conditions apply."
         },
         "ar": {
           "title": "FISHING TRIP",
@@ -4325,43 +4588,43 @@
   ],
   "events": [
     {
-      "id": 47,
-      "image": "1740135415Iftar Yacht tours.webp",
-      "slug": "iftar-buffet-dubai",
-      "whatsapp_url": "https://wa.link/00imiq",
-      "validity": "2025-03-28",
+      "id": 44,
+      "image": "1744035888april-18-yacht-party-website.jpg",
+      "slug": "super-yacht-party-dubai",
+      "whatsapp_url": "https://wa.link/l3yyy6",
+      "validity": "2025-04-18",
       "translations": {
         "ar": {
-          "title": "Iftar Tours",
-          "heading_2": "Weekly Ramadan Fridays",
-          "description": "Picture this: as the sun gracefully dips below the horizon, marking the end of another day of fasting, our luxurious yacht becomes your sanctuary of relaxation and culinary delight. From 6:30 PM till 9:00 PM, immerse yourself in the tranquil ambiance of the sea as we cruise along Dubai's stunning coastline, offering you a truly unique perspective of the city's iconic landmarks.  But that's just the beginning of your extraordinary experience. At Centaurus Charter, we believe in treating our guests like royalty. That's why we've curated an exquisite international buffet featuring a tantalizing array of delicacies from around the globe. From mouthwatering Middle Eastern specialties to delectable international cuisines, our culinary offerings are sure to tantalize your taste buds and satisfy your cravings.  Thirsty? Don't worry, we've got you covered. Quench your thirst with our selection of refreshing beverages, including soft drinks and juices, all included in the package.  Now, here's the best part: all of this comes at an unbelievably low price of just 179 AED per person. Yes, you read that right! Indulge in a lavish Iftar experience on a luxurious yacht without breaking the bank. At Centaurus Charter, we believe that luxury should be accessible to everyone.  So why wait? Gather your loved ones, friends, and colleagues, and join us for an unforgettable Iftar Yacht Trip in Dubai. Book your tickets now and embark on a journey of culinary delights, breathtaking views, and unforgettable memories. Ramadan with Centaurus Charter – where luxury meets affordability on the shimmering waters of Dubai.",
-          "meta_title": null,
-          "meta_description": null,
-          "meta_keyword": null
+          "title": "DJ FOBIYA'S BIRTHDAY YACHT PARTY",
+          "heading_2": "18 April 2025 |  8:00 PM-12:00 AM",
+          "description": "<b>🔥 APRIL 18 – DJ FOBIYA'S BIRTHDAY YACHT PARTY 🔥</b><br><br> <b>🎧 Music. Sea. Sunset. Let’s go!.</b><br> We’re cruising into the night on a luxury yacht with pure fire on deck – get ready for: <b>Afro-House | Tribal | Hypnotic Techno</b><br>  Deep, soulful beats to move your body and elevate your spirit 🌊💃<br> <b>DJ FOBIYA LIVE ALL NIGHT</b><br> One deck. One vibe. An exclusive birthday set that’ll keep the dance floor lit from start to finish!<br><br>  📅 <b>Dates:</b> 18 April 2025<br> ⏰ <b>Time:</b> 8:00 PM – 12:00 AM<br> 📍 <b>Boarding Time:</b> 8:00 PM<br><br> 📍 <b>Location:</b> Dubai Marina Harbour<br><br> 💃  <b>Ticket Price: </b><br> <li><b>Ladies:</b> AED 189</li> <li><b>Gents:</b> AED 289</li> <li><b>Couples:</b> AED 389</li><br> 🍾 <b>Inclusions:</b><br><br> ✔️ Signature canapés to pair with your vibe<br> ✔️ Unlimited soft drinks & water<br> ✔️ Free-flowing wines & beers all night<br> ✔️ A live DJ set by the birthday legend himself — DJ Fobiya<br><br>  This one's for the dreamers, dancers & deep groove lovers.  <b>Celebrate life, music & freedom on the sea.</b><br><br> <b>Limited spots available – book your experience now!</b> (T&Cs apply.There are different ranges of yachts and boats with several capacities, no specific yacht is guaranteed until the time of visit.)",
+          "meta_title": "Dubai Super Yacht Party | Weekend Luxury Cruise Experience - Book Now",
+          "meta_description": "Join us for an exclusive Super Yacht Party in Dubai and enjoy your weekends with luxury, entertainment, and stunning views. Multiple time slots available. Book your spot today!",
+          "meta_keyword": "yacht party dubai, yacht party, party yacht rental dubai"
         },
         "en": {
-          "title": "Iftar Yacht Tours",
-          "heading_2": "Weekly Ramadan Fridays",
-          "description": "<b>Experience an Unforgettable Iftar Yacht Trip in Dubai</b><br><br> As the sun gracefully dips below the horizon, marking the end of another day of fasting, step aboard our luxurious yacht and indulge in an enchanting Iftar experience like no other. From <b>6:00 PM to 8:30 PM,</b> immerse yourself in the tranquil ambiance of the sea, gliding along Dubai’s stunning coastline while taking in breathtaking views of the city's iconic landmarks.<br><br> <b>A Feast Fit for Royalty</b><br><br> At <b>Centaurus Charter,</b> we believe in offering our guests an unparalleled dining experience. Our carefully curated international buffet boasts a delectable selection of flavors from around the world, featuring:<br><br> <li>Traditional Middle Eastern specialties</li> <li>Irresistible international cuisines</li> <li>Freshly prepared delicacies to satisfy every craving</li><br> Complement your meal with a variety of refreshing beverages, including soft drinks and juices, all included in your package.<br><br> <b>Luxury at an Unbeatable Price</b><br><br> Indulge in this extraordinary Iftar experience for just <b>AED 179 per person</b>. Yes, you read that right! We believe luxury should be accessible to everyone, and this exclusive offer makes it possible to enjoy a lavish evening without exceeding your budget.<br><br> <b>Book Your Iftar Yacht Trip Today</b><br><br> Gather your family, friends, and colleagues, and set sail for an evening of culinary delights, breathtaking views, and unforgettable memories. Make this Ramadan truly special with Centaurus Charter – where luxury meets affordability on the shimmering waters of Dubai.<br><br> <b>Reserve Your Spot Now!</b>",
-          "meta_title": null,
-          "meta_description": null,
-          "meta_keyword": null
+          "title": "DJ FOBIYA'S BIRTHDAY YACHT PARTY",
+          "heading_2": "18 April 2025 |  8:00 PM-12:00 AM",
+          "description": "<b>🔥 APRIL 18 – DJ FOBIYA'S BIRTHDAY YACHT PARTY 🔥</b><br><br> <b>🎧 Music. Sea. Sunset. Let’s go!.</b><br> We’re cruising into the night on a luxury yacht with pure fire on deck – get ready for: <b>Afro-House | Tribal | Hypnotic Techno</b><br>  Deep, soulful beats to move your body and elevate your spirit 🌊💃<br> <b>DJ FOBIYA LIVE ALL NIGHT</b><br> One deck. One vibe. An exclusive birthday set that’ll keep the dance floor lit from start to finish!<br><br>  📅 <b>Dates:</b> 18 April 2025<br> ⏰ <b>Time:</b> 8:00 PM – 12:00 AM<br> 📍 <b>Boarding Time:</b> 8:00 PM<br><br> 📍 <b>Location:</b> Dubai Marina Harbour<br><br> 💃  <b>Ticket Price: </b><br> <li><b>Ladies:</b> AED 189</li> <li><b>Gents:</b> AED 289</li> <li><b>Couples:</b> AED 389</li><br> 🍾 <b>Inclusions:</b><br><br> ✔️ Signature canapés to pair with your vibe<br> ✔️ Unlimited soft drinks & water<br> ✔️ Free-flowing wines & beers all night<br> ✔️ A live DJ set by the birthday legend himself — DJ Fobiya<br><br>  This one's for the dreamers, dancers & deep groove lovers.  <b>Celebrate life, music & freedom on the sea.</b><br><br> <b>Limited spots available – book your experience now!</b> (T&Cs apply.There are different ranges of yachts and boats with several capacities, no specific yacht is guaranteed until the time of visit.)",
+          "meta_title": "Dubai Super Yacht Party | Weekend Luxury Cruise Experience - Book Now",
+          "meta_description": "Join us for an exclusive Super Yacht Party in Dubai and enjoy your weekends with luxury, entertainment, and stunning views. Multiple time slots available. Book your spot today!",
+          "meta_keyword": "yacht party dubai, yacht party, party yacht rental dubai"
         },
         "ru": {
-          "title": "Iftar Tours",
-          "heading_2": "Weekly Ramadan Fridays",
-          "description": "<b>Experience an Unforgettable Iftar Yacht Trip in Dubai</b><br><br> As the sun gracefully dips below the horizon, marking the end of another day of fasting, step aboard our luxurious yacht and indulge in an enchanting Iftar experience like no other. From <b>6:00 PM to 8:30 PM,</b> immerse yourself in the tranquil ambiance of the sea, gliding along Dubai’s stunning coastline while taking in breathtaking views of the city's iconic landmarks.<br><br> <b>A Feast Fit for Royalty</b><br><br> At <b>Centaurus Charter,</b> we believe in offering our guests an unparalleled dining experience. Our carefully curated international buffet boasts a delectable selection of flavors from around the world, featuring:<br><br> <li>Traditional Middle Eastern specialties</li> <li>Irresistible international cuisines</li> <li>Freshly prepared delicacies to satisfy every craving</li><br> Complement your meal with a variety of refreshing beverages, including soft drinks and juices, all included in your package.<br><br> <b>Luxury at an Unbeatable Price</b><br><br> Indulge in this extraordinary Iftar experience for just <b>AED 179 per person</b>. Yes, you read that right! We believe luxury should be accessible to everyone, and this exclusive offer makes it possible to enjoy a lavish evening without exceeding your budget.<br><br> <b>Book Your Iftar Yacht Trip Today</b><br><br> Gather your family, friends, and colleagues, and set sail for an evening of culinary delights, breathtaking views, and unforgettable memories. Make this Ramadan truly special with Centaurus Charter – where luxury meets affordability on the shimmering waters of Dubai.<br><br> <b>Reserve Your Spot Now!</b>",
-          "meta_title": null,
-          "meta_description": null,
-          "meta_keyword": null
+          "title": "Prosecco Yacht Party",
+          "heading_2": "05 April 2025 | 9:00 PM-12:00 AM",
+          "description": "<b>Prosecco Yacht Party – 05 April 2025</b><br><br> <b>Unwind. Sip. Dance. Repeat.</b><br> Join us for an exclusive night on the water at the <b>Prosecco Yacht Party</b> – the ultimate yacht experience in Dubai! Set sail on a luxury yacht, where the skyline meets the sea, and enjoy a night of fine drinks, music, and unforgettable vibes.<br><br> 📅 <b>Dates:</b> 05 April 2025<br> ⏰ <b>Time:</b> 9:00 PM – 12:00 AM<br> 📍 <b>Boarding Time:</b> 8:00 PM<br><br> 📍 <b>Location:</b> Dubai Marina Harbour<br><br> 💃  <b>Ticket Price: </b><br> <li><b>Ladies:</b> AED 189</li> <li><b>Gents:</b> AED 289</li> <li><b>Couples:</b> AED 389</li><br> 🍾 <b>Inclusions:</b> <br><br> <li>Delectable canapés to complement your drinks</li> <li>Unlimited water and soft drinks</li> <li>Free-flowing wines & beers</li> <li>An electric DJ set by <b>DJ Fobiya</b> – back to keep the party alive!</li><br><br> Feel the rhythm, sip on your prosecco, and party under the stars aboard our luxury yacht.<br> <b>Limited spots available – book your experience now!</b> (T&Cs apply.There are different ranges of yachts and boats with several capacities, no specific yacht is guaranteed until the time of visit.)",
+          "meta_title": "Dubai Super Yacht Party | Weekend Luxury Cruise Experience - Book Now",
+          "meta_description": "Join us for an exclusive Super Yacht Party in Dubai and enjoy your weekends with luxury, entertainment, and stunning views. Multiple time slots available. Book your spot today!",
+          "meta_keyword": "yacht party dubai, yacht party, party yacht rental dubai"
         },
         "zh": {
-          "title": "Iftar Tours",
-          "heading_2": "Weekly Ramadan Fridays",
-          "description": "<b>Experience an Unforgettable Iftar Yacht Trip in Dubai</b><br><br> As the sun gracefully dips below the horizon, marking the end of another day of fasting, step aboard our luxurious yacht and indulge in an enchanting Iftar experience like no other. From <b>6:00 PM to 8:30 PM,</b> immerse yourself in the tranquil ambiance of the sea, gliding along Dubai’s stunning coastline while taking in breathtaking views of the city's iconic landmarks.<br><br> <b>A Feast Fit for Royalty</b><br><br> At <b>Centaurus Charter,</b> we believe in offering our guests an unparalleled dining experience. Our carefully curated international buffet boasts a delectable selection of flavors from around the world, featuring:<br><br> <li>Traditional Middle Eastern specialties</li> <li>Irresistible international cuisines</li> <li>Freshly prepared delicacies to satisfy every craving</li><br> Complement your meal with a variety of refreshing beverages, including soft drinks and juices, all included in your package.<br><br> <b>Luxury at an Unbeatable Price</b><br><br> Indulge in this extraordinary Iftar experience for just <b>AED 179 per person</b>. Yes, you read that right! We believe luxury should be accessible to everyone, and this exclusive offer makes it possible to enjoy a lavish evening without exceeding your budget.<br><br> <b>Book Your Iftar Yacht Trip Today</b><br><br> Gather your family, friends, and colleagues, and set sail for an evening of culinary delights, breathtaking views, and unforgettable memories. Make this Ramadan truly special with Centaurus Charter – where luxury meets affordability on the shimmering waters of Dubai.<br><br> <b>Reserve Your Spot Now!</b>",
-          "meta_title": null,
-          "meta_description": null,
-          "meta_keyword": null
+          "title": "DJ FOBIYA'S BIRTHDAY YACHT PARTY",
+          "heading_2": "18 April 2025 |  8:00 PM-12:00 AM",
+          "description": "<b>🔥 APRIL 18 – DJ FOBIYA'S BIRTHDAY YACHT PARTY 🔥</b><br><br> <b>🎧 Music. Sea. Sunset. Let’s go!.</b><br> We’re cruising into the night on a luxury yacht with pure fire on deck – get ready for: <b>Afro-House | Tribal | Hypnotic Techno</b><br>  Deep, soulful beats to move your body and elevate your spirit 🌊💃<br> <b>DJ FOBIYA LIVE ALL NIGHT</b><br> One deck. One vibe. An exclusive birthday set that’ll keep the dance floor lit from start to finish!<br><br>  📅 <b>Dates:</b> 18 April 2025<br> ⏰ <b>Time:</b> 8:00 PM – 12:00 AM<br> 📍 <b>Boarding Time:</b> 8:00 PM<br><br> 📍 <b>Location:</b> Dubai Marina Harbour<br><br> 💃  <b>Ticket Price: </b><br> <li><b>Ladies:</b> AED 189</li> <li><b>Gents:</b> AED 289</li> <li><b>Couples:</b> AED 389</li><br> 🍾 <b>Inclusions:</b><br><br> ✔️ Signature canapés to pair with your vibe<br> ✔️ Unlimited soft drinks & water<br> ✔️ Free-flowing wines & beers all night<br> ✔️ A live DJ set by the birthday legend himself — DJ Fobiya<br><br>  This one's for the dreamers, dancers & deep groove lovers.  <b>Celebrate life, music & freedom on the sea.</b><br><br> <b>Limited spots available – book your experience now!</b> (T&Cs apply.There are different ranges of yachts and boats with several capacities, no specific yacht is guaranteed until the time of visit.)",
+          "meta_title": "Dubai Super Yacht Party | Weekend Luxury Cruise Experience - Book Now",
+          "meta_description": "Join us for an exclusive Super Yacht Party in Dubai and enjoy your weekends with luxury, entertainment, and stunning views. Multiple time slots available. Book your spot today!",
+          "meta_keyword": "yacht party dubai, yacht party, party yacht rental dubai"
         }
       }
     }

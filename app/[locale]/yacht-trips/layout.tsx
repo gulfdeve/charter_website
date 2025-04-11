@@ -1,6 +1,6 @@
 import React from "react";
-import fs from "fs/promises";
-import path from "path";
+import { fetchData } from '@/app/lib/fetchData';
+
 
 interface Metadata {
   title: string;
@@ -38,14 +38,12 @@ export async function generateMetadata({
 
   try {
 
-    // Path to your JSON file in the public directory
-    const dataPath = path.join(process.cwd(), 'public', 'data.json');
-
-    // Read the file
-    const jsonData = await fs.readFile(dataPath, 'utf8');
-    const data = JSON.parse(jsonData);
-
-    console.log("Reading from local data.json");
+    // Use fetchData utility instead of reading from filesystem
+    const data = await fetchData();
+    
+    if (!data) {
+      throw new Error('Failed to fetch data');
+    }
 
     // Attempt to get metadata dynamically for "yacht-trips"
     const metaYachtTrips: APIMetaData | undefined =

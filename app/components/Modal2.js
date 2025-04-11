@@ -98,7 +98,7 @@ const Modal2 = ({ isModalOpen, closeModal, idName, idValue }) => {
 
   return (
     <div className="fixed inset-0 bg-gray-500 bg-opacity-50 flex items-center justify-center z-50">
-      <div className="bg-white h-fit rounded-lg shadow-lg w-full max-w-6xl   p-9 lg:p-6 relative">
+      <div className="bg-white h-fit rounded-lg shadow-lg w-full max-w-6xl  mx-5 p-9 lg:p-6 relative">
         {/* Success Bar (absolute, on top of modal) */}
         {submissionSuccess && (
           <div className="absolute top-0 left-0 right-0 bg-green-500 text-white p-3 text-center">
@@ -109,7 +109,7 @@ const Modal2 = ({ isModalOpen, closeModal, idName, idValue }) => {
         {/* Close Button */}
         <button
           onClick={closeModal}
-          className="absolute top-4 right-4 text-2xl p-3 w-10 h-10 rounded-full flex items-center justify-center text-gray-500 hover:text-gray-800"
+          className="absolute top-4 right-4 text-3xl p-3 w-10 h-10 rounded-full flex items-center justify-center text-gray-500 hover:text-gray-800"
         >
           &times;
         </button>
@@ -119,12 +119,12 @@ const Modal2 = ({ isModalOpen, closeModal, idName, idValue }) => {
             <img
               src="/modal2.jpg"
               alt="Yacht Image"
-              className="w-[32rem] h-[31rem] object-cover"
+              className="w-full h-full object-cover"
             />
           </div>
 
-          <div className="lg:pr-10 pr-5">
-            <form onSubmit={handleSubmit} className="space-y-4">
+          <div className="flex items-center w-full lg:pr-10 pr-0 pt-12">
+            <form onSubmit={handleSubmit} className="space-y-4 w-full">
               {/* Full Name */}
               <div>
                 <input
@@ -132,7 +132,7 @@ const Modal2 = ({ isModalOpen, closeModal, idName, idValue }) => {
                   placeholder="Full Name"
                   value={fullName}
                   onChange={(e) => setFullName(e.target.value)}
-                  className="w-full border outline outline-primary-blue bg-gray-100 border-primary-blue rounded-md p-3"
+                  className="w-full border-l-4 rounded-md bg-[#f5f5f5] text-gray-600 focus:outline-none border-[#1b498f] focus:border-primary-yellow focus:bg-[#f3f7fd] transition duration-200 ease-in-out p-3"
                 />
                 {errors.fullName && (
                   <p className="text-red-600 text-sm">{errors.fullName}</p>
@@ -146,7 +146,7 @@ const Modal2 = ({ isModalOpen, closeModal, idName, idValue }) => {
                   value={phoneNumber}
                   onChange={setPhoneNumber}
                   placeholder="Enter phone number"
-                  className="flex-1 outline outline-primary-blue rounded-md bg-gray-100"
+                  className="flex-1 rounded-md bg-[#f5f5f5] text-gray-600 focus:outline-none transition duration-200 ease-in-out"
                   inputStyle={{
                     width: "100%",
                     padding: "20px",
@@ -176,7 +176,7 @@ const Modal2 = ({ isModalOpen, closeModal, idName, idValue }) => {
                   placeholder="Email Address"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  className="w-full border outline outline-primary-blue bg-gray-100 border-primary-blue rounded-md p-3"
+                  className="w-full border-l-4 rounded-md bg-[#f5f5f5] text-gray-600 focus:outline-none border-[#1b498f] focus:border-primary-yellow focus:bg-[#f3f7fd] transition duration-200 ease-in-out p-3"
                 />
                 {errors.email && (
                   <p className="text-red-600 text-sm">{errors.email}</p>
@@ -190,7 +190,7 @@ const Modal2 = ({ isModalOpen, closeModal, idName, idValue }) => {
                   value={message}
                   onChange={(e) => setMessage(e.target.value)}
                   rows="8"
-                  className="w-full border outline outline-primary-blue bg-gray-100 border-primary-blue rounded-md p-3"
+                  className="w-full border-l-4 rounded-md bg-[#f5f5f5] text-gray-600 focus:outline-none border-[#1b498f] focus:border-primary-yellow focus:bg-[#f3f7fd] transition duration-200 ease-in-out p-3"
                 />
                 {errors.message && (
                   <p className="text-red-600 text-sm">{errors.message}</p>

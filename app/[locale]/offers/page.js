@@ -1,42 +1,34 @@
+// app/[locale]/offers/page.js
 import React from "react";
 import { FaWhatsapp } from "react-icons/fa";
-import { useLocale, useTranslations } from "next-intl";
 import Image from "next/image";
 import { Link } from "@/app/i18n/routing";
 import YachtCarousal from "@/app/components/YachtCarousel";
 import OfferMobilecarousal from "@/app/components/OfferMobilecarousal";
 import PageTitleHeading from "@/app/components/PageTitleHeading";
 import ClientButtons from "@/app/components/ClientButtons";
+import { fetchData } from '@/app/lib/fetchData';
 
-// Fetch data server-side
-async function getData() {
-  try {
-    const response = await fetch(process.env.NEXT_PUBLIC_BASE_URL + '/data.json', { cache: 'no-store' });
-    if (!response.ok) {
-      throw new Error('Failed to fetch data');
-    }
-    return response.json();
-  } catch (error) {
-    console.error('Error fetching data:', error);
-    return { offers: [] };
-  }
-}
-
-// Import getTranslations instead of useTranslations
+// Import getTranslations from next-intl/server
 import { getTranslations } from 'next-intl/server';
 
 export default async function OffersPage({ params }) {
-  const data = await getData();
-  const language = params.locale || "en";
-
-  // Use getTranslations instead of useTranslations
+		  // We need to await params before accessing its properties
+		  const resolvedParams = await params;
+		  const language = resolvedParams.locale || "en";
   const t = await getTranslations();
+  
+  // Use the same fetchData utility
+  const data = await fetchData();
+  
+  if (!data) {
+    return <div>Loading...</div>;
+  }
 
   return (
     <>
-      <div className="container mx-auto mt-14 md:mt-0">
+      <div className="container mx-auto nav-space">
         <PageTitleHeading title="YACHT OFFERS AND DEALS IN DUBAI" />
-        {/* <p>{t("navbar.contact-us")}</p> */}
 
         <div className="md:block hidden">
           <div className="grid grid-col-1 md:grid-cols-2 gap-7 pb-8">
@@ -62,7 +54,7 @@ export default async function OffersPage({ params }) {
                       {offer.translations[language].title}
                     </Link>
                   </h2>
-                  <p className="text-[#232629] font-bold text-xs pt-2 pb-16">
+                  <p className="text-[#232629] font-bold text-xs pt-2 pb-12">
                     {offer.note}
                   </p>
                   <p className="text-sm py-2 font-bold">
@@ -72,7 +64,7 @@ export default async function OffersPage({ params }) {
                   <div className="flex flex-row items-center justify-between">
                     <div className="flex flex-col items-start justify-start py-10">
                       <p className="text-[#232629] font-bold text-sm xl:text-lg">
-                        Validity Until:
+                        {t('offers.validity-until')}:
                         <br />
                         {offer.validity}
                       </p>

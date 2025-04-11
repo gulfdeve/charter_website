@@ -13,10 +13,12 @@ import { NextIntlClientProvider } from "next-intl";
 import { getMessages } from "next-intl/server";
 import { routing } from "../i18n/routing";
 import { notFound } from "next/navigation";
-import TopLoader from '@/app/components/TopLoader';
+// import TopLoader from '@/app/components/TopLoader';
+import NProgressLoader from '@/app/components/NProgressLoader';
 import { FareHarborProvider } from "@/app/context/FareHarborContext";
 import 'react-phone-input-2/lib/style.css';
 import { headers } from 'next/headers';
+import { fetchData } from '@/app/lib/fetchData';
 
 const montserrat = Montserrat({
   subsets: ["latin"],
@@ -31,6 +33,7 @@ export default async function RootLayout({
   params: Promise<{ locale: string; slug?: string[] }>;
 }) {
   const { locale, slug } = await params;
+  const serverData = await fetchData();
 
   // Validate locale
   if (!routing.locales.includes(locale as any)) {
@@ -71,9 +74,9 @@ export default async function RootLayout({
         />
       </head>
       <body className={`${montserrat.variable}`}>
-        <TopLoader />
+        <NProgressLoader />
         <NextIntlClientProvider locale={locale} messages={messages}>
-          <DataProvider>
+          <DataProvider initialData={serverData}>
             <LanguageProvider>
               <Navbar />
               <FareHarborProvider>

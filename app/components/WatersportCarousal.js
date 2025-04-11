@@ -24,9 +24,9 @@ export default function WatersportCarousal() {
   }, [embla]);
 
   return (
-    <div className="container mx-auto md:px-4 pb-16">
+    <div className="pb-16">
       {/* Embla "viewport" container */}
-      <div ref={emblaRef} className="overflow-hidden px-3 py-5">
+      <div ref={emblaRef} className="overflow-hidden py-5">
         {/* Embla "container" for slides: using flex for horizontal layout */}
         <div className="flex gap-4 px-2">
           {!loading &&
@@ -73,7 +73,7 @@ export default function WatersportCarousal() {
                           <div className="flex flex-col">
                             <p className="text-[#232629] font-bold text-xs xl:text-base">
                               Starting
-                              <br class="hidden sm:block"/>
+                              <br className="hidden sm:block"/>
                               <span className="text-xs pl-1 sm:pl-0">AED 3120</span>
                             </p>
                           </div>

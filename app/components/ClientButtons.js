@@ -5,7 +5,7 @@ import { Link } from "@/app/i18n/routing";
 
 export default function ClientButtons({ offer }) {
   return (
-    <div className="flex xl:flex-row flex-col items-center justify-end gap-3 ">
+    <div className="flex xl:flex-row flex-col justify-end items-stretch gap-3 md:gap-1 xl:gap-3 ">
       <a
         href={`${offer.whatsapp_url}`}
         target="_blank"

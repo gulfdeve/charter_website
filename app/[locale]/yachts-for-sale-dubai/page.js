@@ -12,7 +12,7 @@ const Page = () => {
     <>
 <VideoLocal filename="/buy-sell-yacht-video.mp4" section="buy-yacht" />
       <div className="bg-white w-full h-auto ">
-        <div className="bg-white rounded-lg p-8 container mx-auto my-8 shadow-buy-yacht mt-14 lg:mt-0 ">
+        <div className="bg-white rounded-lg p-8 container mx-auto my-8 shadow-buy-yacht mt-14">
           <h1 className="text-4xl font-bold text-center text-gray-900 mb-8 ">
             FIND YOUR DREAM YACHT {t("navbar.private-yachts")}  
           </h1>
@@ -27,15 +27,15 @@ const Page = () => {
         </div>
         <YachtListings />
         <div className="container mx-auto">
-          <div className="flex flex-col  lg:flex-row items-center justify-center lg:justify-start lg:gap-0  custom-shadow rounded-lg bg-white overflow-hidden lg:h-[25rem] xl:h-[25rem] 2xl:h-[25rem]">
-            <div className="w-full lg:w-1/2 xl:w-1/2">
+          <div className="flex flex-col  lg:flex-row items-center justify-center lg:justify-start lg:gap-0  custom-shadow rounded-lg bg-white overflow-hidden lg:h-[25rem] xl:h-[30rem] 2xl:h-[35rem]">
+            <div className="w-full lg:w-1/2 xl:w-1/2 h-full">
               <img
                 src="/luxury_yacht_for_sale.webp"
                 className="rounded-t-lg lg:rounded-l-xl  w-full h-full object-cover"
               />
             </div>
-            <div className="w-full lg:w-1/2 flex flex-col items-center lg:rounded-r-xl lg:items-start justify-center text-center lg:text-left lg:px-16 px-6 py-5">
-              <h1 className=" text-black font-bold text-xl 2xl:text-3xl pt-5">
+            <div className="w-full lg:w-1/2 flex flex-col items-center lg:rounded-r-xl  justify-center text-justify lg:px-16 px-6 py-5">
+              <h1 className=" text-black text-center font-bold text-xl 2xl:text-3xl pt-5">
                 LUXURY YACHT FOR SALE
               </h1>
               <p className=" text-black 2xl:text-lg py-5">
@@ -52,11 +52,11 @@ const Page = () => {
             </div>
           </div>
         </div>
-        <div className="md:block hidden">
-          <div className="container mx-auto">
+        <div className="">
+          <div className="container mx-auto mt-20">
           <div className="flex items-center justify-center w-full my-6 xl:px-36 lg:px-20 ">
             <hr className="flex-grow border-primary-yellow-dark" />
-            <span className="px-4 text-3xl 2xl:text-3xl font-semibold  text-black">
+            <span className="px-4 text-3xl 2xl:text-3xl font-semibold  text-black text-center">
               WHY BUY A LUXURY YACHT
             </span>
             <hr className="flex-grow border-primary-yellow-dark " />
@@ -76,11 +76,11 @@ const Page = () => {
             <div className="">
               <img
                 src="/buying_process.webp"
-                className="xl:w-[210rem] sm:w-[170rem] md:h-[530px] xl:h-[452px] lg:h-[460px]"
+                className="xl:w-[210rem] sm:w-[170rem] md:h-[530px] xl:h-[452px] lg:h-[480px]"
               />
             </div>
           </div>
-          <div className="flex flex-col items-center sm:items-start sm:justify-start justify-center bg-primary-blue px-5 xl:px-20 xl:py-12 py-5 md:h-[530px] xl:h-[452px]  lg:h-[460px]">
+          <div className="flex flex-col items-center sm:items-start sm:justify-start justify-center bg-primary-blue px-5 xl:px-20 xl:py-12 py-5 md:h-[530px] xl:h-[452px]  lg:h-[480px]">
             <h1 className=" text-white text-center font-bold text-2xl xl:text-3xl py-7">
               The Buying Process
             </h1>
@@ -119,11 +119,11 @@ const Page = () => {
         </div>
         </div>
         <div className="container mx-auto">
-  <div className="flex flex-col lg:flex-row-reverse items-center justify-center lg:justify-start lg:gap-0 custom-shadow rounded-lg bg-white overflow-hidden lg:h-[25rem] xl:h-[25rem] 2xl:h-[28rem]">  {/* Set container height */}
+  <div className="flex flex-col lg:flex-row-reverse items-center justify-center lg:justify-start lg:gap-0 custom-shadow rounded-lg bg-white overflow-hidden lg:h-[25rem] xl:h-[30rem] 2xl:h-[35rem]">  {/* Set container height */}
     <div className="w-full lg:w-1/2 xl:w-1/2 flex h-full">
       <img
         src="/sell_your_yacht.webp"
-        className="rounded-t-lg lg:rounded-l-xl w-full h-full object-cover"  // Ensure image fills the container
+        className=" w-full h-full object-cover"  // Ensure image fills the container
       />
     </div>
     <div className="w-full lg:w-1/2 flex flex-col items-center lg:rounded-r-xl lg:rounded-l-none lg:items-center justify-center text-center lg:text-left lg:px-16 px-6 py-5">

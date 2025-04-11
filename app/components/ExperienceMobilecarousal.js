@@ -24,7 +24,7 @@ export default function ExperiencesCarousel() {
   }, [embla]);
 
   return (
-    <div className="container mx-auto px-2 md:px-6 lg:p-6  ">
+    <div className="">
       {/* Embla "viewport" container */}
       <div ref={emblaRef} className="overflow-hidden sm:px-3 py-5">
         {/* Embla "container" for slides: using flex for horizontal layout */}

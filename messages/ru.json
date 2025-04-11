@@ -18,5 +18,8 @@
   "footer": {
     "reach-out-to-us": "ОБРАЩАЙТЕСЬ К НАМ",
     "centaurus-charter": "Устав Центавра"
+  },
+  "offers": {
+    "validity-until": "Достоверность до"
   }
 }

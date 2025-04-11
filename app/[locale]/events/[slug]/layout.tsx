@@ -1,7 +1,6 @@
+// app/[locale]/events/[slug]/layout.tsx
 import React from 'react';
-import { useLocale } from "next-intl";
-import fs from 'fs/promises';
-import path from 'path';
+import { fetchData } from '@/app/lib/fetchData';
 
 interface Metadata {
   title: string;
@@ -23,56 +22,39 @@ interface Event {
   };
 }
 
-interface APIResponse {
-  events?: Event[];
-  meta_tags?: {
-    [key: string]: {
-      [locale: string]: EventTranslation | EventTranslation[];
-    };
-  };
-}
-
 const Layout = ({ children }: { children: React.ReactNode }): JSX.Element => {
   return (
-      <main>{children}</main>
+    <main>{children}</main>
   );
 };
 
 export async function generateMetadata({
-  params,
-}: {
-  params: Promise<{ slug: string; locale: string }>;
-}): Promise<Metadata> {
-  const { slug, locale } = await params;
-  const resolvedLocale = locale 
- 
+	params,
+  }: {
+	params: Promise<{ slug: string; locale: string }>;
+  }): Promise<Metadata> {
+	const { slug, locale } = await params;
+	const resolvedLocale = locale 
 
   try {
-
-        // Path to your JSON file in the public directory
-        const dataPath = path.join(process.cwd(), 'public', 'data.json');
+    // Use fetchData utility instead of reading from filesystem
+    const data = await fetchData();
     
-        // Read the file
-        const jsonData = await fs.readFile(dataPath, 'utf8');
-        const data = JSON.parse(jsonData);
-        
-        console.log("Reading from local data.json");
-    
+    if (!data) {
+      throw new Error('Failed to fetch data');
+    }
 
     // Find the event by slug
-    // const event: Event | undefined = data?.events?.find((item) => item.slug === slug);
-    const event: Event | undefined = data?.events?.find((item: Event) => item.slug === slug);
+    const event = data?.events?.find((item: Event) => item.slug === slug);
     
     // Retrieve event translations (or default to an empty object)
     const eventTranslations: EventTranslation = event?.translations?.[resolvedLocale] || {};
-    
 
     // Retrieve home translations as fallback (if available)
     const homeTranslationsRaw = data?.meta_tags?.["home"]?.[resolvedLocale];
     const homeTranslations: EventTranslation = Array.isArray(homeTranslationsRaw)
       ? homeTranslationsRaw[0]
       : homeTranslationsRaw || {};
-    
 
     // Field-by-field fallback only using original meta fields
     const title =
@@ -94,7 +76,7 @@ export async function generateMetadata({
   
     return finalMetadata;
   } catch (error) {
-    console.log("Error fetching metadata:", error);
+    console.error("Error fetching metadata:", error);
     return {
       title: "Default Title",
       description: "Default Description",

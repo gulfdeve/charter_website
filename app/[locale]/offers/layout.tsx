@@ -1,59 +1,44 @@
+// app/[locale]/offers/layout.tsx
 import React from 'react';
-import { useLocale } from "next-intl";
-import fs from 'fs/promises';
-import path from 'path';
+import { fetchData } from '@/app/lib/fetchData';
 
-interface Metadata {
-  title: string;
-  description: string;
+interface LayoutParams {
+  locale: string;
 }
 
-const Layout = ({ children }: { children: React.ReactNode }) => {
-  return (
-      <main>{children}</main>
-  );
-};
+interface LayoutProps {
+  children: React.ReactNode;
+  params: Promise<LayoutParams>;
+}
 
 export async function generateMetadata({
   params,
 }: {
-  params: Promise<{ slug: string; locale: string }>;
+  params: Promise<LayoutParams>;
 }) {
   const { locale } = await params;
-  const resolvedLocale = locale || "en"; // Default to English if locale is missing
-
-  try {
-
-    // Path to your JSON file in the public directory
-    const dataPath = path.join(process.cwd(), 'public', 'data.json');
-
-    // Read the file
-    const jsonData = await fs.readFile(dataPath, 'utf8');
-    const data = JSON.parse(jsonData);
-
-    console.log("Reading from local data.json");
-
-    const metaData = data?.meta_tags?.["offers"]?.[resolvedLocale]?.[0];
-    const metaHome = data?.meta_tags?.["home"]?.[resolvedLocale]?.[0];
-
-    // Use "offers" metadata if available, otherwise fallback to "home"
-    const finalMeta = metaData || metaHome || {
-      meta_title: "Default Title",
-      meta_description: "Default Description",
-    };
-
-    return {
-      title: finalMeta.meta_title || "Default Title",
-      description: finalMeta.meta_description || "Default Description",
-      keywords: finalMeta.meta_keywords || "default, keywords",
-    };
-  } catch (error) {
-    console.error("Error fetching metadata:", error);
-    return {
-      title: "Default Title",
-      description: "Default Description",
-    };
-  }
+  const resolvedLocale = locale || "en";
+  
+  const data = await fetchData();
+  
+  const metaData = data?.meta_tags?.["offers"]?.[resolvedLocale]?.[0];
+  const metaHome = data?.meta_tags?.["home"]?.[resolvedLocale]?.[0];
+  
+  const finalMeta = metaData || metaHome || {
+    meta_title: "Default Title",
+    meta_description: "Default Description",
+  };
+  
+  return {
+    title: finalMeta.meta_title || "Default Title",
+    description: finalMeta.meta_description || "Default Description",
+    keywords: finalMeta.meta_keywords || "default, keywords",
+  };
 }
+
+const Layout = async ({ children, params }: LayoutProps) => {
+  const { locale } = await params;
+  return <main>{children}</main>;
+};
 
 export default Layout;
