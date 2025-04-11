@@ -167,6 +167,11 @@ const Page = () => {
                   {showDetails[index] ? "Hide Details" : "Show Details"}
                 </button>
               </div>
+              <h1 className="text-primary-blue-2 text-sm ml-3">
+                <span className="font-bold">Cruising Time:</span>{" "}
+                {tour.cruisingTime}
+              </h1>
+            </div>
 
               {/* Always Visible Content with Opacity Effect */}
               <div
@@ -199,7 +204,11 @@ const Page = () => {
                   </h1>
                 </div>
               </div>
-
+              <h1 className="text-primary-blue-2 text-sm ml-3">
+                <span className="font-bold">Cruising Route:</span>{" "}
+                {tour.cruisingRoute}
+              </h1>
+            </div>
               {/* Collapsible Details Section */}
               <div
                 className={`
@@ -242,12 +251,22 @@ const Page = () => {
                   </div>
                 </div>
               </div>
-
-              {/* Book Now Button */}
-              <button className="yellow-solid-button w-full">Book Now</button>
+              <h1 className="text-primary-blue-2 text-sm ml-3">
+                <span className="font-bold text-primary-blue-2">
+                  Departure Point:
+                </span>{" "}
+                {tour.departurePoint}
+              </h1>
             </div>
-          ))}
+          </div>
+
+          {/* Book Now Button */}
+          <button className="yellow-solid-button w-full">Book Now</button>
         </div>
+      </div>
+    ))}
+  </div>
+</div>
 
         <div className="flex items-center justify-center bg-primary-blue-2 max-w-3xl mx-auto text-center">
           <h1 className="text-white text-md md:text-xl font-bold">
@@ -263,28 +282,28 @@ const Page = () => {
           </span>
           <hr className="flex-grow border-primary-yellow-dark" />
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-5 px-4 py-10 container mx-auto">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-2 md:gap-5 px-4 py-10 container mx-auto">
           <div>
             <img src="/BBQ.webp" alt="Live BBQ" />
-            <h1 className="bg-primary-blue-2 text-primary-yellow text-center text-md font-bold p-2 rounded-b-lg">
+            <h1 className="bg-primary-blue-2 text-primary-yellow text-center text-xs sm:text-sm md:text-md  font-bold p-2 rounded-b-lg">
               LIVE BBQ
             </h1>
           </div>
           <div>
             <img src="/Picturemoments.webp" alt="Picture Moments" />
-            <h1 className="bg-primary-blue-2 text-primary-yellow text-center text-md font-bold p-2 rounded-b-lg">
+            <h1 className="bg-primary-blue-2 text-primary-yellow text-center text-xs sm:text-sm md:text-md  font-bold p-2 rounded-b-lg">
               PICTURE MOMENTS
             </h1>
           </div>
           <div>
             <img src="/Amazing-View.webp" alt="Amazing View" />
-            <h1 className="bg-primary-blue-2 text-primary-yellow text-center text-md font-bold p-2 rounded-b-lg">
+            <h1 className="bg-primary-blue-2 text-primary-yellow text-center text-xs sm:text-sm md:text-md font-bold p-2 rounded-b-lg">
               AMAZING VIEW
             </h1>
           </div>
           <div>
             <img src="/Great-Food.webp" alt="Great Food" />
-            <h1 className="bg-primary-blue-2 text-primary-yellow text-center text-md font-bold p-2 rounded-b-lg">
+            <h1 className="bg-primary-blue-2 text-primary-yellow text-center text-xs sm:text-sm md:text-md  font-bold p-2 rounded-b-lg">
               GREAT FOOD
             </h1>
           </div>
@@ -322,7 +341,7 @@ const Page = () => {
               className="object-cover object-center xl:w-[250rem] sm:w-[170rem] md:h-[670px] xl:h-[650px] lg:h-[560px]"
             />
           </div>
-          <div className="flex flex-col items-center sm:items-start sm:justify-start justify-center bg-primary-blue-2 px-5 xl:p-32 xl:py-12 py-5 md:h-[670px] xl:h-[650px] lg:h-[560px]">
+          <div className="flex flex-col items-center sm:items-start sm:justify-start justify-center bg-primary-blue-2 px-5 xl:p-32 xl:py-12 py-5 md:h-[600px] xl:h-[650px] lg:h-[560px]">
             <p className="text-white text-center sm:text-left text-md sm:text-sm xl:text-md py-10">
               Experience Dubai's coastline in an entirely new light with our
               exclusive shared yacht tours. Uniting the thrill of luxury
@@ -362,7 +381,7 @@ const Page = () => {
             <p className="text-white text-center md:text-left font-bold text-xl rounded">
               Enjoy a luxurious shared yacht adventure!
             </p>
-            <div className="flex flex-col md:flex-row md:gap-10 space-y">
+            <div className="flex flex-col md:flex-row gap-2 md:gap-10 space-y">
               <button className="blue-lined-button">
                 <FaWhatsapp size={20} /> WHATSAPP US
               </button>

@@ -1,0 +1,748 @@
+{
+	"redirects": [
+
+	  {
+		"source": "/wp/product/56-ft-Yacht-Vassia",
+		"destination": "/yacht-rentals/56ft-vassia",
+		"permanent": true
+	  },
+	  {
+		"source": "/wp/product/Lagoona-majesty-56-ft",
+		"destination": "/yacht-rentals/56ft-lagoona",
+		"permanent": true
+	  },
+	  {
+		"source": "/wp/product/58-ft-Yacht-Etosha",
+		"destination": "/yacht-rentals/58ft-etosha",
+		"permanent": true
+	  },
+	  {
+		"source": "/wp/product/36-ft-Yacht-Thunder",
+		"destination": "/yacht-rentals/36ft-thunder",
+		"permanent": true
+	  },
+	  {
+		"source": "/wp/product/Silvercreek-61-ft",
+		"destination": "/yacht-rentals/61ft-silvercreek",
+		"permanent": true
+	  },
+	  {
+		"source": "/wp/product/77-ft-Yacht-Dionysos",
+		"destination": "/yacht-rentals/77ft-dionysos",
+		"permanent": true
+	  },
+	  {
+		"source": "/wp/product/101ft-Majesty",
+		"destination": "/yacht-rentals/101ft-Majesty",
+		"permanent": true
+	  },
+	  
+	  {
+		"source": "/product/56-ft-Yacht-Vassia",
+		"destination": "/yacht-rentals/56ft-vassia",
+		"permanent": true
+	  },
+	  {
+		"source": "/en/product/56-ft-Yacht-Vassia",
+		"destination": "/yacht-rentals/56ft-vassia",
+		"permanent": true
+	  },
+	  {
+		"source": "/ar/product/56-ft-Yacht-Vassia",
+		"destination": "/ar/yacht-rentals/56ft-vassia",
+		"permanent": true
+	  },
+	  {
+		"source": "/zh/product/56-ft-Yacht-Vassia",
+		"destination": "/zh/yacht-rentals/56ft-vassia",
+		"permanent": true
+	  },
+	  {
+		"source": "/ru/product/56-ft-Yacht-Vassia",
+		"destination": "/ru/yacht-rentals/56ft-vassia",
+		"permanent": true
+	  },
+	  {
+		"source": "/product/56-feet-vassia",
+		"destination": "/yacht-rentals/56ft-vassia",
+		"permanent": true
+	  },
+	  {
+		"source": "/en/product/56-feet-vassia",
+		"destination": "/yacht-rentals/56ft-vassia",
+		"permanent": true
+	  },
+	  {
+		"source": "/ar/product/56-feet-vassia",
+		"destination": "/ar/yacht-rentals/56ft-vassia",
+		"permanent": true
+	  },
+	  {
+		"source": "/zh/product/56-feet-vassia",
+		"destination": "/zh/yacht-rentals/56ft-vassia",
+		"permanent": true
+	  },
+	  {
+		"source": "/ru/product/56-feet-vassia",
+		"destination": "/ru/yacht-rentals/56ft-vassia",
+		"permanent": true
+	  },
+	  {
+		"source": "/product/56-feet-vassia-2",
+		"destination": "/yacht-rentals/56ft-vassia",
+		"permanent": true
+	  },
+	  {
+		"source": "/en/product/56-feet-vassia-2",
+		"destination": "/yacht-rentals/56ft-vassia",
+		"permanent": true
+	  },
+	  {
+		"source": "/ar/product/56-feet-vassia-2",
+		"destination": "/ar/yacht-rentals/56ft-vassia",
+		"permanent": true
+	  },
+	  {
+		"source": "/zh/product/56-feet-vassia-2",
+		"destination": "/zh/yacht-rentals/56ft-vassia",
+		"permanent": true
+	  },
+	  {
+		"source": "/ru/product/56-feet-vassia-2",
+		"destination": "/ru/yacht-rentals/56ft-vassia",
+		"permanent": true
+	  },
+	  
+	  {
+		"source": "/product/Silvercreek-61-ft",
+		"destination": "/yacht-rentals/61ft-silvercreek",
+		"permanent": true
+	  },
+	  {
+		"source": "/en/product/Silvercreek-61-ft",
+		"destination": "/yacht-rentals/61ft-silvercreek",
+		"permanent": true
+	  },
+	  {
+		"source": "/ar/product/Silvercreek-61-ft",
+		"destination": "/ar/yacht-rentals/61ft-silvercreek",
+		"permanent": true
+	  },
+	  {
+		"source": "/zh/product/Silvercreek-61-ft",
+		"destination": "/zh/yacht-rentals/61ft-silvercreek",
+		"permanent": true
+	  },
+	  {
+		"source": "/ru/product/Silvercreek-61-ft",
+		"destination": "/ru/yacht-rentals/61ft-silvercreek",
+		"permanent": true
+	  },
+	  
+	  {
+		"source": "/product/77-ft-Yacht-Dionysos",
+		"destination": "/yacht-rentals/77ft-dionysos",
+		"permanent": true
+	  },
+	  {
+		"source": "/en/product/77-ft-Yacht-Dionysos",
+		"destination": "/yacht-rentals/77ft-dionysos",
+		"permanent": true
+	  },
+	  {
+		"source": "/ar/product/77-ft-Yacht-Dionysos",
+		"destination": "/ar/yacht-rentals/77ft-dionysos",
+		"permanent": true
+	  },
+	  {
+		"source": "/zh/product/77-ft-Yacht-Dionysos",
+		"destination": "/zh/yacht-rentals/77ft-dionysos",
+		"permanent": true
+	  },
+	  {
+		"source": "/ru/product/77-ft-Yacht-Dionysos",
+		"destination": "/ru/yacht-rentals/77ft-dionysos",
+		"permanent": true
+	  },
+	  
+	  {
+		"source": "/product/58-ft-Yacht-Etosha",
+		"destination": "/yacht-rentals/58ft-etosha",
+		"permanent": true
+	  },
+	  {
+		"source": "/en/product/58-ft-Yacht-Etosha",
+		"destination": "/yacht-rentals/58ft-etosha",
+		"permanent": true
+	  },
+	  {
+		"source": "/ar/product/58-ft-Yacht-Etosha",
+		"destination": "/ar/yacht-rentals/58ft-etosha",
+		"permanent": true
+	  },
+	  {
+		"source": "/zh/product/58-ft-Yacht-Etosha",
+		"destination": "/zh/yacht-rentals/58ft-etosha",
+		"permanent": true
+	  },
+	  {
+		"source": "/ru/product/58-ft-Yacht-Etosha",
+		"destination": "/ru/yacht-rentals/58ft-etosha",
+		"permanent": true
+	  },
+	  {
+		"source": "/product/58-feet-etosha",
+		"destination": "/yacht-rentals/58ft-etosha",
+		"permanent": true
+	  },
+	  {
+		"source": "/en/product/58-feet-etosha",
+		"destination": "/yacht-rentals/58ft-etosha",
+		"permanent": true
+	  },
+	  {
+		"source": "/ar/product/58-feet-etosha",
+		"destination": "/ar/yacht-rentals/58ft-etosha",
+		"permanent": true
+	  },
+	  {
+		"source": "/zh/product/58-feet-etosha",
+		"destination": "/zh/yacht-rentals/58ft-etosha",
+		"permanent": true
+	  },
+	  {
+		"source": "/ru/product/58-feet-etosha",
+		"destination": "/ru/yacht-rentals/58ft-etosha",
+		"permanent": true
+	  },
+	  
+	  {
+		"source": "/product/33-ft-Yacht-Riverside",
+		"destination": "/yacht-rentals/36ft-thunder",
+		"permanent": true
+	  },
+	  {
+		"source": "/en/product/33-ft-Yacht-Riverside",
+		"destination": "/yacht-rentals/36ft-thunder",
+		"permanent": true
+	  },
+	  {
+		"source": "/ar/product/33-ft-Yacht-Riverside",
+		"destination": "/ar/yacht-rentals/36ft-thunder",
+		"permanent": true
+	  },
+	  {
+		"source": "/zh/product/33-ft-Yacht-Riverside",
+		"destination": "/zh/yacht-rentals/36ft-thunder",
+		"permanent": true
+	  },
+	  {
+		"source": "/ru/product/33-ft-Yacht-Riverside",
+		"destination": "/ru/yacht-rentals/36ft-thunder",
+		"permanent": true
+	  },
+	  {
+		"source": "/product/33-feet-riverside",
+		"destination": "/yacht-rentals/36ft-thunder",
+		"permanent": true
+	  },
+	  {
+		"source": "/en/product/33-feet-riverside",
+		"destination": "/yacht-rentals/36ft-thunder",
+		"permanent": true
+	  },
+	  {
+		"source": "/ar/product/33-feet-riverside",
+		"destination": "/ar/yacht-rentals/36ft-thunder",
+		"permanent": true
+	  },
+	  {
+		"source": "/zh/product/33-feet-riverside",
+		"destination": "/zh/yacht-rentals/36ft-thunder",
+		"permanent": true
+	  },
+	  {
+		"source": "/ru/product/33-feet-riverside",
+		"destination": "/ru/yacht-rentals/36ft-thunder",
+		"permanent": true
+	  },
+	  
+	  {
+		"source": "/product/101ft-Majesty",
+		"destination": "/yacht-rentals/101ft-Majesty",
+		"permanent": true
+	  },
+	  {
+		"source": "/en/product/101ft-Majesty",
+		"destination": "/yacht-rentals/101ft-Majesty",
+		"permanent": true
+	  },
+	  {
+		"source": "/ar/product/101ft-Majesty",
+		"destination": "/ar/yacht-rentals/101ft-Majesty",
+		"permanent": true
+	  },
+	  {
+		"source": "/zh/product/101ft-Majesty",
+		"destination": "/zh/yacht-rentals/101ft-Majesty",
+		"permanent": true
+	  },
+	  {
+		"source": "/ru/product/101ft-Majesty",
+		"destination": "/ru/yacht-rentals/101ft-Majesty",
+		"permanent": true
+	  },
+	  
+	  {
+		"source": "/product/36-ft-Yacht-Thunder",
+		"destination": "/yacht-rentals/36ft-thunder",
+		"permanent": true
+	  },
+	  {
+		"source": "/en/product/36-ft-Yacht-Thunder",
+		"destination": "/yacht-rentals/36ft-thunder",
+		"permanent": true
+	  },
+	  {
+		"source": "/ar/product/36-ft-Yacht-Thunder",
+		"destination": "/ar/yacht-rentals/36ft-thunder",
+		"permanent": true
+	  },
+	  {
+		"source": "/zh/product/36-ft-Yacht-Thunder",
+		"destination": "/zh/yacht-rentals/36ft-thunder",
+		"permanent": true
+	  },
+	  {
+		"source": "/ru/product/36-ft-Yacht-Thunder",
+		"destination": "/ru/yacht-rentals/36ft-thunder",
+		"permanent": true
+	  },
+	  
+	  {
+		"source": "/yacht-rentals/116ft-poseidon",
+		"destination": "/yacht-rentals/118ft-poseidon",
+		"permanent": true
+	  },
+	  {
+		"source": "/en/yacht-rentals/116ft-poseidon",
+		"destination": "/yacht-rentals/118ft-poseidon",
+		"permanent": true
+	  },
+	  {
+		"source": "/ar/yacht-rentals/116ft-poseidon",
+		"destination": "/ar/yacht-rentals/118ft-poseidon",
+		"permanent": true
+	  },
+	  {
+		"source": "/zh/yacht-rentals/116ft-poseidon",
+		"destination": "/zh/yacht-rentals/118ft-poseidon",
+		"permanent": true
+	  },
+	  {
+		"source": "/ru/yacht-rentals/116ft-poseidon",
+		"destination": "/ru/yacht-rentals/118ft-poseidon",
+		"permanent": true
+	  },
+	  
+	  {
+		"source": "/product/yacht-rentals",
+		"destination": "/yacht-rentals",
+		"permanent": true
+	  },
+	  {
+		"source": "/en/product/yacht-rentals",
+		"destination": "/yacht-rentals",
+		"permanent": true
+	  },
+	  {
+		"source": "/ar/product/yacht-rentals",
+		"destination": "/ar/yacht-rentals",
+		"permanent": true
+	  },
+	  {
+		"source": "/zh/product/yacht-rentals",
+		"destination": "/zh/yacht-rentals",
+		"permanent": true
+	  },
+	  {
+		"source": "/ru/product/yacht-rentals",
+		"destination": "/ru/yacht-rentals",
+		"permanent": true
+	  },
+	  
+	  {
+		"source": "/abu-dhabi-race-2022-yacht-packages",
+		"destination": "/abu-dhabi-race-2024-yacht-packages",
+		"permanent": true
+	  },
+	  {
+		"source": "/en/abu-dhabi-race-2022-yacht-packages",
+		"destination": "/abu-dhabi-race-2024-yacht-packages",
+		"permanent": true
+	  },
+	  {
+		"source": "/ar/abu-dhabi-race-2022-yacht-packages",
+		"destination": "/ar/abu-dhabi-race-2024-yacht-packages",
+		"permanent": true
+	  },
+	  {
+		"source": "/zh/abu-dhabi-race-2022-yacht-packages",
+		"destination": "/zh/abu-dhabi-race-2024-yacht-packages",
+		"permanent": true
+	  },
+	  {
+		"source": "/ru/abu-dhabi-race-2022-yacht-packages",
+		"destination": "/ru/abu-dhabi-race-2024-yacht-packages",
+		"permanent": true
+	  },
+	  
+	  {
+		"source": "/formula1-abu-dhabi-yacht-hospitality",
+		"destination": "/abu-dhabi-race-2024-yacht-packages",
+		"permanent": true
+	  },
+	  {
+		"source": "/en/formula1-abu-dhabi-yacht-hospitality",
+		"destination": "/abu-dhabi-race-2024-yacht-packages",
+		"permanent": true
+	  },
+	  {
+		"source": "/ar/formula1-abu-dhabi-yacht-hospitality",
+		"destination": "/ar/abu-dhabi-race-2024-yacht-packages",
+		"permanent": true
+	  },
+	  {
+		"source": "/zh/formula1-abu-dhabi-yacht-hospitality",
+		"destination": "/zh/abu-dhabi-race-2024-yacht-packages",
+		"permanent": true
+	  },
+	  {
+		"source": "/ru/formula1-abu-dhabi-yacht-hospitality",
+		"destination": "/ru/abu-dhabi-race-2024-yacht-packages",
+		"permanent": true
+	  },
+	  
+	  {
+		"source": "/abu-dhabi-f1-yacht-single-pass",
+		"destination": "/abu-dhabi-race-2024-yacht-packages",
+		"permanent": true
+	  },
+	  {
+		"source": "/en/abu-dhabi-f1-yacht-single-pass",
+		"destination": "/abu-dhabi-race-2024-yacht-packages",
+		"permanent": true
+	  },
+	  {
+		"source": "/ar/abu-dhabi-f1-yacht-single-pass",
+		"destination": "/ar/abu-dhabi-race-2024-yacht-packages",
+		"permanent": true
+	  },
+	  {
+		"source": "/zh/abu-dhabi-f1-yacht-single-pass",
+		"destination": "/zh/abu-dhabi-race-2024-yacht-packages",
+		"permanent": true
+	  },
+	  {
+		"source": "/ru/abu-dhabi-f1-yacht-single-pass",
+		"destination": "/ru/abu-dhabi-race-2024-yacht-packages",
+		"permanent": true
+	  },
+	  
+	  {
+		"source": "/shared-tours",
+		"destination": "/shared-yacht-tours-dubai",
+		"permanent": true
+	  },
+	  {
+		"source": "/en/shared-tours",
+		"destination": "/shared-yacht-tours-dubai",
+		"permanent": true
+	  },
+	  {
+		"source": "/ar/shared-tours",
+		"destination": "/ar/shared-yacht-tours-dubai",
+		"permanent": true
+	  },
+	  {
+		"source": "/zh/shared-tours",
+		"destination": "/zh/shared-yacht-tours-dubai",
+		"permanent": true
+	  },
+	  {
+		"source": "/ru/shared-tours",
+		"destination": "/ru/shared-yacht-tours-dubai",
+		"permanent": true
+	  },
+	  
+	  {
+		"source": "/offers/mybenefits-app",
+		"destination": "/offers",
+		"permanent": true
+	  },
+	  {
+		"source": "/en/offers/mybenefits-app",
+		"destination": "/offers",
+		"permanent": true
+	  },
+	  {
+		"source": "/ar/offers/mybenefits-app",
+		"destination": "/ar/offers",
+		"permanent": true
+	  },
+	  {
+		"source": "/zh/offers/mybenefits-app",
+		"destination": "/zh/offers",
+		"permanent": true
+	  },
+	  {
+		"source": "/ru/offers/mybenefits-app",
+		"destination": "/ru/offers",
+		"permanent": true
+	  },
+	  {
+		"source": "/offers/new-year",
+		"destination": "/offers",
+		"permanent": true
+	  },
+	  {
+		"source": "/en/offers/new-year",
+		"destination": "/offers",
+		"permanent": true
+	  },
+	  {
+		"source": "/ar/offers/new-year",
+		"destination": "/ar/offers",
+		"permanent": true
+	  },
+	  {
+		"source": "/zh/offers/new-year",
+		"destination": "/zh/offers",
+		"permanent": true
+	  },
+	  {
+		"source": "/ru/offers/new-year",
+		"destination": "/ru/offers",
+		"permanent": true
+	  },
+	  {
+		"source": "/offers/ypo",
+		"destination": "/offers",
+		"permanent": true
+	  },
+	  {
+		"source": "/en/offers/ypo",
+		"destination": "/offers",
+		"permanent": true
+	  },
+	  {
+		"source": "/ar/offers/ypo",
+		"destination": "/ar/offers",
+		"permanent": true
+	  },
+	  {
+		"source": "/zh/offers/ypo",
+		"destination": "/zh/offers",
+		"permanent": true
+	  },
+	  {
+		"source": "/ru/offers/ypo",
+		"destination": "/ru/offers",
+		"permanent": true
+	  },
+	  {
+		"source": "/showoffers",
+		"destination": "/offers",
+		"permanent": true
+	  },
+	  {
+		"source": "/en/showoffers",
+		"destination": "/offers",
+		"permanent": true
+	  },
+	  {
+		"source": "/ar/showoffers",
+		"destination": "/ar/offers",
+		"permanent": true
+	  },
+	  {
+		"source": "/zh/showoffers",
+		"destination": "/zh/offers",
+		"permanent": true
+	  },
+	  {
+		"source": "/ru/showoffers",
+		"destination": "/ru/offers",
+		"permanent": true
+	  },
+	  
+	  {
+		"source": "/celebrate-christmas-on-yacht",
+		"destination": "/events",
+		"permanent": true
+	  },
+	  {
+		"source": "/en/celebrate-christmas-on-yacht",
+		"destination": "/events",
+		"permanent": true
+	  },
+	  {
+		"source": "/ar/celebrate-christmas-on-yacht",
+		"destination": "/ar/events",
+		"permanent": true
+	  },
+	  {
+		"source": "/zh/celebrate-christmas-on-yacht",
+		"destination": "/zh/events",
+		"permanent": true
+	  },
+	  {
+		"source": "/ru/celebrate-christmas-on-yacht",
+		"destination": "/ru/events",
+		"permanent": true
+	  },
+	  
+	  {
+		"source": "/showpackages",
+		"destination": "/watersports",
+		"permanent": true
+	  },
+	  {
+		"source": "/en/showpackages",
+		"destination": "/watersports",
+		"permanent": true
+	  },
+	  {
+		"source": "/ar/showpackages",
+		"destination": "/ar/watersports",
+		"permanent": true
+	  },
+	  {
+		"source": "/zh/showpackages",
+		"destination": "/zh/watersports",
+		"permanent": true
+	  },
+	  {
+		"source": "/ru/showpackages",
+		"destination": "/ru/watersports",
+		"permanent": true
+	  },
+	  
+
+	  {
+		"source": "/contactus",
+		"destination": "/contact",
+		"permanent": true
+	  },
+	  {
+		"source": "/en/contactus",
+		"destination": "/contact",
+		"permanent": true
+	  },
+	  {
+		"source": "/ar/contactus",
+		"destination": "/ar/contact",
+		"permanent": true
+	  },
+	  {
+		"source": "/zh/contactus",
+		"destination": "/zh/contact",
+		"permanent": true
+	  },
+	  {
+		"source": "/ru/contactus",
+		"destination": "/ru/contact",
+		"permanent": true
+	  },
+	  {
+		"source": "/privacy",
+		"destination": "/privacy-and-policy",
+		"permanent": true
+	  },
+	  {
+		"source": "/en/privacy",
+		"destination": "/privacy-and-policy",
+		"permanent": true
+	  },
+	  {
+		"source": "/ar/privacy",
+		"destination": "/ar/privacy-and-policy",
+		"permanent": true
+	  },
+	  {
+		"source": "/zh/privacy",
+		"destination": "/zh/privacy-and-policy",
+		"permanent": true
+	  },
+	  {
+		"source": "/ru/privacy",
+		"destination": "/ru/privacy-and-policy",
+		"permanent": true
+	  },
+	  {
+		"source": "/summer-offers",
+		"destination": "/offers",
+		"permanent": true
+	  },
+	  {
+		"source": "/en/summer-offers",
+		"destination": "/offers",
+		"permanent": true
+	  },
+	  {
+		"source": "/ar/summer-offers",
+		"destination": "/ar/offers",
+		"permanent": true
+	  },
+	  {
+		"source": "/zh/summer-offers",
+		"destination": "/zh/offers",
+		"permanent": true
+	  },
+	  {
+		"source": "/ru/summer-offers",
+		"destination": "/ru/offers",
+		"permanent": true
+	  },
+	  {
+		"source": "/new-year-yacht-party-dubai",
+		"destination": "/new-year-yacht-party",
+		"permanent": true
+	  },
+	  {
+		"source": "/en/new-year-yacht-party-dubai",
+		"destination": "/new-year-yacht-party",
+		"permanent": true
+	  },
+	  {
+		"source": "/ar/new-year-yacht-party-dubai",
+		"destination": "/ar/new-year-yacht-party",
+		"permanent": true
+	  },
+	  {
+		"source": "/zh/new-year-yacht-party-dubai",
+		"destination": "/zh/new-year-yacht-party",
+		"permanent": true
+	  },
+	  {
+		"source": "/ru/new-year-yacht-party-dubai",
+		"destination": "/ru/new-year-yacht-party",
+		"permanent": true
+	  },
+	  	  {
+		"source": "/frontend/assets/pdf/FORMULA 1 2021 - Yacht Hospitality Deals.pdf",
+		"destination": "/frontend/assets/pdf/2024 FORMULA 1 Website.pdf",
+		"permanent": true
+	  },
+	  {
+		"source": "/frontend/assets/pdf/2022-Formula 1 .pdf",
+		"destination": "/frontend/assets/pdf/2024 FORMULA 1 Website.pdf",
+		"permanent": true
+	  },
+	  {
+		"source": "/frontend/assets/pdf/2023 FORMULA 1.pdf",
+		"destination": "/frontend/assets/pdf/2024 FORMULA 1 Website.pdf",
+		"permanent": true
+	  }
+	]
+  }

@@ -154,67 +154,70 @@ export default function FirstFooter() {
         </ul>
       ),
     },
-    {
-      title: t("footer.reach-out-to-us"),
-      content: (
-        <ul className="text-text-primary-white space-y-3">
-          {[
-            {
-              address: "Marina Walk (Near Spinneys)",
-              location: "Dubai, United Arab Emirates",
-            },
-            {
-              address: "Dubai Harbour Marina",
-              location: "Dubai, United Arab Emirates",
-            },
-            {
-              address: "Berth No AB05 - near Harbour Bridge - Dubai Harbour",
-              location: "Dubai, United Arab Emirates",
-            },
-            {
-              address:
-                "Dubai Harbour Marina, Berth No A-G36 Near Dockmaster 1 Building",
-              location: "Dubai, United Arab Emirates",
-            },
-          ].map((item, index) => (
-            <li key={index} className="flex items-start gap-3 items-center">
-              <FaMapMarkerAlt className="w-5 h-5 flex-shrink-0 text-text-primary-white" />
-              <a
-                href="https://www.google.com/maps/place/CENTAURUS+CHARTER+-+Yachts+%26+Boats+Rental+Dubai+Harbour"
-                className="hover:text-white"
-              >
-                {item.address}
-                <br />
-                {item.location}
-              </a>
-            </li>
-          ))}
-          <ul className="text-text-primary-white space-y-2">
-            <li className="flex items-center space-x-2">
-              <FaPhoneAlt className="w-5 h-5" />
-              <a href="tel:+97143521833" className="hover:text-white">
-                +971 4 352 1833
-              </a>
-            </li>
-            <li className="flex items-center space-x-2">
-              <FaWhatsapp className="w-5 h-5" />
-              <a href="tel:+971524901269" className="hover:text-white">
-                +971 52 490 1269
-              </a>
-            </li>
-            <li className="flex items-center space-x-2">
-              <MdEmail className="w-5 h-5" />
-              <a
-                href="mailto:info@centauruscharter.com"
-                className="hover:text-white"
-              >
-                info@centauruscharter.com
-              </a>
-            </li>
-          </ul>
-        </ul>
-      ),
-    },
+	{
+		title: t("footer.reach-out-to-us"),
+		content: (
+		  <div className="pb-4">
+			<ul className="text-text-primary-white space-y-4">
+			  {[
+				{
+				  address: "Marina Walk (Near Spinneys)",
+				  location: "Dubai, United Arab Emirates",
+				},
+				{
+				  address: "Dubai Harbour Marina",
+				  location: "Dubai, United Arab Emirates",
+				},
+				{
+				  address: "Berth No AB05 - near Harbour Bridge - Dubai Harbour",
+				  location: "Dubai, United Arab Emirates",
+				},
+				{
+				  address:
+					"Dubai Harbour Marina, Berth No A-G36 Near Dockmaster 1 Building",
+				  location: "Dubai, United Arab Emirates",
+				},
+			  ].map((item, index) => (
+				<li key={index} className="flex items-start gap-3">
+				  <FaMapMarkerAlt className="w-5 h-5 flex-shrink-0 text-text-primary-white mt-1" />
+				  <a
+					href="https://www.google.com/maps/place/CENTAURUS+CHARTER+-+Yachts+%26+Boats+Rental+Dubai+Harbour"
+					className="hover:text-white text-left"
+				  >
+					{item.address}
+					<br />
+					{item.location}
+				  </a>
+				</li>
+			  ))}
+			</ul>
+			
+			<ul className="text-text-primary-white space-y-4 mt-6">
+			  <li className="flex items-center gap-3">
+				<FaPhoneAlt className="w-5 h-5 flex-shrink-0" />
+				<a href="tel:+97143521833" className="hover:text-white text-left">
+				  +971 4 352 1833
+				</a>
+			  </li>
+			  <li className="flex items-center gap-3">
+				<FaWhatsapp className="w-5 h-5 flex-shrink-0" />
+				<a href="tel:+971524901269" className="hover:text-white text-left">
+				  +971 52 490 1269
+				</a>
+			  </li>
+			  <li className="flex items-center gap-3">
+				<MdEmail className="w-5 h-5 flex-shrink-0" />
+				<a
+				  href="mailto:info@centauruscharter.com"
+				  className="hover:text-white text-left"
+				>
+				  info@centauruscharter.com
+				</a>
+			  </li>
+			</ul>
+		  </div>
+		),
+	  },
     {
       title: "For Enquiries",
       content: (

@@ -18,5 +18,8 @@
   "footer": {
     "reach-out-to-us": "REACH OUT TO US",
     "centaurus-charter": "Centaurus Charter"
+  },
+  "offers": {
+    "validity-until": "Validity Until"
   }
 }

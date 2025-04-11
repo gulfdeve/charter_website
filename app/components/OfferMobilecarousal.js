@@ -39,9 +39,9 @@ export default function OfferCarousel() {
   return (
     <div className="container mx-auto md:px-4 pb-16">
     {/* Embla "viewport" container */}
-    <div ref={emblaRef} className="overflow-hidden px-2 py-5">
+    <div ref={emblaRef} className="overflow-hidden py-5">
       {/* Embla "container" for slides: using flex for horizontal layout */}
-      <div className="flex gap-4 px-3">
+      <div className="flex gap-4">
         {!loading &&
           data?.offers?.map((offer) => (
             <div
@@ -49,7 +49,7 @@ export default function OfferCarousel() {
               // This width shows one full offer card plus a partial view of the next
               className="flex-[0_0_85%] md:flex-[0_0_50%] lg:flex-[0_0_40%]"
             >
-              <div className="flex flex-col justify-between rounded-md bg-white shadow-xl max-h-[40rem] h-full overflow-hidden">
+              <div className="flex flex-col justify-start lg:justify-between rounded-md bg-white h-full overflow-hidden border border-gray-400 md:border-none xl:p-10 shadow-none">
                 {/* offer Image */}
                 <Link href={`/offers/${offer.slug}`}>
                   <img
@@ -80,19 +80,19 @@ export default function OfferCarousel() {
                     </p>
                   </div>
                 </div>
-                <div className="flex flex-row items-center justify-between px-5 pb-5">
+                <div className="flex flex-row items-center justify-between pb-5 px-5">
                   {/* Buttons */}
-                  <div className="flex flex-col sm:flex-row items-center justify-end gap-2">
+                  <div className="w-full flex flex-col sm:flex-row items-center justify-end gap-2">
                     <a
                       href={`${offer.whatsapp_url}`}
                       target="_blank"
-                      className="py-2 px-4 text-xs font-bold tracking-wider uppercase text-primary-yellow bg-primary-blue hover:bg-primary-yellow hover:text-primary-blue hover:scale-105 rounded-md shadow transition duration-150 ease-in-out transform flex items-center"
+                      className="w-full flex justify-center py-2 px-4 text-base md:text-sm xl:text-lg font-bold tracking-wider uppercase text-primary-yellow bg-primary-blue hover:bg-primary-yellow hover:text-primary-blue hover:scale-105 rounded-md shadow transition duration-150 ease-in-out transform items-center"
                     >
                       WHATSAPP
                     </a>
                     <Link
                       href={`/offers/${offer.slug}`}
-                      className="py-2 px-4 text-[0.68rem] font-bold uppercase text-primary-yellow bg-primary-blue hover:bg-primary-yellow hover:text-primary-blue hover:scale-105 rounded-md shadow transition duration-150 ease-in-out transform flex items-center"
+                      className="w-full flex justify-center py-2 px-4 text-base md:text-sm xl:text-lg font-bold uppercase text-primary-yellow bg-primary-blue hover:bg-primary-yellow hover:text-primary-blue hover:scale-105 rounded-md shadow transition duration-150 ease-in-out transform text-center items-center"
                     >
                       KNOW MORE
                     </Link>

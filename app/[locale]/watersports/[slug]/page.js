@@ -27,11 +27,11 @@ const Page = () => {
   if (!packageItem) return <p>No package found for {slug}</p>;
 
   return (
-    <div className="container mx-auto px-10">
-      <PageTitleHeading title={packageItem.translations[locale].title} />
-
-      <div className="flex flex-col lg:flex-row justify-center gap-10">
-        {/* First column (70%) */}
+    <div className="container mx-auto nav-space">
+     
+     
+      <div className="flex flex-col lg:flex-row justify-between items-center gap-5 pt-6 md:mt-20 ">
+        {/* First column (30%) */}
         <div className="flex items-start lg:w-7/12">
           <img
             src={`https://www.centauruscharter.com/product/images/${packageItem.image}`}
@@ -40,55 +40,88 @@ const Page = () => {
           />
         </div>
 
-        {/* Second column (30%) */}
+        {/* Second column (70%) */}
+        
         <div className="lg:w-5/12">
-          <h3 className="text-gray-500">
+        <PageTitleHeading title={packageItem.translations[locale].title} className="py-0 lg:pt-0 pb-3" />
+        <h3 className="text-gray-500 text-center font-bold mb-5">
             {packageItem.translations[locale].preview_text}
             <br />
           </h3>
-
-          <p
-            className="text-gray-500 text-md"
-            dangerouslySetInnerHTML={{
-              __html: packageItem.translations[locale].description || "",
-            }}
-          />
-        </div>
-      </div>
-
-      <div className="bg-primary-blue grid grid-cols-1 lg:grid-cols-5 md:grid-cols-1 items-center gap-0 rounded-lg w-full overflow-hidden mb-7 mt-10">
+        <div className="text-center grid grid-cols-1  items-center gap-2  w-full overflow-hidden mb-7">
+       
+       <div className="grid grid-cols-1 sm:grid-cols-3 bg-primary-yellow-light rounded-lg text-primary-blue">
         {/* Ride Title */}
-        <div className="bg-primary-blue text-white p-2 flex flex-col items-center xl:rounded-l-lg">
+        <div className=" p-2 flex flex-col items-center">
           <span className="font-bold text-sm">Ride:</span>
-          <span className="font-semibold text-sm text-primary-yellow xl:text-xl">
+          <span className="font-semibold text-sm  xl:text-sm">
             {packageItem.translations[locale].title}
           </span>
         </div>
         {/* Duration */}
-        <div className="bg-primary-blue text-white p-2 flex flex-col items-center">
+        <div className="  p-2 flex flex-col items-center">
           <span className="font-bold text-sm">Duration:</span>
-          <span className="font-semibold text-sm text-primary-yellow xl:text-xl">
+          <span className="font-semibold text-sm  xl:text-sm">
             1 Hour
           </span>
         </div>
         {/* Price */}
-        <div className="bg-primary-blue text-white p-2 flex flex-col items-center">
+        <div className="bg-primary-yellow rounded-b-lg sm:rounded-l-none sm:rounded-r-lg  p-2 flex flex-col items-center">
           <span className="font-bold text-sm">Price:</span>
-          <span className="font-semibold text-sm text-primary-yellow xl:text-xl">
+          <span className="font-semibold text-sm xl:text-sm">
             {packageItem.amount} AED
           </span>
         </div>
+        </div>
+        <div className="grid grid-cols-1 sm:grid-cols-3 bg-primary-yellow-light rounded-lg text-primary-blue">
+        {/* Ride Title */}
+        <div className=" p-2 flex flex-col items-center ">
+          <span className="font-bold text-sm">Ride:</span>
+          <span className="font-semibold text-sm  xl:text-sm">
+            {packageItem.translations[locale].title}
+          </span>
+        </div>
+        {/* Duration */}
+        <div className="  p-2 flex flex-col items-center">
+          <span className="font-bold text-sm">Duration:</span>
+          <span className="font-semibold text-sm  xl:text-sm">
+            30 mins
+          </span>
+        </div>
+        {/* Price */}
+        <div className="bg-primary-yellow rounded-b-lg sm:rounded-l-none sm:rounded-r-lg p-2 flex flex-col items-center">
+          <span className="font-bold text-sm">Price:</span>
+          <span className="font-semibold text-sm xl:text-sm">
+            {packageItem.amount} AED
+          </span>
+        </div>
+        </div>
+        
+      </div>
+
+      <div className="flex flex-col xl:flex-row items-stretch xl:items-center text-center w-full justify-center">
         {/* WhatsApp Button */}
-        <div className="bg-primary-blue p-2 flex flex-col items-center">
-          <a href={header_whatsapp_url || "#"} className="blue-lined-button flex">
+        <div className=" p-1 flex flex-col items-center">
+          <a href={header_whatsapp_url || "#"} className="w-full blue-solid-button flex justify-center items-center gap-1 text-center">
             <FaWhatsapp size={20} />
             WHATSAPP US
           </a>
         </div>
         {/* Book Now Button */}
-        <div className="bg-primary-blue p-2 flex flex-col items-center xl:rounded-r-lg">
-          <a href="https://fareharbor.com/embeds/book/centauruscharter/?full-items=yes" className="blue-lined-button">BOOK NOW WITH {packageItem.translations[locale].title}</a>
+        <div className=" p-1 flex flex-col items-center xl:rounded-r-lg">
+          <a href="https://fareharbor.com/embeds/book/centauruscharter/?full-items=yes" className="w-full blue-solid-button">BOOK NOW WITH {packageItem.translations[locale].title}</a>
         </div>
+      </div>
+        </div>
+      </div>
+      <div className="py-12">
+          <p
+            className="text-gray-500 text-md pb-6 md:pb-12 "
+            dangerouslySetInnerHTML={{
+              __html: packageItem.translations[locale].description || "",
+            }}
+          />
+
       </div>
     </div>
   );

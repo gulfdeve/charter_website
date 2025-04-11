@@ -1,3 +1,4 @@
+'use client'
 import React, { useEffect, useRef } from "react";
 import EmblaCarousel from "embla-carousel";
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";

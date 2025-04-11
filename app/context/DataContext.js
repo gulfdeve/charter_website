@@ -1,5 +1,7 @@
+// app/context/DataContext.js
 'use client'
 import React, { createContext, useContext, useState, useEffect } from 'react';
+import { fetchData } from '@/app/lib/fetchData';
 
 // Create the context
 const DataContext = createContext();
@@ -9,33 +11,38 @@ export const useData = () => {
   return useContext(DataContext);
 };
 
-// Provider component
-export const DataProvider = ({ children }) => {
-  const [data, setData] = useState(null);
-  const [loading, setLoading] = useState(true);
+// Provider component that accepts server-fetched data
+export const DataProvider = ({ children, initialData = null }) => {
+  const [data, setData] = useState(initialData);
+  const [loading, setLoading] = useState(!initialData);
   const [error, setError] = useState(null);
 
-  // Fetch the data from the local file in the public folder
+  // Only fetch if no initialData is provided
   useEffect(() => {
-    const fetchData = async () => {
+    if (initialData) {
+      setLoading(false);
+      console.log("using initital data instead of making api call")
+      return;
+    }
+
+    const loadData = async () => {
       try {
-        // Load from local JSON file instead of API
-        const response = await fetch('/data.json');
-        console.log("fetching data from dataContext");
-        if (!response.ok) {
-          throw new Error('Failed to fetch local data');
+        const result = await fetchData();
+        if (result) {
+          setData(result);
+        } else {
+          throw new Error('Failed to fetch data');
         }
-        const result = await response.json();
-        setData(result);
       } catch (error) {
+        console.error("Error fetching data:", error);
         setError(error.message);
       } finally {
         setLoading(false);
       }
     };
 
-    fetchData();
-  }, []);
+    loadData();
+  }, [initialData]);
 
   return (
     <DataContext.Provider value={{ data, loading, error }}>

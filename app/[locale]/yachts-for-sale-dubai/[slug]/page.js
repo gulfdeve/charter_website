@@ -9,6 +9,7 @@ import { useLanguage } from "@/app/context/LanguageContext";
 import { use } from "react";
 import ContactForm from "@/app/components/Contactform"
 import YachtCarousel from "@/app/components/YachtCarousel"
+import { useData } from "@/app/context/DataContext";
 export default function Home({ params }) {
   // Get the router object
   const { slug } = use(params); // Get the slug from the URL
@@ -26,6 +27,7 @@ export default function Home({ params }) {
     "/yacht-rentals/56ftLagoona4.jpg",
     "/yacht-rentals/56ftLagoona5.jpg",
   ];
+  const { data, loading, error } = useData();
 
   useEffect(() => {
     if (!slug) return; // Wait for the slug to be available
