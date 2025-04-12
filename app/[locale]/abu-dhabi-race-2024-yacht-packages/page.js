@@ -287,7 +287,7 @@ const Page = () => {
               >
                 <div className="flex flex-col rounded-xl overflow-hidden">
                   <img src={item.src} className="w-full" alt={item.text} />
-                  <h1 className="bg-primary-blue-2 text-primary-yellow text-center text-md font-bold p-7 h-20 flex items-center justify-center">
+                  <h1 className="bg-primary-blue-2 text-primary-yellow text-center p-7 h-20 flex items-center justify-center">
                     {item.text}
                   </h1>
                 </div>

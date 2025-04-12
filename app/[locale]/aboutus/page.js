@@ -8,8 +8,7 @@ const AboutPage = () => {
         <img alt="about us" src="./AboutUsHeader.png" className="w-full" />
       </div>
       <div className="flex flex-col items-center justify-center py-10 ">
-        <h1 className=" text-primary-blue text-center font-bold text-xl sm:text:2xl md:text-3xl lg:text-4xl pb-4">
-
+        <h1 className=" text-primary-blue text-center pb-4">
           ABOUT US
         </h1>
         <p className=" text-primary-blue text-center  text-xl sm:text-2xl md:text-3xl lg:text-4xl pb-4">
