@@ -16,6 +16,9 @@ export default function MobileNavbar({
   handleLanguageChange,
   locale,
   toggleSubmenu,
+  header_whatsapp_url,
+  header_phone_number_url,
+  header_email
 }) {
   const t = useTranslations();
   const dropdownRef = useRef(null);
