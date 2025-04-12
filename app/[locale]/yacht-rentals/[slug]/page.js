@@ -8,7 +8,7 @@ import YachtCarousal from "@/app/components/YachtCarousel";
 import { useLocale } from "next-intl";
 import { use } from "react";
 import { useData } from "@/app/context/DataContext";
-import Link from "next/link";
+import { Link } from "@/app/i18n/routing";
 
 export default function Home({ params }) {
   const { slug } = use(params);
@@ -20,6 +20,10 @@ export default function Home({ params }) {
   const thumbnailRef = useRef(null);
   const locale = useLocale();
   const { data, loading, error } = useData();
+
+  const settingsItem = data?.settings?.[0];
+  const { header_email, header_phone_number_url, header_whatsapp_url } =
+    settingsItem || {};
 
   // Scroll thumbnails container so active thumbnail is visible.
   useEffect(() => {
@@ -63,6 +67,8 @@ export default function Home({ params }) {
     }
   }, [product]);
 
+//   console.log("Product:", product);
+
   const scrollPrev = () => emblaInstance.current?.scrollPrev();
   const scrollNext = () => emblaInstance.current?.scrollNext();
 
@@ -96,18 +102,19 @@ export default function Home({ params }) {
     {
       label: "Extras",
       value: "Drinks Included (Bubbly drinks, Soft drinks, Coffee & Water)",
-    },
+    }
   ];
 
   return (
     <>
       <div className="container mx-auto p-5 nav-space">
         {/* Title */}
+
         <h1 className="text-xl sm:text:2xl md:text-3xl lg:text-4xl text-center mb-5 mt-5 lg:mt-14 font-bold">
-          Dubai Luxury Yacht
+          {product.translations?.[locale]?.name_of_yacht}
         </h1>
         <h2 className="text-base sm:text:2xl lg:text-3xl text-center mb-4">
-          {product.translations?.[locale]?.name_of_yacht}
+          Boat Rental Dubai
         </h2>
 
         {/* Embla Carousel */}
@@ -206,7 +213,7 @@ export default function Home({ params }) {
           <div className="bg-primary-blue p-2 flex flex-col items-center">
             <span className="text-sm text-white">Price Per Hour:</span>
             <span className="font-semibold text-sm text-primary-yellow xl:text-xl">
-              {product.per_hour_price}
+              {product.per_hour_price} AED
             </span>
           </div>
           <div className="bg-primary-blue text-primary-blue p-2 lg:p-1.5 xl:p-2 flex flex-col col-span-2 lg:col-span-1 items-center">
@@ -214,7 +221,7 @@ export default function Home({ params }) {
               href={`https://fareharbor.com/embeds/book/centauruscharter/items/${product.fareharbor_id}/?full-items=yes&flow=645487`}
               target="_self"
               rel="noopener noreferrer"
-              className="flex flex-row items-center justify-center py-1 px-6 md:py-2 md:px-8 border-4 border-[#e1ae48] rounded-md bg-primary-blue hover:bg-primary-blue text-primary-yellow font-bold text-base md:text-sm xl:text-base transition-all duration-300 "
+              className="flex flex-row items-center justify-center py-1 px-6 md:py-2 md:px-8 border-4 border-primary-yellow rounded-md bg-primary-blue hover:bg-primary-blue text-primary-yellow font-bold text-base md:text-sm xl:text-base transition-all duration-300 "
             >
               Book Now
             </a>
@@ -243,9 +250,9 @@ export default function Home({ params }) {
 
           <div className="flex items-start justify-center ">
             <div className="rounded-lg p-3 lg:p-6">
-              <h2 className="text-md text-black font-bold py-4">
+              <p className="text-md text-black font-bold py-4">
                 What to expect
-              </h2>
+              </p>
               <ol className="list-disc text-sm pl-6 space-y-4">
                 {product.translations.en.key_features
                   .split("\n")
@@ -256,7 +263,7 @@ export default function Home({ params }) {
                     />
                   ))}
               </ol>
-              <h2 className="text-md text-black font-bold py-4">Ideal for:</h2>
+              <p className="text-md text-black font-bold py-4">Ideal for:</p>
               <ol className="list-disc text-left text-sm pl-6 space-y-4 ">
                 {product.translations.en.ideal_for
                   .split("\n")
@@ -286,21 +293,25 @@ export default function Home({ params }) {
                 </div>
               </div>
               <div className="flex flex-col md:flex-row justify-center gap-4 mt-10">
-                <button className="yellow-solid-button flex items-center justify-center gap-2">
+                <Link
+                  href="/faq"
+                  className="yellow-solid-button flex items-center justify-center gap-2"
+                >
                   <FaQuestionCircle size={20} />
                   ASK A QUESTION
-                </button>
-                <Link href='https://api.whatsapp.com/send?phone=971547928626&text=Hi!%20I%20came%20across%20your%20website.%20I%20want%20to%20inquire%20about%20a%20yacht%20charter%20in%20Dubai\'>
-                <button className="yellow-solid-button flex items-center justify-center gap-2">
+                </Link>
+                <Link
+                  className="yellow-solid-button flex items-center justify-center gap-2"
+                  href={header_whatsapp_url || "#"}
+                >
                   <FaWhatsapp size={20} />
                   CHAT WITH US
-                </button>
                 </Link>
               </div>
             </div>
           </div>
         </div>
-        <p className="text-sm text-center">
+        {/* <p className="text-sm text-center">
           The 56 Ft <strong>private yacht</strong> is beautiful and versatile. A
           perfect <strong>yacht</strong> available for rental to celebrate any
           special occasion on the waters. This yacht is kept in top condition
@@ -319,12 +330,24 @@ export default function Home({ params }) {
           relax on the front-deck sun loungers or party hard in the open ocean.
           This wonderful party yacht rental is moored at{" "}
           <strong>Dubai Marina</strong> and ready to cruise.
-        </p>
-        <p className="text-sm text-center font-bold my-8">
+
+
+
+        </p> */}
+
+
+		<p className="text-sm text-center"
+  dangerouslySetInnerHTML={{ 
+    __html: product.translations?.[locale]?.description || '' 
+  }} 
+/>
+
+<p className="text-sm text-center font-bold my-8">
           Rent a yacht in Dubai Marina
         </p>
+
       </div>
-      <Route />
+      <Route header_whatsapp_url={header_whatsapp_url} />
       <YachtCarousal />
     </>
   );

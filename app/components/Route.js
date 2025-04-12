@@ -1,16 +1,17 @@
 import React from "react";
 
-const Route = () => {
+const Route = ({ header_whatsapp_url }) => {
   return (
     <div>
       <div className="bg-primary-blue w-full h-auto py-10 xl:px-44 md:px-6 px-2">
         <div className="flex flex-col items-center justify-center pt-10 gap-5 py-6 mx-auto container">
           <h2 className="text-primary-yellow text-center font-bold text-2xl xl:text-3xl py-7">
-          CRUISING ROUTE
+            CRUISING ROUTE
           </h2>
 
           <p className=" text-center text-white text-lg px-4">
-          Discover Dubai from the sea like never before. Enjoy our cruising options just for you:
+            Discover Dubai from the sea like never before. Enjoy our cruising
+            options just for you:
           </p>
         </div>
         <div className="container mx-auto">
@@ -18,20 +19,15 @@ const Route = () => {
           <div className="grid grid-cols-1 md:grid-cols-4">
             <div className="flex flex-col items-start bg-red-100">
               <div className="bg-red-700 p-5 text-white uppercase text-center w-full">
-                <h3 className="text-white text-lg font-bold">
-                  Marina Cruise
-                </h3>
+                <h3 className="text-white text-lg font-bold">Marina Cruise</h3>
                 <p className="text-white text-lg">
-                  1 hour yacht trip <br/>(60 mins)
+                  1 hour yacht trip <br />
+                  (60 mins)
                 </p>
               </div>
               <ul className=" text-left text-base lg:text-lg py-5 px-10 list-disc font-bold">
-                <li>
-                Dubai Marina
-                </li>
-                <li>
-                Bluewaters Island 
-                </li>
+                <li>Dubai Marina</li>
+                <li>Bluewaters Island</li>
                 <li>Ain Dubai</li>
                 <li>JBR</li>
               </ul>
@@ -39,19 +35,16 @@ const Route = () => {
             <div className="flex flex-col items-start bg-blue-100">
               <div className="bg-primary-blue-2 p-5 text-white uppercase text-center w-full">
                 <h3 className="text-white text-lg font-bold">
-                Atlantis Cruise
+                  Atlantis Cruise
                 </h3>
                 <p className="text-white text-lg">
-                  2 hours yacht trip <br/>(120 mins)
+                  2 hours yacht trip <br />
+                  (120 mins)
                 </p>
               </div>
               <ul className=" text-left text-base lg:text-lg py-5 px-10 list-disc font-bold">
-                <li>
-                Dubai Marina
-                </li>
-                <li>
-                Bluewaters Island 
-                </li>
+                <li>Dubai Marina</li>
+                <li>Bluewaters Island</li>
                 <li>Ain Dubai</li>
                 <li>JBR</li>
                 <li>Palm Jumeirah</li>
@@ -60,20 +53,15 @@ const Route = () => {
             </div>
             <div className="flex flex-col items-start bg-green-100">
               <div className="bg-green-700 p-5 text-white uppercase text-center w-full">
-                <h3 className="text-white text-lg font-bold">
-                  Marina Cruise
-                </h3>
+                <h3 className="text-white text-lg font-bold">Marina Cruise</h3>
                 <p className="text-white text-lg">
-                  3 hours yacht trip <br/>(180 mins)
+                  3 hours yacht trip <br />
+                  (180 mins)
                 </p>
               </div>
               <ul className=" text-left text-base lg:text-lg py-5 px-10 list-disc font-bold">
-                <li>
-                Dubai Marina
-                </li>
-                <li>
-                Bluewaters Island 
-                </li>
+                <li>Dubai Marina</li>
+                <li>Bluewaters Island</li>
                 <li>Ain Dubai</li>
                 <li>JBR</li>
                 <li>Palm Jumeirah</li>
@@ -83,11 +71,10 @@ const Route = () => {
             </div>
             <div className="flex flex-col items-start bg-yellow-100">
               <div className="bg-primary-yellow-dark p-5 text-white uppercase text-center w-full">
-                <h3 className="text-white text-lg font-bold">
-                  Marina Cruise
-                </h3>
+                <h3 className="text-white text-lg font-bold">Marina Cruise</h3>
                 <p className="text-white text-lg">
-                  1 hour yacht trip <br/>(60 mins)
+                  1 hour yacht trip <br />
+                  (60 mins)
                 </p>
               </div>
               <ul className=" text-left text-base lg:text-lg py-5 px-10 list-disc font-bold">
@@ -100,18 +87,23 @@ const Route = () => {
                 <li>Burj Khalifa view (from the Canal)</li>
               </ul>
             </div>
-            
           </div>
           <div className="flex flex-col ">
-            
             <div className="flex flex-col gap-5 md:flex-row md:justify-center md:gap-12 mt-5">
-
-              <button className="blue-lined-button">
+              <a
+                href={header_whatsapp_url || "#"}
+                target="_blank"
+                className="blue-lined-button"
+              >
                 Get a Quote
-              </button>
-              <button className="blue-lined-button">
+              </a>
+              <a
+                href="/CentaurusCharterRoutemap.pdf"
+                target="_blank"
+                className="blue-lined-button"
+              >
                 Download Map
-              </button>
+              </a>
             </div>
           </div>
         </div>
