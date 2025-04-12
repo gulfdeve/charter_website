@@ -26,7 +26,7 @@ export default function WatersportCarousal() {
   return (
     <div className="pb-16">
       {/* Embla "viewport" container */}
-      <div ref={emblaRef} className="overflow-hidden py-5">
+      <div ref={emblaRef} className="overflow-hidden">
         {/* Embla "container" for slides: using flex for horizontal layout */}
         <div className="flex gap-4 px-2">
           {!loading &&

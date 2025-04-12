@@ -39,7 +39,7 @@ export default function OfferCarousel() {
   return (
     <div className="container mx-auto md:px-4 pb-16">
     {/* Embla "viewport" container */}
-    <div ref={emblaRef} className="overflow-hidden py-5">
+    <div ref={emblaRef} className="overflow-hidden">
       {/* Embla "container" for slides: using flex for horizontal layout */}
       <div className="flex gap-4">
         {!loading &&

@@ -109,7 +109,7 @@ export default function MobileNavbar({
             className="absolute right-0 top-14 w-48 bg-white border font-bold text-primary-blue shadow-lg z-20"
             style={{ zIndex: 999 }}
           >
-            <ul className="flex flex-col p-4 gap-4">
+            <ul className="flex flex-col p-4 gap-4 mobile-navbar">
               <li className="font-bold cursor-pointer hover:text-blue-500">
                 <div
                   className="flex justify-between items-center"
