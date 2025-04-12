@@ -115,13 +115,12 @@ const Page = () => {
         </div>
       </div>
       <div className="py-12">
-          <p
-            className="text-gray-500 text-md pb-6 md:pb-12 "
-            dangerouslySetInnerHTML={{
-              __html: packageItem.translations[locale].description || "",
-            }}
-          />
-
+	  <div
+          className="text-base"
+          dangerouslySetInnerHTML={{
+            __html: packageItem.translations[locale].description || "",
+          }}
+        />
       </div>
     </div>
   );

@@ -45,7 +45,7 @@ export default function WatersportCarousal() {
                 >
                   <div className="flex flex-col justify-start lg:justify-between rounded-md bg-white h-full overflow-hidden border border-gray-400 md:border-none xl:p-10 shadow-none">
                     {/* Image */}
-                    <Link href={`/yacht-trips/${package_a.slug}`}>
+                    <Link href={`/watersports/${package_a.slug}`}>
                       <img
                         src={`https://www.centauruscharter.net/product/images/${package_a.image}`}
                         alt="yacht"
@@ -56,7 +56,7 @@ export default function WatersportCarousal() {
                     {/* Card Content */}
                     <div className="flex flex-col items-start justify-start sm:px-5 xxs:px-3">
                       <h2 className="text-[#232629] text-base sm:text-xl font-bold pt-6 hover:text-blue-600 transition-all duration-300 cursor-pointer">
-                        <Link href={`/yacht-trips/${package_a.slug}`}>
+                        <Link href={`/watersports/${package_a.slug}`}>
                           {title}
                         </Link>
                       </h2>
@@ -81,7 +81,7 @@ export default function WatersportCarousal() {
                         {/* Wrap the Know More button in a div with ml-auto */}
                         <div className="sm:ml-auto">
                           <Link
-                            href={`/yacht-trips/${package_a.slug}`}
+                            href={`/watersports/${package_a.slug}`}
                             className="py-2 px-4 text-[0.75rem] xs:text-xs font-bold uppercase text-primary-yellow bg-primary-blue hover:bg-primary-yellow hover:text-primary-blue hover:scale-105 rounded-md shadow transition duration-150 ease-in-out transform"
                           >
                             KNOW MORE

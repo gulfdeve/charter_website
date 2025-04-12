@@ -38,13 +38,12 @@ export default async function OfferDetailPage({ params }) {
             priority={true} // Prioritize loading for above-the-fold images
           />
         </div>
-        <ul>
-          {offer.translations?.[language]?.description
-            .split("\n")
-            .map((item, index) => (
-              <li key={index} dangerouslySetInnerHTML={{ __html: item }} />
-            ))}
-        </ul>
+		<div
+          className="text-base"
+          dangerouslySetInnerHTML={{
+            __html: offer.translations?.[language]?.description || "",
+          }}
+        />
 
         <div className="py-10 w-full">
           <div className="flex flex-col md:flex-row rounded-lg items-center gap-5 justify-center md:justify-between bg-primary-blue p-5">

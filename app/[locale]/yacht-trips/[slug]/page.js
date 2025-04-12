@@ -22,7 +22,6 @@ const page = ({ params }) => {
   console.log(locale);
   console.log(experience);
 
-
   if (loading) return <div>Loading...</div>;
   if (error) return <div>Error: {error.message}</div>;
   if (!experience) return <div>No experience found for this slug.</div>;
@@ -69,12 +68,10 @@ const page = ({ params }) => {
   return (
     <>
       <div className="container mx-auto nav-space">
-		<PageTitleHeading title={experience.translations?.[locale]?.title} />
+        <PageTitleHeading title={experience.translations?.[locale]?.title} />
         <div className="grid grid-col-1 md:grid-cols-1 md:px-4  gap-7 container mx-auto pb-10">
-          
-          {
-            experience.yachts_data.map((yacht) => (
-              <div
+          {experience.yachts_data.map((yacht) => (
+            <div
               key={yacht.yacht_id}
               className="flex flex-col md:flex-row justify-start overflow-hidden rounded-md bg-white custom-shadow"
             >
@@ -86,38 +83,36 @@ const page = ({ params }) => {
               />
               <div className="w-full flex justify-stretch flex-col  justify-center px-4 xl:px-6 md:py-4 ">
                 {/* Title with Link */}
-                <Link
-                  href="/"
-                >
+                <Link href="/">
                   <h2 className="text-primary-blue  text-xl xl:text-2xl font-bold xl:pt-6  pt-6 md:pb-2 transition-all duration-300 cursor-pointer py-5 md:py-0">
-                  {yacht.translations?.[locale]?.[0]?.name_of_yacht}
+                    {yacht.translations?.[locale]?.[0]?.name_of_yacht}
                   </h2>
                 </Link>
                 <div className="grid grid-cols-2 lg:grid-cols-4 items-stretch gap-0 rounded-lg w-full overflow-hidden shadow-md mb-7">
-                {/* Model */}
-                <div className="bg-primary-blue text-white p-2 flex flex-col items-center justify-center text-center w-full h-full">
-                <span className="font-bold  text-sm">Model:</span>
+                  {/* Model */}
+                  <div className="bg-primary-blue text-white p-2 flex flex-col items-center justify-center text-center w-full h-full">
+                    <span className="font-bold  text-sm">Model:</span>
                     <span className="font-semibold  text-sm text-primary-yellow">
-                    {yacht.translations?.[locale]?.[0]?.model}
+                      {yacht.translations?.[locale]?.[0]?.model}
                     </span>
                   </div>
                   {/* Length */}
                   <div className="bg-primary-blue text-white p-2 flex flex-col items-center justify-center text-center w-full h-full">
-                  <span className="font-bold  text-sm">Length:</span>
+                    <span className="font-bold  text-sm">Length:</span>
                     <span className="font-semibold  text-sm text-primary-yellow">
                       {yacht.translations?.[locale]?.[0]?.size}
                     </span>
                   </div>
                   {/* Guests */}
                   <div className="bg-primary-blue text-white p-2 flex flex-col items-center justify-center text-center w-full h-full">
-                  <span className="font-bold  text-sm">Guests:</span>
+                    <span className="font-bold  text-sm">Guests:</span>
                     <span className="font-semibold  text-sm text-primary-yellow">
                       {yacht.translations?.[locale]?.[0]?.guests}
                     </span>
                   </div>
                   {/* Good For */}
                   <div className="bg-primary-yellow text-primary-blue w-full p-2 flex flex-col items-center justify-center text-center h-full">
-                  <span className="   text-sm">Good For:</span>
+                    <span className="   text-sm">Good For:</span>
                     <span className="font-semibold  text-sm">
                       {/* Birthday/Parties */}
                       {yacht.translations?.[locale]?.[0]?.good_for}
@@ -147,23 +142,30 @@ const page = ({ params }) => {
 
                   {/* Buttons Section */}
                   <div className="flex flex-col sm:flex-row md:flex-col lg:flex-row items-center gap-2 ml-auto text-right w-full sm:w-auto">
-                    <a href={experience.whatsapp_url} target="_blank" className="w-full flex items-center justify-center py-2 px-4 text-base md:text-sm xl:text-lg font-bold tracking-wider uppercase text-primary-yellow bg-primary-blue hover:bg-primary-yellow hover:text-primary-blue hover:scale-105 rounded-md shadow transition duration-150 ease-in-out transform">
+                    <a
+                      href={experience.whatsapp_url}
+                      target="_blank"
+                      className="w-full flex items-center justify-center py-2 px-4 text-base md:text-sm xl:text-lg font-bold tracking-wider uppercase text-primary-yellow bg-primary-blue hover:bg-primary-yellow hover:text-primary-blue hover:scale-105 rounded-md shadow transition duration-150 ease-in-out transform"
+                    >
                       <FaWhatsapp className="sm:text-md  mr-1" />
                       WHATSAPP
                     </a>
-                    <a href={`https://fareharbor.com/embeds/book/centauruscharter/items/${yacht.fareharbor_id}/?full-items=yes&flow=645487`} className="w-full justify-center py-2 px-4 text-base md:text-sm xl:text-lg font-bold uppercase text-primary-yellow bg-primary-blue hover:bg-primary-yellow hover:text-primary-blue hover:scale-105 rounded-md shadow transition duration-150 ease-in-out transform flex flex-grow items-center">
+                    <a
+                      href={`https://fareharbor.com/embeds/book/centauruscharter/items/${yacht.fareharbor_id}/?full-items=yes&flow=645487`}
+                      className="w-full justify-center py-2 px-4 text-base md:text-sm xl:text-lg font-bold uppercase text-primary-yellow bg-primary-blue hover:bg-primary-yellow hover:text-primary-blue hover:scale-105 rounded-md shadow transition duration-150 ease-in-out transform flex flex-grow items-center"
+                    >
                       KNOW MORE
                     </a>
                   </div>
                 </div>
               </div>
             </div>
-            ))}   
+          ))}
         </div>
 
         <div className="container mx-auto py-5 md:py-10 ">
-          <p
-            className="text-gray-500 text-md"
+          <div
+            className="text-base"
             dangerouslySetInnerHTML={{
               __html: experience.translations?.[locale]?.description || "",
             }}

@@ -96,8 +96,8 @@ const YachtCard = ({ yacht }) => {
             <span className="font-bold">{yacht.length}</span> | Guests:{" "}
             <span className="font-bold">{yacht.guests}</span>
           </p>
-          <p className="text-primary-blue font-bold text-xl pt-5 pb-2">
-            AED {yacht.price} <span className="text-primary-blue">Per Hour</span>
+          <p className="text-primary-blue text-xl pt-5 pb-2">
+            <span className="font-bold">AED {parseInt(yacht.price).toLocaleString()}</span> <span>Per Hour</span>
           </p>
         </div>
         <BookNowButton fareharborId={yacht.fareharbor_id} />

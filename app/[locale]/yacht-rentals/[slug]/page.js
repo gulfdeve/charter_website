@@ -1,19 +1,19 @@
 import React from "react";
-import { fetchData } from '@/app/lib/fetchData';
-import { getTranslations } from 'next-intl/server';
+import { fetchData } from "@/app/lib/fetchData";
+import { getTranslations } from "next-intl/server";
 import YachtCarousal from "@/app/components/YachtCarousel";
 import Route from "@/app/components/Route";
 import YachtGallery from "./YachtGallery";
 import YachtDetails from "./YachtDetails";
 
 export default async function YachtPage({ params: paramsPromise }) {
-//   const { slug, locale } = params;
+  //   const { slug, locale } = params;
   const params = await paramsPromise;
-const { slug, locale } = params;
+  const { slug, locale } = params;
   const t = await getTranslations();
-  
+
   const data = await fetchData();
-  
+
   if (!data) {
     return <div>Loading...</div>;
   }
@@ -32,11 +32,23 @@ const { slug, locale } = params;
     { label: "Capacity", value: product.translations?.[locale]?.maximum_guest },
     { label: "Duration", value: "Minimum 1 Hour" },
     { label: "Cabin", value: product.translations?.[locale]?.cabin },
-    { label: "Kitchen Equipment", value: product.translations?.[locale]?.kitchen_equipment },
-    { label: "Music System", value: product.translations?.[locale]?.music_system },
-    { label: "No of Staff", value: product.translations?.[locale]?.no_of_staff },
+    {
+      label: "Kitchen Equipment",
+      value: product.translations?.[locale]?.kitchen_equipment,
+    },
+    {
+      label: "Music System",
+      value: product.translations?.[locale]?.music_system,
+    },
+    {
+      label: "No of Staff",
+      value: product.translations?.[locale]?.no_of_staff,
+    },
     { label: "Location", value: product.translations?.[locale]?.location },
-    { label: "Extras", value: "Drinks Included (Bubbly drinks, Soft drinks, Coffee & Water)" }
+    {
+      label: "Extras",
+      value: "Drinks Included (Bubbly drinks, Soft drinks, Coffee & Water)",
+    },
   ];
 
   return (
@@ -86,19 +98,19 @@ const { slug, locale } = params;
           </div>
         </div>
 
-        <YachtDetails 
+        <YachtDetails
           yachtDetails={yachtDetails}
           product={product}
           locale={locale}
           whatsappUrl={header_whatsapp_url}
         />
 
-<div 
-  className="text-sm text-center"
-  dangerouslySetInnerHTML={{ 
-    __html: product.translations?.[locale]?.description || '' 
-  }} 
-/>
+        <div
+          className="text-sm text-center"
+          dangerouslySetInnerHTML={{
+            __html: product.translations?.[locale]?.description || "",
+          }}
+        />
 
         <p className="text-sm text-center font-bold my-8">
           Rent a yacht in Dubai Marina
