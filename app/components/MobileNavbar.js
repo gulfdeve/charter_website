@@ -43,7 +43,7 @@ export default function MobileNavbar({
           {/* Icons and Dropdown Trigger */}
           <div className="flex items-center gap-6">
             {/* WhatsApp Icon */}
-            <a href={header_whatsapp_url || "#"}>
+            <a href={t('header.whatsapp_url')} target="_blank">
               <Image
                 src="/whatsapp.svg"
                 alt="whatsapp logo"

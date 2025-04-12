@@ -116,7 +116,7 @@ export default function Navbar() {
               {/* WhatsApp Icon */}
               <Link
                 aria-label="whatsapp icon"
-                href={header_whatsapp_url || "#"}
+                href={t('header.whatsapp_url')}
               >
                 <IoLogoWhatsapp
                   size={30}
