@@ -1,44 +1,11 @@
-// app/[locale]/offers/layout.tsx
-import React from 'react';
-import { fetchData } from '@/app/lib/fetchData';
+// app/[locale]/aboutus/layout.tsx
+import { createPageLayout } from '@/app/lib/createPageLayout';
 
-interface LayoutParams {
-  locale: string;
-}
+// Create a layout for the "aboutus" page with a custom class if needed
+const PageMetaLayout = createPageLayout('offers', 'offers-page');
 
-interface LayoutProps {
-  children: React.ReactNode;
-  params: Promise<LayoutParams>;
-}
+// Export the layout component as default
+export default PageMetaLayout;
 
-export async function generateMetadata({
-  params,
-}: {
-  params: Promise<LayoutParams>;
-}) {
-  const { locale } = await params;
-  const resolvedLocale = locale || "en";
-  
-  const data = await fetchData();
-  
-  const metaData = data?.meta_tags?.["offers"]?.[resolvedLocale]?.[0];
-  const metaHome = data?.meta_tags?.["home"]?.[resolvedLocale]?.[0];
-  
-  const finalMeta = metaData || metaHome || {
-    meta_title: "Default Title",
-    meta_description: "Default Description",
-  };
-  
-  return {
-    title: finalMeta.meta_title || "Default Title",
-    description: finalMeta.meta_description || "Default Description",
-    keywords: finalMeta.meta_keywords || "default, keywords",
-  };
-}
-
-const Layout = async ({ children, params }: LayoutProps) => {
-  const { locale } = await params;
-  return <main>{children}</main>;
-};
-
-export default Layout;
+// Export the generateMetadata function
+export const generateMetadata = PageMetaLayout.generateMetadata;

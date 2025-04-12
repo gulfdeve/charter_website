@@ -17,9 +17,9 @@ export default function Home() {
   };
   return (
     <>
-      <main className="min-h-screen bg-white">
+      <main className="container mx-auto mt-10 lg:mt-0 min-h-screen bg-white">
         {/* Hero Section */}
-        <section className="container mx-auto relative w-full">
+        <section className="relative w-full">
           <div className="flex items-center justify-center pt-10">
             <Image
               src="/GEMS-Offer-Banner.png" // replace with your banner image

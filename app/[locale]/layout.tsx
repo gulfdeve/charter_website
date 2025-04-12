@@ -54,7 +54,6 @@ export default async function RootLayout({
   return (
     <html lang={locale}>
       <head>
-        <link rel="canonical" href={canonicalUrl} />
         <Script
           strategy="afterInteractive"
           src="https://www.googletagmanager.com/gtag/js?id=UA-131086702-1&AW-761360769"
