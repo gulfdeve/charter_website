@@ -57,11 +57,9 @@ const page = ({ params }) => {
               Validity Until: {event.validity}
             </p>
             <div className="flex flex-col md:flex-row md:gap-10 gap-5">
-              <a href={event.whatsapp_url}>
-                <button className="blue-lined-button">
+              <a target="_blank" className="blue-lined-button" href={event.whatsapp_url}>
                   <FaWhatsapp size={20} />
                   WHATSAPP US
-                </button>
               </a>
               <button onClick={handleQuote} className="blue-lined-button">
                 GET A QUOTE

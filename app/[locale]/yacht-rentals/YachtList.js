@@ -116,8 +116,8 @@ export default function YachtList({ yachts }) {
   const getTabStyle = (tabName) => {
     return `px-2 py-1 transition-all duration-300 ${
       activeTab === tabName 
-        ? "text-primary-yellow border-b-2 border-primary-yellow" 
-        : "hover:text-primary-yellow"
+        ? "text-primary-blue border-b-2 border-primary-blue" 
+        : "hover:text-primary-blue"
     }`;
   };
 
