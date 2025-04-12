@@ -1,15 +1,7 @@
 // app/lib/createPageLayout.tsx
 import React from 'react';
 import { fetchData } from '@/app/lib/fetchData';
-
-interface Metadata {
-  title: string;
-  description: string;
-  keywords?: string;
-  alternates?: {
-    canonical: string;
-  };
-}
+import { Metadata } from 'next';
 
 interface APIMetaData {
   meta_title?: string;
@@ -17,17 +9,11 @@ interface APIMetaData {
   meta_keywords?: string;
 }
 
-type ParamsType = {
-  locale: string;
-  slug?: string;
-  [key: string]: any; // For any other dynamic parameters
-};
-
 /**
  * Factory function that creates a page layout component with metadata generation
  * @param pagePath The page path pattern to use for metadata generation (can include placeholders like 'offers/[slug]')
  * @param className Optional CSS class name for styling
- * @param includeCanonicaL Whether to include canonical URL in metadata (default: true)
+ * @param includeCanonical Whether to include canonical URL in metadata (default: true)
  */
 export function createPageLayout(pagePath: string, className: string = '', includeCanonical: boolean = true) {
   // Create the layout component
@@ -39,8 +25,10 @@ export function createPageLayout(pagePath: string, className: string = '', inclu
     );
   };
 
-  // Add generateMetadata function to the layout
-  PageLayout.generateMetadata = async ({ params }: { params: ParamsType }) => {
+  // This is properly typed for Next.js generateMetadata
+  const generateMetadata = async (props: any): Promise<Metadata> => {
+    // Next.js might provide params as a promise or direct object
+    const params = props.params instanceof Promise ? await props.params : props.params;
     const { locale, ...dynamicParams } = params;
     const resolvedLocale = locale || "en"; // Default to English if locale is missing
     const baseUrl = "https://www.centauruscharter.com";
@@ -48,7 +36,9 @@ export function createPageLayout(pagePath: string, className: string = '', inclu
     // Replace dynamic path segments with actual values
     let resolvedPath = pagePath;
     Object.entries(dynamicParams).forEach(([key, value]) => {
-      resolvedPath = resolvedPath.replace(`[${key}]`, value as string);
+      if (value) {
+        resolvedPath = resolvedPath.replace(`[${key}]`, value.toString());
+      }
     });
 
     try {
@@ -117,5 +107,9 @@ export function createPageLayout(pagePath: string, className: string = '', inclu
     }
   };
 
-  return PageLayout;
+  // Return both the component and the generateMetadata function
+  return {
+    default: PageLayout,
+    generateMetadata
+  };
 }
