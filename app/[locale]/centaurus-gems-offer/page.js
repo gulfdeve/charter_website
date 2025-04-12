@@ -97,7 +97,7 @@ export default function Home() {
 
           {/* Pricing Table */}
           <div className="overflow-x-auto mt-8">
-            <table className="w-full text-sm text-center border-collapse">
+            <table className="w-full text-xs md:text-sm text-center border-collapse table-striped">
               {/* Table Header */}
               <thead className="bg-[#0B2946] text-white font-bold">
                 <tr className="border border-white">
