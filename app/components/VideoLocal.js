@@ -37,14 +37,14 @@ export default function VideoLocal({ filename, section }) {
 
       {section === "shared-tours" ? (
         <div className="block text-center mt-10 lg:absolute lg:-translate-x-2/4 lg:-translate-y-2/4 lg:left-2/4 lg:top-2/4 lg:mt-0">
-          <h1 className="text-4xl font-bold mb-4 text-primary-blue-2 lg:text-white  xl:text-xl 2xl:text-4xl text-shadow">
+          <h1 className="mb-4 text-primary-blue-2 lg:text-white text-shadow">
             All-Inclusive Sharing Yacht Trips In Dubai
           </h1>
-          <p className="text-sm xl:text-2xl mb-1  text-primary-blue-2 lg:text-white  2xl:text-3xl text-shadow">
-            Buy 1 Get 1 Free
+          <p className="text-xl mb-2  text-primary-blue-2 lg:text-white  2xl:text-3xl text-shadow">
+            Limited-Time Offer
           </p>
-          <p className="text-sm xl:text-2xl mb-4 text-primary-blue-2 lg:text-white  2xl:text-3xl text-shadow">
-            Starting AED 149
+          <p className="text-xl mb-12 text-primary-blue-2 lg:text-white  2xl:text-3xl text-shadow">
+            50% OFF
           </p>
           <a
             href="https://fareharbor.com/embeds/book/centauruscharter/items/?flow=1038617&full-items=yes&back=https%3A%2F%2Fwww.centauruscharter.com%2F&g4=yes&u=9f3aff5e-960d-40db-8df8-e819cbeaee55&from-ssl=yes&ga=UA-131086702-1%2C48011385.1727165629%3B&ga4t=G-5GL7VDTRSD%2C48011385.1727165629__1742205820%3BG-RK197B1TRV%2C48011385.1727165629__1742205820%3BAW-761360769%2Cundefined__undefined%3BG-319350371%2C48011385.1727165629__1742205821%3B&cp=no&csp=no"
@@ -75,9 +75,11 @@ export default function VideoLocal({ filename, section }) {
       ) : section === "dubai-yachts-winter-offers" ? (
         <div className="block text-center mt-10 lg:absolute lg:-translate-x-2/4 lg:-translate-y-2/4 lg:left-2/4 lg:top-2/4 lg:mt-0">
           <h1 className="mb-4 text-primary-blue-2 lg:text-white text-shadow">
-		  DUBAI YACHTS WINTER OFFERS
+            DUBAI YACHTS WINTER OFFERS
           </h1>
-          <h2 className="mb-4 text-primary-blue-2 lg:text-white text-shadow">ENJOY UP TO 40% OFF LUXURY YACHTS IN DUBAI</h2>
+          <h2 className="mb-4 text-primary-blue-2 lg:text-white text-shadow">
+            ENJOY UP TO 40% OFF LUXURY YACHTS IN DUBAI
+          </h2>
         </div>
       ) : (
         <div></div>
