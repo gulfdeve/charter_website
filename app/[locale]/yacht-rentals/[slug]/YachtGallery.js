@@ -58,6 +58,7 @@ export default function YachtGallery({ gallery }) {
 
       <div className="relative mt-4">
         <button
+        aria-label="go back"
           className="absolute left-0 top-1/2 transform -translate-y-1/2 bg-[#d4cfce] text-white p-1 xl:p-2 rounded-full hover:bg-gray-700 z-10"
           onClick={scrollPrev}
         >
@@ -91,6 +92,7 @@ export default function YachtGallery({ gallery }) {
         </div>
 
         <button
+        aria-label="go forward"
           className="absolute right-0 top-1/2 transform -translate-y-1/2 bg-[#d4cfce] text-white p-1 xl:p-2 rounded-full hover:bg-gray-700 z-10"
           onClick={scrollNext}
         >
