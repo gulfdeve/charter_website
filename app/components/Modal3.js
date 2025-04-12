@@ -11,7 +11,6 @@ const Modal3 = forwardRef(({ idName, idValue, selectedVessel, rentalPeriod }, re
   const [errors, setErrors] = useState({});
   const [submissionSuccess, setSubmissionSuccess] = useState(false);
 
-  // Log rentalPeriod received in Modal3 when the component mounts or rentalPeriod changes.
   useEffect(() => {
     console.log("Modal3 received rentalPeriod:", rentalPeriod);
   }, [rentalPeriod]);
@@ -44,48 +43,34 @@ const Modal3 = forwardRef(({ idName, idValue, selectedVessel, rentalPeriod }, re
     e.preventDefault();
     if (!validateForm()) return;
 
-    // Format vessel details
+    const selectedDates = JSON.parse(localStorage.getItem("selectedDates")) || [];
+
     const vesselDetails = selectedVessel
-      ? `
-Vessel Details:
-Name: ${selectedVessel.name || "N/A"}
-Build: ${selectedVessel.make || "N/A"}
-Length: ${selectedVessel.length || "N/A"}
-Year: ${selectedVessel.builtYear || "N/A"}
-Price: ${selectedVessel.price || "N/A"}
-Cabins: ${selectedVessel.cabins || "N/A"}
-Guests: ${selectedVessel.sleeps || "N/A"}`
+      ? `\nVessel Details:\nName: ${selectedVessel.name || "N/A"}\nBuild: ${selectedVessel.make || "N/A"}\nLength: ${selectedVessel.length || "N/A"}\nYear: ${selectedVessel.builtYear || "N/A"}\nPrice: ${selectedVessel.price || "N/A"}\nCabins: ${selectedVessel.cabins || "N/A"}\nGuests: ${selectedVessel.sleeps || "N/A"}`
       : "";
 
-    // Format vessel id if available.
     const vesselIdText = idName && idValue
       ? `\nVessel ID (${idName}): ${idValue}`
       : "";
 
-    // Format rental dates if available. Assume rentalPeriod is an array.
-    const rentalDatesText = rentalPeriod && rentalPeriod.length > 0
-      ? `\nRental Dates: ${Array.isArray(rentalPeriod) ? rentalPeriod.join(", ") : rentalPeriod}`
+    const rentalDatesText = selectedDates.length > 0
+      ? `\nRental Dates: ${selectedDates.join(", ")}`
       : "";
 
-    // Log rental dates before sending
-    console.log("Formatted rentalDatesText:", rentalDatesText);
-
-    // Combine user message, vessel details, vessel id, and rental dates.
     const fullMessagePayload = `${message}\n\n${vesselDetails}${vesselIdText}${rentalDatesText}`;
-
-    // Prepare query parameters
+console.log("Full message payload:", fullMessagePayload);
     const queryParams = new URLSearchParams({
       name: fullName,
       phone: phoneNumber,
       email: email,
       comments: fullMessagePayload,
     });
+
     queryParams.set("offers_id", "45");
     if (idName && idValue) {
       queryParams.set(idName, idValue);
     }
 
-    // Log what is being sent for debugging purposes
     console.log("Sending enquiry with query parameters:", queryParams.toString());
 
     try {

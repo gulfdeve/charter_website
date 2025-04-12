@@ -8,6 +8,7 @@ import YachtCarousal from "@/app/components/YachtCarousel";
 import { useLocale } from "next-intl";
 import { use } from "react";
 import { useData } from "@/app/context/DataContext";
+import Link from "next/link";
 
 export default function Home({ params }) {
   const { slug } = use(params);
@@ -29,10 +30,10 @@ export default function Home({ params }) {
     }
   }, [activeIndex]);
 
- // Find product based on slug using DataContext
- useEffect(() => {
+  // Find product based on slug using DataContext
+  useEffect(() => {
     if (!slug || loading) return;
-    
+
     if (data && data.products) {
       const yacht = data.products.find((item) => item.slug === slug);
       setProduct(yacht);
@@ -44,7 +45,7 @@ export default function Home({ params }) {
   useEffect(() => {
     if (emblaRef.current && product) {
       emblaInstance.current = EmblaCarousel(emblaRef.current, { loop: true });
-      
+
       // Listen for Embla's "select" event to update activeIndex.
       emblaInstance.current.on("select", () => {
         const index = emblaInstance.current.selectedScrollSnap();
@@ -79,25 +80,42 @@ export default function Home({ params }) {
     { label: "Capacity", value: product.translations?.[locale]?.maximum_guest },
     { label: "Duration", value: "Minimum 1 Hour" },
     { label: "Cabin", value: product.translations?.[locale]?.cabin },
-    { label: "Kitchen Equipment", value: product.translations?.[locale]?.kitchen_equipment },
-    { label: "Music System", value: product.translations?.[locale]?.music_system },
-    { label: "No of Staff", value: product.translations?.[locale]?.no_of_staff },
+    {
+      label: "Kitchen Equipment",
+      value: product.translations?.[locale]?.kitchen_equipment,
+    },
+    {
+      label: "Music System",
+      value: product.translations?.[locale]?.music_system,
+    },
+    {
+      label: "No of Staff",
+      value: product.translations?.[locale]?.no_of_staff,
+    },
     { label: "Location", value: product.translations?.[locale]?.location },
-    { label: "Extras", value: "Drinks Included (Bubbly drinks, Soft drinks, Coffee & Water)" },
+    {
+      label: "Extras",
+      value: "Drinks Included (Bubbly drinks, Soft drinks, Coffee & Water)",
+    },
   ];
 
   return (
     <>
       <div className="container mx-auto p-5 nav-space">
         {/* Title */}
-        <h1 className="text-xl sm:text:2xl md:text-3xl lg:text-4xl text-center mb-5 mt-5 lg:mt-14 font-bold">Dubai Luxury Yacht</h1>
+        <h1 className="text-xl sm:text:2xl md:text-3xl lg:text-4xl text-center mb-5 mt-5 lg:mt-14 font-bold">
+          Dubai Luxury Yacht
+        </h1>
         <h2 className="text-base sm:text:2xl lg:text-3xl text-center mb-4">
           {product.translations?.[locale]?.name_of_yacht}
         </h2>
 
         {/* Embla Carousel */}
         <div className="embla relative">
-          <div className="embla__viewport overflow-hidden rounded-lg" ref={emblaRef}>
+          <div
+            className="embla__viewport overflow-hidden rounded-lg"
+            ref={emblaRef}
+          >
             <div className="embla__container flex">
               {product.gallery.map((item, index) => (
                 <div
@@ -192,83 +210,119 @@ export default function Home({ params }) {
             </span>
           </div>
           <div className="bg-primary-blue text-primary-blue p-2 lg:p-1.5 xl:p-2 flex flex-col col-span-2 lg:col-span-1 items-center">
-            <button className="flex flex-row items-center justify-center py-1 px-6 md:py-2 md:px-8 border-4 border-[#e1ae48] rounded-md bg-primary-blue hover:bg-primary-blue text-primary-yellow font-bold text-base md:text-sm xl:text-base transition-all duration-300">
+            <a
+              href={`https://fareharbor.com/embeds/book/centauruscharter/items/${product.fareharbor_id}/?full-items=yes&flow=645487`}
+              target="_self"
+              rel="noopener noreferrer"
+              className="flex flex-row items-center justify-center py-1 px-6 md:py-2 md:px-8 border-4 border-[#e1ae48] rounded-md bg-primary-blue hover:bg-primary-blue text-primary-yellow font-bold text-base md:text-sm xl:text-base transition-all duration-300 "
+            >
               Book Now
-            </button>
+            </a>
           </div>
         </div>
 
         {/* Yacht Description and Details */}
         <div className="flex flex-col lg:flex-row w-full items-start lg:justify-between py-10">
           <div className="flex flex-col lg:items-start w-full lg:justify-start lg:w-1/2">
-              <table className="w-full text-sm text-left text-gray-900">
-                <tbody>
-                  {yachtDetails.map((detail, index) => (
-                    <tr key={index} className="border-b border-gray-200">
-                      <th className="py-3 px-4 font-semibold text-gray-700 w-2/5" scope="row">
-                        {detail.label}:
-                      </th>
-                      <td className="py-3 px-4">{detail.value}</td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
+            <table className="w-full text-sm text-left text-gray-900">
+              <tbody>
+                {yachtDetails.map((detail, index) => (
+                  <tr key={index} className="border-b border-gray-200">
+                    <th
+                      className="py-3 px-4 font-semibold text-gray-700 w-2/5"
+                      scope="row"
+                    >
+                      {detail.label}:
+                    </th>
+                    <td className="py-3 px-4">{detail.value}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
           </div>
 
           <div className="flex items-start justify-center ">
             <div className="rounded-lg p-3 lg:p-6">
-            <h2 className="text-md text-black font-bold py-4">What to expect</h2>
-            <ol className="list-disc text-sm pl-6 space-y-4">
-              {product.translations.en.key_features.split("\n").map((item, index) => (
-                <li key={index} dangerouslySetInnerHTML={{ __html: item }} />
-              ))}
-            </ol>
-            <h2 className="text-md text-black font-bold py-4">Ideal for:</h2>
-            <ol className="list-disc text-left text-sm pl-6 space-y-4 ">
-              {product.translations.en.ideal_for.split("\n").map((item, index) => (
-                <li key={index} dangerouslySetInnerHTML={{ __html: item }} />
-              ))}
-            </ol>
-         
+              <h2 className="text-md text-black font-bold py-4">
+                What to expect
+              </h2>
+              <ol className="list-disc text-sm pl-6 space-y-4">
+                {product.translations.en.key_features
+                  .split("\n")
+                  .map((item, index) => (
+                    <li
+                      key={index}
+                      dangerouslySetInnerHTML={{ __html: item }}
+                    />
+                  ))}
+              </ol>
+              <h2 className="text-md text-black font-bold py-4">Ideal for:</h2>
+              <ol className="list-disc text-left text-sm pl-6 space-y-4 ">
+                {product.translations.en.ideal_for
+                  .split("\n")
+                  .map((item, index) => (
+                    <li
+                      key={index}
+                      dangerouslySetInnerHTML={{ __html: item }}
+                    />
+                  ))}
+              </ol>
+
               <div className="flex items-start gap-3 items-center mt-10">
                 <div>
                   <FaMapMarkerAlt className="w-8 h-8 flex-shrink-0" />
                 </div>
-                <div className="uppercase"><p className="font-bold">Yacht location:</p>
-                <p className="text-blue-800"> 
-                  <a
-                          href="https://www.google.com/maps/place/CENTAURUS+CHARTER+-+Yachts+%26+Boats+Rental+Dubai+Harbour"
-                          className="hover:text-white" target="_blank"
-                          >U-32 berth dubai marina (near spinneys)
-                          </a> </p></div>
+                <div className="uppercase">
+                  <p className="font-bold">Yacht location:</p>
+                  <p className="text-blue-800">
+                    <a
+                      href="https://www.google.com/maps/place/CENTAURUS+CHARTER+-+Yachts+%26+Boats+Rental+Dubai+Harbour"
+                      className="hover:text-white"
+                      target="_blank"
+                    >
+                      U-32 berth dubai marina (near spinneys)
+                    </a>{" "}
+                  </p>
+                </div>
               </div>
               <div className="flex flex-col md:flex-row justify-center gap-4 mt-10">
                 <button className="yellow-solid-button flex items-center justify-center gap-2">
                   <FaQuestionCircle size={20} />
                   ASK A QUESTION
                 </button>
+                <Link href='https://api.whatsapp.com/send?phone=971547928626&text=Hi!%20I%20came%20across%20your%20website.%20I%20want%20to%20inquire%20about%20a%20yacht%20charter%20in%20Dubai\'>
                 <button className="yellow-solid-button flex items-center justify-center gap-2">
                   <FaWhatsapp size={20} />
                   CHAT WITH US
                 </button>
+                </Link>
               </div>
             </div>
           </div>
         </div>
         <p className="text-sm text-center">
-              The 56 Ft <strong>private yacht</strong> is beautiful and versatile. A perfect <strong>yacht</strong> available for rental to celebrate any special occasion on the waters. This yacht is kept in top
-              condition with a cruising speed of 22 knots. Vassia is loaded with all guest amenities, a fully AC yacht and plenty of space for you and your guests. The overall
-              length is 56 Feet/17.6 meters can accommodate up to 21 guests and has 3 comfortable cabins with 6 sleeps.
-        <br/><br/>
-              In addition to this; it contains 3 separate heads. Also, there is one captain and two crew members on board to provide great service on your charter. Our fleet
-              features an array of outdoor and indoor areas. The outdoor dining area on the cockpit is sheltered by a hard-top and furnished with sofas, a table, an electric
-              BBQ and a great sound system to enjoy every moment on the sea. Sip your coffee or wine, relax on the front-deck sun loungers or party hard in the open
-              ocean. This wonderful party yacht rental is moored at <strong>Dubai Marina</strong> and ready to cruise.
+          The 56 Ft <strong>private yacht</strong> is beautiful and versatile. A
+          perfect <strong>yacht</strong> available for rental to celebrate any
+          special occasion on the waters. This yacht is kept in top condition
+          with a cruising speed of 22 knots. Vassia is loaded with all guest
+          amenities, a fully AC yacht and plenty of space for you and your
+          guests. The overall length is 56 Feet/17.6 meters can accommodate up
+          to 21 guests and has 3 comfortable cabins with 6 sleeps.
+          <br />
+          <br />
+          In addition to this; it contains 3 separate heads. Also, there is one
+          captain and two crew members on board to provide great service on your
+          charter. Our fleet features an array of outdoor and indoor areas. The
+          outdoor dining area on the cockpit is sheltered by a hard-top and
+          furnished with sofas, a table, an electric BBQ and a great sound
+          system to enjoy every moment on the sea. Sip your coffee or wine,
+          relax on the front-deck sun loungers or party hard in the open ocean.
+          This wonderful party yacht rental is moored at{" "}
+          <strong>Dubai Marina</strong> and ready to cruise.
         </p>
         <p className="text-sm text-center font-bold my-8">
           Rent a yacht in Dubai Marina
         </p>
-
       </div>
       <Route />
       <YachtCarousal />

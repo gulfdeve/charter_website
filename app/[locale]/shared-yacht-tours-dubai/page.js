@@ -10,7 +10,8 @@ import { MdOutlineLocalDining } from "react-icons/md";
 import YachtCarousal from "@/app/components/YachtCarousel";
 import FareHarborCalendar from "@/app/components/FareHarborCalendar";
 import Modalsharedtours from "../../components/Modelsharedtours";
-
+import Modal2 from "@/app/components/Modal2";
+import Link from "next/link";
 // Example data
 const toursData = [
   {
@@ -50,6 +51,15 @@ const toursData = [
 
 const Page = () => {
   const [showDetails, setShowDetails] = useState(toursData.map(() => false));
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const handlequote = () => {
+    setIsModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+  };
 
   // Toggle details for a single card
   const toggleDetails = (index) => {
@@ -181,26 +191,19 @@ const Page = () => {
                   {tour.childPrice}
                 </h1>
               </div>
-            </div>
 
-            {/* Cruising Route (always visible) */}
-            <h1 className="text-primary-blue-2 text-sm ml-3">
-              <span className="font-bold">Cruising Route:</span>{" "}
-              {tour.cruisingRoute}
-            </h1>
-
-            {/* Collapsible Details Section */}
-            <div
-              className={`transition-all duration-300 overflow-hidden ${
-                showDetails[index] ? "max-h-[999px] opacity-100" : "max-h-0 opacity-0"
-              }`}
-            >
-              <div className="space-y-4 mt-4">
-                <div className="flex flex-row gap-2 items-center">
-                  <MdOutlineLocalDining className="text-primary-blue-2 text-[6rem] sm:text-[3rem] lg:text-[6rem]" />
+              {/* Always Visible Content with Opacity Effect */}
+              <div
+                className={`
+                  transition-opacity duration-300
+                  ${!showDetails[index] ? "opacity-40" : "opacity-100"}
+                `}
+              >
+                <div className="flex flex-row gap-2 items-center ml-1.5 mb-4">
+                  <FaClock size={25} className="text-primary-blue-2" />
                   <h1 className="text-primary-blue-2 text-sm">
-                    <span className="font-bold">Live BBQ:</span>{" "}
-                    {tour.liveBBQ}
+                    <span className="font-bold">Cruising Time:</span>{" "}
+                    {tour.cruisingTime}
                   </h1>
                 </div>
 
@@ -220,13 +223,55 @@ const Page = () => {
                   </h1>
                 </div>
               </div>
-            </div>
 
-            {/* Book Now Button */}
-            <button className="yellow-solid-button w-full mt-4">Book Now</button>
-          </div>
-        ))}
-      </div>
+              {/* Collapsible Details Section */}
+              <div
+                className={`
+                  transition-all duration-300 overflow-hidden
+                  ${
+                    showDetails[index]
+                      ? "max-h-[999px] opacity-100"
+                      : "max-h-0 opacity-0"
+                  }
+                `}
+              >
+                <div className=" space-y-4">
+                  <div className="flex flex-row gap-2 items-center">
+                    <MdOutlineLocalDining className="text-primary-blue-2 text-[6rem] sm:text-[3rem] lg:text-[6rem]" />
+                    <h1 className="text-primary-blue-2 text-sm">
+                      <span className="font-bold">Live BBQ:</span>{" "}
+                      {tour.liveBBQ}
+                    </h1>
+                  </div>
+
+                  <div className="flex flex-row gap-2.5 items-center ml-0.5">
+                    <FaCameraRetro size={35} className="text-primary-blue-2" />
+                    <h1 className="text-primary-blue-2 text-sm">
+                      <span className="font-bold">Cruising Route:</span>{" "}
+                      {tour.cruisingRoute}
+                    </h1>
+                  </div>
+
+                  <div className="flex flex-row gap-2 items-center">
+                    <IoLocationSharp
+                      size={32}
+                      className="text-primary-blue-2"
+                    />
+                    <h1 className="text-primary-blue-2 text-sm">
+                      <span className="font-bold text-primary-blue-2">
+                        Departure Point:
+                      </span>{" "}
+                      {tour.departurePoint}
+                    </h1>
+                  </div>
+                </div>
+              </div>
+
+              {/* Book Now Button */}
+              <button className="yellow-solid-button w-full">Book Now</button>
+            </div>
+          ))}
+        </div>
 
       {/* Premium Drinks Notice */}
       <div className="flex items-center justify-center bg-primary-blue-2 max-w-3xl mx-auto text-center">
@@ -235,37 +280,36 @@ const Page = () => {
         </h1>
       </div>
 
-      {/* HIGHLIGHTS */}
-      <div className="flex items-center justify-center w-full my-6">
-        <hr className="flex-grow border-primary-yellow-dark" />
-        <span className="px-4 text-2xl 2xl:text-3xl font-semibold text-primary-blue">
-          HIGHLIGHTS
-        </span>
-        <hr className="flex-grow border-primary-yellow-dark" />
-      </div>
-      
-	  <div className="grid grid-cols-2 md:grid-cols-4 gap-2 md:gap-5 px-4 py-10 container mx-auto">
+        {/* HIGHLIGHTS */}
+        <div className="flex items-center justify-center w-full my-6">
+          <hr className="flex-grow border-primary-yellow-dark" />
+          <span className="px-4 text-2xl 2xl:text-3xl font-semibold text-primary-blue">
+            HIGHLIGHTS
+          </span>
+          <hr className="flex-grow border-primary-yellow-dark" />
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-5 px-4 py-10 container mx-auto">
           <div>
             <img src="/BBQ.webp" alt="Live BBQ" />
-            <h1 className="bg-primary-blue-2 text-primary-yellow text-center text-xs sm:text-sm md:text-md  font-bold p-2 rounded-b-lg">
+            <h1 className="bg-primary-blue-2 text-primary-yellow text-center text-md font-bold p-2 rounded-b-lg">
               LIVE BBQ
             </h1>
           </div>
           <div>
             <img src="/Picturemoments.webp" alt="Picture Moments" />
-            <h1 className="bg-primary-blue-2 text-primary-yellow text-center text-xs sm:text-sm md:text-md  font-bold p-2 rounded-b-lg">
+            <h1 className="bg-primary-blue-2 text-primary-yellow text-center text-md font-bold p-2 rounded-b-lg">
               PICTURE MOMENTS
             </h1>
           </div>
           <div>
             <img src="/Amazing-View.webp" alt="Amazing View" />
-            <h1 className="bg-primary-blue-2 text-primary-yellow text-center text-xs sm:text-sm md:text-md font-bold p-2 rounded-b-lg">
+            <h1 className="bg-primary-blue-2 text-primary-yellow text-center text-md font-bold p-2 rounded-b-lg">
               AMAZING VIEW
             </h1>
           </div>
           <div>
             <img src="/Great-Food.webp" alt="Great Food" />
-            <h1 className="bg-primary-blue-2 text-primary-yellow text-center text-xs sm:text-sm md:text-md  font-bold p-2 rounded-b-lg">
+            <h1 className="bg-primary-blue-2 text-primary-yellow text-center text-md font-bold p-2 rounded-b-lg">
               GREAT FOOD
             </h1>
           </div>
@@ -302,7 +346,7 @@ const Page = () => {
               className="object-cover object-center xl:w-[250rem] sm:w-[170rem] md:h-[670px] xl:h-[650px] lg:h-[560px]"
             />
           </div>
-          <div className="flex flex-col items-center sm:items-start sm:justify-start justify-center bg-primary-blue-2 px-5 xl:p-32 xl:py-12 py-5 md:h-[600px] xl:h-[650px] lg:h-[560px]">
+          <div className="flex flex-col items-center sm:items-start sm:justify-start justify-center bg-primary-blue-2 px-5 xl:p-32 xl:py-12 py-5 md:h-[670px] xl:h-[650px] lg:h-[560px]">
             <p className="text-white text-center sm:text-left text-md sm:text-sm xl:text-md py-10">
               Experience Dubai's coastline in an entirely new light with our
               exclusive shared yacht tours. Uniting the thrill of luxury
@@ -341,17 +385,22 @@ const Page = () => {
             <p className="text-white text-center md:text-left font-bold text-xl rounded">
               Enjoy a luxurious shared yacht adventure!
             </p>
-            <div className="flex flex-col md:flex-row gap-2 md:gap-10 space-y">
+            <div className="flex flex-col md:flex-row md:gap-10 space-y">
+              <Link href="https://wa.link/vpunoz">
               <button className="blue-lined-button">
                 <FaWhatsapp size={20} /> WHATSAPP US
               </button>
-              <button className="blue-lined-button">GET A QUOTE</button>
+              </Link>
+              <button onClick={handlequote} className="blue-lined-button">
+                GET A QUOTE
+              </button>
             </div>
           </div>
         </div>
-    </div>
-    <YachtCarousal />
-  </>
+        <Modal2 isModalOpen={isModalOpen} closeModal={closeModal} />
+      </div>
+      <YachtCarousal />
+    </>
   );
 };
 
