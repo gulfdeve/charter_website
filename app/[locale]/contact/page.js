@@ -6,6 +6,8 @@ import { MdLocationOn } from "react-icons/md";
 import { IoCallSharp } from "react-icons/io5";
 import { FaWhatsapp } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
+import { usePathname, Link } from "@/app/i18n/routing";
+import { useLocale, useTranslations } from "next-intl";
 
 export default function Page() {
   const [fullName, setFullName] = useState("");
@@ -15,6 +17,7 @@ export default function Page() {
   const [subscribe, setSubscribe] = useState(false);
   const [acceptedTerms, setAcceptedTerms] = useState(false);
   const [errors, setErrors] = useState({});
+    const t = useTranslations();
 
   const validateForm = () => {
     let errs = {};
@@ -22,14 +25,22 @@ export default function Page() {
     if (!email) errs.email = "Email is required";
     if (!phoneNumber) errs.phoneNumber = "Phone number is required";
     if (!message) errs.message = "Message is required";
-    if (!acceptedTerms) errs.acceptedTerms = "Please accept the Terms and Conditions";
+    if (!acceptedTerms)
+      errs.acceptedTerms = "Please accept the Terms and Conditions";
     setErrors(errs);
     return Object.keys(errs).length === 0;
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log("Submitting form:", { fullName, email, phoneNumber, message, subscribe, acceptedTerms });
+    console.log("Submitting form:", {
+      fullName,
+      email,
+      phoneNumber,
+      message,
+      subscribe,
+      acceptedTerms,
+    });
     if (!validateForm()) return;
 
     try {
@@ -66,14 +77,20 @@ export default function Page() {
     <>
       <div className="bg-white w-full h-full nav-space">
         <div>
-          <img alt="contact header banner" src="./Contactheader.webp" className="w-full" />
+          <img
+            alt="contact header banner"
+            src="./Contactheader.webp"
+            className="w-full"
+          />
         </div>
         <div className="flex flex-col items-center justify-center py-10 ">
           <h1 className="text-primary-blue text-center font-bold text-xl sm:text:2xl md:text-3xl lg:text-4xl pb-4">
             CONTACT US
           </h1>
           <p className="container text-[#848484] text-center text-base px-3 lg:px-12 xl:px-56">
-            We at Centaurus Charter are well experienced to meet the expectations of your next yachting adventure in Dubai. Please fill contact you shortly.
+            We at Centaurus Charter are well experienced to meet the
+            expectations of your next yachting adventure in Dubai. Please fill
+            contact you shortly.
           </p>
         </div>
 
@@ -89,7 +106,9 @@ export default function Page() {
                     value={fullName}
                     onChange={(e) => setFullName(e.target.value)}
                   />
-                  {errors.fullName && <p className="text-red-600 text-sm">{errors.fullName}</p>}
+                  {errors.fullName && (
+                    <p className="text-red-600 text-sm mt-1">{errors.fullName}</p>
+                  )}
                 </div>
                 <div>
                   <input
@@ -99,7 +118,9 @@ export default function Page() {
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                   />
-                  {errors.email && <p className="text-red-600 text-sm">{errors.email}</p>}
+                  {errors.email && (
+                    <p className="text-red-600 text-sm mt-1">{errors.email}</p>
+                  )}
                 </div>
                 <div>
                   {/* PhoneInput replaces the standard phone input */}
@@ -126,7 +147,9 @@ export default function Page() {
                       fontFamily: "Montserrat, sans-serif",
                     }}
                   />
-                  {errors.phoneNumber && <p className="text-red-600 text-sm">{errors.phoneNumber}</p>}
+                  {errors.phoneNumber && (
+                    <p className="text-red-600 text-sm mt-1">{errors.phoneNumber}</p>
+                  )}
                 </div>
                 <div>
                   <textarea
@@ -136,7 +159,9 @@ export default function Page() {
                     value={message}
                     onChange={(e) => setMessage(e.target.value)}
                   ></textarea>
-                  {errors.message && <p className="text-red-600 text-sm">{errors.message}</p>}
+                  {errors.message && (
+                    <p className="text-red-600 text-sm mt-1">{errors.message}</p>
+                  )}
                 </div>
                 <div className="space-y-2 text-gray-600">
                   <div className="flex items-start space-x-2">
@@ -148,10 +173,12 @@ export default function Page() {
                       onChange={(e) => setSubscribe(e.target.checked)}
                     />
                     <label htmlFor="updates" className="text-sm leading-5">
-                      I would like to sign up to receive email updates from Centaurus Charter. See our{" "}
-                      <a href="#" className="text-blue-500 underline">
+                      I would like to sign up to receive email updates from
+                      Centaurus Charter. See our{" "}
+                      <Link href="/privacy-and-policy" className="text-blue-500 underline">
                         Privacy Policy
-                      </a>.
+                      </Link>
+                      .
                     </label>
                   </div>
                   <div className="flex items-start space-x-2">
@@ -164,11 +191,16 @@ export default function Page() {
                     />
                     <label htmlFor="terms" className="text-sm leading-5">
                       I can confirm I have read and accepted the{" "}
-                      <a href="#" className="text-blue-500 underline">
+                      <Link href="/terms-and-condtion" className="text-blue-500 underline">
                         Terms and Conditions
-                      </a>.
+                      </Link>
+                      .
                     </label>
-                    {errors.acceptedTerms && <p className="text-red-600 text-sm">{errors.acceptedTerms}</p>}
+                    {errors.acceptedTerms && (
+                      <p className="text-red-600 text-sm mt-1">
+                        {errors.acceptedTerms}
+                      </p>
+                    )}
                   </div>
                 </div>
                 <div className="text-left">
@@ -185,14 +217,17 @@ export default function Page() {
           <div className="flex flex-col items-start md:items-center justify-center space-y-7 md:-mt-40">
             <div className="flex flex-row items-start justify-start">
               <div className="p-3 rounded-full bg-primary-blue-2">
-              <MdLocationOn className="text-2xl text-primary-yellow" /> </div>
+                <MdLocationOn className="text-2xl text-primary-yellow" />{" "}
+              </div>
               <p className="text-sm w-[16rem] xs:w-[19rem] pl-5 font-medium">
-                Office 907 ETA Star's Al Manara Tower 6, Marasi Drive Street Business Bay, Za'beel, Dubai United Arab Emirates
+                Office 907 ETA Star's Al Manara Tower 6, Marasi Drive Street
+                Business Bay, Za'beel, Dubai United Arab Emirates
               </p>
             </div>
             <div className="flex flex-row items-center justify-start">
-            <div className="p-3 rounded-full bg-primary-blue-2">
-              <IoCallSharp className="text-2xl text-primary-yellow" /></div>
+              <div className="p-3 rounded-full bg-primary-blue-2">
+                <IoCallSharp className="text-2xl text-primary-yellow" />
+              </div>
               <a
                 href="tel:+97143521833"
                 className="text-sm w-[14rem] xs:w-[19rem] pl-5 text-primary-blue-2 font-medium"
@@ -201,25 +236,28 @@ export default function Page() {
               </a>
             </div>
             <div className="flex flex-row items-center justify-start">
-            <div className="p-3 rounded-full bg-primary-blue-2">
-              <FaWhatsapp className="text-2xl text-primary-yellow" /> </div>
+              <div className="p-3 rounded-full bg-primary-blue-2">
+                <FaWhatsapp className="text-2xl text-primary-yellow" />{" "}
+              </div>
               <a
-                href="https://wa.me/971524901269"
+                href={t('header.whatsapp_url')}
+				target="_blank"
                 className="text-sm w-[16rem] xs:w-[19rem] pl-5 text-primary-blue-2 font-medium"
-                target="_blank"
                 rel="noopener noreferrer"
               >
                 <span className="text-black">WhatsApp:</span> +971 52 490 1269
               </a>
             </div>
             <div className="flex flex-row items-center justify-start">
-            <div className="p-3 rounded-full bg-primary-blue-2">
-              <MdEmail className="text-2xl text-primary-yellow" /></div>
+              <div className="p-3 rounded-full bg-primary-blue-2">
+                <MdEmail className="text-2xl text-primary-yellow" />
+              </div>
               <a
                 href="mailto:info@centauruscharter.com"
                 className="text-sm w-[16rem] xs:w-[19rem] pl-5 text-primary-blue-2 font-medium"
               >
-                <span className="text-black">Email:</span> info@centauruscharter.com
+                <span className="text-black">Email:</span>{" "}
+                info@centauruscharter.com
               </a>
             </div>
           </div>
