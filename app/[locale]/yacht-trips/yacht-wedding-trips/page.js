@@ -8,6 +8,7 @@ import { FaWhatsapp } from "react-icons/fa";
 import YachtCarousel from "@/app/components/YachtCarousel"
 import { useData } from "@/app/context/DataContext";
 import { useLocale, useTranslations } from "next-intl";
+import VideoLocal from "@/app/components/VideoLocal";
 const page = () => {
     const { data, loading, error } = useData();
     const locale = useLocale();
@@ -18,6 +19,7 @@ const page = () => {
       {/* <div>
         <Videosharedtours/>
       </div> */}
+	  <VideoLocal filename="/yacht-wedding-trips.mp4" section="yacht-wedding-trips.mp4" />
      
       <div className="container mx-auto bg-white nav-space">
         <div className="flex flex-col items-center justify-center py-12 lg:pt-14"> 
