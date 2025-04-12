@@ -127,7 +127,7 @@ export default function MobileNavbar({
                 </div>
               </li>
               <Link
-                href={`/yacht-sale-for-dubai`}
+                href={`/yachts-for-sale-dubai`}
                 onClick={() => setMobileDropdownOpen(false)}
               >
                 <li className="font-bold cursor-pointer hover:text-blue-500">

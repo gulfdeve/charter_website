@@ -26,7 +26,7 @@ const page = () => {
         </div>
 
         <div className="flex flex-col items-start justify-center py-10">
-          <p className=" text-[#848484] text-left  text-[0.9rem]  px-4 lg: xl:">
+          <p className=" text-[#848484] text-left  text-[0.9rem] lg: xl:">
             This voucher includes the use of our yachts and equipment according
             to the value, bed linen, auxiliary rowboat, gas, autopilot, GPS,
             usual services provided by Centaurus Charter Services at the time of
@@ -43,10 +43,10 @@ const page = () => {
             accommodate the yacht at the period of the trip. Guests, staff, and
             yachts are fully insured.
           </p>
-          <h1 className=" text-[#707070] text-left font-bold text-lg md:text-xl py-5  px-4">
+          <h1 className=" text-[#707070] text-left font-bold text-lg md:text-xl py-5">
             DEPOSIT AND INSURANCE
           </h1>
-          <p className=" text-[#848484] text-left  text-[0.9rem]  px-4 ">
+          <p className=" text-[#848484] text-left  text-[0.9rem] ">
             Our yachts are covered with insurance amount according to the Price
             List for the current year. The insurance policy covers Compulsory
             Passenger Insurance and Compulsory Third-Party Insurance. Personal
@@ -61,14 +61,14 @@ const page = () => {
             Otherwise, the deposit shall be kept in the equivalent value of the
             repair or the purchase value of the damaged and/or lost equipment.
           </p>
-          <h1 className=" text-[#707070] text-left font-bold text-lg md:text-xl py-5  px-4">
+          <h1 className=" text-[#707070] text-left font-bold text-lg md:text-xl py-5  ">
             PROMO CODE
           </h1>
-          <p className=" text-[#848484] text-left  text-[0.9rem]  px-4 ">
+          <p className=" text-[#848484] text-left  text-[0.9rem]   ">
             These terms and conditions apply to those promotions where you must
             redeem a promo code as part of the offer.
           </p>
-          <ul className="list-disc pl-12  text-[#848484] text-left  text-[0.9rem]  px-4 ">
+          <ul className="list-disc pl-12  text-[#848484] text-left  text-[0.9rem]   ">
             <li>The promo code is valid for a limited time only.</li>
 
             <li>
@@ -123,18 +123,18 @@ const page = () => {
               reserves the right to void the transactions where prohibited.
             </li>
           </ul>
-          <p className=" text-[#848484] text-left  text-[0.9rem]  px-4 ">
+          <p className=" text-[#848484] text-left  text-[0.9rem]   ">
             If you violate any of the Terms and Conditions, the promotion will
             be invalid, and the promo code discount will not apply.
           </p>
-          <p className=" text-[#848484] text-left  text-[0.9rem]  px-4 ">
+          <p className=" text-[#848484] text-left  text-[0.9rem]   ">
             Centaurus Charter reserves the right to update these terms and
             conditions without prior notice.
           </p>
-          <h1 className=" text-[#707070] text-left font-bold text-lg md:text-xl py-5  px-4">
+          <h1 className=" text-[#707070] text-left font-bold text-lg md:text-xl py-5  ">
             CANCELLATION
           </h1>
-          <ul className="list-disc pl-12  text-[#848484] text-left  text-[0.9rem]  px-4 ">
+          <ul className="list-disc pl-12  text-[#848484] text-left  text-[0.9rem]   ">
             <li>
               Cancellation or reschedule 72 hours prior the booking free of
               charge (standard bank fees will be charged).
@@ -149,10 +149,10 @@ const page = () => {
               be NO REFUNDABLE.
             </li>
           </ul>
-          <h1 className=" text-[#707070] text-left font-bold text-lg md:text-xl py-5 px-4">
+          <h1 className=" text-[#707070] text-left font-bold text-lg md:text-xl py-5 ">
             Poseidon 118Ft Cancellation Policy
           </h1>
-          <ul className="list-disc pl-12  text-[#848484] text-left  text-[0.9rem]  px-4 ">
+          <ul className="list-disc pl-12  text-[#848484] text-left  text-[0.9rem]   ">
             <li>
               Centaurus requires a 50% booking payment as a security deposit.
             </li>
@@ -167,10 +167,10 @@ const page = () => {
               100% of the total booking charge.
             </li>
           </ul>
-          <h1 className=" text-[#707070] text-left font-bold text-lg md:text-xl py-5  px-4">
+          <h1 className=" text-[#707070] text-left font-bold text-lg md:text-xl py-5  ">
             Booking and Cancellation Policy for Formula 1 AD GP 2023
           </h1>
-          <ul className="list-disc pl-12  text-[#848484] text-left  text-[0.9rem]  px-4 ">
+          <ul className="list-disc pl-12  text-[#848484] text-left  text-[0.9rem]   ">
             <li>
               First 50% deposit shall be paid to the company by the Client upon
               booking (not refundable).
@@ -187,10 +187,10 @@ const page = () => {
               cancel the booking and offer the vessel to other customers.
             </li>
           </ul>
-          <h1 className=" text-[#707070] text-left font-bold text-lg md:text-xl py-5  px-4">
+          <h1 className=" text-[#707070] text-left font-bold text-lg md:text-xl py-5  ">
             YACHT DELIVERY PROCEDURE (CHECK -IN)
           </h1>
-          <p className=" text-[#848484] text-left  text-[0.9rem]  px-4 ">
+          <p className=" text-[#848484] text-left  text-[0.9rem]   ">
             The yacht boarding takes place upon bookings which will be Sunday –
             Saturday 9 am – 2 am. All guests shall deliver a verified original
             voucher including original identification documents (emirates id or
@@ -206,10 +206,10 @@ const page = () => {
             availability of the vessel whereupon added charges for additional
             timings will be made once approved by us.
           </p>
-          <h1 className=" text-[#707070] text-left font-bold text-lg md:text-xl py-5  px-4">
+          <h1 className=" text-[#707070] text-left font-bold text-lg md:text-xl py-5  ">
             LIABILITY OF GUESTS
           </h1>
-          <p className=" text-[#848484] text-left  text-[0.9rem]  px-4 ">
+          <p className=" text-[#848484] text-left  text-[0.9rem]   ">
             All guests undertake not to accept more passengers onboard of the
             Yacht than it is specified in the Centaurus Charter. The guests
             shall immediately inform representatives of Centaurus Charter when
@@ -223,10 +223,10 @@ const page = () => {
             (dogs, cats, birds, etc.) without the prior written consent by
             Centaurus Charter.
           </p>
-          <h1 className=" text-[#707070] text-left font-bold text-lg md:text-xl py-5  px-4">
+          <h1 className=" text-[#707070] text-left font-bold text-lg md:text-xl py-5  ">
             LIABILITY OF Centaurus Charter
           </h1>
-          <p className=" text-[#848484] text-left  text-[0.9rem]  px-4 ">
+          <p className=" text-[#848484] text-left  text-[0.9rem]   ">
             Centaurus Charter shall be obliged to deliver the vessel in good
             working order, cleaned and with full fuel and water tanks. In case
             of inability to deliver the booked Yacht at the arranged time, the
@@ -234,25 +234,25 @@ const page = () => {
             shall not be liable for any delay incurred due to rough weather
             conditions.
           </p>
-          <h1 className=" text-[#707070] text-left font-bold text-lg md:text-xl py-5  px-4">
+          <h1 className=" text-[#707070] text-left font-bold text-lg md:text-xl py-5  ">
             COMPLAINTS
           </h1>
-          <p className=" text-[#848484] text-left  text-[0.9rem]  px-4 ">
+          <p className=" text-[#848484] text-left  text-[0.9rem]   ">
             Guests shall be entitled to file complaints only in writing, signed
             personally and by a representative of Centaurus Charter on the
             completion date of the service
           </p>
-          <h1 className=" text-[#707070] text-left font-bold text-lg md:text-xl py-5  px-4">
+          <h1 className=" text-[#707070] text-left font-bold text-lg md:text-xl py-5  ">
             CRUISE ROUTE
           </h1>
-          <p className=" text-[#848484] text-left  text-[0.9rem]  px-4 ">
+          <p className=" text-[#848484] text-left  text-[0.9rem]   ">
             Depending on the time the route shall include the Marina Canal,
             Lagoon, Burj Al Arab and Atlantis the Palm.
           </p>
-          <h1 className=" text-[#707070] text-left font-bold text-lg md:text-xl py-5  px-4">
+          <h1 className=" text-[#707070] text-left font-bold text-lg md:text-xl py-5  ">
             FOOD AND BEVERAGES
           </h1>
-          <p className=" text-[#848484] text-left  text-[0.9rem]  px-4 ">
+          <p className=" text-[#848484] text-left  text-[0.9rem]   ">
             Refrigerator, AC, GPS, Cutlery, drinkware, plates etc. No food or
             refreshments will be sold to guests; however, guests can bring their
             own food onboard. Drinks can be ordered from
@@ -266,25 +266,25 @@ const page = () => {
               www.centaurusint.net
             </Link>
           </p>
-          <h1 className=" text-[#707070] text-left font-bold text-lg md:text-xl py-5  px-4">
+          <h1 className=" text-[#707070] text-left font-bold text-lg md:text-xl py-5  ">
             Centaurus Charter Services
           </h1>
-          <h1 className=" text-[#707070] text-left font-bold text-xl pt-5 px-4">
+          <h1 className=" text-[#707070] text-left font-bold text-xl pt-5 ">
             YACHT OFFERS AND DEALS IN DUBAI
           </h1>
-          <h1 className=" text-[#707070] text-left font-bold text-sm pb-4  px-4">
+          <h1 className=" text-[#707070] text-left font-bold text-sm pb-4  ">
             UAE RESIDENTS OFFERS - UP TO 40% DISCOUNT
           </h1>
-          <p className=" text-[#848484] text-left  text-[0.9rem]  px-4 ">
+          <p className=" text-[#848484] text-left  text-[0.9rem]   ">
             (DISCOUNTED RATES ARE VALID FOR BOOKINGS FALLING BETWEEN 6AM-3PM
             (MORNING TRIPS) & 7PM ONWARDS (NIGHT TRIPS) MIN. OF 3-HOUR
             BOOKINGS).
           </p>
-          <h1 className=" text-[#707070] text-left font-bold text-sm  py-2 px-4">
+          <h1 className=" text-[#707070] text-left font-bold text-sm  py-2 ">
             FAZAA DISCOUNT, EMIRATES STAFF DISCOUNT& BUSINESS COUNCIL MEMBERS
             OFFER UP TO 20-40% DISCOUNT
           </h1>
-          <p className=" text-[#848484] text-left  text-[0.9rem] py-2 px-4 ">
+          <p className=" text-[#848484] text-left  text-[0.9rem] py-2  ">
             MIN. OF 3-HOUR BOOKINGS.
           </p>
         </div>

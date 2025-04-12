@@ -24,19 +24,19 @@ const page = () => {
         </div>
 
         <div className="flex flex-col items-start justify-center py-10">
-          <h1 className=" text-[#707070] text-left font-bold text-2xl py-5  px-4">
+          <h1 className=" text-[#707070] text-left font-bold text-2xl py-5  ">
             Who we are
           </h1>
-          <p className=" text-[#848484] text-left  text-[0.9rem]  px-4 ">
+          <p className=" text-[#848484] text-left  text-[0.9rem]   ">
             Our website address is: www.centauruscharter.com
           </p>
-          <h1 className=" text-[#707070] text-left font-bold text-2xl py-5  px-4">
+          <h1 className=" text-[#707070] text-left font-bold text-2xl py-5  ">
             What personal data we collect and why we collect it
           </h1>
-          <h1 className=" text-[#707070] text-left font-bold text-lg py-5  px-4">
+          <h1 className=" text-[#707070] text-left font-bold text-lg py-5  ">
             Comments
           </h1>
-          <p className=" text-[#848484] text-left  text-[0.9rem]  px-4 ">
+          <p className=" text-[#848484] text-left  text-[0.9rem]   ">
             When visitors leave comments on the site we collect the data shown
             in the comments form, and also the visitor’s IP address and browser
             user agent string to help spam detection.
@@ -50,22 +50,22 @@ const page = () => {
             comment.
           </p>
 
-          <h1 className=" text-[#707070] text-left font-bold text-lg py-5  px-4">
+          <h1 className=" text-[#707070] text-left font-bold text-lg py-5  ">
             Media
           </h1>
-          <p className=" text-[#848484] text-left  text-[0.9rem]  px-4 ">
+          <p className=" text-[#848484] text-left  text-[0.9rem]   ">
             If you upload images to the website, you should avoid uploading
             images with embedded location data (EXIF GPS) included. Visitors to
             the website can download and extract any location data from images
             on the website.
           </p>
-          <h1 className=" text-[#707070] text-left font-bold text-2xl py-5  px-4">
+          <h1 className=" text-[#707070] text-left font-bold text-2xl py-5  ">
             Contact forms
           </h1>
-          <h1 className=" text-[#707070] text-left font-bold text-lg py-5  px-4">
+          <h1 className=" text-[#707070] text-left font-bold text-lg py-5  ">
             Cookies
           </h1>
-          <p className=" text-[#848484] text-left  text-[0.9rem]  px-4 ">
+          <p className=" text-[#848484] text-left  text-[0.9rem]   ">
             If you leave a comment on our site you may opt-in to save your name,
             email address and website in cookies. These are for your convenience
             so that you do not have to fill in your details again when you leave
@@ -89,10 +89,10 @@ const page = () => {
             expires after 1 day.
           </p>
 
-          <h1 className=" text-[#707070] text-left font-bold text-lg py-5  px-4">
+          <h1 className=" text-[#707070] text-left font-bold text-lg py-5  ">
             Embedded content from other websites
           </h1>
-          <p className=" text-[#848484] text-left  text-[0.9rem]  px-4 ">
+          <p className=" text-[#848484] text-left  text-[0.9rem]   ">
             Articles on this site may include embedded content (e.g. videos,
             images, articles, etc.). Embedded content from other websites
             behaves in the exact same way as if the visitor has visited the
@@ -105,16 +105,16 @@ const page = () => {
             website.
           </p>
 
-          <h1 className=" text-[#707070] text-left font-bold text-lg py-5  px-4">
+          <h1 className=" text-[#707070] text-left font-bold text-lg py-5  ">
             Analytics
           </h1>
-          <h1 className=" text-[#707070] text-left font-bold text-2xl py-5  px-4">
+          <h1 className=" text-[#707070] text-left font-bold text-2xl py-5  ">
             Who we share your data with
           </h1>
-          <h1 className=" text-[#707070] text-left font-bold text-lg py-5  px-4">
+          <h1 className=" text-[#707070] text-left font-bold text-lg py-5  ">
             How long we retain your data
           </h1>
-          <p className=" text-[#848484] text-left  text-[0.9rem]  px-4 ">
+          <p className=" text-[#848484] text-left  text-[0.9rem]   ">
             If you leave a comment, the comment and its metadata are retained
             indefinitely. This is so we can recognize and approve any follow-up
             comments automatically instead of holding them in a moderation
@@ -127,10 +127,10 @@ const page = () => {
             (except they cannot change their username). Website administrators
             can also see and edit that information.
           </p>
-          <h1 className=" text-[#707070] text-left font-bold text-lg py-5  px-4">
+          <h1 className=" text-[#707070] text-left font-bold text-lg py-5  ">
             What rights you have over your data
           </h1>
-          <p className=" text-[#848484] text-left  text-[0.9rem]  px-4 ">
+          <p className=" text-[#848484] text-left  text-[0.9rem]   ">
             If you have an account on this site or have left comments, you can
             request to receive an exported file of the personal data we hold
             about you, including any data you have provided to us. You can also
@@ -138,10 +138,10 @@ const page = () => {
             not include any data we are obliged to keep for administrative,
             legal, or security purposes.
           </p>
-          <h1 className=" text-[#707070] text-left font-bold text-lg py-5  px-4">
+          <h1 className=" text-[#707070] text-left font-bold text-lg py-5  ">
             Where we send your data
           </h1>
-          <p className=" text-[#848484] text-left  text-[0.9rem]  px-4 ">
+          <p className=" text-[#848484] text-left  text-[0.9rem]   ">
             Visitor comments may be checked through an automated spam detection
             service.
           </p>

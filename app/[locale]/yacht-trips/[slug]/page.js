@@ -10,6 +10,7 @@ import { useData } from "@/app/context/DataContext";
 import Route from "@/app/components/Route";
 import ExperienceCarousal from "@/app/components/ExperienceCarousal";
 import ExperienceMobilecarousel from "@/app/components/ExperienceMobilecarousal";
+import PageTitleHeading from "@/app/components/PageTitleHeading";
 const page = ({ params }) => {
   const { slug } = use(params); // Get slug from the URL
   const locale = useLocale();
@@ -67,12 +68,8 @@ const page = ({ params }) => {
 
   return (
     <>
-      <div className="bg-white h-full w-full mt-14 md:mt-0">
-        <div className="flex flex-col items-center justify-center pt-10 ">
-          <h1 className=" text-primary-blue text-center font-bold text-xl sm:text:2xl md:text-3xl lg:text-4xl pb-10">
-            {experience.translations?.[locale]?.title}
-          </h1>
-        </div>
+      <div className="container mx-auto nav-space">
+		<PageTitleHeading title={experience.translations?.[locale]?.title} />
         <div className="grid grid-col-1 md:grid-cols-1 md:px-4  gap-7 container mx-auto pb-10">
           
           {
