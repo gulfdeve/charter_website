@@ -142,7 +142,7 @@ export default function FirstFooter() {
         <ul>
           {!loading &&
             data?.experiences?.map((experience) => (
-              <li key={experience.id} className="mb-2 text-text-primary-white">
+              <li key={experience.id} className="mb-2 text-text-primary-white capitalize">
                 <Link
                   href={`/yacht-trips/${experience.slug}`}
                   onClick={scrollToTop}
