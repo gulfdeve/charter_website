@@ -47,7 +47,7 @@ export default function WatersportCarousal() {
                     {/* Image */}
                     <Link href={`/yacht-trips/${package_a.slug}`}>
                       <img
-                        src={`https://www.centauruscharter.com/product/images/${package_a.image}`}
+                        src={`https://www.centauruscharter.net/product/images/${package_a.image}`}
                         alt="yacht"
                         className="rounded-tl-md rounded-tr-md w-full object-cover"
                       />

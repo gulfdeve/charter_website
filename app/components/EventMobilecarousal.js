@@ -40,7 +40,7 @@ export default function EventCarousel() {
                   {/* Event Image */}
                   <Link href={`/events/${event.slug}`}>
                     <img
-                      src={`https://www.centauruscharter.com/product/images/${event.image}`}
+                      src={`https://www.centauruscharter.net/product/images/${event.image}`}
                       alt={event.translations[locale].title}
                       className="rounded-tl-md rounded-tr-md w-full object-cover"
                     />

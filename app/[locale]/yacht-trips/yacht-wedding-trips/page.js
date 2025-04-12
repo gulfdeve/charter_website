@@ -37,7 +37,7 @@ const page = () => {
             >
               <Link href={`/yacht-rentals/${product.slug}`}>
                 <img
-                  src={`https://www.centauruscharter.com/product/images/${product.image}`}
+                  src={`https://www.centauruscharter.net/product/images/${product.image}`}
                   className="rounded-t-md w-full object-contain"
                   alt={product.translations?.[locale].name_of_yacht}
                 />

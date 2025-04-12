@@ -46,7 +46,7 @@ export default function YachtmobileCarousal() {
                   {/* Yacht Image */}
                   <Link href={`/yacht-rentals/${product.slug}`}>
                     <Image
-                      src={`https://www.centauruscharter.com/product/images/${product.image}`}
+                      src={`https://www.centauruscharter.net/product/images/${product.image}`}
                       alt={product.translations?.[locale].name_of_yacht}
                       className="rounded-lg xl:w-[32rem] w-full mt-3"
                       width={400}

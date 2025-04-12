@@ -57,7 +57,7 @@ const Modal = ({ show, onClose }) => {
       // Build the query string: ?email=...
       const queryParams = new URLSearchParams({ email }).toString();
       // Final URL: e.g. https://www.centauruscharter.com/public/view_news_subscriber?email=test1@test.com
-      const url = `https://www.centauruscharter.com/api/api_new/save_subscriber?${queryParams}`;
+      const url = `${process.env.NEXT_PUBLIC_API_DOMAIN}/api/api_new/save_subscriber?${queryParams}`;
 
       // Make a POST request with the query params
       const response = await fetch(url, {

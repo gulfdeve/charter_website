@@ -34,7 +34,7 @@ const Page = () => {
         {/* First column (30%) */}
         <div className="flex items-start lg:w-7/12">
           <img
-            src={`https://www.centauruscharter.com/product/images/${packageItem.image}`}
+            src={`https://www.centauruscharter.net/product/images/${packageItem.image}`}
             alt={packageItem.translations[locale].title}
             className="w-full rounded-lg"
           />

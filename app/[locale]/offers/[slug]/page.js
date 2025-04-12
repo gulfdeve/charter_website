@@ -30,7 +30,7 @@ export default async function OfferDetailPage({ params }) {
         
         <div className="flex items-center justify-center pb-10">
           <Image
-            src={`https://www.centauruscharter.com/product/images/${offer.image}`}
+            src={`https://www.centauruscharter.net/product/images/${offer.image}`}
             alt={offer.translations?.[language]?.title || "Offer image"}
             className="w-full h-auto" // Full width, height adjusts automatically
             width={1024} // Intrinsic width

@@ -9,7 +9,7 @@ export default function EventCard({ event, language }) {
     <div className="flex flex-col justify-start lg:justify-between rounded-md bg-white custom-shadow">
       <Link href={`/events/${event.slug}`}>
         <img 
-          src={`https://www.centauruscharter.com/product/images/${event.image}`}
+          src={`https://www.centauruscharter.net/product/images/${event.image}`}
           alt={event.translations[language].title} 
           className="rounded-t-md w-full object-cover" 
         />

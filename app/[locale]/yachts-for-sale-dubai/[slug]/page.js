@@ -112,7 +112,7 @@ export default function Home({ params }) {
                   className="embla__slide min-w-full flex justify-center items-center "
                 >
                   <img
-                    src={`https://www.centauruscharter.com/product/galleryimages/${item.image}`}
+                    src={`https://www.centauruscharter.net/product/galleryimages/${item.image}`}
                     alt={`Slide ${index + 1}`}
                     className="w-full  h-auto xl:h-5/6 max-w-7xl object-cover rounded-lg"
                   />
@@ -134,7 +134,7 @@ export default function Home({ params }) {
                 className="w-full h-10  xl:w-full xl:h-full bg-gray-200 rounded overflow-hidden hover:ring-2 ring-blue-500"
               >
                 <img
-                  src={`https://www.centauruscharter.com/product/galleryimages/${item.image}`}
+                  src={`https://www.centauruscharter.net/product/galleryimages/${item.image}`}
                   alt={`Thumbnail ${index + 1}`}
                   className="w-full h-full object-cover"
                 />

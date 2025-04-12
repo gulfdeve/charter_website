@@ -103,7 +103,7 @@ export default function Home() {
                   </Link>
                   <Link  href={`/yacht-rentals/${product.slug}`}>
                   <Image 
-                    src={`https://www.centauruscharter.com/product/images/${product.image}`}
+                    src={`https://www.centauruscharter.net/product/images/${product.image}`}
                     alt={product.translations?.[locale].name_of_yacht}
                     className="w-full rounded-lg mt-3"
                     width={400}

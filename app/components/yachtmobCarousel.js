@@ -45,7 +45,7 @@ export default function YachtmobCarousel() {
                 >
                   <div className="relative bg-transparent rounded-lg overflow-hidden aspect-square">
                     <Image
-                      src={`https://www.centauruscharter.com/product/images/${product.thumbnail_image}`}
+                      src={`https://www.centauruscharter.net/product/images/${product.thumbnail_image}`}
                       alt={product.translations[locale].name_of_yacht}
                       width={450}
                       height={450}

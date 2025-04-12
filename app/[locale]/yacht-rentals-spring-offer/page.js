@@ -28,7 +28,7 @@ const YachtCard = ({ yacht }) => {
         {firstImage && (
           <Link href={`yacht-rentals/${yacht.slug}`}>
             <img
-              src={`https://www.centauruscharter.com/product/galleryimages/${firstImage}`}
+              src={`https://www.centauruscharter.net/product/galleryimages/${firstImage}`}
               alt={yacht.title}
               className="rounded-2xl h-[250px] md:h-[300px] w-full object-cover"
             />
