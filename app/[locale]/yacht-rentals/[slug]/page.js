@@ -6,8 +6,10 @@ import Route from "@/app/components/Route";
 import YachtGallery from "./YachtGallery";
 import YachtDetails from "./YachtDetails";
 
-export default async function YachtPage({ params }) {
-  const { slug, locale } = params;
+export default async function YachtPage({ params: paramsPromise }) {
+//   const { slug, locale } = params;
+  const params = await paramsPromise;
+const { slug, locale } = params;
   const t = await getTranslations();
   
   const data = await fetchData();
@@ -91,11 +93,12 @@ export default async function YachtPage({ params }) {
           whatsappUrl={header_whatsapp_url}
         />
 
-        <p className="text-sm text-center"
-          dangerouslySetInnerHTML={{ 
-            __html: product.translations?.[locale]?.description || '' 
-          }} 
-        />
+<div 
+  className="text-sm text-center"
+  dangerouslySetInnerHTML={{ 
+    __html: product.translations?.[locale]?.description || '' 
+  }} 
+/>
 
         <p className="text-sm text-center font-bold my-8">
           Rent a yacht in Dubai Marina
