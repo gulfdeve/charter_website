@@ -1,6 +1,7 @@
 "use client";
 import React, { useState, useRef, useEffect } from "react";
 import { Link } from "@/app/i18n/routing";
+import Image from "next/image";
 import EmblaCarousel from "embla-carousel";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 import BookNowButton from "@/app/components/BookNowButton";
@@ -34,12 +35,15 @@ const YachtCard = ({ yacht }) => {
         <div className="overflow-hidden rounded-t-md" ref={emblaRef}>
           <div className="flex">
             {yacht.images.map((img, index) => (
-              <div key={index} className="min-w-full">
+              <div key={index} className="min-w-full relative aspect-[4/3]">
                 <Link href={`yacht-rentals/${yacht.slug}`}>
-                  <img
+                  <Image
                     src={`https://www.centauruscharter.net/product/galleryimages/${img}`}
-                    alt={`Slide ${index + 1}`}
-                    className="w-full object-contain"
+                    alt={`${yacht.title} gallery ${index + 1}`}
+                    className="object-cover"
+                    fill
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                    priority={index === 0}
                   />
                 </Link>
               </div>
@@ -109,12 +113,35 @@ export default function YachtList({ yachts }) {
     yacht.category.includes(activeTab)
   );
 
+  const getTabStyle = (tabName) => {
+    return `px-2 py-1 transition-all duration-300 ${
+      activeTab === tabName 
+        ? "text-primary-yellow border-b-2 border-primary-yellow" 
+        : "hover:text-primary-yellow"
+    }`;
+  };
+
   return (
     <>
       <div className="flex justify-center items-center gap-8 md:gap-8 text-xs sm:text-base md:text-lg font-semibold py-2 pb-10 md:py-2 px-2">
-        <button onClick={() => setActiveTab("allYachts")}>ALL YACHTS</button>
-        <button onClick={() => setActiveTab("bestSellers")}>BEST SELLERS</button>
-        <button onClick={() => setActiveTab("premium")}>PREMIUM</button>
+        <button 
+          onClick={() => setActiveTab("allYachts")}
+          className={getTabStyle("allYachts")}
+        >
+          ALL YACHTS
+        </button>
+        <button 
+          onClick={() => setActiveTab("bestSellers")}
+          className={getTabStyle("bestSellers")}
+        >
+          BEST SELLERS
+        </button>
+        <button 
+          onClick={() => setActiveTab("premium")}
+          className={getTabStyle("premium")}
+        >
+          PREMIUM
+        </button>
       </div>
       
       <div className="p-0 md:p-6 text-center">
