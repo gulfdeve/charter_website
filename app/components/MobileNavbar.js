@@ -40,19 +40,19 @@ export default function MobileNavbar({
           {/* Icons and Dropdown Trigger */}
           <div className="flex items-center gap-6">
             {/* WhatsApp Icon */}
-            <Link href="https://wa.me/1234567890">
+            <a href={header_whatsapp_url || "#"}>
               <Image
                 src="/whatsapp.svg"
                 alt="whatsapp logo"
                 width={24}
                 height={24}
               />
-            </Link>
+            </a>
 
             {/* Phone Icon */}
-            <Link aria-label="phone icon" href="tel:1234567890">
+            <a aria-label="phone icon" href={header_phone_number_url || "#"}>
               <FaPhoneAlt className="text-white w-5 h-5" />
-            </Link>
+            </a>
 
             {/* Language Selector */}
             <div className="relative" ref={dropdownRef}>

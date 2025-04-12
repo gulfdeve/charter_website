@@ -430,6 +430,9 @@ export default function Navbar() {
         handleLanguageChange={handleLanguageChange}
         locale={locale}
         toggleSubmenu={toggleSubmenu}
+		header_email={header_email}
+		header_phone_number_url={header_phone_number_url}
+		header_whatsapp_url={header_whatsapp_url}
       />
     </>
   );
