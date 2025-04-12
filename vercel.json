@@ -1,5 +1,15 @@
 {
 	"redirects": [
+		{
+			"source": "/shared-yacht-tours-in-dubai",
+			"destination": "https://www.centauruscharter.net/shared-yacht-tours-in-dubai",
+			"permanent": true
+		  },
+		  {
+			"source": "/yacht-rentals-spring-offer",
+			"destination": "https://www.centauruscharter.net/yacht-rentals-spring-offer",
+			"permanent": true
+		  },
 
 	  {
 		"source": "/wp/product/56-ft-Yacht-Vassia",

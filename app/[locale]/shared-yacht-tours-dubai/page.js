@@ -70,8 +70,8 @@ const Page = () => {
 
   return (
 	<>
-    {/* Hero Video or Banner */}
-    <Modalsharedtours />
+{/* Hero Video or Banner */}
+<Modalsharedtours />
     <VideoLocal filename="/shared yacht tours.mp4" section="shared-tours" />
 
     {/* Main Container */}
@@ -192,36 +192,28 @@ const Page = () => {
                 </h1>
               </div>
 
-              {/* Always Visible Content with Opacity Effect */}
-              <div
-                className={`
-                  transition-opacity duration-300
-                  ${!showDetails[index] ? "opacity-40" : "opacity-100"}
-                `}
-              >
-                <div className="flex flex-row gap-2 items-center ml-1.5 mb-4">
-                  <FaClock size={25} className="text-primary-blue-2" />
-                  <h1 className="text-primary-blue-2 text-sm">
-                    <span className="font-bold">Cruising Time:</span>{" "}
-                    {tour.cruisingTime}
-                  </h1>
-                </div>
+              <div className="flex flex-row gap-2 items-center ml-1.5 mb-4">
+                <FaClock size={25} className="text-primary-blue-2" />
+                <h1 className="text-primary-blue-2 text-sm">
+                  <span className="font-bold">Cruising Time:</span>{" "}
+                  {tour.cruisingTime}
+                </h1>
+              </div>
 
-                <div className="flex flex-row gap-2.5 items-center ml-0.5">
-                  <FaCameraRetro size={35} className="text-primary-blue-2" />
-                  <h1 className="text-primary-blue-2 text-sm">
-                    <span className="font-bold">Photo Opportunities:</span>{" "}
-                    {tour.photoOps}
-                  </h1>
-                </div>
+              <div className="flex flex-row gap-2.5 items-center ml-0.5">
+                <FaCameraRetro size={35} className="text-primary-blue-2" />
+                <h1 className="text-primary-blue-2 text-sm">
+                  <span className="font-bold">Photo Opportunities:</span>{" "}
+                  {tour.photoOps}
+                </h1>
+              </div>
 
-                <div className="flex flex-row gap-2 items-center">
-                  <IoLocationSharp size={32} className="text-primary-blue-2" />
-                  <h1 className="text-primary-blue-2 text-sm">
-                    <span className="font-bold">Departure Point:</span>{" "}
-                    {tour.departurePoint}
-                  </h1>
-                </div>
+              <div className="flex flex-row gap-2 items-center">
+                <IoLocationSharp size={32} className="text-primary-blue-2" />
+                <h1 className="text-primary-blue-2 text-sm">
+                  <span className="font-bold">Departure Point:</span>{" "}
+                  {tour.departurePoint}
+                </h1>
               </div>
 
               {/* Collapsible Details Section */}
@@ -270,8 +262,9 @@ const Page = () => {
               {/* Book Now Button */}
               <button className="yellow-solid-button w-full">Book Now</button>
             </div>
-          ))}
-        </div>
+          </div>
+        ))}
+      </div>
 
       {/* Premium Drinks Notice */}
       <div className="flex items-center justify-center bg-primary-blue-2 max-w-3xl mx-auto text-center">
@@ -280,126 +273,126 @@ const Page = () => {
         </h1>
       </div>
 
-        {/* HIGHLIGHTS */}
-        <div className="flex items-center justify-center w-full my-6">
-          <hr className="flex-grow border-primary-yellow-dark" />
-          <span className="px-4 text-2xl 2xl:text-3xl font-semibold text-primary-blue">
-            HIGHLIGHTS
-          </span>
-          <hr className="flex-grow border-primary-yellow-dark" />
-        </div>
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-5 px-4 py-10 container mx-auto">
-          <div>
-            <img src="/BBQ.webp" alt="Live BBQ" />
-            <h1 className="bg-primary-blue-2 text-primary-yellow text-center text-md font-bold p-2 rounded-b-lg">
-              LIVE BBQ
-            </h1>
-          </div>
-          <div>
-            <img src="/Picturemoments.webp" alt="Picture Moments" />
-            <h1 className="bg-primary-blue-2 text-primary-yellow text-center text-md font-bold p-2 rounded-b-lg">
-              PICTURE MOMENTS
-            </h1>
-          </div>
-          <div>
-            <img src="/Amazing-View.webp" alt="Amazing View" />
-            <h1 className="bg-primary-blue-2 text-primary-yellow text-center text-md font-bold p-2 rounded-b-lg">
-              AMAZING VIEW
-            </h1>
-          </div>
-          <div>
-            <img src="/Great-Food.webp" alt="Great Food" />
-            <h1 className="bg-primary-blue-2 text-primary-yellow text-center text-md font-bold p-2 rounded-b-lg">
-              GREAT FOOD
-            </h1>
-          </div>
-        </div>
-
-        {/* TERMS & CONDITION */}
-        <div className="flex flex-col items-center justify-center py-10 px-5">
-          <h1 className="text-primary-blue-2 font-bold text-center">
-            TERMS & CONDITION
-          </h1>
-          <ul className="list-disc md:list-none text-center text-primary-blue text-sm pl-4 pt-5 space-y-2">
-            <li>
-              Rates do not include alcohol. An alcohol menu is available for
-              purchase on board.
-            </li>
-            <li>Yacht allocation will be confirmed upon check in.</li>
-            <li>
-              Cruise routes are subject to change due to weather and wind
-              conditions.
-            </li>
-            <li>
-              Cruising times are subject to adjustments based on sunset timings.
-            </li>
-            <li>Rates cannot be combined with other offers.</li>
-            <li>Guests under 18 years old must be accompanied by an adult.</li>
-          </ul>
-        </div>
-		        {/* Split Section with Image + Text */}
-				<div className="flex flex-col md:flex-row-reverse items-center justify-center">
-          <div className="hidden lg:block">
-            <img
-              src="/royal.webp"
-              alt="Shared Yacht Tour"
-              className="object-cover object-center xl:w-[250rem] sm:w-[170rem] md:h-[670px] xl:h-[650px] lg:h-[560px]"
-            />
-          </div>
-          <div className="flex flex-col items-center sm:items-start sm:justify-start justify-center bg-primary-blue-2 px-5 xl:p-32 xl:py-12 py-5 md:h-[670px] xl:h-[650px] lg:h-[560px]">
-            <p className="text-white text-center sm:text-left text-md sm:text-sm xl:text-md py-10">
-              Experience Dubai's coastline in an entirely new light with our
-              exclusive shared yacht tours. Uniting the thrill of luxury
-              yachting with the ease of shared experiences, we offer you the
-              chance to enjoy the opulence of Dubai's waters without the
-              extravagant cost of chartering an entire yacht. Revel in the
-              stunning vistas, relish in the flavors of live BBQ, and savor
-              complimentary refreshments - all while forging unforgettable
-              memories with fellow adventurers.
-            </p>
-            <h1 className="text-white text-center font-bold text-2xl xl:text-3xl">
-              Affordable Luxury
-            </h1>
-            <p className="text-white text-center sm:text-left text-md sm:text-sm xl:text-md pb-10">
-              Elevate your Dubai escapade without emptying your wallet. Our
-              shared yacht tours are meticulously crafted to provide a taste of
-              the high life at a fraction of the price. Share the journey, share
-              the splendor, and share the savings as you immerse yourself in the
-              lap of affordable luxury.
-            </p>
-            <h1 className="text-white text-center font-bold text-2xl xl:text-3xl">
-              Unmatched Amenities
-            </h1>
-            <p className="text-white text-center sm:text-left text-md sm:text-sm xl:text-md pb-10">
-              Our commitment to your enjoyment knows no bounds. Indulge in the
-              expertise of our onboard culinary artists as they create a live
-              BBQ spectacle right before your eyes. Additionally, delight in our
-              selection of complimentary delicacies and beverages, ensuring that
-              your voyage is not just luxurious, but delicious too.
-            </p>
-          </div>
-        </div>
-		{/* CTA Section */}
-        <div className="py-10 container mx-auto">
-          <div className="flex flex-col md:flex-row rounded-lg items-center gap-5 justify-center md:justify-between bg-primary-blue p-5">
-            <p className="text-white text-center md:text-left font-bold text-xl rounded">
-              Enjoy a luxurious shared yacht adventure!
-            </p>
-            <div className="flex flex-col md:flex-row md:gap-10 space-y">
-              <Link href="https://wa.link/vpunoz">
-              <button className="blue-lined-button">
-                <FaWhatsapp size={20} /> WHATSAPP US
-              </button>
-              </Link>
-              <button onClick={handlequote} className="blue-lined-button">
-                GET A QUOTE
-              </button>
-            </div>
-          </div>
-        </div>
-        <Modal2 isModalOpen={isModalOpen} closeModal={closeModal} />
+      {/* HIGHLIGHTS */}
+      <div className="flex items-center justify-center w-full my-6">
+        <hr className="flex-grow border-primary-yellow-dark" />
+        <span className="px-4 text-2xl 2xl:text-3xl font-semibold text-primary-blue">
+          HIGHLIGHTS
+        </span>
+        <hr className="flex-grow border-primary-yellow-dark" />
       </div>
-      <YachtCarousal />
+      <div className="grid grid-cols-1 md:grid-cols-4 gap-5 px-4 py-10 container mx-auto">
+        <div>
+          <img src="/BBQ.webp" alt="Live BBQ" />
+          <h1 className="bg-primary-blue-2 text-primary-yellow text-center text-md font-bold p-2 rounded-b-lg">
+            LIVE BBQ
+          </h1>
+        </div>
+        <div>
+          <img src="/Picturemoments.webp" alt="Picture Moments" />
+          <h1 className="bg-primary-blue-2 text-primary-yellow text-center text-md font-bold p-2 rounded-b-lg">
+            PICTURE MOMENTS
+          </h1>
+        </div>
+        <div>
+          <img src="/Amazing-View.webp" alt="Amazing View" />
+          <h1 className="bg-primary-blue-2 text-primary-yellow text-center text-md font-bold p-2 rounded-b-lg">
+            AMAZING VIEW
+          </h1>
+        </div>
+        <div>
+          <img src="/Great-Food.webp" alt="Great Food" />
+          <h1 className="bg-primary-blue-2 text-primary-yellow text-center text-md font-bold p-2 rounded-b-lg">
+            GREAT FOOD
+          </h1>
+        </div>
+      </div>
+
+      {/* TERMS & CONDITION */}
+      <div className="flex flex-col items-center justify-center py-10 px-5">
+        <h1 className="text-primary-blue-2 font-bold text-center">
+          TERMS & CONDITION
+        </h1>
+        <ul className="list-disc md:list-none text-center text-primary-blue text-sm pl-4 pt-5 space-y-2">
+          <li>
+            Rates do not include alcohol. An alcohol menu is available for
+            purchase on board.
+          </li>
+          <li>Yacht allocation will be confirmed upon check in.</li>
+          <li>
+            Cruise routes are subject to change due to weather and wind
+            conditions.
+          </li>
+          <li>
+            Cruising times are subject to adjustments based on sunset timings.
+          </li>
+          <li>Rates cannot be combined with other offers.</li>
+          <li>Guests under 18 years old must be accompanied by an adult.</li>
+        </ul>
+      </div>
+      {/* Split Section with Image + Text */}
+      <div className="flex flex-col md:flex-row-reverse items-center justify-center">
+        <div className="hidden lg:block">
+          <img
+            src="/royal.webp"
+            alt="Shared Yacht Tour"
+            className="object-cover object-center xl:w-[250rem] sm:w-[170rem] md:h-[670px] xl:h-[650px] lg:h-[560px]"
+          />
+        </div>
+        <div className="flex flex-col items-center sm:items-start sm:justify-start justify-center bg-primary-blue-2 px-5 xl:p-32 xl:py-12 py-5 md:h-[670px] xl:h-[650px] lg:h-[560px]">
+          <p className="text-white text-center sm:text-left text-md sm:text-sm xl:text-md py-10">
+            Experience Dubai's coastline in an entirely new light with our
+            exclusive shared yacht tours. Uniting the thrill of luxury
+            yachting with the ease of shared experiences, we offer you the
+            chance to enjoy the opulence of Dubai's waters without the
+            extravagant cost of chartering an entire yacht. Revel in the
+            stunning vistas, relish in the flavors of live BBQ, and savor
+            complimentary refreshments - all while forging unforgettable
+            memories with fellow adventurers.
+          </p>
+          <h1 className="text-white text-center font-bold text-2xl xl:text-3xl">
+            Affordable Luxury
+          </h1>
+          <p className="text-white text-center sm:text-left text-md sm:text-sm xl:text-md pb-10">
+            Elevate your Dubai escapade without emptying your wallet. Our
+            shared yacht tours are meticulously crafted to provide a taste of
+            the high life at a fraction of the price. Share the journey, share
+            the splendor, and share the savings as you immerse yourself in the
+            lap of affordable luxury.
+          </p>
+          <h1 className="text-white text-center font-bold text-2xl xl:text-3xl">
+            Unmatched Amenities
+          </h1>
+          <p className="text-white text-center sm:text-left text-md sm:text-sm xl:text-md pb-10">
+            Our commitment to your enjoyment knows no bounds. Indulge in the
+            expertise of our onboard culinary artists as they create a live
+            BBQ spectacle right before your eyes. Additionally, delight in our
+            selection of complimentary delicacies and beverages, ensuring that
+            your voyage is not just luxurious, but delicious too.
+          </p>
+        </div>
+      </div>
+      {/* CTA Section */}
+      <div className="py-10 container mx-auto">
+        <div className="flex flex-col md:flex-row rounded-lg items-center gap-5 justify-center md:justify-between bg-primary-blue p-5">
+          <p className="text-white text-center md:text-left font-bold text-xl rounded">
+            Enjoy a luxurious shared yacht adventure!
+          </p>
+          <div className="flex flex-col md:flex-row md:gap-10 space-y">
+            <Link href="https://wa.link/vpunoz">
+            <button className="blue-lined-button">
+              <FaWhatsapp size={20} /> WHATSAPP US
+            </button>
+            </Link>
+            <button onClick={handlequote} className="blue-lined-button">
+              GET A QUOTE
+            </button>
+          </div>
+        </div>
+      </div>
+      <Modal2 isModalOpen={isModalOpen} closeModal={closeModal} />
+    </div>
+    <YachtCarousal />
     </>
   );
 };
