@@ -5,7 +5,7 @@ import { useRouter, usePathname, Link } from "@/app/i18n/routing";
 const page = () => {
   return (
     <>
-      <div className="bg-white w-full h-full nav-space">
+      <div className="nav-space">
         <div>
           <Image
             src="/terms.jpg"
