@@ -44,7 +44,7 @@ export default async function YachtRentalsPage({ params }) {
       <YachtList yachts={yachts} />
 
       <div className="container text-left mx-auto px-3 py-5 pb-8">
-        <p className="text-gray-500 text-md">
+	  <p className="text-base text-primary-black">
           A <strong>luxury yacht rental</strong> is the perfect way to enjoy an experience
           tailored to your specific needs. We offer the best luxury yacht
           experiences in UAE. Whether you're looking for a luxurious getaway

@@ -47,20 +47,20 @@ export default function EventCarousel() {
                   </Link>
                   <div className="flex flex-col justify-start px-5 lg:px-5 flex-grow">
                     {/* Event Title */}
-                    <h2 className="text-[#232629] text-lg font-bold pt-4">
+                    <h2 className="text-primary-black text-lg font-bold pt-4">
                       <Link href={`/events/${event.slug}`}>
                         {event.translations[locale].title}
                       </Link>
                     </h2>
                     {/* Event Heading */}
-                    <p className="text-[#232629] font-bold text-xs pt-2 pb-4">
+                    <p className="text-primary-black font-bold text-xs pt-2 pb-4">
                       {event.translations[locale].heading_2}
                     </p>
                     {/* Separator */}
-                    <div className="bg-[#232629] w-full h-[0.05rem]"></div>
+                    <div className="bg-primary-black w-full h-[0.05rem]"></div>
                     {/* Validity Info */}
                     <div className="flex flex-col items-start justify-start py-2">
-                      <p className="text-[#232629] font-bold text-sm xl:text-lg">
+                      <p className="text-primary-black font-bold text-sm xl:text-lg">
                         Validity Until:
                         <br />
                         {event.validity}

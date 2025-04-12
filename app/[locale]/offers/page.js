@@ -49,21 +49,21 @@ export default async function OffersPage({ params }) {
                   />
                 </Link>
                 <div className="flex flex-col justify-start px-5 lg:px-5">
-                  <h2 className="text-[#232629] text-2xl font-bold pt-4">
+                  <h2 className="text-primary-black text-2xl font-bold pt-4">
                     <Link href={`/offers/${offer.slug}`}>
                       {offer.translations[language].title}
                     </Link>
                   </h2>
-                  <p className="text-[#232629] font-bold text-xs pt-2 pb-12">
+                  <p className="text-primary-black font-bold text-xs pt-2 pb-12">
                     {offer.note}
                   </p>
                   <p className="text-sm py-2 font-bold">
                     *SUBJECT TO AVAILABILITY{" "}
                   </p>
-                  <div className="bg-[#232629] w-full h-[0.05rem]"></div>
+                  <div className="bg-primary-black w-full h-[0.05rem]"></div>
                   <div className="flex flex-row items-center justify-between">
                     <div className="flex flex-col items-start justify-start py-10">
-                      <p className="text-[#232629] font-bold text-sm xl:text-lg">
+                      <p className="text-primary-black font-bold text-sm xl:text-lg">
                         {t('offers.validity-until')}:
                         <br />
                         {offer.validity}
@@ -81,7 +81,7 @@ export default async function OffersPage({ params }) {
         <OfferMobilecarousal />
       </div>
       <div className="container mx-auto px-3 py-5 pb-8">
-        <p className=" text-gray-500 text-md ">
+        <p className="text-base text-primary-black">
           Centaurus Charter offers range of membership discounts &{" "}
           <strong>yacht deals</strong> to adorn the beautiful yachting
           destinations. The best way to enjoy your dream vacation is a day out

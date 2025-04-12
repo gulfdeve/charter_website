@@ -163,7 +163,7 @@ const page = () => {
                   <span className="font-semibold text-sm text-primary-yellow"> {yacht.cabin}</span>
                 </div>
               </div>
-              <div className="bg-[#232629] w-full h-[0.05rem]" />
+              <div className="bg-primary-black w-full h-[0.05rem]" />
               <div className="flex flex-row items-center justify-between w-full py-5">
                 <div className="flex flex-row items-center gap-1">
                   <IoIosPricetag className="text-3xl" />
@@ -171,7 +171,7 @@ const page = () => {
                     <h1 className="text-black font-bold text-sm xl:text-lg">
                       {yacht.hours} Hours Rate
                       <br />
-                      <span className="xl:text-xl text-[#232629] text-xs">${yacht.price}</span>
+                      <span className="xl:text-xl text-primary-black text-xs">${yacht.price}</span>
                       <span className="text-primary-yellow text-xs"> +VAT</span>
                     </h1>
                   </div>

@@ -120,7 +120,7 @@ const page = ({ params }) => {
                   </div>
                 </div>
 
-                <div className="bg-[#232629] w-full h-[0.05rem] "></div>
+                <div className="bg-primary-black w-full h-[0.05rem] "></div>
                 <div className="flex flex-col sm:flex-row flex-grow items-left lg:items-end justify-between w-full py-5 md:gap-3">
                   {/* Pricing Section */}
                   <div className="flex flex-row items-center gap-1 xl:gap-3 py-5 lg:py-0 text-left">
@@ -129,7 +129,7 @@ const page = ({ params }) => {
                       <p className="text-black  font-bold s:text-sm text-xs xl:text-lg">
                         {yacht.hours} Hours Rate
                         <br />
-                        <span className="xl:text-xl text-[#232629] text-xs">
+                        <span className="xl:text-xl text-primary-black text-xs">
                           {yacht.yacht_price.toLocaleString()}
                         </span>
                         <span className="text-primary-yellow s:text-sm  text-xs">

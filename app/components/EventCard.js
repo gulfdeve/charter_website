@@ -15,16 +15,16 @@ export default function EventCard({ event, language }) {
         />
       </Link>
       <div className="flex flex-col justify-start px-5 lg:px-5">
-        <h2 className="text-[#232629] text-2xl font-bold pt-4">
+        <h2 className="text-primary-black text-2xl font-bold pt-4">
           <Link href={`/events/${event.slug}`}>
             {event.translations[language].title}
           </Link>
         </h2>
-        <p className="text-[#232629] font-bold text-base pt-2 pb-4">
+        <p className="text-primary-black font-bold text-base pt-2 pb-4">
           {event.translations[language].heading_2}
         </p>
         <p className="text-red-500 py-2 font-bold">Limited Slots Available</p>
-        <div className="bg-[#232629] w-full h-[0.05rem]"></div>
+        <div className="bg-primary-black w-full h-[0.05rem]"></div>
         <div className="flex flex-row items-center justify-between">
           <div className="flex flex-col items-start justify-start py-10">
             <p className="text-red-500 font-bold text-sm xl:text-lg">

@@ -55,7 +55,7 @@ export default function WatersportCarousal() {
 
                     {/* Card Content */}
                     <div className="flex flex-col items-start justify-start sm:px-5 xxs:px-3">
-                      <h2 className="text-[#232629] text-base sm:text-xl font-bold pt-6 hover:text-blue-600 transition-all duration-300 cursor-pointer">
+                      <h2 className="text-primary-black text-base sm:text-xl font-bold pt-6 hover:text-blue-600 transition-all duration-300 cursor-pointer">
                         <Link href={`/watersports/${package_a.slug}`}>
                           {title}
                         </Link>
@@ -65,13 +65,13 @@ export default function WatersportCarousal() {
                         {package_a.translations?.[locale]?.preivew_text}
                       </p>
 
-                      <div className="bg-[#232629] w-full h-[0.05rem]" />
+                      <div className="bg-primary-black w-full h-[0.05rem]" />
 
                       <div className="flex gap-3 sm:gap-0 flex-col sm:flex-row items-center w-full py-5">
                         <div className="flex flex-row items-center gap-1 sm:gap-4">
                           <IoIosPricetag className="text-2xl lg:text-5xl" />
                           <div className="flex flex-col">
-                            <p className="text-[#232629] font-bold text-xs xl:text-base">
+                            <p className="text-primary-black font-bold text-xs xl:text-base">
                               Starting
                               <br className="hidden sm:block"/>
                               <span className="text-xs pl-1 sm:pl-0">AED 3120</span>

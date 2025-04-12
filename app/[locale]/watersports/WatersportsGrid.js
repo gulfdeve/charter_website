@@ -19,20 +19,20 @@ export default function WatersportsGrid({ packages, language }) {
             />
           </Link>
           <div className="flex flex-col justify-start px-5 lg:px-5">
-            <h2 className="text-[#232629] text-2xl font-bold pt-4">
+            <h2 className="text-primary-black text-2xl font-bold pt-4">
               <Link href={`/watersports/${package_a.slug}`}>
                 {package_a.translations[language].title}
               </Link>
             </h2>
-            <p className="text-[#232629] text-base pt-2 pb-4">
+            <p className="text-primary-black text-base pt-2 pb-4">
               {package_a.translations[language].preview_text}
             </p>
-            <div className="bg-[#232629] w-full h-[0.05rem]"></div>
+            <div className="bg-primary-black w-full h-[0.05rem]"></div>
             <div className="flex flex-row items-center justify-between">
               <div className="flex flex-row items-center justify-evenly gap-4 py-5">
                 <IoIosPricetag className="text-3xl lg:text-5xl" />
                 <div className="flex flex-col items-start justify-start">
-                  <p className="text-[#232629] font-bold text-sm xl:text-base">
+                  <p className="text-primary-black font-bold text-sm xl:text-base">
                     Starting
                     <br />
                     <span className="xl:text-xl">
