@@ -5,6 +5,7 @@ import { FaWhatsapp } from "react-icons/fa";
 import Modal2 from "@/app/components/Modal2";
 import { useData } from "@/app/context/DataContext";
 import { useLocale, useTranslations } from "next-intl";
+import Image from "next/image";
 const page = ({ params }) => {
   const { slug } = use(params); // Get slug from the URL
   const { data, loading, error } = useData();
@@ -40,10 +41,14 @@ const page = ({ params }) => {
 
         {/* Full width image container without horizontal padding */}
         <div className="w-full flex items-center justify-center">
-          <img
+          <Image
             src={`https://www.centauruscharter.net/product/images/${event.image}`}
             alt={event.translations?.[locale]?.title}
-            className="w-full h-auto" // Make image full width with auto height
+            className="w-full h-auto object-contain" // Full width with proper object fitting
+            width={100} // Larger intrinsic width for better quality
+            height={0} // Proportional height
+            priority={true} // Prioritize loading for above-the-fold images
+            sizes="100vw" // Tell Next.js this image takes the full viewport width
           />
         </div>
 

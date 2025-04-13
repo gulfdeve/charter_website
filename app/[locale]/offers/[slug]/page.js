@@ -37,8 +37,8 @@ export default async function OfferDetailPage({ params }) {
         src={`https://www.centauruscharter.net/product/images/${offer.image}`}
         alt={offer.translations?.[language]?.title || "Offer image"}
         className="w-full h-auto object-contain" // Full width with proper object fitting
-        width={1500} // Larger intrinsic width for better quality
-        height={750} // Proportional height
+        width={100} // Larger intrinsic width for better quality
+        height={0} // Proportional height
         priority={true} // Prioritize loading for above-the-fold images
         sizes="100vw" // Tell Next.js this image takes the full viewport width
       />
