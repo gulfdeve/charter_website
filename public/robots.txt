@@ -1,0 +1,16 @@
+User-agent: *
+Allow: /
+Disallow: /makepayment$
+Disallow: /searchboat
+Disallow: /addbooking
+Disallow: /bookings
+Disallow: /editbookingdetails
+Disallow: /admin
+Disallow: /dashboard
+Disallow: /home
+Disallow: /terms-and-condition
+Disallow: /privacy-and-policy
+Disallow: /landing_f1_test
+Disallow: /formula-1-grand-prix-2024-black-friday-sale
+
+Sitemap: https://www.centauruscharter.com/sitemap.xml
