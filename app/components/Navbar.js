@@ -80,7 +80,7 @@ export default function Navbar() {
           <div className="text-xl font-bold">
             <Link href={"/"}>
               <Image
-                src="/Centaurus-logo-white.webp"
+                src="/Cenaturus Logo top.png"
                 alt="Centaurus charter Logo"
                 width={200}
                 priority={true}

@@ -24,6 +24,7 @@ const ImageModal = () => {
         
         {/* Close Button */}
         <button 
+		aria-label="Close Modal"
           onClick={() => setIsVisible(false)}
           className="absolute top-2 right-2 md:top-3 md:right-3 text-black bg-gray-200 rounded-full p-2 md:p-1.5 text-2xl md:text-3xl "
         >
