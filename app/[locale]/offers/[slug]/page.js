@@ -23,37 +23,46 @@ export default async function OfferDetailPage({ params }) {
   if (!offer) return <div>No offer found for this slug.</div>;
 
   return (
-    <>
-      <div className="container mx-auto px-10 flex flex-col items-center justify-center mt-14 md:mt-0">
-        
-        <PageTitleHeading title={offer.translations?.[language]?.title} />
-        
-        <div className="flex items-center justify-center pb-10">
-          <Image
-            src={`https://www.centauruscharter.net/product/images/${offer.image}`}
-            alt={offer.translations?.[language]?.title || "Offer image"}
-            className="w-full h-auto" // Full width, height adjusts automatically
-            width={1024} // Intrinsic width
-            height={512} // Intrinsic height
-            priority={true} // Prioritize loading for above-the-fold images
-          />
-        </div>
-		<div
-          className="text-base"
-          dangerouslySetInnerHTML={{
-            __html: offer.translations?.[language]?.description || "",
-          }}
-        />
+<>
+  {/* Use full width container without padding for the image */}
+  <div className="container mx-auto nav-space">
+    
+    <div className="px-10">
+      <PageTitleHeading title={offer.translations?.[language]?.title} />
+    </div>
+    
+    {/* Move the image outside the padded container */}
+    <div className="w-full flex items-center justify-center pb-10">
+      <Image
+        src={`https://www.centauruscharter.net/product/images/${offer.image}`}
+        alt={offer.translations?.[language]?.title || "Offer image"}
+        className="w-full h-auto object-contain" // Full width with proper object fitting
+        width={1500} // Larger intrinsic width for better quality
+        height={750} // Proportional height
+        priority={true} // Prioritize loading for above-the-fold images
+        sizes="100vw" // Tell Next.js this image takes the full viewport width
+      />
+    </div>
 
-        <div className="py-10 w-full">
-          <div className="flex flex-col md:flex-row rounded-lg items-center gap-5 justify-center md:justify-between bg-primary-blue p-5">
-            <p className="text-white text-center md:text-left font-bold bg-primary-blue text-xl rounded">
-              Validity Until: {offer.validity}
-            </p>
-            <OfferClientActions offer={offer} />
-          </div>
+    {/* Return to container for the rest of the content */}
+    <div className="">
+      <div
+        className="text-base"
+        dangerouslySetInnerHTML={{
+          __html: offer.translations?.[language]?.description || "",
+        }}
+      />
+
+      <div className="py-10 w-full">
+        <div className="flex flex-col md:flex-row rounded-lg items-center gap-5 justify-center md:justify-between bg-primary-blue p-5">
+          <p className="text-white text-center md:text-left font-bold bg-primary-blue text-xl rounded">
+            Validity Until: {offer.validity}
+          </p>
+          <OfferClientActions offer={offer} />
         </div>
       </div>
-    </>
+    </div>
+  </div>
+</>
   );
 }

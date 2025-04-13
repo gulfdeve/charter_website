@@ -29,44 +29,51 @@ const page = ({ params }) => {
 
   return (
     <>
-      <div className="container mx-auto px-10 py-10 flex flex-col items-center justify-center text-primary-black mt-14 md:mt-0">
-        <h1 className="">
-          {event.translations?.[locale]?.title}
-        </h1>
-        <h2 className="font-bold text-center">
-          {event.translations?.[locale]?.heading_2}
-        </h2>
-        <div className="flex items-center justify-center py-10">
+      <div className="container mx-auto nav-space">
+        {/* Container for title/heading with padding */}
+        <div className="py-10 text-center">
+          <h1 className="">{event.translations?.[locale]?.title}</h1>
+          <h2 className="font-bold text-center">
+            {event.translations?.[locale]?.heading_2}
+          </h2>
+        </div>
+
+        {/* Full width image container without horizontal padding */}
+        <div className="w-full flex items-center justify-center">
           <img
             src={`https://www.centauruscharter.net/product/images/${event.image}`}
             alt={event.translations?.[locale]?.title}
-            className=""
+            className="w-full h-auto" // Make image full width with auto height
           />
         </div>
-        <div
-          className="text-base"
-          dangerouslySetInnerHTML={{
-            __html: event.translations?.[locale]?.description || "",
-          }}
-        />
 
-        <div className="py-10 w-full">
-          <div className="flex flex-col md:flex-row rounded-lg items-center  gap-5 justify-center  md:justify-between bg-primary-blue p-5">
-            <p className="text-white  text-center md:text-left font-bold bg-primary-blue text-xl rounded ">
-              Validity Until: {event.validity}
-            </p>
-            <div className="flex flex-col md:flex-row md:gap-10 gap-5">
-              <a
-                target="_blank"
-                className="blue-lined-button"
-                href={event.whatsapp_url}
-              >
-                <FaWhatsapp size={20} />
-                WHATSAPP US
-              </a>
-              <button onClick={handleQuote} className="blue-lined-button">
-                GET A QUOTE
-              </button>
+        {/* Container for the rest of the content with padding */}
+        <div className="py-10">
+          <div
+            className="text-base"
+            dangerouslySetInnerHTML={{
+              __html: event.translations?.[locale]?.description || "",
+            }}
+          />
+
+          <div className="py-10 w-full">
+            <div className="flex flex-col md:flex-row rounded-lg items-center gap-5 justify-center md:justify-between bg-primary-blue p-5">
+              <p className="text-white text-center md:text-left font-bold bg-primary-blue text-xl rounded">
+                Validity Until: {event.validity}
+              </p>
+              <div className="flex flex-col md:flex-row md:gap-10 gap-5">
+                <a
+                  target="_blank"
+                  className="blue-lined-button"
+                  href={event.whatsapp_url}
+                >
+                  <FaWhatsapp size={20} />
+                  WHATSAPP US
+                </a>
+                <button onClick={handleQuote} className="blue-lined-button">
+                  GET A QUOTE
+                </button>
+              </div>
             </div>
           </div>
         </div>
