@@ -3,7 +3,7 @@
 
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
-import Link from "next/link";
+import { Link } from "@/app/i18n/routing";
 import { useLocale } from "next-intl";
 import { FaYoutube } from "react-icons/fa";
 

@@ -7,7 +7,6 @@ import { useData } from "../context/DataContext";
 import Image from "next/image";
 import YachtmobCarousel from "./yachtmobCarousel";
 import { useLocale } from "next-intl";
-// import Link from "next/link";
 import { useRouter, usePathname, Link } from "@/app/i18n/routing";
 
 export default function YachtCarousal() {

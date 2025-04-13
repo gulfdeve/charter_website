@@ -2,7 +2,7 @@
 import React from 'react'
 import { IoIosPricetag } from "react-icons/io";
 import { FaWhatsapp } from "react-icons/fa";
-import Link from "next/link";
+import { Link } from "@/app/i18n/routing";
 import ExperienceCarousal from "@/app/components/ExperienceCarousal";
 
 const yachts = [

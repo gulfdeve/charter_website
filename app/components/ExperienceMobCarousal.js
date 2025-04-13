@@ -6,7 +6,6 @@ import { useData } from "../context/DataContext";
 import { useLocale } from "next-intl";
 import Image from "next/image";
 
-// import Link from "next/link";
 import { useRouter, usePathname, Link } from "@/app/i18n/routing";
 
 // Mobile Version: Uses updated card design and responsive widths

@@ -1,7 +1,6 @@
 "use client";
 import React from "react";
 import Videoweddingtrip from "@/app/components/Videoweddingtrip";
-// import Link from "next/link";
 import { useRouter, usePathname, Link } from "@/app/i18n/routing";
 import Videosharedtours from "@/app/components/Video-sharedtours";
 import { FaWhatsapp } from "react-icons/fa";

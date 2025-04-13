@@ -3,7 +3,6 @@ import React from "react";
 import { use } from "react";
 import { IoIosPricetag } from "react-icons/io";
 import { FaWhatsapp } from "react-icons/fa";
-// import Link from "next/link";
 import { useRouter, usePathname, Link } from "@/app/i18n/routing";
 import { useLocale, useTranslations } from "next-intl";
 import { useData } from "@/app/context/DataContext";

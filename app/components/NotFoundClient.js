@@ -7,7 +7,7 @@ import Navbar from "./Navbar";
 import FirstFooter from "@/app/components/FirstFooter";
 import SecondFooter from "@/app/components/SecondFooter";
 import CopyrightFooter from "@/app/components/CopyrightFooter";
-import Link from "next/link";
+import { Link } from "@/app/i18n/routing";
 export default function NotFoundClient() {
   const t = useTranslations();
 

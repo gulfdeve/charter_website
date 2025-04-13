@@ -1,4 +1,4 @@
-import Link from 'next/link';
+import { Link } from "@/app/i18n/routing";
 import React from 'react';
 import { useLanguage } from "@/app/context/LanguageContext";
 const YachtCard = ({ yacht }) => {

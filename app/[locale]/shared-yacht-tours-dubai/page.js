@@ -11,7 +11,7 @@ import YachtCarousal from "@/app/components/YachtCarousel";
 import FareHarborCalendar from "@/app/components/FareHarborCalendar";
 import Modalsharedtours from "../../components/Modelsharedtours";
 import Modal2 from "@/app/components/Modal2";
-import Link from "next/link";
+import { Link } from "@/app/i18n/routing";
 // Example data
 const toursData = [
   {

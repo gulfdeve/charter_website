@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import EmblaCarousel from "embla-carousel";
-import Link from "next/link";
+import { Link } from "@/app/i18n/routing";
 import Image from "next/image";
 import { useData } from "@/app/context/DataContext";
 import { useLocale, useTranslations } from "next-intl";

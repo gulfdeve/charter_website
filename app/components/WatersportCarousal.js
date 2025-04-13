@@ -1,7 +1,7 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
 import EmblaCarousel from "embla-carousel";
-import Link from "next/link";
+import { Link } from "@/app/i18n/routing";
 import { useData } from "@/app/context/DataContext";
 import { useLocale } from "next-intl";
 import { IoIosPricetag } from "react-icons/io"; // <-- Import your icon

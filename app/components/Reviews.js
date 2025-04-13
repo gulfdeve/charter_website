@@ -1,7 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import EmblaCarousel from "embla-carousel";
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
-// import Link from "next/link";
 import { useRouter, usePathname, Link } from "@/app/i18n/routing";
 import { FaStar } from "react-icons/fa";
 import { RxBorderDotted } from "react-icons/rx";

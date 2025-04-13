@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useRef, useState } from "react";
-import Link from "next/link";
+import { Link } from "@/app/i18n/routing";
 import Modal3 from "@/app/components/Modal3";
 
 export default function SearchResultsClient({

@@ -1,7 +1,7 @@
 import fs from "fs";
 import jwt from "jsonwebtoken";
 import MultiDatePicker from "@/app/components/MultiDatePicker";
-import Link from "next/link";
+import { Link } from "@/app/i18n/routing";
 import SearchResultsClient from "@/app/components/SearchResultsClient";
 
 // --------------------

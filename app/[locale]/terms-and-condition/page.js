@@ -1,6 +1,5 @@
 import React from "react";
 import Image from "next/image";
-// import Link from "next/link";
 import { useRouter, usePathname, Link } from "@/app/i18n/routing";
 const page = () => {
   return (
