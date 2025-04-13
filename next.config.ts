@@ -6,9 +6,30 @@ const withNextIntl = createNextIntlPlugin("./app/i18n/request.ts");
 const nextConfig: NextConfig = {
   /* config options here */
   images: {
-    domains: ["www.centauruscharter.com", "www.centauruscharter.net"], // Allow external images from this domain
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'centauruscharter.com',
+        pathname: '/**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'www.centauruscharter.com',
+        pathname: '/**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'centauruscharter.net',
+        pathname: '/**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'www.centauruscharter.net',
+        pathname: '/**',
+      },
+    ],
+    minimumCacheTTL: 60, // Cache images for at least 60 seconds
   },
- 
 };
 
 export default withNextIntl(nextConfig);
