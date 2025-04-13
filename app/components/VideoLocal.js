@@ -1,5 +1,6 @@
 "use client";
 import React, { useRef, useEffect } from "react";
+import { Link } from "@/app/i18n/routing";
 
 export default function VideoLocal({ filename, section }) {
   const videoRef = useRef(null);
@@ -56,21 +57,22 @@ export default function VideoLocal({ filename, section }) {
       ) : section === "home" ? (
         <div className="block text-center mt-10 xxs:mb-10 lg:absolute lg:-translate-x-2/4 lg:-translate-y-2/4 lg:left-2/4 lg:top-2/4 lg:mt-0">
           <h1 className="text-4xl font-bold mb-4 text-primary-blue-2 lg:text-white lg:text-[32px] p-0 xxs:px-10 md:px-0 xxs:text-2xl xs:text-xl s:text-2xl sm:text-2xl md:text-3xl 2xl:text-4xl    text-shadow">
-            Ramadan Iftar Buffet on a Yacht <br />
-            International Buffet & Drinks
+		  Yacht Party<br />
+		  Yacht Party with DJ Fobiya, Canapes, Drinks
           </h1>
           <p className="text-sm xl:text-2xl mb-1  text-primary-blue-2 lg:text-white  2xl:text-3xl text-shadow">
-            Every Friday of Ramadan
+		  Friday, 18 April 2025
+
+
           </p>
           <p className="text-sm xl:text-2xl mb-4 text-primary-blue-2 lg:text-white  2xl:text-3xl text-shadow">
-            Starting AED 179/Person
+		  Tickets start at 189 AED
           </p>
-          <a
-            href="https://www.centauruscharter.com/shared-yacht-tours-dubai"
+          <Link href="events/super-yacht-party-dubai"
             className="blue-solid-button"
           >
             GET OFFER
-          </a>
+          </Link>
         </div>
       ) : section === "dubai-yachts-winter-offers" ? (
         <div className="block text-center mt-10 lg:absolute lg:-translate-x-2/4 lg:-translate-y-2/4 lg:left-2/4 lg:top-2/4 lg:mt-0">
