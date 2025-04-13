@@ -10,6 +10,11 @@
 			"destination": "https://www.centauruscharter.net/yacht-rentals-spring-offer",
 			"permanent": true
 		  },
+		  {
+			"source": "/makepayment/:path*",
+			"destination": "https://www.centauruscharter.net/makepayment/:path*",
+			"permanent": true
+		  },
 
 	  {
 		"source": "/wp/product/56-ft-Yacht-Vassia",
