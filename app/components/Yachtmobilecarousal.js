@@ -89,7 +89,8 @@ export default function YachtmobileCarousal() {
                         Per Hour:
                       </span>
                       <span className="font-semibold xxs:text-[0.46rem] xs:text-[0.6rem]">
-                        {product.per_hour_price} +VAT
+					  {product.per_hour_price.toLocaleString()} +VAT
+
                       </span>
                     </div>
                   </div>
@@ -105,10 +106,10 @@ export default function YachtmobileCarousal() {
                         </li>
                         <li>Transfer (upon request)</li>
                         <li>Canapés & Snacks (additional charges apply)</li>
-                        <span className="text-blue-500 text-xs text-center  ">
+                      </ol>
+					  <span className="text-primary-blue text-xs text-center  ">
                           T&C’s Apply
                         </span>
-                      </ol>
                       {/* <div className="flex flex-col items-center justify-center">
                       
                     </div> */}

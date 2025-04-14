@@ -147,7 +147,7 @@ export default function Home() {
                     <div className="bg-primary-yellow text-primary-blue p-1 xl:p-2 flex flex-col items-center xl:rounded-r-lg">
                       <span className=" text-sm">Per Hour:</span>
                       <span className="font-semibold  text-sm">
-                        {product.per_hour_price} +VAT
+					  {product.per_hour_price.toLocaleString()} +VAT
                       </span>
                     </div>
                   </div>
