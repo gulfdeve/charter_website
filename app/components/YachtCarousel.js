@@ -11,7 +11,7 @@ import { useRouter, usePathname, Link } from "@/app/i18n/routing";
 
 export default function YachtCarousal() {
   const { data, loading } = useData();
-   const locale = useLocale()
+  const locale = useLocale()
   const emblaRef = useRef(null);
   const emblaInstance = useRef(null);
 
@@ -21,6 +21,7 @@ export default function YachtCarousal() {
       emblaInstance.current = EmblaCarousel(emblaRef.current, {
         align: "start",
         loop: true,
+        slidesToScroll: 1,
       });
       const autoplay = setInterval(() => {
         emblaInstance.current?.scrollNext();
@@ -41,66 +42,64 @@ export default function YachtCarousal() {
         EXPLORE OUR YACHTS
       </h2>
       <div className="lg:block hidden">
-      <div className="relative container h-full overflow-hidden bg-primary-yellow mx-auto">
-        {/* Single Embla Carousel */}
-        <div className="embla__viewport" ref={emblaRef}>
-          <div className="embla__container flex space-x-4">
-            {!loading &&
-              data?.products?.map((product) => (
-                <div
-                  key={product.id}
-                  className="embla__slide w-full lg:basis-[calc(100%/3)] flex-none  "
-                >
-                  <div className="relative bg-transparent rounded-lg overflow-hidden space-y-5">
-                    <Image
-                      src={`https://www.centauruscharter.net/product/images/${product.thumbnail_image}`}
-						// src='/Storm-thumbnail.webp'
-                      alt={product.translations[locale].name_of_yacht}
-                      width={450}
-                      height={0}
-                      className="w-full h-[24rem] rounded-lg object-cover"
-                      loading="lazy"
-                    />
-                    <div className="absolute bottom-0 left-0 w-full bg-black-gradient p-4 text-white rounded-lg">
-                      <h3 className="text-xl font-bold text-left mb-3">
+        <div className="relative container h-full overflow-hidden bg-primary-yellow mx-auto px-3">
+          {/* Single Embla Carousel */}
+          <div className="embla__viewport" ref={emblaRef}>
+            <div className="embla__container flex space-x-2.5">
+              {!loading &&
+                data?.products?.map((product) => (
+                  <div
+                    key={product.id}
+                    className="embla__slide w-full lg:basis-[calc(33%-7px)] flex-none"
+                  >
+                    <div className="relative bg-transparent rounded-lg overflow-hidden">
+                      <Image
+                        src={`https://www.centauruscharter.net/product/images/${product.thumbnail_image}`}
+                        alt={product.translations[locale].name_of_yacht}
+                        width={480}
+                        height={0}
+                        className="w-full h-[26rem] rounded-lg object-cover"
+                        loading="lazy"
+                      />
+                      <div className="absolute bottom-0 left-0 w-full bg-black-gradient p-4 text-white rounded-lg">
+                        <h3 className="text-xl font-bold text-left mb-3">
+                          <Link href={`/yacht-rentals/${product.slug}`}>
+                            {product.translations[locale].name_of_yacht}
+                          </Link>
+                        </h3>
+                        <p className="text-sm text-left mb-3">
+                          {product.translations[locale].slider_text}
+                        </p>
                         <Link href={`/yacht-rentals/${product.slug}`}>
-                          {product.translations[locale].name_of_yacht}
+                          <button className="yellow-solid-button uppercase">
+                            Book Now
+                          </button>
                         </Link>
-                      </h3>
-                      <p className="text-sm text-left mb-3">
-                        {product.translations[locale].slider_text}
-                      </p>
-                      <Link href={`/yacht-rentals/${product.slug}`}>
-                        <button className="yellow-solid-button uppercase">
-                          Book Now
-                        </button>
-                      </Link>
+                      </div>
                     </div>
                   </div>
-                </div>
-              ))}
+                ))}
+            </div>
           </div>
+          {/* Navigation Buttons */}
+          <button
+            aria-label="go previous slide"
+            className="bg-primary-blue text-primary-yellow transition duration-150 ease-in-out absolute left-2 top-1/2 -translate-y-1/2 bg-gray-800 text-white w-14 aspect-square rounded-full flex items-center justify-center z-10"
+            onClick={scrollPrev}
+          >
+            <IoIosArrowBack size={30} />
+          </button>
+          <button
+            aria-label="go next slide"
+            className="bg-primary-blue text-primary-yellow transition duration-150 ease-in-out absolute right-4 top-1/2 -translate-y-1/2 bg-gray-800 text-white w-14 aspect-square rounded-full flex items-center justify-center z-10"
+            onClick={scrollNext}
+          >
+            <IoIosArrowForward size={30} />
+          </button>
         </div>
-        {/* Navigation Buttons */}
-        <button
-          aria-label="go previous slide"
-          className="bg-primary-blue text-primary-yellow transition duration-150 ease-in-out absolute left-2 top-1/2 -translate-y-1/2 bg-gray-800 text-white w-14 aspect-square rounded-full flex items-center justify-center z-10"
-          onClick={scrollPrev}
-        >
-          <IoIosArrowBack size={30} />
-        </button>
-        <button
-          aria-label="go next slide"
-          className="bg-primary-blue text-primary-yellow transition duration-150 ease-in-out absolute right-4 top-1/2 -translate-y-1/2 bg-gray-800 text-white w-14 aspect-square rounded-full flex items-center justify-center z-10"
-          onClick={scrollNext}
-        >
-          <IoIosArrowForward size={30} />
-        </button>
-      </div>
       </div>
       <div className="block lg:hidden">
         <YachtmobCarousel/>
-
       </div>
       <div className="pt-12"></div>
     </div>
