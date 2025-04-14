@@ -23,7 +23,7 @@ const page = () => {
           </h1>
         </div>
 
-        <div className="flex flex-col items-start justify-center py-10">
+        <div className="flex flex-col items-start justify-center py-10 text-primary-grey">
           <h2 className="  text-left py-5  ">
             Who we are
           </h2>

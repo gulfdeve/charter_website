@@ -24,7 +24,7 @@ const page = () => {
           </h1>
         </div>
 
-        <div className="flex flex-col items-start justify-center py-10">
+        <div className="flex flex-col items-start justify-center py-10 text-primary-grey">
           <p>
             This voucher includes the use of our yachts and equipment according
             to the value, bed linen, auxiliary rowboat, gas, autopilot, GPS,
