@@ -182,7 +182,7 @@ const Reviews = () => {
       <div className="xl:hidden block">
         <div className="bg-gray-200 w-full h-auto py-20 px-4">
           <div>
-            <h1 className=" text-primary-blue text-center font-bold text-xl sm:text:2xl md:text-3xl lg:text-4xl pb-4">
+            <h2 className=" text-primary-blue text-center font-bold text-xl sm:text:2xl md:text-3xl lg:text-4xl pb-4">
               WHAT OUR GUESTS SAY
             </h1>
           </div>
@@ -202,8 +202,8 @@ const Reviews = () => {
                         className="w-14 rounded-full"
                       />
                       <div className="flex flex-col items-start">
-                        <h1 className="">{review.name}</h1>
-                        <h3 className=" text-xs">{review.date}</h3>
+                        <span className="">{review.name}</span>
+                        <span className=" text-xs">{review.date}</span>
                       </div>
                     </div>
                     <div className="flex flex-row py-1 gap-2">
@@ -211,7 +211,7 @@ const Reviews = () => {
                         <FaStar key={index} />
                       ))}
                     </div>
-                    <h1 className=" text-sm py-1">{review.title}</h1>
+                    <span className=" text-sm py-1">{review.title}</span>
                     <p className=" text-xs">{review.content}</p>
                   </div>
                 </div>
@@ -221,12 +221,12 @@ const Reviews = () => {
             <div className="lg:block hidden">
               <div className="flex flex-col justify-center w-[20rem] md:w-full lg:ml-4 mt-4 lg:mt-4 lg:absolute xl:left-60 lg:left-32 lg:top-1/2 lg:-translate-y-1/2 lg:w-44 lg:p-3 lg:h-[225px] bg-white h-32 text-center rounded-lg">
                 <Link href="https://www.tripadvisor.com/Attraction_Review-g295424-d15699786-Reviews-Centaurus_Yachts_Boats_Dubai-Dubai_Emirate_of_Dubai.html">
-                  <h1 className=" font-bold text-sm underline">
+                  <span className=" font-bold text-sm underline">
                     Centaurus Yachts & Boats Dubai
-                  </h1>
+                  </span>
                   <div className="flex flex-col items-center justify-center -space-y-3">
                     <RxBorderDotted className="text-green-600 text-center text-5xl -mt-3" />
-                    <h1 className=" font-bold text-xs">176 Reviews</h1>
+                    <span className=" font-bold text-xs">176 Reviews</span>
                     <img
                       alt="tripadvisor logo"
                       src="/Tripadvisor.png"
@@ -264,12 +264,12 @@ const Reviews = () => {
           <div className="lg:hidden block ">
             <div className="flex flex-col justify-center w-full md:w-full lg:ml-4 mt-4 lg:mt-4 lg:absolute xl:left-60 lg:left-32 lg:top-1/2 lg:-translate-y-1/2 lg:w-44 lg:p-3 lg:h-[225px] bg-white h-32 text-center rounded-lg">
               <Link href="https://www.tripadvisor.com/Attraction_Review-g295424-d15699786-Reviews-Centaurus_Yachts_Boats_Dubai-Dubai_Emirate_of_Dubai.html">
-                <h1 className=" font-bold text-sm underline">
+                <span className=" font-bold text-sm underline">
                   Centaurus Yachts & Boats Dubai
-                </h1>
+                </span>
                 <div className="flex flex-col items-center justify-center -space-y-3">
                   <RxBorderDotted className="text-green-600 text-center text-5xl -mt-3" />
-                  <h1 className=" font-bold text-xs">176 Reviews</h1>
+                  <span className=" font-bold text-xs">176 Reviews</span>
                   <img
                     alt="tripadvisor logo"
                     src="/Tripadvisor.png"
