@@ -8,7 +8,7 @@ import { useData } from "../context/DataContext";
 import { useRouter, usePathname, Link } from "../i18n/routing";
 import { GiHamburgerMenu } from "react-icons/gi";
 import Image from "next/image";
-import MobileNavbar from './MobileNavbar';
+import MobileNavbar from "./MobileNavbar";
 
 export default function Navbar() {
   const t = useTranslations();
@@ -114,10 +114,7 @@ export default function Navbar() {
                 />
               </Link>
               {/* WhatsApp Icon */}
-              <Link
-                aria-label="whatsapp icon"
-                href={t('header.whatsapp_url')}
-              >
+              <Link aria-label="whatsapp icon" href={t("header.whatsapp_url")}>
                 <IoLogoWhatsapp
                   size={30}
                   className="text-primary-yellow hover:text-primary-blue  hover:scale-110"
@@ -216,7 +213,7 @@ export default function Navbar() {
                       alt="centaurus charter logo"
                       width={200}
                       height={0}
-					  priority={true}
+                      priority={true}
                       style={{ height: "auto" }}
                     />
                   </Link>
@@ -336,7 +333,12 @@ export default function Navbar() {
                     </svg>
                   </span>
                   <ul className="absolute top-[85%] left-0 w-80 bg-white text-black shadow-lg rounded-lg overflow-hidden border border-gray-200 hidden group-hover:block z-50">
-                    {!loading &&
+				  <li className="cursor-pointer uppercase text-base font-medium text-gray-600 hover:text-white hover:bg-primary-blue transition-all duration-300">
+                      <Link href="/watersports" className="py-2 px-4 block">
+                        {t("navbar.water-sports")}
+                      </Link>
+                    </li>
+					{!loading &&
                       data?.experiences?.map((experience) => {
                         return (
                           <li
@@ -389,7 +391,7 @@ export default function Navbar() {
                   </Link>
                 </li>
 
-                <li
+                {/* <li
                   className={`uppercase ${
                     pathname === "/watersports" ||
                     pathname.startsWith("/watersports/")
@@ -403,7 +405,7 @@ export default function Navbar() {
                   >
                     {t("navbar.water-sports")}
                   </Link>
-                </li>
+                </li> */}
 
                 {/* NEWYEAR */}
 
@@ -420,7 +422,7 @@ export default function Navbar() {
         </div>
       </div>
       {/* Mobile Navbar */}
-      <MobileNavbar 
+      <MobileNavbar
         currentLanguage={currentLanguage}
         istheDropdownOpen={istheDropdownOpen}
         setIsDropdownOpen={setIsDropdownOpen}
@@ -430,9 +432,9 @@ export default function Navbar() {
         handleLanguageChange={handleLanguageChange}
         locale={locale}
         toggleSubmenu={toggleSubmenu}
-		header_email={header_email}
-		header_phone_number_url={header_phone_number_url}
-		header_whatsapp_url={header_whatsapp_url}
+        header_email={header_email}
+        header_phone_number_url={header_phone_number_url}
+        header_whatsapp_url={header_whatsapp_url}
       />
     </>
   );
