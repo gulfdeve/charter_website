@@ -1,4 +1,4 @@
-'use client';
+"use client";
 import { useState } from "react";
 
 const EmailSubscription = () => {
@@ -38,7 +38,19 @@ const EmailSubscription = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="order-3 flex flex-col items-center max-w-md">
+    <form
+      onSubmit={handleSubmit}
+      className="order-3 flex flex-col items-center max-w-md"
+    >
+		      {submissionSuccess && (
+        // <p className="mt-2 text-green-500 text-sm">Subscription successful!</p>
+        <p className="mb-2 p-2 bg-green-100 border border-green-400 text-green-700 text-xs">
+          Subscription Successful
+        </p>
+      )}
+      {errorMessage && (
+        <p className="mt-2 text-red-500 text-sm">{errorMessage}</p>
+      )}
       <div className="flex w-full">
         <input
           type="email"
@@ -47,12 +59,14 @@ const EmailSubscription = () => {
           onChange={(e) => setEmail(e.target.value)}
           className="flex-grow px-6 py-4 text-sm font-bold text-gray-700 border border-black focus:outline-none"
         />
-        <button type="submit" className="bg-gray-300 text-xs sm:text-base px-4 py-3 font-bold text-gray-800 hover:bg-gray-400 border border-black">
+        <button
+          type="submit"
+          className="bg-gray-300 text-xs sm:text-base px-4 py-3 font-bold text-gray-800 hover:bg-gray-400 border border-black"
+        >
           SIGN UP
         </button>
       </div>
-      {submissionSuccess && <p className="mt-2 text-green-500 text-sm">Subscription successful!</p>}
-      {errorMessage && <p className="mt-2 text-red-500 text-sm">{errorMessage}</p>}
+
     </form>
   );
 };
