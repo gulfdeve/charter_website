@@ -15,7 +15,7 @@ export default function EventCard({ event, language }) {
         />
       </Link>
       <div className="flex flex-col justify-start px-5 lg:px-5">
-        <h2 className="text-primary-black text-2xl font-bold pt-4">
+        <h2 className="text-primary-blue text-2xl font-bold pt-4">
           <Link href={`/events/${event.slug}`}>
             {event.translations[language].title}
           </Link>

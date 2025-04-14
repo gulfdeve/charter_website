@@ -19,7 +19,7 @@ export default function WatersportsGrid({ packages, language }) {
             />
           </Link>
           <div className="flex flex-col justify-start px-5 lg:px-5">
-            <h2 className="text-primary-black text-2xl font-bold pt-4">
+            <h2 className="text-primary-blue text-2xl font-bold pt-4">
               <Link href={`/watersports/${package_a.slug}`}>
                 {package_a.translations[language].title}
               </Link>

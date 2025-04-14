@@ -32,7 +32,7 @@ const page = ({ params }) => {
     <>
       <div className="container mx-auto nav-space">
         {/* Container for title/heading with padding */}
-        <div className="py-10 text-center">
+        <div className="py-10 text-center text-primary-blue">
           <h1 className="">{event.translations?.[locale]?.title}</h1>
           <h2 className="font-bold text-center">
             {event.translations?.[locale]?.heading_2}

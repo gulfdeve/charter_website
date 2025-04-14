@@ -49,7 +49,7 @@ export default function YachtGallery({ gallery }) {
               <img
                 src={`https://www.centauruscharter.net/product/galleryimages/${item.image}`}
                 alt={`Slide ${index + 1}`}
-                className="w-full h-auto xl:h-5/6 max-w-7xl object-cover rounded-lg"
+                className="w-full h-auto max-w-7xl object-cover rounded-lg"
               />
             </div>
           ))}
