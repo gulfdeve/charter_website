@@ -79,7 +79,7 @@ export default function YachtGallery({ gallery }) {
               key={index}
               onClick={() => emblaInstance.current?.scrollTo(index)}
               className={`flex-shrink-0 w-[calc(20%-8px)] aspect-video ${
-                activeIndex === index ? "ring-2 ring-primary-yellow" : "hover:ring-2 hover:ring-primary-yellow"
+                activeIndex === index ? "" : ""
               }`}
             >
               <img
