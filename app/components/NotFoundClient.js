@@ -17,10 +17,15 @@ export default function NotFoundClient() {
       <DataProvider>
         <Navbar />{" "}
         <Link href="/">
-		<div
+		{/* <div
           className=" flex items-center justify-center h-screen w-full bg-cover bg-center"
-          style={{ backgroundImage: "url('/404_Page_BG.webp')" }} // Replace with your image path
-        ></div>
+          style={{ backgroundImage: "url('/404_bg.webp')" }} // Replace with your image path
+        ></div> */}
+		<div className="container mx-auto">
+			<Link href="/">
+			<img src="/404_bg.webp" alt="404 Not Found" className="" />
+			</Link>
+		</div>
 		</Link>
         <FirstFooter />
         <SecondFooter />

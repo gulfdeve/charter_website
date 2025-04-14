@@ -223,7 +223,7 @@ export default function FirstFooter() {
       content: (
         <ul className="text-text-primary-white">
           <li className="flex flex-col md:items-start items-center text-center md:text-left">
-            <p className="font-semibold py-3">English / Russian</p>
+            <p className="font-semibold pb-3">English / Russian</p>
             <a
               className="mb-2 inline-block"
               href="tel:+971505484685"

@@ -17,7 +17,8 @@ export default function Page() {
   const [subscribe, setSubscribe] = useState(false);
   const [acceptedTerms, setAcceptedTerms] = useState(false);
   const [errors, setErrors] = useState({});
-    const t = useTranslations();
+  const [successMessage, setSuccessMessage] = useState("");
+  const t = useTranslations();
 
   const validateForm = () => {
     let errs = {};
@@ -64,11 +65,16 @@ export default function Page() {
         setSubscribe(false);
         setAcceptedTerms(false);
         setErrors({});
-        alert("Success");
+        // Replace alert with success message
+        setSuccessMessage("Your form has been successfully submitted. We will contact you shortly.");
+        // Scroll to the top of the form to make message visible
+        window.scrollTo({ top: document.getElementById('contact-form').offsetTop - 100, behavior: 'smooth' });
       } else {
+        setSuccessMessage("");
         alert("Something went wrong while sending the form.");
       }
     } catch (error) {
+      setSuccessMessage("");
       alert("An error occurred. Please try again later.");
     }
   };
@@ -96,7 +102,12 @@ export default function Page() {
 
         <div className="container mx-auto flex flex-col md:flex-row-reverse items-center md:justify-end 2xl:justify-center md:gap-4 lg:gap-20 py-10">
           <div className="flex justify-center md:justify-start items-center md:items-start bg-white pb-12 md:pb-0">
-            <div className="w-full xl:w-[40rem] p-0 md:p-6 bg-white">
+            <div id="contact-form" className="w-full xl:w-[40rem] p-0 md:p-6 bg-white">
+              {successMessage && (
+                <div className="mb-6 p-4 bg-green-100 border border-green-400 text-green-700 rounded-md">
+                  {successMessage}
+                </div>
+              )}
               <form onSubmit={handleSubmit} className="space-y-4">
                 <div>
                   <input
