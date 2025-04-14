@@ -112,7 +112,7 @@ console.log("Full message payload:", fullMessagePayload);
 
         <button
           onClick={() => setIsVisible(false)}
-          className="absolute top-4 right-4 text-2xl p-3 w-10 h-10 rounded-full flex items-center justify-center text-gray-500 hover:text-gray-800"
+          className="absolute top-4 right-4 text-2xl p-3 w-10 h-10 rounded-full flex items-center justify-center text-primary-grey hover:text-gray-800"
         >
           &times;
         </button>

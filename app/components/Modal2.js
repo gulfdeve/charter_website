@@ -103,13 +103,13 @@ const Modal2 = ({ isModalOpen, closeModal, idName, idValue }) => {
   };
 
   return (
-    <div className="fixed inset-0 bg-gray-500 bg-opacity-50 flex items-center justify-center z-50">
+    <div className="fixed inset-0 bg-primary-grey bg-opacity-50 flex items-center justify-center z-50">
       <div className="bg-white rounded-lg shadow-lg w-full max-w-6xl  mx-5 p-9 lg:p-6 relative">
 
         {/* Close Button */}
         <button
           onClick={closeModal}
-          className="absolute top-4 right-4 text-3xl p-3 w-10 h-10 rounded-full flex items-center justify-center text-gray-500 hover:text-gray-800"
+          className="absolute top-4 right-4 text-3xl p-3 w-10 h-10 rounded-full flex items-center justify-center text-primary-grey hover:text-primary-grey"
         >
           &times;
         </button>
@@ -183,7 +183,7 @@ const Modal2 = ({ isModalOpen, closeModal, idName, idValue }) => {
                   placeholder="Email Address"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  className="w-full border-l-4 rounded-md bg-[#f5f5f5] text-gray-600 focus:outline-none border-[#1b498f] focus:border-primary-yellow focus:bg-[#f3f7fd] transition duration-200 ease-in-out p-3"
+                  className="w-full border-l-4 rounded-md bg-[#f5f5f5] text-primary-grey focus:outline-none border-[#1b498f] focus:border-primary-yellow focus:bg-[#f3f7fd] transition duration-200 ease-in-out p-3"
                 />
                 {errors.email && (
                   <p className="text-red-600 text-sm">{errors.email}</p>
@@ -197,7 +197,7 @@ const Modal2 = ({ isModalOpen, closeModal, idName, idValue }) => {
                   value={message}
                   onChange={(e) => setMessage(e.target.value)}
                   rows="8"
-                  className="w-full border-l-4 rounded-md bg-[#f5f5f5] text-gray-600 focus:outline-none border-[#1b498f] focus:border-primary-yellow focus:bg-[#f3f7fd] transition duration-200 ease-in-out p-3"
+                  className="w-full border-l-4 rounded-md bg-[#f5f5f5] text-primary-grey focus:outline-none border-[#1b498f] focus:border-primary-yellow focus:bg-[#f3f7fd] transition duration-200 ease-in-out p-3"
                 />
                 {errors.message && (
                   <p className="text-red-600 text-sm">{errors.message}</p>

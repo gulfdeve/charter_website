@@ -303,7 +303,7 @@ export default function Home() {
             <h4 className="text-lg font-bold text-primary-blue mb-2">
               Terms & Conditions:
             </h4>
-            <ul className="list-disc list-inside text-sm text-gray-700 space-y-1">
+            <ul className="list-disc list-inside text-sm text-primary-grey space-y-1">
               <li>Minimum Booking Rental 3 Hours</li>
               <li>
                 This discount cannot be used in conjunction with any other
@@ -324,7 +324,7 @@ export default function Home() {
             <h4 className="text-lg font-bold text-primary-blue mb-2">
               Cancellation Policy
             </h4>
-            <ul className="list-disc list-inside text-sm text-gray-700 space-y-1">
+            <ul className="list-disc list-inside text-sm text-primary-grey space-y-1">
               <li>Cancellations 72 hours prior the booking free of charge</li>
               <li>Cancellations 48 hours prior will get 50% refund</li>
               <li>Cancellations 24 hours prior will be non-refundable</li>
@@ -332,7 +332,7 @@ export default function Home() {
           </div>
 
           {/* Final CTA */}
-          <div className="my-8 text-center text-base text-gray-800 font-semibold">
+          <div className="my-8 text-center text-base text-primary-grey font-semibold">
             RESERVE YOUR SPOT TODAY AND INDULGE IN A MEMORABLE YACHT ADVENTURE
             ONLY WITH CENTAURUS CHARTER!
           </div>

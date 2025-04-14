@@ -148,7 +148,7 @@ const page = () => {
                     activeIndex === index ? "max-h-40" : "max-h-0"
                   }`}
                 >
-                  <p className="bg-white px-4 py-3 text-gray-600   text-xs md:text-xs mt-3">
+                  <p className="bg-white px-4 py-3 text-primary-grey   text-xs md:text-xs mt-3">
                     {faq.answer}
                   </p>
                 </div>

@@ -113,7 +113,7 @@ export default function Page() {
                   <input
                     type="text"
                     placeholder="Your Name"
-                    className="w-full p-3 border-l-4 rounded-md bg-[#f5f5f5] text-gray-600 focus:outline-none border-[#1b498f] focus:border-primary-yellow focus:bg-[#f3f7fd] transition duration-200 ease-in-out"
+                    className="w-full p-3 border-l-4 rounded-md bg-[#f5f5f5] text-primary-grey focus:outline-none border-[#1b498f] focus:border-primary-yellow focus:bg-[#f3f7fd] transition duration-200 ease-in-out"
                     value={fullName}
                     onChange={(e) => setFullName(e.target.value)}
                   />
@@ -125,7 +125,7 @@ export default function Page() {
                   <input
                     type="email"
                     placeholder="Your Email"
-                    className="w-full p-3 border-l-4 rounded-md bg-[#f5f5f5] text-gray-600 focus:outline-none border-[#1b498f] focus:border-primary-yellow focus:bg-[#f3f7fd] transition duration-200 ease-in-out"
+                    className="w-full p-3 border-l-4 rounded-md bg-[#f5f5f5] text-primary-grey focus:outline-none border-[#1b498f] focus:border-primary-yellow focus:bg-[#f3f7fd] transition duration-200 ease-in-out"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                   />
@@ -166,7 +166,7 @@ export default function Page() {
                   <textarea
                     placeholder="Your Message"
                     rows={4}
-                    className="w-full p-3 border-l-4 rounded-md bg-[#f5f5f5] text-gray-600 focus:outline-none border-[#1b498f] focus:border-primary-yellow focus:bg-[#f3f7fd] transition duration-200 ease-in-out"
+                    className="w-full p-3 border-l-4 rounded-md bg-[#f5f5f5] text-primary-grey focus:outline-none border-[#1b498f] focus:border-primary-yellow focus:bg-[#f3f7fd] transition duration-200 ease-in-out"
                     value={message}
                     onChange={(e) => setMessage(e.target.value)}
                   ></textarea>
@@ -174,7 +174,7 @@ export default function Page() {
                     <p className="text-red-600 text-sm mt-1">{errors.message}</p>
                   )}
                 </div>
-                <div className="space-y-2 text-gray-600">
+                <div className="space-y-2 text-primary-grey">
                   <div className="flex items-start space-x-2">
                     <input
                       type="checkbox"

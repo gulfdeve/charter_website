@@ -44,7 +44,7 @@ const Page = () => {
         
         <div className="lg:w-5/12">
         <PageTitleHeading title={packageItem.translations[locale].title} className="py-0 lg:pt-0 pb-3" />
-        <h3 className="text-gray-500 text-center font-bold mb-5">
+        <h3 className="text-primary-grey text-center font-bold mb-5">
             {packageItem.translations[locale].preview_text}
             <br />
           </h3>
@@ -116,7 +116,7 @@ const Page = () => {
       </div>
       <div className="py-12">
 	  <div
-          className="text-base"
+          className="text-base text-primary-grey"
           dangerouslySetInnerHTML={{
             __html: packageItem.translations[locale].description || "",
           }}
