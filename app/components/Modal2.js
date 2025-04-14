@@ -117,8 +117,8 @@ const Modal2 = ({ isModalOpen, closeModal, idName, idValue }) => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
           <div className="rounded-lg overflow-hidden hidden md:block">
             <img
-              src="/modal2.jpg"
-              alt="Yacht Image"
+              src="/Get a Quote.webp"
+              alt="Get a Quote Yacht Image"
               className="w-full h-full object-cover"
             />
           </div>
