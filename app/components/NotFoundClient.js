@@ -17,7 +17,6 @@ export default function NotFoundClient() {
       {" "}
       <DataProvider>
         <Navbar />{" "}
-        <Link href="/">
 		{/* <div
           className=" flex items-center justify-center h-screen w-full bg-cover bg-center"
           style={{ backgroundImage: "url('/404_bg.webp')" }} // Replace with your image path
@@ -27,13 +26,10 @@ export default function NotFoundClient() {
 			<Link href="/">
 			<img src="/404 Page_wt.webp" alt="404 Not Found" className="" />
 			</Link>
-			<Link href="/">
-			<button className="block mx-auto w-full my-10 flex flex-row items-center justify-center yellow-solid-button">
+			<Link href="/" className="block mx-auto w-full my-10 flex flex-row items-center justify-center yellow-solid-button">
 				SAIL BACK
-			</button>
 			</Link>
 		</div>
-		</Link>
         <FirstFooter />
         <SecondFooter />
         <CopyrightFooter />
