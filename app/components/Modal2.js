@@ -1,3 +1,4 @@
+import { id } from "date-fns/locale";
 import React, { useState } from "react";
 import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/style.css";
@@ -62,7 +63,12 @@ const Modal2 = ({ isModalOpen, closeModal, idName, idValue }) => {
       queryParams.set(idName, idValue);
 
       // Construct final URL
-      const url = `https://www.centauruscharter.net/api/api_new/save_enquiry?${queryParams}`;
+      let url;
+      if (idName === "events_id") {
+        url = `https://www.centauruscharter.net/api/api_new/save_enquiry_events?${queryParams}`;
+      } else {
+        url = `https://www.centauruscharter.net/api/api_new/save_enquiry?${queryParams}`;
+      }
 
       // Send POST request
       const response = await fetch(url, {
@@ -102,7 +108,7 @@ const Modal2 = ({ isModalOpen, closeModal, idName, idValue }) => {
         {/* Success Bar (absolute, on top of modal) */}
         {submissionSuccess && (
           <div className="absolute top-0 left-0 right-0 bg-green-500 text-white p-3 text-center">
-            Enquiry sent successfully! 
+            Enquiry sent successfully!
           </div>
         )}
 
