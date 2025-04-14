@@ -15,7 +15,7 @@ const AboutPage = () => {
 
           Experience Dubai from the Sea
         </p>
-        <p className=" text-[#848484] text-center  text-base  px-3 lg:px-12 xl:px-56">
+        <p className=" text-primary-grey text-center  text-base  px-3 lg:px-12 xl:px-56">
           <strong> CENTAURUS CHARTER</strong> was established in 2013 and offers Leisure boats and Yacht Rentals in Dubai . The fully-crewed luxury yacht charters, as well as full-service event planning, is conveniently located in Dubai Marina, each vessel is registered by the Dubai Marina Yacht Club and is operated by a certified crew and catered by professional Staff.
         </p>
       </div>

@@ -33,7 +33,7 @@ export default async function YachtTripsPage({ params }) {
       </div>
 
       <div className="container mx-auto py-5 pb-8">
-	  <p className="text-base text-primary-black">
+	  <p className="text-base text-primary-grey">
           Dubai is a popular destination for yachting. The Arabian coastline
           is lined with beautiful azure beaches and top attractions, which are
           perfect for leisure trips and intimate celebrations. Centaurus

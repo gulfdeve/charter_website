@@ -35,7 +35,7 @@ export default async function WatersportsPage({ params }) {
       </div>
 
       <div className="container mx-auto px-3 py-5 pb-8">
-	  <p className="text-base text-primary-black">
+	  <p className="text-base text-primary-grey">
           Explore the beautiful coastline of the Arabian Gulf, the sun warming
           your skin, water lapping at your feet, and a warm breeze whispering in
           your ears. We have the best watersports activities with yacht

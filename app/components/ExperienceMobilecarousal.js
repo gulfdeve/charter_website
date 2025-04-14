@@ -61,7 +61,7 @@ export default function ExperiencesCarousel() {
                         </Link>
                       </h2>
 
-                      <p className="text-[#848484] text-xs pt-2 pb-9">
+                      <p className="text-primary-grey text-xs pt-2 pb-9">
                         {experience.translations?.[locale]?.preivew_text}
                       </p>
                 

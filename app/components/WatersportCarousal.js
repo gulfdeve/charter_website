@@ -61,7 +61,7 @@ export default function WatersportCarousal() {
                         </Link>
                       </h2>
 
-                      <p className="text-[#848484] text-xs pt-2 pb-9">
+                      <p className="text-primary-grey text-xs pt-2 pb-9">
                         {package_a.translations?.[locale]?.preivew_text}
                       </p>
 

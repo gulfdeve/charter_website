@@ -71,7 +71,7 @@ export default function Home() {
           Enjoy your Luxury Yacht Experience
         </p>
 
-        <p className=" text-[#848484] text-center  text-base  px-3 mx-auto container">
+        <p className=" text-primary-grey text-center  text-base  px-3 mx-auto container">
           Centaurus Charter is a yacht rental company in Dubai that offers range
           of private yachts and boats for those who like glamorous, a taste of
           luxury & cruiser that bring forth a wonderful yachting experience. Let
@@ -198,7 +198,7 @@ export default function Home() {
 
                     </div>
                     <div className="flex flex-col items-center justify-center">
-                      <span className=" text-blue-500 text-xs text-center mt-6 mr-3">
+                      <span className=" text-primary-blue-2 text-xs text-center mt-6 mr-3">
                         T&C’s Apply
                       </span>
                     </div>

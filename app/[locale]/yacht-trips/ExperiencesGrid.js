@@ -34,7 +34,7 @@ export default function ExperiencesGrid({ experiences, locale }) {
                   {title}
                 </Link>
               </h2>
-              <p className="text-[#848484] text-md pt-2 pb-9">
+              <p className="text-primary-grey text-md pt-2 pb-9">
                 {preivew_text}
               </p>
               <div className="bg-primary-black w-full h-[0.05rem]"></div>

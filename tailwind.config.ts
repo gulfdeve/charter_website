@@ -42,6 +42,7 @@ export default {
         "text-primary-white": "#ababab",
         "text-primary-black": "#212529",
         "primary-red": "#8A1538",
+		"primary-grey": "#575757"
       },
       fontFamily: {
         sans: ['var(--font-montserrat)', 'sans-serif'],

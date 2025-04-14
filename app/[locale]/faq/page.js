@@ -109,7 +109,7 @@ const page = () => {
             {" "}
             Everything you need to know about yacht charter
           </p>
-          <p className=" text-[#848484] text-center  text-base ">
+          <p className=" text-primary-grey text-center  text-base ">
             A luxury yacht rental is the best choice for anyone who wants to enjoy
             a day on the water. There are a lot of Insta-worthy spots that can be
             seen from the water. Got a question? Find the answers below to most

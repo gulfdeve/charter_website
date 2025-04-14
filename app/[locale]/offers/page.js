@@ -81,7 +81,7 @@ export default async function OffersPage({ params }) {
         <OfferMobilecarousal />
       </div>
       <div className="container mx-auto px-3 py-5 pb-8">
-        <p className="text-base text-primary-black">
+        <p className="text-base text-primary-grey">
           Centaurus Charter offers range of membership discounts &{" "}
           <strong>yacht deals</strong> to adorn the beautiful yachting
           destinations. The best way to enjoy your dream vacation is a day out

@@ -3,7 +3,7 @@ import EmailSubscription from "@/app/components/EmailSubscription"; // Client co
 
 const Sociallink = () => {
   return (
-    <div className="bg-[#1B498F] w-full h-[20rem] lg:h-[8rem] flex items-center justify-center">
+    <div className="bg-primary-blue-2 w-full h-[20rem] lg:h-[8rem] flex items-center justify-center">
       <div className="container mx-auto flex flex-col lg:flex-row items-center justify-between gap-5 lg:gap-8 xl:gap-20">
         
         {/* Social Media Links */}

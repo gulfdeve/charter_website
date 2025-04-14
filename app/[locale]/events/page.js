@@ -36,7 +36,7 @@ export default async function Page({ params }) {
       </div>
 
       <div className="container mx-auto px-3 py-5 pb-8">
-        <p className="text-base text-primary-black">
+        <p className="text-base text-primary-grey">
           Experience the perfect fusion of luxury, elegance, and unforgettable
           moments on the glistening waters of Dubai. As a premier destination
           for hosting extraordinary events, parties, and exclusive gatherings,

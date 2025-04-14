@@ -93,7 +93,7 @@ export default function Page() {
           <h1 className="text-primary-blue text-center font-bold text-xl sm:text:2xl md:text-3xl lg:text-4xl pb-4">
             CONTACT US
           </h1>
-          <p className="container text-[#848484] text-center text-base px-3 lg:px-12 xl:px-56">
+          <p className="container text-primary-grey text-center text-base px-3 lg:px-12 xl:px-56">
             We at Centaurus Charter are well experienced to meet the
             expectations of your next yachting adventure in Dubai. Please fill
             contact you shortly.
@@ -217,7 +217,7 @@ export default function Page() {
                 <div className="text-left">
                   <button
                     type="submit"
-                    className="px-6 py-3 bg-[#1B498F] text-white rounded-md hover:bg-primary-blue transition duration-200"
+                    className="px-6 py-3 bg-primary-blue-2 text-white rounded-md hover:bg-primary-blue transition duration-200"
                   >
                     SEND MESSAGE
                   </button>

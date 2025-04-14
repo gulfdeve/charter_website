@@ -69,7 +69,7 @@ function MobileCarousel() {
     <div className="container mx-auto md:px-4 pb-16 lg:hidden">
       {/* Optional heading */}
       <div className="flex flex-col items-center justify-center py-10">
-        <h2 className="text-primary-blue text-center font-bold xxs:text-2xl sm:text:2xl md:text-3xl lg:text-4xl">
+        <h2 className="text-primary-blue text-center">
           YACHT LOCATION
         </h2>
       </div>
@@ -142,7 +142,7 @@ function DesktopCarousel() {
   return (
     <div className="container mx-auto flex flex-col items-center container mx-auto hidden lg:block">
       <div className="flex flex-col items-center justify-center">
-        <h2 className="text-primary-blue text-center font-bold text-4xl py-10">
+        <h2 className="text-primary-blue text-center py-10">
           YACHT LOCATION
         </h2>
       </div>
