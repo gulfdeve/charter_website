@@ -51,7 +51,7 @@ body {
   @apply text-primary-yellow hover:text-primary-yellow-dark text-primary-yellow hover:text-yellow-600 font-bold tracking-wide uppercase text-base;
 }
 .header_dropdown_links {
-  @apply p-2 px-4 cursor-pointer text-base font-normal text-gray-500 hover:bg-slate-200
+  @apply p-2 px-4 cursor-pointer text-base font-normal text-primary-grey hover:bg-slate-200
 }
 .blue-lined-button {
   @apply flex items-center justify-center gap-2 px-8 py-2 bg-primary-blue hover:scale-105 hover:bg-primary-yellow hover:text-primary-blue text-primary-yellow border-2 border-primary-yellow tracking-wide font-bold rounded-md transition duration-150 ease-in-out transform;

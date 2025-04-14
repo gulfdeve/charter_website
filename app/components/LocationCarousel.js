@@ -98,10 +98,10 @@ function MobileCarousel() {
                   
                   {/* Card text (bottom) */}
                   <div className="p-4 text-center">
-                    <h3 className="text-lg font-bold text-gray-800">
+                    <h3 className="text-lg font-bold text-primary-grey">
                       {item.title}
                     </h3>
-                    <p className="text-sm text-gray-600">{item.subTitle}</p>
+                    <p className="text-sm text-primary-grey">{item.subTitle}</p>
                   </div>
                 </div>
               </div>

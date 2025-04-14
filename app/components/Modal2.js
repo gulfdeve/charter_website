@@ -139,7 +139,7 @@ const Modal2 = ({ isModalOpen, closeModal, idName, idValue }) => {
                   placeholder="Full Name"
                   value={fullName}
                   onChange={(e) => setFullName(e.target.value)}
-                  className="w-full border-l-4 rounded-md bg-[#f5f5f5] text-gray-600 focus:outline-none border-[#1b498f] focus:border-primary-yellow focus:bg-[#f3f7fd] transition duration-200 ease-in-out p-3"
+                  className="w-full border-l-4 rounded-md bg-[#f5f5f5] text-primary-grey focus:outline-none border-[#1b498f] focus:border-primary-yellow focus:bg-[#f3f7fd] transition duration-200 ease-in-out p-3"
                 />
                 {errors.fullName && (
                   <p className="text-red-600 text-sm">{errors.fullName}</p>
@@ -153,7 +153,7 @@ const Modal2 = ({ isModalOpen, closeModal, idName, idValue }) => {
                   value={phoneNumber}
                   onChange={setPhoneNumber}
                   placeholder="Enter phone number"
-                  className="flex-1 rounded-md bg-[#f5f5f5] text-gray-600 focus:outline-none transition duration-200 ease-in-out"
+                  className="flex-1 rounded-md bg-[#f5f5f5] text-primary-grey focus:outline-none transition duration-200 ease-in-out"
                   inputStyle={{
                     width: "100%",
                     padding: "20px",

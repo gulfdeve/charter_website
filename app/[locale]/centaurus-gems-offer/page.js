@@ -99,7 +99,7 @@ export default function Home() {
           <div className="overflow-x-auto mt-8">
             <table className="w-full text-xs md:text-sm text-center border-collapse table-striped">
               {/* Table Header */}
-              <thead className="bg-[#0B2946] text-white font-bold">
+              <thead className="bg-primary-blue text-white font-bold">
                 <tr className="border border-white">
                   <th
                     scope="col"
@@ -281,7 +281,7 @@ export default function Home() {
           {/* Promo Boxes (Similar to the screenshot) */}
           <div className=" mt-8 space-y-4 max-w-lg mx-auto">
             {/* Afternoon Discount Box */}
-            <div className="bg-[#0B2946] text-white text-center p-4">
+            <div className="bg-primary-blue text-white text-center p-4">
               <p className="text-lg font-bold">
                 20% off in our yacht rental bookings in afternoon
               </p>
@@ -289,7 +289,7 @@ export default function Home() {
             </div>
 
             {/* Extended Booking Discount Box */}
-            <div className="bg-[#0B2946] text-white text-center p-4">
+            <div className="bg-primary-blue text-white text-center p-4">
               <p className="text-lg font-bold">
                 40% discount when booking 4 hours in early morning or evening
                 time
@@ -300,7 +300,7 @@ export default function Home() {
 
           {/* Terms & Conditions */}
           <div className="mt-8">
-            <h4 className="text-lg font-bold text-[#0B2946] mb-2">
+            <h4 className="text-lg font-bold text-primary-blue mb-2">
               Terms & Conditions:
             </h4>
             <ul className="list-disc list-inside text-sm text-gray-700 space-y-1">
@@ -321,7 +321,7 @@ export default function Home() {
 
           {/* Cancellation Policy */}
           <div className="mt-6">
-            <h4 className="text-lg font-bold text-[#0B2946] mb-2">
+            <h4 className="text-lg font-bold text-primary-blue mb-2">
               Cancellation Policy
             </h4>
             <ul className="list-disc list-inside text-sm text-gray-700 space-y-1">

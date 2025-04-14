@@ -256,7 +256,7 @@ export default function Navbar() {
                       data?.products?.map((product) => (
                         <li
                           key={product.id}
-                          className="cursor-pointer text-base font-medium text-gray-600 hover:text-white hover:bg-primary-blue transition-all duration-300"
+                          className="cursor-pointer text-base font-medium text-primary-grey hover:text-white hover:bg-primary-blue transition-all duration-300"
                         >
                           <Link
                             href={`/yacht-rentals/${product.slug}`}
@@ -333,7 +333,7 @@ export default function Navbar() {
                     </svg>
                   </span>
                   <ul className="absolute top-[85%] left-0 w-80 bg-white text-black shadow-lg rounded-lg overflow-hidden border border-gray-200 hidden group-hover:block z-50">
-				  <li className="cursor-pointer uppercase text-base font-medium text-gray-600 hover:text-white hover:bg-primary-blue transition-all duration-300">
+				  <li className="cursor-pointer uppercase text-base font-medium text-primary-grey hover:text-white hover:bg-primary-blue transition-all duration-300">
                       <Link href="/watersports" className="py-2 px-4 block">
                         {t("navbar.water-sports")}
                       </Link>
@@ -343,7 +343,7 @@ export default function Navbar() {
                         return (
                           <li
                             key={experience.id}
-                            className="cursor-pointer text-base font-medium text-gray-600 hover:text-white hover:bg-primary-blue transition-all duration-300"
+                            className="cursor-pointer text-base font-medium text-primary-grey hover:text-white hover:bg-primary-blue transition-all duration-300"
                           >
                             <Link
                               href={`/yacht-trips/${experience.slug}`}

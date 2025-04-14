@@ -172,7 +172,7 @@ export default function SpringOffer() {
       </div>
 
       {/* Spring Offer Headings */}
-      <h1 className="text-2xl md:text-4xl font-bold text-[#0B2946] mb-2 text-center">
+      <h1 className="text-2xl md:text-4xl font-bold text-primary-blue mb-2 text-center">
         Centaurus Luxury Yacht Rentals
       </h1>
       <h2 className="text-lg md:text-2xl text-gray-500 mb-6 text-center">

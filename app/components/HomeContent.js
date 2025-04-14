@@ -118,7 +118,7 @@ export default function Home() {
                       <span className="font-bold  text-sm">
                         Model:
                       </span>
-                      <span className="font-semibold  text-sm xl:text-xs text-[#e1ae48]">
+                      <span className="font-semibold  text-sm xl:text-xs text-primary-yellow">
                         {product.translations?.[locale].model}
                       </span>
                     </div>
@@ -128,7 +128,7 @@ export default function Home() {
                       <span className="font-bold  text-sm">
                         Length:
                       </span>
-                      <span className="font-semibold  text-sm text-[#e1ae48]">
+                      <span className="font-semibold  text-sm text-primary-yellow">
                         {product.translations?.[locale].size}
                       </span>
                     </div>
@@ -138,7 +138,7 @@ export default function Home() {
                       <span className="font-bold  text-sm">
                         Guests:
                       </span>
-                      <span className="font-semibold  text-sm text-[#e1ae48]">
+                      <span className="font-semibold  text-sm text-primary-yellow">
                         {product.translations?.[locale].guests}
                       </span>
                     </div>
@@ -245,7 +245,7 @@ export default function Home() {
             Welcome your guests in a warm atmosphere with pure elegance and
             style.
           </p>
-          <button className="flex flex-row items-center sm:text-left justify-center mb-4 py-2 px-6 md:py-2 md:px-4   outline-[#e1ae48] outline-double rounded-md bg-primary-blue text-primary-yellow  font-bold text-[20px] md:text-sm xl:text-lg">
+          <button className="flex flex-row items-center sm:text-left justify-center mb-4 py-2 px-6 md:py-2 md:px-4   outline-primary-yellow outline-double rounded-md bg-primary-blue text-primary-yellow  font-bold text-[20px] md:text-sm xl:text-lg">
             EXPLORE OUR YACHTS
           </button>
         </div>
@@ -307,7 +307,7 @@ export default function Home() {
             Find your ideal boat with great deals and confirm your booking
             instantly.
           </p>
-          <button className="flex flex-row items-center sm:text-left justify-center mb-4 py-2 px-6 md:py-2 md:px-4   outline-[#e1ae48] outline-double rounded-md bg-primary-blue text-primary-yellow  font-bold text-[20px] md:text-sm xl:text-lg">
+          <button className="flex flex-row items-center sm:text-left justify-center mb-4 py-2 px-6 md:py-2 md:px-4   outline-primary-yellow outline-double rounded-md bg-primary-blue text-primary-yellow  font-bold text-[20px] md:text-sm xl:text-lg">
             EXPLORE ALL OFFERS
           </button>
         </div>

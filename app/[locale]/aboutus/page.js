@@ -54,13 +54,13 @@ const AboutPage = () => {
               <br />LUXURY YACHT EXPERIENCE
             </span>
           </h2>
-          <p className=" text-gray-500 text-center sm:text-left  text-md  sm:text-sm xl:text-md pb-10">
+          <p className=" text-primary-grey text-center sm:text-left  text-md  sm:text-sm xl:text-md pb-10">
             There is nothing more relaxing than to survey the Burj Al Arab, Atlantis & Jumeirah Beach Residence from the deck of our yacht. This remarkable Luxuries experience, previously the exclusive domain of the rich and famous, is now more affordable, and rates are competitive with that of a high-end cruise ship. In fact, many sophisticated vacationers prefer private charters due to the increasing demand and anonymity experience of luxury.<br />Enjoy the personalized and attentive service that renting a private charter brings.
           </p>
           <h2 className=" text-black text-left font-bold text-2xl xl:text-3xl py-7">
             OUR <span className='text-yellow-400'>GOAL</span>
           </h2>
-          <p className=" text-gray-500 text-center sm:text-left  text-md  sm:text-sm xl:text-md pb-10">
+          <p className=" text-primary-grey text-center sm:text-left  text-md  sm:text-sm xl:text-md pb-10">
             Our goal has always been to provide quality service and outstanding customer support. When you choose Centaurus Charter we provide you with the very best. You can count on us for a fast turnaround on proposals and quotations. Our knowledgeable staff is standing by to discuss your preferred, custom itinerary and to answer any questions you may have.
           </p>
 

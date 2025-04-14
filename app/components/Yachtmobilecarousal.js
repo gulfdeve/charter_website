@@ -61,7 +61,7 @@ export default function YachtmobileCarousal() {
                       <span className="font-bold xxs:text-[0.5rem] xs:text-[0.6rem]">
                         Model:
                       </span>
-                      <span className="font-semibold xxs:text-[0.5rem] xs:text-[0.6rem] xl:text-xs text-[#e1ae48]">
+                      <span className="font-semibold xxs:text-[0.5rem] xs:text-[0.6rem] xl:text-xs text-primary-yellow">
                         {product.translations?.[locale].model}
                       </span>
                     </div>
@@ -70,7 +70,7 @@ export default function YachtmobileCarousal() {
                       <span className="font-bold xxs:text-[0.5rem] xs:text-[0.6rem]">
                         Length:
                       </span>
-                      <span className="font-semibold xxs:text-[0.5rem] xs:text-[0.6rem] text-[#e1ae48]">
+                      <span className="font-semibold xxs:text-[0.5rem] xs:text-[0.6rem] text-primary-yellow">
                         {product.translations?.[locale].size}
                       </span>
                     </div>
@@ -79,7 +79,7 @@ export default function YachtmobileCarousal() {
                       <span className="font-bold xxs:text-[0.5rem] xs:text-[0.6rem]">
                         Guests:
                       </span>
-                      <span className="font-semibold xxs:text-[0.5rem] xs:text-[0.6rem] text-[#e1ae48]">
+                      <span className="font-semibold xxs:text-[0.5rem] xs:text-[0.6rem] text-primary-yellow">
                         {product.translations?.[locale].guests}
                       </span>
                     </div>

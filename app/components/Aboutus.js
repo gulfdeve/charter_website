@@ -24,7 +24,7 @@ const Aboutus = () => {
           professional staff.
         </p>
         <div className="">
-          <button className="w-full lg:w-auto text-center lg:text-left text-primary-yellow  border px-3 py-2 font-bold border-[#e1ae48]">
+          <button className="w-full lg:w-auto text-center lg:text-left text-primary-yellow  border px-3 py-2 font-bold border-primary-yellow">
             Read More
           </button>
         </div>
