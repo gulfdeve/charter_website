@@ -184,7 +184,7 @@ const Reviews = () => {
           <div>
             <h2 className=" text-primary-blue text-center font-bold text-xl sm:text:2xl md:text-3xl lg:text-4xl pb-4">
               WHAT OUR GUESTS SAY
-            </h1>
+            </h2>
           </div>
 
           <div
