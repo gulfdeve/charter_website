@@ -6,7 +6,7 @@ export async function generateMetadata({ params }) {
   const locale = useLocale();
 
   // Fetch the product data (you can reuse the fetch logic from your component)
-  const response = await fetch("https://www.centauruscharter.com/api/api_new/basic");
+  const response = await fetch("https://www.centauruscharter.net/api/api_new/basic");
   const data = await response.json();
   const product = data.products.find((item) => item.slug === slug);
 

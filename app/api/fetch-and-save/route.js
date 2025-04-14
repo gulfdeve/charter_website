@@ -5,7 +5,7 @@ export async function GET(req) {
   try {
     // Force a fresh fetch by disabling caching
     const response = await fetch(
-      "https://www.centauruscharter.com/api/api_new/basic", 
+      "https://www.centauruscharter.net/api/api_new/basic", 
       { cache: "no-store" }
     );
 

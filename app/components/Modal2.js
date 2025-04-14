@@ -62,7 +62,7 @@ const Modal2 = ({ isModalOpen, closeModal, idName, idValue }) => {
       queryParams.set(idName, idValue);
 
       // Construct final URL
-      const url = `https://www.centauruscharter.com/api/api_new/save_enquiry?${queryParams}`;
+      const url = `https://www.centauruscharter.net/api/api_new/save_enquiry?${queryParams}`;
 
       // Send POST request
       const response = await fetch(url, {

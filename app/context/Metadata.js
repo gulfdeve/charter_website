@@ -3,7 +3,7 @@ export async function generateMetadata({ params, searchParams }, parent) {
     
    
     // fetch data
-    const product = await fetch(`https://www.centauruscharter.com/api/api_new/basic`).then((res) => res.json())
+    const product = await fetch(`https://www.centauruscharter.net/api/api_new/basic`).then((res) => res.json())
     const yacht = data.product.find((item) => item.slug === slug);
     // optionally access and extend (rather than replace) parent metadata
    

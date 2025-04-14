@@ -34,7 +34,7 @@ export default function Home({ params }) {
     const fetchData = async () => {
       try {
         const response = await fetch(
-          "https://www.centauruscharter.com/api/api_new/basic"
+          "https://www.centauruscharter.net/api/api_new/basic"
         );
         const data = await response.json();
         // Find the product with the matching slug

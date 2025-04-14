@@ -74,7 +74,7 @@ console.log("Full message payload:", fullMessagePayload);
     console.log("Sending enquiry with query parameters:", queryParams.toString());
 
     try {
-      const url = `https://www.centauruscharter.com/api/api_new/save_enquiry?${queryParams}`;
+      const url = `https://www.centauruscharter.net/api/api_new/save_enquiry?${queryParams}`;
       const response = await fetch(url, { method: "POST" });
       const data = await response.json();
 
