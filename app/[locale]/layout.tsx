@@ -16,7 +16,7 @@ import { notFound } from "next/navigation";
 // import TopLoader from '@/app/components/TopLoader';
 import NProgressLoader from '@/app/components/NProgressLoader';
 import { FareHarborProvider } from "@/app/context/FareHarborContext";
-import 'react-phone-input-2/lib/style.css';
+// import 'react-phone-input-2/lib/style.css';
 import { headers } from 'next/headers';
 import { fetchData } from '@/app/lib/fetchData';
 

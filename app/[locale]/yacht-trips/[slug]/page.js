@@ -164,7 +164,7 @@ const page = ({ params }) => {
 
         <div className="container mx-auto py-5 md:py-10 ">
           <div
-            className="text-base"
+            className="text-base text-primary-grey"
             dangerouslySetInnerHTML={{
               __html: experience.translations?.[locale]?.description || "",
             }}
