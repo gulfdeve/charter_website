@@ -104,13 +104,7 @@ const Modal2 = ({ isModalOpen, closeModal, idName, idValue }) => {
 
   return (
     <div className="fixed inset-0 bg-gray-500 bg-opacity-50 flex items-center justify-center z-50">
-      <div className="bg-white h-fit rounded-lg shadow-lg w-full max-w-6xl  mx-5 p-9 lg:p-6 relative">
-        {/* Success Bar (absolute, on top of modal) */}
-        {submissionSuccess && (
-          <div className="absolute top-0 left-0 right-0 bg-green-500 text-white p-3 text-center">
-            Enquiry sent successfully!
-          </div>
-        )}
+      <div className="bg-white rounded-lg shadow-lg w-full max-w-6xl  mx-5 p-9 lg:p-6 relative">
 
         {/* Close Button */}
         <button
@@ -130,8 +124,15 @@ const Modal2 = ({ isModalOpen, closeModal, idName, idValue }) => {
           </div>
 
           <div className="flex items-center w-full lg:pr-10 pr-0 pt-12">
-            <form onSubmit={handleSubmit} className="space-y-4 w-full">
+            
+			<form onSubmit={handleSubmit} className="space-y-4 w-full">
               {/* Full Name */}
+			          {/* Success Bar (absolute, on top of modal) */}
+					  {submissionSuccess && (
+          <div className="mb-6 p-4 bg-green-100 border border-green-400 text-green-700 rounded-md">
+            Your form has been successfully submitted. We will contact you shortly.
+          </div>
+        )}
               <div>
                 <input
                   type="text"
