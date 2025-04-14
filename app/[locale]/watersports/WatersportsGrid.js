@@ -41,7 +41,7 @@ export default function WatersportsGrid({ packages, language }) {
                   </p>
                 </div>
               </div>
-              <button className="blue-solid-button">KNOW MORE</button>
+              <Link href={`/watersports/${package_a.slug}`} className="blue-solid-button">KNOW MORE</Link>
             </div>
           </div>
         </div>
