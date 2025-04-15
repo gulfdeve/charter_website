@@ -115,7 +115,7 @@ export default async function YachtPage({ params: paramsPromise }) {
         </p>
       </div>
 
-      <Route header_whatsapp_url={header_whatsapp_url} />
+      <Route product={product} header_whatsapp_url={header_whatsapp_url} />
       <YachtCarousal />
     </>
   );

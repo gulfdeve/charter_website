@@ -1,7 +1,7 @@
 import React from "react";
 import { useLocale, useTranslations } from "next-intl";
 
-const Route = ({ header_whatsapp_url }) => {
+const Route = ({ product, header_whatsapp_url }) => {
 	  const t = useTranslations();
   return (
     <div>
@@ -17,7 +17,7 @@ const Route = ({ header_whatsapp_url }) => {
           </p>
         </div>
         <div className="container mx-auto">
-          <img className="w-full" alt="route map of centaurus charter yachts" src="/route-map-storm.webp" />
+          <img className="w-full" alt="route map of centaurus charter yachts" src={`https://www.centauruscharter.net/product/images/${product.map_image}`} />
           <div className="grid grid-cols-1 md:grid-cols-4">
             <div className="flex flex-col items-start bg-red-100">
               <div className="bg-red-700 p-5 text-white uppercase text-center w-full">
