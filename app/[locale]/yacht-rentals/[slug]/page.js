@@ -30,7 +30,7 @@ export default async function YachtPage({ params: paramsPromise }) {
     { label: "Size", value: product.translations?.[locale]?.size },
     { label: "Decks", value: product.translations?.[locale]?.decks },
     { label: "Capacity", value: product.translations?.[locale]?.maximum_guest },
-    { label: "Duration", value: "Minimum 1 Hour" },
+    { label: "Duration", value: product.translations?.[locale]?.duration },
     { label: "Cabin", value: product.translations?.[locale]?.cabin },
     {
       label: "Kitchen Equipment",
@@ -104,7 +104,7 @@ export default async function YachtPage({ params: paramsPromise }) {
         />
 
         <div
-          className="text-sm text-center"
+          className="text-base text-primary-grey"
           dangerouslySetInnerHTML={{
             __html: product.translations?.[locale]?.description || "",
           }}
