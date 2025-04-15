@@ -15,7 +15,11 @@
 			"destination": "https://www.centauruscharter.net/makepayment/:path*",
 			"permanent": true
 		  },
-
+		  {
+			"source": "/dubai-yachts-winter-offers",
+			"destination": "/offers/dubai-yachts-winter-offers",
+			"permanent": true
+		  },
 	  {
 		"source": "/wp/product/56-ft-Yacht-Vassia",
 		"destination": "/yacht-rentals/56ft-vassia",

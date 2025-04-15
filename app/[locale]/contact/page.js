@@ -202,7 +202,7 @@ export default function Page() {
                     />
                     <label htmlFor="terms" className="text-sm leading-5">
                       I can confirm I have read and accepted the{" "}
-                      <Link href="/terms-and-condtion" className="text-blue-500 underline">
+                      <Link href="/terms-and-condition" className="text-blue-500 underline">
                         Terms and Conditions
                       </Link>
                       .

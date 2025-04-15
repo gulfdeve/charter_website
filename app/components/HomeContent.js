@@ -348,7 +348,7 @@ export default function Home() {
         <div
           className="w-full h-[50vh] bg-cover bg-fixed lg:bg-top bg-center"
           style={{
-            backgroundImage: "url('YachtSun.webp')",
+            backgroundImage: "url('/YachtSun.webp')",
             // Ensure the background is behind the content
           }}
         ></div>

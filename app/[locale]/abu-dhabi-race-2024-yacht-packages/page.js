@@ -211,7 +211,7 @@ const Page = () => {
     { src: "/DAILY ACCESS TO F1 OASIS AREA.webp", text: "DAILY ACCESS TO F1 OASIS AREA" },
     { src: "/PANORAMIC VIEWS OF YAS MARINA.webp", text: "PANORAMIC VIEWS OF YAS MARINA" },
     { src: "/4-DAY VIP YACHT PARTY ACCESS.webp", text: "4-DAY VIP YACHT PARTY ACCESS" },
-    { src: "/4-DAY GOURMET FOOD CATERINGwebp", text: "4-DAY GOURMET FOOD CATERING" },
+    { src: "/4-DAY GOURMET FOOD CATERING.webp", text: "4-DAY GOURMET FOOD CATERING" },
   ]
 
   return (
