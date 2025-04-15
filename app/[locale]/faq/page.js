@@ -98,7 +98,7 @@ const page = () => {
     return (
       <div className="bg-white w-full h-full nav-space">
         <div>
-          <img src="./FAQ.jpg" className="w-full" />
+          <img src="/FAQ.jpg" className="w-full" />
         </div>
         <div className="container m-auto flex flex-col items-center justify-center py-10">
           <h1 className=" text-primary-blue text-center font-bold text-xl sm:text:2xl md:text-3xl lg:text-4xl">

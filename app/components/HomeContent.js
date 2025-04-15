@@ -175,7 +175,7 @@ export default function Home() {
                         }
                       >
                         <img
-                          src="./centaurus_link.svg"
+                          src="/centaurus_link.svg"
                           alt="centaurus link"
                           className="w-[10rem] xl:mt-3"
                         />

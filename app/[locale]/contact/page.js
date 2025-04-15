@@ -85,7 +85,7 @@ export default function Page() {
         <div>
           <img
             alt="contact header banner"
-            src="./Contactheader.webp"
+            src="/Contactheader.webp"
             className="w-full"
           />
         </div>

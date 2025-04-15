@@ -141,7 +141,7 @@ export default function YachtmobileCarousal() {
                         }
                       >
                         <img
-                          src="./centaurus_link.svg"
+                          src="/centaurus_link.svg"
                           alt="centaurus link"
                           className="xxs:w-[5rem] xs:w-[7rem] xl:mt-3"
                         />

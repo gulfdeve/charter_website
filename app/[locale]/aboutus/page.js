@@ -5,7 +5,7 @@ const AboutPage = () => {
   return (
     <><div className="bg-white w-full h-full nav-space">
       <div>
-        <img alt="about us" src="./AboutUsHeader.png" className="w-full" />
+        <img alt="about us" src="/AboutUsHeader.png" className="w-full" />
       </div>
       <div className="flex flex-col items-center justify-center py-10 ">
         <h1 className=" text-primary-blue text-center pb-4">

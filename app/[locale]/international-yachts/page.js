@@ -115,7 +115,7 @@ export default async function VesselsPage({ searchParams }) {
       {/* --- HERO IMAGE (full-width at top) --- */}
       <div className="relative w-full h-[500px]">
         <img
-          src="./international-yacht.jpeg"
+          src="/international-yacht.jpeg"
           alt="Hero"
           className="w-full h-full object-cover"
         />
