@@ -1,9 +1,11 @@
 "use client";
 import { FaQuestionCircle, FaWhatsapp, FaMapMarkerAlt } from "react-icons/fa";
 import { Link } from "@/app/i18n/routing";
+import { useLocale, useTranslations } from "next-intl";
 
 export default function YachtDetails({ yachtDetails, product, locale, whatsappUrl }) {
-  return (
+	const t = useTranslations();
+	return (
     <div className="flex flex-col lg:flex-row w-full items-start lg:justify-between py-10">
       <div className="flex flex-col lg:items-start w-full lg:justify-start lg:w-1/2">
         <table className="w-full text-sm text-left text-gray-900">
@@ -62,7 +64,7 @@ export default function YachtDetails({ yachtDetails, product, locale, whatsappUr
             </Link>
             <Link
               className="yellow-solid-button flex items-center justify-center gap-2"
-              href={whatsappUrl || "#"}
+              href={t("header.whatsapp_url")}
             >
               <FaWhatsapp size={20} />
               CHAT WITH US
