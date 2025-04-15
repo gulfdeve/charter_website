@@ -323,26 +323,26 @@ const Page = () => {
   <p className="text-primary-blue-2 font-bold text-center">
     TERMS & CONDITION
   </p>
-  <ul className="max-w-2xl mx-auto list-disc text-primary-blue text-sm pt-5 space-y-2">
-    <li className="text-left">
+  <ul className="max-w-2xl mx-auto list-disc text-primary-blue-4 text-sm pt-5 space-y-2">
+    <li className="text-center">
       Rates do not include alcohol. An alcohol menu is available for
       purchase on board.
     </li>
-    <li className="text-left">
+    <li className="text-center">
       There are different ranges of yachts and boats with several
       capacities, no specific yacht is guaranteed until the time of
       visit.
     </li>
-    <li className="text-left">
+    <li className="text-center">
       Cruise routes are subject to change due to weather and wind
       conditions.
     </li>
-    <li className="text-left">
+    <li className="text-center">
       Cruising times are subject to adjustments based on sunset timings.
     </li>
-    <li className="text-left">Rates cannot be combined with other offers.</li>
-    <li className="text-left">Guests under 18 years old must be accompanied by an adult.</li>
-    <li className="text-left">The offer is valid until 6-28 April 2025</li>
+    <li className="text-center">Rates cannot be combined with other offers.</li>
+    <li className="text-center">Guests under 18 years old must be accompanied by an adult.</li>
+    <li className="text-center">The offer is valid until 6-28 April 2025</li>
   </ul>
 </div>
         {/* Split Section with Image + Text */}
@@ -386,7 +386,7 @@ const Page = () => {
         {/* CTA Section */}
 
         <div className="py-10 w-full container mx-auto">
-          <div className="flex flex-col md:flex-row rounded-lg items-center  gap-5 justify-center  md:justify-between bg-primary-blue p-5">
+          <div className="flex flex-col md:flex-row rounded-xl items-center  gap-5 justify-center  md:justify-between bg-primary-blue p-5">
             <p className="text-white  text-center md:text-left font-bold bg-primary-blue text-xl rounded ">
               Enjoy a luxurious shared yacht adventure!
             </p>

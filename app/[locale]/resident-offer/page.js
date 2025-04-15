@@ -1,7 +1,19 @@
-import React from "react";
+"use client";
+import React, { useState } from "react";
 import Videoresidentoffers from "@/app/components/Videoresidentoffers";
 import { FaWhatsapp } from "react-icons/fa";
+import Link from "next/link";
+import Modal2 from "@/app/components/Modal2";
 const page = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const handlequote = () => {
+    setIsModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+  };
   const yachts = [
     {
       name: "THUNDER - 36FT",
@@ -10,6 +22,7 @@ const page = () => {
       rate2Hours: "AED 950",
       rate3Hours: "AED 1070",
       rate4Hours: "AED 1430",
+      fareharbor_id: "353083",
     },
     {
       name: "STORM - 36FT",
@@ -18,6 +31,7 @@ const page = () => {
       rate2Hours: "AED 950",
       rate3Hours: "AED 1070",
       rate4Hours: "AED 1430",
+      fareharbor_id: "429263",
     },
     {
       name: "VASSIA - 56FT",
@@ -26,6 +40,7 @@ const page = () => {
       rate2Hours: "AED 1665",
       rate3Hours: "AED 1870",
       rate4Hours: "AED 2495",
+      fareharbor_id: "340280",
     },
     {
       name: "ETOSHA - 58FT",
@@ -34,6 +49,7 @@ const page = () => {
       rate2Hours: "AED 1730",
       rate3Hours: "AED 1945",
       rate4Hours: "AED 2590",
+      fareharbor_id: "340265",
     },
     {
       name: "LAGOONA - 56FT",
@@ -42,6 +58,7 @@ const page = () => {
       rate2Hours: "AED 1840",
       rate3Hours: "AED 2070",
       rate4Hours: "AED 2760",
+      fareharbor_id: "340459",
     },
     {
       name: "SILVER CREEK - 61FT",
@@ -50,6 +67,7 @@ const page = () => {
       rate2Hours: "AED 1995",
       rate3Hours: "AED 2250",
       rate4Hours: "AED 3000",
+      fareharbor_id: "340286",
     },
   ];
   return (
@@ -57,11 +75,11 @@ const page = () => {
       <div>
         <Videoresidentoffers />
       </div>
-      <div className="container mx-auto flex flex-col items-center justify-center py-10">
-        <h1 className=" text-primary-blue text-center font-bold text-2xl pb-4">
+      <div className="container mx-auto flex flex-col items-center justify-center pt-6">
+        <h3 className=" text-primary-blue text-center font-bold  pb-4">
           EXCLUSIVE 40% DISCOUNT FOR UAE RESIDENTS
-        </h1>
-        <p className=" text-primary-blue text-lg text-center">
+        </h3>
+        <p className=" text-primary-blue text-md text-center">
           EXPERIENCE THE ULTIMATE IN LUXURY YACHT RENTALS AT UNBEATABLE PRICES,
           EXCLUSIVELY FOR UAE RESIDENTS. ENJOY A PERFECT BLEND OF QUALITY AND
           AFFORDABILITY, PROMISING A UNIQUE AND UNFORGETTABLE ADVENTURE ON THE
@@ -69,8 +87,8 @@ const page = () => {
         </p>
       </div>
 
-      <div className="container mx-auto p-2 lg:p-20 py-6">
-        <div className="overflow-x-auto">
+      <div className="container mx-auto p-3 lg:p-5 py-6">
+        <div className="overflow-x-auto lg:px-10">
           <table className="w-full border-collapse border border-gray-300 md:text-sm lg:text-sm">
             <thead>
               <tr className="bg-primary-blue text-white">
@@ -102,31 +120,44 @@ const page = () => {
                 <tr
                   key={index}
                   className={`${
-                    index % 2 === 0 ? "bg-white" : "bg-gray-100"
+                    index % 2 === 0 ? "bg-white" : "bg-white"
                   } text-center text-sm`}
                 >
-                  <td className="border border-black p-2  font-bold">
+                  <td className="border border-black p-3  font-bold">
                     {yacht.name}
                   </td>
-                  <td className="border border-black p-2  font-bold">
+                  <td className="border border-black p-3  font-bold">
                     {yacht.capacity}
                   </td>
-                  <td className="border border-black p-2  font-bold">
+                  <td className="border border-black p-3  font-bold">
                     {yacht.ratePerHour}
                   </td>
-                  <td className="border border-black p-2  font-bold">
+                  <td className="border border-black p-3  font-bold">
                     {yacht.rate2Hours}
                   </td>
-                  <td className="border border-black p-2  font-bold">
+                  <td className="border border-black p-3  font-bold">
                     {yacht.rate3Hours}
                   </td>
-                  <td className="border border-black p-2  font-bold">
+                  <td className="border border-black p-3  font-bold">
                     {yacht.rate4Hours}
                   </td>
-                  <td className="border border-black p-2  font-bold bg-primary-yellow">
-                    <button className="bg-primary-yellow text-black py-1 px-10 rounded-lg hover:bg-[#d49d3f] transition-all">
+                  <td className="border border-black p-3  font-bold bg-primary-yellow">
+                    <a
+                      href={`https://fareharbor.com/embeds/book/centauruscharter/items/${yacht.fareharbor_id}/?full-items=yes&flow=645487`}
+                      target="_self"
+                      rel="noopener noreferrer"
+                      className="
+    bg-primary-yellow
+    text-black
+    mx-10
+    rounded-lg
+    hover:bg-primary-yellow-dark
+    transition-all
+    inline-block  
+  "
+                    >
                       Book Now
-                    </button>
+                    </a>
                   </td>
                 </tr>
               ))}
@@ -135,16 +166,16 @@ const page = () => {
         </div>
       </div>
       <div className="container mx-auto flex flex-col  px-4">
-        <h3 className="text-black  text-center font-bold">
+        <h3 className="text-black text-lg text-center font-bold pb-5">
           INCLUSIONS: WATER, SOFT DRINKS, WINES, AND BEERS.
         </h3>
-        <div className="bg-primary-blue p-1 ">
-          <h3 className=" font-bold text-center text-white text-md">
+        <div className="bg-primary-blue-4 p-0.5 ">
+          <h3 className=" font-bold text-center text-white text-[1rem]">
             DISCOUNTED RATES ARE VALID FOR BOOKINGS FROM 6AM-2PM (MORNING TRIPS)
             & 8 PM ONWARDS (NIGHT TRIPS)
           </h3>
         </div>
-        <h3 className=" text-left md:text-center py-5">
+        <h3 className=" text-left md:text-center  text-[1rem]  leading-tight font-light py-5">
           ESCAPE THE ORDINARY AND EMBARK ON A PRIVATE YACHT ADVENTURE WITH OUR
           LIMITED-TIME 40% DISCOUNT FOR UAE RESIDENTS. TO AVAIL THIS EXCLUSIVE
           OFFER, SIMPLY BOOK A MINIMUM 2-HOURS YACHT TOUR AND LET US TAKE CARE
@@ -153,22 +184,21 @@ const page = () => {
         </h3>
       </div>
       <div className="container mx-auto">
-      <hr className="my-5 border border-primary-blue"></hr>
+        <hr className="my-5 border border-primary-blue"></hr>
       </div>
-      <div className="flex flex-col items-center justify-center py-10">
-        <h1 className=" text-primary-blue text-center font-bold text-2xl pb-4">
+      <div className="flex flex-col items-center justify-center pt-5 ">
+        <h3 className=" text-primary-blue text-center font-bold  pb-4">
           EXCLUSIVE 30% DISCOUNT FOR UAE RESIDENTS
-        </h1>
-        <p className=" text-primary-blue text-lg text-center lg:px-56">
-          EXPERIENCE THE ULTIMATE IN LUXURY YACHT RENTALS AT UNBEATABLE PRICES,
-          EXCLUSIVELY FOR UAE RESIDENTS. ENJOY A PERFECT BLEND OF QUALITY AND
-          AFFORDABILITY, PROMISING A UNIQUE AND UNFORGETTABLE ADVENTURE ON THE
-          WATER.
+        </h3>
+        <p className=" text-primary-blue  text-left  text-[1rem]  lg:px-56">
+          TAKE ADVANTAGE OF OUR SPECIAL OFFER WITH A 30% DISCOUNT ON LUXURY
+          YACHT RENTALS DURING PRIMETIME HOURS. EXPERIENCE THE SAME QUALITY AND
+          LUXURY AT A REDUCED RATE
         </p>
       </div>
-      <div className="container mx-auto p-2 lg:p-20 py-6">
-        <div className="overflow-x-auto">
-          <table className="w-full border-collapse border border-gray-300 md:text-sm lg:text-sm">
+      <div className="container mx-auto p-3 lg:p-30 py-3">
+        <div className="overflow-x-auto lg:px-10">
+          <table className="w-full border-collapse border border-gray-300 md:text-sm lg:text-sm ">
             <thead>
               <tr className="bg-primary-blue text-white">
                 <th className="border border-transparent p-3  text-primary-yellow">
@@ -199,31 +229,45 @@ const page = () => {
                 <tr
                   key={index}
                   className={`${
-                    index % 2 === 0 ? "bg-white" : "bg-gray-100"
+                    index % 2 === 0 ? "bg-white" : "bg-white"
                   } text-center text-sm`}
                 >
-                  <td className="border border-black p-2  font-bold">
+                  <td className="border border-black p-3  font-bold">
                     {yacht.name}
                   </td>
-                  <td className="border border-black p-2  font-bold">
+                  <td className="border border-black p-3  font-bold">
                     {yacht.capacity}
                   </td>
-                  <td className="border border-black p-2  font-bold">
+                  <td className="border border-black p-3  font-bold">
                     {yacht.ratePerHour}
                   </td>
-                  <td className="border border-black p-2  font-bold">
+                  <td className="border border-black p-3  font-bold">
                     {yacht.rate2Hours}
                   </td>
-                  <td className="border border-black p-2  font-bold">
+                  <td className="border border-black p-3  font-bold">
                     {yacht.rate3Hours}
                   </td>
-                  <td className="border border-black p-2  font-bold">
+                  <td className="border border-black p-3  font-bold">
                     {yacht.rate4Hours}
                   </td>
-                  <td className="border border-black p-2  font-bold bg-primary-yellow">
-                    <button className="bg-primary-yellow text-black py-1 px-10 rounded-lg hover:bg-[#d49d3f] transition-all">
+
+                  <td className="border border-black p-3  font-bold bg-primary-yellow">
+                    <a
+                      href={`https://fareharbor.com/embeds/book/centauruscharter/items/${yacht.fareharbor_id}/?full-items=yes&flow=645487`}
+                      target="_self"
+                      rel="noopener noreferrer"
+                      className="
+    bg-primary-yellow
+    text-black
+    mx-10
+    rounded-lg
+    hover:bg-primary-yellow-dark
+    transition-all
+    inline-block  
+  "
+                    >
                       Book Now
-                    </button>
+                    </a>
                   </td>
                 </tr>
               ))}
@@ -232,78 +276,101 @@ const page = () => {
         </div>
       </div>
       <div className="container mx-auto flex flex-col  px-4">
-        <h3 className="text-black  text-center font-bold">
+        <h3 className="text-black text-lg text-center font-bold pb-5">
           INCLUSIONS: WATER, SOFT DRINKS, WINES, AND BEERS.
         </h3>
-        <div className="bg-primary-blue p-1 ">
-          <h3 className=" font-bold text-center text-white text-md">
-            DISCOUNTED RATES ARE VALID FOR BOOKINGS FROM 6AM-2PM (MORNING TRIPS)
-            & 8 PM ONWARDS (NIGHT TRIPS)
+        <div className="bg-primary-blue-4 p-0.5 ">
+          <h3 className=" font-bold text-center text-white text-[1rem]">
+            DISCOUNTED RATES: VALID FOR BOOKINGS FROM 4 PM TO 7 PM (PRIMETIME).
           </h3>
         </div>
-        <h3 className=" text-left md:text-center py-5">
-          ESCAPE THE ORDINARY AND EMBARK ON A PRIVATE YACHT ADVENTURE WITH OUR
-          LIMITED-TIME 40% DISCOUNT FOR UAE RESIDENTS. TO AVAIL THIS EXCLUSIVE
+        <h3 className=" text-left md:text-center  text-[1rem]  leading-tight font-light py-5">
+          ESCAPE THE ORDINARY AND SET SAIL ON A PRIVATE YACHT ADVENTURE WITH OUR
+          LIMITED-TIME 30% DISCOUNT FOR UAE RESIDENTS. TO AVAIL THIS EXCLUSIVE
           OFFER, SIMPLY BOOK A MINIMUM 2-HOURS YACHT TOUR AND LET US TAKE CARE
           OF THE REST. ENJOY UNLIMITED DRINKS AND SNACKS DURING YOUR PRIVATE
           YACHT TOUR. WATERSPORTS ARE ALSO AVAILABLE ON REQUEST.
         </h3>
       </div>
       <div className="container mx-auto">
-     
-      </div>
-      <div className="flex flex-col item-center justify-center py-10 px-5">
-              <h1 className=" text-primary-blue-2 font-bold text-center">
-                TERMS & CONDITION
-              </h1>
-              <ul className="list-disc md:list-none text-center  text-primary-blue text-sm pl-4 pt-5 space-y-2">
-                <li>The Winter Offer is valid until 31 January 2025.</li>
-                <li>This offer cannot be combined with other promotions.</li>
-                <li>⁠A minimum booking duration of 2 hours is required.</li>
-                <li>
-                  ⁠The offer is exclusive to UAE residents (proof of residency
-                  may be required).
-                </li>
-                <li>
-                  Blackout dates: 1-3 December (National Day) and 20 December
-                  2024 -01 January 2025
-                </li>
-                <li>⁠Terms are subject to change without prior notice.</li>
-              </ul>
-            </div>
-            <section className="w-full p-4 container mx-auto space-y-10">
-      {/* Outer container with gold background */}
-      
-      <div className="bg-primary-yellow flex items-center justify-between rounded-xl px-6 py-3">
-        {/* Left Text */}
-        <span className="text-primary-blue font-bold text-xl uppercase">
-          EXPLORE MORE YACHT OFFERS
-        </span>
+        <div className=" flex flex-col item-center justify-center py-2 px-5">
+          <h5 className=" text-black text-lg  text-center">
+            TERMS & CONDITION
+          </h5>
+          <ul className="container-mx-auto list-disc  text-center  text-primary-blue text-sm pl-4 pt-5 space-y-2 uppercase">
+            <li>
+              THE SUMMER OFFER IS VALID FROM JUNE 10TH TO SEPTEMBER 15TH, 2024.
+            </li>
+            <li>CANNOT BE COMBINED WITH OTHER OFFERS.</li>
+            <li>MINIMUM BOOKING DURATION IS 2 HOURS.</li>
+            <li>THIS OFFER IS EXCLUSIVE TO UAE RESIDENTS.</li>
+            <li>
+              <strong>
+                {" "}
+                - DRINKS ARE INCLUDED WITH BOOKINGS OF 3 HOURS OR MORE
+              </strong>
+            </li>
 
-        {/* Right Button */}
-        <button className="blue-solid-button text-white">
-          VIEW MORE
-        </button>
+            <li>
+              <strong>- OFFER IS NOT VALID ON PUBLIC HOLIDAYS</strong>
+            </li>
+          </ul>
+          <h6 className="font-bold uppercase text-center py-7">
+            BOOK NOW AND ENJOY AN UNFORGETTABLE YACHT EXPERIENCE WITH CENTAURUS
+            CHARTER!
+          </h6>
+        </div>
       </div>
-      <div className="flex flex-col md:flex-row rounded-lg md:px-10 xl:px-5 items-center  gap-5 justify-center  md:justify-between bg-transparent md:bg-primary-blue py-3">
-                    <button className="text-white  font-bold bg-primary-blue px-5 py-3 text-xl rounded">
-                      REACH OUT TO US
-                    </button>
-                    <div className=" flex flex-col md:flex-row md:gap-10 gap-5">
-                      <button className="flex items-center justify-center gap-2 px-4 py-3 bg-primary-blue text-primary-yellow border border-primary-yellow-dark  font-bold rounded-md hover:bg-primary-blue-2 transition">
-                        <FaWhatsapp size={20} />
-                        WHATSAPP US
-                      </button>
-                      <button
-                       
-                        className="flex items-center justify-center gap-2 px-4 py-3 bg-primary-blue text-primary-yellow border border-primary-yellow-dark  font-bold rounded-md hover:bg-primary-blue-2 transition"
-                      >
-                   SUMMER OFFERS
-                      </button>
-                    </div>
-                  </div>
-    </section>
-    
+
+      <section className="w-full p-4 container mx-auto space-y-10">
+        {/* Outer container with gold background */}
+
+        <div className="bg-primary-yellow flex items-center justify-between rounded-xl px-36 py-3">
+          {/* Left Text */}
+          <span className="text-primary-blue font-bold text-lg uppercase">
+            EXPLORE MORE YACHT OFFERS
+          </span>
+
+          {/* Right Button */}
+          <Link href="/offers">
+            <button
+              className="py-3 px-20
+          text-base font-bold tracking-wider uppercase
+           bg-primary-blue
+           
+        shadow
+          transition duration-150 ease-in-out transform rounded-xl text-white"
+            >
+              VIEW MORE
+            </button>
+          </Link>
+        </div>
+        <div className="flex flex-col md:flex-row rounded-xl md:px-10 xl:px-5 items-center  gap-5 justify-center  md:justify-between bg-transparent md:bg-primary-blue py-3">
+          <button className="text-white  font-bold bg-primary-blue px-5 py-3 text-xl rounded">
+            REACH OUT TO US
+          </button>
+          <div className=" flex flex-col md:flex-row md:gap-10 gap-5">
+            <Link href={"https://wa.link/eyg3by"}>
+              <button className="flex items-center justify-center gap-3 px-10 py-2 bg-primary-blue text-primary-yellow border border-primary-yellow-dark  font-bold rounded-md  transition">
+                <FaWhatsapp size={20} />
+                WHATSAPP US
+              </button>
+            </Link>
+            <button
+              onClick={handlequote}
+              className="flex items-center justify-center gap-3 px-10 py-2 bg-primary-blue text-primary-yellow border border-primary-yellow-dark  font-bold rounded-md  transition"
+            >
+              SUMMER OFFERS
+            </button>
+          </div>
+        </div>
+        <Modal2
+          isModalOpen={isModalOpen}
+          closeModal={closeModal}
+          idName="offers_id"
+          idValue="44"
+        />
+      </section>
     </>
   );
 };
