@@ -31,7 +31,7 @@ export default function EventCarousel() {
         {/* Embla "container" for slides: using flex for horizontal layout */}
         <div className="flex gap-4">
           {!loading &&
-            data?.events?.map((event) => (
+            data?.events?.map((event, index) => (
               <div
                 key={event.id}
                 // This width shows one full event card plus a partial view of the next
@@ -46,6 +46,8 @@ export default function EventCarousel() {
 							  className="rounded-tl-md rounded-tr-md w-full object-cover"
 							  width={1000}
 							  height={600}
+							  priority={index < 2}
+            loading={index < 2 ? "eager" : "lazy"}
 						/>
                   </Link>
                   <div className="flex flex-col justify-start px-5 lg:px-5 flex-grow">
