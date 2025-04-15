@@ -7,9 +7,9 @@ export async function GET(request) {
   const secret = request.nextUrl.searchParams.get('secret');
   
   // Check for secret to prevent public access
-  if (secret !== process.env.REVALIDATION_SECRET) {
-    return NextResponse.json({ message: 'Invalid token' }, { status: 401 });
-  }
+//   if (secret !== process.env.REVALIDATION_SECRET) {
+//     return NextResponse.json({ message: 'Invalid token' }, { status: 401 });
+//   }
   
   // Revalidate the specific path that uses this data
   revalidatePath('/api/get-data');
