@@ -3,16 +3,19 @@
 import React from "react";
 import { FaWhatsapp } from "react-icons/fa";
 import { Link } from "@/app/i18n/routing";
+import Image from "next/image";
 
 export default function EventCard({ event, language }) {
   return (
     <div className="flex flex-col justify-start lg:justify-between rounded-md bg-white custom-shadow">
       <Link href={`/events/${event.slug}`}>
-        <img 
-          src={`https://www.centauruscharter.net/product/images/${event.image}`}
-          alt={event.translations[language].title} 
-          className="rounded-t-md w-full object-cover" 
-        />
+        <Image 
+		  src={`https://www.centauruscharter.net/product/images/${event.image}`}
+		  alt={event.translations[language].title} 
+		  className="rounded-t-md w-full object-cover"
+		  width={1000}
+		  height={600}
+	/>
       </Link>
       <div className="flex flex-col justify-start px-5 lg:px-5">
         <h2 className="text-primary-blue text-2xl font-bold pt-4">
