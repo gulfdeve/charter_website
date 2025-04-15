@@ -3,7 +3,7 @@ import { useLocale, useTranslations } from "next-intl";
 
 const Route = ({ product, header_whatsapp_url }) => {
 	  const t = useTranslations();
-	  console.log("product: ", product);
+	//   console.log("product: ", product);
   return (
     <div>
       <div className="bg-primary-blue w-full h-auto py-10 xl:px-44 md:px-6 px-2">

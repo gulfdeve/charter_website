@@ -9,7 +9,10 @@ export const fetchData = cache(async () => {
       : '';
       
     const response = await fetch(`${baseUrl}/api/get-data`, {
-      next: { revalidate: 3600 } // Cache for 1 hour (3600 seconds)
+		next: { 
+			revalidate: 3600,
+			tags: ['data-cache'] // Add this tag
+		  }
     });
     
     if (!response.ok) {
