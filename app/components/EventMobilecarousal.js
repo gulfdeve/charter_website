@@ -5,6 +5,7 @@ import { Link } from "@/app/i18n/routing";
 import { useData } from "@/app/context/DataContext";
 import { useLocale } from "next-intl";
 import { FaWhatsapp } from "react-icons/fa";
+import Image from "next/image";
 
 export default function EventCarousel() {
   const emblaRef = useRef(null);
@@ -39,11 +40,13 @@ export default function EventCarousel() {
                 <div className="flex flex-col justify-start lg:justify-between rounded-md bg-white h-full overflow-hidden border border-gray-400 md:border-none xl:p-10 shadow-none">
                   {/* Event Image */}
                   <Link href={`/events/${event.slug}`}>
-                    <img
-                      src={`https://www.centauruscharter.net/product/images/${event.image}`}
-                      alt={event.translations[locale].title}
-                      className="rounded-tl-md rounded-tr-md w-full object-cover"
-                    />
+							<Image 
+							  src={`https://www.centauruscharter.net/product/images/${event.image}`}
+							  alt={event.translations[locale].title} 
+							  className="rounded-tl-md rounded-tr-md w-full object-cover"
+							  width={1000}
+							  height={600}
+						/>
                   </Link>
                   <div className="flex flex-col justify-start px-5 lg:px-5 flex-grow">
                     {/* Event Title */}
