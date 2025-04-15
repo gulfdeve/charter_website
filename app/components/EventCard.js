@@ -5,8 +5,9 @@ import { FaWhatsapp } from "react-icons/fa";
 import { Link } from "@/app/i18n/routing";
 import Image from "next/image";
 
-export default function EventCard({ event, language }) {
-  return (
+export default function EventCard({ event, language, index }) {
+	const isPriority = index < 2;
+	return (
     <div className="flex flex-col justify-start lg:justify-between rounded-md bg-white custom-shadow">
       <Link href={`/events/${event.slug}`}>
         <Image 
@@ -15,6 +16,8 @@ export default function EventCard({ event, language }) {
 		  className="rounded-t-md w-full object-cover"
 		  width={1000}
 		  height={600}
+		  priority={isPriority}
+          loading={isPriority ? "eager" : "lazy"}
 	/>
       </Link>
       <div className="flex flex-col justify-start px-5 lg:px-5">

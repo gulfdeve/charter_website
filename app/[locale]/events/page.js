@@ -24,8 +24,8 @@ export default async function Page({ params }) {
 
         <div className="hidden md:block">
           <div className="grid grid-col-1 md:grid-cols-2 gap-7 pb-4">
-            {data?.events?.map((event) => (
-              <EventCard key={event.id} event={event} language={language} />
+            {data?.events?.map((event, index) => (
+              <EventCard key={event.id} event={event} language={language} index={index} />
             ))}
           </div>
         </div>
