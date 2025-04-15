@@ -1,6 +1,8 @@
 import React from "react";
+import { useLocale, useTranslations } from "next-intl";
 
 const Route = ({ header_whatsapp_url }) => {
+	  const t = useTranslations();
   return (
     <div>
       <div className="bg-primary-blue w-full h-auto py-10 xl:px-44 md:px-6 px-2">
@@ -91,7 +93,7 @@ const Route = ({ header_whatsapp_url }) => {
           <div className="flex flex-col ">
             <div className="flex flex-col gap-5 md:flex-row md:justify-center md:gap-12 mt-5">
               <a
-                href={header_whatsapp_url || "#"}
+                href={t("header.whatsapp_url")}
                 target="_blank"
                 className="blue-lined-button"
               >
