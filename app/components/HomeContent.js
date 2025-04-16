@@ -343,10 +343,10 @@ export default function Home() {
         </div>
       </div>
       <WhyChooseUs />
-      <div className=" h-[40vh]">
+      <div className=" h-[30vh]">
         {/* Scrollable Background */}
         <div
-          className="w-full h-[50vh] bg-cover bg-fixed lg:bg-top bg-center"
+          className="w-full h-[40vh] bg-cover bg-fixed lg:bg-top bg-center"
           style={{
             backgroundImage: "url('/YachtSun.webp')",
             // Ensure the background is behind the content
