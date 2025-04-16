@@ -34,7 +34,6 @@ const nextConfig: NextConfig = {
   poweredByHeader: false, // Remove X-Powered-By header for security
   // Enable static optimizations
   reactStrictMode: true,
-  swcMinify: true,
   // Add custom headers for caching
   async headers() {
     return [
