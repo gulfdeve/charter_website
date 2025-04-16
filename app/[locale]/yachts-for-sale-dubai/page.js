@@ -12,17 +12,15 @@ const Page = () => {
     <>
 <VideoLocal filename="/buy-sell-yacht-video.mp4" section="buy-yacht" />
       <div className="bg-white w-full h-auto ">
-        <div className="bg-white rounded-lg p-8 container mx-auto my-8 shadow-buy-yacht mt-14">
+        <div className="bg-white rounded-lg p-8 container mx-auto my-8 mt-14">
           <h1 className="text-4xl font-bold text-center text-gray-900 mb-8 ">
             FIND YOUR DREAM YACHT {t("navbar.private-yachts")}  
           </h1>
 
           <p className="text-gray-700 text-lg text-center leading-relaxed ">
-            AT CENTAURUS CHARTER, WE OFFER AN EXCLUSIVE COLLECTION OF LUXURY
-            YACHTS FOR SALE, CATERING TO THE DISCERNING TASTES OF OUR CLIENTS.
-            WHETHER YOU'RE LOOKING FOR A SLEEK, MODERN YACHT OR A classNameIC,
-            ELEGANT VESSEL, WE HAVE THE PERFECT YACHT TO MEET YOUR NEEDS AND
-            EXCEED YOUR EXPECTATIONS.
+            At Centaurus Charter, we Offer an Exclusive Collection of Luxury Yachts for sale, catering to the discerning tastes of our clients. 
+            Whether You're Looking for a Sleek, Modern Yacht or an Elegant Vessel, 
+            We Have the Perfect Yacht to Meet Your Needs and Exceed Your Expectations.
           </p>
         </div>
         <YachtListings />
@@ -81,9 +79,9 @@ const Page = () => {
             </div>
           </div>
           <div className="flex flex-col items-center sm:items-start sm:justify-start justify-center bg-primary-blue px-5 xl:px-20 xl:py-12 py-5 md:h-[530px] xl:h-[452px]  lg:h-[480px]">
-            <h1 className=" text-white text-center font-bold text-2xl xl:text-3xl py-7">
+            <h2 className=" text-white text-center font-bold text-2xl xl:text-3xl py-7">
               The Buying Process
-            </h1>
+            </h2>
             <h3 className="text-primary-yellow ">
               PERSONALISED ASSISTANCE
             </h3>
@@ -127,9 +125,9 @@ const Page = () => {
       />
     </div>
     <div className="w-full lg:w-1/2 flex flex-col items-center lg:rounded-r-xl lg:rounded-l-none lg:items-center justify-center text-center lg:text-left lg:px-16 px-6 py-5">
-      <h1 className=" text-black font-bold text-3xl 2xl:text-3xl pt-5">
+      <h2 className=" text-black font-bold text-3xl 2xl:text-3xl pt-5">
         Sell your Yacht
-      </h1>
+      </h2>
       <p className=" text-black 2xl:text-xl py-5 lg:text-left 2xl:px-3 xl:px-10">
         Looking to sell your yacht? At Centaurus Charter, we provide expert assistance to help you achieve the best value for your vessel. Our extensive network and marketing expertise ensure that your yacht is presented to the right buyers, maximizing its exposure and sale potential. We handle everything from valuations to negotiations, providing a hassle-free selling experience.
       </p>
