@@ -141,19 +141,23 @@ const page = () => {
                   <td className="border border-black p-3  font-bold">
                     {yacht.rate4Hours}
                   </td>
-                  <td className="border border-black p-3  font-bold bg-primary-yellow">
+                  <td className="border border-black p-3  font-bold bg-primary-yellow hover:bg-primary-yellow-dark">
                     <a
                       href={`https://fareharbor.com/embeds/book/centauruscharter/items/${yacht.fareharbor_id}/?full-items=yes&flow=645487`}
                       target="_self"
                       rel="noopener noreferrer"
                       className="
-    bg-primary-yellow
+    
     text-black
-    mx-10
+   
     rounded-lg
-    hover:bg-primary-yellow-dark
+  
     transition-all
     inline-block  
+  
+mx-10
+    text-center
+    h-full
   "
                     >
                       Book Now
@@ -251,19 +255,23 @@ const page = () => {
                     {yacht.rate4Hours}
                   </td>
 
-                  <td className="border border-black p-3  font-bold bg-primary-yellow">
-                    <a
+                  <td className="border border-black p-3  font-bold bg-primary-yellow hover:bg-primary-yellow-dark">
+                  <a
                       href={`https://fareharbor.com/embeds/book/centauruscharter/items/${yacht.fareharbor_id}/?full-items=yes&flow=645487`}
                       target="_self"
                       rel="noopener noreferrer"
                       className="
-    bg-primary-yellow
+    
     text-black
-    mx-10
+   
     rounded-lg
-    hover:bg-primary-yellow-dark
+  
     transition-all
     inline-block  
+  
+mx-10
+    text-center
+    h-full
   "
                     >
                       Book Now
@@ -294,28 +302,31 @@ const page = () => {
       </div>
       <div className="container mx-auto">
         <div className=" flex flex-col item-center justify-center py-2 px-5">
-          <h5 className=" text-black text-lg  text-center">
+          <h5 className=" text-black text-lg  text-left">
             TERMS & CONDITION
           </h5>
-          <ul className="container-mx-auto list-disc  text-center  text-primary-blue text-sm pl-4 pt-5 space-y-2 uppercase">
-            <li>
-              THE SUMMER OFFER IS VALID FROM JUNE 10TH TO SEPTEMBER 15TH, 2024.
-            </li>
-            <li>CANNOT BE COMBINED WITH OTHER OFFERS.</li>
-            <li>MINIMUM BOOKING DURATION IS 2 HOURS.</li>
-            <li>THIS OFFER IS EXCLUSIVE TO UAE RESIDENTS.</li>
-            <li>
-              <strong>
-                {" "}
-                - DRINKS ARE INCLUDED WITH BOOKINGS OF 3 HOURS OR MORE
-              </strong>
-            </li>
+          <ul className="container mx-auto list-disc text-left text-primary-blue text-sm pl-4 pt-5 uppercase">
+  <li className="mb-1">
+    THE SUMMER OFFER IS VALID FROM JUNE 10TH TO SEPTEMBER 15TH, 2024.
+  </li>
+  <li className="mb-1">
+    CANNOT BE COMBINED WITH OTHER OFFERS.
+  </li>
+  <li className="mb-1">
+    MINIMUM BOOKING DURATION IS 2 HOURS.
+  </li>
+  <li className="mb-1">
+    THIS OFFER IS EXCLUSIVE TO UAE RESIDENTS.
+  </li>
+  <li className="mb-1">
+    <strong>- DRINKS ARE INCLUDED WITH BOOKINGS OF 3 HOURS OR MORE</strong>
+  </li>
+  <li className="mb-1">
+    <strong>- OFFER IS NOT VALID ON PUBLIC HOLIDAYS</strong>
+  </li>
+</ul>
 
-            <li>
-              <strong>- OFFER IS NOT VALID ON PUBLIC HOLIDAYS</strong>
-            </li>
-          </ul>
-          <h6 className="font-bold uppercase text-center py-7">
+          <h6 className="font-bold uppercase text-left py-7">
             BOOK NOW AND ENJOY AN UNFORGETTABLE YACHT EXPERIENCE WITH CENTAURUS
             CHARTER!
           </h6>

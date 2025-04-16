@@ -50,29 +50,7 @@ const Page = () => {
           </h3>
         <div className="text-center grid grid-cols-1  items-center gap-2  w-full overflow-hidden mb-7">
        
-       <div className="grid grid-cols-1 sm:grid-cols-3 bg-primary-yellow-light rounded-lg text-primary-blue">
-        {/* Ride Title */}
-        <div className=" p-2 flex flex-col items-center">
-          <span className="font-bold text-sm">Ride:</span>
-          <span className="font-semibold text-sm  xl:text-sm">
-            {packageItem.translations[locale].title}
-          </span>
-        </div>
-        {/* Duration */}
-        <div className="  p-2 flex flex-col items-center">
-          <span className="font-bold text-sm">Duration:</span>
-          <span className="font-semibold text-sm  xl:text-sm">
-            1 Hour
-          </span>
-        </div>
-        {/* Price */}
-        <div className="bg-primary-yellow rounded-b-lg sm:rounded-l-none sm:rounded-r-lg  p-2 flex flex-col items-center">
-          <span className="font-bold text-sm">Price:</span>
-          <span className="font-semibold text-sm xl:text-sm">
-            {packageItem.amount} AED
-          </span>
-        </div>
-        </div>
+      
         <div className="grid grid-cols-1 sm:grid-cols-3 bg-primary-yellow-light rounded-lg text-primary-blue">
         {/* Ride Title */}
         <div className=" p-2 flex flex-col items-center ">

@@ -30,7 +30,7 @@ export default async function WatersportsPage({ params }) {
         </div>
         
         <div className="md:hidden block">
-          <WatersportCarousal />
+          <WatersportCarousal packages={data?.packages} language={language}/>
         </div>
       </div>
 

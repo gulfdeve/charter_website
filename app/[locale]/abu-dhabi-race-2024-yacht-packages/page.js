@@ -5,6 +5,7 @@ import Videof1 from "@/app/components/Videof1"
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io"
 import Image from 'next/image'
 import { FaShip, FaUsers, FaBed, FaIdCard } from "react-icons/fa"
+import Link from 'next/link'
 
 const yachtData = [
   {
@@ -222,47 +223,47 @@ const Page = () => {
       </div>
 
       {/* Heading Section */}
-      <section className="flex flex-col items-center py-10 bg-white">
-        <h1 className="text-3xl font-bold text-center text-blue-900">
+      <section className="flex flex-col items-center py-20 bg-white">
+        <h1 className="text-5xl font-bold text-center text-primary-blue">
           F1 ABU DHABI GP 2025
         </h1>
-        <p className="text-lg text-center text-gray-600 mt-2">
+        <h3 className="font-medium text-center text-primary-blue my-7">
           LUXURY YACHT CHARTER PACKAGES
-        </p>
-        <p className="text-sm text-center text-gray-700 mt-2 font-semibold">
+        </h3>
+        <h6 className=" text-center font-bold text-primary-blue mt-2 ">
           EVENT DATES: 04 - 07 DECEMBER 2025 | YAS MARINA, ABU DHABI
-        </p>
+        </h6>
 
         {/* Two-column (Image + Text) Section */}
         <div className="container mx-auto py-10">
-          <div className="flex flex-col lg:flex-row items-center justify-center bg-white rounded-3xl overflow-hidden">
+          <div className="flex flex-col lg:flex-row items-center justify-center bg-white rounded-[4rem] overflow-hidden lg:mx-20">
             {/* Left: Image */}
             <div className="rounded rounded-l-xl">
               <img
                 src="/F1TRACKSIDE.webp"
                 alt="F1 Trackside"
-                className="xl:w-[40rem] sm:w-[170rem] lg:w-[160rem] md:h-[543px] xl:h-[500px] lg:h-[504px]"
+                className="xl:w-[40rem] sm:w-[170rem] lg:w-[160rem] md:h-[543px] xl:h-[570px] lg:h-[504px]"
               />
             </div>
 
             {/* Right: Text & Content */}
-            <div className="flex flex-col items-center justify-center bg-primary-blue-2 px-5 py-5 xl:w-[40rem] lg:w-[160rem] md:h-[541px] xl:h-[500px] lg:h-[504px] md:px-10">
-              <h2 className="text-primary-yellow uppercase text-3xl font-bold text-center pb-1">
+            <div className="flex flex-col items-center justify-center bg-primary-blue-2 px-5 py-5 xl:w-[40rem] lg:w-[160rem] md:h-[541px] xl:h-[570px] lg:h-[504px] p-5">
+              <h1 className="text-primary-yellow uppercase  text-4xl font-bold text-center pb-1">
                 FORMULA 1 YACHT PARTY
-              </h2>
-              <h3 className="text-white text-2xl font-bold text-center pb-5">
+              </h1>
+              <h1 className="text-white  font-bold text-center pb-5">
                 HOSPITALITY PACKAGE
-              </h3>
-              <p className="text-white text-center text-sm md:text-base pb-6 px-2 md:px-10">
+              </h1>
+              <p className="text-white text-center text-sm md:text-lg pb-8 px-2 md:px-2">
                 Join Centaurus Charter for an exclusive 4-day Formula 1 Yacht Party experience.
                 Enjoy a luxurious setting, breathtaking views, and an unforgettable race weekend atmosphere.
                 Perfect for corporate events or private celebrations, this hospitality package offers the
                 ultimate way to enjoy the excitement of Formula 1.
               </p>
-              <button className="bg-white text-primary-blue-2 font-semibold px-6 py-3 rounded-lg shadow-md hover:bg-gray-200 transition-colors">
+              <button className="bg-white text-primary-blue text-2xl font-bold px-7 py-4 rounded-xl shadow-md hover:bg-gray-200 transition-colors">
                 INQUIRE NOW
               </button>
-              <p className="mt-4 text-xs text-gray-200 text-center">
+              <p className="mt-8 text-sm text-gray-200 text-center">
                 Limited tickets are available. T&Cs apply.
               </p>
             </div>
@@ -287,9 +288,9 @@ const Page = () => {
               >
                 <div className="flex flex-col rounded-xl overflow-hidden">
                   <img src={item.src} className="w-full" alt={item.text} />
-                  <h1 className="bg-primary-blue-2 text-primary-yellow text-center p-7 h-20 flex items-center justify-center">
+                  <h5 className="bg-primary-blue-2 text-primary-yellow text-center p-7 h-20 flex items-center justify-center">
                     {item.text}
-                  </h1>
+                  </h5>
                 </div>
               </div>
             ))}
@@ -318,10 +319,10 @@ const Page = () => {
         <h2 className="text-2xl md:text-3xl font-bold text-center text-blue-900 mb-8">
           F1 LUXURY YACHT CHARTER PACKAGES
         </h2>
-        <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-20">
+        <div className="container mx-auto  ">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-24 px-20">
             {yachtData.map((yacht) => (
-              <div key={yacht.id} className="bg-white rounded-xl shadow-2xl overflow-hidden">
+              <div key={yacht.id} className="bg-white rounded-2xl shadow-custom overflow-hidden ">
                 {/* Yacht Image */}
                 <Image
                   src={yacht.imageSrc}
@@ -331,36 +332,36 @@ const Page = () => {
                   className="w-full h-auto object-cover"
                 />
                 <div className="p-6">
-                  <h3 className="text-base sm:text-xl font-bold text-black py-2">{yacht.title}</h3>
+                  <h2 className=" font-bold text-black py-2">{yacht.title}</h2>
                   {/* Info Boxes */}
                   <div className="grid grid-cols-2 gap-2 md:gap-4 text-blue-900">
                     {yacht.infoBoxes.map((box, index) => (
-                      <div key={index} className="border-2 border-primary-blue rounded-lg flex items-center">
+                      <div key={index} className="border-2 border-primary-blue rounded-xl flex items-center">
                         <div className="p-1 sm:p-3 flex items-center justify-center">
-                          <box.icon size={24} />
+                          <box.icon size={30} />
                         </div>
                         <div className="hidden sm:block h-12 border-r border-primary-blue" />
                         <div className="p-1 text-center flex-1">
-                          <div className="font-bold text-sm">{box.value}</div>
-                          <div className="text-[0.6rem] uppercase">{box.label}</div>
+                          <div className="font-bold text-lg text-primary-blue">{box.value}</div>
+                          <div className="text-xs text-primary-blue uppercase">{box.label}</div>
                         </div>
                       </div>
                     ))}
                   </div>
-                  <hr className="my-4 border-primary-blue" />
+                  <hr className="my-5 border-primary-blue " />
                   {/* Inclusions & Add-ons */}
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 py-3">
                     <div>
-                      <h4 className="font-semibold text-primary-blue">INCLUSIONS:</h4>
-                      <ul className="text-sm text-primary-blue list-disc ml-4 mt-2 space-y-1">
+                      <h4 className="font-bold text-primary-blue">INCLUSIONS:</h4>
+                      <ul className="text-md text-primary-blue list-disc ml-10 mt-2 space-y-1">
                         {yacht.inclusions.map((item, idx) => (
                           <li key={idx}>{item}</li>
                         ))}
                       </ul>
                     </div>
                     <div>
-                      <h4 className="font-semibold text-primary-blue">ADD-ONS:</h4>
-                      <ul className="text-sm text-primary-blue list-disc ml-4 mt-2 space-y-1">
+                      <h4 className="font-bold text-primary-blue">ADD-ONS:</h4>
+                      <ul className="text-md text-primary-blue list-disc ml-10 mt-2 space-y-1">
                         {yacht.addons.map((item, idx) => (
                           <li key={idx}>{item}</li>
                         ))}
@@ -368,7 +369,9 @@ const Page = () => {
                     </div>
                   </div>
                   {/* CTA Button */}
+                  <Link href="https://wa.link/5ti3ye" target="_blank" >
                   <button className="w-full blue-solid-button">{yacht.cta}</button>
+                </Link>
                 </div>
               </div>
             ))}
@@ -378,7 +381,7 @@ const Page = () => {
       <section className="w-full bg-white">
       {/* Disclaimer & Contact */}
       <div className="text-center p-4 text-sm text-gray-700">
-        <p className="font-bold">
+        <p className="">
           Formula 1 Hospitality Packages Disclaimer
         </p>
         <p>
@@ -407,21 +410,21 @@ const Page = () => {
         </div>
 
         {/* Right Column: Gold BG + Text */}
-        <div className=" container w-full md:w-1/2 bg-primary-yellow py-3 md:py-14 md:px-14 text-black flex flex-col justify-center  ">
+        <div className=" container w-full md:w-1/2 bg-primary-yellow py-3 md:py-7 md:px-7 text-primary-blue flex flex-col justify-center  ">
           <h2 className="text-xl md:text-2xl font-bold mb-4">
             ABU DHABI GRAND PRIX 2025
           </h2>
           <p className="mb-4 leading-relaxed text-xs">
-            Formula 1 is heading back to Abu Dhabi this December. Catch the
+           <strong> Formula 1  </strong>is heading back to Abu Dhabi this December. Catch the
             glamour, action and excitement!
           </p>
           <p className="mb-4 leading-relaxed text-xs">
-            Take a break from your busy life and grab access to Abu Dhabi GP
-            2025. Watch this thrilling F1 race at Yas Marina Circuit from the
+            Take a break from your busy life and grab access to<strong> Abu Dhabi GP</strong>
+            2025. Watch this thrilling F1 race at <strong>Yas Marina Circuit </strong>from the
             comfort of a supreme yacht. Entertain yourself, your loved ones or
             your colleagues on this private yacht charter while cheering your
-            fav Formula one riders. Get most out of the experience on the race
-            weekend with Centaurus F1 VIP Yacht Hospitality. Our yachts are
+            fav Formula one riders. Get most out of the experience on the <strong>race
+            weekend</strong> with Centaurus F1 VIP Yacht Hospitality. Our yachts are
             docked close to the racing track to watch the uninterrupted views
             and are equipped with unmatched services. Our spacious yacht can
             accommodate from 28 to 100 guests, so appreciate the buzz around you
@@ -435,7 +438,7 @@ const Page = () => {
             Centaurus corporate hospitality will surely impress your potential
             partners and strengthen your business relationships. Enjoy 4 nights
             stay in our yacht with yummy breakfast delicacies and selected
-            drinks package. Besides these breathtaking moments, F1 Yacht Charter
+            drinks package. Besides these breathtaking moments, <strong>F1 Yacht Charter</strong>
             is an ideal option for people who love luxury and privacy. Explore
             the greatest race in the sunshine of Abu Dhabi. This vibrant
             atmosphere, ever-happening yacht parties, and once-in-a-lifetime
@@ -452,25 +455,25 @@ const Page = () => {
        
 
         {/* Right Column: Gold BG + Text */}
-        <div className="container w-full md:w-1/2 bg-primary-blue py-3 md:py-14 md:px-14 text-white flex flex-col justify-center">
+        <div className="container w-full md:w-1/2 bg-primary-blue py-3 md:py-7 md:px-7 text-white flex flex-col justify-center">
           <h2 className="text-xl md:text-2xl font-bold mb-4">
           TRACKSIDE YACHT HOSPITALITY INCLUSIONS
           </h2>
           <p className="mb-4 leading-relaxed text-xs">
-          4 Days Yacht Rental<br/>
+         <strong> 4 Days Yacht Rental</strong><br/>
           Our all-inclusive package offers 4 days of unparalleled yacht rental, granting you the ultimate vantage point to witness the adrenaline-fueled action of the Formula 1 race.
           </p>
           <p className="mb-4 leading-relaxed text-xs">
-          Overnight Stay & Marina Views<br/>
+         <strong> Overnight Stay & Marina Views</strong><br/>
 During your overnight stay on board, you'll have the unique opportunity to relax and live the high life. Unwind in luxurious cabins and spacious lounges, experiencing the utmost comfort and tranquility at Yas Marina.
 
           </p>
           <p className="leading-relaxed text-xs">
-          Canapes<br/>
+          <strong>Canapes</strong><br/>
 Indulge in a delectable selection of canapés ensuring a delightful culinary experience throughout race weekend<br/>
-Drinks<br/>
+<strong>Drinks </strong><br/>
 Savor the taste of house drinks adding a touch of sophistication to your onboard celebrations.<br/>
-Marina Passes<br/>
+<strong>Marina Passes</strong><br/>
 Get marina passes granting you access to prime viewing spots and an up-close look at the thrilling race action on Yas Marina circuit.
           </p>
         </div>

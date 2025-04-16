@@ -12,6 +12,7 @@ import FareHarborCalendar from "@/app/components/FareHarborCalendar";
 import Modalsharedtours from "../../components/Modelsharedtours";
 import Modal2 from "@/app/components/Modal2";
 import { Link } from "@/app/i18n/routing";
+import ToursCarousel from "@/app/components/Sharedtoursmob";
 // Example data
 const toursData = [
   {
@@ -130,6 +131,7 @@ const Page = () => {
         </div>
 
         {/* Card Grid */}
+        <div className="md:block hidden">
         <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-3 py-10 gap-5 container mx-auto items-start">
           {toursData.map((tour, index) => (
             <div
@@ -265,7 +267,10 @@ const Page = () => {
             </div>
           ))}
         </div>
-
+        </div>
+        <div className="md:hidden block">
+<ToursCarousel toursData={toursData}  />
+        </div>
         {/* Premium Drinks Notice */}
         <div className="flex items-center justify-center bg-primary-blue-2 max-w-3xl mx-auto text-center">
           <p className="text-white text-md md:text-xl font-bold">
