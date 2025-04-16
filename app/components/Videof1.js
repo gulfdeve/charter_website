@@ -68,9 +68,9 @@ export default function Video() {
 Formula 1: Grand Prix Abu Dhabi 2025 <br/>Experience F1 in Style
         </h1>
        
-        <h2 className="text-sm mb-6 xl:mb-8 text-center  md:text-white text-black  xl:text-lg 2xl:text-xl text-shadow">
+        <p className="text-sm mb-6 xl:mb-8 text-center  md:text-white text-black  xl:text-lg 2xl:text-xl text-shadow">
         4 days Yacht Rentals, Gourmet Delights, Exclusive Marina Access
-        </h2>
+        </p>
        
         <button className="blue-solid-button">
      BOOK NOW
