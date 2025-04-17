@@ -5,6 +5,7 @@ import { FaPhoneAlt } from "react-icons/fa";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { Link } from "../i18n/routing";
 import Image from "next/image";
+import { IoLogoWhatsapp } from "react-icons/io5";
 
 export default function MobileNavbar({
   currentLanguage,
@@ -25,13 +26,13 @@ export default function MobileNavbar({
 
   return (
     <div className="lg:hidden block">
-      <nav className="bg-primary-blue w-full h-14 p-3 fixed top-0 z-50">
+      <nav className="gradient-custom w-full h-14 p-3 fixed top-0 z-50">
         <div className="flex items-center justify-between">
           {/* Logo */}
           <div className="w-32 pr-3">
             <Link href={"/"}>
               <Image
-                src="/CentaurusLogoWhite.png"
+                src="/Cenaturus Logo top.png"
                 alt="centaurus charter logo"
                 width={200}
                 height={0}
@@ -43,18 +44,16 @@ export default function MobileNavbar({
           {/* Icons and Dropdown Trigger */}
           <div className="flex items-center gap-6">
             {/* WhatsApp Icon */}
-            <a href={t('header.whatsapp_url')} target="_blank">
-              <Image
-                src="/whatsapp.svg"
-                alt="whatsapp logo"
-                width={24}
-                height={24}
-              />
-            </a>
+						  <Link aria-label="whatsapp icon" href={t("header.whatsapp_url")}>
+							<IoLogoWhatsapp
+							  size={24}
+							  className="text-primary-blue"
+							/>
+						  </Link>
 
             {/* Phone Icon */}
             <a aria-label="phone icon" href={header_phone_number_url || "#"}>
-              <FaPhoneAlt className="text-white w-5 h-5" />
+              <FaPhoneAlt className="text-primary-blue w-5 h-5" />
             </a>
 
             {/* Language Selector */}
@@ -101,7 +100,7 @@ export default function MobileNavbar({
               className="w-8 cursor-pointer"
               onClick={() => setMobileDropdownOpen(!mobileDropdownOpen)}
             >
-              <GiHamburgerMenu size={30} className="text-white" />
+              <GiHamburgerMenu size={30} className="text-primary-blue" />
             </div>
           </div>
         </div>

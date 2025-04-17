@@ -19,7 +19,7 @@ export default function Navbar() {
   const [isDropdownOpen, setDropdownOpen] = useState(false);
   const [isSticky, setSticky] = useState(false);
   const [mobileDropdownOpen, setMobileDropdownOpen] = useState(false);
-  const [submenuOpen, setSubmenuOpen] = useState(null); // Tracks open submenu
+  const [submenuOpen, setSubmenuOpen] = useState(null);
   const { data, loading, error } = useData();
 
   const settingsItem = data?.settings?.[0];
@@ -43,14 +43,13 @@ export default function Navbar() {
     }
   };
 
-  // Initialize language from localStorage on page load
-
   useEffect(() => {
     window.addEventListener("scroll", handleScroll);
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
+
   const languages = [
     { code: "en", name: "English", flag: "/uk.svg" },
     { code: "ar", name: "Arabic", flag: "/uae.svg" },
@@ -74,170 +73,43 @@ export default function Navbar() {
 
   return (
     <>
-      {/* First Navbar */}
-      <div className="lg:block hidden">
-        <nav className="py-4 container mx-auto bg-white text-black flex items-center justify-between xl:gap-64 2xl:gap-64 md:gap-24">
-          <div className="text-xl font-bold">
-            <Link href={"/"}>
-              <Image
-                src="/Cenaturus Logo top.png"
-                alt="Centaurus charter Logo"
-                width={200}
-                priority={true}
-                height={0}
-              />
-            </Link>
-          </div>
-          <div className="flex items-center justify-end">
-            <Link
-              aria-label="contact us icon"
-              href={"/contact"}
-              className="flex flex-row items-center justify-center yellow-solid-button"
-            >
-              {t("navbar.contact-us")}
-            </Link>
-            <div className="flex flex-row px-8 gap-8">
-              {/* Email Icon */}
-              <Link aria-label="email icon" href={header_email || "#"}>
-                <MdMail
-                  size={30}
-                  className="text-primary-yellow hover:text-primary-blue hover:scale-110"
-                />
-              </Link>
-              <Link
-                aria-label="phone icon"
-                href={header_phone_number_url || "#"}
-              >
-                <FaPhoneAlt
-                  size={23}
-                  className="text-primary-yellow hover:text-primary-blue mt-1  hover:scale-110"
-                />
-              </Link>
-              {/* WhatsApp Icon */}
-              <Link aria-label="whatsapp icon" href={t("header.whatsapp_url")}>
-                <IoLogoWhatsapp
-                  size={30}
-                  className="text-primary-yellow hover:text-primary-blue  hover:scale-110"
+      {/* Fixed Single Navbar */}
+      <div className="fixed top-0 left-0 w-full z-50 bg-white shadow-md lg:block hidden gradient-custom">
+        <div className="container mx-auto">
+          <nav className="flex items-center justify-between">
+            {/* Logo */}
+            <div className="py-4">
+              <Link href="/">
+                <Image
+                  src="/Cenaturus Logo top.png"
+                  alt="Centaurus charter Logo"
+                  width={150}
+                  height={0}
+                  priority={true}
                 />
               </Link>
             </div>
-            {/* Language Dropdown */}
-            <div
-              className="relative"
-              onMouseEnter={() => setDropdownOpen(true)}
-              onMouseLeave={() => setDropdownOpen(false)}
-            >
-              {/* Trigger */}
-              <div className="p-3 rounded text-black  cursor-pointer scale-105 flex items-center gap-2">
-                <img
-                  src={
-                    locale === "en"
-                      ? "/uk.svg"
-                      : locale === "ar"
-                      ? "/uae.svg"
-                      : locale === "ru"
-                      ? "/ru.svg"
-                      : locale === "zh"
-                      ? "/zh.svg"
-                      : null
-                  }
-                  alt={locale}
-                  className="w-4 h-4"
-                />
-                {locale.toUpperCase()}
-              </div>
-              {/* Dropdown Menu */}
-              {isDropdownOpen && (
-                <ul className="absolute right-0 w-44 bg-white border  rounded-md shadow-lg z-20">
-                  <li
-                    onClick={() => handleLanguageChange("en")}
-                    className="flex items-center gap-2 p-2 cursor-pointer hover:bg-gray-200"
-                  >
-                    <img src="/uk.svg" alt="English" className="w-4 h-4" />
-                    ENGLISH - EN
-                  </li>
-                  <li
-                    onClick={() => handleLanguageChange("ar")}
-                    className="flex items-center gap-2 p-2 cursor-pointer hover:bg-gray-200"
-                  >
-                    <img src="/uae.svg" alt="Arabic" className="w-4 h-4" />
-                    ARABIC - AR
-                  </li>
-                  <Link className="bg-gray-300" href={pathname} locale="ru">
-                    <li className="flex items-center gap-2 p-2 cursor-pointer hover:bg-gray-200">
-                      <img src="/ru.svg" alt="Russian" className="w-4 h-4" />
-                      RUSSIAN - RU
-                    </li>
-                  </Link>
-                  <Link className="bg-gray-300" href={pathname} locale="zh">
-                    <li className="flex items-center gap-2 p-2 cursor-pointer hover:bg-gray-200">
-                      <img src="/zh.svg" alt="Chinese" className="w-4 h-4" />
-                      CHINESE - ZH
-                    </li>
-                  </Link>
-                </ul>
-              )}
-            </div>
-          </div>
-        </nav>
 
-        {/* Second Navbar (Sticky) */}
-        <div
-          className={`bg-primary-blue w-full ${
-            isSticky ? "fixed top-0 z-50 transition-all " : ""
-          } `}
-        >
-          <nav
-            className={` w-full bg-primary-blue text-primary-yellow  font-bold ${
-              isSticky ? " sticky top-0 z-50" : ""
-            }`}
-          >
-            <div className="container mx-auto">
-              <ul
-                className={`flex flex-row items-center justify-between text-[11px] md:text-[12px] ${
-                  isSticky
-                    ? "2xl:text-[15px] xl:text-[11px] md:text-[11px]"
-                    : " 2xl:text-[15px] xl:text-[12px] md:text-[11px] lg:text-[12px]"
-                }`}
-              >
-                <li
-                  className={`transition-opacity ${
-                    isSticky
-                      ? "w-44 md:w-28 xl:w-44 2xl:w-48 opacity-100"
-                      : "w-0 opacity-0 absolute"
-                  }`}
-                >
-                  <Link href={"/"}>
-                    <Image
-                      src="/CentaurusLogoWhite.png"
-                      alt="centaurus charter logo"
-                      width={200}
-                      height={0}
-                      priority={true}
-                      style={{ height: "auto" }}
-                    />
-                  </Link>
-                </li>
-
+            {/* Main Menu Items */}
+            <div className="flex items-center text-xs">
+              <ul className="flex space-x-6 text-xs font-semibold">
                 {/* PRIVATE YACHTS with Dropdown */}
-
                 <li className="relative group">
                   <span
-                    className={`flex items-center justify-between cursor-pointer gap-1 ${
-                      pathname === "/yacht-rentals" ||
-                      pathname.startsWith("/yacht-rentals/")
-                        ? "text-white"
-                        : ""
+                    className={`flex items-center justify-between cursor-pointer gap-1 py-6 ${
+                      pathname === "/yacht-rentals" || pathname.startsWith("/yacht-rentals/")
+                        ? "text-primary-blue"
+                        : "text-primary-blue hover:text-primary-blue"
                     }`}
                   >
                     <Link
-                      className="py-6 inline-block tracking-wider hover:text-white"
+                      className="tracking-wider"
                       href={`/yacht-rentals`}
                     >
                       {t("navbar.private-yachts")}
                     </Link>
                     <svg
-                      className="xl:w-5 lg:w-5 h-5 lg:h-5 transform group-hover:rotate-180 transition-transform duration-300"
+                      className="w-4 h-4 transform group-hover:rotate-180 transition-transform duration-300"
                       xmlns="http://www.w3.org/2000/svg"
                       fill="none"
                       viewBox="0 0 24 24"
@@ -251,12 +123,12 @@ export default function Navbar() {
                       />
                     </svg>
                   </span>
-                  <ul className="absolute top-[85%] left-0 w-80 bg-white text-black shadow-lg rounded-lg overflow-hidden border border-gray-200 hidden group-hover:block z-50">
+                  <ul className="absolute top-full left-0 w-60 bg-white text-black shadow-lg rounded-lg overflow-hidden border border-gray-200 hidden group-hover:block z-50">
                     {!loading &&
                       data?.products?.map((product) => (
                         <li
                           key={product.id}
-                          className="cursor-pointer text-base font-medium text-primary-grey hover:text-white hover:bg-primary-blue transition-all duration-300"
+                          className="cursor-pointer text-xs font-medium text-primary-grey hover:text-white hover:bg-primary-blue transition-all duration-300"
                         >
                           <Link
                             href={`/yacht-rentals/${product.slug}`}
@@ -270,15 +142,9 @@ export default function Navbar() {
                 </li>
 
                 {/* BUY A YACHT */}
-
-                <li
-                  className={`uppercase ${
-                    pathname === "/yachts-for-sale-dubai" ? "text-white" : ""
-                  }`}
-                >
-                  {" "}
+                <li className={pathname === "/yachts-for-sale-dubai" ? "text-primary-blue" : "text-primary-blue hover:text-primary-blue"}>
                   <Link
-                    className="py-6 inline-block tracking-wider hover:text-white"
+                    className="py-6 inline-block tracking-wider"
                     href={`/yachts-for-sale-dubai`}
                   >
                     {t("navbar.buy-a-yacht")}
@@ -286,15 +152,9 @@ export default function Navbar() {
                 </li>
 
                 {/* SHARED TOURS */}
-
-                <li
-                  className={`uppercase ${
-                    pathname === "/shared-yacht-tours-dubai" ? "text-white" : ""
-                  }`}
-                >
-                  {" "}
+                <li className={pathname === "/shared-yacht-tours-dubai" ? "text-primary-blue" : "text-primary-blue hover:text-primary-blue"}>
                   <Link
-                    className="py-6 inline-block tracking-wider hover:text-white"
+                    className="py-6 inline-block tracking-wider"
                     href={`/shared-yacht-tours-dubai`}
                   >
                     {t("navbar.shared-tours")}
@@ -304,21 +164,20 @@ export default function Navbar() {
                 {/* EXPERIENCES with Dropdown */}
                 <li className="relative group">
                   <span
-                    className={`flex items-center justify-between cursor-pointer gap-1 ${
-                      pathname === "/yacht-trips" ||
-                      pathname.startsWith("/yacht-trips/")
-                        ? "text-white"
-                        : ""
+                    className={`flex items-center justify-between cursor-pointer gap-1 py-6 ${
+                      pathname === "/yacht-trips" || pathname.startsWith("/yacht-trips/")
+                        ? "text-primary-blue"
+                        : "text-primary-blue hover:text-primary-blue"
                     }`}
                   >
                     <Link
-                      className="py-6 inline-block tracking-wider hover:text-white"
+                      className="tracking-wider"
                       href={`/yacht-trips`}
                     >
                       {t("navbar.experiences")}
                     </Link>
                     <svg
-                      className="w-5 h-5 lg:w-5 lg:h-5 transform group-hover:rotate-180 transition-transform duration-300"
+                      className="w-4 h-4 transform group-hover:rotate-180 transition-transform duration-300"
                       xmlns="http://www.w3.org/2000/svg"
                       fill="none"
                       viewBox="0 0 24 24"
@@ -332,95 +191,122 @@ export default function Navbar() {
                       />
                     </svg>
                   </span>
-                  <ul className="absolute top-[85%] left-0 w-80 bg-white text-black shadow-lg rounded-lg overflow-hidden border border-gray-200 hidden group-hover:block z-50">
-				  <li className="cursor-pointer uppercase text-base font-medium text-primary-grey hover:text-white hover:bg-primary-blue transition-all duration-300">
+                  <ul className="absolute top-full left-0 w-60 bg-white text-black shadow-lg rounded-lg overflow-hidden border border-gray-200 hidden group-hover:block z-50">
+                    <li className="cursor-pointer uppercase text-xs font-medium text-primary-grey hover:text-white hover:bg-primary-blue transition-all duration-300">
                       <Link href="/watersports" className="py-2 px-4 block">
                         {t("navbar.water-sports")}
                       </Link>
                     </li>
-					{!loading &&
-                      data?.experiences?.map((experience) => {
-                        return (
-                          <li
-                            key={experience.id}
-                            className="cursor-pointer text-base font-medium text-primary-grey hover:text-white hover:bg-primary-blue transition-all duration-300"
+                    {!loading &&
+                      data?.experiences?.map((experience) => (
+                        <li
+                          key={experience.id}
+                          className="cursor-pointer text-xs font-medium text-primary-grey hover:text-white hover:bg-primary-blue transition-all duration-300"
+                        >
+                          <Link
+                            href={`/yacht-trips/${experience.slug}`}
+                            className="py-2 px-4 block"
                           >
-                            <Link
-                              href={`/yacht-trips/${experience.slug}`}
-                              key={experience.id}
-                              className="py-2 px-4 block"
-                            >
-                              {" "}
-                              {experience.translations?.[locale]?.title}
-                            </Link>
-                          </li>
-                        );
-                      })}
+                            {experience.translations?.[locale]?.title}
+                          </Link>
+                        </li>
+                      ))}
                   </ul>
                 </li>
 
-                <li
-                  className={`uppercase ${
-                    pathname === "/offers" || pathname.startsWith("/offers/")
-                      ? "text-white"
-                      : ""
-                  }`}
-                >
-                  {" "}
+                {/* OFFERS */}
+                <li className={pathname === "/offers" || pathname.startsWith("/offers/") ? "text-primary-blue" : "text-primary-blue hover:text-primary-blue"}>
                   <Link
-                    className="py-6 inline-block tracking-wider hover:text-white"
+                    className="py-6 inline-block tracking-wider uppercase"
                     href={`/offers`}
                   >
-                    {t("navbar.offers")}{" "}
+                    {t("navbar.offers")}
                   </Link>
                 </li>
 
-                <li
-                  className={`uppercase ${
-                    pathname === "/events" || pathname.startsWith("/events/")
-                      ? "text-white"
-                      : ""
-                  }`}
-                >
-                  {" "}
+                {/* EVENTS */}
+                <li className={pathname === "/events" || pathname.startsWith("/events/") ? "text-primary-blue" : "text-primary-blue hover:text-primary-blue"}>
                   <Link
-                    className="py-6 inline-block tracking-wider hover:text-white"
+                    className="py-6 inline-block tracking-wider"
                     href={`/events`}
                   >
-                    Events
+                    EVENTS
                   </Link>
                 </li>
 
-                {/* <li
-                  className={`uppercase ${
-                    pathname === "/watersports" ||
-                    pathname.startsWith("/watersports/")
-                      ? "text-white"
-                      : ""
-                  }`}
-                >
+                {/* CONTACT US */}
+                <li className={pathname === "/contact" ? "text-primary-blue" : "text-primary-blue hover:text-primary-blue"}>
                   <Link
-                    className="py-6 inline-block tracking-wider hover:text-white"
-                    href={`/watersports`}
+                    className="py-6 inline-block tracking-wider uppercase"
+                    href={`/contact`}
                   >
-                    {t("navbar.water-sports")}
+                    {t("navbar.contact-us")}
                   </Link>
-                </li> */}
+                </li>
 
-                {/* NEWYEAR */}
-
-                {/* <li
-                  className={`uppercase ${
-                    pathname === "/newyear" ? "text-white" : ""
-                  }`}
-                >
-                  <Link className="py-6 inline-block tracking-wider hover:text-white" href={`/newyear`}>{t("navbar.new-year")}</Link>
-                </li> */}
               </ul>
+            </div>
+
+            {/* Contact & Language Section */}
+            <div className="flex items-center gap-4">
+              {/* Contact Icons */}
+              <Link aria-label="email icon" href={header_email || "#"}>
+                <MdMail
+                  size={24}
+                  className="text-primary-blue hover:text-primary-blue hover:scale-110"
+                />
+              </Link>
+			  <Link
+                aria-label="phone icon"
+                href={header_phone_number_url || "#"}
+              >
+                <FaPhoneAlt
+                  size={20}
+                  className="text-primary-blue hover:text-primary-blue mt-1  hover:scale-110"
+                />
+              </Link>
+              <Link aria-label="whatsapp icon" href={t("header.whatsapp_url")}>
+                <IoLogoWhatsapp
+                  size={24}
+                  className="text-primary-blue hover:text-primary-blue hover:scale-110"
+                />
+              </Link>
+
+              {/* Language Dropdown */}
+              <div
+                className="relative"
+                onMouseEnter={() => setDropdownOpen(true)}
+                onMouseLeave={() => setDropdownOpen(false)}
+              >
+                <div className="p-2 cursor-pointer flex items-center gap-1">
+                  <img
+                    src={currentLanguage?.flag}
+                    alt={locale}
+                    className="w-5 h-5"
+                  />
+                  <span className="text-xs font-medium">{locale.toUpperCase()}</span>
+                </div>
+                {isDropdownOpen && (
+                  <ul className="absolute text-xs right-0 w-36 bg-white text-primary-blue border rounded-md shadow-lg z-20">
+                    {languages.map((lang) => (
+                      <li
+                        key={lang.code}
+                        onClick={() => handleLanguageChange(lang.code)}
+                        className="flex items-center gap-2 p-2 cursor-pointer hover:bg-gray-100"
+                      >
+                        <img src={lang.flag} alt={lang.name} className="w-4 h-4" />
+                        {lang.name.toUpperCase()} - 
+						{lang.code.toUpperCase()}
+                      </li>
+                    ))}
+                  </ul>
+                )}
+              </div>
             </div>
           </nav>
         </div>
       </div>
+
       {/* Mobile Navbar */}
       <MobileNavbar
         currentLanguage={currentLanguage}
