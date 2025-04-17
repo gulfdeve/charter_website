@@ -87,10 +87,10 @@ const Page = () => {
       {/* Main Container */}
       <div className="bg-white h-full w-full">
         {/* Top Heading with FareHarbor Calendar */}
-        <div className="container mx-auto py-20">
-          <div className="flex flex-col lg:flex-row items-center">
+        <div className="container mx-auto pt-20">
+          <div className="flex flex-col lg:flex-row align-top">
             {/* Left Section - Text Content */}
-            <div className="w-full lg:w-1/2 flex flex-col items-center justify-center pb-10 lg:pb-0 lg:pr-8">
+            <div className="w-full lg:w-1/2 flex flex-col pb-10 lg:pb-0 lg:pr-8">
               <h2 className="text-primary-blue-2 text-center pb-4">
                 SHARED YACHT TOURS IN DUBAI
               </h2>
@@ -113,9 +113,16 @@ const Page = () => {
             </div>
 
             {/* Right Section - FareHarbor Calendar */}
-            <div className="w-full lg:w-1/2 flex justify-center items-start">
-              <FareHarborCalendar />
-            </div>
+			<div className="w-full lg:w-1/2 flex justify-center items-center">
+  <iframe
+    src="https://www.centauruscharter.net/calendar.html"
+    title="Centaurus Charter Calendar"
+    className="w-[450px] h-[550px] mx-auto"
+    frameBorder="0"
+    scrolling="auto"
+    allowFullScreen
+  />
+</div>
           </div>
         </div>
 
