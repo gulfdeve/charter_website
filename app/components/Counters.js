@@ -53,7 +53,7 @@ const Counters = () => {
   return (
     <div
       ref={sectionRef}
-      className="flex items-center justify-center w-full h-[50vh] bg-cover bg-fixed lg:bg-top bg-center"
+      className="flex items-center justify-center w-full h-[40vh] bg-cover bg-fixed lg:bg-top bg-center"
       style={{ backgroundImage: "url('/counterbg.webp')" }}
     >
       <div className="container mx-auto px-6 lg:px-0">

@@ -243,7 +243,7 @@ const page = () => {
           <img src="/marryright.webp" className="rounded-lg md:col-span-3" />
         </div>
         <div className="py-5 xl:px-32 ">
-          <div className="flex flex-col md:flex-row rounded-lg md:px-10 xl:px-44 items-center  gap-5 justify-center  md:justify-between bg-transparent md:bg-primary-blue py-5">
+          <div className="flex flex-col md:flex-row rounded-lg md:px-10 items-center  gap-5 justify-center  md:justify-between bg-transparent md:bg-primary-blue py-5">
             <button className="text-white  font-bold bg-primary-blue px-5 py-3 text-xl rounded">
               REACH OUT TO US
             </button>

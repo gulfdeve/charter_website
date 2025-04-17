@@ -18,9 +18,9 @@ const Page = () => {
           </h1>
 
           <p className="text-gray-700 text-lg text-center leading-relaxed ">
-            At Centaurus Charter, we Offer an Exclusive Collection of Luxury Yachts for sale, catering to the discerning tastes of our clients. 
-            Whether You're Looking for a Sleek, Modern Yacht or an Elegant Vessel, 
-            We Have the Perfect Yacht to Meet Your Needs and Exceed Your Expectations.
+            At Centaurus Charter, we offer an exclusive collection of Luxury Yachts for sale, catering to the discerning tastes of our clients. 
+            Whether you're looking for a Sleek, Modern Yacht or an Elegant Vessel, 
+            We have the perfect yacht to meet your needs and exceed your expectations.
           </p>
         </div>
         <YachtListings />
@@ -137,8 +137,8 @@ const Page = () => {
     </div>
   </div>
 </div>
-<div className="py-5 xl:px-44 container mx-auto">
-<div className="flex flex-col md:flex-row rounded-lg md:px-10 xl:px-44 items-center  gap-5 justify-center  md:justify-between bg-transparent md:bg-primary-blue py-5">
+<div className="py-5 container mx-auto">
+<div className="flex flex-col md:flex-row rounded-lg md:px-10 items-center  gap-5 justify-center  md:justify-between bg-transparent md:bg-primary-blue py-5">
 <button className="text-white  font-bold bg-primary-blue px-5 py-3 text-xl rounded">
         REACH OUT TO US
       </button>
