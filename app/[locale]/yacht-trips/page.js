@@ -6,6 +6,7 @@ import TailorYachtExperience from "@/app/components/TailorYachtExperience";
 import ExclusiveOffers from "../../components/ExclusiveOffers";
 import PageTitleHeading from "@/app/components/PageTitleHeading";
 import ExperiencesGrid from "./ExperiencesGrid"; // We'll create this client component
+import LocationCarousel from "@/app/components/LocationCarousel";
 
 export default async function YachtTripsPage({ params }) {
   const resolvedParams = await params;
@@ -50,6 +51,7 @@ export default async function YachtTripsPage({ params }) {
 
       <ExclusiveOffers />
       <TailorYachtExperience />
+	  <LocationCarousel />
     </>
   );
 }
