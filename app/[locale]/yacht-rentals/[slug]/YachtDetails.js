@@ -46,7 +46,7 @@ export default function YachtDetails({ yachtDetails, product, locale, whatsappUr
               <p className="text-blue-800">
                 <a
                   href="https://www.google.com/maps/place/CENTAURUS+CHARTER+-+Yachts+%26+Boats+Rental+Dubai+Harbour"
-                  className="hover:text-white"
+                  className="hover:text-blue-600"
                   target="_blank"
                 >
                   U-32 berth dubai marina (near spinneys)

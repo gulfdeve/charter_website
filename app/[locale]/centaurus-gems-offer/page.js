@@ -1,59 +1,58 @@
-
 import React from "react";
 import Image from "next/image";
 
 import ContactGem from "@/app/components/ContactGem";
+import PageTitleHeading from "@/app/components/PageTitleHeading";
 
 const page = () => {
-  
   const yachts = [
     {
       name: "THUNDER/STORM - 36FT",
       capacity: "10",
       regular: "AED 2,380",
-      discounted: "AED 1,430/hr",
+      discounted: "AED 1,430",
     },
     {
       name: "RIVERSIDE - 40FT",
       capacity: "12",
       regular: "AED 3,000",
-      discounted: "AED 1,800/hr",
+      discounted: "AED 1,800",
     },
     {
       name: "VASSIA - 56FT",
       capacity: "21",
       regular: "AED 4,160",
-      discounted: "AED 2,495/hr",
+      discounted: "AED 2,495",
     },
     {
       name: "LAGOONA - 56FT",
       capacity: "24",
       regular: "AED 4,600",
-      discounted: "AED 2,760/hr",
+      discounted: "AED 2,760",
     },
     {
       name: "ETOSHA - 58FT",
       capacity: "28",
       regular: "AED 4,320",
-      discounted: "AED 2,590/hr",
+      discounted: "AED 2,590",
     },
     {
       name: "SILVER CREEK - 61FT",
       capacity: "30",
       regular: "AED 5,000",
-      discounted: "AED 3,000/hr",
+      discounted: "AED 3,000",
     },
     {
       name: "KRONOS - 86FT",
       capacity: "50",
       regular: "AED 14,000",
-      discounted: "AED 8,400/hr",
+      discounted: "AED 8,400",
     },
     {
       name: "POSEIDON - 118FT",
       capacity: "up to 40",
       regular: "AED 20,000",
-      discounted: "from AED 12,000/hr",
+      discounted: " AED 12,000",
     },
   ];
   const yachts2 = [
@@ -103,33 +102,32 @@ const page = () => {
       name: "POSEIDON - 118FT",
       capacity: "up to 40",
       regular: "AED 5,000",
-      discounted: "from AED 3,750/hr",
+      discounted: " AED 3,750/hr",
     },
   ];
   return (
-    <section className="bg-white container mx-auto p-4 my-10">
+    <div className="container mx-auto nav-space">
+      <PageTitleHeading title="Exclusive Yacht Charter Discounts for GEMS Rewards Members" />
       <div>
-        <h3 className=" font-bold text-center text-primary-blue">
-          {" "}
-          Exclusive Yacht Charter Discounts for GEMS Rewards Members
-        </h3>
-        <div className="flex items-center justify-center pt-10">
-          <Image
+        <div className="flex items-center justify-center pb-10">
+		  <Image
             src="/GEMS-Offer-Banner.png"
-            alt="Hero background"
-            width={1000}
-            height={500}
-            priority
+            alt="Exclusive Yacht Charter Discounts for GEMS Rewards Members"
+            className="w-full h-auto object-contain" // Full width with proper object fitting
+            width={100} // Larger intrinsic width for better quality
+            height={0} // Proportional height
+            priority={true} // Prioritize loading for above-the-fold images
+            sizes="100vw" // Tell Next.js this image takes the full viewport width
           />
         </div>
       </div>
-      <div className="max-w-4xl mx-auto px-4 py-8">
-        <div className="text-center mb-8  ">
-          <h5 className="text-lg font-bold bg-primary-blue-2 text-primary-yellow py-1">
+      <div className="pb-8">
+        <div className="max-w-5xl mx-auto text-center mb-8  ">
+          <h2 className="font-bold bg-primary-blue-2 text-primary-yellow py-1">
             Hero Offer - 50% OFF Morning Yacht Rentals
-          </h5>
+          </h2>
         </div>
-        <div className="max-w-3xl mx-auto leading-relaxed text-center text-sm space-y-7">
+        <div className="mx-auto leading-relaxed text-center text-sm space-y-7">
           <p>
             We’re thrilled to announce a special collaboration between GEMS
             Education and Centaurus Charter, bringing you an exclusive offer for
@@ -144,9 +142,9 @@ const page = () => {
             limited-time deal to experience the best of Dubai from the water.
           </p>
 
-          <h5 className="text-primary-blue">
+          <h2 className="text-primary-blue">
             25% OFF Afternoon Yacht Rentals & 40% OFF Extended Bookings
-          </h5>
+          </h2>
           <p>
             Take your yacht experience to the next level with our exclusive 25%
             discount on afternoon yacht rentals from 3 PM – 7 PM. Explore the
@@ -171,9 +169,9 @@ const page = () => {
           </p>
         </div>
         <div className="py-10 text-center ">
-          <h5 className="text-primary-blue">
+          <p className="text-primary-blue">
             Check the table below for detailed pricing and more information
-          </h5>
+          </p>
         </div>
         <div className="overflow-x-auto">
           <table className="min-w-full border-collapse text-center">
@@ -234,7 +232,7 @@ const page = () => {
                     <td className="py-4 px-2 text-sm border border-white text-center">
                       {isLast ? (
                         <>
-                          <span className="text-xs lowercase mr-1">from</span>
+                          <span className="text-xs lowercase">from</span>
                           <span className="font-semibold">
                             {yacht.discounted}
                           </span>
@@ -310,7 +308,7 @@ const page = () => {
                     <td className="py-4 px-2 text-sm border border-white text-center">
                       {isLast ? (
                         <>
-                          <span className="text-xs lowercase mr-1">from</span>
+                          <span className="text-xs lowercase">from</span>
                           <span className="font-semibold">
                             {yacht.discounted}
                           </span>
@@ -328,9 +326,9 @@ const page = () => {
           </table>
         </div>
         <div className="mt-8">
-          <h5 className="text-lg font-bold text-primary-blue mb-2">
+          <h4 className="text-lg font-bold text-primary-blue mb-2">
             Terms & Conditions:
-          </h5>
+          </h4>
           <ul className="list-disc text-sm text-black ml-6 space-y-1">
             <li>
               This discount cannot be used in conjunction with any other
@@ -344,30 +342,26 @@ const page = () => {
               Add-ons: AED 100 per hour for unlimited wines & beers. (Exclusive
               for 36-61 ft yachts only.)
             </li>
-            <li >
-             
+            <li>
               Poseidon 118ft Trips: An Add on of AED 800 per hour will be added
-              for every additional 10 pax where the occupancy  {" "}  surpasses the 40
+              for every additional 10 pax where the occupancy surpasses the 40
               passengers
             </li>
           </ul>
         </div>
         <div className="mt-8">
-          <h5 className="text-lg font-bold text-primary-blue mb-2">
-          Cancellation policy: 
-          </h5>
+          <h4 className="text-lg font-bold text-primary-blue mb-2">
+            Cancellation policy:
+          </h4>
           <ul className="list-disc text-sm text-black ml-6 space-y-1">
-            <li>
-            Cancellations 72 hours prior the booking free of charge
-            </li>
+            <li>Cancellations 72 hours prior the booking free of charge</li>
             <li>Cancellations 48 hours prior will get 50% refund</li>
             <li> Cancellations 24 hours prior will be No refundable</li>
-           
           </ul>
         </div>
-        {/* <ContactGem/> */}
+        <ContactGem />
       </div>
-    </section>
+    </div>
   );
 };
 

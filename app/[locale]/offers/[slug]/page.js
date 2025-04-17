@@ -6,6 +6,7 @@ import { getTranslations } from 'next-intl/server';
 import PageTitleHeading from "@/app/components/PageTitleHeading";
 import OfferClientActions from "@/app/components/OfferClientActions";
 import { fetchData } from '@/app/lib/fetchData';
+import ExperienceCarousal from "@/app/components/ExperienceCarousal";
 
 export default async function OfferDetailPage({ params }) {
   const { slug, locale } = params;
@@ -63,6 +64,7 @@ export default async function OfferDetailPage({ params }) {
       </div>
     </div>
   </div>
+  <ExperienceCarousal />
 </>
   );
 }

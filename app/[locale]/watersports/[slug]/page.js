@@ -44,10 +44,10 @@ const Page = () => {
         
         <div className="lg:w-5/12">
         <PageTitleHeading title={packageItem.translations[locale].title} className="py-0 lg:pt-0 pb-3" />
-        <h3 className="text-primary-grey text-center font-bold mb-5">
+        <h2 className="text-primary-grey text-center font-bold mb-5">
             {packageItem.translations[locale].preview_text}
             <br />
-          </h3>
+          </h2>
         <div className="text-center grid grid-cols-1  items-center gap-2  w-full overflow-hidden mb-7">
        
       
