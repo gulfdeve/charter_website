@@ -10,49 +10,49 @@ const page = () => {
       name: "THUNDER/STORM - 36FT",
       capacity: "10",
       regular: "AED 2,380",
-      discounted: "AED 1,430/hr",
+      discounted: "AED 1,430",
     },
     {
       name: "RIVERSIDE - 40FT",
       capacity: "12",
       regular: "AED 3,000",
-      discounted: "AED 1,800/hr",
+      discounted: "AED 1,800",
     },
     {
       name: "VASSIA - 56FT",
       capacity: "21",
       regular: "AED 4,160",
-      discounted: "AED 2,495/hr",
+      discounted: "AED 2,495",
     },
     {
       name: "LAGOONA - 56FT",
       capacity: "24",
       regular: "AED 4,600",
-      discounted: "AED 2,760/hr",
+      discounted: "AED 2,760",
     },
     {
       name: "ETOSHA - 58FT",
       capacity: "28",
       regular: "AED 4,320",
-      discounted: "AED 2,590/hr",
+      discounted: "AED 2,590",
     },
     {
       name: "SILVER CREEK - 61FT",
       capacity: "30",
       regular: "AED 5,000",
-      discounted: "AED 3,000/hr",
+      discounted: "AED 3,000",
     },
     {
       name: "KRONOS - 86FT",
       capacity: "50",
       regular: "AED 14,000",
-      discounted: "AED 8,400/hr",
+      discounted: "AED 8,400",
     },
     {
       name: "POSEIDON - 118FT",
       capacity: "up to 40",
       regular: "AED 20,000",
-      discounted: "from AED 12,000/hr",
+      discounted: " AED 12,000",
     },
   ];
   const yachts2 = [
@@ -102,7 +102,7 @@ const page = () => {
       name: "POSEIDON - 118FT",
       capacity: "up to 40",
       regular: "AED 5,000",
-      discounted: "from AED 3,750/hr",
+      discounted: " AED 3,750/hr",
     },
   ];
   return (
@@ -232,7 +232,7 @@ const page = () => {
                     <td className="py-4 px-2 text-sm border border-white text-center">
                       {isLast ? (
                         <>
-                          <span className="text-xs lowercase mr-1">from</span>
+                          <span className="text-xs lowercase">from</span>
                           <span className="font-semibold">
                             {yacht.discounted}
                           </span>
@@ -308,7 +308,7 @@ const page = () => {
                     <td className="py-4 px-2 text-sm border border-white text-center">
                       {isLast ? (
                         <>
-                          <span className="text-xs lowercase mr-1">from</span>
+                          <span className="text-xs lowercase">from</span>
                           <span className="font-semibold">
                             {yacht.discounted}
                           </span>
