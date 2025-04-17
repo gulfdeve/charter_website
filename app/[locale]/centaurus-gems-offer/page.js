@@ -365,7 +365,7 @@ const page = () => {
            
           </ul>
         </div>
-        <ContactGem/>
+        {/* <ContactGem/> */}
       </div>
     </section>
   );

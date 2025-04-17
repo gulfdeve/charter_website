@@ -1,18 +1,29 @@
 import React from "react";
 import { useTranslations } from "next-intl";
-// Import the JSON data
-import routesData from '@/app/components/routesData.json'
+import routesData from '@/app/components/routesData.json';
 
 const Route = ({ product, slug, header_whatsapp_url }) => {
   const t = useTranslations();
-
-  // Look up the routes data from the imported JSON for the given slug.
   const routes = routesData[slug];
 
-  // Fallback if no routes are found for the slug.
   if (!routes) {
     return <div>Product not found.</div>;
   }
+
+  // Manual color configuration
+  const headerColors = [
+    'bg-red-700',          // For first route
+    'bg-primary-blue-2',   // For second route
+    'bg-green-700',        // For third route
+    'bg-primary-yellow-dark' // For fourth route
+  ];
+
+  const bodyColors = [
+    'bg-red-100',
+    'bg-blue-100',
+    'bg-green-100',
+    'bg-yellow-100'
+  ];
 
   return (
     <div>
@@ -26,7 +37,6 @@ const Route = ({ product, slug, header_whatsapp_url }) => {
           </p>
         </div>
         <div className="container mx-auto">
-          {/* Use the product prop to display the map image */}
           <img
             className="w-full"
             alt="route map of centaurus charter yachts"
@@ -34,8 +44,8 @@ const Route = ({ product, slug, header_whatsapp_url }) => {
           />
           <div className="grid grid-cols-1 md:grid-cols-4">
             {routes.map((route, idx) => (
-              <div key={idx} className={`flex flex-col items-start ${route.bgColorClass}`}>
-                <div className={`${route.headerBgColorClass} p-5 text-white uppercase text-center w-full`}>
+              <div key={idx} className={`flex flex-col items-start ${bodyColors[idx % bodyColors.length]}`}>
+                <div className={`${headerColors[idx % headerColors.length]} p-5 text-white uppercase text-center w-full`}>
                   <h3 className="text-white text-lg font-bold">{route.title}</h3>
                   <p className="text-white text-lg">
                     {route.duration} <br />({route.minutes})
