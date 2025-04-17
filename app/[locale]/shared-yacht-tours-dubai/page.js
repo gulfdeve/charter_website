@@ -41,7 +41,7 @@ const toursData = [
     blueHeadline: "EVERY SUNDAY & MONDAY",
     yellowHeadline: "50% OFF",
     fareharborLink:
-      "https://fareharbor.com/embeds/book/centauruscharter/items/488868/?flow=no",
+      "https://fareharbor.com/embeds/book/centauruscharter/items/488868/?full-items=yes&flow=no",
   },
   {
     image: "/night.webp",
@@ -55,7 +55,7 @@ const toursData = [
     blueHeadline: "EVERY SUNDAY & MONDAY",
     yellowHeadline: "50% OFF",
     fareharborLink:
-      "https://fareharbor.com/embeds/book/centauruscharter/items/488872/?full-items=yes",
+      "https://fareharbor.com/embeds/book/centauruscharter/items/488872/?full-items=yes&flow=no",
   },
 ];
 
