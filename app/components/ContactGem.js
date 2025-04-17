@@ -51,9 +51,29 @@ const ContactGem = () => {
       const url = `https://www.centauruscharter.net/api/api_new/save_enquiry?${queryParams}`;
       const response = await fetch(url, { method: "POST" });
       const data = await response.json();
-      console.log("Response data:", data);
+	  const subject = "New contact form inquiry on GEMS offer";
+	  const recipients = "habibjutt868@gmail.com, mayflor@centaurusint.com, habib@centauruscharter.com";
 
-      if (response.ok) {
+      // New email API call
+      const emailResponse = await fetch("/api/send-email", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          fullName,
+          email,
+          phoneNumber,
+          message,
+          subscribe,
+		  subject,
+		  recipients
+        }),
+      });
+
+      const emailData = await emailResponse.json();
+
+      if (response.ok && emailResponse.ok) {
         setFullName("");
         setEmail("");
         setPhoneNumber("");
