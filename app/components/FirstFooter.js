@@ -31,7 +31,7 @@ export default function FirstFooter() {
   // Define each footer section and its content
   const footerSections = [
     {
-      title: t("footer.centaurus-charter"),
+      title: "CENTAURUS CHARTER",
       content: (
         <ul>
           <li className="mb-2">
@@ -119,7 +119,7 @@ export default function FirstFooter() {
       ),
     },
     {
-      title: "Our Luxury Yachts",
+      title: "OUR LUXURY YACHTS",
       content: (
         <ul>
           {!loading &&
@@ -219,7 +219,7 @@ export default function FirstFooter() {
 		),
 	  },
     {
-      title: "For Enquiries",
+      title: "FOR ENQUIRIES",
       content: (
         <ul className="text-text-primary-white">
           <li className="flex flex-col md:items-start items-center text-center md:text-left">
