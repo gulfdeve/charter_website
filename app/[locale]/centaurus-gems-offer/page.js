@@ -123,7 +123,7 @@ const page = () => {
       </div>
       <div className="pb-8">
         <div className="max-w-5xl mx-auto text-center mb-8  ">
-          <h2 className="text-lg font-bold bg-primary-blue-2 text-primary-yellow py-1">
+          <h2 className="font-bold bg-primary-blue-2 text-primary-yellow py-1">
             Hero Offer - 50% OFF Morning Yacht Rentals
           </h2>
         </div>
