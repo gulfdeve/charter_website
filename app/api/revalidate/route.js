@@ -16,9 +16,25 @@ export async function GET(request) {
 	
 	// Also revalidate paths that use this data
 	revalidatePath('/');
-	revalidatePath('/yacht-rentals/56ft-lagoona');
-	revalidatePath('/yacht-rentals/85ft-yacht-Kronos');
-	revalidatePath('/yacht-rentals/40ft-yacht-Riverside');
+	revalidatePath('/yacht-rentals');
+	revalidatePath('/yacht-rentals/[slug]');
+	revalidatePath('/offers');
+	revalidatePath('/offers/[slug]');
+	revalidatePath('/events');
+	revalidatePath('/events/[slug]');
+	revalidatePath('/yacht-trips');
+	revalidatePath('/yacht-trips/[slug]');
+	revalidatePath('/watersports');
+	revalidatePath('/watersports/[slug]');
+
+	revalidatePath('/shared-yacht-tours-dubai');
+	revalidatePath('/contact');
+	revalidatePath('/aboutus');
+	revalidatePath('/terms-and-condition');
+	revalidatePath('/privacy-and-policy');
+	revalidatePath('/faq');
+	
+	
 	
 	
 	return NextResponse.json({ revalidated: true, now: Date.now() });
