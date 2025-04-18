@@ -224,10 +224,10 @@ const Page = () => {
 
       {/* Heading Section */}
       <section className="flex flex-col items-center py-20 bg-white">
-        <h2 className="text-5xl font-bold text-center text-primary-blue">
-          F1 ABU DHABI GP 2025
+        <h2 className="text-3xl font-bold text-center text-primary-blue">
+          FORMULA 1 ABU DHABI GP 2025
         </h2>
-        <p className="font-medium text-center text-primary-blue my-7">
+        <p className="font-medium text-center text-primary-blue my-3">
           LUXURY YACHT CHARTER PACKAGES
         </p>
         <p className=" text-center font-bold text-primary-blue mt-2 ">

@@ -6,9 +6,9 @@ import { useLocale, useTranslations } from "next-intl";
 export default function YachtDetails({ yachtDetails, product, locale, whatsappUrl }) {
 	const t = useTranslations();
 	return (
-    <div className="flex flex-col lg:flex-row w-full items-start lg:justify-between py-10">
+    <div className="flex flex-col lg:flex-row w-full items-start lg:justify-between py-3">
       <div className="flex flex-col lg:items-start w-full lg:justify-start lg:w-1/2">
-      <h3 className="text-base text-black font-bold py-4">Yacht Features</h3>
+      <h3 className="text-base text-black font-bold py-4">Yacht Specifications</h3>
         <table className="w-full text-sm text-left text-gray-900">
           <tbody>
             {yachtDetails.map((detail, index) => (
