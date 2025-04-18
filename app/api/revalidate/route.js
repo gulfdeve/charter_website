@@ -16,6 +16,10 @@ export async function GET(request) {
 	
 	// Also revalidate paths that use this data
 	revalidatePath('/');
+	revalidatePath('/yacht-rentals/56ft-lagoona');
+	revalidatePath('/yacht-rentals/85ft-yacht-Kronos');
+	revalidatePath('/yacht-rentals/40ft-yacht-Riverside');
+	
 	
 	return NextResponse.json({ revalidated: true, now: Date.now() });
   }
