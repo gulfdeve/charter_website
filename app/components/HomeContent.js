@@ -65,9 +65,9 @@ export default function Home() {
       <div className="flex flex-col bg-white items-center justify-center lg:pt-12 xl:pt-20
        2xl:pt-20 2xl:py-0 ">
         <h2 className=" text-primary-blue text-center font-bold text-3xl sm:text-2xl md:text-3xl lg:text-4xl md:p-4 pb-4 px-3">
-          YACHT RENTAL DUBAI {t("navbar.private-yachts")}
+          DUBAI YACHTS - ONLINE BOOKING
         </h2>
-        <p className=" text-primary-blue text-center text-xl sm:text-2xl md:text-3xl lg:text-4xl  pb-6 md:pb-12">
+        <p className=" text-primary-blue text-center text-xl sm:text-2xl md:text-xl lg:text-2xl  pb-6 md:pb-12">
           Enjoy your Luxury Yacht Experience
         </p>
 

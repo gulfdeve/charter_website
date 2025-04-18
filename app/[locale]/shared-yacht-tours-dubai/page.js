@@ -91,8 +91,8 @@ const Page = () => {
           <div className="flex flex-col lg:flex-row align-top">
             {/* Left Section - Text Content */}
             <div className="w-full lg:w-1/2 flex flex-col pb-10 lg:pb-0 lg:pr-8">
-              <h2 className="text-primary-blue-2 text-center pb-4">
-                SHARED YACHT TOURS IN DUBAI
+              <h2 className="text-primary-blue-2 text-center pb-4 uppercase">
+                Shared yacht Dubai <br/> with live BBQ & Drinks
               </h2>
               <p className="text-primary-blue-2 text-base text-center">
                 Luxury Experience that's Affordable: Set Sail and Experience
@@ -130,8 +130,8 @@ const Page = () => {
         <div>
           <div className="flex items-center justify-center w-full my-6">
             <hr className="flex-grow border-primary-yellow-dark" />
-            <span className="px-4 text-2xl 2xl:text-2xl font-semibold text-primary-blue-2">
-              SEASONAL TOURS
+            <span className="px-4 text-2xl 2xl:text-2xl font-semibold text-primary-blue-2 uppercase">
+              Shared yacht tour prices & online booking
             </span>
             <hr className="flex-grow border-primary-yellow-dark" />
           </div>
@@ -332,9 +332,9 @@ const Page = () => {
 
         {/* TERMS & CONDITION */}
 		<div className="flex flex-col items-center justify-center py-10 px-5">
-  <p className="text-primary-blue-2 font-bold text-center">
-    TERMS & CONDITION
-  </p>
+  <h2 className="text-base text-primary-blue-2 font-bold text-center">
+    TERMS & CONDITIONS
+  </h2>
   <ul className="max-w-2xl mx-auto list-disc text-primary-blue-4 text-sm pt-5 space-y-2">
     <li className="text-center">
       Rates do not include alcohol. An alcohol menu is available for

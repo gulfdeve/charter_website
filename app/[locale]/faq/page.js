@@ -132,7 +132,7 @@ const page = () => {
                     : "bg-primary-blue rounded-lg"
                 }`}
               >
-                <button
+                <h2
                   onClick={() => toggleAnswer(index)}
                   className={`w-full text-left text-lg md:text-lg font-bold  py-3 px-3 block flex justify-between items-center focus:outline-none ${
                     activeIndex === index ? "text-primary-blue" : "text-primary-yellow"
@@ -142,7 +142,7 @@ const page = () => {
                   <span className="text-2xl">
                     {activeIndex === index ? "-" : "+"}
                   </span>
-                </button>
+                </h2>
                 <div
                   className={`overflow-hidden transition-[max-height] w-full duration-300 ease-in-out ${
                     activeIndex === index ? "max-h-40" : "max-h-0"
