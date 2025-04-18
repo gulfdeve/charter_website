@@ -1,27 +1,38 @@
-// app/lib/fetchData.js
-import { cache } from 'react';
+export const dynamic = process.env.NODE_ENV === 'development' ? 'force-dynamic' : 'auto';
+export const revalidate = process.env.NODE_ENV === 'development' ? 0 : 3600;
 
-export const fetchData = cache(async () => {
+export async function GET() {
   try {
-    // Check if we're on the server or client
-    const baseUrl = typeof window === 'undefined' 
-      ? process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3000'
-      : '';
-      
-    const response = await fetch(`${baseUrl}/api/get-data`, {
-		next: { 
-			revalidate: 3600,
-			tags: ['data-cache'] // Add this tag
-		  }
-    });
+    const url = `${process.env.API_DOMAIN}/api/api_new/basic`;
+    console.log("using url: ", url);
+    
+    // Add no-cache headers for development
+    const fetchOptions = process.env.NODE_ENV === 'development' 
+      ? { cache: 'no-store', headers: { 'Cache-Control': 'no-cache' } }
+      : {};
+    
+    const response = await fetch(url, fetchOptions);
     
     if (!response.ok) {
-      throw new Error('Failed to fetch data');
+      return new Response(JSON.stringify({ error: "Failed to fetch data" }), {
+        status: 500,
+      });
     }
+    console.log("loading data from api");
+    const data = await response.json();
     
-    return response.json();
+    // Add no-cache headers to response in development
+    const headers = process.env.NODE_ENV === 'development' 
+      ? { 'Cache-Control': 'no-store, no-cache, must-revalidate, proxy-revalidate' }
+      : { 'Cache-Control': 'public, max-age=3600, s-maxage=7200, stale-while-revalidate=86400' };
+    
+    return new Response(JSON.stringify(data), { 
+      status: 200,
+      headers: headers
+    });
   } catch (error) {
-    console.error('Error fetching data:', error);
-    return null;
+    return new Response(JSON.stringify({ error: error.message }), {
+      status: 500,
+    });
   }
-});
+}
