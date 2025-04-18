@@ -1,9 +1,9 @@
 "use client";
 import { useLocale, useTranslations } from "next-intl";
 import { useEffect, useState, useRef } from "react";
-import { FaPhoneAlt } from "react-icons/fa";
+import { MdOutlinePhone } from "react-icons/md";
 import { IoLogoWhatsapp } from "react-icons/io5";
-import { MdMail } from "react-icons/md";
+import { MdOutlineMail } from "react-icons/md";
 import { useData } from "../context/DataContext";
 import { useRouter, usePathname, Link } from "../i18n/routing";
 import { GiHamburgerMenu } from "react-icons/gi";
@@ -75,8 +75,8 @@ export default function Navbar() {
     <>
       {/* Fixed Single Navbar */}
       <div className="fixed top-0 left-0 w-full z-50 bg-white shadow-md lg:block hidden gradient-custom">
-        <div className="container mx-auto">
-          <nav className="flex items-center justify-between">
+        <div className="container lg:max-w-none px-0 mx-auto">
+          <nav className="flex items-center justify-around">
             {/* Logo */}
             <div className="py-4">
               <Link href="/">
@@ -91,15 +91,15 @@ export default function Navbar() {
             </div>
 
             {/* Main Menu Items */}
-            <div className="flex items-center text-xs">
-              <ul className="flex space-x-6 text-xs font-semibold">
+            <div className="flex items-center text-xs xxl:text-base">
+              <ul className="flex space-x-6 lg:space-x-8 text-xs xxl:text-base font-semibold">
                 {/* PRIVATE YACHTS with Dropdown */}
                 <li className="relative group">
                   <span
-                    className={`flex items-center justify-between cursor-pointer gap-1 py-6 ${
+                    className={`flex items-center justify-between cursor-pointer gap-1 py-2 uppercase border-b-2 transition-all duration-200 ${
                       pathname === "/yacht-rentals" || pathname.startsWith("/yacht-rentals/")
-                        ? "text-primary-blue"
-                        : "text-primary-blue hover:text-primary-blue"
+                         ? "text-primary-blue border-primary-yellow font-semibold"
+                        : "text-primary-blue border-transparent"
                     }`}
                   >
                     <Link
@@ -142,20 +142,28 @@ export default function Navbar() {
                 </li>
 
                 {/* BUY A YACHT */}
-                <li className={pathname === "/yachts-for-sale-dubai" ? "text-primary-blue" : "text-primary-blue hover:text-primary-blue"}>
+                <li>
                   <Link
-                    className="py-6 inline-block tracking-wider"
-                    href={`/yachts-for-sale-dubai`}
+                    href="/yachts-for-sale-dubai"
+                    className={`py-2 inline-block tracking-wider uppercase border-b-2 transition-all duration-200 ${
+                      pathname === "/yachts-for-sale-dubai" || pathname.startsWith("/yachts-for-sale-dubai/")
+                        ? "text-primary-blue border-primary-yellow font-semibold"
+                        : "text-primary-blue border-transparent hover:border-primary-yellow"
+                    }`} 
                   >
                     {t("navbar.buy-a-yacht")}
                   </Link>
                 </li>
 
                 {/* SHARED TOURS */}
-                <li className={pathname === "/shared-yacht-tours-dubai" ? "text-primary-blue" : "text-primary-blue hover:text-primary-blue"}>
+                <li> 
                   <Link
-                    className="py-6 inline-block tracking-wider"
-                    href={`/shared-yacht-tours-dubai`}
+                    href="/shared-yacht-tours-dubai"
+                    className={`py-2 inline-block tracking-wider uppercase border-b-2 transition-all duration-200 ${
+                      pathname === "/shared-yacht-tours-dubai" || pathname.startsWith("/shared-yacht-tours-dubai/")
+                        ? "text-primary-blue border-primary-yellow font-semibold"
+                        : "text-primary-blue border-transparent hover:border-primary-yellow"
+                    }`} 
                   >
                     {t("navbar.shared-tours")}
                   </Link>
@@ -164,10 +172,10 @@ export default function Navbar() {
                 {/* EXPERIENCES with Dropdown */}
                 <li className="relative group">
                   <span
-                    className={`flex items-center justify-between cursor-pointer gap-1 py-6 ${
+                    className={`flex items-center justify-between cursor-pointer gap-1 py-2 border-b-2 transition-all duration-200  ${
                       pathname === "/yacht-trips" || pathname.startsWith("/yacht-trips/")
-                        ? "text-primary-blue"
-                        : "text-primary-blue hover:text-primary-blue"
+                        ? "text-primary-blue border-primary-yellow font-semibold"
+                        : "text-primary-blue border-transparent"
                     }`}
                   >
                     <Link
@@ -191,7 +199,7 @@ export default function Navbar() {
                       />
                     </svg>
                   </span>
-                  <ul className="absolute top-full left-0 w-60 bg-white text-black shadow-lg rounded-lg overflow-hidden border border-gray-200 hidden group-hover:block z-50">
+                  <ul className="absolute top-full left-0 w-60 bg-white text-black transition-all duration-150 shadow-lg rounded-lg overflow-hidden border border-gray-200 hidden group-hover:block z-50">
                     <li className="cursor-pointer uppercase text-xs font-medium text-primary-grey hover:text-white hover:bg-primary-blue transition-all duration-300">
                       <Link href="/watersports" className="py-2 px-4 block">
                         {t("navbar.water-sports")}
@@ -215,30 +223,43 @@ export default function Navbar() {
                 </li>
 
                 {/* OFFERS */}
-                <li className={pathname === "/offers" || pathname.startsWith("/offers/") ? "text-primary-blue" : "text-primary-blue hover:text-primary-blue"}>
-                  <Link
-                    className="py-6 inline-block tracking-wider uppercase"
-                    href={`/offers`}
-                  >
-                    {t("navbar.offers")}
-                  </Link>
-                </li>
+                <li>
+                <Link
+                  href="/offers"
+                  className={`py-2 inline-block tracking-wider uppercase border-b-2 transition-all duration-200 ${
+                    pathname === "/offers" || pathname.startsWith("/offers/")
+                      ? "text-primary-blue border-primary-yellow font-semibold"
+                      : "text-primary-blue border-transparent hover:border-primary-yellow"
+                  }`}
+                >
+                  {t("navbar.offers")}
+                </Link>
+              </li>
 
                 {/* EVENTS */}
-                <li className={pathname === "/events" || pathname.startsWith("/events/") ? "text-primary-blue" : "text-primary-blue hover:text-primary-blue"}>
-                  <Link
-                    className="py-6 inline-block tracking-wider"
-                    href={`/events`}
+                <li>
+                <Link
+                  href="/events"
+                  className={`py-2 inline-block tracking-wider uppercase border-b-2 transition-all duration-200 ${
+                      pathname === "/events" || pathname.startsWith("/events/")
+                        ? "text-primary-blue border-primary-yellow font-semibold"
+                        : "text-primary-blue border-transparent hover:border-primary-yellow"
+                    }`}
+
                   >
                     EVENTS
                   </Link>
                 </li>
 
                 {/* CONTACT US */}
-                <li className={pathname === "/contact" ? "text-primary-blue" : "text-primary-blue hover:text-primary-blue"}>
+                <li>
                   <Link
-                    className="py-6 inline-block tracking-wider uppercase"
-                    href={`/contact`}
+                    href="/contact"
+                    className={`py-2 inline-block tracking-wider uppercase border-b-2 transition-all duration-200 ${
+                      pathname === "/contact" || pathname.startsWith("/contact/")
+                        ? "text-primary-blue border-primary-yellow font-semibold"
+                        : "text-primary-blue border-transparent hover:border-primary-yellow"
+                    }`}
                   >
                     {t("navbar.contact-us")}
                   </Link>
@@ -251,24 +272,24 @@ export default function Navbar() {
             <div className="flex items-center gap-4">
               {/* Contact Icons */}
               <Link aria-label="email icon" href={header_email || "#"}>
-                <MdMail
+                <MdOutlineMail
                   size={24}
-                  className="text-primary-blue hover:text-primary-blue hover:scale-110"
+                  className="text-primary-blue-2 hover:text-primary-blue hover:scale-110 transition-transform duration-200"
                 />
               </Link>
 			  <Link
                 aria-label="phone icon"
                 href={header_phone_number_url || "#"}
               >
-                <FaPhoneAlt
-                  size={20}
-                  className="text-primary-blue hover:text-primary-blue mt-1  hover:scale-110"
+                <MdOutlinePhone
+                  size={26}
+                  className="text-primary-blue-2 hover:text-primary-blue  hover:scale-110 transition-transform duration-200"
                 />
               </Link>
               <Link aria-label="whatsapp icon" href={t("header.whatsapp_url")}>
-                <IoLogoWhatsapp
+                <IoLogoWhatsapp 
                   size={24}
-                  className="text-primary-blue hover:text-primary-blue hover:scale-110"
+                  className="text-primary-blue-2 hover:text-primary-blue hover:scale-110 transition-transform duration-200"
                 />
               </Link>
 

@@ -1,7 +1,7 @@
 "use client";
 import { useLocale, useTranslations } from "next-intl";
 import { useRef } from "react";
-import { FaPhoneAlt } from "react-icons/fa";
+import { MdOutlinePhone } from "react-icons/md";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { Link } from "../i18n/routing";
 import Image from "next/image";
@@ -29,7 +29,7 @@ export default function MobileNavbar({
       <nav className="gradient-custom w-full h-14 p-3 fixed top-0 z-50">
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <div className="w-32 pr-3">
+          <div className="w-40 pr-3">
             <Link href={"/"}>
               <Image
                 src="/Cenaturus Logo top.png"
@@ -42,18 +42,18 @@ export default function MobileNavbar({
           </div>
 
           {/* Icons and Dropdown Trigger */}
-          <div className="flex items-center gap-6">
+          <div className="flex items-center gap-3 md:gap-6">
             {/* WhatsApp Icon */}
 						  <Link aria-label="whatsapp icon" href={t("header.whatsapp_url")}>
 							<IoLogoWhatsapp
 							  size={24}
-							  className="text-primary-blue"
+							  className="text-primary-blue-2"
 							/>
 						  </Link>
 
             {/* Phone Icon */}
             <a aria-label="phone icon" href={header_phone_number_url || "#"}>
-              <FaPhoneAlt className="text-primary-blue w-5 h-5" />
+              <MdOutlinePhone className="text-primary-blue-2 w-5 h-5" />
             </a>
 
             {/* Language Selector */}
@@ -100,7 +100,7 @@ export default function MobileNavbar({
               className="w-8 cursor-pointer"
               onClick={() => setMobileDropdownOpen(!mobileDropdownOpen)}
             >
-              <GiHamburgerMenu size={30} className="text-primary-blue" />
+              <GiHamburgerMenu size={30} className="text-primary-blue-2" />
             </div>
           </div>
         </div>
@@ -108,11 +108,11 @@ export default function MobileNavbar({
         {/* Mobile Dropdown Menu */}
         {mobileDropdownOpen && (
           <div
-            className="absolute right-0 top-14 w-48 bg-white border font-bold text-primary-blue shadow-lg z-20"
+            className="absolute right-0 top-14 w-full sm:w-80 bg-[#fafafa] border font-bold text-primary-blue shadow-lg z-20"
             style={{ zIndex: 999 }}
           >
-            <ul className="flex flex-col p-4 gap-4 mobile-navbar">
-              <li className="font-bold cursor-pointer hover:text-blue-500">
+            <ul className="flex flex-col p-4 gap-7 mobile-navbar">
+              <li className="font-bold cursor-pointer hover:text-primary-blue-2">
                 <div
                   className="flex justify-between items-center"
                   onClick={() => toggleSubmenu(0)}
@@ -129,12 +129,12 @@ export default function MobileNavbar({
                 href={`/yachts-for-sale-dubai`}
                 onClick={() => setMobileDropdownOpen(false)}
               >
-                <li className="font-bold cursor-pointer hover:text-blue-500">
+                <li className="font-bold cursor-pointer hover:text-primary-blue-2">
                   {t("navbar.buy-a-yacht")}
                 </li>
               </Link>
 
-              <li className="font-bold cursor-pointer hover:text-blue-500">
+              <li className="font-bold cursor-pointer hover:text-primary-blue-2">
                 <Link
                   href={`/shared-yacht-tours-dubai`}
                   onClick={() => setMobileDropdownOpen(false)}
@@ -143,7 +143,7 @@ export default function MobileNavbar({
                 </Link>
               </li>
 
-              <li className="font-bold cursor-pointer">
+              <li className="font-bold cursor-pointer hover:text-primary-blue-2">
                 <div
                   className="flex justify-between items-center"
                   onClick={() => toggleSubmenu(1)}
@@ -157,7 +157,7 @@ export default function MobileNavbar({
                 </div>
               </li>
 
-              <li className="font-bold cursor-pointer hover:text-blue-500">
+              <li className="font-bold cursor-pointer hover:text-primary-blue-2">
                 <Link
                   href={`/offers`}
                   onClick={() => setMobileDropdownOpen(false)}
@@ -165,7 +165,7 @@ export default function MobileNavbar({
                   {t("navbar.offers")}
                 </Link>
               </li>
-              <li className="font-bold cursor-pointer hover:text-blue-500">
+              <li className="font-bold cursor-pointer hover:text-primary-blue-2">
                 <Link
                   href={`/events`}
                   onClick={() => setMobileDropdownOpen(false)}
@@ -174,7 +174,7 @@ export default function MobileNavbar({
                 </Link>
               </li>
 
-              <li className="font-bold cursor-pointer hover:text-blue-500">
+              <li className="font-bold cursor-pointer hover:text-primary-blue-2">
                 <Link
                   href={`/watersports`}
                   onClick={() => setMobileDropdownOpen(false)}
