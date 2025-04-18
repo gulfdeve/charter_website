@@ -11,6 +11,9 @@ export default {
       textShadow: {
         inner: 'inset 2px 2px 4px rgba(0, 0, 0, 0.6)', // Example inner shadow
       },
+	  fontSize: {
+        'xxs': '0.65rem', // Adding custom text-xxs size
+      },
       screens: {
         'xxs': '320px',
         'xs': '375px',
@@ -21,7 +24,7 @@ export default {
         'md': '768px',
         // => @media (min-width: 768px) { ... }
   
-        'lg': '1024px',
+        'lg': '1200px',
         // => @media (min-width: 1024px) { ... }
   
         'xl': '1280px',

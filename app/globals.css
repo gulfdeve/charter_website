@@ -63,7 +63,7 @@ body {
   @apply px-4 md:px-6;
 }
 .nav-space {
-  @apply pt-14 md:pt-14 lg:pt-0;
+  @apply pt-14 md:pt-14 lg:pt-[70px];
 }
 .text-video-new {
   position: absolute;
@@ -372,6 +372,10 @@ h1 {
 	/* Reduced desktop size from lg to base */
 	/* H6 remains small but still distinct */
 	@apply text-xs sm:text-xs md:text-sm lg:text-base font-bold;
+  }
+  .gradient-custom {
+	background: #E8F1FF;
+	background: linear-gradient(45deg,rgba(232, 241, 255, 1) 0%, rgba(255, 242, 206, 1) 100%);
   }
 
 @media (max-width: 1023px) {
