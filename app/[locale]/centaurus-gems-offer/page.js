@@ -179,7 +179,7 @@ const page = () => {
               <tr>
                 <th
                   colSpan={4}
-                  className="bg-primary-blue text-white text-center py-4 px-2"
+                  className="bg-primary-blue text-white text-center py-4 px-1 sm:px-2"
                 >
                   40% OFF IN OUR 4 HOURS YACHT RENTAL BOOKINGS
                   <div className="font-normal mt-1">
@@ -188,16 +188,16 @@ const page = () => {
                 </th>
               </tr>
               <tr className="">
-                <th className="bg-primary-blue text-white font-semibold uppercase py-3 px-2 border border-white text-center">
+                <th className="bg-primary-blue text-white font-semibold uppercase py-3 px-1 sm:px-2 border border-white text-center">
                   Yacht
                 </th>
-                <th className="bg-primary-blue text-white font-semibold uppercase py-3 px-2 border border-white text-center">
+                <th className="bg-primary-blue text-white font-semibold uppercase py-3 px-1 sm:px-2 border border-white text-center">
                   Capacity
                 </th>
-                <th className="bg-primary-blue text-white font-semibold uppercase py-3 px-2 border border-white text-center">
+                <th className="bg-primary-blue text-white font-semibold uppercase py-3 px-1 sm:px-2 border border-white text-center">
                   Regular Rate
                 </th>
-                <th className="bg-primary-blue text-white font-semibold uppercase py-3 px-2 border border-white text-center">
+                <th className="bg-primary-blue text-white font-semibold uppercase py-3 px-1 sm:px-2 border border-white text-center">
                   Discounted Rate
                 </th>
               </tr>
@@ -208,13 +208,13 @@ const page = () => {
                 return (
                   <tr key={idx} className={idx % 2 === 1 ? "bg-[#F5F9FF]" : ""}>
                     {/* Yacht Name */}
-                    <td className="py-4 px-2 font-semibold border border-white">
+                    <td className="py-4 px-1 sm:px-2 font-semibold border border-white">
                       {yacht.name}
                     </td>
 
                     {/* Capacity: normal font + italic for last row */}
                     <td
-                      className={`py-4 px-2 border border-white text-center ${
+                      className={`py-4 px-1 sm:px-2 border border-white text-center ${
                         isLast ? " font-bold" : "font-bold"
                       }`}
                     >
@@ -222,14 +222,14 @@ const page = () => {
                     </td>
 
                     {/* Regular Rate with strikethrough */}
-                    <td className="py-4 px-2 border border-white text-center">
+                    <td className="py-4 px-1 sm:px-2 border border-white text-center">
                       <span className="line-through text-black">
                         {yacht.regular}
                       </span>
                     </td>
 
                     {/* Discounted Rate: split "from" on last row */}
-                    <td className="py-4 px-2 border border-white text-center">
+                    <td className="py-4 px-1 sm:px-2 border border-white text-center">
                       {isLast ? (
                         <>
                           <span className="text-xs lowercase">from</span>
@@ -255,7 +255,7 @@ const page = () => {
               <tr>
                 <th
                   colSpan={4}
-                  className="bg-primary-blue text-white text-center py-4 px-2"
+                  className="bg-primary-blue text-white text-center py-4 px-1 sm:px-2"
                 >
                   25% OFF IN OUR YACHT RENTAL BOOKINGS
                   <div className="font-normal mt-1">
@@ -264,16 +264,16 @@ const page = () => {
                 </th>
               </tr>
               <tr className="">
-                <th className="bg-primary-blue text-white font-semibold uppercase py-3 px-2 border border-white text-center">
+                <th className="bg-primary-blue text-white font-semibold uppercase py-3 px-1 sm:px-2 border border-white text-center">
                   Yacht
                 </th>
-                <th className="bg-primary-blue text-white font-semibold uppercase py-3 px-2 border border-white text-center">
+                <th className="bg-primary-blue text-white font-semibold uppercase py-3 px-1 sm:px-2 border border-white text-center">
                   Capacity
                 </th>
-                <th className="bg-primary-blue text-white font-semibold uppercase py-3 px-2 border border-white text-center">
+                <th className="bg-primary-blue text-white font-semibold uppercase py-3 px-1 sm:px-2 border border-white text-center">
                   Regular Rate
                 </th>
-                <th className="bg-primary-blue text-white font-semibold uppercase py-3 px-2 border border-white text-center">
+                <th className="bg-primary-blue text-white font-semibold uppercase py-3 px-1 sm:px-2 border border-white text-center">
                   Discounted Rate
                 </th>
               </tr>
@@ -284,13 +284,13 @@ const page = () => {
                 return (
                   <tr key={idx} className={idx % 2 === 1 ? "bg-[#F5F9FF]" : ""}>
                     {/* Yacht Name */}
-                    <td className="py-4 px-2 font-semibold border border-white">
+                    <td className="py-4 px-1 sm:px-2 font-semibold border border-white">
                       {yacht.name}
                     </td>
 
                     {/* Capacity: normal font + italic for last row */}
                     <td
-                      className={`py-4 px-2 border border-white text-center ${
+                      className={`py-4 px-1 sm:px-2 border border-white text-center ${
                         isLast ? " font-bold" : "font-bold"
                       }`}
                     >
@@ -298,14 +298,14 @@ const page = () => {
                     </td>
 
                     {/* Regular Rate with strikethrough */}
-                    <td className="py-4 px-2 border border-white text-center">
+                    <td className="py-4 px-1 sm:px-2 border border-white text-center">
                       <span className="line-through text-black">
                         {yacht.regular}
                       </span>
                     </td>
 
                     {/* Discounted Rate: split "from" on last row */}
-                    <td className="py-4 px-2 border border-white text-center">
+                    <td className="py-4 px-1 sm:px-2 border border-white text-center">
                       {isLast ? (
                         <>
                           <span className="text-xs lowercase">from</span>
