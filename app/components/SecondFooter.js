@@ -10,7 +10,7 @@ const SecondFooter = () => {
           <p className="text-text-primary-white text-center  lg:text-start">
             Official Partner
           </p>
-          <a href="https://centaurusint.net/" target="_blank">
+          <a href="http://bit.ly/3BOrIIF" target="_blank">
             <Image
               src="/Centaurus-Internatioanl-Horizontal-white.webp"
               alt="Centaurus International"
@@ -49,18 +49,21 @@ const SecondFooter = () => {
           <div className="flex flex-row gap-3">
             {" "}
             {/* Changed to always be flex-row */}
+            
             <Image
               src="/Google.png"
               alt="google logo"
               width={80}
               height={100}
             />
+            <Link href="https://www.tripadvisor.com/Attraction_Review-g295424-d15699786-Reviews-Centaurus_Yachts_Boats_Dubai-Dubai_Emirate_of_Dubai.html" target="_blank" rel="noopener noreferrer">
             <Image
               src="/Tripadvisor-logo.webp"
               alt="tripadvisor logo"
               width={80}
               height={0}
             />
+            </Link>
           </div>
           <div className="flex flex-row items-center gap-3">
             {" "}

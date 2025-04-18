@@ -249,10 +249,7 @@ const Page = () => {
             {/* Right: Text & Content */}
             <div className="flex flex-col items-center justify-center bg-primary-blue-2 px-5 py-5 xl:w-[40rem] lg:w-[160rem] md:h-[541px] xl:h-[570px] lg:h-[504px] p-5">
               <h3 className="text-primary-yellow uppercase  text-4xl font-bold text-center pb-1">
-                FORMULA 1 YACHT PARTY
-              </h3>
-              <h3 className="text-white  font-bold text-center pb-5">
-                HOSPITALITY PACKAGE
+                F1 YACHT PARTY TICKETS
               </h3>
               <p className="text-white text-center text-sm md:text-lg pb-8 px-2 md:px-2">
                 Join Centaurus Charter for an exclusive 4-day Formula 1 Yacht Party experience.
@@ -273,6 +270,9 @@ const Page = () => {
 
       {/* Carousel Section */}
       <div className="container mx-auto ">
+      <h4 className="text-2xl md:text-3xl font-bold text-center text-blue-900 mb-8">
+          F1 TICKET INCLUSIONS
+        </h4>
         <div ref={emblaRef} className="overflow-hidden relative">
           <div className="flex">
             {slides.map((item, index) => (

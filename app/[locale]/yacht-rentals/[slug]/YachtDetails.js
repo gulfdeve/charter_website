@@ -8,6 +8,7 @@ export default function YachtDetails({ yachtDetails, product, locale, whatsappUr
 	return (
     <div className="flex flex-col lg:flex-row w-full items-start lg:justify-between py-10">
       <div className="flex flex-col lg:items-start w-full lg:justify-start lg:w-1/2">
+      <h3 className="text-base text-black font-bold py-4">Yacht Features</h3>
         <table className="w-full text-sm text-left text-gray-900">
           <tbody>
             {yachtDetails.map((detail, index) => (
@@ -23,14 +24,14 @@ export default function YachtDetails({ yachtDetails, product, locale, whatsappUr
       </div>
 
       <div className="flex items-start justify-center">
-        <div className="rounded-lg p-3 lg:p-6">
-          <p className="text-md text-black font-bold py-4">What to expect</p>
+        <div className="rounded-lg">
+          <h3 className="text-base text-black font-bold py-4">What to expect</h3>
           <ol className="list-disc text-sm pl-6 space-y-4">
             {product.translations[locale].key_features.split("\n").map((item, index) => (
               <li key={index} dangerouslySetInnerHTML={{ __html: item }} />
             ))}
           </ol>
-          <p className="text-md text-black font-bold py-4">Ideal for:</p>
+          <h3 className="text-base text-black font-bold py-4">Ideal for:</h3>
           <ol className="list-disc text-left text-sm pl-6 space-y-4">
             {product.translations[locale].ideal_for.split("\n").map((item, index) => (
               <li key={index} dangerouslySetInnerHTML={{ __html: item }} />
@@ -42,7 +43,7 @@ export default function YachtDetails({ yachtDetails, product, locale, whatsappUr
               <FaMapMarkerAlt className="w-8 h-8 flex-shrink-0" />
             </div>
             <div className="uppercase">
-              <p className="font-bold">Yacht location:</p>
+              <h3 className="font-bold text-base">Yacht location:</h3>
               <p className="text-blue-800">
                 <a
                   href="https://www.google.com/maps/place/CENTAURUS+CHARTER+-+Yachts+%26+Boats+Rental+Dubai+Harbour"

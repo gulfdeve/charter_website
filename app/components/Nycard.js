@@ -111,48 +111,48 @@ const Nycard = () => {
               )}
             </div>
             <div className="bg-primary-yellow p-2">
-              <h1 className=" text-center text-2xl text-primary-blue font-bold">
+              <h4 className=" text-center text-2xl text-primary-blue font-bold">
                 {yacht.name}
-              </h1>
+              </h4>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 bg-white p-2  gap-5">
               <div className="flex flex-row items-center justify-between  p-4 md:p-2 px-16 md:px-4 xl:px-5 outline md:outline-none outline-primary-blue">
                 <FaShip className="text-4xl md:text-4xl text-primary-yellow" />
-                <h1 className="text-center md:text-sm  text-primary-blue uppercase">
+                <div className="font-bold text-center md:text-sm  text-primary-blue uppercase">
                   Model<br />
                   <span className=" font-medium">{yacht.model}</span>
-                </h1>
+                </div>
               </div>
               <div className="flex flex-row items-center justify-between p-4 md:p-2 px-16 md:px-4 xl:px-5 outline outline-primary-blue md:outline-none">
                 <FaClock className="text-4xl md:text-3xl text-primary-yellow" />
-                <h1 className="text-center md:text-sm  text-primary-blue">
+                <div className="font-bold text-center md:text-sm  text-primary-blue">
                   {yacht.timings}<br />
                   <span className="font-medium">TIMINGS</span>
-                </h1>
+                </div>
               </div>
               <div className="flex flex-row items-center justify-between p-4 md:p-2 px-16 md:px-4  outline outline-primary-blue md:outline-none">
                 <IoIosPeople className="text-4xl md:text-5xl text-primary-yellow" />
-                <h1 className="text-center md:text-sm  text-primary-blue">
+                <div className="font-bold text-center md:text-sm  text-primary-blue">
                   {yacht.capacity}<br />
                   <span className="font-medium">CAPACITY</span>
-                </h1>
+                </div>
               </div>
               <div className="flex flex-row items-center justify-between p-4 md:p-2 px-16 md:px-4 xl:px-7 outline outline-primary-blue  md:outline-none">
                 <FaBed className="text-4xl md:text-4xl text-primary-yellow" />
-                <h1 className="text-center md:text-sm text-primary-blue">
+                <div className="font-bold text-center md:text-sm text-primary-blue">
                   {yacht.cabins}<br />
                   <span className="font-medium md:text-sm">CABINS</span>
-                </h1>
+                </div>
               </div>
             </div>
             <div className="bg-white p-5 rounded-b-3xl">
               <div className="bg-primary-blue outline outline-primary-yellow rounded-lg p-4 space-y-2 py-5">
-                <h1 className=" text-primary-yellow text-center font-bold text-xl">
+                <h5 className=" text-primary-yellow text-center font-bold text-xl">
                   PACKAGE INCLUSIONS:
-                </h1>
-                <h1 className=" text-white text-center text-sm ">
+                </h5>
+                <div className=" text-white text-center text-sm ">
                   {yacht.packageInclusions}
-                </h1>
+                </div>
               </div>
               {/* <div className="flex flex-row items-center justify-center p-3">
                 <IoMdPricetag className="text-5xl md:text-4xl text-primary-yellow" />
