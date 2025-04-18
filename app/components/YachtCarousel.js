@@ -3,29 +3,35 @@ import React, { useEffect, useRef } from "react";
 import EmblaCarousel from "embla-carousel";
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 import { useData } from "../context/DataContext";
-
 import Image from "next/image";
-import YachtmobCarousel from "./yachtmobCarousel";
 import { useLocale } from "next-intl";
-import { useRouter, usePathname, Link } from "@/app/i18n/routing";
+import { Link } from "@/app/i18n/routing";
 
-export default function YachtCarousal() {
+export default function YachtCarousel() {
   const { data, loading } = useData();
-  const locale = useLocale()
+  const locale = useLocale();
   const emblaRef = useRef(null);
   const emblaInstance = useRef(null);
 
-  // Initialize Embla carousel with autoplay
   useEffect(() => {
     if (emblaRef.current) {
-      emblaInstance.current = EmblaCarousel(emblaRef.current, {
+      const options = {
         align: "start",
         loop: true,
         slidesToScroll: 1,
-      });
+        breakpoints: {
+          '(min-width: 768px)': { slidesToScroll: 2 },
+          '(min-width: 1024px)': { slidesToScroll: 3 }
+        }
+      };
+  
+      emblaInstance.current = EmblaCarousel(emblaRef.current, options);
+      
+      // Autoplay functionality
       const autoplay = setInterval(() => {
         emblaInstance.current?.scrollNext();
-      }, 10000);
+      }, 100000000);
+  
       return () => {
         clearInterval(autoplay);
         emblaInstance.current?.destroy();
@@ -41,66 +47,69 @@ export default function YachtCarousal() {
       <h2 className="text-primary-blue text-center font-bold text-2xl xl:text-4xl py-7">
         EXPLORE OUR YACHTS
       </h2>
-      <div className="lg:block hidden">
-        <div className="relative container h-full overflow-hidden bg-primary-yellow mx-auto px-3">
-          {/* Single Embla Carousel */}
-          <div className="embla__viewport" ref={emblaRef}>
-            <div className="embla__container flex space-x-2.5">
-              {!loading &&
-                data?.products?.map((product) => (
-                  <div
-                    key={product.id}
-                    className="embla__slide w-full lg:basis-[calc(33%-7px)] flex-none"
-                  >
-                    <div className="relative bg-transparent rounded-lg overflow-hidden">
-                      <Image
-                        src={`https://www.centauruscharter.net/product/images/${product.thumbnail_image}`}
-                        alt={product.translations[locale].name_of_yacht}
-                        width={480}
-                        height={0}
-                        className="w-full h-[26rem] rounded-lg object-cover"
-                        loading="lazy"
-                      />
-                      <div className="absolute bottom-0 left-0 w-full bg-black-gradient p-4 text-white rounded-lg">
-                        <h3 className="text-xl font-bold text-left mb-3">
+
+      <div className="relative container h-full overflow-hidden bg-primary-yellow mx-auto px-3">
+        <div className="embla__viewport" ref={emblaRef}>
+          <div className="embla__container flex">
+            {!loading &&
+              data?.products?.map((product) => (
+<div
+  key={product.id}
+  className="flex-[0_0_90%] md:flex-[0_0_calc(50%-10px)] lg:flex-[0_0_calc(33.33%-10px)] min-w-0 px-2"
+>
+
+<div className="relative bg-transparent rounded-lg overflow-hidden h-[400px] w-full">
+                    <div className="relative w-full h-full">
+                    <Image
+  src={`https://www.centauruscharter.net/product/images/${product.thumbnail_image}`}
+  alt={product.translations[locale].name_of_yacht}
+  fill
+  className="object-cover rounded-lg"
+  loading="lazy"
+  sizes="(max-width: 768px) 90vw, (max-width: 1024px) 45vw, 30vw"
+/>
+                      <div className="absolute inset-0 bg-black-gradient rounded-lg" />
+                      <div className="absolute bottom-0 left-0 w-full p-4 z-10">
+                        <h3 className="text-xl lg:text-2xl font-bold text-white mb-2">
                           <Link href={`/yacht-rentals/${product.slug}`}>
                             {product.translations[locale].name_of_yacht}
                           </Link>
                         </h3>
-                        <p className="text-sm text-left mb-3">
+                        <p className="text-sm text-white mb-4 line-clamp-2">
                           {product.translations[locale].slider_text}
                         </p>
                         <Link href={`/yacht-rentals/${product.slug}`}>
-                          <button className="yellow-solid-button uppercase">
+                          <button className="yellow-solid-button uppercase text-sm lg:text-base py-2 px-4">
                             Book Now
                           </button>
                         </Link>
                       </div>
                     </div>
                   </div>
-                ))}
-            </div>
+                </div>
+              ))}
           </div>
-          {/* Navigation Buttons */}
-          <button
-            aria-label="go previous slide"
-            className="bg-primary-blue text-primary-yellow transition duration-150 ease-in-out absolute left-2 top-1/2 -translate-y-1/2 bg-gray-800 text-white w-14 aspect-square rounded-full flex items-center justify-center z-10"
-            onClick={scrollPrev}
-          >
-            <IoIosArrowBack size={30} />
-          </button>
-          <button
-            aria-label="go next slide"
-            className="bg-primary-blue text-primary-yellow transition duration-150 ease-in-out absolute right-4 top-1/2 -translate-y-1/2 bg-gray-800 text-white w-14 aspect-square rounded-full flex items-center justify-center z-10"
-            onClick={scrollNext}
-          >
-            <IoIosArrowForward size={30} />
-          </button>
         </div>
+        
+
+        {/* Navigation Buttons - Hidden on mobile */}
+{/* Navigation Buttons - Hidden on mobile, visible on tablet and desktop */}
+<button
+  aria-label="Previous slide"
+  className="hidden md:flex bg-primary-blue text-primary-yellow transition duration-150 ease-in-out absolute left-2 top-1/2 -translate-y-1/2 w-14 aspect-square rounded-full items-center justify-center z-10"
+  onClick={scrollPrev}
+>
+  <IoIosArrowBack size={30} />
+</button>
+<button
+  aria-label="Next slide"
+  className="hidden md:flex bg-primary-blue text-primary-yellow transition duration-150 ease-in-out absolute right-4 top-1/2 -translate-y-1/2 w-14 aspect-square rounded-full items-center justify-center z-10"
+  onClick={scrollNext}
+>
+  <IoIosArrowForward size={30} />
+</button>
       </div>
-      <div className="block lg:hidden">
-        <YachtmobCarousel/>
-      </div>
+      
       <div className="pt-12"></div>
     </div>
   );

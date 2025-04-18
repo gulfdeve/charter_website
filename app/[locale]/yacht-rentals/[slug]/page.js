@@ -55,7 +55,7 @@ export default async function YachtPage({ params: paramsPromise }) {
     <>
       <div className="container mx-auto nav-space">
         <div className="py-10 text-center text-primary-blue">
-          <h1 className="font-bold text-center">Boat Rental Dubai</h1>
+          <h1 className="font-bold text-center">{product.translations?.[locale]?.heading_2}</h1>
           <h2 className="">{product.translations?.[locale]?.name_of_yacht}</h2>
         </div>
 

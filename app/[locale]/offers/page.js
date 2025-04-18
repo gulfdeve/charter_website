@@ -50,7 +50,7 @@ export default async function OffersPage({ params }) {
                 </Link>
                 <div className="flex flex-col justify-start px-5 lg:px-5">
                   <h2 className="text-primary-blue text-2xl font-bold pt-4">
-                    <Link href={`/offers/${offer.slug}`} className="capitalize">
+                    <Link href={`/offers/${offer.slug}`} className="uppercase">
                       {offer.translations[language].title}
                     </Link>
                   </h2>
