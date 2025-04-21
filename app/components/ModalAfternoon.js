@@ -13,7 +13,7 @@ const ImageModal = () => {
   if (!isVisible) return null;
 
   return (
-<div className="hidden fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-70">
+<div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-70">
   <div className="relative w-full max-w-[95%] md:max-w-[80%] lg:max-w-2xl">
     {/* Background Image with all content */}
     <a target="_blank" href="https://wa.me/971547928626?text=Hi!%20I%20came%20from%20your%20website%20Centaurus%20Charter%2C%20and%20would%20like%20to%20inquire%20about%20the%2030%25%20spring%20offer%20that%20you%20currently%20have.">

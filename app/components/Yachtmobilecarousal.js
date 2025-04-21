@@ -23,7 +23,7 @@ export default function YachtmobileCarousal() {
   }, [embla]);
 
   return (
-    <div className="container mx-auto py-12 lg:p-6 md:px-6 xxs:px-2">
+    <div className="container mx-auto py-6">
       {/* Embla "viewport" container */}
       <div ref={emblaRef} className="overflow-hidden md:px-3 md:py-5 xxs:px-2">
         {/* Embla "container" for slides: use flex + partial widths */}
