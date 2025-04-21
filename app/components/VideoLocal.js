@@ -69,20 +69,18 @@ export default function VideoLocal({ filename, section }) {
         ></div>
         <div className="block text-center mt-10 xxs:mb-10 lg:absolute lg:-translate-x-2/4 lg:-translate-y-2/4 lg:left-2/4 lg:top-2/4 lg:mt-0">
           <h1 className="uppercase text-4xl font-bold mb-4 text-primary-blue-2 lg:text-white lg:text-[32px] p-0 xxs:px-10 md:px-0 xxs:text-2xl xs:text-xl s:text-2xl sm:text-2xl md:text-3xl 2xl:text-4xl    ">
-		  centaurus yacht rental dubai<br />
+          Daily Yacht Sharing Tours In Dubai<br />
           </h1>
           <p className="text-sm xl:text-2xl mb-1  text-primary-blue-2 lg:text-white 2xl:text-3xl">
-          Yacht Party with DJ Fobiya, Canapes, Drinks
-<br/>
-      Friday, 18 April 2025
+          Including Food and Drinks
           </p>
           <p className="text-sm xl:text-2xl mb-4 text-primary-blue-2 lg:text-white  2xl:text-3xl font-bold">
-		  Tickets start at 189 AED
+          Starting AED 99
           </p>
-          <Link href="events/super-yacht-party-dubai"
+          <Link href="/shared-yacht-tours-dubai"
             className="blue-solid-button"
             >
-            GET OFFER
+            GET YOUR TICKET NOW!
           </Link>
         </div>
         </>
