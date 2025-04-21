@@ -12,8 +12,8 @@ const Page = () => {
     <>
 <VideoLocal filename="/buy-sell-yacht-video.mp4" section="buy-yacht" />
       <div className="bg-white w-full h-auto ">
-        <div className="bg-white rounded-lg p-8 container mx-auto my-8 mt-14">
-          <h1 className="text-4xl font-bold text-center text-gray-900 mb-8 ">
+        <div className="bg-white rounded-lg p-8 container mx-auto lg:mt-8 xl:mt-16 2xl:mt-16">
+          <h1 className="text-2xl xl:text-4xl font-bold text-center text-gray-900 mb-8 ">
             FIND YOUR DREAM YACHT {t("navbar.private-yachts")}  
           </h1>
 

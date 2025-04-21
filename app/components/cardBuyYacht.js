@@ -15,7 +15,7 @@ const YachtCard = ({ yacht }) => {
       
       <div className="p-6">
         <Link href={`/${language}/yachts-for-sale-dubai/88ft-sunseeker`}>
-        <h2 className="text-base sm:text-xl font-bold text-navy-900 mb-4 ">{yacht.name}</h2>
+        <h2 className="text-lg sm:text-xl font-bold text-navy-900 mb-4 ">{yacht.name}</h2>
         </Link>
         
         <div className="grid grid-cols-2 gap-6 mb-6">

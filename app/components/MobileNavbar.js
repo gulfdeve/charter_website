@@ -173,15 +173,6 @@ export default function MobileNavbar({
                   {t("navbar.events")}
                 </Link>
               </li>
-
-              <li className="font-bold cursor-pointer hover:text-primary-blue-2">
-                <Link
-                  href={`/watersports`}
-                  onClick={() => setMobileDropdownOpen(false)}
-                >
-                  {t("navbar.water-sports")}
-                </Link>
-              </li>
             </ul>
           </div>
         )}
