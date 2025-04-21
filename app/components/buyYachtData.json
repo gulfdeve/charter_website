@@ -1,0 +1,532 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "title": "88 FT YACHT SUNSEEKER",
+      "image": "88ft/88 FT YACHT SUNSEEKER.webp",
+      "slug": "88ft-sunseeker",
+      "per_hour_price": 1150,
+      "fareharbor_id": "340459",
+      "thumbnail_image": "1737100995Thumbnail-Lagoona.webp",
+      "gallery": [
+        {
+          "id": 769,
+          "image": "88ft/88 FT YACHT SUNSEEKER.webp",
+          "alt_tag": null
+        },
+        {
+          "id": 7691,
+          "image": "88ft/88 FT YACHT SUNSEEKER1.webp",
+          "alt_tag": null
+        },
+        {
+          "id": 770,
+          "image": "88ft/88 FT YACHT SUNSEEKER2.webp",
+          "alt_tag": null
+        },
+        {
+          "id": 771,
+          "image": "88ft/88 FT YACHT SUNSEEKER4.webp",
+          "alt_tag": null
+        },
+        {
+          "id": 772,
+          "image": "88ft/88 FT YACHT SUNSEEKER6.webp",
+          "alt_tag": null
+        },
+        {
+          "id": 773,
+          "image": "88ft/88 FT YACHT SUNSEEKER7.webp",
+          "alt_tag": null
+        },
+        {
+          "id": 774,
+          "image": "88ft/88 FT YACHT SUNSEEKER8.webp",
+          "alt_tag": null
+        }
+      ],
+      "translations": {
+        "ar": {
+          "price":"upon request", 
+          "name_of_yacht": "88 FT YACHT SUNSEEKER",
+          "year": "2024",
+          "condition": "New",
+          "location": "Dubai",
+          "availability": "Available",
+          "length": "86.7 FT / 26.43 M",
+          "max_speed": "28 KNOTS",
+          "beam": "21.3 FT / 6.49 M",
+          "cruising_speed": "12 KNOTS",
+          "builder": "Sunseeker",
+          "water_capacity": "1400 L / 369.84 US GAL",
+          "year_build": "Sunseeker",
+          "fuel_capacity": "11000 L / 2905.89 US GAL",
+          "propulsion": "Shafts",
+          "engine": "TWIN MTU 10V 2000 M96L SHAFT (2 X 1622PS), TWIN MTU 12V 2000 M96L SHAFT (2 X 1950PS), TWIN MTU 12V M96X SHAFT (2 X 2000PS)",
+          "description": "Step into a world of luxury with the 2024 Sunseeker 88, a masterpiece of seductive styling and smart, practical spaces. If you’re looking to buy a yacht in Dubai, this stunning yacht features a built-in hardtop and a cleverly configured interior that offers unparalleled comfort and elegance. The improved, sumptuous master cabin layout ensures a luxurious retreat, while the Beach Club with its innovative X-TEND™ sunbed at the aft promises relaxation and enjoyment. For those aiming to buy a luxury yacht, the 88 ft Sunseeker is an icon worthy of your immediate attention. Don't miss this opportunity to buy a boat in Dubai and experience the pinnacle of maritime luxury.",
+
+          "meta_keyword": "Luxury Yacht Dubai, luxury yachts, dubai luxury yachts, yachting holiday, yachting vacation, luxury yacht rental"
+        },
+        "en": {
+          "price":"upon request", 
+          "name_of_yacht": "88 FT YACHT SUNSEEKER",
+          "year": "2024",
+          "condition": "New",
+          "location": "Dubai",
+          "availability": "Available",
+          "length": "86.7 FT / 26.43 M",
+          "max_speed": "28 KNOTS",
+          "beam": "21.3 FT / 6.49 M",
+          "cruising_speed": "12 KNOTS",
+          "builder": "Sunseeker",
+          "water_capacity": "1400 L / 369.84 US GAL",
+          "year_build": "Sunseeker",
+          "fuel_capacity": "11000 L / 2905.89 US GAL",
+          "propulsion": "Shafts",
+          "engine": "TWIN MTU 10V 2000 M96L SHAFT (2 X 1622PS), TWIN MTU 12V 2000 M96L SHAFT (2 X 1950PS), TWIN MTU 12V M96X SHAFT (2 X 2000PS)",
+          "description": "Step into a world of luxury with the 2024 Sunseeker 88, a masterpiece of seductive styling and smart, practical spaces. If you’re looking to buy a yacht in Dubai, this stunning yacht features a built-in hardtop and a cleverly configured interior that offers unparalleled comfort and elegance. The improved, sumptuous master cabin layout ensures a luxurious retreat, while the Beach Club with its innovative X-TEND™ sunbed at the aft promises relaxation and enjoyment. For those aiming to buy a luxury yacht, the 88 ft Sunseeker is an icon worthy of your immediate attention. Don't miss this opportunity to buy a boat in Dubai and experience the pinnacle of maritime luxury.",
+
+          "meta_keyword": "Luxury Yacht Dubai, luxury yachts, dubai luxury yachts, yachting holiday, yachting vacation, luxury yacht rental"
+        },
+        "ru": {
+          "price":"upon request", 
+          "name_of_yacht": "88 FT YACHT SUNSEEKER",
+          "year": "2024",
+          "condition": "New",
+          "location": "Dubai",
+          "availability": "Available",
+          "length": "86.7 FT / 26.43 M",
+          "max_speed": "28 KNOTS",
+          "beam": "21.3 FT / 6.49 M",
+          "cruising_speed": "12 KNOTS",
+          "builder": "Sunseeker",
+          "water_capacity": "1400 L / 369.84 US GAL",
+          "year_build": "Sunseeker",
+          "fuel_capacity": "11000 L / 2905.89 US GAL",
+          "propulsion": "Shafts",
+          "engine": "TWIN MTU 10V 2000 M96L SHAFT (2 X 1622PS), TWIN MTU 12V 2000 M96L SHAFT (2 X 1950PS), TWIN MTU 12V M96X SHAFT (2 X 2000PS)",
+          "description": "Step into a world of luxury with the 2024 Sunseeker 88, a masterpiece of seductive styling and smart, practical spaces. If you’re looking to buy a yacht in Dubai, this stunning yacht features a built-in hardtop and a cleverly configured interior that offers unparalleled comfort and elegance. The improved, sumptuous master cabin layout ensures a luxurious retreat, while the Beach Club with its innovative X-TEND™ sunbed at the aft promises relaxation and enjoyment. For those aiming to buy a luxury yacht, the 88 ft Sunseeker is an icon worthy of your immediate attention. Don't miss this opportunity to buy a boat in Dubai and experience the pinnacle of maritime luxury.",
+
+          "meta_keyword": "Luxury Yacht Dubai, luxury yachts, dubai luxury yachts, yachting holiday, yachting vacation, luxury yacht rental"
+        },
+        "zh": {
+          "price":"upon request", 
+          "name_of_yacht": "88 FT YACHT SUNSEEKER",
+          "year": "2024",
+          "condition": "New",
+          "location": "Dubai",
+          "availability": "Available",
+          "length": "86.7 FT / 26.43 M",
+          "max_speed": "28 KNOTS",
+          "beam": "21.3 FT / 6.49 M",
+          "cruising_speed": "12 KNOTS",
+          "builder": "Sunseeker",
+          "water_capacity": "1400 L / 369.84 US GAL",
+          "year_build": "Sunseeker",
+          "fuel_capacity": "11000 L / 2905.89 US GAL",
+          "propulsion": "Shafts",
+          "engine": "TWIN MTU 10V 2000 M96L SHAFT (2 X 1622PS), TWIN MTU 12V 2000 M96L SHAFT (2 X 1950PS), TWIN MTU 12V M96X SHAFT (2 X 2000PS)",
+          "description": "Step into a world of luxury with the 2024 Sunseeker 88, a masterpiece of seductive styling and smart, practical spaces. If you’re looking to buy a yacht in Dubai, this stunning yacht features a built-in hardtop and a cleverly configured interior that offers unparalleled comfort and elegance. The improved, sumptuous master cabin layout ensures a luxurious retreat, while the Beach Club with its innovative X-TEND™ sunbed at the aft promises relaxation and enjoyment. For those aiming to buy a luxury yacht, the 88 ft Sunseeker is an icon worthy of your immediate attention. Don't miss this opportunity to buy a boat in Dubai and experience the pinnacle of maritime luxury.",
+
+          "meta_keyword": "Luxury Yacht Dubai, luxury yachts, dubai luxury yachts, yachting holiday, yachting vacation, luxury yacht rental"
+        }
+      }
+    },
+    {
+      "id": 2,
+      "title": "78ft-cranchi",
+      "image": "78ft/CRANCHI 78 FT YACHT.webp",
+      "slug": "78ft-cranchi",
+      "per_hour_price": 1150,
+      "fareharbor_id": "340459",
+      "thumbnail_image": "1737100995Thumbnail-Lagoona.webp",
+      "gallery": [
+        {
+          "id": 768,
+          "image": "78ft/CRANCHI 78 FT YACHT.webp",
+          "alt_tag": null
+        },
+        {
+          "id": 769,
+          "image": "78ft/CRANCHI 78 FT YACHT1.webp",
+          "alt_tag": null
+        },
+        {
+          "id": 770,
+          "image": "78ft/CRANCHI 78 FT YACHT2.webp",
+          "alt_tag": null
+        },
+        {
+          "id": 771,
+          "image": "78ft/CRANCHI 78 FT YACHT4.webp",
+          "alt_tag": null
+        },
+        {
+          "id": 772,
+          "image": "78ft/CRANCHI 78 FT YACHT6.webp",
+          "alt_tag": null
+        },
+        {
+          "id": 773,
+          "image": "78ft/CRANCHI 78 FT YACHT7.webp",
+          "alt_tag": null
+        },
+        {
+          "id": 774,
+          "image": "78ft/CRANCHI 78 FT YACHT8.webp",
+          "alt_tag": null
+        }
+      ],
+      "translations": {
+        "ar": {
+          "price":"upon request", 
+          "name_of_yacht": "78 FT YACHTCRANCHI",
+          "year": "2022",
+          "condition": "USED",
+          "location": "Dubai",
+          "availability": "Available",
+          "length": "82.6 FT / 25.18 M",
+          "max_speed": "33 KNOTS",
+          "beam": "18.1 FT / 5.52 M",
+          "cruising_speed": "23 KNOTS",
+          "builder": "CRANCHI",
+          "water_capacity": "1250 L / 330.22 US GAL",
+          "year_build": "CRANCHI",
+          "fuel_capacity": "5920 L / 1563.9 US GAL",
+          "propulsion": "IPS",
+          "engine": "Volvo Penta - IPS",
+          "description": "Experience the epitome of modern and timeless beauty with the Cranchi 78, a grand exhibit crafted with meticulous attention to detail. If you’re looking to buy a yacht in Dubai, this vessel comes fully loaded with premium options including upgraded AC, an aft-facing camera, Humphree fin stabilizers, and a day head on the main deck. This yacht offers unparalleled luxury and convenience, making it perfect for those wanting to buy a luxury yacht. This is a unique opportunity to buy a yacht without the long wait for a new build. The Cranchi 78 is a symbol of refined elegance and a top choice for anyone aiming to buy a boat in Dubai",
+
+          "meta_keyword": "Luxury Yacht Dubai, luxury yachts, dubai luxury yachts, yachting holiday, yachting vacation, luxury yacht rental"
+        },
+        "en": {
+          "price":"upon request", 
+          "name_of_yacht": "78 FT YACHTCRANCHI",
+          "year": "2022",
+          "condition": "USED",
+          "location": "Dubai",
+          "availability": "Available",
+          "length": "82.6 FT / 25.18 M",
+          "max_speed": "33 KNOTS",
+          "beam": "18.1 FT / 5.52 M",
+          "cruising_speed": "23 KNOTS",
+          "builder": "CRANCHI",
+          "water_capacity": "1250 L / 330.22 US GAL",
+          "year_build": "CRANCHI",
+          "fuel_capacity": "5920 L / 1563.9 US GAL",
+          "propulsion": "IPS",
+          "engine": "Volvo Penta - IPS",
+          "description": "Experience the epitome of modern and timeless beauty with the Cranchi 78, a grand exhibit crafted with meticulous attention to detail. If you’re looking to buy a yacht in Dubai, this vessel comes fully loaded with premium options including upgraded AC, an aft-facing camera, Humphree fin stabilizers, and a day head on the main deck. This yacht offers unparalleled luxury and convenience, making it perfect for those wanting to buy a luxury yacht. This is a unique opportunity to buy a yacht without the long wait for a new build. The Cranchi 78 is a symbol of refined elegance and a top choice for anyone aiming to buy a boat in Dubai",
+
+          "meta_keyword": "Luxury Yacht Dubai, luxury yachts, dubai luxury yachts, yachting holiday, yachting vacation, luxury yacht rental"
+        },
+        "ru":  {
+          "price":"upon request", 
+          "name_of_yacht": "78 FT YACHTCRANCHI",
+          "year": "2022",
+          "condition": "USED",
+          "location": "Dubai",
+          "availability": "Available",
+          "length": "82.6 FT / 25.18 M",
+          "max_speed": "33 KNOTS",
+          "beam": "18.1 FT / 5.52 M",
+          "cruising_speed": "23 KNOTS",
+          "builder": "CRANCHI",
+          "water_capacity": "1250 L / 330.22 US GAL",
+          "year_build": "CRANCHI",
+          "fuel_capacity": "5920 L / 1563.9 US GAL",
+          "propulsion": "IPS",
+          "engine": "Volvo Penta - IPS",
+          "description": "Experience the epitome of modern and timeless beauty with the Cranchi 78, a grand exhibit crafted with meticulous attention to detail. If you’re looking to buy a yacht in Dubai, this vessel comes fully loaded with premium options including upgraded AC, an aft-facing camera, Humphree fin stabilizers, and a day head on the main deck. This yacht offers unparalleled luxury and convenience, making it perfect for those wanting to buy a luxury yacht. This is a unique opportunity to buy a yacht without the long wait for a new build. The Cranchi 78 is a symbol of refined elegance and a top choice for anyone aiming to buy a boat in Dubai",
+
+          "meta_keyword": "Luxury Yacht Dubai, luxury yachts, dubai luxury yachts, yachting holiday, yachting vacation, luxury yacht rental"
+        },
+        "zh":  {
+          "price":"upon request", 
+          "name_of_yacht": "78 FT YACHTCRANCHI",
+          "year": "2022",
+          "condition": "USED",
+          "location": "Dubai",
+          "availability": "Available",
+          "length": "82.6 FT / 25.18 M",
+          "max_speed": "33 KNOTS",
+          "beam": "18.1 FT / 5.52 M",
+          "cruising_speed": "23 KNOTS",
+          "builder": "CRANCHI",
+          "water_capacity": "1250 L / 330.22 US GAL",
+          "year_build": "CRANCHI",
+          "fuel_capacity": "5920 L / 1563.9 US GAL",
+          "propulsion": "IPS",
+          "engine": "Volvo Penta - IPS",
+          "description": "Experience the epitome of modern and timeless beauty with the Cranchi 78, a grand exhibit crafted with meticulous attention to detail. If you’re looking to buy a yacht in Dubai, this vessel comes fully loaded with premium options including upgraded AC, an aft-facing camera, Humphree fin stabilizers, and a day head on the main deck. This yacht offers unparalleled luxury and convenience, making it perfect for those wanting to buy a luxury yacht. This is a unique opportunity to buy a yacht without the long wait for a new build. The Cranchi 78 is a symbol of refined elegance and a top choice for anyone aiming to buy a boat in Dubai",
+
+          "meta_keyword": "Luxury Yacht Dubai, luxury yachts, dubai luxury yachts, yachting holiday, yachting vacation, luxury yacht rental"
+        }
+      }
+    },
+    {
+      "id": 3,
+      "title": "90 FT YACHT SUNSEEKER",
+      "image": "90ft/90 FT YACHT SUNSEEKER.webp",
+      "slug": "90ft-sunseeker",
+      "per_hour_price": 1150,
+      "fareharbor_id": "340459",
+      "thumbnail_image": "1737100995Thumbnail-Lagoona.webp",
+      "gallery": [
+        {
+          "id": 768,
+          "image": "90ft/90 FT YACHT SUNSEEKER.webp",
+          "alt_tag": null
+        },
+        {
+          "id": 769,
+          "image": "90ft/90 FT YACHT SUNSEEKER1.webp",
+          "alt_tag": null
+        },
+        {
+          "id": 770,
+          "image": "90ft/90 FT YACHT SUNSEEKER2.webp",
+          "alt_tag": null
+        },
+        {
+          "id": 771,
+          "image": "90ft/90 FT YACHT SUNSEEKER4.webp",
+          "alt_tag": null
+        },
+        {
+          "id": 772,
+          "image": "90ft/90 FT YACHT SUNSEEKER6.webp",
+          "alt_tag": null
+        },
+        {
+          "id": 773,
+          "image": "90ft/90 FT YACHT SUNSEEKER7.webp",
+          "alt_tag": null
+        },
+        {
+          "id": 774,
+          "image": "90ft/90 FT YACHT SUNSEEKER8.webp",
+          "alt_tag": null
+        }
+      ],
+      "translations": {
+        "ar": {
+          "price":"AED 11,500,000 ", 
+          "name_of_yacht": "90 FT YACHT SUNSEEKER",
+          "year": "2008",
+          "condition": "USED",
+          "location": "Dubai",
+          "availability": "Available",
+          "length": "91.1 FT / 27.77 M",
+          "max_speed": "30 KNOTS",
+          "beam": "20.8 FT / 6.34 M",
+          "cruising_speed": "24 KNOTS",
+          "builder": "SUNSEEKER",
+          "water_capacity": "1500 L / 396.26 US GAL",
+          "year_build": "SUNSEEKER",
+          "fuel_capacity": "8500 L / 2245.46 US GAL",
+          "propulsion": "shafts",
+          "engine": "2x CAT C-32 Acert",
+          "description": "Indulge in the ultimate luxury with the 2002 Sunseeker 90, a yacht that defines elegance on the water. If you’re looking to buy a used yacht, this 91ft luxury motor yacht, built by the prestigious Sunseeker International, is perfect for water sports enthusiasts. It includes a Sea-Doo Spark accessible via the hydraulic swim platform. Meticulously maintained by a full-time captain and crew, this MCA-compliant yacht is a perfect blend of style, performance, and reliability. Ideal for those looking to buy a luxury yacht in Dubai, the Sunseeker 90 is an exquisite choice. Don’t miss out on this opportunity to buy a yacht and experience true maritime luxury.",
+
+          "meta_keyword": "Luxury Yacht Dubai, luxury yachts, dubai luxury yachts, yachting holiday, yachting vacation, luxury yacht rental"
+        },
+        "en":  {
+          "price":"AED 11,500,000",
+          "name_of_yacht": "90 FT YACHT SUNSEEKER",
+          "year": "2008",
+          "condition": "USED",
+          "location": "Dubai",
+          "availability": "Available",
+          "length": "91.1 FT / 27.77 M",
+          "max_speed": "30 KNOTS",
+          "beam": "20.8 FT / 6.34 M",
+          "cruising_speed": "24 KNOTS",
+          "builder": "SUNSEEKER",
+          "water_capacity": "1500 L / 396.26 US GAL",
+          "year_build": "SUNSEEKER",
+          "fuel_capacity": "8500 L / 2245.46 US GAL",
+          "propulsion": "shafts",
+          "engine": "2x CAT C-32 Acert",
+          "description": "Indulge in the ultimate luxury with the 2002 Sunseeker 90, a yacht that defines elegance on the water. If you’re looking to buy a used yacht, this 91ft luxury motor yacht, built by the prestigious Sunseeker International, is perfect for water sports enthusiasts. It includes a Sea-Doo Spark accessible via the hydraulic swim platform. Meticulously maintained by a full-time captain and crew, this MCA-compliant yacht is a perfect blend of style, performance, and reliability. Ideal for those looking to buy a luxury yacht in Dubai, the Sunseeker 90 is an exquisite choice. Don’t miss out on this opportunity to buy a yacht and experience true maritime luxury.",
+
+          "meta_keyword": "Luxury Yacht Dubai, luxury yachts, dubai luxury yachts, yachting holiday, yachting vacation, luxury yacht rental"
+        },
+        "ru":   {
+          "price":"AED 11,500,000 ",
+          "name_of_yacht": "90 FT YACHT SUNSEEKER",
+          "year": "2008",
+          "condition": "USED",
+          "location": "Dubai",
+          "availability": "Available",
+          "length": "91.1 FT / 27.77 M",
+          "max_speed": "30 KNOTS",
+          "beam": "20.8 FT / 6.34 M",
+          "cruising_speed": "24 KNOTS",
+          "builder": "SUNSEEKER",
+          "water_capacity": "1500 L / 396.26 US GAL",
+          "year_build": "SUNSEEKER",
+          "fuel_capacity": "8500 L / 2245.46 US GAL",
+          "propulsion": "shafts",
+          "engine": "2x CAT C-32 Acert",
+          "description": "Indulge in the ultimate luxury with the 2002 Sunseeker 90, a yacht that defines elegance on the water. If you’re looking to buy a used yacht, this 91ft luxury motor yacht, built by the prestigious Sunseeker International, is perfect for water sports enthusiasts. It includes a Sea-Doo Spark accessible via the hydraulic swim platform. Meticulously maintained by a full-time captain and crew, this MCA-compliant yacht is a perfect blend of style, performance, and reliability. Ideal for those looking to buy a luxury yacht in Dubai, the Sunseeker 90 is an exquisite choice. Don’t miss out on this opportunity to buy a yacht and experience true maritime luxury.",
+
+          "meta_keyword": "Luxury Yacht Dubai, luxury yachts, dubai luxury yachts, yachting holiday, yachting vacation, luxury yacht rental"
+        },
+        "zh":  {
+          "price":"AED 11,500,000 ",
+          "name_of_yacht": "90 FT YACHT SUNSEEKER",
+          "year": "2008",
+          "condition": "USED",
+          "location": "Dubai",
+          "availability": "Available",
+          "length": "91.1 FT / 27.77 M",
+          "max_speed": "30 KNOTS",
+          "beam": "20.8 FT / 6.34 M",
+          "cruising_speed": "24 KNOTS",
+          "builder": "SUNSEEKER",
+          "water_capacity": "1500 L / 396.26 US GAL",
+          "year_build": "SUNSEEKER",
+          "fuel_capacity": "8500 L / 2245.46 US GAL",
+          "propulsion": "shafts",
+          "engine": "2x CAT C-32 Acert",
+          "description": "Indulge in the ultimate luxury with the 2002 Sunseeker 90, a yacht that defines elegance on the water. If you’re looking to buy a used yacht, this 91ft luxury motor yacht, built by the prestigious Sunseeker International, is perfect for water sports enthusiasts. It includes a Sea-Doo Spark accessible via the hydraulic swim platform. Meticulously maintained by a full-time captain and crew, this MCA-compliant yacht is a perfect blend of style, performance, and reliability. Ideal for those looking to buy a luxury yacht in Dubai, the Sunseeker 90 is an exquisite choice. Don’t miss out on this opportunity to buy a yacht and experience true maritime luxury.",
+
+          "meta_keyword": "Luxury Yacht Dubai, luxury yachts, dubai luxury yachts, yachting holiday, yachting vacation, luxury yacht rental"
+        }
+      }
+    },
+    {
+      "id": 4,
+      "title": "76 FT YACHT CANADOS",
+      "image": "76ft/76 FT YACHT CANADOS.webp",
+      "slug": "76ft-canados",
+      "per_hour_price": 1150,
+      "fareharbor_id": "340459",
+      "thumbnail_image": "1737100995Thumbnail-Lagoona.webp",
+      "gallery": [
+        {
+          "id": 768,
+          "image": "76ft/76 FT YACHT CANADOS.webp",
+          "alt_tag": null
+        },
+        {
+          "id": 769,
+          "image": "76ft/76 FT YACHT CANADOS1.webp",
+          "alt_tag": null
+        },
+        {
+          "id": 770,
+          "image": "76ft/76 FT YACHT CANADOS2.webp",
+          "alt_tag": null
+        },
+        {
+          "id": 771,
+          "image": "76ft/76 FT YACHT CANADOS4.webp",
+          "alt_tag": null
+        },
+        {
+          "id": 772,
+          "image": "76ft/76 FT YACHT CANADOS6.webp",
+          "alt_tag": null
+        },
+        {
+          "id": 773,
+          "image": "76ft/76 FT YACHT CANADOS7.webp",
+          "alt_tag": null
+        },
+        {
+          "id": 774,
+          "image": "76ft/76 FT YACHT CANADOS8.webp",
+          "alt_tag": null
+        }
+      ],
+      "translations": {
+        "ar": {
+          "price":"AED 5,500,000",
+          "name_of_yacht": "90 FT YACHT SUNSEEKER",
+          "year": "2008",
+          "condition": "USED",
+          "location": "Dubai",
+          "availability": "Available",
+          "length": "77.76 FT / 23.7 M",
+          "max_speed": "31 KNOTS",
+          "beam": "19.23 FT / 5.86 M",
+          "cruising_speed": "26 KNOTS",
+          "builder": "CANADOS",
+          "water_capacity": "1300 L / 343.42 US GAL",
+          "year_build": "CANADOS",
+          "fuel_capacity": "5500 L / 1452.95 US GAL",
+          "propulsion": "shafts",
+          "engine": "MAN V12 1550HP x2",
+          "description": "Discover the excellence of the 2008 Canados 76 Yacht, a vessel that exemplifies quality and durability. If you’re looking to buy a yacht in Dubai, this well-maintained yacht measures 80 feet in length and features a Williams 385 Turbo Jet Tender, adding practical value to your maritime adventures. Perfect for those who appreciate a well-cared-for yacht, the Canados 76 offers a seamless blend of performance and comfort. This ready-to-cruise yacht is an excellent investment for anyone aiming to buy a boat in Dubai. Don’t miss this chance to buy a luxury yacht that’s ready to sail.",
+
+          "meta_keyword": "Luxury Yacht Dubai, luxury yachts, dubai luxury yachts, yachting holiday, yachting vacation, luxury yacht rental"
+        },
+        "en":  {
+          "price":"AED 5,500,000",
+          "name_of_yacht": "90 FT YACHT SUNSEEKER",
+          "year": "2008",
+          "condition": "USED",
+          "location": "Dubai",
+          "availability": "Available",
+          "length": "77.76 FT / 23.7 M",
+          "max_speed": "31 KNOTS",
+          "beam": "19.23 FT / 5.86 M",
+          "cruising_speed": "26 KNOTS",
+          "builder": "CANADOS",
+          "water_capacity": "1300 L / 343.42 US GAL",
+          "year_build": "CANADOS",
+          "fuel_capacity": "5500 L / 1452.95 US GAL",
+          "propulsion": "shafts",
+          "engine": "MAN V12 1550HP x2",
+          "description": "Discover the excellence of the 2008 Canados 76 Yacht, a vessel that exemplifies quality and durability. If you’re looking to buy a yacht in Dubai, this well-maintained yacht measures 80 feet in length and features a Williams 385 Turbo Jet Tender, adding practical value to your maritime adventures. Perfect for those who appreciate a well-cared-for yacht, the Canados 76 offers a seamless blend of performance and comfort. This ready-to-cruise yacht is an excellent investment for anyone aiming to buy a boat in Dubai. Don’t miss this chance to buy a luxury yacht that’s ready to sail.",
+
+          "meta_keyword": "Luxury Yacht Dubai, luxury yachts, dubai luxury yachts, yachting holiday, yachting vacation, luxury yacht rental"
+        },
+        "ru":   {
+          "price":"AED 5,500,000",
+          "name_of_yacht": "90 FT YACHT SUNSEEKER",
+          "year": "2008",
+          "condition": "USED",
+          "location": "Dubai",
+          "availability": "Available",
+          "length": "77.76 FT / 23.7 M",
+          "max_speed": "31 KNOTS",
+          "beam": "19.23 FT / 5.86 M",
+          "cruising_speed": "26 KNOTS",
+          "builder": "CANADOS",
+          "water_capacity": "1300 L / 343.42 US GAL",
+          "year_build": "CANADOS",
+          "fuel_capacity": "5500 L / 1452.95 US GAL",
+          "propulsion": "shafts",
+          "engine": "MAN V12 1550HP x2",
+          "description": "Discover the excellence of the 2008 Canados 76 Yacht, a vessel that exemplifies quality and durability. If you’re looking to buy a yacht in Dubai, this well-maintained yacht measures 80 feet in length and features a Williams 385 Turbo Jet Tender, adding practical value to your maritime adventures. Perfect for those who appreciate a well-cared-for yacht, the Canados 76 offers a seamless blend of performance and comfort. This ready-to-cruise yacht is an excellent investment for anyone aiming to buy a boat in Dubai. Don’t miss this chance to buy a luxury yacht that’s ready to sail.",
+
+          "meta_keyword": "Luxury Yacht Dubai, luxury yachts, dubai luxury yachts, yachting holiday, yachting vacation, luxury yacht rental"
+        },
+        "zh": {
+          "price":"AED 5,500,000",
+          "name_of_yacht": "90 FT YACHT SUNSEEKER",
+          "year": "2008",
+          "condition": "USED",
+          "location": "Dubai",
+          "availability": "Available",
+          "length": "77.76 FT / 23.7 M",
+          "max_speed": "31 KNOTS",
+          "beam": "19.23 FT / 5.86 M",
+          "cruising_speed": "26 KNOTS",
+          "builder": "CANADOS",
+          "water_capacity": "1300 L / 343.42 US GAL",
+          "year_build": "CANADOS",
+          "fuel_capacity": "5500 L / 1452.95 US GAL",
+          "propulsion": "shafts",
+          "engine": "MAN V12 1550HP x2",
+          "description": "Discover the excellence of the 2008 Canados 76 Yacht, a vessel that exemplifies quality and durability. If you’re looking to buy a yacht in Dubai, this well-maintained yacht measures 80 feet in length and features a Williams 385 Turbo Jet Tender, adding practical value to your maritime adventures. Perfect for those who appreciate a well-cared-for yacht, the Canados 76 offers a seamless blend of performance and comfort. This ready-to-cruise yacht is an excellent investment for anyone aiming to buy a boat in Dubai. Don’t miss this chance to buy a luxury yacht that’s ready to sail.",
+
+          "meta_keyword": "Luxury Yacht Dubai, luxury yachts, dubai luxury yachts, yachting holiday, yachting vacation, luxury yacht rental"
+        }
+      }
+    }
+  ]
+}

@@ -1,11 +1,12 @@
 import { Link } from "@/app/i18n/routing";
 import React from 'react';
-import { useLanguage } from "@/app/context/LanguageContext";
+
+import { useLocale } from "next-intl";
 const YachtCard = ({ yacht }) => {
-  const { language, changeLanguage } = useLanguage();
+  const locale = useLocale();
   return (
     <div className="bg-white rounded-lg border-2 md:border-0 md:shadow-lg overflow-hidden">
-      <Link href={`/${language}/yachts-for-sale-dubai/88ft-sunseeker`}>
+      <Link href={`/${locale}/yachts-for-sale-dubai/${yacht.slug}`}>
       <img 
         src={yacht.image} 
         alt={yacht.name}
@@ -14,7 +15,7 @@ const YachtCard = ({ yacht }) => {
       </Link>
       
       <div className="p-6">
-        <Link href={`/${language}/yachts-for-sale-dubai/88ft-sunseeker`}>
+        <Link href={`/${locale}/yachts-for-sale-dubai/${yacht.slug}`}>
         <h2 className="text-base sm:text-xl font-bold text-navy-900 mb-4 ">{yacht.name}</h2>
         </Link>
         
@@ -46,7 +47,7 @@ const YachtCard = ({ yacht }) => {
         </div>
         
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          <Link href="yachts-for-sale-dubai/88ft-sunseeker" className="blue-solid-button text-center ">
+          <Link href={`yachts-for-sale-dubai/${yacht.slug}`} className="blue-solid-button text-center ">
             KNOW MORE
           </Link>
           <button className="blue-solid-button ">
@@ -61,6 +62,7 @@ const YachtCard = ({ yacht }) => {
 const YachtListings = () => {
   const yachts = [
     {
+      slug: "88ft-sunseeker",
       name: "88 FT YACHT SUNSEEKER",
       build: "88 FT YACHT SUNSEEKER",
       cabins: "4",
@@ -71,6 +73,7 @@ const YachtListings = () => {
       image: "buy_yacht/SUNSEEKER 88 YACHT-1.webp"
     },
     {
+      slug: "78ft-cranchi",
       name: "78 FT YACHTCRANCHI",
       build: "78 FT YACHTCRANCHI",
       cabins: "4",
@@ -78,7 +81,29 @@ const YachtListings = () => {
       guests: "8",
       year: "2022",
       price: "UPON REQUEST",
-      image: "buy_yacht/SUNSEEKER 88 YACHT-1.webp"
+      image: "buy_yacht/MAIN CRANCHI 78 FT YACHT.webp"
+    },
+    {
+      slug: "90ft-sunseeker",
+      name: "90 FT YACHT SUNSEEKER",
+      build: "90 FT YACHT SUNSEEKER",
+      cabins: "4",
+      length: "91.1 FT / 27.77 M",
+      guests: "10",
+      year: "2008",
+      price: "AED 11,500,000",
+      image: "buy_yacht/90ftsunseeker.webp"
+    },
+    {
+      slug: "76ft-canados",
+      name: "76 FT YACHT CANADOS",
+      build: "77.76 FT / 23.7 M",
+      cabins: "4",
+      length: "82.6 FT / 25.18 M",
+      guests: "8",
+      year: "2008",
+      price: "AED 5,500,000",
+      image: "buy_yacht/76 FT YACHT CANADOS MAIN.webp"
     }
   ];
 
