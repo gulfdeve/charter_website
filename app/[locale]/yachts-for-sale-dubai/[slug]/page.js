@@ -51,7 +51,7 @@ export default function Home({ params }) {
 
         <div className="flex flex-col lg:flex-row items-stretch justify-center py-10">
       {/* Wrapper: column on mobile, row at lg and above */}
-      <div className="flex flex-col lg:flex-row w-full max-w-7xl rounded-2xl overflow-hidden shadow-lg items-stretch gap-6">
+      <div className="flex flex-col lg:flex-row w-full max-w-7xl rounded-2xl overflow-hidden shadow-lg items-stretch ">
 
         {/* UPON REQUEST */}
         <div className="w-full lg:w-1/2 flex flex-col items-center justify-start bg-[#1a428a] p-5 pb-10 shadow-custom">

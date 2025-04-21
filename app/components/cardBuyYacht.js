@@ -47,7 +47,7 @@ const YachtCard = ({ yacht }) => {
         </div>
         
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          <Link href={`yachts-for-sale-dubai/${yacht.slug}`} className="blue-solid-button text-center ">
+          <Link href={`/${locale}/yachts-for-sale-dubai/${yacht.slug}`} className="blue-solid-button text-center ">
             KNOW MORE
           </Link>
           <button className="blue-solid-button ">
