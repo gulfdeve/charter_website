@@ -40,7 +40,7 @@ const page = () => {
             qualified and trained Captain will accommodate the yacht at the
             period of the trip. Guests, staff, and yachts are fully insured.
           </p>
-          <h2 className="  text-left py-5">DEPOSIT AND INSURANCE</h2>
+          <h2 className="text-[24px] text-left pt-8 pb-4">DEPOSIT AND INSURANCE</h2>
           <p>
             Our yachts are covered with an insurance amount according to the
             Price List for the current year. The insurance policy covers
@@ -57,7 +57,7 @@ const page = () => {
             the equivalent value of the repair or the purchase value of the
             damaged and/or lost equipment.
           </p>
-          <h2 className="  text-left py-5  ">PROMO CODE</h2>
+          <h2 className="text-[24px] text-left pt-8 pb-4  ">PROMO CODE</h2>
           <p className="  text-left     ">
             These terms and conditions apply to those promotions where you must
             redeem a promo code as part of the offer.
@@ -112,7 +112,7 @@ const page = () => {
             conditions without prior notice.
           </p>
 
-          <h2 className="  text-left py-5  ">CANCELLATION</h2>
+          <h2 className="text-[24px] text-left pt-8 pb-4  ">CANCELLATION</h2>
           <ul className="list-disc pl-12   text-left     ">
             <li>
               Cancellation or reschedule 72 hours prior to the booking free of
@@ -128,7 +128,7 @@ const page = () => {
               be NO REFUNDABLE.
             </li>
           </ul>
-          <h2 className="  text-left py-5 ">
+          <h2 className="text-[24px] text-left pt-8 pb-4 ">
             POSEIDON 118FT CANCELLATION POLICY
           </h2>
           <ul className="list-disc pl-12   text-left     ">
@@ -146,7 +146,7 @@ const page = () => {
               100% of the total booking charge.
             </li>
           </ul>
-          <h2>YACHT DELIVERY PROCEDURE (CHECK -IN)</h2>
+          <h2 className="text-[24px] text-left pt-8 pb-4">YACHT DELIVERY PROCEDURE (CHECK -IN)</h2>
           <p>
             The yacht boarding takes place upon bookings which will be Sunday –
             Saturday 9 am – 2 am. All guests shall deliver a verified original
@@ -164,7 +164,7 @@ const page = () => {
             timings will be made once approved by us.
           </p>
 
-          <h2>LIABILITY OF GUESTS</h2>
+          <h2 className="text-[24px] text-left pt-8 pb-4">LIABILITY OF GUESTS</h2>
           <p>
             All guests undertake not to accept more passengers onboard of the
             Yacht than it is specified in the Centaurus Charter. The guests
@@ -179,7 +179,7 @@ const page = () => {
             (dogs, cats, birds, etc.) without the prior written consent by
             Centaurus Charter.
           </p>
-          <h2>LIABILITY OF CENTAURUS CHARTER</h2>
+          <h2 className="text-[24px] text-left pt-8 pb-4">LIABILITY OF CENTAURUS CHARTER</h2>
           <p>
             Centaurus Charter shall be obliged to deliver the vessel in good
             working order, cleaned and with full fuel and water tanks. In case
@@ -188,31 +188,31 @@ const page = () => {
             shall not be liable for any delay incurred due to rough weather
             conditions.
           </p>
-          <h2>COMPLAINTS</h2>
+          <h2 className="text-[24px] text-left pt-8 pb-4">COMPLAINTS</h2>
           <p>
             Guests shall be entitled to file complaints only in writing, signed
             personally and by a representative of Centaurus Charter on the
             completion date of the service
           </p>
-          <h2>CRUISE ROUTE</h2>
+          <h2 className="text-[24px] text-left pt-8 pb-4">CRUISE ROUTE</h2>
           <p>
             Depending on the time the route shall include the Marina Canal,
             Lagoon, Burj Al Arab and Atlantis the Palm.
           </p>
-          <h2>FOOD AND BEVERAGES</h2>
+          <h2 className="text-[24px] text-left pt-8 pb-4">FOOD AND BEVERAGES</h2>
           <p>
             Refrigerator, AC, GPS, Cutlery, drinkware, plates etc. No food or
             refreshments will be sold to guests; however, guests can bring their
             own food onboard. Drinks can be ordered from www.centaurusint.net
           </p>
-          <h2>Centaurus Charter Services </h2>
-          <h2>YACHT OFFERS AND DEALS IN DUBAI</h2>
+          <h2 className="text-[24px] text-left pt-8">CENTAURUS CHARTER SERVICES </h2>
+          <h3 className="text-[20px] text-left py-5">Yacht Offers and Deals in Dubai</h3>
           <p>
             Yacht offers blackout dates: 1-3 December (National Day) and 20
             December 2024 -01 January. All offers cannot be combined with other
             promotions.
           </p>
-          <h2>UAE RESIDENTS OFFERS</h2>
+          <h3 className="text-[20px] text-left py-5">UAE Residents Offers</h3>
           <ul className="list-disc pl-12   text-left  ">
             <li>
               Discounted rates are valid for bookings falling between 6 am-2 pm
@@ -226,7 +226,7 @@ const page = () => {
             </li>
             <li>Terms are subject to change without prior notice.</li>
           </ul>
-          <h2>FAZAA</h2>
+          <h3 className="text-[20px] text-left py-5">FAZAA</h3>
           <ul className="list-disc pl-12   text-left  ">
             <li>A minimum booking duration of 2 hours is required.</li>
             <li>
@@ -234,7 +234,7 @@ const page = () => {
             </li>
             <li>The Offer is valid until 28 February 2025.</li>
           </ul>
-          <h2>EMIRATES STAFF DISCOUNT</h2>
+          <h3 className="text-[20px] text-left py-5">Emirates Staff Discount</h3>
           <ul className="list-disc pl-12   text-left  ">
             <li>Minimum Booking Rental time 4 hours.</li>
             <li>Inclusions: Water , Tea , Coffee and soft drinks</li>
@@ -259,14 +259,14 @@ const page = () => {
             </li>
           </ul>
 
-          <h2>BUSINESS COUNCIL MEMBERS OFFER</h2>
+          <h3 className="text-[20px] text-left py-5">Business Council Members Offer</h3>
 
           <ul className="list-disc pl-12   text-left  ">
             <li>A minimum booking duration of 2 hours is required.</li>
             <li>Valid for all our business council partners.</li>
           </ul>
 
-          <h2>FORMULA 1-2025</h2>
+          <h3 className="text-[20px] text-left py-5">Formula 1-2025</h3>
           <p>Booking and Cancellation Policy for Formula 1 Abu Dhabi</p>
           <ul className="list-disc pl-12   text-left  ">
             <li>
@@ -285,7 +285,7 @@ const page = () => {
             <li>Terms are subject to change without prior notice.</li>
           </ul>
 
-          <h2>NEW YEAR’S EVE</h2>
+          <h3 className="text-[20px] text-left py-5">New Year’s Eve</h3>
           <p>Centaurus Charter Cancellation policy:</p>
           <ul className="list-disc pl-12   text-left  ">
             <li>
