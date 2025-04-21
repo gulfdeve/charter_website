@@ -43,7 +43,7 @@ export default function ToursCarousel({ toursData }) {
       {/* Embla carousel viewport */}
       <div ref={emblaRef} className="overflow-hidden">
         {/* Carousel container with a horizontal flex layout */}
-        <div className="flex gap-4 px-2">
+        <div className="flex gap-4 mx-4 container ">
           {toursData.map((tour, index) => (
             <div
               key={index}

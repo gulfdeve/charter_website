@@ -1,4 +1,3 @@
-import { id } from "date-fns/locale";
 import React, { useState } from "react";
 import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/style.css";
@@ -6,34 +5,38 @@ import "react-phone-input-2/lib/style.css";
 const Modal2 = ({ isModalOpen, closeModal, idName, idValue }) => {
   if (!isModalOpen) return null;
 
-  // State for form fields
   const [fullName, setFullName] = useState("");
   const [phoneNumber, setPhoneNumber] = useState("");
+  const [phoneCountry, setPhoneCountry] = useState({ countryCode: "ae", format: "" });
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
-
-  // State for validation errors
   const [errors, setErrors] = useState({});
-  // State for success
   const [submissionSuccess, setSubmissionSuccess] = useState(false);
 
-  // Basic form validation
   const validateForm = () => {
     const newErrors = {};
 
     if (!fullName.trim()) {
       newErrors.fullName = "Full Name is required.";
     }
+
+    // Inline phone validation using react-phone-input-2 format
     if (!phoneNumber.trim()) {
       newErrors.phoneNumber = "Phone Number is required.";
-    } else if (phoneNumber.replace(/\D/g, "").length < 7) {
-      newErrors.phoneNumber = "Please enter a valid phone number.";
+    } else {
+      const digits = phoneNumber.replace(/\D/g, "");
+      const expected = (phoneCountry.format.match(/9/g) || []).length;
+      if (digits.length < expected) {
+        newErrors.phoneNumber = "Please enter a valid phone number.";
+      }
     }
+
     if (!email.trim()) {
       newErrors.email = "Email is required.";
     } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
       newErrors.email = "Invalid email format.";
     }
+
     if (!message.trim()) {
       newErrors.message = "Message is required.";
     }
@@ -42,53 +45,35 @@ const Modal2 = ({ isModalOpen, closeModal, idName, idValue }) => {
     return Object.keys(newErrors).length === 0;
   };
 
-  // Submit Handler
   const handleSubmit = async (e) => {
     e.preventDefault();
-
-    if (!validateForm()) {
-      return;
-    }
+    if (!validateForm()) return;
 
     try {
-      // Build query parameters
       const queryParams = new URLSearchParams({
         name: fullName,
         phone: phoneNumber,
-        email: email,
+        email,
         comments: message,
       });
-
-      // Dynamically set the ID key (offers_id, events_id, etc.)
       queryParams.set(idName, idValue);
 
-      // Construct final URL
-      let url;
-      if (idName === "events_id") {
-        url = `https://www.centauruscharter.net/api/api_new/save_enquiry_events?${queryParams}`;
-      } else {
-        url = `https://www.centauruscharter.net/api/api_new/save_enquiry?${queryParams}`;
-      }
+      const endpoint =
+        idName === "events_id"
+          ? "https://www.centauruscharter.net/api/api_new/save_enquiry_events"
+          : "https://www.centauruscharter.net/api/api_new/save_enquiry";
+      const url = `${endpoint}?${queryParams}`;
 
-      // Send POST request
-      const response = await fetch(url, {
-        method: "POST",
-      });
-
+      const response = await fetch(url, { method: "POST" });
       const data = await response.json();
       console.log("API response:", data);
 
       if (response.ok) {
-        // Show success bar
         setSubmissionSuccess(true);
-
-        // Clear form fields if you like
         setFullName("");
         setPhoneNumber("");
         setEmail("");
         setMessage("");
-
-        // Automatically close the modal after 5 seconds
         setTimeout(() => {
           setSubmissionSuccess(false);
           closeModal();
@@ -97,16 +82,14 @@ const Modal2 = ({ isModalOpen, closeModal, idName, idValue }) => {
         alert("Something went wrong while sending the form.");
       }
     } catch (error) {
-      console.log("Error submitting form:", error);
+      console.error("Error submitting form:", error);
       alert("An error occurred. Please try again later.");
     }
   };
 
   return (
     <div className="fixed inset-0 bg-primary-grey bg-opacity-50 flex items-center justify-center z-50">
-      <div className="bg-white rounded-lg shadow-lg w-full max-w-6xl  mx-5 p-9 lg:p-6 relative">
-
-        {/* Close Button */}
+      <div className="bg-white rounded-lg shadow-lg w-full max-w-6xl mx-5 p-9 lg:p-6 relative">
         <button
           onClick={closeModal}
           className="absolute top-4 right-4 text-3xl p-3 w-10 h-10 rounded-full flex items-center justify-center text-primary-grey hover:text-primary-grey"
@@ -124,15 +107,13 @@ const Modal2 = ({ isModalOpen, closeModal, idName, idValue }) => {
           </div>
 
           <div className="flex items-center w-full lg:pr-10 pr-0 pt-12">
-            
-			<form onSubmit={handleSubmit} className="space-y-4 w-full">
-              {/* Full Name */}
-			          {/* Success Bar (absolute, on top of modal) */}
-					  {submissionSuccess && (
-          <div className="mb-6 p-4 bg-green-100 border border-green-400 text-green-700 rounded-md">
-            Your form has been successfully submitted. We will contact you shortly.
-          </div>
-        )}
+            <form onSubmit={handleSubmit} className="space-y-4 w-full">
+              {submissionSuccess && (
+                <div className="mb-6 p-4 bg-green-100 border border-green-400 text-green-700 rounded-md">
+                  Your form has been successfully submitted. We will contact you shortly.
+                </div>
+              )}
+
               <div>
                 <input
                   type="text"
@@ -141,19 +122,24 @@ const Modal2 = ({ isModalOpen, closeModal, idName, idValue }) => {
                   onChange={(e) => setFullName(e.target.value)}
                   className="w-full border-l-4 rounded-md bg-[#f5f5f5] text-primary-grey focus:outline-none border-[#1b498f] focus:border-primary-yellow focus:bg-[#f3f7fd] transition duration-200 ease-in-out p-3"
                 />
-                {errors.fullName && (
-                  <p className="text-red-600 text-sm">{errors.fullName}</p>
-                )}
+                {errors.fullName && <p className="text-red-600 text-sm">{errors.fullName}</p>}
               </div>
 
-              {/* Phone Number */}
               <div>
                 <PhoneInput
-                  country="ae"
+                  country={phoneCountry.countryCode}
                   value={phoneNumber}
-                  onChange={setPhoneNumber}
+                  onChange={(val, country) => {
+                    setPhoneNumber(val);
+                    setPhoneCountry(country);
+                  }}
                   placeholder="Enter phone number"
-                  className="flex-1 rounded-md bg-[#f5f5f5] text-primary-grey focus:outline-none transition duration-200 ease-in-out"
+                  isValid={(value, country) => {
+                    const digits = value.replace(/\D/g, "");
+                    const expected = (country.format.match(/9/g) || []).length;
+                    return digits.length >= expected;
+                  }}
+                  defaultErrorMessage="Please enter a valid phone number"
                   inputStyle={{
                     width: "100%",
                     padding: "20px",
@@ -171,12 +157,9 @@ const Modal2 = ({ isModalOpen, closeModal, idName, idValue }) => {
                     fontFamily: "Montserrat, sans-serif",
                   }}
                 />
-                {errors.phoneNumber && (
-                  <p className="text-red-600 text-sm">{errors.phoneNumber}</p>
-                )}
+                {errors.phoneNumber && <p className="text-red-600 text-sm">{errors.phoneNumber}</p>}
               </div>
 
-              {/* Email */}
               <div>
                 <input
                   type="email"
@@ -185,12 +168,9 @@ const Modal2 = ({ isModalOpen, closeModal, idName, idValue }) => {
                   onChange={(e) => setEmail(e.target.value)}
                   className="w-full border-l-4 rounded-md bg-[#f5f5f5] text-primary-grey focus:outline-none border-[#1b498f] focus:border-primary-yellow focus:bg-[#f3f7fd] transition duration-200 ease-in-out p-3"
                 />
-                {errors.email && (
-                  <p className="text-red-600 text-sm">{errors.email}</p>
-                )}
+                {errors.email && <p className="text-red-600 text-sm">{errors.email}</p>}
               </div>
 
-              {/* Message / Comments */}
               <div>
                 <textarea
                   placeholder="Comments"
@@ -199,12 +179,9 @@ const Modal2 = ({ isModalOpen, closeModal, idName, idValue }) => {
                   rows="8"
                   className="w-full border-l-4 rounded-md bg-[#f5f5f5] text-primary-grey focus:outline-none border-[#1b498f] focus:border-primary-yellow focus:bg-[#f3f7fd] transition duration-200 ease-in-out p-3"
                 />
-                {errors.message && (
-                  <p className="text-red-600 text-sm">{errors.message}</p>
-                )}
+                {errors.message && <p className="text-red-600 text-sm">{errors.message}</p>}
               </div>
 
-              {/* Submit Button */}
               <button type="submit" className="blue-solid-button">
                 SEND
               </button>
