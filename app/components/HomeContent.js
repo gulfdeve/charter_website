@@ -62,8 +62,7 @@ export default function Home() {
         <VideoLocal filename="/Seasonal Tour _ Luxury Tours.mp4" section="home" />
       </div>
 
-      <div className="flex flex-col bg-white items-center justify-center lg:pt-12 xl:pt-20
-       2xl:pt-20 2xl:py-0 ">
+      <div className="flex flex-col bg-white items-center justify-center lg:pt-8 xl:pt-16 2xl:pt-16">
         <h2 className=" text-primary-blue text-center font-bold text-3xl sm:text-2xl md:text-3xl lg:text-4xl md:p-4 pb-4 px-3">
           DUBAI YACHTS - ONLINE BOOKING
         </h2>

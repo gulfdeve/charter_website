@@ -87,7 +87,7 @@ const Page = () => {
       {/* Main Container */}
       <div className="bg-white h-full w-full">
         {/* Top Heading with FareHarbor Calendar */}
-        <div className="container mx-auto pt-20">
+        <div className="container mx-auto pt-10 lg:pt-8 2xl:pt-16">
           <div className="flex flex-col lg:flex-row align-top">
             {/* Left Section - Text Content */}
             <div className="w-full lg:w-1/2 flex flex-col pb-10 lg:pb-0 lg:pr-8">
