@@ -6,6 +6,7 @@ import { getTranslations } from 'next-intl/server';
 import PageTitleHeading from "@/app/components/PageTitleHeading";
 import OfferClientActions from "@/app/components/OfferClientActions";
 import { fetchData } from '@/app/lib/fetchData';
+import ExperienceCarousal from "@/app/components/ExperienceCarousal";
 
 export default async function OfferDetailPage({ params }) {
   const { slug, locale } = params;
@@ -27,9 +28,10 @@ export default async function OfferDetailPage({ params }) {
   {/* Use full width container without padding for the image */}
   <div className="container mx-auto nav-space">
     
-    <div className="px-10">
-      <PageTitleHeading title={offer.translations?.[language]?.title} />
-    </div>
+	<div className="py-10 text-center text-primary-blue">
+          <h1 className="font-bold text-center">{offer.translations?.[language]?.title}</h1>
+          <h2 className="">{offer.translations?.[language]?.heading_2}</h2>
+        </div>
     
     {/* Move the image outside the padded container */}
     <div className="w-full flex items-center justify-center pb-10">
@@ -63,6 +65,7 @@ export default async function OfferDetailPage({ params }) {
       </div>
     </div>
   </div>
+  <ExperienceCarousal />
 </>
   );
 }

@@ -63,7 +63,7 @@ body {
   @apply px-4 md:px-6;
 }
 .nav-space {
-  @apply pt-14 md:pt-14 lg:pt-0;
+  @apply pt-14 md:pt-14 lg:pt-[70px];
 }
 .text-video-new {
   position: absolute;
@@ -169,7 +169,8 @@ footer a:hover {
 }
 .embla__container {
   display: flex;
-  flex-direction: row;
+  gap: 10px;
+  height: 100%;
 }
 .embla__slide {
   flex: 0 0 100%; /* Each slide occupies full viewport */
@@ -196,8 +197,14 @@ footer a:hover {
   align-items: center;
 }
 
-.bg-black-gradient{
-  background: linear-gradient(0deg, rgba(0, 0, 0, 0.9) 30%, rgba(0, 0, 0, 0) 100%);
+.bg-black-gradient {
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.9) 0%,
+    rgba(0, 0, 0, 0.5) 50%,
+    rgba(0, 0, 0, 0.2) 75%,
+    rgba(0, 0, 0, 0) 100%
+  );
 }
 
 .counter-container {
@@ -366,3 +373,13 @@ h1 {
 	/* H6 remains small but still distinct */
 	@apply text-xs sm:text-xs md:text-sm lg:text-base font-bold;
   }
+  .gradient-custom {
+	background: #E8F1FF;
+	background: linear-gradient(45deg,rgba(232, 241, 255, 1) 0%, rgba(255, 242, 206, 1) 100%);
+  }
+
+@media (max-width: 1023px) {
+  .embla__container {
+    gap: 8px;
+  }
+}

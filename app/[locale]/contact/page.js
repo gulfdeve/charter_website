@@ -10,20 +10,22 @@ import { usePathname, Link } from "@/app/i18n/routing";
 import { useLocale, useTranslations } from "next-intl";
 
 export default function Page() {
-  const [fullName, setFullName] = useState("");
-  const [email, setEmail] = useState("");
-  const [phoneNumber, setPhoneNumber] = useState("");
-  const [message, setMessage] = useState("");
-  const [subscribe, setSubscribe] = useState(false);
-  const [acceptedTerms, setAcceptedTerms] = useState(false);
-  const [errors, setErrors] = useState({});
-  const [successMessage, setSuccessMessage] = useState("");
-  const t = useTranslations();
+	const [fullName, setFullName] = useState("");
+	const [email, setEmail] = useState("");
+	const [phoneNumber, setPhoneNumber] = useState("");
+	const [message, setMessage] = useState("");
+	const [subscribe, setSubscribe] = useState(false);
+	const [acceptedTerms, setAcceptedTerms] = useState(false);
+	const [errors, setErrors] = useState({});
+	const [successMessage, setSuccessMessage] = useState("");
+	const [isSubmitting, setIsSubmitting] = useState(false);
+	const t = useTranslations();
 
   const validateForm = () => {
     let errs = {};
     if (!fullName) errs.fullName = "Name is required";
     if (!email) errs.email = "Email is required";
+    else if (!/\S+@\S+\.\S+/.test(email)) errs.email = "Email is invalid";
     if (!phoneNumber) errs.phoneNumber = "Phone number is required";
     if (!message) errs.message = "Message is required";
     if (!acceptedTerms)
@@ -42,9 +44,13 @@ export default function Page() {
       subscribe,
       acceptedTerms,
     });
+    
     if (!validateForm()) return;
+    
+    setIsSubmitting(true);
 
     try {
+      // Original API call
       const queryParams = new URLSearchParams({
         name: fullName,
         email: email,
@@ -53,11 +59,28 @@ export default function Page() {
       });
       queryParams.set("offers_id", "43");
 
-      const url = `${process.env.NEXT_PUBLIC_API_DOMAIN}/api/api_new/save_enquiry?${queryParams}`;
-      const response = await fetch(url, { method: "POST" });
-      const data = await response.json();
+      const apiUrl = `${process.env.NEXT_PUBLIC_API_DOMAIN}/api/api_new/save_enquiry?${queryParams}`;
+      const apiResponse = await fetch(apiUrl, { method: "POST" });
+      const apiData = await apiResponse.json();
 
-      if (response.ok) {
+      // New email API call
+      const emailResponse = await fetch("/api/send-email", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          fullName,
+          email,
+          phoneNumber,
+          message,
+          subscribe,
+        }),
+      });
+      
+      const emailData = await emailResponse.json();
+
+      if (apiResponse.ok && emailResponse.ok) {
         setFullName("");
         setEmail("");
         setPhoneNumber("");
@@ -65,7 +88,7 @@ export default function Page() {
         setSubscribe(false);
         setAcceptedTerms(false);
         setErrors({});
-        // Replace alert with success message
+        // Set success message
         setSuccessMessage("Your form has been successfully submitted. We will contact you shortly.");
         // Scroll to the top of the form to make message visible
         window.scrollTo({ top: document.getElementById('contact-form').offsetTop - 100, behavior: 'smooth' });
@@ -74,8 +97,11 @@ export default function Page() {
         alert("Something went wrong while sending the form.");
       }
     } catch (error) {
+      console.error("Form submission error:", error);
       setSuccessMessage("");
       alert("An error occurred. Please try again later.");
+    } finally {
+      setIsSubmitting(false);
     }
   };
 

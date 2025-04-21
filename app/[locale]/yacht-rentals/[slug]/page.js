@@ -55,37 +55,37 @@ export default async function YachtPage({ params: paramsPromise }) {
     <>
       <div className="container mx-auto nav-space">
         <div className="py-10 text-center text-primary-blue">
-          <h1 className="">{product.translations?.[locale]?.name_of_yacht}</h1>
-          <h2 className="font-bold text-center">Boat Rental Dubai</h2>
+          <h1 className="font-bold text-center">{product.translations?.[locale]?.heading_2}</h1>
+          <h2 className="">{product.translations?.[locale]?.name_of_yacht}</h2>
         </div>
 
         <YachtGallery gallery={product.gallery} />
 
         <div className="bg-primary-blue grid grid-cols-2 lg:grid-cols-5 md:grid-cols-2 items-center gap-0 rounded-lg w-full overflow-hidden shadow-md mb-7 mt-6 mx-auto">
-          <div className=" text-white p-2 flex flex-col items-center">
+          <h3 className=" text-white p-2 flex flex-col items-center">
             <span className="font-bold text-sm">Model:</span>
             <span className="font-semibold text-sm text-primary-yellow xl:text-xl">
               {product.translations?.[locale]?.model}
             </span>
-          </div>
-          <div className=" text-white p-2 flex flex-col items-center">
+          </h3>
+          <h3 className=" text-white p-2 flex flex-col items-center">
             <span className="font-bold text-sm">Length:</span>
             <span className="font-semibold text-sm text-primary-yellow xl:text-xl">
               {product.translations?.[locale]?.size}
             </span>
-          </div>
-          <div className="text-white p-2 flex flex-col items-center">
+          </h3>
+          <h3 className="text-white p-2 flex flex-col items-center">
             <span className="font-bold text-sm">Guests:</span>
             <span className="font-semibold text-sm text-primary-yellow xl:text-xl">
               {product.translations?.[locale]?.guests}
             </span>
-          </div>
-          <div className=" p-2 flex flex-col items-center">
+          </h3>
+          <h3 className=" p-2 flex flex-col items-center">
             <span className="text-sm text-white">Price Per Hour:</span>
             <span className="font-semibold text-sm text-primary-yellow xl:text-xl">
               {product.per_hour_price.toLocaleString()} AED
             </span>
-          </div>
+          </h3>
           <div className=" text-primary-blue p-2 lg:p-1.5 xl:p-2 flex flex-col col-span-2 lg:col-span-1 items-center">
             <a
               href={`https://fareharbor.com/embeds/book/centauruscharter/items/${product.fareharbor_id}/?full-items=yes&flow=645487`}

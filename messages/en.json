@@ -1,6 +1,6 @@
 {
   "navbar": {
-    "contact-us": "Contact us",
+    "contact-us": "Contact",
     "private-yachts": "PRIVATE YACHTS",
     "buy-a-yacht": "BUY A YACHT",
     "shared-tours": "SHARED TOURS",
@@ -16,7 +16,7 @@
     "yacht-rentals": "Yacht Rentals"
   },
   "footer": {
-    "reach-out-to-us": "REACH OUT TO US",
+    "reach-out-to-us": "REACH US",
     "centaurus-charter": "Centaurus Charter"
   },
   "offers": {

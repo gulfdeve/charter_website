@@ -68,9 +68,9 @@ export default function Videonewyear() {
         <h1 className="text-4xl font-bold mb-4 text-black md:text-white  xl:text-xl 2xl:text-4xl text-shadow">
         NEW YEAR'S EVE YACHT PARTY IN DUBAI
         </h1>
-        <h1 className="text-sm xl:text-2xl mb-4 text-black md:text-white  2xl:text-3xl text-shadow">
+        <p className="text-sm xl:text-2xl font-bold mb-4 text-black md:text-white  2xl:text-3xl text-shadow">
         Celebrate the most glamorous night of the year
-        </h1>
+        </p>
 
         <button className="blue-solid-button">BOOK NOW</button>
       </div>

@@ -6,6 +6,7 @@ import Modal2 from "@/app/components/Modal2";
 import { useData } from "@/app/context/DataContext";
 import { useLocale, useTranslations } from "next-intl";
 import Image from "next/image";
+import ExperienceCarousal from "@/app/components/ExperienceCarousal";
 const page = ({ params }) => {
   const { slug } = use(params); // Get slug from the URL
   const { data, loading, error } = useData();
@@ -90,6 +91,7 @@ const page = ({ params }) => {
         idName="events_id"
         idValue={event.id}
       />
+	  <ExperienceCarousal />
     </>
   );
 };

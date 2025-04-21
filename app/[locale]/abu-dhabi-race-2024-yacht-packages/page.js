@@ -224,15 +224,15 @@ const Page = () => {
 
       {/* Heading Section */}
       <section className="flex flex-col items-center py-20 bg-white">
-        <h1 className="text-5xl font-bold text-center text-primary-blue">
-          F1 ABU DHABI GP 2025
-        </h1>
-        <h3 className="font-medium text-center text-primary-blue my-7">
+        <h2 className="text-3xl font-bold text-center text-primary-blue">
+          FORMULA 1 ABU DHABI GP 2025
+        </h2>
+        <p className="font-medium text-center text-primary-blue my-3">
           LUXURY YACHT CHARTER PACKAGES
-        </h3>
-        <h6 className=" text-center font-bold text-primary-blue mt-2 ">
+        </p>
+        <p className=" text-center font-bold text-primary-blue mt-2 ">
           EVENT DATES: 04 - 07 DECEMBER 2025 | YAS MARINA, ABU DHABI
-        </h6>
+        </p>
 
         {/* Two-column (Image + Text) Section */}
         <div className="container mx-auto py-10">
@@ -248,12 +248,9 @@ const Page = () => {
 
             {/* Right: Text & Content */}
             <div className="flex flex-col items-center justify-center bg-primary-blue-2 px-5 py-5 xl:w-[40rem] lg:w-[160rem] md:h-[541px] xl:h-[570px] lg:h-[504px] p-5">
-              <h1 className="text-primary-yellow uppercase  text-4xl font-bold text-center pb-1">
-                FORMULA 1 YACHT PARTY
-              </h1>
-              <h1 className="text-white  font-bold text-center pb-5">
-                HOSPITALITY PACKAGE
-              </h1>
+              <h3 className="text-primary-yellow uppercase  text-4xl font-bold text-center pb-1">
+                F1 YACHT PARTY TICKETS
+              </h3>
               <p className="text-white text-center text-sm md:text-lg pb-8 px-2 md:px-2">
                 Join Centaurus Charter for an exclusive 4-day Formula 1 Yacht Party experience.
                 Enjoy a luxurious setting, breathtaking views, and an unforgettable race weekend atmosphere.
@@ -273,6 +270,9 @@ const Page = () => {
 
       {/* Carousel Section */}
       <div className="container mx-auto ">
+      <h4 className="text-2xl md:text-3xl font-bold text-center text-blue-900 mb-8">
+          F1 TICKET INCLUSIONS
+        </h4>
         <div ref={emblaRef} className="overflow-hidden relative">
           <div className="flex">
             {slides.map((item, index) => (
@@ -316,9 +316,9 @@ const Page = () => {
 
       {/* Yacht Cards Section */}
       <section className="bg-white py-12">
-        <h2 className="text-2xl md:text-3xl font-bold text-center text-blue-900 mb-8">
+        <h3 className="text-2xl md:text-3xl font-bold text-center text-blue-900 mb-8">
           F1 LUXURY YACHT CHARTER PACKAGES
-        </h2>
+        </h3>
         <div className="container mx-auto  ">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-24 px-20">
             {yachtData.map((yacht) => (
@@ -332,7 +332,7 @@ const Page = () => {
                   className="w-full h-auto object-cover"
                 />
                 <div className="p-6">
-                  <h2 className=" font-bold text-black py-2">{yacht.title}</h2>
+                  <h4 className=" font-bold text-black py-2">{yacht.title}</h4>
                   {/* Info Boxes */}
                   <div className="grid grid-cols-2 gap-2 md:gap-4 text-blue-900">
                     {yacht.infoBoxes.map((box, index) => (
@@ -352,7 +352,7 @@ const Page = () => {
                   {/* Inclusions & Add-ons */}
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 py-3">
                     <div>
-                      <h4 className="font-bold text-primary-blue">INCLUSIONS:</h4>
+                      <p className="font-bold text-primary-blue">INCLUSIONS:</p>
                       <ul className="text-md text-primary-blue list-disc ml-10 mt-2 space-y-1">
                         {yacht.inclusions.map((item, idx) => (
                           <li key={idx}>{item}</li>
@@ -360,7 +360,7 @@ const Page = () => {
                       </ul>
                     </div>
                     <div>
-                      <h4 className="font-bold text-primary-blue">ADD-ONS:</h4>
+                      <p className="font-bold text-primary-blue">ADD-ONS:</p>
                       <ul className="text-md text-primary-blue list-disc ml-10 mt-2 space-y-1">
                         {yacht.addons.map((item, idx) => (
                           <li key={idx}>{item}</li>
@@ -411,9 +411,9 @@ const Page = () => {
 
         {/* Right Column: Gold BG + Text */}
         <div className=" container w-full md:w-1/2 bg-primary-yellow py-3 md:py-7 md:px-7 text-primary-blue flex flex-col justify-center  ">
-          <h2 className="text-xl md:text-2xl font-bold mb-4">
+          <h4 className="text-xl md:text-2xl font-bold mb-4">
             ABU DHABI GRAND PRIX 2025
-          </h2>
+          </h4>
           <p className="mb-4 leading-relaxed text-xs">
            <strong> Formula 1  </strong>is heading back to Abu Dhabi this December. Catch the
             glamour, action and excitement!
@@ -456,9 +456,9 @@ const Page = () => {
 
         {/* Right Column: Gold BG + Text */}
         <div className="container w-full md:w-1/2 bg-primary-blue py-3 md:py-7 md:px-7 text-white flex flex-col justify-center">
-          <h2 className="text-xl md:text-2xl font-bold mb-4">
+          <h4 className="text-xl md:text-2xl font-bold mb-4">
           TRACKSIDE YACHT HOSPITALITY INCLUSIONS
-          </h2>
+          </h4>
           <p className="mb-4 leading-relaxed text-xs">
          <strong> 4 Days Yacht Rental</strong><br/>
           Our all-inclusive package offers 4 days of unparalleled yacht rental, granting you the ultimate vantage point to witness the adrenaline-fueled action of the Formula 1 race.

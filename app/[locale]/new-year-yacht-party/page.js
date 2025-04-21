@@ -10,9 +10,9 @@ const Page = () => {
       <div className="bg-[url('/nye24.webp')] bg-cover bg-center bg-no-repeat min-h-screen ">
         <div className="container mx-auto">
           <div className="flex flex-col items-center justify-center pb-10 pt-10">
-            <h1 className="text-primary-yellow text-center font-bold text-4xl lg:px-5 xl:text-5xl pb-4 pt-12">
+            <h2 className="text-primary-yellow text-center font-bold text-4xl lg:px-5 xl:text-5xl pb-4 pt-12">
               NEW YEAR'S EVE CELEBRATION ON A LUXURY YACHT
-            </h1>
+            </h2>
             <p className="text-white text-center text-xl px-3 lg:px-12 xl:px-56">
               New year's Offer on Yacht you don't want to miss
             </p>
@@ -33,9 +33,9 @@ const Page = () => {
               </div>
               {/* Right side - Text & Button */}
               <div className="md:w-1/2 w-full bg-primary-yellow p-6 flex flex-col justify-center items-center">
-                <h1 className="text-2xl md:text-2xl text-center font-bold text-primary-blue-2 mb-2">
+                <h2 className="text-2xl md:text-2xl text-center font-bold text-primary-blue-2 mb-2">
                   NYE YACHT PARTY TICKETS
-                </h1>
+                </h2>
                 <p className="text-md text-primary-blue mb-10 text-center">
                   31 December 2024 | Dubai Harbour | 9 PM - 3 AM
                 </p>
@@ -57,9 +57,9 @@ const Page = () => {
           </div>
 
           <div className="flex items-center justify-center w-full mt-10 mb-5">
-            <span className="px-4 text-2xl 2xl:text-4xl font-semibold text-primary-yellow">
+            <h3 className="px-4 text-2xl 2xl:text-4xl font-semibold text-primary-yellow">
               TICKETS INCLUSION
-            </span>
+            </h3>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 px-4 py-10 xl:px-12">
             {[
@@ -89,16 +89,16 @@ const Page = () => {
 
           <div className="lg:px-20 px-5">
             <div className="flex flex-col items-center justify-center w-full mt-10 mb-5 px-10">
-              <h4 className="px-4 font-semibold text-primary-yellow">
+              <h3 className="text-[20px] px-4 font-semibold text-primary-yellow">
                 Dress Code
-              </h4>
+              </h3>
               <p className="text-md text-white text-center">
                 Glow Up, Show Up, And Sparkle All Night Long—It's A Night For
                 Glitter, Shimmer, And Head-Turning Sparkle.
               </p>
             </div>
             <div className="flex flex-col items-center justify-center w-full mt-5 mb-20 px-10">
-              <h4 className="px-4 font-semibold text-primary-yellow">RSVP</h4>
+              <h3 className="text-[20px] px-4 font-semibold text-primary-yellow">RSVP</h3>
               <p className="text-md text-white text-center">
                 Secure your spot today, Bookings are non-refundable after 15
                 December 2024.
@@ -106,10 +106,10 @@ const Page = () => {
             </div>
             <div className="flex items-center justify-center w-full my-6">
               <hr className="flex-grow border-primary-yellow-dark" />
-              <h3 className="px-4 text-2xl font-semibold text-primary-yellow text-center">
+              <h2 className="px-4 text-2xl font-semibold text-primary-yellow text-center">
                 NEW YEAR'S EVE <br />
                 PRIVATE YACHT RENTAL PACKAGES
-              </h3>
+              </h2>
               <hr className="flex-grow border-primary-yellow-dark" />
             </div>
             <p className="text-primary-yellow text-center text-md sm:text-sm xl:text-md pb-5">
@@ -123,7 +123,7 @@ const Page = () => {
             </p>
             <div className="flex flex-col items-center xl:px-48 lg:px-20">
               <div className="w-full pb-4">
-                <h3 className="px-4 text-left font-light text-primary-yellow">
+                <h3 className="text-[20px] px-4 text-left font-bold text-primary-yellow">
                   AMENITIES
                 </h3>
               </div>
@@ -144,9 +144,9 @@ const Page = () => {
                   stunning views of the city.
                 </li>
               </ul>
-              <button className="flex flex-row items-center text-center justify-center py-2 px-6 md:py-4 md:px-6 rounded-lg bg-transparent text-primary-yellow font-bold text-[20px] md:text-lg xl:text-2xl outline outline-primary-yellow">
+              <h3 className="flex flex-row items-center text-center justify-center py-2 px-6 md:py-4 md:px-6 rounded-lg bg-transparent text-primary-yellow font-bold text-[20px] md:text-lg xl:text-2xl outline outline-primary-yellow">
                 PREMIUM YACHTS
-              </button>
+              </h3>
             </div>
           </div>
         </div>
@@ -155,14 +155,14 @@ const Page = () => {
       <div className="bg-white w-full h-full py-10">
         <div className="container mx-auto">
           <div className="flex flex-col items-center justify-center px-7">
-            <h5 className="text-primary-yellow text-lg font-bold text-center">
+            <h3 className="text-primary-yellow text-lg font-bold text-center">
               EXTRA SERVICES ON DEMAND
-            </h5>
-            <h6 className="text-black font-light">(48 HOURS NOTICE PERIOD)</h6>
-            <h6 className="text-black font-light text-center py-5">
+            </h3>
+            <p className="text-black font-light">(48 HOURS NOTICE PERIOD)</p>
+            <p className="text-black font-light text-center py-5">
               For those looking to have a touch of luxury to their celebration,
               we offer additional services.
-            </h6>
+            </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-6 gap-3 px-4 xl:px-10">
             <div>
@@ -174,9 +174,9 @@ const Page = () => {
                   className="object-cover"
                 />
               </div>
-              <h5 className="text-black font-bold text-sm py-7 text-center">
+              <h4 className="text-black font-bold text-sm py-7 text-center">
                 Premium Drinks
-              </h5>
+              </h4>
             </div>
             <div>
               <div className="relative w-full h-40">
@@ -187,9 +187,9 @@ const Page = () => {
                   className="object-cover"
                 />
               </div>
-              <h6 className="text-black font-bold py-7 text-center">
+              <h4 className="text-black font-bold text-sm py-7 text-center">
                 Catering Service
-              </h6>
+              </h4>
             </div>
             <div>
               <div className="relative w-full h-40">
@@ -200,9 +200,9 @@ const Page = () => {
                   className="object-cover"
                 />
               </div>
-              <h6 className="text-black font-bold text-sm py-7 text-center">
+              <h4 className="text-black font-bold text-sm py-7 text-center">
                 Party Decoration
-              </h6>
+              </h4>
             </div>
             <div>
               <div className="relative w-full h-40">
@@ -213,9 +213,9 @@ const Page = () => {
                   className="object-cover"
                 />
               </div>
-              <h6 className="text-black font-bold text-sm py-7 text-center">
+              <h4 className="text-black font-bold text-sm py-7 text-center">
                 New Year Cake
-              </h6>
+              </h4>
             </div>
             <div>
               <div className="relative w-full h-40">
@@ -226,9 +226,9 @@ const Page = () => {
                   className="object-cover"
                 />
               </div>
-              <h6 className="text-black font-bold text-sm py-7 text-center">
+              <h4 className="text-black font-bold text-sm py-7 text-center">
                 Professional DJ Services
-              </h6>
+              </h4>
             </div>
             <div>
               <div className="relative w-full h-40">
@@ -239,24 +239,24 @@ const Page = () => {
                   className="object-cover"
                 />
               </div>
-              <h6 className="text-black font-bold text-sm py-7 text-center px-3">
+              <h4 className="text-black font-bold text-sm py-7 text-center px-3">
                 Photographer & Videographer Service
-              </h6>
+              </h4>
             </div>
           </div>
           <div className="flex flex-col items-center justify-center py-7">
             <button className="yellow-solid-button">CONTACT US</button>
-            <h6 className="text-black font-light text-center py-4 px-3">
+            <p className="text-black font-light text-center py-4 px-3">
               To secure the best deal for your New Year's Eve celebration on the
               water, reach out to us today.
-            </h6>
-            <h6 className="text-black font-bold text-center py-4 px-3">
+            </p>
+            <p className="text-black font-bold text-center py-4 px-3">
               New Year’s Eve Package Disclaimer
-            </h6>
-            <h6 className="text-black font-light text-center py-1 px-3">
+            </p>
+            <p className="text-black font-light text-center py-1 px-3">
               Inclusions, timings, prices, and capacity for the New Year’s Eve
               packages are subject to change without prior notice.
-            </h6>
+            </p>
           </div>
         </div>
       </div>
@@ -264,9 +264,9 @@ const Page = () => {
       <div>
         <div className="bg-[url('/atlantis-royal.jpg')] bg-cover bg-center bg-no-repeat min-h-screen">
           <div className="flex flex-col items-start justify-start px-16 py-10 lg:px-0 lg:pl-10 xl:w-1/2 md:w-10/12 lg:w-1/2">
-            <h1 className="text-white text-lg font-medium">
+            <h3 className="text-white text-lg font-medium">
               Why Choose Our New Year's Eve Yacht Rental?
-            </h1>
+            </h3>
             <ul className="list-disc text-sm pl-4 xl:pl-10 text-white py-5">
               <li>
                 <strong>Unforgettable Views:</strong> Sail through the heart of
@@ -292,9 +292,9 @@ const Page = () => {
                 NYE celebration is nothing short of perfection.
               </li>
             </ul>
-            <h5 className="text-white font-medium">
+            <h3 className="text-white font-medium">
               How to Book Your New Year Yacht Offer
-            </h5>
+            </h3>
             <ul className="list-disc text-sm pl-4 xl:pl-10 text-white py-5">
               <li>
                 <strong>Select Your Yacht:</strong> Browse our impressive fleet
@@ -311,18 +311,18 @@ const Page = () => {
                 arrangements for your celebration.
               </li>
             </ul>
-            <h5 className="text-white font-medium">New Year's Eve in Dubai</h5>
-            <h6 className="text-white py-4 font-normal">
+            <h3 className="text-white font-medium">New Year's Eve in Dubai</h3>
+            <p className="text-white py-4 font-normal">
               Dubai is renowned for its extravagant New Year Event, and our
               yachts provide the ultimate vantage point to enjoy the
               festivities. From the mesmerizing fireworks at the Burj Khalifa to
               the spectacular shows along the Palm Jumeirah, you won't miss a
               moment of the action.
-            </h6>
-            <h5 className="text-white text-lg font-medium">
+            </p>
+            <h3 className="text-white text-lg font-medium">
               Book Now and Make Your Reservation
-            </h5>
-            <h6 className="text-white text-sm py-4 font-normal">
+            </h3>
+            <p className="text-white text-sm py-4 font-normal">
               Don't miss out on this exclusive opportunity to welcome the New
               Year in absolute luxury. Our New Year's Eve Yacht Rentals are in
               high demand, so make your reservation today to secure your spot.
@@ -330,7 +330,7 @@ const Page = () => {
               New Year's Eve Yacht Rental in Dubai. Let's create memories that
               will last a lifetime as you sail into the New Year with style and
               opulence.
-            </h6>
+            </p>
           </div>
         </div>
       </div>
