@@ -59,17 +59,24 @@ export default function Navbar() {
 
   const currentLanguage = languages.find((lang) => lang.code === locale);
   const dropdownRef = useRef(null);
-
+  const privateYachtsRef = useRef(null);
+  const experiencesRef = useRef(null);
   useEffect(() => {
     const handleClickOutside = (event) => {
-      if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
-        setIsDropdownOpen(false);
+      if (
+        dropdownRef.current && !dropdownRef.current.contains(event.target) &&
+        privateYachtsRef.current && !privateYachtsRef.current.contains(event.target) &&
+        experiencesRef.current && !experiencesRef.current.contains(event.target)
+      ) {
+        setIsDropdownOpen(false);      // For Language
+        setSubmenuOpen(null);          // For all nav dropdowns
       }
     };
-
+  
     document.addEventListener("mousedown", handleClickOutside);
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
+  
 
   return (
     <>
@@ -94,7 +101,7 @@ export default function Navbar() {
             <div className="flex items-center text-xs xxl:text-base">
               <ul className="flex space-x-6 lg:space-x-8 text-xs xxl:text-base font-semibold">
                 {/* PRIVATE YACHTS with Dropdown */}
-                <li className="relative group">
+                <li className="relative group" ref={privateYachtsRef}>
                   <span
                     className={`flex items-center justify-between cursor-pointer gap-1 py-2 uppercase border-b-2 transition-all duration-200 ${
                       pathname === "/yacht-rentals" || pathname.startsWith("/yacht-rentals/")
@@ -170,7 +177,7 @@ export default function Navbar() {
                 </li>
 
                 {/* EXPERIENCES with Dropdown */}
-                <li className="relative group">
+                <li className="relative group"ref={experiencesRef}>
                   <span
                     className={`flex items-center justify-between cursor-pointer gap-1 py-2 border-b-2 transition-all duration-200  ${
                       pathname === "/yacht-trips" || pathname.startsWith("/yacht-trips/")

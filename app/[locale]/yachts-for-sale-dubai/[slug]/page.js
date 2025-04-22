@@ -43,9 +43,9 @@ export default function Home({ params }) {
 
   return (
     <>
-      <div className="container mx-auto p-6">
-        <h1 className=" font-bold text-center mb-4 mt-5 uppercase">{product.name_of_yacht}</h1>
-        <p className="text-xl text-center mb-4 uppercase">{product.name_of_yacht}</p>
+      <div className="container mx-auto  nav-space">
+        <h1 className=" font-bold text-center mb-4 mt-5 uppercase">{product.translations[locale].name_of_yacht}</h1>
+   
 
         <YachtGallery gallery={product.gallery} />
 
