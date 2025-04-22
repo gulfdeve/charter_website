@@ -7,11 +7,52 @@ export default function Contactform() {
   const [email, setEmail] = useState("");
   const [yachtName, setYachtName] = useState("88 FT YACHT SUNCRACKER");
   const [message, setMessage] = useState("");
+  const [errors, setErrors] = useState({});
+
+  const validate = () => {
+    const newErrors = {};
+
+    // Name: only alphabets and spaces, required
+    if (!fullName.trim()) {
+      newErrors.fullName = "Name is required";
+    } else if (!/^[a-zA-Z\s]+$/.test(fullName)) {
+      newErrors.fullName = "Name must contain only letters and spaces";
+    }
+
+    // Email: required and valid
+    if (!email.trim()) {
+      newErrors.email = "Email is required";
+    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+      newErrors.email = "Invalid email format";
+    }
+
+    // Phone: required, only digits, length 7-15
+    if (!phoneNumber.trim()) {
+      newErrors.phoneNumber = "Phone number is required";
+    } else if (!/^\d{7,15}$/.test(phoneNumber)) {
+      newErrors.phoneNumber = "Phone must be 7 to 15 digits";
+    }
+
+    // Yacht name: required
+    if (!yachtName.trim()) {
+      newErrors.yachtName = "Yacht name is required";
+    }
+
+    // Message: required and at least 10 characters
+    if (!message.trim()) {
+      newErrors.message = "Message is required";
+    } else if (message.trim().length < 10) {
+      newErrors.message = "Message must be at least 10 characters";
+    }
+
+    setErrors(newErrors);
+    return Object.keys(newErrors).length === 0;
+  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    console.log("Submitting form:", { fullName, phoneNumber, email, yachtName, message });
+    if (!validate()) return;
 
     try {
       const queryParams = new URLSearchParams({
@@ -34,7 +75,7 @@ export default function Contactform() {
         setEmail("");
         setYachtName("88 FT YACHT SUNCRACKER");
         setMessage("");
-        alert("success");
+        alert("Success! Your message was sent.");
       } else {
         alert("Something went wrong while sending the form.");
       }
@@ -45,74 +86,67 @@ export default function Contactform() {
 
   return (
     <div className="flex items-center justify-center py-10 px-2">
-      <form onSubmit={handleSubmit} className="w-full max-w-6xl bg-primary-blue rounded-lg shadow-lg p-6">
+      <form
+        onSubmit={handleSubmit}
+        className="w-full max-w-6xl bg-primary-blue rounded-lg shadow-lg p-6"
+      >
         <h1 className="text-center text-white text-4xl font-bold pb-7">INQUIRE</h1>
         <div className="flex flex-col lg:flex-row gap-6">
           <div className="flex flex-col w-full gap-4">
             <div>
               <input
                 type="text"
-                id="name"
-                name="name"
-                className="w-full p-3 border border-gray-300 rounded-md focus:ring focus:ring-blue-300"
+                className="w-full p-3 border rounded-md focus:ring"
                 placeholder="Name"
                 value={fullName}
                 onChange={(e) => setFullName(e.target.value)}
               />
+              {errors.fullName && <p className="text-red-400 text-sm mt-1">{errors.fullName}</p>}
             </div>
             <div>
               <input
                 type="email"
-                id="email"
-                name="email"
-                className="w-full p-3 border border-gray-300 rounded-md focus:ring focus:ring-blue-300"
+                className="w-full p-3 border rounded-md focus:ring"
                 placeholder="Email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
               />
+              {errors.email && <p className="text-red-400 text-sm mt-1">{errors.email}</p>}
             </div>
             <div>
               <input
                 type="tel"
-                id="phone"
-                name="phone"
-                className="w-full p-3 border border-gray-300 rounded-md focus:ring focus:ring-blue-300"
+                className="w-full p-3 border rounded-md focus:ring"
                 placeholder="Phone"
                 value={phoneNumber}
                 onChange={(e) => setPhoneNumber(e.target.value)}
               />
+              {errors.phoneNumber && <p className="text-red-400 text-sm mt-1">{errors.phoneNumber}</p>}
             </div>
             <div>
               <input
                 type="text"
-                id="yachtname"
-                name="yachtname"
-                className="w-full p-3 border border-gray-300 rounded-md focus:ring focus:ring-blue-300"
+                className="w-full p-3 border rounded-md focus:ring"
                 placeholder="88 FT YACHT SUNCRACKER"
                 value={yachtName}
                 onChange={(e) => setYachtName(e.target.value)}
               />
+              {errors.yachtName && <p className="text-red-400 text-sm mt-1">{errors.yachtName}</p>}
             </div>
           </div>
 
           <div className="flex flex-col w-full gap-4">
             <div>
               <textarea
-                id="message"
-                name="message"
-                className="w-full p-3 border border-gray-300 rounded-md focus:ring focus:ring-blue-300 h-32"
+                className="w-full p-3 border rounded-md focus:ring h-32"
                 placeholder="Message"
                 value={message}
                 onChange={(e) => setMessage(e.target.value)}
-              ></textarea>
+              />
+              {errors.message && <p className="text-red-400 text-sm mt-1">{errors.message}</p>}
             </div>
             <div className="flex items-center gap-2">
-              <input
-                type="checkbox"
-                id="terms"
-                name="terms"
-                className="w-5 h-5 text-blue-500 border-gray-300 rounded focus:ring focus:ring-blue-300"
-              />
+              <input type="checkbox" id="terms" className="w-5 h-5" />
               <label htmlFor="terms" className="text-sm text-white">
                 I'd like to receive updates on special offers, news and events
               </label>
