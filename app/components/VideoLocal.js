@@ -69,9 +69,10 @@ export default function VideoLocal({ filename, section }) {
         ></div>
         <div className="block text-center mt-10 xxs:mb-10 lg:absolute lg:-translate-x-2/4 lg:-translate-y-2/4 lg:left-2/4 lg:top-2/4 lg:mt-0">
           <h1 className="uppercase text-4xl font-bold mb-4 text-primary-blue-2 lg:text-white lg:text-[32px] p-0 xxs:px-10 md:px-0 xxs:text-2xl xs:text-xl s:text-2xl sm:text-2xl md:text-3xl 2xl:text-4xl    ">
-          Daily Yacht Sharing Tours In Dubai<br />
+          centaurus yacht rental dubai<br />
           </h1>
           <p className="text-sm xl:text-2xl mb-1  text-primary-blue-2 lg:text-white 2xl:text-3xl">
+          Daily Yacht Sharing Tours In Dubai <br/>
           Including Food and Drinks
           </p>
           <p className="text-sm xl:text-2xl mb-4 text-primary-blue-2 lg:text-white  2xl:text-3xl font-bold">
