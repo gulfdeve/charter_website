@@ -290,15 +290,20 @@ footer a:hover {
   padding-top: 100px;
   padding-bottom: 20px;
 }
+.divider-top-outside {
+  overflow: hidden;
+  line-height: 0;
+  left: 0;
+  right: 0;
+}
 .divider-top {
   position: absolute;
   overflow: hidden;
   line-height: 0;
   transform: rotate(180deg);
-  top:-2px;
 }
 
-.divider-top svg {
+.divider-top svg, .dividider-top-outside svg {
   display: block;
 }
 

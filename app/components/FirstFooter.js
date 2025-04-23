@@ -301,7 +301,24 @@ export default function FirstFooter() {
   ];
 
   return (
-    <footer className="text-sm bg-primary-black py-10">
+    <>
+   
+    <footer className="text-sm bg-primary-black pb-10 pt-10 md:pt-24 lg:pt-24 xl:pt-36 relative">
+       {/* SVG Divider */}
+    <div className="divider-top -top-2 w-full z-10">
+      <svg
+        data-name="Layer 1"
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 1200 60"
+        preserveAspectRatio="none"
+      >
+        <path
+          d="M987.16,44.39c-78.99-8.42-163.38-20.36-243.32-27.16-82.26-7.01-168.06-6.6-250.45.16-57.84,4.74-114,12.56-172,16.92C213.61,42.32,102.47,38.25,0,22.55v37.45h1200v-21.1c-67.81,9.35-142.79,12.95-212.84,5.48Z"
+          className="fill-primary-blue-2"
+          
+        ></path>
+      </svg>
+    </div>
       <div className="py-4 container mx-auto">
         {/** DESKTOP / LARGER SCREENS (Grid) **/}
         <div className="hidden md:grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-4">
@@ -372,5 +389,6 @@ export default function FirstFooter() {
         </a>
       </div>
     </footer>
+    </>
   );
 }
