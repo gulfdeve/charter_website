@@ -1,13 +1,13 @@
 import React, { useState } from "react";
 import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/style.css";
-import startsWith from 'lodash.startswith';
 
 const Modal2 = ({ isModalOpen, closeModal, idName, idValue }) => {
   if (!isModalOpen) return null;
 
   const [fullName, setFullName] = useState("");
   const [phoneNumber, setPhoneNumber] = useState("");
+  const [phoneCountry, setPhoneCountry] = useState({ countryCode: "ae", format: "" });
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
   const [errors, setErrors] = useState({});
@@ -20,10 +20,15 @@ const Modal2 = ({ isModalOpen, closeModal, idName, idValue }) => {
       newErrors.fullName = "Full Name is required.";
     }
 
+    // Inline phone validation using react-phone-input-2 format
     if (!phoneNumber.trim()) {
       newErrors.phoneNumber = "Phone Number is required.";
-    } else if (phoneNumber.replace(/\D/g, "").length < 7) {
-      newErrors.phoneNumber = "Please enter a valid phone number.";
+    } else {
+      const digits = phoneNumber.replace(/\D/g, "");
+      const expected = (phoneCountry.format.match(/9/g) || []).length;
+      if (digits.length < expected) {
+        newErrors.phoneNumber = "Please enter a valid phone number.";
+      }
     }
 
     if (!email.trim()) {
@@ -122,11 +127,19 @@ const Modal2 = ({ isModalOpen, closeModal, idName, idValue }) => {
 
               <div>
                 <PhoneInput
-                  country="ae"
+                  country={phoneCountry.countryCode}
                   value={phoneNumber}
-                  onChange={setPhoneNumber}
+                  onChange={(val, country) => {
+                    setPhoneNumber(val);
+                    setPhoneCountry(country);
+                  }}
                   placeholder="Enter phone number"
-                  className="flex-1 rounded-md bg-[#f5f5f5] text-primary-grey focus:outline-none transition duration-200 ease-in-out"
+                  isValid={(value, country) => {
+                    const digits = value.replace(/\D/g, "");
+                    const expected = (country.format.match(/9/g) || []).length;
+                    return digits.length >= expected;
+                  }}
+                  defaultErrorMessage="Please enter a valid phone number"
                   inputStyle={{
                     width: "100%",
                     padding: "20px",
@@ -143,12 +156,6 @@ const Modal2 = ({ isModalOpen, closeModal, idName, idValue }) => {
                     width: "60px",
                     fontFamily: "Montserrat, sans-serif",
                   }}
-                  isValid={(inputNumber, country, countries) =>
-                    countries.some((c) =>
-                      startsWith(inputNumber, c.dialCode) || startsWith(c.dialCode, inputNumber)
-                    )
-                  }
-                  defaultErrorMessage="Please enter a valid phone number"
                 />
                 {errors.phoneNumber && <p className="text-red-600 text-sm">{errors.phoneNumber}</p>}
               </div>
