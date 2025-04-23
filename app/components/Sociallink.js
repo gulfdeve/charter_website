@@ -39,7 +39,7 @@ const Sociallink = () => {
 
         {/* Subscription Section */}
         <div className="order-2 lg:order-1 flex flex-col items-center lg:items-start">
-          <p className="text-white text-2xl 3xl:text-4xl font-bold">Amazing Offers just for you</p>
+          <p className="text-white text-lg lg:text-2xl 3xl:text-4xl font-bold">Amazing Offers just for you</p>
           <p className="text-white text-lg text-center lg:text-left">Sign up to receive amazing offers and tips</p>
         </div>
 
