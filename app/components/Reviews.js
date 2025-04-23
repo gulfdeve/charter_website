@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import EmblaCarousel from "embla-carousel";
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
+import { FcGoogle } from "react-icons/fc";
 import { useRouter, usePathname, Link } from "@/app/i18n/routing";
 import { FaStar } from "react-icons/fa";
 import { RxBorderDotted } from "react-icons/rx";
@@ -14,31 +15,52 @@ const Reviews = () => {
   const slidesData = [
     {
       id: 1,
-      name: "Julain Smith",
-      date: "June 2022",
+      name: "Carolina Arbelaez de la Espriella",
+      date: "November 2025",
       rating: 5,
-      title: "Fabulous Experience",
       content:
-        "This was an unforgettable experience with Centaurus Yachts & Boats, Dubai, and one of the highlights of our trip! The yacht (Vassia by Majesty) is luxurious, clean,...",
+        "Great staff and overall very good service! I recommend to book with them, went on a trip with my kids and parents in law and was very nice, Jonathan has great sense of customer service 👍",
     },
     {
       id: 2,
-      name: "Anna Taylor",
+      name: "Googoodoll",
       date: "July 2022",
-      rating: 4,
-      title: "Wonderful Service",
+      rating: 5,
       content:
-        "The crew was friendly, and the service was amazing. Highly recommended for a relaxing experience on the waters of Dubai.",
+        "An absolutely fun experience! Robert & Capt Gef was very accommodating and polite: picked us up from the “lobby” and guided us to the yacht even though some of us were so incredibly late. They made sure we got the best views and backgrounds for our pictures. This is surely one of the best if not the best yacht ride we tried with our very special friends! We’ll definitely come back next time we’re in Dubai & recommend :)",
     },
     {
       id: 3,
-      name: "John Doe",
-      date: "August 2022",
+      name: "Arnee Profugo",
+      date: "March 2025",
       rating: 5,
-      title: "Perfect Day",
       content:
-        "The yacht was in pristine condition, and the staff went above and beyond to make our day special. Will definitely book again.",
+        "We had an unforgettable night aboard Lagoona! We booked it for a birthday celebration with friends and family, and the entire experience exceeded our expectations. The crew was incredibly professional, attentive, and made sure we had everything we needed for a perfect evening. A special thanks to Tracy for making the booking process seamless and stress-free! She was extremely helpful, answering all our questions and ensuring every detail was perfectly arranged for our celebration. If you're looking for an exceptional way to celebrate a special occasion or simply enjoy a day or night on the water, give them a call and ask for Tracy! 🤩"
     },
+    {
+      id: 4,
+      name: "Marco",
+      date: "December 2024",
+      rating: 5,
+      content:
+        "Nice vessel, well maintained, Price very reasonable for a 118'' Crew very well trained, gentle and ready to help in any occasion. Nice service and quality of food and drink very good. They have full facilities on board, just ask and they will provide, Great for party or just cruising or transform in a Disco boat when necessary. We had private party for 85 People and was perfect."
+    },
+    {
+      id: 5,
+      name: "Adri Lenis",
+      date: "February 2025",
+      rating: 5,
+      content:
+        "Amazing experience with my group. They really enjoy the experience despite the cloudy and rainy weather. Staff was very attentive and polite. yacht is clean and everybody very professionals. As my group was mainly women they loved to have a women captain as well. Thanks a lot !"
+    },
+    {
+      id: 6,
+      name: "Marcy Simmons",
+      date: "March 2025",
+      rating: 5,
+      content:
+        "We had the most fun. Nice boat and over the top service. We last minute wanted jet skis for our boys to ride and within minutes they had jet skis come to the boat. Highly recommend."
+    }
   ];
 
   useEffect(() => {
@@ -90,61 +112,59 @@ const Reviews = () => {
   };
   return (
     <>
-      <div className="xl:block hidden">
-        <div className="bg-gray-200 w-full h-auto py-20 px-4">
-          <div>
-            <h2 className=" text-primary-blue text-center font-bold xxs:text-2xl sm:text:2xl md:text-3xl lg:text-4xl pb-4">
-              WHAT OUR GUESTS SAY
-            </h2>
-          </div>
+      <div className="hidden xl:block relative w-full h-auto py-20 px-4">
+      {/* Background SVG in Front */}
+      <div
+        className="absolute inset-0 z-10"
+        style={{
+          backgroundImage: "url('/images/bg-svg-blue.svg')",
+          backgroundRepeat: "no-repeat",
+          backgroundPosition: "center",
+          backgroundSize: "contain",
+          backgroundAttachment: "fixed",
+        }}
+      ></div>
+
+      {/* Gradient Background Behind */}
+      <div className="absolute inset-0 gradient-custom z-0"></div>
+
+        <div className="relative z-20">
+        <h2 className="text-primary-blue text-center font-bold xxs:text-2xl sm:text:2xl md:text-3xl lg:text-4xl pb-4">
+          WHAT OUR GUESTS SAY
+        </h2>
 
           <div className="flex flex-row items-stretch justify-center container mx-auto relative gap-7">
-            {/* TripAdvisor Container */}
-            <div className="pt-[3.3rem]">
-              <div className="bg-white p-6 rounded-md shadow-md w-44   h-[225px] z-20 flex flex-col justify-center items-center">
-                <Link href="https://www.tripadvisor.com/Attraction_Review-g295424-d15699786-Reviews-Centaurus_Yachts_Boats_Dubai-Dubai_Emirate_of_Dubai.html">
-                  <span className=" font-bold text-center text-sm underline">
-                    Centaurus Yachts & Boats Dubai
-                  </span>
-                  <div className="flex flex-col items-center justify-center -space-y-3">
-                    <RxBorderDotted className="text-green-600 text-center text-5xl -mt-3" />
-                    <span className=" font-bold text-xs">176 Reviews</span>
-                    <img alt="tripadvisor logo" src="/Tripadvisor.png" className="w-24 pt-5" />
-                  </div>
-                </Link>
-              </div>
-            </div>
             {/* Review Carousel */}
-            <div className="w-full max-w-4xl mt-8 flex flex-col items-center">
+            <div className="w-full max-w-4xl mt-10 flex flex-col items-center align-middle justify-center">
               <div
-                className="custom-embla__viewport overflow-hidden"
+                className="custom-embla__viewport overflow-hidden z-10"
                 ref={viewportRef}
               >
                 <div className="custom-embla__container flex">
                   {slidesData.map((slide) => (
                     <div
                       key={slide.id}
-                      className="custom-embla__slide flex-[0_0_50%] text-left p-4 rounded-md mx-2"
-                    >
-                      <div className="bg-white h-[225px] flex flex-col items-start p-5 rounded-lg">
+                      className="flex-[0_0_33.33%] text-left p-2 rounded-md"
+                    >  
+                      <div className="bg-white h-[290px] flex flex-col items-start p-5 rounded-lg">
                         <div className="flex flex-row gap-5">
                           <img
-                            src="Profile.jpg"
+                            src="images/profile.svg"
                             alt="Profile"
                             className="w-14 rounded-full"
                           />
                           <div className="flex flex-col items-start">
-                            <span className="">{slide.name}</span>
+                            <span className="font-bold">{slide.name}</span>
                             <span className=" text-xs">{slide.date}</span>
                           </div>
                         </div>
-                        <div className="flex flex-row py-1 gap-2">
+                        <div className="flex flex-row py-1 gap-1">
                           {Array.from({ length: slide.rating }, (_, index) => (
-                            <FaStar key={index} />
+                            <FaStar key={index} color="#E1BA4D" />
                           ))}
                         </div>
                         <p className=" text-sm py-1">{slide.title}</p>
-                        <p className=" text-xs">{slide.content}</p>
+                        <p className=" text-xs overflow-hidden text-ellipsis">{slide.content}</p>
                       </div>
                     </div>
                   ))}
@@ -152,35 +172,44 @@ const Reviews = () => {
               </div>
 
               {/* Navigation Buttons */}
-              <div className="flex justify-center space-x-4 mt-4">
+              <div className="w-full h-full absolute flex justify-between z-0 px-20">
                 <button
                   aria-label="go previous review"
-                  className="bg-gray-800 text-white p-2 lg:p-5 rounded-full hover:bg-gray-700"
+                  className="text-gray-500 p-2 rounded-full"
                   onClick={scrollPrev}
                 >
-                  <IoIosArrowBack size={20} />
+                  <IoIosArrowBack size={30} />
                 </button>
                 <button
                   aria-label="go next review"
-                  className="bg-gray-800 text-white p-2 lg:p-5 rounded-full hover:bg-gray-700"
+                  className="text-gray-500 p-2 lg:p-5 rounded-full"
                   onClick={scrollNext}
                 >
-                  <IoIosArrowForward size={20} />
+                  <IoIosArrowForward size={30} />
                 </button>
-                <div className="p-2 flex flex-col items-center z-20">
-                  <Link href="https://www.tripadvisor.com/Attraction_Review-g295424-d15699786-Reviews-Centaurus_Yachts_Boats_Dubai-Dubai_Emirate_of_Dubai.html">
-                    <button className="blue-solid-button">
-                      Write A Review
-                    </button>
-                  </Link>
-                </div>
+              </div>
+              <div className="flex w-full items-end justify-end mt-4 gap-2 z-50">
+                <p className="flex items-center justify-end mt-4 gap-2">
+                  <a
+                    href="https://g.co/kgs/jfR6mP6"
+                    className="underline text-gray-600 font-bold"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Read all review on Google
+                  </a>
+                  <FcGoogle size={30} />
+                  <span className="text-gray-600 font-bold text-xl"> 4.8</span>
+                  <span className="text-gray-600 text-sm"> (150) Reviews</span>
+                </p>
               </div>
             </div>
           </div>
         </div>
       </div>
+      {/* Mobile View */}
       <div className="xl:hidden block">
-        <div className="bg-gray-200 w-full h-auto py-20 px-4">
+        <div className="gradient-custom w-full h-auto py-20 px-4">
           <div>
             <h2 className=" text-primary-blue text-center font-bold text-xl sm:text:2xl md:text-3xl lg:text-4xl pb-4">
               WHAT OUR GUESTS SAY
@@ -193,8 +222,8 @@ const Reviews = () => {
           >
             <div className="embla__container">
               {slidesData.map((review) => (
-                <div className="embla__slide lg:w-[28rem]" key={review.id}>
-                  <div className="bg-white w-[18rem] lg:w-[28rem] h-[225px] flex flex-col items-start p-5 rounded-lg">
+                <div className="embla__slide " key={review.id}>
+                  <div className="bg-white w-[18rem] h-[225px] flex flex-col items-start p-5 rounded-lg">
                     <div className="flex flex-row gap-5">
                       <img
                         alt="Profile"
@@ -202,82 +231,54 @@ const Reviews = () => {
                         className="w-14 rounded-full"
                       />
                       <div className="flex flex-col items-start">
-                        <span className="">{review.name}</span>
+                        <span className="font-bold">{review.name}</span>
                         <span className=" text-xs">{review.date}</span>
                       </div>
                     </div>
                     <div className="flex flex-row py-1 gap-2">
                       {Array.from({ length: review.rating }, (_, index) => (
-                        <FaStar key={index} />
+                        <FaStar key={index} color="#E1BA4D" />
                       ))}
                     </div>
                     <span className=" text-sm py-1">{review.title}</span>
-                    <p className=" text-xs">{review.content}</p>
+                    <p className=" text-xs overflow-hidden text-ellipsis">{review.content}</p>
                   </div>
                 </div>
               ))}
-            </div>
-
-            <div className="lg:block hidden">
-              <div className="flex flex-col justify-center w-[20rem] md:w-full lg:ml-4 mt-4 lg:mt-4 lg:absolute xl:left-60 lg:left-32 lg:top-1/2 lg:-translate-y-1/2 lg:w-44 lg:p-3 lg:h-[225px] bg-white h-32 text-center rounded-lg">
-                <Link href="https://www.tripadvisor.com/Attraction_Review-g295424-d15699786-Reviews-Centaurus_Yachts_Boats_Dubai-Dubai_Emirate_of_Dubai.html">
-                  <span className=" font-bold text-sm underline">
-                    Centaurus Yachts & Boats Dubai
-                  </span>
-                  <div className="flex flex-col items-center justify-center -space-y-3">
-                    <RxBorderDotted className="text-green-600 text-center text-5xl -mt-3" />
-                    <span className=" font-bold text-xs">176 Reviews</span>
-                    <img
-                      alt="tripadvisor logo"
-                      src="/Tripadvisor.png"
-                      className="w-24 pt-5"
-                    />
-                  </div>
-                </Link>
-              </div>
             </div>
           </div>
 
           <div className="flex items-center justify-center mt-4 gap-2 ">
             <button
               aria-label="go previous review"
-              className="bg-gray-800 text-white p-2 lg:p-5 rounded-full hover:bg-gray-700"
+              className="bg-gray-200 text-gray-500 p-2 lg:p-5 rounded-full hover:bg-gray-300"
               onClick={scrollPrevMob}
             >
               <IoIosArrowBack size={20} />
             </button>
             <button
               aria-label="go next review"
-              className="bg-gray-800 text-white p-2 lg:p-5 rounded-full hover:bg-gray-700"
+              className="bg-gray-200 text-gray-500 p-2 lg:p-5 rounded-full hover:bg-gray-300"
               onClick={scrollNextMob}
             >
               <IoIosArrowForward size={20} />
             </button>
-            <div className=" p-2 flex flex-col items-center z-20 ">
-              <Link href="https://www.tripadvisor.com/Attraction_Review-g295424-d15699786-Reviews-Centaurus_Yachts_Boats_Dubai-Dubai_Emirate_of_Dubai.html">
-                <button className="flex flex-row items-center justify-center py-1 px-6 md:py-2 md:px-8 border-4 border-[#0d2343] rounded-md bg-[#050505] hover:bg-primary-blue text-primary-yellow  font-bold text-base md:text-sm xl:text-base transition-all duration-300">
-                  Write A Review
-                </button>
-              </Link>
-            </div>
+           
           </div>
-          <div className="lg:hidden block ">
-            <div className="flex flex-col justify-center w-full md:w-full lg:ml-4 mt-4 lg:mt-4 lg:absolute xl:left-60 lg:left-32 lg:top-1/2 lg:-translate-y-1/2 lg:w-44 lg:p-3 lg:h-[225px] bg-white h-32 text-center rounded-lg">
-              <Link href="https://www.tripadvisor.com/Attraction_Review-g295424-d15699786-Reviews-Centaurus_Yachts_Boats_Dubai-Dubai_Emirate_of_Dubai.html">
-                <span className=" font-bold text-sm underline">
-                  Centaurus Yachts & Boats Dubai
-                </span>
-                <div className="flex flex-col items-center justify-center -space-y-3">
-                  <RxBorderDotted className="text-green-600 text-center text-5xl -mt-3" />
-                  <span className=" font-bold text-xs">176 Reviews</span>
-                  <img
-                    alt="tripadvisor logo"
-                    src="/Tripadvisor.png"
-                    className="w-24 pt-5"
-                  />
-                </div>
-              </Link>
-            </div>
+          <div>
+            <p className="flex items-center justify-center mt-4 gap-2 z-index-50">
+              <a
+                href="https://g.co/kgs/jfR6mP6"
+                className="underline text-gray-600 font-bold"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Read all review on Google
+              </a>
+              <FcGoogle size={30} />
+              <span className="text-gray-600 font-bold text-xl"> 4.8</span>
+              <span className="text-gray-600 text-sm"> (150) Reviews</span>
+            </p>
           </div>
         </div>
       </div>
