@@ -340,19 +340,34 @@ export default function Home() {
         </div>
       </div>
       <WhyChooseUs />
-      <div className=" h-[30vh]">
-        {/* Scrollable Background */}
-        <div
-          className="w-full h-[40vh] bg-cover bg-fixed lg:bg-top bg-center"
-          style={{
-            backgroundImage: "url('/YachtSun.webp')",
-            // Ensure the background is behind the content
-          }}
-        ></div>
+      <div className="h-[30vh] lg:h-[50vh] relative">
+  {/* Scrollable Background */}
+  <div
+    className="h-[30vh] lg:h-[50vh] bg-cover bg-fixed lg:bg-top bg-center"
+    style={{
+      backgroundImage: "url('/images/yacht-sun.webp')",
+    }}
+  >
+    {/* SVG Divider */}
+    <div className="divider-top absolute w-full">
+      <svg
+        data-name="Layer 1"
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 1200 120"
+        preserveAspectRatio="none"
+        className="w-full "
+      >
+        <path
+          d="M985.66,92.83C906.67,72,823.78,31,743.84,14.19c-82.26-17.34-168.06-16.33-250.45.39-57.84,11.73-114,31.07-172,41.86A600.21,600.21,0,0,1,0,27.35V120H1200V95.8C1132.19,118.92,1055.71,111.31,985.66,92.83Z"
+          className="shape-fill"
+          fill="white" // Adjust the color as needed
+        ></path>
+      </svg>
+    </div>
+  </div>
 
-        {/* Fixed Content */}
-      </div>
-
+  {/* Fixed Content */}
+</div>
       <Aboutus />
       <Reviews />
 
