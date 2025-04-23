@@ -29,7 +29,7 @@
     ".next/types/**/*.ts",
     "next.config.ts",
     "app/[locale]/page.js",
-    "app/[locale]/layout.tsx"
-, "app/[locale]/contact/page.js", "app/layout.js"  ],
+    "app/[locale]/layout.tsx",
+	"app/layout.js"  ],
   "exclude": ["node_modules"]
 }
