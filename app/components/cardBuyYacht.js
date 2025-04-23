@@ -70,7 +70,7 @@ const YachtListings = () => {
       guests: "8",
       year: "2024",
       price: "UPON REQUEST",
-      image: "buy_yacht/SUNSEEKER 88 YACHT-1.webp"
+      image: "/buy_yacht/SUNSEEKER 88 YACHT-1.webp"
     },
     {
       slug: "78ft-cranchi",
@@ -81,7 +81,7 @@ const YachtListings = () => {
       guests: "8",
       year: "2022",
       price: "UPON REQUEST",
-      image: "buy_yacht/MAIN CRANCHI 78 FT YACHT.webp"
+      image: "/buy_yacht/MAIN CRANCHI 78 FT YACHT.webp"
     },
     {
       slug: "90ft-sunseeker",
@@ -92,7 +92,7 @@ const YachtListings = () => {
       guests: "10",
       year: "2008",
       price: "AED 11,500,000",
-      image: "buy_yacht/90ftsunseeker.webp"
+      image: "/buy_yacht/90ftsunseeker.webp"
     },
     {
       slug: "76ft-canados",
@@ -103,7 +103,7 @@ const YachtListings = () => {
       guests: "8",
       year: "2008",
       price: "AED 5,500,000",
-      image: "buy_yacht/76 FT YACHT CANADOS MAIN.webp"
+      image: "/buy_yacht/76 FT YACHT CANADOS MAIN.webp"
     }
   ];
 
