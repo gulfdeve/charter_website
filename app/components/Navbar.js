@@ -207,7 +207,7 @@ export default function Navbar() {
                     </svg>
                   </span>
                   <ul className="absolute top-full left-0 w-60 bg-white text-black transition-all duration-150 shadow-lg rounded-lg overflow-hidden border border-gray-200 hidden group-hover:block z-50">
-                    <li className="cursor-pointer uppercase text-xs font-medium text-primary-grey hover:text-white hover:bg-primary-blue transition-all duration-300">
+                    <li className="cursor-pointer capitalize text-xs font-medium text-primary-grey hover:text-white hover:bg-primary-blue transition-all duration-300">
                       <Link href="/watersports" className="py-2 px-4 block">
                         {t("navbar.water-sports")}
                       </Link>
@@ -220,7 +220,7 @@ export default function Navbar() {
                         >
                           <Link
                             href={`/yacht-trips/${experience.slug}`}
-                            className="py-2 px-4 block"
+                            className="py-2 px-4 block capitalize"
                           >
                             {experience.translations?.[locale]?.title}
                           </Link>
