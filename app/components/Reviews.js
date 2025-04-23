@@ -227,7 +227,7 @@ const Reviews = () => {
                     <div className="flex flex-row gap-5">
                       <img
                         alt="Profile"
-                        src="Profile.jpg"
+                        src="images/profile.svg"
                         className="w-14 rounded-full"
                       />
                       <div className="flex flex-col items-start">
@@ -266,7 +266,7 @@ const Reviews = () => {
            
           </div>
           <div>
-            <p className="flex items-center justify-center mt-4 gap-2 z-index-50">
+            <p className="flex flex-col sm:flex-row items-center justify-center mt-4 gap-2 z-index-50">
               <a
                 href="https://g.co/kgs/jfR6mP6"
                 className="underline text-gray-600 font-bold"
