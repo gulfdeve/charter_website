@@ -103,7 +103,7 @@ export default function Navbar() {
                 {/* PRIVATE YACHTS with Dropdown */}
                 <li className="relative group" ref={privateYachtsRef}>
                   <span
-                    className={`flex items-center justify-between cursor-pointer gap-1 py-2 uppercase border-b-2 transition-all duration-200 ${
+                    className={`flex items-center justify-between cursor-pointer gap-1 py-2 uppercase border-b-2 transition-all duration-200 font-Montserrat ${
                       pathname === "/yacht-rentals" || pathname.startsWith("/yacht-rentals/")
                          ? "text-primary-blue border-primary-yellow font-semibold"
                         : "text-primary-blue border-transparent"
@@ -135,7 +135,7 @@ export default function Navbar() {
                       data?.products?.map((product) => (
                         <li
                           key={product.id}
-                          className="cursor-pointer text-xs font-medium text-primary-grey hover:text-white hover:bg-primary-blue transition-all duration-300"
+                          className="cursor-pointer text-xs font-medium text-primary-grey hover:text-white hover:bg-primary-blue transition-all duration-300 font-Montserrat"
                         >
                           <Link
                             href={`/yacht-rentals/${product.slug}`}
@@ -152,7 +152,7 @@ export default function Navbar() {
                 <li>
                   <Link
                     href="/yachts-for-sale-dubai"
-                    className={`py-2 inline-block tracking-wider uppercase border-b-2 transition-all duration-200 ${
+                    className={`py-2 inline-block tracking-wider uppercase border-b-2 transition-all duration-200 font-Montserrat ${
                       pathname === "/yachts-for-sale-dubai" || pathname.startsWith("/yachts-for-sale-dubai/")
                         ? "text-primary-blue border-primary-yellow font-semibold"
                         : "text-primary-blue border-transparent hover:border-primary-yellow"
@@ -166,7 +166,7 @@ export default function Navbar() {
                 <li> 
                   <Link
                     href="/shared-yacht-tours-dubai"
-                    className={`py-2 inline-block tracking-wider uppercase border-b-2 transition-all duration-200 ${
+                    className={`py-2 inline-block tracking-wider uppercase border-b-2 transition-all duration-200 font-Montserrat ${
                       pathname === "/shared-yacht-tours-dubai" || pathname.startsWith("/shared-yacht-tours-dubai/")
                         ? "text-primary-blue border-primary-yellow font-semibold"
                         : "text-primary-blue border-transparent hover:border-primary-yellow"
@@ -179,7 +179,7 @@ export default function Navbar() {
                 {/* EXPERIENCES with Dropdown */}
                 <li className="relative group"ref={experiencesRef}>
                   <span
-                    className={`flex items-center justify-between cursor-pointer gap-1 py-2 border-b-2 transition-all duration-200  ${
+                    className={`flex items-center justify-between cursor-pointer gap-1 py-2 border-b-2 transition-all duration-200 font-Montserrat ${
                       pathname === "/yacht-trips" || pathname.startsWith("/yacht-trips/")
                         ? "text-primary-blue border-primary-yellow font-semibold"
                         : "text-primary-blue border-transparent"
@@ -207,7 +207,7 @@ export default function Navbar() {
                     </svg>
                   </span>
                   <ul className="absolute top-full left-0 w-60 bg-white text-black transition-all duration-150 shadow-lg rounded-lg overflow-hidden border border-gray-200 hidden group-hover:block z-50">
-                    <li className="cursor-pointer uppercase text-xs font-medium text-primary-grey hover:text-white hover:bg-primary-blue transition-all duration-300">
+                    <li className="cursor-pointer uppercase text-xs font-medium text-primary-grey hover:text-white hover:bg-primary-blue transition-all duration-300 font-Montserrat">
                       <Link href="/watersports" className="py-2 px-4 block">
                         {t("navbar.water-sports")}
                       </Link>
@@ -216,7 +216,7 @@ export default function Navbar() {
                       data?.experiences?.map((experience) => (
                         <li
                           key={experience.id}
-                          className="cursor-pointer text-xs font-medium text-primary-grey hover:text-white hover:bg-primary-blue transition-all duration-300"
+                          className="cursor-pointer text-xs font-medium text-primary-grey hover:text-white hover:bg-primary-blue transition-all duration-300 font-Montserrat"
                         >
                           <Link
                             href={`/yacht-trips/${experience.slug}`}
@@ -233,7 +233,7 @@ export default function Navbar() {
                 <li>
                 <Link
                   href="/offers"
-                  className={`py-2 inline-block tracking-wider uppercase border-b-2 transition-all duration-200 ${
+                  className={`py-2 inline-block tracking-wider uppercase border-b-2 transition-all duration-200 font-Montserrat ${
                     pathname === "/offers" || pathname.startsWith("/offers/")
                       ? "text-primary-blue border-primary-yellow font-semibold"
                       : "text-primary-blue border-transparent hover:border-primary-yellow"
@@ -247,7 +247,7 @@ export default function Navbar() {
                 <li>
                 <Link
                   href="/events"
-                  className={`py-2 inline-block tracking-wider uppercase border-b-2 transition-all duration-200 ${
+                  className={`py-2 inline-block tracking-wider uppercase border-b-2 transition-all duration-200 font-Montserrat ${
                       pathname === "/events" || pathname.startsWith("/events/")
                         ? "text-primary-blue border-primary-yellow font-semibold"
                         : "text-primary-blue border-transparent hover:border-primary-yellow"
@@ -262,7 +262,7 @@ export default function Navbar() {
                 <li>
                   <Link
                     href="/contact"
-                    className={`py-2 inline-block tracking-wider uppercase border-b-2 transition-all duration-200 ${
+                    className={`py-2 inline-block tracking-wider uppercase border-b-2 transition-all duration-200 font-Montserrat ${
                       pathname === "/contact" || pathname.startsWith("/contact/")
                         ? "text-primary-blue border-primary-yellow font-semibold"
                         : "text-primary-blue border-transparent hover:border-primary-yellow"

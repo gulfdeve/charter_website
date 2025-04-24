@@ -81,7 +81,7 @@ export default async function YachtPage({ params: paramsPromise }) {
             </span>
           </h3>
           <h3 className=" p-2 flex flex-col items-center">
-            <span className="text-sm text-white">Price Per Hour:</span>
+            <span className="text-sm text-white">Price per hour:</span>
             <span className="font-semibold text-sm text-primary-yellow xl:text-xl">
               {product.per_hour_price.toLocaleString()} AED
             </span>

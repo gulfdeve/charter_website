@@ -155,7 +155,7 @@ export default function Home() {
                           {" "}
                           Transfer
                         </li>
-                        <li>Canapes & Snacks</li>
+                        <li>Canapés & Snacks</li>
                         <li>DJ</li>
                       </ol>
                       </div>
@@ -184,7 +184,7 @@ export default function Home() {
                   <div className="flex flex-row justify-between items-center z-20 border-t border-gray-400 pt-3 mt-5">
                     {/* Price per Hour */}
                     <div className="p-1 xl:p-2 flex flex-col">
-                      <span className=" text-sm">Per Hour:</span>
+                      <span className=" text-sm">Price per hour:</span>
                       <span className="font-bold text-lg lg:text-xl text-primary-red">
                       AED {product.per_hour_price.toLocaleString()}
                       </span>

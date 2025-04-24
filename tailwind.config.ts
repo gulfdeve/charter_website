@@ -53,6 +53,7 @@ export default {
       fontFamily: {
         sans: ['var(--font-montserrat)', 'sans-serif'],
         Montserrat: ["var(--font-montserrat)"],
+        Inter: ["var(--font-inter)"],
       },
       
     },
