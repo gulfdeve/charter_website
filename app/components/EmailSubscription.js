@@ -57,11 +57,11 @@ const EmailSubscription = () => {
           placeholder="Your Email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
-          className="flex-grow px-6 py-4 text-sm font-bold text-primary-grey border border-black focus:outline-none"
+          className="flex-grow px-6 py-4 text-sm font-bold text-primary-grey border border-l-4 roundedl-l-md bg-[#f5f5f5] text-primary-grey focus:outline-none border-primary-blue focus:bg-[#f3f7fd] transition duration-200 ease-in-out"
         />
         <button
           type="submit"
-          className="bg-gray-300 text-xs sm:text-base px-4 py-3 font-bold text-primary-grey hover:bg-gray-400 border border-black"
+          className="bg-primary-blue rounded-r-md text-white text-xs sm:text-base px-4 py-3 font-bold text-primary-grey hover:bg-gray-400 border border-black"
         >
           SIGN UP
         </button>

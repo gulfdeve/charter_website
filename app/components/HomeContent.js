@@ -61,32 +61,35 @@ export default function Home() {
         {/* <Video /> */}
         <VideoLocal filename="/Seasonal Tour _ Luxury Tours.mp4" section="home" />
       </div>
-
-      <div className="flex flex-col bg-white items-center justify-center lg:pt-8 xl:pt-16 2xl:pt-16">
-        <h2 className=" text-primary-blue text-center font-bold text-3xl sm:text-2xl md:text-3xl lg:text-4xl md:p-4 pb-4 px-3">
+    <div className="relative">
+      
+      <div className="flex flex-col items-center justify-center">
+        <h2 className=" text-primary-blue text-center font-bold text-xl sm:text-2xl md:text-3xl lg:text-4xl md:p-4 pb-4 px-3">
           DUBAI YACHTS - ONLINE BOOKING
         </h2>
-        <p className=" text-primary-blue text-center text-xl sm:text-2xl md:text-xl lg:text-2xl  pb-6 md:pb-12">
+        <p className=" text-primary-blue text-center text-lg sm:text-xl md:text-xl lg:text-2xl  pb-6 md:pb-12">
           Enjoy your Luxury Yacht Experience
         </p>
       </div>
         
 
       {/* DESKTOP */}
-      <div className="hidden md:block">
+      <div className="hidden md:block z-30">
         <div className="container mx-auto p-0">
-          <div className="grid grid-col-1 md:grid-cols-2 lg:gap-10 md:gap-4">
+          <div className="grid grid-col-1 md:grid-cols-2 lg:grid-cols-3 lg:gap-6 md:gap-4">
             {!loading &&
               data?.products?.map((product) => (
                 <div
                   key={product.id}
-                  className="flex flex-col border border-gray-400 xl:p-8 3xl:p-16 p-5 rounded-lg shadow-custom"
+                  className="flex flex-col p-5 rounded-lg shadow-custom bg-white"
                 >
                   <Link  href={`/yacht-rentals/${product.slug}`}>
-                  <h3 className="xl:text-4xl md:text-lg  font-bold">
+                  <h3 className="md:text-lg  font-bold">
                     {product.translations?.[locale].name_of_yacht}
                   </h3>
                   </Link>
+                  <div className="relative">
+                    {/* Yacht Image */}
                   <Link  href={`/yacht-rentals/${product.slug}`}>
                   <Image 
                     src={`https://www.centauruscharter.net/product/images/${product.image}`}
@@ -98,61 +101,67 @@ export default function Home() {
 
                   </Link>
 
-                  <div className="grid grid-cols-2 lg:grid-cols-4 items-center gap-0 rounded-lg shadow-md mb-7 mt-5">
+                  <div className="absolute grid grid-cols-3 items-center gap-0 rounded-lg center-absolute -bottom-5 left-0 right-0 px-5">
                     {/* Model */}
-                    <div className="bg-primary-blue text-white p-1 xl:p-2.5 flex flex-col items-center xl:rounded-l-lg">
-                      <span className="font-bold  text-sm">
+                    <div className="bg-[#f1f1f1] text-primary-grey p-1 xl:p-2 flex flex-col items-center rounded-l-lg">
+                      <span className="text-xs">
                         Model:
                       </span>
-                      <span className="font-semibold  text-sm xl:text-xs text-primary-yellow">
+                      <span className="font-bold text-sm text-black">
                         {product.translations?.[locale].model}
                       </span>
                     </div>
 
                     {/* Length */}
-                    <div className="bg-primary-blue text-white p-1 xl:p-2 flex flex-col items-center">
-                      <span className="font-bold  text-sm">
+                    <div className="bg-[#f1f1f1] text-primary-grey p-1 xl:p-2 flex flex-col items-center">
+                      <span className="text-xs">
                         Length:
                       </span>
-                      <span className="font-semibold  text-sm text-primary-yellow">
+                      <span className="font-bold text-sm text-black">
                         {product.translations?.[locale].size}
                       </span>
                     </div>
 
                     {/* Guests */}
-                    <div className="bg-primary-blue text-white p-1 xl:p-2 flex flex-col items-center">
-                      <span className="font-bold  text-sm">
+                    <div className="bg-[#f1f1f1] text-primary-grey p-1 xl:p-2 flex flex-col items-center rounded-r-lg">
+                      <span className="text-xs">
                         Guests:
                       </span>
-                      <span className="font-semibold  text-sm text-primary-yellow">
+                      <span className="font-bold text-sm text-black text-primary-grey">
                         {product.translations?.[locale].guests}
                       </span>
                     </div>
-
-                    {/* Good For */}
-                    <div className="bg-primary-yellow text-primary-blue p-1 xl:p-2 flex flex-col items-center xl:rounded-r-lg">
-                      <span className=" text-sm">Per Hour:</span>
-                      <span className="font-semibold  text-sm">
-					  {product.per_hour_price.toLocaleString()} +VAT
-                      </span>
                     </div>
                   </div>
-                  <div className="flex flex-row justify-between items-center">
+                  <div className="flex flex-row justify-between z-10 mt-12">
                     <div>
-                      <div className=" font-bold">
+                      <div className="text-sm font-semibold mt-3 mb-2">
                         Trip inclusions from 3 hours onwards:
                       </div>
-                      <ol className="list-disc ml-7 text-xs font-bold ">
+                      <div>
+                      <ol className="text-xs">
                         <li>
                           {" "}
                           Hops, Wines, Bubbly Drinks, Coffee, Tea, Water, &
                           Softdrinks
                         </li>
-                        <li> Transfer (upon request)</li>
-                        <li> Canapés & Snacks (additional charges apply)</li>
                       </ol>
+                      </div>
+                      <div className="text-sm font-semibold mt-3 mb-2">
+                        Extras: <span className="text-xs text-primary-grey font-normal">(additional charges apply)</span> 
+                      </div>
+                      <div>
+                      <ol className="text-xs">
+                        <li>
+                          {" "}
+                          Transfer
+                        </li>
+                        <li>Canapés & Snacks</li>
+                        <li>DJ</li>
+                      </ol>
+                      </div>
+                      
                     </div>
-
                     <div>
                       <Link
                         href={
@@ -162,13 +171,25 @@ export default function Home() {
                         <img
                           src="/centaurus_link.svg"
                           alt="centaurus link"
-                          className="w-[10rem] xl:mt-3"
+                          className="w-[8rem]"
                         />
                       </Link>
+                      <div className="flex flex-col items-center justify-center">
+                      <span className=" text-primary-blue-2 text-xs text-center">
+                        <a href="https://www.centauruscharter.com/terms-and-condition" target="_blank">T&C’s Apply</a>
+                      </span>
+                    </div>
                     </div>
                   </div>
 
-                  <div className="flex flex-row justify-between items-center mt-3">
+                  <div className="flex flex-row justify-between items-center z-20 border-t border-gray-400 pt-3 mt-5">
+                    {/* Price per Hour */}
+                    <div className="p-1 xl:p-2 flex flex-col">
+                      <span className=" text-sm">Price per hour:</span>
+                      <span className="font-bold text-lg lg:text-xl text-primary-red">
+                      AED {product.per_hour_price.toLocaleString()}
+                      </span>
+                    </div>
                     <div className="pt-3">
                    
 
@@ -176,16 +197,11 @@ export default function Home() {
   href={`https://fareharbor.com/embeds/book/centauruscharter/items/${product.fareharbor_id}/?full-items=yes&flow=645487`}
   target="_self"
   rel="noopener noreferrer"
-  className="yellow-solid-button "
+  className="blue-solid-button "
 >
   Book Now
 </a>
 
-                    </div>
-                    <div className="flex flex-col items-center justify-center">
-                      <span className=" text-primary-blue-2 text-xs text-center mt-6 mr-3">
-                        T&C’s Apply
-                      </span>
                     </div>
                   </div>
                 </div>
@@ -193,6 +209,7 @@ export default function Home() {
           </div>
         </div>
       </div>
+      
       {/* MOBILE */}
       <div className="md:hidden block">
         <Yachtmobilecarousal/>
@@ -210,7 +227,18 @@ export default function Home() {
                   enjoy drinks on the deck while watching the sunset. Come cruise with
                   us.
                 </p>
-
+{/* Background SVG in Front */}
+<div
+        className="absolute inset-0 z-[-10]"
+        style={{
+          backgroundImage: "url('/images/bg-svg-blue.svg')",
+          backgroundRepeat: "no-repeat",
+          backgroundPosition: "top",
+          backgroundSize: "contain",
+          backgroundAttachment: "fixed",
+        }}
+      ></div>
+      </div>
 
 
 
@@ -349,7 +377,7 @@ export default function Home() {
     }}
   >
     {/* SVG Divider */}
-    <div className="divider-top absolute w-full">
+    <div className="divider-top absolute w-full -top-2">
       <svg
         data-name="Layer 1"
         xmlns="http://www.w3.org/2000/svg"
@@ -359,8 +387,8 @@ export default function Home() {
       >
         <path
           d="M985.66,92.83C906.67,72,823.78,31,743.84,14.19c-82.26-17.34-168.06-16.33-250.45.39-57.84,11.73-114,31.07-172,41.86A600.21,600.21,0,0,1,0,27.35V120H1200V95.8C1132.19,118.92,1055.71,111.31,985.66,92.83Z"
-          className="shape-fill"
-          fill="white" // Adjust the color as needed
+          className="shape-fill fill-white"
+          
         ></path>
       </svg>
     </div>

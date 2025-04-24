@@ -15,7 +15,7 @@ const page = () => {
           />
         </div>
       </div>
-      <div class="container mx-auto">
+      <div className="container mx-auto">
         <div className="flex items-center justify-center pt-10">
           <h1 className=" text-primary-blue text-center">
             {" "}

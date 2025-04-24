@@ -8,12 +8,17 @@
   --background: #ffffff;
   --foreground: #171717;
   --font-montserrat: 'Montserrat', sans-serif;
+  --font-inter: 'Inter', sans-serif;
+
 }
 /* globals.css */
 
 
 body {
   font-family: var(--font-montserrat);
+}
+p,li,span {
+  font-family: var(--font-inter);
 }
 
 .video-layout {
@@ -34,8 +39,8 @@ body {
 .blue-solid-button {
   @apply  py-3 px-6
           text-base font-bold tracking-wider uppercase
-          text-primary-yellow bg-primary-blue
-          hover:bg-primary-yellow hover:text-primary-blue hover:scale-105
+          text-white bg-primary-blue-2
+          hover:bg-primary-blue hover:scale-105
           rounded-md shadow
           transition duration-150 ease-in-out transform ;
 }
@@ -290,15 +295,20 @@ footer a:hover {
   padding-top: 100px;
   padding-bottom: 20px;
 }
+.divider-top-outside {
+  overflow: hidden;
+  line-height: 0;
+  left: 0;
+  right: 0;
+}
 .divider-top {
   position: absolute;
   overflow: hidden;
   line-height: 0;
   transform: rotate(180deg);
-  top:-2px;
 }
 
-.divider-top svg {
+.divider-top svg, .dividider-top-outside svg {
   display: block;
 }
 

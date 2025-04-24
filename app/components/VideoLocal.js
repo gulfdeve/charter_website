@@ -15,7 +15,7 @@ export default function VideoLocal({ filename, section }) {
   }, []);
 
   return (
-    <div className="w-full mx-auto relative nav-space">
+    <div className="w-full mx-auto nav-space relative overflow-hidden">
       {/* Local Video as Background */}
       <div className="" style={{ pointerEvents: "none" }}>
         <video
@@ -35,7 +35,7 @@ export default function VideoLocal({ filename, section }) {
           Your browser does not support the video tag.
         </video>
       </div>
-      
+    
           
       {section === "shared-tours" ? (
         <>
@@ -67,7 +67,34 @@ export default function VideoLocal({ filename, section }) {
         className="hidden lg:block absolute inset-0 bg-black opacity-50"
         style={{ pointerEvents: "none" }}
         ></div>
-        <div className="block text-center mt-10 xxs:mb-10 lg:absolute lg:-translate-x-2/4 lg:-translate-y-2/4 lg:left-2/4 lg:top-2/4 lg:mt-0">
+        {/* Blue Background SVG in Front */}
+      <div
+        className="absolute inset-0 z-30"
+        style={{
+          backgroundImage: "url('/images/bg-svg-blue.svg')",
+          backgroundRepeat: "no-repeat",
+          backgroundPosition: "top",
+          backgroundSize: "contain",
+          backgroundAttachment: "fixed",
+        }}
+      ></div>
+        {/* White Background SVG in Front */}
+        <div
+        className="hidden: lg:absolute inset-0 z-40"
+        style={{
+          backgroundImage: "url('/images/bg-svg-white.svg')",
+          backgroundRepeat: "no-repeat",
+          backgroundPosition: "top",
+          backgroundSize: "contain",
+          backgroundAttachment: "fixed",
+        }}
+      ></div>
+        <div className="hidden lg:block divider-bottom absolute z-20 w-full bottom-2 xl:bottom-0 z-10"><svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none" className="w-full "><path d="M1200,104.64v15.36H322.45L0,121.91v-21.91s129.69-39.79,154.85-45.98c26.37-6.49,114.85-29.12,171.58-36.22,109.89-13.81,219.26-7.58,323.57,16.47,8.58,2.22,17.21,4.36,25.93,6.36,151.94,34.99,314.51,32.24,473.99-15.34,15.92-5.2,43.33-16.69,50.08-19.75.18,5.52,0,99.1,0,99.1Z" className="fill-primary-blue"></path></svg></div>
+
+<div className="hidden lg:block divider-bottom absolute z-20 w-full bottom-0 xl:-bottom-2 z-10"><svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none" className="w-full "><path d="M1200,104.64v15.36H322.45L0,121.91v-21.91s129.69-39.79,154.85-45.98c26.37-6.49,114.85-29.12,171.58-36.22,109.89-13.81,219.26-7.58,323.57,16.47,8.58,2.22,17.21,4.36,25.93,6.36,151.94,34.99,314.51,32.24,473.99-15.34,15.92-5.2,43.33-16.69,50.08-19.75.18,5.52,0,99.1,0,99.1Z" className="fill-white"></path></svg></div>
+
+
+        <div className="block text-center mt-10 xxs:mb-10 lg:absolute lg:-translate-x-2/4 lg:-translate-y-2/4 lg:left-2/4 lg:top-2/4 lg:mt-0 z-40">
           <h1 className="uppercase text-4xl font-bold mb-4 text-primary-blue-2 lg:text-white lg:text-[32px] p-0 xxs:px-10 md:px-0 xxs:text-2xl xs:text-xl s:text-2xl sm:text-2xl md:text-3xl 2xl:text-4xl    ">
           centaurus yacht rental dubai<br />
           </h1>
