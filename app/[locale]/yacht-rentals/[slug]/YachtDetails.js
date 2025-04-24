@@ -5,6 +5,59 @@ import { useLocale, useTranslations } from "next-intl";
 
 export default function YachtDetails({ yachtDetails, product, locale, whatsappUrl }) {
 	const t = useTranslations();
+  const locationMap = {
+    '56ft-vassia': {
+      berth: 'U-32 Berth, Dubai Marina Walk (Near Spinneys)',
+      address: 'Dubai Marina, United Arab Emirates',
+      mapUrl: 'https://maps.app.goo.gl/QSj2E2dSANthgjSx9'
+    },
+    '58ft-etosha': {
+      berth: 'U-27 Berth, Dubai Marina Walk, Near Spinneys',
+      address: 'Dubai Marina, United Arab Emirates',
+      mapUrl: 'https://maps.app.goo.gl/QSj2E2dSANthgjSx9'
+    },
+    '36ft-thunder': {
+      berth: 'U-47 Berth, Dubai Marina Walk, Near Spinneys',
+      address: 'United Arab Emirates',
+      mapUrl: 'https://maps.app.goo.gl/QSj2E2dSANthgjSx9'
+    },
+    '61ft-silvercreek': {
+      berth: 'B-B09 Berth, D Marin, Dubai Harbour',
+      address: 'Dubai Harbour, United Arab Emirates',
+      mapUrl: 'https://maps.app.goo.gl/7XosKc57ijvNTVeY9'
+    },
+    '56ft-lagoona': {
+      berth: 'BB07 Berth, D Marin, Dubai Harbour',
+      address: 'United Arab Emirates',
+      mapUrl: 'https://maps.app.goo.gl/7XosKc57ijvNTVeY9'
+    },
+    '40ft-yacht-Riverside': {
+      berth: 'B-D26 Berth, Near Dockmaster 1 Building, Dubai Harbour',
+      address: 'United Arab Emirates',
+      mapUrl: 'https://maps.app.goo.gl/oGk6YfdTv1PtRCwD7'
+    },
+    '36ft-Storm': {
+      berth: 'A-G36 Berth, Dubai Harbour, Near Dockmaster 1 Building',
+      address: 'Dubai Harbour, United Arab Emirates',
+      mapUrl: 'https://maps.app.goo.gl/bKrvqKZUkhfr9h8x9'
+    },
+    '118ft-poseidon': {
+      berth: 'A-B05 Berth, Dubai Harbour, Near Harbour Bridge',
+      address: 'Dubai Harbour, United Arab Emirates',
+      mapUrl: 'https://maps.app.goo.gl/3KAyipRTujeWihAG6'
+    },
+    '77ft-dionysos': {
+      berth: 'D-A18 Berth, Dubai Harbour, Near Bar Du Port',
+      address: 'Dubai Harbour, United Arab Emirates',
+      mapUrl: 'https://maps.app.goo.gl/RG7xmTtjcYf7syVQ8'
+    },
+    '85ft-yacht-Kronos': {
+      berth: 'E06 G gate - D-Marin - Marasi Dr - Bay Marina - Dubai',
+      address: 'Dubai, United Arab Emirates',
+      mapUrl: 'https://maps.app.goo.gl/XVPwMjj8uWpwocsh6'
+    }
+  };
+  const loc = locationMap[product.slug] || {};
 	return (
     <div className="flex flex-col lg:flex-row w-full items-start lg:justify-between py-3">
       <div className="flex flex-col lg:items-start w-full lg:justify-start lg:w-1/2">
@@ -44,15 +97,21 @@ export default function YachtDetails({ yachtDetails, product, locale, whatsappUr
             </div>
             <div className="uppercase">
               <h3 className="font-bold text-base">Yacht location:</h3>
-              <p className="text-blue-800">
-                <a
-                  href="https://www.google.com/maps/place/CENTAURUS+CHARTER+-+Yachts+%26+Boats+Rental+Dubai+Harbour"
-                  className="hover:text-blue-600"
-                  target="_blank"
-                >
-                  U-32 berth dubai marina (near spinneys)
-                </a>
-              </p>
+              {loc.mapUrl ? (
+                <p className="text-blue-800">
+                  <a
+                    href={loc.mapUrl}
+                    className="hover:text-blue-600"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    {loc.berth}
+                  </a>
+                </p>
+              ) : (
+                <p className="text-gray-500">Location not available</p>
+              )}
+              {loc.address && <p>{loc.address}</p>}
             </div>
           </div>
           <div className="flex flex-col md:flex-row justify-center gap-4 mt-10">
