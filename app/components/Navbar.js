@@ -15,9 +15,8 @@ export default function Navbar() {
   const locale = useLocale();
   const pathname = usePathname();
   const router = useRouter();
-  const [isLanguageDropdownOpen, setLanguageDropdownOpen] = useState(false);
-  const [isPrivateYachtsOpen, setPrivateYachtsOpen] = useState(false);
-  const [isExperiencesOpen, setExperiencesOpen] = useState(false);
+  const [istheDropdownOpen, setIsDropdownOpen] = useState(false);
+  const [isDropdownOpen, setDropdownOpen] = useState(false);
   const [isSticky, setSticky] = useState(false);
   const [mobileDropdownOpen, setMobileDropdownOpen] = useState(false);
   const [submenuOpen, setSubmenuOpen] = useState(null);
@@ -33,8 +32,9 @@ export default function Navbar() {
 
   const handleLanguageChange = (lang) => {
     router.replace(pathname, { locale: lang });
-    setLanguageDropdownOpen(false);
+    setDropdownOpen(false);
   };
+
   const handleScroll = () => {
     if (window.scrollY > 100) {
       setSticky(true);
@@ -42,13 +42,13 @@ export default function Navbar() {
       setSticky(false);
     }
   };
+
   useEffect(() => {
     window.addEventListener("scroll", handleScroll);
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
-  // Refs for dropdown containers
 
   const languages = [
     { code: "en", name: "English", flag: "/uk.svg" },
@@ -58,33 +58,29 @@ export default function Navbar() {
   ];
 
   const currentLanguage = languages.find((lang) => lang.code === locale);
-  const languageDropdownRef = useRef(null);
+  const dropdownRef = useRef(null);
   const privateYachtsRef = useRef(null);
   const experiencesRef = useRef(null);
-  // Handle clicks outside dropdowns
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (
-        languageDropdownRef.current &&
-        !languageDropdownRef.current.contains(event.target) &&
-        privateYachtsRef.current &&
-        !privateYachtsRef.current.contains(event.target) &&
-        experiencesRef.current &&
-        !experiencesRef.current.contains(event.target)
+        dropdownRef.current && !dropdownRef.current.contains(event.target) &&
+        privateYachtsRef.current && !privateYachtsRef.current.contains(event.target) &&
+        experiencesRef.current && !experiencesRef.current.contains(event.target)
       ) {
-        setLanguageDropdownOpen(false);
-        setPrivateYachtsOpen(false);
-        setExperiencesOpen(false);
+        setIsDropdownOpen(false);      // For Language
+        setSubmenuOpen(null);          // For all nav dropdowns
       }
     };
-
+  
     document.addEventListener("mousedown", handleClickOutside);
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
+  
 
   return (
     <>
-      {/* Desktop Navbar */}
+      {/* Fixed Single Navbar */}
       <div className="fixed top-0 left-0 w-full z-50 bg-white shadow-md lg:block hidden gradient-custom">
         <div className="container lg:max-w-none px-0 mx-auto">
           <nav className="flex items-center justify-around">
@@ -104,28 +100,23 @@ export default function Navbar() {
             {/* Main Menu Items */}
             <div className="flex items-center text-xs xxl:text-base">
               <ul className="flex space-x-6 lg:space-x-8 text-xs xxl:text-base font-semibold">
-                {/* Private Yachts Dropdown */}
-                <li
-                  className="relative group"
-                  ref={privateYachtsRef}
-                  onMouseEnter={() => setPrivateYachtsOpen(true)}
-                  onMouseLeave={() => setPrivateYachtsOpen(false)}
-                >
+                {/* PRIVATE YACHTS with Dropdown */}
+                <li className="relative group" ref={privateYachtsRef}>
                   <span
                     className={`flex items-center justify-between cursor-pointer gap-1 py-2 uppercase border-b-2 transition-all duration-200 ${
-                      pathname === "/yacht-rentals" ||
-                      pathname.startsWith("/yacht-rentals/")
-                        ? "text-primary-blue border-primary-yellow font-semibold"
+                      pathname === "/yacht-rentals" || pathname.startsWith("/yacht-rentals/")
+                         ? "text-primary-blue border-primary-yellow font-semibold"
                         : "text-primary-blue border-transparent"
                     }`}
                   >
-                    <Link href="/yacht-rentals" className="tracking-wider">
+                    <Link
+                      className="tracking-wider"
+                      href={`/yacht-rentals`}
+                    >
                       {t("navbar.private-yachts")}
                     </Link>
                     <svg
-                      className={`w-4 h-4 transform transition-transform duration-300 ${
-                        isPrivateYachtsOpen ? "rotate-180" : ""
-                      }`}
+                      className="w-4 h-4 transform group-hover:rotate-180 transition-transform duration-300"
                       xmlns="http://www.w3.org/2000/svg"
                       fill="none"
                       viewBox="0 0 24 24"
@@ -139,79 +130,69 @@ export default function Navbar() {
                       />
                     </svg>
                   </span>
-                  {isPrivateYachtsOpen && (
-                    <ul className="absolute top-full left-0 w-60 bg-white text-black shadow-lg rounded-lg overflow-hidden border border-gray-200 z-50">
-                      {!loading &&
-                        data?.products?.map((product) => (
-                          <li
-                            key={product.id}
-                            onClick={() => setPrivateYachtsOpen(false)}
-                            className="cursor-pointer text-xs font-medium text-primary-grey hover:text-white hover:bg-primary-blue transition-all duration-300"
+                  <ul className="absolute top-full left-0 w-60 bg-white text-black shadow-lg rounded-lg overflow-hidden border border-gray-200 hidden group-hover:block z-50">
+                    {!loading &&
+                      data?.products?.map((product) => (
+                        <li
+                          key={product.id}
+                          className="cursor-pointer text-xs font-medium text-primary-grey hover:text-white hover:bg-primary-blue transition-all duration-300"
+                        >
+                          <Link
+                            href={`/yacht-rentals/${product.slug}`}
+                            className="py-2 px-4 block"
                           >
-                            <Link
-                              href={`/yacht-rentals/${product.slug}`}
-                              className="py-2 px-4 block"
-                            >
-                              {product.translations?.[locale]?.name_of_yacht}
-                            </Link>
-                          </li>
-                        ))}
-                    </ul>
-                  )}
+                            {product.translations?.[locale]?.name_of_yacht}
+                          </Link>
+                        </li>
+                      ))}
+                  </ul>
                 </li>
 
-                {/* Buy Yacht */}
+                {/* BUY A YACHT */}
                 <li>
                   <Link
                     href="/yachts-for-sale-dubai"
                     className={`py-2 inline-block tracking-wider uppercase border-b-2 transition-all duration-200 ${
-                      pathname === "/yachts-for-sale-dubai" ||
-                      pathname.startsWith("/yachts-for-sale-dubai/")
+                      pathname === "/yachts-for-sale-dubai" || pathname.startsWith("/yachts-for-sale-dubai/")
                         ? "text-primary-blue border-primary-yellow font-semibold"
                         : "text-primary-blue border-transparent hover:border-primary-yellow"
-                    }`}
+                    }`} 
                   >
                     {t("navbar.buy-a-yacht")}
                   </Link>
                 </li>
 
-                {/* Shared Tours */}
-                <li>
+                {/* SHARED TOURS */}
+                <li> 
                   <Link
                     href="/shared-yacht-tours-dubai"
                     className={`py-2 inline-block tracking-wider uppercase border-b-2 transition-all duration-200 ${
-                      pathname === "/shared-yacht-tours-dubai" ||
-                      pathname.startsWith("/shared-yacht-tours-dubai/")
+                      pathname === "/shared-yacht-tours-dubai" || pathname.startsWith("/shared-yacht-tours-dubai/")
                         ? "text-primary-blue border-primary-yellow font-semibold"
                         : "text-primary-blue border-transparent hover:border-primary-yellow"
-                    }`}
+                    }`} 
                   >
                     {t("navbar.shared-tours")}
                   </Link>
                 </li>
 
-                {/* Experiences Dropdown */}
-                <li
-                  className="relative group"
-                  ref={experiencesRef}
-                  onMouseEnter={() => setExperiencesOpen(true)}
-                  onMouseLeave={() => setExperiencesOpen(false)}
-                >
+                {/* EXPERIENCES with Dropdown */}
+                <li className="relative group"ref={experiencesRef}>
                   <span
-                    className={`flex items-center justify-between cursor-pointer gap-1 py-2 border-b-2 transition-all duration-200 ${
-                      pathname === "/yacht-trips" ||
-                      pathname.startsWith("/yacht-trips/")
+                    className={`flex items-center justify-between cursor-pointer gap-1 py-2 border-b-2 transition-all duration-200  ${
+                      pathname === "/yacht-trips" || pathname.startsWith("/yacht-trips/")
                         ? "text-primary-blue border-primary-yellow font-semibold"
                         : "text-primary-blue border-transparent"
                     }`}
                   >
-                    <Link href="/yacht-trips" className="tracking-wider">
+                    <Link
+                      className="tracking-wider"
+                      href={`/yacht-trips`}
+                    >
                       {t("navbar.experiences")}
                     </Link>
                     <svg
-                      className={`w-4 h-4 transform transition-transform duration-300 ${
-                        isExperiencesOpen ? "rotate-180" : ""
-                      }`}
+                      className="w-4 h-4 transform group-hover:rotate-180 transition-transform duration-300"
                       xmlns="http://www.w3.org/2000/svg"
                       fill="none"
                       viewBox="0 0 24 24"
@@ -225,70 +206,64 @@ export default function Navbar() {
                       />
                     </svg>
                   </span>
-                  {isExperiencesOpen && (
-                    <ul className="absolute top-full left-0 w-60 bg-white text-black transition-all duration-150 shadow-lg rounded-lg overflow-hidden border border-gray-200 z-50">
-                      <li
-                        onClick={() => setExperiencesOpen(false)}
-                        className="cursor-pointer uppercase text-xs font-medium text-primary-grey hover:text-white hover:bg-primary-blue transition-all duration-300"
-                      >
-                        <Link href="/watersports" className="py-2 px-4 block">
-                          {t("navbar.water-sports")}
-                        </Link>
-                      </li>
-                      {!loading &&
-                        data?.experiences?.map((experience) => (
-                          <li
-                            key={experience.id}
-                            onClick={() => setExperiencesOpen(false)}
-                            className="cursor-pointer text-xs font-medium text-primary-grey hover:text-white hover:bg-primary-blue transition-all duration-300"
+                  <ul className="absolute top-full left-0 w-60 bg-white text-black transition-all duration-150 shadow-lg rounded-lg overflow-hidden border border-gray-200 hidden group-hover:block z-50">
+                    <li className="cursor-pointer capitalize text-xs font-medium text-primary-grey hover:text-white hover:bg-primary-blue transition-all duration-300">
+                      <Link href="/watersports" className="py-2 px-4 block">
+                        {t("navbar.water-sports")}
+                      </Link>
+                    </li>
+                    {!loading &&
+                      data?.experiences?.map((experience) => (
+                        <li
+                          key={experience.id}
+                          className="cursor-pointer text-xs font-medium text-primary-grey hover:text-white hover:bg-primary-blue transition-all duration-300"
+                        >
+                          <Link
+                            href={`/yacht-trips/${experience.slug}`}
+                            className="py-2 px-4 block capitalize"
                           >
-                            <Link
-                              href={`/yacht-trips/${experience.slug}`}
-                              className="py-2 px-4 block capitalize"
-                            >
-                              {experience.translations?.[locale]?.title}
-                            </Link>
-                          </li>
-                        ))}
-                    </ul>
-                  )}
+                            {experience.translations?.[locale]?.title}
+                          </Link>
+                        </li>
+                      ))}
+                  </ul>
                 </li>
 
-                {/* Offers */}
+                {/* OFFERS */}
                 <li>
-                  <Link
-                    href="/offers"
-                    className={`py-2 inline-block tracking-wider uppercase border-b-2 transition-all duration-200 ${
-                      pathname === "/offers" || pathname.startsWith("/offers/")
-                        ? "text-primary-blue border-primary-yellow font-semibold"
-                        : "text-primary-blue border-transparent hover:border-primary-yellow"
-                    }`}
-                  >
-                    {t("navbar.offers")}
-                  </Link>
-                </li>
+                <Link
+                  href="/offers"
+                  className={`py-2 inline-block tracking-wider uppercase border-b-2 transition-all duration-200 ${
+                    pathname === "/offers" || pathname.startsWith("/offers/")
+                      ? "text-primary-blue border-primary-yellow font-semibold"
+                      : "text-primary-blue border-transparent hover:border-primary-yellow"
+                  }`}
+                >
+                  {t("navbar.offers")}
+                </Link>
+              </li>
 
-                {/* Events */}
+                {/* EVENTS */}
                 <li>
-                  <Link
-                    href="/events"
-                    className={`py-2 inline-block tracking-wider uppercase border-b-2 transition-all duration-200 ${
+                <Link
+                  href="/events"
+                  className={`py-2 inline-block tracking-wider uppercase border-b-2 transition-all duration-200 ${
                       pathname === "/events" || pathname.startsWith("/events/")
                         ? "text-primary-blue border-primary-yellow font-semibold"
                         : "text-primary-blue border-transparent hover:border-primary-yellow"
                     }`}
+
                   >
-                    {t("navbar.events")}
+                    EVENTS
                   </Link>
                 </li>
 
-                {/* Contact */}
+                {/* CONTACT US */}
                 <li>
                   <Link
                     href="/contact"
                     className={`py-2 inline-block tracking-wider uppercase border-b-2 transition-all duration-200 ${
-                      pathname === "/contact" ||
-                      pathname.startsWith("/contact/")
+                      pathname === "/contact" || pathname.startsWith("/contact/")
                         ? "text-primary-blue border-primary-yellow font-semibold"
                         : "text-primary-blue border-transparent hover:border-primary-yellow"
                     }`}
@@ -296,28 +271,40 @@ export default function Navbar() {
                     {t("navbar.contact-us")}
                   </Link>
                 </li>
+
               </ul>
             </div>
 
             {/* Contact & Language Section */}
             <div className="flex items-center gap-4">
               {/* Contact Icons */}
-              <Link href={header_email || "#"} aria-label="Email">
-                <MdOutlineMail className="text-primary-blue-2 hover:text-primary-blue hover:scale-110 transition-transform duration-200 text-2xl" />
+              <Link aria-label="email icon" href={header_email || "#"}>
+                <MdOutlineMail
+                  size={24}
+                  className="text-primary-blue-2 hover:text-primary-blue hover:scale-110 transition-transform duration-200"
+                />
               </Link>
-              <Link href={header_phone_number_url || "#"} aria-label="Phone">
-                <MdOutlinePhone className="text-primary-blue-2 hover:text-primary-blue hover:scale-110 transition-transform duration-200 text-2xl" />
+			  <Link
+                aria-label="phone icon"
+                href={header_phone_number_url || "#"}
+              >
+                <MdOutlinePhone
+                  size={26}
+                  className="text-primary-blue-2 hover:text-primary-blue  hover:scale-110 transition-transform duration-200"
+                />
               </Link>
-              <Link href={header_whatsapp_url || "#"} aria-label="WhatsApp">
-                <IoLogoWhatsapp className="text-primary-blue-2 hover:text-primary-blue hover:scale-110 transition-transform duration-200 text-2xl" />
+              <Link aria-label="whatsapp icon" href={t("header.whatsapp_url")}>
+                <IoLogoWhatsapp 
+                  size={24}
+                  className="text-primary-blue-2 hover:text-primary-blue hover:scale-110 transition-transform duration-200"
+                />
               </Link>
 
               {/* Language Dropdown */}
               <div
-                className="relative group"
-                ref={languageDropdownRef}
-                onMouseEnter={() => setLanguageDropdownOpen(true)}
-                onMouseLeave={() => setLanguageDropdownOpen(false)}
+                className="relative"
+                onMouseEnter={() => setDropdownOpen(true)}
+                onMouseLeave={() => setDropdownOpen(false)}
               >
                 <div className="p-2 cursor-pointer flex items-center gap-1">
                   <img
@@ -325,27 +312,19 @@ export default function Navbar() {
                     alt={locale}
                     className="w-5 h-5"
                   />
-                  <span className="text-xs font-medium">
-                    {locale.toUpperCase()}
-                  </span>
+                  <span className="text-xs font-medium">{locale.toUpperCase()}</span>
                 </div>
-                {isLanguageDropdownOpen && (
-                  <ul className="absolute right-0 w-36 bg-white text-primary-blue border rounded-md shadow-lg z-20 text-xs">
+                {isDropdownOpen && (
+                  <ul className="absolute text-xs right-0 w-36 bg-white text-primary-blue border rounded-md shadow-lg z-20">
                     {languages.map((lang) => (
                       <li
                         key={lang.code}
-                        onClick={(e) => {
-                          e.stopPropagation();
-                          handleLanguageChange(lang.code);
-                        }}
+                        onClick={() => handleLanguageChange(lang.code)}
                         className="flex items-center gap-2 p-2 cursor-pointer hover:bg-gray-100"
                       >
-                        <img
-                          src={lang.flag}
-                          alt={lang.name}
-                          className="w-4 h-4"
-                        />
-                        {lang.name.toUpperCase()} - {lang.code.toUpperCase()}
+                        <img src={lang.flag} alt={lang.name} className="w-4 h-4" />
+                        {lang.name.toUpperCase()} - 
+						{lang.code.toUpperCase()}
                       </li>
                     ))}
                   </ul>
@@ -359,8 +338,8 @@ export default function Navbar() {
       {/* Mobile Navbar */}
       <MobileNavbar
         currentLanguage={currentLanguage}
-        isLanguageDropdownOpen={isLanguageDropdownOpen}
-        setLanguageDropdownOpen={setLanguageDropdownOpen}
+        istheDropdownOpen={istheDropdownOpen}
+        setIsDropdownOpen={setIsDropdownOpen}
         mobileDropdownOpen={mobileDropdownOpen}
         setMobileDropdownOpen={setMobileDropdownOpen}
         languages={languages}
