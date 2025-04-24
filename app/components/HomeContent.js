@@ -133,7 +133,7 @@ export default function Home() {
                     </div>
                     </div>
                   </div>
-                  <div className="flex flex-row justify-between z-10 mt-12">
+                  <div className="flex flex-row justify-between items-end z-10 mt-12">
                     <div>
                       <div className="text-sm font-semibold mt-3 mb-2">
                         Trip inclusions from 3 hours onwards:
@@ -171,7 +171,7 @@ export default function Home() {
                         <img
                           src="/centaurus_link.svg"
                           alt="centaurus link"
-                          className="w-[8rem]"
+                          className="w-[11rem]"
                         />
                       </Link>
                       <div className="flex flex-col items-center justify-center">

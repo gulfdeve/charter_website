@@ -78,17 +78,6 @@ export default function VideoLocal({ filename, section }) {
           backgroundAttachment: "fixed",
         }}
       ></div>
-        {/* White Background SVG in Front */}
-        <div
-        className="hidden: lg:absolute inset-0 z-40"
-        style={{
-          backgroundImage: "url('/images/bg-svg-white.svg')",
-          backgroundRepeat: "no-repeat",
-          backgroundPosition: "top",
-          backgroundSize: "contain",
-          backgroundAttachment: "fixed",
-        }}
-      ></div>
         <div className="hidden lg:block divider-bottom absolute z-20 w-full bottom-2 xl:bottom-0 z-10"><svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none" className="w-full "><path d="M1200,104.64v15.36H322.45L0,121.91v-21.91s129.69-39.79,154.85-45.98c26.37-6.49,114.85-29.12,171.58-36.22,109.89-13.81,219.26-7.58,323.57,16.47,8.58,2.22,17.21,4.36,25.93,6.36,151.94,34.99,314.51,32.24,473.99-15.34,15.92-5.2,43.33-16.69,50.08-19.75.18,5.52,0,99.1,0,99.1Z" className="fill-primary-blue"></path></svg></div>
 
 <div className="hidden lg:block divider-bottom absolute z-20 w-full bottom-0 xl:-bottom-2 z-10"><svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none" className="w-full "><path d="M1200,104.64v15.36H322.45L0,121.91v-21.91s129.69-39.79,154.85-45.98c26.37-6.49,114.85-29.12,171.58-36.22,109.89-13.81,219.26-7.58,323.57,16.47,8.58,2.22,17.21,4.36,25.93,6.36,151.94,34.99,314.51,32.24,473.99-15.34,15.92-5.2,43.33-16.69,50.08-19.75.18,5.52,0,99.1,0,99.1Z" className="fill-white"></path></svg></div>
