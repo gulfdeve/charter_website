@@ -1,11 +1,13 @@
 import React, { useState, forwardRef, useImperativeHandle, useEffect } from "react";
 import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/style.css";
+import { isValidPhoneNumber, parsePhoneNumberFromString } from "libphonenumber-js";
 
 const Modal3 = forwardRef(({ idName, idValue, selectedVessel, rentalPeriod }, ref) => {
   const [isVisible, setIsVisible] = useState(false);
   const [fullName, setFullName] = useState("");
   const [phoneNumber, setPhoneNumber] = useState("");
+  const [phoneCountry, setPhoneCountry] = useState({ countryCode: "ae", format: "" });
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
   const [errors, setErrors] = useState({});
@@ -24,10 +26,17 @@ const Modal3 = forwardRef(({ idName, idValue, selectedVessel, rentalPeriod }, re
     const newErrors = {};
     if (!fullName.trim()) newErrors.fullName = "Full Name is required.";
     if (!phoneNumber.trim()) {
-      newErrors.phoneNumber = "Phone Number is required.";
-    } else if (phoneNumber.replace(/\D/g, "").length < 7) {
-      newErrors.phoneNumber = "Please enter a valid phone number.";
-    }
+        newErrors.phoneNumber = "Phone Number is required.";
+      } else {
+        try {
+        const parsedPhone = parsePhoneNumberFromString("+" + phoneNumber);
+        if (!parsedPhone || !parsedPhone.isValid()) {
+          newErrors.phoneNumber = "Please enter a valid phone number.";
+        }
+        } catch (e) {
+        newErrors.phoneNumber = "Please enter a valid phone number.";
+        }
+      }
     if (!email.trim()) {
       newErrors.email = "Email is required.";
     } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
@@ -142,12 +151,23 @@ console.log("Full message payload:", fullMessagePayload);
               </div>
 
               <div>
-                <PhoneInput
-                  country="ae"
+              <PhoneInput
+                  country={phoneCountry.countryCode}
                   value={phoneNumber}
-                  onChange={setPhoneNumber}
+                  onChange={(val, country) => {
+                    setPhoneNumber(val);
+                    setPhoneCountry(country);
+                  }}
                   placeholder="Enter phone number"
-                  className="flex-1 outline outline-primary-blue rounded-md bg-gray-100"
+                  isValid={(value, country) => {
+					try {
+					  const parsed = parsePhoneNumberFromString("+" + value);
+					  return parsed && parsed.isValid();
+					} catch {
+					  return false;
+					}
+				  }}
+                //   defaultErrorMessage="Please enter a valid phone number"
                   inputStyle={{
                     width: "100%",
                     padding: "20px",
