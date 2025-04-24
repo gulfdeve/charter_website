@@ -24,12 +24,12 @@ const Sociallink = () => {
         {/* Social Media Links */}
         <div className="order-1 lg:order-2 flex flex-row items-center justify-center gap-5">
           {[
-            { href: "https://www.facebook.com/centauruscharteryachtsrental/", src: "/Facebook.png", alt: "Facebook" },
-            { href: "https://twitter.com/centaurscharter", src: "/Twitter.png", alt: "Twitter" },
-            { href: "https://www.instagram.com/centauruscharter/", src: "/Instagram.png", alt: "Instagram" },
-            { href: "https://www.pinterest.com/centauruscharteryachtsdubai/", src: "/Pinterest.png", alt: "Pinterest" },
-            { href: "https://www.linkedin.com/company/centauruscharter", src: "/LinkedIn.png", alt: "LinkedIn" },
-            { href: "https://www.youtube.com/channel/UCcvuO64sGm4HxfNMZRYfScQ?view_as=subscriber", src: "/Youtube.png", alt: "Youtube" },
+            { href: "https://www.facebook.com/centauruscharteryachtsrental/", src: "/images/facebook.webp", alt: "Facebook" },
+            { href: "https://twitter.com/centaurscharter", src: "/images/twitter.webp", alt: "Twitter" },
+            { href: "https://www.instagram.com/centauruscharter/", src: "/images/instagram.webp", alt: "Instagram" },
+            { href: "https://www.pinterest.com/centauruscharteryachtsdubai/", src: "/images/pinterest.webp", alt: "Pinterest" },
+            { href: "https://www.linkedin.com/company/centauruscharter", src: "/images/linkedin.webp", alt: "LinkedIn" },
+            { href: "https://www.youtube.com/channel/UCcvuO64sGm4HxfNMZRYfScQ?view_as=subscriber", src: "/images/youtube.webp", alt: "Youtube" },
           ].map(({ href, src, alt }) => (
             <a key={href} href={href} target="_blank" rel="noopener noreferrer">
               <Image src={src} alt={alt} width={30} height={30} />

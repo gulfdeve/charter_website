@@ -97,7 +97,7 @@ export default function YachtmobileCarousal() {
                           Softdrinks
                         </li>
                       </ol>
-                      <div class="text-sm font-semibold mt-3 mb-2">Extras: <span class="text-xs text-primary-grey font-normal">(additional charges apply)</span></div>
+                      <div className="text-sm font-semibold mt-3 mb-2">Extras: <span className="text-xs text-primary-grey font-normal">(additional charges apply)</span></div>
                       <ol className="text-xs">
                       <li>Transfer</li>
                         <li>Canapés & Snacks</li>
