@@ -8,11 +8,13 @@ import { FaWhatsapp } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
 import { usePathname, Link } from "@/app/i18n/routing";
 import { useLocale, useTranslations } from "next-intl";
+import { isValidPhoneNumber, parsePhoneNumberFromString } from "libphonenumber-js";
 
 export default function Page() {
 	const [fullName, setFullName] = useState("");
 	const [email, setEmail] = useState("");
 	const [phoneNumber, setPhoneNumber] = useState("");
+  const [phoneCountry, setPhoneCountry] = useState({ countryCode: "ae", format: "" });
 	const [message, setMessage] = useState("");
 	const [subscribe, setSubscribe] = useState(false);
 	const [acceptedTerms, setAcceptedTerms] = useState(false);
@@ -26,7 +28,18 @@ export default function Page() {
     if (!fullName) errs.fullName = "Name is required";
     if (!email) errs.email = "Email is required";
     else if (!/\S+@\S+\.\S+/.test(email)) errs.email = "Email is invalid";
-    if (!phoneNumber) errs.phoneNumber = "Phone number is required";
+    if (!phoneNumber.trim()) {
+      errs.phoneNumber = "Phone Number is required.";
+    } else {
+      try {
+      const parsedPhone = parsePhoneNumberFromString("+" + phoneNumber);
+      if (!parsedPhone || !parsedPhone.isValid()) {
+        errs.phoneNumber = "Please enter a valid phone number.";
+      }
+      } catch (e) {
+        errs.phoneNumber = "Please enter a valid phone number.";
+      }
+    }
     if (!message) errs.message = "Message is required";
     if (!acceptedTerms)
       errs.acceptedTerms = "Please accept the Terms and Conditions";
@@ -162,28 +175,39 @@ export default function Page() {
                 <div>
                   {/* PhoneInput replaces the standard phone input */}
                   <PhoneInput
-                    country="ae"
-                    value={phoneNumber}
-                    onChange={setPhoneNumber}
-                    placeholder="Enter phone number"
-                    className="flex-1  rounded-md bg-gray-100"
-                    inputStyle={{
-                      width: "100%",
-                      padding: "20px",
-                      paddingLeft: "65px",
-                      border: "1px solid #ddd",
-                      borderRadius: "4px",
-                      fontFamily: "Montserrat, sans-serif",
-                    }}
-                    buttonStyle={{
-                      padding: "10px",
-                      border: "1px solid #ddd",
-                      borderRadius: "4px",
-                      fontSize: "14px",
-                      width: "60px",
-                      fontFamily: "Montserrat, sans-serif",
-                    }}
-                  />
+                  country={phoneCountry.countryCode}
+                  value={phoneNumber}
+                  onChange={(val, country) => {
+                    setPhoneNumber(val);
+                    setPhoneCountry(country);
+                  }}
+                  placeholder="Enter phone number"
+                  isValid={(value, country) => {
+					try {
+					  const parsed = parsePhoneNumberFromString("+" + value);
+					  return parsed && parsed.isValid();
+					} catch {
+					  return false;
+					}
+				  }}
+                //   defaultErrorMessage="Please enter a valid phone number"
+                  inputStyle={{
+                    width: "100%",
+                    padding: "20px",
+                    paddingLeft: "65px",
+                    border: "1px solid #ddd",
+                    borderRadius: "4px",
+                    fontFamily: "Montserrat, sans-serif",
+                  }}
+                  buttonStyle={{
+                    padding: "10px",
+                    border: "1px solid #ddd",
+                    borderRadius: "4px",
+                    fontSize: "14px",
+                    width: "60px",
+                    fontFamily: "Montserrat, sans-serif",
+                  }}
+                />
                   {errors.phoneNumber && (
                     <p className="text-red-600 text-sm mt-1">{errors.phoneNumber}</p>
                   )}
