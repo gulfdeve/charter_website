@@ -63,10 +63,10 @@ export default function Home() {
       </div>
 
       <div className="flex flex-col bg-white items-center justify-center lg:pt-8 xl:pt-16 2xl:pt-16">
-        <h2 className=" text-primary-blue text-center font-bold text-3xl sm:text-2xl md:text-3xl lg:text-4xl md:p-4 pb-4 px-3">
+        <h2 className=" text-primary-blue text-center font-bold text-xl sm:text-2xl md:text-3xl lg:text-4xl md:p-4 pb-4 px-3">
           DUBAI YACHTS - ONLINE BOOKING
         </h2>
-        <p className=" text-primary-blue text-center text-xl sm:text-2xl md:text-xl lg:text-2xl  pb-6 md:pb-12">
+        <p className=" text-primary-blue text-center text-lg sm:text-xl md:text-xl lg:text-2xl  pb-6 md:pb-12">
           Enjoy your Luxury Yacht Experience
         </p>
       </div>
@@ -80,13 +80,15 @@ export default function Home() {
               data?.products?.map((product) => (
                 <div
                   key={product.id}
-                  className="flex flex-col p-5 rounded-lg shadow-custom relative"
+                  className="flex flex-col p-5 rounded-lg shadow-custom"
                 >
                   <Link  href={`/yacht-rentals/${product.slug}`}>
                   <h3 className="md:text-lg  font-bold">
                     {product.translations?.[locale].name_of_yacht}
                   </h3>
                   </Link>
+                  <div className="relative">
+                    {/* Yacht Image */}
                   <Link  href={`/yacht-rentals/${product.slug}`}>
                   <Image 
                     src={`https://www.centauruscharter.net/product/images/${product.image}`}
@@ -98,7 +100,7 @@ export default function Home() {
 
                   </Link>
 
-                  <div className="absolute grid grid-cols-3 items-center gap-0 rounded-lg center-absolute -top-14 lg:top-0 left-0 right-0 bottom-0 px-8">
+                  <div className="absolute grid grid-cols-3 items-center gap-0 rounded-lg center-absolute -bottom-5 left-0 right-0 px-5">
                     {/* Model */}
                     <div className="bg-[#f1f1f1] text-primary-grey p-1 xl:p-2 flex flex-col items-center rounded-l-lg">
                       <span className="text-xs">
@@ -127,6 +129,7 @@ export default function Home() {
                       <span className="font-bold text-sm text-black text-primary-grey">
                         {product.translations?.[locale].guests}
                       </span>
+                    </div>
                     </div>
                   </div>
                   <div className="flex flex-row justify-between z-10 mt-12">
@@ -182,7 +185,7 @@ export default function Home() {
                     {/* Price per Hour */}
                     <div className="p-1 xl:p-2 flex flex-col">
                       <span className=" text-sm">Per Hour:</span>
-                      <span className="font-bold text-sm lg:text-xl text-primary-red">
+                      <span className="font-bold text-lg lg:text-xl text-primary-red">
                       AED {product.per_hour_price.toLocaleString()}
                       </span>
                     </div>
