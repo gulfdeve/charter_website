@@ -38,7 +38,7 @@ const toursData = [
     liveBBQ: "Chicken & Beef Skewers, Sliders, | | Hotdogs, Veggie Patty, Vegetable Skewers, Muffins, Fruits Water, Tea, Coffee, Soft Drinks & Juices",
     cruisingRoute: "Dubai Marina, JBR and Burj Al Arab",
     departurePoint: "Dubai Marina",
-    blueHeadline: "EVERY SUNDAY & MONDAY",
+    blueHeadline: "EVERY SUNDAY-WEDNESDAY",
     yellowHeadline: "50% OFF",
     fareharborLink:
       "https://fareharbor.com/embeds/book/centauruscharter/items/488868/?full-items=yes&flow=no",
@@ -52,7 +52,7 @@ const toursData = [
     liveBBQ: "Chicken & Beef Skewers, Sliders, | Hotdogs, Veggie Patty, Vegetable Skewers, Muffins, Fruits Water, Tea, Coffee, Soft Drinks & Juices",
     cruisingRoute: "Dubai Marina, JBR and Burj Al Arab",
     departurePoint: "Dubai Marina",
-    blueHeadline: "EVERY SUNDAY & MONDAY",
+    blueHeadline: "EVERY SUNDAY-WEDNESDAY",
     yellowHeadline: "50% OFF",
     fareharborLink:
       "https://fareharbor.com/embeds/book/centauruscharter/items/488872/?full-items=yes&flow=no",
