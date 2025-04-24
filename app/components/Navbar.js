@@ -220,7 +220,7 @@ export default function Navbar() {
                         >
                           <Link
                             href={`/yacht-trips/${experience.slug}`}
-                            className="py-2 px-4 block"
+                            className="py-2 px-4 block capitalize"
                           >
                             {experience.translations?.[locale]?.title}
                           </Link>
