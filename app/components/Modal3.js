@@ -1,210 +1,253 @@
-import React, { useState, forwardRef, useImperativeHandle, useEffect } from "react";
+import React, {
+  useState,
+  forwardRef,
+  useImperativeHandle,
+  useEffect,
+} from "react";
 import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/style.css";
+import {
+  isValidPhoneNumber,
+  parsePhoneNumberFromString,
+} from "libphonenumber-js";
 
-const Modal3 = forwardRef(({ idName, idValue, selectedVessel, rentalPeriod }, ref) => {
-  const [isVisible, setIsVisible] = useState(false);
-  const [fullName, setFullName] = useState("");
-  const [phoneNumber, setPhoneNumber] = useState("");
-  const [email, setEmail] = useState("");
-  const [message, setMessage] = useState("");
-  const [errors, setErrors] = useState({});
-  const [submissionSuccess, setSubmissionSuccess] = useState(false);
-
-  useEffect(() => {
-    console.log("Modal3 received rentalPeriod:", rentalPeriod);
-  }, [rentalPeriod]);
-
-  useImperativeHandle(ref, () => ({
-    open: () => setIsVisible(true),
-    close: () => setIsVisible(false)
-  }));
-
-  const validateForm = () => {
-    const newErrors = {};
-    if (!fullName.trim()) newErrors.fullName = "Full Name is required.";
-    if (!phoneNumber.trim()) {
-      newErrors.phoneNumber = "Phone Number is required.";
-    } else if (phoneNumber.replace(/\D/g, "").length < 7) {
-      newErrors.phoneNumber = "Please enter a valid phone number.";
-    }
-    if (!email.trim()) {
-      newErrors.email = "Email is required.";
-    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-      newErrors.email = "Invalid email format.";
-    }
-    if (!message.trim()) newErrors.message = "Message is required.";
-    
-    setErrors(newErrors);
-    return Object.keys(newErrors).length === 0;
-  };
-
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    if (!validateForm()) return;
-
-    const selectedDates = JSON.parse(localStorage.getItem("selectedDates")) || [];
-
-    const vesselDetails = selectedVessel
-      ? `\nVessel Details:\nName: ${selectedVessel.name || "N/A"}\nBuild: ${selectedVessel.make || "N/A"}\nLength: ${selectedVessel.length || "N/A"}\nYear: ${selectedVessel.builtYear || "N/A"}\nPrice: ${selectedVessel.price || "N/A"}\nCabins: ${selectedVessel.cabins || "N/A"}\nGuests: ${selectedVessel.sleeps || "N/A"}`
-      : "";
-
-    const vesselIdText = idName && idValue
-      ? `\nVessel ID (${idName}): ${idValue}`
-      : "";
-
-    const rentalDatesText = selectedDates.length > 0
-      ? `\nRental Dates: ${selectedDates.join(", ")}`
-      : "";
-
-    const fullMessagePayload = `${message}\n\n${vesselDetails}${vesselIdText}${rentalDatesText}`;
-console.log("Full message payload:", fullMessagePayload);
-    const queryParams = new URLSearchParams({
-      name: fullName,
-      phone: phoneNumber,
-      email: email,
-      comments: fullMessagePayload,
+const Modal3 = forwardRef(
+  ({ idName, idValue, selectedVessel, rentalPeriod }, ref) => {
+    const [isVisible, setIsVisible] = useState(false);
+    const [fullName, setFullName] = useState("");
+    const [phoneNumber, setPhoneNumber] = useState("");
+    const [phoneCountry, setPhoneCountry] = useState({
+      countryCode: "ae",
+      format: "",
     });
+    const [email, setEmail] = useState("");
+    const [message, setMessage] = useState("");
+    const [errors, setErrors] = useState({});
+    const [submissionSuccess, setSubmissionSuccess] = useState(false);
 
-    queryParams.set("offers_id", "45");
-    if (idName && idValue) {
-      queryParams.set(idName, idValue);
-    }
+    useEffect(() => {
+      console.log("Modal3 received rentalPeriod:", rentalPeriod);
+    }, [rentalPeriod]);
 
-    console.log("Sending enquiry with query parameters:", queryParams.toString());
+    useImperativeHandle(ref, () => ({
+      open: () => setIsVisible(true),
+      close: () => setIsVisible(false),
+    }));
 
-    try {
-      const url = `https://www.centauruscharter.net/api/api_new/save_enquiry?${queryParams}`;
-      const response = await fetch(url, { method: "POST" });
-      const data = await response.json();
-
-      if (response.ok) {
-        console.log("Response from server:", data);
-        setSubmissionSuccess(true);
-        setFullName("");
-        setPhoneNumber("");
-        setEmail("");
-        setMessage("");
-
-        setTimeout(() => {
-          setSubmissionSuccess(false);
-          setIsVisible(false);
-        }, 5000);
+    const validateForm = () => {
+      const newErrors = {};
+      if (!fullName.trim()) newErrors.fullName = "Full Name is required.";
+      if (!phoneNumber.trim()) {
+        newErrors.phoneNumber = "Phone Number is required.";
       } else {
-        alert("Something went wrong while sending the form.");
+        try {
+          const parsedPhone = parsePhoneNumberFromString("+" + phoneNumber);
+          if (!parsedPhone || !parsedPhone.isValid()) {
+            newErrors.phoneNumber = "Please enter a valid phone number.";
+          }
+        } catch (e) {
+          newErrors.phoneNumber = "Please enter a valid phone number.";
+        }
       }
-    } catch (error) {
-      console.error("Error submitting form:", error);
-      alert("An error occurred. Please try again later.");
-    }
-  };
+      if (!email.trim()) {
+        newErrors.email = "Email is required.";
+      } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+        newErrors.email = "Invalid email format.";
+      }
+      if (!message.trim()) newErrors.message = "Message is required.";
 
-  if (!isVisible) return null;
+      setErrors(newErrors);
+      return Object.keys(newErrors).length === 0;
+    };
 
-  return (
-    <div className="fixed inset-0 bg-gray-500 bg-opacity-50 flex items-center justify-center z-50 px-5">
-      <div className="bg-white h-fit rounded-lg shadow-lg w-full max-w-6xl p-9 lg:p-6 relative">
-        {submissionSuccess && (
-          <div className="absolute top-0 left-0 right-0 bg-green-500 text-white p-3 text-center">
-            Enquiry sent successfully!
-          </div>
-        )}
+    const handleSubmit = async (e) => {
+      e.preventDefault();
+      if (!validateForm()) return;
 
-        <button
-          onClick={() => setIsVisible(false)}
-          className="absolute top-4 right-4 text-2xl p-3 w-10 h-10 rounded-full flex items-center justify-center text-primary-grey hover:text-gray-800"
-        >
-          &times;
-        </button>
+      const selectedDates =
+        JSON.parse(localStorage.getItem("selectedDates")) || [];
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-5 ">
-          <div className="rounded-lg overflow-hidden hidden md:block">
-            <img
-              src="/modal2.jpg"
-              alt="Yacht Image"
-              className="w-[32rem] h-[31rem] object-cover"
-            />
-          </div>
+      const vesselDetails = selectedVessel
+        ? `\nVessel Details:\nName: ${selectedVessel.name || "N/A"}\nBuild: ${
+            selectedVessel.make || "N/A"
+          }\nLength: ${selectedVessel.length || "N/A"}\nYear: ${
+            selectedVessel.builtYear || "N/A"
+          }\nPrice: ${selectedVessel.price || "N/A"}\nCabins: ${
+            selectedVessel.cabins || "N/A"
+          }\nGuests: ${selectedVessel.sleeps || "N/A"}`
+        : "";
 
-          <div className="lg:pr-10 pr-5">
-            <form onSubmit={handleSubmit} className="space-y-4">
-              <div>
-                <input
-                  type="text"
-                  placeholder="Full Name"
-                  value={fullName}
-                  onChange={(e) => setFullName(e.target.value)}
-                  className="w-full border outline outline-primary-blue bg-gray-100 border-primary-blue rounded-md p-3"
-                />
-                {errors.fullName && (
-                  <p className="text-red-600 text-sm">{errors.fullName}</p>
-                )}
-              </div>
+      const vesselIdText =
+        idName && idValue ? `\nVessel ID (${idName}): ${idValue}` : "";
 
-              <div>
-                <PhoneInput
-                  country="ae"
-                  value={phoneNumber}
-                  onChange={setPhoneNumber}
-                  placeholder="Enter phone number"
-                  className="flex-1 outline outline-primary-blue rounded-md bg-gray-100"
-                  inputStyle={{
-                    width: "100%",
-                    padding: "20px",
-                    paddingLeft: "65px",
-                    border: "1px solid #ddd",
-                    borderRadius: "4px",
-                    fontFamily: "Montserrat, sans-serif",
-                  }}
-                  buttonStyle={{
-                    padding: "10px",
-                    border: "1px solid #ddd",
-                    borderRadius: "4px",
-                    fontSize: "14px",
-                    width: "60px",
-                    fontFamily: "Montserrat, sans-serif",
-                  }}
-                />
-                {errors.phoneNumber && (
-                  <p className="text-red-600 text-sm">{errors.phoneNumber}</p>
-                )}
-              </div>
+      const rentalDatesText =
+        selectedDates.length > 0
+          ? `\nRental Dates: ${selectedDates.join(", ")}`
+          : "";
 
-              <div>
-                <input
-                  type="email"
-                  placeholder="Email Address"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  className="w-full border outline outline-primary-blue bg-gray-100 border-primary-blue rounded-md p-3"
-                />
-                {errors.email && (
-                  <p className="text-red-600 text-sm">{errors.email}</p>
-                )}
-              </div>
+      const fullMessagePayload = `${message}\n\n${vesselDetails}${vesselIdText}${rentalDatesText}`;
+      console.log("Full message payload:", fullMessagePayload);
+      const queryParams = new URLSearchParams({
+        name: fullName,
+        phone: phoneNumber,
+        email: email,
+        comments: fullMessagePayload,
+      });
 
-              <div>
-                <textarea
-                  placeholder="Comments"
-                  value={message}
-                  onChange={(e) => setMessage(e.target.value)}
-                  rows="8"
-                  className="w-full border outline outline-primary-blue bg-gray-100 border-primary-blue rounded-md p-3"
-                />
-                {errors.message && (
-                  <p className="text-red-600 text-sm">{errors.message}</p>
-                )}
-              </div>
+      queryParams.set("offers_id", "45");
+      if (idName && idValue) {
+        queryParams.set(idName, idValue);
+      }
 
-              <button type="submit" className="blue-solid-button">
-                SEND
-              </button>
-            </form>
+      console.log(
+        "Sending enquiry with query parameters:",
+        queryParams.toString()
+      );
+
+      try {
+        const url = `https://www.centauruscharter.net/api/api_new/save_enquiry?${queryParams}`;
+        const response = await fetch(url, { method: "POST" });
+        const data = await response.json();
+
+        if (response.ok) {
+          console.log("Response from server:", data);
+          setSubmissionSuccess(true);
+          setFullName("");
+          setPhoneNumber("");
+          setEmail("");
+          setMessage("");
+
+          setTimeout(() => {
+            setSubmissionSuccess(false);
+            setIsVisible(false);
+          }, 5000);
+        } else {
+          alert("Something went wrong while sending the form.");
+        }
+      } catch (error) {
+        console.error("Error submitting form:", error);
+        alert("An error occurred. Please try again later.");
+      }
+    };
+
+    if (!isVisible) return null;
+
+    return (
+      <div className="fixed inset-0 bg-gray-500 bg-opacity-50 flex items-center justify-center z-50 px-5">
+        <div className="bg-white h-fit rounded-lg shadow-lg w-full max-w-6xl p-9 lg:p-6 relative">
+          {submissionSuccess && (
+            <div className="absolute top-0 left-0 right-0 bg-green-500 text-white p-3 text-center">
+              Enquiry sent successfully!
+            </div>
+          )}
+
+          <button
+            onClick={() => setIsVisible(false)}
+            className="absolute top-4 right-4 text-2xl p-3 w-10 h-10 rounded-full flex items-center justify-center text-primary-grey hover:text-gray-800"
+          >
+            &times;
+          </button>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-5 ">
+            <div className="rounded-lg overflow-hidden hidden md:block">
+              <img
+                src="/modal2.jpg"
+                alt="Yacht Image"
+                className="w-[32rem] h-[31rem] object-cover"
+              />
+            </div>
+
+            <div className="lg:pr-10 pr-5">
+              <form onSubmit={handleSubmit} className="space-y-4">
+                <div>
+                  <input
+                    type="text"
+                    placeholder="Full Name"
+                    value={fullName}
+                    onChange={(e) => setFullName(e.target.value)}
+                    className="w-full border outline outline-primary-blue bg-gray-100 border-primary-blue rounded-md p-3"
+                  />
+                  {errors.fullName && (
+                    <p className="text-red-600 text-sm">{errors.fullName}</p>
+                  )}
+                </div>
+
+                <div>
+                  <PhoneInput
+                    country={phoneCountry.countryCode}
+                    value={phoneNumber}
+                    onChange={(val, country) => {
+                      setPhoneNumber(val);
+                      setPhoneCountry(country);
+                    }}
+                    placeholder="Enter phone number"
+                    isValid={(value, country) => {
+                      try {
+                        const parsed = parsePhoneNumberFromString("+" + value);
+                        return parsed && parsed.isValid();
+                      } catch {
+                        return false;
+                      }
+                    }}
+                    //   defaultErrorMessage="Please enter a valid phone number"
+                    inputStyle={{
+                      width: "100%",
+                      padding: "20px",
+                      paddingLeft: "65px",
+                      border: "1px solid #ddd",
+                      borderRadius: "4px",
+                      fontFamily: "Montserrat, sans-serif",
+                    }}
+                    buttonStyle={{
+                      padding: "10px",
+                      border: "1px solid #ddd",
+                      borderRadius: "4px",
+                      fontSize: "14px",
+                      width: "60px",
+                      fontFamily: "Montserrat, sans-serif",
+                    }}
+                  />
+                  {errors.phoneNumber && (
+                    <p className="text-red-600 text-sm">{errors.phoneNumber}</p>
+                  )}
+                </div>
+
+                <div>
+                  <input
+                    type="email"
+                    placeholder="Email Address"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    className="w-full border outline outline-primary-blue bg-gray-100 border-primary-blue rounded-md p-3"
+                  />
+                  {errors.email && (
+                    <p className="text-red-600 text-sm">{errors.email}</p>
+                  )}
+                </div>
+
+                <div>
+                  <textarea
+                    placeholder="Comments"
+                    value={message}
+                    onChange={(e) => setMessage(e.target.value)}
+                    rows="8"
+                    className="w-full border outline outline-primary-blue bg-gray-100 border-primary-blue rounded-md p-3"
+                  />
+                  {errors.message && (
+                    <p className="text-red-600 text-sm">{errors.message}</p>
+                  )}
+                </div>
+
+                <button type="submit" className="blue-solid-button">
+                  SEND
+                </button>
+              </form>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-  );
-});
+    );
+  }
+);
 
 export default Modal3;
