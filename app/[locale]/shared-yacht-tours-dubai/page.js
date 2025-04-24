@@ -336,25 +336,25 @@ const Page = () => {
     TERMS & CONDITIONS
   </h2>
   <ul className="max-w-2xl mx-auto list-disc text-primary-blue-4 text-sm pt-5 space-y-2">
-    <li className="text-center">
+    <li className="">
       Rates do not include alcohol. An alcohol menu is available for
       purchase on board.
     </li>
-    <li className="text-center">
+    <li className="">
       There are different ranges of yachts and boats with several
       capacities, no specific yacht is guaranteed until the time of
       visit.
     </li>
-    <li className="text-center">
+    <li className="">
       Cruise routes are subject to change due to weather and wind
       conditions.
     </li>
-    <li className="text-center">
+    <li className="">
       Cruising times are subject to adjustments based on sunset timings.
     </li>
-    <li className="text-center">Rates cannot be combined with other offers.</li>
-    <li className="text-center">Guests under 18 years old must be accompanied by an adult.</li>
-    <li className="text-center">The offer is valid until 6-28 April 2025</li>
+    <li className="">Rates cannot be combined with other offers.</li>
+    <li className="">Guests under 18 years old must be accompanied by an adult.</li>
+    <li className="">The offer is valid until 30 May 2025</li>
   </ul>
 </div>
         {/* Split Section with Image + Text */}
