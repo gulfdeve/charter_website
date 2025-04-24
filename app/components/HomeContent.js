@@ -61,8 +61,9 @@ export default function Home() {
         {/* <Video /> */}
         <VideoLocal filename="/Seasonal Tour _ Luxury Tours.mp4" section="home" />
       </div>
-
-      <div className="flex flex-col bg-white items-center justify-center lg:pt-8 xl:pt-16 2xl:pt-16">
+    <div className="relative">
+      
+      <div className="flex flex-col items-center justify-center">
         <h2 className=" text-primary-blue text-center font-bold text-xl sm:text-2xl md:text-3xl lg:text-4xl md:p-4 pb-4 px-3">
           DUBAI YACHTS - ONLINE BOOKING
         </h2>
@@ -73,14 +74,14 @@ export default function Home() {
         
 
       {/* DESKTOP */}
-      <div className="hidden md:block">
+      <div className="hidden md:block z-30">
         <div className="container mx-auto p-0">
           <div className="grid grid-col-1 md:grid-cols-2 lg:grid-cols-3 lg:gap-6 md:gap-4">
             {!loading &&
               data?.products?.map((product) => (
                 <div
                   key={product.id}
-                  className="flex flex-col p-5 rounded-lg shadow-custom"
+                  className="flex flex-col p-5 rounded-lg shadow-custom bg-white"
                 >
                   <Link  href={`/yacht-rentals/${product.slug}`}>
                   <h3 className="md:text-lg  font-bold">
@@ -208,6 +209,7 @@ export default function Home() {
           </div>
         </div>
       </div>
+      
       {/* MOBILE */}
       <div className="md:hidden block">
         <Yachtmobilecarousal/>
@@ -225,7 +227,18 @@ export default function Home() {
                   enjoy drinks on the deck while watching the sunset. Come cruise with
                   us.
                 </p>
-
+{/* Background SVG in Front */}
+<div
+        className="absolute inset-0 z-[-10]"
+        style={{
+          backgroundImage: "url('/images/bg-svg-blue.svg')",
+          backgroundRepeat: "no-repeat",
+          backgroundPosition: "top",
+          backgroundSize: "contain",
+          backgroundAttachment: "fixed",
+        }}
+      ></div>
+      </div>
 
 
 

@@ -119,7 +119,7 @@ const Reviews = () => {
         style={{
           backgroundImage: "url('/images/bg-svg-blue.svg')",
           backgroundRepeat: "no-repeat",
-          backgroundPosition: "center",
+          backgroundPosition: "top",
           backgroundSize: "contain",
           backgroundAttachment: "fixed",
         }}

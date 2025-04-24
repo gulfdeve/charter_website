@@ -81,7 +81,7 @@ export default function Navbar() {
   return (
     <>
       {/* Fixed Single Navbar */}
-      <div className="fixed top-0 left-0 w-full z-50 bg-white shadow-md lg:block hidden gradient-custom">
+      <div className="fixed top-0 left-0 w-full z-50 bg-white shadow-md lg:block hidden gradient-custom z-50">
         <div className="container lg:max-w-none px-0 mx-auto">
           <nav className="flex items-center justify-around">
             {/* Logo */}
