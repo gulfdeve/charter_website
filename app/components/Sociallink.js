@@ -1,24 +1,30 @@
+'use client'
 import Image from "next/image";
+import { useRouter, usePathname, Link } from "../i18n/routing";
 import EmailSubscription from "@/app/components/EmailSubscription"; // Client component
 
 const Sociallink = () => {
+	const pathname = usePathname(); // Get the current path
+	const isHomePage = pathname === "/" || pathname === ""; // Check if it's the homepage
   return (
     <div className="relative bg-primary-blue-2 w-full h-[24rem] lg:h-[15rem] 2xl:h-[18rem] flex items-center justify-center">
        {/* SVG Divider */}
-    <div className="divider-top -top-2 w-full z-10">
-      <svg
-        data-name="Layer 1"
-        xmlns="http://www.w3.org/2000/svg"
-        viewBox="0 0 1200 60"
-        preserveAspectRatio="none"
-      >
-        <path
-          d="M987.16,44.39c-78.99-8.42-163.38-20.36-243.32-27.16-82.26-7.01-168.06-6.6-250.45.16-57.84,4.74-114,12.56-172,16.92C213.61,42.32,102.47,38.25,0,22.55v37.45h1200v-21.1c-67.81,9.35-142.79,12.95-212.84,5.48Z"
-          className="fill-white"
-          
-        ></path>
-      </svg>
-    </div>
+{/* SVG Divider - Only show on homepage */}
+{isHomePage && (
+        <div className="divider-top -top-2 w-full z-10">
+          <svg
+            data-name="Layer 1"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 1200 60"
+            preserveAspectRatio="none"
+          >
+            <path
+              d="M987.16,44.39c-78.99-8.42-163.38-20.36-243.32-27.16-82.26-7.01-168.06-6.6-250.45.16-57.84,4.74-114,12.56-172,16.92C213.61,42.32,102.47,38.25,0,22.55v37.45h1200v-21.1c-67.81,9.35-142.79,12.95-212.84,5.48Z"
+              className="fill-white"
+            ></path>
+          </svg>
+        </div>
+      )}
       <div className="container mx-auto flex flex-col lg:flex-row items-center justify-between gap-5 lg:gap-8 xl:gap-20 pt-3 lg:pt-8 2xl:pt-24 3xl:pt-36 z-20">
         
         {/* Social Media Links */}
