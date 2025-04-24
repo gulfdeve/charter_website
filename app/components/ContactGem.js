@@ -2,10 +2,7 @@
 import React, { useState } from "react";
 import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/style.css";
-import {
-  isValidPhoneNumber,
-  parsePhoneNumberFromString,
-} from "libphonenumber-js";
+
 import { usePathname, Link } from "@/app/i18n/routing";
 import { useLocale, useTranslations } from "next-intl";
 const ContactGem = () => {
@@ -14,10 +11,6 @@ const ContactGem = () => {
   const [phoneNumber, setPhoneNumber] = useState("");
   const [message, setMessage] = useState("");
   const [subscribe, setSubscribe] = useState(false);
-  const [phoneCountry, setPhoneCountry] = useState({
-    countryCode: "ae",
-    format: "",
-  });
   const [acceptedTerms, setAcceptedTerms] = useState(false);
   const [errors, setErrors] = useState({});
   const [successMessage, setSuccessMessage] = useState("");
@@ -26,18 +19,7 @@ const ContactGem = () => {
     let errs = {};
     if (!fullName) errs.fullName = "Name is required";
     if (!email) errs.email = "Email is required";
-    if (!phoneNumber.trim()) {
-      errs.phoneNumber = "Phone Number is required.";
-    } else {
-      try {
-        const parsedPhone = parsePhoneNumberFromString("+" + phoneNumber);
-        if (!parsedPhone || !parsedPhone.isValid()) {
-          errs.phoneNumber = "Please enter a valid phone number.";
-        }
-      } catch (e) {
-        errs.phoneNumber = "Please enter a valid phone number.";
-      }
-    }
+    if (!phoneNumber) errs.phoneNumber = "Phone number is required";
     if (!message) errs.message = "Message is required";
     if (!acceptedTerms)
       errs.acceptedTerms = "Please accept the Terms and Conditions";
@@ -69,9 +51,8 @@ const ContactGem = () => {
       const url = `https://www.centauruscharter.net/api/api_new/save_enquiry?${queryParams}`;
       const response = await fetch(url, { method: "POST" });
       const data = await response.json();
-      const subject = "New contact form inquiry on GEMS offer";
-      const recipients =
-        "habibjutt868@gmail.com, mayflor@centaurusint.com, habib@centauruscharter.com";
+	  const subject = "New contact form inquiry on GEMS offer";
+	  const recipients = "habibjutt868@gmail.com, mayflor@centaurusint.com, habib@centauruscharter.com";
 
       // New email API call
       const emailResponse = await fetch("/api/send-email", {
@@ -85,8 +66,8 @@ const ContactGem = () => {
           phoneNumber,
           message,
           subscribe,
-          subject,
-          recipients,
+		  subject,
+		  recipients
         }),
       });
 
@@ -156,22 +137,11 @@ const ContactGem = () => {
           <div>
             {/* PhoneInput replaces the standard phone input */}
             <PhoneInput
-              country={phoneCountry.countryCode}
+              country="ae"
               value={phoneNumber}
-              onChange={(val, country) => {
-                setPhoneNumber(val);
-                setPhoneCountry(country);
-              }}
+              onChange={setPhoneNumber}
               placeholder="Enter phone number"
-              isValid={(value, country) => {
-                try {
-                  const parsed = parsePhoneNumberFromString("+" + value);
-                  return parsed && parsed.isValid();
-                } catch {
-                  return false;
-                }
-              }}
-              //   defaultErrorMessage="Please enter a valid phone number"
+              className="flex-1  rounded-md bg-gray-100"
               inputStyle={{
                 width: "100%",
                 padding: "20px",
