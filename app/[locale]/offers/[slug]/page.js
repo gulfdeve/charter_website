@@ -7,6 +7,7 @@ import PageTitleHeading from "@/app/components/PageTitleHeading";
 import OfferClientActions from "@/app/components/OfferClientActions";
 import { fetchData } from '@/app/lib/fetchData';
 import ExperienceCarousal from "@/app/components/ExperienceCarousal";
+import { notFound } from "next/navigation";
 
 export default async function OfferDetailPage({ params }) {
   const { slug, locale } = params;
@@ -21,7 +22,11 @@ export default async function OfferDetailPage({ params }) {
   // Use getTranslations instead of useTranslations
   const t = await getTranslations();
   
-  if (!offer) return <div>No offer found for this slug.</div>;
+
+  if (!offer) {
+    notFound();
+  }
+
 
   return (
 <>

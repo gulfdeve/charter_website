@@ -10,6 +10,7 @@ import Route from "@/app/components/Route";
 import ExperienceCarousal from "@/app/components/ExperienceCarousal";
 import ExperienceMobilecarousel from "@/app/components/ExperienceMobilecarousal";
 import PageTitleHeading from "@/app/components/PageTitleHeading";
+import { notFound } from "next/navigation";
 const page = ({ params }) => {
   const { slug } = use(params); // Get slug from the URL
   const locale = useLocale();
@@ -23,7 +24,9 @@ const page = ({ params }) => {
 
   if (loading) return <div>Loading...</div>;
   if (error) return <div>Error: {error.message}</div>;
-  if (!experience) return <div>No experience found for this slug.</div>;
+  if (!experience) {
+    notFound();
+  }
 
   console.log(locale);
   const offers = [

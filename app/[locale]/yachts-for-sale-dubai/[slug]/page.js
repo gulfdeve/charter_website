@@ -10,6 +10,7 @@ import YachtGallery from "../YachGallery";
 import yachtdata from "@/app/components/buyYachtData.json";
 import { use } from "react";
 import { useLocale } from "next-intl";
+import { notFound } from "next/navigation";
 
 export default function Home({ params }) {
   const { slug } = use(params);
@@ -39,7 +40,9 @@ export default function Home({ params }) {
   const scrollNext = () => emblaInstance.current?.scrollNext();
 
   if (isLoading) return <div className="text-center mt-20 uppercase">Loading...</div>;
-  if (!product) return <div className="text-center mt-20 uppercase">No product found.</div>;
+  if (!product) {
+    notFound();
+  }
 
   return (
     <>
