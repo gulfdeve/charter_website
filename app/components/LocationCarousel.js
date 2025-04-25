@@ -55,169 +55,99 @@ const TEMPORARY_DATA = [
   }
 ];
 
-// Mobile Version: Uses updated card design and responsive widths
-function MobileCarousel() {
+export default function LocationCarousel() {
   const emblaRef = useRef(null);
-  const emblaInstance = useRef(null);
+  const embla = useRef(null);
 
   useEffect(() => {
     if (emblaRef.current) {
-      emblaInstance.current = EmblaCarousel(emblaRef.current, {
-        align: "start",
+      embla.current = EmblaCarousel(emblaRef.current, {
+        align: 'start',
         loop: true,
       });
-      const autoplay = setInterval(() => {
-        emblaInstance.current?.scrollNext();
-      }, 10000);
+      const autoplay = setInterval(() => embla.current.scrollNext(), 10000);
       return () => {
         clearInterval(autoplay);
-        emblaInstance.current?.destroy();
+        embla.current.destroy();
       };
     }
   }, []);
 
-  const scrollPrev = () => emblaInstance.current?.scrollPrev();
-  const scrollNext = () => emblaInstance.current?.scrollNext();
+  const scrollPrev = () => embla.current?.scrollPrev();
+  const scrollNext = () => embla.current?.scrollNext();
 
   return (
-    <div className="container mx-auto md:px-4 pb-16 lg:hidden">
-      {/* Optional heading */}
+    <div className="container mx-auto px-4 pb-16">
       <div className="flex flex-col items-center justify-center py-10">
-        <h2 className="text-primary-blue text-center">
-          YACHT LOCATION
-        </h2>
+        <h2 className="text-primary-blue text-center">YACHT LOCATION</h2>
       </div>
 
-      <div className="relative">
-        {/* Embla viewport */}
-        <div ref={emblaRef} className="overflow-hidden px-3 py-5 ">
-          {/* Embla container */}
-          <div className="flex gap-4 px-2">
-            {TEMPORARY_DATA.map((item) => (
-              <div
-                key={item.id}
-                // Control how many cards appear at once (85%, 50%, 40%, etc.)
-                className="flex-[0_0_80%] md:flex-[0_0_50%] lg:flex-[0_0_40%]"
-              >
-                <div className="bg-white shadow-md rounded-md overflow-hidden h-full">
-                  {/* Map iframe (top) */}
-                  <div className="relative w-full h-52 p-4">
-                    <iframe
-                      title="google maps location"
-                      src={item.src}
-                      className="absolute inset-0 w-full h-full"
-                      loading="lazy"
-                    ></iframe>
-                  </div>
-                  
-                  {/* Card text (bottom) */}
-                  <div className="p-4 text-center">
-                    <h3 className="text-lg font-bold text-primary-grey">
-                      {item.title}
-                    </h3>
-                    <p className="text-sm text-primary-grey">{item.subTitle}</p>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-        {/* Navigation Buttons */}
-       
-      </div>
-    </div>
-  );
-}
-
-// Desktop Version: Keeps your original design code
-function DesktopCarousel() {
-  const emblaRef = useRef(null);
-  const emblaInstance = useRef(null);
-
-  useEffect(() => {
-    if (emblaRef.current) {
-      emblaInstance.current = EmblaCarousel(emblaRef.current, {
-        align: "start",
-        loop: true,
-      });
-      const autoplay = setInterval(() => {
-        emblaInstance.current?.scrollNext();
-      }, 10000);
-      return () => {
-        clearInterval(autoplay);
-        emblaInstance.current?.destroy();
-      };
-    }
-  }, []);
-
-  const scrollPrev = () => emblaInstance.current?.scrollPrev();
-  const scrollNext = () => emblaInstance.current?.scrollNext();
-
-  return (
-    <div className="container mx-auto flex flex-col items-center container mx-auto hidden lg:block">
-      <div className="flex flex-col items-center justify-center">
-        <h2 className="text-primary-blue text-center py-10">
-          YACHT LOCATION
-        </h2>
-      </div>
-
-      <div className="relative w-full overflow-hidden">
-        <div className="embla__viewport" ref={emblaRef}>
-          <div className="embla__container flex">
-            {TEMPORARY_DATA.map((item) => (
-              <div
-                key={item.id}
-                className="embla__slide px-5 w-full lg:basis-[calc(100%/3)] flex-none"
-              >
-                <div className="relative bg-gray-200 overflow-hidden shadow-lg w-96">
+      <div className="relative overflow-hidden" ref={emblaRef}>
+        <div className="flex gap-4">
+          {TEMPORARY_DATA.map(item => (
+            <div
+              key={item.id}
+              className="flex-[0_0_80%] md:flex-[0_0_50%] lg:basis-1/3 flex-none min-w-0 px-2"
+            >
+              {/* Mobile Card */}
+              <div className="bg-white shadow-md rounded-md overflow-hidden h-full lg:hidden">
+                <div className="relative w-full h-52 p-4">
                   <iframe
-                    title="google maps location"
+                    title={`map-${item.id}`}
                     src={item.src}
-                    width="400"
-                    height="400"
+                    className="absolute inset-0 w-full h-full"
                     loading="lazy"
-                    className="w-full"
-                  ></iframe>
-                  <div className="location-carousel absolute bottom-0 left-0 w-full bg-black bg-opacity-30 p-4 text-white">
-                    <h3 className="text-4xl font-bold text-center">
-                      {item.title}
-                    </h3>
-                    <p className="text-xl font-bold text-center">
-                      {item.description}
-                    </p>
-                  </div>
+                  />
+                </div>
+                <div className="p-4 text-center">
+                  <h3 className="text-lg font-bold text-primary-grey">
+                    {item.title}
+                  </h3>
+                  <p className="text-sm text-primary-grey">
+                    {item.description}
+                  </p>
                 </div>
               </div>
-            ))}
-          </div>
+
+              {/* Desktop Card */}
+              <div className="relative bg-gray-200 overflow-hidden shadow-lg w-full hidden lg:block">
+                <iframe
+                  title={`map-${item.id}`}
+                  src={item.src}
+                  width="400"
+                  height="400"
+                  loading="lazy"
+                  className="w-full"
+                />
+                <div className="absolute bottom-0 left-0 w-full bg-black bg-opacity-30 p-4 text-white">
+                  <h3 className="text-4xl font-bold text-center">
+                    {item.title}
+                  </h3>
+                  <p className="text-xl font-bold text-center">
+                    {item.description}
+                  </p>
+                </div>
+              </div>
+            </div>
+          ))}
         </div>
 
         {/* Navigation Buttons */}
         <button
-          aria-label="go previous slide"
-          className="bg-primary-blue text-primary-yellow hover:bg-primary-yellow hover:text-primary-blue transition duration-150 ease-in-out absolute left-2 top-1/2 -translate-y-1/2 bg-gray-800 text-white w-14 aspect-square rounded-full flex items-center justify-center hover:bg-gray-700 z-10"
+          aria-label="Previous slide"
           onClick={scrollPrev}
+          className="hidden lg:flex absolute left-2 top-1/2 -translate-y-1/2 bg-primary-blue text-white hover:bg-primary-yellow-dark hover:text-primary-blue transition duration-150 ease-in-out w-14 aspect-square rounded-full items-center justify-center z-10 "
         >
           <IoIosArrowBack size={30} />
         </button>
         <button
-          aria-label="go next slide"
-          className="bg-primary-blue text-primary-yellow hover:bg-primary-yellow hover:text-primary-blue transition duration-150 ease-in-out absolute right-2 top-1/2 -translate-y-1/2 bg-gray-800 text-white w-14 aspect-square rounded-full flex items-center justify-center hover:bg-gray-700 z-10"
+          aria-label="Next slide"
           onClick={scrollNext}
+          className="hidden lg:flex absolute right-2 top-1/2 -translate-y-1/2 bg-primary-blue text-white hover:bg-primary-yellow-dark hover:text-primary-blue transition duration-150 ease-in-out w-14 aspect-square rounded-full items-center justify-center z-10"
         >
           <IoIosArrowForward size={30} />
         </button>
       </div>
-      <div className="pt-12"></div>
     </div>
-  );
-}
-
-export default function LocationCarousel() {
-  return (
-    <>
-      <MobileCarousel />
-      <DesktopCarousel />
-    </>
   );
 }
