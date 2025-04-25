@@ -34,7 +34,7 @@ const Reviews = () => {
       date: "March 2025",
       rating: 5,
       content:
-        "We had an unforgettable night aboard Lagoona! We booked it for a birthday celebration with friends and family, and the entire experience exceeded our expectations. The crew was incredibly professional, attentive, and made sure we had everything we needed for a perfect evening. A special thanks to Tracy for making the booking process seamless and stress-free! She was extremely helpful, answering all our questions and ensuring every detail was perfectly arranged for our celebration. If you're looking for an exceptional way to celebrate a special occasion or simply enjoy a day or night on the water, give them a call and ask for Tracy! 🤩",
+        "We had an unforgettable night aboard Lagoona! We booked it for a birthday celebration with friends and family, and the entire experience exceeded our expectations. The crew was incredibly professional, attentive, and made sure we had everything we needed for a perfect evening. A special thanks to Tracy for making the booking process seamless and stress-free! She was extremely helpful, answering all our questions and ensuring every detail was perfectly arranged for our celebration. If you're looking for an exceptional way to celebrate a special occasion or simply enjoy a day or night on the water, give them a call and ask for Tracy! 🤩"
     },
     {
       id: 4,
@@ -42,7 +42,7 @@ const Reviews = () => {
       date: "December 2024",
       rating: 5,
       content:
-        "Nice vessel, well maintained, Price very reasonable for a 118'' Crew very well trained, gentle and ready to help in any occasion. Nice service and quality of food and drink very good. They have full facilities on board, just ask and they will provide, Great for party or just cruising or transform in a Disco boat when necessary. We had private party for 85 People and was perfect.",
+        "Nice vessel, well maintained, Price very reasonable for a 118'' Crew very well trained, gentle and ready to help in any occasion. Nice service and quality of food and drink very good. They have full facilities on board, just ask and they will provide, Great for party or just cruising or transform in a Disco boat when necessary. We had private party for 85 People and was perfect."
     },
     {
       id: 5,
@@ -50,7 +50,7 @@ const Reviews = () => {
       date: "February 2025",
       rating: 5,
       content:
-        "Amazing experience with my group. They really enjoy the experience despite the cloudy and rainy weather. Staff was very attentive and polite. yacht is clean and everybody very professionals. As my group was mainly women they loved to have a women captain as well. Thanks a lot !",
+        "Amazing experience with my group. They really enjoy the experience despite the cloudy and rainy weather. Staff was very attentive and polite. yacht is clean and everybody very professionals. As my group was mainly women they loved to have a women captain as well. Thanks a lot !"
     },
     {
       id: 6,
@@ -58,8 +58,8 @@ const Reviews = () => {
       date: "March 2025",
       rating: 5,
       content:
-        "We had the most fun. Nice boat and over the top service. We last minute wanted jet skis for our boys to ride and within minutes they had jet skis come to the boat. Highly recommend.",
-    },
+        "We had the most fun. Nice boat and over the top service. We last minute wanted jet skis for our boys to ride and within minutes they had jet skis come to the boat. Highly recommend."
+    }
   ];
 
   useEffect(() => {
@@ -87,8 +87,8 @@ const Reviews = () => {
   return (
     <div className="relative w-full py-20">
       {/* Background SVG & Gradient */}
-      <div className="absolute inset-0 z-10 bg-[url('/images/bg-svg-blue.svg')] bg-center bg-no-repeat bg-contain bg-fixed"></div>
-      <div className="absolute inset-0 gradient-custom z-0"></div>
+      <div className="absolute inset-0 z-[-1] bg-[url('/images/bg-svg-blue.svg')] bg-center bg-no-repeat bg-contain bg-fixed"></div>
+      <div className="absolute inset-0 gradient-custom z-[-2]"></div>
 
       <div className="relative  container mx-auto px-4">
         <h2 className="text-primary-blue text-center font-bold text-2xl sm:text-3xl md:text-3xl lg:text-4xl pb-16">
@@ -108,11 +108,7 @@ const Reviews = () => {
               >
                 <div className="bg-white h-[290px] flex flex-col p-5 rounded-lg">
                   <div className="flex items-center gap-4 mb-2">
-                    <img
-                      src="/images/profile.svg"
-                      alt="Profile"
-                      className="w-14 rounded-full"
-                    />
+                    <img src="/images/profile.svg" alt="Profile" className="w-14 rounded-full" />
                     <div>
                       <p className="font-bold">{slide.name}</p>
                       <p className="text-xs text-gray-600">{slide.date}</p>
@@ -124,9 +120,7 @@ const Reviews = () => {
                     ))}
                   </div>
                   <p className="text-sm mb-1">{slide.title}</p>
-                  <p className="text-xs overflow-hidden text-ellipsis">
-                    {slide.content}
-                  </p>
+                  <p className="text-xs overflow-hidden text-ellipsis">{slide.content}</p>
                 </div>
               </div>
             ))}
@@ -134,7 +128,7 @@ const Reviews = () => {
         </div>
 
         {/* Desktop nav: constrained inside container */}
-        <div className="hidden xl:absolute xl:left-20 xl:right-20 xl:top-[64%] xl:flex xl:-translate-y-1/2 xl:justify-between xl:z-20">
+        <div className="hidden xl:absolute xl:left-20 xl:right-20 xl:top-[64%] xl:flex xl:-translate-y-1/2 xl:justify-between ">
           <button
             aria-label="Previous"
             className="text-gray-500 p-2 rounded-full"
@@ -154,7 +148,7 @@ const Reviews = () => {
         </div>
 
         {/* Mobile nav below */}
-        <div className="flex xl:hidden justify-center gap-4 mt-6">
+        <div className="flex xl:hidden justify-center gap-4 mt-6 ">
           <button
             aria-label="Previous"
             className="bg-gray-200 text-gray-500 p-2 rounded-full hover:bg-gray-300"
