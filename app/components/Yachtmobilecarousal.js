@@ -35,7 +35,7 @@ export default function YachtmobileCarousal() {
                 // This width ensures one full card + part of the next is visible
                 className="flex-[0_0_85%] md:flex-[0_0_50%] lg:flex-[0_0_40%]"
               >
-                <div className="flex flex-col border border-gray-300 xl:p-10 md:p-5 p-3 rounded-lg shadow-none">
+                <div className="flex flex-col border bg-white border-gray-300 xl:p-10 md:p-5 p-3 rounded-lg shadow-none">
                   {/* Yacht Title */}
                   <Link href={`/yacht-rentals/${product.slug}`}>
                     <h2 className="xl:text-4xl md:text-lg xxs:text-sm text-xl font-bold">
@@ -120,7 +120,7 @@ export default function YachtmobileCarousal() {
                         <img
                           src="/centaurus_link.svg"
                           alt="centaurus link"
-                          className="xxs:w-[5rem] xs:w-[7rem] xl:mt-3"
+                          className="w-[10rem] xl:mt-3"
                         />
                       </Link>
                   {/* Book Now & T&C */}
@@ -160,13 +160,6 @@ export default function YachtmobileCarousal() {
               </div>
             ))}
         </div>
-      </div>
-
-      <div className="flex items-center justify-center py-5 px-6">
-        <button className="yellow-solid-button w-full ">
-          {" "}
-          BOOK YOUR YACHT
-        </button>
       </div>
     </div>
   );
