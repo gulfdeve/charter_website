@@ -21,7 +21,7 @@ const toursData = [
     cruisingTime: "11:00 AM - 2:00 PM",
     adultPrice: "AED 299",
     childPrice: "AED 149",
-    liveBBQ: "Chicken & Beef Skewers, Sliders, | Hotdogs, Veggie Patty, Vegetable Skewers, Muffins, Fruits Water, Tea, Coffee, Soft Drinks & Juices",
+    liveBBQ: "Chicken & Beef Skewers, Sliders, | Hotdogs, Muffins, Fruits Water, Tea, Coffee, Soft Drinks & Juices<br>*Vegetarian food available on request - Veggie patty, Vegetable skewers",
     cruisingRoute: "Dubai Marina, JBR, Atlantis the Palm and Burj Al Arab",
     departurePoint: "Dubai Marina",
     blueHeadline: "AVAILABLE ALL DAYS OF THE WEEK",
@@ -35,7 +35,7 @@ const toursData = [
     cruisingTime: "05:00 PM - 07:00 PM",
     adultPrice: "AED 259",
     childPrice: "AED 149",
-    liveBBQ: "Chicken & Beef Skewers, Sliders, | | Hotdogs, Veggie Patty, Vegetable Skewers, Muffins, Fruits Water, Tea, Coffee, Soft Drinks & Juices",
+    liveBBQ: "Chicken & Beef Skewers, Sliders, | | Hotdogs, Muffins, Fruits Water, Tea, Coffee, Soft Drinks & Juices<br>*Vegetarian food available on request - Veggie patty, Vegetable skewers",
     cruisingRoute: "Dubai Marina, JBR and Burj Al Arab",
     departurePoint: "Dubai Marina",
     blueHeadline: "EVERY SUNDAY-WEDNESDAY",
@@ -49,7 +49,7 @@ const toursData = [
     cruisingTime: "08:00 PM - 10:00 PM",
     adultPrice: "AED 199",
     childPrice: "AED 149",
-    liveBBQ: "Chicken & Beef Skewers, Sliders, | Hotdogs, Veggie Patty, Vegetable Skewers, Muffins, Fruits Water, Tea, Coffee, Soft Drinks & Juices",
+    liveBBQ: "Chicken & Beef Skewers, Sliders, | Hotdogs, Muffins, Fruits Water, Tea, Coffee, Soft Drinks & Juices<br>*Vegetarian food available on request - Veggie patty, Vegetable skewers",
     cruisingRoute: "Dubai Marina, JBR and Burj Al Arab",
     departurePoint: "Dubai Marina",
     blueHeadline: "EVERY SUNDAY-WEDNESDAY",
@@ -231,8 +231,9 @@ const Page = () => {
                       <div className="flex flex-row gap-2 items-center">
                         <MdOutlineLocalDining className="text-primary-blue-2 text-[6rem] sm:text-[3rem] lg:text-[6rem]" />
                         <p className="text-primary-blue-2 text-sm">
-                          <span className="font-bold">Live BBQ:</span>{" "}
-                          {tour.liveBBQ}
+                          <span className="font-bold">BBQ:</span>{" "}
+                          {/* {tour.liveBBQ} */}
+						  <span dangerouslySetInnerHTML={{ __html: tour.liveBBQ }} />
                         </p>
                       </div>
 
