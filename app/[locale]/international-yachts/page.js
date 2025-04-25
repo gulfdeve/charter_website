@@ -12,7 +12,8 @@ async function fetchVessels(searchParams) {
   console.log("Received searchParams:", searchParams);
 
   // --- Generate JWT Token ---
-  const privateKey = fs.readFileSync("private_key.pem", "utf8");
+    // const privateKey = fs.readFileSync('private_key.pem', 'utf8');
+	const privateKey = process.env.ANKOR_PRIVATE_KEY;
   const kid = "jSZNvbnPK03KXEEo0-bJw4XPF1z68eW_OpHFW_9XvLY";
   const companyUri = "c::19468221194";
 
