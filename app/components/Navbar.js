@@ -179,7 +179,7 @@ export default function Navbar() {
                 <li>
                   <Link
                     href="/shared-yacht-tours-dubai"
-                    className={`py-2 inline-block tracking-wider uppercase border-b-2 transition-all duration-200 font-Montserrat${
+                    className={`py-2 inline-block tracking-wider uppercase border-b-2 transition-all duration-200 font-Montserrat ${
                       pathname === "/shared-yacht-tours-dubai" ||
                       pathname.startsWith("/shared-yacht-tours-dubai/")
                         ? "text-primary-blue border-primary-yellow font-semibold"
@@ -258,7 +258,7 @@ export default function Navbar() {
                 <li>
                   <Link
                     href="/offers"
-                    className={`py-2 inline-block tracking-wider uppercase border-b-2 transition-all duration-200 font-Montserrat${
+                    className={`py-2 inline-block tracking-wider uppercase border-b-2 transition-all duration-200 font-Montserrat ${
                       pathname === "/offers" || pathname.startsWith("/offers/")
                         ? "text-primary-blue border-primary-yellow font-semibold"
                         : "text-primary-blue border-transparent hover:border-primary-yellow"
@@ -272,7 +272,7 @@ export default function Navbar() {
                 <li>
                   <Link
                     href="/events"
-                    className={`py-2 inline-block tracking-wider uppercase border-b-2 transition-all duration-200 font-Montserrat${
+                    className={`py-2 inline-block tracking-wider uppercase border-b-2 transition-all duration-200 font-Montserrat ${
                       pathname === "/events" || pathname.startsWith("/events/")
                         ? "text-primary-blue border-primary-yellow font-semibold"
                         : "text-primary-blue border-transparent hover:border-primary-yellow"
@@ -286,7 +286,7 @@ export default function Navbar() {
                 <li>
                   <Link
                     href="/contact"
-                    className={`py-2 inline-block tracking-wider uppercase border-b-2 transition-all duration-200 font-Montserrat${
+                    className={`py-2 inline-block tracking-wider uppercase border-b-2 transition-all duration-200 font-Montserrat ${
                       pathname === "/contact" ||
                       pathname.startsWith("/contact/")
                         ? "text-primary-blue border-primary-yellow font-semibold"
