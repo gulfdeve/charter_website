@@ -55,99 +55,98 @@ const TEMPORARY_DATA = [
   }
 ];
 
+// Mobile Version: Uses updated card design and responsive widths
 export default function LocationCarousel() {
-  const emblaRef = useRef(null);
-  const embla = useRef(null);
 
+  const emblaRef = useRef(null);
+  const emblaInstance = useRef(null);
   useEffect(() => {
     if (emblaRef.current) {
-      embla.current = EmblaCarousel(emblaRef.current, {
-        align: 'start',
+      const options = {
+        align: "start",
         loop: true,
-      });
-      const autoplay = setInterval(() => embla.current.scrollNext(), 10000);
+        slidesToScroll: 1,
+        breakpoints: {
+          '(min-width: 768px)': { slidesToScroll: 2 },
+          '(min-width: 1024px)': { slidesToScroll: 3 }
+        }
+      };
+  
+      emblaInstance.current = EmblaCarousel(emblaRef.current, options);
+      
+      // Autoplay functionality
+      const autoplay = setInterval(() => {
+        emblaInstance.current?.scrollNext();
+      }, 100000000);
+  
       return () => {
         clearInterval(autoplay);
-        embla.current.destroy();
+        emblaInstance.current?.destroy();
       };
     }
   }, []);
 
-  const scrollPrev = () => embla.current?.scrollPrev();
-  const scrollNext = () => embla.current?.scrollNext();
+  const scrollPrev = () => emblaInstance.current?.scrollPrev();
+  const scrollNext = () => emblaInstance.current?.scrollNext();
 
   return (
-    <div className="container mx-auto px-4 pb-16">
-      <div className="flex flex-col items-center justify-center py-10">
-        <h2 className="text-primary-blue text-center">YACHT LOCATION</h2>
-      </div>
+    <div className="flex flex-col items-center justify-center bg-white pt-10">
+      <h2 className="text-primary-blue text-center font-bold text-2xl xl:text-4xl py-7">
+YACHT LOCATION
+      </h2>
 
-      <div className="relative overflow-hidden" ref={emblaRef}>
-        <div className="flex gap-4">
-          {TEMPORARY_DATA.map(item => (
-            <div
-              key={item.id}
-              className="flex-[0_0_80%] md:flex-[0_0_50%] lg:basis-1/3 flex-none min-w-0 px-2"
-            >
-              {/* Mobile Card */}
-              <div className="bg-white shadow-md rounded-md overflow-hidden h-full lg:hidden">
-                <div className="relative w-full h-52 p-4">
-                  <iframe
-                    title={`map-${item.id}`}
+      <div className="relative container h-full overflow-hidden bg-white mx-auto px-3">
+        <div className="embla__viewport" ref={emblaRef}>
+          <div className="embla__container flex">
+          {TEMPORARY_DATA?.map((item) => (
+                <div
+                  key={item.id}
+                  className="flex-[0_0_90%] md:flex-[0_0_calc(50%-10px)] lg:flex-[0_0_calc(33.33%-10px)] min-w-0 px-2"
+                >
+                  <div className="relative bg-transparent  overflow-hidden h-[400px] w-full">
+                    <div className="relative w-full h-full">
+                    <iframe
+                    title="google maps location"
                     src={item.src}
-                    className="absolute inset-0 w-full h-full"
+                    width="400"
+                    height="400"
                     loading="lazy"
-                  />
+                    className="w-full"
+                  ></iframe>
+                      <div className="absolute inset-0  rounded-lg " />
+                      <div className=" location-carousel absolute bottom-0 left-0 w-full bg-black bg-opacity-30 p-4 text-white">
+                    <h3 className="text-4xl font-bold text-center">
+                      {item.title}
+                    </h3>
+                    <p className="text-xl font-bold text-center">
+                      {item.description}
+                    </p>
+                  </div>
+                    </div>
+                  </div>
                 </div>
-                <div className="p-4 text-center">
-                  <h3 className="text-lg font-bold text-primary-grey">
-                    {item.title}
-                  </h3>
-                  <p className="text-sm text-primary-grey">
-                    {item.description}
-                  </p>
-                </div>
-              </div>
-
-              {/* Desktop Card */}
-              <div className="relative bg-gray-200 overflow-hidden shadow-lg w-full hidden lg:block">
-                <iframe
-                  title={`map-${item.id}`}
-                  src={item.src}
-                  width="400"
-                  height="400"
-                  loading="lazy"
-                  className="w-full"
-                />
-                <div className="absolute bottom-0 left-0 w-full bg-black bg-opacity-30 p-4 text-white">
-                  <h3 className="text-4xl font-bold text-center">
-                    {item.title}
-                  </h3>
-                  <p className="text-xl font-bold text-center">
-                    {item.description}
-                  </p>
-                </div>
-              </div>
-            </div>
-          ))}
+              ))}
+          </div>
         </div>
 
-        {/* Navigation Buttons */}
+        {/* Navigation Buttons - Hidden on mobile, visible on tablet and desktop */}
         <button
           aria-label="Previous slide"
+          className="hidden md:flex bg-primary-blue text-white hover:bg-primary-yellow hover:text-primary-blue transition duration-150 ease-in-out absolute left-2 top-1/2 -translate-y-1/2 w-14 aspect-square rounded-full items-center justify-center z-10"
           onClick={scrollPrev}
-          className="hidden lg:flex absolute left-2 top-1/2 -translate-y-1/2 bg-primary-blue text-white hover:bg-primary-yellow-dark hover:text-primary-blue transition duration-150 ease-in-out w-14 aspect-square rounded-full items-center justify-center z-10 "
         >
           <IoIosArrowBack size={30} />
         </button>
         <button
           aria-label="Next slide"
+          className="hidden md:flex bg-primary-blue text-white hover:bg-primary-yellow hover:text-primary-blue transition duration-150 ease-in-out absolute right-4 top-1/2 -translate-y-1/2 w-14 aspect-square rounded-full items-center justify-center z-10"
           onClick={scrollNext}
-          className="hidden lg:flex absolute right-2 top-1/2 -translate-y-1/2 bg-primary-blue text-white hover:bg-primary-yellow-dark hover:text-primary-blue transition duration-150 ease-in-out w-14 aspect-square rounded-full items-center justify-center z-10"
         >
           <IoIosArrowForward size={30} />
         </button>
       </div>
+      
+      <div className="pt-12"></div>
     </div>
-  );
-}
+
+)}
