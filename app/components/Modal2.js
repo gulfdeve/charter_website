@@ -1,52 +1,57 @@
 import React, { useState } from "react";
 import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/style.css";
-import { isValidPhoneNumber, parsePhoneNumberFromString } from "libphonenumber-js";
+import {
+  isValidPhoneNumber,
+  parsePhoneNumberFromString,
+} from "libphonenumber-js";
 
 const Modal2 = ({ isModalOpen, closeModal, idName, idValue }) => {
   if (!isModalOpen) return null;
 
   const [fullName, setFullName] = useState("");
   const [phoneNumber, setPhoneNumber] = useState("");
-  const [phoneCountry, setPhoneCountry] = useState({ countryCode: "ae", format: "" });
+  const [phoneCountry, setPhoneCountry] = useState({
+    countryCode: "ae",
+    format: "",
+  });
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
   const [errors, setErrors] = useState({});
   const [submissionSuccess, setSubmissionSuccess] = useState(false);
 
-
   const validateForm = () => {
-	const newErrors = {};
-  
-	if (!fullName.trim()) {
-	  newErrors.fullName = "Full Name is required.";
-	}
-  
-	if (!phoneNumber.trim()) {
-	  newErrors.phoneNumber = "Phone Number is required.";
-	} else {
-	  try {
-		const parsedPhone = parsePhoneNumberFromString("+" + phoneNumber);
-		if (!parsedPhone || !parsedPhone.isValid()) {
-		  newErrors.phoneNumber = "Please enter a valid phone number.";
-		}
-	  } catch (e) {
-		newErrors.phoneNumber = "Please enter a valid phone number.";
-	  }
-	}
-  
-	if (!email.trim()) {
-	  newErrors.email = "Email is required.";
-	} else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-	  newErrors.email = "Invalid email format.";
-	}
-  
-	if (!message.trim()) {
-	  newErrors.message = "Message is required.";
-	}
-  
-	setErrors(newErrors);
-	return Object.keys(newErrors).length === 0;
+    const newErrors = {};
+
+    if (!fullName.trim()) {
+      newErrors.fullName = "Full Name is required.";
+    }
+
+    if (!phoneNumber.trim()) {
+      newErrors.phoneNumber = "Phone Number is required.";
+    } else {
+      try {
+        const parsedPhone = parsePhoneNumberFromString("+" + phoneNumber);
+        if (!parsedPhone || !parsedPhone.isValid()) {
+          newErrors.phoneNumber = "Please enter a valid phone number.";
+        }
+      } catch (e) {
+        newErrors.phoneNumber = "Please enter a valid phone number.";
+      }
+    }
+
+    if (!email.trim()) {
+      newErrors.email = "Email is required.";
+    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+      newErrors.email = "Invalid email format.";
+    }
+
+    if (!message.trim()) {
+      newErrors.message = "Message is required.";
+    }
+
+    setErrors(newErrors);
+    return Object.keys(newErrors).length === 0;
   };
 
   const handleSubmit = async (e) => {
@@ -114,7 +119,8 @@ const Modal2 = ({ isModalOpen, closeModal, idName, idValue }) => {
             <form onSubmit={handleSubmit} className="space-y-4 w-full">
               {submissionSuccess && (
                 <div className="mb-6 p-4 bg-green-100 border border-green-400 text-green-700 rounded-md">
-                  Your form has been successfully submitted. We will contact you shortly.
+                  Your form has been successfully submitted. We will contact you
+                  shortly.
                 </div>
               )}
 
@@ -126,7 +132,9 @@ const Modal2 = ({ isModalOpen, closeModal, idName, idValue }) => {
                   onChange={(e) => setFullName(e.target.value)}
                   className="w-full border-l-4 rounded-md bg-[#f5f5f5] text-primary-grey focus:outline-none border-[#1b498f] focus:border-primary-yellow focus:bg-[#f3f7fd] transition duration-200 ease-in-out p-3"
                 />
-                {errors.fullName && <p className="text-red-600 text-sm">{errors.fullName}</p>}
+                {errors.fullName && (
+                  <p className="text-red-600 text-sm">{errors.fullName}</p>
+                )}
               </div>
 
               <div>
@@ -139,14 +147,14 @@ const Modal2 = ({ isModalOpen, closeModal, idName, idValue }) => {
                   }}
                   placeholder="Enter phone number"
                   isValid={(value, country) => {
-					try {
-					  const parsed = parsePhoneNumberFromString("+" + value);
-					  return parsed && parsed.isValid();
-					} catch {
-					  return false;
-					}
-				  }}
-                //   defaultErrorMessage="Please enter a valid phone number"
+                    try {
+                      const parsed = parsePhoneNumberFromString("+" + value);
+                      return parsed && parsed.isValid();
+                    } catch {
+                      return false;
+                    }
+                  }}
+                  //   defaultErrorMessage="Please enter a valid phone number"
                   inputStyle={{
                     width: "100%",
                     padding: "20px",
@@ -164,7 +172,9 @@ const Modal2 = ({ isModalOpen, closeModal, idName, idValue }) => {
                     fontFamily: "Montserrat, sans-serif",
                   }}
                 />
-                {errors.phoneNumber && <p className="text-red-600 text-sm">{errors.phoneNumber}</p>}
+                {errors.phoneNumber && (
+                  <p className="text-red-600 text-sm">{errors.phoneNumber}</p>
+                )}
               </div>
 
               <div>
@@ -175,7 +185,9 @@ const Modal2 = ({ isModalOpen, closeModal, idName, idValue }) => {
                   onChange={(e) => setEmail(e.target.value)}
                   className="w-full border-l-4 rounded-md bg-[#f5f5f5] text-primary-grey focus:outline-none border-[#1b498f] focus:border-primary-yellow focus:bg-[#f3f7fd] transition duration-200 ease-in-out p-3"
                 />
-                {errors.email && <p className="text-red-600 text-sm">{errors.email}</p>}
+                {errors.email && (
+                  <p className="text-red-600 text-sm">{errors.email}</p>
+                )}
               </div>
 
               <div>
@@ -186,7 +198,9 @@ const Modal2 = ({ isModalOpen, closeModal, idName, idValue }) => {
                   rows="8"
                   className="w-full border-l-4 rounded-md bg-[#f5f5f5] text-primary-grey focus:outline-none border-[#1b498f] focus:border-primary-yellow focus:bg-[#f3f7fd] transition duration-200 ease-in-out p-3"
                 />
-                {errors.message && <p className="text-red-600 text-sm">{errors.message}</p>}
+                {errors.message && (
+                  <p className="text-red-600 text-sm">{errors.message}</p>
+                )}
               </div>
 
               <button type="submit" className="blue-solid-button">
