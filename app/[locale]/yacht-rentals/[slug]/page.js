@@ -5,6 +5,7 @@ import YachtCarousal from "@/app/components/YachtCarousel";
 import Route from "@/app/components/Route";
 import YachtGallery from "./YachtGallery";
 import YachtDetails from "./YachtDetails";
+import { notFound } from "next/navigation";
 
 export default async function YachtPage({ params: paramsPromise }) {
   //   const { slug, locale } = params;
@@ -23,7 +24,7 @@ export default async function YachtPage({ params: paramsPromise }) {
   const { header_whatsapp_url } = settingsItem || {};
 
   if (!product) {
-    return <div className="text-center mt-20">No product found.</div>;
+    notFound();
   }
 
   const yachtDetails = [

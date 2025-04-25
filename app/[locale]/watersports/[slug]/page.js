@@ -3,7 +3,7 @@ import React from "react";
 import { FaWhatsapp } from "react-icons/fa";
 import { useData } from "@/app/context/DataContext";
 import { useLocale } from "next-intl";
-import { useParams } from "next/navigation";
+import { notFound, useParams } from "next/navigation";
 import PageTitleHeading from "../../../components/PageTitleHeading";
 import WaterSportCarousal2 from "../../../components/WaterSportCarousal2";
 
@@ -25,7 +25,9 @@ const Page = () => {
   // Find the package matching the slug
   const packageItem = data?.packages?.find((pkg) => pkg.slug === slug);
 
-  if (!packageItem) return <p>No package found for {slug}</p>;
+  if (!packageItem) {
+    notFound();
+  }
 
   return (
     <><div className="container mx-auto nav-space">

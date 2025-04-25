@@ -4,9 +4,11 @@ import { use } from "react";
 import { FaWhatsapp } from "react-icons/fa";
 import Modal2 from "@/app/components/Modal2";
 import { useData } from "@/app/context/DataContext";
+
 import { useLocale, useTranslations } from "next-intl";
 import Image from "next/image";
 import ExperienceCarousal from "@/app/components/ExperienceCarousal";
+import { notFound } from "next/navigation";
 const page = ({ params }) => {
   const { slug } = use(params); // Get slug from the URL
   const { data, loading, error } = useData();
@@ -27,7 +29,9 @@ const page = ({ params }) => {
 
   if (loading) return <div>Loading...</div>;
   if (error) return <div>Error: {error.message}</div>;
-  if (!event) return <div>No event found for this slug.</div>;
+  if (!event) {
+    notFound();
+  }
 
   return (
     <>
