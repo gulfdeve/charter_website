@@ -23,7 +23,7 @@ const toursData = [
     childPrice: "AED 149",
     liveBBQ: "Chicken & Beef Skewers, Sliders, | Hotdogs, Muffins, Fruits Water, Tea, Coffee, Soft Drinks & Juices<br>*Vegetarian food available on request - Veggie patty, Vegetable skewers",
     cruisingRoute: "Dubai Marina, JBR, Atlantis the Palm and Burj Al Arab",
-    departurePoint: "Dubai Marina",
+    departurePoint: "Dubai Harbour",
     blueHeadline: "AVAILABLE ALL DAYS OF THE WEEK",
     yellowHeadline: "",
     fareharborLink:
@@ -37,7 +37,7 @@ const toursData = [
     childPrice: "AED 149",
     liveBBQ: "Chicken & Beef Skewers, Sliders, | | Hotdogs, Muffins, Fruits Water, Tea, Coffee, Soft Drinks & Juices<br>*Vegetarian food available on request - Veggie patty, Vegetable skewers",
     cruisingRoute: "Dubai Marina, JBR and Burj Al Arab",
-    departurePoint: "Dubai Marina",
+    departurePoint: "Dubai Harbour",
     blueHeadline: "EVERY SUNDAY-WEDNESDAY",
     yellowHeadline: "50% OFF",
     fareharborLink:
@@ -51,7 +51,7 @@ const toursData = [
     childPrice: "AED 149",
     liveBBQ: "Chicken & Beef Skewers, Sliders, | Hotdogs, Muffins, Fruits Water, Tea, Coffee, Soft Drinks & Juices<br>*Vegetarian food available on request - Veggie patty, Vegetable skewers",
     cruisingRoute: "Dubai Marina, JBR and Burj Al Arab",
-    departurePoint: "Dubai Marina",
+    departurePoint: "Dubai Harbour",
     blueHeadline: "EVERY SUNDAY-WEDNESDAY",
     yellowHeadline: "50% OFF",
     fareharborLink:
