@@ -91,7 +91,7 @@ export default function LocationCarousel() {
 
   return (
     <div className="flex flex-col items-center justify-center bg-white pt-10">
-      <h2 className="text-primary-blue text-center font-bold text-2xl xl:text-4xl py-7">
+      <h2 className="text-primary-blue text-center font-bold text-2xl xl:text-3xl  pb-10">
 YACHT LOCATION
       </h2>
 
