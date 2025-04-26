@@ -38,7 +38,7 @@ export default function YachtmobileCarousal() {
                 <div className="flex flex-col border bg-white border-gray-300 xl:p-10 md:p-5 p-3 rounded-lg shadow-none">
                   {/* Yacht Title */}
                   <Link href={`/yacht-rentals/${product.slug}`}>
-                    <h2 className="xl:text-4xl md:text-lg xxs:text-sm text-xl font-bold">
+                    <h2 className="xl:text-4xl md:text-lg text-sm font-bold">
                       {product.translations?.[locale].name_of_yacht}
                     </h2>
                   </Link>
@@ -128,11 +128,11 @@ export default function YachtmobileCarousal() {
                     <div className="flex w-full justify-between items-center border-t border-gray-400 pt-3 pb-2 md:pb-0">
                     {/* Per Hour */}
                 <div className=" xl:p-2 flex flex-col xl:rounded-r-lg">
-                      <span className="xxs:text-[0.47rem] xs:text-[0.6rem]">
+                      <span className="text-[0.47rem] xs:text-[0.6rem]">
                         Price Per Hour:
                       </span>
                       <span className="font-bold text-sm xs:text-lg text-primary-red ">
-					              {product.per_hour_price.toLocaleString()}
+					              AED {product.per_hour_price.toLocaleString()}
                       </span>
                     </div>
                     <div className="">
@@ -141,7 +141,7 @@ export default function YachtmobileCarousal() {
                         target="_self"
                         rel="noopener noreferrer"
                         className="p-3
-                        text-base xxs:text-xs font-bold tracking-wider uppercase
+                        text-base text-xs font-bold tracking-wider uppercase
                         text-white bg-primary-blue-2
                         hover:bg-primary-blue hover:text-primary-yellow hover:scale-105
                         rounded-md shadow
