@@ -52,6 +52,13 @@ p,li,span {
           rounded-md shadow
           transition duration-150 ease-in-out transform ;
 }
+.btn-info {
+  @apply  py-3 pr-3
+          text-base font-semibold tracking-wider uppercase
+          text-white
+          transition duration-150 ease-in-out transform ;
+}
+
 .header_links {
   @apply text-primary-yellow hover:text-primary-yellow-dark text-primary-yellow hover:text-yellow-600 font-bold tracking-wide uppercase text-base;
 }
