@@ -125,14 +125,14 @@ export default function YachtmobileCarousal() {
                       </Link>
                   {/* Book Now & T&C */}
                   <div className="flex s:flex-row xxs:flex-col-reverse justify-between items-center z-10 xl:w-[32rem] mt-3">
-                    <div className="flex w-full justify-between items-center border-t border-gray-400 pt-3">
+                    <div className="flex w-full justify-between items-center border-t border-gray-400 pt-3 pb-2 md:pb-0">
                     {/* Per Hour */}
                 <div className=" xl:p-2 flex flex-col xl:rounded-r-lg">
                       <span className="xxs:text-[0.47rem] xs:text-[0.6rem]">
                         Price Per Hour:
                       </span>
                       <span className="font-bold text-sm xs:text-lg text-primary-red ">
-					              {product.per_hour_price.toLocaleString()} +VAT
+					              {product.per_hour_price.toLocaleString()}
                       </span>
                     </div>
                     <div className="">
