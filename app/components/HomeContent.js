@@ -16,6 +16,7 @@ import { Link } from "../i18n/routing";
 import Image from "next/image";
 import Yachtmobilecarousal from '@/app/components/Yachtmobilecarousal'
 import VideoLocal from "@/app/components/VideoLocal";
+import { FiArrowRight } from "react-icons/fi";
 import ModalAfternoon from "@/app/components/ModalAfternoon";
 export default function Home() {
   const t = useTranslations();
@@ -242,131 +243,109 @@ export default function Home() {
 
 
 
+<div className="bg-primary-blue-light py-20">
+      <div className="container mx-auto ]">
+  {/* Grid Layout for 4 Boxes */}
+  <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 auto-rows-fr">
+    {/* Box 1 */}
+    <a href="/yacht-rentals" className="relative group bg-primary-blue-2 text-white py-8 px-5 md:py-8 md:px-10 rounded-lg shadow-lg overflow-hidden flex flex-col">
+      {/* Background Image */}
+      <img
+        src="/LUXURY YACHT CHARTER.webp"
+        alt="Luxury Yacht Rentals"
+        className="absolute inset-0 w-full h-full object-cover opacity-20 md:opacity-60 md:group-hover:opacity-10 transition-opacity duration-300"
+      />
+      {/* Content */}
+      <div className="relative z-10 flex flex-col h-full">
+        <h2 className="text-xl md:text-2xl xl:text-2xl font-bold mb-4">Luxury Yacht Rentals</h2>
+        <p className="md:opacity-0 md:group-hover:opacity-100 leading-7 transition-opacity duration-300 text-sm mb-4">
+          Marvel with the beauty of Dubai on a luxury yacht. Explore our yachts in Dubai Marina and Dubai Harbor Marina with excellent conditions, full of luxurious amenities, flexible booking timings, capacity, and yacht sizes. Cruise along the Arabian Gulf and Dubai’s top attractions – Burj Al Arab, Atlantis The Palm, JBR, Ain Dubai, Bluewaters Island, and much more.
+          <br />
+          <br />
+          Welcome your guests in a warm atmosphere with pure elegance and style.
+        </p>
+        <div className="flex items-center mt-auto pt-5 group">
+          <div className="btn-info">Explore Our Yachts</div>
+          <FiArrowRight size={20} className="text-lg transform md:group-hover:translate-x-4 transition-transform duration-300" />
+        </div>
+      </div>
+    </a>
 
-      <div className="flex flex-col  md:flex-row-reverse items-center justify-center ">
-        <div className="">
-          <div className="">
-            <img
-              src="/LUXURY YACHT CHARTER.webp"
-              alt="luxury yacht charter"
-              className="w-full h-full object-cover xl:w-[380rem] sm:w-[170rem] lg:w-[160rem] md:h-[443px] xl:h-[452px] lg:h-[404px]"
-            />
-          </div>
-        </div>
-        <div className="flex flex-col items-center sm:items-start sm:justify-start justify-center bg-primary-blue px-5 xl:px-32 xl:py-12 py-5 md:h-[443px] xl:w-[395rem] lg:w-[250rem] xl:h-[452px] lg:h-[404px]">
-        
-          <h2 className=" text-primary-yellow text-center font-bold text-2xl xl:text-4xl py-7">
-            LUXURY YACHT RENTALS
-          </h2>
-          <p className=" text-white text-center sm:text-left  text-md  sm:text-sm xl:text-md pb-10">
-            Marvel with the beauty of Dubai on a luxury yacht. Explore our
-            yachts in Dubai Marina and Dubai Harbor Marina with excellent
-            conditions, full of luxurious amenities, flexible booking timings,
-            capacity and yacht sizes. Cruise along the Arabian Gulf and Dubai’s
-            top attractions – Burj Al Arab, Atlantis The Palm, JBR, Ain Dubai,
-            Bluewaters Island and much more.
-          </p>
-          <p className=" text-white text-center sm:text-left text-md sm:text-sm xl:text-md  pb-10">
-            Welcome your guests in a warm atmosphere with pure elegance and
-            style.
-          </p>
-          <button className="flex flex-row items-center sm:text-left justify-center mb-4 py-2 px-6 md:py-2 md:px-4   outline-primary-yellow outline-double rounded-md bg-primary-blue text-primary-yellow  font-bold text-[20px] md:text-sm xl:text-lg">
-            EXPLORE OUR YACHTS
-          </button>
+    {/* Box 2 */}
+    <a href="/yacht-trips" className="relative group bg-primary-blue-2 text-white py-8 px-5 md:py-8 md:px-10 rounded-lg shadow-lg overflow-hidden flex flex-col">
+      {/* Background Image */}
+      <img
+        src="/CUSTOMIZEDEXPERIENCES.webp"
+        alt="Customized Yacht Trips"
+        className="absolute inset-0 w-full h-full object-cover opacity-20 md:opacity-60 md:group-hover:opacity-10 transition-opacity duration-300"
+      />
+      {/* Content */}
+      <div className="relative z-10 flex flex-col h-full">
+        <h2 className="text-xl md:text-2xl xl:text-2xl font-bold mb-4">Customized Yacht Trips</h2>
+        <p className="md:opacity-0 md:group-hover:opacity-100 leading-7 transition-opacity duration-300 text-sm mb-4">
+          Centaurus Charter has something for everyone. Embark on a sunset cruise, catch some fish, celebrate milestones, woo your loved one, or take your colleagues to a different team meeting; rent a yacht in Dubai and enjoy the day making memories that last forever. Book a Dubai luxury yacht for parties, fishing trips, or romantic getaways in Dubai.
+          <br />
+          <br />
+          Celebrate Birthday Parties, Wedding Anniversaries, Marriage Proposals, or Corporate Events on private yachts.
+        </p>
+        <div className="flex items-center mt-auto pt-5 group">
+          <div className="btn-info">Explore Our Experiences</div>
+          <FiArrowRight size={20} className="text-lg transform md:group-hover:translate-x-4 transition-transform duration-300" />
         </div>
       </div>
-      <div className="flex flex-col  lg:flex-row items-center justify-center">
-        <div>
-          <div className="">
-            <img
-              src="/CUSTOMIZEDEXPERIENCES.webp"
-              alt="customized experiences"
-              className="w-full h-full object-cover xl:w-[260rem] sm:w-[170rem] lg:w-[160rem] md:h-[443px] xl:h-[452px] lg:h-[404px]"
-            />
-          </div>
-        </div>
+    </a>
 
-        <div className="flex flex-col items-center sm:items-start sm:justify-start justify-center  bg-primary-yellow px-5 xl:px-32 xl:py-12 py-5 md:h-[443px] xl:w-[277rem] xl:h-[452px] lg:h-[404px]">
-          <h2 className=" text-primary-blue text-center font-bold text-2xl xl:text-4xl py-7">
-            CUSTOMIZED YACHT TRIPS
-          </h2>
-          <p className=" text-primary-blue text-center sm:text-left  text-md  sm:text-sm xl:text-md pb-10">
-            Centaurus Charter has something for everyone. Embark on a sunset
-            cruise, catch some fish, celebrate milestones, woo your loved one or
-            take your colleagues to a different team meeting; rent a yacht in
-            Dubai and enjoy the day making memories that last forever. Book a
-            Dubai luxury yacht for parties, fishing trips or romantic getaway in
-            Dubai.
-          </p>
-          <p className=" text-primary-blue text-center sm:text-left text-md sm:text-sm xl:text-md  pb-10">
-            Celebrate Birthday Parties, Wedding Anniversary, Marriage proposals
-            or Corporate Events on private yachts.
-          </p>
-          <button className="flex flex-row items-center sm:text-left justify-center mb-4 py-2 px-6 md:py-2 md:px-4   outline-[#0D2343] outline-double rounded-md bg-primary-yellow text-primary-blue  font-bold text-[20px] md:text-sm xl:text-lg">
-            EXPLORE OUR EXPERIENCES
-          </button>
+    {/* Box 3 */}
+    <a href="/offers" className="relative group bg-primary-blue-2 text-white py-8 px-5 md:py-8 md:px-10 rounded-lg shadow-lg overflow-hidden flex flex-col">
+      {/* Background Image */}
+      <img
+        src="/EXCLUSIVEOFFERS.webp"
+        alt="Exclusive Offers"
+        className="absolute inset-0 w-full h-full object-cover opacity-20 md:opacity-60 md:group-hover:opacity-10 transition-opacity duration-300"
+      />
+      {/* Content */}
+      <div className="relative z-10 flex flex-col h-full">
+        <h2 className="text-xl md:text-2xl xl:text-2xl font-bold mb-4">Exclusive Offers</h2>
+        <p className="md:opacity-0 md:group-hover:opacity-100 leading-7 transition-opacity duration-300 text-sm mb-4">
+          Dubai is a true yachting heaven with azure blue waters and beautiful skyscrapers. Take your loved ones to sea. We bring to you deals from day charter, yacht parties to overnight yacht rentals. Don’t miss exploring the special discount for Emirates Platinum, Business Councils, & FAZAA members.
+          <br />
+          <br />
+          Find your ideal boat with great deals and confirm your booking instantly.
+        </p>
+        <div className="flex items-center mt-auto pt-5 group">
+          <div className="btn-info">Explore All Offers</div>
+          <FiArrowRight size={20} className="text-lg transform md:group-hover:translate-x-4 transition-transform duration-300" />
         </div>
       </div>
-      <div className="flex flex-col  md:flex-row-reverse items-center justify-center">
-        <div>
-          <div className="">
-            <img
-              src="/EXCLUSIVEOFFERS.webp"
-              alt="exclusive offers"
-              className="w-full h-full object-cover xl:w-[270rem] sm:w-[170rem] lg:w-[140rem] md:h-[443px] xl:h-[452px] lg:h-[404px]"
-            />
-          </div>
-        </div>
-        <div className="flex flex-col items-center sm:items-start sm:justify-start justify-center bg-primary-blue px-5 xl:px-32 xl:py-12 py-5 md:h-[443px] xl:w-[287rem]  xl:h-[452px] lg:h-[404px]">
-          <h2 className=" text-primary-yellow text-center font-bold text-2xl xl:text-3xl py-7">
-            EXCLUSIVE OFFERS
-          </h2>
-          <p className=" text-white text-center sm:text-left  text-md  sm:text-sm xl:text-md pb-10">
-            Dubai is a true yachting heaven with azure blue waters and beautiful
-            skyscrapers. Take your loved ones to sea. We bring to you deals from
-            day charter, yacht parties to overnight yacht rentals. Don’t miss to
-            explore the special discount for Emirates platinum , Business
-            councils & FAZAA members.
-          </p>
-          <p className=" text-white text-center sm:text-left text-md sm:text-sm xl:text-md  pb-10">
-            Find your ideal boat with great deals and confirm your booking
-            instantly.
-          </p>
-          <button className="flex flex-row items-center sm:text-left justify-center mb-4 py-2 px-6 md:py-2 md:px-4   outline-primary-yellow outline-double rounded-md bg-primary-blue text-primary-yellow  font-bold text-[20px] md:text-sm xl:text-lg">
-            EXPLORE ALL OFFERS
-          </button>
-        </div>
-      </div>
-      <div className="flex flex-col  lg:flex-row items-center justify-center">
-        <div>
-          <div className="">
-            <img
-              src="/WATERACTIVITIES.webp"
-              alt="water activities"
-              className="w-full h-full object-cover xl:w-[240rem] sm:w-[170rem] lg:w-[140rem] md:h-[443px] xl:h-[452px] lg:h-[404px]"
-            />
-          </div>
-        </div>
+    </a>
 
-        <div className="flex flex-col items-center sm:items-start sm:justify-start justify-center  bg-primary-yellow px-5 xl:px-32 xl:py-12 py-5 md:h-[443px] xl:w-[250rem] xl:h-[452px] lg:h-[404px]">
-          <h2 className=" text-primary-blue text-center font-bold text-2xl xl:text-3xl py-7">
-            WATER SPORTS ADD ON’s
-          </h2>
-          <p className=" text-primary-blue text-center sm:text-left  text-md  sm:text-sm xl:text-md pb-10">
-            Holidays in Dubai offers a great mix of fun, adventure, breath
-            taking places and special moments. It’s truly amazing to cruise the
-            beautiful coastline with the speed jet boat or fly high on waters
-            with fly boarding. Find plenty of water activities at the best price
-            and make your excursion even more exciting.
-          </p>
-          <p className=" text-primary-blue text-center sm:text-left text-md sm:text-sm xl:text-md  pb-10">
-            Book your watersports together with boat charter at the best price.
-          </p>
-          <button className="flex flex-row items-center sm:text-left justify-center mb-4 py-2 px-6 md:py-2 md:px-4   outline-[#0D2343] outline-double rounded-md bg-primary-yellow text-primary-blue  font-bold text-[20px] md:text-sm xl:text-lg">
-            EXPLORE OUR WATER ACTIVITIES
-          </button>
+    {/* Box 4 */}
+    <a href="/watersports" className="relative group bg-primary-blue-2 text-white py-8 px-5 md:py-8 md:px-10 rounded-lg shadow-lg overflow-hidden flex flex-col">
+      {/* Background Image */}
+      <img
+        src="/WATERACTIVITIES.webp"
+        alt="Water Sports Add-ons"
+        className="absolute inset-0 w-full h-full object-cover opacity-20 md:opacity-60 md:group-hover:opacity-10 transition-opacity duration-300"
+      />
+      {/* Content */}
+      <div className="relative z-10 flex flex-col h-full">
+        <h2 className="text-xl md:text-2xl xl:text-2xl font-bold mb-4">Water Sports Add-ons</h2>
+        <p className="md:opacity-0 md:group-hover:opacity-100 leading-7 transition-opacity duration-300 text-sm mb-4">
+          Holidays in Dubai offer a great mix of fun, adventure, breathtaking places, and special moments. It’s truly amazing to cruise the beautiful coastline with the speed jet boat or fly high on waters with flyboarding. Find plenty of water activities at the best price and make your excursion even more exciting.
+          <br />
+          <br />
+          Book your watersports together with a boat charter at the best price.
+        </p>
+        <div className="flex items-center mt-auto pt-5 group">
+          <div className="btn-info">Explore Our Water Activities</div>
+          <FiArrowRight size={20} className="text-lg transform md:group-hover:translate-x-4 transition-transform duration-300" />
         </div>
-      </div>
+      
+    </div>
+    </a>
+  </div>
+</div>
+</div>
       <WhyChooseUs />
       <div className="h-[30vh] lg:h-[50vh] relative">
   {/* Scrollable Background */}
