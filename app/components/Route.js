@@ -105,7 +105,7 @@ const Route = ({ product, slug, header_whatsapp_url }) => {
                 Get a Quote
               </a>
               <a
-                href={pdfFile.pdf}
+                href={`/${pdfFile.pdf}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="blue-lined-button"
