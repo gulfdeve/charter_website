@@ -228,7 +228,7 @@ export default function Home() {
                   enjoy drinks on the deck while watching the sunset. Come cruise with
                   us.
                 </p>
-{/* Background SVG in Front */}
+{/* Background SVG in Behind */}
 <div
         className="absolute inset-0 z-[-10]"
         style={{

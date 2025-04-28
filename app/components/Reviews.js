@@ -128,7 +128,7 @@ const Reviews = () => {
         </div>
 
         {/* Desktop nav: constrained inside container */}
-        <div className="hidden xl:absolute xl:left-20 xl:right-20 xl:top-[64%] xl:flex xl:-translate-y-1/2 xl:justify-between ">
+        <div className="hidden lg:absolute lg:left-20 lg:right-20 lg:top-[64%] lg:flex lg:-translate-y-1/2 lg:justify-between ">
           <button
             aria-label="Previous"
             className="text-gray-500 p-2 rounded-full"
@@ -148,7 +148,7 @@ const Reviews = () => {
         </div>
 
         {/* Mobile nav below */}
-        <div className="flex xl:hidden justify-center gap-4 mt-6 ">
+        <div className="flex lg:hidden justify-center gap-4 mt-6 ">
           <button
             aria-label="Previous"
             className="bg-gray-200 text-gray-500 p-2 rounded-full hover:bg-gray-300"
@@ -168,7 +168,7 @@ const Reviews = () => {
         </div>
 
         {/* Google reviews link */}
-        <div className="container flex justify-center items-center md:justify-end gap-2 mt-6  md:px-4 lg:px-44">
+        <div className="container flex flex-col md:flex-row justify-center items-center lg:justify-end gap-2 mt-6  md:px-4 lg:px-44">
           <a
             href="https://g.co/kgs/jfR6mP6"
             className="underline text-gray-600 font-bold"
