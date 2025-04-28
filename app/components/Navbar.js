@@ -229,7 +229,7 @@ export default function Navbar() {
                     <ul className="absolute top-full left-0 w-60 bg-white text-black transition-all duration-150 shadow-lg rounded-lg overflow-hidden border border-gray-200 z-50">
                       <li
                         onClick={() => setExperiencesOpen(false)}
-                        className="cursor-pointer uppercase text-xs font-medium text-primary-grey hover:text-white hover:bg-primary-blue transition-all duration-300 font-Montserrat"
+                        className="cursor-pointer capitalize text-xs font-medium text-primary-grey hover:text-white hover:bg-primary-blue transition-all duration-300 font-Montserrat"
                       >
                         <Link href="/watersports" className="py-2 px-4 block">
                           {t("navbar.water-sports")}
