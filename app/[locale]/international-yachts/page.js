@@ -33,6 +33,7 @@ async function fetchVessels(searchParams) {
     algorithm: "RS256",
     header: { alg: "RS256", typ: "JWT", kid },
   });
+  console.log("Generated JWT Token:", token);
 
   // --- Build Query Params ---
   const queryObject = {
