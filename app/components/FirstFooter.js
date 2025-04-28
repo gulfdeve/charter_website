@@ -386,7 +386,7 @@ export default function FirstFooter() {
       href={pathname.includes('shared-yacht-tours-dubai') 
         ? "https://fareharbor.com/embeds/book/centauruscharter/?full-items=yes&flow=1038617" 
         : "https://fareharbor.com/embeds/book/centauruscharter/?full-items=yes"}
-      className="yellow-solid-button fixed fixed-btn bottom-4 hover:no-underline z-10 w-[calc(100%-2rem)] md:w-auto mx-auto left-0 right-0 text-center md:left-auto md:right-4"
+      className="yellow-solid-button fixed fixed-btn bottom-4 hover:no-underline z-40 w-[calc(100%-2rem)] md:w-auto mx-auto left-0 right-0 text-center md:left-auto md:right-4"
     >
       BOOK YOUR YACHT
     </a>
