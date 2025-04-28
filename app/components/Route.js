@@ -25,6 +25,41 @@ const Route = ({ product, slug, header_whatsapp_url }) => {
     'bg-yellow-100'
   ];
 
+  const routePDF = {
+    "56ft-vassia": {
+      pdf: "ROUTE MAP-ALL YACHTS-ETOSHA-VASSIA-THUNDER.pdf",
+    },
+    "58ft-etosha": {
+	pdf: "ROUTE MAP-ALL YACHTS-ETOSHA-VASSIA-THUNDER.pdf",
+    },
+    "36ft-thunder": {
+		pdf: "ROUTE MAP-ALL YACHTS-ETOSHA-VASSIA-THUNDER.pdf",
+    },
+    "61ft-silvercreek": {
+		pdf: "ROUTE MAP-ALL YACHTS-LAGOONA-SILVER.pdf",
+    },
+    "56ft-lagoona": {
+		pdf: "ROUTE MAP-ALL YACHTS-LAGOONA-SILVER.pdf",
+    },
+    "40ft-yacht-Riverside": {
+		pdf: "ROUTE MAP-ALL YACHTS-RIVERSIDE.pdf",
+    },
+    "36ft-Storm": {
+		pdf: "ROUTE MAP-ALL YACHTS-STORM.pdf",
+    },
+    "118ft-poseidon": {
+		pdf: "ROUTE MAP-ALL YACHTS-POSEIDON.pdf",
+    },
+    "77ft-dionysos": {
+		pdf: "ROUTE MAP-ALL YACHTS-DIONYSOS.pdf",
+    },
+    "85ft-yacht-Kronos": {
+		pdf: "ROUTE MAP-ALL YACHTS-KRONOS.pdf",
+    },
+  };
+
+  const pdfFile = routePDF[product.slug] || {};
+
   return (
     <div>
       <div className="bg-primary-blue w-full h-auto py-10 xl:px-44 md:px-6 px-2">
@@ -70,7 +105,7 @@ const Route = ({ product, slug, header_whatsapp_url }) => {
                 Get a Quote
               </a>
               <a
-                href="/CentaurusCharterRoutemap.pdf"
+                href={pdfFile.pdf}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="blue-lined-button"
