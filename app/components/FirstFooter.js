@@ -1,7 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import { useLocale, useTranslations } from "next-intl";
-import { Link } from "@/app/i18n/routing";
+import { useRouter, usePathname, Link } from "@/app/i18n/routing";
 import { useData } from "@/app/context/DataContext";
 import { FaPhoneAlt } from "react-icons/fa";
 import { FaWhatsapp } from "react-icons/fa";
@@ -13,6 +13,7 @@ export default function FirstFooter() {
   const locale = useLocale();
   const { data, loading } = useData();
   const t = useTranslations();
+  const pathname = usePathname();
 
   // Scroll to top function
   const scrollToTop = () => {
@@ -380,14 +381,16 @@ export default function FirstFooter() {
           })}
         </div>
       </div>
-      <div className="container mx-auto px-4">
-        <a
-          href="https://fareharbor.com/embeds/book/centauruscharter/?full-items=yes"
-          className="yellow-solid-button fixed fixed-btn bottom-4 hover:no-underline z-10 w-[calc(100%-2rem)] md:w-auto mx-auto left-0 right-0 text-center md:left-auto md:right-4"
-        >
-          BOOK YOUR YACHT
-        </a>
-      </div>
+	  <div className="container mx-auto px-4">
+    <a
+      href={pathname.includes('shared-yacht-tours-dubai') 
+        ? "https://fareharbor.com/embeds/book/centauruscharter/?full-items=yes&flow=1038617" 
+        : "https://fareharbor.com/embeds/book/centauruscharter/?full-items=yes"}
+      className="yellow-solid-button fixed fixed-btn bottom-4 hover:no-underline z-40 w-[calc(100%-2rem)] md:w-auto mx-auto left-0 right-0 text-center md:left-auto md:right-4"
+    >
+      BOOK YOUR YACHT
+    </a>
+  </div>
     </footer>
     </>
   );

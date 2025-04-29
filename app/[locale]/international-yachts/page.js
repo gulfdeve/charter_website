@@ -12,8 +12,8 @@ async function fetchVessels(searchParams) {
   console.log("Received searchParams:", searchParams);
 
   // --- Generate JWT Token ---
-//   const privateKey = fs.readFileSync("private_key.pem", "utf8");
-  const privateKey = process.env.ANKOR_PRIVATE_KEY;
+  // const privateKey = fs.readFileSync('private_key.pem', 'utf8');
+	const privateKey = process.env.ANKOR_PRIVATE_KEY.replace(/\\n/g, '\n');
   const kid = "jSZNvbnPK03KXEEo0-bJw4XPF1z68eW_OpHFW_9XvLY";
   const companyUri = "c::19468221194";
 
@@ -33,6 +33,7 @@ async function fetchVessels(searchParams) {
     algorithm: "RS256",
     header: { alg: "RS256", typ: "JWT", kid },
   });
+  console.log("Generated JWT Token:", token);
 
   // --- Build Query Params ---
   const queryObject = {
@@ -112,7 +113,7 @@ export default async function VesselsPage({ searchParams }) {
   const nextPageLink = currentPage < totalPages ? buildPageLink(currentPage + 1) : null;
 
   return (
-    <div className="bg-white w-full h-full mt-14 md:mt-0 mb-36">
+    <div className="bg-white w-full h-full mt-14 md:mt-0 mb-36 nav-space">
       {/* --- HERO IMAGE (full-width at top) --- */}
       <div className="relative w-full h-[500px]">
         <img
@@ -124,8 +125,8 @@ export default async function VesselsPage({ searchParams }) {
 
       {/* --- HEADER BELOW IMAGE --- */}
       <div className="text-center my-8">
-        <h1 className="text-4xl font-extrabold mb-2 tracking-tight">HEADER</h1>
-        <h2 className="text-xl font-light">SUB HEADER</h2>
+        <h1 className=" font-extrabold mb-2 tracking-tight">HEADER</h1>
+        <h3 className=" font-light">SUB HEADER</h3>
       </div>
 
       {/* --- SEARCH FORM --- */}

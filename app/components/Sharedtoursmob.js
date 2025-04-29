@@ -43,13 +43,13 @@ export default function ToursCarousel({ toursData }) {
       {/* Embla carousel viewport */}
       <div ref={emblaRef} className="overflow-hidden">
         {/* Carousel container with a horizontal flex layout */}
-        <div className="flex gap-4 mx-4 container ">
+        <div className="flex gap-4 container ">
           {toursData.map((tour, index) => (
             <div
               key={index}
               className="flex-[0_0_85%] md:flex-[0_0_50%] lg:flex-[0_0_40%] py-10"
             >
-              <div className="bg-white rounded-lg shadow-custom duration-300 p-5 space-y-3 overflow-hidden ">
+              <div className="bg-white rounded-lg shadow-custom duration-300 p-2 space-y-1 overflow-hidden ">
                 {/* Image Section */}
                 <div className="relative">
                   <img

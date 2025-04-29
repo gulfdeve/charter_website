@@ -24,7 +24,7 @@ export default function SearchResultsClient({
   console.log("rentalppp",rentalPeriod);
   return (
     <div className="mt-12 flex flex-col items-center justify-center px-4 container mx-auto">
-      <h2 className="text-2xl font-semibold text-center mb-6">Search Results</h2>
+      <h2 className=" font-semibold text-center mb-6">Search Results</h2>
       {paginatedHits && paginatedHits.length > 0 ? (
         <>
           <div className="flex flex-wrap justify-center gap-6">
@@ -49,37 +49,37 @@ export default function SearchResultsClient({
 
                 <div className="p-4 flex flex-col justify-between grow">
                   <Link href={`/yachts-for-sale-dubai/${vessel.slug || "some-default"}`}>
-                    <h2 className="text-xl font-bold text-navy-900 mb-3">
+                    <h3 className=" font-bold text-primary-blue mb-3">
                       {vessel.name || "Unnamed Yacht"}
-                    </h2>
+                    </h3>
                   </Link>
 
                   <div className="grid grid-cols-2 gap-4 mb-4">
                     <div className="border-b border-gray-200">
-                      <p className="text-[#125589] text-sm font-medium mb-1">Build:</p>
-                      <p className="text-gray-900 text-sm font-bold">{vessel.make || "N/A"}</p>
+                      <h6 className="text-[#125589]  font-medium mb-1">Build:</h6>
+                      <h6 className="text-gray-900  font-bold">{vessel.make || "N/A"}</h6>
                     </div>
                     <div className="border-b border-gray-200">
-                      <p className="text-[#125589] text-sm font-medium mb-1">Cabins:</p>
-                      <p className="text-gray-900 text-sm font-bold">{vessel.cabins || "N/A"}</p>
+                      <h6 className="text-[#125589]  font-medium mb-1">Cabins:</h6>
+                      <h6 className="text-gray-900  font-bold">{vessel.cabins || "N/A"}</h6>
                     </div>
                     <div className="border-b border-gray-200">
-                      <p className="text-[#125589] text-sm font-medium mb-1">Length:</p>
-                      <p className="text-gray-900 text-sm font-bold">{vessel.length || "N/A"}</p>
+                      <h6 className="text-[#125589]  font-medium mb-1">Length:</h6>
+                      <h6 className="text-gray-900  font-bold">{vessel.length || "N/A"}</h6>
                     </div>
                     <div className="border-b border-gray-200">
-                      <p className="text-[#125589] text-sm font-medium mb-1">Guests:</p>
-                      <p className="text-gray-900 text-sm font-bold">{vessel.sleeps || "N/A"}</p>
+                      <h6 className="text-[#125589]  font-medium mb-1">Guests:</h6>
+                      <h6 className="text-gray-900  font-bold">{vessel.sleeps || "N/A"}</h6>
                     </div>
                     <div className="border-b border-gray-200">
-                      <p className="text-[#125589] text-sm font-medium mb-1">Year:</p>
-                      <p className="text-gray-900 text-sm font-bold">{vessel.builtYear || "N/A"}</p>
+                      <h6 className="text-[#125589]  font-medium mb-1">Year:</h6>
+                      <h6 className="text-gray-900  font-bold">{vessel.builtYear || "N/A"}</h6>
                     </div>
                     <div className="border-b border-gray-200">
-                      <p className="text-[#125589] text-sm font-medium mb-1">Price:</p>
-                      <p className="text-gray-900 text-sm font-bold">
+                      <h6 className="text-[#125589]  font-medium mb-1">Price:</h6>
+                      <h6 className="text-gray-900 font-bold">
                         {vessel.price ? `$${vessel.price.toLocaleString()}` : "N/A"}
-                      </p>
+                      </h6>
                     </div>
                   </div>
 
