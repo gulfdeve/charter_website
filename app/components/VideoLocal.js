@@ -15,7 +15,7 @@ export default function VideoLocal({ filename, section }) {
   }, []);
 
   return (
-    <div className="w-full mx-auto nav-space relative overflow-hidden">
+    <div className="w-full mx-auto nav-space relative">
       {/* Local Video as Background */}
       <div className="" style={{ pointerEvents: "none" }}>
         <video
@@ -43,7 +43,7 @@ export default function VideoLocal({ filename, section }) {
         className="hidden lg:block absolute inset-0 bg-black opacity-50"
         style={{ pointerEvents: "none" }}
         ></div>
-        <div className="block text-center mt-10 lg:absolute lg:-translate-x-2/4 lg:-translate-y-2/4 lg:left-2/4 lg:top-2/4 lg:mt-0">
+        <div className="container block text-center mt-10 lg:absolute lg:-translate-x-2/4 lg:-translate-y-2/4 lg:left-2/4 lg:top-2/4 lg:mt-0">
           <h1 className="mb-4 text-primary-blue-2 lg:text-white">
             All-Inclusive Sharing Yacht Trips In Dubai
           </h1>

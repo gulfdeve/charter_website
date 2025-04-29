@@ -72,6 +72,13 @@ export default function ToursCarousel({ toursData }) {
                         </p>
                       </div>
                     )}
+					{tour.validity && (
+					<div className="px-3 py-1">
+					  <p className="text-xs uppercase text-white">
+						{tour.validity}
+					  </p>
+					</div>
+				  )}
                   </div>
                 </div>
 

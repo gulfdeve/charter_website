@@ -25,6 +25,7 @@ const toursData = [
     cruisingRoute: "Dubai Marina, JBR, Atlantis the Palm and Burj Al Arab",
     departurePoint: "Dubai Harbour",
     blueHeadline: "AVAILABLE ALL DAYS OF THE WEEK",
+	validity: "*Valid from 4-28 May 2025",
     yellowHeadline: "",
     fareharborLink:
       "https://fareharbor.com/embeds/book/centauruscharter/items/488624/?full-items=yes&flow=no",
@@ -39,6 +40,7 @@ const toursData = [
     cruisingRoute: "Dubai Marina, JBR and Burj Al Arab",
     departurePoint: "Dubai Harbour",
     blueHeadline: "EVERY SUNDAY-WEDNESDAY",
+	validity: "*Valid from 4-28 May 2025",
     yellowHeadline: "50% OFF",
     fareharborLink:
       "https://fareharbor.com/embeds/book/centauruscharter/items/488868/?full-items=yes&flow=no",
@@ -53,6 +55,7 @@ const toursData = [
     cruisingRoute: "Dubai Marina, JBR and Burj Al Arab",
     departurePoint: "Dubai Harbour",
     blueHeadline: "EVERY SUNDAY-WEDNESDAY",
+	validity: "*Valid from 4-28 May 2025",
     yellowHeadline: "50% OFF",
     fareharborLink:
       "https://fareharbor.com/embeds/book/centauruscharter/items/488872/?full-items=yes&flow=no",
@@ -127,15 +130,13 @@ const Page = () => {
         </div>
 
         {/* Seasonal Tours Header */}
-        <div>
-          <div className="flex items-center justify-center w-full my-6">
+          <div className="flex items-center justify-center w-full my-6 container">
             <hr className="flex-grow border-primary-yellow-dark" />
-            <span className="px-4 text-2xl 2xl:text-2xl font-semibold text-primary-blue-2 uppercase">
+            <span className="text-2xl 2xl:text-2xl font-semibold text-primary-blue-2 uppercase">
               Shared yacht tour prices & online booking
             </span>
             <hr className="flex-grow border-primary-yellow-dark" />
           </div>
-        </div>
 
         {/* Card Grid */}
         <div className="md:block hidden">
@@ -168,6 +169,13 @@ const Page = () => {
                       </p>
                     </div>
                   )}
+				  {tour.validity && (
+					<div className="px-3 py-1">
+					  <p className="text-xs uppercase text-white">
+						{tour.validity}
+					  </p>
+					</div>
+				  )}
                 </div>
               </div>
 
