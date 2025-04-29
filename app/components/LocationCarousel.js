@@ -39,21 +39,21 @@ const TEMPORARY_DATA = [
       title: "Dubai Harbour ",
       description: "(Storm)",
       src: "https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3614.3279149091572!2d55.138999999999996!3d25.0933333!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMjXCsDA1JzM2LjAiTiA1NcKwMDgnMjAuNCJF!5e0!3m2!1sen!2sae!4v1745566272471!5m2!1sen!2sae",
-      link:"http://google.com/maps/place/Al+Wasl+Dhow/@25.093333,55.139,16z/data=!4m6!3m5!1s0x3e5f1356b7b45fab:0xf155b8ffc518ad23!8m2!3d25.0956445!4d55.1386389!16s%2Fg%2F11b_00vm_z?hl=en&entry=ttu&g_ep=EgoyMDI1MDQyMy4wIKXMDSoASAFQAw%3D%3D"
+      link:"https://maps.app.goo.gl/3Nme79N7jRvsVZ7L9"
     },
     {
       id: 6,
       title: "Dubai Harbour ",
       description: "(Kronos)",
       src: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3609.6418554768284!2d55.28838520000002!3d25.1886704!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f69968419a28d%3A0x9ac03170b460adb7!2sCentaurus%20Charter%20Yachts%20%26%20Boats%20Rental%20-%20Marasi%20Bay%20Marina!5e0!3m2!1sen!2sae!4v1745565761528!5m2!1sen!2sae",
-      link:"https://www.google.com/maps?ll=25.18867,55.288385&z=16&t=m&hl=en&gl=AE&mapclient=embed&cid=11150967037501681079 ",
+      link:"https://maps.app.goo.gl/XVPwMjj8uWpwocsh6",
     },
     {
       id: 7,
       title: "Dubai Harbour ",
       description: "(Riverside)",
       src: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3613.3196216528795!2d55.1418864!3d25.0910397!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f6b9ffbbf937b%3A0xa3eaabac5f6ee887!2sRiverside%20Yacht%20-%20Centaurus%20Charter%20Yachts%20%26%20Boats%20Rental!5e0!3m2!1sen!2sae!4v1745566092581!5m2!1sen!2sae",
-      link:"https://www.google.com/maps?ll=25.09104,55.141886&z=16&t=m&hl=en&gl=AE&mapclient=embed&cid=11811441729556375687"
+      link:"https://maps.app.goo.gl/oGk6YfdTv1PtRCwD7"
     }
   ];
   
@@ -80,7 +80,7 @@ export default function LocationCarousel() {
       // Autoplay functionality
       const autoplay = setInterval(() => {
         emblaInstance.current?.scrollNext();
-      }, 10000);
+      }, 10000000000);
   
       return () => {
         clearInterval(autoplay);
