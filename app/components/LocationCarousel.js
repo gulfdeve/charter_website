@@ -11,28 +11,28 @@ const TEMPORARY_DATA = [
       title: "Dubai Marina",
       description: "(Thunder, Vassia & Etosha)",
       src: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3613.4605443824817!2d55.1474643!3d25.086266999999996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f6b4a39b0235d%3A0xd464874a98c88514!2sCentaurus%20Charter%3A%20Luxury%20Yacht%20Rental%20Dubai%20Marina!5e0!3m2!1sen!2sae!4v1693488363219!5m2!1sen!2sae",
-      link:"https://www.google.com/maps?ll=25.086267,55.147464&z=16&t=m&hl=en&gl=AE&mapclient=embed&cid=15304506188172395796"
+      link:"https://g.page/r/CRSFyJhKh2TUEBM/"
     },
     {
       id: 2,
       title: "Dubai Marina",
       description: "(Lagoona & Silver Creek)",
       src: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3613.34346928787!2d55.1430654!3d25.090232099999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f6b6195d88cb9%3A0xb959a4fe54f444df!2sCENTAURUS%20CHARTER%20-%20Yachts%20%26%20Boats%20Rental%20Dubai%20Harbour!5e0!3m2!1sen!2sae!4v1693488420055!5m2!1sen!2sae",
-      link:"https://www.google.com/maps?ll=25.090232,55.143065&z=16&t=m&hl=en&gl=AE&mapclient=embed&cid=13355887582197859551"
+      link:"https://g.page/r/Cd9E9FT-pFm5EBM/"
     },
     {
       id: 3,
       title: "Dubai Harbour",
       description: "(Poseidon)",
       src: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3613.232177136002!2d55.139939399999996!3d25.094000800000003!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f6b1f6453e121%3A0x45035717db6c3954!2sCENTAURUS%20CHARTER%20-%20Yachts%20%26%20Boats%20Rental%20Dubai%20Harbour!5e0!3m2!1sen!2sae!4v1693488469422!5m2!1sen!2sae",
-      link : "https://www.google.com/maps?ll=25.094818,55.139006&z=16&t=m&hl=en&gl=AE&mapclient=embed&cid=4972914173524326740"
+      link : "https://g.page/r/CVQ5bNsXVwNFEBM/"
     },
     {
       id: 4,
       title: "Dubai Harbour",
       description: "(Dionysos)",
       src: "https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3612.5516095536605!2d55.14394699999999!3d25.098374!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMjXCsDA1JzU0LjIiTiA1NcKwMDgnMzguMiJF!5e0!3m2!1sen!2sae!4v1733380389487!5m2!1sen!2sae",
-      link:"https://www.google.com/maps?ll=25.098374,55.143947&z=16&t=m&hl=en&gl=AE&mapclient=embed&q=25%C2%B005%2754.2%22N+55%C2%B008%2738.2%22E+25.098389,+55.143944@25.0983889,55.1439444"
+      link:"https://maps.app.goo.gl/dEWhqr8WGKvDCAMw5"
     },
     {
       id: 5,
