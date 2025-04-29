@@ -186,7 +186,7 @@ export default function FirstFooter() {
 				<li key={index} className="flex items-start gap-3">
 				  <FaMapMarkerAlt className="w-5 h-5 flex-shrink-0 text-text-primary-white mt-1" />
 				  <a
-					href="{item.link}" target="_blank"
+					href={item.link} target="_blank"
 					className="hover:text-white text-left"
 				  >
 					{item.address}
