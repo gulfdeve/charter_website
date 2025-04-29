@@ -66,7 +66,7 @@ const Modalsharedtours = () => {
       <div className="relative w-full max-w-[95%] md:max-w-[80%] lg:max-w-2xl">
         <a href="https://fareharbor.com/embeds/book/centauruscharter/items/?flow=1038617&full-items=yes">
 		<img
-          src="/popupbannersharedtours.webp"
+          src="/pop up banner shared tours main banner-50% OFF.webp"
           alt="Special Offer"
           className="w-full h-auto"
         />
