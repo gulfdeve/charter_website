@@ -18,7 +18,7 @@ const page = () => {
       {
         question: "How do I book a yacht in Dubai?",
         answer:
-          "You can book a yacht online, by phone, or via email with Centaurus Charter. Our sales team will assist you with all your questions. To secure your booking, a 50% deposit is required. You’ll receive booking confirmation via email or WhatsApp. Multiple payment options are available, including online payment, bank transfer, or cash. You'll also receive a location map, contact details, and information about your coordinator and captain. \n\nFor online bookings: Choose your preferred yacht, check availability, select your date and time, enter your details, and proceed to payment.\n\nTo book via phone: Call us at +971 50 248 4678 or +971 4 352 1833.\n\nTo book via email: Contact us at info@centauruscharter.com.",
+          "You can book a yacht online, by phone, or via email with Centaurus Charter. Our sales team will assist you with all your questions. To secure your booking, a 50% deposit is required. You’ll receive booking confirmation via email or WhatsApp. Multiple payment options are available, including online payment, bank transfer, or cash. You'll also receive a location map, contact details, and information about your coordinator and captain. \n\nFor online bookings: Choose your preferred yacht, check availability, select your date and time, enter your details, and proceed to payment.\n\nTo book via phone: Call us at +971 50 248 4678 or +971 4 352 1833.\n\n To book via email: Contact us at info@centauruscharter.com.",
       },
       {
         question: "Do you have any special offers on yachts?",
@@ -147,7 +147,8 @@ Got a question? We’ve answered the most frequently asked questions about yacht
                     activeIndex === index ? "max-h-40" : "max-h-0"
                   }`}
                 >
-                  <p className="bg-white px-4 py-3 text-primary-grey   text-sm md:text-base mt-3">
+                  <p className="bg-white px-4 py-3 text-primary-grey text-sm md:text-base mt-3 whitespace-pre-line">
+
                     {faq.answer}
                   </p>
                 </div>
