@@ -11,87 +11,89 @@ const page = () => {
     };
     const faqs = [
       {
-        question: "HOW MUCH TO RENT A YACHT",
+        question: "How much does it cost to rent a yacht?",
         answer:
-          "Centaurus yacht rental in Dubai provides a crewed private yacht starting from 805 AED per hour. The price depends on the size of yacht.",
+          "Centaurus yacht rental in Dubai offers private, crewed yachts starting from AED 805 per hour. The price depends on the size of the yacht.",
       },
       {
-        question: "HOW TO BOOK A YACHT IN DUBAI",
+        question: "How do I book a yacht in Dubai?",
         answer:
-          "You can book a yacht online, by calling or sending email to Centaurus Charter. One of our sales staff will attend and facilitate you for all of your questions. You can secure the booking by placing a 50% deposit against the allotted charter. You’ll receive a confirmation of your booking via Email and or WhatsApp. Multiple payment options like pay online, pay through the bank account, pay in cash are available. A location Map, Contact details, Coordinator and Captain of the Yacht will also be provided. If you wish to book online - choose the perfect yacht, availability, date and time. Enter your details and you can pay online.If you wish to contact us - call us +971 50 248 4678 or +971 4 352 1833 and speak to yacht charter team.If you wish to email us - send your email to info@centauruscharter.com",
+          "You can book a yacht online, by phone, or via email with Centaurus Charter. Our sales team will assist you with all your questions. To secure your booking, a 50% deposit is required. You’ll receive booking confirmation via email or WhatsApp. Multiple payment options are available, including online payment, bank transfer, or cash. You'll also receive a location map, contact details, and information about your coordinator and captain. \n\nFor online bookings: Choose your preferred yacht, check availability, select your date and time, enter your details, and proceed to payment.\n\nTo book via phone: Call us at +971 50 248 4678 or +971 4 352 1833.\n\nTo book via email: Contact us at info@centauruscharter.com.",
       },
       {
-        question: "DO YOU HAVE ANY SPECIAL OFFERS ON YACHT",
+        question: "Do you have any special offers on yachts?",
         answer:
-          "Yes, we do have special deals on yacht bookings. We have summer offers, birthday yacht offers and Emirates staff, YPO, Fazaa card membership discounts. Check all our yacht offers.",
+          "Yes, we offer special deals on yacht bookings, including summer promotions, birthday packages, and discounts for Emirates staff, YPO, and Fazaa card members. Check out all our current offers.",
       },
       {
-        question: "DO YOU HAVE FEMALE CREW ONBOARD",
+        question: "Do you have a female crew onboard?",
         answer:
-          "Yes, we do have female crew on our yachts. So cruise with us safely.",
+          "Yes, we do have female crew members on our yachts. Cruise with us safely and comfortably.",
       },
       {
-        question: "WHAT ARE THE MODES OF THE PAYMENT",
+        question: "What are the modes of payment?",
         answer:
-          "We do offer various payment options - Visa card, Mastercard credit card or debit card or cash on arrival.",
+          "We accept various payment methods including Visa, Mastercard (credit or debit), and cash upon arrival.",
       },
       {
-        question: "ARE WE ALLOWED TO PHOTOGRAPH?",
+        question: "Are we allowed to take photographs?",
         answer:
-          "Make sure to charge your electronic devices in advance to ensure cameras/mobile devices can capture numerous sights. Avoid photographing Arab women and girls unless you request and get permission. Picturing government buildings or military installations is illegal.",
+          "Yes, you are welcome to take photographs. Make sure your devices are fully charged. Please avoid photographing Arab women or girls without permission. Photography of government buildings or military sites is strictly prohibited.",
       },
       {
-        question: "WHAT SHOULD WE WEAR?",
+        question: "What should we wear?",
         answer:
-          "Swim wear or casual clothes as per your comfort. You can also have upper/jacket specially for winter days.",
+          "Wear swimwear or casual clothing based on your comfort. We also recommend bringing a jacket or upper layer, especially during winter.",
       },
       {
-        question: "ARE WE ALLOWED SWIMMING ON TOUR?",
+        question: "Are we allowed to swim during the tour?",
         answer:
-          "Yes, you can enjoy swimming while on your sightseeing tour. Our captain can guide for safe areas and swimming is available for tours more than 3 hours.",
+          "Yes, swimming is allowed during the tour, especially on trips longer than 3 hours. Our captain will guide you to safe swimming areas.",
       },
       {
-        question: "IS FOOD & BEVERAGE INCLUDED ON TRIP?",
+        question: "Is food and beverage included on the trip?",
         answer:
-          "The complimentary drinks like soft drinks, coffee & water are included. The food is not yet included on trip. If you order in advance, we can arrange catering for you. You are also welcome to bring your own food or beverages aboard",
+          "Complimentary soft drinks, coffee, and water are included. Food is not included, but catering can be arranged upon request. You are also welcome to bring your own food and beverages onboard.",
       },
       {
-        question: "WHERE DOES THE BOAT DEPARTURE FROM?",
+        question: "Where does the boat depart from?",
         answer:
-          "Our boats departure from Marina Walk, Dubai Marina and Dubai Harbour near Barasti Beach",
+          "Our boats depart from Marina Walk in Dubai Marina or from Dubai Harbour near Barasti Beach.",
       },
       {
-        question: "WHAT ENTERTAINMENT OPTIONS ARE AVAILABLE ON THE BOAT?",
+        question: "What entertainment options are available on the boat?",
         answer:
-          "Our boats have hifi music system and TV screens so you can enjoy your trip. We can arrange DJ system and water activities on request",
+          "Our yachts are equipped with high-quality music systems and TV screens. DJ setups and additional entertainment can be arranged upon request.",
       },
       {
-        question: "IS SMOKING ALLOWED ON YACHT CRUISE?",
-        answer: "No, smoking is not allowed on yacht cruise.",
-      },
-      {
-        question: "DO YOU OFFER TRANSFERS",
-        answer: "Yes, we do offer transfer on request and at an extra cost.",
-      },
-      {
-        question: "DO YOU OFFER WATER SPORTS ACTIVITIES?",
+        question: "Is smoking allowed on the yacht cruise?",
         answer:
-          "Yes, we do provide water sports along with your yacht tour at an additional cost. Add more fun to your yacht ride by including water activities like Swimming, Jet Ski, FlyBoard, Parasailing, Fishing Trips, Banana Boats. Check our all watersports add ons",
+          "No, smoking is not permitted during the yacht cruise.",
       },
       {
-        question: "DO YACHT HAVE BBQ EQUIPMENT?",
+        question: "Do you offer transfers?",
         answer:
-          "Yes, do we have electric BBQ equipment aboard. Our crew can help you to grill your meal.",
+          "Yes, transfers can be arranged upon request for an additional charge.",
       },
       {
-        question: "WHAT WE NEED TO CONSIDER AFTER WE BOOKED?",
+        question: "Do you offer water sports activities?",
         answer:
-          "As advised by the Dubai Coast Guard, guests would be requested to present a passport or Emirates Id copy. Yacht trips always need Dubai Coast Guard approval (company takes this approval) based on weather conditions. Arrival location point is at Dubai Marina Walk near Spinneys Market or Dubai Marina Harbour. We request guests to arrive 15-20 minutes before the trip time. In case, guests arrive late; the time cannot be compensated.",
+          "Yes, we offer a variety of water sports at an extra cost. Enhance your experience with activities like jet skiing, flyboarding, parasailing, fishing trips, banana boat rides, and swimming. Explore all our watersports add-ons.",
       },
       {
-        question: "WHAT ARE THE CANCELATION,REFUND & RESCHEDULE POLICIES?",
+        question: "Does the yacht have BBQ equipment?",
         answer:
-          "Cancellation or reschedule 72 hours prior the booking free of charge (standard bank fees will be charged). Upon cancellation less than 48 hours prior the booking 50% from the total will be charged. No-show or cancellation less than 24 hours prior the booking will be NO REFUNDABLE.",
+          "Yes, our yachts are equipped with electric BBQ grills. Our crew can assist you with grilling your food.",
+      },
+      {
+        question: "What should we consider after booking?",
+        answer:
+          "As per Dubai Coast Guard regulations, all guests must present a copy of their passport or Emirates ID. Yacht trips require official approval, which we obtain based on weather conditions. The departure location is at Dubai Marina Walk (near Spinneys) or Dubai Harbour. Please arrive 15–20 minutes before your scheduled trip. Late arrivals will result in reduced cruise time without compensation.",
+      },
+      {
+        question: "What are the cancellation, refund, and rescheduling policies?",
+        answer:
+          "Cancellations or rescheduling made 72 hours before the booking are free of charge (excluding bank fees). Cancellations made less than 48 hours before will incur a 50% charge. No-shows or cancellations within 24 hours are non-refundable.",
       },
     ];
   
@@ -110,32 +112,29 @@ const page = () => {
             Everything you need to know about yacht charter
           </p>
           <p className=" text-primary-grey text-center  text-base ">
-            A luxury yacht rental is the best choice for anyone who wants to enjoy
-            a day on the water. There are a lot of Insta-worthy spots that can be
-            seen from the water. Got a question? Find the answers below to most
-            Frequently asked questions about yacht chartering and bookings in
-            Dubai. If you still don't find an answer for your inquiry, just{" "}
-            <span className="text-blue-600">Contact us</span> and tell about your
-            requirements. HOW MUCH TO RENT A YACHT?
+          A luxury yacht rental is the perfect choice for anyone looking to enjoy a day on the water in Dubai. From stunning skyline views to Instagram-worthy photo spots, there’s no better way to explore the coast.
+
+Got a question? We’ve answered the most frequently asked questions about yacht chartering and bookings in Dubai below. If you still don’t find what you’re looking for, feel free to{" "}
+            <span className="text-blue-600">contact us</span> and let us know your requirements.
           </p>
         </div>
         <div
-          className={`container my-5 mx-auto rounded-lg`}
+          className={`container my-5 mx-auto`}
         >
           <div className="space-y-6">
             {faqs.map((faq, index) => (
               <div
                 key={index}
-                className={`  transition-colors duration-200  shadow-md ${
+                className={`  transition-colors duration-200  ${
                   activeIndex === index
-                    ? "bg-primary-yellow rounded-t-lg"
-                    : "bg-primary-blue rounded-lg"
+                    ? "text-primary-blue-2 bg-white"
+                    : "  border-b-[0.5px] border-gray-300"
                 }`}
               >
                 <h2
                   onClick={() => toggleAnswer(index)}
-                  className={`w-full text-left text-lg md:text-lg font-bold  py-3 px-3 block flex justify-between items-center focus:outline-none ${
-                    activeIndex === index ? "text-primary-blue" : "text-primary-yellow"
+                  className={`font-Inter w-full text-left text-lg md:text-lg font-normal  py-3 px-3 block flex justify-between items-center focus:outline-none ${
+                    activeIndex === index ? "text-primary-blue-2" : "text-grey-600"
                   }`}
                 >
                   {faq.question}
@@ -148,7 +147,7 @@ const page = () => {
                     activeIndex === index ? "max-h-40" : "max-h-0"
                   }`}
                 >
-                  <p className="bg-white px-4 py-3 text-primary-grey   text-xs md:text-xs mt-3">
+                  <p className="bg-white px-4 py-3 text-primary-grey   text-sm md:text-base mt-3">
                     {faq.answer}
                   </p>
                 </div>
