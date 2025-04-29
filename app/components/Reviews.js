@@ -15,7 +15,7 @@ const Reviews = () => {
     {
       id: 1,
       name: "Carolina Arbelaez de la Espriella",
-      date: "November 2025",
+      date: "November 2024",
       rating: 5,
       content:
         "Great staff and overall very good service! I recommend to book with them, went on a trip with my kids and parents in law and was very nice, Jonathan has great sense of customer service 👍",
@@ -23,7 +23,7 @@ const Reviews = () => {
     {
       id: 2,
       name: "Googoodoll",
-      date: "July 2022",
+      date: "April 2025",
       rating: 5,
       content:
         "An absolutely fun experience! Robert & Capt Gef was very accommodating and polite: picked us up from the “lobby” and guided us to the yacht even though some of us were so incredibly late. They made sure we got the best views and backgrounds for our pictures. This is surely one of the best if not the best yacht ride we tried with our very special friends! We’ll definitely come back next time we’re in Dubai & recommend :)",

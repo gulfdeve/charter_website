@@ -41,7 +41,7 @@ const YachtCard = ({ yacht }) => {
           </Link>
         </div>
       <div className="relative">
-        <div className="overflow-hidden rounded-t-md" ref={emblaRef}>
+        <div className="overflow-hidden rounded-lg" ref={emblaRef}>
           <div className="flex">
             {yacht.images.map((img, index) => (
               <div key={index} className="min-w-full relative aspect-[4/3]">
@@ -90,26 +90,26 @@ const YachtCard = ({ yacht }) => {
           </div>
         )}
          
-          <div class="absolute grid grid-cols-3 items-center gap-0 rounded-lg center-absolute -bottom-5 left-0 right-0 px-3">
-            <div class="bg-[#f1f1f1] text-primary-grey p-1 xl:p-2 flex flex-col items-center rounded-l-lg">
-              <span class="text-xs">Model:</span>
-              <span class="font-bold text-sm text-black">{yacht.model}</span>
+          <div className="absolute grid grid-cols-3 items-center gap-0 rounded-lg center-absolute -bottom-5 left-0 right-0 px-3">
+            <div className="bg-[#f1f1f1] text-primary-grey p-1 xl:p-2 flex flex-col items-center rounded-l-lg">
+              <span className="text-xs">Model:</span>
+              <span className="font-bold text-sm text-black">{yacht.model}</span>
               </div>
-              <div class="bg-[#f1f1f1] text-primary-grey p-1 xl:p-2 flex flex-col items-center">
-                <span class="text-xs">Length:</span><span class="font-bold text-sm text-black">{yacht.length}</span>
+              <div className="bg-[#f1f1f1] text-primary-grey p-1 xl:p-2 flex flex-col items-center">
+                <span className="text-xs">Length:</span><span className="font-bold text-sm text-black">{yacht.length}</span>
                 </div>
-                <div class="bg-[#f1f1f1] text-primary-grey p-1 xl:p-2 flex flex-col items-center rounded-r-lg">
-                  <span class="text-xs">Guests:</span>
-          <span class="font-bold text-sm text-black">{yacht.guests}</span>
+                <div className="bg-[#f1f1f1] text-primary-grey p-1 xl:p-2 flex flex-col items-center rounded-r-lg">
+                  <span className="text-xs">Guests:</span>
+          <span className="font-bold text-sm text-black">{yacht.guests}</span>
          
           </div>
           </div>
       </div>
 
       <div className="flex flex-col flex-grow py-4">
-      <div class="flex flex-row justify-between items-center z-20 border-t border-gray-400 pt-3 mt-5">
-        <div class="p-1 xl:p-2 flex flex-col text-left"><span class=" text-sm">Price per hour:</span>
-        <span class="font-bold text-lg lg:text-xl text-primary-red">AED {parseInt(yacht.price).toLocaleString()}</span>
+      <div className="flex flex-row justify-between items-center z-20 border-t border-gray-400 pt-3 mt-5">
+        <div className="p-1 xl:p-2 flex flex-col text-left"><span className=" text-sm">Price per hour:</span>
+        <span className="font-bold text-lg lg:text-xl text-primary-red">AED {parseInt(yacht.price).toLocaleString()}</span>
         </div>
         <BookNowButton fareharborId={yacht.fareharbor_id} />
       </div>
