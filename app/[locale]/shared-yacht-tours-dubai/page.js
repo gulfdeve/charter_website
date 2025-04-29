@@ -355,7 +355,7 @@ const Page = () => {
     </li>
     <li className="">Rates cannot be combined with other offers.</li>
     <li className="">Guests under 18 years old must be accompanied by an adult.</li>
-    <li className="">The offer is valid until 30 May 2025</li>
+    <li className="">The offer is valid from 4-28 May 2025</li>
   </ul>
 </div>
         {/* Split Section with Image + Text */}
