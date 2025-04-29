@@ -164,25 +164,29 @@ export default function FirstFooter() {
 				{
 				  address: "Marina Walk (Near Spinneys)",
 				  location: "Dubai, United Arab Emirates",
+				  link: "https://g.page/r/CRSFyJhKh2TUEAE"
 				},
 				{
-				  address: "Dubai Harbour Marina",
+				  address: "D Marin, Dubai Harbour",
 				  location: "Dubai, United Arab Emirates",
+				  link: "https://goo.gl/maps/ySfLoXGZ348Hs2rWA"
 				},
 				{
 				  address: "Berth No AB05 - near Harbour Bridge - Dubai Harbour",
 				  location: "Dubai, United Arab Emirates",
+				  link: "https://goo.gl/maps/NPhE8NUps51fSAAJ9"
 				},
 				{
 				  address:
 					"Dubai Harbour Marina, Berth No A-G36 Near Dockmaster 1 Building",
 				  location: "Dubai, United Arab Emirates",
+				  link: "https://maps.app.goo.gl/D7m68mfD2Xbc4pcv6"
 				},
 			  ].map((item, index) => (
 				<li key={index} className="flex items-start gap-3">
 				  <FaMapMarkerAlt className="w-5 h-5 flex-shrink-0 text-text-primary-white mt-1" />
 				  <a
-					href="https://www.google.com/maps/place/CENTAURUS+CHARTER+-+Yachts+%26+Boats+Rental+Dubai+Harbour"
+					href="{item.link}" target="_blank"
 					className="hover:text-white text-left"
 				  >
 					{item.address}
