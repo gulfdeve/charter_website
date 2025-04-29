@@ -3,6 +3,7 @@ import jwt from "jsonwebtoken";
 import MultiDatePicker from "@/app/components/MultiDatePicker";
 import { Link } from "@/app/i18n/routing";
 import SearchResultsClient from "@/app/components/SearchResultsClient";
+import { cache } from "react";
 
 // --------------------
 // 1) fetchVessels function
@@ -46,7 +47,7 @@ async function fetchVessels(searchParams) {
     region: searchParams.region || "",
     currency: "USD",
     priceMin: 1000,
-    priceMax: 500000,
+    priceMax: 5000,
   };
 
   // Remove empty keys
@@ -60,8 +61,8 @@ async function fetchVessels(searchParams) {
   const response = await fetch(url, {
     method: "GET",
     headers: { Accept: "application/json", Authorization: `Bearer ${token}` },
-    cache: 'no-store',
   });
+  console.log("API Response:", response);
 
   if (!response.ok) throw new Error(`API Error: ${response.statusText}`);
 
@@ -75,19 +76,13 @@ async function fetchVessels(searchParams) {
 export default async function VesselsPage({ searchParams }) {
   
   let data = null;
-  try {
-    data = await fetchVessels(searchParams);
-  } catch (err) {
-    console.error("❌ fetchVessels failed:", err);
-    throw err;    // or at least render an error message
-  }
   const hasAnyParam = Object.keys(searchParams || {}).length > 0;
-
+  console.log("Has any param:", hasAnyParam);
   if (hasAnyParam) {
     try {
       data = await fetchVessels(searchParams);
     } catch (error) {
-      console.error("Error fetching vessels:", error);
+      console.log("Error fetching vessels:", error);
     }
   }
 
