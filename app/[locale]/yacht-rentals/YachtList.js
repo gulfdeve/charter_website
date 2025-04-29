@@ -5,6 +5,7 @@ import Image from "next/image";
 import EmblaCarousel from "embla-carousel";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 import BookNowButton from "@/app/components/BookNowButton";
+import { BsStars } from "react-icons/bs";
 
 const YachtCard = ({ yacht }) => {
   const emblaRef = useRef(null);
@@ -30,7 +31,15 @@ const YachtCard = ({ yacht }) => {
   };
 
   return (
-    <div className="flex flex-col justify-between bg-white rounded-md shadow-2xl h-auto relative">
+    <div className="relative flex flex-col md:p-5 p-3 rounded-lg shadow-custom">
+      {/* Yacht Details */}
+      <div className="flex flex-col items-start">
+          <Link href={`yacht-rentals/${yacht.slug}`}>
+            <h2 className="text-primary-blue text-xl font-bold pb-4 hover:text-blue-600 transition-all duration-300 cursor-pointer">
+              {yacht.title}
+            </h2>
+          </Link>
+        </div>
       <div className="relative">
         <div className="overflow-hidden rounded-t-md" ref={emblaRef}>
           <div className="flex">
@@ -56,14 +65,14 @@ const YachtCard = ({ yacht }) => {
             <button
               aria-label="go previous slide"
               onClick={scrollPrev}
-              className="bg-primary-blue text-primary-yellow hover:bg-primary-yellow hover:text-primary-blue transition duration-150 ease-in-out transform absolute top-1/2 left-2 transform -translate-y-1/2 p-2 rounded-full shadow-md"
+              className="bg-white text-gray-500 opacity-80 hover:opacity-90 transition duration-150 ease-in-out transform absolute top-1/2 left-2 transform -translate-y-1/2 p-2 rounded-full shadow-md"
             >
               <FaArrowLeft />
             </button>
             <button
               aria-label="go next slide"
               onClick={scrollNext}
-              className="bg-primary-blue text-primary-yellow hover:bg-primary-yellow hover:text-primary-blue transition duration-150 ease-in-out transform absolute top-1/2 right-2 transform -translate-y-1/2 p-2 rounded-full shadow-md"
+              className="bg-white text-gray-500 opacity-80 hover:opacity-90 transition duration-150 ease-in-out transform absolute top-1/2 right-2 transform -translate-y-1/2 p-2 rounded-full shadow-md"
             >
               <FaArrowRight />
             </button>
@@ -71,36 +80,40 @@ const YachtCard = ({ yacht }) => {
         )}
 
         {yacht.category.includes("bestSellers") && (
-          <div className="absolute top-4 left-0 bg-primary-blue text-primary-yellow text-md py-0.5 px-2">
-            BEST SELLER
+          <div className="absolute flex items-center gap-2 top-4 left-0 gradient-custom-2 text-primary-yellow-light text-md py-0.5 px-2 rounded-r-lg">
+            <BsStars /><p>Best Seller</p>
           </div>
         )}
         {yacht.category.includes("premium") && (
-          <div className="absolute top-4 left-0 bg-primary-blue text-primary-yellow text-md py-0.5 px-2">
-            PREMIUM YACHT
+          <div className="absolute flex items-center gap-2 top-4 left-0 gradient-custom-2 text-primary-yellow-light text-md py-0.5 px-2 rounded-r-lg">
+            <BsStars /><p>Premium Yacht</p>
           </div>
         )}
+         
+          <div class="absolute grid grid-cols-3 items-center gap-0 rounded-lg center-absolute -bottom-5 left-0 right-0 px-3">
+            <div class="bg-[#f1f1f1] text-primary-grey p-1 xl:p-2 flex flex-col items-center rounded-l-lg">
+              <span class="text-xs">Model:</span>
+              <span class="font-bold text-sm text-black">{yacht.model}</span>
+              </div>
+              <div class="bg-[#f1f1f1] text-primary-grey p-1 xl:p-2 flex flex-col items-center">
+                <span class="text-xs">Length:</span><span class="font-bold text-sm text-black">{yacht.length}</span>
+                </div>
+                <div class="bg-[#f1f1f1] text-primary-grey p-1 xl:p-2 flex flex-col items-center rounded-r-lg">
+                  <span class="text-xs">Guests:</span>
+          <span class="font-bold text-sm text-black">{yacht.guests}</span>
+         
+          </div>
+          </div>
       </div>
 
-      <div className="flex flex-col justify-between flex-grow p-4">
-        {/* Yacht Details */}
-        <div className="flex flex-col items-start">
-          <Link href={`yacht-rentals/${yacht.slug}`}>
-            <h2 className="text-primary-blue text-xl font-bold pb-4 hover:text-blue-600 transition-all duration-300 cursor-pointer">
-              {yacht.title}
-            </h2>
-          </Link>
-
-          <p className="text-xs s:text-sm md:text-xs lg:text-sm text-primary-blue text-left">
-            Model: <span className="font-bold">{yacht.model}</span> | Length:{" "}
-            <span className="font-bold">{yacht.length}</span> | Guests:{" "}
-            <span className="font-bold">{yacht.guests}</span>
-          </p>
-          <p className="text-primary-blue text-xl pt-5 pb-2">
-            <span className="font-bold">AED {parseInt(yacht.price).toLocaleString()}</span> <span>Per Hour</span>
-          </p>
+      <div className="flex flex-col flex-grow py-4">
+      <div class="flex flex-row justify-between items-center z-20 border-t border-gray-400 pt-3 mt-5">
+        <div class="p-1 xl:p-2 flex flex-col text-left"><span class=" text-sm">Price per hour:</span>
+        <span class="font-bold text-lg lg:text-xl text-primary-red">AED {parseInt(yacht.price).toLocaleString()}</span>
         </div>
         <BookNowButton fareharborId={yacht.fareharbor_id} />
+      </div>
+       
       </div>
     </div>
   );
