@@ -47,7 +47,7 @@ export default function Videosharedtours() {
   }, []);
 
   return (
-    <div className="relative mx-auto w-full h-[413px] sm:h-[560px] s:h-[425px] lg:h-[385px] md:h-[560px] xl:h-[590px] 3xl:h-[660px] overflow-hidden mt-14 md:mt-0">
+    <div className="relative mx-auto w-full h-[40vh] sm:h-[560px] s:h-[425px] lg:h-[385px] md:h-[560px] xl:h-[590px] 3xl:h-[660px] overflow-hidden mt-14 md:mt-0">
       {/* Wistia Video as Background */}
       <style>
         {`
@@ -66,14 +66,15 @@ export default function Videosharedtours() {
         )}
       </div>
 
-      <div className="absolute inset-0 z-10 flex flex-col items-center  justify-center top-[32%] sm:top-[51%] s:top-[49%] md:top-[57%] lg:-top-[35%] xl:-top-[2%]  text-white text-center p-2 md:px-14 lg:px-24 ">
-        <h1 className="text-4xl font-bold mb-4 text-primary-blue-2 lg:text-white  xl:text-xl 2xl:text-4xl text-shadow">
+      <div className="container mx-auto block text-center mt-10 absolute -translate-x-2/4 -translate-y-2/4 left-2/4 top-2/4 mt-0 z-40">
+        
+        <h1 className="uppercase text-4xl font-bold mb-4 text-primary-blue-2 md:text-white text-[32px] p-0 xxs:px-10 md:px-0 xxs:text-2xl xs:text-xl s:text-2xl sm:text-2xl md:text-3xl 2xl:text-4xl">
          
 UAE RESIDENTS SUMMER YACHTS OFFERS
         </h1>
-        <h1 className="text-3xl font-bold mb-4 text-primary-blue-2 lg:text-white  xl:text-xl 2xl:text-3xl text-shadow">
-        UNMATCHED DISCOUNT FOR A LUXURY EXPERIENCE
-                 </h1>
+        <h2 className="text-3xl font-bold mb-4 text-primary-blue-2 lg:text-white lg:text-[24px] p-0 xxs:px-10 md:px-0 xxs:text-2xl xs:text-xl s:text-2xl sm:text-2xl md:text-3xl 2xl:text-3xl">
+        Unmatched Discount for a Luxury Experience
+                 </h2>
         
        
 

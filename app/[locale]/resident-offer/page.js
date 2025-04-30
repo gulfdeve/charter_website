@@ -79,38 +79,35 @@ const page = () => {
         <h3 className=" text-primary-blue text-center font-bold  pb-4">
           EXCLUSIVE 40% DISCOUNT FOR UAE RESIDENTS
         </h3>
-        <p className=" text-primary-blue text-md text-center">
-          EXPERIENCE THE ULTIMATE IN LUXURY YACHT RENTALS AT UNBEATABLE PRICES,
-          EXCLUSIVELY FOR UAE RESIDENTS. ENJOY A PERFECT BLEND OF QUALITY AND
-          AFFORDABILITY, PROMISING A UNIQUE AND UNFORGETTABLE ADVENTURE ON THE
-          WATER.
+        <p className=" text-primary-blue text-md text-center">  
+          Experience the ultimate in luxury yacht rentals at unbeatable prices, Exclusively for UAE Residents. Enjoy a perfect blend of Quality and Affordability, promising a unique and unforgettable adventure on the Water.
         </p>
       </div>
 
       <div className="container mx-auto p-3 lg:p-5 py-6">
-        <div className="overflow-x-auto lg:px-10">
-          <table className="w-full border-collapse border border-gray-300 md:text-sm lg:text-sm">
+        <div className="overflow-x-auto">
+          <table className="w-full border-collapse border border-gray-300 md:text-sm lg:text-sm ">
             <thead>
-              <tr className="bg-primary-blue text-white">
-                <th className="border border-transparent p-3  text-primary-yellow">
+              <tr className="bg-[#f1f1f1] text-primary-blue-2">
+                <th className=" px-3 py-5  ">
                   YACHT
                 </th>
-                <th className="border border-transparent p-3  text-primary-yellow">
+                <th className=" px-3 py-5">
                   CAPACITY
                 </th>
-                <th className="border border-transparent p-3  text-primary-yellow">
+                <th className=" px-3 py-5">
                   REGULAR RATE/HOUR
                 </th>
-                <th className="border border-transparent p-3  text-primary-yellow">
+                <th className=" px-3 py-5">
                   DISCOUNTED 2-HOUR RATE
                 </th>
-                <th className="border border-transparent p-3  text-primary-yellow">
+                <th className=" px-3 py-5">
                   DISCOUNTED 3-HOUR RATE
                 </th>
-                <th className="border border-transparent p-3  text-primary-yellow">
+                <th className=" px-3 py-5">
                   DISCOUNTED 4-HOUR RATE
                 </th>
-                <th className="border border-transparent p-3  text-primary-yellow">
+                <th className=" px-3 py-5">
                   BOOKING
                 </th>
               </tr>
@@ -120,44 +117,34 @@ const page = () => {
                 <tr
                   key={index}
                   className={`${
-                    index % 2 === 0 ? "bg-white" : "bg-white"
+                    index % 2 === 0 ? "bg-white" : "bg-[#fafafa]"
                   } text-center text-sm`}
                 >
-                  <td className="border border-black p-3  font-bold">
+                  <td className="font-Inter p-3 font-semibold">
                     {yacht.name}
                   </td>
-                  <td className="border border-black p-3  font-bold">
+                  <td className="font-Inter p-3 font-semibold">
                     {yacht.capacity}
                   </td>
-                  <td className="border border-black p-3  font-bold">
+                  <td className="font-Inter p-3 font-semibold">
                     {yacht.ratePerHour}
                   </td>
-                  <td className="border border-black p-3  font-bold">
+                  <td className="font-Inter p-3 font-semibold">
                     {yacht.rate2Hours}
                   </td>
-                  <td className="border border-black p-3  font-bold">
+                  <td className="font-Inter p-3 font-semibold">
                     {yacht.rate3Hours}
                   </td>
-                  <td className="border border-black p-3  font-bold">
+                  <td className="font-Inter p-3 font-semibold">
                     {yacht.rate4Hours}
                   </td>
-                  <td className="border border-black p-3  font-bold bg-primary-yellow hover:bg-primary-yellow-dark">
+                  <td className="p-3 font-bold">
                     <a
                       href={`https://fareharbor.com/embeds/book/centauruscharter/items/${yacht.fareharbor_id}/?full-items=yes&flow=645487`}
                       target="_self"
                       rel="noopener noreferrer"
-                      className="
-    
-    text-black
-   
-    rounded-lg
-  
-    transition-all
-    inline-block  
-  
-mx-10
-    text-center
-    h-full
+                      className="bg-primary-blue-2 hover:bg-primary-blue
+     text-white rounded-lg transition-all flex text-center w-full px-3 py-2
   "
                     >
                       Book Now
@@ -179,51 +166,45 @@ mx-10
             & 8 PM ONWARDS (NIGHT TRIPS)
           </h3>
         </div>
-        <h3 className=" text-left md:text-center  text-[1rem]  leading-tight font-light py-5">
-          ESCAPE THE ORDINARY AND EMBARK ON A PRIVATE YACHT ADVENTURE WITH OUR
-          LIMITED-TIME 40% DISCOUNT FOR UAE RESIDENTS. TO AVAIL THIS EXCLUSIVE
-          OFFER, SIMPLY BOOK A MINIMUM 2-HOURS YACHT TOUR AND LET US TAKE CARE
-          OF THE REST. ENJOY UNLIMITED DRINKS AND SNACKS DURING YOUR PRIVATE
-          YACHT TOUR. WATERSPORTS ARE ALSO AVAILABLE ON REQUEST.
-        </h3>
+        <p className=" text-left md:text-center  text-[1rem]  leading-tight py-5">
+        Escape the ordinary and embark on a private yacht adventure with our limited-time 40% discount for uae residents. To avail this exclusive offer, simply book a minimum 2-hours yacht tour and let us take care of the rest. Enjoy unlimited drinks and snacks during your private yacht tour. Watersports are also available on request.
+        </p>
       </div>
       <div className="container mx-auto">
         <hr className="my-5 border border-primary-blue"></hr>
       </div>
-      <div className="flex flex-col items-center justify-center pt-5 ">
+      <div className="container mx-auto flex flex-col items-center justify-center pt-5 ">
         <h3 className=" text-primary-blue text-center font-bold  pb-4">
           EXCLUSIVE 30% DISCOUNT FOR UAE RESIDENTS
         </h3>
-        <p className=" text-primary-blue  text-left  text-[1rem]  lg:px-56">
-          TAKE ADVANTAGE OF OUR SPECIAL OFFER WITH A 30% DISCOUNT ON LUXURY
-          YACHT RENTALS DURING PRIMETIME HOURS. EXPERIENCE THE SAME QUALITY AND
-          LUXURY AT A REDUCED RATE
+        <p className=" text-primary-blue text-center">
+        Take advantage of our special offer with a 30% discount on luxury yacht rentals during primetime hours. Experience the same quality and luxury at a reduced rate.
         </p>
       </div>
-      <div className="container mx-auto p-3 lg:p-30 py-3">
-        <div className="overflow-x-auto lg:px-10">
+      <div className="container mx-auto p-3 lg:p-5 py-6">
+        <div className="overflow-x-auto">
           <table className="w-full border-collapse border border-gray-300 md:text-sm lg:text-sm ">
             <thead>
-              <tr className="bg-primary-blue text-white">
-                <th className="border border-transparent p-3  text-primary-yellow">
+              <tr className="bg-[#f1f1f1] text-primary-blue-2">
+                <th className="px-3 py-5">
                   YACHT
                 </th>
-                <th className="border border-transparent p-3  text-primary-yellow">
+                <th className="px-3 py-5">
                   CAPACITY
                 </th>
-                <th className="border border-transparent p-3  text-primary-yellow">
+                <th className="px-3 py-5">
                   REGULAR RATE/HOUR
                 </th>
-                <th className="border border-transparent p-3  text-primary-yellow">
+                <th className="px-3 py-5">
                   DISCOUNTED 2-HOUR RATE
                 </th>
-                <th className="border border-transparent p-3  text-primary-yellow">
+                <th className="px-3 py-5">
                   DISCOUNTED 3-HOUR RATE
                 </th>
-                <th className="border border-transparent p-3  text-primary-yellow">
+                <th className="px-3 py-5">
                   DISCOUNTED 4-HOUR RATE
                 </th>
-                <th className="border border-transparent p-3  text-primary-yellow">
+                <th className="px-3 py-5">
                   BOOKING
                 </th>
               </tr>
@@ -233,46 +214,34 @@ mx-10
                 <tr
                   key={index}
                   className={`${
-                    index % 2 === 0 ? "bg-white" : "bg-white"
+                    index % 2 === 0 ? "bg-white" : "bg-[#fafafa]"
                   } text-center text-sm`}
                 >
-                  <td className="border border-black p-3  font-bold">
+                  <td className="font-Inter p-3 font-semibold">
                     {yacht.name}
                   </td>
-                  <td className="border border-black p-3  font-bold">
+                  <td className="font-Inter p-3 font-semibold">
                     {yacht.capacity}
                   </td>
-                  <td className="border border-black p-3  font-bold">
+                  <td className="font-Inter p-3 font-semibold">
                     {yacht.ratePerHour}
                   </td>
-                  <td className="border border-black p-3  font-bold">
+                  <td className="font-Inter p-3 font-semibold">
                     {yacht.rate2Hours}
                   </td>
-                  <td className="border border-black p-3  font-bold">
+                  <td className="font-Inter p-3 font-semibold">
                     {yacht.rate3Hours}
                   </td>
-                  <td className="border border-black p-3  font-bold">
+                  <td className="font-Inter p-3 font-semibold">
                     {yacht.rate4Hours}
                   </td>
 
-                  <td className="border border-black p-3  font-bold bg-primary-yellow hover:bg-primary-yellow-dark">
+                  <td className="p-3 font-bold">
                   <a
                       href={`https://fareharbor.com/embeds/book/centauruscharter/items/${yacht.fareharbor_id}/?full-items=yes&flow=645487`}
                       target="_self"
                       rel="noopener noreferrer"
-                      className="
-    
-    text-black
-   
-    rounded-lg
-  
-    transition-all
-    inline-block  
-  
-mx-10
-    text-center
-    h-full
-  "
+                      className=" bg-primary-blue-2 hover:bg-primary-blue   text-white rounded-lg transition-all flex text-center w-full px-3 py-2"
                     >
                       Book Now
                     </a>
@@ -292,39 +261,35 @@ mx-10
             DISCOUNTED RATES: VALID FOR BOOKINGS FROM 4 PM TO 7 PM (PRIMETIME).
           </h3>
         </div>
-        <h3 className=" text-left md:text-center  text-[1rem]  leading-tight font-light py-5">
-          ESCAPE THE ORDINARY AND SET SAIL ON A PRIVATE YACHT ADVENTURE WITH OUR
-          LIMITED-TIME 30% DISCOUNT FOR UAE RESIDENTS. TO AVAIL THIS EXCLUSIVE
-          OFFER, SIMPLY BOOK A MINIMUM 2-HOURS YACHT TOUR AND LET US TAKE CARE
-          OF THE REST. ENJOY UNLIMITED DRINKS AND SNACKS DURING YOUR PRIVATE
-          YACHT TOUR. WATERSPORTS ARE ALSO AVAILABLE ON REQUEST.
-        </h3>
+        <p className=" text-left md:text-center  text-[1rem]  leading-tight font-light py-5">
+        Escape the ordinary and set sail on a private yacht adventure with our limited-time 30% discount for uae residents. To avail this exclusive offer, simply book a minimum 2-hours yacht tour and let us take care of the rest. Enjoy unlimited drinks and snacks during your private yacht tour. Watersports are also available on request.
+        </p>
       </div>
       <div className="container mx-auto">
         <div className=" flex flex-col item-center justify-center py-2 px-5">
           <h5 className=" text-black text-lg  text-left">
-            TERMS & CONDITION
+            TERMS & CONDITIONS
           </h5>
-          <ul className="container mx-auto list-disc text-left text-primary-blue text-sm pl-4 pt-5 uppercase">
-  <li className="mb-1">
-    THE SUMMER OFFER IS VALID FROM JUNE 10TH TO SEPTEMBER 15TH, 2024.
-  </li>
-  <li className="mb-1">
-    CANNOT BE COMBINED WITH OTHER OFFERS.
-  </li>
-  <li className="mb-1">
-    MINIMUM BOOKING DURATION IS 2 HOURS.
-  </li>
-  <li className="mb-1">
-    THIS OFFER IS EXCLUSIVE TO UAE RESIDENTS.
-  </li>
-  <li className="mb-1">
-    <strong>- DRINKS ARE INCLUDED WITH BOOKINGS OF 3 HOURS OR MORE</strong>
-  </li>
-  <li className="mb-1">
-    <strong>- OFFER IS NOT VALID ON PUBLIC HOLIDAYS</strong>
-  </li>
-</ul>
+          <ul className="container mx-auto list-disc text-left text-primary-blue text-sm pl-4 pt-5">
+            
+            <li className="mb-1">The summer offer is valid from June 1st to September 15th, 2025</li>
+            <li className="mb-1">This offer cannot be combined with other promotions.</li>
+            <li className="mb-1">
+            ⁠A minimum booking duration of 3 hours is required.
+            </li>
+            <li className="mb-1">
+            ⁠The offer is exclusive to UAE residents (proof of residency may be required).
+            </li>
+            <li className="mb-1">
+            The offer is not valid on public holidays
+            </li>
+            <li className="mb-1">
+            Drinks are included with bookings of 3 hours or more
+            </li>
+            <li className="mb-1">
+            ⁠Terms are subject to change without prior notice.
+            </li>
+          </ul>
 
           <h6 className="font-bold uppercase text-left py-7">
             BOOK NOW AND ENJOY AN UNFORGETTABLE YACHT EXPERIENCE WITH CENTAURUS
@@ -336,7 +301,7 @@ mx-10
       <section className="w-full p-4 container mx-auto space-y-10">
         {/* Outer container with gold background */}
 
-        <div className="bg-primary-yellow flex items-center justify-between rounded-xl px-36 py-3">
+        <div className="container bg-primary-yellow flex items-center justify-between rounded-xl py-3">
           {/* Left Text */}
           <span className="text-primary-blue font-bold text-lg uppercase">
             EXPLORE MORE YACHT OFFERS
@@ -345,12 +310,12 @@ mx-10
           {/* Right Button */}
           <Link href="/offers">
             <button
-              className="py-3 px-20
+              className="px-10 py-2
           text-base font-bold tracking-wider uppercase
            bg-primary-blue
            
         shadow
-          transition duration-150 ease-in-out transform rounded-xl text-white"
+          transition duration-150 ease-in-out transform rounded-md text-white"
             >
               VIEW MORE
             </button>

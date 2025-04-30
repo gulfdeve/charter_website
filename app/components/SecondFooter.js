@@ -49,13 +49,14 @@ const SecondFooter = () => {
           <div className="flex flex-row gap-3">
             {" "}
             {/* Changed to always be flex-row */}
-            
+            <Link href="https://g.co/kgs/jfR6mP6" target="_blank" rel="noopener noreferrer">
             <Image
-              src="/Google.png"
+              src="/images/google-logo.webp"
               alt="google logo"
               width={80}
               height={100}
             />
+            </Link>
             <Link href="https://www.tripadvisor.com/Attraction_Review-g295424-d15699786-Reviews-Centaurus_Yachts_Boats_Dubai-Dubai_Emirate_of_Dubai.html" target="_blank" rel="noopener noreferrer">
             <Image
               src="/Tripadvisor-logo.webp"

@@ -64,7 +64,7 @@ const Counters = () => {
     <div
       ref={sectionRef}
       className="flex items-center justify-center w-full h-[40vh] bg-cover bg-fixed lg:bg-top bg-center"
-      style={{ backgroundImage: "url('/counterbg.webp')" }}
+      style={{ backgroundImage: "url('/images/footer-sunset.webp')" }}
     >
       <div className="container mx-auto px-6 lg:px-0">
         <div className="grid grid-cols-3 lg:grid-cols-3 gap-12">

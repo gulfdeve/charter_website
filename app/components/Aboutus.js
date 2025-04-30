@@ -1,32 +1,51 @@
 import React from "react";
+import Link from "next/link";
 
 const Aboutus = () => {
   return (
-    <div className=" 2xl:hidden relative flex flex-col lg:flex-row items-center justify-center lg:justify-between 2xl:justify-center px-5 bg-primary-blue lg:bg-white py-10 lg:py-32">
-      <div className=" lg:absolute lg:right-14 lg:top-1/2 lg:-translate-y-1/2 xl:right-52 xl:top-1/2 xl:-translate-y-1/2 lg:w-96 xl:w-[36rem]">
-        <img
-          alt="about us"
-          src="HomeAboutUs.webp"
-          className="rounded-lg xl:w-full"
-        />
-      </div>
+    <div className="relative lg:flex-row center justify-center lg:justify-between py-10 lg:py-32">
+      {/* Background Image */}
+      <div
+        className="absolute inset-0"
+        style={{
+          backgroundImage: "url('/images/bg-water.webp')",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          backgroundRepeat: "no-repeat",
+          zIndex: -2, // Place behind everything
+        }}
+      ></div>
 
-      <div className="flex flex-col lg:bg-primary-blue lg:w-[40rem] lg:p-20 lg:pl-8 lg:ml-32 xl:ml-44 xl:w-[55rem]">
-        <h2 className=" text-3xl py-5 xl:pb-14 xl:pt-2 text-primary-yellow font-bold text-center lg:text-left">
-          About Us
-        </h2>
-        <p className=" text-white text-center pb-7 lg:text-left lg:text-sm lg:pr-32 xl:pr-72">
-          Centaurus Charter was established in 2013 and offers Leisure boats and
-          Yacht Rentals in Dubai. The fully-crewed luxury yacht charters as well
-          as full-service event planning, are conveniently located in Dubai
-          Marina and Dubai Marina Harbor, each vessel is registered by the Dubai
-          Marina Yacht Club and is operated by a certified crew and catered by
-          professional staff.
-        </p>
-        <div className="">
-          <button className="w-full lg:w-auto text-center lg:text-left text-primary-yellow  border px-3 py-2 font-bold border-primary-yellow">
-            Read More
-          </button>
+      {/* Semi-Transparent Background Color */}
+      <div className="absolute inset-0 bg-primary-blue-light opacity-70 z-[-1]"></div>
+
+      <div className="z-10 container mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
+        <div className="flex flex-col order-2 md:order-1">
+          <h2 className="uppercase text-3xl py-5 xl:pb-10 xl:pt-2 text-primary-blue-2 font-bold text-center md:text-left">
+            About Us
+          </h2>
+          <p className="text-center pb-7 md:text-left leading-8">
+            Centaurus Charter was established in 2013 and offers Leisure boats
+            and Yacht Rentals in Dubai. The fully-crewed luxury yacht charters
+            as well as full-service event planning, are conveniently located in
+            Dubai Marina and Dubai Marina Harbor, each vessel is registered by
+            the Dubai Marina Yacht Club and is operated by a certified crew and
+            catered by professional staff.
+          </p>
+          <div className="mx-auto md:mx-0">
+          <Link href="/aboutus">
+            <button className="blue-solid-button">
+              Read More
+            </button>
+            </Link>
+          </div>
+        </div>
+        <div className="order-1 md:order-2">
+          <img
+            alt="about us"
+            src="HomeAboutUs.webp"
+            className="rounded-lg w-full"
+          />
         </div>
       </div>
     </div>
