@@ -3,6 +3,7 @@ import jwt from "jsonwebtoken";
 import MultiDatePicker from "@/app/components/MultiDatePicker";
 import { Link } from "@/app/i18n/routing";
 import SearchResultsClient from "@/app/components/SearchResultsClient";
+import { cache } from "react";
 
 // --------------------
 // 1) fetchVessels function
@@ -61,6 +62,7 @@ async function fetchVessels(searchParams) {
     method: "GET",
     headers: { Accept: "application/json", Authorization: `Bearer ${token}` },
   });
+  console.log("API Response:", response);
 
   if (!response.ok) throw new Error(`API Error: ${response.statusText}`);
 
@@ -75,12 +77,12 @@ export default async function VesselsPage({ searchParams }) {
   
   let data = null;
   const hasAnyParam = Object.keys(searchParams || {}).length > 0;
-
+  console.log("Has any param:", hasAnyParam);
   if (hasAnyParam) {
     try {
       data = await fetchVessels(searchParams);
     } catch (error) {
-      console.error("Error fetching vessels:", error);
+      console.log("Error fetching vessels:", error);
     }
   }
 
