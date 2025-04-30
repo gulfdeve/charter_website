@@ -130,11 +130,11 @@ const Page = () => {
         </div>
 
         {/* Seasonal Tours Header */}
-          <div className="flex items-center justify-center w-full my-6 container">
+          <div className="flex items-center justify-center w-full my-6">
             <hr className="flex-grow border-primary-yellow-dark" />
-            <span className="text-2xl 2xl:text-2xl font-semibold text-primary-blue-2 uppercase">
+            <h2 className="text-2xl 2xl:text-2xl font-semibold text-primary-blue-2 uppercase">
               Shared yacht tour prices & online booking
-            </span>
+            </h2>
             <hr className="flex-grow border-primary-yellow-dark" />
           </div>
 
