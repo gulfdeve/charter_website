@@ -75,7 +75,7 @@ const page = () => {
       <div>
         <Videoresidentoffers />
       </div>
-      <div className="container mx-auto flex flex-col items-center justify-center pt-6">
+      <div className="container mx-auto flex flex-col items-center justify-center pt-6 lg:pt-10">
         <h3 className=" text-primary-blue text-center font-bold  pb-4">
           EXCLUSIVE 40% DISCOUNT FOR UAE RESIDENTS
         </h3>
@@ -108,7 +108,7 @@ const page = () => {
                   DISCOUNTED 4-HOUR RATE
                 </th>
                 <th className=" px-3 py-5">
-                  BOOKING
+                  
                 </th>
               </tr>
             </thead>
@@ -157,7 +157,7 @@ const page = () => {
         </div>
       </div>
       <div className="container mx-auto flex flex-col  px-4">
-        <h3 className="text-black text-lg text-center font-bold pb-5">
+        <h3 className="text-black text-base text-center font-bold pb-5">
           INCLUSIONS: WATER, SOFT DRINKS, WINES, AND BEERS.
         </h3>
         <div className="bg-primary-blue-4 p-0.5 ">
@@ -166,8 +166,8 @@ const page = () => {
             & 8 PM ONWARDS (NIGHT TRIPS)
           </h3>
         </div>
-        <p className=" text-left md:text-center  text-[1rem]  leading-tight py-5">
-        Escape the ordinary and embark on a private yacht adventure with our limited-time 40% discount for uae residents. To avail this exclusive offer, simply book a minimum 2-hours yacht tour and let us take care of the rest. Enjoy unlimited drinks and snacks during your private yacht tour. Watersports are also available on request.
+        <p className=" text-left md:text-center italic text-primary-grey py-5">
+        Escape the ordinary and embark on a private yacht adventure with our limited-time 40% discount for UAE residents. To avail this exclusive offer, simply book a minimum 2-hours yacht tour and let us take care of the rest. Enjoy unlimited drinks and snacks during your private yacht tour. Watersports are also available on request.
         </p>
       </div>
       <div className="container mx-auto">
@@ -205,7 +205,7 @@ const page = () => {
                   DISCOUNTED 4-HOUR RATE
                 </th>
                 <th className="px-3 py-5">
-                  BOOKING
+                  
                 </th>
               </tr>
             </thead>
@@ -253,7 +253,7 @@ const page = () => {
         </div>
       </div>
       <div className="container mx-auto flex flex-col  px-4">
-        <h3 className="text-black text-lg text-center font-bold pb-5">
+        <h3 className="text-black text-base text-center font-bold pb-5">
           INCLUSIONS: WATER, SOFT DRINKS, WINES, AND BEERS.
         </h3>
         <div className="bg-primary-blue-4 p-0.5 ">
@@ -261,8 +261,8 @@ const page = () => {
             DISCOUNTED RATES: VALID FOR BOOKINGS FROM 4 PM TO 7 PM (PRIMETIME).
           </h3>
         </div>
-        <p className=" text-left md:text-center  text-[1rem]  leading-tight font-light py-5">
-        Escape the ordinary and set sail on a private yacht adventure with our limited-time 30% discount for uae residents. To avail this exclusive offer, simply book a minimum 2-hours yacht tour and let us take care of the rest. Enjoy unlimited drinks and snacks during your private yacht tour. Watersports are also available on request.
+        <p className="text-left md:text-center italic text-primary-grey py-5">
+        Escape the ordinary and set sail on a private yacht adventure with our limited-time 30% discount for UAE residents. To avail this exclusive offer, simply book a minimum 2-hours yacht tour and let us take care of the rest. Enjoy unlimited drinks and snacks during your private yacht tour. Watersports are also available on request.
         </p>
       </div>
       <div className="container mx-auto">
