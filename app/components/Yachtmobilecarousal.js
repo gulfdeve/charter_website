@@ -35,7 +35,7 @@ export default function YachtmobileCarousal() {
                 // This width ensures one full card + part of the next is visible
                 className="flex-[0_0_85%] md:flex-[0_0_50%] lg:flex-[0_0_40%]"
               >
-                <div className="flex flex-col border bg-white border-gray-300 xl:p-10 md:p-5 p-3 rounded-lg shadow-none">
+                <div className="flex flex-col border bg-white border-gray-300 xl:p-10 md:p-5 p-2 rounded-lg shadow-none">
                   {/* Yacht Title */}
                   <Link href={`/yacht-rentals/${product.slug}`}>
                     <h2 className="xl:text-4xl md:text-lg text-sm font-bold">
@@ -55,13 +55,13 @@ export default function YachtmobileCarousal() {
                   </Link>
 
                   {/* Model / Length / Guests / Price */}
-                  <div className="grid grid-cols-3 items-center gap-0 rounded-lg px-3 absolute -bottom-5 left-0 right-0">
+                  <div className="grid grid-cols-3 items-center gap-0 rounded-lg my-3">
                     {/* Model */}
                     <div className="bg-[#f1f1f1] p-1 xl:p-2.5 flex flex-col items-center rounded-l-lg">
                       <span className="font-semibold text-primary-grey text-[0.6rem]">
                         Model:
                       </span>
-                      <span className="font-semibold text-xs">
+                      <span className="font-semibold text-xxs">
                         {product.translations?.[locale].model}
                       </span>
                     </div>
@@ -70,7 +70,7 @@ export default function YachtmobileCarousal() {
                       <span className="font-semibold text-primary-grey text-[0.6rem]">
                         Length:
                       </span>
-                      <span className="font-semibold text-xs ">
+                      <span className="font-semibold text-xxs ">
                         {product.translations?.[locale].size}
                       </span>
                     </div>
@@ -79,7 +79,7 @@ export default function YachtmobileCarousal() {
                       <span className="font-semibold text-primary-grey text-[0.6rem]">
                         Guests:
                       </span>
-                      <span className="font-semibold text-xs">
+                      <span className="font-semibold text-xxs">
                         {product.translations?.[locale].guests}
                       </span>
                     </div>
@@ -87,7 +87,13 @@ export default function YachtmobileCarousal() {
                   </div>
 
                   {/* Trip Inclusions & Partner Link */}
-                  <div className="flex flex-row justify-between items-center xl:w-[32rem] pt-8 z-10">
+                  <div>{product.id === 24 && (
+                        <p className="text-xxs font-normal italic text-primary-grey">Poseidon 118ft Trips: An Add on of AED 1000 per hour will be added for every additional 10 pax where the occupancy surpasses the 40 passengers.
+                        </p>
+                        )
+                      }
+                  </div>
+                  <div className="flex flex-row justify-between items-center xl:w-[32rem] z-10">
                     <div>
                       <div className="font-semibold text-xs mt-3 mb-2">Trip inclusions from 3 hours onwards:
                       </div>
@@ -131,6 +137,10 @@ export default function YachtmobileCarousal() {
                       <span className="text-[0.47rem] xs:text-[0.6rem]">
                         Price Per Hour:
                       </span>
+                      <span>{product.id === 24 && (
+                          <p className="text-xxs font-normal italic text-primary-grey">Starting from</p> )
+                              }
+                      </span>     
                       <span className="font-bold text-sm xs:text-lg text-primary-red ">
 					              AED {product.per_hour_price.toLocaleString()}
                       </span>
