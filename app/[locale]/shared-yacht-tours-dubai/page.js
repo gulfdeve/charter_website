@@ -130,14 +130,12 @@ const Page = () => {
         </div>
 
         {/* Seasonal Tours Header */}
-          <div className="flex items-center justify-center w-full my-6">
-            <hr className="flex-grow border-primary-yellow-dark" />
-            <h2 className="text-2xl 2xl:text-2xl font-semibold text-primary-blue-2 uppercase">
-              Shared yacht tour prices & online booking
-            </h2>
-            <hr className="flex-grow border-primary-yellow-dark" />
-          </div>
-
+         
+          <div className="flex items-center text-center justify-center w-full my-6">
+          <hr className="flex-grow border-primary-yellow-dark" />
+          <h2 className="px-4 font-semibold text-primary-blue-2 uppercase">Shared yacht tour prices & online booking</h2>
+          <hr className="flex-grow border-primary-yellow-dark" />
+        </div>
         {/* Card Grid */}
         <div className="md:block hidden">
         <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-3 py-10 gap-5 container mx-auto items-start">
