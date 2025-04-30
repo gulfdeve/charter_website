@@ -54,7 +54,7 @@ export default async function YachtPage({ params: paramsPromise }) {
 
   return (
     <>
-      <div className="container mx-auto nav-space">
+      <div data-id={product.id} className="container mx-auto nav-space">
         <div className="py-10 text-center text-primary-blue">
           <h1 className="font-bold text-center">{product.translations?.[locale]?.heading_2}</h1>
           <h2 className="">{product.translations?.[locale]?.name_of_yacht}</h2>
@@ -96,6 +96,12 @@ export default async function YachtPage({ params: paramsPromise }) {
             </a>
           </div>
         </div>
+		{/* if product.id is 24 add a paragraph */}
+		{product.id === 24 && (
+		  <p className="text-sm text-center my-2">
+			Poseidon 118ft Trips: An Add on of AED 1000 per hour will be added for every additional 10 pax where the occupancy surpasses the 50 passengers.
+		  </p>
+		)}
 
         <YachtDetails
           yachtDetails={yachtDetails}
