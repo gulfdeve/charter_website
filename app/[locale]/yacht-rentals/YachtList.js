@@ -105,10 +105,20 @@ const YachtCard = ({ yacht }) => {
           </div>
           </div>
       </div>
-
+      
       <div className="flex flex-col flex-grow py-4">
-      <div className="flex flex-row justify-between items-center z-20 border-t border-gray-400 pt-3 mt-5">
+        <div className=" mt-5">{yacht.id === 24 && (
+							<p className="text-xs font-normal italic text-primary-grey">Poseidon 118ft Trips: An Add on of AED 1000 per hour will be added for every additional 10 pax where the occupancy surpasses the 40 passengers.
+							</p>
+							)
+						}
+        </div>
+      <div className="flex flex-row justify-between items-center z-20 border-t border-gray-400 pt-3  mt-5">
         <div className="p-1 xl:p-2 flex flex-col text-left"><span className=" text-sm">Price per hour:</span>
+        <span>{yacht.id === 24 && (
+            <p className="text-xs font-normal italic text-primary-grey">Starting from</p> )
+                }
+        </span>        
         <span className="font-bold text-lg lg:text-xl text-primary-red">AED {parseInt(yacht.price).toLocaleString()}</span>
         </div>
         <BookNowButton fareharborId={yacht.fareharbor_id} />

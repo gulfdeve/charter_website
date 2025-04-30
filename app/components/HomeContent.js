@@ -84,6 +84,7 @@ export default function Home() {
                   key={product.id}
                   className="flex flex-col p-5 rounded-lg shadow-custom bg-white"
                 >
+                  
                   <Link  href={`/yacht-rentals/${product.slug}`}>
                   <h3 className="md:text-lg  font-bold">
                     {product.translations?.[locale].name_of_yacht}
@@ -134,7 +135,16 @@ export default function Home() {
                     </div>
                     </div>
                   </div>
-                  <div className="flex flex-row justify-between items-end z-10 mt-12">
+                  <div className="z-10 mt-12">
+                  {product.id === 24 && (
+                    <p className="text-xs font-normal italic text-primary-grey">Poseidon 118ft Trips: An Add on of AED 1000 per hour will be added for every additional 10 pax where the occupancy surpasses the 40 passengers.
+                    </p>
+                    )
+                  }
+                  </div>
+
+                  <div className="flex flex-row justify-between items-end z-10">
+        
                     <div>
                       <div className="text-sm font-semibold mt-3 mb-2">
                         Trip inclusions from 3 hours onwards:
@@ -187,8 +197,15 @@ export default function Home() {
                     {/* Price per Hour */}
                     <div className="p-1 xl:p-2 flex flex-col">
                       <span className=" text-sm">Price per hour:</span>
+                      <span>{product.id === 24 && (
+                        <p className="text-xs font-normal italic text-primary-grey">Starting from
+                        </p>
+                        )
+                      }
+                      </span>
                       <span className="font-bold text-lg lg:text-xl text-primary-red">
                       AED {product.per_hour_price.toLocaleString()}
+                      
                       </span>
                     </div>
                     <div className="pt-3">
