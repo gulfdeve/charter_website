@@ -54,8 +54,7 @@ p,li,span {
 }
 .btn-info {
   @apply  py-3 pr-3
-          text-base font-semibold tracking-wider uppercase
-          text-white
+          text-base font-bold tracking-wider uppercase
           transition duration-150 ease-in-out transform ;
 }
 
