@@ -4,6 +4,12 @@ import Videoresidentoffers from "@/app/components/Videoresidentoffers";
 import { FaWhatsapp } from "react-icons/fa";
 import Link from "next/link";
 import Modal2 from "@/app/components/Modal2";
+import { FaUser } from "react-icons/fa";
+import { IoIosPricetag } from "react-icons/io";
+import { RiDiscountPercentFill } from "react-icons/ri";
+import { FiArrowRight } from "react-icons/fi";
+
+
 const page = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
@@ -14,59 +20,115 @@ const page = () => {
   const closeModal = () => {
     setIsModalOpen(false);
   };
-  const yachts = [
+  const yachtsFortyOff = [
     {
       name: "THUNDER - 36FT",
       capacity: 10,
-      ratePerHour: "AED 595",
-      rate2Hours: "AED 950",
-      rate3Hours: "AED 1070",
-      rate4Hours: "AED 1430",
+      ratePerHour: "AED 0",
+      rate2Hours: "AED 0",
+      rate3Hours: "AED 0",
+      rate4Hours: "AED 0",
       fareharbor_id: "353083",
     },
     {
       name: "STORM - 36FT",
       capacity: 10,
-      ratePerHour: "AED 595",
-      rate2Hours: "AED 950",
-      rate3Hours: "AED 1070",
-      rate4Hours: "AED 1430",
+      ratePerHour: "AED 0",
+      rate2Hours: "AED 0",
+      rate3Hours: "AED 0",
+      rate4Hours: "AED 0",
       fareharbor_id: "429263",
     },
     {
       name: "VASSIA - 56FT",
       capacity: 21,
-      ratePerHour: "AED 1040",
-      rate2Hours: "AED 1665",
-      rate3Hours: "AED 1870",
-      rate4Hours: "AED 2495",
+      ratePerHour: "AED 0",
+      rate2Hours: "AED 0",
+      rate3Hours: "AED 0",
+      rate4Hours: "AED 0",
       fareharbor_id: "340280",
     },
     {
       name: "ETOSHA - 58FT",
       capacity: 28,
-      ratePerHour: "AED 1080",
-      rate2Hours: "AED 1730",
-      rate3Hours: "AED 1945",
-      rate4Hours: "AED 2590",
+      ratePerHour: "AED 0",
+      rate2Hours: "AED 0",
+      rate3Hours: "AED 0",
+      rate4Hours: "AED 0",
       fareharbor_id: "340265",
     },
     {
       name: "LAGOONA - 56FT",
       capacity: 24,
-      ratePerHour: "AED 1150",
-      rate2Hours: "AED 1840",
-      rate3Hours: "AED 2070",
-      rate4Hours: "AED 2760",
+      ratePerHour: "AED 0",
+      rate2Hours: "AED 0",
+      rate3Hours: "AED 0",
+      rate4Hours: "AED 0",
       fareharbor_id: "340459",
     },
     {
       name: "SILVER CREEK - 61FT",
       capacity: 30,
-      ratePerHour: "AED 1250",
-      rate2Hours: "AED 1995",
-      rate3Hours: "AED 2250",
-      rate4Hours: "AED 3000",
+      ratePerHour: "AED 0",
+      rate2Hours: "AED 0",
+      rate3Hours: "AED 0",
+      rate4Hours: "AED 0",
+      fareharbor_id: "340286",
+    },
+  ];
+  const yachtsThirtyOff = [
+    {
+      name: "THUNDER - 36FT",
+      capacity: 10,
+      ratePerHour: "AED 0",
+      rate2Hours: "AED 0",
+      rate3Hours: "AED 0",
+      rate4Hours: "AED 0",
+      fareharbor_id: "353083",
+    },
+    {
+      name: "STORM - 36FT",
+      capacity: 10,
+      ratePerHour: "AED 0",
+      rate2Hours: "AED 0",
+      rate3Hours: "AED 0",
+      rate4Hours: "AED 0",
+      fareharbor_id: "429263",
+    },
+    {
+      name: "VASSIA - 56FT",
+      capacity: 21,
+      ratePerHour: "AED 0",
+      rate2Hours: "AED 0",
+      rate3Hours: "AED 0",
+      rate4Hours: "AED 0",
+      fareharbor_id: "340280",
+    },
+    {
+      name: "ETOSHA - 58FT",
+      capacity: 28,
+      ratePerHour: "AED 0",
+      rate2Hours: "AED 0",
+      rate3Hours: "AED 0",
+      rate4Hours: "AED 0",
+      fareharbor_id: "340265",
+    },
+    {
+      name: "LAGOONA - 56FT",
+      capacity: 24,
+      ratePerHour: "AED 0",
+      rate2Hours: "AED 0",
+      rate3Hours: "AED 0",
+      rate4Hours: "AED 0",
+      fareharbor_id: "340459",
+    },
+    {
+      name: "SILVER CREEK - 61FT",
+      capacity: 30,
+      ratePerHour: "AED 0",
+      rate2Hours: "AED 0",
+      rate3Hours: "AED 0",
+      rate4Hours: "AED 0",
       fareharbor_id: "340286",
     },
   ];
@@ -75,7 +137,7 @@ const page = () => {
       <div>
         <Videoresidentoffers />
       </div>
-      <div className="container mx-auto flex flex-col items-center justify-center pt-6">
+      <div className="container mx-auto flex flex-col items-center justify-center pt-6 lg:pt-10">
         <h3 className=" text-primary-blue text-center font-bold  pb-4">
           EXCLUSIVE 40% DISCOUNT FOR UAE RESIDENTS
         </h3>
@@ -85,7 +147,47 @@ const page = () => {
       </div>
 
       <div className="container mx-auto p-3 lg:p-5 py-6">
-        <div className="overflow-x-auto">
+      <div className="block lg:hidden overflow-x-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 items-center justify-center gap-5 ">
+          {yachtsFortyOff.map((yacht, index) => (
+            <div key={index} className="w-full border-2 rounded-lg border-gray-300 p-4">
+              <h2 className=" font-bold mb-4">{yacht.name}</h2>
+              <div className="font-Inter">
+              <div className="grid grid-cols-1 s:grid-cols-2 md:grid-cols-1 gap-x-4">
+              <div className="flex flex-col mb-4">
+                <div className="flex"><IoIosPricetag size={20} className="mr-3 mt-1 text-primary-blue-light-2"/>
+                  <p className="flex flex-col text-sm text-primary-grey">Regular Rate/Hour:
+                <span className=" font-semibold text-base text-black mt-2">{yacht.ratePerHour}</span></p></div>
+              </div>
+              <div className="flex flex-col mb-4">
+                <div className="flex"><FaUser size={20} className="mr-3 mt-1 text-primary-blue-light-2"/>
+                  <p className="flex flex-col text-sm text-primary-grey">Capacity:
+                <span className=" font-semibold text-base text-black mt-2">{yacht.capacity}</span></p></div>
+              </div>
+              </div>
+              <div className="flex flex-col mb-4">
+                <div className="flex"><RiDiscountPercentFill size={20} className="mr-3 mt-1 text-primary-blue-light-2"/>
+                  <div className="flex flex-col text-sm text-primary-grey">Discounted Rate:
+                  <p className="font-semibold text-base mt-2">2 Hours: <span className="text-black ml-4">{yacht.rate2Hours}</span></p>
+                  <p className="font-semibold text-base">3 Hours: <span className="text-black ml-4">{yacht.rate3Hours}</span></p>
+                  <p className="font-semibold text-base">4 Hours: <span className="text-black ml-4">{yacht.rate4Hours}</span></p>
+                  </div>
+                </div>
+              </div>
+              </div>
+              <a href={`https://fareharbor.com/embeds/book/centauruscharter/items/${yacht.fareharbor_id}/?full-items=yes&flow=645487`}
+                      target="_self"
+                      rel="noopener noreferrer" 
+                      className="flex items-center mt-5 pt-3 group justify-between px-5 text-primary-blue-2 border-t border-gray-400">
+                <div className="btn-info">Book Now</div>
+                <FiArrowRight size={20} className=" text-lg transform md:group-hover:translate-x-4 transition-transform duration-300" />
+              </a>
+            </div>
+          ))}
+        </div>
+      </div>
+
+        <div className="hidden lg:block overflow-x-auto">
           <table className="w-full border-collapse border border-gray-300 md:text-sm lg:text-sm ">
             <thead>
               <tr className="bg-[#f1f1f1] text-primary-blue-2">
@@ -108,12 +210,12 @@ const page = () => {
                   DISCOUNTED 4-HOUR RATE
                 </th>
                 <th className=" px-3 py-5">
-                  BOOKING
+                  
                 </th>
               </tr>
             </thead>
             <tbody>
-              {yachts.map((yacht, index) => (
+              {yachtsFortyOff.map((yacht, index) => (
                 <tr
                   key={index}
                   className={`${
@@ -155,9 +257,10 @@ const page = () => {
             </tbody>
           </table>
         </div>
-      </div>
+        </div>
+
       <div className="container mx-auto flex flex-col  px-4">
-        <h3 className="text-black text-lg text-center font-bold pb-5">
+        <h3 className="text-black text-base text-center font-bold pb-5">
           INCLUSIONS: WATER, SOFT DRINKS, WINES, AND BEERS.
         </h3>
         <div className="bg-primary-blue-4 p-0.5 ">
@@ -166,8 +269,8 @@ const page = () => {
             & 8 PM ONWARDS (NIGHT TRIPS)
           </h3>
         </div>
-        <p className=" text-left md:text-center  text-[1rem]  leading-tight py-5">
-        Escape the ordinary and embark on a private yacht adventure with our limited-time 40% discount for uae residents. To avail this exclusive offer, simply book a minimum 2-hours yacht tour and let us take care of the rest. Enjoy unlimited drinks and snacks during your private yacht tour. Watersports are also available on request.
+        <p className=" text-left md:text-center italic text-primary-grey py-5">
+        Escape the ordinary and embark on a private yacht adventure with our limited-time 40% discount for UAE residents. To avail this exclusive offer, simply book a minimum 2-hours yacht tour and let us take care of the rest. Enjoy unlimited drinks and snacks during your private yacht tour. Watersports are also available on request.
         </p>
       </div>
       <div className="container mx-auto">
@@ -182,7 +285,48 @@ const page = () => {
         </p>
       </div>
       <div className="container mx-auto p-3 lg:p-5 py-6">
-        <div className="overflow-x-auto">
+      <div className="block lg:hidden overflow-x-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 items-center justify-center gap-5 ">
+          {yachtsThirtyOff.map((yacht, index) => (
+            <div key={index} className="w-full border-2 rounded-lg border-gray-300 p-4">
+              <h2 className=" font-bold mb-4">{yacht.name}</h2>
+              <div className="font-Inter">
+              <div className="grid grid-cols-1 s:grid-cols-2 md:grid-cols-1 gap-x-4">
+              <div className="flex flex-col mb-4">
+                <div className="flex"><IoIosPricetag size={20} className="mr-3 mt-1 text-primary-blue-light-2"/>
+                  <p className="flex flex-col text-sm text-primary-grey">Regular Rate/Hour:
+                <span className=" font-semibold text-base text-black mt-2">{yacht.ratePerHour}</span></p></div>
+              </div>
+              <div className="flex flex-col mb-4">
+                <div className="flex"><FaUser size={20} className="mr-3 mt-1 text-primary-blue-light-2"/>
+                  <p className="flex flex-col text-sm text-primary-grey">Capacity:
+                <span className=" font-semibold text-base text-black mt-2">{yacht.capacity}</span></p></div>
+              </div>
+              </div>
+              <div className="flex flex-col mb-4">
+                <div className="flex"><RiDiscountPercentFill size={20} className="mr-3 mt-1 text-primary-blue-light-2"/>
+                  <div className="flex flex-col text-sm text-primary-grey">Discounted Rate:
+                  <p className="font-semibold text-base mt-2">2 Hours: <span className="text-black ml-4">{yacht.rate2Hours}</span></p>
+                  <p className="font-semibold text-base">3 Hours: <span className="text-black ml-4">{yacht.rate3Hours}</span></p>
+                  <p className="font-semibold text-base">4 Hours: <span className="text-black ml-4">{yacht.rate4Hours}</span></p>
+                  </div>
+                </div>
+              </div>
+              </div>
+              <a href={`https://fareharbor.com/embeds/book/centauruscharter/items/${yacht.fareharbor_id}/?full-items=yes&flow=645487`}
+                      target="_self"
+                      rel="noopener noreferrer" 
+                      className="flex items-center mt-5 pt-3 group justify-between px-5 text-primary-blue-2 border-t border-gray-400">
+                <div className="btn-info">Book Now</div>
+                <FiArrowRight size={20} className=" text-lg transform md:group-hover:translate-x-4 transition-transform duration-300" />
+              </a>
+            </div>
+            
+
+          ))}
+        </div>
+      </div>
+        <div className="hidden lg:block overflow-x-auto">
           <table className="w-full border-collapse border border-gray-300 md:text-sm lg:text-sm ">
             <thead>
               <tr className="bg-[#f1f1f1] text-primary-blue-2">
@@ -205,12 +349,12 @@ const page = () => {
                   DISCOUNTED 4-HOUR RATE
                 </th>
                 <th className="px-3 py-5">
-                  BOOKING
+                  
                 </th>
               </tr>
             </thead>
             <tbody>
-              {yachts.map((yacht, index) => (
+              {yachtsThirtyOff.map((yacht, index) => (
                 <tr
                   key={index}
                   className={`${
@@ -253,7 +397,7 @@ const page = () => {
         </div>
       </div>
       <div className="container mx-auto flex flex-col  px-4">
-        <h3 className="text-black text-lg text-center font-bold pb-5">
+        <h3 className="text-black text-base text-center font-bold pb-5">
           INCLUSIONS: WATER, SOFT DRINKS, WINES, AND BEERS.
         </h3>
         <div className="bg-primary-blue-4 p-0.5 ">
@@ -261,8 +405,8 @@ const page = () => {
             DISCOUNTED RATES: VALID FOR BOOKINGS FROM 4 PM TO 7 PM (PRIMETIME).
           </h3>
         </div>
-        <p className=" text-left md:text-center  text-[1rem]  leading-tight font-light py-5">
-        Escape the ordinary and set sail on a private yacht adventure with our limited-time 30% discount for uae residents. To avail this exclusive offer, simply book a minimum 2-hours yacht tour and let us take care of the rest. Enjoy unlimited drinks and snacks during your private yacht tour. Watersports are also available on request.
+        <p className="text-left md:text-center italic text-primary-grey py-5">
+        Escape the ordinary and set sail on a private yacht adventure with our limited-time 30% discount for UAE residents. To avail this exclusive offer, simply book a minimum 2-hours yacht tour and let us take care of the rest. Enjoy unlimited drinks and snacks during your private yacht tour. Watersports are also available on request.
         </p>
       </div>
       <div className="container mx-auto">

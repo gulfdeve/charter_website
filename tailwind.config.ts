@@ -37,6 +37,8 @@ export default {
       colors: {
         "primary-blue": "#0D2343",
         "primary-blue-light": "#f5f9ff",
+        "primary-blue-light-2": "#94b4ea",
+
         "primary-blue-2": "#1B498F",
         "primary-blue-3": "#0E2243",
         "primary-blue-4": "#08396e",
