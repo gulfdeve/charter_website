@@ -175,10 +175,13 @@ const page = () => {
                 </div>
               </div>
               </div>
-              <div className="flex items-center mt-5 pt-3 group justify-between px-5 text-primary-blue-2 border-t border-gray-400">
+              <a href={`https://fareharbor.com/embeds/book/centauruscharter/items/${yacht.fareharbor_id}/?full-items=yes&flow=645487`}
+                      target="_self"
+                      rel="noopener noreferrer" 
+                      className="flex items-center mt-5 pt-3 group justify-between px-5 text-primary-blue-2 border-t border-gray-400">
                 <div className="btn-info">Book Now</div>
                 <FiArrowRight size={20} className=" text-lg transform md:group-hover:translate-x-4 transition-transform duration-300" />
-              </div>
+              </a>
             </div>
           ))}
         </div>
@@ -310,11 +313,16 @@ const page = () => {
                 </div>
               </div>
               </div>
-              <div className="flex items-center mt-5 pt-3 group justify-between px-5 text-primary-blue-2 border-t border-gray-400">
+              <a href={`https://fareharbor.com/embeds/book/centauruscharter/items/${yacht.fareharbor_id}/?full-items=yes&flow=645487`}
+                      target="_self"
+                      rel="noopener noreferrer" 
+                      className="flex items-center mt-5 pt-3 group justify-between px-5 text-primary-blue-2 border-t border-gray-400">
                 <div className="btn-info">Book Now</div>
                 <FiArrowRight size={20} className=" text-lg transform md:group-hover:translate-x-4 transition-transform duration-300" />
-              </div>
+              </a>
             </div>
+            
+
           ))}
         </div>
       </div>
