@@ -44,7 +44,7 @@ export default function YachtCarousel() {
 
   return (
     <div className="flex flex-col items-center justify-center bg-primary-yellow">
-      <h2 className="text-primary-blue text-center font-bold text-2xl xl:text-4xl py-7">
+      <h2 className="text-primary-blue text-center font-bold text-2xl xl:text-4xl py-10">
         EXPLORE OUR YACHTS
       </h2>
 

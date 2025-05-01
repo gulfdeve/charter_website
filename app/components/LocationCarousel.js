@@ -93,8 +93,8 @@ export default function LocationCarousel() {
   const scrollNext = () => emblaInstance.current?.scrollNext();
 
   return (
-    <div className="flex flex-col items-center justify-center bg-white pt-10">
-      <h2 className="text-primary-blue text-center font-bold text-2xl xl:text-3xl  pb-10">
+    <div className="flex flex-col items-center justify-center bg-white">
+      <h2 className="text-primary-blue text-center font-bold text-2xl xl:text-3xl py-10">
 YACHT LOCATION
       </h2>
 

@@ -43,8 +43,8 @@ export default function WaterSportCarousal2({packages}) {
   const scrollNext = () => emblaInstance.current?.scrollNext();
 
   return (
-    <div className="flex flex-col items-center justify-center bg-primary-yellow pt-10">
-      <h2 className="text-primary-blue text-center font-bold text-2xl xl:text-4xl py-7">
+    <div className="flex flex-col items-center justify-center bg-primary-yellow">
+      <h2 className="text-primary-blue text-center font-bold text-2xl xl:text-4xl py-10">
       EXPLORE MORE WATERSPORTS ADD-ON
       </h2>
 
