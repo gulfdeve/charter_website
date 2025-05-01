@@ -21,7 +21,7 @@ export default function SearchResultsClient({
     modalRef.current?.open();
     
   };
-console.log("result", paginatedHits)
+  console.log("rentalppp",rentalPeriod);
   return (
     <div className="mt-12 flex flex-col items-center justify-center px-4 container mx-auto">
       <h2 className=" font-semibold text-center mb-6">Search Results</h2>
