@@ -39,9 +39,9 @@ export default function ToursCarousel({ toursData }) {
   };
 
   return (
-    <div className="pb-16">
+    <div className="pb-16 ">
       {/* Embla carousel viewport */}
-      <div ref={emblaRef} className="overflow-hidden">
+      <div ref={emblaRef} className="overflow-hidden container mx-auto">
         {/* Carousel container with a horizontal flex layout */}
         <div className="flex gap-4 container ">
           {toursData.map((tour, index) => (
