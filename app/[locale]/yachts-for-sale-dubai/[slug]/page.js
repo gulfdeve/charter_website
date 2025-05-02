@@ -11,7 +11,7 @@ import yachtdata from "@/app/components/buyYachtData.json";
 import { use } from "react";
 import { useLocale } from "next-intl";
 import { notFound } from "next/navigation";
-
+import PageTitleHeading from "@/app/components/PageTitleHeading";
 export default function Home({ params }) {
   const { slug } = use(params);
   const emblaRef = useRef(null);
@@ -47,9 +47,9 @@ export default function Home({ params }) {
   return (
     <>
       <div className="container mx-auto  nav-space">
-        <h1 className=" font-bold text-center mb-4 mt-5 uppercase">{product.translations[locale].name_of_yacht}</h1>
+       
    
-
+<PageTitleHeading title={product.translations[locale].name_of_yacht} />
         <YachtGallery gallery={product.gallery} />
 
         <div className="flex flex-col lg:flex-row items-stretch justify-center py-10">
