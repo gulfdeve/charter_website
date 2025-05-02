@@ -12,6 +12,7 @@ import { use } from "react";
 import { useLocale } from "next-intl";
 import { notFound } from "next/navigation";
 import PageTitleHeading from "@/app/components/PageTitleHeading";
+import { Link } from "@/app/i18n/routing";
 export default function Home({ params }) {
   const { slug } = use(params);
   const emblaRef = useRef(null);
@@ -81,7 +82,9 @@ export default function Home({ params }) {
             </div>
           </div>
           <button className="yellow-solid-button w-1/2 mx-auto uppercase">
+          <Link href={'https://api.whatsapp.com/send?phone=971547928626&text=Hi!%20I%20came%20across%20your%20website.%20I%20want%20to%20inquire%20about%20a%20yacht%20charter%20in%20Dubai.' } target="_blank" rel="noopener noreferrer">
             CHAT WITH US
+            </Link>
           </button>
         </div>
 
