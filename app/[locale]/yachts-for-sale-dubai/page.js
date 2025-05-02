@@ -140,21 +140,24 @@ const Page = () => {
     </div>
   </div>
 </div>
-<div className="py-5 container mx-auto">
-<div className="flex flex-col md:flex-row rounded-lg md:px-10 items-center  gap-5 justify-center  md:justify-between bg-transparent md:bg-primary-blue py-5">
-<button className="text-white  font-bold bg-primary-blue px-5 py-3 text-xl rounded">
-        REACH OUT TO US
-      </button>
-      <div className="">
-  <button className="flex items-center justify-center gap-2 px-4 py-3 bg-primary-yellow text-primary-blue  font-bold rounded-md hover:bg-yellow-600 transition">
+<div className="py-10 w-full container mx-auto">
+            <div className="flex flex-col md:flex-row rounded-lg items-center  gap-5 justify-center  md:justify-between bg-primary-blue p-5">
+              <p className="text-white  text-center md:text-left font-bold bg-primary-blue text-xl rounded ">
+                REACH OUT TO US
+              </p>
+              <div className="flex flex-col md:flex-row md:gap-10 gap-5">
+                <a
+                  target="_blank"
+                  className="blue-lined-button"
+                  href="https://api.whatsapp.com/send?phone=971547928626&text=Hi!%20I%20came%20across%20your%20website.%20I%20want%20to%20inquire%20about%20a%20yacht%20charter%20in%20Dubai."
+                >
                   <FaWhatsapp size={20} />
-                  <Link href={'https://api.whatsapp.com/send?phone=971547928626&text=Hi!%20I%20came%20across%20your%20website.%20I%20want%20to%20inquire%20about%20a%20yacht%20charter%20in%20Dubai.' } target="_blank" rel="noopener noreferrer">
                   WHATSAPP US
-                  </Link>
-                </button>
-
-                </div></div>
-</div>
+                </a>
+             
+              </div>
+            </div>
+          </div>
 
       </div>
     </>
