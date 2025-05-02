@@ -86,11 +86,16 @@ const Route = ({ product, slug, header_whatsapp_url }) => {
                     {route.duration} <br />({route.minutes})
                   </p>
                 </div>
-                <ul className="text-left text-base lg:text-lg py-5 px-10 list-disc font-bold">
+                {/* <ul className="text-left text-base lg:text-lg py-5 px-10 list-disc font-bold">
                   {route.points.map((point, index) => (
                     <li key={index}>{point}</li>
                   ))}
-                </ul>
+                </ul> */}
+				<ul className="text-left text-base lg:text-lg py-5 px-10 list-disc font-bold uppercase">
+  {route.points.map((point, index) => (
+    <li key={index} dangerouslySetInnerHTML={{ __html: point }}></li>
+  ))}
+</ul>
               </div>
             ))}
           </div>

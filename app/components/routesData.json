@@ -74,7 +74,7 @@
       ]
     },
     {
-      "title": "Marina Cruise",
+      "title": "Burj Al Arab Cruise",
       "duration": "3 hours yacht trip",
       "minutes": "180 mins",
       "bgColorClass": "bg-green-100",
@@ -85,14 +85,14 @@
         "Ain Dubai",
         "JBR",
         "Palm Jumeirah",
-        "Atlantis",
+        "Atlantis The Palm",
         "Burj Al Arab"
       ]
     },
     {
-      "title": "Marina Cruise",
-      "duration": "1 hour yacht trip",
-      "minutes": "60 mins",
+      "title": "Dubai Canal",
+      "duration": "4-6 hours yacht trip",
+      "minutes": "240 - 360 mins",
       "bgColorClass": "bg-yellow-100",
       "headerBgColorClass": "bg-primary-yellow-dark",
       "points": [
@@ -101,465 +101,483 @@
         "Ain Dubai",
         "JBR",
         "Palm Jumeirah",
-        "Dubai Canal",
-        "Burj Khalifa view (from the Canal)"
+        "Alantis the palm",
+		"Burj Al Arab",
+		"Dubai Canal",
+        "Burj Khalifa view <span>(from the Canal)</span>"
       ]
     }
   ],
   "36ft-Storm": [
     {
-      "title": "Marina Cruise",
-      "duration": "1 hour yacht trip",
-      "minutes": "60 mins",
-      "bgColorClass": "bg-red-100",
-      "headerBgColorClass": "bg-red-700",
-      "points": ["Dubai Marina", "Bluewaters Island", "Ain Dubai", "JBR"]
-    },
-    {
-      "title": "Atlantis Cruise",
-      "duration": "2 hours yacht trip",
-      "minutes": "120 mins",
-      "bgColorClass": "bg-blue-100",
-      "headerBgColorClass": "bg-primary-blue-2",
-      "points": [
-        "Dubai Marina",
-        "Bluewaters Island",
-        "Ain Dubai",
-        "JBR",
-        "Palm Jumeirah",
-        "Atlantis"
-      ]
-    },
-    {
-      "title": "Marina Cruise",
-      "duration": "3 hours yacht trip",
-      "minutes": "180 mins",
-      "bgColorClass": "bg-green-100",
-      "headerBgColorClass": "bg-green-700",
-      "points": [
-        "Dubai Marina",
-        "Bluewaters Island",
-        "Ain Dubai",
-        "JBR",
-        "Palm Jumeirah",
-        "Atlantis",
-        "Burj Al Arab"
-      ]
-    },
-    {
-      "title": "Marina Cruise",
-      "duration": "1 hour yacht trip",
-      "minutes": "60 mins",
-      "bgColorClass": "bg-yellow-100",
-      "headerBgColorClass": "bg-primary-yellow-dark",
-      "points": [
-        "Dubai Marina",
-        "Bluewaters Island",
-        "Ain Dubai",
-        "JBR",
-        "Palm Jumeirah",
-        "Dubai Canal",
-        "Burj Khalifa view (from the Canal)"
-      ]
-    }
+		"title": "Marina Cruise",
+		"duration": "1 hour yacht trip",
+		"minutes": "60 mins",
+		"bgColorClass": "bg-red-100",
+		"headerBgColorClass": "bg-red-700",
+		"points": ["Dubai Marina", "Bluewaters Island", "Ain Dubai", "JBR"]
+	  },
+	  {
+		"title": "Atlantis Cruise",
+		"duration": "2 hours yacht trip",
+		"minutes": "120 mins",
+		"bgColorClass": "bg-blue-100",
+		"headerBgColorClass": "bg-primary-blue-2",
+		"points": [
+		  "Dubai Marina",
+		  "Bluewaters Island",
+		  "Ain Dubai",
+		  "JBR",
+		  "Palm Jumeirah",
+		  "Atlantis"
+		]
+	  },
+	  {
+		"title": "Burj Al Arab Cruise",
+		"duration": "3 hours yacht trip",
+		"minutes": "180 mins",
+		"bgColorClass": "bg-green-100",
+		"headerBgColorClass": "bg-green-700",
+		"points": [
+		  "Dubai Marina",
+		  "Bluewaters Island",
+		  "Ain Dubai",
+		  "JBR",
+		  "Palm Jumeirah",
+		  "Atlantis The Palm",
+		  "Burj Al Arab"
+		]
+	  },
+	  {
+		"title": "Dubai Canal",
+		"duration": "4-6 hours yacht trip",
+		"minutes": "240 - 360 mins",
+		"bgColorClass": "bg-yellow-100",
+		"headerBgColorClass": "bg-primary-yellow-dark",
+		"points": [
+		  "Dubai Marina",
+		  "Bluewaters Island",
+		  "Ain Dubai",
+		  "JBR",
+		  "Palm Jumeirah",
+		  "Alantis the palm",
+		  "Burj Al Arab",
+		  "Dubai Canal",
+		  "Burj Khalifa view <span>(from the Canal)</span>"
+		]
+	  }
   ],
   "36ft-thunder": [
     {
-      "title": "Marina Cruise",
-      "duration": "1 hour yacht trip",
-      "minutes": "60 mins",
-      "bgColorClass": "bg-red-100",
-      "headerBgColorClass": "bg-red-700",
-      "points": ["Dubai Marina", "Bluewaters Island", "Ain Dubai", "JBR"]
-    },
-    {
-      "title": "Atlantis Cruise",
-      "duration": "2 hours yacht trip",
-      "minutes": "120 mins",
-      "bgColorClass": "bg-blue-100",
-      "headerBgColorClass": "bg-primary-blue-2",
-      "points": [
-        "Dubai Marina",
-        "Bluewaters Island",
-        "Ain Dubai",
-        "JBR",
-        "Palm Jumeirah",
-        "Atlantis"
-      ]
-    },
-    {
-      "title": "Marina Cruise",
-      "duration": "3 hours yacht trip",
-      "minutes": "180 mins",
-      "bgColorClass": "bg-green-100",
-      "headerBgColorClass": "bg-green-700",
-      "points": [
-        "Dubai Marina",
-        "Bluewaters Island",
-        "Ain Dubai",
-        "JBR",
-        "Palm Jumeirah",
-        "Atlantis",
-        "Burj Al Arab"
-      ]
-    },
-    {
-      "title": "Marina Cruise",
-      "duration": "1 hour yacht trip",
-      "minutes": "60 mins",
-      "bgColorClass": "bg-yellow-100",
-      "headerBgColorClass": "bg-primary-yellow-dark",
-      "points": [
-        "Dubai Marina",
-        "Bluewaters Island",
-        "Ain Dubai",
-        "JBR",
-        "Palm Jumeirah",
-        "Dubai Canal",
-        "Burj Khalifa view (from the Canal)"
-      ]
-    }
+		"title": "Marina Cruise",
+		"duration": "1 hour yacht trip",
+		"minutes": "60 mins",
+		"bgColorClass": "bg-red-100",
+		"headerBgColorClass": "bg-red-700",
+		"points": ["Dubai Marina", "Bluewaters Island", "Ain Dubai", "JBR"]
+	  },
+	  {
+		"title": "Atlantis Cruise",
+		"duration": "2 hours yacht trip",
+		"minutes": "120 mins",
+		"bgColorClass": "bg-blue-100",
+		"headerBgColorClass": "bg-primary-blue-2",
+		"points": [
+		  "Dubai Marina",
+		  "Bluewaters Island",
+		  "Ain Dubai",
+		  "JBR",
+		  "Palm Jumeirah",
+		  "Atlantis"
+		]
+	  },
+	  {
+		"title": "Burj Al Arab Cruise",
+		"duration": "3 hours yacht trip",
+		"minutes": "180 mins",
+		"bgColorClass": "bg-green-100",
+		"headerBgColorClass": "bg-green-700",
+		"points": [
+		  "Dubai Marina",
+		  "Bluewaters Island",
+		  "Ain Dubai",
+		  "JBR",
+		  "Palm Jumeirah",
+		  "Atlantis The Palm",
+		  "Burj Al Arab"
+		]
+	  },
+	  {
+		"title": "Dubai Canal",
+		"duration": "4-6 hours yacht trip",
+		"minutes": "240 - 360 mins",
+		"bgColorClass": "bg-yellow-100",
+		"headerBgColorClass": "bg-primary-yellow-dark",
+		"points": [
+		  "Dubai Marina",
+		  "Bluewaters Island",
+		  "Ain Dubai",
+		  "JBR",
+		  "Palm Jumeirah",
+		  "Alantis the palm",
+		  "Burj Al Arab",
+		  "Dubai Canal",
+		  "Burj Khalifa view <span>(from the Canal)</span>"
+		]
+	  }
   ],
   "40ft-yacht-Riverside": [
     {
-      "title": "Marina Cruise",
-      "duration": "1 hour yacht trip",
-      "minutes": "60 mins",
-      "bgColorClass": "bg-red-100",
-      "headerBgColorClass": "bg-red-700",
-      "points": ["Dubai Marina", "Bluewaters Island", "Ain Dubai", "JBR"]
-    },
-    {
-      "title": "Atlantis Cruise",
-      "duration": "2 hours yacht trip",
-      "minutes": "120 mins",
-      "bgColorClass": "bg-blue-100",
-      "headerBgColorClass": "bg-primary-blue-2",
-      "points": [
-        "Dubai Marina",
-        "Bluewaters Island",
-        "Ain Dubai",
-        "JBR",
-        "Palm Jumeirah",
-        "Atlantis"
-      ]
-    },
-    {
-      "title": "Marina Cruise",
-      "duration": "3 hours yacht trip",
-      "minutes": "180 mins",
-      "bgColorClass": "bg-green-100",
-      "headerBgColorClass": "bg-green-700",
-      "points": [
-        "Dubai Marina",
-        "Bluewaters Island",
-        "Ain Dubai",
-        "JBR",
-        "Palm Jumeirah",
-        "Atlantis",
-        "Burj Al Arab"
-      ]
-    },
-    {
-      "title": "Marina Cruise",
-      "duration": "1 hour yacht trip",
-      "minutes": "60 mins",
-      "bgColorClass": "bg-yellow-100",
-      "headerBgColorClass": "bg-primary-yellow-dark",
-      "points": [
-        "Dubai Marina",
-        "Bluewaters Island",
-        "Ain Dubai",
-        "JBR",
-        "Palm Jumeirah",
-        "Dubai Canal",
-        "Burj Khalifa view (from the Canal)"
-      ]
-    }
+		"title": "Marina Cruise",
+		"duration": "1 hour yacht trip",
+		"minutes": "60 mins",
+		"bgColorClass": "bg-red-100",
+		"headerBgColorClass": "bg-red-700",
+		"points": ["Dubai Marina", "Bluewaters Island", "Ain Dubai", "JBR"]
+	  },
+	  {
+		"title": "Atlantis Cruise",
+		"duration": "2 hours yacht trip",
+		"minutes": "120 mins",
+		"bgColorClass": "bg-blue-100",
+		"headerBgColorClass": "bg-primary-blue-2",
+		"points": [
+		  "Dubai Marina",
+		  "Bluewaters Island",
+		  "Ain Dubai",
+		  "JBR",
+		  "Palm Jumeirah",
+		  "Atlantis"
+		]
+	  },
+	  {
+		"title": "Burj Al Arab Cruise",
+		"duration": "3 hours yacht trip",
+		"minutes": "180 mins",
+		"bgColorClass": "bg-green-100",
+		"headerBgColorClass": "bg-green-700",
+		"points": [
+		  "Dubai Marina",
+		  "Bluewaters Island",
+		  "Ain Dubai",
+		  "JBR",
+		  "Palm Jumeirah",
+		  "Atlantis The Palm",
+		  "Burj Al Arab"
+		]
+	  },
+	  {
+		"title": "Dubai Canal",
+		"duration": "4-6 hours yacht trip",
+		"minutes": "240 - 360 mins",
+		"bgColorClass": "bg-yellow-100",
+		"headerBgColorClass": "bg-primary-yellow-dark",
+		"points": [
+		  "Dubai Marina",
+		  "Bluewaters Island",
+		  "Ain Dubai",
+		  "JBR",
+		  "Palm Jumeirah",
+		  "Alantis the palm",
+		  "Burj Al Arab",
+		  "Dubai Canal",
+		  "Burj Khalifa view <span>(from the Canal)</span>"
+		]
+	  }
   ],
   "56ft-vassia": [
     {
-      "title": "Marina Cruise",
-      "duration": "1 hour yacht trip",
-      "minutes": "60 mins",
-      "bgColorClass": "bg-red-100",
-      "headerBgColorClass": "bg-red-700",
-      "points": ["Dubai Marina", "Bluewaters Island", "Ain Dubai", "JBR"]
-    },
-    {
-      "title": "Atlantis Cruise",
-      "duration": "2 hours yacht trip",
-      "minutes": "120 mins",
-      "bgColorClass": "bg-blue-100",
-      "headerBgColorClass": "bg-primary-blue-2",
-      "points": [
-        "Dubai Marina",
-        "Bluewaters Island",
-        "Ain Dubai",
-        "JBR",
-        "Palm Jumeirah",
-        "Atlantis"
-      ]
-    },
-    {
-      "title": "Marina Cruise",
-      "duration": "3 hours yacht trip",
-      "minutes": "180 mins",
-      "bgColorClass": "bg-green-100",
-      "headerBgColorClass": "bg-green-700",
-      "points": [
-        "Dubai Marina",
-        "Bluewaters Island",
-        "Ain Dubai",
-        "JBR",
-        "Palm Jumeirah",
-        "Atlantis",
-        "Burj Al Arab"
-      ]
-    },
-    {
-      "title": "Marina Cruise",
-      "duration": "1 hour yacht trip",
-      "minutes": "60 mins",
-      "bgColorClass": "bg-yellow-100",
-      "headerBgColorClass": "bg-primary-yellow-dark",
-      "points": [
-        "Dubai Marina",
-        "Bluewaters Island",
-        "Ain Dubai",
-        "JBR",
-        "Palm Jumeirah",
-        "Dubai Canal",
-        "Burj Khalifa view (from the Canal)"
-      ]
-    }
+		"title": "Marina Cruise",
+		"duration": "1 hour yacht trip",
+		"minutes": "60 mins",
+		"bgColorClass": "bg-red-100",
+		"headerBgColorClass": "bg-red-700",
+		"points": ["Dubai Marina", "Bluewaters Island", "Ain Dubai", "JBR"]
+	  },
+	  {
+		"title": "Atlantis Cruise",
+		"duration": "2 hours yacht trip",
+		"minutes": "120 mins",
+		"bgColorClass": "bg-blue-100",
+		"headerBgColorClass": "bg-primary-blue-2",
+		"points": [
+		  "Dubai Marina",
+		  "Bluewaters Island",
+		  "Ain Dubai",
+		  "JBR",
+		  "Palm Jumeirah",
+		  "Atlantis"
+		]
+	  },
+	  {
+		"title": "Burj Al Arab Cruise",
+		"duration": "3 hours yacht trip",
+		"minutes": "180 mins",
+		"bgColorClass": "bg-green-100",
+		"headerBgColorClass": "bg-green-700",
+		"points": [
+		  "Dubai Marina",
+		  "Bluewaters Island",
+		  "Ain Dubai",
+		  "JBR",
+		  "Palm Jumeirah",
+		  "Atlantis The Palm",
+		  "Burj Al Arab"
+		]
+	  },
+	  {
+		"title": "Dubai Canal",
+		"duration": "4-6 hours yacht trip",
+		"minutes": "240 - 360 mins",
+		"bgColorClass": "bg-yellow-100",
+		"headerBgColorClass": "bg-primary-yellow-dark",
+		"points": [
+		  "Dubai Marina",
+		  "Bluewaters Island",
+		  "Ain Dubai",
+		  "JBR",
+		  "Palm Jumeirah",
+		  "Alantis the palm",
+		  "Burj Al Arab",
+		  "Dubai Canal",
+		  "Burj Khalifa view <span>(from the Canal)</span>"
+		]
+	  }
   ],
   "58ft-etosha": [
     {
-      "title": "Marina Cruise",
-      "duration": "1 hour yacht trip",
-      "minutes": "60 mins",
-      "bgColorClass": "bg-red-100",
-      "headerBgColorClass": "bg-red-700",
-      "points": ["Dubai Marina", "Bluewaters Island", "Ain Dubai", "JBR"]
-    },
-    {
-      "title": "Atlantis Cruise",
-      "duration": "2 hours yacht trip",
-      "minutes": "120 mins",
-      "bgColorClass": "bg-blue-100",
-      "headerBgColorClass": "bg-primary-blue-2",
-      "points": [
-        "Dubai Marina",
-        "Bluewaters Island",
-        "Ain Dubai",
-        "JBR",
-        "Palm Jumeirah",
-        "Atlantis"
-      ]
-    },
-    {
-      "title": "Marina Cruise",
-      "duration": "3 hours yacht trip",
-      "minutes": "180 mins",
-      "bgColorClass": "bg-green-100",
-      "headerBgColorClass": "bg-green-700",
-      "points": [
-        "Dubai Marina",
-        "Bluewaters Island",
-        "Ain Dubai",
-        "JBR",
-        "Palm Jumeirah",
-        "Atlantis",
-        "Burj Al Arab"
-      ]
-    },
-    {
-      "title": "Marina Cruise",
-      "duration": "1 hour yacht trip",
-      "minutes": "60 mins",
-      "bgColorClass": "bg-yellow-100",
-      "headerBgColorClass": "bg-primary-yellow-dark",
-      "points": [
-        "Dubai Marina",
-        "Bluewaters Island",
-        "Ain Dubai",
-        "JBR",
-        "Palm Jumeirah",
-        "Dubai Canal",
-        "Burj Khalifa view (from the Canal)"
-      ]
-    }
+		"title": "Marina Cruise",
+		"duration": "1 hour yacht trip",
+		"minutes": "60 mins",
+		"bgColorClass": "bg-red-100",
+		"headerBgColorClass": "bg-red-700",
+		"points": ["Dubai Marina", "Bluewaters Island", "Ain Dubai", "JBR"]
+	  },
+	  {
+		"title": "Atlantis Cruise",
+		"duration": "2 hours yacht trip",
+		"minutes": "120 mins",
+		"bgColorClass": "bg-blue-100",
+		"headerBgColorClass": "bg-primary-blue-2",
+		"points": [
+		  "Dubai Marina",
+		  "Bluewaters Island",
+		  "Ain Dubai",
+		  "JBR",
+		  "Palm Jumeirah",
+		  "Atlantis"
+		]
+	  },
+	  {
+		"title": "Burj Al Arab Cruise",
+		"duration": "3 hours yacht trip",
+		"minutes": "180 mins",
+		"bgColorClass": "bg-green-100",
+		"headerBgColorClass": "bg-green-700",
+		"points": [
+		  "Dubai Marina",
+		  "Bluewaters Island",
+		  "Ain Dubai",
+		  "JBR",
+		  "Palm Jumeirah",
+		  "Atlantis The Palm",
+		  "Burj Al Arab"
+		]
+	  },
+	  {
+		"title": "Dubai Canal",
+		"duration": "4-6 hours yacht trip",
+		"minutes": "240 - 360 mins",
+		"bgColorClass": "bg-yellow-100",
+		"headerBgColorClass": "bg-primary-yellow-dark",
+		"points": [
+		  "Dubai Marina",
+		  "Bluewaters Island",
+		  "Ain Dubai",
+		  "JBR",
+		  "Palm Jumeirah",
+		  "Alantis the palm",
+		  "Burj Al Arab",
+		  "Dubai Canal",
+		  "Burj Khalifa view <span>(from the Canal)</span>"
+		]
+	  }
   ],
   "61ft-silvercreek": [
     {
-      "title": "Marina Cruise",
-      "duration": "1 hour yacht trip",
-      "minutes": "60 mins",
-      "bgColorClass": "bg-red-100",
-      "headerBgColorClass": "bg-red-700",
-      "points": ["Dubai Marina", "Bluewaters Island", "Ain Dubai", "JBR"]
-    },
-    {
-      "title": "Atlantis Cruise",
-      "duration": "2 hours yacht trip",
-      "minutes": "120 mins",
-      "bgColorClass": "bg-blue-100",
-      "headerBgColorClass": "bg-primary-blue-2",
-      "points": [
-        "Dubai Marina",
-        "Bluewaters Island",
-        "Ain Dubai",
-        "JBR",
-        "Palm Jumeirah",
-        "Atlantis"
-      ]
-    },
-    {
-      "title": "Marina Cruise",
-      "duration": "3 hours yacht trip",
-      "minutes": "180 mins",
-      "bgColorClass": "bg-green-100",
-      "headerBgColorClass": "bg-green-700",
-      "points": [
-        "Dubai Marina",
-        "Bluewaters Island",
-        "Ain Dubai",
-        "JBR",
-        "Palm Jumeirah",
-        "Atlantis",
-        "Burj Al Arab"
-      ]
-    },
-    {
-      "title": "Marina Cruise",
-      "duration": "1 hour yacht trip",
-      "minutes": "60 mins",
-      "bgColorClass": "bg-yellow-100",
-      "headerBgColorClass": "bg-primary-yellow-dark",
-      "points": [
-        "Dubai Marina",
-        "Bluewaters Island",
-        "Ain Dubai",
-        "JBR",
-        "Palm Jumeirah",
-        "Dubai Canal",
-        "Burj Khalifa view (from the Canal)"
-      ]
-    }
+		"title": "Marina Cruise",
+		"duration": "1 hour yacht trip",
+		"minutes": "60 mins",
+		"bgColorClass": "bg-red-100",
+		"headerBgColorClass": "bg-red-700",
+		"points": ["Dubai Marina", "Bluewaters Island", "Ain Dubai", "JBR"]
+	  },
+	  {
+		"title": "Atlantis Cruise",
+		"duration": "2 hours yacht trip",
+		"minutes": "120 mins",
+		"bgColorClass": "bg-blue-100",
+		"headerBgColorClass": "bg-primary-blue-2",
+		"points": [
+		  "Dubai Marina",
+		  "Bluewaters Island",
+		  "Ain Dubai",
+		  "JBR",
+		  "Palm Jumeirah",
+		  "Atlantis"
+		]
+	  },
+	  {
+		"title": "Burj Al Arab Cruise",
+		"duration": "3 hours yacht trip",
+		"minutes": "180 mins",
+		"bgColorClass": "bg-green-100",
+		"headerBgColorClass": "bg-green-700",
+		"points": [
+		  "Dubai Marina",
+		  "Bluewaters Island",
+		  "Ain Dubai",
+		  "JBR",
+		  "Palm Jumeirah",
+		  "Atlantis The Palm",
+		  "Burj Al Arab"
+		]
+	  },
+	  {
+		"title": "Dubai Canal",
+		"duration": "4-6 hours yacht trip",
+		"minutes": "240 - 360 mins",
+		"bgColorClass": "bg-yellow-100",
+		"headerBgColorClass": "bg-primary-yellow-dark",
+		"points": [
+		  "Dubai Marina",
+		  "Bluewaters Island",
+		  "Ain Dubai",
+		  "JBR",
+		  "Palm Jumeirah",
+		  "Alantis the palm",
+		  "Burj Al Arab",
+		  "Dubai Canal",
+		  "Burj Khalifa view <span>(from the Canal)</span>"
+		]
+	  }
   ],
   "77ft-dionysos": [
     {
-      "title": "Marina Cruise",
-      "duration": "1 hour yacht trip",
-      "minutes": "60 mins",
-      "bgColorClass": "bg-red-100",
-      "headerBgColorClass": "bg-red-700",
-      "points": ["Dubai Marina", "Bluewaters Island", "Ain Dubai", "JBR"]
-    },
-    {
-      "title": "Atlantis Cruise",
-      "duration": "2 hours yacht trip",
-      "minutes": "120 mins",
-      "bgColorClass": "bg-blue-100",
-      "headerBgColorClass": "bg-primary-blue-2",
-      "points": [
-        "Dubai Marina",
-        "Bluewaters Island",
-        "Ain Dubai",
-        "JBR",
-        "Palm Jumeirah",
-        "Atlantis"
-      ]
-    },
-    {
-      "title": "Marina Cruise",
-      "duration": "3 hours yacht trip",
-      "minutes": "180 mins",
-      "bgColorClass": "bg-green-100",
-      "headerBgColorClass": "bg-green-700",
-      "points": [
-        "Dubai Marina",
-        "Bluewaters Island",
-        "Ain Dubai",
-        "JBR",
-        "Palm Jumeirah",
-        "Atlantis",
-        "Burj Al Arab"
-      ]
-    },
-    {
-      "title": "Marina Cruise",
-      "duration": "1 hour yacht trip",
-      "minutes": "60 mins",
-      "bgColorClass": "bg-yellow-100",
-      "headerBgColorClass": "bg-primary-yellow-dark",
-      "points": [
-        "Dubai Marina",
-        "Bluewaters Island",
-        "Ain Dubai",
-        "JBR",
-        "Palm Jumeirah",
-        "Dubai Canal",
-        "Burj Khalifa view (from the Canal)"
-      ]
-    }
+		"title": "Marina Cruise",
+		"duration": "1 hour yacht trip",
+		"minutes": "60 mins",
+		"bgColorClass": "bg-red-100",
+		"headerBgColorClass": "bg-red-700",
+		"points": ["Dubai Marina", "Bluewaters Island", "Ain Dubai", "JBR"]
+	  },
+	  {
+		"title": "Atlantis Cruise",
+		"duration": "2 hours yacht trip",
+		"minutes": "120 mins",
+		"bgColorClass": "bg-blue-100",
+		"headerBgColorClass": "bg-primary-blue-2",
+		"points": [
+		  "Dubai Marina",
+		  "Bluewaters Island",
+		  "Ain Dubai",
+		  "JBR",
+		  "Palm Jumeirah",
+		  "Atlantis"
+		]
+	  },
+	  {
+		"title": "Burj Al Arab Cruise",
+		"duration": "3 hours yacht trip",
+		"minutes": "180 mins",
+		"bgColorClass": "bg-green-100",
+		"headerBgColorClass": "bg-green-700",
+		"points": [
+		  "Dubai Marina",
+		  "Bluewaters Island",
+		  "Ain Dubai",
+		  "JBR",
+		  "Palm Jumeirah",
+		  "Atlantis The Palm",
+		  "Burj Al Arab"
+		]
+	  },
+	  {
+		"title": "Dubai Canal",
+		"duration": "4-6 hours yacht trip",
+		"minutes": "240 - 360 mins",
+		"bgColorClass": "bg-yellow-100",
+		"headerBgColorClass": "bg-primary-yellow-dark",
+		"points": [
+		  "Dubai Marina",
+		  "Bluewaters Island",
+		  "Ain Dubai",
+		  "JBR",
+		  "Palm Jumeirah",
+		  "Alantis the palm",
+		  "Burj Al Arab",
+		  "Dubai Canal",
+		  "Burj Khalifa view <span>(from the Canal)</span>"
+		]
+	  }
   ],
   "118ft-poseidon": [
     {
-      "title": "Marina Cruise",
-      "duration": "1 hour yacht trip",
-      "minutes": "60 mins",
-      "bgColorClass": "bg-red-100",
-      "headerBgColorClass": "bg-red-700",
-      "points": ["Dubai Marina", "Bluewaters Island", "Ain Dubai", "JBR"]
-    },
-    {
-      "title": "Atlantis Cruise",
-      "duration": "2 hours yacht trip",
-      "minutes": "120 mins",
-      "bgColorClass": "bg-blue-100",
-      "headerBgColorClass": "bg-primary-blue-2",
-      "points": [
-        "Dubai Marina",
-        "Bluewaters Island",
-        "Ain Dubai",
-        "JBR",
-        "Palm Jumeirah",
-        "Atlantis"
-      ]
-    },
-    {
-      "title": "Marina Cruise",
-      "duration": "3 hours yacht trip",
-      "minutes": "180 mins",
-      "bgColorClass": "bg-green-100",
-      "headerBgColorClass": "bg-green-700",
-      "points": [
-        "Dubai Marina",
-        "Bluewaters Island",
-        "Ain Dubai",
-        "JBR",
-        "Palm Jumeirah",
-        "Atlantis",
-        "Burj Al Arab"
-      ]
-    },
-    {
-      "title": "Marina Cruise",
-      "duration": "1 hour yacht trip",
-      "minutes": "60 mins",
-      "bgColorClass": "bg-yellow-100",
-      "headerBgColorClass": "bg-primary-yellow-dark",
-      "points": [
-        "Dubai Marina",
-        "Bluewaters Island",
-        "Ain Dubai",
-        "JBR",
-        "Palm Jumeirah",
-        "Dubai Canal",
-        "Burj Khalifa view (from the Canal)"
-      ]
-    }
+		"title": "Marina Cruise",
+		"duration": "1 hour yacht trip",
+		"minutes": "60 mins",
+		"bgColorClass": "bg-red-100",
+		"headerBgColorClass": "bg-red-700",
+		"points": ["Dubai Marina", "Bluewaters Island", "Ain Dubai", "JBR"]
+	  },
+	  {
+		"title": "Atlantis Cruise",
+		"duration": "2 hours yacht trip",
+		"minutes": "120 mins",
+		"bgColorClass": "bg-blue-100",
+		"headerBgColorClass": "bg-primary-blue-2",
+		"points": [
+		  "Dubai Marina",
+		  "Bluewaters Island",
+		  "Ain Dubai",
+		  "JBR",
+		  "Palm Jumeirah",
+		  "Atlantis"
+		]
+	  },
+	  {
+		"title": "Burj Al Arab Cruise",
+		"duration": "3 hours yacht trip",
+		"minutes": "180 mins",
+		"bgColorClass": "bg-green-100",
+		"headerBgColorClass": "bg-green-700",
+		"points": [
+		  "Dubai Marina",
+		  "Bluewaters Island",
+		  "Ain Dubai",
+		  "JBR",
+		  "Palm Jumeirah",
+		  "Atlantis The Palm",
+		  "Burj Al Arab"
+		]
+	  },
+	  {
+		"title": "Dubai Canal",
+		"duration": "4-6 hours yacht trip",
+		"minutes": "240 - 360 mins",
+		"bgColorClass": "bg-yellow-100",
+		"headerBgColorClass": "bg-primary-yellow-dark",
+		"points": [
+		  "Dubai Marina",
+		  "Bluewaters Island",
+		  "Ain Dubai",
+		  "JBR",
+		  "Palm Jumeirah",
+		  "Alantis the palm",
+		  "Burj Al Arab",
+		  "Dubai Canal",
+		  "Burj Khalifa view <span>(from the Canal)</span>"
+		]
+	  }
   ]
 }
