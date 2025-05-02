@@ -91,7 +91,7 @@ const YachtListings = () => {
       length: "91.1 FT / 27.77 M",
       guests: "10",
       year: "2008",
-      price: "AED 11,500,000",
+      price: "UPON REQUEST",
       image: "/buy_yacht/90ftsunseeker.webp"
     },
     {
@@ -102,7 +102,7 @@ const YachtListings = () => {
       length: "82.6 FT / 25.18 M",
       guests: "8",
       year: "2008",
-      price: "AED 5,500,000",
+      price: "UPON REQUEST",
       image: "/buy_yacht/76 FT YACHT CANADOS MAIN.webp"
     }
   ];

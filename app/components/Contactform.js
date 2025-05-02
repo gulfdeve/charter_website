@@ -104,9 +104,9 @@ export default function Contactform() {
     <div className="flex items-center justify-center py-10 px-2">
       <form
         onSubmit={handleSubmit}
-        className="w-full max-w-6xl bg-primary-blue rounded-lg shadow-lg p-6"
+        className="w-full max-w-6xl bg-white rounded-lg custom-shadow p-6"
       >
-        <h1 className="text-center text-white text-4xl font-bold pb-7">
+        <h1 className="text-center text-primary-blue text-4xl font-bold pb-7">
           INQUIRE
         </h1>
         <div className="flex flex-col lg:flex-row gap-6">
@@ -204,14 +204,14 @@ export default function Contactform() {
             </div>
             <div className="flex items-center gap-2">
               <input type="checkbox" id="terms" className="w-5 h-5" />
-              <label htmlFor="terms" className="text-sm text-white">
+              <label htmlFor="terms" className="text-sm text-primary-grey">
                 I'd like to receive updates on special offers, news and events
               </label>
             </div>
             <div>
               <button
                 type="submit"
-                className="w-full bg-primary-yellow text-primary-blue font-bold py-3 rounded-md"
+                className="w-full bg-primary-blue-2 text-white font-bold py-3 rounded-md"
               >
                 Send Message
               </button>
