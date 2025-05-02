@@ -17,7 +17,7 @@ export default function OfferClientActions({ offer }) {
   return (
     <>
       <div className="flex flex-col md:flex-row md:gap-10 gap-5">
-        <a href={offer.whatsapp_url}>
+        <a href={offer.whatsapp_url} target="_blank">
           <button className="blue-lined-button">
             <FaWhatsapp size={20} />
             WHATSAPP US
