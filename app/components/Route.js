@@ -63,8 +63,8 @@ const Route = ({ product, slug, header_whatsapp_url }) => {
   return (
     <div>
       <div className="bg-primary-blue w-full h-auto py-10 xl:px-44 md:px-6 px-2">
-        <div className="flex flex-col items-center justify-center pt-10 gap-5 py-6 mx-auto container">
-          <h2 className="text-primary-yellow text-center font-bold text-2xl xl:text-3xl py-7">
+        <div className="flex flex-col items-center justify-center py-6 mx-auto container">
+          <h2 className="text-primary-yellow text-center font-bold text-2xl xl:text-3xl py-4">
             CRUISING ROUTE
           </h2>
           <p className="text-center text-white text-lg px-4">
@@ -77,12 +77,12 @@ const Route = ({ product, slug, header_whatsapp_url }) => {
             alt="route map of centaurus charter yachts"
             src={`https://www.centauruscharter.net/product/images/${product.map_image}`}
           />
-          <div className="grid grid-cols-1 md:grid-cols-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4">
             {routes.map((route, idx) => (
               <div key={idx} className={`flex flex-col items-start ${bodyColors[idx % bodyColors.length]}`}>
                 <div className={`${headerColors[idx % headerColors.length]} p-5 text-white uppercase text-center w-full`}>
-                  <h3 className="text-white text-lg font-bold">{route.title}</h3>
-                  <p className="text-white text-lg">
+                  <h3 className={`text-lg font-bold ${idx === 3 ? "text-black" : "text-white"}`}>{route.title}</h3>
+                  <p className={`${idx === 3 ? "text-black" : "text-white"}`}>
                     {route.duration} <br />({route.minutes})
                   </p>
                 </div>
@@ -91,7 +91,7 @@ const Route = ({ product, slug, header_whatsapp_url }) => {
                     <li key={index}>{point}</li>
                   ))}
                 </ul> */}
-				<ul className="text-left text-base lg:text-lg py-5 px-10 list-disc font-bold uppercase">
+				<ul className="text-left text-base py-5 px-10 list-disc font-bold uppercase">
   {route.points.map((point, index) => (
     <li key={index} dangerouslySetInnerHTML={{ __html: point }}></li>
   ))}
