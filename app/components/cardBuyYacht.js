@@ -1,61 +1,76 @@
 import { Link } from "@/app/i18n/routing";
-import React from 'react';
-
+import React, { useState } from 'react';
 import { useLocale } from "next-intl";
+import Modal2 from "./Modal2";
+
 const YachtCard = ({ yacht }) => {
   const locale = useLocale();
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const openModal = (e) => {
+    e.preventDefault();
+    setIsModalOpen(true);
+  };
+  const closeModal = () => setIsModalOpen(false);
+
   return (
-    <div className="bg-white rounded-lg border-2 md:border-0 md:shadow-lg overflow-hidden">
-      <Link href={`/${locale}/yachts-for-sale-dubai/${yacht.slug}`}>
-      <img 
-        src={yacht.image} 
-        alt={yacht.name}
-        className="w-full object-cover"
-      />
-      </Link>
-      
-      <div className="p-6">
-        <Link href={`/${locale}/yachts-for-sale-dubai/${yacht.slug}`}>
-        <h2 className="text-base sm:text-xl font-bold text-navy-900 mb-4 ">{yacht.name}</h2>
+    <>
+      <div className="bg-white rounded-lg border-2 md:border-0 md:shadow-lg overflow-hidden flex flex-col h-full">
+        <Link href={`/${locale}/yachts-for-sale-dubai/${yacht.slug}`}>  
+          <img src={yacht.image} alt={yacht.name} className="w-full object-cover" />
         </Link>
-        
-        <div className="grid grid-cols-2 gap-6 mb-6">
-          <div className='border-b-2 border-gray-200'>
-            <p className="text-[#125589] font-medium mb-1 ">Build:</p>
-            <p className="text-gray-900 font-bold ">{yacht.build}</p>
+        <div className="p-6 flex flex-col justify-between flex-grow">
+          <div>
+            <Link href={`/${locale}/yachts-for-sale-dubai/${yacht.slug}`}>  
+              <h2 className="text-base sm:text-xl font-bold text-navy-900 mb-4">{yacht.name}</h2>
+            </Link>
+            <div className="grid grid-cols-2 gap-6 mb-6">
+              {/* Yacht detail items */}
+              <div className="border-b-2 border-gray-200">
+                <p className="text-[#125589] font-medium mb-1">Build:</p>
+                <p className="text-gray-900 font-bold">{yacht.build}</p>
+              </div>
+              <div className="border-b-2 border-gray-200">
+                <p className="text-[#125589] font-medium mb-1">Cabins:</p>
+                <p className="text-gray-900 font-bold">{yacht.cabins}</p>
+              </div>
+              <div className="border-b-2 border-gray-200">
+                <p className="text-[#125589] font-medium mb-1">Length:</p>
+                <p className="text-gray-900 font-bold">{yacht.length}</p>
+              </div>
+              <div className="border-b-2 border-gray-200">
+                <p className="text-[#125589] font-medium mb-1">Guests:</p>
+                <p className="text-gray-900 font-bold">{yacht.guests}</p>
+              </div>
+              <div className="border-b-2 border-gray-200">
+                <p className="text-[#125589] font-medium mb-1">Year:</p>
+                <p className="text-gray-900 font-bold">{yacht.year}</p>
+              </div>
+              <div className="border-b-2 border-gray-200">
+                <p className="text-[#125589] font-medium mb-1">Price:</p>
+                <p className="text-gray-900 font-bold">{yacht.price}</p>
+              </div>
+            </div>
           </div>
-          <div className='border-b-2 border-gray-200'>
-            <p className="text-[#125589] font-medium mb-1 ">Cabins:</p>
-            <p className="text-gray-900 font-bold ">{yacht.cabins}</p>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <Link href={`/${locale}/yachts-for-sale-dubai/${yacht.slug}`} className="blue-solid-button text-center">
+              KNOW MORE
+            </Link>
+            <button onClick={openModal} className="blue-solid-button">
+              INQUIRE NOW
+            </button>
           </div>
-          <div className='border-b-2 border-gray-200'>
-            <p className="text-[#125589] font-medium mb-1 ">Length:</p>
-            <p className="text-gray-900 font-bold ">{yacht.length}</p>
-          </div>
-          <div className='border-b-2 border-gray-200'>
-            <p className="text-[#125589] font-medium mb-1 ">Guests:</p>
-            <p className="text-gray-900 font-bold ">{yacht.guests}</p>
-          </div>
-          <div className='border-b-2 border-gray-200'>
-            <p className="text-[#125589] font-medium mb-1 ">Year:</p>
-            <p className="text-gray-900 font-bold ">{yacht.year}</p>
-          </div>
-          <div className='border-b-2 border-gray-200'>
-            <p className="text-[#125589] font-medium mb-1 ">Price:</p>
-            <p className="text-gray-900 font-bold ">{yacht.price}</p>
-          </div>
-        </div>
-        
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          <Link href={`/${locale}/yachts-for-sale-dubai/${yacht.slug}`} className="blue-solid-button text-center ">
-            KNOW MORE
-          </Link>
-          <button className="blue-solid-button ">
-            INQUIRE NOW
-          </button>
         </div>
       </div>
-    </div>
+
+      <Modal2
+        isModalOpen={isModalOpen}
+        closeModal={closeModal}
+        idName="offers_id"
+        idValue="41"
+        selectedVessel={yacht}
+      />
+    </>
   );
 };
 
