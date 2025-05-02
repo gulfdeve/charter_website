@@ -4,6 +4,7 @@ import React, { useEffect } from "react";
 import { FaWhatsapp } from "react-icons/fa";
 import YachtListings from "@/app/components/cardBuyYacht";
 import VideoLocal from "@/app/components/VideoLocal";
+import { Link } from "@/app/i18n/routing";
 
 const Page = () => {
   const t = useTranslations();
@@ -132,7 +133,9 @@ const Page = () => {
         Looking to sell your yacht? At Centaurus Charter, we provide expert assistance to help you achieve the best value for your vessel. Our extensive network and marketing expertise ensure that your yacht is presented to the right buyers, maximizing its exposure and sale potential. We handle everything from valuations to negotiations, providing a hassle-free selling experience.
       </p>
       <button className="text-white  font-bold bg-primary-blue px-5 py-2 text-xl rounded">
+      <Link href="/contact" className="text-white font-bold">
         CONTACT US
+        </Link>
       </button>
     </div>
   </div>
@@ -145,7 +148,9 @@ const Page = () => {
       <div className="">
   <button className="flex items-center justify-center gap-2 px-4 py-3 bg-primary-yellow text-primary-blue  font-bold rounded-md hover:bg-yellow-600 transition">
                   <FaWhatsapp size={20} />
+                  <Link href={'https://api.whatsapp.com/send?phone=971547928626&text=Hi!%20I%20came%20across%20your%20website.%20I%20want%20to%20inquire%20about%20a%20yacht%20charter%20in%20Dubai.' } target="_blank" rel="noopener noreferrer">
                   WHATSAPP US
+                  </Link>
                 </button>
 
                 </div></div>
