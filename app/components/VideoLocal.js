@@ -102,14 +102,20 @@ export default function VideoLocal({ filename, section }) {
         </div>
         </>
       ) : section === "dubai-yachts-winter-offers" ? (
+        <>
+        <div
+        className="hidden lg:block absolute inset-0 bg-black opacity-50"
+        style={{ pointerEvents: "none" }}
+        ></div>
         <div className="block text-center mt-10 lg:absolute lg:-translate-x-2/4 lg:-translate-y-2/4 lg:left-2/4 lg:top-2/4 lg:mt-0">
-          <h1 className="mb-4 text-primary-blue-2 lg:text-white text-shadow">
+          <h1 className="mb-4 text-primary-blue-2 lg:text-white">
             DUBAI YACHTS WINTER OFFERS
           </h1>
-          <h2 className="mb-4 text-primary-blue-2 lg:text-white text-shadow">
+          <h2 className="mb-4 text-primary-blue-2 lg:text-white">
             ENJOY UP TO 40% OFF LUXURY YACHTS IN DUBAI
           </h2>
         </div>
+        </>
       ) : (
         <div></div>
       )}
