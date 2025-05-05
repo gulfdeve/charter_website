@@ -42,6 +42,14 @@ export default function YachtGallery({ gallery }) {
 
   return (
     <div className="embla relative">
+        <button
+        aria-label="go back"
+          className="absolute left-5 top-[45%] transform -translate-y-1/2 text-primary-grey bg-[#f1f1f1] bg-opacity-80 p-1 xl:p-2 rounded-full z-10"
+          onClick={scrollPrev}
+        >
+          <IoIosArrowBack size={20} />
+        </button>
+
       <div className="embla__viewport overflow-hidden rounded-lg" ref={emblaRef}>
         <div className="embla__container flex">
           {gallery.map((item, index) => (
@@ -55,19 +63,18 @@ export default function YachtGallery({ gallery }) {
           ))}
         </div>
       </div>
-
-      <div className="relative mt-4">
-        <button
-        aria-label="go back"
-          className="absolute left-0 top-1/2 transform -translate-y-1/2 bg-[#d4cfce] text-white p-1 xl:p-2 rounded-full hover:bg-gray-700 z-10"
-          onClick={scrollPrev}
+      <button
+        aria-label="go forward"
+          className="absolute right-5 top-[45%] transform -translate-y-1/2 text-primary-grey bg-[#f1f1f1] bg-opacity-80 p-1 xl:p-2 rounded-full z-10"
+          onClick={scrollNext}
         >
-          <IoIosArrowBack className="text-black" />
+          <IoIosArrowForward size={20} />
         </button>
-
+      <div className="relative mt-4">
+      
         <div 
           ref={thumbnailRef} 
-          className="mx-10 overflow-x-auto flex gap-2 no-scrollbar"
+          className="overflow-x-auto flex gap-2 no-scrollbar"
           style={{
             scrollBehavior: 'smooth',
             msOverflowStyle: 'none',
@@ -91,13 +98,7 @@ export default function YachtGallery({ gallery }) {
           ))}
         </div>
 
-        <button
-        aria-label="go forward"
-          className="absolute right-0 top-1/2 transform -translate-y-1/2 bg-[#d4cfce] text-white p-1 xl:p-2 rounded-full hover:bg-gray-700 z-10"
-          onClick={scrollNext}
-        >
-          <IoIosArrowForward className="text-black" />
-        </button>
+        
       </div>
     </div>
   );

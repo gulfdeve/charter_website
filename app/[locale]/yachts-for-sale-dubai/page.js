@@ -26,7 +26,7 @@ const Page = () => {
         </div>
         <YachtListings />
         <div className="container mx-auto">
-          <div className="flex flex-col  lg:flex-row items-center justify-center lg:justify-start lg:gap-0  custom-shadow rounded-lg bg-white overflow-hidden lg:h-[25rem] xl:h-[30rem] 2xl:h-[35rem]">
+          <div className="flex flex-col  lg:flex-row items-center justify-center lg:justify-start lg:gap-0  custom-shadow rounded-lg bg-primary-blue-3 overflow-hidden lg:h-[25rem] xl:h-[30rem] 2xl:h-[35rem]">
             <div className="w-full lg:w-1/2 xl:w-1/2 h-full">
               <img
                 src="/luxury_yacht_for_sale.webp"
@@ -34,10 +34,10 @@ const Page = () => {
               />
             </div>
             <div className="w-full lg:w-1/2 flex flex-col items-center lg:rounded-r-xl  justify-center text-justify lg:px-16 px-6 py-5">
-              <h1 className=" text-black text-center font-bold text-xl 2xl:text-3xl pt-5">
+              <h1 className=" text-white text-center font-bold text-xl 2xl:text-3xl pt-5">
                 LUXURY YACHT FOR SALE
               </h1>
-              <p className=" text-black 2xl:text-lg py-5">
+              <p className=" text-[#f1f1f1] 2xl:text-lg py-5">
                 Explore our curated selection of luxury yachts designed to
                 provide unparalleled comfort, style, and performance. Each yacht
                 in our collection is meticulously maintained and equipped with
@@ -45,7 +45,7 @@ const Page = () => {
                 water. Our dedicated team is here to assist you in finding the
                 yacht that perfectly matches your desires and lifestyle.
               </p>
-              <button className="text-white  font-bold bg-primary-blue px-5 py-2 text-xl rounded">
+              <button className="blue-solid-button">
                 GET A LIST
               </button>
             </div>
@@ -55,12 +55,12 @@ const Page = () => {
           <div className="container mx-auto mt-20">
           <div className="flex items-center justify-center w-full my-6 xl:px-36 lg:px-20 ">
             <hr className="flex-grow border-primary-yellow-dark" />
-            <span className="px-4 text-3xl 2xl:text-3xl font-semibold  text-black text-center">
+            <span className="font-Montserrat px-4 text-3xl 2xl:text-3xl font-bold  text-primary-blue text-center">
               WHY BUY A LUXURY YACHT
             </span>
             <hr className="flex-grow border-primary-yellow-dark " />
           </div>
-          <p className=" text-black text-lg 2xl:text-xl pt-2 pb-5 xl:px-36 lg:px-20 md:px-16 text-center">
+          <p className=" text-primary-grey text-base 2xl:text-lg pt-2 pb-5 xl:px-36 lg:px-20 md:px-16 text-center">
             Owning a luxury yacht is more than just a purchase; it's an
             investment in a lifestyle of opulence and adventure. A yacht offers
             you the freedom to explore the open seas at your leisure, hosting
@@ -70,70 +70,73 @@ const Page = () => {
           </p>
         </div>
         </div>
-        <div className="flex flex-col  md:flex-row items-center justify-center py-10">
-          <div>
-            <div className="">
-              <img
-                src="/buying_process.webp"
-                className="xl:w-[210rem] sm:w-[170rem] md:h-[530px] xl:h-[452px] lg:h-[480px]"
-              />
-            </div>
-          </div>
-          <div className="flex flex-col items-center sm:items-start sm:justify-start justify-center bg-primary-blue px-5 xl:px-20 xl:py-12 py-5 md:h-[530px] xl:h-[452px]  lg:h-[480px]">
-            <h2 className=" text-white text-center font-bold text-2xl xl:text-3xl py-7">
-              The Buying Process
-            </h2>
-            <h3 className="text-primary-yellow ">
-              PERSONALISED ASSISTANCE
-            </h3>
-            <p className=" text-white text-center sm:text-left  text-md  sm:text-sm xl:text-md pb-10">
-              Our experienced yacht brokers provide personalized assistance
-              throughout the entire buying process. From initial consultations
-              to finalizing the purchase, we are here to ensure a smooth and
-              enjoyable experience. We take the time to understand your
-              preferences and requirements, guiding you to the yacht that best
-              fits your vision. 
-            </p>
-            <h3 className="text-primary-yellow ">
-              COMPREHENSIVE SERVICES
-            </h3>
-            <p className=" text-white text-center sm:text-left  text-md  sm:text-sm xl:text-md pb-10">
-            In addition to helping you find your dream yacht, we offer a range of comprehensive services, including financing options, insurance, and maintenance packages. Our goal is to make yacht ownership as seamless and enjoyable as possible, allowing you to focus on the pleasures of yachting.
-            </p>
-            
-          </div>
-        </div>
+        <div className="container mx-auto flex flex-col md:flex-row items-center justify-center py-5">
+  
+  <div className="flex flex-col items-center justify-center">
+    <h2 className=" text-primary-blue-2 text-center font-bold text-2xl xl:text-3xl py-7">
+      The Buying Process
+    </h2>
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+    <div>
+      <div className="flex flex-col items-center justify-center text-center gap-y-4 px-10">
+        <img alt="" className="w-12" src="/Certified Crew.png"/>
+        <h3 className="text-primary-grey text-center">Personalised Assistance</h3>
+        <p className="text-primary-grey text-center text-md sm:text-sm xl:text-md pb-10">
+          Our experienced yacht brokers provide personalized assistance throughout
+          the entire buying process. From initial consultations to finalizing the
+          purchase, we are here to ensure a smooth and enjoyable experience. We take
+          the time to understand your preferences and requirements, guiding you to
+          the yacht that best fits your vision.
+        </p>
+      </div>
+      </div>
+      <div>
+      <div className="flex flex-col items-center justify-center text-center gap-y-4 px-10">
+        <img alt="" className="w-12" src="/Outstanding Customer Support.png"/>        
+        <h3 className="text-primary-grey text-center">Comprehensive Services</h3>
+        <p className="text-primary-grey text-center text-md sm:text-sm xl:text-md pb-10">
+          In addition to helping you find your dream yacht, we offer a range of
+          comprehensive services, including financing options, insurance, and
+          maintenance packages. Our goal is to make yacht ownership as seamless and
+          enjoyable as possible, allowing you to focus on the pleasures of yachting.
+        </p>
+      </div>
+      </div>
+      </div>
+  </div>
+</div>
         <div className="md:block hidden">
-          <div className="container mx-auto">
+          <div className="container mx-auto mb-8">
           <div className="flex items-center justify-center w-full my-6 xl:px-36 lg:px-20 ">
             <hr className="flex-grow border-primary-yellow-dark" />
-            <span className="px-4 text-xl 2xl:text-3xl font-semibold  text-black">
+            <span className="font-Montserrat px-4 text-xl 2xl:text-3xl font-bold  text-primary-blue">
               THE BENEFITS OF OWNING A YACHT
             </span>
             <hr className="flex-grow border-primary-yellow-dark " />
           </div>
-          <p className=" text-black text-lg 2xl:text-xl pt-2 pb-5 xl:px-36 lg:px-20 md:px-16 text-center">
+          <p className=" text-primary-grey text-base 2xl:text-lg pt-2 pb-5 xl:px-36 lg:px-20 md:px-16 text-center">
           Owning a yacht opens up a world of possibilities. Enjoy spontaneous getaways, host exclusive parties, or simply relax with family and friends in the privacy of your own floating sanctuary. A yacht is not just a mode of transportation; it’s a lifestyle choice that offers unparalleled freedom, luxury, and prestige.
           </p>
         </div>
         </div>
         <div className="container mx-auto">
-  <div className="flex flex-col lg:flex-row-reverse items-center justify-center lg:justify-start lg:gap-0 custom-shadow rounded-lg bg-white overflow-hidden lg:h-[25rem] xl:h-[30rem] 2xl:h-[35rem]">  {/* Set container height */}
+  <div className="flex flex-col lg:flex-row-reverse items-center justify-center lg:justify-start lg:gap-0 custom-shadow rounded-lg bg-primary-blue overflow-hidden lg:h-[25rem] xl:h-[30rem] 2xl:h-[35rem]">  {/* Set container height */}
     <div className="w-full lg:w-1/2 xl:w-1/2 flex h-full">
       <img
         src="/sell_your_yacht.webp"
         className=" w-full h-full object-cover"  // Ensure image fills the container
       />
     </div>
-    <div className="w-full lg:w-1/2 flex flex-col items-center lg:rounded-r-xl lg:rounded-l-none lg:items-center justify-center text-center lg:text-left lg:px-16 px-6 py-5">
-      <h2 className=" text-black font-bold text-3xl 2xl:text-3xl pt-5">
+    <div className="w-full items-center lg:w-1/2 flex flex-col lg:rounded-r-xl lg:rounded-l-none lg:px-16 px-6 py-5">
+      <h2 className="uppercase text-center text-white font-bold text-3xl 2xl:text-3xl pt-5">
         Sell your Yacht
       </h2>
-      <p className=" text-black 2xl:text-xl py-5 lg:text-left 2xl:px-3 xl:px-10">
+      <p className=" text-[#f1f1f1] 2xl:text-xl py-5 text-justify 2xl:px-3 xl:px-10">
         Looking to sell your yacht? At Centaurus Charter, we provide expert assistance to help you achieve the best value for your vessel. Our extensive network and marketing expertise ensure that your yacht is presented to the right buyers, maximizing its exposure and sale potential. We handle everything from valuations to negotiations, providing a hassle-free selling experience.
       </p>
-      <button className="text-white  font-bold bg-primary-blue px-5 py-2 text-xl rounded">
-      <Link href="/contact" className="text-white font-bold">
+
+      <button className="blue-solid-button">
+                <Link href="/contact" className="text-white font-bold">
         CONTACT US
         </Link>
       </button>

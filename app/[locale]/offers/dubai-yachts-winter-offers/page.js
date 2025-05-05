@@ -99,9 +99,6 @@ const Page = () => {
                     REGULAR RATE/HOUR
                   </th>
                   <th className="border border-transparent p-3  text-primary-yellow">
-                    DISCOUNTED 2-HOUR RATE
-                  </th>
-                  <th className="border border-transparent p-3  text-primary-yellow">
                     DISCOUNTED 3-HOUR RATE
                   </th>
                   <th className="border border-transparent p-3  text-primary-yellow">
@@ -128,9 +125,6 @@ const Page = () => {
                     </td>
                     <td className="border border-black p-2  font-bold">
                       {yacht.ratePerHour}
-                    </td>
-                    <td className="border border-black p-2  font-bold">
-                      {yacht.rate2Hours}
                     </td>
                     <td className="border border-black p-2  font-bold">
                       {yacht.rate3Hours}
@@ -250,23 +244,19 @@ const Page = () => {
             incredible winter savings!
           </p>
           <div className="flex flex-col item-center justify-center py-10 px-5">
-            <p className=" text-primary-blue-2 text-center">
+            <p className="text-black text-lg font-bold text-left">
               TERMS & CONDITION
             </p>
-            <ul className="list-disc md:list-none text-center  text-primary-blue text-sm pl-4 pt-5 space-y-2">
-              <li>The Winter Offer is valid until 31 January 2025.</li>
+            <ul className="container mx-auto list-disc text-left text-primary-blue text-sm pl-4 pt-5">
+              <li>The UAE Residents offer is valid until 31 May 2025.</li>
               <li>This offer cannot be combined with other promotions.</li>
-              <li>⁠A minimum booking duration of 2 hours is required.</li>
+              <li>⁠A minimum booking duration of 3 hours is required.</li>
               <li>
                 ⁠The offer is exclusive to UAE residents (proof of residency may
                 be required).
               </li>
-              <li>
-                Blackout dates: 1-3 December (National Day) and 20 December 2024
-                -01 January 2025
-              </li>
-              <li>⁠Terms are subject to change without prior notice.</li>
-            </ul>
+              <li>Terms are subject to change without prior notice.</li>
+              </ul>
           </div>
           <p className="text-black  text-center font-bold">
             RESERVE YOUR SPOT TODAY AND INDULGE IN A MEMORABLE YACHT ADVENTURES

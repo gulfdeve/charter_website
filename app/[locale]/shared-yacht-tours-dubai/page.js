@@ -97,11 +97,11 @@ const Page = () => {
               <h2 className="text-primary-blue-2 text-center pb-4 uppercase">
                 Shared yacht Dubai <br/> with live BBQ & Drinks
               </h2>
-              <p className="text-primary-blue-2 text-base text-center">
+              <p className="text-primary-grey font-bold text-base text-center">
                 Luxury Experience that's Affordable: Set Sail and Experience
                 Dubai, From Morning till Night
               </p>
-              <p className="text-primary-blue-2 text-base mt-4 text-center">
+              <p className="text-primary-grey text-base mt-4 text-center">
                 Experience the ultimate Dubai yacht tour with our exclusive
                 daily cruises, available three times a day—midday, sunset, and
                 night. Whether you want to soak up the sun, witness the
@@ -120,7 +120,7 @@ const Page = () => {
   <iframe
     src="https://www.centauruscharter.net/calendar.html"
     title="Centaurus Charter Calendar"
-    className="w-[450px] h-[550px] mx-auto"
+    className="w-[450px] h-[400px] mx-auto"
     frameBorder="0"
     scrolling="auto"
     allowFullScreen
@@ -364,6 +364,29 @@ const Page = () => {
     <li className="">The offer is valid from 4-28 May 2025</li>
   </ul>
 </div>
+  {/* CTA Section */}
+
+  <div className="py-10 w-full container mx-auto">
+          <div className="flex flex-col md:flex-row rounded-xl items-center  gap-5 justify-center  md:justify-between bg-primary-blue p-5">
+            <p className="text-white  text-center md:text-left font-bold bg-primary-blue text-xl rounded ">
+              Enjoy a luxurious shared yacht adventure!
+            </p>
+            <div className="flex flex-col md:flex-row md:gap-10 gap-5">
+              <a
+                target="_blank"
+                className="blue-lined-button"
+                href="https://wa.link/vpunoz"
+              >
+                <FaWhatsapp size={20} />
+                WHATSAPP US
+              </a>
+              <button onClick={handlequote} className="blue-lined-button">
+                GET A QUOTE
+              </button>
+            </div>
+          </div>
+        </div>
+    
         {/* Split Section with Image + Text */}
         <section
       className="

@@ -55,12 +55,12 @@ export default function Home({ params }) {
 
         <div className="flex flex-col lg:flex-row items-stretch justify-center py-10">
       {/* Wrapper: column on mobile, row at lg and above */}
-      <div className="flex flex-col lg:flex-row w-full max-w-7xl rounded-2xl overflow-hidden shadow-lg items-stretch ">
+      <div className="flex flex-col lg:flex-row w-full max-w-7xl rounded-2xl overflow-hidden custom-shadow items-stretch ">
 
         {/* UPON REQUEST */}
         <div className="w-full lg:w-1/2 flex flex-col items-center justify-start bg-[#1a428a] p-5 pb-10 shadow-custom">
           <div className="max-w-3xl mx-auto">
-            <h1 className="text-white font-bold text-center py-7 px-3 uppercase">{product.translations[locale].price}</h1>
+            <h1 className="text-white text-3xl font-bold text-center py-7 px-3 uppercase">{product.translations[locale].price}</h1>
             <div className="w-full h-px bg-white" />
             <div className="flex flex-col items-start justify-center">
               <div className="flex flex-row items-center justify-between gap-5 pt-4 lg:pt-12">
@@ -89,7 +89,7 @@ export default function Home({ params }) {
         </div>
 
         {/* TECHNICAL SPECS */}
-        <div className="w-full lg:w-1/2 flex flex-col bg-white p-5 xl:px-14 lg:px-7 shadow-2xl">
+        <div className="w-full lg:w-1/2 flex flex-col bg-white p-5 xl:px-14 lg:px-7">
           <h1 className="text-black text-3xl font-bold text-center py-7 px-3 uppercase">TECHNICAL SPECS</h1>
           <div className="w-full h-px bg-gray-500" />
           <div className="grid grid-cols-2 lg:grid-cols-2 gap-6 py-4">
@@ -142,10 +142,10 @@ export default function Home({ params }) {
         <div className="md:block hidden">
           <div className="flex items-center justify-center w-full my-6 xl:px-36 lg:px-20">
             <hr className="flex-grow border-primary-yellow-dark" />
-            <span className="px-4 text-3xl 2xl:text-3xl font-semibold text-black uppercase">{product.translations[locale].name_of_yacht}</span>
+            <span className="font-Montserrat px-4 text-3xl 2xl:text-3xl font-semibold text-black uppercase">{product.translations[locale].name_of_yacht}</span>
             <hr className="flex-grow border-primary-yellow-dark" />
           </div>
-          <p className="text-black text-md pt-2 pb-5 xl:px-36 lg:px-20 md:px-16 text-left uppercase">{product.translations[locale].description}</p>
+          <p className="text-primary-grey text-md pt-2 pb-5 xl:px-36 lg:px-20 md:px-16 text-center">{product.translations[locale].description}</p>
         </div>
 
         <ContactForm />
