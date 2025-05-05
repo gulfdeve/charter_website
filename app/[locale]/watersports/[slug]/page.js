@@ -45,8 +45,8 @@ const Page = () => {
         {/* Second column (70%) */}
 
         <div className="lg:w-5/12">
-          <PageTitleHeading title={packageItem.translations[locale].title} className="py-0 lg:pt-0 pb-3" />
-          <h2 className="text-primary-grey text-center font-bold mb-5">
+          <PageTitleHeading title={packageItem.translations[locale].title} className="py-0 lg:pt-0 pb-0" />
+          <h2 className="text-base text-primary-grey text-center font-bold mb-5">
             {packageItem.translations[locale].preview_text}
             <br />
           </h2>
