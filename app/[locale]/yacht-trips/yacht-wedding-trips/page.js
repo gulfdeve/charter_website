@@ -31,72 +31,76 @@ const page = () => {
             Your Perfect Yacht Wedding in Dubai
           </p>
         </div>
-        <div className="md:container grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-7 md:gap-10">
-          {!loading &&
-            data?.products?.map((product) => (
-              <div
-                key={product.id}
-                className="relative flex flex-col md:p-5 p-3 rounded-lg shadow-custom"
-              >
-                <div className="relative">
-                <Link href={`/yacht-rentals/${product.slug}`}>
-                      <h2 className="text-primary-blue text-xl font-bold pb-4 hover:text-blue-600 transition-all duration-300 cursor-pointer">
-                        {product.translations?.[locale]?.name_of_yacht}
-                      </h2>
-                    </Link>
-                <Link href={`/yacht-rentals/${product.slug}`}>
-                  <img
-                    src={`https://www.centauruscharter.net/product/images/${product.image}`}
-                    className="rounded-lg w-full object-contain"
-                    alt={product.translations?.[locale].name_of_yacht}
-                  />
-                </Link>
-                <div className="absolute grid grid-cols-3 items-center gap-0 rounded-lg center-absolute -bottom-5 left-0 right-0 px-3">
-                  <div className="bg-[#f1f1f1] text-primary-grey p-1 xl:p-2 flex flex-col items-center rounded-l-lg">
-                    <span className="text-xs">Model:</span>
-                    <span className="font-bold text-xs md:text-sm text-black">{product.translations?.[locale]?.model}</span>
-                  </div>
-                  <div className="bg-[#f1f1f1] text-primary-grey p-1 xl:p-2 flex flex-col items-center">
-                    <span className="text-xs">Length:</span>
-                    <span className="font-bold text-xs md:text-sm text-black">{product.translations?.[locale]?.size}</span>
-                  </div>
-                  <div className="bg-[#f1f1f1] text-primary-grey p-1 xl:p-2 flex flex-col items-center rounded-r-lg">
-                    <span className="text-xs">Guests:</span>
-                    <span className="font-bold text-xs md:text-sm text-black">{product.translations?.[locale]?.guests}</span>
-                  </div>
-                </div>
-                </div>
-                <div className="flex flex-col flex-grow justify-end py-4">
-                  <div className=" mt-5">{product.id === 24 && (
-                        <p className="text-xs font-normal italic text-primary-grey">Poseidon 118ft Trips: An Add on of AED 1000 per hour will be added for every additional 10 pax where the occupancy surpasses the 40 passengers.
-                        </p>
-                        )
-                      }
-                  </div>
-                <div className="flex flex-row justify-between items-center z-20 border-t border-gray-400 pt-3  mt-5">
-                  <div className="p-1 xl:p-2 flex flex-col text-left"><span className=" text-xs md:text-sm">Price per hour:</span>
-                  <span>{product.id === 24 && (
-                      <p className="text-xs font-normal italic text-primary-grey">Starting from</p> )
-                          }
-                  </span>        
-                  <span className="font-bold text-md md:text-lg lg:text-xl text-primary-red">AED {product.per_hour_price}</span>
-                  </div>
-                  <a
-                    href={`https://fareharbor.com/embeds/book/centauruscharter/items/${
-                      product.fareharbor_id
-                    }/?full-items=yes&flow=645487&back=${encodeURIComponent(
-                      "http://example.com"
-                    )}`}
-                    className="blue-solid-button"
-                  >
-                    Book Now
-                  </a>
-                </div>
-              
-                </div>
+
+		<div className="md:container grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-7 md:gap-10">
+  {!loading &&
+    data?.products?.map((product) => (
+      (product.id === 20 || product.id === 24 || product.id === 50) ? (
+        <div
+          key={product.id}
+          className="relative flex flex-col md:p-5 p-3 rounded-lg shadow-custom"
+        >
+          <div className="relative">
+            <Link href={`/yacht-rentals/${product.slug}`}>
+              <h2 className="text-primary-blue text-xl font-bold pb-4 hover:text-blue-600 transition-all duration-300 cursor-pointer">
+                {product.translations?.[locale]?.name_of_yacht}
+              </h2>
+            </Link>
+            <Link href={`/yacht-rentals/${product.slug}`}>
+              <img
+                src={`https://www.centauruscharter.net/product/images/${product.image}`}
+                className="rounded-lg w-full object-contain"
+                alt={product.translations?.[locale].name_of_yacht}
+              />
+            </Link>
+            <div className="absolute grid grid-cols-3 items-center gap-0 rounded-lg center-absolute -bottom-5 left-0 right-0 px-3">
+              <div className="bg-[#f1f1f1] text-primary-grey p-1 xl:p-2 flex flex-col items-center rounded-l-lg">
+                <span className="text-xs">Model:</span>
+                <span className="font-bold text-xs md:text-sm text-black">{product.translations?.[locale]?.model}</span>
               </div>
-            ))}
+              <div className="bg-[#f1f1f1] text-primary-grey p-1 xl:p-2 flex flex-col items-center">
+                <span className="text-xs">Length:</span>
+                <span className="font-bold text-xs md:text-sm text-black">{product.translations?.[locale]?.size}</span>
+              </div>
+              <div className="bg-[#f1f1f1] text-primary-grey p-1 xl:p-2 flex flex-col items-center rounded-r-lg">
+                <span className="text-xs">Guests:</span>
+                <span className="font-bold text-xs md:text-sm text-black">{product.translations?.[locale]?.guests}</span>
+              </div>
+            </div>
+          </div>
+          <div className="flex flex-col flex-grow justify-end py-4">
+            <div className="mt-5">
+              {product.id === 24 && (
+                <p className="text-xs font-normal italic text-primary-grey">
+                  Poseidon 118ft Trips: An Add on of AED 1000 per hour will be added for every additional 10 pax where the occupancy surpasses the 40 passengers.
+                </p>
+              )}
+            </div>
+            <div className="flex flex-row justify-between items-center z-20 border-t border-gray-400 pt-3 mt-5">
+              <div className="p-1 xl:p-2 flex flex-col text-left">
+                <span className="text-xs md:text-sm">Price per hour:</span>
+                {product.id === 24 && (
+                  <p className="text-xs font-normal italic text-primary-grey">Starting from</p>
+                )}
+                <span className="font-bold text-md md:text-lg lg:text-xl text-primary-red">AED {product.per_hour_price}</span>
+              </div>
+              
+                <a href={`https://fareharbor.com/embeds/book/centauruscharter/items/${
+                  product.fareharbor_id
+                }/?full-items=yes&flow=645487&back=${encodeURIComponent(
+                  "http://example.com"
+                )}`}
+                className="blue-solid-button"
+              >
+                Book Now
+              </a>
+            </div>
+          </div>
         </div>
+      ) : null
+    ))}
+</div>
+
         <div className="mt-10">
           <div className="flex flex-col  lg:flex-row-reverse items-center justify-center lg:justify-start lg:gap-0  rounded-lg bg-primary-blue overflow-hidden ">
             <div className="w-full lg:w-1/2 xl:w-1/2">
