@@ -5,30 +5,49 @@ import SearchResultsClient from "@/app/components/SearchResultsClient";
 
 // --- fetchVessels: builds query with required + optional params ---
 async function fetchVessels(searchParams) {
+	console.log("coming to fetch vessels");
   // 1) JWT setup
-  const rawKey = process.env.ANKOR_PRIVATE_KEY;
-  const privateKey = rawKey.replace(/\\n/g, "\n");
+  // We still need jsonwebtoken package to create the token
   const now = Math.floor(Date.now() / 1000);
-  const token = jwt.sign(
-    {
-      scopes: ["website:read:*"],
-      iss: "c::19468221194",
-      aud: "ankor.io",
-      sub: "c::19468221194",
-      iat: now,
-      exp: now + 3600,
-    },
-    privateKey,
-    {
-      algorithm: "RS256",
-      header: {
-        alg: "RS256",
-        typ: "JWT",
-        kid: "jSZNvbnPK03KXEEo0-bJw4XPF1z68eW_OpHFW_9XvLY",
+  
+  // Instead of using ANKOR_PRIVATE_KEY, we'll construct the JWT with your Key ID
+  // Your Key ID appears to be the same as the 'kid' in your original JWT header
+  // Your Company URI is the same as the 'iss' and 'sub' values in your payload
+  const keyId = process.env.ANKOR_KEY_ID;
+  const companyUri = process.env.ANKOR_COMPANY_URI;
+  
+  // Use the private key if it exists, otherwise create a simple JWT
+  let token;
+  if (process.env.ANKOR_PRIVATE_KEY) {
+    // Original JWT creation with private key
+    const rawKey = process.env.ANKOR_PRIVATE_KEY;
+    const privateKey = rawKey.replace(/\\n/g, "\n");
+    
+    token = jwt.sign(
+      {
+        scopes: ["website:read:*"],
+        iss: companyUri,
+        aud: "ankor.io",
+        sub: companyUri,
+        iat: now,
+        exp: now + 3600,
       },
-    }
-  );
-
+      privateKey,
+      {
+        algorithm: "RS256",
+        header: {
+          alg: "RS256",
+          typ: "JWT",
+          kid: keyId,
+        },
+      }
+    );
+  } else {
+    // Alternative approach if no private key available
+    console.warn("No private key available, using simple authorization");
+    token = keyId; // Use the Key ID directly as the token
+  }
+  
   // 2) Prepare params object
   const params = {
     currency: "USD",      // always include
@@ -53,7 +72,7 @@ async function fetchVessels(searchParams) {
   qp.append("priceMin", params.priceMin);
   qp.append("priceMax", params.priceMax);
 
-  // only append others if they’re not null/undefined/empty-string
+  // only append others if they're not null/undefined/empty-string
   for (const [key, value] of Object.entries(params)) {
     if (
       ["currency", "priceMin", "priceMax"].includes(key) ||
@@ -73,18 +92,29 @@ async function fetchVessels(searchParams) {
   const url = `https://api.ankor.io/website/search?${qp.toString()}`;
   console.log("🛰️  Fetching:", url);
 
-  const res = await fetch(url, {
-    headers: {
-      Accept: "application/json",
-      Authorization: `Bearer ${token}`,
-    },
-  });
-  if (!res.ok) throw new Error(`API Error: ${res.statusText}`);
+  // You might need to try different header formats depending on the API requirements
+  const headers = {
+    Accept: "application/json",
+    Authorization: `Bearer ${token}`,
+  };
+  
+  console.log("Using Authorization header:", headers.Authorization.substring(0, 30) + "...");
+  
+  const res = await fetch(url, { headers });
+  
+  if (!res.ok) {
+    const errorText = await res.text();
+    console.error("API Error Status:", res.status);
+    console.error("API Error Response:", errorText);
+    throw new Error(`API Error: ${res.statusText}`);
+  }
+  
   return res.json();
 }
 
 // --- Page Component ---
 export default async function VesselsPage({ searchParams }) {
+	console.log("coming here");
   // 1) Fetch data if any filter/search has run
   const hasParams = Object.keys(searchParams).length > 0;
   let data = null;
