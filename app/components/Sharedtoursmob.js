@@ -136,8 +136,9 @@ export default function ToursCarousel({ toursData }) {
                         <div className="flex flex-row gap-3 items-center">
                           <MdOutlineLocalDining className="text-primary-yellow-light text-[8rem] sm:text-[4rem] lg:text-[6rem]" />
                           <p className="text-primary-grey text-sm">
-                            <span className="font-bold">Live BBQ:</span>{" "}
-                            {tour.liveBBQ}
+                            {/* <span className="font-bold">Live BBQ:</span>{" "}
+                            {tour.liveBBQ} */}
+							<span dangerouslySetInnerHTML={{ __html: tour.liveBBQ }} />
                           </p>
                         </div>
                         <div className="flex flex-row gap-2.5 items-center ml-0.5">
