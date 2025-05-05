@@ -3,27 +3,23 @@ import jwt from "jsonwebtoken";
 import MultiDatePicker from "@/app/components/MultiDatePicker";
 import SearchResultsClient from "@/app/components/SearchResultsClient";
 
-// Global variable to store the working token
-let WORKING_TOKEN = null;
-
 // --- fetchVessels: builds query with required + optional params ---
 async function fetchVessels(searchParams) {
-  // Debug object to capture all the information
-  const debugData = {
-    token: null,
-    apiUrl: null,
-    apiResponse: {
-      status: null,
-      isSuccess: false,
-      responseText: null
-    }
-  };
-
+  // Store debug information
+  let tokenUsed = '';
+  let responseStatus = '';
+  let responseDetails = '';
+  
   try {
     // 1) JWT setup
+    console.log("🔑 Setting up JWT authentication...");
     const rawKey = process.env.ANKOR_PRIVATE_KEY;
     const privateKey = rawKey.replace(/\\n/g, "\n");
     const now = Math.floor(Date.now() / 1000);
+    
+    // Log key identification
+    console.log("🔐 Key ID being used: ", process.env.ANKOR_KEY_ID || "Not set");
+
     const token = jwt.sign(
       {
         scopes: ["website:read:*"],
@@ -39,15 +35,17 @@ async function fetchVessels(searchParams) {
         header: {
           alg: "RS256",
           typ: "JWT",
-          kid: "hxF8VcUaRO5CiwTLJ79bVIGHycQqlVQX_WL-yTKo8z4",
+          kid: process.env.ANKOR_KEY_ID || "jSZNvbnPK03KXEEo0-bJw4XPF1z68eW_OpHFW_9XvLY",
         },
       }
     );
 
     // Save token for inspection
-    debugData.token = token;
+    tokenUsed = token;
+    console.log("🎫 Generated token: ", token.substring(0, 50) + "...");
 
     // 2) Prepare params object
+    console.log("📝 Preparing request parameters...");
     const params = {
       currency: "USD",      // always include
       priceMin: 1000,       // always include
@@ -89,9 +87,11 @@ async function fetchVessels(searchParams) {
     }
 
     const url = `https://api.ankor.io/website/search?${qp.toString()}`;
-    debugData.apiUrl = url;
     console.log("🛰️  Fetching:", url);
 
+    // 4) Make the API request
+    console.log("📡 Sending API request with Authorization: Bearer " + token.substring(0, 20) + "...");
+    
     const res = await fetch(url, {
       headers: {
         Accept: "application/json",
@@ -99,58 +99,61 @@ async function fetchVessels(searchParams) {
       },
     });
     
-    // Record response details
-    debugData.apiResponse.status = res.status;
-    debugData.apiResponse.isSuccess = res.ok;
-
+    // Store response status
+    responseStatus = `${res.status} ${res.statusText}`;
+    console.log("📨 Received API response:", responseStatus);
+    
     if (!res.ok) {
       const errorText = await res.text();
-      debugData.apiResponse.responseText = errorText;
-      console.error("API Error:", res.status, errorText);
+      responseDetails = errorText;
+      console.error("❌ API Error:", res.status, errorText);
       throw new Error(`API Error: ${res.statusText}`);
     }
-
-    // If we get here, the request was successful!
-    // Store the working token for future reference
-    WORKING_TOKEN = token;
     
+    // Success! Parse the JSON response
+    console.log("✅ API request successful!");
     const data = await res.json();
     return data;
   } catch (error) {
-    // Add the debug data to the error
-    error.debugData = debugData;
+    // Add debug info to the error object
+    error.tokenUsed = tokenUsed;
+    error.responseStatus = responseStatus;
+    error.responseDetails = responseDetails;
     throw error;
   }
 }
 
 // --- Page Component ---
 export default async function VesselsPage({ searchParams }) {
-  // Debug information to display
-  let debugInfo = {
-    token: null,
-    workingToken: WORKING_TOKEN,
-    error: null,
-    apiDetails: null
-  };
+  // States for tracking debug info
+  let token = null;
+  let apiStatus = null;
+  let apiDetails = null;
+  let searchSuccessful = false;
   
   // 1) Fetch data if any filter/search has run
   const hasParams = Object.keys(searchParams).length > 0;
   let data = null;
   if (hasParams) {
     try {
+      console.log("🔍 Starting search with parameters:", searchParams);
       data = await fetchVessels(searchParams);
-      // If successful, update debug info
-      debugInfo.token = "API call succeeded! Working token captured.";
-      debugInfo.workingToken = WORKING_TOKEN;
+      
+      // If we get here, the search was successful
+      searchSuccessful = true;
+      apiStatus = "Success! API call completed without errors.";
+      token = await generateTokenForDisplay();  // Generate a fresh token for display
+      
     } catch (err) {
-      console.error("Error fetching vessels:", err);
-      // Capture debug info from the error
-      if (err.debugData) {
-        debugInfo.token = err.debugData.token;
-        debugInfo.error = err.message;
-        debugInfo.apiDetails = err.debugData.apiResponse;
-      }
+      console.error("❌ Error fetching vessels:", err);
+      
+      // Extract debug info from the error
+      token = err.tokenUsed || "No token captured";
+      apiStatus = err.responseStatus || "Unknown error";
+      apiDetails = err.responseDetails || err.message;
     }
+  } else {
+    console.log("ℹ️ No search parameters provided yet");
   }
 
   // 2) Pagination
@@ -177,57 +180,53 @@ export default async function VesselsPage({ searchParams }) {
   return (
     <div className="bg-white w-full h-full mt-14 md:mt-0 mb-36 nav-space">
       {/* Debug Panel */}
-      <div className="bg-gray-100 border border-gray-300 rounded-md p-4 m-4">
-        <h2 className="text-lg font-bold mb-2">API Diagnostic Information</h2>
-        
-        {debugInfo.workingToken ? (
-          <div className="bg-green-100 p-2 mb-2 rounded border border-green-300">
-            <p className="font-semibold text-green-700">Working Token Found!</p>
-            <p className="text-sm">This token is working with the API:</p>
-            <textarea
-              className="w-full h-32 font-mono text-xs p-2 mt-1 border border-gray-300 rounded"
-              readOnly
-              value={debugInfo.workingToken}
-            ></textarea>
-          </div>
-        ) : (
-          debugInfo.token && (
-            <div className="mb-4">
-              <p className="font-semibold">Generated Token (Not Working):</p>
+      {hasParams && (
+        <div className="bg-gray-100 border border-gray-300 rounded-md p-4 m-4">
+          <h2 className="text-lg font-bold mb-2">API Diagnostic Information</h2>
+          
+          {searchSuccessful ? (
+            <div className="bg-green-100 p-3 mb-4 rounded border border-green-300">
+              <p className="font-bold text-green-700 mb-2">✅ Search successful! API is working.</p>
+              <p className="mb-2">Here's the token that was used:</p>
               <textarea
-                className="w-full h-32 font-mono text-xs p-2 mt-1 border border-gray-300 rounded"
+                className="w-full h-40 font-mono text-xs p-2 border border-gray-300 rounded"
                 readOnly
-                value={debugInfo.token}
+                value={token}
               ></textarea>
+              <p className="text-sm mt-2">
+                ✨ Key ID: {process.env.ANKOR_KEY_ID || "jSZNvbnPK03KXEEo0-bJw4XPF1z68eW_OpHFW_9XvLY"}
+              </p>
             </div>
-          )
-        )}
-        
-        {debugInfo.error && (
-          <div className="mb-4">
-            <p className="font-semibold text-red-600">Error:</p>
-            <p className="text-red-600">{debugInfo.error}</p>
+          ) : (
+            <>
+              <div className="bg-red-100 p-3 mb-4 rounded border border-red-300">
+                <p className="font-bold text-red-700 mb-2">❌ Search failed!</p>
+                <p className="mb-2">API Response: {apiStatus}</p>
+                {apiDetails && (
+                  <pre className="bg-gray-200 p-2 rounded text-xs overflow-auto mb-2">
+                    {apiDetails}
+                  </pre>
+                )}
+              </div>
+              
+              <div className="mb-4">
+                <p className="font-semibold mb-2">Token that was used:</p>
+                <textarea
+                  className="w-full h-40 font-mono text-xs p-2 border border-gray-300 rounded"
+                  readOnly
+                  value={token}
+                ></textarea>
+              </div>
+            </>
+          )}
+          
+          <div className="text-sm mt-4">
+            <p><strong>Environment:</strong> {process.env.VERCEL ? 'Vercel Production' : 'Local Development'}</p>
+            <p><strong>Key ID:</strong> {process.env.ANKOR_KEY_ID || "Not set (using default)"}</p>
+            <p><strong>Private Key Available:</strong> {process.env.ANKOR_PRIVATE_KEY ? 'Yes' : 'No'}</p>
           </div>
-        )}
-        
-        {debugInfo.apiDetails && (
-          <div className="mb-4">
-            <p className="font-semibold">API Response:</p>
-            <pre className="bg-gray-200 p-2 rounded text-xs overflow-auto">
-              {JSON.stringify(debugInfo.apiDetails, null, 2)}
-            </pre>
-          </div>
-        )}
-        
-        <div className="mb-4">
-          <p className="font-semibold">Instructions:</p>
-          <ul className="list-disc pl-5">
-            <li>Use the search form below to trigger an API call</li>
-            <li>If the search works, the successful token will be displayed above</li>
-            <li>Copy this token and save it - it's the key to making your API work</li>
-          </ul>
         </div>
-      </div>
+      )}
 
       {/* Hero */}
       <div className="relative w-full h-[500px]">
@@ -323,7 +322,7 @@ export default async function VesselsPage({ searchParams }) {
       </section>
 
       {/* Results */}
-      {hasParams && data && (
+      {hasParams && searchSuccessful && (
         <SearchResultsClient
           paginatedHits={paginatedHits}
           currentPage={currentPage}
@@ -334,4 +333,38 @@ export default async function VesselsPage({ searchParams }) {
       )}
     </div>
   );
+}
+
+// Helper function to generate a token for display
+async function generateTokenForDisplay() {
+  try {
+    const rawKey = process.env.ANKOR_PRIVATE_KEY;
+    const privateKey = rawKey.replace(/\\n/g, "\n");
+    const now = Math.floor(Date.now() / 1000);
+    
+    const token = jwt.sign(
+      {
+        scopes: ["website:read:*"],
+        iss: "c::19468221194",
+        aud: "ankor.io",
+        sub: "c::19468221194",
+        iat: now,
+        exp: now + 3600,
+      },
+      privateKey,
+      {
+        algorithm: "RS256",
+        header: {
+          alg: "RS256",
+          typ: "JWT",
+          kid: process.env.ANKOR_KEY_ID || "jSZNvbnPK03KXEEo0-bJw4XPF1z68eW_OpHFW_9XvLY",
+        },
+      }
+    );
+    
+    return token;
+  } catch (error) {
+    console.error("Error generating token for display:", error);
+    return "Error generating token: " + error.message;
+  }
 }
