@@ -10,12 +10,12 @@ export default function ClientSearchResults({ searchParams: initialSearchParams,
   const [error, setError] = useState(null);
   const [searchParams, setSearchParams] = useState(initialSearchParams);
   const [hasParams, setHasParams] = useState(initialHasParams);
-  const [debugInfo, setDebugInfo] = useState({
-    apiCalled: false,
-    apiStatus: null,
-    apiDetails: null,
-    timestamp: new Date().toISOString()
-  });
+  // const [debugInfo, setDebugInfo] = useState({
+  //   apiCalled: false,
+  //   apiStatus: null,
+  //   apiDetails: null,
+  //   timestamp: new Date().toISOString()
+  // });
 
   // Effect to handle form submission
   useEffect(() => {
@@ -70,7 +70,7 @@ export default function ClientSearchResults({ searchParams: initialSearchParams,
     setError(null);
     
     try {
-      console.log("🔍 Starting search with parameters:", searchParams);
+      // console.log("🔍 Starting search with parameters:", searchParams);
       
       // Build the proxy URL with search parameters
       const qp = new URLSearchParams();
@@ -90,14 +90,14 @@ export default function ClientSearchResults({ searchParams: initialSearchParams,
       // Construct the proxy URL
       const proxyUrl = `/api/ankor-proxy?${qp.toString()}`;
       
-      setDebugInfo(prev => ({ 
-        ...prev, 
-        apiCalled: true,
-        proxyUrl: proxyUrl,
-        fetchStartTime: new Date().toISOString() 
-      }));
+      // setDebugInfo(prev => ({ 
+      //   ...prev, 
+      //   apiCalled: true,
+      //   proxyUrl: proxyUrl,
+      //   fetchStartTime: new Date().toISOString() 
+      // }));
       
-      console.log("🛰️ Fetching data via proxy:", proxyUrl);
+      // console.log("🛰️ Fetching data via proxy:", proxyUrl);
       
       // Create AbortController for timeout
       const controller = new AbortController();
@@ -111,25 +111,25 @@ export default function ClientSearchResults({ searchParams: initialSearchParams,
         
         clearTimeout(timeoutId);
         
-        setDebugInfo(prev => ({ 
-          ...prev, 
-          apiStatus: `${response.status} ${response.statusText}`,
-          fetchEndTime: new Date().toISOString()
-        }));
+        // setDebugInfo(prev => ({ 
+        //   ...prev, 
+        //   apiStatus: `${response.status} ${response.statusText}`,
+        //   fetchEndTime: new Date().toISOString()
+        // }));
         
         // Handle error responses
         if (!response.ok) {
           const errorData = await response.json();
-          setDebugInfo(prev => ({ 
-            ...prev, 
-            apiDetails: errorData
-          }));
+          // setDebugInfo(prev => ({ 
+          //   ...prev, 
+          //   apiDetails: errorData
+          // }));
           throw new Error(errorData.error || `API Error: ${response.statusText}`);
         }
         
         // Parse the JSON response
         const responseData = await response.json();
-        console.log("✅ API request successful!");
+        // console.log("✅ API request successful!");
         
         // Update state with the data
         setData(responseData);
@@ -141,7 +141,7 @@ export default function ClientSearchResults({ searchParams: initialSearchParams,
         throw fetchError;
       }
     } catch (err) {
-      console.error("❌ Error fetching vessels:", err);
+      // console.error("❌ Error fetching vessels:", err);
       setError(err.message || 'An unknown error occurred');
     } finally {
       setLoading(false);
@@ -156,15 +156,18 @@ export default function ClientSearchResults({ searchParams: initialSearchParams,
   const startIdx = (currentPage - 1) * pageSize;
   const paginatedHits = hits.slice(startIdx, startIdx + pageSize);
 
-  // Function to build page links
-  const buildPageLink = (pageNum) => {
-    const entries = Object.entries(searchParams)
-      .filter(([k, v]) => typeof v === "string" && v !== "")
-      .map(([k, v]) => [k, v]);
-
-    const qp = new URLSearchParams(entries);
-    qp.set("page", pageNum);
-    return `?${qp.toString()}`;
+  // Function to handle page change
+  const handlePageChange = (pageNum) => {
+    setLoading(true);
+    const newParams = { ...searchParams, page: pageNum.toString() };
+    setSearchParams(newParams);
+    
+    // Update URL without page reload
+    const url = new URL(window.location.pathname, window.location.origin);
+    for (const [key, value] of Object.entries(newParams)) {
+      url.searchParams.set(key, value);
+    }
+    window.history.pushState({}, '', url.toString());
   };
 
   return (
@@ -182,7 +185,7 @@ export default function ClientSearchResults({ searchParams: initialSearchParams,
       )}
 
       {/* API Diagnostics - show after search attempted */}
-      {hasParams && (
+      {/* {hasParams && (
         <div className="bg-gray-100 border border-gray-300 rounded-md p-4 m-4">
           <h2 className="text-lg font-bold mb-2">API Diagnostic Information</h2>
           
@@ -235,7 +238,7 @@ export default function ClientSearchResults({ searchParams: initialSearchParams,
             </details>
           </div>
         </div>
-      )}
+      )} */}
 
       {/* Results */}
       {hasParams && !loading && data && (
@@ -243,8 +246,9 @@ export default function ClientSearchResults({ searchParams: initialSearchParams,
           paginatedHits={paginatedHits}
           currentPage={currentPage}
           totalPages={totalPages}
-          previousPageLink={currentPage > 1 ? buildPageLink(currentPage - 1) : null}
-          nextPageLink={currentPage < totalPages ? buildPageLink(currentPage + 1) : null}
+          previousPageLink={currentPage > 1 ? `#page-${currentPage - 1}` : null}
+          nextPageLink={currentPage < totalPages ? `#page-${currentPage + 1}` : null}
+          onPageChange={handlePageChange}
         />
       )}
     </>

@@ -4,32 +4,29 @@ import ClientSearchResults from "@/app/components/ClientSearchResults"; // New c
 
 export default function VesselsPage({ searchParams }) {
   // Additional diagnostic information
-  const renderInfo = {
-    timestamp: new Date().toISOString(),
-    vercel: process.env.VERCEL ? 'Yes' : 'No',
-    searchParamsReceived: Object.keys(searchParams).length > 0 ? 'Yes' : 'No',
-    searchParamsKeys: Object.keys(searchParams),
-    nodeVersion: process.version,
-    privateKeyAvailable: process.env.ANKOR_PRIVATE_KEY ? 'Yes' : 'No',
-    keyIdAvailable: process.env.ANKOR_KEY_ID ? 'Yes' : 'No'
-  };
+  // const renderInfo = {
+  //   timestamp: new Date().toISOString(),
+  //   vercel: process.env.VERCEL ? 'Yes' : 'No',
+  //   searchParamsReceived: Object.keys(searchParams).length > 0 ? 'Yes' : 'No',
+  //   searchParamsKeys: Object.keys(searchParams),
+  //   nodeVersion: process.version,
+  //   privateKeyAvailable: process.env.ANKOR_PRIVATE_KEY ? 'Yes' : 'No',
+  //   keyIdAvailable: process.env.ANKOR_KEY_ID ? 'Yes' : 'No'
+  // };
   
   // Determine if we have search parameters
   const hasParams = Object.keys(searchParams).length > 0;
-  renderInfo.hasParamsValue = hasParams;
+  // renderInfo.hasParamsValue = hasParams;
 
   return (
     <div className="bg-white w-full h-full mt-14 md:mt-0 mb-36 nav-space">
       {/* Always show basic diagnostic info at the top */}
-      <div className="bg-blue-50 border border-blue-200 rounded-md p-4 m-4">
+      {/* <div className="bg-blue-50 border border-blue-200 rounded-md p-4 m-4">
         <h2 className="text-lg font-bold mb-2">Page Render Diagnostics</h2>
         <pre className="bg-white p-2 rounded text-xs overflow-auto max-h-40">
           {JSON.stringify(renderInfo, null, 2)}
         </pre>
-      </div>
-      
-      {/* Client-side component to handle API calls */}
-      <ClientSearchResults searchParams={searchParams} hasParams={hasParams} />
+      </div> */}
 
       {/* Hero */}
       <div className="relative w-full h-[500px]">
@@ -128,6 +125,9 @@ export default function VesselsPage({ searchParams }) {
           </button>
         </form>
       </section>
+
+      {/* Client-side component to handle API calls */}
+      <ClientSearchResults searchParams={searchParams} hasParams={hasParams} />
     </div>
   );
 }

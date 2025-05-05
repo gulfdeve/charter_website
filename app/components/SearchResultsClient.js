@@ -10,7 +10,8 @@ export default function SearchResultsClient({
   totalPages,
   previousPageLink,
   nextPageLink,
-  rentalPeriod
+  rentalPeriod,
+  onPageChange
 }) {
   const modalRef = useRef(null);
   const [selectedVessel, setSelectedVessel] = useState(null);
@@ -19,9 +20,13 @@ export default function SearchResultsClient({
     e.preventDefault();
     setSelectedVessel(vessel);
     modalRef.current?.open();
-    
   };
-  console.log("rentalppp",rentalPeriod);
+
+  const handlePageClick = (e, pageNum) => {
+    e.preventDefault();
+    onPageChange(pageNum);
+  };
+
   return (
     <div className="mt-12 flex flex-col items-center justify-center px-4 container mx-auto">
       <h2 className=" font-semibold text-center mb-6">Search Results</h2>
@@ -86,19 +91,19 @@ export default function SearchResultsClient({
                   <div className="grid grid-cols-2 gap-2">
                     <Link
                       href={`/yachts-for-sale-dubai/${vessel.slug || "some-default"}`}
-                 
                       className="blue-solid-button  mt-5"
                     >
                       KNOW MORE
                     </Link>
-                    <button className="py-1 mt-5 
-          text-base font-bold tracking-wider uppercase
-          text-primary-yellow bg-primary-blue
-          hover:bg-primary-yellow hover:text-primary-blue hover:scale-105
-          rounded-md shadow
-          transition duration-150 ease-in-out transform "
-          onClick={(e) => handleQuote(e, vessel)}
-          >
+                    <button 
+                      className="py-1 mt-5 
+                        text-base font-bold tracking-wider uppercase
+                        text-primary-yellow bg-primary-blue
+                        hover:bg-primary-yellow hover:text-primary-blue hover:scale-105
+                        rounded-md shadow
+                        transition duration-150 ease-in-out transform"
+                      onClick={(e) => handleQuote(e, vessel)}
+                    >
                       INQUIRE NOW
                     </button>
                   </div>
@@ -110,23 +115,23 @@ export default function SearchResultsClient({
           {/* Pagination Controls */}
           <div className="mt-6 pb-12 flex items-center space-x-4">
             {previousPageLink && (
-              <Link
-                href={previousPageLink}
+              <button
+                onClick={(e) => handlePageClick(e, currentPage - 1)}
                 className="px-4 py-2 bg-gray-200 hover:bg-gray-300 rounded text-sm"
               >
                 Previous
-              </Link>
+              </button>
             )}
             <span className="text-sm">
               Page {currentPage} of {totalPages}
             </span>
             {nextPageLink && (
-              <Link
-                href={nextPageLink}
+              <button
+                onClick={(e) => handlePageClick(e, currentPage + 1)}
                 className="px-4 py-2 bg-gray-200 hover:bg-gray-300 rounded text-sm"
               >
                 Next
-              </Link>
+              </button>
             )}
           </div>
         </>
