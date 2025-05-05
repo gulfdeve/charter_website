@@ -125,6 +125,17 @@ async function fetchVessels(searchParams) {
 
 // --- Page Component ---
 export default async function VesselsPage({ searchParams }) {
+  // Additional diagnostic information
+  const renderInfo = {
+    timestamp: new Date().toISOString(),
+    vercel: process.env.VERCEL ? 'Yes' : 'No',
+    searchParamsReceived: Object.keys(searchParams).length > 0 ? 'Yes' : 'No',
+    searchParamsKeys: Object.keys(searchParams),
+    nodeVersion: process.version,
+    privateKeyAvailable: process.env.ANKOR_PRIVATE_KEY ? 'Yes' : 'No',
+    keyIdAvailable: process.env.ANKOR_KEY_ID ? 'Yes' : 'No'
+  };
+  
   // States for tracking debug info
   let token = null;
   let apiStatus = null;
@@ -133,11 +144,16 @@ export default async function VesselsPage({ searchParams }) {
   
   // 1) Fetch data if any filter/search has run
   const hasParams = Object.keys(searchParams).length > 0;
+  renderInfo.hasParamsValue = hasParams;
+  
   let data = null;
   if (hasParams) {
     try {
       console.log("🔍 Starting search with parameters:", searchParams);
+      renderInfo.attemptedSearch = 'Yes';
+      
       data = await fetchVessels(searchParams);
+      renderInfo.searchSucceeded = 'Yes';
       
       // If we get here, the search was successful
       searchSuccessful = true;
@@ -146,6 +162,8 @@ export default async function VesselsPage({ searchParams }) {
       
     } catch (err) {
       console.error("❌ Error fetching vessels:", err);
+      renderInfo.searchSucceeded = 'No';
+      renderInfo.errorMessage = err.message;
       
       // Extract debug info from the error
       token = err.tokenUsed || "No token captured";
@@ -154,6 +172,7 @@ export default async function VesselsPage({ searchParams }) {
     }
   } else {
     console.log("ℹ️ No search parameters provided yet");
+    renderInfo.attemptedSearch = 'No';
   }
 
   // 2) Pagination
@@ -179,7 +198,15 @@ export default async function VesselsPage({ searchParams }) {
 
   return (
     <div className="bg-white w-full h-full mt-14 md:mt-0 mb-36 nav-space">
-      {/* Debug Panel */}
+      {/* Always show basic diagnostic info at the top */}
+      <div className="bg-blue-50 border border-blue-200 rounded-md p-4 m-4">
+        <h2 className="text-lg font-bold mb-2">Page Render Diagnostics</h2>
+        <pre className="bg-white p-2 rounded text-xs overflow-auto max-h-40">
+          {JSON.stringify(renderInfo, null, 2)}
+        </pre>
+      </div>
+      
+      {/* Full API Diagnostics - show after search attempted */}
       {hasParams && (
         <div className="bg-gray-100 border border-gray-300 rounded-md p-4 m-4">
           <h2 className="text-lg font-bold mb-2">API Diagnostic Information</h2>
