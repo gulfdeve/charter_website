@@ -271,82 +271,88 @@ export default async function VesselsPage({ searchParams }) {
       </div>
 
       {/* Search Form */}
-      <section className="max-w-6xl mx-auto px-4 pb-8">
-        <form
-          method="GET"
-          className="grid grid-cols-1 md:grid-cols-5 gap-4 items-end"
-        >
-          <input
-            name="name"
-            placeholder="VESSEL NAME"
-            defaultValue={searchParams.name || ""}
-            className="block w-full border border-gray-300 py-2 px-3 focus:outline-none"
-          />
+	  <section className="max-w-6xl mx-auto px-4 pb-8">
+  <form
+    action={`/${searchParams.locale || 'en'}/international-yachts`}
+    method="GET"
+    className="grid grid-cols-1 md:grid-cols-5 gap-4 items-end"
+  >
+    {/* Include locale as a hidden field to ensure it's passed along */}
+    {searchParams.locale && (
+      <input type="hidden" name="locale" value={searchParams.locale} />
+    )}
+    
+    <input
+      name="name"
+      placeholder="VESSEL NAME"
+      defaultValue={searchParams.name || ""}
+      className="block w-full border border-gray-300 py-2 px-3 focus:outline-none"
+    />
 
-          <select
-            name="region"
-            defaultValue={searchParams.region || ""}
-            className="block w-full border border-gray-300 py-2 px-3 focus:outline-none"
-          >
-            <option value="">CHOOSE DESTINATION</option>
-            <option value="Africa">Africa</option>
-            {/* … */}
-          </select>
+    <select
+      name="region"
+      defaultValue={searchParams.region || ""}
+      className="block w-full border border-gray-300 py-2 px-3 focus:outline-none"
+    >
+      <option value="">CHOOSE DESTINATION</option>
+      <option value="Africa">Africa</option>
+      {/* … */}
+    </select>
 
-          <select
-            name="yachtType"
-            defaultValue={searchParams.yachtType || ""}
-            className="block w-full border border-gray-300 py-2 px-3 focus:outline-none"
-          >
-            <option value="">CHOOSE TYPE OF BOAT</option>
-            <option value="Sailboat">Gulet</option>
-            {/* … */}
-          </select>
+    <select
+      name="yachtType"
+      defaultValue={searchParams.yachtType || ""}
+      className="block w-full border border-gray-300 py-2 px-3 focus:outline-none"
+    >
+      <option value="">CHOOSE TYPE OF BOAT</option>
+      <option value="Sailboat">Gulet</option>
+      {/* … */}
+    </select>
 
-          <select
-            name="charterType"
-            defaultValue={searchParams.charterType || ""}
-            className="block w-full border border-gray-300 py-2 px-3 focus:outline-none"
-          >
-            <option value="">CHOOSE TYPE OF CHARTER</option>
-            <option value="Crewed">Crewed</option>
-            <option value="Bareboat">Bareboat</option>
-          </select>
+    <select
+      name="charterType"
+      defaultValue={searchParams.charterType || ""}
+      className="block w-full border border-gray-300 py-2 px-3 focus:outline-none"
+    >
+      <option value="">CHOOSE TYPE OF CHARTER</option>
+      <option value="Crewed">Crewed</option>
+      <option value="Bareboat">Bareboat</option>
+    </select>
 
-          <MultiDatePicker
-            name="rentalPeriod"
-            defaultDates={searchParams.rentalPeriod || []}
-          />
+    <MultiDatePicker
+      name="rentalPeriod"
+      defaultDates={searchParams.rentalPeriod || []}
+    />
 
-          <input
-            name="minLength"
-            placeholder="MIN LENGTH"
-            defaultValue={searchParams.minLength || ""}
-            className="block w-full border border-gray-300 py-2 px-3 focus:outline-none"
-          />
+    <input
+      name="minLength"
+      placeholder="MIN LENGTH"
+      defaultValue={searchParams.minLength || ""}
+      className="block w-full border border-gray-300 py-2 px-3 focus:outline-none"
+    />
 
-          <input
-            name="maxLength"
-            placeholder="MAX LENGTH"
-            defaultValue={searchParams.maxLength || ""}
-            className="block w-full border border-gray-300 py-2 px-3 focus:outline-none"
-          />
+    <input
+      name="maxLength"
+      placeholder="MAX LENGTH"
+      defaultValue={searchParams.maxLength || ""}
+      className="block w-full border border-gray-300 py-2 px-3 focus:outline-none"
+    />
 
-          <input
-            name="sleeps"
-            placeholder="SLEEPS"
-            defaultValue={searchParams.sleeps || ""}
-            className="block w-full border border-gray-300 py-2 px-3 focus:outline-none"
-          />
+    <input
+      name="sleeps"
+      placeholder="SLEEPS"
+      defaultValue={searchParams.sleeps || ""}
+      className="block w-full border border-gray-300 py-2 px-3 focus:outline-none"
+    />
 
-          <button
-            type="submit"
-            className="col-span-2 bg-primary-blue text-white font-semibold py-2 px-6 uppercase"
-          >
-            SEARCH
-          </button>
-        </form>
-      </section>
+    <button
+      type="submit"
+      className="col-span-2 bg-primary-blue text-white font-semibold py-2 px-6 uppercase"
+    >
+      SEARCH
+    </button>
+  </form>
+</section>
 
       {/* Results */}
       {hasParams && searchSuccessful && (
