@@ -93,14 +93,14 @@ const YachtCard = ({ yacht }) => {
           <div className="absolute grid grid-cols-3 items-center gap-0 rounded-lg center-absolute -bottom-5 left-0 right-0 px-3">
             <div className="bg-[#f1f1f1] text-primary-grey p-1 xl:p-2 flex flex-col items-center rounded-l-lg">
               <span className="text-xs">Model:</span>
-              <span className="font-bold text-sm text-black">{yacht.model}</span>
+              <span className="font-bold text-xs md:text-sm text-black">{yacht.model}</span>
               </div>
               <div className="bg-[#f1f1f1] text-primary-grey p-1 xl:p-2 flex flex-col items-center">
-                <span className="text-xs">Length:</span><span className="font-bold text-sm text-black">{yacht.length}</span>
+                <span className="text-xs">Length:</span><span className="font-bold text-xs md:text-sm text-black">{yacht.length}</span>
                 </div>
                 <div className="bg-[#f1f1f1] text-primary-grey p-1 xl:p-2 flex flex-col items-center rounded-r-lg">
                   <span className="text-xs">Guests:</span>
-          <span className="font-bold text-sm text-black">{yacht.guests}</span>
+          <span className="font-bold text-xs md:text-sm text-black">{yacht.guests}</span>
          
           </div>
           </div>
@@ -114,12 +114,12 @@ const YachtCard = ({ yacht }) => {
 						}
         </div>
       <div className="flex flex-row justify-between items-center z-20 border-t border-gray-400 pt-3  mt-5">
-        <div className="p-1 xl:p-2 flex flex-col text-left"><span className=" text-sm">Price per hour:</span>
+        <div className="p-1 xl:p-2 flex flex-col text-left"><span className=" text-xs md:text-sm">Price per hour:</span>
         <span>{yacht.id === 24 && (
             <p className="text-xs font-normal italic text-primary-grey">Starting from</p> )
                 }
         </span>        
-        <span className="font-bold text-lg lg:text-xl text-primary-red">AED {parseInt(yacht.price).toLocaleString()}</span>
+        <span className="font-bold text-md md:text-lg lg:text-xl text-primary-red">AED {parseInt(yacht.price).toLocaleString()}</span>
         </div>
         <BookNowButton fareharborId={yacht.fareharbor_id} />
       </div>

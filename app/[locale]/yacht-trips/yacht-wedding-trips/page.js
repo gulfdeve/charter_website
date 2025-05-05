@@ -23,7 +23,7 @@ const page = () => {
       />
 
       <div className="container mx-auto bg-white nav-space">
-        <div className="flex flex-col items-center justify-center py-12 lg:pt-14">
+        <div className="flex flex-col items-center justify-center pb-12 lg:pt-5">
           <h1 className=" text-primary-blue text-center font-bold text-lg md:text-3xl lg:text-4xl pb-4">
             YACHT WEDDING CHARTER
           </h1>
@@ -36,65 +36,66 @@ const page = () => {
             data?.products?.map((product) => (
               <div
                 key={product.id}
-                className="flex flex-col justify-stretch bg-white rounded-md shadow-custom h-auto"
+                className="relative flex flex-col md:p-5 p-3 rounded-lg shadow-custom"
               >
+                <div className="relative">
                 <Link href={`/yacht-rentals/${product.slug}`}>
-                  <img
-                    src={`https://www.centauruscharter.net/product/images/${product.image}`}
-                    className="rounded-t-md w-full object-contain"
-                    alt={product.translations?.[locale].name_of_yacht}
-                  />
-                </Link>
-                <div className="flex flex-col justify-between flex-grow p-4">
-                  <div className="flex flex-col">
-                    <Link href={`/yacht-rentals/${product.slug}`}>
-                      <h2 className="text-primary-blue text-base sm:text-xl font-bold xl:pt-6 md:pb-2 hover:text-blue-600 transition-all duration-300 cursor-pointer py-1 md:py-0">
+                      <h2 className="text-primary-blue text-xl font-bold pb-4 hover:text-blue-600 transition-all duration-300 cursor-pointer">
                         {product.translations?.[locale]?.name_of_yacht}
                       </h2>
                     </Link>
-                    <p className="text-xs s:text-sm md:text-xs lg:text-sm text-primary-blue">
-                      Model:
-                      <span className=" text-primary-blue font-bold">
-                        {" "}
-                        {product.translations?.[locale]?.model}
-                      </span>{" "}
-                      | Length:
-                      <span className=" text-primary-blue font-bold">
-                        {" "}
-                        {product.translations?.[locale]?.size}
-                      </span>{" "}
-                      | Guests:
-                      <span className=" text-primary-blue font-bold">
-                        {" "}
-                        {product.translations?.[locale]?.guests}
-                      </span>
-                    </p>
-                    <p className=" text-primary-blue font-bold text-base sm:text-xl pt-4 pb-2">
-                      AED {product.per_hour_price}{" "}
-                      <span className=" text-primary-blue">Per Hour</span>
-                    </p>
+                <Link href={`/yacht-rentals/${product.slug}`}>
+                  <img
+                    src={`https://www.centauruscharter.net/product/images/${product.image}`}
+                    className="rounded-lg w-full object-contain"
+                    alt={product.translations?.[locale].name_of_yacht}
+                  />
+                </Link>
+                <div className="absolute grid grid-cols-3 items-center gap-0 rounded-lg center-absolute -bottom-5 left-0 right-0 px-3">
+                  <div className="bg-[#f1f1f1] text-primary-grey p-1 xl:p-2 flex flex-col items-center rounded-l-lg">
+                    <span className="text-xs">Model:</span>
+                    <span className="font-bold text-xs md:text-sm text-black">{product.translations?.[locale]?.model}</span>
                   </div>
-
+                  <div className="bg-[#f1f1f1] text-primary-grey p-1 xl:p-2 flex flex-col items-center">
+                    <span className="text-xs">Length:</span>
+                    <span className="font-bold text-xs md:text-sm text-black">{product.translations?.[locale]?.size}</span>
+                  </div>
+                  <div className="bg-[#f1f1f1] text-primary-grey p-1 xl:p-2 flex flex-col items-center rounded-r-lg">
+                    <span className="text-xs">Guests:</span>
+                    <span className="font-bold text-xs md:text-sm text-black">{product.translations?.[locale]?.guests}</span>
+                  </div>
+                </div>
+                </div>
+                <div className="flex flex-col flex-grow justify-end py-4">
+                  <div className=" mt-5">{product.id === 24 && (
+                        <p className="text-xs font-normal italic text-primary-grey">Poseidon 118ft Trips: An Add on of AED 1000 per hour will be added for every additional 10 pax where the occupancy surpasses the 40 passengers.
+                        </p>
+                        )
+                      }
+                  </div>
+                <div className="flex flex-row justify-between items-center z-20 border-t border-gray-400 pt-3  mt-5">
+                  <div className="p-1 xl:p-2 flex flex-col text-left"><span className=" text-xs md:text-sm">Price per hour:</span>
+                  <span>{product.id === 24 && (
+                      <p className="text-xs font-normal italic text-primary-grey">Starting from</p> )
+                          }
+                  </span>        
+                  <span className="font-bold text-md md:text-lg lg:text-xl text-primary-red">AED {product.per_hour_price}</span>
+                  </div>
                   <a
                     href={`https://fareharbor.com/embeds/book/centauruscharter/items/${
                       product.fareharbor_id
                     }/?full-items=yes&flow=645487&back=${encodeURIComponent(
                       "http://example.com"
                     )}`}
-                    className="flex-row items-center justify-center text-center py-2 w-full md:py-2 md:px-4 rounded-md bg-primary-yellow text-primary-blue hover:bg-primary-blue hover:text-primary-yellow font-bold text-base md:text-sm xl:text-lg transition-all duration-300"
+                    className="blue-solid-button"
                   >
                     Book Now
                   </a>
                 </div>
+              
+                </div>
               </div>
             ))}
-        </div>
-        <div>
-          <p className="text-xs  text-gray-400 xl:px-44 px-2 pt-2">
-            *POSEIDON 118FT TRIPS: An Add on of AED 1000 per hour will be added
-            for every additional 10 pax where the occupancy surpasses the 50
-            passengers
-          </p>
         </div>
         <div className="mt-10">
           <div className="flex flex-col  lg:flex-row-reverse items-center justify-center lg:justify-start lg:gap-0  rounded-lg bg-primary-blue overflow-hidden ">
@@ -105,36 +106,36 @@ const page = () => {
               />
             </div>
             <div className="w-full lg:w-1/2 flex flex-col items-center lg:rounded-r-xl lg:items-start justify-center text-center lg:text-left lg:px-16 px-6 py-5">
-              <h2 className=" text-white font-bold text-2xl 2xl:text-4xl pt-5">
+              <h2 className=" text-white font-bold text-2xl pt-5">
                 Let Us Make Your Dream Wedding Come True
               </h2>
-              <p className=" text-white 2xl:text-2xl py-2 pb-5">
+              <p className=" text-white text-xl pt-2 pb-8">
                 An unforgettable journey, turning your wedding dreams into
                 reality. Our yacht wedding charter redefines romance, offering
                 an extraordinary backdrop for your special day.
               </p>
-              <button className="flex items-center justify-center gap-2 px-7 py-3 bg-primary-blue text-primary-yellow border border-primary-yellow-dark   font-bold rounded-md hover:bg-primary-blue-2 transition">
+              <button className="blue-solid-button">
                 INQUIRE
               </button>
             </div>
           </div>
         </div>
         <div className="md:block hidden">
-          <div className="flex items-center justify-center w-full my-6 xl:px-36 lg:px-20 ">
+          <div className="flex items-center justify-center w-full my-6 xl:px-36 lg:px-20 mt-20">
             <hr className="flex-grow border-primary-yellow-dark" />
-            <span className="px-4 text-2xl 2xl:text-5xl font-semibold  text-black">
+            <span className="font-Montserrat px-4 text-2xl lg:text-3xl font-semibold  text-black">
               CUSTOMIZED YOUR WEDDING
             </span>
             <hr className="flex-grow border-primary-yellow-dark " />
           </div>
-          <p className=" text-black text-md 2xl:text-2xl  pb-5 xl:px-36 lg:px-20 md:px-16 text-center">
+          <p className=" text-primary-grey text-base pb-5 xl:px-36 lg:px-20 md:px-16 text-center">
             Tailor your celebration to perfection with our customizable yacht
             wedding packages. From intimate ceremonies to grand affairs, our
             expert team ensures every detail reflects your unique love story,
             creating a day that's truly yours.
           </p>
         </div>
-        <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-5 gap-5 ">
+        <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-5 gap-5 mt-10">
           <div>
             <img className="rounded-t-lg" src="/BBQ.webp" />
             <p className="bg-primary-blue-2 text-primary-yellow text-center  textsm  font-bold p-2 rounded-b-lg md:px-10 lg:px-0 ">
@@ -167,14 +168,14 @@ const page = () => {
           </div>
         </div>
         <div className="md:block hidden">
-          <div className="flex items-center justify-center w-full my-6 xl:px-36 lg:px-20 ">
+          <div className="flex items-center justify-center w-full my-6 xl:px-36 lg:px-20 mt-20 ">
             <hr className="flex-grow border-primary-yellow-dark" />
-            <span className="px-4 text-2xl 2xl:text-5xl font-semibold  text-black">
+            <span className="font-Montserrat px-4 text-2xl lg:text-3xl font-semibold  text-black">
               YACHT MARRIAGE PROPOSAL
             </span>
             <hr className="flex-grow border-primary-yellow-dark " />
           </div>
-          <p className=" text-black text-md 2xl:text-2xl  pb-5 xl:px-36 lg:px-20 md:px-16 text-center">
+          <p className=" text-primary-grey text-base pb-5 xl:px-36 lg:px-20 md:px-16 text-center">
             Elevate your proposal to new heights with our yacht marriage
             proposal experiences. Sail into the sunset with your beloved,
             surrounded by the beauty of the open sea, creating a moment that's
@@ -223,14 +224,14 @@ const page = () => {
           </div>
         </div>
         <div className="md:block hidden">
-          <div className="flex items-center justify-center w-full my-6 xl:px-36 lg:px-20 ">
+          <div className="flex items-center justify-center w-full my-6 xl:px-36 lg:px-20 mt-20">
             <hr className="flex-grow border-primary-yellow-dark" />
-            <span className="px-4 text-2xl 2xl:text-5xl font-semibold  text-black">
+            <span className="font-Montserrat px-4 text-2xl lg:text-3xl font-semibold  text-black">
               EXPERIENCE OF A LIFETIME
             </span>
             <hr className="flex-grow border-primary-yellow-dark " />
           </div>
-          <p className=" text-black text-md 2xl:text-2xl  pb-5 xl:px-36 lg:px-20 md:px-16 text-center">
+          <p className=" text-primary-grey text-base pb-5 xl:px-36 lg:px-20 md:px-16 text-center">
             Create lasting memories with our yacht charter for weddings. Our
             photography and videography services capture every breathtaking
             moment against the stunning backdrop of the open sea, ensuring your
