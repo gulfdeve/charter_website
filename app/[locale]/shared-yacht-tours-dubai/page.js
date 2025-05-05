@@ -152,17 +152,17 @@ const Page = () => {
                   className="rounded-lg w-full"
                 />
                 {/* Overlay Container */}
-                <div className="absolute top-2 shadow-sm">
+                <div className="absolute top-2">
                   {tour.yellowHeadline && (
-                    <div className="bg-primary-yellow px-3 py-1 rounded-sm">
-                      <span className="text-xl font-bold uppercase text-primary-blue">
+                    <div className="gradient-custom-2 px-3 py-1 rounded-sm">
+                      <span className="text-xl font-bold uppercase text-white">
                         {tour.yellowHeadline}
                       </span>
                     </div>
                   )}
                   {tour.blueHeadline && (
-                    <div className="bg-primary-blue px-3 py-1 rounded-sm">
-                      <p className="text-sm uppercase text-primary-yellow font-bold">
+                    <div className="bg-primary-yellow-light px-3 py-1 rounded-sm">
+                      <p className="text-sm uppercase text-primary-blue-2 font-bold">
                         {tour.blueHeadline}
                       </p>
                     </div>
@@ -184,7 +184,7 @@ const Page = () => {
                 </h3>
                 <button
                   onClick={() => toggleDetails(index)}
-                  className="bg-gray-200 text-primary-blue-2 w-full py-2 rounded font-bold text-sm hover:bg-gray-200 transition-colors duration-300 mb-2"
+                  className="bg-gray-100 text-gray-400 w-full py-2 rounded font-semibold text-sm hover:bg-gray-200 transition-colors duration-300 mb-2"
                 >
                   {showDetails[index] ? "Hide Details" : "Show Details"}
                 </button>
@@ -198,25 +198,25 @@ const Page = () => {
                 )}
 
                 <div className="space-y-3">
-                  <div className="flex flex-row gap-2 items-center ml-1.5 mb-4">
-                    <FaClock size={25} className="text-primary-blue-2" />
-                    <p className="text-primary-blue-2 text-sm">
+                  <div className="flex flex-row gap-3 items-center ml-1 mb-4">
+                    <FaClock size={25} className="text-primary-yellow-light" />
+                    <p className="text-primary-grey text-sm">
                       <span className="font-bold">Cruising Time:</span>{" "}
                       {tour.cruisingTime}
                     </p>
                   </div>
 
                   <div className="flex flex-row gap-2 items-center mb-4">
-                    <IoMan size={35} className="text-primary-blue-2" />
-                    <p className="text-primary-blue-2 text-sm">
+                    <IoMan size={32} className="text-primary-yellow-light" />
+                    <p className="text-primary-grey text-sm">
                       <span className="font-bold">Adult (12+):</span>{" "}
                       {tour.adultPrice}
                     </p>
                   </div>
 
-                  <div className="flex flex-row gap-2 items-center ml-0.5 mb-3">
-                    <FaChild size={30} className="text-primary-blue-2" />
-                    <p className="text-primary-blue-2 text-sm">
+                  <div className="flex flex-row gap-2 items-center mb-3">
+                    <FaChild size={30} className="text-primary-yellow-light" />
+                    <p className="text-primary-grey text-sm">
                       <span className="font-bold">Child (4-11):</span>{" "}
                       {tour.childPrice}
                     </p>
@@ -235,20 +235,20 @@ const Page = () => {
                   >
                     <div className="space-y-4">
                       <div className="flex flex-row gap-2 items-center">
-                        <MdOutlineLocalDining className="text-primary-blue-2 text-[6rem] sm:text-[3rem] lg:text-[6rem]" />
-                        <p className="text-primary-blue-2 text-sm">
+                        <MdOutlineLocalDining className="text-primary-yellow-light text-[6rem] sm:text-[2.2rem] lg:text-[4rem]" />
+                        <p className="text-primary-grey text-sm">
                           <span className="font-bold">BBQ:</span>{" "}
                           {/* {tour.liveBBQ} */}
 						  <span dangerouslySetInnerHTML={{ __html: tour.liveBBQ }} />
                         </p>
                       </div>
 
-                      <div className="flex flex-row gap-2.5 items-center ml-0.5">
+                      <div className="flex flex-row gap-2.5 items-center">
                         <FaCameraRetro
-                          size={35}
-                          className="text-primary-blue-2"
+                          size={30}
+                          className="text-primary-yellow-light"
                         />
-                        <p className="text-primary-blue-2 text-sm">
+                        <p className="text-primary-grey text-sm">
                           <span className="font-bold">Cruising Route:</span>{" "}
                           {tour.cruisingRoute}
                         </p>
@@ -257,10 +257,10 @@ const Page = () => {
                       <div className="flex flex-row gap-2 items-center">
                         <IoLocationSharp
                           size={32}
-                          className="text-primary-blue-2"
+                          className="text-primary-yellow-light"
                         />
-                        <p className="text-primary-blue-2 text-sm">
-                          <span className="font-bold text-primary-blue-2">
+                        <p className="text-primary-grey text-sm">
+                          <span className="font-bold text-primary-grey">
                             Departure Point:
                           </span>{" "}
                           {tour.departurePoint}
@@ -274,7 +274,7 @@ const Page = () => {
               {/* Book Now Button - Always fully visible */}
               <a
                 href={tour.fareharborLink}
-                className="yellow-solid-button w-full block text-center"
+                className="blue-solid-button w-full block text-center"
               >
                 Book Now
               </a>
@@ -342,7 +342,7 @@ const Page = () => {
   <h2 className="text-base text-primary-blue-2 font-bold text-center">
     TERMS & CONDITIONS
   </h2>
-  <ul className="max-w-2xl mx-auto list-disc text-primary-blue-4 text-sm pt-5 space-y-2">
+  <ul className="max-w-2xl mx-auto list-disc text-sm pt-5 space-y-2">
     <li className="">
       Rates do not include alcohol. An alcohol menu is available for
       purchase on board.
@@ -446,29 +446,6 @@ const Page = () => {
         </p>
       </div>
     </section>
-        {/* CTA Section */}
-
-        <div className="py-10 w-full container mx-auto">
-          <div className="flex flex-col md:flex-row rounded-xl items-center  gap-5 justify-center  md:justify-between bg-primary-blue p-5">
-            <p className="text-white  text-center md:text-left font-bold bg-primary-blue text-xl rounded ">
-              Enjoy a luxurious shared yacht adventure!
-            </p>
-            <div className="flex flex-col md:flex-row md:gap-10 gap-5">
-              <a
-                target="_blank"
-                className="blue-lined-button"
-                href="https://wa.link/vpunoz"
-              >
-                <FaWhatsapp size={20} />
-                WHATSAPP US
-              </a>
-              <button onClick={handlequote} className="blue-lined-button">
-                GET A QUOTE
-              </button>
-            </div>
-          </div>
-        </div>
-
         <Modal2
           isModalOpen={isModalOpen}
           closeModal={closeModal}
