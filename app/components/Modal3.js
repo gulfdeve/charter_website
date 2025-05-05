@@ -68,24 +68,24 @@ const Modal3 = forwardRef(
         JSON.parse(localStorage.getItem("selectedDates")) || [];
 
       const vesselDetails = selectedVessel
-        ? `\nVessel Details:\nName: ${selectedVessel.name || "N/A"}\nBuild: ${
+        ? `<br>Vessel Details:<br>Name: ${selectedVessel.name || "N/A"}<br>Build: ${
             selectedVessel.make || "N/A"
-          }\nLength: ${selectedVessel.length || "N/A"}\nYear: ${
+          }<br>Length: ${selectedVessel.length || "N/A"}<br>Year: ${
             selectedVessel.builtYear || "N/A"
-          }\nPrice: ${selectedVessel.price || "N/A"}\nCabins: ${
+          }<br>Price: ${selectedVessel.price || "N/A"}<br>Cabins: ${
             selectedVessel.cabins || "N/A"
-          }\nGuests: ${selectedVessel.sleeps || "N/A"}`
+          }<br>Guests: ${selectedVessel.sleeps || "N/A"}`
         : "";
 
       const vesselIdText =
-        idName && idValue ? `\nVessel ID (${idName}): ${idValue}` : "";
+        idName && idValue ? `<br>Vessel ID (${idName}): ${idValue}` : "";
 
       const rentalDatesText =
         selectedDates.length > 0
-          ? `\nRental Dates: ${selectedDates.join(", ")}`
+          ? `<br>Rental Dates: ${selectedDates.join(", ")}`
           : "";
 
-      const fullMessagePayload = `${message}\n\n${vesselDetails}${vesselIdText}${rentalDatesText}`;
+      const fullMessagePayload = `Comments: ${message}<br><br>${vesselDetails}${vesselIdText}${rentalDatesText}`;
       console.log("Full message payload:", fullMessagePayload);
       const queryParams = new URLSearchParams({
         name: fullName,

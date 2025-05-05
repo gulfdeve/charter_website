@@ -62,13 +62,13 @@ const Modal2 = ({ isModalOpen, closeModal, idName, idValue, selectedVessel }) =>
     let enquiryComments = message;
     if (selectedVessel) {
       const { name, build, cabins, length, guests, year, price } = selectedVessel;
-      enquiryComments += `\n\nYacht Details:\n` +
-        `Name: ${name || 'N/A'}\n` +
-        `Build: ${build || 'N/A'}\n` +
-        `Cabins: ${cabins || 'N/A'}\n` +
-        `Length: ${length || 'N/A'}\n` +
-        `Guests: ${guests || 'N/A'}\n` +
-        `Year: ${year || 'N/A'}\n` +
+      enquiryComments += `<br><br>Yacht Details:<br>` +
+        `Name: ${name || 'N/A'}<br>` +
+        `Build: ${build || 'N/A'}<br>` +
+        `Cabins: ${cabins || 'N/A'}<br>` +
+        `Length: ${length || 'N/A'}<br>` +
+        `Guests: ${guests || 'N/A'}<br>` +
+        `Year: ${year || 'N/A'}<br>` +
         `Price: ${price || 'N/A'}`;
     }
 
