@@ -35,7 +35,7 @@ const YachtCard = ({ yacht }) => {
       {/* Yacht Details */}
       <div className="flex flex-col items-start">
           <Link href={`yacht-rentals/${yacht.slug}`}>
-            <h2 className="text-primary-blue text-xl font-bold pb-4 hover:text-blue-600 transition-all duration-300 cursor-pointer">
+            <h2 className="text-primary-blue text-xl font-bold pb-4 hover:text-primary-blue-2 transition-all duration-300 cursor-pointer">
               {yacht.title}
             </h2>
           </Link>

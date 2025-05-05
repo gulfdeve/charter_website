@@ -40,7 +40,7 @@ const page = () => {
               >
                 <div className="relative">
                 <Link href={`/yacht-rentals/${product.slug}`}>
-                      <h2 className="text-primary-blue text-xl font-bold pb-4 hover:text-blue-600 transition-all duration-300 cursor-pointer">
+                      <h2 className="text-primary-blue text-xl font-bold pb-4 hover:text-primary-blue-2 transition-all duration-300 cursor-pointer">
                         {product.translations?.[locale]?.name_of_yacht}
                       </h2>
                     </Link>

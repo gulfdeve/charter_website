@@ -86,7 +86,7 @@ export default function Home() {
                 >
                   
                   <Link  href={`/yacht-rentals/${product.slug}`}>
-                  <h3 className="md:text-lg  font-bold">
+                  <h3 className="md:text-lg  font-bold hover:text-primary-blue-2 transition-all duration-300 cursor-pointer">
                     {product.translations?.[locale].name_of_yacht}
                   </h3>
                   </Link>
