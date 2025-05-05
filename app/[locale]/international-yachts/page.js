@@ -271,16 +271,50 @@ export default async function VesselsPage({ searchParams }) {
       </div>
 
       {/* Search Form */}
-	  <section className="max-w-6xl mx-auto px-4 pb-8">
+{/* Search Form */}
+<section className="max-w-6xl mx-auto px-4 pb-8">
+  {/* Add a client-side JavaScript function to handle the form submission */}
+  {/* This will run when the form is submitted */}
+  <script dangerouslySetInnerHTML={{ __html: `
+    function handleFormSubmit(event) {
+      event.preventDefault();
+      
+      // Get the form element
+      const form = event.target;
+      
+      // Build URL with current pathname
+      const url = new URL(window.location.pathname, window.location.origin);
+      
+      // Add all form fields to URL parameters, including empty ones
+      const formData = new FormData(form);
+      for (const [key, value] of formData.entries()) {
+        url.searchParams.append(key, value);
+      }
+      
+      // Add default required parameters if not present
+      if (!url.searchParams.has('currency')) {
+        url.searchParams.append('currency', 'USD');
+      }
+      if (!url.searchParams.has('priceMin')) {
+        url.searchParams.append('priceMin', '1000');
+      }
+      if (!url.searchParams.has('priceMax')) {
+        url.searchParams.append('priceMax', '5000');
+      }
+      
+      // Navigate to the new URL
+      window.location.href = url.toString();
+    }
+  `}} />
+
   <form
-    action={`/${searchParams.locale || 'en'}/international-yachts`}
-    method="GET"
+    onSubmit="handleFormSubmit(event); return false;"
     className="grid grid-cols-1 md:grid-cols-5 gap-4 items-end"
   >
-    {/* Include locale as a hidden field to ensure it's passed along */}
-    {searchParams.locale && (
-      <input type="hidden" name="locale" value={searchParams.locale} />
-    )}
+    {/* Always include these hidden fields for the required parameters */}
+    <input type="hidden" name="currency" value="USD" />
+    <input type="hidden" name="priceMin" value="1000" />
+    <input type="hidden" name="priceMax" value="5000" />
     
     <input
       name="name"
