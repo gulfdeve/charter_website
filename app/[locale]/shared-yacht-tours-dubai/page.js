@@ -388,43 +388,87 @@ const Page = () => {
         </div>
     
         {/* Split Section with Image + Text */}
-        <div className="flex flex-col md:flex-row-reverse items-center justify-center">
-          <div className="hidden lg:block">
-            <img
-              src="/royal.webp"
-              alt="Shared Yacht Tour"
-              className="object-cover object-center xl:w-[250rem] sm:w-[170rem] md:h-[670px] xl:h-[650px] lg:h-[560px]"
-            />
-          </div>
-          <div className="flex flex-col items-center sm:items-start sm:justify-start justify-center bg-primary-blue-2 px-5 xl:p-32 xl:py-12 py-5 md:h-[670px] xl:h-[650px] lg:h-[560px]">
-            <p className="text-white text-center sm:text-left text-md sm:text-sm xl:text-md py-10">
-              Experience Dubai's coastline in an entirely new light with our
-              exclusive shared yacht tours. Uniting the thrill of luxury
-              yachting with the ease of shared experiences, we offer you the
-              chance to enjoy the opulence of Dubai's waters without the
-              extravagant cost of chartering an entire yacht. Revel in the
-              stunning vistas, relish in the flavors of live BBQ, and savor
-              complimentary refreshments - all while forging unforgettable
-              memories with fellow adventurers.
+        <section
+      className="
+        flex flex-col md:flex-row-reverse 
+        items-center justify-center 
+        h-[750px] sm:h-[520px] md:h-[620px] lg:h-[560px] xl:h-[650px]
+        overflow-hidden
+      "
+    >
+      {/* Yacht image (only on large screens) */}
+      <div className="hidden lg:block w-full h-full">
+        <img
+          src="/royal.webp"
+          alt="Shared Yacht Tour"
+          className="object-cover object-center w-full h-full"
+        />
+      </div>
+
+      {/* Text content */}
+      <div
+        className="
+          flex flex-col 
+          items-center sm:items-start 
+          justify-center 
+          w-full h-full 
+          bg-primary-blue-2 
+          px-5 py-5 
+          xl:px-32 xl:py-12
+        "
+      >
+        <p className="text-white text-center sm:text-left text-md sm:text-sm xl:text-md py-10">
+          Experience Dubai's coastline in an entirely new light with our
+          exclusive shared yacht tours. Uniting the thrill of luxury yachting
+          with the ease of shared experiences, we offer you the chance to enjoy
+          the opulence of Dubai's waters without the extravagant cost of
+          chartering an entire yacht. Revel in the stunning vistas, relish in
+          the flavors of live BBQ, and savor complimentary refreshments—all
+          while forging unforgettable memories with fellow adventurers.
+        </p>
+
+        <h2 className="text-white text-center">Affordable Luxury</h2>
+        <p className="text-white text-center sm:text-left text-md sm:text-sm xl:text-md pb-10">
+          Elevate your Dubai escapade without emptying your wallet. Our shared
+          yacht tours are meticulously crafted to provide a taste of the high
+          life at a fraction of the price. Share the journey, share the
+          splendor, and share the savings as you immerse yourself in the lap of
+          affordable luxury.
+        </p>
+
+        <h2 className="text-white text-center">Unmatched Amenities</h2>
+        <p className="text-white text-center sm:text-left text-md sm:text-sm xl:text-md pb-10">
+          Our commitment to your enjoyment knows no bounds. Indulge in the
+          expertise of our onboard culinary artists as they create a live BBQ
+          spectacle right before your eyes. Additionally, delight in our
+          selection of complimentary delicacies and beverages, ensuring that
+          your voyage is not just luxurious, but delicious too.
+        </p>
+      </div>
+    </section>
+        {/* CTA Section */}
+
+        <div className="py-10 w-full container mx-auto">
+          <div className="flex flex-col md:flex-row rounded-xl items-center  gap-5 justify-center  md:justify-between bg-primary-blue p-5">
+            <p className="text-white  text-center md:text-left font-bold bg-primary-blue text-xl rounded ">
+              Enjoy a luxurious shared yacht adventure!
             </p>
-            <h2 className="text-white text-center">Affordable Luxury</h2>
-            <p className="text-white text-center sm:text-left text-md sm:text-sm xl:text-md pb-10">
-              Elevate your Dubai escapade without emptying your wallet. Our
-              shared yacht tours are meticulously crafted to provide a taste of
-              the high life at a fraction of the price. Share the journey, share
-              the splendor, and share the savings as you immerse yourself in the
-              lap of affordable luxury.
-            </p>
-            <h2 className="text-white text-center">Unmatched Amenities</h2>
-            <p className="text-white text-center sm:text-left text-md sm:text-sm xl:text-md pb-10">
-              Our commitment to your enjoyment knows no bounds. Indulge in the
-              expertise of our onboard culinary artists as they create a live
-              BBQ spectacle right before your eyes. Additionally, delight in our
-              selection of complimentary delicacies and beverages, ensuring that
-              your voyage is not just luxurious, but delicious too.
-            </p>
+            <div className="flex flex-col md:flex-row md:gap-10 gap-5">
+              <a
+                target="_blank"
+                className="blue-lined-button"
+                href="https://wa.link/vpunoz"
+              >
+                <FaWhatsapp size={20} />
+                WHATSAPP US
+              </a>
+              <button onClick={handlequote} className="blue-lined-button">
+                GET A QUOTE
+              </button>
+            </div>
           </div>
         </div>
+
         <Modal2
           isModalOpen={isModalOpen}
           closeModal={closeModal}

@@ -6,7 +6,7 @@ import {
   parsePhoneNumberFromString,
 } from "libphonenumber-js";
 
-const Modal2 = ({ isModalOpen, closeModal, idName, idValue }) => {
+const Modal2 = ({ isModalOpen, closeModal, idName, idValue, selectedVessel }) => {
   if (!isModalOpen) return null;
 
   const [fullName, setFullName] = useState("");
@@ -58,12 +58,26 @@ const Modal2 = ({ isModalOpen, closeModal, idName, idValue }) => {
     e.preventDefault();
     if (!validateForm()) return;
 
+    // Build enquiry comments, including yacht details if provided
+    let enquiryComments = message;
+    if (selectedVessel) {
+      const { name, build, cabins, length, guests, year, price } = selectedVessel;
+      enquiryComments += `\n\nYacht Details:\n` +
+        `Name: ${name || 'N/A'}\n` +
+        `Build: ${build || 'N/A'}\n` +
+        `Cabins: ${cabins || 'N/A'}\n` +
+        `Length: ${length || 'N/A'}\n` +
+        `Guests: ${guests || 'N/A'}\n` +
+        `Year: ${year || 'N/A'}\n` +
+        `Price: ${price || 'N/A'}`;
+    }
+
     try {
       const queryParams = new URLSearchParams({
         name: fullName,
         phone: phoneNumber,
         email,
-        comments: message,
+        comments: enquiryComments,
       });
       queryParams.set(idName, idValue);
 
@@ -75,6 +89,8 @@ const Modal2 = ({ isModalOpen, closeModal, idName, idValue }) => {
 
       const response = await fetch(url, { method: "POST" });
       const data = await response.json();
+      console.log('Submitting enquiry with params:', queryParams.toString());
+
       console.log("API response:", data);
 
       if (response.ok) {
@@ -154,7 +170,6 @@ const Modal2 = ({ isModalOpen, closeModal, idName, idValue }) => {
                       return false;
                     }
                   }}
-                  //   defaultErrorMessage="Please enter a valid phone number"
                   inputStyle={{
                     width: "100%",
                     padding: "20px",

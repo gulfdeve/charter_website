@@ -65,12 +65,16 @@ export default function YachtDetails({
   const loc = locationMap[product.slug] || {};
 
   return (
-    <div className="flex flex-col lg:flex-row w-full items-start lg:justify-between py-3">
+    <div className="flex flex-col lg:flex-row w-full items-start  py-3 gap-10">
       <div className="flex flex-col lg:items-start w-full lg:justify-start lg:w-1/2">
         <h3 className="text-base text-black font-bold py-4">
           Yacht Specifications
         </h3>
         <table className="w-full text-sm text-left text-gray-900">
+        <colgroup>
+            <col className="w-2/5" />
+            <col className="w-3/5" />
+          </colgroup>
           <tbody>
             {yachtDetails.map((detail, index) => (
               <tr key={index} className="border-b border-gray-200">
@@ -80,7 +84,7 @@ export default function YachtDetails({
                 >
                   {detail.label}:
                 </th>
-                <td className="py-3 px-4">{detail.value}</td>
+                <td className="py-3 px-4 break-words">{detail.value}</td>
               </tr>
             ))}
           </tbody>
