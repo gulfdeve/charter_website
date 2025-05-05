@@ -3,15 +3,19 @@ import { NextResponse } from 'next/server';
 import jwt from 'jsonwebtoken';
 
 export async function GET(request) {
+  console.log('Starting Ankor proxy request...');
+  
   try {
     // Get search parameters from the request URL
     const { searchParams } = new URL(request.url);
+    console.log('Search params:', Object.fromEntries(searchParams.entries()));
     
     // Generate token
     const rawKey = process.env.ANKOR_PRIVATE_KEY;
     const keyId = process.env.ANKOR_KEY_ID || "jSZNvbnPK03KXEEo0-bJw4XPF1z68eW_OpHFW_9XvLY";
     
     if (!rawKey) {
+      console.error('ANKOR_PRIVATE_KEY is missing');
       return NextResponse.json({ 
         error: 'ANKOR_PRIVATE_KEY environment variable is missing'
       }, { status: 500 });
@@ -59,32 +63,51 @@ export async function GET(request) {
     
     // Build the Ankor API URL
     const ankorUrl = `https://api.ankor.io/website/search?${qp.toString()}`;
+    console.log('Making request to Ankor API:', ankorUrl);
     
-    // Make the request to Ankor API
-    const response = await fetch(ankorUrl, {
-      method: 'GET',
-      headers: {
-        'Accept': 'application/json',
-        'Authorization': `Bearer ${token}`
-      },
-      // Add a timeout using AbortController
-      signal: AbortSignal.timeout(15000) // 15 second timeout
-    });
+    // Create AbortController with timeout
+    const controller = new AbortController();
+    const timeoutId = setTimeout(() => controller.abort(), 25000); // 25 second timeout
     
-    // If the response is not ok, return the error
-    if (!response.ok) {
-      const errorText = await response.text();
-      return NextResponse.json({ 
-        error: `Ankor API Error: ${response.status} ${response.statusText}`,
-        details: errorText
-      }, { status: response.status });
+    try {
+      // Make the request to Ankor API
+      const response = await fetch(ankorUrl, {
+        method: 'GET',
+        headers: {
+          'Accept': 'application/json',
+          'Authorization': `Bearer ${token}`
+        },
+        signal: controller.signal
+      });
+      
+      clearTimeout(timeoutId);
+      
+      // If the response is not ok, return the error
+      if (!response.ok) {
+        const errorText = await response.text();
+        console.error('Ankor API error:', response.status, errorText);
+        return NextResponse.json({ 
+          error: `Ankor API Error: ${response.status} ${response.statusText}`,
+          details: errorText
+        }, { status: response.status });
+      }
+      
+      // Get the response JSON
+      const data = await response.json();
+      console.log('Successfully received data from Ankor API');
+      
+      // Return the response
+      return NextResponse.json(data);
+    } catch (fetchError) {
+      clearTimeout(timeoutId);
+      if (fetchError.name === 'AbortError') {
+        console.error('Request timed out');
+        return NextResponse.json({ 
+          error: 'Request timed out after 25 seconds'
+        }, { status: 504 });
+      }
+      throw fetchError;
     }
-    
-    // Get the response JSON
-    const data = await response.json();
-    
-    // Return the response
-    return NextResponse.json(data);
   } catch (error) {
     console.error('Ankor proxy error:', error);
     return NextResponse.json({ 

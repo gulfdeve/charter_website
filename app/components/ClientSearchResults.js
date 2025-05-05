@@ -59,31 +59,47 @@ export default function ClientSearchResults({ searchParams, hasParams }) {
       
       console.log("🛰️ Fetching data via proxy:", proxyUrl);
       
-      // Make the request to our proxy
-      const response = await fetch(proxyUrl);
+      // Create AbortController for timeout
+      const controller = new AbortController();
+      const timeoutId = setTimeout(() => controller.abort(), 30000); // 30 second timeout
       
-      setDebugInfo(prev => ({ 
-        ...prev, 
-        apiStatus: `${response.status} ${response.statusText}`,
-        fetchEndTime: new Date().toISOString()
-      }));
-      
-      // Handle error responses
-      if (!response.ok) {
-        const errorData = await response.json();
+      try {
+        // Make the request to our proxy
+        const response = await fetch(proxyUrl, {
+          signal: controller.signal
+        });
+        
+        clearTimeout(timeoutId);
+        
         setDebugInfo(prev => ({ 
           ...prev, 
-          apiDetails: errorData
+          apiStatus: `${response.status} ${response.statusText}`,
+          fetchEndTime: new Date().toISOString()
         }));
-        throw new Error(errorData.error || `API Error: ${response.statusText}`);
+        
+        // Handle error responses
+        if (!response.ok) {
+          const errorData = await response.json();
+          setDebugInfo(prev => ({ 
+            ...prev, 
+            apiDetails: errorData
+          }));
+          throw new Error(errorData.error || `API Error: ${response.statusText}`);
+        }
+        
+        // Parse the JSON response
+        const responseData = await response.json();
+        console.log("✅ API request successful!");
+        
+        // Update state with the data
+        setData(responseData);
+      } catch (fetchError) {
+        clearTimeout(timeoutId);
+        if (fetchError.name === 'AbortError') {
+          throw new Error('Request timed out after 30 seconds');
+        }
+        throw fetchError;
       }
-      
-      // Parse the JSON response
-      const responseData = await response.json();
-      console.log("✅ API request successful!");
-      
-      // Update state with the data
-      setData(responseData);
     } catch (err) {
       console.error("❌ Error fetching vessels:", err);
       setError(err.message || 'An unknown error occurred');
