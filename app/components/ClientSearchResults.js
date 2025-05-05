@@ -1,13 +1,15 @@
 'use client';
 
-import { useState, useEffect } from 'react';
-import SearchResultsClient from "@/app/components/SearchResultsClient"; // Your existing component
+import { useState, useEffect, useRef } from 'react';
+import SearchResultsClient from "@/app/components/SearchResultsClient";
 
-export default function ClientSearchResults({ searchParams, hasParams }) {
+export default function ClientSearchResults({ searchParams: initialSearchParams, hasParams: initialHasParams }) {
   // State for API data and loading status
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
+  const [searchParams, setSearchParams] = useState(initialSearchParams);
+  const [hasParams, setHasParams] = useState(initialHasParams);
   const [debugInfo, setDebugInfo] = useState({
     apiCalled: false,
     apiStatus: null,
@@ -15,12 +17,50 @@ export default function ClientSearchResults({ searchParams, hasParams }) {
     timestamp: new Date().toISOString()
   });
 
+  // Effect to handle form submission
+  useEffect(() => {
+    const form = document.getElementById('searchForm');
+    if (!form) return;
+
+    const handleSubmit = (e) => {
+      e.preventDefault();
+      setLoading(true);
+      
+      // Get form data
+      const formData = new FormData(form);
+      const params = {};
+      
+      // Convert FormData to object
+      for (const [key, value] of formData.entries()) {
+        if (value) {
+          params[key] = value;
+        }
+      }
+      
+      // Ensure required parameters
+      if (!params.currency) params.currency = 'USD';
+      if (!params.priceMin) params.priceMin = '1000';
+      if (!params.priceMax) params.priceMax = '5000';
+      
+      // Update search params and trigger search
+      setSearchParams(params);
+      setHasParams(true);
+      
+      // Update URL without page reload
+      const url = new URL(window.location.pathname, window.location.origin);
+      for (const [key, value] of Object.entries(params)) {
+        url.searchParams.set(key, value);
+      }
+      window.history.pushState({}, '', url.toString());
+    };
+
+    form.addEventListener('submit', handleSubmit);
+    return () => form.removeEventListener('submit', handleSubmit);
+  }, []);
+
   // Effect to fetch data when search parameters change
   useEffect(() => {
-    // Only run search if there are parameters
     if (!hasParams) return;
-    
-    // Call our fetch function
     fetchVessels();
   }, [searchParams, hasParams]);
 
@@ -118,12 +158,10 @@ export default function ClientSearchResults({ searchParams, hasParams }) {
 
   // Function to build page links
   const buildPageLink = (pageNum) => {
-    // take only string keys from searchParams, drop empty
     const entries = Object.entries(searchParams)
       .filter(([k, v]) => typeof v === "string" && v !== "")
       .map(([k, v]) => [k, v]);
 
-    // add/replace page
     const qp = new URLSearchParams(entries);
     qp.set("page", pageNum);
     return `?${qp.toString()}`;
@@ -131,6 +169,18 @@ export default function ClientSearchResults({ searchParams, hasParams }) {
 
   return (
     <>
+      {/* Loading Overlay */}
+      {loading && (
+        <div className="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center">
+          <div className="bg-white p-8 rounded-lg shadow-xl">
+            <div className="flex items-center space-x-4">
+              <div className="animate-spin rounded-full h-8 w-8 border-t-2 border-b-2 border-primary-blue"></div>
+              <div className="text-lg font-semibold">Searching for yachts...</div>
+            </div>
+          </div>
+        </div>
+      )}
+
       {/* API Diagnostics - show after search attempted */}
       {hasParams && (
         <div className="bg-gray-100 border border-gray-300 rounded-md p-4 m-4">
