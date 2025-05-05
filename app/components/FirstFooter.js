@@ -184,6 +184,12 @@ export default function FirstFooter() {
 				  location: "Dubai, United Arab Emirates",
 				  link: "https://maps.app.goo.gl/D7m68mfD2Xbc4pcv6"
 				},
+				{
+					address:
+					  "Marasi Bay Marina, E06 G gate - D-Marin - Marasi Dr - Bay Marina",
+					location: "Dubai, United Arab Emirates",
+					link: "https://maps.app.goo.gl/XVPwMjj8uWpwocsh6"
+				  },
 			  ].map((item, index) => (
 				<li key={index} className="flex items-start gap-3">
 				  <FaMapMarkerAlt className="w-5 h-5 flex-shrink-0 text-text-primary-white mt-1" />
