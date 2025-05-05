@@ -66,7 +66,7 @@ export default function OfferCarousel() {
                     </Link>
                   </h2>
                   {/* offer Heading */}
-                  <p className="text-primary-black font-bold text-xs pt-2 pb-4">
+                  <p className="text-primary-black font-semibold text-xs pt-2 pb-4">
                     {offer.translations[locale].heading_2}
                   </p>
                   {/* Separator */}
@@ -86,13 +86,13 @@ export default function OfferCarousel() {
                     <a
                       href={`${offer.whatsapp_url}`}
                       target="_blank"
-                      className="w-full flex justify-center py-2 px-4 text-base md:text-sm xl:text-lg font-bold tracking-wider uppercase text-primary-yellow bg-primary-blue hover:bg-primary-yellow hover:text-primary-blue hover:scale-105 rounded-md shadow transition duration-150 ease-in-out transform items-center"
+                      className="w-full flex justify-center py-2 px-4 text-base md:text-sm xl:text-lg font-bold tracking-wider uppercase text-white bg-primary-blue-2 hover:scale-105 rounded-md shadow transition duration-150 ease-in-out transform items-center"
                     >
                       <FaWhatsapp className="xs:text-xl text-lg mr-1" />WHATSAPP
                     </a>
                     <Link
                       href={`/offers/${offer.slug}`}
-                      className="w-full flex justify-center py-2 px-4 text-base md:text-sm xl:text-lg font-bold tracking-wider uppercase text-primary-yellow bg-primary-blue hover:bg-primary-yellow hover:text-primary-blue hover:scale-105 rounded-md shadow transition duration-150 ease-in-out transform items-center"
+                      className="w-full flex justify-center py-2 px-4 text-base md:text-sm xl:text-lg font-bold tracking-wider uppercase text-white bg-primary-blue-2 hover:scale-105 rounded-md shadow transition duration-150 ease-in-out transform items-center"
                     >
                       KNOW MORE
                     </Link>

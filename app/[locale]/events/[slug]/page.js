@@ -39,7 +39,7 @@ const page = ({ params }) => {
         {/* Container for title/heading with padding */}
         <div className="py-10 text-center text-primary-blue">
           <h1 className="">{event.translations?.[locale]?.title}</h1>
-          <h2 className="font-bold text-center">
+          <h2 className="font-Inter text-primary-blue-2 text-center">
             {event.translations?.[locale]?.heading_2}
           </h2>
         </div>
@@ -60,7 +60,7 @@ const page = ({ params }) => {
         {/* Container for the rest of the content with padding */}
         <div className="py-10">
           <div
-            className="text-base"
+            className="text-base font-Inter"
             dangerouslySetInnerHTML={{
               __html: event.translations?.[locale]?.description || "",
             }}

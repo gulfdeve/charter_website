@@ -48,21 +48,21 @@ export default async function OffersPage({ params }) {
                     priority={true}
                   />
                 </Link>
-                <div className="flex flex-col justify-start px-5 lg:px-5">
-                  <h2 className="text-primary-blue text-2xl font-bold pt-4">
+                <div className="flex flex-col justify-start px-5 lg:px-5 py-4">
+                  <h2 className="text-primary-blue text-2xl font-bold">
                     <Link href={`/offers/${offer.slug}`} className="uppercase">
                       {offer.translations[language].title}
                     </Link>
                   </h2>
-                  <p className="text-primary-black font-bold text-xs pt-2 pb-12">
+                  <p className="text-primary-black font-bold text-xs pt-2 pb-5">
                     {offer.note}
                   </p>
                   <p className="text-sm py-2 font-bold">
                     *SUBJECT TO AVAILABILITY{" "}
                   </p>
-                  <div className="bg-primary-black w-full h-[0.05rem]"></div>
+                  <div className="bg-gray-300 w-full h-[0.05rem] mb-4"></div>
                   <div className="flex flex-row items-center justify-between">
-                    <div className="flex flex-col items-start justify-start py-10">
+                    <div className="flex flex-col items-start justify-start py-5 mb-4">
                       <p className="text-primary-black font-bold text-sm xl:text-lg">
                         {t('offers.validity-until')}:
                         <br />
