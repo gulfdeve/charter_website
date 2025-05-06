@@ -91,7 +91,7 @@ const Route = ({ product, slug, header_whatsapp_url }) => {
                     <li key={index}>{point}</li>
                   ))}
                 </ul> */}
-				<ul className="text-left text-base py-5 px-10 list-disc font-bold uppercase">
+				<ul className="text-left text-primary-blue text-base py-5 px-10 list-disc font-bold uppercase">
   {route.points.map((point, index) => (
     <li key={index} dangerouslySetInnerHTML={{ __html: point }}></li>
   ))}

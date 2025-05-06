@@ -4,6 +4,10 @@ import Videosharedtours from "../../../components/Video-sharedtours";
 import { FaWhatsapp } from "react-icons/fa";
 import Modal2 from "@/app/components/Modal2";
 import VideoLocal from "@/app/components/VideoLocal";
+import { FaUser } from "react-icons/fa";
+import { IoIosPricetag } from "react-icons/io";
+import { RiDiscountPercentFill } from "react-icons/ri";
+import { FiArrowRight } from "react-icons/fi";
 const Page = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
@@ -85,27 +89,65 @@ const Page = () => {
           </p>
         </div>
         <div className="py-6">
-          <div className="overflow-x-auto">
+          <div className="block lg:hidden overflow-x-auto">
+                  <div className="grid grid-cols-1 md:grid-cols-2 items-center justify-center gap-5 ">
+                    {yachts.map((yacht, index) => (
+                      <div key={index} className="w-full border-2 rounded-lg border-gray-300 p-4">
+                        <h2 className=" font-bold mb-4">{yacht.name}</h2>
+                        <div className="font-Inter">
+                        <div className="grid grid-cols-1 s:grid-cols-2 md:grid-cols-1 gap-x-4">
+                        <div className="flex flex-col mb-4">
+                          <div className="flex"><IoIosPricetag size={20} className="mr-3 mt-1 text-primary-blue-light-2"/>
+                            <p className="flex flex-col text-sm text-primary-grey">Regular Rate/Hour:
+                          <span className=" font-semibold text-base text-black mt-2">{yacht.ratePerHour}</span></p></div>
+                        </div>
+                        <div className="flex flex-col mb-4">
+                          <div className="flex"><FaUser size={20} className="mr-3 mt-1 text-primary-blue-light-2"/>
+                            <p className="flex flex-col text-sm text-primary-grey">Capacity:
+                          <span className=" font-semibold text-base text-black mt-2">{yacht.capacity}</span></p></div>
+                        </div>
+                        </div>
+                        <div className="flex flex-col mb-4">
+                          <div className="flex"><RiDiscountPercentFill size={20} className="mr-3 mt-1 text-primary-blue-light-2"/>
+                            <div className="flex flex-col text-sm text-primary-grey">Discounted Rate:
+                            <p className="font-semibold text-base">3 Hours: <span className="text-black ml-4">{yacht.rate3Hours}</span></p>
+                            <p className="font-semibold text-base">4 Hours: <span className="text-black ml-4">{yacht.rate4Hours}</span></p>
+                            </div>
+                          </div>
+                        </div>
+                        </div>
+                        <a href={`https://fareharbor.com/embeds/book/centauruscharter/items/${yacht.fareharbor_id}/?full-items=yes&flow=645487`}
+                                target="_self"
+                                rel="noopener noreferrer" 
+                                className="flex items-center mt-5 pt-3 group justify-between px-5 text-primary-blue-2 border-t border-gray-400">
+                          <div className="btn-info">Book Now</div>
+                          <FiArrowRight size={20} className=" text-lg transform md:group-hover:translate-x-4 transition-transform duration-300" />
+                        </a>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+          
+          <div className="hidden lg:block overflow-x-auto">
             <table className="w-full border-collapse border border-gray-300 md:text-sm lg:text-sm">
               <thead>
-                <tr className="bg-primary-blue text-white">
-                  <th className="border border-transparent p-3  text-primary-yellow">
+                <tr className="bg-[#f1f1f1] text-primary-blue-2">
+                  <th className="px-3 py-5">
                     YACHT
                   </th>
-                  <th className="border border-transparent p-3  text-primary-yellow">
+                  <th className="px-3 py-5">
                     CAPACITY
                   </th>
-                  <th className="border border-transparent p-3  text-primary-yellow">
+                  <th className="px-3 py-5">
                     REGULAR RATE/HOUR
                   </th>
-                  <th className="border border-transparent p-3  text-primary-yellow">
+                  <th className="px-3 py-5">
                     DISCOUNTED 3-HOUR RATE
                   </th>
-                  <th className="border border-transparent p-3  text-primary-yellow">
+                  <th className="px-3 py-5">
                     DISCOUNTED 4-HOUR RATE
                   </th>
-                  <th className="border border-transparent p-3  text-primary-yellow">
-                    BOOKING
+                  <th className="px-3 py-5">
                   </th>
                 </tr>
               </thead>
@@ -114,26 +156,26 @@ const Page = () => {
                   <tr
                     key={index}
                     className={`${
-                      index % 2 === 0 ? "bg-white" : "bg-gray-100"
+                      index % 2 === 0 ? "bg-white" : "bg-[#fafafa]"
                     } text-center text-sm`}
                   >
-                    <td className="border border-black p-2  font-bold">
+                    <td className="font-Inter p-3 font-semibold">
                       {yacht.name}
                     </td>
-                    <td className="border border-black p-2  font-bold">
+                    <td className="font-Inter p-3 font-semibold">
                       {yacht.capacity}
                     </td>
-                    <td className="border border-black p-2  font-bold">
+                    <td className="font-Inter p-3 font-semibold">
                       {yacht.ratePerHour}
                     </td>
-                    <td className="border border-black p-2  font-bold">
+                    <td className="font-Inter p-3 font-semibold">
                       {yacht.rate3Hours}
                     </td>
-                    <td className="border border-black p-2  font-bold">
+                    <td className="font-Inter p-3 font-semibold">
                       {yacht.rate4Hours}
                     </td>
-                    <td className="border border-black p-2  font-bold bg-primary-yellow">
-                      <button className="bg-primary-yellow text-black py-1 px-10 rounded-lg hover:bg-[#d49d3f] transition-all">
+                    <td className="p-3 font-bold">
+                      <button className="bg-primary-blue-2 hover:bg-primary-blue text-white rounded-lg transition-all flex text-center justify-center w-full px-3 py-2">
                         Book Now
                       </button>
                     </td>
@@ -161,7 +203,7 @@ const Page = () => {
             VIBRANT SKYLINE AT NIGHT, WE HAVE THE PERFECT TOUR TO SUIT YOUR
             NEEDS.
           </p>
-          <h2 className="text-left py-2">
+          <h2 className="text-left text-primary-blue-2 py-2">
             Discover Our Winter Yacht Charter Offers in Dubai
           </h2>
           <p className=" text-base text-left py-2">
@@ -172,10 +214,10 @@ const Page = () => {
             yacht deals are perfect for any event.
           </p>
 
-          <h2 className="text-left py-2">
+          <h2 className="text-[20px] text-primary-grey text-left py-2">
             Morning Yacht Trips (6 AM - 2 PM) - Start Your Day on the Water
           </h2>
-          <p className=" text-base text-left py-2">
+          <p className="text-primary-grey text-base text-left py-2">
             Begin your day with the refreshing sea breeze and the breathtaking
             skyline on one of our morning yacht tours. From 6 AM to 2 PM, we
             provide a serene yet luxurious journey, ideal for early risers who
@@ -185,10 +227,10 @@ const Page = () => {
             fully equipped to ensure your comfort and pleasure, offering you a
             top-notch experience to start your day.
           </p>
-          <h2 className="text-left py-2">
+          <h2 className="text-[20px] text-primary-grey text-left py-2">
             Night Yacht Cruises (8 PM Onwards) - Sail Under the Stars
           </h2>
-          <p className=" text-base text-left py-2">
+          <p className="text-primary-grey text-base text-left py-2">
             Experience the magic of city skyline illuminated under the night sky
             with our exclusive night cruises. Our evening trips, starting at 8
             PM, are ideal for romantic getaways, fun gatherings, or business
@@ -198,17 +240,17 @@ const Page = () => {
             lasting 3 hours or more. Let Centaurus Charter be your guide to an
             unforgettable evening on the water.
           </p>
-          <h2 className="text-left py-2">
+          <h2 className="text-[20px] text-primary-grey text-left py-2">
             Why Choose Centaurus Charter for Yacht Rentals in Dubai?
           </h2>
-          <p className=" text-base text-left py-2">
+          <p className="text-primary-grey text-base text-left py-2">
             Centaurus Charter takes pride in delivering premium experiences with
             yacht bookings. Our yachts come with modern features, a skilled
             crew, and flexible options to make your trip special. Whether it's a
             casual day trip or an extravagant night out, our team is dedicated
             to making every moment special
           </p>
-          <ul className="list-disc  text-black pl-3">
+          <ul className="list-disc  text-primary-grey pl-3">
             <li>
               Customized Experiences: Create your perfect cruise with catering,
               entertainment, and custom décor.
@@ -223,8 +265,8 @@ const Page = () => {
             </li>
           </ul>
 
-          <h2 className="text-left py-2">Special Offers and Booking Details</h2>
-          <p className=" text-sm text-left py-2">
+          <h2 className="text-[20px] text-primary-grey text-left py-2">Special Offers and Booking Details</h2>
+          <p className="text-primary-grey text-sm text-left py-2">
             To make the most of our yacht charter special offers, we recommend
             booking in advance, as slots fill up quickly during the winter time.
             Our team is available to assist you with all your booking needs and
@@ -232,8 +274,8 @@ const Page = () => {
             want a more personal touch, we have custom packages to fit your
             needs, making your time on board unforgettable.
           </p>
-          <h2 className="text-left py-2">Plan Your Next Yacht Adventure</h2>
-          <p className=" text-sm text-left py-2">
+          <h2 className="text-[20px] text-primary-grey text-left py-2">Plan Your Next Yacht Adventure</h2>
+          <p className="text-primary-grey text-sm text-left py-2">
             Don’t miss out on these limited-time winter yacht rental promotions.
             Save up to 40% on extended trips that promise unforgettable moments
             on the water. Book Now and experience the best luxury yacht rental

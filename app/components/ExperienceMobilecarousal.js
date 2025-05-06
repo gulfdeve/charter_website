@@ -74,7 +74,7 @@ export default function ExperiencesCarousel() {
                             <p className="text-primary-black font-bold text-xs xl:text-base">
                               Starting
                               <br className="hidden sm:block" />
-                              <span className="text-xs pl-1 sm:pl-0">AED 3120</span>
+                              <span className="text-xs pl-1 sm:pl-0">AED {experience.amount.toLocaleString()}</span>
                             </p>
                           </div>
                         </div>
@@ -82,7 +82,7 @@ export default function ExperiencesCarousel() {
                         <div className="sm:ml-auto">
                           <Link
                             href={`/yacht-trips/${experience.slug}`}
-                            className="py-2 px-4 text-[0.75rem] xs:text-xs font-bold uppercase text-primary-yellow bg-primary-blue hover:bg-primary-yellow hover:text-primary-blue hover:scale-105 rounded-md shadow transition duration-150 ease-in-out transform"
+                            className="py-2 px-4 text-[0.75rem] xs:text-xs font-bold uppercase text-white bg-primary-blue-2 hover:bg-primary-yellow hover:text-primary-blue hover:scale-105 rounded-md shadow transition duration-150 ease-in-out transform"
                           >
                             KNOW MORE
                           </Link>
