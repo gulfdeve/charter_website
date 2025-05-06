@@ -25,7 +25,7 @@ const toursData = [
     cruisingRoute: "Dubai Marina, JBR, Atlantis the Palm and Burj Al Arab",
     departurePoint: "Dubai Harbour",
     blueHeadline: "AVAILABLE ALL DAYS OF THE WEEK",
-	validity: "*Valid from 4-28 May 2025",
+	  validity: "",
     yellowHeadline: "",
     fareharborLink:
       "https://fareharbor.com/embeds/book/centauruscharter/items/488624/?full-items=yes&flow=no",
@@ -40,7 +40,7 @@ const toursData = [
     cruisingRoute: "Dubai Marina, JBR and Burj Al Arab",
     departurePoint: "Dubai Harbour",
     blueHeadline: "EVERY SUNDAY-WEDNESDAY",
-	validity: "*Valid from 4-28 May 2025",
+	  validity: "*Valid from 4-28 May 2025",
     yellowHeadline: "50% OFF",
     fareharborLink:
       "https://fareharbor.com/embeds/book/centauruscharter/items/488868/?full-items=yes&flow=no",
@@ -55,7 +55,7 @@ const toursData = [
     cruisingRoute: "Dubai Marina, JBR and Burj Al Arab",
     departurePoint: "Dubai Harbour",
     blueHeadline: "EVERY SUNDAY-WEDNESDAY",
-	validity: "*Valid from 4-28 May 2025",
+	  validity: "*Valid from 4-28 May 2025",
     yellowHeadline: "50% OFF",
     fareharborLink:
       "https://fareharbor.com/embeds/book/centauruscharter/items/488872/?full-items=yes&flow=no",
