@@ -36,8 +36,16 @@ const Page = () => {
       rate4Hours: "AED 1430",
     },
     {
+      name: "RIVERSIDE - 40FT",
+      capacity: 12,
+      ratePerHour: "AED 750",
+      rate2Hours: "AED 1200",
+      rate3Hours: "AED 1350",
+      rate4Hours: "AED 1800",
+    },
+    {
       name: "VASSIA - 56FT",
-      capacity: 21,
+      capacity: 28,
       ratePerHour: "AED 1040",
       rate2Hours: "AED 1665",
       rate3Hours: "AED 1870",
@@ -53,7 +61,7 @@ const Page = () => {
     },
     {
       name: "LAGOONA - 56FT",
-      capacity: 24,
+      capacity: 28,
       ratePerHour: "AED 1150",
       rate2Hours: "AED 1840",
       rate3Hours: "AED 2070",
