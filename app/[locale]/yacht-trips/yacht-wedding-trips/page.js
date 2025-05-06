@@ -186,46 +186,51 @@ const page = () => {
             as breathtaking as your commitment.
           </p>
         </div>
-        <div className="flex flex-col  md:flex-row items-center justify-center py-10">
-          <div>
-            <div className="xl:w-[30rem] 2xl:w-[40rem] lg:w-[32rem] md:w-[12rem]">
-              <img
-                src="Marry-me-on-a-yacht.webp"
-                className="md:h-[670px] xl:h-[600px] lg:h-[560px]"
-              />
-            </div>
-          </div>
-          <div className="flex flex-col items-center sm:items-start sm:justify-start justify-center bg-primary-blue px-5  xl:px-20 xl:py-12 py-5  md:h-[670px] xl:h-[600px] lg:h-[560px]">
-            <h2 className=" text-white text-center  text-2xl xl:text-3xl pt-7">
-              Why Choose Us
-            </h2>
-            <h3 className="text-primary-yellow  text-2xl">
-              Unmatched Elegance
-            </h3>
-            <p className=" text-white text-center sm:text-left  text-xs  sm:text-sm xl:text-md pb-10">
-              Step aboard our fleet of yachts, where unmatched elegance meets
-              impeccable design. Each vessel is a testament to our commitment to
-              providing the pinnacle of luxury, ensuring a setting as
-              extraordinary as your love.
-            </p>
-            <h3 className="text-primary-yellow  text-2xl">Experienced Crew</h3>
-            <p className=" text-white text-center sm:text-left  text-xs  sm:text-sm xl:text-md pb-10">
-              Behind every successful event is a team of experts. Our crew and
-              event planners bring a wealth of experience, ensuring your wedding
-              day unfolds seamlessly. Trust us to navigate every detail, leaving
-              you free to savor every moment.
-            </p>
-            <h3 className="text-primary-yellow  text-2xl">
-              Reviews from Couples
-            </h3>
-            <p className=" text-white text-center sm:text-left  text-xs  sm:text-sm xl:text-md pb-10">
-              Don't just take our word for it – our track record speaks for
-              itself. Glowing testimonials from couples who have celebrated
-              their love with us underscore our commitment to delivering
-              exceptional experiences. Join the ranks of those who chose
-              extraordinary for their special day.
-            </p>
-          </div>
+        <div className="container mx-auto flex flex-col md:flex-row items-center justify-center py-5">
+        <div className="flex flex-col items-center justify-center">
+          <h2 className="block md:hidden text-primary-blue-2 text-center font-bold text-2xl xl:text-3xl py-7">
+            Why Choose Us
+          </h2>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 lg:gap-10">
+            <div>
+              <div className="flex flex-col items-center justify-center text-center gap-y-4 lg:px-10">
+                <img alt="" className="w-12" src="/images/unmatched-elegance.png"/>
+                <h3 className="text-primary-grey text-base lg:text-lg text-center">Unmatched Elegance</h3>
+                <p className="text-primary-grey text-center text-md sm:text-sm xl:text-md pb-10">
+                      Step aboard our fleet of yachts, where unmatched elegance meets
+                    impeccable design. Each vessel is a testament to our commitment to
+                    providing the pinnacle of luxury, ensuring a setting as
+                    extraordinary as your love.
+                </p>
+              </div>
+              </div>
+            <div>
+              <div className="flex flex-col items-center justify-center text-center gap-y-4 lg:px-10">
+                <img alt="" className="w-16" src="/Certified Crew.png"/>
+                <h3 className="text-primary-grey text-base lg:text-lg text-center">Experienced Crew</h3>
+                <p className="text-primary-grey text-center text-md sm:text-sm xl:text-md pb-10">
+                      Behind every successful event is a team of experts. Our crew and
+                    event planners bring a wealth of experience, ensuring your wedding
+                    day unfolds seamlessly. Trust us to navigate every detail, leaving
+                    you free to savor every moment.
+                </p>
+              </div>
+              </div>
+              <div>
+              <div className="flex flex-col items-center justify-center text-center gap-y-4 lg:px-10">
+                <img alt="" className="w-12" src="/images/reviews-from-couples.png"/>        
+                <h3 className="text-primary-grey text-base lg:text-lg text-center">Reviews from Couples</h3>
+                <p className="text-primary-grey text-center text-md sm:text-sm xl:text-md lg:pb-10">
+                      Don't just take our word for it – our track record speaks for
+                    itself. Glowing testimonials from couples who have celebrated
+                    their love with us underscore our commitment to delivering
+                    exceptional experiences. Join the ranks of those who chose
+                    extraordinary for their special day.
+                </p>
+              </div>
+              </div>
+              </div>
+              </div>
         </div>
         <div className="md:block hidden">
           <div className="flex items-center justify-center w-full my-6 xl:px-36 lg:px-20 mt-20">
