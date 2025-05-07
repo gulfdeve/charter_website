@@ -38,14 +38,14 @@ export default function ExperiencesGrid({ experiences, locale }) {
                 {preivew_text}
               </p>
               <div className="bg-primary-black w-full h-[0.05rem]"></div>
-              <div className="flex flex-row items-center justify-between">
-                <div className="flex flex-row items-center justify-evenly gap-4 py-5">
-                  <IoIosPricetag className="text-3xl lg:text-5xl" />
+              <div className="flex flex-row items-center justify-between py-4">
+                <div className="flex flex-row items-center justify-evenly gap-4">
+                  <IoIosPricetag className="text-primary-blue-light-2 text-3xl lg:text-5xl" />
                   <div className="flex flex-col items-start justify-start">
-                    <p className="text-primary-black font-bold text-sm xl:text-base">
+                    <p className="text-primary-grey font-semibold text-sm xl:text-base">
                       Starting
                       <br className="hidden sm:block"/>
-                      <span className="xl:text-xl">
+                      <span className="xl:text-xl text-primary-red font-bold">
                         AED {experience.amount.toLocaleString()}
                       </span>
                     </p>
