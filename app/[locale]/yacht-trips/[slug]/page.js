@@ -78,17 +78,19 @@ const page = ({ params }) => {
               className="flex flex-col p-3 sm:p-5 overflow-hidden rounded-md bg-white custom-shadow"
             >
                 {/* Title with Link */}
-                <Link href="/">
+                <Link href={`/yacht-rentals/${yacht.slug}`}>
                   <h2 className="text-primary-blue text-xl font-bold pb-4 hover:text-primary-blue-2 transition-all duration-300 cursor-pointer">
                     {yacht.translations?.[locale]?.[0]?.name_of_yacht}
                   </h2>
                 </Link>
               {/* Image with object-cover for proper scaling */}
-              <img
+              <Link href={`/yacht-rentals/${yacht.slug}`}>
+			  <img
                 src={`https://www.centauruscharter.net/product/images/${yacht.yacht_image}`}
                 alt={yacht.translations?.[locale]?.[0]?.name_of_yacht}
                 className="rounded-lg w-full object-cover"
               />
+			  </Link>
               <div className="w-full flex justify-stretch flex-col  justify-center pt-4 ">
                 <div className="grid grid-cols-2 lg:grid-cols-4 items-stretch gap-0 rounded-lg w-full overflow-hidden mb-7">
                   {/* Model */}
@@ -132,7 +134,7 @@ const page = ({ params }) => {
                         {yacht.hours} Hours Rate
                         <br />
                         <span className="font-bold text-lg lg:text-xl text-primary-red">
-                         AED {yacht.yacht_price.toLocaleString()}
+                         AED {(Number(yacht.yacht_price) || 0).toLocaleString()}
                         </span>
                         <span className="text-primary-blue-2 s:text-sm  text-xs">
                           {" "}
