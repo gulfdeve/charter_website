@@ -3,13 +3,15 @@ import React, { useState, useRef, useEffect } from "react";
 import { Link } from "@/app/i18n/routing";
 import Image from "next/image";
 import EmblaCarousel from "embla-carousel";
-import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
+import { FaArrowLeft, FaArrowRight ,FaYoutube} from "react-icons/fa";
 import BookNowButton from "@/app/components/BookNowButton";
 import { BsStars } from "react-icons/bs";
 
 const YachtCard = ({ yacht }) => {
   const emblaRef = useRef(null);
   const emblaApi = useRef(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [selectedVideo, setSelectedVideo] = useState("");
 
   useEffect(() => {
     if (emblaRef.current) {
@@ -22,24 +24,30 @@ const YachtCard = ({ yacht }) => {
     };
   }, [yacht]);
 
-  const scrollPrev = () => {
-    if (emblaApi.current) emblaApi.current.scrollPrev();
+  const scrollPrev = () => emblaApi.current?.scrollPrev();
+  const scrollNext = () => emblaApi.current?.scrollNext();
+
+  const openModal = () => {
+    setSelectedVideo("https://www.youtube.com/embed/dQw4w9WgXcQ"); // temporary video
+    setIsModalOpen(true);
   };
 
-  const scrollNext = () => {
-    if (emblaApi.current) emblaApi.current.scrollNext();
+  const closeModal = () => {
+    setSelectedVideo("");
+    setIsModalOpen(false);
   };
 
   return (
     <div className="relative flex flex-col md:p-5 p-3 rounded-lg shadow-custom">
       {/* Yacht Details */}
       <div className="flex flex-col items-start">
-          <Link href={`yacht-rentals/${yacht.slug}`}>
-            <h2 className="text-primary-blue text-xl font-bold pb-4 hover:text-primary-blue-2 transition-all duration-300 cursor-pointer">
-              {yacht.title}
-            </h2>
-          </Link>
-        </div>
+        <Link href={`yacht-rentals/${yacht.slug}`}>
+          <h2 className="text-primary-blue text-xl font-bold pb-4 hover:text-primary-blue-2 transition-all duration-300 cursor-pointer">
+            {yacht.title}
+          </h2>
+        </Link>
+      </div>
+
       <div className="relative">
         <div className="overflow-hidden rounded-lg" ref={emblaRef}>
           <div className="flex">
@@ -55,30 +63,36 @@ const YachtCard = ({ yacht }) => {
                     priority={index === 0}
                   />
                 </Link>
+                {/* YouTube Icon */}
+                {index === 0 && (
+                  <button
+                    onClick={openModal}
+                    className="absolute top-2 right-2 bg-white p-2 rounded-full shadow-md hover:bg-red-600 hover:text-white text-red-600 transition-all"
+                    aria-label="Watch video"
+                  >
+                    <FaYoutube size={20} />
+                  </button>
+                )}
               </div>
             ))}
           </div>
         </div>
 
+        {/* Carousel Arrows */}
         {yacht.images.length > 1 && (
           <>
-            <button
-              aria-label="go previous slide"
-              onClick={scrollPrev}
-              className="bg-white text-gray-500 opacity-80 hover:opacity-90 transition duration-150 ease-in-out transform absolute top-1/2 left-2 transform -translate-y-1/2 p-2 rounded-full shadow-md"
-            >
+            <button onClick={scrollPrev} aria-label="Previous slide"
+              className="bg-white text-gray-500 opacity-80 hover:opacity-90 transition duration-150 ease-in-out transform absolute top-1/2 left-2 -translate-y-1/2 p-2 rounded-full shadow-md">
               <FaArrowLeft />
             </button>
-            <button
-              aria-label="go next slide"
-              onClick={scrollNext}
-              className="bg-white text-gray-500 opacity-80 hover:opacity-90 transition duration-150 ease-in-out transform absolute top-1/2 right-2 transform -translate-y-1/2 p-2 rounded-full shadow-md"
-            >
+            <button onClick={scrollNext} aria-label="Next slide"
+              className="bg-white text-gray-500 opacity-80 hover:opacity-90 transition duration-150 ease-in-out transform absolute top-1/2 right-2 -translate-y-1/2 p-2 rounded-full shadow-md">
               <FaArrowRight />
             </button>
           </>
         )}
 
+        {/* Category Badge */}
         {yacht.category.includes("bestSellers") && (
           <div className="absolute flex items-center gap-2 top-4 left-0 gradient-custom-2 text-primary-yellow-light text-md py-0.5 px-2 rounded-r-lg">
             <BsStars /><p>Best Seller</p>
@@ -89,45 +103,69 @@ const YachtCard = ({ yacht }) => {
             <BsStars /><p>Premium Yacht</p>
           </div>
         )}
-         
-          <div className="absolute grid grid-cols-3 items-center gap-0 rounded-lg center-absolute -bottom-5 left-0 right-0 px-3">
-            <div className="bg-[#f1f1f1] text-primary-grey p-1 xl:p-2 flex flex-col items-center rounded-l-lg">
-              <span className="text-xs">Model:</span>
-              <span className="font-bold text-xs md:text-sm text-black">{yacht.model}</span>
-              </div>
-              <div className="bg-[#f1f1f1] text-primary-grey p-1 xl:p-2 flex flex-col items-center">
-                <span className="text-xs">Length:</span><span className="font-bold text-xs md:text-sm text-black">{yacht.length}</span>
-                </div>
-                <div className="bg-[#f1f1f1] text-primary-grey p-1 xl:p-2 flex flex-col items-center rounded-r-lg">
-                  <span className="text-xs">Guests:</span>
-          <span className="font-bold text-xs md:text-sm text-black">{yacht.guests}</span>
-         
+
+        {/* Model, Length, Guests */}
+        <div className="absolute grid grid-cols-3 items-center gap-0 rounded-lg center-absolute -bottom-5 left-0 right-0 px-3">
+          <div className="bg-[#f1f1f1] text-primary-grey p-1 xl:p-2 flex flex-col items-center rounded-l-lg">
+            <span className="text-xs">Model:</span>
+            <span className="font-bold text-xs md:text-sm text-black">{yacht.model}</span>
           </div>
+          <div className="bg-[#f1f1f1] text-primary-grey p-1 xl:p-2 flex flex-col items-center">
+            <span className="text-xs">Length:</span>
+            <span className="font-bold text-xs md:text-sm text-black">{yacht.length}</span>
           </div>
+          <div className="bg-[#f1f1f1] text-primary-grey p-1 xl:p-2 flex flex-col items-center rounded-r-lg">
+            <span className="text-xs">Guests:</span>
+            <span className="font-bold text-xs md:text-sm text-black">{yacht.guests}</span>
+          </div>
+        </div>
       </div>
-      
+
       <div className="flex flex-col flex-grow justify-end py-4">
-        <div className=" mt-5">{yacht.id === 24 && (
-							<p className="text-xs font-normal italic text-primary-grey">Poseidon 118ft Trips: An Add on of AED 1000 per hour will be added for every additional 10 pax where the occupancy surpasses the 40 passengers.
-							</p>
-							)
-						}
+        {yacht.id === 24 && (
+          <p className="text-xs font-normal italic text-primary-grey mt-5">
+            Poseidon 118ft Trips: An Add on of AED 1000 per hour will be added for every additional 10 pax where the occupancy surpasses the 40 passengers.
+          </p>
+        )}
+
+        <div className="flex flex-row justify-between items-center z-20 border-t border-gray-400 pt-3 mt-5">
+          <div className="p-1 xl:p-2 flex flex-col text-left">
+            <span className="text-xs md:text-sm">Price per hour:</span>
+            {yacht.id === 24 && (
+              <p className="text-xs font-normal italic text-primary-grey">Starting from</p>
+            )}
+            <span className="font-bold text-md md:text-lg lg:text-xl text-primary-red">AED {parseInt(yacht.price).toLocaleString()}</span>
+          </div>
+          <BookNowButton fareharborId={yacht.fareharbor_id} />
         </div>
-      <div className="flex flex-row justify-between items-center z-20 border-t border-gray-400 pt-3  mt-5">
-        <div className="p-1 xl:p-2 flex flex-col text-left"><span className=" text-xs md:text-sm">Price per hour:</span>
-        <span>{yacht.id === 24 && (
-            <p className="text-xs font-normal italic text-primary-grey">Starting from</p> )
-                }
-        </span>        
-        <span className="font-bold text-md md:text-lg lg:text-xl text-primary-red">AED {parseInt(yacht.price).toLocaleString()}</span>
+      </div>
+
+      {/* Modal */}
+      {isModalOpen && (
+        <div className="fixed top-0 left-0 w-full h-full bg-black bg-opacity-70 flex items-center justify-center z-50">
+          <div className="relative w-[90%] md:w-[60%] h-[60%] bg-black rounded-lg overflow-hidden">
+            <button
+              onClick={closeModal}
+              className="absolute top-2 right-2 text-white text-xl z-10"
+              aria-label="Close video"
+            >
+              ✕
+            </button>
+            <iframe
+              src={selectedVideo}
+              className="w-full h-full"
+              frameBorder="0"
+              allow="autoplay; encrypted-media"
+              allowFullScreen
+              title="Yacht Video"
+            />
+          </div>
         </div>
-        <BookNowButton fareharborId={yacht.fareharbor_id} />
-      </div>
-       
-      </div>
+      )}
     </div>
   );
 };
+
 
 export default function YachtList({ yachts }) {
   const [activeTab, setActiveTab] = useState("allYachts");
