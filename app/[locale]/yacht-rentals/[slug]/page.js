@@ -113,7 +113,7 @@ export default async function YachtPage({ params: paramsPromise }) {
       whatsappUrl={header_whatsapp_url}
     />
 
-    <div
+    <p
       className="text-base text-primary-grey"
       dangerouslySetInnerHTML={{
         __html: product.translations?.[locale]?.description || "",

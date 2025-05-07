@@ -63,11 +63,11 @@ const Route = ({ product, slug, header_whatsapp_url }) => {
   return (
     <div>
       <div className="bg-primary-blue w-full h-auto py-10 xl:px-44 md:px-6 px-2">
-        <div className="flex flex-col items-center justify-center py-6 mx-auto container">
+        <div className="flex flex-col items-center justify-center pb-6 mx-auto container">
           <h2 className="text-primary-yellow text-center font-bold text-2xl xl:text-3xl py-4">
             CRUISING ROUTE
           </h2>
-          <p className="text-center text-white text-lg px-4">
+          <p className="text-center text-white text-base px-4">
             Discover Dubai from the sea like never before. Enjoy our cruising options just for you:
           </p>
         </div>
