@@ -54,15 +54,15 @@ const page = () => {
               />
             </Link>
             <div className="absolute grid grid-cols-3 items-center gap-0 rounded-lg center-absolute -bottom-5 left-0 right-0 px-3">
-              <div className="bg-[#f1f1f1] text-primary-grey p-1 xl:p-2 flex flex-col items-center rounded-l-lg">
+              <div className="bg-primary-blue-light text-primary-grey p-1 xl:p-2 flex flex-col items-center rounded-l-lg">
                 <span className="text-xs">Model:</span>
                 <span className="font-bold text-xs md:text-sm text-black">{product.translations?.[locale]?.model}</span>
               </div>
-              <div className="bg-[#f1f1f1] text-primary-grey p-1 xl:p-2 flex flex-col items-center">
+              <div className="bg-primary-blue-light text-primary-grey p-1 xl:p-2 flex flex-col items-center">
                 <span className="text-xs">Length:</span>
                 <span className="font-bold text-xs md:text-sm text-black">{product.translations?.[locale]?.size}</span>
               </div>
-              <div className="bg-[#f1f1f1] text-primary-grey p-1 xl:p-2 flex flex-col items-center rounded-r-lg">
+              <div className="bg-primary-blue-light text-primary-grey p-1 xl:p-2 flex flex-col items-center rounded-r-lg">
                 <span className="text-xs">Guests:</span>
                 <span className="font-bold text-xs md:text-sm text-black">{product.translations?.[locale]?.guests}</span>
               </div>
