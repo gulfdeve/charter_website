@@ -139,7 +139,7 @@ const Page = () => {
           <div className="hidden lg:block overflow-x-auto">
             <table className="w-full border-collapse border border-gray-300 md:text-sm lg:text-sm">
               <thead>
-                <tr className="bg-[#f1f1f1] text-primary-blue-2">
+                <tr className="bg-primary-blue-light-1 text-primary-blue-2">
                   <th className="px-3 py-5">
                     YACHT
                   </th>
@@ -164,7 +164,7 @@ const Page = () => {
                   <tr
                     key={index}
                     className={`${
-                      index % 2 === 0 ? "bg-white" : "bg-[#fafafa]"
+                      index % 2 === 0 ? "bg-white" : "bg-primary-blue-light"
                     } text-center text-sm`}
                   >
                     <td className="font-Inter p-3 font-semibold">
