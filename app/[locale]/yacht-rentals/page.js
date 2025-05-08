@@ -33,9 +33,11 @@ export default async function YachtRentalsPage({ params }) {
       model: item.translations?.[locale]?.model,
       guests: item.translations?.[locale]?.guests,
       price: item.per_hour_price,
+      youtube_url: item.youtube_url,
       category,
     };
   });
+
 
   return (
     <div className="w-full bg-white nav-space">
