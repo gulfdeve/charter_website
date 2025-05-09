@@ -3,6 +3,7 @@
 import { useState } from "react";
 import ExclusiveOffers from "@/app/components/ExclusiveOffers";
 import TailorYachtExperience from "@/app/components/TailorYachtExperience";
+import { useRouter, usePathname, Link } from "@/app/i18n/routing";
 const page = () => {
     const [activeIndex, setActiveIndex] = useState(null);
 
@@ -115,7 +116,7 @@ const page = () => {
           A luxury yacht rental is the perfect choice for anyone looking to enjoy a day on the water in Dubai. From stunning skyline views to Instagram-worthy photo spots, there’s no better way to explore the coast.
 
 Got a question? We’ve answered the most frequently asked questions about yacht chartering and bookings in Dubai below. If you still don’t find what you’re looking for, feel free to{" "}
-            <span className="text-blue-600">contact us</span> and let us know your requirements.
+            <Link href="/contact"><span className="text-blue-600">contact us</span></Link> and let us know your requirements.
           </p>
         </div>
         <div
@@ -133,7 +134,7 @@ Got a question? We’ve answered the most frequently asked questions about yacht
               >
                 <h2
                   onClick={() => toggleAnswer(index)}
-                  className={`font-Inter w-full text-left text-lg md:text-lg font-normal  py-3 px-3 block flex justify-between items-center focus:outline-none ${
+                  className={`font-Inter w-full text-left text-lg md:text-lg font-normal  py-3 px-3 block flex justify-between items-center focus:outline-none hover:cursor-pointer ${
                     activeIndex === index ? "text-primary-blue-2" : "text-grey-600"
                   }`}
                 >

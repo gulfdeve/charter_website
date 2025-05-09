@@ -59,6 +59,20 @@ const YachtCard = ({ yacht }) => {
                     priority={index === 0}
                   />
                 </Link>
+                {/* YouTube Icon only on first slide if URL exists */}
+                {index === 0 && yacht.youtube_url && (
+                  <button
+                    onClick={() =>
+                      openModal(
+                        yacht.youtube_url /* or toEmbedUrl(yacht.youtube_url) */
+                      )
+                    }
+                    className="absolute top-2 right-2 bg-white p-2 rounded-full shadow-md hover:bg-red-600 hover:text-white text-red-600 transition-all"
+                    aria-label="Watch video"
+                  >
+                    <FaYoutube size={20} />
+                  </button>
+                )}
               </div>
             ))}
           </div>
@@ -97,7 +111,6 @@ const YachtCard = ({ yacht }) => {
             <p>Premium Yacht</p>
           </div>
         )}
-
         {/* YouTube Icon (same design, moved above carousel) */}
         {yacht.youtube_url && (
           <button
@@ -111,17 +124,23 @@ const YachtCard = ({ yacht }) => {
 
         {/* Model, Length, Guests */}
         <div className="absolute grid grid-cols-3 items-center gap-0 rounded-lg center-absolute -bottom-5 left-0 right-0 px-3">
-          <div className="bg-[#f1f1f1] text-primary-grey p-1 xl:p-2 flex flex-col items-center rounded-l-lg">
+          <div className="bg-primary-blue-light text-primary-grey p-1 xl:p-2 flex flex-col items-center rounded-l-lg">
             <span className="text-xs">Model:</span>
-            <span className="font-bold text-xs md:text-sm text-black">{yacht.model}</span>
+            <span className="font-bold text-xs md:text-sm text-black">
+              {yacht.model}
+            </span>
           </div>
-          <div className="bg-[#f1f1f1] text-primary-grey p-1 xl:p-2 flex flex-col items-center">
+          <div className="bg-primary-blue-light text-primary-grey p-1 xl:p-2 flex flex-col items-center">
             <span className="text-xs">Length:</span>
-            <span className="font-bold text-xs md:text-sm text-black">{yacht.length}</span>
+            <span className="font-bold text-xs md:text-sm text-black">
+              {yacht.length}
+            </span>
           </div>
-          <div className="bg-[#f1f1f1] text-primary-grey p-1 xl:p-2 flex flex-col items-center rounded-r-lg">
+          <div className="bg-primary-blue-light text-primary-grey p-1 xl:p-2 flex flex-col items-center rounded-r-lg">
             <span className="text-xs">Guests:</span>
-            <span className="font-bold text-xs md:text-sm text-black">{yacht.guests}</span>
+            <span className="font-bold text-xs md:text-sm text-black">
+              {yacht.guests}
+            </span>
           </div>
         </div>
       </div>
@@ -129,7 +148,9 @@ const YachtCard = ({ yacht }) => {
       <div className="flex flex-col flex-grow justify-end py-4">
         {yacht.id === 24 && (
           <p className="text-xs font-normal italic text-primary-grey mt-5">
-            Poseidon 118ft Trips: An Add on of AED 1000 per hour will be added for every additional 10 pax where the occupancy surpasses the 40 passengers.
+            Poseidon 118ft Trips: An Add on of AED 1000 per hour will be added
+            for every additional 10 pax where the occupancy surpasses the 40
+            passengers.
           </p>
         )}
 
@@ -137,7 +158,9 @@ const YachtCard = ({ yacht }) => {
           <div className="p-1 xl:p-2 flex flex-col text-left">
             <span className="text-xs md:text-sm">Price per hour:</span>
             {yacht.id === 24 && (
-              <p className="text-xs font-normal italic text-primary-grey">Starting from</p>
+              <p className="text-xs font-normal italic text-primary-grey">
+                Starting from
+              </p>
             )}
             <span className="font-bold text-md md:text-lg lg:text-xl text-primary-red">
               AED {parseInt(yacht.price).toLocaleString()}

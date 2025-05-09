@@ -113,13 +113,13 @@ export default async function YachtPage({ params: paramsPromise }) {
       whatsappUrl={header_whatsapp_url}
     />
 
-<ul
-  className="text-base text-primary-grey list-disc list-inside"
-  dangerouslySetInnerHTML={{
-    __html: product.translations?.[locale]?.description || "",
-  }}
-/>
 
+    <p
+      className="text-base text-primary-grey"
+      dangerouslySetInnerHTML={{
+        __html: product.translations?.[locale]?.description || "",
+      }}
+    />
 
     <p className="text-sm text-center font-bold my-8">
       Rent a yacht in Dubai Marina

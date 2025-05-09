@@ -98,46 +98,36 @@ export default function Home() {
                       <FaYoutube size={20} />
                     </button>
                   )}
+                  <div className="absolute grid grid-cols-3 items-center gap-0 rounded-lg center-absolute -bottom-5 left-0 right-0 px-5">
+                    {/* Model */}
+                    <div className="bg-primary-blue-light text-primary-grey p-1 xl:p-2 flex flex-col items-center rounded-l-lg">
+                      <span className="text-xs">
+                        Model:
+                      </span>
+                      <span className="font-bold text-sm text-black">
+                        {product.translations?.[locale].model}
+                      </span>
+                    </div>
 
-                  {/* Yacht Link & Title */}
-                  <Link href={`/yacht-rentals/${product.slug}`}>
-                    <h3 className="md:text-lg font-bold hover:text-primary-blue-2 transition-all duration-300 cursor-pointer">
-                      {product.translations?.[locale].name_of_yacht}
-                    </h3>
-                  </Link>
+                    {/* Length */}
+                    <div className="bg-primary-blue-light text-primary-grey p-1 xl:p-2 flex flex-col items-center">
+                      <span className="text-xs">
+                        Length:
+                      </span>
+                      <span className="font-bold text-sm text-black">
+                        {product.translations?.[locale].size}
+                      </span>
+                    </div>
 
-                  {/* Yacht Image */}
-                  <div className="relative">
-                    <Link href={`/yacht-rentals/${product.slug}`}>  
-                      <Image 
-                        src={`https://www.centauruscharter.net/product/images/${product.image}`}
-                        alt={product.translations?.[locale].name_of_yacht}
-                        className="w-full rounded-lg mt-3"
-                        width={400}
-                        height={400}
-                      />
-                    </Link>
-
-                    {/* Model, Length, Guests */}
-                    <div className="absolute grid grid-cols-3 items-center gap-0 rounded-lg center-absolute -bottom-5 left-0 right-0 px-5">
-                      <div className="bg-[#f1f1f1] text-primary-grey p-1 xl:p-2 flex flex-col items-center rounded-l-lg">
-                        <span className="text-xs">Model:</span>
-                        <span className="font-bold text-sm text-black">
-                          {product.translations?.[locale].model}
-                        </span>
-                      </div>
-                      <div className="bg-[#f1f1f1] text-primary-grey p-1 xl:p-2 flex flex-col items-center">
-                        <span className="text-xs">Length:</span>
-                        <span className="font-bold text-sm text-black">
-                          {product.translations?.[locale].size}
-                        </span>
-                      </div>
-                      <div className="bg-[#f1f1f1] text-primary-grey p-1 xl:p-2 flex flex-col items-center rounded-r-lg">
-                        <span className="text-xs">Guests:</span>
-                        <span className="font-bold text-sm text-black">
-                          {product.translations?.[locale].guests}
-                        </span>
-                      </div>
+                    {/* Guests */}
+                    <div className="bg-primary-blue-light text-primary-grey p-1 xl:p-2 flex flex-col items-center rounded-r-lg">
+                      <span className="text-xs">
+                        Guests:
+                      </span>
+                      <span className="font-bold text-sm text-black">
+                        {product.translations?.[locale].guests}
+                      </span>
+                    </div>
                     </div>
                   </div>
 

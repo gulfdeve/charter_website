@@ -79,17 +79,32 @@ export default function YachtmobileCarousal() {
 
                   {/* Model / Length / Guests */}
                   <div className="grid grid-cols-3 items-center gap-0 rounded-lg my-3">
-                    <div className="bg-[#f1f1f1] p-1 xl:p-2.5 flex flex-col items-center rounded-l-lg">
-                      <span className="font-semibold text-primary-grey text-[0.6rem]">Model:</span>
-                      <span className="font-semibold text-xxs">{product.translations?.[locale].model}</span>
+                    {/* Model */}
+                    <div className="bg-primary-blue-light p-1 xl:p-2.5 flex flex-col items-center rounded-l-lg">
+                      <span className="font-semibold text-primary-grey text-[0.6rem]">
+                        Model:
+                      </span>
+                      <span className="font-semibold text-xxs">
+                        {product.translations?.[locale].model}
+                      </span>
                     </div>
-                    <div className="bg-[#f1f1f1] p-1 xl:p-2 flex flex-col items-center">
-                      <span className="font-semibold text-primary-grey text-[0.6rem]">Length:</span>
-                      <span className="font-semibold text-xxs ">{product.translations?.[locale].size}</span>
+                    {/* Length */}
+                    <div className="bg-primary-blue-light p-1 xl:p-2 flex flex-col items-center">
+                      <span className="font-semibold text-primary-grey text-[0.6rem]">
+                        Length:
+                      </span>
+                      <span className="font-semibold text-xxs ">
+                        {product.translations?.[locale].size}
+                      </span>
                     </div>
-                    <div className="bg-[#f1f1f1] p-1 xl:p-2 flex flex-col items-center rounded-r-lg">
-                      <span className="font-semibold text-primary-grey text-[0.6rem]">Guests:</span>
-                      <span className="font-semibold text-xxs">{product.translations?.[locale].guests}</span>
+                    {/* Guests */}
+                    <div className="bg-primary-blue-light p-1 xl:p-2 flex flex-col items-center rounded-r-lg">
+                      <span className="font-semibold text-primary-grey text-[0.6rem]">
+                        Guests:
+                      </span>
+                      <span className="font-semibold text-xxs">
+                        {product.translations?.[locale].guests}
+                      </span>
                     </div>
                   </div>
                 </div>

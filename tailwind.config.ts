@@ -36,7 +36,8 @@ export default {
       },
       colors: {
         "primary-blue": "#0D2343",
-        "primary-blue-light": "#f5f9ff",
+        "primary-blue-light": "#E8F1FF",
+        "primary-blue-light-1": "#DAE9FF",
         "primary-blue-light-2": "#B0D0FF",
 
         "primary-blue-2": "#1B498F",
@@ -44,7 +45,7 @@ export default {
         "primary-blue-4": "#08396e",
         "primary-black": "#1D1D1D",
         "primary-yellow": "#E1BA4D",
-        "primary-yellow-light": "#f5e9c6",
+        "primary-yellow-light": "#ecd593",
         "primary-yellow-dark": "rgb(234 174 6)",
         "text-primary-white": "#ababab",
         "text-primary-black": "#212529",
