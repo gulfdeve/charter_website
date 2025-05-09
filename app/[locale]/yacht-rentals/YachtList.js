@@ -17,15 +17,12 @@ const YachtCard = ({ yacht }) => {
     if (emblaRef.current) {
       emblaApi.current = EmblaCarousel(emblaRef.current, { loop: true });
     }
-    return () => {
-      emblaApi.current?.destroy();
-    };
+    return () => emblaApi.current?.destroy();
   }, [yacht]);
 
   const scrollPrev = () => emblaApi.current?.scrollPrev();
   const scrollNext = () => emblaApi.current?.scrollNext();
 
-  // Accepts an embeddable YouTube URL (e.g. "https://www.youtube.com/embed/VIDEO_ID")
   const openModal = (videoUrl) => {
     setSelectedVideo(videoUrl);
     setIsModalOpen(true);
@@ -35,17 +32,6 @@ const YachtCard = ({ yacht }) => {
     setSelectedVideo("");
     setIsModalOpen(false);
   };
-
-  // If you instead store the watch-page URL, uncomment and use this:
-  // const toEmbedUrl = (watchUrl) => {
-  //   try {
-  //     const url = new URL(watchUrl);
-  //     const id = url.searchParams.get("v");
-  //     return id ? `https://www.youtube.com/embed/${id}` : "";
-  //   } catch {
-  //     return "";
-  //   }
-  // };
 
   return (
     <div className="relative flex flex-col md:p-5 p-3 rounded-lg shadow-custom">
@@ -73,16 +59,6 @@ const YachtCard = ({ yacht }) => {
                     priority={index === 0}
                   />
                 </Link>
-                {/* YouTube Icon only on first slide if URL exists */}
-                {index === 0 && yacht.youtube_url && (
-                  <button
-                    onClick={() => openModal(yacht.youtube_url /* or toEmbedUrl(yacht.youtube_url) */)}
-                    className="absolute top-2 right-2 bg-white p-2 rounded-full shadow-md hover:bg-red-600 hover:text-white text-red-600 transition-all"
-                    aria-label="Watch video"
-                  >
-                    <FaYoutube size={20} />
-                  </button>
-                )}
               </div>
             ))}
           </div>
@@ -108,7 +84,7 @@ const YachtCard = ({ yacht }) => {
           </>
         )}
 
-        {/* Category Badge */}
+        {/* Category Badges */}
         {yacht.category.includes("bestSellers") && (
           <div className="absolute flex items-center gap-2 top-4 left-0 gradient-custom-2 text-primary-yellow-light text-md py-0.5 px-2 rounded-r-lg">
             <BsStars />
@@ -120,6 +96,17 @@ const YachtCard = ({ yacht }) => {
             <BsStars />
             <p>Premium Yacht</p>
           </div>
+        )}
+
+        {/* YouTube Icon (same design, moved above carousel) */}
+        {yacht.youtube_url && (
+          <button
+            onClick={() => openModal(yacht.youtube_url)}
+            aria-label="Watch video"
+            className="absolute top-4 right-4 z-30 bg-white p-2 rounded-full shadow-md hover:bg-red-600 hover:text-white text-red-600 transition-all"
+          >
+            <FaYoutube size={20} />
+          </button>
         )}
 
         {/* Model, Length, Guests */}
@@ -194,13 +181,11 @@ export default function YachtList({ yachts }) {
       ? yachts
       : yachts.filter((yacht) => yacht.category.includes(activeTab));
 
-  const getTabStyle = (tabName) => {
-    return `px-2 py-1 transition-all duration-300 ${
-      activeTab === tabName
-        ? "text-primary-blue border-b-2 border-primary-blue"
-        : "hover:text-primary-blue"
-    }`;
-  };
+  const getTabStyle = (tabName) => `px-2 py-1 transition-all duration-300 ${
+    activeTab === tabName
+      ? "text-primary-blue border-b-2 border-primary-blue"
+      : "hover:text-primary-blue"
+  }`;
 
   return (
     <>
