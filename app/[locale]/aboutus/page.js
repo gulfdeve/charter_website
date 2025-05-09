@@ -34,7 +34,7 @@ const AboutPage = () => {
             </div>
           </div>
           <div className="flex flex-col items-center sm:items-start sm:justify-start justify-center bg-primary-blue px-5 xl:px-32 xl:py-12 py-5 md:h-[443px] xl:h-[452px] lg:h-[404px]">
-            <h2 className=" text-primary-yellow text-left font-bold text-2xl xl:text-3xl py-7">
+            <h2 className="text-center sm:text-left  text-primary-yellow font-bold text-2xl xl:text-3xl py-7">
               OFFERING A WIDE SELECTION OF LUXURY YACHTS
             </h2>
             <p className=" text-white text-center sm:text-left  text-md  sm:text-sm xl:text-md pb-10">

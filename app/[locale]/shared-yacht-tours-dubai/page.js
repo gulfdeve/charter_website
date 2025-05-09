@@ -21,9 +21,9 @@ const toursData = [
     cruisingTime: "11:00 AM - 2:00 PM",
     adultPrice: "AED 299",
     childPrice: "AED 149",
-    liveBBQ: "Chicken & Beef Skewers, Sliders, | Hotdogs, Muffins, Fruits Water, Tea, Coffee, Soft Drinks & Juices<br>*Vegetarian food available on request - Veggie patty, Vegetable skewers",
+    liveBBQ: "Chicken & Beef Skewers, Sliders, Hotdogs, Veggie Patty, Vegetable Skewers, Muffins, Fresh Fruits, Water, Tea, Coffee & Soft Drinks<br>*Vegetarian food available on request - Veggie patty, Vegetable skewers",
     cruisingRoute: "Dubai Marina, JBR, Atlantis the Palm and Burj Al Arab",
-    departurePoint: "Dubai Harbour",
+    departurePoint: "Dubai Marina/Dubai Marina Harbour",
     blueHeadline: "AVAILABLE ALL DAYS OF THE WEEK",
 	  validity: "",
     yellowHeadline: "",
@@ -36,9 +36,9 @@ const toursData = [
     cruisingTime: "05:00 PM - 07:00 PM",
     adultPrice: "AED 259",
     childPrice: "AED 149",
-    liveBBQ: "Chicken & Beef Skewers, Sliders, | | Hotdogs, Muffins, Fruits Water, Tea, Coffee, Soft Drinks & Juices<br>*Vegetarian food available on request - Veggie patty, Vegetable skewers",
+    liveBBQ: "Chicken & Beef Skewers, Sliders, Hotdogs, Veggie Patty, Vegetable Skewers, Muffins, Fresh Fruits, Water, Tea, Coffee & Soft Drinks<br>*Vegetarian food available on request - Veggie patty, Vegetable skewers",
     cruisingRoute: "Dubai Marina, JBR and Burj Al Arab",
-    departurePoint: "Dubai Harbour",
+    departurePoint: "Dubai Marina/Dubai Marina Harbour",
     blueHeadline: "EVERY SUNDAY-WEDNESDAY",
 	  validity: "*Valid from 4-28 May 2025",
     yellowHeadline: "50% OFF",
@@ -51,9 +51,9 @@ const toursData = [
     cruisingTime: "08:00 PM - 10:00 PM",
     adultPrice: "AED 199",
     childPrice: "AED 149",
-    liveBBQ: "Chicken & Beef Skewers, Sliders, | Hotdogs, Muffins, Fruits Water, Tea, Coffee, Soft Drinks & Juices<br>*Vegetarian food available on request - Veggie patty, Vegetable skewers",
+    liveBBQ: "Chicken & Beef Skewers, Sliders, Hotdogs, Veggie Patty, Vegetable Skewers, Muffins, Fresh Fruits, Water, Tea, Coffee & Soft Drinks<br>*Vegetarian food available on request - Veggie patty, Vegetable skewers",
     cruisingRoute: "Dubai Marina, JBR and Burj Al Arab",
-    departurePoint: "Dubai Harbour",
+    departurePoint: "Dubai Marina/Dubai Marina Harbour",
     blueHeadline: "EVERY SUNDAY-WEDNESDAY",
 	  validity: "*Valid from 4-28 May 2025",
     yellowHeadline: "50% OFF",
@@ -237,7 +237,7 @@ const Page = () => {
                       <div className="flex flex-row gap-2 items-center">
                         <MdOutlineLocalDining className="text-primary-yellow-light text-[6rem] sm:text-[2.2rem] lg:text-[4rem]" />
                         <p className="text-primary-grey text-sm">
-                          <span className="font-bold">BBQ:</span>{" "}
+                          <span className="font-bold">Inclusions:</span>{" "}
                           {/* {tour.liveBBQ} */}
 						  <span dangerouslySetInnerHTML={{ __html: tour.liveBBQ }} />
                         </p>
@@ -285,13 +285,18 @@ const Page = () => {
         <div className="md:hidden block">
 <ToursCarousel toursData={toursData}  />
         </div>
+        <div className="container mx-auto">
         {/* Premium Drinks Notice */}
         <div className="flex items-center justify-center bg-primary-blue-2 max-w-3xl mx-auto text-center">
           <p className="text-white text-md md:text-xl font-bold">
             PREMIUM DRINKS ARE AVAILABLE FOR PURCHASE ON BOARD
           </p>
         </div>
-
+        <p className="text-center text-primary-grey text-xs md:text-base italic mt-4">
+            *Yacht type and capacity may vary;
+            specific yacht not guaranteed until the day of the tour.
+          </p>
+        </div>
         {/* HIGHLIGHTS */}
         <div className="flex items-center justify-center w-full my-6">
           <hr className="flex-grow border-primary-yellow-dark" />
