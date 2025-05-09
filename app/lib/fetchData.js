@@ -13,12 +13,14 @@ export const fetchData = cache(async () => {
       : { next: { revalidate: 3600, tags: ['data-cache'] } };
       
     const response = await fetch(`${baseUrl}/api/get-data`, fetchOptions);
-    
+ 
     if (!response.ok) {
+    
       throw new Error('Failed to fetch data');
     }
-    
+  
     return response.json();
+   // Log the data for debugging
   } catch (error) {
     console.log('Error fetching data:', error);
     return null;
