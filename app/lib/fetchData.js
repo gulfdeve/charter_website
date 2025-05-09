@@ -20,7 +20,7 @@ export const fetchData = cache(async () => {
     
     return response.json();
   } catch (error) {
-    console.error('Error fetching data:', error);
+    console.log('Error fetching data:', error);
     return null;
   }
 });

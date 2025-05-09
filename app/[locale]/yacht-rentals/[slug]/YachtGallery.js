@@ -1,5 +1,6 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
+import Image from "next/image";
 import EmblaCarousel from "embla-carousel";
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 
@@ -42,38 +43,42 @@ export default function YachtGallery({ gallery }) {
 
   return (
     <div className="embla relative">
-        <button
+      <button
         aria-label="go back"
-          className="absolute left-5 top-[45%] transform -translate-y-1/2 text-primary-grey bg-[#f1f1f1] bg-opacity-80 p-1 xl:p-2 rounded-full z-10"
-          onClick={scrollPrev}
-        >
-          <IoIosArrowBack size={20} />
-        </button>
+        className="absolute left-5 top-[45%] transform -translate-y-1/2 text-primary-grey bg-[#f1f1f1] bg-opacity-80 p-1 xl:p-2 rounded-full z-10"
+        onClick={scrollPrev}
+      >
+        <IoIosArrowBack size={20} />
+      </button>
 
       <div className="embla__viewport overflow-hidden rounded-lg" ref={emblaRef}>
         <div className="embla__container flex">
           {gallery.map((item, index) => (
             <div key={index} className="embla__slide min-w-full flex justify-center items-center pb-5 lg:pb-0">
-              <img
+              <Image
                 src={`https://www.centauruscharter.net/product/galleryimages/${item.image}`}
                 alt={`Slide ${index + 1}`}
+                width={1200}
+                height={600}
                 className="w-full h-auto max-w-7xl object-cover rounded-lg"
+                priority={index === 0}
               />
             </div>
           ))}
         </div>
       </div>
+
       <button
         aria-label="go forward"
-          className="absolute right-5 top-[45%] transform -translate-y-1/2 text-primary-grey bg-[#f1f1f1] bg-opacity-80 p-1 xl:p-2 rounded-full z-10"
-          onClick={scrollNext}
-        >
-          <IoIosArrowForward size={20} />
-        </button>
+        className="absolute right-5 top-[45%] transform -translate-y-1/2 text-primary-grey bg-[#f1f1f1] bg-opacity-80 p-1 xl:p-2 rounded-full z-10"
+        onClick={scrollNext}
+      >
+        <IoIosArrowForward size={20} />
+      </button>
+
       <div className="relative mt-4">
-      
-        <div 
-          ref={thumbnailRef} 
+        <div
+          ref={thumbnailRef}
           className="overflow-x-auto flex gap-2 no-scrollbar"
           style={{
             scrollBehavior: 'smooth',
@@ -85,21 +90,20 @@ export default function YachtGallery({ gallery }) {
             <button
               key={index}
               onClick={() => emblaInstance.current?.scrollTo(index)}
-              className={`flex-shrink-0 w-[calc(20%-8px)] aspect-video ${
-                activeIndex === index ? "" : ""
-              }`}
+              className="flex-shrink-0 w-[calc(20%-8px)] aspect-video"
             >
-              <img
+              <Image
                 src={`https://www.centauruscharter.net/product/galleryimages/${item.image}`}
                 alt={`Thumbnail ${index + 1}`}
+                width={320}
+                height={180}
                 className="w-full h-full object-cover rounded"
+                priority={index === 0}
               />
             </button>
           ))}
         </div>
-
-        
       </div>
     </div>
   );
-} 
+}
