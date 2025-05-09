@@ -105,7 +105,7 @@ export default function Home() {
 
                   <div className="absolute grid grid-cols-3 items-center gap-0 rounded-lg center-absolute -bottom-5 left-0 right-0 px-5">
                     {/* Model */}
-                    <div className="bg-[#f1f1f1] text-primary-grey p-1 xl:p-2 flex flex-col items-center rounded-l-lg">
+                    <div className="bg-primary-blue-light text-primary-grey p-1 xl:p-2 flex flex-col items-center rounded-l-lg">
                       <span className="text-xs">
                         Model:
                       </span>
@@ -115,7 +115,7 @@ export default function Home() {
                     </div>
 
                     {/* Length */}
-                    <div className="bg-[#f1f1f1] text-primary-grey p-1 xl:p-2 flex flex-col items-center">
+                    <div className="bg-primary-blue-light text-primary-grey p-1 xl:p-2 flex flex-col items-center">
                       <span className="text-xs">
                         Length:
                       </span>
@@ -125,7 +125,7 @@ export default function Home() {
                     </div>
 
                     {/* Guests */}
-                    <div className="bg-[#f1f1f1] text-primary-grey p-1 xl:p-2 flex flex-col items-center rounded-r-lg">
+                    <div className="bg-primary-blue-light text-primary-grey p-1 xl:p-2 flex flex-col items-center rounded-r-lg">
                       <span className="text-xs">
                         Guests:
                       </span>

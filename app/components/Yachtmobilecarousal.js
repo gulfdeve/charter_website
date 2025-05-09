@@ -57,7 +57,7 @@ export default function YachtmobileCarousal() {
                   {/* Model / Length / Guests / Price */}
                   <div className="grid grid-cols-3 items-center gap-0 rounded-lg my-3">
                     {/* Model */}
-                    <div className="bg-[#f1f1f1] p-1 xl:p-2.5 flex flex-col items-center rounded-l-lg">
+                    <div className="bg-primary-blue-light p-1 xl:p-2.5 flex flex-col items-center rounded-l-lg">
                       <span className="font-semibold text-primary-grey text-[0.6rem]">
                         Model:
                       </span>
@@ -66,7 +66,7 @@ export default function YachtmobileCarousal() {
                       </span>
                     </div>
                     {/* Length */}
-                    <div className="bg-[#f1f1f1] p-1 xl:p-2 flex flex-col items-center">
+                    <div className="bg-primary-blue-light p-1 xl:p-2 flex flex-col items-center">
                       <span className="font-semibold text-primary-grey text-[0.6rem]">
                         Length:
                       </span>
@@ -75,7 +75,7 @@ export default function YachtmobileCarousal() {
                       </span>
                     </div>
                     {/* Guests */}
-                    <div className="bg-[#f1f1f1] p-1 xl:p-2 flex flex-col items-center rounded-r-lg">
+                    <div className="bg-primary-blue-light p-1 xl:p-2 flex flex-col items-center rounded-r-lg">
                       <span className="font-semibold text-primary-grey text-[0.6rem]">
                         Guests:
                       </span>

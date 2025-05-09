@@ -84,38 +84,39 @@ const page = ({ params }) => {
                   </h2>
                 </Link>
               {/* Image with object-cover for proper scaling */}
+              <div className="relative">
+
               <Link href={`/yacht-rentals/${yacht.slug}`}>
 			  <img
                 src={`https://www.centauruscharter.net/product/images/${yacht.yacht_image}`}
                 alt={yacht.translations?.[locale]?.[0]?.name_of_yacht}
                 className="rounded-lg w-full object-cover"
-              />
+                />
 			  </Link>
-              <div className="w-full flex justify-stretch flex-col  justify-center pt-4 ">
-                <div className="grid grid-cols-2 lg:grid-cols-4 items-stretch gap-0 rounded-lg w-full overflow-hidden mb-7">
+        <div className="lg:absolute grid grid-cols-2 sm:grid-cols-4 md:grid-cols-2 lg:grid-cols-4 items-center gap-0 bg-primary-blue-light rounded-lg center-absolute -bottom-5 left-0 right-0 lg:mx-5 mt-4 lg:mt-0">
                   {/* Model */}
-                  <div className="bg-primary-blue-light text-primary-grey p-2 flex flex-col items-center justify-center text-center w-full h-full">
+                  <div className="text-primary-grey p-2 flex flex-col items-center justify-center text-center w-full h-full">
                     <span className="text-sm">Model:</span>
                     <span className="font-semibold text-sm text-black">
                       {yacht.translations?.[locale]?.[0]?.model}
                     </span>
                   </div>
                   {/* Length */}
-                  <div className="bg-primary-blue-light text-primary-grey p-2 flex flex-col items-center justify-center text-center w-full h-full">
+                  <div className="text-primary-grey p-2 flex flex-col items-center justify-center text-center w-full h-full">
                     <span className="text-sm">Length:</span>
                     <span className="font-semibold text-sm text-black">
                       {yacht.translations?.[locale]?.[0]?.size}
                     </span>
                   </div>
                   {/* Guests */}
-                  <div className="bg-primary-blue-light text-primary-grey p-2 flex flex-col items-center justify-center text-center w-full h-full">
+                  <div className="text-primary-grey p-2 flex flex-col items-center justify-center text-center w-full h-full">
                     <span className="text-sm">Guests:</span>
                     <span className="font-semibold text-sm text-black">
                       {yacht.translations?.[locale]?.[0]?.guests}
                     </span>
                   </div>
                   {/* Good For */}
-                  <div className="bg-primary-blue-light text-primary-grey w-full p-2 flex flex-col items-center justify-center text-center h-full">
+                  <div className="text-primary-grey w-full p-2 flex flex-col items-center justify-center text-center h-full">
                     <span className="text-sm">Good For:</span>
                     <span className="font-semibold text-black text-sm">
                       {/* Birthday/Parties */}
@@ -123,6 +124,9 @@ const page = ({ params }) => {
                     </span>
                   </div>
                 </div>
+                </div>
+              <div className="w-full flex justify-stretch flex-col pt-5 lg:pt-10">
+                
 
                 <div className="bg-primary-black w-full h-[0.05rem] "></div>
                 <div className="flex flex-col sm:flex-row flex-grow items-left lg:items-end justify-between w-full pt-5 gap-2 md:gap-3">
