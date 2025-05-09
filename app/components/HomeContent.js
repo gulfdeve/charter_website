@@ -129,7 +129,6 @@ export default function Home() {
                       </span>
                     </div>
                     </div>
-                  </div>
 
                   {/* Special Note */}
                   <div className="z-10 mt-12">
