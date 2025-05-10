@@ -14,6 +14,7 @@ import { useData } from "@/app/context/DataContext";
 import { useLanguage } from "@/app/context/LanguageContext";
 import { Link } from "../i18n/routing";
 import Image from "next/image";
+import { FaYoutube } from "react-icons/fa";
 import Yachtmobilecarousal from '@/app/components/Yachtmobilecarousal'
 import VideoLocal from "@/app/components/VideoLocal";
 import { FiArrowRight } from "react-icons/fi";
@@ -22,6 +23,8 @@ export default function Home() {
   const t = useTranslations();
   const emblaRef = useRef(null);
   const [isModalVisible, setIsModalVisible] = useState(false);
+  const [videoModalVisible, setVideoModalVisible] = useState(false);
+  const [selectedVideo, setSelectedVideo] = useState("");
   const emblaInstance = useRef(null);
   const { data, loading, error } = useData();
   const { language } = useLanguage();
@@ -34,6 +37,15 @@ export default function Home() {
 
   const closeModal = () => {
     setIsModalVisible(false);
+  };
+
+   const openVideoModal = (url) => {
+    setSelectedVideo(url);
+    setVideoModalVisible(true);
+  };
+  const closeVideoModal = () => {
+    setSelectedVideo("");
+    setVideoModalVisible(false);
   };
 
   useEffect(() => {
@@ -82,9 +94,18 @@ export default function Home() {
               data?.products?.map((product) => (
                 <div
                   key={product.id}
-                  className="flex flex-col p-5 rounded-lg shadow-custom bg-white"
+                  className="relative flex flex-col p-5 rounded-lg shadow-custom bg-white"
                 >
-                  
+                   {/* YouTube Button */}
+                  {product.youtube_url && (
+                    <button
+                      onClick={() => openVideoModal(product.youtube_url)}
+                      aria-label="Watch video"
+                      className="absolute top-4 right-4 z-20 bg-white p-2 rounded-full shadow-md hover:bg-red-600 hover:text-white text-red-600 transition-all"
+                    >
+                      <FaYoutube size={20} />
+                    </button>
+                  )}
                   <Link  href={`/yacht-rentals/${product.slug}`}>
                   <h3 className="md:text-lg  font-bold hover:text-primary-blue-2 transition-all duration-300 cursor-pointer">
                     {product.translations?.[locale].name_of_yacht}
@@ -397,7 +418,29 @@ export default function Home() {
 
       <Counters />
       <LocationCarousel />
+       {videoModalVisible && (
+        <div className="fixed top-0 left-0 w-full h-full bg-black bg-opacity-70 flex items-center justify-center z-50">
+          <div className="relative w-[90%] md:w-[60%] h-[60%] bg-black rounded-lg overflow-hidden">
+            <button
+              onClick={closeVideoModal}
+              className="absolute top-2 right-2 text-white text-xl z-10"
+              aria-label="Close video"
+            >
+              ✕
+            </button>
+            <iframe
+              src={selectedVideo}
+              className="w-full h-full"
+              frameBorder="0"
+              allow="autoplay; encrypted-media"
+              allowFullScreen
+              title="Yacht Video"
+            />
+          </div>
+        </div>
+      )}
       </div>
+
     </>
   );
 }
