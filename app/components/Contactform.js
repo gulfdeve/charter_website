@@ -106,9 +106,9 @@ export default function Contactform() {
         onSubmit={handleSubmit}
         className="w-full max-w-6xl bg-white rounded-lg custom-shadow p-6"
       >
-        <h1 className="text-center text-primary-blue text-4xl font-bold pb-7">
+        <h3 className="text-center text-primary-blue text-4xl font-bold pb-7">
           INQUIRE
-        </h1>
+        </h3>
         <div className="flex flex-col lg:flex-row gap-6">
           <div className="flex flex-col w-full gap-4">
             <div>

@@ -58,30 +58,30 @@ export default function Home({ params }) {
       <div className="flex flex-col lg:flex-row w-full max-w-7xl rounded-2xl overflow-hidden custom-shadow items-stretch ">
 
         {/* UPON REQUEST */}
-        <div className="w-full lg:w-1/2 flex flex-col items-center justify-start bg-[#1a428a] p-5 pb-10 shadow-custom">
+        <div className="w-full lg:w-1/2 flex flex-col items-center justify-start bg-primary-blue-2 p-5 pb-10">
           <div className="max-w-3xl mx-auto">
-            <h1 className="text-white text-3xl font-bold text-center py-7 px-3 uppercase">{product.translations[locale].price}</h1>
+            <h3 className="text-white text-xl font-bold text-center py-7 px-3 uppercase">{product.translations[locale].price}</h3>
             <div className="w-full h-px bg-white" />
             <div className="flex flex-col items-start justify-center">
               <div className="flex flex-row items-center justify-between gap-5 pt-4 lg:pt-12">
-                <h4 className="text-white font-medium uppercase">CONDITION:</h4>
-                <h4 className="text-white font-bold uppercase">{product.translations[locale].condition}</h4>
+                <p className="text-white font-medium uppercase">CONDITION:</p>
+                <p className="text-white font-bold uppercase">{product.translations[locale].condition}</p>
               </div>
               <div className="flex flex-row items-center justify-between gap-5 pt-4 lg:pt-10">
-                <h4 className="text-white font-medium uppercase">YEAR:</h4>
-                <h4 className="text-white uppercase font-bold">{product.translations[locale].year}</h4>
+                <p className="text-white font-medium uppercase">YEAR:</p>
+                <p className="text-white uppercase font-bold">{product.translations[locale].year}</p>
               </div>
               <div className="flex flex-row items-center justify-between gap-5 pt-4 lg:pt-10">
-                <h4 className="text-white font-medium uppercase">LOCATION:</h4>
-                <h4 className="text-white uppercase font-bold">{product.translations[locale].location}</h4>
+                <p className="text-white font-medium uppercase">LOCATION:</p>
+                <p className="text-white uppercase font-bold">{product.translations[locale].location}</p>
               </div>
               <div className="flex flex-row items-center justify-between gap-5 pt-4 lg:pt-10 pb-10">
-                <h4 className="text-white font-medium uppercase">AVAILABILITY:</h4>
-                <h4 className="text-white font-bold uppercase">{product.translations[locale].availability}</h4>
+                <p className="text-white font-medium uppercase">AVAILABILITY:</p>
+                <p className="text-white font-bold uppercase">{product.translations[locale].availability}</p>
               </div>
             </div>
           </div>
-          <button className="yellow-solid-button w-1/2 mx-auto uppercase">
+          <button className="yellow-solid-button md:w-1/2 mx-auto uppercase">
           <Link href={'https://api.whatsapp.com/send?phone=971547928626&text=Hi!%20I%20came%20across%20your%20website.%20I%20want%20to%20inquire%20about%20a%20yacht%20charter%20in%20Dubai.' } target="_blank" rel="noopener noreferrer">
             CHAT WITH US
             </Link>
@@ -89,49 +89,49 @@ export default function Home({ params }) {
         </div>
 
         {/* TECHNICAL SPECS */}
-        <div className="w-full lg:w-1/2 flex flex-col bg-white p-5 xl:px-14 lg:px-7">
-          <h1 className="text-black text-3xl font-bold text-center py-7 px-3 uppercase">TECHNICAL SPECS</h1>
+        <div className="w-full lg:w-1/2 flex flex-col bg-white p-5 xl:px-14 s:px-10">
+          <h3 className="text-black text-xl font-bold text-center py-7 px-3 uppercase">TECHNICAL SPECS</h3>
           <div className="w-full h-px bg-gray-500" />
-          <div className="grid grid-cols-2 lg:grid-cols-2 gap-6 py-4">
+          <div className="grid grid-cols-1 xs:grid-cols-2 gap-6 py-4">
             <div>
-              <h4 className="text-black font-bold uppercase">LENGTH:</h4>
-              <h4 className="text-black font-medium uppercase">{product.translations[locale].length}</h4>
+              <p className="text-black font-bold uppercase">LENGTH:</p>
+              <p className="text-black font-medium uppercase">{product.translations[locale].length}</p>
             </div>
             <div>
-              <h4 className="text-black font-bold uppercase">MAX SPEED:</h4>
-              <h4 className="text-black font-medium uppercase">{product.translations[locale].max_speed}</h4>
+              <p className="text-black font-bold uppercase">MAX SPEED:</p>
+              <p className="text-black font-medium uppercase">{product.translations[locale].max_speed}</p>
             </div>
             <div>
-              <h4 className="text-black font-bold uppercase">BEAM:</h4>
-              <h4 className="text-black font-medium uppercase">{product.translations[locale].beam}</h4>
+              <p className="text-black font-bold uppercase">BEAM:</p>
+              <p className="text-black font-medium uppercase">{product.translations[locale].beam}</p>
             </div>
             <div>
-              <h4 className="text-black font-bold uppercase">CRUISING SPEED:</h4>
-              <h4 className="text-black font-medium uppercase">{product.translations[locale].cruising_speed}</h4>
+              <p className="text-black font-bold uppercase">CRUISING SPEED:</p>
+              <p className="text-black font-medium uppercase">{product.translations[locale].cruising_speed}</p>
             </div>
             <div>
-              <h4 className="text-black font-bold uppercase">BUILDER:</h4>
-              <h4 className="text-black font-medium uppercase">{product.translations[locale].builder}</h4>
+              <p className="text-black font-bold uppercase">BUILDER:</p>
+              <p className="text-black font-medium uppercase">{product.translations[locale].builder}</p>
             </div>
             <div>
-              <h4 className="text-black font-bold uppercase">WATER CAPACITY:</h4>
-              <h4 className="text-black font-medium uppercase">{product.translations[locale].water_capacity}</h4>
+              <p className="text-black font-bold uppercase">WATER CAPACITY:</p>
+              <p className="text-black font-medium uppercase">{product.translations[locale].water_capacity}</p>
             </div>
             <div>
-              <h4 className="text-black font-bold uppercase">YEAR BUILT:</h4>
-              <h4 className="text-black font-medium uppercase">{product.translations[locale].year_build}</h4>
+              <p className="text-black font-bold uppercase">YEAR BUILT:</p>
+              <p className="text-black font-medium uppercase">{product.translations[locale].year_build}</p>
             </div>
             <div>
-              <h4 className="text-black font-bold uppercase">FUEL CAPACITY:</h4>
-              <h4 className="text-black font-medium uppercase">{product.translations[locale].fuel_capacity}</h4>
+              <p className="text-black font-bold uppercase">FUEL CAPACITY:</p>
+              <p className="text-black font-medium uppercase">{product.translations[locale].fuel_capacity}</p>
             </div>
             <div>
-              <h4 className="text-black font-bold uppercase">PROPULSION:</h4>
-              <h4 className="text-black font-medium uppercase">{product.translations[locale].propulsion}</h4>
+              <p className="text-black font-bold uppercase">PROPULSION:</p>
+              <p className="text-black font-medium uppercase">{product.translations[locale].propulsion}</p>
             </div>
             <div>
-              <h4 className="text-black font-bold uppercase">ENGINE:</h4>
-              <h4 className="text-black font-medium uppercase">{product.translations[locale].engine}</h4>
+              <p className="text-black font-bold uppercase">ENGINE:</p>
+              <p className="text-black font-medium uppercase">{product.translations[locale].engine}</p>
             </div>
           </div>
         </div>
