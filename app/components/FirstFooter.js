@@ -316,7 +316,7 @@ export default function FirstFooter() {
   return (
     <>
    
-    <footer className="text-sm bg-primary-black pb-10 pt-10 md:pt-24 lg:pt-24 xl:pt-36 relative">
+    <footer className="text-sm bg-primary-blue pb-10 pt-10 md:pt-24 lg:pt-24 xl:pt-36 relative">
        {/* SVG Divider */}
     <div className="divider-top -top-2 w-full z-10">
       <svg
