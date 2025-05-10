@@ -60,11 +60,11 @@ const YachtCard = ({ yacht }) => {
                   />
                 </Link>
                 {/* YouTube Icon only on first slide if URL exists */}
-                {index === 0 && yacht.youtube_url && (
+                {/* {index === 0 && yacht.youtube_url && (
                   <button
                     onClick={() =>
                       openModal(
-                        yacht.youtube_url /* or toEmbedUrl(yacht.youtube_url) */
+                        yacht.youtube_url
                       )
                     }
                     className="absolute top-2 right-2 bg-white p-2 rounded-full shadow-md hover:bg-red-600 hover:text-white text-red-600 transition-all"
@@ -72,7 +72,7 @@ const YachtCard = ({ yacht }) => {
                   >
                     <FaYoutube size={20} />
                   </button>
-                )}
+                )} */}
               </div>
             ))}
           </div>
