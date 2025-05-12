@@ -26,6 +26,7 @@ const Page = () => {
       rate2Hours: "AED 950",
       rate3Hours: "AED 1070",
       rate4Hours: "AED 1430",
+      fareharbor_id: "353083",
     },
     {
       name: "STORM - 36FT",
@@ -34,6 +35,7 @@ const Page = () => {
       rate2Hours: "AED 950",
       rate3Hours: "AED 1070",
       rate4Hours: "AED 1430",
+      fareharbor_id: "429263",
     },
     {
       name: "RIVERSIDE - 40FT",
@@ -42,6 +44,7 @@ const Page = () => {
       rate2Hours: "AED 1200",
       rate3Hours: "AED 1350",
       rate4Hours: "AED 1800",
+      fareharbor_id: "583211",
     },
     {
       name: "VASSIA - 56FT",
@@ -50,6 +53,7 @@ const Page = () => {
       rate2Hours: "AED 1665",
       rate3Hours: "AED 1870",
       rate4Hours: "AED 2495",
+      fareharbor_id: "340280",
     },
     {
       name: "ETOSHA - 58FT",
@@ -58,6 +62,7 @@ const Page = () => {
       rate2Hours: "AED 1730",
       rate3Hours: "AED 1945",
       rate4Hours: "AED 2590",
+      fareharbor_id: "340265",
     },
     {
       name: "LAGOONA - 56FT",
@@ -66,6 +71,8 @@ const Page = () => {
       rate2Hours: "AED 1840",
       rate3Hours: "AED 2070",
       rate4Hours: "AED 2760",
+      fareharbor_id: "340459",
+
     },
     {
       name: "SILVER CREEK - 61FT",
@@ -74,6 +81,7 @@ const Page = () => {
       rate2Hours: "AED 1995",
       rate3Hours: "AED 2250",
       rate4Hours: "AED 3000",
+       fareharbor_id: "340286",
     },
   ];
 
@@ -128,7 +136,7 @@ const Page = () => {
                                 target="_self"
                                 rel="noopener noreferrer" 
                                 className="flex items-center mt-5 pt-3 group justify-between px-5 text-primary-blue-2 border-t border-gray-400">
-                          <div className="btn-info">Book Now</div>
+                          <button className="btn-info">Book Now</button>
                           <FiArrowRight size={20} className=" text-lg transform md:group-hover:translate-x-4 transition-transform duration-300" />
                         </a>
                       </div>

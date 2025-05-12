@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import Videoweddingtrip from "@/app/components/Videoweddingtrip";
 import { useRouter, usePathname, Link } from "@/app/i18n/routing";
 import Videosharedtours from "@/app/components/Video-sharedtours";
@@ -8,10 +8,18 @@ import YachtCarousel from "@/app/components/YachtCarousel";
 import { useData } from "@/app/context/DataContext";
 import { useLocale, useTranslations } from "next-intl";
 import VideoLocal from "@/app/components/VideoLocal";
+import Modal2 from "@/app/components/Modal2";
 const page = () => {
   const { data, loading, error } = useData();
   const locale = useLocale();
+    const [isModalOpen, setIsModalOpen] = useState(false);
+  const handleQuote = () => {
+    setIsModalOpen(true);
+  };
 
+  const closeModal = () => {
+    setIsModalOpen(false);
+  };
   return (
     <>
       {/* <div>
@@ -118,7 +126,7 @@ const page = () => {
                 reality. Our yacht wedding charter redefines romance, offering
                 an extraordinary backdrop for your special day.
               </p>
-              <button className="blue-solid-button">
+              <button onClick={handleQuote} className="blue-solid-button">
                 INQUIRE
               </button>
             </div>
@@ -258,17 +266,24 @@ const page = () => {
               REACH OUT TO US
             </button>
             <div className=" flex md:flex-row md:gap-10">
+              <a href="https://api.whatsapp.com/send?phone=971547928626&text=Hi!%20I%20came%20across%20your%20website.%20I%20want%20to%20inquire%20about%20a%20yacht%20charter%20in%20Dubai." target="_blank"></a>
               <button className="flex items-center justify-center gap-2 px-4 py-3 bg-primary-blue text-primary-yellow border border-primary-yellow-dark  font-bold rounded-md hover:bg-primary-blue-2 transition">
                 <FaWhatsapp size={20} />
                 WHATSAPP US
               </button>
-              <button className="flex items-center justify-center gap-2 px-4 py-3 bg-primary-blue text-primary-yellow border border-primary-yellow-dark  font-bold rounded-md hover:bg-primary-blue-2 transition">
+              <button onClick={handleQuote} className="flex items-center justify-center gap-2 px-4 py-3 bg-primary-blue text-primary-yellow border border-primary-yellow-dark  font-bold rounded-md hover:bg-primary-blue-2 transition">
                 GET A QUOTE
               </button>
             </div>
           </div>
         </div>
       </div>
+       <Modal2
+              isModalOpen={isModalOpen}
+              closeModal={closeModal}
+              idName="offers_id"
+              idValue="47"
+            />
       <YachtCarousel />
     </>
   );
