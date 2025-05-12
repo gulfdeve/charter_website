@@ -85,9 +85,9 @@ export default function Navbar() {
   return (
     <>
       {/* Desktop Navbar */}
-      <div className="fixed h-20 top-0 left-0 w-full z-50 bg-white shadow-md lg:block hidden gradient-custom">
+      <div className="fixed h-[4.5rem] top-0 left-0 w-full z-50 bg-white shadow-md lg:block hidden gradient-custom">
         <div className="container lg:max-w-none px-0 mx-auto">
-          <nav className="flex h-20 items-stretch justify-around">
+          <nav className="flex h-[4.4rem] items-stretch justify-around">
             {/* Logo */}
             <div className="flex items-center justify-center h-full">
               <Link href="/">
