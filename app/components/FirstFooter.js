@@ -174,21 +174,21 @@ export default function FirstFooter() {
 				  link: "https://goo.gl/maps/ySfLoXGZ348Hs2rWA"
 				},
 				{
-				  address: "Berth No AB05 - near Harbour Bridge - Dubai Harbour",
+				  address: "Berth No. AB05 - near Harbour Bridge - Dubai Harbour",
 				  location: "Dubai, United Arab Emirates",
 				  link: "https://goo.gl/maps/NPhE8NUps51fSAAJ9"
 				},
 				{
 				  address:
-					"Dubai Harbour Marina, Berth No A-G36 Near Dockmaster 1 Building",
+					"Dubai Harbour Marina, Berth No. A-G36 Near Dockmaster 1 Building",
 				  location: "Dubai, United Arab Emirates",
 				  link: "https://maps.app.goo.gl/D7m68mfD2Xbc4pcv6"
 				},
 				{
 					address:
-					  "Marasi Bay Marina, E06 G gate - D-Marin - Marasi Dr - Bay Marina",
+					  "Berth No. A-H33T, Dubai Harbour Marina, United Arab Emirates",
 					location: "Dubai, United Arab Emirates",
-					link: "https://maps.app.goo.gl/XVPwMjj8uWpwocsh6"
+					link: "https://maps.app.goo.gl/PpBaHSR3ZjCNbpKDA"
 				  },
 			  ].map((item, index) => (
 				<li key={index} className="flex items-start gap-3">

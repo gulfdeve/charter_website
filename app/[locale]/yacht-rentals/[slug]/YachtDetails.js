@@ -57,9 +57,9 @@ export default function YachtDetails({
       mapUrl: "https://maps.app.goo.gl/RG7xmTtjcYf7syVQ8",
     },
     "85ft-yacht-Kronos": {
-      berth: "E06 G gate - D-Marin - Marasi Dr - Bay Marina - Dubai",
+      berth: "Berth No. A-H33T, Dubai Harbour Marina",
       address: "Dubai, United Arab Emirates",
-      mapUrl: "https://maps.app.goo.gl/XVPwMjj8uWpwocsh6",
+      mapUrl: "https://maps.app.goo.gl/PpBaHSR3ZjCNbpKDA",
     },
   };
   const loc = locationMap[product.slug] || {};
