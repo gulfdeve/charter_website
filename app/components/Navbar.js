@@ -85,11 +85,11 @@ export default function Navbar() {
   return (
     <>
       {/* Desktop Navbar */}
-      <div className="fixed top-0 left-0 w-full z-50 bg-white shadow-md lg:block hidden gradient-custom">
+      <div className="fixed h-20 top-0 left-0 w-full z-50 bg-white shadow-md lg:block hidden gradient-custom">
         <div className="container lg:max-w-none px-0 mx-auto">
-          <nav className="flex items-center justify-around">
+          <nav className="flex h-20 items-stretch justify-around">
             {/* Logo */}
-            <div className="py-4">
+            <div className="flex items-center justify-center h-full">
               <Link href="/">
                 <Image
                   src="/Cenaturus Logo top.png"
@@ -102,17 +102,17 @@ export default function Navbar() {
             </div>
 
             {/* Main Menu Items */}
-            <div className="flex items-center text-xs xxl:text-base">
-              <ul className="flex space-x-6 lg:space-x-8 text-xs xxl:text-base font-semibold">
+            <div className="flex h-full items-stretch text-xs xxl:text-base">
+              <ul className="flex items-stretch h-full space-x-6 lg:space-x-8 text-xs xxl:text-base font-semibold">
                 {/* Private Yachts Dropdown */}
                 <li
-                  className="relative group"
+                  className="relative group h-full"
                   ref={privateYachtsRef}
                   onMouseEnter={() => setPrivateYachtsOpen(true)}
                   onMouseLeave={() => setPrivateYachtsOpen(false)}
                 >
                   <span
-                    className={`flex items-center justify-between cursor-pointer gap-1 py-2 uppercase border-b-2 transition-all duration-200 font-Montserrat ${
+                    className={`h-full flex items-center justify-between cursor-pointer gap-1 py-2 transition-all duration-200 font-Montserrat ${
                       pathname === "/yacht-rentals" ||
                       pathname.startsWith("/yacht-rentals/")
                         ? "text-primary-blue border-primary-yellow font-semibold"
@@ -164,11 +164,11 @@ export default function Navbar() {
                 <li>
                   <Link
                     href="/yachts-for-sale-dubai"
-                    className={`py-2 inline-block tracking-wider uppercase border-b-2 transition-all duration-200 font-Montserrat ${
+                    className={`h-full flex items-center tracking-wider uppercase underline decoration-2 underline-offset-8 transition-all duration-200 font-Montserrat ${
                       pathname === "/yachts-for-sale-dubai" ||
                       pathname.startsWith("/yachts-for-sale-dubai/")
-                        ? "text-primary-blue border-primary-yellow font-semibold"
-                        : "text-primary-blue border-transparent hover:border-primary-yellow"
+                        ? "text-primary-blue decoration-primary-yellow font-semibold"
+                        : "text-primary-blue decoration-transparent hover:decoration-primary-yellow"
                     }`}
                   >
                     {t("navbar.buy-a-yacht")}
@@ -179,11 +179,11 @@ export default function Navbar() {
                 <li>
                   <Link
                     href="/shared-yacht-tours-dubai"
-                    className={`py-2 inline-block tracking-wider uppercase border-b-2 transition-all duration-200 font-Montserrat ${
+                    className={`h-full flex items-center tracking-wider uppercase underline decoration-2 underline-offset-8 transition-all duration-200 font-Montserrat ${
                       pathname === "/shared-yacht-tours-dubai" ||
                       pathname.startsWith("/shared-yacht-tours-dubai/")
-                        ? "text-primary-blue border-primary-yellow font-semibold"
-                        : "text-primary-blue border-transparent hover:border-primary-yellow"
+                        ? "text-primary-blue decoration-primary-yellow font-semibold"
+                        : "text-primary-blue decoration-transparent hover:decoration-primary-yellow"
                     }`}
                   >
                     {t("navbar.shared-tours")}
@@ -192,17 +192,17 @@ export default function Navbar() {
 
                 {/* Experiences Dropdown */}
                 <li
-                  className="relative group"
+                  className="relative group h-full"
                   ref={experiencesRef}
                   onMouseEnter={() => setExperiencesOpen(true)}
                   onMouseLeave={() => setExperiencesOpen(false)}
                 >
                   <span
-                    className={`flex items-center justify-between cursor-pointer gap-1 py-2 border-b-2 transition-all duration-200 font-Montserrat ${
+                    className={`h-full flex items-center justify-between cursor-pointer gap-1 py-2 transition-all duration-200 font-Montserrat ${
                       pathname === "/yacht-trips" ||
                       pathname.startsWith("/yacht-trips/")
-                        ? "text-primary-blue border-primary-yellow font-semibold"
-                        : "text-primary-blue border-transparent"
+                        ? "text-primary-blue underline-primary-yellow font-semibold"
+                        : "text-primary-blue underline-transparent"
                     }`}
                   >
                     <Link href="/yacht-trips" className="tracking-wider">
@@ -258,10 +258,10 @@ export default function Navbar() {
                 <li>
                   <Link
                     href="/offers"
-                    className={`py-2 inline-block tracking-wider uppercase border-b-2 transition-all duration-200 font-Montserrat ${
+                    className={`h-full flex items-center tracking-wider uppercase underline decoration-2 underline-offset-8 transition-all duration-200 font-Montserrat ${
                       pathname === "/offers" || pathname.startsWith("/offers/")
-                        ? "text-primary-blue border-primary-yellow font-semibold"
-                        : "text-primary-blue border-transparent hover:border-primary-yellow"
+                        ? "text-primary-blue decoration-primary-yellow font-semibold"
+                        : "text-primary-blue decoration-transparent hover:decoration-primary-yellow"
                     }`}
                   >
                     {t("navbar.offers")}
@@ -272,10 +272,10 @@ export default function Navbar() {
                 <li>
                   <Link
                     href="/events"
-                    className={`py-2 inline-block tracking-wider uppercase border-b-2 transition-all duration-200 font-Montserrat ${
+                    className={`h-full flex items-center tracking-wider uppercase underline decoration-2 underline-offset-8 transition-all duration-200 font-Montserrat ${
                       pathname === "/events" || pathname.startsWith("/events/")
-                        ? "text-primary-blue border-primary-yellow font-semibold"
-                        : "text-primary-blue border-transparent hover:border-primary-yellow"
+                        ? "text-primary-blue decoration-primary-yellow font-semibold"
+                        : "text-primary-blue decoration-transparent hover:decoration-primary-yellow"
                     }`}
                   >
                     {t("navbar.events")}
@@ -286,11 +286,11 @@ export default function Navbar() {
                 <li>
                   <Link
                     href="/contact"
-                    className={`py-2 inline-block tracking-wider uppercase border-b-2 transition-all duration-200 font-Montserrat ${
+                    className={`h-full flex items-center tracking-wider uppercase underline decoration-2 underline-offset-8 transition-all duration-200 font-Montserrat ${
                       pathname === "/contact" ||
                       pathname.startsWith("/contact/")
-                        ? "text-primary-blue border-primary-yellow font-semibold"
-                        : "text-primary-blue border-transparent hover:border-primary-yellow"
+                        ? "text-primary-blue decoration-primary-yellow font-semibold"
+                        : "text-primary-blue decoration-transparent hover:decoration-primary-yellow"
                     }`}
                   >
                     {t("navbar.contact-us")}
