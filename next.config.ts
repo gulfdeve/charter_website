@@ -36,60 +36,81 @@ const nextConfig: NextConfig = {
   reactStrictMode: true,
   // Add custom headers for caching
   async headers() {
-	// In development, use no-cache headers
-	if (process.env.NODE_ENV === 'development') {
+    if (process.env.NODE_ENV === 'development') {
+		return [
+		  {
+			source: '/(.*)',
+			headers: [
+			  {
+				key: 'Cache-Control',
+				value: 'no-store, no-cache, must-revalidate, proxy-revalidate',
+			  },
+			  {
+				key: 'Pragma',
+				value: 'no-cache',
+			  },
+			  {
+				key: 'Expires',
+				value: '0',
+			  },
+			],
+		  },
+		];
+	  }
+	  
 	  return [
+		// HTML pages - shorter cache with revalidation
 		{
-		  source: '/(.*)',
+		  source: '/',
 		  headers: [
 			{
 			  key: 'Cache-Control',
-			  value: 'no-store, no-cache, must-revalidate, proxy-revalidate',
+			  value: 'public, max-age=60, s-maxage=3600, stale-while-revalidate=86400',
 			},
+		  ],
+		},
+		{
+		  source: '/((?!api|_next|.*\\..*).*)', // All routes except API, _next, and files
+		  headers: [
 			{
-			  key: 'Pragma',
-			  value: 'no-cache',
+			  key: 'Cache-Control',
+			  value: 'public, max-age=60, s-maxage=3600, stale-while-revalidate=86400',
 			},
+		  ],
+		},
+		
+		// API routes - no cache by default
+		{
+		  source: '/api/:path*',
+		  headers: [
 			{
-			  key: 'Expires',
-			  value: '0',
+			  key: 'Cache-Control',
+			  value: 'no-store, max-age=0',
+			},
+		  ],
+		},
+		
+		// Static assets - long cache with versioning
+		{
+		  source: '/_next/static/(.*)',
+		  headers: [
+			{
+			  key: 'Cache-Control',
+			  value: 'public, max-age=31536000, immutable',
+			},
+		  ],
+		},
+		{
+		  source: '/(.*)\\.(js|css|svg|jpg|jpeg|png|webp|avif|ico|woff2)',
+		  headers: [
+			{
+			  key: 'Cache-Control',
+			  value: 'public, max-age=31536000, immutable',
 			},
 		  ],
 		},
 	  ];
-	}
-	
-	// In production, keep the original caching strategy
-	return [
-	  {
-		source: '/(.*)',
-		headers: [
-		  {
-			key: 'Cache-Control',
-			value: 'public, max-age=3600, s-maxage=86400, stale-while-revalidate=604800',
-		  },
-		],
-	  },
-	  {
-		source: '/api/get-data',
-		headers: [
-		  {
-			key: 'Cache-Control',
-			value: 'public, max-age=3600, s-maxage=7200, stale-while-revalidate=86400',
-		  },
-		],
-	  },
-	  {
-		source: '/(.*)\\.(js|css|svg|jpg|jpeg|png|webp|avif|ico|woff2)',
-		headers: [
-		  {
-			key: 'Cache-Control',
-			value: 'public, max-age=31536000, immutable',
-		  },
-		],
-	  },
-	];
-  },
+	},
 };
 
 export default withNextIntl(nextConfig);
