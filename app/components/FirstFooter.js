@@ -302,6 +302,16 @@ export default function FirstFooter() {
               +971 56 501 7057
             </a>
           </li>
+          <li className="flex flex-col md:items-start items-center text-center md:text-left">
+            <p className="font-semibold py-3">English / Chinese</p>
+            <a
+              className="mb-2 inline-block"
+              href="tel:+971544948573"
+              onClick={scrollToTop}
+            >
+              +971 54 494 8573
+            </a>
+          </li>
           {/* <li className="flex flex-col md:items-start items-center text-center md:text-left">
             <p className="font-semibold py-3">English / Hindi</p>
             <a className="mb-2 inline-block" href="tel:+971501452203" onClick={scrollToTop}>
