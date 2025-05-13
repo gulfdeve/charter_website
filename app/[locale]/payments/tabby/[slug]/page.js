@@ -5,7 +5,7 @@ import { redirect } from 'next/navigation';
 export const dynamicParams = true;
 
 // Pull environment variables
-const { NEXT_PUBLIC_BASE_URL, MERCHANT_CODE, TABBY_SECRET } = process.env;
+const { NEXT_PUBLIC_BASE_URL, TABBY_MERCHANT_CODE, TABBY_SECRET_KEY } = process.env;
 
 export default async function PaymentPage({ params }) {
   const { locale, slug } = params;
@@ -66,7 +66,7 @@ export default async function PaymentPage({ params }) {
       }
     },
     lang: locale,
-    merchant_code: MERCHANT_CODE,
+    merchant_code: TABBY_MERCHANT_CODE,
     merchant_urls: {
       success: `${NEXT_PUBLIC_BASE_URL}/${locale}/payments/tabby/${slug}/success`,
       cancel: `${NEXT_PUBLIC_BASE_URL}/${locale}/payments/tabby/${slug}/cancel`,
@@ -78,7 +78,7 @@ export default async function PaymentPage({ params }) {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
-      Authorization: `Bearer ${TABBY_SECRET}`
+      Authorization: `Bearer ${TABBY_SECRET_KEY}`
     },
     body: JSON.stringify(tabbyPayload)
   });
