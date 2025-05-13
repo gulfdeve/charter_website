@@ -18,6 +18,17 @@ export async function GET(request) {
 	revalidatePath('/');
 	revalidatePath('/yacht-rentals');
 	revalidatePath('/yacht-rentals/[slug]');
+	revalidatePath('/yacht-rentals/36ft-Storm');
+	revalidatePath('/yacht-rentals/56ft-lagoona');
+	revalidatePath('/yacht-rentals/85ft-yacht-Kronos');
+	revalidatePath('/yacht-rentals/36ft-thunder');
+	revalidatePath('/yacht-rentals/40ft-yacht-Riverside');
+	revalidatePath('/yacht-rentals/56ft-vassia');
+	revalidatePath('/yacht-rentals/58ft-etosha');
+	revalidatePath('/yacht-rentals/61ft-silvercreek');
+	revalidatePath('/yacht-rentals/77ft-dionysos');
+	revalidatePath('/yacht-rentals/118ft-poseidon');
+
 	revalidatePath('/offers');
 	revalidatePath('/offers/[slug]');
 	revalidatePath('/events');
