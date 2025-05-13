@@ -31,8 +31,16 @@ export async function GET(request) {
 
 	revalidatePath('/offers');
 	revalidatePath('/offers/[slug]');
+	revalidatePath('/offers/business-council');
+	revalidatePath('/offers/emirates-staff');
+	revalidatePath('/offers/dubai-yachts-winter-offers');
+	revalidatePath('/offers/fazaa-card');
+
+
 	revalidatePath('/events');
 	revalidatePath('/events/[slug]');
+	revalidatePath('/events/super-yacht-party-dubai');
+
 	revalidatePath('/yacht-trips');
 	revalidatePath('/yacht-trips/[slug]');
 	revalidatePath('/watersports');
