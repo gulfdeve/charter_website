@@ -67,29 +67,32 @@ export default function YachtDetails({
   return (
     <div className="flex flex-col lg:flex-row w-full items-start  py-3 gap-10">
       <div className="flex flex-col lg:items-start w-full lg:justify-start lg:w-1/2">
-        <h3 className="text-base text-black font-bold py-4">
-          Yacht Specifications
-        </h3>
-        <table className="w-full text-sm text-left text-gray-900">
+      <h3 className="text-base text-black font-bold py-4">
+        Yacht Specifications
+      </h3>
+      <table className="w-full text-sm text-left text-gray-900">
         <colgroup>
-            <col className="w-2/5" />
-            <col className="w-3/5" />
-          </colgroup>
-          <tbody>
-            {yachtDetails.map((detail, index) => (
-              <tr key={index} className="border-b border-gray-200">
-                <th
-                  className="py-3 px-4 font-semibold text-gray-700 w-2/5"
-                  scope="row"
-                >
-                  {detail.label}:
-                </th>
-                <td className="py-3 px-4 break-words">{detail.value}</td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
+          <col className="w-2/5" />
+          <col className="w-3/5" />
+        </colgroup>
+        <tbody>
+          {yachtDetails.map((detail, index) => (
+            <tr key={index} className="border-b border-gray-200">
+              <th
+                className="py-3 px-4 font-semibold text-gray-700 w-2/5"
+                scope="row"
+              >
+                {detail.label}:
+              </th>
+              <td
+                className="py-3 px-4 break-words"
+                dangerouslySetInnerHTML={{ __html: detail.value }}
+              />
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
 
       <div className="flex items-start justify-center">
         <div className="rounded-lg">
