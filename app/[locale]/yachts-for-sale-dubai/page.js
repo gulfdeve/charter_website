@@ -45,9 +45,11 @@ const Page = () => {
                 water. Our dedicated team is here to assist you in finding the
                 yacht that perfectly matches your desires and lifestyle.
               </p>
+              <a href="https://wa.me/123456789" target="_blank">
               <button className="blue-solid-button">
                 GET A LIST
               </button>
+              </a>
             </div>
           </div>
         </div>
