@@ -1,40 +1,64 @@
 import React from 'react';
 
-const PaymentResultPage = ({ searchParams }) => {
-  const { callback } = searchParams;
+// Next.js App Router server component
+export const runtime = 'edge';
 
-  // Determine status
+// Helper for extracting real payment_id
+function getRealPaymentId(raw) {
+  if (!raw) return null;
+  if (Array.isArray(raw)) {
+    const real = raw.find((v) => typeof v === 'string' && v.length > 1);
+    return real || raw[raw.length - 1];
+  }
+  return typeof raw === 'string' && raw.length > 1 ? raw : null;
+}
+
+export default function PaymentResultPage({ searchParams }) {
+  const { callback } = searchParams;
+  const paymentId = getRealPaymentId(searchParams.payment_id);
+
+  // Determine status flags
   const isSuccess = callback === 'success';
   const isCancelled = callback === 'cancel';
   const isFailure = callback === 'failure';
 
-  // Default title and message
+  // Titles and messages
   let title = 'Thank you!';
   let message = 'Your booking has been successfully confirmed.';
-  let imageSrc = '/images/booking-confirmed.webp';
-  let imageAlt = 'thank you';
 
   if (isCancelled) {
     title = 'Booking Cancelled';
     message = 'Your booking process was cancelled. No charges have been made.';
-   
   } else if (isFailure) {
     title = 'Payment Failed';
     message = 'Unfortunately, there was an error processing your payment. Please try again or contact support.';
-    
   }
 
+  // Conditional padding classes
+  const containerPadding = isSuccess ? 'py-10' : 'py-32';
+  const innerPaddingTop = isSuccess ? 'pt-10' : 'pt-32';
+
   return (
-    <div className="container mx-auto   bg-white nav-space">
-      <div className="flex flex-col items-center h-screen justify-center pt-1">
-        {/* Header */}
+    <div className={
+      `container mx-auto ${containerPadding} bg-white nav-space`
+    }>
+      <div className={
+        `flex flex-col items-center justify-center ${innerPaddingTop}`
+      }>
         <h2 className="text-primary-blue-2 font-bold">{title}</h2>
         <p className="max-w-2xl text-primary-grey text-center font-bold mb-5 md:text-xl">
           {message}
         </p>
-        
 
-        {/* Contextual sub-message */}
+        {/* Show image only on success */}
+        {isSuccess && (
+          <img
+            src="/images/booking-confirmed.webp"
+            alt="thank you"
+            className="w-1/2 md:w-1/3 lg:w-1/6 my-5"
+          />
+        )}
+
         {isSuccess && (
           <p className="max-w-xl text-primary-grey text-center italic">
             A detailed invoice has been sent to your registered email address.<br />
@@ -67,7 +91,6 @@ const PaymentResultPage = ({ searchParams }) => {
           </p>
         )}
 
-        {/* Detailed summary shown only on success */}
         {isSuccess && (
           <div className="bg-[#f5f5f5] w-full max-w-2xl rounded-lg p-6 m-5">
             {/* Booking Summary */}
@@ -139,6 +162,4 @@ const PaymentResultPage = ({ searchParams }) => {
       </div>
     </div>
   );
-};
-
-export default PaymentResultPage;
+}
