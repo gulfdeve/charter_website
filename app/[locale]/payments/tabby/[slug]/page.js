@@ -1,4 +1,3 @@
-// app/payments/tabby/[slug]/page.js
 import React from 'react';
 import { redirect } from 'next/navigation';
 
@@ -23,86 +22,15 @@ function getRealPaymentId(raw) {
 }
 
 export default async function PaymentPage({ params, searchParams }) {
-  const { slug } = params;
+  const { slug, locale } = params;
   const callback = searchParams.callback; // "success", "cancel", etc.
   const paymentId = getRealPaymentId(searchParams.payment_id);
 
   // —— Callback phase: Tabby has redirected back
   if (callback && paymentId) {
-    console.log(`🔔 Tabby ${callback.toUpperCase()} callback for slug ${slug}`, { paymentId });
-
-    // 1) Retrieve full payment details from Tabby
-    let paymentData;
-    try {
-      const res = await fetch(
-        `https://api.tabby.ai/api/v2/payments/${paymentId}`,
-        {
-          headers: { Authorization: `Bearer ${TABBY_SECRET_KEY}` },
-          cache: 'no-store',
-        }
-      );
-      if (!res.ok) throw new Error(`Tabby fetch failed: ${res.status}`);
-      paymentData = await res.json();
-    } catch (err) {
-      console.error('❌ Error fetching Tabby payment:', err);
-      paymentData = { error: err.message };
-    }
-
-    // 2) Notify Centaurus via POST with query params
-    let centResponse;
-    try {
-      const url = new URL(
-        `https://www.centauruscharter.net/api/api_new/payments/tabby/${slug}`
-      );
-      url.searchParams.set('token', CENTAURUS_API_KEY);
-      url.searchParams.set('id', slug);
-      url.searchParams.set('status', callback);
-      url.searchParams.set('payment_id', paymentId);
-      url.searchParams.set('callback', callback);
-
-      console.log('🔗 Centaurus POST URL:', url.toString());
-
-      const centRes = await fetch(url.toString(), {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        cache: 'no-store',
-      });
-      console.log('🔄 Centaurus response status:', centRes.status);
-      centResponse = centRes.ok ? await centRes.json() : { error: centRes.statusText };
-    } catch (err) {
-      console.error('❌ Error notifying Centaurus:', err);
-      centResponse = { error: err.message };
-    }
-
-    // 3) Render results
-    return (
-      <div className="max-w-xl mx-auto p-8">
-        <h1 className="text-3xl font-bold mb-4">
-          Payment {callback === 'cancel' ? 'Cancelled' : 'Successful'}
-        </h1>
-
-        <section className="mb-6">
-          <h2 className="text-2xl font-semibold">Payment ID</h2>
-          <pre className="bg-gray-100 p-4 rounded">{paymentId}</pre>
-        </section>
-
-        <section className="mb-6">
-          <h2 className="text-2xl font-semibold">Tabby Payment Data</h2>
-          <pre className="bg-gray-100 p-4 rounded">
-            {JSON.stringify(paymentData, null, 2)}
-          </pre>
-        </section>
-
-        <section>
-          <h2 className="text-2xl font-semibold">Centaurus Response</h2>
-          <pre className="bg-gray-100 p-4 rounded">
-            {JSON.stringify(centResponse, null, 2)}
-          </pre>
-        </section>
-      </div>
-    );
+    // Redirect to centralized callback handler page
+    const targetUrl = `${NEXT_PUBLIC_BASE_URL}/${locale}/payments/tabby_payment?callback=${callback}&slug=${slug}&payment_id=${paymentId}`;
+    redirect(targetUrl);
   }
 
   // —— Initial load: create a Tabby session & redirect
@@ -146,7 +74,7 @@ export default async function PaymentPage({ params, searchParams }) {
         customer: booking.customer_id.toString(),
       },
     },
-    lang: params.locale,
+    lang: locale,
     merchant_code: TABBY_MERCHANT_CODE,
     merchant_urls: {
       success: `${NEXT_PUBLIC_BASE_URL}/payments/tabby/${slug}?callback=success`,
