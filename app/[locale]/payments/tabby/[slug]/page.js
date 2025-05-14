@@ -1,4 +1,3 @@
-// app/payments/tabby/[slug]/page.js
 import React from 'react';
 import { redirect } from 'next/navigation';
 
@@ -58,7 +57,7 @@ export default async function PaymentPage({ params, searchParams }) {
       url.searchParams.set('id', slug);
       url.searchParams.set('status', callback);
       url.searchParams.set('payment_id', paymentId);
-      url.searchParams.set('callback', callback);
+    
 
       console.log('🔗 Centaurus POST URL:', url.toString());
 
@@ -76,33 +75,9 @@ export default async function PaymentPage({ params, searchParams }) {
       centResponse = { error: err.message };
     }
 
-    // 3) Render results
-    return (
-      <div className="max-w-xl mx-auto p-8">
-        <h1 className="text-3xl font-bold mb-4">
-          Payment {callback === 'cancel' ? 'Cancelled' : 'Successful'}
-        </h1>
-
-        <section className="mb-6">
-          <h2 className="text-2xl font-semibold">Payment ID</h2>
-          <pre className="bg-gray-100 p-4 rounded">{paymentId}</pre>
-        </section>
-
-        <section className="mb-6">
-          <h2 className="text-2xl font-semibold">Tabby Payment Data</h2>
-          <pre className="bg-gray-100 p-4 rounded">
-            {JSON.stringify(paymentData, null, 2)}
-          </pre>
-        </section>
-
-        <section>
-          <h2 className="text-2xl font-semibold">Centaurus Response</h2>
-          <pre className="bg-gray-100 p-4 rounded">
-            {JSON.stringify(centResponse, null, 2)}
-          </pre>
-        </section>
-      </div>
-    );
+    // 3) Redirect to the result page with all params
+    const target = `${NEXT_PUBLIC_BASE_URL}/payments/tabby_payment?callback=${callback}&slug=${slug}&payment_id=${paymentId}`;
+    redirect(target);
   }
 
   // —— Initial load: create a Tabby session & redirect
