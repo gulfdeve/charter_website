@@ -66,7 +66,7 @@ export default function YachtDetails({
 
   return (
     <div className="flex flex-col lg:flex-row w-full items-start  py-3 gap-10">
-      <div className="flex flex-col lg:items-start w-full lg:justify-start lg:w-1/2">
+     <div className="flex flex-col lg:items-start w-full lg:justify-start lg:w-1/2">
       <h3 className="text-base text-black font-bold py-4">
         Yacht Specifications
       </h3>
