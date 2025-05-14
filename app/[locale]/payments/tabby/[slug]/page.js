@@ -22,15 +22,62 @@ function getRealPaymentId(raw) {
 }
 
 export default async function PaymentPage({ params, searchParams }) {
-  const { slug, locale } = params;
+  const { slug } = params;
   const callback = searchParams.callback; // "success", "cancel", etc.
   const paymentId = getRealPaymentId(searchParams.payment_id);
 
   // —— Callback phase: Tabby has redirected back
   if (callback && paymentId) {
-    // Redirect to centralized callback handler page
-    const targetUrl = `${NEXT_PUBLIC_BASE_URL}/${locale}/payments/tabby_payment?callback=${callback}&slug=${slug}&payment_id=${paymentId}`;
-    redirect(targetUrl);
+    console.log(`🔔 Tabby ${callback.toUpperCase()} callback for slug ${slug}`, { paymentId });
+
+    // 1) Retrieve full payment details from Tabby
+    let paymentData;
+    try {
+      const res = await fetch(
+        `https://api.tabby.ai/api/v2/payments/${paymentId}`,
+        {
+          headers: { Authorization: `Bearer ${TABBY_SECRET_KEY}` },
+          cache: 'no-store',
+        }
+      );
+      if (!res.ok) throw new Error(`Tabby fetch failed: ${res.status}`);
+      paymentData = await res.json();
+    } catch (err) {
+      console.error('❌ Error fetching Tabby payment:', err);
+      paymentData = { error: err.message };
+    }
+
+    // 2) Notify Centaurus via POST with query params
+    let centResponse;
+    try {
+      const url = new URL(
+        `https://www.centauruscharter.net/api/api_new/payments/tabby/${slug}`
+      );
+      url.searchParams.set('token', CENTAURUS_API_KEY);
+      url.searchParams.set('id', slug);
+      url.searchParams.set('status', callback);
+      url.searchParams.set('payment_id', paymentId);
+    
+
+      console.log('🔗 Centaurus POST URL:', url.toString());
+
+      const centRes = await fetch(url.toString(), {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        cache: 'no-store',
+      });
+      console.log('🔄 Centaurus response status:', centRes.status);
+      centResponse = centRes.ok ? await centRes.json() : { error: centRes.statusText };
+    } catch (err) {
+      console.error('❌ Error notifying Centaurus:', err);
+      centResponse = { error: err.message };
+    }
+
+    // 3) Redirect to the result page with all params
+    const target = `${NEXT_PUBLIC_BASE_URL}/payments/tabby_payment?callback=${callback}&slug=${slug}&payment_id=${paymentId}`;
+    redirect(target);
   }
 
   // —— Initial load: create a Tabby session & redirect
@@ -74,7 +121,7 @@ export default async function PaymentPage({ params, searchParams }) {
         customer: booking.customer_id.toString(),
       },
     },
-    lang: locale,
+    lang: params.locale,
     merchant_code: TABBY_MERCHANT_CODE,
     merchant_urls: {
       success: `${NEXT_PUBLIC_BASE_URL}/payments/tabby/${slug}?callback=success`,
