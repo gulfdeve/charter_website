@@ -17,12 +17,12 @@ import ToursCarousel from "@/app/components/Sharedtoursmob";
 const toursData = [
   {
     image: "/midday.webp",
-    title: "MIDDAY TOURS",
-    cruisingTime: "11:00 AM - 2:00 PM",
-    adultPrice: "AED 299",
+    title: "MORNING TOURS",
+    cruisingTime: "9:00 AM - 11:00 AM",
+    adultPrice: "AED 199",
     childPrice: "AED 149",
-    liveBBQ: "Chicken & Beef Skewers, Sliders, Hotdogs, Veggie Patty, Vegetable Skewers, Muffins, Fresh Fruits, Water, Tea, Coffee & Soft Drinks<br>*Vegetarian food available on request - Veggie patty, Vegetable skewers",
-    cruisingRoute: "Dubai Marina, JBR, Atlantis the Palm and Burj Al Arab",
+    liveBBQ: "Sandwiches,  Assorted Croissants, Fruits, muffins, Strawberry & Honey Jam, Coffee and Tea<br/>*Vegetarian food available on request",
+    cruisingRoute: "Dubai Marina, JBR and Burj Al Arab",
     departurePoint: "Dubai Marina/Dubai Marina Harbour",
     blueHeadline: "AVAILABLE ALL DAYS OF THE WEEK",
 	  validity: "",
