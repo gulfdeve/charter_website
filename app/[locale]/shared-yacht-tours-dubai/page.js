@@ -28,7 +28,7 @@ const toursData = [
 	  validity: "",
     yellowHeadline: "",
     fareharborLink:
-      "https://fareharbor.com/embeds/book/centauruscharter/items/488624/?full-items=yes&flow=no",
+      "https://fareharbor.com/embeds/book/centauruscharter/items/633603/?full-items=yes&flow=1283212",
   },
   {
     image: "/sunset.webp",
