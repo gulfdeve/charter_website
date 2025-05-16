@@ -149,33 +149,33 @@ const page = () => {
         </div>
         <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-5 gap-5 mt-10">
           <div>
-            <img className="rounded-t-lg" src="/BBQ.webp" />
-            <p className="bg-primary-blue-2 text-primary-yellow text-center  textsm  font-bold p-2 rounded-b-lg md:px-10 lg:px-0 ">
-              LIVE BBQ
+            <img className="rounded-t-lg" src="/images/decoration.webp" />
+            <p className="bg-primary-blue-2 text-primary-yellow text-center  text-sm  font-bold p-2 rounded-b-lg md:px-10 lg:px-0 ">
+              DECORATIONS
             </p>
           </div>
           <div>
-            <img className="rounded-t-lg" src="/Picturemoments.webp" />
-            <p className="bg-primary-blue-2 text-primary-yellow text-center  textsm  font-bold p-2 rounded-b-lg ">
+            <img className="rounded-t-lg" src="/images/catering.webp" />
+            <p className="bg-primary-blue-2 text-primary-yellow text-center  text-sm  font-bold p-2 rounded-b-lg ">
+              CATERINGS
+            </p>
+          </div>
+          <div>
+            <img className="rounded-t-lg" src="/images/premium-drinks.webp" />
+            <p className="bg-primary-blue-2 text-primary-yellow text-center  text-sm  font-bold p-2 rounded-b-lg ">
               PREMIUM DRINKS
             </p>
           </div>
           <div>
-            <img className="rounded-t-lg" src="/Amazing-View.webp" />
-            <p className="bg-primary-blue-2 text-primary-yellow text-center  textsm  font-bold p-2 rounded-b-lg ">
-              AMAZING VIEW
+            <img className="rounded-t-lg" src="/images/dj.webp" />
+            <p className="bg-primary-blue-2 text-primary-yellow text-center  text-sm  font-bold p-2 rounded-b-lg md:px-10 lg:px-0 ">
+              DJ/MUSIC
             </p>
           </div>
           <div>
-            <img className="rounded-t-lg" src="/Great-Food.webp" />
-            <p className="bg-primary-blue-2 text-primary-yellow text-center  textsm  font-bold p-2 rounded-b-lg md:px-10 lg:px-0 ">
-              GREAT FOOD
-            </p>
-          </div>
-          <div>
-            <img className="rounded-t-lg" src="/Amazing-View.webp" />
+            <img className="rounded-t-lg" src="/images/photography.webp" />
             <p className="bg-primary-blue-2 text-primary-yellow text-center  text-sm font-bold p-2 rounded-b-lg ">
-              AMAZING VIEW
+              PHOTOGRAPHY
             </p>
           </div>
         </div>

@@ -65,6 +65,7 @@ export default function YachtDetails({
   const loc = locationMap[product.slug] || {};
 
   return (
+    <>
     <div className="flex flex-col lg:flex-row w-full items-start  py-3 gap-10">
      <div className="flex flex-col lg:items-start w-full lg:justify-start lg:w-1/2">
       <h3 className="text-base text-black font-bold py-4">
@@ -93,7 +94,6 @@ export default function YachtDetails({
         </tbody>
       </table>
     </div>
-
       <div className="flex items-start justify-center">
         <div className="rounded-lg">
           <h3 className="text-base text-black font-bold py-4">
@@ -157,5 +157,50 @@ export default function YachtDetails({
         </div>
       </div>
     </div>
+     <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-7 gap-5 my-10">
+          <div>
+            <img className="rounded-t-lg" src="/images/decoration.webp" />
+            <p className="bg-primary-blue-2 text-primary-yellow text-center  text-sm  font-bold p-2 rounded-b-lg md:px-10 lg:px-0 ">
+              DECORATIONS
+            </p>
+          </div>
+          <div>
+            <img className="rounded-t-lg" src="/images/watersports.webp" />
+            <p className="uppercase bg-primary-blue-2 text-primary-yellow text-center  text-sm  font-bold p-2 rounded-b-lg ">
+              watersports
+            </p>
+          </div>
+          <div>
+            <img className="rounded-t-lg" src="/images/flowers.webp" />
+            <p className="uppercase bg-primary-blue-2 text-primary-yellow text-center  text-sm  font-bold p-2 rounded-b-lg ">
+              flowers
+            </p>
+          </div>
+          <div>
+            <img className="rounded-t-lg" src="/images/premium-drinks.webp" />
+            <p className="uppercase bg-primary-blue-2 text-primary-yellow text-center  text-sm  font-bold p-2 rounded-b-lg md:px-10 lg:px-0 ">
+              premium drinks
+            </p>
+          </div>
+          <div>
+            <img className="rounded-t-lg" src="/images/catering.webp" />
+            <p className="uppercase bg-primary-blue-2 text-primary-yellow text-center  text-sm font-bold p-2 rounded-b-lg ">
+              catering
+            </p>
+          </div>
+          <div>
+            <img className="rounded-t-lg" src="/images/dj.webp" />
+            <p className="uppercase bg-primary-blue-2 text-primary-yellow text-center  text-sm font-bold p-2 rounded-b-lg ">
+              DJ/Music
+            </p>
+          </div>
+          <div>
+            <img className="rounded-t-lg" src="/images/photography.webp" />
+            <p className="uppercase bg-primary-blue-2 text-primary-yellow text-center  text-sm font-bold p-2 rounded-b-lg ">
+              Photography
+            </p>
+          </div>
+    </div>
+    </>
   );
 }
