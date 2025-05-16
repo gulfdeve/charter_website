@@ -35,7 +35,7 @@ const page = ({ params }) => {
 
   return (
     <>
-      <div className="container mx-auto nav-space">
+      <div className="container mx-auto nav-space" data-id={event.id}>
         {/* Container for title/heading with padding */}
         <div className="py-10 text-center text-primary-blue">
           <h1 className="">{event.translations?.[locale]?.title}</h1>
@@ -80,9 +80,20 @@ const page = ({ params }) => {
                   <FaWhatsapp size={20} />
                   WHATSAPP US
                 </a>
-                <button onClick={handleQuote} className="blue-lined-button">
-                  GET A QUOTE
-                </button>
+				{
+					event.id === 44 ? (
+					<a
+					  className="blue-lined-button"
+					  href="https://fareharbor.com/embeds/book/centauruscharter/items/469615/?full-items=yes&flow=645487">BOOK NOW
+
+					  </a>
+					)
+					: (
+						<button onClick={handleQuote} className="blue-lined-button">
+                  			GET A QUOTE
+                		</button>
+					)
+				}
               </div>
             </div>
           </div>
