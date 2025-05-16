@@ -33,7 +33,7 @@ const toursData = [
   {
     image: "/sunset.webp",
     title: "SUNSET TOURS",
-    cruisingTime: "05:30 PM - 07:00 PM",
+    cruisingTime: "05:30 PM - 07:30 PM",
     adultPrice: "AED 259",
     childPrice: "AED 149",
     liveBBQ: "Chicken & Beef Skewers, Sliders, Hotdogs, Veggie Patty, Vegetable Skewers, Muffins, Fresh Fruits, Water, Tea, Coffee & Soft Drinks<br>*Vegetarian food available on request - Veggie patty, Vegetable skewers",
