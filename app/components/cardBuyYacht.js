@@ -67,7 +67,7 @@ const YachtCard = ({ yacht }) => {
         isModalOpen={isModalOpen}
         closeModal={closeModal}
         idName="offers_id"
-        idValue="41"
+        idValue="48"
         selectedVessel={yacht}
       />
     </>
