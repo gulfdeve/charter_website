@@ -122,7 +122,7 @@ export default function FirstFooter() {
       ),
     },
     {
-      title: "OUR LUXURY YACHTS",
+      title: "LUXURY YACHTS",
       content: (
         <ul>
           {!loading &&
@@ -164,34 +164,12 @@ export default function FirstFooter() {
 			<ul className="text-text-primary-white space-y-4">
 			  {[
 				{
-				  address: "Marina Walk (Near Spinneys)",
-				  location: "Dubai, United Arab Emirates",
-				  link: "https://g.page/r/CRSFyJhKh2TUEAE"
+				  address: "Office 402, Galadari Bldg. 17, Dubai Production City (IMPZ), P.O. Box 74461",
+				  location: "United Arab Emirates",
+				  link: "https://maps.app.goo.gl/mFvSe2XsrVUDRdfK6"
 				},
-				{
-				  address: "D Marin, Dubai Harbour",
-				  location: "Dubai, United Arab Emirates",
-				  link: "https://goo.gl/maps/ySfLoXGZ348Hs2rWA"
-				},
-				{
-				  address: "Berth No. AB05 - near Harbour Bridge - Dubai Harbour",
-				  location: "Dubai, United Arab Emirates",
-				  link: "https://goo.gl/maps/NPhE8NUps51fSAAJ9"
-				},
-				{
-				  address:
-					"Dubai Harbour Marina, Berth No. A-G36 Near Dockmaster 1 Building",
-				  location: "Dubai, United Arab Emirates",
-				  link: "https://maps.app.goo.gl/D7m68mfD2Xbc4pcv6"
-				},
-				{
-					address:
-					  "Berth No. A-H33T, Dubai Harbour Marina, United Arab Emirates",
-					location: "Dubai, United Arab Emirates",
-					link: "https://maps.app.goo.gl/PpBaHSR3ZjCNbpKDA"
-				  },
 			  ].map((item, index) => (
-				<li key={index} className="flex items-start gap-3">
+				<li key={index} className="flex items-start gap-2">
 				  <FaMapMarkerAlt className="w-5 h-5 flex-shrink-0 text-text-primary-white mt-1" />
 				  <a
 					href={item.link} target="_blank"
@@ -206,19 +184,19 @@ export default function FirstFooter() {
 			</ul>
 			
 			<ul className="text-text-primary-white space-y-4 mt-6">
-			  <li className="flex items-center gap-3">
+			  <li className="flex items-center gap-2">
 				<FaPhoneAlt className="w-5 h-5 flex-shrink-0" />
 				<a href="tel:+97143521833" className="hover:text-white text-left">
 				  +971 4 352 1833
 				</a>
 			  </li>
-			  <li className="flex items-center gap-3">
+			  <li className="flex items-center gap-2">
 				<FaWhatsapp className="w-5 h-5 flex-shrink-0" />
 				<a href="tel:+971524901269" className="hover:text-white text-left">
 				  +971 52 490 1269
 				</a>
 			  </li>
-			  <li className="flex items-center gap-3">
+			  <li className="flex items-center gap-2">
 				<MdEmail className="w-5 h-5 flex-shrink-0" />
 				<a
 				  href="mailto:info@centauruscharter.com"
@@ -240,21 +218,18 @@ export default function FirstFooter() {
             <a
               className="mb-2 inline-block"
               href="tel:+971505484685"
-              onClick={scrollToTop}
             >
               +971 50 548 4685
             </a>
             <a
               className="mb-2 inline-block"
               href="tel:+971502484678"
-              onClick={scrollToTop}
             >
               +971 50 248 4678
             </a>
             <a
               className="mb-2 inline-block"
               href="tel:+971502014225"
-              onClick={scrollToTop}
             >
               +971 50 201 4225
             </a>
@@ -264,7 +239,6 @@ export default function FirstFooter() {
             <a
               className="mb-2 inline-block"
               href="tel:+971567277387"
-              onClick={scrollToTop}
             >
               +971 56 727 7387
             </a>
@@ -280,14 +254,12 @@ export default function FirstFooter() {
             <a
               className="mb-2 inline-block"
               href="tel:+971565017078"
-              onClick={scrollToTop}
             >
               +971 56 501 7078
             </a>
             <a
               className="mb-2 inline-block"
               href="tel:++971501452203"
-              onClick={scrollToTop}
             >
               +971 50 145 2203
             </a>
@@ -297,7 +269,6 @@ export default function FirstFooter() {
             <a
               className="mb-2 inline-block"
               href="tel:+971565017057"
-              onClick={scrollToTop}
             >
               +971 56 501 7057
             </a>
@@ -307,7 +278,6 @@ export default function FirstFooter() {
             <a
               className="mb-2 inline-block"
               href="tel:+971544948573"
-              onClick={scrollToTop}
             >
               +971 54 494 8573
             </a>
@@ -321,6 +291,47 @@ export default function FirstFooter() {
         </ul>
       ),
     },
+    {
+		title: "YACHTS LOCATION",
+		content: (
+		  <div className="pb-4">
+			<ul className="text-text-primary-white space-y-4">
+			  {[
+				{
+				  address: "Dubai Marina Walk, (Near Spinneys)",
+				  link: "https://g.page/r/CRSFyJhKh2TUEAE"
+				},
+				{
+				  address: "Dubai Harbour Marina",
+				  link: "https://goo.gl/maps/ySfLoXGZ348Hs2rWA"
+				},
+        {
+					address: "Dubai Harbour Marina (Near Dockmaster)",
+					link: "https://maps.app.goo.gl/PpBaHSR3ZjCNbpKDA"
+				},
+				{
+				  address: "Dubai Harbour Marina (Near Harbour Bridge)",
+				  link: "https://goo.gl/maps/NPhE8NUps51fSAAJ9"
+				},
+        {
+				  address: "Dubai Harbour Marina (Near Bar Du Port)",
+				  link: "https://goo.gl/maps/NPhE8NUps51fSAAJ9"
+				},
+			  ].map((item, index) => (
+				<li key={index} className="flex items-start gap-3">
+				  <FaMapMarkerAlt className="w-5 h-5 flex-shrink-0 text-text-primary-white mt-1" />
+				  <a
+					href={item.link} target="_blank"
+					className="hover:text-white text-left"
+				  >
+					{item.address}
+				  </a>
+				</li>
+			  ))}
+			</ul>
+		  </div>
+		),
+	  },
   ];
 
   return (
@@ -342,12 +353,12 @@ export default function FirstFooter() {
         ></path>
       </svg>
     </div>
-      <div className="py-4 container mx-auto">
+      <div className="container py-4 mx-auto">
         {/** DESKTOP / LARGER SCREENS (Grid) **/}
-        <div className="hidden md:grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-4">
+        <div className="hidden md:grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 gap-8">
           {footerSections.map((section, index) => (
             <div key={index}>
-              <div className="text-lg text-white font-semibold mb-4">
+              <div className="text-white font-semibold mb-4">
                 {section.title}
               </div>
               {section.content}
