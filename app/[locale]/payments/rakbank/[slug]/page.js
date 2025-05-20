@@ -3,6 +3,7 @@
 import React from 'react';
 import PaymentWidget from '../../../../components/PaymentWidget';
 import { headers } from 'next/headers';
+import Script from 'next/script';
 
 const {
   CENTAURUS_API_KEY,        // ← your token for Centaurus booking-data
@@ -90,9 +91,19 @@ export default async function PaymentTestPage({ params }) {
   const scriptUrl  = RAKBANK_CHECKOUT_SCRIPT;
   const cancelUrl  = `${baseUrl}/checkout/${slug}`;
   const merchantId = process.env.RAKBANK_MPGS_MERCHANT;
+  
   // 3️⃣ Render the client-only widget, passing slug along
   return (
     <div className="container mx-auto p-10">
+      {/* Add script to check for cancel hash and redirect */}
+      <Script id="check-cancel-redirect" strategy="afterInteractive">
+        {`
+          if (window.location.hash === '#__hc-action-cancel') {
+            window.location.href = '/checkout/${slug}';
+          }
+        `}
+      </Script>
+      
       <h1 className="text-2xl font-bold mb-6">
         Complete Payment for Booking: {slug}
       </h1>
