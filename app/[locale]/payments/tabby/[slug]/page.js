@@ -57,7 +57,6 @@ export default async function PaymentPage({ params, searchParams }) {
       url.searchParams.set('id', slug);
       url.searchParams.set('status', callback);
       url.searchParams.set('payment_id', paymentId);
-    
 
       console.log('🔗 Centaurus POST URL:', url.toString());
 
@@ -80,11 +79,20 @@ export default async function PaymentPage({ params, searchParams }) {
     redirect(target);
   }
 
-  // —— Initial load: create a Tabby session & redirect
-  const centaurusRes = await fetch(
-    `https://www.centauruscharter.net/api/api_new/booking_data/${slug}`,
-    { cache: 'no-store' }
+  // —— Initial load: load booking data (POST with token query-param)
+  const bookingUrl = new URL(
+    `https://www.centauruscharter.net/api/api_new/booking_data/${slug}`
   );
+  bookingUrl.searchParams.set('token', CENTAURUS_API_KEY);
+
+  const centaurusRes = await fetch(bookingUrl.toString(), {
+    method: 'POST',
+    cache: 'no-store',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+  });
+
   if (!centaurusRes.ok) {
     return (
       <div className="flex items-center justify-center h-screen">

@@ -1,27 +1,49 @@
 // app/payment-test/[slug]/page.js
 
+import React from 'react';
 import PaymentWidget from '../../../../components/PaymentWidget';
-import { headers }   from 'next/headers';
+import { headers } from 'next/headers';
+
+const {
+  CENTAURUS_API_KEY,        // ← your token for Centaurus booking-data
+  RAKBANK_CHECKOUT_SCRIPT,  // assuming this is set in env
+  NODE_ENV,
+} = process.env;
 
 export const dynamicParams = true;
-export const runtime       = 'edge';
+export const runtime = 'edge';
 
 async function fetchBooking(slug) {
-  const res = await fetch(
-    `https://www.centauruscharter.net/api/api_new/booking_data/${slug}`,
-    { cache: 'no-store' }
+  // build URL with token query-param
+  const url = new URL(
+    `https://www.centauruscharter.net/api/api_new/booking_data/${slug}`
   );
-  if (!res.ok) throw new Error('Failed to load booking data');
+  url.searchParams.set('token', CENTAURUS_API_KEY);
+
+  const res = await fetch(url.toString(), {
+    method: 'POST',
+    cache: 'no-store',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    // no JSON body needed per your API spec
+  });
+
+  if (!res.ok) {
+    const text = await res.text();
+    throw new Error(`Failed to load booking data (${res.status}): ${text}`);
+  }
+
   const [booking] = await res.json();
   return booking;
 }
 
 export default async function PaymentTestPage({ params }) {
-  const { slug }       = params;
-  const headersList    = headers();
-  const host           = headersList.get('host') || 'localhost:3000';
-  const protocol       = process.env.NODE_ENV === 'production' ? 'https' : 'http';
-  const baseUrl        = `${protocol}://${host}`;
+  const { slug }    = params;
+  const hdrs        = headers();
+  const host        = hdrs.get('host') || 'localhost:3000';
+  const protocol    = NODE_ENV === 'production' ? 'https' : 'http';
+  const baseUrl     = `${protocol}://${host}`;
 
   // 1️⃣ Fetch booking & compute amount
   let booking;
@@ -64,11 +86,11 @@ export default async function PaymentTestPage({ params }) {
     );
   }
   const { parsedResponse } = await paymentRes.json();
-  const sessionId = parsedResponse['session.id'];
-  const scriptUrl = process.env.RAKBANK_CHECKOUT_SCRIPT; 
-  const cancelUrl = `${baseUrl}/payment-test/${slug}?payment=cancel`;
-
-  // 3️⃣ Render the client-only widget
+  const sessionId  = parsedResponse['session.id'];
+  const scriptUrl  = RAKBANK_CHECKOUT_SCRIPT;
+  const cancelUrl  = `${baseUrl}/checkout/${slug}`;
+  const merchantId = process.env.RAKBANK_MPGS_MERCHANT;
+  // 3️⃣ Render the client-only widget, passing slug along
   return (
     <div className="container mx-auto p-10">
       <h1 className="text-2xl font-bold mb-6">
@@ -77,12 +99,19 @@ export default async function PaymentTestPage({ params }) {
 
       {sessionId && scriptUrl ? (
         <PaymentWidget
+          slug={slug}
           checkoutScriptUrl={scriptUrl}
           sessionId={sessionId}
           cancelUrl={cancelUrl}
+          merchantId={merchantId}
         />
       ) : (
-        <p className="text-red-600">Unable to initialize payment widget.</p>
+        <p className="text-red-600">
+          Unable to initialize payment widget.  
+          { !sessionId && ' (missing session)' }
+          { !scriptUrl   && ' (missing script URL)' }
+          { !merchantId  && ' (missing merchant ID)' }
+        </p>
       )}
     </div>
   );
