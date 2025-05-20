@@ -6,8 +6,9 @@ import { headers } from 'next/headers';
 import Script from 'next/script';
 
 const {
-  CENTAURUS_API_KEY,        // ← your token for Centaurus booking-data
-  RAKBANK_CHECKOUT_SCRIPT,  // assuming this is set in env
+  CENTAURUS_API_KEY,
+  RAKBANK_CHECKOUT_SCRIPT,
+  RAKBANK_MPGS_MERCHANT,
   NODE_ENV,
 } = process.env;
 
@@ -15,48 +16,37 @@ export const dynamicParams = true;
 export const runtime = 'edge';
 
 async function fetchBooking(slug) {
-  // build URL with token query-param
   const url = new URL(
     `https://www.centauruscharter.net/api/api_new/booking_data/${slug}`
   );
   url.searchParams.set('token', CENTAURUS_API_KEY);
 
   const res = await fetch(url.toString(), {
-    method: 'POST',
-    cache: 'no-store',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    // no JSON body needed per your API spec
+    method: 'POST', cache: 'no-store', headers: { 'Content-Type': 'application/json' }
   });
-
   if (!res.ok) {
     const text = await res.text();
-    throw new Error(`Failed to load booking data (${res.status}): ${text}`);
+    throw new Error(`Booking data failed (${res.status}): ${text}`);
   }
-
   const [booking] = await res.json();
   return booking;
 }
 
 export default async function PaymentTestPage({ params }) {
-  const { slug }    = params;
-  const hdrs        = headers();
-  const host        = hdrs.get('host') || 'localhost:3000';
-  const protocol    = NODE_ENV === 'production' ? 'https' : 'http';
-  const baseUrl     = `${protocol}://${host}`;
+  const { slug } = params;
+  const hdrs     = headers();
+  const host     = hdrs.get('host') || 'localhost:3000';
+  const protocol = NODE_ENV === 'production' ? 'https' : 'http';
+  const baseUrl  = `${protocol}://${host}`;
 
-  // 1️⃣ Fetch booking & compute amount
   let booking;
   try {
     booking = await fetchBooking(slug);
   } catch (err) {
-    return (
-      <div className="p-8 text-red-600">
-        <h1>Error loading booking:</h1>
-        <p>{err.message}</p>
-      </div>
-    );
+    return <div className="p-8 text-red-600">
+      <h1>Error loading booking:</h1>
+      <p>{err.message}</p>
+    </div>;
   }
 
   const yachtPrice = parseFloat(booking.amount);
@@ -66,33 +56,42 @@ export default async function PaymentTestPage({ params }) {
   const total      = subtotal - promoDisc;
   const orderNo    = booking.order_no || slug;
 
-  // 2️⃣ Call your internal payment API for a session
-  const payload = {
-    orderId : orderNo,
-    slug,
-    amount  : total.toString(),
-    currency: 'AED',
-  };
+  const payload = { orderId: orderNo, slug, amount: total.toString(), currency: 'AED' };
   const paymentRes = await fetch(`${baseUrl}/api/payment`, {
-    method : 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body   : JSON.stringify(payload),
-    cache  : 'no-store',
+    method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload), cache: 'no-store'
   });
   if (!paymentRes.ok) {
-    return (
-      <div className="p-8 text-red-600">
-        Payment API error: {paymentRes.status}
-      </div>
-    );
+    return <div className="p-8 text-red-600">Payment API error: {paymentRes.status}</div>;
   }
+
   const { parsedResponse } = await paymentRes.json();
-  const sessionId  = parsedResponse['session.id'];
-  const scriptUrl  = RAKBANK_CHECKOUT_SCRIPT;
-  const cancelUrl  = `${baseUrl}/checkout/${slug}`;
-  const merchantId = process.env.RAKBANK_MPGS_MERCHANT;
-  
-  // 3️⃣ Render the client-only widget, passing slug along
+  const sessionId        = parsedResponse['session.id'];
+  const sessionVersion   = parsedResponse['session.version'];
+  const successIndicator = parsedResponse['success.indicator'];
+  const scriptUrl        = RAKBANK_CHECKOUT_SCRIPT;
+  const cancelUrl        = `${baseUrl}/checkout/${slug}`;
+  const merchantId       = RAKBANK_MPGS_MERCHANT;
+
+  if (sessionId && sessionVersion && successIndicator) {
+    const statusUrl = new URL(
+      `https://www.centauruscharter.net/api/api_new/payments/rakbank/${slug}`
+    );
+    statusUrl.searchParams.set('token', CENTAURUS_API_KEY);
+    statusUrl.searchParams.set('id', slug);
+    statusUrl.searchParams.set('status', 'initial');
+    statusUrl.searchParams.set('session_id', sessionId);
+    statusUrl.searchParams.set('session_version', sessionVersion);
+    statusUrl.searchParams.set('success_indicator', successIndicator);
+
+    console.log('Sending Rakbank status to:', statusUrl.toString());
+    try {
+      const statusRes = await fetch(statusUrl.toString(), { method: 'POST', cache: 'no-store' });
+      console.log('Rakbank initial status response OK?', statusRes.ok);
+    } catch (error) {
+      console.error('Error sending Rakbank status:', error);
+    }
+  }
+
   return (
     <div className="container mx-auto p-10">
       {/* Add script to check for cancel hash and redirect */}
@@ -103,11 +102,7 @@ export default async function PaymentTestPage({ params }) {
           }
         `}
       </Script>
-      
-      <h1 className="text-2xl font-bold mb-6">
-        Complete Payment for Booking: {slug}
-      </h1>
-
+      <h1 className="text-2xl font-bold mb-6">Complete Payment for Booking: {slug}</h1>
       {sessionId && scriptUrl ? (
         <PaymentWidget
           slug={slug}
@@ -118,7 +113,7 @@ export default async function PaymentTestPage({ params }) {
         />
       ) : (
         <p className="text-red-600">
-          Unable to initialize payment widget.  
+          Unable to initialize payment widget.
           { !sessionId && ' (missing session)' }
           { !scriptUrl   && ' (missing script URL)' }
           { !merchantId  && ' (missing merchant ID)' }
