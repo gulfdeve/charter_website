@@ -5,11 +5,27 @@ export const dynamicParams = true;
 export const runtime = 'edge';
 
 async function fetchBooking(slug) {
-  const res = await fetch(
-    `https://www.centauruscharter.net/api/api_new/booking_data/${slug}`,
-    { cache: 'no-store' }
+  const url = new URL(
+    `https://www.centauruscharter.net/api/api_new/booking_data/${slug}`
   );
-  if (!res.ok) throw new Error('Failed to load booking data');
+
+  // attach your API key as ?token=...
+  url.searchParams.set('token', process.env.CENTAURUS_API_KEY);
+
+  const res = await fetch(url.toString(), {
+    method: 'POST',
+    cache: 'no-store',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    // no body required; server ignores it
+  });
+
+  if (!res.ok) {
+    const text = await res.text();
+    throw new Error(`Failed to load booking data (${res.status}): ${text}`);
+  }
+
   const data = await res.json();
   return data[0];
 }
@@ -38,14 +54,14 @@ export default async function CheckoutPage({ params, searchParams }) {
     title,
     image,
     booking_date,
-    start_time,
-    end_time,
+    per_hour_price,
     hours,
     amount,
     addons_price = 0,
     promo_discount = 0,
     first_name,
     last_name,
+  
     email,
     mobile,
   } = booking;
@@ -72,32 +88,36 @@ export default async function CheckoutPage({ params, searchParams }) {
               <input
                 name="first_name"
                 type="text"
-                defaultValue={first_name}
+                value={first_name}
+                readOnly
                 placeholder="First Name"
-                className="border-[1px] border-gray-400 rounded-md p-2 mt-2 w-full"
+                className="border-[1px] border-gray-400 bg-gray-100 rounded-md p-2 mt-2 w-full"
               />
               <input
                 name="last_name"
                 type="text"
-                defaultValue={last_name}
+                value={last_name}
+                readOnly
                 placeholder="Last Name"
-                className="border-[1px] border-gray-400 rounded-md p-2 mt-2 w-full"
+                className="border-[1px] border-gray-400 bg-gray-100 rounded-md p-2 mt-2 w-full"
               />
             </div>
             <div className="flex flex-col md:flex-row gap-3">
               <input
                 name="email"
                 type="email"
-                defaultValue={email}
+                value={email}
+                readOnly
                 placeholder="Email Address"
-                className="border-[1px] border-gray-400 rounded-md p-2 mt-2 w-full"
+                className="border-[1px] border-gray-400 bg-gray-100 rounded-md p-2 mt-2 w-full"
               />
               <input
                 name="mobile"
                 type="text"
-                defaultValue={mobile}
+                value={mobile}
+                readOnly
                 placeholder="Phone Number"
-                className="border-[1px] border-gray-400 rounded-md p-2 mt-2 w-full"
+                className="border-[1px] border-gray-400 bg-gray-100 rounded-md p-2 mt-2 w-full"
               />
             </div>
           </div>
@@ -144,12 +164,7 @@ export default async function CheckoutPage({ params, searchParams }) {
           />
           <p className="text-primary-grey text-xs">Trip Date & Time</p>
           <p className="text-black mb-2">
-            {new Date(booking_date).toLocaleDateString('en-GB', { 
-              day: '2-digit', 
-              month: 'short', 
-              year: 'numeric' 
-            })} <br />
-            {start_time} to {end_time}
+            {new Date(booking_date).toLocaleDateString('en-GB', { day: '2-digit', month: 'short', year: 'numeric' })}
           </p>
           <p className="text-primary-grey text-xs">Trip Hours</p>
           <p className="text-black mb-4">{hours} Hours</p>
@@ -157,7 +172,7 @@ export default async function CheckoutPage({ params, searchParams }) {
           <div className="py-6 border-y-2 border-gray-300">
             <div className="flex justify-between text-primary-grey">
               <span>Yacht Price:</span>
-              <span>AED {amount} per hour</span>
+              <span>AED {per_hour_price} per hour</span>
             </div>
             <div className="flex justify-between text-primary-grey mt-4">
               <span>Add-ons Price:</span>
@@ -189,7 +204,7 @@ export default async function CheckoutPage({ params, searchParams }) {
         </button>
         <button
           type="submit"
-          form="checkout-form"  // Associate with form
+          form="checkout-form"
           className="p-2 rounded-md font-semibold text-white bg-primary-blue-2 hover:bg-primary-blue"
         >
           Confirm Checkout
