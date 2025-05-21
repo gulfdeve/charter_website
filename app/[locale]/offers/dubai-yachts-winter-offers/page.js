@@ -132,13 +132,10 @@ const Page = () => {
                           </div>
                         </div>
                         </div>
-                        <a href={`https://fareharbor.com/embeds/book/centauruscharter/items/${yacht.fareharbor_id}/?full-items=yes&flow=645487`}
-                                target="_self"
-                                rel="noopener noreferrer" 
-                                className="flex items-center mt-5 pt-3 group justify-between px-5 text-primary-blue-2 border-t border-gray-400">
+                       
                           <button className="btn-info">Book Now</button>
                           <FiArrowRight size={20} className=" text-lg transform md:group-hover:translate-x-4 transition-transform duration-300" />
-                        </a>
+                      
                       </div>
                     ))}
                   </div>
@@ -191,9 +188,14 @@ const Page = () => {
                       {yacht.rate4Hours}
                     </td>
                     <td className="p-3 font-bold">
+                       <a href={`https://fareharbor.com/embeds/book/centauruscharter/items/${yacht.fareharbor_id}/?full-items=yes&flow=645487`}
+                                target="_self"
+                                rel="noopener noreferrer" 
+                                className="">
                       <button className="bg-primary-blue-2 hover:bg-primary-blue text-white rounded-lg transition-all flex text-center justify-center w-full px-3 py-2">
                         Book Now
                       </button>
+                        </a>
                     </td>
                   </tr>
                 ))}
