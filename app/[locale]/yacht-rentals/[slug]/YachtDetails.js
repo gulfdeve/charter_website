@@ -115,7 +115,7 @@ export default function YachtDetails({
               ))}
           </ol>
 
-          <div className="flex items-start gap-3 items-center mt-10">
+          <div className="flex gap-3 items-center mt-10">
             <div>
               <FaMapMarkerAlt className="w-8 h-8 flex-shrink-0" />
             </div>
@@ -157,6 +157,18 @@ export default function YachtDetails({
         </div>
       </div>
     </div>
+      <div className="text-center">
+          <div className="flex items-center justify-center w-full my-6 xl:px-36 lg:px-20 mt-20">
+            <hr className="flex-grow border-primary-yellow-dark" />
+            <span className="uppercase font-Montserrat px-4 text-base md:text-2xl lg:text-3xl font-semibold  text-black">
+              Customize Your Yacht Experience
+            </span>
+            <hr className="flex-grow border-primary-yellow-dark " />
+          </div>
+          <p className=" text-primary-grey text-base pb-5 xl:px-36 lg:px-20 md:px-16 text-center">
+            Level up your private yacht charter with premium add-ons like watersports, photography, decorations & more.<br/><span className="italic">Available upon request.</span>
+          </p>
+      </div>
      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-7 gap-5 my-10">
           <div>
             <img className="rounded-t-lg" src="/images/decoration.webp" />
