@@ -1,8 +1,14 @@
-import React from 'react';
-import { redirect } from 'next/navigation';
-
 export const dynamicParams = true;
-export const runtime = 'edge';
+export const runtime = 'edge';import React from 'react';
+import { redirect } from 'next/navigation';
+import { createTabbySession } from '@/app/utils/tabby';
+
+// Make sure we import the environment variables at the top
+const {
+  TABBY_MERCHANT_CODE,
+  TABBY_SECRET_KEY,
+  CENTAURUS_API_KEY,
+} = process.env;
 
 async function fetchBooking(slug) {
   const url = new URL(
@@ -30,6 +36,30 @@ async function fetchBooking(slug) {
   return data[0];
 }
 
+async function checkTabbyPreApproval(booking) {
+  try {
+    const session = await createTabbySession(booking);
+    console.log(session);
+    
+    // Check if installments are available (pre-approved)
+    const installments = session.configuration?.available_products?.installments;
+    
+    return {
+      isApproved: !!installments && installments.length > 0,
+      sessionData: session,
+      error: null
+    };
+  } catch (error) {
+    console.error('Tabby pre-approval check failed:', error);
+    return { 
+      isApproved: false, 
+      error: error.message || 'Failed to check Tabby eligibility',
+      sessionData: null
+    };
+  }
+}
+
+// Server component - all async operations happen here
 export default async function CheckoutPage({ params, searchParams }) {
   const { slug } = params;
   const { confirm, method } = searchParams;
@@ -50,6 +80,9 @@ export default async function CheckoutPage({ params, searchParams }) {
     );
   }
 
+  // Check Tabby pre-approval status
+  const tabbyStatus = await checkTabbyPreApproval(booking);
+
   const {
     title,
     image,
@@ -61,13 +94,13 @@ export default async function CheckoutPage({ params, searchParams }) {
     promo_discount = 0,
     first_name,
     last_name,
-  
     email,
     mobile,
   } = booking;
 
   const yachtPrice = parseFloat(amount);
-  const subtotal = yachtPrice * hours + addons_price;
+//   const subtotal = yachtPrice * hours + addons_price;
+  const subtotal = parseFloat(amount)
   const total = subtotal - promo_discount;
 
   return (
@@ -137,20 +170,47 @@ export default async function CheckoutPage({ params, searchParams }) {
                 <p className="text-primary-grey text-xs">Debit/Credit Card</p>
               </div>
             </label>
-            <label className="w-full sm:w-auto">
+            <label className="w-full sm:w-auto relative">
               <input
                 type="radio"
                 name="method"
                 value="tabby"
                 defaultChecked={method === 'tabby'}
                 className="peer hidden"
+                disabled={!tabbyStatus.isApproved}
               />
-              <div className="border-2 rounded-lg p-4 flex items-center gap-2 cursor-pointer peer-checked:border-primary-blue-2 peer-checked:bg-primary-blue-light">
+              <div className={`border-2 rounded-lg p-4 flex items-center gap-2 cursor-pointer 
+                ${!tabbyStatus.isApproved ? 'opacity-60 cursor-not-allowed' : 'peer-checked:border-primary-blue-2 peer-checked:bg-primary-blue-light'}`}>
                 <img src="/images/tabby.webp" alt="Tabby" className="w-12" />
-                <p className="text-primary-grey text-xs">Tabby</p>
+                <div>
+                  <p className="text-primary-grey text-xs">Tabby</p>
+                  {tabbyStatus.isApproved ? (
+                    <span className="text-green-600 text-xs block">Pre-approved</span>
+                  ) : (
+                    <span className="text-red-500 text-xs block">Not available</span>
+                  )}
+                </div>
               </div>
+              {tabbyStatus.error && typeof tabbyStatus.error === 'string' && (
+                <div className="absolute bottom-0 translate-y-full left-0 text-xs text-red-500 mt-1">
+                  {tabbyStatus.error}
+                </div>
+              )}
             </label>
           </div>
+
+          {tabbyStatus.isApproved && tabbyStatus.sessionData?.configuration?.available_products?.installments?.[0] && (
+            <div className="mt-4 p-3 bg-blue-50 rounded-md border border-blue-200">
+              <p className="text-sm font-medium text-gray-700 mb-1">Pay with Tabby:</p>
+              <p className="text-xs text-gray-600">
+                Split your payment into {tabbyStatus.sessionData.configuration.available_products.installments[0].installments_count} 
+                {' '}interest-free payments of {' '}
+                <span className="font-semibold">
+                  AED {tabbyStatus.sessionData.configuration.available_products.installments[0].pay_per_installment}
+                </span>
+              </p>
+            </div>
+          )}
         </div>
 
         {/* Right Side - Booking Info */}

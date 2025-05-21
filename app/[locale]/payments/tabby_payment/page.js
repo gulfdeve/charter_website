@@ -13,9 +13,42 @@ function getRealPaymentId(raw) {
   return typeof raw === 'string' && raw.length > 1 ? raw : null;
 }
 
-export default function PaymentResultPage({ searchParams }) {
-  const { callback } = searchParams;
+async function fetchBooking(slug) {
+  const url = new URL(
+    `https://www.centauruscharter.net/api/api_new/booking_data/${slug}`
+  );
+
+  url.searchParams.set('token', process.env.CENTAURUS_API_KEY);
+
+  const res = await fetch(url.toString(), {
+    method: 'POST',
+    cache: 'no-store',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+  });
+
+  if (!res.ok) {
+    const text = await res.text();
+    throw new Error(`Failed to load booking data (${res.status}): ${text}`);
+  }
+
+  const data = await res.json();
+  return data[0];
+}
+
+export default async function PaymentResultPage({ searchParams }) {
+  const { callback, slug } = searchParams;
   const paymentId = getRealPaymentId(searchParams.payment_id);
+
+  // Fetch booking data
+  let booking;
+  try {
+    booking = await fetchBooking(slug);
+  } catch (err) {
+    console.error('Failed to fetch booking data:', err);
+    // Continue with the page render even if booking data fetch fails
+  }
 
   // Determine status flags
   const isSuccess = callback === 'success';
@@ -37,6 +70,15 @@ export default function PaymentResultPage({ searchParams }) {
   // Conditional padding classes
   const containerPadding = isSuccess ? 'py-10' : 'py-32';
   const innerPaddingTop = isSuccess ? 'pt-10' : 'pt-32';
+
+  // Format date for display
+  const formatDate = (dateString) => {
+    return new Date(dateString).toLocaleDateString('en-GB', {
+      day: '2-digit',
+      month: 'short',
+      year: 'numeric',
+    });
+  };
 
   return (
     <div className={
@@ -91,17 +133,17 @@ export default function PaymentResultPage({ searchParams }) {
           </p>
         )}
 
-        {isSuccess && (
+        {isSuccess && booking && (
           <div className="bg-[#f5f5f5] w-full max-w-2xl rounded-lg p-6 m-5">
             {/* Booking Summary */}
             <div className="flex flex-col s:flex-row justify-between pb-5 border-b-2">
               <div className="flex flex-col">
                 <p className="text-primary-grey text-xs">Booking No.</p>
-                <p className="text-black">123456789</p>
+                <p className="text-black">{slug}</p>
               </div>
               <div className="flex flex-col">
                 <p className="text-primary-grey text-xs">Booking Date & Time</p>
-                <p className="text-black">05 May, 2025 - 3:08 PM</p>
+                <p className="text-black">{formatDate(booking.created_at)}</p>
               </div>
             </div>
 
@@ -110,16 +152,16 @@ export default function PaymentResultPage({ searchParams }) {
             <div className="grid grid-cols-1 s:grid-cols-2 md:grid-cols-3 gap-4">
               <div className="flex flex-col">
                 <p className="text-primary-grey text-xs">Yacht Name</p>
-                <p className="text-black">56 Ft Yacht - Lagoona</p>
+                <p className="text-black">{booking.title}</p>
               </div>
               <div className="flex flex-col">
                 <p className="text-primary-grey text-xs">Trip Hours</p>
-                <p className="text-black">2 Hours</p>
+                <p className="text-black">{booking.hours} Hours</p>
               </div>
               <div className="flex flex-col">
                 <p className="text-primary-grey text-xs">Trip Date & Time</p>
                 <p className="text-black">
-                  17 May, 2025<br />7:00 PM to 9:00 PM
+                  {formatDate(booking.booking_date)}
                 </p>
               </div>
             </div>
@@ -128,16 +170,16 @@ export default function PaymentResultPage({ searchParams }) {
             <p className="text-xl font-bold text-primary-blue-2 pt-6 pb-3">Customer Details</p>
             <div className="grid grid-cols-1 s:grid-cols-2 md:grid-cols-3 gap-4">
               <div className="flex flex-col">
-                <p className="text-primary-grey text-xs">Booked by</p>
-                <p className="text-black">Bianca Quicho</p>
+                <p className="text-primary-grey text-xs">Customer Name</p>
+                <p className="text-black">{`${booking.first_name} ${booking.last_name}`}</p>
               </div>
               <div className="flex flex-col">
                 <p className="text-primary-grey text-xs">Phone Number</p>
-                <p className="text-black">+971 124 589 406</p>
+                <p className="text-black">{booking.mobile}</p>
               </div>
               <div className="flex flex-col">
                 <p className="text-primary-grey text-xs">Email Address</p>
-                <p className="text-black">bianca@gmail.com</p>
+                <p className="text-black">{booking.email}</p>
               </div>
             </div>
 
@@ -150,11 +192,11 @@ export default function PaymentResultPage({ searchParams }) {
               </div>
               <div className="flex flex-col">
                 <p className="text-primary-grey text-xs">Total Price</p>
-                <p className="text-black">AED 25,000</p>
+                <p className="text-black">AED {booking.amount}</p>
               </div>
               <div className="flex flex-col">
                 <p className="text-primary-grey text-xs">Amount Paid</p>
-                <p className="text-black">AED 25,000</p>
+                <p className="text-black">AED {booking.amount}</p>
               </div>
             </div>
           </div>
