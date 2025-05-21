@@ -47,7 +47,7 @@ export default async function YachtPage({ params: paramsPromise }) {
     },
     { label: "Location", value: product.translations?.[locale]?.location },
     {
-      label: "Inclusions ",
+      label: "Inclusions",
       value: "Drinks (Bubbly drinks, Soft drinks, Coffee & Water) for trips of 2 hours and above",
     },
   ];
