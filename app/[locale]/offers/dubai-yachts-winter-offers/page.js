@@ -133,8 +133,12 @@ const Page = () => {
                         </div>
                         </div>
                        
-                          <button className="btn-info">Book Now</button>
+                          <a href={`https://fareharbor.com/embeds/book/centauruscharter/items/${yacht.fareharbor_id}/?full-items=yes&flow=645487`}
+                                target="_self"
+                                rel="noopener noreferrer" 
+                                className="btn-info">Book Now
                           <FiArrowRight size={20} className=" text-lg transform md:group-hover:translate-x-4 transition-transform duration-300" />
+                          </a>
                       
                       </div>
                     ))}
@@ -191,10 +195,10 @@ const Page = () => {
                        <a href={`https://fareharbor.com/embeds/book/centauruscharter/items/${yacht.fareharbor_id}/?full-items=yes&flow=645487`}
                                 target="_self"
                                 rel="noopener noreferrer" 
-                                className="">
-                      <button className="bg-primary-blue-2 hover:bg-primary-blue text-white rounded-lg transition-all flex text-center justify-center w-full px-3 py-2">
+                                className="bg-primary-blue-2 hover:bg-primary-blue text-white rounded-lg transition-all flex text-center justify-center w-full px-3 py-2">
+                      
                         Book Now
-                      </button>
+                      
                         </a>
                     </td>
                   </tr>

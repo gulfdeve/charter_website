@@ -45,7 +45,7 @@ const Page = () => {
                 water. Our dedicated team is here to assist you in finding the
                 yacht that perfectly matches your desires and lifestyle.
               </p>
-              <a href="https://wa.me/123456789" target="_blank">
+              <a href="https://api.whatsapp.com/send?phone=971547928626&text=Hi!%20I%20came%20across%20your%20website.%20I%20want%20to%20inquire%20about%20a%20yacht%20charter%20in%20Dubai." target="_blank">
               <button className="blue-solid-button">
                 GET A LIST
               </button>
