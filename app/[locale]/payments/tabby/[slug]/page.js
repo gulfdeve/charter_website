@@ -189,7 +189,7 @@ export default async function PaymentPage({ params, searchParams }) {
   try {
     // Define merchant URLs for the payment flow
     const merchantUrls = {
-      success: `${NEXT_PUBLIC_BASE_URL}/payments/tabby/${slug}?callback=success`,
+      success: `${NEXT_PUBLIC_BASE_URL}/payments/success/${slug}?callback=success`,
       cancel: `${NEXT_PUBLIC_BASE_URL}/payments/tabby/${slug}?callback=cancel`,
       failure: `${NEXT_PUBLIC_BASE_URL}/payments/tabby/${slug}?callback=failure`,
     };
