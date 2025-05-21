@@ -123,11 +123,20 @@ export default async function PaymentPage({ params, searchParams }) {
       );
       url.searchParams.set('token', CENTAURUS_API_KEY);
       url.searchParams.set('id', slug);
-      url.searchParams.set('status', callback);
+      // url.searchParams.set('status', callback);
       url.searchParams.set('payment_id', paymentId);
-      // Add capture and payment data to the notification
-      url.searchParams.set('capture_data', JSON.stringify(captureData));
-      url.searchParams.set('payment_data', JSON.stringify(paymentData));
+      console.log(paymentData);
+      // Add payment data from Tabby
+      if (paymentData) {
+        url.searchParams.set('received_amount', paymentData.amount);
+        url.searchParams.set('status', paymentData.status);
+        // url.searchParams.set('payment_data', JSON.stringify(paymentData));
+      }
+      
+      // Add capture data if available
+      // if (captureData && !captureData.error) {
+      //   url.searchParams.set('capture_data', JSON.stringify(captureData));
+      // }
 
       console.log('🔗 Centaurus POST URL:', url.toString());
 
@@ -140,6 +149,7 @@ export default async function PaymentPage({ params, searchParams }) {
       });
       console.log('🔄 Centaurus response status:', centRes.status);
       centResponse = centRes.ok ? await centRes.json() : { error: centRes.statusText };
+      console.log(centRes);
     } catch (err) {
       console.error('❌ Error notifying Centaurus:', err);
       centResponse = { error: err.message };
@@ -148,6 +158,9 @@ export default async function PaymentPage({ params, searchParams }) {
     // 4) Redirect to the result page with all params
     const target = `${NEXT_PUBLIC_BASE_URL}/payments/tabby_payment?callback=${callback}&slug=${slug}&payment_id=${paymentId}`;
     return redirect(target);
+    // return (
+    //   <div>done</div>
+    // );
   }
 
   // —— Initial load: load booking data (POST with token query-param)
