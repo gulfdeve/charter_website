@@ -62,7 +62,7 @@ export default async function YachtPage({ params: paramsPromise }) {
         <div className="relative">
         <YachtGallery gallery={product.gallery} />
         
-        <div className="lg:absolute bottom-0 lg:pr-4 lg:pl-48 lg:pb-4 w-full overflow-hidden lg:mb-">
+        <div className="lg:absolute bottom-0 lg:pr-4 lg:pl-48 lg:pb-4 w-full overflow-hidden">
         <div className=" bg-[#f1f1f1] lg:bg-opacity-80 grid grid-cols-2 lg:grid-cols-5 md:grid-cols-4 items-center gap-0 rounded-lg w-full overflow-hidden lg:shadow-none shadow-md mt-6 mx-auto">
           <h3 className="text-primary-grey p-2 flex flex-col items-center">
             <span className="font-bold text-sm">Model:</span>

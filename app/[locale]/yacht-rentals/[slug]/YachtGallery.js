@@ -66,7 +66,7 @@ export default function YachtGallery({ gallery }) {
       <div className="relative md:h-[300px] lg:h-[545px] xl:h-[610px] md:w-40 flex-shrink-0">
         <div
           ref={thumbnailRef}
-          className="overflow-x-auto rounded-lg md:overflow-y-auto flex flex-row md:flex-col gap-2 md:h-full no-scrollbar"
+          className="absolute w-full z-50 overflow-x-auto rounded-lg md:overflow-y-auto flex flex-row md:flex-col gap-2 md:h-full no-scrollbar"
           style={{
             scrollBehavior: 'smooth',
             msOverflowStyle: 'none',
