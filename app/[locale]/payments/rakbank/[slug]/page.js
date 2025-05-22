@@ -87,7 +87,7 @@ export default async function PaymentTestPage({ params }) {
   const successIndicator = parsedResponse["success.indicator"];
 
   const scriptUrl = RAKBANK_CHECKOUT_SCRIPT;
-  const cancelUrl = `${baseUrl}/checkout/${slug}`;
+  const cancelUrl = `${baseUrl}/checkout/${slug}?callback=cancel`;
   const merchantId = RAKBANK_MPGS_MERCHANT;
 
   return (
@@ -96,7 +96,7 @@ export default async function PaymentTestPage({ params }) {
       <Script id="check-cancel-redirect" strategy="afterInteractive">
         {`
           if (window.location.hash === '#__hc-action-cancel') {
-            window.location.href = '/checkout/${slug}';
+            window.location.href = '/checkout/${slug}?callback=cancel';
           }
         `}
       </Script>
