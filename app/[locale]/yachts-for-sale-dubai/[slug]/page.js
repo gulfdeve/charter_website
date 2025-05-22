@@ -148,7 +148,7 @@ export default function Home({ params }) {
           <p className="text-primary-grey text-md pt-2 pb-5 xl:px-36 lg:px-20 md:px-16 text-center">{product.translations[locale].description}</p>
         </div>
 
-        <ContactForm />
+       <ContactForm yachtName={product.translations[locale].name_of_yacht} />
       </div>
       <YachtCarousel />
     </>

@@ -62,7 +62,7 @@ async function checkTabbyPreApproval(booking) {
 // Server component - all async operations happen here
 export default async function CheckoutPage({ params, searchParams }) {
   const { slug } = params;
-  const { confirm, method } = searchParams;
+  const { confirm, method,callback } = searchParams;
 
   if (confirm === '1') {
     if (method === 'tabby') return redirect(`/payments/tabby/${slug}`);
@@ -210,6 +210,14 @@ export default async function CheckoutPage({ params, searchParams }) {
                 </span>
               </p>
             </div>
+            
+          )}
+            {(callback === 'cancel' || callback === 'failure') && (
+            <p className="text-red-500 text-sm mt-2">
+              {callback === 'cancel'
+                ? 'Payment was cancelled. Please try again.'
+                : 'Payment failed. Please try again.'}
+            </p>
           )}
         </div>
 

@@ -29,72 +29,67 @@ export default async function PaymentPage({ params, searchParams }) {
   if (callback && paymentId) {
     console.log(`🔔 Tabby ${callback.toUpperCase()} callback for slug ${slug}`, { paymentId });
 
-    // 1) Capture the payment first
     let captureData;
-    try {
-      console.log('Attempting to capture payment:', paymentId);
-      
-      // First get payment details to use in capture
-      const paymentDetailsRes = await fetch(
-        `https://api.tabby.ai/api/v2/payments/${paymentId}`,
-        {
-          headers: { Authorization: `Bearer ${process.env.TABBY_SECRET_KEY}` },
-          cache: 'no-store',
-        }
-      );
-      
-      if (!paymentDetailsRes.ok) {
-        throw new Error(`Failed to get payment details: ${paymentDetailsRes.status}`);
-      }
-      
-      const paymentDetails = await paymentDetailsRes.json();
-      console.log('Payment details:', paymentDetails);
-      
-      // Prepare capture payload
-      const capturePayload = {
-        amount: paymentDetails.amount,
-        reference_id: `capture_${paymentDetails.id}_${Date.now()}`,
-        tax_amount: paymentDetails.order?.tax_amount || "0",
-        shipping_amount: paymentDetails.order?.shipping_amount || "0",
-        discount_amount: paymentDetails.order?.discount_amount || "0",
-        items: paymentDetails.order?.items || []
-      };
+    let paymentData;
 
-      console.log('Capture payload:', capturePayload);
-
-      const captureRes = await fetch(
-        `https://api.tabby.ai/api/v2/payments/${paymentId}/captures`,
-        {
-          method: 'POST',
-          headers: { 
-            'Content-Type': 'application/json',
-            'Authorization': `Bearer ${process.env.TABBY_SECRET_KEY}`
-          },
-          body: JSON.stringify(capturePayload),
-          cache: 'no-store',
+    // Only capture on success
+    if (callback === 'success') {
+      try {
+        console.log('Attempting to capture payment:', paymentId);
+        // First get payment details to use in capture
+        const paymentDetailsRes = await fetch(
+          `https://api.tabby.ai/api/v2/payments/${paymentId}`,
+          {
+            headers: { Authorization: `Bearer ${process.env.TABBY_SECRET_KEY}` },
+            cache: 'no-store',
+          }
+        );
+        if (!paymentDetailsRes.ok) {
+          throw new Error(`Failed to get payment details: ${paymentDetailsRes.status}`);
         }
-      );
-      
-      if (!captureRes.ok) {
-        const errorText = await captureRes.text();
-        throw new Error(`Tabby capture failed (${captureRes.status}): ${errorText}`);
+        const paymentDetails = await paymentDetailsRes.json();
+        console.log('Payment details:', paymentDetails);
+
+        // Prepare capture payload
+        const capturePayload = {
+          amount: paymentDetails.amount,
+          reference_id: `capture_${paymentDetails.id}_${Date.now()}`,
+          tax_amount: paymentDetails.order?.tax_amount || "0",
+          shipping_amount: paymentDetails.order?.shipping_amount || "0",
+          discount_amount: paymentDetails.order?.discount_amount || "0",
+          items: paymentDetails.order?.items || []
+        };
+        console.log('Capture payload:', capturePayload);
+
+        const captureRes = await fetch(
+          `https://api.tabby.ai/api/v2/payments/${paymentId}/captures`,
+          {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+              'Authorization': `Bearer ${process.env.TABBY_SECRET_KEY}`
+            },
+            body: JSON.stringify(capturePayload),
+            cache: 'no-store',
+          }
+        );
+        if (!captureRes.ok) {
+          const errorText = await captureRes.text();
+          throw new Error(`Tabby capture failed (${captureRes.status}): ${errorText}`);
+        }
+        captureData = await captureRes.json();
+        console.log('Payment captured successfully:', captureData);
+      } catch (err) {
+        console.error('❌ Error capturing Tabby payment:', err);
+        return (
+          <div className="flex items-center justify-center h-screen">
+            <p className="text-red-500">Failed to capture payment: {err.message}</p>
+          </div>
+        );
       }
-      
-      captureData = await captureRes.json();
-      console.log('Payment captured successfully:', captureData);
-    } catch (err) {
-      console.error('❌ Error capturing Tabby payment:', err);
-      captureData = { error: err.message };
-      //stop execution if capture fails
-      return (
-        <div className="flex items-center justify-center h-screen">
-          <p className="text-red-500">Failed to capture payment: {err.message}</p>
-        </div>
-      );
     }
 
-    // 2) Retrieve full payment details from Tabby
-    let paymentData;
+    // Retrieve payment details regardless of callback type
     try {
       console.log('Retrieving payment details:', paymentId);
       const res = await fetch(
@@ -115,7 +110,7 @@ export default async function PaymentPage({ params, searchParams }) {
       paymentData = { error: err.message };
     }
 
-    // 3) Notify Centaurus via POST with query params
+    // Notify Centaurus via POST with query params
     let centResponse;
     try {
       const url = new URL(
@@ -123,20 +118,11 @@ export default async function PaymentPage({ params, searchParams }) {
       );
       url.searchParams.set('token', CENTAURUS_API_KEY);
       url.searchParams.set('id', slug);
-      // url.searchParams.set('status', callback);
       url.searchParams.set('payment_id', paymentId);
-      console.log(paymentData);
-      // Add payment data from Tabby
       if (paymentData) {
         url.searchParams.set('received_amount', paymentData.amount);
         url.searchParams.set('status', paymentData.status);
-        // url.searchParams.set('payment_data', JSON.stringify(paymentData));
       }
-      
-      // Add capture data if available
-      // if (captureData && !captureData.error) {
-      //   url.searchParams.set('capture_data', JSON.stringify(captureData));
-      // }
 
       console.log('🔗 Centaurus POST URL:', url.toString());
 
@@ -149,18 +135,15 @@ export default async function PaymentPage({ params, searchParams }) {
       });
       console.log('🔄 Centaurus response status:', centRes.status);
       centResponse = centRes.ok ? await centRes.json() : { error: centRes.statusText };
-      console.log(centRes);
+      console.log('Centaurus response:', centResponse);
     } catch (err) {
       console.error('❌ Error notifying Centaurus:', err);
       centResponse = { error: err.message };
     }
 
-    // 4) Redirect to the result page with all params
+    // Redirect to the result page with all params
     const target = `${NEXT_PUBLIC_BASE_URL}/payments/tabby_payment?callback=${callback}&slug=${slug}&payment_id=${paymentId}`;
     return redirect(target);
-    // return (
-    //   <div>done</div>
-    // );
   }
 
   // —— Initial load: load booking data (POST with token query-param)
@@ -209,7 +192,7 @@ export default async function PaymentPage({ params, searchParams }) {
 
     console.log('Redirecting to Tabby:', redirectUrl);
     
-    // Instead of using redirect(), we'll return a client-side redirect
+    // Client-side redirect
     return (
       <html>
         <head>
