@@ -1,5 +1,5 @@
 export async function createTabbySession(booking, locale = 'en', merchantUrls = null) {
-  const { amount, order_no, booking_date, email, mobile, customer_id } = booking;
+  const { first_name, last_name, amount, order_no, booking_date, email, mobile, customer_id } = booking;
   
   const phone = mobile?.startsWith('+') ? mobile : `+${mobile}`;
   
@@ -11,7 +11,7 @@ export async function createTabbySession(booking, locale = 'en', merchantUrls = 
       buyer: {
         phone,
         email,
-      },
+        name: `${first_name} ${last_name}`,
       order: {
         tax_amount: '0.00',
         shipping_amount: '0.00',
@@ -21,11 +21,12 @@ export async function createTabbySession(booking, locale = 'en', merchantUrls = 
         items: [
           {
             title: `Booking ${order_no}`,
-            description: `Charter booking on ${booking_date}`,
+            description: `Yacht booking on ${booking_date}`,
             quantity: 1,
             unit_price: amount.toString(),
             discount_amount: '0.00',
             reference_id: order_no,
+            category: 'yacht_booking',
           },
         ],
       },

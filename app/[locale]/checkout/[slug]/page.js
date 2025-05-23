@@ -1,7 +1,10 @@
 export const dynamicParams = true;
-export const runtime = 'edge';import React from 'react';
+export const runtime = 'edge';
+import React from 'react';
 import { redirect } from 'next/navigation';
 import { createTabbySession } from '@/app/utils/tabby';
+import Script from 'next/script';
+import TabbyPromoSection from './TabbyPromoSection';
 
 // Make sure we import the environment variables at the top
 const {
@@ -166,7 +169,7 @@ export default async function CheckoutPage({ params, searchParams }) {
                 className="peer hidden"
               />
               <div className="border-2 rounded-lg p-4 flex items-center gap-2 cursor-pointer peer-checked:border-primary-blue-2 peer-checked:bg-primary-blue-light">
-                <img src="/images/debit-credit.webp" alt="Debit/Credit Card" className="w-12" />
+                <img src="/images/debit-credit.webp" alt="Debit/Credit Card" className="w-16" />
                 <p className="text-primary-grey text-xs">Debit/Credit Card</p>
               </div>
             </label>
@@ -181,11 +184,11 @@ export default async function CheckoutPage({ params, searchParams }) {
               />
               <div className={`border-2 rounded-lg p-4 flex items-center gap-2 cursor-pointer 
                 ${!tabbyStatus.isApproved ? 'opacity-60 cursor-not-allowed' : 'peer-checked:border-primary-blue-2 peer-checked:bg-primary-blue-light'}`}>
-                <img src="/images/tabby.webp" alt="Tabby" className="w-12" />
+                <img src="/images/tabby.webp" alt="Tabby" className="w-16" />
                 <div>
-                  <p className="text-primary-grey text-xs">Tabby</p>
+                  <p className="text-primary-grey text-xs">Pay in 4. No interest, no fees.	</p>
                   {tabbyStatus.isApproved ? (
-                    <span className="text-green-600 text-xs block">Pre-approved</span>
+                    <span className="text-green-600 text-xs block"></span>
                   ) : (
                     <span className="text-red-500 text-xs block">Not available</span>
                   )}
@@ -199,7 +202,7 @@ export default async function CheckoutPage({ params, searchParams }) {
             </label>
           </div>
 
-          {tabbyStatus.isApproved && tabbyStatus.sessionData?.configuration?.available_products?.installments?.[0] && (
+          {/* {tabbyStatus.isApproved && tabbyStatus.sessionData?.configuration?.available_products?.installments?.[0] && (
             <div className="mt-4 p-3 bg-blue-50 rounded-md border border-blue-200">
               <p className="text-sm font-medium text-gray-700 mb-1">Pay with Tabby:</p>
               <p className="text-xs text-gray-600">
@@ -210,9 +213,14 @@ export default async function CheckoutPage({ params, searchParams }) {
                 </span>
               </p>
             </div>
-            
-          )}
-            {(callback === 'cancel' || callback === 'failure') && (
+          )} */}
+
+          {/* Tabby Promo Section */}
+          <div className="mt-4">
+            <TabbyPromoSection total={total} />
+          </div>
+
+          {(callback === 'cancel' || callback === 'failure') && (
             <p className="text-red-500 text-sm mt-2">
               {callback === 'cancel'
                 ? 'Payment was cancelled. Please try again.'
