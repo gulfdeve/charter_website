@@ -12,6 +12,7 @@ export async function createTabbySession(booking, locale = 'en', merchantUrls = 
         phone,
         email,
         name: `${first_name} ${last_name}`,
+      },
       order: {
         tax_amount: '0.00',
         shipping_amount: '0.00',
