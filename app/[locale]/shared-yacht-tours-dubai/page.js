@@ -138,11 +138,11 @@ const Page = () => {
         </div>
         {/* Card Grid */}
         <div className="md:block hidden">
-        <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-3 py-10 gap-5 container mx-auto items-start">
+        <div className="grid grid-cols-1 md:grid-cols-3 py-10 gap-4 container mx-auto items-start">
           {toursData.map((tour, index) => (
             <div
               key={index}
-              className="bg-white rounded-lg shadow-custom duration-300 p-5 space-y-3"
+              className="bg-white rounded-lg shadow-custom duration-300 p-3 lg:p-5 space-y-3"
             >
               {/* Image Wrapper */}
               <div className="relative">
@@ -162,7 +162,7 @@ const Page = () => {
                   )}
                   {tour.blueHeadline && (
                     <div className="bg-primary-yellow-light px-3 py-1 rounded-sm">
-                      <p className="text-sm uppercase text-primary-blue-2 font-bold">
+                      <p className="text-xs lg:text-sm uppercase text-primary-blue-2 font-bold">
                         {tour.blueHeadline}
                       </p>
                     </div>
@@ -179,7 +179,7 @@ const Page = () => {
 
               {/* Title and Toggle Button */}
               <div className="text-center">
-                <h3 className="text-primary-blue-2 text-center py-2">
+                <h3 className="text-base md:text-xl text-primary-blue-2 text-center py-2">
                   {tour.title}
                 </h3>
                 <button
@@ -235,7 +235,7 @@ const Page = () => {
                   >
                     <div className="space-y-4">
                       <div className="flex flex-row gap-2 items-center">
-                        <MdOutlineLocalDining className="text-primary-yellow-light text-[6rem] sm:text-[2.2rem] lg:text-[4rem]" />
+                        <MdOutlineLocalDining className="text-primary-yellow-light text-[6rem] sm:text-[2.2rem] md:text-[8rem] lg:text-[4rem]" />
                         <p className="text-primary-grey text-sm">
                           <span className="font-bold">Inclusions:</span>{" "}
                           {/* {tour.liveBBQ} */}
@@ -303,10 +303,10 @@ const Page = () => {
           <h2 className="px-4 font-semibold text-primary-blue-2">HIGHLIGHTS</h2>
           <hr className="flex-grow border-primary-yellow-dark" />
         </div>
-        <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-5 px-4 py-10 container mx-auto">
+        <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-5 px-4 py-5 md:py-10 container mx-auto">
           <div>
             <img src="/BBQ.webp" className="rounded-t-lg" alt="Live BBQ" />
-            <h3 className="bg-primary-blue-2 text-primary-yellow text-center text-base font-bold p-2 rounded-b-lg">
+            <h3 className="bg-primary-blue-2 text-primary-yellow text-center text-xs lg:text-base font-bold p-2 rounded-b-lg">
               MEAT SKEWERS
             </h3>
           </div>
@@ -316,7 +316,7 @@ const Page = () => {
               className="rounded-t-lg"
               alt="Picture Moments"
             />
-            <h3 className="bg-primary-blue-2 text-primary-yellow text-center text-base font-bold p-2 rounded-b-lg">
+            <h3 className="bg-primary-blue-2 text-primary-yellow text-center text-xs lg:text-base font-bold p-2 rounded-b-lg">
               PICTURE MOMENTS
             </h3>
           </div>
@@ -326,7 +326,7 @@ const Page = () => {
               className="rounded-t-lg"
               alt="Amazing View"
             />
-            <h3 className="bg-primary-blue-2 text-primary-yellow text-center text-base font-bold p-2 rounded-b-lg">
+            <h3 className="bg-primary-blue-2 text-primary-yellow text-center text-xs lg:text-base font-bold p-2 rounded-b-lg">
               AMAZING VIEW
             </h3>
           </div>
@@ -336,14 +336,14 @@ const Page = () => {
               className="rounded-t-lg"
               alt="Great Food"
             />
-            <h3 className="bg-primary-blue-2 text-primary-yellow text-center text-base font-bold p-2 rounded-b-lg">
+            <h3 className="bg-primary-blue-2 text-primary-yellow text-center text-xs lg:text-base font-bold p-2 rounded-b-lg">
               GREAT FOOD
             </h3>
           </div>
         </div>
 
         {/* TERMS & CONDITION */}
-		<div className="flex flex-col items-center justify-center py-10 px-5">
+		<div className="container mx-auto flex flex-col items-center justify-center py-5 md:py-10">
   <h2 className="text-base text-primary-blue-2 font-bold text-center">
     TERMS & CONDITIONS
   </h2>
@@ -396,8 +396,8 @@ const Page = () => {
         <section
       className="
         flex flex-col md:flex-row-reverse 
-        items-center justify-center 
-        h-[750px] sm:h-[520px] md:h-[620px] lg:h-[560px] xl:h-[650px]
+        items-center lg:justify-center 
+        h-full lg:h-[560px] xl:h-[650px]
         overflow-hidden
       "
     >
