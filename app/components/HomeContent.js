@@ -268,7 +268,7 @@ export default function Home() {
                 </p>
 {/* Background SVG in Behind */}
 <div
-        className="absolute inset-0 z-[-10]"
+        className="hidden lg:block absolute inset-0 z-[-10]"
         style={{
           backgroundImage: "url('/images/bg-svg-blue.svg')",
           backgroundRepeat: "no-repeat",
