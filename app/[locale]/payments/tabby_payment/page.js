@@ -3,7 +3,10 @@ import { redirect } from 'next/navigation';
 
 // Next.js App Router server component
 export const runtime = 'edge';
-
+const {
+  NEXT_PUBLIC_SITE_URL,
+  
+} = process.env;
 // Helper for extracting real payment_id
 function getRealPaymentId(raw) {
   if (!raw) return null;
@@ -43,10 +46,10 @@ export default async function PaymentResultPage({ searchParams }) {
 
   // Redirects based on callback
   if (callback === 'success') {
-    return redirect(`/payments/success?slug=${slug}&payment_id=${paymentId}`);
+    return redirect(`${NEXT_PUBLIC_SITE_URL}/payments/success?slug=${slug}&payment_id=${paymentId}`);
   }
   if (callback === 'cancel' || callback === 'failure') {
-    return redirect(`/checkout/${slug}?callback=${callback}`);
+    return redirect(`${NEXT_PUBLIC_SITE_URL}/checkout/${slug}?callback=${callback}`);
   }
 
   // Fetch booking data for any other states (unlikely)

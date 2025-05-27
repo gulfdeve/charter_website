@@ -100,6 +100,13 @@ export default async function PaymentTestPage({ params }) {
           }
         `}
       </Script>
+       <Script id="check-success-redirect" strategy="afterInteractive">
+        {`
+          if (window.location.hash === '#__hc-action-success') {
+            window.location.href = '/payments/success/${slug}';
+          }
+        `}
+      </Script>
 
       <h1 className="text-2xl font-bold mb-6">
         Complete Payment for Booking: {slug}
