@@ -212,9 +212,9 @@ footer a:hover {
   background: linear-gradient(
     to top,
     rgba(0, 0, 0, 0.9) 0%,
-    rgba(0, 0, 0, 0.5) 50%,
-    rgba(0, 0, 0, 0.2) 75%,
-    rgba(0, 0, 0, 0) 100%
+    rgba(0, 0, 0, 0.5) 40%,
+    rgba(0, 0, 0, 0.2) 60%,
+    rgba(0, 0, 0, 0) 70%
   );
 }
 
