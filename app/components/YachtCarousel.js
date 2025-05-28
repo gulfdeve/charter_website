@@ -68,22 +68,17 @@ export default function YachtCarousel() {
   loading="lazy"
   sizes="(max-width: 768px) 90vw, (max-width: 1024px) 45vw, 30vw"
 />
+                      <Link href={`/yacht-rentals/${product.slug}`}>
                       <div className="absolute inset-0 bg-black-gradient rounded-lg" />
                       <div className="absolute bottom-0 left-0 w-full p-4 z-10">
                         <h3 className="text-xl lg:text-2xl font-bold text-white mb-2">
-                          <Link href={`/yacht-rentals/${product.slug}`}>
                             {product.translations[locale].name_of_yacht}
-                          </Link>
                         </h3>
                         <p className="text-sm text-white mb-4 line-clamp-2">
                           {product.translations[locale].slider_text}
                         </p>
-                        <Link href={`/yacht-rentals/${product.slug}`}>
-                          <button className="yellow-solid-button uppercase text-sm lg:text-base py-2 px-4">
-                            Book Now
-                          </button>
-                        </Link>
                       </div>
+                      </Link>
                     </div>
                   </div>
                 </div>
