@@ -5,12 +5,14 @@ import Image from "next/image";
 import { useData } from "@/app/context/DataContext";
 import { useLocale } from "next-intl";
 import { FaYoutube } from "react-icons/fa";
+import { BsStars } from "react-icons/bs";
 
 export default function YachtmobileCarousal() {
   const emblaRef = useRef(null);
   const [embla, setEmbla] = useState(null);
   const { data, loading, error } = useData();
   const locale = useLocale();
+  const [activeFilter, setActiveFilter] = useState(null);
 
   // YouTube modal state
   const [videoModalVisible, setVideoModalVisible] = useState(false);
@@ -36,12 +38,58 @@ export default function YachtmobileCarousal() {
     setVideoModalVisible(false);
   };
 
+  const getFilteredProducts = () => {
+    if (!data?.products) return [];
+    if (!activeFilter) return data.products;
+
+    return data.products.filter(product => {
+      if (activeFilter === "premium" && product.per_hour_price > 4000) {
+        return true;
+      }
+      if (activeFilter === "bestSellers" && ["56ft-lagoona", "61ft-silvercreek"].includes(product.slug)) {
+        return true;
+      }
+      return false;
+    });
+  };
+
+  const getFilterStyle = (filterName) => `px-2 py-1 transition-all duration-300 ${
+    activeFilter === filterName
+      ? "text-primary-blue border-b-2 border-primary-blue"
+      : "hover:text-primary-blue"
+  }`;
+
   return (
     <div className="container mx-auto py-6">
+      {/* Filter Buttons */}
+      <div className="flex justify-center items-center gap-8 md:gap-8 text-xs sm:text-base md:text-lg font-semibold py-2 pb-10 md:py-2 px-2">
+        <button
+          onClick={() => setActiveFilter("bestSellers")}
+          className={getFilterStyle("bestSellers")}
+        >
+          BEST SELLERS
+        </button>
+        <button
+          onClick={() => setActiveFilter("premium")}
+          className={getFilterStyle("premium")}
+        >
+          PREMIUM
+        </button>
+        {activeFilter && (
+          <button
+            onClick={() => setActiveFilter(null)}
+            className="text-primary-red hover:text-primary-red-2 transition-all duration-300"
+            aria-label="Clear filter"
+          >
+            ✕
+          </button>
+        )}
+      </div>
+
       {/* Embla viewport */}
       <div ref={emblaRef} className="overflow-hidden md:px-3 md:py-5 xxs:px-2">
         <div className="flex gap-4 px-3">
-          {!loading && data?.products?.map((product) => (
+          {!loading && getFilteredProducts().map((product) => (
             <div
               key={product.id}
               className="flex-[0_0_85%] md:flex-[0_0_50%] lg:flex-[0_0_40%] relative"
@@ -76,6 +124,20 @@ export default function YachtmobileCarousal() {
                       height={400}
                     />
                   </Link>
+
+                  {/* Category Badges */}
+                  {["56ft-lagoona", "61ft-silvercreek"].includes(product.slug) && (
+                    <div className="absolute flex items-center gap-2 top-4 left-0 gradient-custom-2 text-primary-yellow-light text-md py-0.5 px-2 rounded-r-lg">
+                      <BsStars />
+                      <p>Best Seller</p>
+                    </div>
+                  )}
+                  {product.per_hour_price > 4000 && (
+                    <div className="absolute flex items-center gap-2 top-4 left-0 gradient-custom-2 text-primary-yellow-light text-md py-0.5 px-2 rounded-r-lg">
+                      <BsStars />
+                      <p>Premium Yacht</p>
+                    </div>
+                  )}
 
                   {/* Model / Length / Guests */}
                   <div className="grid grid-cols-3 items-center gap-0 rounded-lg my-3">
@@ -129,7 +191,7 @@ export default function YachtmobileCarousal() {
                       <li>Canapés & Snacks</li>
                       <li>DJ</li>
                     </ol>
-                    <span className="text-primary-blue text-xs">T&C’s Apply</span>
+                    <span className="text-primary-blue text-xs">T&C's Apply</span>
                   </div>
                 </div>
                 <Link
