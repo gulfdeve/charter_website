@@ -306,10 +306,9 @@ export default function Page() {
               <div className="p-3 rounded-full bg-primary-blue-2">
                 <MdLocationOn className="text-2xl text-primary-yellow" />{" "}
               </div>
-              <p className="text-sm w-[16rem] xs:w-[19rem] pl-5 font-medium">
-                Office 907 ETA Star's Al Manara Tower 6, Marasi Drive Street
-                Business Bay, Za'beel, Dubai United Arab Emirates
-              </p>
+              <a href="https://maps.app.goo.gl/mFvSe2XsrVUDRdfK6" target="_blank" className="text-sm w-[16rem] xs:w-[19rem] pl-5 font-medium">
+                Office 402, Galadari Bldg. 17, Dubai Production City (IMPZ), P.O. Box 74461, United Arab Emirates
+              </a>
             </div>
             <div className="flex flex-row items-center justify-start">
               <div className="p-3 rounded-full bg-primary-blue-2">
