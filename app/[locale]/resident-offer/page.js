@@ -24,113 +24,257 @@ const page = () => {
     {
       name: "THUNDER - 36FT",
       capacity: 10,
-      ratePerHour: "AED 0",
-      rate2Hours: "AED 0",
-      rate3Hours: "AED 0",
-      rate4Hours: "AED 0",
+      ratePerHour: "AED 595",
+      rate2Hours: "AED 714",
+      rate3Hours: "AED 1,071",
+      rate4Hours: "AED 1,428",
       fareharbor_id: "353083",
     },
     {
       name: "STORM - 36FT",
       capacity: 10,
-      ratePerHour: "AED 0",
-      rate2Hours: "AED 0",
-      rate3Hours: "AED 0",
-      rate4Hours: "AED 0",
+      ratePerHour: "AED 595",
+      rate2Hours: "AED 714",
+      rate3Hours: "AED 1,071",
+      rate4Hours: "AED 1,428",
       fareharbor_id: "429263",
+    },
+    {
+      name: "RIVERSIDE - 40FT",
+      capacity: 12,
+      ratePerHour: "AED 750",
+      rate2Hours: "AED 900",
+      rate3Hours: "AED 1,350",
+      rate4Hours: "AED 1,800",
+      fareharbor_id: "583211",
     },
     {
       name: "VASSIA - 56FT",
       capacity: 21,
-      ratePerHour: "AED 0",
-      rate2Hours: "AED 0",
-      rate3Hours: "AED 0",
-      rate4Hours: "AED 0",
+      ratePerHour: "AED 1,040",
+      rate2Hours: "AED 1,248",
+      rate3Hours: "AED 1,872",
+      rate4Hours: "AED 2,496",
       fareharbor_id: "340280",
     },
     {
       name: "ETOSHA - 58FT",
       capacity: 28,
-      ratePerHour: "AED 0",
-      rate2Hours: "AED 0",
-      rate3Hours: "AED 0",
-      rate4Hours: "AED 0",
+      ratePerHour: "AED 1,080",
+      rate2Hours: "AED 1,296",
+      rate3Hours: "AED 1,944",
+      rate4Hours: "AED 2,592",
       fareharbor_id: "340265",
     },
     {
       name: "LAGOONA - 56FT",
       capacity: 24,
-      ratePerHour: "AED 0",
-      rate2Hours: "AED 0",
-      rate3Hours: "AED 0",
-      rate4Hours: "AED 0",
+      ratePerHour: "AED 1,150",
+      rate2Hours: "AED 1,380",
+      rate3Hours: "AED 2,070",
+      rate4Hours: "AED 2,760",
       fareharbor_id: "340459",
     },
     {
       name: "SILVER CREEK - 61FT",
       capacity: 30,
-      ratePerHour: "AED 0",
-      rate2Hours: "AED 0",
-      rate3Hours: "AED 0",
-      rate4Hours: "AED 0",
+      ratePerHour: "AED 1,250",
+      rate2Hours: "AED 1,500",
+      rate3Hours: "AED 2,250",
+      rate4Hours: "AED 3,000",
       fareharbor_id: "340286",
+    },
+    {
+      name: "KRONOS - 85FT",
+      capacity: 50,
+      ratePerHour: "AED 3,500",
+      rate2Hours: "AED 4,200",
+      rate3Hours: "AED 6,300",
+      rate4Hours: "AED 8,400",
+      fareharbor_id: "577212",
+    },
+    {
+      name: "POSEIDON - 118FT",
+      capacity: "1 - 40",
+      ratePerHour: "AED 5,000",
+      rate2Hours: "AED 6,000",
+      rate3Hours: "AED 9,000",
+      rate4Hours: "AED 12,000",
+      fareharbor_id: "417962",
+    },
+    {
+      name: "POSEIDON - 118FT",
+      capacity: "41 - 50",
+      ratePerHour: "AED 6,000",
+      rate2Hours: "AED 7,200",
+      rate3Hours: "AED 10,800",
+      rate4Hours: "AED 14,400",
+      fareharbor_id: "417962",
+    },
+    {
+      name: "POSEIDON - 118FT",
+      capacity: "51 - 60",
+      ratePerHour: "AED 7,000",
+      rate2Hours: "AED 8,400",
+      rate3Hours: "AED 12,600",
+      rate4Hours: "AED 16,800",
+      fareharbor_id: "417962",
+    },
+    {
+      name: "POSEIDON - 118FT",
+      capacity: "61 - 70",
+      ratePerHour: "AED 8,000",
+      rate2Hours: "AED 9,600",
+      rate3Hours: "AED 14,400",
+      rate4Hours: "AED 19,200",
+      fareharbor_id: "417962",
+    },
+    {
+      name: "POSEIDON - 118FT",
+      capacity: "71 - 80",
+      ratePerHour: "AED 9,000",
+      rate2Hours: "AED 10,800",
+      rate3Hours: "AED 16,200",
+      rate4Hours: "AED 21,600",
+      fareharbor_id: "417962",
+    },
+    {
+      name: "POSEIDON - 118FT",
+      capacity: "81 - 100",
+      ratePerHour: "AED 10,000",
+      rate2Hours: "AED 12,000",
+      rate3Hours: "AED 18,000",
+      rate4Hours: "AED 24,000",
+      fareharbor_id: "417962",
     },
   ];
   const yachtsThirtyOff = [
     {
       name: "THUNDER - 36FT",
       capacity: 10,
-      ratePerHour: "AED 0",
-      rate2Hours: "AED 0",
-      rate3Hours: "AED 0",
-      rate4Hours: "AED 0",
+      ratePerHour: "AED 595",
+      rate2Hours: "AED 833",
+      rate3Hours: "AED 1,250",
+      rate4Hours: "AED 1,666",
       fareharbor_id: "353083",
     },
     {
       name: "STORM - 36FT",
       capacity: 10,
-      ratePerHour: "AED 0",
-      rate2Hours: "AED 0",
-      rate3Hours: "AED 0",
-      rate4Hours: "AED 0",
+      ratePerHour: "AED 595",
+      rate2Hours: "AED 833",
+      rate3Hours: "AED 1,250",
+      rate4Hours: "AED 1,666",
       fareharbor_id: "429263",
+    },
+    {
+      name: "RIVERSIDE - 40FT",
+      capacity: 12,
+      ratePerHour: "AED 750",
+      rate2Hours: "AED 1,050",
+      rate3Hours: "AED 1,575",
+      rate4Hours: "AED 2,100",
+      fareharbor_id: "583211",
     },
     {
       name: "VASSIA - 56FT",
       capacity: 21,
-      ratePerHour: "AED 0",
-      rate2Hours: "AED 0",
-      rate3Hours: "AED 0",
-      rate4Hours: "AED 0",
+      ratePerHour: "AED 1,040",
+      rate2Hours: "AED 1,456",
+      rate3Hours: "AED 2,184",
+      rate4Hours: "AED 2,912",
       fareharbor_id: "340280",
     },
     {
       name: "ETOSHA - 58FT",
       capacity: 28,
-      ratePerHour: "AED 0",
-      rate2Hours: "AED 0",
-      rate3Hours: "AED 0",
-      rate4Hours: "AED 0",
+      ratePerHour: "AED 1,080",
+      rate2Hours: "AED 1,512",
+      rate3Hours: "AED 2,268",
+      rate4Hours: "AED 3,024",
       fareharbor_id: "340265",
     },
     {
       name: "LAGOONA - 56FT",
       capacity: 24,
-      ratePerHour: "AED 0",
-      rate2Hours: "AED 0",
-      rate3Hours: "AED 0",
-      rate4Hours: "AED 0",
+      ratePerHour: "AED 1,150",
+      rate2Hours: "AED 1,610",
+      rate3Hours: "AED 2,415",
+      rate4Hours: "AED 3,220",
       fareharbor_id: "340459",
     },
     {
       name: "SILVER CREEK - 61FT",
       capacity: 30,
-      ratePerHour: "AED 0",
-      rate2Hours: "AED 0",
-      rate3Hours: "AED 0",
-      rate4Hours: "AED 0",
+      ratePerHour: "AED 1,250",
+      rate2Hours: "AED 1,750",
+      rate3Hours: "AED 2,625",
+      rate4Hours: "AED 3,500",
       fareharbor_id: "340286",
     },
+    {
+      name: "KRONOS - 85FT",
+      capacity: 50,
+      ratePerHour: "AED 3,500",
+      rate2Hours: "AED 4,900",
+      rate3Hours: "AED 7,350",
+      rate4Hours: "AED 9,800",
+      fareharbor_id: "577212",
+    },
+    {
+      name: "POSEIDON - 118FT",
+      capacity: "1 - 40",
+      ratePerHour: "AED 5,000",
+      rate2Hours: "AED 7,000",
+      rate3Hours: "AED 10,500",
+      rate4Hours: "AED 14,000",
+      fareharbor_id: "417962",
+    },
+    {
+      name: "POSEIDON - 118FT",
+      capacity: "41 - 50",
+      ratePerHour: "AED 6,000",
+      rate2Hours: "AED 8,400",
+      rate3Hours: "AED 12,600",
+      rate4Hours: "AED 16,800",
+      fareharbor_id: "417962",
+    },
+    {
+      name: "POSEIDON - 118FT",
+      capacity: "51 - 60",
+      ratePerHour: "AED 7,000",
+      rate2Hours: "AED 9,800",
+      rate3Hours: "AED 14,700",
+      rate4Hours: "AED 19,600",
+      fareharbor_id: "417962",
+    },
+    {
+      name: "POSEIDON - 118FT",
+      capacity: "61 - 70",
+      ratePerHour: "AED 8,000",
+      rate2Hours: "AED 11,200",
+      rate3Hours: "AED 16,800",
+      rate4Hours: "AED 22,400",
+      fareharbor_id: "417962",
+    },
+    {
+      name: "POSEIDON - 118FT",
+      capacity: "71 - 80",
+      ratePerHour: "AED 9,000",
+      rate2Hours: "AED 12,600",
+      rate3Hours: "AED 18,900",
+      rate4Hours: "AED 25,200",
+      fareharbor_id: "417962",
+    },
+    {
+      name: "POSEIDON - 118FT",
+      capacity: "81 - 100",
+      ratePerHour: "AED 10,000",
+      rate2Hours: "AED 14,000",
+      rate3Hours: "AED 21,000",
+      rate4Hours: "AED 28,000",
+      fareharbor_id: "417962",
+    },    
   ];
   return (
     <>
@@ -261,8 +405,11 @@ const page = () => {
 
       <div className="container mx-auto flex flex-col  px-4">
         <h3 className="text-black text-base text-center font-bold pb-5">
-          INCLUSIONS: WATER, SOFT DRINKS, WINES, AND BEERS.
+          INCLUSIONS: WATER, SOFT DRINKS, BEER, RED WINE, WHITE WINE & SPARKLING WINE
         </h3>
+        <p className="text-left md:text-center italic text-primary-grey pb-5">
+        Premium drinks are available for purchase on board
+        </p>
         <div className="bg-primary-blue-4 p-0.5 ">
           <h3 className=" font-bold text-center text-white text-[1rem]">
             DISCOUNTED RATES ARE VALID FOR BOOKINGS FROM 6AM-2PM (MORNING TRIPS)
@@ -397,9 +544,12 @@ const page = () => {
         </div>
       </div>
       <div className="container mx-auto flex flex-col  px-4">
-        <h3 className="text-black text-base text-center font-bold pb-5">
-          INCLUSIONS: WATER, SOFT DRINKS, WINES, AND BEERS.
+        <h3 className="text-black text-base text-center font-bold pb-2">
+          INCLUSIONS: WATER, SOFT DRINKS, BEER, RED WINE, WHITE WINE & SPARKLING WINE
         </h3>
+        <p className="text-left md:text-center italic text-primary-grey pb-5">
+        Premium drinks are available for purchase on board
+        </p>
         <div className="bg-primary-blue-4 p-0.5 ">
           <h3 className=" font-bold text-center text-white text-[1rem]">
             DISCOUNTED RATES: VALID FOR BOOKINGS FROM 4 PM TO 7 PM (PRIMETIME).
@@ -419,7 +569,7 @@ const page = () => {
             <li className="mb-1">The summer offer is valid from June 1st to September 15th, 2025</li>
             <li className="mb-1">This offer cannot be combined with other promotions.</li>
             <li className="mb-1">
-            ⁠A minimum booking duration of 3 hours is required.
+            ⁠A minimum booking duration of 2 hours is required.
             </li>
             <li className="mb-1">
             ⁠The offer is exclusive to UAE residents (proof of residency may be required).
@@ -445,9 +595,9 @@ const page = () => {
       <section className="w-full p-4 container mx-auto space-y-10">
         {/* Outer container with gold background */}
 
-        <div className="container bg-primary-yellow flex items-center justify-between rounded-xl py-3">
+        <div className="container bg-primary-yellow flex flex-col md:flex-row gap-3 items-center justify-between rounded-xl py-3">
           {/* Left Text */}
-          <span className="text-primary-blue font-bold text-lg uppercase">
+          <span className="text-primary-blue font-bold text-base md:text-lg uppercase">
             EXPLORE MORE YACHT OFFERS
           </span>
 
@@ -465,20 +615,20 @@ const page = () => {
             </button>
           </Link>
         </div>
-        <div className="flex flex-col md:flex-row rounded-xl md:px-10 xl:px-5 items-center  gap-5 justify-center  md:justify-between bg-transparent md:bg-primary-blue py-3">
-          <button className="text-white  font-bold bg-primary-blue px-5 py-3 text-xl rounded">
+        <div className="flex flex-col md:flex-row rounded-xl px-5 items-center  gap-5 justify-center  md:justify-between bg-primary-blue py-3">
+          <button className="text-white font-bold px-5 py-3 text-xl rounded">
             REACH OUT TO US
           </button>
           <div className=" flex flex-col md:flex-row md:gap-10 gap-5">
             <Link href={"https://wa.link/eyg3by"}>
-              <button className="flex items-center justify-center gap-3 px-10 py-2 bg-primary-blue text-primary-yellow border border-primary-yellow-dark  font-bold rounded-md  transition">
+              <button className="flex items-center justify-center gap-3 px-4 py-2 bg-primary-blue text-primary-yellow border border-primary-yellow-dark  font-bold rounded-md  transition">
                 <FaWhatsapp size={20} />
                 WHATSAPP US
               </button>
             </Link>
             <button
               onClick={handlequote}
-              className="flex items-center justify-center gap-3 px-10 py-2 bg-primary-blue text-primary-yellow border border-primary-yellow-dark  font-bold rounded-md  transition"
+              className="hidden flex items-center justify-center gap-3 px-10 py-2 bg-primary-blue text-primary-yellow border border-primary-yellow-dark  font-bold rounded-md  transition"
             >
               SUMMER OFFERS
             </button>
