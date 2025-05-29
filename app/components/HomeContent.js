@@ -2,7 +2,7 @@
 import { useLocale, useTranslations } from "next-intl";
 import { useRef, useEffect ,useState} from "react";
 import EmblaCarousel from "embla-carousel";
-import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
+import { IoIosArrowBack, IoIosArrowForward, IoIosSunny } from "react-icons/io";
 import WhyChooseUs from "@/app/components/WhyChooseUs";
 import Aboutus from "@/app/components/Aboutus";
 import Reviews from "@/app/components/Reviews";
@@ -19,6 +19,8 @@ import Yachtmobilecarousal from '@/app/components/Yachtmobilecarousal'
 import VideoLocal from "@/app/components/VideoLocal";
 import { FiArrowRight } from "react-icons/fi";
 import ModalAfternoon from "@/app/components/ModalAfternoon";
+import { BsStars } from "react-icons/bs";
+
 export default function Home() {
   const t = useTranslations();
   const emblaRef = useRef(null);
@@ -29,6 +31,7 @@ export default function Home() {
   const { data, loading, error } = useData();
   const { language } = useLanguage();
   const locale = useLocale();
+  const [activeFilter, setActiveFilter] = useState(null);
 
   useEffect(() => {
     // Show modal when the page loads
@@ -47,6 +50,27 @@ export default function Home() {
     setSelectedVideo("");
     setVideoModalVisible(false);
   };
+
+  const getFilteredProducts = () => {
+    if (!data?.products) return [];
+    if (!activeFilter) return data.products;
+
+    return data.products.filter(product => {
+      if (activeFilter === "premium" && product.per_hour_price > 4000) {
+        return true;
+      }
+      if (activeFilter === "bestSellers" && ["56ft-lagoona", "61ft-silvercreek"].includes(product.slug)) {
+        return true;
+      }
+      return false;
+    });
+  };
+
+  const getFilterStyle = (filterName) => `px-2 py-1 transition-all duration-300 ${
+    activeFilter === filterName
+      ? "text-primary-blue border-b-2 border-primary-blue"
+      : "hover:text-primary-blue"
+  }`;
 
   useEffect(() => {
     if (emblaRef.current) {
@@ -86,12 +110,37 @@ export default function Home() {
       </div>
         
 
+      {/* Filter Buttons */}
+      <div className="hidden flex justify-center items-center gap-8 md:gap-8 text-xs sm:text-base md:text-lg font-semibold py-2 pb-10 md:py-2 px-2">
+        <button
+          onClick={() => setActiveFilter("bestSellers")}
+          className={getFilterStyle("bestSellers")}
+        >
+          BEST SELLERS
+        </button>
+        <button
+          onClick={() => setActiveFilter("premium")}
+          className={getFilterStyle("premium")}
+        >
+          PREMIUM
+        </button>
+        {activeFilter && (
+          <button
+            onClick={() => setActiveFilter(null)}
+            className="text-primary-red hover:text-primary-red-2 transition-all duration-300"
+            aria-label="Clear filter"
+          >
+            ✕
+          </button>
+        )}
+      </div>
+
       {/* DESKTOP */}
       <div className="hidden md:block z-30">
         <div className="container mx-auto p-0">
           <div className="grid grid-col-1 md:grid-cols-2 lg:grid-cols-3 lg:gap-6 md:gap-4">
             {!loading &&
-              data?.products?.map((product) => (
+              getFilteredProducts().map((product) => (
                 <div
                   key={product.id}
                   className="relative flex flex-col p-5 rounded-lg shadow-custom bg-white"
@@ -121,8 +170,26 @@ export default function Home() {
                     width={400}
                     height={400}
                   />
-
                   </Link>
+
+                  {/* Category Badges */}
+                  {/* Summer Offer Tag */}
+                  <a href="/resident-offer" target="_blank" className="cursor-pointer font-semibold absolute z-10 flex items-center gap-2 top-6 left-0 gradient-custom-3 text-primary-blue-2 text-sm py-0.5 px-2 rounded-r-lg hover:pl-5 transition-all">
+                    <IoIosSunny/>
+                    <p>Summer Offer up to 40%</p>
+                  </a>                  
+                  {["56ft-lagoona", "61ft-silvercreek"].includes(product.slug) && (
+                    <div className="absolute flex items-center gap-2 top-14 left-0 gradient-custom-2 text-primary-yellow-light text-sm py-0.5 px-2 rounded-r-lg">
+                      <BsStars />
+                      <p>Best Seller</p>
+                    </div>
+                  )}
+                  {product.per_hour_price > 4000 && (
+                    <div className="absolute flex items-center gap-2 top-14 left-0 gradient-custom-2 text-primary-yellow-light text-sm py-0.5 px-2 rounded-r-lg">
+                      <BsStars />
+                      <p>Premium Yacht</p>
+                    </div>
+                  )}
 
                   <div className="absolute grid grid-cols-3 items-center gap-0 rounded-lg center-absolute -bottom-5 left-0 right-0 px-5">
                     {/* Model */}
@@ -208,7 +275,7 @@ export default function Home() {
                       </Link>
                       <div className="flex flex-col items-center justify-center">
                       <span className=" text-primary-blue-2 text-xs text-center">
-                        <a href="https://www.centauruscharter.com/terms-and-condition" target="_blank">T&C’s Apply</a>
+                        <a href="https://www.centauruscharter.com/terms-and-condition" target="_blank">T&C's Apply</a>
                       </span>
                     </div>
                     </div>
@@ -297,7 +364,7 @@ export default function Home() {
       <div className="relative z-10 flex flex-col h-full">
         <h2 className="text-xl md:text-2xl xl:text-2xl font-bold mb-4">Luxury Yacht Rentals</h2>
         <p className="md:opacity-0 md:group-hover:opacity-100 leading-7 transition-opacity duration-300 text-sm mb-4">
-          Marvel with the beauty of Dubai on a luxury yacht. Explore our yachts in Dubai Marina and Dubai Harbor Marina with excellent conditions, full of luxurious amenities, flexible booking timings, capacity, and yacht sizes. Cruise along the Arabian Gulf and Dubai’s top attractions – Burj Al Arab, Atlantis The Palm, JBR, Ain Dubai, Bluewaters Island, and much more.
+          Marvel with the beauty of Dubai on a luxury yacht. Explore our yachts in Dubai Marina and Dubai Harbor Marina with excellent conditions, full of luxurious amenities, flexible booking timings, capacity, and yacht sizes. Cruise along the Arabian Gulf and Dubai's top attractions – Burj Al Arab, Atlantis The Palm, JBR, Ain Dubai, Bluewaters Island, and much more.
           <br />
           <br />
           Welcome your guests in a warm atmosphere with pure elegance and style.
@@ -345,7 +412,7 @@ export default function Home() {
       <div className="relative z-10 flex flex-col h-full">
         <h2 className="text-xl md:text-2xl xl:text-2xl font-bold mb-4">Exclusive Offers</h2>
         <p className="md:opacity-0 md:group-hover:opacity-100 leading-7 transition-opacity duration-300 text-sm mb-4">
-          Dubai is a true yachting heaven with azure blue waters and beautiful skyscrapers. Take your loved ones to sea. We bring to you deals from day charter, yacht parties to overnight yacht rentals. Don’t miss exploring the special discount for Emirates Platinum, Business Councils, & FAZAA members.
+          Dubai is a true yachting heaven with azure blue waters and beautiful skyscrapers. Take your loved ones to sea. We bring to you deals from day charter, yacht parties to overnight yacht rentals. Don't miss exploring the special discount for Emirates Platinum, Business Councils, & FAZAA members.
           <br />
           <br />
           Find your ideal boat with great deals and confirm your booking instantly.
@@ -369,7 +436,7 @@ export default function Home() {
       <div className="relative z-10 flex flex-col h-full">
         <h2 className="text-xl md:text-2xl xl:text-2xl font-bold mb-4">Water Sports Add-ons</h2>
         <p className="md:opacity-0 md:group-hover:opacity-100 leading-7 transition-opacity duration-300 text-sm mb-4">
-          Holidays in Dubai offer a great mix of fun, adventure, breathtaking places, and special moments. It’s truly amazing to cruise the beautiful coastline with the speed jet boat or fly high on waters with flyboarding. Find plenty of water activities at the best price and make your excursion even more exciting.
+          Holidays in Dubai offer a great mix of fun, adventure, breathtaking places, and special moments. It's truly amazing to cruise the beautiful coastline with the speed jet boat or fly high on waters with flyboarding. Find plenty of water activities at the best price and make your excursion even more exciting.
           <br />
           <br />
           Book your watersports together with a boat charter at the best price.
