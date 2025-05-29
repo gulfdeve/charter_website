@@ -2,7 +2,7 @@
 import { useLocale, useTranslations } from "next-intl";
 import { useRef, useEffect ,useState} from "react";
 import EmblaCarousel from "embla-carousel";
-import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
+import { IoIosArrowBack, IoIosArrowForward, IoIosSunny } from "react-icons/io";
 import WhyChooseUs from "@/app/components/WhyChooseUs";
 import Aboutus from "@/app/components/Aboutus";
 import Reviews from "@/app/components/Reviews";
@@ -111,7 +111,7 @@ export default function Home() {
         
 
       {/* Filter Buttons */}
-      <div className="flex justify-center items-center gap-8 md:gap-8 text-xs sm:text-base md:text-lg font-semibold py-2 pb-10 md:py-2 px-2">
+      <div className="hidden flex justify-center items-center gap-8 md:gap-8 text-xs sm:text-base md:text-lg font-semibold py-2 pb-10 md:py-2 px-2">
         <button
           onClick={() => setActiveFilter("bestSellers")}
           className={getFilterStyle("bestSellers")}
@@ -173,14 +173,19 @@ export default function Home() {
                   </Link>
 
                   {/* Category Badges */}
+                  {/* Summer Offer Tag */}
+                  <a href="/resident-offer" target="_blank" className="cursor-pointer font-semibold absolute z-10 flex items-center gap-2 top-6 left-0 gradient-custom-3 text-primary-blue-2 text-sm py-0.5 px-2 rounded-r-lg hover:pl-5 transition-all">
+                    <IoIosSunny/>
+                    <p>Summer Offer up to 40%</p>
+                  </a>                  
                   {["56ft-lagoona", "61ft-silvercreek"].includes(product.slug) && (
-                    <div className="absolute flex items-center gap-2 top-4 left-0 gradient-custom-2 text-primary-yellow-light text-md py-0.5 px-2 rounded-r-lg">
+                    <div className="absolute flex items-center gap-2 top-14 left-0 gradient-custom-2 text-primary-yellow-light text-sm py-0.5 px-2 rounded-r-lg">
                       <BsStars />
                       <p>Best Seller</p>
                     </div>
                   )}
                   {product.per_hour_price > 4000 && (
-                    <div className="absolute flex items-center gap-2 top-4 left-0 gradient-custom-2 text-primary-yellow-light text-md py-0.5 px-2 rounded-r-lg">
+                    <div className="absolute flex items-center gap-2 top-14 left-0 gradient-custom-2 text-primary-yellow-light text-sm py-0.5 px-2 rounded-r-lg">
                       <BsStars />
                       <p>Premium Yacht</p>
                     </div>

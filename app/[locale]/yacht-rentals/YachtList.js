@@ -6,6 +6,7 @@ import EmblaCarousel from "embla-carousel";
 import { FaArrowLeft, FaArrowRight, FaYoutube } from "react-icons/fa";
 import BookNowButton from "@/app/components/BookNowButton";
 import { BsStars } from "react-icons/bs";
+import { IoIosSunny } from "react-icons/io";
 
 const YachtCard = ({ yacht }) => {
   const emblaRef = useRef(null);
@@ -100,16 +101,23 @@ const YachtCard = ({ yacht }) => {
 
         {/* Category Badges */}
         {yacht.category.includes("bestSellers") && (
-          <div className="absolute flex items-center gap-2 top-4 left-0 gradient-custom-2 text-primary-yellow-light text-md py-0.5 px-2 rounded-r-lg">
+          <div className="absolute flex items-center gap-2 top-12 left-0 gradient-custom-2 text-primary-yellow-light text-sm py-0.5 px-2 rounded-r-lg">
             <BsStars />
             <p>Best Seller</p>
           </div>
         )}
         {yacht.category.includes("premium") && (
-          <div className="absolute flex items-center gap-2 top-4 left-0 gradient-custom-2 text-primary-yellow-light text-md py-0.5 px-2 rounded-r-lg">
+          <div className="absolute flex items-center gap-2 top-12 left-0 gradient-custom-2 text-primary-yellow-light text-sm py-0.5 px-2 rounded-r-lg">
             <BsStars />
             <p>Premium Yacht</p>
           </div>
+        )}
+        {/* Summer Offer Tag */}
+        {yacht.category && (
+          <a href="/resident-offer" target="_blank" className="cursor-pointer font-semibold absolute flex items-center gap-2 top-4 left-0 gradient-custom-3 text-primary-blue-2 text-sm py-0.5 px-2 rounded-r-lg hover:pl-5 transition-all">
+            <IoIosSunny/>
+            <p>Summer Offer up to 40%</p>
+          </a>
         )}
         {/* YouTube Icon (same design, moved above carousel) */}
         {yacht.youtube_url && (
