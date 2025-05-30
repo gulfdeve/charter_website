@@ -95,7 +95,7 @@ const Page = () => {
             {/* Left Section - Text Content */}
             <div className="w-full lg:w-1/2 flex flex-col pb-10 lg:pb-0 lg:pr-8">
               <h2 className="text-primary-blue-2 text-center pb-4 uppercase">
-                Shared yacht Dubai <br/> with Meat Skewers & Drinks
+                Shared Yacht Dubai<br/>with Gourmet Bites & Drinks
               </h2>
               <p className="text-primary-grey font-bold text-base text-center">
                 Luxury Experience that's Affordable: Set Sail and Experience
@@ -306,8 +306,8 @@ const Page = () => {
         <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-5 px-4 py-5 md:py-10 container mx-auto">
           <div>
             <img src="/BBQ.webp" className="rounded-t-lg" alt="Live BBQ" />
-            <h3 className="bg-primary-blue-2 text-primary-yellow text-center text-xs lg:text-base font-bold p-2 rounded-b-lg">
-              MEAT SKEWERS
+            <h3 className="uppercase bg-primary-blue-2 text-primary-yellow text-center text-xs lg:text-base font-bold p-2 rounded-b-lg">
+              Beef & Chicken Sliders
             </h3>
           </div>
           <div>
@@ -427,8 +427,7 @@ const Page = () => {
           exclusive shared yacht tours. Uniting the thrill of luxury yachting
           with the ease of shared experiences, we offer you the chance to enjoy
           the opulence of Dubai's waters without the extravagant cost of
-          chartering an entire yacht. Revel in the stunning vistas, relish in
-          the flavors of meat skewers, and savor complimentary refreshments—all
+          chartering an entire yacht. Revel in the stunning vistas, relish in the flavors of delightful chicken and beef sliders, crispy rolls, and fresh fruits. Savor complimentary refreshments—all
           while forging unforgettable memories with fellow adventurers.
         </p>
 
@@ -443,7 +442,7 @@ const Page = () => {
 
         <h2 className="text-white text-center">Unmatched Amenities</h2>
         <p className="text-white text-center sm:text-left text-md sm:text-sm xl:text-md pb-10">
-        Our commitment to your enjoyment knows no bounds. Savor the flavors of our expertly prepared beef and chicken skewers, crafted by our talented culinary team. Paired with a thoughtful selection of complimentary delicacies and beverages, your voyage promises to be not only luxurious, but deliciously memorable.        </p>
+        Our commitment to your enjoyment knows no bounds. Savor the flavors of our handcrafted sliders, sandwiches, and savory treats, perfectly prepared by our onboard chefs. Paired with a thoughtful selection of complimentary delicacies and beverages, your voyage promises to be not only luxurious, but deliciously memorable.        </p>
       </div>
     </section>
         <Modal2
