@@ -55,7 +55,7 @@ const page = () => {
       rate2Hours: "AED 1,250",
       rate3Hours: "AED 1,870",
       rate4Hours: "AED 2,500",
-      fareharbor_id: "340280",
+      fareharbor_id: "340265",
     },
     {
       name: "ETOSHA - 58FT",
@@ -64,7 +64,7 @@ const page = () => {
       rate2Hours: "AED 1,300",
       rate3Hours: "AED 1,945",
       rate4Hours: "AED 2,600",
-      fareharbor_id: "340265",
+      fareharbor_id: "340280",
     },
     {
       name: "LAGOONA - 56FT",
@@ -183,7 +183,7 @@ const page = () => {
       rate2Hours: "AED 1,460",
       rate3Hours: "AED 2,185",
       rate4Hours: "AED 2,910",
-      fareharbor_id: "340280",
+      fareharbor_id: "340265",
     },
     {
       name: "ETOSHA - 58FT",
@@ -192,7 +192,7 @@ const page = () => {
       rate2Hours: "AED 1,510",
       rate3Hours: "AED 2,270",
       rate4Hours: "AED 3,025",
-      fareharbor_id: "340265",
+      fareharbor_id: "340280",
     },
     {
       name: "LAGOONA - 56FT",
@@ -404,18 +404,18 @@ const page = () => {
         </div>
 
       <div className="container mx-auto flex flex-col  px-4">
-        <h3 className="text-black text-base text-center font-bold pb-5">
-          INCLUSIONS: WATER, SOFT DRINKS, BEER, RED WINE, WHITE WINE & SPARKLING WINE
-        </h3>
-        <p className="text-left md:text-center italic text-primary-grey pb-5">
-        Premium drinks are available for purchase on board
-        </p>
         <div className="bg-primary-blue-4 p-0.5 ">
           <h3 className=" font-bold text-center text-white text-[1rem]">
-            DISCOUNTED RATES ARE VALID FOR BOOKINGS FROM 6AM-2PM (MORNING TRIPS)
-            & 8 PM ONWARDS (NIGHT TRIPS)
+          INCLUSIONS: WATER, SOFT DRINKS, BEER, RED WINE, WHITE WINE & SPARKLING WINE
           </h3>
         </div>
+        <p className="text-left md:text-center italic font-bold text-primary-blue pt-2 pb-5">
+        Premium drinks are available for purchase on board
+        </p>
+        <h3 className="text-black text-base text-center font-bold pb-5">
+            DISCOUNTED RATES ARE VALID FOR BOOKINGS FROM 6AM-2PM (MORNING TRIPS)
+            & 8 PM ONWARDS (NIGHT TRIPS)
+        </h3>
         <p className=" text-left md:text-center italic text-primary-grey py-5">
         Escape the ordinary and embark on a private yacht adventure with our limited-time 40% discount for UAE residents. To avail this exclusive offer, simply book a minimum 2-hours yacht tour and let us take care of the rest. Enjoy unlimited drinks and snacks during your private yacht tour. Watersports are also available on request.
         </p>
@@ -544,17 +544,17 @@ const page = () => {
         </div>
       </div>
       <div className="container mx-auto flex flex-col  px-4">
-        <h3 className="text-black text-base text-center font-bold pb-2">
-          INCLUSIONS: WATER, SOFT DRINKS, BEER, RED WINE, WHITE WINE & SPARKLING WINE
-        </h3>
-        <p className="text-left md:text-center italic text-primary-grey pb-5">
-        Premium drinks are available for purchase on board
-        </p>
         <div className="bg-primary-blue-4 p-0.5 ">
           <h3 className=" font-bold text-center text-white text-[1rem]">
-            DISCOUNTED RATES: VALID FOR BOOKINGS FROM 4 PM TO 7 PM (PRIMETIME).
+            INCLUSIONS: WATER, SOFT DRINKS, BEER, RED WINE, WHITE WINE & SPARKLING WINE
           </h3>
         </div>
+        <p className="text-left md:text-center italic font-bold text-primary-blue pt-2 pb-5">
+        Premium drinks are available for purchase on board
+        </p>
+        <h3 className="text-black text-base text-center font-bold pb-2">
+        DISCOUNTED RATES: VALID FOR BOOKINGS FROM 4 PM TO 7 PM (PRIMETIME).
+        </h3>
         <p className="text-left md:text-center italic text-primary-grey py-5">
         Escape the ordinary and set sail on a private yacht adventure with our limited-time 30% discount for UAE residents. To avail this exclusive offer, simply book a minimum 2-hours yacht tour and let us take care of the rest. Enjoy unlimited drinks and snacks during your private yacht tour. Watersports are also available on request.
         </p>
