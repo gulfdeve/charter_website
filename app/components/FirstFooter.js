@@ -64,7 +64,7 @@ export default function FirstFooter() {
               {t("navbar.yacht-rentals")}
             </Link>
           </li>
-          <li className="mb-2">
+          {/* <li className="mb-2">
             <Link
               href="/watersports"
               onClick={scrollToTop}
@@ -72,7 +72,7 @@ export default function FirstFooter() {
             >
               {t("navbar.water-sports")}
             </Link>
-          </li>
+          </li> */}
           <li className="mb-2">
             <Link
               href="/offers"
@@ -80,6 +80,15 @@ export default function FirstFooter() {
               className="text-text-primary-white capitalize"
             >
               {t("navbar.offers")}
+            </Link>
+          </li>
+          <li className="mb-2">
+            <Link
+              href="/resident-offer"
+              onClick={scrollToTop}
+              className="text-text-primary-white capitalize"
+            >
+              Summer Offers
             </Link>
           </li>
           <li className="mb-2">

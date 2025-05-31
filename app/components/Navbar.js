@@ -255,7 +255,7 @@ export default function Navbar() {
                 </li>
 
                 {/* Offers */}
-                <li>
+                {/* <li>
                   <Link
                     href="/offers"
                     className={`h-full flex items-center tracking-wider uppercase underline decoration-2 underline-offset-8 transition-all duration-200 font-Montserrat ${
@@ -265,6 +265,20 @@ export default function Navbar() {
                     }`}
                   >
                     {t("navbar.offers")}
+                  </Link>
+                </li> */}
+
+                {/* SUMMER Offers */}
+                <li>
+                  <Link
+                    href="/resident-offer"
+                    className={`h-full flex items-center tracking-wider uppercase underline decoration-2 underline-offset-8 transition-all duration-200 font-Montserrat ${
+                      pathname === "/resident-offer" || pathname.startsWith("/resident-offer/")
+                        ? "text-primary-blue decoration-primary-yellow font-semibold"
+                        : "text-primary-blue decoration-transparent hover:decoration-primary-yellow"
+                    }`}
+                  >
+                    SUMMER OFFERS
                   </Link>
                 </li>
 

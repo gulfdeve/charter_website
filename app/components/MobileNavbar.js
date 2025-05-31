@@ -119,8 +119,11 @@ export default function MobileNavbar({
                   {t("navbar.experiences")}
                 </Link>
               </li>
-              <li onClick={() => setMobileDropdownOpen(false)} className="font-bold hover:text-primary-blue-2">
+              {/* <li onClick={() => setMobileDropdownOpen(false)} className="font-bold hover:text-primary-blue-2">
                 <Link href="/offers">{t("navbar.offers")}</Link>
+              </li> */}
+              <li onClick={() => setMobileDropdownOpen(false)} className="font-bold hover:text-primary-blue-2">
+                <Link href="/resident-offer">SUMMER OFFERS</Link>
               </li>
               <li onClick={() => setMobileDropdownOpen(false)} className="font-bold hover:text-primary-blue-2">
                 <Link href="/events">{t("navbar.events")}</Link>
