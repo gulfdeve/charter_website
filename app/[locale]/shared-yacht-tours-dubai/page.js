@@ -24,9 +24,9 @@ const toursData = [
     liveBBQ: "Sandwiches, Assorted Croissants, Strawberry & Honey Jam, Muffins, & Fresh Fruits. Welcome Mimosa, Water, Tea, Coffee, Juices & Soft Drinks.<br/>*Vegetarian food available on request*",
     cruisingRoute: "Dubai Marina, JBR and Burj Al Arab",
     departurePoint: "Dubai Marina/Dubai Marina Harbour",
-    blueHeadline: "AVAILABLE ALL DAYS OF THE WEEK",
-	  validity: "",
-    yellowHeadline: "",
+    blueHeadline: "EVERY SUNDAY-WEDNESDAY",
+	  validity: "*Valid until July 2, 2025",
+    yellowHeadline: "50% OFF",
     fareharborLink:
       "https://fareharbor.com/embeds/book/centauruscharter/items/633603/?full-items=yes&flow=1283212",
   },
@@ -40,7 +40,7 @@ const toursData = [
     cruisingRoute: "Dubai Marina, JBR and Burj Al Arab",
     departurePoint: "Dubai Marina/Dubai Marina Harbour",
     blueHeadline: "EVERY SUNDAY-WEDNESDAY",
-	  validity: "*Valid from 4-28 May 2025",
+	  validity: "*Valid until July 2, 2025",
     yellowHeadline: "50% OFF",
     fareharborLink:
       "https://fareharbor.com/embeds/book/centauruscharter/items/488868/?full-items=yes&flow=no",
@@ -55,7 +55,7 @@ const toursData = [
     cruisingRoute: "Dubai Marina, JBR and Burj Al Arab",
     departurePoint: "Dubai Marina/Dubai Marina Harbour",
     blueHeadline: "EVERY SUNDAY-WEDNESDAY",
-	  validity: "*Valid from 4-28 May 2025",
+	  validity: "*Valid until July 2, 2025",
     yellowHeadline: "50% OFF",
     fareharborLink:
       "https://fareharbor.com/embeds/book/centauruscharter/items/488872/?full-items=yes&flow=no",
@@ -305,12 +305,6 @@ const Page = () => {
         </div>
         <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-5 px-4 py-5 md:py-10 container mx-auto">
           <div>
-            <img src="/BBQ.webp" className="rounded-t-lg" alt="Live BBQ" />
-            <h3 className="uppercase bg-primary-blue-2 text-primary-yellow text-center text-xs lg:text-base font-bold p-2 rounded-b-lg">
-              Beef & Chicken Sliders
-            </h3>
-          </div>
-          <div>
             <img
               src="/Picturemoments.webp"
               className="rounded-t-lg"
@@ -318,6 +312,12 @@ const Page = () => {
             />
             <h3 className="bg-primary-blue-2 text-primary-yellow text-center text-xs lg:text-base font-bold p-2 rounded-b-lg">
               PICTURE MOMENTS
+            </h3>
+          </div>
+          <div>
+            <img src="/images/chicken-beef-sliders-on-yacht-dubai.webp" className="rounded-t-lg" alt="Beef & Chicken Sliders" />
+            <h3 className="uppercase bg-primary-blue-2 text-primary-yellow text-center text-xs lg:text-base font-bold p-2 rounded-b-lg">
+              Beef & Chicken Sliders
             </h3>
           </div>
           <div>
@@ -332,12 +332,12 @@ const Page = () => {
           </div>
           <div>
             <img
-              src="/Great-Food.webp"
+              src="/images/bubbly-drinks-on-yacht-dubai.webp"
               className="rounded-t-lg"
-              alt="Great Food"
+              alt="Bubbly Drinks"
             />
             <h3 className="bg-primary-blue-2 text-primary-yellow text-center text-xs lg:text-base font-bold p-2 rounded-b-lg">
-              GREAT FOOD
+              BUBBLY DRINKS
             </h3>
           </div>
         </div>
@@ -366,7 +366,7 @@ const Page = () => {
     </li>
     <li className="">Rates cannot be combined with other offers.</li>
     <li className="">Guests under 18 years old must be accompanied by an adult.</li>
-    <li className="">The offer is valid from 4-28 May 2025</li>
+    <li className="">The offer is valid until July 2, 2025</li>
   </ul>
 </div>
   {/* CTA Section */}
