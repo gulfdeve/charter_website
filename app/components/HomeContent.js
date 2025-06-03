@@ -31,6 +31,46 @@ export default function Home() {
   const { data, loading, error } = useData();
   const { language } = useLanguage();
   const locale = useLocale();
+  const summeroffer = [
+    {
+      name: "36 Ft Yacht - Thunder",
+      discounted: "AED 415",
+    },
+    {
+      name: "36 Ft Yacht - Storm",
+      discounted: "AED 415"
+    },
+    {
+      name: "40 Ft Yacht - Riverside",
+      discounted: "AED 525",
+    },
+    {
+      name: "56 Ft Yacht - Vassia",
+      discounted: "AED 725",
+    },
+    {
+      name: "58 Ft Yacht - Etosha",
+      discounted: "AED 755",
+    },
+    {
+      name: "56 Ft Yacht - Lagoona",
+      discounted: "AED 805",
+    },
+    {
+      name: "61 Ft Yacht - Silver Creek",
+      discounted: "AED 875",
+    },
+    {
+      name: "85 Ft Yacht - Kronos",
+      discounted: "AED 2,450",
+    },
+    {
+      name: "118 Ft Yacht - Poseidon",
+      discounted: "AED 3,500",
+    }
+  ]
+
+  
   const [activeFilter, setActiveFilter] = useState(null);
 
   useEffect(() => {
@@ -143,7 +183,7 @@ export default function Home() {
               getFilteredProducts().map((product) => (
                 <div
                   key={product.id}
-                  className="relative flex flex-col p-5 rounded-lg shadow-custom bg-white"
+                  className="relative flex flex-col p-5 pb-8 rounded-lg shadow-custom bg-white"
                 >
                    {/* YouTube Button */}
                   {product.youtube_url && (
@@ -174,10 +214,11 @@ export default function Home() {
 
                   {/* Category Badges */}
                   {/* Summer Offer Tag */}
+                  {product.id !== 20 && (
                   <a href="/resident-offer" target="_blank" className="cursor-pointer font-semibold absolute z-10 flex items-center gap-2 top-6 left-0 gradient-custom-3 text-primary-blue-2 text-sm py-0.5 px-2 rounded-r-lg hover:pl-5 transition-all">
                     <IoIosSunny/>
                     <p>Summer Offer up to 40%</p>
-                  </a>                  
+                  </a>)}           
                   {["56ft-lagoona", "61ft-silvercreek"].includes(product.slug) && (
                     <div className="absolute flex items-center gap-2 top-14 left-0 gradient-custom-2 text-primary-yellow-light text-sm py-0.5 px-2 rounded-r-lg">
                       <BsStars />
@@ -281,34 +322,52 @@ export default function Home() {
                     </div>
                   </div>
 
-                  <div className="flex flex-row justify-between items-center z-20 border-t border-gray-400 pt-3 mt-5">
+                  <div className="flex flex-grow flex-col lg:flex-row justify-end lg:justify-between lg:items-end z-20 border-t border-gray-400 pt-3 mt-5">
                     {/* Price per Hour */}
-                    <div className="p-1 xl:p-2 flex flex-col">
-                      <span className=" text-sm">Price per hour:</span>
-                      <span>{product.id === 24 && (
-                        <p className="text-xs font-normal italic text-primary-grey">Starting from
-                        </p>
-                        )
-                      }
-                      </span>
-                      <span className="font-bold text-lg lg:text-xl text-primary-red">
+                    <div className="">
+                      {product.id === 20 && (<span className=" text-sm">Price per hour:</span>)}
+                      {product.id !== 20 && (<div>
+                      <span className=" text-sm">Regular Price:</span>
+                      <div className="flex gap-2 font-semibold text-sm lg:text-md text-primary-grey">
+                      <span className="line-through">
                       AED {product.per_hour_price.toLocaleString()}
-                      
+                      </span> <span>per hour</span>
+                      </div></div>)}
+                      <span>
+                        {product.id !== 20 && (
+                          <div>
+                            
+                        <p className="text-xs font-semibold italic mt-4 text-primary-grey">Summer Offer Exclusive
+                        </p>
+                        <p className="text-xxs font-normal italic text-primary-grey">minimum booking of 2 hours<br/>Exclusive for UAE Residents
+                        </p>
+                        </div>
+                        )}
                       </span>
+                      <div className="flex gap-2 items-center">
+                      <span className="font-bold text-base lg:text-lg text-primary-red line">
+                      {
+                        summeroffer.find(offer =>
+                          product.translations?.[locale].name_of_yacht
+                            ?.toLowerCase()
+                            .includes(offer.name.toLowerCase())
+                        )?.discounted || `AED ${product.per_hour_price.toLocaleString()}`
+                      } 
+                      {product.id === 24 && (<span className="text-xs text-primary-grey"> (40 Pax)</span>)}
+                      </span>
+                      <span className="font-semibold text-sm text-primary-grey"></span>
+                      </div>
                     </div>
-                    <div className="pt-3">
-                   
-
                     <a
-  href={`https://fareharbor.com/embeds/book/centauruscharter/items/${product.fareharbor_id}/?full-items=yes&flow=645487`}
-  target="_self"
-  rel="noopener noreferrer"
-  className="blue-solid-button "
->
-  Book Now
-</a>
+                      href={`https://fareharbor.com/embeds/book/centauruscharter/items/${product.fareharbor_id}/?full-items=yes&flow=645487`}
+                      target="_self"
+                      rel="noopener noreferrer"
+                      className="blue-solid-button text-center"
+                    >
+                      Book Now
+                    </a>
 
-                    </div>
+                    
                   </div>
                 </div>
               ))}
