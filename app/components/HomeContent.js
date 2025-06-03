@@ -322,7 +322,7 @@ export default function Home() {
                     </div>
                   </div>
 
-                  <div className="flex flex-grow flex-col lg:flex-row justify-end lg:justify-between lg:items-end z-20 border-t border-gray-400 pt-3 mt-5">
+                  <div className="flex flex-grow gap-2 flex-col lg:flex-row justify-end lg:justify-between lg:items-end z-20 border-t border-gray-400 pt-3 mt-5">
                     {/* Price per Hour */}
                     <div className="">
                       {product.id === 20 && (<span className=" text-sm">Price per hour:</span>)}
@@ -332,11 +332,11 @@ export default function Home() {
                       <span className="line-through">
                       AED {product.per_hour_price.toLocaleString()}
                       </span> <span>per hour</span>
-                      </div></div>)}
+                      </div>
+                      </div>)}
                       <span>
                         {product.id !== 20 && (
-                          <div>
-                            
+                        <div>   
                         <p className="text-xs font-semibold italic mt-4 text-primary-grey">Summer Offer Exclusive
                         </p>
                         <p className="text-xxs font-normal italic text-primary-grey">minimum booking of 2 hours<br/>Exclusive for UAE Residents
