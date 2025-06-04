@@ -7,7 +7,51 @@ import { FaArrowLeft, FaArrowRight, FaYoutube } from "react-icons/fa";
 import BookNowButton from "@/app/components/BookNowButton";
 import { BsStars } from "react-icons/bs";
 import { IoIosSunny } from "react-icons/io";
-
+const summeroffer = [
+    {
+      name: "36 Ft Yacht - Thunder",
+      discounted: "AED 415",
+    },
+    {
+      name: "36 Ft Yacht - Storm",
+      discounted: "AED 415"
+    },
+    {
+      name: "40 Ft Yacht - Riverside",
+      discounted: "AED 525",
+    },
+    {
+      name: "56 Ft Yacht - Vassia",
+      discounted: "AED 725",
+    },
+    {
+      name: "58 Ft Yacht - Etosha",
+      discounted: "AED 755",
+    },
+    {
+      name: "56 Ft Yacht - Lagoona",
+      discounted: "AED 805",
+    },
+    {
+      name: "61 Ft Yacht - Silver Creek",
+      discounted: "AED 875",
+    },
+    {
+      name: "85 Ft Yacht - Kronos",
+      discounted: "AED 2,450",
+    },
+    {
+      name: "118 Ft Yacht - Poseidon",
+      discounted: "AED 3,500",
+    }
+  ]
+function getDiscountedPrice(yachtName) {
+  if (!yachtName) return null;
+  const normalize = str => str.replace(/[\s\-]/g, '').toLowerCase();
+  const yachtNorm = normalize(yachtName);
+  const offer = summeroffer.find(item => normalize(item.name) === yachtNorm);
+  return offer ? offer.discounted : null;
+}  
 const YachtCard = ({ yacht }) => {
   const emblaRef = useRef(null);
   const emblaApi = useRef(null);
@@ -113,7 +157,7 @@ const YachtCard = ({ yacht }) => {
           </div>
         )}
         {/* Summer Offer Tag */}
-        {yacht.category && (
+        {yacht.id !== 20 && (
           <a href="/resident-offer" target="_blank" className="cursor-pointer font-semibold absolute flex items-center gap-2 top-4 left-0 gradient-custom-3 text-primary-blue-2 text-sm py-0.5 px-2 rounded-r-lg hover:pl-5 transition-all">
             <IoIosSunny/>
             <p>Summer Offer up to 40%</p>
@@ -162,19 +206,42 @@ const YachtCard = ({ yacht }) => {
           </p>
         )}
 
-        <div className="flex flex-row justify-between items-center z-20 border-t border-gray-400 pt-3 mt-5">
-          <div className="p-1 xl:p-2 flex flex-col text-left">
-            <span className="text-xs md:text-sm">Price per hour:</span>
-            {yacht.id === 24 && (
-              <p className="text-xs font-normal italic text-primary-grey">
-                Starting from
-              </p>
+        <div className="flex flex-col s:flex-row md:flex-col lg:flex-row justify-between s:items-end md:items-stretch lg:items-end z-20 gap-2 border-t border-gray-400 pt-3 mt-5">
+          <div className="flex flex-col text-left">
+            {yacht.id === 20 && (<span className=" text-sm">Price per hour:</span>)}
+            {yacht.id !== 20 && (
+            <div>
+            <span className=" text-sm">Regular Price:</span>
+            <div className="flex gap-2 font-semibold text-sm lg:text-md text-primary-grey">
+            <span className="line-through">
+            AED {parseInt(yacht.price).toLocaleString()}
+            </span> 
+            <span>per hour</span>
+            </div>
+            </div>)}
+            <span>
+            {yacht.id !== 20 && (
+            <div>   
+            <p className="text-xs font-semibold italic mt-4 text-primary-grey">Summer Offer Exclusive
+            </p>
+            <p className="text-xxs font-normal italic text-primary-grey">minimum booking of 2 hours<br/>Exclusive for UAE Residents
+            </p>
+            </div>
             )}
-            <span className="font-bold text-md md:text-lg lg:text-xl text-primary-red">
-              AED {parseInt(yacht.price).toLocaleString()}
+          </span>
+          <div className="flex gap-2 items-center">
+            <span className="font-bold text-base lg:text-lg text-primary-red line">
+            </span>
+            <span className="font-semibold text-sm text-primary-grey"></span>
+          </div>
+            <span className="font-bold text-md md:text-lg lg:text-xl text-primary-red line">
+              {getDiscountedPrice(yacht.title) || `AED ${parseInt(yacht.price).toLocaleString()}`}
+            {yacht.id === 24 && (<span className="text-xs text-primary-grey"> (40 Pax)</span>)}
             </span>
           </div>
+       
           <BookNowButton fareharborId={yacht.fareharbor_id} />
+          
         </div>
       </div>
 
