@@ -80,7 +80,13 @@ export default function VideoLocal({ filename, section }) {
       ></div>
         <div className="hidden lg:block divider-bottom absolute w-full bottom-0 xl:bottom-0 z-10"><svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none" className="w-full "><path d="M1200,104.64v15.36H322.45L0,121.91v-21.91s129.69-39.79,154.85-45.98c26.37-6.49,114.85-29.12,171.58-36.22,109.89-13.81,219.26-7.58,323.57,16.47,8.58,2.22,17.21,4.36,25.93,6.36,151.94,34.99,314.51,32.24,473.99-15.34,15.92-5.2,43.33-16.69,50.08-19.75.18,5.52,0,99.1,0,99.1Z" className="fill-primary-blue"></path></svg></div>
         <div className="hidden lg:block divider-bottom absolute w-full -bottom-2 xl:-bottom-2 z-10"><svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none" className="w-full "><path d="M1200,104.64v15.36H322.45L0,121.91v-21.91s129.69-39.79,154.85-45.98c26.37-6.49,114.85-29.12,171.58-36.22,109.89-13.81,219.26-7.58,323.57,16.47,8.58,2.22,17.21,4.36,25.93,6.36,151.94,34.99,314.51,32.24,473.99-15.34,15.92-5.2,43.33-16.69,50.08-19.75.18,5.52,0,99.1,0,99.1Z" className="fill-white"></path></svg></div>
-        <div className="block text-center mt-10 pb-10 lg:absolute lg:-translate-x-2/4 lg:-translate-y-2/4 lg:left-2/4 lg:top-2/4 lg:mt-0 z-40">
+        <div className="flex lg:flex-col gap-2 justify-center items-center lg:absolute lg:top-32 lg:right-24">
+        <div className="flex lg:flex-col gap-2 rounded-full justify-center items-center p-4 mt-6 lg:mt-0 lg:py-10 lg:px-8 gradient-custom-2 border-4 border-primary-blue">
+          <img src="/images/crypto-coin.webp" alt="we-accept-crypto" className="w-8 lg:w-14 object-cover rounded-full" />
+          <p className="font-bold text-white text-center text-xs lg:text-base">We Now Accept <br/>Crypto Payment</p>
+        </div>
+        </div>
+        <div className="block text-center mt-6 pb-10 lg:absolute lg:-translate-x-2/4 lg:-translate-y-2/4 lg:left-2/4 lg:top-2/4 lg:mt-0 z-40">
           <h1 className="uppercase font-bold mb-4 text-primary-blue-2 lg:text-white lg:text-[32px] p-0  md:px-0 text-xl s:text-2xl sm:text-2xl md:text-3xl 2xl:text-4xl">
           centaurus yacht rental dubai<br />
           </h1>
