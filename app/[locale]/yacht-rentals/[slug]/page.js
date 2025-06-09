@@ -6,7 +6,51 @@ import Route from "@/app/components/Route";
 import YachtGallery from "./YachtGallery";
 import YachtDetails from "./YachtDetails";
 import { notFound } from "next/navigation";
-
+const summeroffer = [
+    {
+      name: "36 Ft Yacht - Thunder",
+      discounted: "AED 415",
+    },
+    {
+      name: "36 Ft Yacht - Storm",
+      discounted: "AED 415"
+    },
+    {
+      name: "40 Ft Yacht - Riverside",
+      discounted: "AED 525",
+    },
+    {
+      name: "56 Ft Yacht - Vassia",
+      discounted: "AED 725",
+    },
+    {
+      name: "58 Ft Yacht - Etosha",
+      discounted: "AED 755",
+    },
+    {
+      name: "56 Ft Yacht - Lagoona",
+      discounted: "AED 805",
+    },
+    {
+      name: "61 Ft Yacht - Silver Creek",
+      discounted: "AED 875",
+    },
+    {
+      name: "85 Ft Yacht - Kronos",
+      discounted: "AED 2,450",
+    },
+    {
+      name: "118 Ft Yacht - Poseidon",
+      discounted: "AED 3,500",
+    }
+  ]
+  function getDiscountedPrice(yachtName) {
+  if (!yachtName) return null;
+  const normalize = str => str.replace(/[\s\-]/g, '').toLowerCase();
+  const yachtNorm = normalize(yachtName);
+  const offer = summeroffer.find(item => normalize(item.name) === yachtNorm);
+  return offer ? offer.discounted : null;
+}  
 export default async function YachtPage({ params: paramsPromise }) {
   //   const { slug, locale } = params;
   const params = await paramsPromise;
@@ -84,9 +128,14 @@ export default async function YachtPage({ params: paramsPromise }) {
         </h3>
         <h3 className=" p-2 flex flex-col items-center">
           <span className="text-sm text-primary-grey">Price per hour:</span>
-          <span className="font-semibold text-sm text-primary-blue xl:text-xl">
-            {product.per_hour_price.toLocaleString()} AED
-          </span>
+          {product.id !== 20 && (
+          <span className="font-semibold text-xs text-primary-blue xl:text-xs line-through">
+            AED {product.per_hour_price.toLocaleString()} 
+          </span>)}
+          <span className="font-bold text-md md:text-lg lg:text-xl text-primary-red">
+              {getDiscountedPrice(product.title) || `AED ${parseInt(product.per_hour_price).toLocaleString()}`}
+            {product.id === 24 && (<span className="text-xs text-primary-grey"> (40 Pax)</span>)}
+            </span>
         </h3>
       <div className=" text-primary-blue rounded-lg p-2 lg:p-1.5 xl:p-2 flex flex-col col-span-2 md:col-span-4 lg:col-span-1 items-end">
         <a
@@ -99,7 +148,11 @@ export default async function YachtPage({ params: paramsPromise }) {
     </div>
     </div>
     </div>
-    {/* if product.id is 24 add a paragraph */}
+    {product.id !== 20 && (
+      <p className="text-sm text-center my-2 italic text-primary-grey">
+        Summer Offer: Book now and get 50% off on all yacht rentals. Minimum Booking of 2 hours.
+      </p>
+    )}
     {product.id === 24 && (
       <p className="text-sm text-center my-2 italic text-primary-grey">
         Poseidon 118ft Trips: An Add on of AED 1000 per hour will be added for every additional 10 pax where the occupancy surpasses the 40 passengers.
