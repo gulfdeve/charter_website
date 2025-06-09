@@ -132,9 +132,9 @@ export default async function YachtPage({ params: paramsPromise }) {
           <span className="font-semibold text-xs text-primary-blue xl:text-xs line-through">
             AED {product.per_hour_price.toLocaleString()} 
           </span>)}
-          <span className="font-bold text-md md:text-lg lg:text-xl text-primary-red">
+          <span className="font-bold text-md md:text-lg lg:text-xl text-primary-red text-center">
               {getDiscountedPrice(product.title) || `AED ${parseInt(product.per_hour_price).toLocaleString()}`}
-            {product.id === 24 && (<span className="text-xs text-primary-grey"> (40 Pax)</span>)}
+            {product.id === 24 && (<span className="text-xs text-primary-grey"><br className="s:hidden"/> (40 Pax)</span>)}
             </span>
         </h3>
       <div className=" text-primary-blue rounded-lg p-2 lg:p-1.5 xl:p-2 flex flex-col col-span-2 md:col-span-4 lg:col-span-1 items-end">
@@ -150,7 +150,7 @@ export default async function YachtPage({ params: paramsPromise }) {
     </div>
     {product.id !== 20 && (
       <p className="text-sm text-center my-2 italic text-primary-grey">
-        Summer Offer: Book now and get 50% off on all yacht rentals. Minimum Booking of 2 hours.
+        Summer Offer: Minimum Booking of 2 hours. T&Cs Apply.
       </p>
     )}
     {product.id === 24 && (
