@@ -183,7 +183,7 @@ export default function Home() {
               getFilteredProducts().map((product) => (
                 <div
                   key={product.id}
-                  className="relative flex flex-col p-5 pb-8 rounded-lg shadow-custom bg-white"
+                  className="relative flex flex-col p-5 rounded-lg shadow-custom bg-white"
                 >
                    {/* YouTube Button */}
                   {product.youtube_url && (
@@ -264,7 +264,7 @@ export default function Home() {
                     </div>
                     </div>
                   </div>
-                  <div className="z-10 mt-12">
+                  <div className="z-10 mt-8">
                   {product.id === 24 && (
                     <p className="text-xs font-normal italic text-primary-grey">Poseidon 118ft Trips: An Add on of AED 1000 per hour will be added for every additional 10 pax where the occupancy surpasses the 40 passengers.
                     </p>

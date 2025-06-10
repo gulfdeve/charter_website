@@ -76,7 +76,7 @@ const page = () => {
               </div>
             </div>
           </div>
-          <div className="flex flex-col flex-grow justify-end py-4">
+          <div className="flex flex-col flex-grow justify-end pt-4">
             <div className="mt-5">
               {product.id === 24 && (
                 <p className="text-xs font-normal italic text-primary-grey">
@@ -84,8 +84,8 @@ const page = () => {
                 </p>
               )}
             </div>
-            <div className="flex flex-row justify-between items-center z-20 border-t border-gray-400 pt-3 mt-5">
-              <div className="p-1 xl:p-2 flex flex-col text-left">
+            <div className="flex flex-row justify-between items-end z-20 border-t border-gray-400 pt-3 mt-5">
+              <div className="flex flex-col text-left">
                 <span className="text-xs md:text-sm">Price per hour:</span>
                 {product.id === 24 && (
                   <p className="text-xs font-normal italic text-primary-grey">Starting from</p>
