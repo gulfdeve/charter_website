@@ -114,8 +114,13 @@ export default function YachtDetails({
                 <li key={index} dangerouslySetInnerHTML={{ __html: item }} />
               ))}
           </ol>
-
-          <div className="flex gap-3 items-center mt-10">
+          <div className="flex justify-start items-center">
+          <div className="flex gap-2 rounded-full justify-center items-center p-4 mt-4 gradient-custom-2">
+          <img src="/images/crypto-coin.webp" alt="we-accept-crypto" className="w-8 object-cover rounded-full" />
+          <p className="font-bold text-white text-center text-xs ">We Accept Crypto Payment</p>
+        </div>
+        </div>
+          <div className="flex gap-3 items-center mt-8">
             <div>
               <FaMapMarkerAlt className="w-8 h-8 flex-shrink-0" />
             </div>

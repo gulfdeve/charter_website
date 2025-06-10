@@ -69,14 +69,15 @@ const SecondFooter = () => {
           <div className="flex flex-row items-center gap-3">
             {" "}
             {/* Changed to always be flex-row */}
-            <Image src="/Cash.png" alt="cash logo" width={45} height={100} />
-            <Image src="/Visa.png" alt="visa logo" width={45} height={100} />
+            <Image src="/Cash.png" alt="cash-logo" width={45} height={100} />
+            <Image src="/Visa.png" alt="visa-logo" width={45} height={100} />
             <Image
               src="/Mastercard.png"
-              alt="mastercard logo"
+              alt="mastercard-logo"
               width={45}
               height={100}
             />
+            <Image src="/images/crypto.webp" alt="crpto-logo" width={45} height={100} />
           </div>
         </div>
         <div className="flex lg:flex-col justify-between gap-4 xs:gap-10 lg:gap-2 text-text-primary-white">
