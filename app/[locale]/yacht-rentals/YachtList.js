@@ -197,7 +197,7 @@ const YachtCard = ({ yacht }) => {
         </div>
       </div>
 
-      <div className="flex flex-col flex-grow justify-end py-4">
+      <div className="flex flex-col flex-grow justify-end pt-4">
         {yacht.id === 24 && (
           <p className="text-xs font-normal italic text-primary-grey mt-5">
             Poseidon 118ft Trips: An Add on of AED 1000 per hour will be added
