@@ -40,7 +40,7 @@ export async function createTabbySession(booking, locale = 'en', merchantUrls = 
       }
     },
     lang: locale,
-    merchant_code: process.env.TABBY_MERCHANT_CODE,
+    merchant_code: process.env.NEXT_PUBLIC_TABBY_MERCHANT_CODE,
     merchant_urls: {
       success: `${process.env.NEXT_PUBLIC_BASE_URL}/payments/tabby/${order_no}/success`,
       cancel: `${process.env.NEXT_PUBLIC_BASE_URL}/payments/tabby/${order_no}/cancel`,

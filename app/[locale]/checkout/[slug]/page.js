@@ -8,7 +8,7 @@ import TabbyPromoSection from './TabbyPromoSection';
 
 // Make sure we import the environment variables at the top
 const {
-  TABBY_MERCHANT_CODE,
+  NEXT_PUBLIC_TABBY_MERCHANT_CODE,
   TABBY_SECRET_KEY,
   CENTAURUS_API_KEY,
 } = process.env;
