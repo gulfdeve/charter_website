@@ -372,7 +372,7 @@ const page = () => {
                   <td className="font-Inter p-3 font-semibold">
                     {yacht.capacity}
                   </td>
-                  <td className="font-Inter p-3 font-semibold">
+                  <td className="font-Inter p-3 font-semibold line-through text-primary-grey">
                     {yacht.ratePerHour}
                   </td>
                   <td className="font-Inter p-3 font-semibold">
@@ -514,7 +514,7 @@ const page = () => {
                   <td className="font-Inter p-3 font-semibold">
                     {yacht.capacity}
                   </td>
-                  <td className="font-Inter p-3 font-semibold">
+                  <td className="font-Inter p-3 font-semibold line-through text-primary-grey">
                     {yacht.ratePerHour}
                   </td>
                   <td className="font-Inter p-3 font-semibold">
