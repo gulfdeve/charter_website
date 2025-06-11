@@ -3,6 +3,9 @@ export async function createTabbySession(booking, locale = 'en', merchantUrls = 
   
   const phone = mobile?.startsWith('+') ? mobile : `+${mobile}`;
   
+  // Convert booking_date to UTC ISO 8601 format
+  const utcBookingDate = new Date(booking_date).toISOString();
+  
   const payload = {
     payment: {
       amount: amount.toString(),
@@ -17,12 +20,12 @@ export async function createTabbySession(booking, locale = 'en', merchantUrls = 
         tax_amount: '0.00',
         shipping_amount: '0.00',
         discount_amount: '0.00',
-        updated_at: booking_date,
+        updated_at: utcBookingDate,
         reference_id: order_no,
         items: [
           {
             title: `Booking ${order_no}`,
-            description: `Yacht booking on ${booking_date}`,
+            description: `Yacht booking on ${utcBookingDate}`,
             quantity: 1,
             unit_price: amount.toString(),
             discount_amount: '0.00',
@@ -38,9 +41,15 @@ export async function createTabbySession(booking, locale = 'en', merchantUrls = 
     },
     lang: locale,
     merchant_code: process.env.TABBY_MERCHANT_CODE,
+    merchant_urls: {
+      success: `${process.env.NEXT_PUBLIC_BASE_URL}/payments/tabby/${order_no}/success`,
+      cancel: `${process.env.NEXT_PUBLIC_BASE_URL}/payments/tabby/${order_no}/cancel`,
+      failure: `${process.env.NEXT_PUBLIC_BASE_URL}/payments/tabby/${order_no}/failure`,
+      webhook: `${process.env.NEXT_PUBLIC_BASE_URL}/api/webhooks/tabby`
+    }
   };
 
-  // Add merchant URLs if provided
+  // Add merchant URLs if provided (this will override the defaults)
   if (merchantUrls) {
     payload.merchant_urls = merchantUrls;
   }

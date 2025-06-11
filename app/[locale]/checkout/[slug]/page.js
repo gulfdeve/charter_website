@@ -112,6 +112,16 @@ export default async function CheckoutPage({ params, searchParams }) {
         <h1 className="text-primary-blue-2 font-bold text-2xl md:text-3xl">Checkout</h1>
       </div>
       
+      {(callback === 'cancel' || callback === 'failure') && (
+        <div className="bg-red-50 border border-red-200 rounded-md p-4 mt-4 mx-auto max-w-7xl">
+          <p className="text-red-600 text-sm">
+            {callback === 'cancel'
+              ? 'You aborted the payment. Please retry or choose another payment method.'
+              : 'Sorry, Tabby is unable to approve this purchase. Please use an alternative payment method for your order'}
+          </p>
+        </div>
+      )}
+      
       {/* Form with ID for button association */}
       <form id="checkout-form" method="get" className="flex flex-col lg:flex-row gap-6 mt-8">
         <input type="hidden" name="confirm" value="1" />
@@ -219,14 +229,6 @@ export default async function CheckoutPage({ params, searchParams }) {
           <div className="mt-4">
             <TabbyPromoSection total={total} />
           </div>
-
-          {(callback === 'cancel' || callback === 'failure') && (
-            <p className="text-red-500 text-sm mt-2">
-              {callback === 'cancel'
-                ? 'Payment was cancelled. Please try again.'
-                : 'Payment failed. Please try again.'}
-            </p>
-          )}
         </div>
 
         {/* Right Side - Booking Info */}
@@ -240,6 +242,7 @@ export default async function CheckoutPage({ params, searchParams }) {
           />
           <p className="text-primary-grey text-xs">Trip Date & Time</p>
           <p className="text-black mb-2">
+            {/* {new Date(booking_date).toISOString()} */}
             {new Date(booking_date).toLocaleDateString('en-GB', { day: '2-digit', month: 'short', year: 'numeric' })}
           </p>
           <p className="text-primary-grey text-xs">Trip Hours</p>
