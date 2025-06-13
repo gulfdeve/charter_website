@@ -112,7 +112,7 @@ export default function Navbar() {
                   onMouseLeave={() => setPrivateYachtsOpen(false)}
                 >
                   <span
-                    className={`h-full flex items-center justify-between cursor-pointer gap-1 py-2 transition-all duration-200 font-Montserrat ${
+                    className={`h-full flex items-center justify-between cursor-pointer gap-1 py-2 transition-all duration-200 font-ProximaNova ${
                       pathname === "/yacht-rentals" ||
                       pathname.startsWith("/yacht-rentals/")
                         ? "text-primary-blue border-primary-yellow font-semibold"

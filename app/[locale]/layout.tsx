@@ -54,6 +54,7 @@ export default async function RootLayout({
   return (
     <html lang={locale}>
       <head>
+        <link rel="stylesheet" href="https://use.typekit.net/kkb1lse.css"></link>
         <Script
           strategy="afterInteractive"
           src="https://www.googletagmanager.com/gtag/js?id=UA-131086702-1&AW-761360769"
