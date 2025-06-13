@@ -165,7 +165,7 @@ export default function YachtDetails({
       <div className="text-center">
           <div className="flex items-center justify-center w-full my-6 xl:px-36 lg:px-20 mt-20">
             <hr className="flex-grow border-primary-yellow-dark" />
-            <span className="uppercase font-Montserrat px-4 text-base md:text-2xl lg:text-3xl font-semibold  text-black">
+            <span className="uppercase font-primary px-4 text-base md:text-2xl lg:text-3xl font-semibold  text-black">
               Customize Your Yacht Experience
             </span>
             <hr className="flex-grow border-primary-yellow-dark " />

@@ -129,7 +129,7 @@ export default async function CheckoutPage({ params, searchParams }) {
         {/* Left Side - Personal & Payment */}
         <div className="w-full lg:w-2/3 bg-[#f5f5f5] rounded-lg p-4 md:p-6">
           <p className="text-xl font-bold text-primary-blue-2 pt-4 pb-3">Personal Information</p>
-          <div className="font-Inter flex flex-col gap-4">
+          <div className="font-secondary flex flex-col gap-4">
             <div className="flex flex-col md:flex-row gap-3">
               <input
                 name="first_name"

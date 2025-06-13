@@ -135,7 +135,7 @@ const page = () => {
         <div className="md:block hidden">
           <div className="flex items-center justify-center w-full my-6 xl:px-36 lg:px-20 mt-20">
             <hr className="flex-grow border-primary-yellow-dark" />
-            <span className="font-Montserrat px-4 text-2xl lg:text-3xl font-semibold  text-black">
+            <span className="font-primary px-4 text-2xl lg:text-3xl font-semibold  text-black">
               CUSTOMIZED YOUR WEDDING
             </span>
             <hr className="flex-grow border-primary-yellow-dark " />
@@ -182,7 +182,7 @@ const page = () => {
         <div className="md:block hidden">
           <div className="flex items-center justify-center w-full my-6 xl:px-36 lg:px-20 mt-20 ">
             <hr className="flex-grow border-primary-yellow-dark" />
-            <span className="font-Montserrat px-4 text-2xl lg:text-3xl font-semibold  text-black">
+            <span className="font-primary px-4 text-2xl lg:text-3xl font-semibold  text-black">
               YACHT MARRIAGE PROPOSAL
             </span>
             <hr className="flex-grow border-primary-yellow-dark " />
@@ -243,7 +243,7 @@ const page = () => {
         <div className="md:block hidden">
           <div className="flex items-center justify-center w-full my-6 xl:px-36 lg:px-20 mt-20">
             <hr className="flex-grow border-primary-yellow-dark" />
-            <span className="font-Montserrat px-4 text-2xl lg:text-3xl font-semibold  text-black">
+            <span className="font-primary px-4 text-2xl lg:text-3xl font-semibold  text-black">
               EXPERIENCE OF A LIFETIME
             </span>
             <hr className="flex-grow border-primary-yellow-dark " />

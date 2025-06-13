@@ -134,7 +134,7 @@ Got a question? We’ve answered the most frequently asked questions about yacht
               >
                 <h2
                   onClick={() => toggleAnswer(index)}
-                  className={`font-Inter w-full text-left text-lg md:text-lg font-normal  py-3 px-3 block flex justify-between items-center focus:outline-none hover:cursor-pointer ${
+                  className={`font-secondary w-full text-left text-lg md:text-lg font-normal  py-3 px-3 block flex justify-between items-center focus:outline-none hover:cursor-pointer ${
                     activeIndex === index ? "text-primary-blue-2" : "text-grey-600"
                   }`}
                 >

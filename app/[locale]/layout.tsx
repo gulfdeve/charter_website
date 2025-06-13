@@ -20,10 +20,10 @@ import { FareHarborProvider } from "@/app/context/FareHarborContext";
 import { headers } from 'next/headers';
 import { fetchData } from '@/app/lib/fetchData';
 
-const montserrat = Montserrat({
-  subsets: ["latin"],
-  variable: "--font-montserrat",
-});
+// const montserrat = Montserrat({
+//   subsets: ["latin"],
+//   variable: "--font-montserrat",
+// });
 
 export default async function RootLayout({
   children,
@@ -54,6 +54,7 @@ export default async function RootLayout({
   return (
     <html lang={locale}>
       <head>
+        <link rel="stylesheet" href="https://use.typekit.net/kkb1lse.css"></link>
         <Script
           id="gtm-script"
           strategy="afterInteractive"
@@ -85,7 +86,7 @@ export default async function RootLayout({
           }}
         /> */}
       </head>
-      <body className={`${montserrat.variable}`}>
+      <body className={/* `${montserrat.variable}`*/''}>
         <noscript>
         <iframe
             src="https://www.googletagmanager.com/ns.html?id=GTM-NPBPZQ2"
@@ -94,7 +95,6 @@ export default async function RootLayout({
             style={{ display: 'none', visibility: 'hidden' }}
           />
         </noscript>
-        
         <NProgressLoader />
         <NextIntlClientProvider locale={locale} messages={messages}>
           <DataProvider initialData={serverData}>

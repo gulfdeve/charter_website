@@ -110,7 +110,7 @@ const Page = () => {
                     {yachts.map((yacht, index) => (
                       <div key={index} className="w-full border-2 rounded-lg border-gray-300 p-4">
                         <h2 className=" font-bold mb-4">{yacht.name}</h2>
-                        <div className="font-Inter">
+                        <div className="font-secondary">
                         <div className="grid grid-cols-1 s:grid-cols-2 md:grid-cols-1 gap-x-4">
                         <div className="flex flex-col mb-4">
                           <div className="flex"><IoIosPricetag size={20} className="mr-3 mt-1 text-primary-blue-light-2"/>
@@ -176,19 +176,19 @@ const Page = () => {
                       index % 2 === 0 ? "bg-white" : "bg-primary-blue-light"
                     } text-center text-sm`}
                   >
-                    <td className="font-Inter p-3 font-semibold">
+                    <td className="font-secondary p-3 font-semibold">
                       {yacht.name}
                     </td>
-                    <td className="font-Inter p-3 font-semibold">
+                    <td className="font-secondary p-3 font-semibold">
                       {yacht.capacity}
                     </td>
-                    <td className="font-Inter p-3 font-semibold">
+                    <td className="font-secondary p-3 font-semibold">
                       {yacht.ratePerHour}
                     </td>
-                    <td className="font-Inter p-3 font-semibold">
+                    <td className="font-secondary p-3 font-semibold">
                       {yacht.rate3Hours}
                     </td>
-                    <td className="font-Inter p-3 font-semibold">
+                    <td className="font-secondary p-3 font-semibold">
                       {yacht.rate4Hours}
                     </td>
                     <td className="p-3 font-bold">

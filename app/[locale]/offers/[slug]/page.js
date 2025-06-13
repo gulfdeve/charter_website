@@ -35,7 +35,7 @@ export default async function OfferDetailPage({ params }) {
     
 	<div className="py-10 text-center text-primary-blue">
           <h1 className="font-bold text-center">{offer.translations?.[language]?.title}</h1>
-          <h2 className="font-Inter text-primary-blue-2">{offer.translations?.[language]?.heading_2}</h2>
+          <h2 className="font-secondary text-primary-blue-2">{offer.translations?.[language]?.heading_2}</h2>
         </div>
     
     {/* Move the image outside the padded container */}
