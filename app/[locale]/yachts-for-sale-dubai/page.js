@@ -57,7 +57,7 @@ const Page = () => {
           <div className="container mx-auto mt-20">
           <div className="flex items-center justify-center w-full my-6 xl:px-36 lg:px-20 ">
             <hr className="flex-grow border-primary-yellow-dark" />
-            <span className="font-Montserrat px-4 text-3xl 2xl:text-3xl font-bold  text-primary-blue text-center">
+            <span className="font-primary px-4 text-3xl 2xl:text-3xl font-bold  text-primary-blue text-center">
               WHY BUY A LUXURY YACHT
             </span>
             <hr className="flex-grow border-primary-yellow-dark " />
@@ -111,7 +111,7 @@ const Page = () => {
           <div className="container mx-auto mb-8">
           <div className="flex items-center justify-center w-full my-6 xl:px-36 lg:px-20 ">
             <hr className="flex-grow border-primary-yellow-dark" />
-            <span className="font-Montserrat px-4 text-xl 2xl:text-3xl font-bold  text-primary-blue">
+            <span className="font-primary px-4 text-xl 2xl:text-3xl font-bold  text-primary-blue">
               THE BENEFITS OF OWNING A YACHT
             </span>
             <hr className="flex-grow border-primary-yellow-dark " />

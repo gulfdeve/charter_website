@@ -20,10 +20,10 @@ import { FareHarborProvider } from "@/app/context/FareHarborContext";
 import { headers } from 'next/headers';
 import { fetchData } from '@/app/lib/fetchData';
 
-const montserrat = Montserrat({
-  subsets: ["latin"],
-  variable: "--font-montserrat",
-});
+// const montserrat = Montserrat({
+//   subsets: ["latin"],
+//   variable: "--font-montserrat",
+// });
 
 export default async function RootLayout({
   children,
@@ -73,7 +73,7 @@ export default async function RootLayout({
           }}
         />
       </head>
-      <body className={`${montserrat.variable}`}>
+      <body className={/* `${montserrat.variable}`*/''}>
         <NProgressLoader />
         <NextIntlClientProvider locale={locale} messages={messages}>
           <DataProvider initialData={serverData}>

@@ -142,7 +142,7 @@ export default function Home({ params }) {
         <div className="md:block hidden">
           <div className="flex items-center justify-center w-full my-6 xl:px-36 lg:px-20">
             <hr className="flex-grow border-primary-yellow-dark" />
-            <span className="font-Montserrat px-4 text-3xl 2xl:text-3xl font-semibold text-black uppercase">{product.translations[locale].name_of_yacht}</span>
+            <span className="font-primary px-4 text-3xl 2xl:text-3xl font-semibold text-black uppercase">{product.translations[locale].name_of_yacht}</span>
             <hr className="flex-grow border-primary-yellow-dark" />
           </div>
           <p className="text-primary-grey text-md pt-2 pb-5 xl:px-36 lg:px-20 md:px-16 text-center">{product.translations[locale].description}</p>

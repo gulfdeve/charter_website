@@ -139,13 +139,12 @@ export default function Contactform({ yachtName: initialYachtName = "" }) {
                 }}
                 inputStyle={{
                   width: "100%", padding: "20px", paddingLeft: "65px",
-                  border: "1px solid #ddd", borderRadius: "6px",
-                  fontFamily: "Montserrat, sans-serif",
+                  border: "1px solid #ddd", borderRadius: "6px"
                 }}
                 buttonStyle={{
                   padding: "10px", border: "1px solid #ddd",
                   borderRadius: "4px", fontSize: "14px",
-                  width: "60px", fontFamily: "Montserrat, sans-serif",
+                  width: "60px"
                 }}
               />
               {errors.phoneNumber && <p className="text-red-400 text-sm mt-1">{errors.phoneNumber}</p>}

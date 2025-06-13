@@ -112,7 +112,7 @@ export default function Navbar() {
                   onMouseLeave={() => setPrivateYachtsOpen(false)}
                 >
                   <span
-                    className={`h-full flex items-center justify-between cursor-pointer gap-1 py-2 transition-all duration-200 font-ProximaNova ${
+                    className={`h-full flex items-center justify-between cursor-pointer gap-1 py-2 transition-all duration-200 font-primary ${
                       pathname === "/yacht-rentals" ||
                       pathname.startsWith("/yacht-rentals/")
                         ? "text-primary-blue border-primary-yellow font-semibold"
@@ -146,7 +146,7 @@ export default function Navbar() {
                           <li
                             key={product.id}
                             onClick={() => setPrivateYachtsOpen(false)}
-                            className="cursor-pointer text-xs font-medium text-primary-grey hover:text-white hover:bg-primary-blue transition-all duration-300 font-Montserrat"
+                            className="cursor-pointer text-xs font-medium text-primary-grey hover:text-white hover:bg-primary-blue transition-all duration-300 font-primary"
                           >
                             <Link
                               href={`/yacht-rentals/${product.slug}`}
@@ -164,7 +164,7 @@ export default function Navbar() {
                 <li>
                   <Link
                     href="/yachts-for-sale-dubai"
-                    className={`h-full flex items-center tracking-wider uppercase underline decoration-2 underline-offset-8 transition-all duration-200 font-Montserrat ${
+                    className={`h-full flex items-center tracking-wider uppercase underline decoration-2 underline-offset-8 transition-all duration-200 font-primary ${
                       pathname === "/yachts-for-sale-dubai" ||
                       pathname.startsWith("/yachts-for-sale-dubai/")
                         ? "text-primary-blue decoration-primary-yellow font-semibold"
@@ -179,7 +179,7 @@ export default function Navbar() {
                 <li>
                   <Link
                     href="/shared-yacht-tours-dubai"
-                    className={`h-full flex items-center tracking-wider uppercase underline decoration-2 underline-offset-8 transition-all duration-200 font-Montserrat ${
+                    className={`h-full flex items-center tracking-wider uppercase underline decoration-2 underline-offset-8 transition-all duration-200 font-primary ${
                       pathname === "/shared-yacht-tours-dubai" ||
                       pathname.startsWith("/shared-yacht-tours-dubai/")
                         ? "text-primary-blue decoration-primary-yellow font-semibold"
@@ -198,7 +198,7 @@ export default function Navbar() {
                   onMouseLeave={() => setExperiencesOpen(false)}
                 >
                   <span
-                    className={`h-full flex items-center justify-between cursor-pointer gap-1 py-2 transition-all duration-200 font-Montserrat ${
+                    className={`h-full flex items-center justify-between cursor-pointer gap-1 py-2 transition-all duration-200 font-primary ${
                       pathname === "/yacht-trips" ||
                       pathname.startsWith("/yacht-trips/")
                         ? "text-primary-blue underline-primary-yellow font-semibold"
@@ -229,7 +229,7 @@ export default function Navbar() {
                     <ul className="absolute top-full left-0 w-60 bg-white text-black transition-all duration-150 shadow-lg rounded-lg overflow-hidden border border-gray-200 z-50">
                       <li
                         onClick={() => setExperiencesOpen(false)}
-                        className="cursor-pointer capitalize text-xs font-medium text-primary-grey hover:text-white hover:bg-primary-blue transition-all duration-300 font-Montserrat"
+                        className="cursor-pointer capitalize text-xs font-medium text-primary-grey hover:text-white hover:bg-primary-blue transition-all duration-300 font-primary"
                       >
                         <Link href="/watersports" className="py-2 px-4 block">
                           {t("navbar.water-sports")}
@@ -240,7 +240,7 @@ export default function Navbar() {
                           <li
                             key={experience.id}
                             onClick={() => setExperiencesOpen(false)}
-                            className="cursor-pointer text-xs font-medium text-primary-grey hover:text-white hover:bg-primary-blue transition-all duration-300 font-Montserrat"
+                            className="cursor-pointer text-xs font-medium text-primary-grey hover:text-white hover:bg-primary-blue transition-all duration-300 font-primary"
                           >
                             <Link
                               href={`/yacht-trips/${experience.slug}`}
@@ -258,7 +258,7 @@ export default function Navbar() {
                 {/* <li>
                   <Link
                     href="/offers"
-                    className={`h-full flex items-center tracking-wider uppercase underline decoration-2 underline-offset-8 transition-all duration-200 font-Montserrat ${
+                    className={`h-full flex items-center tracking-wider uppercase underline decoration-2 underline-offset-8 transition-all duration-200 font-primary ${
                       pathname === "/offers" || pathname.startsWith("/offers/")
                         ? "text-primary-blue decoration-primary-yellow font-semibold"
                         : "text-primary-blue decoration-transparent hover:decoration-primary-yellow"
@@ -272,7 +272,7 @@ export default function Navbar() {
                 <li>
                   <Link
                     href="/resident-offer"
-                    className={`h-full flex items-center tracking-wider uppercase underline decoration-2 underline-offset-8 transition-all duration-200 font-Montserrat ${
+                    className={`h-full flex items-center tracking-wider uppercase underline decoration-2 underline-offset-8 transition-all duration-200 font-primary ${
                       pathname === "/resident-offer" || pathname.startsWith("/resident-offer/")
                         ? "text-primary-blue decoration-primary-yellow font-semibold"
                         : "text-primary-blue decoration-transparent hover:decoration-primary-yellow"
@@ -286,7 +286,7 @@ export default function Navbar() {
                 <li>
                   <Link
                     href="/events"
-                    className={`h-full flex items-center tracking-wider uppercase underline decoration-2 underline-offset-8 transition-all duration-200 font-Montserrat ${
+                    className={`h-full flex items-center tracking-wider uppercase underline decoration-2 underline-offset-8 transition-all duration-200 font-primary ${
                       pathname === "/events" || pathname.startsWith("/events/")
                         ? "text-primary-blue decoration-primary-yellow font-semibold"
                         : "text-primary-blue decoration-transparent hover:decoration-primary-yellow"
@@ -300,7 +300,7 @@ export default function Navbar() {
                 <li>
                   <Link
                     href="/contact"
-                    className={`h-full flex items-center tracking-wider uppercase underline decoration-2 underline-offset-8 transition-all duration-200 font-Montserrat ${
+                    className={`h-full flex items-center tracking-wider uppercase underline decoration-2 underline-offset-8 transition-all duration-200 font-primary ${
                       pathname === "/contact" ||
                       pathname.startsWith("/contact/")
                         ? "text-primary-blue decoration-primary-yellow font-semibold"

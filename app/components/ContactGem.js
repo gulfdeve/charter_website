@@ -177,16 +177,14 @@ const ContactGem = () => {
                 padding: "20px",
                 paddingLeft: "65px",
                 border: "1px solid #ddd",
-                borderRadius: "4px",
-                fontFamily: "Montserrat, sans-serif",
+                borderRadius: "4px"
               }}
               buttonStyle={{
                 padding: "10px",
                 border: "1px solid #ddd",
                 borderRadius: "4px",
                 fontSize: "14px",
-                width: "60px",
-                fontFamily: "Montserrat, sans-serif",
+                width: "60px"
               }}
             />
             {errors.phoneNumber && (

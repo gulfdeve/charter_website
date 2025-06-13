@@ -55,10 +55,9 @@ export default {
     
       },
       fontFamily: {
-        sans: ['var(--font-montserrat)', 'sans-serif'],
-        Montserrat: ["var(--font-montserrat)"],
-        Inter: ["var(--font-inter)"],
-        'ProximaNova': ['proxima-nova', 'Verdana'],
+        sans: ['var(--primary)', 'sans-serif'],
+        secondary: ["var(--font-secondary)"],
+        'primary': ['proxima-nova', 'Verdana'],
       },
       
     },
