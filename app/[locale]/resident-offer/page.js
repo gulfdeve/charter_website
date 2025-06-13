@@ -390,7 +390,7 @@ const page = () => {
                       target="_self"
                       rel="noopener noreferrer"
                       className="bg-primary-blue-2 hover:bg-primary-blue
-     text-white rounded-lg transition-all flex text-center w-full px-3 py-2
+     text-white rounded-lg transition-all flex text-center justify-center w-full px-3 py-2
   "
                     >
                       Book Now
@@ -532,7 +532,7 @@ const page = () => {
                       href={`https://fareharbor.com/embeds/book/centauruscharter/items/${yacht.fareharbor_id}/?full-items=yes&flow=645487`}
                       target="_self"
                       rel="noopener noreferrer"
-                      className=" bg-primary-blue-2 hover:bg-primary-blue   text-white rounded-lg transition-all flex text-center w-full px-3 py-2"
+                      className=" bg-primary-blue-2 hover:bg-primary-blue text-white rounded-lg transition-all flex text-center justify-center w-full px-3 py-2"
                     >
                       Book Now
                     </a>
