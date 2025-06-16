@@ -26,7 +26,7 @@ const Page = () => {
         </div>
         <YachtListings />
         <div className="container mx-auto">
-          <div className="flex flex-col  lg:flex-row items-center justify-center lg:justify-start lg:gap-0  custom-shadow rounded-lg bg-primary-blue-3 overflow-hidden lg:h-[25rem] xl:h-[30rem] 2xl:h-[35rem]">
+          <div className="flex flex-col  lg:flex-row items-center justify-center lg:justify-start lg:gap-0  custom-shadow rounded-lg bg-primary-blue overflow-hidden lg:h-[25rem] xl:h-[30rem] 2xl:h-[35rem]">
             <div className="w-full lg:w-1/2 xl:w-1/2 h-full">
               <img
                 src="/luxury_yacht_for_sale.webp"

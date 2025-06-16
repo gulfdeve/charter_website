@@ -4,7 +4,7 @@ import Image from "next/image";
 
 const SecondFooter = () => {
   return (
-    <div className="bg-primary-blue-3">
+    <div className="bg-primary-black">
       <div className="flex justify-between flex-col gap-10 lg:flex-row lg:gap-10 items-center p-4 container mx-auto ">
         <div className="flex flex-col gap-2">
           <p className="text-text-primary-white text-center  lg:text-start">

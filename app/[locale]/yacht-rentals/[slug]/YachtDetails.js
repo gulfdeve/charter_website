@@ -177,43 +177,43 @@ export default function YachtDetails({
      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-7 gap-5 my-10">
           <div>
             <img className="rounded-t-lg" src="/images/decoration.webp" />
-            <p className="bg-primary-blue-2 text-primary-yellow text-center  text-sm  font-bold p-2 rounded-b-lg md:px-10 lg:px-0 ">
+            <p className="bg-primary-blue-2 text-white text-center  text-sm  font-bold p-2 rounded-b-lg md:px-10 lg:px-0 ">
               DECORATIONS
             </p>
           </div>
           <div>
             <img className="rounded-t-lg" src="/images/watersports.webp" />
-            <p className="uppercase bg-primary-blue-2 text-primary-yellow text-center  text-sm  font-bold p-2 rounded-b-lg ">
+            <p className="uppercase bg-primary-blue-2 text-white text-center  text-sm  font-bold p-2 rounded-b-lg ">
               watersports
             </p>
           </div>
           <div>
             <img className="rounded-t-lg" src="/images/flowers.webp" />
-            <p className="uppercase bg-primary-blue-2 text-primary-yellow text-center  text-sm  font-bold p-2 rounded-b-lg ">
+            <p className="uppercase bg-primary-blue-2 text-white text-center  text-sm  font-bold p-2 rounded-b-lg ">
               flowers
             </p>
           </div>
           <div>
             <img className="rounded-t-lg" src="/images/premium-drinks.webp" />
-            <p className="uppercase bg-primary-blue-2 text-primary-yellow text-center  text-sm  font-bold p-2 rounded-b-lg md:px-10 lg:px-0 ">
+            <p className="uppercase bg-primary-blue-2 text-white text-center  text-sm  font-bold p-2 rounded-b-lg md:px-10 lg:px-0 ">
               premium drinks
             </p>
           </div>
           <div>
             <img className="rounded-t-lg" src="/images/catering.webp" />
-            <p className="uppercase bg-primary-blue-2 text-primary-yellow text-center  text-sm font-bold p-2 rounded-b-lg ">
+            <p className="uppercase bg-primary-blue-2 text-white text-center  text-sm font-bold p-2 rounded-b-lg ">
               catering
             </p>
           </div>
           <div>
             <img className="rounded-t-lg" src="/images/dj.webp" />
-            <p className="uppercase bg-primary-blue-2 text-primary-yellow text-center  text-sm font-bold p-2 rounded-b-lg ">
+            <p className="uppercase bg-primary-blue-2 text-white text-center  text-sm font-bold p-2 rounded-b-lg ">
               DJ/Music
             </p>
           </div>
           <div>
             <img className="rounded-t-lg" src="/images/photography.webp" />
-            <p className="uppercase bg-primary-blue-2 text-primary-yellow text-center  text-sm font-bold p-2 rounded-b-lg ">
+            <p className="uppercase bg-primary-blue-2 text-white text-center  text-sm font-bold p-2 rounded-b-lg ">
               Photography
             </p>
           </div>

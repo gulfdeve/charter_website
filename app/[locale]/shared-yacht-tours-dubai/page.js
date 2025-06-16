@@ -310,13 +310,13 @@ const Page = () => {
               className="rounded-t-lg"
               alt="Picture Moments"
             />
-            <h3 className="bg-primary-blue-2 text-primary-yellow text-center text-xs lg:text-base font-bold p-2 rounded-b-lg">
+            <h3 className="bg-primary-blue-2 text-white text-center text-xs lg:text-base font-bold p-2 rounded-b-lg">
               PICTURE MOMENTS
             </h3>
           </div>
           <div>
             <img src="/images/chicken-beef-sliders-on-yacht-dubai.webp" className="rounded-t-lg" alt="Beef & Chicken Sliders" />
-            <h3 className="uppercase bg-primary-blue-2 text-primary-yellow text-center text-xs lg:text-base font-bold p-2 rounded-b-lg">
+            <h3 className="uppercase bg-primary-blue-2 text-white text-center text-xs lg:text-base font-bold p-2 rounded-b-lg">
               Beef & Chicken Sliders
             </h3>
           </div>
@@ -326,7 +326,7 @@ const Page = () => {
               className="rounded-t-lg"
               alt="Amazing View"
             />
-            <h3 className="bg-primary-blue-2 text-primary-yellow text-center text-xs lg:text-base font-bold p-2 rounded-b-lg">
+            <h3 className="bg-primary-blue-2 text-white text-center text-xs lg:text-base font-bold p-2 rounded-b-lg">
               AMAZING VIEW
             </h3>
           </div>
@@ -336,7 +336,7 @@ const Page = () => {
               className="rounded-t-lg"
               alt="Bubbly Drinks"
             />
-            <h3 className="bg-primary-blue-2 text-primary-yellow text-center text-xs lg:text-base font-bold p-2 rounded-b-lg">
+            <h3 className="bg-primary-blue-2 text-white text-center text-xs lg:text-base font-bold p-2 rounded-b-lg">
               BUBBLY DRINKS
             </h3>
           </div>

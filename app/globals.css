@@ -410,7 +410,7 @@ h1 {
   }
   .gradient-custom-2 {
   background: #E8F1FF;
-	background: linear-gradient(45deg,rgba(27 73 143) 0%, rgba(13, 35, 67, 1) 100%);
+	background: linear-gradient(45deg,rgba(27 73 143) 0%, rgba(0, 48, 87, 1) 100%);
   }
   .gradient-custom-3 {
   background: #E8F1FF;

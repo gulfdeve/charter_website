@@ -30,7 +30,7 @@ export default function WatersportsGrid({ packages, language }) {
             <div className="bg-primary-black w-full h-[0.05rem]"></div>
             <div className="flex flex-row items-center justify-between">
               <div className="flex flex-row items-center justify-evenly gap-4 py-5">
-                <IoIosPricetag className="text-3xl lg:text-5xl" />
+                <IoIosPricetag className="text-primary-blue-light text-3xl lg:text-5xl" />
                 <div className="flex flex-col items-start justify-start">
                   <p className="text-primary-black font-bold text-sm xl:text-base">
                     Starting
