@@ -20,6 +20,9 @@ body {
 p,li,span {
   font-family: var(--font-secondary);
 }
+h1, h2, h3, h4, h5, h6 {
+  letter-spacing: 0.3px;
+}
 
 .video-layout {
   @apply relative mx-auto w-full overflow-hidden;

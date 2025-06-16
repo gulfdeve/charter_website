@@ -119,7 +119,7 @@ export default function Navbar() {
                         : "text-primary-blue border-transparent"
                     }`}
                   >
-                    <Link href="/yacht-rentals" className="tracking-wider">
+                    <Link href="/yacht-rentals" className="tracking-[1px]">
                       {t("navbar.private-yachts")}
                     </Link>
                     <svg
@@ -164,7 +164,7 @@ export default function Navbar() {
                 <li>
                   <Link
                     href="/yachts-for-sale-dubai"
-                    className={`h-full flex items-center tracking-wider uppercase underline decoration-2 underline-offset-8 transition-all duration-200 font-primary ${
+                    className={`h-full flex items-center tracking-[1px] uppercase underline decoration-2 underline-offset-8 transition-all duration-200 font-primary ${
                       pathname === "/yachts-for-sale-dubai" ||
                       pathname.startsWith("/yachts-for-sale-dubai/")
                         ? "text-primary-blue decoration-primary-yellow font-semibold"
@@ -179,7 +179,7 @@ export default function Navbar() {
                 <li>
                   <Link
                     href="/shared-yacht-tours-dubai"
-                    className={`h-full flex items-center tracking-wider uppercase underline decoration-2 underline-offset-8 transition-all duration-200 font-primary ${
+                    className={`h-full flex items-center tracking-[1px] uppercase underline decoration-2 underline-offset-8 transition-all duration-200 font-primary ${
                       pathname === "/shared-yacht-tours-dubai" ||
                       pathname.startsWith("/shared-yacht-tours-dubai/")
                         ? "text-primary-blue decoration-primary-yellow font-semibold"
@@ -205,7 +205,7 @@ export default function Navbar() {
                         : "text-primary-blue underline-transparent"
                     }`}
                   >
-                    <Link href="/yacht-trips" className="tracking-wider">
+                    <Link href="/yacht-trips" className="tracking-[1px]">
                       {t("navbar.experiences")}
                     </Link>
                     <svg
@@ -258,7 +258,7 @@ export default function Navbar() {
                 {/* <li>
                   <Link
                     href="/offers"
-                    className={`h-full flex items-center tracking-wider uppercase underline decoration-2 underline-offset-8 transition-all duration-200 font-primary ${
+                    className={`h-full flex items-center tracking-[1px] uppercase underline decoration-2 underline-offset-8 transition-all duration-200 font-primary ${
                       pathname === "/offers" || pathname.startsWith("/offers/")
                         ? "text-primary-blue decoration-primary-yellow font-semibold"
                         : "text-primary-blue decoration-transparent hover:decoration-primary-yellow"
@@ -272,7 +272,7 @@ export default function Navbar() {
                 <li>
                   <Link
                     href="/resident-offer"
-                    className={`h-full flex items-center tracking-wider uppercase underline decoration-2 underline-offset-8 transition-all duration-200 font-primary ${
+                    className={`h-full flex items-center tracking-[1px] uppercase underline decoration-2 underline-offset-8 transition-all duration-200 font-primary ${
                       pathname === "/resident-offer" || pathname.startsWith("/resident-offer/")
                         ? "text-primary-blue decoration-primary-yellow font-semibold"
                         : "text-primary-blue decoration-transparent hover:decoration-primary-yellow"
@@ -286,7 +286,7 @@ export default function Navbar() {
                 <li>
                   <Link
                     href="/events"
-                    className={`h-full flex items-center tracking-wider uppercase underline decoration-2 underline-offset-8 transition-all duration-200 font-primary ${
+                    className={`h-full flex items-center tracking-[1px] uppercase underline decoration-2 underline-offset-8 transition-all duration-200 font-primary ${
                       pathname === "/events" || pathname.startsWith("/events/")
                         ? "text-primary-blue decoration-primary-yellow font-semibold"
                         : "text-primary-blue decoration-transparent hover:decoration-primary-yellow"
@@ -300,7 +300,7 @@ export default function Navbar() {
                 <li>
                   <Link
                     href="/contact"
-                    className={`h-full flex items-center tracking-wider uppercase underline decoration-2 underline-offset-8 transition-all duration-200 font-primary ${
+                    className={`h-full flex items-center tracking-[1px] uppercase underline decoration-2 underline-offset-8 transition-all duration-200 font-primary ${
                       pathname === "/contact" ||
                       pathname.startsWith("/contact/")
                         ? "text-primary-blue decoration-primary-yellow font-semibold"
