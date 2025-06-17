@@ -54,6 +54,39 @@ async function captureTabbyPayment(paymentId) {
   }
 }
 
+async function notifyCentaurus(slug, paymentId, paymentData) {
+  console.log(`[Tabby Webhook] Notifying Centaurus for payment ${paymentId}`);
+  try {
+    const url = new URL(
+      `https://www.centauruscharter.net/api/api_new/payments/tabby/${slug}`
+    );
+    url.searchParams.set('token', process.env.CENTAURUS_API_KEY);
+    url.searchParams.set('id', slug);
+    url.searchParams.set('payment_id', paymentId);
+    if (paymentData) {
+      url.searchParams.set('received_amount', paymentData.amount);
+      url.searchParams.set('status', paymentData.status);
+    }
+
+    console.log('[Tabby Webhook] Centaurus POST URL:', url.toString());
+
+    const centRes = await fetch(url.toString(), {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      cache: 'no-store',
+    });
+    console.log('[Tabby Webhook] Centaurus response status:', centRes.status);
+    const centResponse = centRes.ok ? await centRes.json() : { error: centRes.statusText };
+    console.log('[Tabby Webhook] Centaurus response:', centResponse);
+    return centResponse;
+  } catch (err) {
+    console.error('[Tabby Webhook] Error notifying Centaurus:', err);
+    throw err;
+  }
+}
+
 export async function POST(request) {
   const requestId = Math.random().toString(36).substring(7);
   console.log(`[Tabby Webhook] New webhook request received (ID: ${requestId})`);
@@ -166,31 +199,58 @@ export async function POST(request) {
       case 'payment.authorized':
         console.log(`[Tabby Webhook] Processing payment.authorized event (ID: ${requestId})`);
         try {
+          // Capture the payment
           const captureResult = await captureTabbyPayment(payload.id);
-          
-          // TODO: Update your database/booking status
           console.log(`[Tabby Webhook] Payment capture completed (ID: ${requestId}):`, captureResult);
+          
+          // Get the latest payment details
+          const paymentDetailsRes = await fetch(
+            `https://api.tabby.ai/api/v2/payments/${payload.id}`,
+            {
+              headers: { Authorization: `Bearer ${process.env.TABBY_SECRET_KEY}` },
+              cache: 'no-store',
+            }
+          );
+          if (!paymentDetailsRes.ok) {
+            throw new Error(`Failed to get payment details: ${paymentDetailsRes.status}`);
+          }
+          const paymentData = await paymentDetailsRes.json();
+          console.log('[Tabby Webhook] Updated payment details:', paymentData);
+          
+          // Notify Centaurus
+          const orderId = payload.order?.reference_id;
+          if (orderId) {
+            await notifyCentaurus(orderId, payload.id, paymentData);
+          } else {
+            console.warn('[Tabby Webhook] No order ID found in payload, skipping Centaurus notification');
+          }
           
           return NextResponse.json({ 
             status: 'success',
-            message: 'Payment captured successfully'
+            message: 'Payment captured and Centaurus notified successfully'
           });
         } catch (error) {
-          console.error(`[Tabby Webhook] Failed to capture payment (ID: ${requestId}):`, error);
+          console.error(`[Tabby Webhook] Failed to process payment (ID: ${requestId}):`, error);
           return NextResponse.json(
-            { error: 'Failed to capture payment' },
+            { error: 'Failed to process payment' },
             { status: 500 }
           );
         }
         
       case 'payment.rejected':
         console.log(`[Tabby Webhook] Processing payment.rejected event (ID: ${requestId}):`, payload);
-        // TODO: Update your database/booking status
+        // Notify Centaurus about rejection
+        if (payload.order?.reference_id) {
+          await notifyCentaurus(payload.order.reference_id, payload.id, payload);
+        }
         return NextResponse.json({ status: 'success' });
         
       case 'payment.expired':
         console.log(`[Tabby Webhook] Processing payment.expired event (ID: ${requestId}):`, payload);
-        // TODO: Update your database/booking status
+        // Notify Centaurus about expiration
+        if (payload.order?.reference_id) {
+          await notifyCentaurus(payload.order.reference_id, payload.id, payload);
+        }
         return NextResponse.json({ status: 'success' });
         
       default:
