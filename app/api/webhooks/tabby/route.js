@@ -4,12 +4,38 @@ import { headers } from 'next/headers';
 async function captureTabbyPayment(paymentId) {
   console.log(`[Tabby Webhook] Attempting to capture payment: ${paymentId}`);
   try {
-    const response = await fetch(`https://api.tabby.ai/api/v2/payments/${paymentId}/capture`, {
+    // First get payment details to use in capture
+    const paymentDetailsRes = await fetch(
+      `https://api.tabby.ai/api/v2/payments/${paymentId}`,
+      {
+        headers: { Authorization: `Bearer ${process.env.TABBY_SECRET_KEY}` },
+        cache: 'no-store',
+      }
+    );
+    if (!paymentDetailsRes.ok) {
+      throw new Error(`Failed to get payment details: ${paymentDetailsRes.status}`);
+    }
+    const paymentDetails = await paymentDetailsRes.json();
+    console.log('[Tabby Webhook] Payment details:', paymentDetails);
+
+    // Prepare capture payload
+    const capturePayload = {
+      amount: paymentDetails.amount,
+      reference_id: `capture_${paymentDetails.id}_${Date.now()}`,
+      tax_amount: paymentDetails.order?.tax_amount || "0",
+      shipping_amount: paymentDetails.order?.shipping_amount || "0",
+      discount_amount: paymentDetails.order?.discount_amount || "0",
+      items: paymentDetails.order?.items || []
+    };
+    console.log('[Tabby Webhook] Capture payload:', capturePayload);
+
+    const response = await fetch(`https://api.tabby.ai/api/v2/payments/${paymentId}/captures`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
         'Authorization': `Bearer ${process.env.TABBY_SECRET_KEY}`
       },
+      body: JSON.stringify(capturePayload),
       cache: 'no-store'
     });
 
