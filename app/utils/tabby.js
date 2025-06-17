@@ -4,7 +4,8 @@ export async function createTabbySession(booking, locale = 'en', merchantUrls = 
   const phone = mobile?.startsWith('+') ? mobile : `+${mobile}`;
   
   // Convert booking_date to UTC ISO 8601 format
-  const utcBookingDate = new Date(booking_date).toISOString();
+  const utcBookingDate = new Date(booking_date).toISOString().replace('T', ' ').replace('.000Z', '');
+  console.log("utcBookingDate: " + utcBookingDate);
   
   const payload = {
     payment: {

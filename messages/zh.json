@@ -24,5 +24,16 @@
   },
   "header": {
     "whatsapp_url": "https://api.whatsapp.com/send?phone=971547928626&text=Hi!%20I%20came%20across%20your%20website.%20I%20want%20to%20inquire%20about%20a%20yacht%20charter%20in%20Dubai."
+  },
+  "checkout": {
+    "trip-date-and-time": "旅行日期",
+    "cancel": "取消",
+    "confirm-checkout": "确认结帐",
+    "checkout": "查看",
+    "personal-information": "个人信息",
+    "payment-method": "付款方式",
+    "debit-credit-card": "借记卡/信用卡",
+    "pay-in-4-no-interest-no-fees": "付款4。无利息，无费用。",
+    "booking-information": "预订信息"
   }
 }

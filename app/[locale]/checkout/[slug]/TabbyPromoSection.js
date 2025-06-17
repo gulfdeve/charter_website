@@ -2,7 +2,7 @@
 
 import { useEffect } from 'react';
 
-export default function TabbyPromoSection({ total }) {
+export default function TabbyPromoSection({ total, locale = 'en' }) {
   useEffect(() => {
     const loadTabby = () => {
       // Remove any existing TabbyPromo elements
@@ -26,7 +26,7 @@ export default function TabbyPromoSection({ total }) {
                 selector: '#TabbyPromo',
                 currency: 'AED',
                 price: total.toFixed(2),
-                lang: 'en',
+                lang: locale,
                 source: 'product',
                 publicKey: process.env.NEXT_PUBLIC_TABBY_PUBLIC_KEY,
                 merchantCode: process.env.NEXT_PUBLIC_TABBY_MERCHANT_CODE
@@ -53,7 +53,7 @@ export default function TabbyPromoSection({ total }) {
         script.remove();
       }
     };
-  }, [total]);
+  }, [total, locale]);
 
   return (
     <div className="tabby-promo-container">

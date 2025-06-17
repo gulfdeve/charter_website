@@ -5,6 +5,7 @@ import { redirect } from 'next/navigation';
 import { createTabbySession } from '@/app/utils/tabby';
 import Script from 'next/script';
 import TabbyPromoSection from './TabbyPromoSection';
+import { getTranslations } from 'next-intl/server';
 
 // Make sure we import the environment variables at the top
 const {
@@ -42,7 +43,6 @@ async function fetchBooking(slug) {
 async function checkTabbyPreApproval(booking) {
   try {
     const session = await createTabbySession(booking);
-    console.log(session);
     
     // Check if installments are available (pre-approved)
     const installments = session.configuration?.available_products?.installments;
@@ -64,6 +64,7 @@ async function checkTabbyPreApproval(booking) {
 
 // Server component - all async operations happen here
 export default async function CheckoutPage({ params, searchParams }) {
+  const t = await getTranslations();
   const { slug } = params;
   const { confirm, method,callback } = searchParams;
 
@@ -109,7 +110,7 @@ export default async function CheckoutPage({ params, searchParams }) {
   return (
     <div className="container mx-auto py-10 bg-white nav-space">
       <div className="flex flex-col items-center justify-center pt-10">
-        <h1 className="text-primary-blue-2 font-bold text-2xl md:text-3xl">Checkout</h1>
+        <h1 className="text-primary-blue-2 font-bold text-2xl md:text-3xl">{t('checkout.checkout')}</h1>
       </div>
       
       {(callback === 'cancel' || callback === 'failure') && (
@@ -128,7 +129,7 @@ export default async function CheckoutPage({ params, searchParams }) {
         
         {/* Left Side - Personal & Payment */}
         <div className="w-full lg:w-2/3 bg-[#f5f5f5] rounded-lg p-4 md:p-6">
-          <p className="text-xl font-bold text-primary-blue-2 pt-4 pb-3">Personal Information</p>
+          <p className="text-xl font-bold text-primary-blue-2 pt-4 pb-3">{t('checkout.personal-information')}</p>
           <div className="font-secondary flex flex-col gap-4">
             <div className="flex flex-col md:flex-row gap-3">
               <input
@@ -168,7 +169,7 @@ export default async function CheckoutPage({ params, searchParams }) {
             </div>
           </div>
 
-          <p className="text-xl font-bold text-primary-blue-2 pt-6 pb-3">Payment Method</p>
+          <p className="text-xl font-bold text-primary-blue-2 pt-6 pb-3">{t('checkout.payment-method')}</p>
           <div className="flex flex-col sm:flex-row gap-4">
             <label className="w-full sm:w-auto">
               <input
@@ -180,7 +181,7 @@ export default async function CheckoutPage({ params, searchParams }) {
               />
               <div className="border-2 rounded-lg p-4 flex items-center gap-2 cursor-pointer peer-checked:border-primary-blue-2 peer-checked:bg-primary-blue-light">
                 <img src="/images/debit-credit.webp" alt="Debit/Credit Card" className="w-16" />
-                <p className="text-primary-grey text-xs">Debit/Credit Card</p>
+                <p className="text-primary-grey text-xs">{t('checkout.debit-credit-card')}</p>
               </div>
             </label>
             <label className="w-full sm:w-auto relative">
@@ -196,11 +197,11 @@ export default async function CheckoutPage({ params, searchParams }) {
                 ${!tabbyStatus.isApproved ? 'opacity-60 cursor-not-allowed' : 'peer-checked:border-primary-blue-2 peer-checked:bg-primary-blue-light'}`}>
                 <img src="/images/tabby.webp" alt="Tabby" className="w-16" />
                 <div>
-                  <p className="text-primary-grey text-xs">Pay in 4. No interest, no fees.	</p>
+                  <p className="text-primary-grey text-xs">{t('checkout.pay-in-4-no-interest-no-fees')}</p>
                   {tabbyStatus.isApproved ? (
                     <span className="text-green-600 text-xs block"></span>
                   ) : (
-                    <span className="text-red-500 text-xs block">Not available</span>
+                    <span className="text-red-500 text-xs block">{t('checkout.not-available')}</span>
                   )}
                 </div>
               </div>
@@ -227,20 +228,20 @@ export default async function CheckoutPage({ params, searchParams }) {
 
           {/* Tabby Promo Section */}
           <div className="mt-4">
-            <TabbyPromoSection total={total} />
+            <TabbyPromoSection total={total} locale={params.locale} />
           </div>
         </div>
 
         {/* Right Side - Booking Info */}
         <div className="w-full lg:w-1/3 bg-[#f5f5f5] rounded-lg p-4 md:p-5">
-          <p className="text-xl font-bold text-primary-blue-2 pt-4 pb-3">Booking Information</p>
+          <p className="text-xl font-bold text-primary-blue-2 pt-4 pb-3">{t('checkout.booking-information')}</p>
           <p className="text-lg font-bold pt-4 pb-3">{title}</p>
           <img
             src={`https://www.centauruscharter.net/product/images/${image}`}
             alt="Yacht"
             className="w-24 md:w-32 rounded-lg mb-4"
           />
-          <p className="text-primary-grey text-xs">Trip Date & Time</p>
+          <p className="text-primary-grey text-xs">{t('checkout.trip-date-and-time')}</p>
           <p className="text-black mb-2">
             {/* {new Date(booking_date).toISOString()} */}
             {new Date(booking_date).toLocaleDateString('en-GB', { day: '2-digit', month: 'short', year: 'numeric' })}
@@ -279,14 +280,14 @@ export default async function CheckoutPage({ params, searchParams }) {
           type="button"
           className="p-2 rounded-md font-semibold border-2 border-gray-500"
         >
-          Cancel
+          {t('checkout.cancel')}
         </button>
         <button
           type="submit"
           form="checkout-form"
           className="p-2 rounded-md font-semibold text-white bg-primary-blue-2 hover:bg-primary-blue"
         >
-          Confirm Checkout
+          {t('checkout.confirm-checkout')}
         </button>
       </div>
     </div>
