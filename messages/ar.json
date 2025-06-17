@@ -34,6 +34,14 @@
     "payment-method": "طريقة الدفع",
     "debit-credit-card": "بطاقة الخصم/الائتمان",
     "pay-in-4-no-interest-no-fees": "دفع في 4. لا فائدة ، لا رسوم.",
-    "booking-information": "معلومات الحجز"
+    "booking-information": "معلومات الحجز",
+    "yacht-price": "سعر اليخت",
+    "add-ons-price": "سعر الوظائف الإضافية",
+    "subtotal": "نطاق فرعي",
+    "promo-discount": "خصم ترويجي",
+    "total": "المجموع",
+    "hours": "ساعات",
+    "trip-hours": "ساعات الرحلة",
+    "per-hour": "كل ساعة"
   }
 }

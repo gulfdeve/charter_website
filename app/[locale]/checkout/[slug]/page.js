@@ -246,29 +246,29 @@ export default async function CheckoutPage({ params, searchParams }) {
             {/* {new Date(booking_date).toISOString()} */}
             {new Date(booking_date).toLocaleDateString('en-GB', { day: '2-digit', month: 'short', year: 'numeric' })}
           </p>
-          <p className="text-primary-grey text-xs">Trip Hours</p>
-          <p className="text-black mb-4">{hours} Hours</p>
+          <p className="text-primary-grey text-xs">{t('checkout.trip-hours')}</p>
+          <p className="text-black mb-4">{hours} {t('checkout.hours')}</p>
 
           <div className="py-6 border-y-2 border-gray-300">
             <div className="flex justify-between text-primary-grey">
-              <span>Yacht Price:</span>
-              <span>AED {per_hour_price} per hour</span>
+              <span>{t('checkout.yacht-price')}:</span>
+              <span>AED {per_hour_price} {t('checkout.per-hour')}</span>
             </div>
             <div className="flex justify-between text-primary-grey mt-4">
-              <span>Add-ons Price:</span>
+              <span>{t('checkout.add-ons-price')}:</span>
               <span>AED {addons_price}</span>
             </div>
             <div className="flex justify-between text-primary-grey mt-4">
-              <span>Subtotal:</span>
+              <span>{t('checkout.subtotal')}:</span>
               <span>AED {subtotal}</span>
             </div>
             <div className="flex justify-between text-primary-grey mt-4">
-              <span>Promo Discount:</span>
+              <span>{t('checkout.promo-discount')}:</span>
               <span>AED {promo_discount}</span>
             </div>
           </div>
           <div className="flex justify-between font-bold mt-4">
-            <span>Total:</span>
+            <span>{t('checkout.total')}:</span>
             <span>AED {total}</span>
           </div>
         </div>

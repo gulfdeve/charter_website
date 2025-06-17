@@ -35,6 +35,14 @@
     "debit-credit-card": "Debit/Credit Card",
     "pay-in-4-no-interest-no-fees": "Pay in 4. No interest, no fees.",
     "not-available": "Not available",
-    "booking-information": "Booking Information"
+    "booking-information": "Booking Information",
+    "add-ons-price": "Add-ons Price",
+    "yacht-price": "Yacht Price",
+    "subtotal": "Subtotal",
+    "promo-discount": "Promo Discount",
+    "total": "Total",
+    "trip-hours": "Trip Hours",
+    "hours": "Hours",
+    "per-hour": "per hour"
   }
 }

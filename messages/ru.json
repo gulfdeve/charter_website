@@ -34,6 +34,14 @@
     "payment-method": "Способ оплаты",
     "debit-credit-card": "Дебет/кредитная карта",
     "pay-in-4-no-interest-no-fees": "Заплатить в 4. Нет процентов, без сборов.",
-    "booking-information": "Информация о бронировании"
+    "booking-information": "Информация о бронировании",
+    "yacht-price": "Цена яхты",
+    "add-ons-price": "Дополнительная цена",
+    "subtotal": "Подтотальный",
+    "promo-discount": "Промо -скидка",
+    "total": "Общий",
+    "hours": "Часы",
+    "trip-hours": "Часы поездки",
+    "per-hour": "в час"
   }
 }

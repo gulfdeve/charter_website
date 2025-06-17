@@ -34,6 +34,14 @@
     "payment-method": "付款方式",
     "debit-credit-card": "借记卡/信用卡",
     "pay-in-4-no-interest-no-fees": "付款4。无利息，无费用。",
-    "booking-information": "预订信息"
+    "booking-information": "预订信息",
+    "yacht-price": "游艇价格",
+    "add-ons-price": "附加价格",
+    "subtotal": "小计",
+    "promo-discount": "促销折扣",
+    "total": "全部的",
+    "hours": "小时",
+    "trip-hours": "旅行时间",
+    "per-hour": "每小时"
   }
 }
