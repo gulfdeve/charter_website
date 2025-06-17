@@ -1,9 +1,9 @@
 "use client";
 import { useLocale, useTranslations } from "next-intl";
 import { useEffect, useState, useRef } from "react";
-import { MdOutlinePhone } from "react-icons/md";
-import { IoLogoWhatsapp } from "react-icons/io5";
-import { MdOutlineMail } from "react-icons/md";
+import { FaPhoneAlt } from "react-icons/fa";
+import { IoLogoWhatsapp } from "react-icons/io";
+import { MdEmail } from "react-icons/md";
 import { useData } from "../context/DataContext";
 import { useRouter, usePathname, Link } from "../i18n/routing";
 import { GiHamburgerMenu } from "react-icons/gi";
@@ -92,7 +92,7 @@ export default function Navbar() {
             <div className="flex items-center justify-center h-full">
               <Link href="/">
                 <Image
-                  src="/Cenaturus Logo top.png"
+                  src="/images/centaurus-charter-logo.webp"
                   alt="Centaurus charter Logo"
                   width={150}
                   height={0}
@@ -317,13 +317,13 @@ export default function Navbar() {
             <div className="flex items-center gap-4">
               {/* Contact Icons */}
               <Link href={header_email || "#"} aria-label="Email">
-                <MdOutlineMail className="text-primary-blue-2 hover:text-primary-blue hover:scale-110 transition-transform duration-200 text-2xl" />
+                <MdEmail className="w-5 h-5 text-primary-blue-2 hover:text-primary-blue hover:scale-110 transition-transform duration-200 text-2xl" />
               </Link>
               <Link href={header_phone_number_url || "#"} aria-label="Phone">
-                <MdOutlinePhone className="text-primary-blue-2 hover:text-primary-blue hover:scale-110 transition-transform duration-200 text-2xl" />
+                <FaPhoneAlt className="w-4 h-4 text-primary-blue-2 hover:text-primary-blue hover:scale-110 transition-transform duration-200 text-2xl" />
               </Link>
               <Link href={header_whatsapp_url || "#"} aria-label="WhatsApp">
-                <IoLogoWhatsapp className="text-primary-blue-2 hover:text-primary-blue hover:scale-110 transition-transform duration-200 text-2xl" />
+                <IoLogoWhatsapp className="w-5 h-5 text-primary-blue-2 hover:text-primary-blue hover:scale-110 transition-transform duration-200 text-2xl" />
               </Link>
 
               {/* Language Dropdown */}

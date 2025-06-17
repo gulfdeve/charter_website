@@ -43,12 +43,12 @@ export default function WaterSportCarousal2({packages}) {
   const scrollNext = () => emblaInstance.current?.scrollNext();
 
   return (
-    <div className="flex flex-col items-center justify-center bg-primary-yellow">
+    <div className="flex flex-col items-center justify-center bg-primary-blue-light">
       <h2 className="text-primary-blue text-center font-bold text-2xl xl:text-4xl py-10">
       EXPLORE MORE WATERSPORTS ADD-ON
       </h2>
 
-      <div className="relative container h-full overflow-hidden bg-primary-yellow mx-auto px-3">
+      <div className="relative container h-full overflow-hidden mx-auto px-3">
         <div className="embla__viewport" ref={emblaRef}>
           <div className="embla__container flex">
           {packages?.map((package_a) => (
@@ -92,14 +92,14 @@ export default function WaterSportCarousal2({packages}) {
         {/* Navigation Buttons - Hidden on mobile, visible on tablet and desktop */}
         <button
           aria-label="Previous slide"
-          className="hidden md:flex bg-primary-blue text-primary-yellow transition duration-150 ease-in-out absolute left-2 top-1/2 -translate-y-1/2 w-14 aspect-square rounded-full items-center justify-center z-10"
+          className="hidden md:flex bg-primary-blue text-primary-blue-light transition duration-150 ease-in-out absolute left-2 top-1/2 -translate-y-1/2 w-14 aspect-square rounded-full items-center justify-center z-10"
           onClick={scrollPrev}
         >
           <IoIosArrowBack size={30} />
         </button>
         <button
           aria-label="Next slide"
-          className="hidden md:flex bg-primary-blue text-primary-yellow transition duration-150 ease-in-out absolute right-4 top-1/2 -translate-y-1/2 w-14 aspect-square rounded-full items-center justify-center z-10"
+          className="hidden md:flex bg-primary-blue text-primary-blue-light transition duration-150 ease-in-out absolute right-4 top-1/2 -translate-y-1/2 w-14 aspect-square rounded-full items-center justify-center z-10"
           onClick={scrollNext}
         >
           <IoIosArrowForward size={30} />

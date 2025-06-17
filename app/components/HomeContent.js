@@ -407,7 +407,7 @@ export default function Home() {
 
 
 
-<div className="bg-primary-blue-light py-20">
+<div className="bg-[#fafafa] py-20">
       <div className="container mx-auto ]">
   {/* Grid Layout for 4 Boxes */}
   <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 auto-rows-fr">

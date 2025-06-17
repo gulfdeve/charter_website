@@ -6,9 +6,9 @@ const Aboutus = () => {
     <div className="relative lg:flex-row center justify-center lg:justify-between py-10 lg:py-32">
       {/* Background Image */}
       <div
-        className="absolute inset-0"
+        className="absolute inset-0 bg-white"
         style={{
-          backgroundImage: "url('/images/bg-water.webp')",
+          // backgroundImage: "url('/images/bg-water.webp')",
           backgroundSize: "cover",
           backgroundPosition: "center",
           backgroundRepeat: "no-repeat",

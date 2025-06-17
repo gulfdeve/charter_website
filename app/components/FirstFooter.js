@@ -4,7 +4,7 @@ import { useLocale, useTranslations } from "next-intl";
 import { useRouter, usePathname, Link } from "@/app/i18n/routing";
 import { useData } from "@/app/context/DataContext";
 import { FaPhoneAlt } from "react-icons/fa";
-import { FaWhatsapp } from "react-icons/fa";
+import { IoLogoWhatsapp } from "react-icons/io";
 import { MdEmail } from "react-icons/md";
 import { FaMapMarkerAlt } from "react-icons/fa";
 import { IoBoat } from "react-icons/io5";
@@ -200,7 +200,7 @@ export default function FirstFooter() {
 				</a>
 			  </li>
 			  <li className="flex items-center gap-2">
-				<FaWhatsapp className="w-5 h-5 flex-shrink-0" />
+				<IoLogoWhatsapp className="w-5 h-5 flex-shrink-0" />
 				<a href="tel:+971524901269" className="hover:text-white text-left">
 				  +971 52 490 1269
 				</a>
@@ -346,7 +346,7 @@ export default function FirstFooter() {
   return (
     <>
    
-    <footer className="text-sm bg-primary-blue pb-10 pt-10 md:pt-24 lg:pt-24 xl:pt-36 relative">
+    <footer className="text-sm bg-primary-black pb-10 pt-10 md:pt-24 lg:pt-24 xl:pt-36 relative">
        {/* SVG Divider */}
     <div className="divider-top -top-2 w-full z-10">
       <svg

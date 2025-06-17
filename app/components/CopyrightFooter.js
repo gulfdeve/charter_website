@@ -9,7 +9,7 @@ const CopyrightFooter = () => {
             } Centaurus Passenger Yachts &amp; Boats Rental LLC, All rights reserved.
         </div>
         <Image
-            src="/CentaurusLogoWhite.png"
+            src="/images/centaurus-charter-logo2.webp"
             alt="centaurus charter logo"
             width={200}
             height={0}

@@ -137,14 +137,14 @@ YACHT LOCATION
         {/* Navigation Buttons - Hidden on mobile, visible on tablet and desktop */}
         <button
           aria-label="Previous slide"
-          className="hidden md:flex bg-primary-blue text-white hover:bg-primary-yellow hover:text-primary-blue transition duration-150 ease-in-out absolute left-2 top-1/2 -translate-y-1/2 w-14 aspect-square rounded-full items-center justify-center z-10"
+          className="hidden md:flex bg-primary-blue text-white hover:bg-primary-blue-2 transition duration-150 ease-in-out absolute left-2 top-1/2 -translate-y-1/2 w-14 aspect-square rounded-full items-center justify-center z-10"
           onClick={scrollPrev}
         >
           <IoIosArrowBack size={30} />
         </button>
         <button
           aria-label="Next slide"
-          className="hidden md:flex bg-primary-blue text-white hover:bg-primary-yellow hover:text-primary-blue transition duration-150 ease-in-out absolute right-4 top-1/2 -translate-y-1/2 w-14 aspect-square rounded-full items-center justify-center z-10"
+          className="hidden md:flex bg-primary-blue text-white hover:bg-primary-blue-2 transition duration-150 ease-in-out absolute right-4 top-1/2 -translate-y-1/2 w-14 aspect-square rounded-full items-center justify-center z-10"
           onClick={scrollNext}
         >
           <IoIosArrowForward size={30} />
