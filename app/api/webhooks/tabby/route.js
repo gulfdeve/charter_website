@@ -35,27 +35,43 @@ export async function POST(request) {
   try {
     // Log headers
     const headersList = headers();
-    const customHeader = headersList.get('title');
+    const titleHeader = headersList.get('title');
+    const valueHeader = headersList.get('value');
+    
+    // Log all headers for debugging
+    const allHeaders = {};
+    headersList.forEach((value, key) => {
+      allHeaders[key] = value;
+    });
+    console.log(`[Tabby Webhook] All request headers:`, allHeaders);
+    
     console.log(`[Tabby Webhook] Request headers:`, {
       requestId,
-      customHeader: customHeader ? 'present' : 'missing',
+      titleHeader: titleHeader ? 'present' : 'missing',
+      valueHeader: valueHeader ? 'present' : 'missing',
       contentType: headersList.get('content-type'),
       userAgent: headersList.get('user-agent')
     });
     
-    if (!customHeader) {
-      console.warn(`[Tabby Webhook] Missing custom header (ID: ${requestId})`);
+    if (!titleHeader || !valueHeader) {
+      console.warn(`[Tabby Webhook] Missing required headers (ID: ${requestId})`, {
+        titleHeader: titleHeader || 'missing',
+        valueHeader: valueHeader || 'missing'
+      });
       return NextResponse.json(
-        { error: 'Missing custom header' },
+        { error: 'Missing required headers' },
         { status: 401 }
       );
     }
 
-    // Verify the custom header value
-    if (customHeader !== 'charter') {
-      console.warn(`[Tabby Webhook] Invalid custom header value (ID: ${requestId}): ${customHeader}`);
+    // Verify the header values
+    if (titleHeader !== 'charter' || valueHeader !== 'mCizk9f3eizl') {
+      console.warn(`[Tabby Webhook] Invalid header values (ID: ${requestId}):`, {
+        titleHeader,
+        valueHeader
+      });
       return NextResponse.json(
-        { error: 'Invalid custom header value' },
+        { error: 'Invalid header values' },
         { status: 401 }
       );
     }
