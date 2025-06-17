@@ -10,20 +10,10 @@ const {
 export const dynamicParams = true;
 export const runtime = 'edge';
 
-// Helper to extract the real payment_id (length > 1) from searchParams
-function getRealPaymentId(raw) {
-  if (!raw) return null;
-  if (Array.isArray(raw)) {
-    const real = raw.find((v) => typeof v === 'string' && v.length > 1);
-    return real || raw[raw.length - 1];
-  }
-  return typeof raw === 'string' && v.length > 1 ? raw : null;
-}
-
 export default async function PaymentPage({ params, searchParams }) {
   const { slug } = params;
   const callback = searchParams.callback; // "success", "cancel", etc.
-  const paymentId = getRealPaymentId(searchParams.payment_id);
+  const paymentId = searchParams.payment_id;
 
   // —— Callback phase: Tabby has redirected back
   if (callback && paymentId) {
