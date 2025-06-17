@@ -18,6 +18,12 @@ async function captureTabbyPayment(paymentId) {
     const paymentDetails = await paymentDetailsRes.json();
     console.log('[Tabby Webhook] Payment details:', paymentDetails);
 
+    // Check if payment is already captured
+    if (paymentDetails.status === 'CLOSED' || paymentDetails.captures?.length > 0) {
+      console.log(`[Tabby Webhook] Payment ${paymentId} is already captured, skipping capture`);
+      return paymentDetails;
+    }
+
     // Prepare capture payload
     const capturePayload = {
       amount: paymentDetails.amount,
@@ -188,6 +194,9 @@ export async function POST(request) {
       case 'expired':
         eventType = 'payment.expired';
         break;
+      case 'closed':
+        eventType = 'payment.closed';
+        break;
       default:
         eventType = `payment.${payload.status}`;
     }
@@ -233,6 +242,43 @@ export async function POST(request) {
           console.error(`[Tabby Webhook] Failed to process payment (ID: ${requestId}):`, error);
           return NextResponse.json(
             { error: 'Failed to process payment' },
+            { status: 500 }
+          );
+        }
+        
+      case 'payment.closed':
+        console.log(`[Tabby Webhook] Processing payment.closed event (ID: ${requestId}):`, payload);
+        try {
+          // Get payment details
+          const paymentDetailsRes = await fetch(
+            `https://api.tabby.ai/api/v2/payments/${payload.id}`,
+            {
+              headers: { Authorization: `Bearer ${process.env.TABBY_SECRET_KEY}` },
+              cache: 'no-store',
+            }
+          );
+          if (!paymentDetailsRes.ok) {
+            throw new Error(`Failed to get payment details: ${paymentDetailsRes.status}`);
+          }
+          const paymentData = await paymentDetailsRes.json();
+          console.log('[Tabby Webhook] Payment details:', paymentData);
+          
+          // Notify Centaurus
+          const orderId = payload.order?.reference_id;
+          if (orderId) {
+            await notifyCentaurus(orderId, payload.id, paymentData);
+          } else {
+            console.warn('[Tabby Webhook] No order ID found in payload, skipping Centaurus notification');
+          }
+          
+          return NextResponse.json({ 
+            status: 'success',
+            message: 'Payment closed and Centaurus notified successfully'
+          });
+        } catch (error) {
+          console.error(`[Tabby Webhook] Failed to process closed payment (ID: ${requestId}):`, error);
+          return NextResponse.json(
+            { error: 'Failed to process closed payment' },
             { status: 500 }
           );
         }
