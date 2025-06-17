@@ -109,17 +109,38 @@ export async function POST(request) {
     // Parse the webhook payload
     const payload = JSON.parse(rawBody);
     console.log(`[Tabby Webhook] Parsed payload (ID: ${requestId}):`, {
-      event: payload.event,
-      paymentId: payload.payment?.id,
+      id: payload.id,
+      status: payload.status,
+      amount: payload.amount,
+      currency: payload.currency,
+      orderId: payload.order?.reference_id,
       timestamp: new Date().toISOString()
     });
     
+    // Determine event type based on payment status
+    let eventType;
+    switch (payload.status) {
+      case 'authorized':
+        eventType = 'payment.authorized';
+        break;
+      case 'rejected':
+        eventType = 'payment.rejected';
+        break;
+      case 'expired':
+        eventType = 'payment.expired';
+        break;
+      default:
+        eventType = `payment.${payload.status}`;
+    }
+    
+    console.log(`[Tabby Webhook] Determined event type: ${eventType} (ID: ${requestId})`);
+    
     // Handle different event types
-    switch (payload.event) {
+    switch (eventType) {
       case 'payment.authorized':
         console.log(`[Tabby Webhook] Processing payment.authorized event (ID: ${requestId})`);
         try {
-          const captureResult = await captureTabbyPayment(payload.payment.id);
+          const captureResult = await captureTabbyPayment(payload.id);
           
           // TODO: Update your database/booking status
           console.log(`[Tabby Webhook] Payment capture completed (ID: ${requestId}):`, captureResult);
@@ -147,7 +168,7 @@ export async function POST(request) {
         return NextResponse.json({ status: 'success' });
         
       default:
-        console.log(`[Tabby Webhook] Unhandled event type (ID: ${requestId}):`, payload.event);
+        console.log(`[Tabby Webhook] Unhandled payment status (ID: ${requestId}):`, payload.status);
         return NextResponse.json({ status: 'success' });
     }
   } catch (error) {
