@@ -35,28 +35,34 @@ export async function POST(request) {
   try {
     // Log headers
     const headersList = headers();
-    const signature = headersList.get('x-tabby-signature');
+    const customHeader = headersList.get('title');
     console.log(`[Tabby Webhook] Request headers:`, {
       requestId,
-      signature: signature ? 'present' : 'missing',
+      customHeader: customHeader ? 'present' : 'missing',
       contentType: headersList.get('content-type'),
       userAgent: headersList.get('user-agent')
     });
     
-    if (!signature) {
-      console.warn(`[Tabby Webhook] Missing Tabby signature (ID: ${requestId})`);
+    if (!customHeader) {
+      console.warn(`[Tabby Webhook] Missing custom header (ID: ${requestId})`);
       return NextResponse.json(
-        { error: 'Missing Tabby signature' },
+        { error: 'Missing custom header' },
         { status: 401 }
       );
     }
 
-    // Get the raw body for signature verification
+    // Verify the custom header value
+    if (customHeader !== 'charter') {
+      console.warn(`[Tabby Webhook] Invalid custom header value (ID: ${requestId}): ${customHeader}`);
+      return NextResponse.json(
+        { error: 'Invalid custom header value' },
+        { status: 401 }
+      );
+    }
+
+    // Get the raw body
     const rawBody = await request.text();
     console.log(`[Tabby Webhook] Raw request body (ID: ${requestId}):`, rawBody);
-    
-    // TODO: Implement signature verification
-    // This would involve verifying the HMAC signature using your Tabby secret key
     
     // Parse the webhook payload
     const payload = JSON.parse(rawBody);
