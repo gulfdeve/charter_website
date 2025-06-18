@@ -1,6 +1,7 @@
 import React from 'react';
 import { redirect } from 'next/navigation';
 import { createTabbySession } from '@/app/utils/tabby';
+import Image from 'next/image';
 
 const {
   NEXT_PUBLIC_BASE_URL,
@@ -70,16 +71,79 @@ export default async function PaymentPage({ params, searchParams }) {
 
     console.log('Redirecting to Tabby:', redirectUrl);
     
-    // Client-side redirect
+    // Client-side redirect with animated loading screen
     return (
       <html>
         <head>
           <meta httpEquiv="refresh" content={`0;url=${redirectUrl}`} />
           <title>Redirecting to Tabby...</title>
+          <style>{`
+            @keyframes fadeInOut {
+              0% { opacity: 0; transform: translateY(20px); }
+              20% { opacity: 1; transform: translateY(0); }
+              80% { opacity: 1; transform: translateY(0); }
+              100% { opacity: 0; transform: translateY(-20px); }
+            }
+            @keyframes pulse {
+              0% { transform: scale(1); }
+              50% { transform: scale(1.05); }
+              100% { transform: scale(1); }
+            }
+            .loading-container {
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+              justify-content: center;
+              min-height: 100vh;
+              background: linear-gradient(135deg, #f5f7fa 0%, #e4e8eb 100%);
+            }
+            .logo-container {
+              display: flex;
+              align-items: center;
+              gap: 2rem;
+              margin-bottom: 2rem;
+              animation: fadeInOut 2s ease-in-out;
+            }
+            .logo {
+              height: 60px;
+              width: auto;
+              object-fit: contain;
+            }
+            .loading-text {
+              font-size: 1.5rem;
+              color: #333;
+              margin-top: 2rem;
+              animation: pulse 2s infinite;
+            }
+            .arrow {
+              font-size: 2rem;
+              color: #666;
+              margin: 0 1rem;
+            }
+          `}</style>
         </head>
         <body>
-          <div className="flex items-center justify-center h-screen">
-            <p>Redirecting to payment page...</p>
+          <div className="loading-container">
+            <div className="logo-container">
+              <Image
+                src="/images/centaurus-charter-logo.webp"
+                alt="Centaurus Charter"
+                width={200}
+                height={60}
+                className="logo"
+                priority
+              />
+              <span className="arrow">→</span>
+              <Image
+                src="/images/tabby.webp"
+                alt="Tabby"
+                width={200}
+                height={60}
+                className="logo"
+                priority
+              />
+            </div>
+            <p className="loading-text">Redirecting to Tabby payment page...</p>
           </div>
         </body>
       </html>

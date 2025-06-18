@@ -42,6 +42,7 @@
     "total": "المجموع",
     "hours": "ساعات",
     "trip-hours": "ساعات الرحلة",
-    "per-hour": "كل ساعة"
+    "per-hour": "كل ساعة",
+    "not-available": "غير متوفر"
   }
 }

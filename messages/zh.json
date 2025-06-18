@@ -42,6 +42,7 @@
     "total": "全部的",
     "hours": "小时",
     "trip-hours": "旅行时间",
-    "per-hour": "每小时"
+    "per-hour": "每小时",
+    "not-available": "无法使用"
   }
 }
