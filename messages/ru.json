@@ -52,7 +52,8 @@
     "total": "Общий",
     "hours": "Часы",
     "trip-hours": "Часы поездки",
-    "per-hour": "в час"
+    "per-hour": "в час",
+    "not-available": "Нет в наличии"
   },
   "home": {
     "centaurus-yacht-rental-dubai": "Прокат яхты Centaurus Dubai",

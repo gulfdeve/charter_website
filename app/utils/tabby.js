@@ -6,6 +6,7 @@ export async function createTabbySession(booking, locale = 'en', merchantUrls = 
   // Convert booking_date to UTC ISO 8601 format
   const utcBookingDate = new Date(booking_date).toISOString();
   console.log("utcBookingDate: " + utcBookingDate);
+  console.log("phone: " + phone);
   
   const payload = {
     payment: {

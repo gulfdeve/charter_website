@@ -20,7 +20,7 @@ export const config = {
 		  status: 500,
 		});
 	  }
-	  console.log("loading data from api");
+	//   console.log("loading data from api");
 	  const data = await response.json();
 	  
 	  // Add no-cache headers to response in development

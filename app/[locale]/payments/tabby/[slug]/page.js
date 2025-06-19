@@ -1,6 +1,7 @@
 import React from 'react';
 import { redirect } from 'next/navigation';
 import { createTabbySession } from '@/app/utils/tabby';
+import Image from 'next/image';
 
 const {
   NEXT_PUBLIC_BASE_URL,
@@ -10,136 +11,14 @@ const {
 export const dynamicParams = true;
 export const runtime = 'edge';
 
-// Helper to extract the real payment_id (length > 1) from searchParams
-function getRealPaymentId(raw) {
-  if (!raw) return null;
-  if (Array.isArray(raw)) {
-    const real = raw.find((v) => typeof v === 'string' && v.length > 1);
-    return real || raw[raw.length - 1];
-  }
-  return typeof raw === 'string' && raw.length > 1 ? raw : null;
-}
-
 export default async function PaymentPage({ params, searchParams }) {
   const { slug } = params;
   const callback = searchParams.callback; // "success", "cancel", etc.
-  const paymentId = getRealPaymentId(searchParams.payment_id);
+  const paymentId = searchParams.payment_id;
 
   // —— Callback phase: Tabby has redirected back
   if (callback && paymentId) {
     console.log(`🔔 Tabby ${callback.toUpperCase()} callback for slug ${slug}`, { paymentId });
-
-    let captureData;
-    let paymentData;
-
-    // Only capture on success
-    if (callback === 'success') {
-      try {
-        console.log('Attempting to capture payment:', paymentId);
-        // First get payment details to use in capture
-        const paymentDetailsRes = await fetch(
-          `https://api.tabby.ai/api/v2/payments/${paymentId}`,
-          {
-            headers: { Authorization: `Bearer ${process.env.TABBY_SECRET_KEY}` },
-            cache: 'no-store',
-          }
-        );
-        if (!paymentDetailsRes.ok) {
-          throw new Error(`Failed to get payment details: ${paymentDetailsRes.status}`);
-        }
-        const paymentDetails = await paymentDetailsRes.json();
-        console.log('Payment details:', paymentDetails);
-
-        // Prepare capture payload
-        const capturePayload = {
-          amount: paymentDetails.amount,
-          reference_id: `capture_${paymentDetails.id}_${Date.now()}`,
-          tax_amount: paymentDetails.order?.tax_amount || "0",
-          shipping_amount: paymentDetails.order?.shipping_amount || "0",
-          discount_amount: paymentDetails.order?.discount_amount || "0",
-          items: paymentDetails.order?.items || []
-        };
-        console.log('Capture payload:', capturePayload);
-
-        const captureRes = await fetch(
-          `https://api.tabby.ai/api/v2/payments/${paymentId}/captures`,
-          {
-            method: 'POST',
-            headers: {
-              'Content-Type': 'application/json',
-              'Authorization': `Bearer ${process.env.TABBY_SECRET_KEY}`
-            },
-            body: JSON.stringify(capturePayload),
-            cache: 'no-store',
-          }
-        );
-        if (!captureRes.ok) {
-          const errorText = await captureRes.text();
-          throw new Error(`Tabby capture failed (${captureRes.status}): ${errorText}`);
-        }
-        captureData = await captureRes.json();
-        console.log('Payment captured successfully:', captureData);
-      } catch (err) {
-        console.error('❌ Error capturing Tabby payment:', err);
-        return (
-          <div className="flex items-center justify-center h-screen">
-            <p className="text-red-500">Failed to capture payment: {err.message}</p>
-          </div>
-        );
-      }
-    }
-
-    // Retrieve payment details regardless of callback type
-    try {
-      console.log('Retrieving payment details:', paymentId);
-      const res = await fetch(
-        `https://api.tabby.ai/api/v2/payments/${paymentId}`,
-        {
-          headers: { Authorization: `Bearer ${process.env.TABBY_SECRET_KEY}` },
-          cache: 'no-store',
-        }
-      );
-      if (!res.ok) {
-        const errorText = await res.text();
-        throw new Error(`Tabby fetch failed (${res.status}): ${errorText}`);
-      }
-      paymentData = await res.json();
-      console.log('Payment details retrieved:', paymentData);
-    } catch (err) {
-      console.error('❌ Error fetching Tabby payment:', err);
-      paymentData = { error: err.message };
-    }
-
-    // Notify Centaurus via POST with query params
-    let centResponse;
-    try {
-      const url = new URL(
-        `https://www.centauruscharter.net/api/api_new/payments/tabby/${slug}`
-      );
-      url.searchParams.set('token', CENTAURUS_API_KEY);
-      url.searchParams.set('id', slug);
-      url.searchParams.set('payment_id', paymentId);
-      if (paymentData) {
-        url.searchParams.set('received_amount', paymentData.amount);
-        url.searchParams.set('status', paymentData.status);
-      }
-
-      console.log('🔗 Centaurus POST URL:', url.toString());
-
-      const centRes = await fetch(url.toString(), {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        cache: 'no-store',
-      });
-      console.log('🔄 Centaurus response status:', centRes.status);
-      centResponse = centRes.ok ? await centRes.json() : { error: centRes.statusText };
-      console.log('Centaurus response:', centResponse);
-    } catch (err) {
-      console.error('❌ Error notifying Centaurus:', err);
-      centResponse = { error: err.message };
-    }
 
     // Redirect to the result page with all params
     const target = `${NEXT_PUBLIC_BASE_URL}/payments/tabby_payment?callback=${callback}&slug=${slug}&payment_id=${paymentId}`;
@@ -192,16 +71,79 @@ export default async function PaymentPage({ params, searchParams }) {
 
     console.log('Redirecting to Tabby:', redirectUrl);
     
-    // Client-side redirect
+    // Client-side redirect with animated loading screen
     return (
       <html>
         <head>
           <meta httpEquiv="refresh" content={`0;url=${redirectUrl}`} />
           <title>Redirecting to Tabby...</title>
+          <style>{`
+            @keyframes fadeInOut {
+              0% { opacity: 0; transform: translateY(20px); }
+              20% { opacity: 1; transform: translateY(0); }
+              80% { opacity: 1; transform: translateY(0); }
+              100% { opacity: 0; transform: translateY(-20px); }
+            }
+            @keyframes pulse {
+              0% { transform: scale(1); }
+              50% { transform: scale(1.05); }
+              100% { transform: scale(1); }
+            }
+            .loading-container {
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+              justify-content: center;
+              min-height: 100vh;
+              background: linear-gradient(135deg, #f5f7fa 0%, #e4e8eb 100%);
+            }
+            .logo-container {
+              display: flex;
+              align-items: center;
+              gap: 2rem;
+              margin-bottom: 2rem;
+              animation: fadeInOut 2s ease-in-out;
+            }
+            .logo {
+              height: 60px;
+              width: auto;
+              object-fit: contain;
+            }
+            .loading-text {
+              font-size: 1.5rem;
+              color: #333;
+              margin-top: 2rem;
+              animation: pulse 2s infinite;
+            }
+            .arrow {
+              font-size: 2rem;
+              color: #666;
+              margin: 0 1rem;
+            }
+          `}</style>
         </head>
         <body>
-          <div className="flex items-center justify-center h-screen">
-            <p>Redirecting to payment page...</p>
+          <div className="loading-container">
+            <div className="logo-container">
+              <Image
+                src="/images/centaurus-charter-logo.webp"
+                alt="Centaurus Charter"
+                width={200}
+                height={60}
+                className="logo"
+                priority
+              />
+              <span className="arrow">→</span>
+              <Image
+                src="/images/tabby.webp"
+                alt="Tabby"
+                width={200}
+                height={60}
+                className="logo"
+                priority
+              />
+            </div>
+            <p className="loading-text">Redirecting to Tabby payment page...</p>
           </div>
         </body>
       </html>
