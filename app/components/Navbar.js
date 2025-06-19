@@ -278,7 +278,7 @@ export default function Navbar() {
                         : "text-primary-blue decoration-transparent hover:decoration-primary-yellow"
                     }`}
                   >
-                    SUMMER OFFERS
+                    {t('navbar.summer-offers')}
                   </Link>
                 </li>
 

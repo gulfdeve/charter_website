@@ -1,10 +1,14 @@
-import React from "react";
+"use client";
+import React, { use } from "react";
+import { useLocale, useTranslations } from "next-intl";
 
 const WhyChooseUs = () => {
+  const t = useTranslations();
+
   return (
     <div className="bg-white h-auto  bg-fixed container mx-auto py-12 lg:p-16">
       <h2 className=" text-primary-blue text-center pb-7">
-        WHY CHOOSE <br className="sm:hidden"></br> CENTARUS CHARTER
+        {t('home.why-choose')} <br className="sm:hidden"></br> {t('home.centaurus-charter')}
       </h2>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 text-center md:gap-10">
         <div className="flex flex-col items-center justify-start ">
@@ -12,10 +16,10 @@ const WhyChooseUs = () => {
             <img alt="luxury experience badge" src="/Luxury Experience Badge.png" className="w-10" />
           </div>
           <h3 className=" text-primary-grey py-3">
-            Luxury Experience
+            {t('home.luxury-experience')}
           </h3>
           <p className=" text-primary-grey text-center pb-3 md:pb-0">
-            Hire our yachts for an unforgettable luxurious experience on sea
+            {t('home.luxury-experience-description')}
           </p>
         </div>
         <div className="flex flex-col items-center justify-start ">
@@ -23,10 +27,10 @@ const WhyChooseUs = () => {
             <img alt="fleet of yachts" src="/Fleet of Yachts.png" className="w-12" />
           </div>
           <h3 className=" text-primary-grey py-3">
-          Fleet of Yachts
+          {t('home.fleet-of-yachts')}
           </h3>
           <p className=" text-primary-grey text-center pb-3 md:pb-0">
-          Charter from the selection of private yachts and boats in Dubai
+          {t('home.fleet-of-yachts-description')}
           </p>
         </div>
         <div className="flex flex-col items-center justify-start">
@@ -34,12 +38,10 @@ const WhyChooseUs = () => {
             <img alt="certified crew" src="/Certified Crew.png" className="w-12" />
           </div>
           <h3 className=" text-primary-grey py-3">
-          Certified Crew
+          {t('home.certified-crew')}
           </h3>
           <p className=" text-primary-grey  xl:px-6 text-center pb-3 md:pb-0">
-          Our professional captain and crew welcomes you & ensures the smooth ride onboard
-
-
+          {t('home.certified-crew-description')}
           </p>
         </div>
         <div className="flex flex-col items-center justify-start">
@@ -47,10 +49,10 @@ const WhyChooseUs = () => {
             <img alt="Quality Service" src="/Quality Service.png" className="w-12" />
           </div>
           <h3 className=" text-primary-grey py-3">
-          Quality Service
+          {t('home.quality-service')}
           </h3>
           <p className=" text-primary-grey xl:px-6 text-center pb-3 md:pb-0">
-          Our trained and friendly staff offers great services during your yacht tour
+          {t('home.quality-service-description')}
           </p>
         </div>
         <div className="flex flex-col items-center justify-start ">
@@ -58,10 +60,10 @@ const WhyChooseUs = () => {
             <img alt="Outstanding Customer Support" src="/Outstanding Customer Support.png" className="w-12" />
           </div>
           <h3 className=" text-primary-grey py-3">
-          Outstanding Customer Support
+          {t('home.outstanding-customer-support')}
           </h3>
           <p className=" text-primary-grey xl:px-6  text-center pb-3 md:pb-0">
-          We guarantee to provide best support from yacht viewings to bookings
+          {t('home.outstanding-customer-support-description')}
           </p>
         </div>
         <div className="flex flex-col items-center justify-start ">
@@ -69,10 +71,10 @@ const WhyChooseUs = () => {
             <img alt="Multilingual Staff" src="/Multilingual Staff.png" className="w-12" />
           </div>
           <h3 className=" text-primary-grey py-3">
-            Multilingual Staff
+            {t('home.multilingual-staff')}
           </h3>
           <p className=" text-primary-grey  xl:px-6 text-center pb-3 md:pb-0">
-          We speak all - English, Arabic, Russian, Spanish, German, French, Portuguese and Chinese
+          {t('home.multilingual-staff-description')}
 
 
           </p>

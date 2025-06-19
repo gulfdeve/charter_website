@@ -34,7 +34,7 @@ export default function FirstFooter() {
   // Define each footer section and its content
   const footerSections = [
     {
-      title: "CENTAURUS CHARTER",
+      title: t('home.centaurus-charter'),
       content: (
         <ul>
           <li className="mb-2">
@@ -88,7 +88,7 @@ export default function FirstFooter() {
               onClick={scrollToTop}
               className="text-text-primary-white capitalize"
             >
-              Summer Offers
+              {t('navbar.summer-offers')}
             </Link>
           </li>
           <li className="mb-2">
@@ -131,7 +131,7 @@ export default function FirstFooter() {
       ),
     },
     {
-      title: "LUXURY YACHTS",
+      title: t('footer.luxury-yachts'),
       content: (
         <ul>
           {!loading &&
@@ -173,8 +173,7 @@ export default function FirstFooter() {
 			<ul className="text-text-primary-white space-y-4">
 			  {[
 				{
-				  address: "Office 402, Galadari Bldg. 17, Dubai Production City (IMPZ), P.O. Box 74461",
-				  location: "United Arab Emirates",
+				  address: t("footer.office-location"),
 				  link: "https://maps.app.goo.gl/mFvSe2XsrVUDRdfK6"
 				},
 			  ].map((item, index) => (
@@ -219,11 +218,11 @@ export default function FirstFooter() {
 		),
 	  },
     {
-      title: "FOR ENQUIRIES",
+      title: t('footer.for-enquiries'),
       content: (
         <ul className="text-text-primary-white">
           <li className="flex flex-col md:items-start items-center text-center md:text-left">
-            <p className="font-semibold pb-3">English / Russian</p>
+            <p className="font-semibold pb-3">{t('footer.english-russian')}</p>
             <a
               className="mb-2 inline-block"
               href="tel:+971505484685"
@@ -244,7 +243,7 @@ export default function FirstFooter() {
             </a>
           </li>
           <li className="flex flex-col md:items-start items-center text-center md:text-left">
-            <p className="font-semibold py-3">English / Spanish / Portuguese</p>
+            <p className="font-semibold py-3">{t('footer.english-spanish-portuguese')}</p>
             <a
               className="mb-2 inline-block"
               href="tel:+971567277387"
@@ -259,7 +258,7 @@ export default function FirstFooter() {
             </a>
           </li> */}
           <li className="flex flex-col md:items-start items-center text-center md:text-left">
-            <p className="font-semibold py-3">English / Arabic</p>
+            <p className="font-semibold py-3">{t('footer.english-arabic')}</p>
             <a
               className="mb-2 inline-block"
               href="tel:+971565017078"
@@ -274,7 +273,7 @@ export default function FirstFooter() {
             </a>
           </li>
           <li className="flex flex-col md:items-start items-center text-center md:text-left">
-            <p className="font-semibold py-3">English / Filipino</p>
+            <p className="font-semibold py-3">{t('footer.english-filipino')}</p>
             <a
               className="mb-2 inline-block"
               href="tel:+971565017057"
@@ -283,7 +282,7 @@ export default function FirstFooter() {
             </a>
           </li>
           <li className="flex flex-col md:items-start items-center text-center md:text-left">
-            <p className="font-semibold py-3">English / Chinese</p>
+            <p className="font-semibold py-3">{t('footer.english-chinese')}</p>
             <a
               className="mb-2 inline-block"
               href="tel:+971544948573"
@@ -301,7 +300,7 @@ export default function FirstFooter() {
       ),
     },
     {
-		title: "YACHTS LOCATION",
+		title: t('footer.yachts-location'),
 		content: (
 		  <div className="pb-4">
 			<ul className="text-text-primary-white space-y-4">

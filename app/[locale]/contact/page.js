@@ -305,7 +305,7 @@ export default function Page() {
                 <MdLocationOn className="text-2xl text-primary-yellow" />{" "}
               </div>
               <a href="https://maps.app.goo.gl/mFvSe2XsrVUDRdfK6" target="_blank" className="text-sm w-[16rem] xs:w-[19rem] pl-5 font-medium">
-                Office 402, Galadari Bldg. 17, Dubai Production City (IMPZ), P.O. Box 74461, United Arab Emirates
+                {t('footer.office-location')}
               </a>
             </div>
             <div className="flex flex-row items-center justify-start">

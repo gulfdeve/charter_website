@@ -2,10 +2,12 @@
 import Image from "next/image";
 import { useRouter, usePathname, Link } from "../i18n/routing";
 import EmailSubscription from "@/app/components/EmailSubscription"; // Client component
+import { useTranslations } from "next-intl";
 
 const Sociallink = () => {
 	const pathname = usePathname(); // Get the current path
 	const isHomePage = pathname === "/" || pathname === ""; // Check if it's the homepage
+  const t = useTranslations();
   return (
     <div className="relative bg-primary-blue-2 w-full h-[24rem] lg:h-[15rem] 2xl:h-[18rem] flex items-center justify-center">
        {/* SVG Divider */}
@@ -45,8 +47,8 @@ const Sociallink = () => {
 
         {/* Subscription Section */}
         <div className="order-2 lg:order-1 flex flex-col items-center lg:items-start">
-          <p className="text-white text-lg lg:text-2xl 3xl:text-4xl font-bold">Amazing Offers just for you</p>
-          <p className="text-white text-lg text-center lg:text-left">Sign up to receive amazing offers and tips</p>
+          <p className="text-white text-lg lg:text-2xl 3xl:text-4xl font-bold">{t('footer.amazing-offers-just-for-you')}</p>
+          <p className="text-white text-lg text-center lg:text-left">{t('home.sign-up-to-receive-amazing-offers-and-tips')}</p>
         </div>
 
         {/* Email Subscription Form (Client Component) */}

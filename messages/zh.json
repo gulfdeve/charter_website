@@ -13,11 +13,21 @@
     "company-profile": "公司简介",
     "home": "家",
     "about": "关于",
-    "yacht-rentals": "游艇租赁"
+    "yacht-rentals": "游艇租赁",
+    "summer-offers": "夏季优惠"
   },
   "footer": {
     "reach-out-to-us": "联系我们",
-    "centaurus-charter": "半人马座宪章"
+    "centaurus-charter": "半人马座宪章",
+    "amazing-offers-just-for-you": "惊人的报价只为您",
+    "luxury-yachts": "豪华游艇",
+    "for-enquiries": "查询",
+    "yachts-location": "游艇位置",
+    "office-location": "办公室402，Galadari Bldg。 \n17，迪拜生产城（IMPZ），P.O。 \nBox 74461，阿拉伯联合酋长国",
+    "english-russian": "英语 /俄语",
+    "english-spanish-portuguese": "英语 /西班牙 /葡萄牙语",
+    "english-arabic": "英语 /阿拉伯语",
+    "english-filipino": "英语 /菲律宾"
   },
   "offers": {
     "validity-until": "有效直到"
@@ -43,5 +53,64 @@
     "hours": "小时",
     "trip-hours": "旅行时间",
     "per-hour": "每小时"
+  },
+  "home": {
+    "centaurus-yacht-rental-dubai": "迪拜的半人马座游艇",
+    "daily-yacht-sharing-tours-in-dubai": "每日游艇在迪拜共享旅行",
+    "including-food-and-drinks": "包括食物和饮料",
+    "starting-aed-99": "开始大教堂99",
+    "dubai-yachts-winter-offers": "迪拜游艇冬季优惠",
+    "enjoy-up-to-40-off-luxury-yachts-in-dubai": "在迪拜享受多达40％的豪华游艇",
+    "dubai-yachts-online-booking": "迪拜游艇 - 在线预订",
+    "enjoy-your-luxury-yacht-experience": "享受您的豪华游艇体验",
+    "card-description-below": "Centaurus Charter 是一家位于迪拜的游艇租赁公司，为追求奢华和巡航的宾客提供各种私人游艇和船只，为您带来绝佳的游艇体验。无论您是想体验开阔大海的刺激，还是在私人岛屿上放松身心，亦或只是想探索新的目的地，我们经验丰富的游艇船员都将竭诚为您和家人提供周到的服务。我们将确保您享受宁静的体验，并悉心照顾每一个细节。我们的游艇也为所有年龄段的宾客提供舒适的环境。您可以在甲板上一边享用饮品，一边欣赏日落。快来加入我们的航海之旅吧！",
+    "luxury-yacht-rentals": "豪华游艇租金",
+    "luxury-yacht-card-description": "在豪华游艇上与迪拜的美丽奇迹。\n探索我们在迪拜码头和迪拜港码头的游艇，身材良好，充满豪华的设施，灵活的预订时间，容量和游艇尺寸。\n沿着阿拉伯湾和迪拜的顶级景点进行巡游 - 阿拉伯人，亚特兰蒂斯，棕榈，JBR，艾因·迪拜，蓝沼岛等等。",
+    "luxury-yacht-card-description-one": "欢迎您的客人在温暖的氛围中以纯净的优雅和风格。",
+    "luxury-yacht-card-button": "探索我们的游艇",
+    "customized-yacht-trips": "定制游艇旅行",
+    "customized-yacht-trips-description": "Centaurus Charter适合所有人。\n登上日落巡游，捕捞一些鱼，庆祝里程碑，向您所爱的人致敬，或带您的同事参加其他团队会议；\n在迪拜租一辆游艇，享受一天的回忆。\n在迪拜预订迪拜豪华游艇，钓鱼旅行或浪漫旅行。",
+    "customized-yacht-trips-description-one": "庆祝生日聚会，结婚周年纪念日，求婚或私人游艇上的公司活动。",
+    "explore-our-experiences": "探索我们的经验",
+    "explore-our-experiences-button": "探索我们的经验",
+    "exclusive-offers": "独家优惠",
+    "exclusive-offers-description": "迪拜是一个真正的游艇天堂，拥有蓝色的蓝色水和美丽的摩天大楼。\n带你的亲人出海。\n从一日游，游艇派对到过夜游艇租金，我们将带给您交易。\n不要错过探索阿联酋白金，商业委员会的特别折扣，",
+    "exclusive-offers-description-one": "找到您的理想船，并有很大的交易，并立即确认您的预订。",
+    "explore-all-offers-button": "探索所有优惠",
+    "water-sports-add-ons": "水上运动附加组件",
+    "water-sports-add-ons-description": "迪拜的假期提供了充满乐趣，冒险，令人叹为观止的地方和特殊时刻。\n乘坐快速船或乘飞机上的水上飞行在水面上飞行美丽的海岸线真是太神奇了。\n以最优惠的价格找到大量的水活动，并使您的游览更加令人兴奋。",
+    "water-sports-add-ons-description-one": "以最优惠的价格与船租船一起预订水上运动。",
+    "explore-our-water-activities-button": "探索我们的水活动",
+    "luxury-experience": "豪华体验",
+    "luxury-experience-description": "租用我们的游艇，在海上难忘的豪华体验",
+    "fleet-of-yachts": "游艇舰队",
+    "fleet-of-yachts-description": "从迪拜选择私人游艇和船只的宪章",
+    "certified-crew": "认证机组人员",
+    "certified-crew-description": "我们的专业队长和工作人员欢迎您",
+    "quality-service": "优质的服务",
+    "quality-service-description": "我们训练有素友好的员工在您的游艇之旅中提供出色的服务",
+    "outstanding-customer-support": "出色的客户支持",
+    "outstanding-customer-support-description": "我们保证从游艇观看到预订的最佳支持",
+    "multilingual-staff": "多语言员工",
+    "multilingual-staff-description": "我们会说所有 - 英语，阿拉伯语，俄语，西班牙语，德语，法语，葡萄牙语和中文",
+    "why-choose": "为什么选择",
+    "centaurus-charter": "百万富翁宪章",
+    "about-us": "关于我们",
+    "about-us-description": "Centaurus Charter成立于2013年，在迪拜提供休闲船和游艇租赁。\n全面蛋的豪华游艇宪章以及全方位服务的活动计划位于迪拜码头和迪拜码头港，每艘船均由迪拜码头游艇俱乐部注册，由认证的机组人员经营，并由专业的员工迎合。",
+    "what-our-guests-say": "客人怎么说",
+    "read-all-reviews-on-google": "在Google上阅读所有评论",
+    "reviews": "评论",
+    "years-in-business": "经营年",
+    "happy-guests": "快乐的客人",
+    "service-rating": "服务等级",
+    "sign-up-to-receive-amazing-offers-and-tips": "注册以获得惊人的报价和提示"
+  },
+  "button": {
+    "read-more": "阅读更多",
+    "sign-up": "报名"
+  },
+  "input": {
+    "sign-up": "报名",
+    "your-email": "您的电子邮件"
   }
 }
