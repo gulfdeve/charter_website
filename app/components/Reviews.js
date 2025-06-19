@@ -1,10 +1,14 @@
+"use client";
 import React, { useEffect, useRef, useState } from "react";
 import EmblaCarousel from "embla-carousel";
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 import { FcGoogle } from "react-icons/fc";
 import { FaStar } from "react-icons/fa";
+import { useLocale, useTranslations } from "next-intl";
+
 
 const Reviews = () => {
+  const t = useTranslations();
   const viewportRef = useRef(null);
   const emblaApi = useRef(null);
   const [prevEnabled, setPrevEnabled] = useState(false);
@@ -92,7 +96,7 @@ const Reviews = () => {
 
       <div className="relative  container mx-auto px-4">
         <h2 className="text-primary-blue text-center font-bold text-2xl sm:text-3xl md:text-3xl lg:text-4xl pb-16">
-          WHAT OUR GUESTS SAY
+          {t('home.what-our-guests-say')}
         </h2>
 
         {/* Carousel viewport with side padding */}
@@ -175,11 +179,11 @@ const Reviews = () => {
             target="_blank"
             rel="noopener noreferrer"
           >
-            Read all reviews on Google
+            {t('home.read-all-reviews-on-google')}
           </a>
           <FcGoogle size={30} />
           <span className="text-gray-600 font-bold text-xl">4.8</span>
-          <span className="text-gray-600 text-sm">(150) Reviews</span>
+          <span className="text-gray-600 text-sm">(150) {t('home.reviews')}</span>
         </div>
       </div>
     </div>

@@ -13,11 +13,22 @@
     "company-profile": "Company Profile",
     "home": "Home",
     "about": "About",
-    "yacht-rentals": "Yacht Rentals"
+    "yacht-rentals": "Yacht Rentals",
+    "summer-offers": "Summer Offers"
   },
   "footer": {
     "reach-out-to-us": "REACH US",
-    "centaurus-charter": "Centaurus Charter"
+    "centaurus-charter": "Centaurus Charter",
+    "amazing-offers-just-for-you": "Amazing Offers just for you",
+    "luxury-yachts": "LUXURY YACHTS",
+    "for-enquiries": "FOR ENQUIRIES",
+    "yachts-location": "YACHTS LOCATION",
+    "office-location": "Office 402, Galadari Bldg. 17, Dubai Production City (IMPZ), P.O. Box 74461, United Arab Emirates",
+    "english-russian": "English / Russian",
+    "english-spanish-portuguese": "English / Spanish / Portuguese",
+    "english-arabic": "English / Arabic",
+    "english-filipino": "English / Filipino",
+    "english-chinese": "English / Chinese"
   },
   "offers": {
     "validity-until": "Validity Until"
@@ -44,5 +55,64 @@
     "trip-hours": "Trip Hours",
     "hours": "Hours",
     "per-hour": "per hour"
+  },
+  "home": {
+    "centaurus-yacht-rental-dubai": "centaurus yacht rental dubai",
+    "daily-yacht-sharing-tours-in-dubai": "Daily Yacht Sharing Tours In Dubai",
+    "including-food-and-drinks": "Including Food and Drinks",
+    "starting-aed-99": "Starting AED 99",
+    "dubai-yachts-winter-offers": "DUBAI YACHTS WINTER OFFERS",
+    "enjoy-up-to-40-off-luxury-yachts-in-dubai": "ENJOY UP TO 40% OFF LUXURY YACHTS IN DUBAI",
+    "dubai-yachts-online-booking": "DUBAI YACHTS - ONLINE BOOKING",
+    "enjoy-your-luxury-yacht-experience": "Enjoy your Luxury Yacht Experience",
+    "card-description-below": "Centaurus Charter is a yacht rental company in Dubai that offers range of private yachts and boats for those who like glamorous, a taste of luxury & cruiser that bring forth a wonderful yachting experience. Let our experienced yachtsmen take care of you and your family, whether you're looking for the thrill of the open seas, the relaxation of a private island, or simply want to explore new destinations. We'll make sure you enjoy a calm experience with every detail taken care of. Our yachts also provide a comfortable environment for all ages. You can enjoy drinks on the deck while watching the sunset. Come cruise with us.",
+    "luxury-yacht-rentals": "Luxury Yacht Rentals",
+    "luxury-yacht-card-description": "Marvel with the beauty of Dubai on a luxury yacht. Explore our yachts in Dubai Marina and Dubai Harbor Marina with excellent conditions, full of luxurious amenities, flexible booking timings, capacity, and yacht sizes. Cruise along the Arabian Gulf and Dubai's top attractions – Burj Al Arab, Atlantis The Palm, JBR, Ain Dubai, Bluewaters Island, and much more.",
+    "welcome-your-guests-in-a-warm-atmosphere-with-pure-elegance-and-style": "Welcome your guests in a warm atmosphere with pure elegance and style.",
+    "luxury-yacht-card-description-one": "Welcome your guests in a warm atmosphere with pure elegance and style.",
+    "luxury-yacht-card-button": "Explore Our Yachts",
+    "customized-yacht-trips": "Customized Yacht Trips",
+    "customized-yacht-trips-description": "Centaurus Charter has something for everyone. Embark on a sunset cruise, catch some fish, celebrate milestones, woo your loved one, or take your colleagues to a different team meeting; rent a yacht in Dubai and enjoy the day making memories that last forever. Book a Dubai luxury yacht for parties, fishing trips, or romantic getaways in Dubai.",
+    "customized-yacht-trips-description-one": "Celebrate Birthday Parties, Wedding Anniversaries, Marriage Proposals, or Corporate Events on private yachts.",
+    "explore-our-experiences": "Explore Our Experiences",
+    "explore-our-experiences-button": "Explore Our Experiences",
+    "exclusive-offers": "Exclusive Offers",
+    "exclusive-offers-description": "Dubai is a true yachting heaven with azure blue waters and beautiful skyscrapers. Take your loved ones to sea. We bring to you deals from day charter, yacht parties to overnight yacht rentals. Don't miss exploring the special discount for Emirates Platinum, Business Councils, & FAZAA members.",
+    "exclusive-offers-description-one": "Find your ideal boat with great deals and confirm your booking instantly.",
+    "explore-all-offers-button": "Explore All Offers",
+    "water-sports-add-ons": "Water Sports Add-ons",
+    "water-sports-add-ons-description": "Holidays in Dubai offer a great mix of fun, adventure, breathtaking places, and special moments. It's truly amazing to cruise the beautiful coastline with the speed jet boat or fly high on waters with flyboarding. Find plenty of water activities at the best price and make your excursion even more exciting.",
+    "water-sports-add-ons-description-one": "Book your watersports together with a boat charter at the best price.",
+    "explore-our-water-activities-button": "Explore Our Water Activities",
+    "luxury-experience": "Luxury Experience",
+    "luxury-experience-description": "Hire our yachts for an unforgettable luxurious experience on sea",
+    "fleet-of-yachts": "Fleet of Yachts",
+    "fleet-of-yachts-description": "Charter from the selection of private yachts and boats in Dubai",
+    "certified-crew": "Certified Crew",
+    "certified-crew-description": "Our professional captain and crew welcomes you & ensures the smooth ride onboard",
+    "quality-service": "Quality Service",
+    "quality-service-description": "Our trained and friendly staff offers great services during your yacht tour",
+    "outstanding-customer-support": "Outstanding Customer Support",
+    "outstanding-customer-support-description": "We guarantee to provide best support from yacht viewings to bookings",
+    "multilingual-staff": "Multilingual Staff",
+    "multilingual-staff-description": "We speak all - English, Arabic, Russian, Spanish, German, French, Portuguese and Chinese",
+    "why-choose": "WHY CHOOSE",
+    "centaurus-charter": "CENTAURUS CHARTER",
+    "about-us": "About Us",
+    "about-us-description": "Centaurus Charter was established in 2013 and offers Leisure boats and Yacht Rentals in Dubai. The fully-crewed luxury yacht charters as well as full-service event planning, are conveniently located in Dubai Marina and Dubai Marina Harbor, each vessel is registered by the Dubai Marina Yacht Club and is operated by a certified crew and catered by professional staff.",
+    "what-our-guests-say": "WHAT OUR GUESTS SAY",
+    "read-all-reviews-on-google": "Read all reviews on Google",
+    "reviews": "Reviews",
+    "years-in-business": "years in business",
+    "happy-guests": "happy guests",
+    "service-rating": "service rating",
+    "sign-up-to-receive-amazing-offers-and-tips": "Sign up to receive amazing offers and tips"
+  },
+  "button": {
+    "read-more": "Read More",
+    "sign-up": "Sign Up"
+  },
+  "input": {
+    "your-email": "Your Email"
   }
 }

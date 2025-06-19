@@ -1,11 +1,12 @@
 "use client";
 import { useState } from "react";
+import { useTranslations } from "next-intl";
 
 const EmailSubscription = () => {
   const [email, setEmail] = useState("");
   const [submissionSuccess, setSubmissionSuccess] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
-
+  const t = useTranslations();
   const handleSubmit = async (e) => {
     e.preventDefault();
 
@@ -54,16 +55,16 @@ const EmailSubscription = () => {
       <div className="flex w-full">
         <input
           type="email"
-          placeholder="Your Email"
+          placeholder={t('input.your-email')}
           value={email}
           onChange={(e) => setEmail(e.target.value)}
           className="flex-grow px-6 py-4 text-sm font-bold text-primary-grey border border-l-4 roundedl-l-md bg-[#f5f5f5] text-primary-grey focus:outline-none border-primary-blue focus:bg-[#f3f7fd] transition duration-200 ease-in-out"
         />
         <button
           type="submit"
-          className="bg-primary-blue rounded-r-md text-white text-xs sm:text-base px-4 py-3 font-bold text-primary-grey hover:bg-gray-400 border border-black"
+          className="bg-primary-blue rounded-r-md uppercase text-white text-xs sm:text-base px-4 py-3 font-bold text-primary-grey hover:bg-gray-400 border border-black"
         >
-          SIGN UP
+          {t('button.sign-up')}
         </button>
       </div>
 

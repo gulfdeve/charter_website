@@ -142,10 +142,10 @@ export default function Home() {
       
       <div className="flex flex-col items-center justify-center">
         <h2 className=" text-primary-blue text-center font-bold text-xl sm:text-2xl md:text-3xl lg:text-4xl md:p-4 pb-4 px-3">
-          DUBAI YACHTS - ONLINE BOOKING
+          {t('home.dubai-yachts-online-booking')}
         </h2>
         <p className=" text-primary-blue text-center text-lg sm:text-xl md:text-xl lg:text-2xl  pb-6 md:pb-12">
-          Enjoy your Luxury Yacht Experience
+          {t('home.enjoy-your-luxury-yacht-experience')}
         </p>
       </div>
         
@@ -381,16 +381,7 @@ export default function Home() {
 
       </div>
       <p className=" text-primary-grey text-center  text-base py-4 md:py-14 px-3 mx-auto container">
-                  Centaurus Charter is a yacht rental company in Dubai that offers range
-                  of private yachts and boats for those who like glamorous, a taste of
-                  luxury & cruiser that bring forth a wonderful yachting experience. Let
-                  our experienced yachtsmen take care of you and your family, whether
-                  you're looking for the thrill of the open seas, the relaxation of a
-                  private island, or simply want to explore new destinations. We'll make
-                  sure you enjoy a calm experience with every detail taken care of. Our
-                  yachts also provide a comfortable environment for all ages. You can
-                  enjoy drinks on the deck while watching the sunset. Come cruise with
-                  us.
+                  {t('home.card-description-below')}
                 </p>
 {/* Background SVG in Behind */}
 <div
@@ -421,15 +412,15 @@ export default function Home() {
       />
       {/* Content */}
       <div className="relative z-10 flex flex-col h-full">
-        <h2 className="text-xl md:text-2xl xl:text-2xl font-bold mb-4">Luxury Yacht Rentals</h2>
+        <h2 className="text-xl md:text-2xl xl:text-2xl font-bold mb-4">{t('home.luxury-yacht-rentals')}</h2>
         <p className="md:opacity-0 md:group-hover:opacity-100 leading-7 transition-opacity duration-300 text-sm mb-4">
-          Marvel with the beauty of Dubai on a luxury yacht. Explore our yachts in Dubai Marina and Dubai Harbor Marina with excellent conditions, full of luxurious amenities, flexible booking timings, capacity, and yacht sizes. Cruise along the Arabian Gulf and Dubai's top attractions – Burj Al Arab, Atlantis The Palm, JBR, Ain Dubai, Bluewaters Island, and much more.
+          {t('home.luxury-yacht-card-description')}
           <br />
           <br />
-          Welcome your guests in a warm atmosphere with pure elegance and style.
+          {t('home.luxury-yacht-card-description-one')}
         </p>
         <div className="flex items-center mt-auto pt-5 group">
-          <div className="btn-info">Explore Our Yachts</div>
+          <div className="btn-info">{t('home.luxury-yacht-card-button')}</div>
           <FiArrowRight size={20} className="text-lg transform md:group-hover:translate-x-4 transition-transform duration-300" />
         </div>
       </div>
@@ -445,15 +436,15 @@ export default function Home() {
       />
       {/* Content */}
       <div className="relative z-10 flex flex-col h-full">
-        <h2 className="text-xl md:text-2xl xl:text-2xl font-bold mb-4">Customized Yacht Trips</h2>
+        <h2 className="text-xl md:text-2xl xl:text-2xl font-bold mb-4">{t('home.customized-yacht-trips')}</h2>
         <p className="md:opacity-0 md:group-hover:opacity-100 leading-7 transition-opacity duration-300 text-sm mb-4">
-          Centaurus Charter has something for everyone. Embark on a sunset cruise, catch some fish, celebrate milestones, woo your loved one, or take your colleagues to a different team meeting; rent a yacht in Dubai and enjoy the day making memories that last forever. Book a Dubai luxury yacht for parties, fishing trips, or romantic getaways in Dubai.
+          {t('home.customized-yacht-trips-description')}
           <br />
           <br />
-          Celebrate Birthday Parties, Wedding Anniversaries, Marriage Proposals, or Corporate Events on private yachts.
+          {t('home.customized-yacht-trips-description-one')}
         </p>
         <div className="flex items-center mt-auto pt-5 group">
-          <div className="btn-info">Explore Our Experiences</div>
+          <div className="btn-info">{t('home.explore-our-experiences-button')}</div>
           <FiArrowRight size={20} className="text-lg transform md:group-hover:translate-x-4 transition-transform duration-300" />
         </div>
       </div>
@@ -469,15 +460,15 @@ export default function Home() {
       />
       {/* Content */}
       <div className="relative z-10 flex flex-col h-full">
-        <h2 className="text-xl md:text-2xl xl:text-2xl font-bold mb-4">Exclusive Offers</h2>
+        <h2 className="text-xl md:text-2xl xl:text-2xl font-bold mb-4">{t('home.exclusive-offers')}</h2>
         <p className="md:opacity-0 md:group-hover:opacity-100 leading-7 transition-opacity duration-300 text-sm mb-4">
-          Dubai is a true yachting heaven with azure blue waters and beautiful skyscrapers. Take your loved ones to sea. We bring to you deals from day charter, yacht parties to overnight yacht rentals. Don't miss exploring the special discount for Emirates Platinum, Business Councils, & FAZAA members.
+          {t('home.exclusive-offers-description')}
           <br />
           <br />
-          Find your ideal boat with great deals and confirm your booking instantly.
+          {t('home.exclusive-offers-description-one')}
         </p>
         <div className="flex items-center mt-auto pt-5 group">
-          <div className="btn-info">Explore All Offers</div>
+          <div className="btn-info">{t('home.explore-all-offers-button')}</div>
           <FiArrowRight size={20} className="text-lg transform md:group-hover:translate-x-4 transition-transform duration-300" />
         </div>
       </div>
@@ -493,15 +484,15 @@ export default function Home() {
       />
       {/* Content */}
       <div className="relative z-10 flex flex-col h-full">
-        <h2 className="text-xl md:text-2xl xl:text-2xl font-bold mb-4">Water Sports Add-ons</h2>
+        <h2 className="text-xl md:text-2xl xl:text-2xl font-bold mb-4">{t('home.water-sports-add-ons')}</h2>
         <p className="md:opacity-0 md:group-hover:opacity-100 leading-7 transition-opacity duration-300 text-sm mb-4">
-          Holidays in Dubai offer a great mix of fun, adventure, breathtaking places, and special moments. It's truly amazing to cruise the beautiful coastline with the speed jet boat or fly high on waters with flyboarding. Find plenty of water activities at the best price and make your excursion even more exciting.
+          {t('home.water-sports-add-ons-description')}
           <br />
           <br />
-          Book your watersports together with a boat charter at the best price.
+          {t('home.water-sports-add-ons-description-one')}
         </p>
         <div className="flex items-center mt-auto pt-5 group">
-          <div className="btn-info">Explore Our Water Activities</div>
+          <div className="btn-info">{t('home.explore-our-water-activities-button')}</div>
           <FiArrowRight size={20} className="text-lg transform md:group-hover:translate-x-4 transition-transform duration-300" />
         </div>
       
@@ -541,7 +532,6 @@ export default function Home() {
 </div>
       <Aboutus />
       <Reviews />
-
       <Counters />
       <LocationCarousel />
        {videoModalVisible && (
