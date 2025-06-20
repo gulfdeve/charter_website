@@ -2,6 +2,7 @@ import React from 'react';
 import { redirect } from 'next/navigation';
 import { createTabbySession } from '@/app/utils/tabby';
 import Image from 'next/image';
+import { getTranslations } from 'next-intl/server';
 
 const {
   NEXT_PUBLIC_BASE_URL,
@@ -12,6 +13,7 @@ export const dynamicParams = true;
 export const runtime = 'edge';
 
 export default async function PaymentPage({ params, searchParams }) {
+  const t = await getTranslations();
   const { slug } = params;
   const callback = searchParams.callback; // "success", "cancel", etc.
   const paymentId = searchParams.payment_id;
@@ -143,7 +145,7 @@ export default async function PaymentPage({ params, searchParams }) {
                 priority
               />
             </div>
-            <p className="loading-text">Redirecting to Tabby payment page...</p>
+            <p className="loading-text">{t('checkout.redirecting-to-tabby-payment-page')}.</p>
           </div>
         </body>
       </html>

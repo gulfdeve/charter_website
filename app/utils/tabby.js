@@ -1,13 +1,54 @@
 export async function createTabbySession(booking, locale = 'en', merchantUrls = null) {
-  const { first_name, last_name, amount, order_no, booking_date, email, mobile, customer_id } = booking;
+  const { first_name, last_name, amount, order_no, booking_date, email, mobile, customer_id, past_booking = [] } = booking;
   
-  const phone = mobile?.startsWith('+') ? mobile : `+${mobile}`;
+//   const phone = mobile?.startsWith('+') ? mobile : `+${mobile}`;
+  const phone = mobile;
   
   // Convert booking_date to UTC ISO 8601 format
   const utcBookingDate = new Date(booking_date).toISOString();
   console.log("utcBookingDate: " + utcBookingDate);
   console.log("phone: " + phone);
   
+  // --- Buyer History ---
+  let allBookings = Array.isArray(past_booking) ? [...past_booking] : [];
+  // Include the current booking as well for registered_since
+  allBookings.push({ created_at: booking.created_at || booking.booking_date });
+  // Sort by created_at ascending (earliest first)
+  allBookings = allBookings.filter(b => b.created_at).sort((a, b) => new Date(a.created_at) - new Date(b.created_at));
+  const firstOrderDate = allBookings.length > 0 ? new Date(allBookings[0].created_at).toISOString() : utcBookingDate;
+
+  const buyer_history = {
+    registered_since: firstOrderDate,
+    loyalty_level: 0,
+    wishlist_count: 0,
+    is_social_networks_connected: false,
+    is_phone_number_verified: true,
+    is_email_verified: true
+  };
+
+  // --- Order History ---
+  const order_history = (Array.isArray(past_booking) ? past_booking : []).map(pb => ({
+    purchased_at: pb.created_at ? new Date(pb.created_at).toISOString() : new Date(pb.booking_date).toISOString(),
+    amount: pb.amount ? pb.amount.toString() : '0.00',
+    payment_method: pb.payment_method || 'card',
+    buyer: {
+      phone: pb.mobile || '',
+      email: pb.email || '',
+      name: `${pb.first_name || ''} ${pb.last_name || ''}`.trim(),
+    },
+    items: [
+      {
+        title: pb.title ? pb.title : `Booking ${pb.order_no}`,
+        description: `Yacht booking on ${pb.booking_date ? new Date(pb.booking_date).toISOString() : ''}`,
+        quantity: pb.hours || 1,
+        unit_price: pb.amount ? pb.amount.toString() : '0.00',
+        discount_amount: '0.00',
+        reference_id: pb.order_no || '',
+        category: 'yacht_booking',
+      }
+    ]
+  }));
+
   const payload = {
     payment: {
       amount: amount.toString(),
@@ -39,7 +80,9 @@ export async function createTabbySession(booking, locale = 'en', merchantUrls = 
       meta: {
         order_id: order_no,
         customer: customer_id ? customer_id.toString() : '0'
-      }
+      },
+      buyer_history,
+      order_history
     },
     lang: locale,
     merchant_code: process.env.NEXT_PUBLIC_TABBY_MERCHANT_CODE,
@@ -50,6 +93,7 @@ export async function createTabbySession(booking, locale = 'en', merchantUrls = 
       webhook: `${process.env.NEXT_PUBLIC_BASE_URL}/api/webhooks/tabby`
     }
   };
+  console.log("Tabby payload: ", payload);
 
   // Add merchant URLs if provided (this will override the defaults)
   if (merchantUrls) {

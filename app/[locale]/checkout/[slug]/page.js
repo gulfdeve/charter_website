@@ -40,9 +40,9 @@ async function fetchBooking(slug) {
   return data[0];
 }
 
-async function checkTabbyPreApproval(booking) {
+async function checkTabbyPreApproval(booking, locale) {
   try {
-    const session = await createTabbySession(booking);
+    const session = await createTabbySession(booking, locale);
     
     // Check if installments are available (pre-approved)
     const installments = session.configuration?.available_products?.installments;
@@ -62,10 +62,25 @@ async function checkTabbyPreApproval(booking) {
   }
 }
 
+// Helper to map rejection reasons to human-readable messages
+function getTabbyRejectionMessage(reason, t) {
+  if (!reason) return '';
+  switch (reason) {
+    case 'not_available':
+      return t('checkout.tabby_not_available');
+    case 'order_amount_too_high':
+      return t('checkout.tabby_order_amount_too_high');
+    case 'order_amount_too_low':
+      return t('checkout.tabby_order_amount_too_low');
+    default:
+      return reason.replace(/_/g, ' ');
+  }
+}
+
 // Server component - all async operations happen here
 export default async function CheckoutPage({ params, searchParams }) {
   const t = await getTranslations();
-  const { slug } = params;
+  const { slug, locale } = params;
   const { confirm, method,callback } = searchParams;
 
   if (confirm === '1') {
@@ -85,7 +100,8 @@ export default async function CheckoutPage({ params, searchParams }) {
   }
 
   // Check Tabby pre-approval status
-  const tabbyStatus = await checkTabbyPreApproval(booking);
+  const tabbyStatus = await checkTabbyPreApproval(booking, locale);
+  // console.log(tabbyStatus);
 
   const {
     title,
@@ -117,8 +133,8 @@ export default async function CheckoutPage({ params, searchParams }) {
         <div className="bg-red-50 border border-red-200 rounded-md p-4 mt-4 mx-auto max-w-7xl">
           <p className="text-red-600 text-sm">
             {callback === 'cancel'
-              ? 'You aborted the payment. Please retry or choose another payment method.'
-              : 'Sorry, Tabby is unable to approve this purchase. Please use an alternative payment method for your order'}
+              ? t('checkout.tabby_cancellation')
+              : t('checkout.tabby_failure')}
           </p>
         </div>
       )}
@@ -201,7 +217,14 @@ export default async function CheckoutPage({ params, searchParams }) {
                   {tabbyStatus.isApproved ? (
                     <span className="text-green-600 text-xs block"></span>
                   ) : (
-                    <span className="text-red-500 text-xs block">{t('checkout.not-available')}</span>
+                    <>
+                      {/* <span className="text-red-500 text-xs block">{t('checkout.not-available')}</span> */}
+                      {tabbyStatus.sessionData?.configuration?.products?.installments?.rejection_reason && (
+                        <span className="text-red-400 text-xs block mt-1">
+                          {getTabbyRejectionMessage(tabbyStatus.sessionData.configuration.products.installments.rejection_reason, t)}
+                        </span>
+                      )}
+                    </>
                   )}
                 </div>
               </div>

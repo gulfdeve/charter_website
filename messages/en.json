@@ -54,7 +54,13 @@
     "total": "Total",
     "trip-hours": "Trip Hours",
     "hours": "Hours",
-    "per-hour": "per hour"
+    "per-hour": "per hour",
+    "tabby_not_available": "Sorry, Tabby is unable to approve this purchase. Please use an alternative payment method for your order.",
+    "tabby_order_amount_too_high": "This purchase is above your current spending limit with Tabby, try a smaller cart or use another payment method",
+    "tabby_order_amount_too_low": "The purchase amount is below the minimum amount required to use Tabby, try adding more items or use another payment method",
+    "tabby_cancellation": "You aborted the payment. Please retry or choose another payment method.",
+    "tabby_failure": "Sorry, Tabby is unable to approve this purchase. Please use an alternative payment method for your order",
+    "redirecting-to-tabby-payment-page": "Redirecting to Tabby payment page.."
   },
   "home": {
     "centaurus-yacht-rental-dubai": "centaurus yacht rental dubai",
