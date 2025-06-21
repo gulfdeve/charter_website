@@ -26,8 +26,8 @@ const toursData = [
     liveBBQ: "Sandwiches, Assorted Croissants, Strawberry & Honey Jam, Muffins, & Fresh Fruits. Welcome Mimosa, Water, Tea, Coffee, Juices & Soft Drinks.<br/>*Vegetarian food available on request*",
     cruisingRoute: "Dubai Marina, JBR and Burj Al Arab",
     departurePoint: "Dubai Marina/Dubai Marina Harbour",
-    blueHeadline: "EVERY SUNDAY-WEDNESDAY",
-	  validity: "*Valid until July 2, 2025",
+    blueHeadline: "EVERY SUNDAY-THURSDAY",
+	  validity: "*Valid from July 1-September 15, 2025",
     yellowHeadline: "50% OFF",
     fareharborLink:
       "https://fareharbor.com/embeds/book/centauruscharter/items/633603/?full-items=yes&flow=1283212",
@@ -42,11 +42,11 @@ const toursData = [
     liveBBQ: "Wines, Beers, Softdrinks & Water",
     cruisingRoute: "Dubai Marina, Ain Dubai, Marina Canal and JBR",
     departurePoint: "Dubai Marina/Dubai Marina Harbour",
-    blueHeadline: "ALL DAYS OF THE WEEK",
-	  validity: "*Valid from July 5-September 15, 2025",
-    yellowHeadline: "Limited Time Offer",
+    blueHeadline: "EVERY SUNDAY-THURSDAY",
+	  validity: "*Valid from July 1-September 15, 2025",
+    yellowHeadline: "50% OFF",
     fareharborLink:
-      "https://fareharbor.com/embeds/book/centauruscharter/items/488868/?full-items=yes&flow=no",
+      "https://fareharbor.com/embeds/book/centauruscharter/items/646208/calendar/2025/06/?full-items=yes",
   },
   {
     id: 3,
@@ -58,8 +58,8 @@ const toursData = [
     liveBBQ: "Club Sandwich, Chicken & Beef Sliders, Vegetable Spring Rolls, Chicken Samosa & Fruit Plater. Water, Soft Drinks, Beer, Red Wine, White Wine & Sparkling Wine<br>*Vegetarian food available on request",
     cruisingRoute: "Dubai Marina, JBR and Burj Al Arab",
     departurePoint: "Dubai Marina/Dubai Marina Harbour",
-    blueHeadline: "EVERY SUNDAY-WEDNESDAY",
-	  validity: "*Valid until July 2, 2025",
+    blueHeadline: "EVERY SUNDAY-THURSDAY",
+	  validity: "*Valid from July 1-September 15, 2025",
     yellowHeadline: "50% OFF",
     fareharborLink:
       "https://fareharbor.com/embeds/book/centauruscharter/items/488868/?full-items=yes&flow=no",
@@ -74,8 +74,8 @@ const toursData = [
     liveBBQ: "Club Sandwich, Chicken & Beef Sliders, Vegetable Spring Rolls, Chicken Samosa & Fruit Plater. Water, Soft Drinks, Beer, Red Wine, White Wine & Sparkling Wine<br>*Vegetarian food available on request",
     cruisingRoute: "Dubai Marina, JBR and Burj Al Arab",
     departurePoint: "Dubai Marina/Dubai Marina Harbour",
-    blueHeadline: "EVERY SUNDAY-WEDNESDAY",
-	  validity: "*Valid until July 2, 2025",
+    blueHeadline: "EVERY SUNDAY-THURSDAY",
+	  validity: "*Valid from July 1-September 15, 2025",
     yellowHeadline: "50% OFF",
     fareharborLink:
       "https://fareharbor.com/embeds/book/centauruscharter/items/488872/?full-items=yes&flow=no",
