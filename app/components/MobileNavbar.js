@@ -48,7 +48,7 @@ export default function MobileNavbar({
 
           <div className="flex items-center gap-3 md:gap-6">
             {/* WhatsApp */}
-            <Link aria-label="whatsapp" href={header_whatsapp_url || "#"}>
+            <Link aria-label="whatsapp" href={t("header.navbar_whatsapp_url")}>
               <IoLogoWhatsapp size={24} className="text-primary-blue-2" />
             </Link>
             {/* Phone */}

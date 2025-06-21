@@ -322,7 +322,7 @@ export default function Navbar() {
               <Link href={header_phone_number_url || "#"} aria-label="Phone">
                 <FaPhoneAlt className="w-4 h-4 text-primary-blue-2 hover:text-primary-blue hover:scale-110 transition-transform duration-200 text-2xl" />
               </Link>
-              <Link href={header_whatsapp_url || "#"} aria-label="WhatsApp">
+              <Link href={t("header.navbar_whatsapp_url")} aria-label="WhatsApp">
                 <IoLogoWhatsapp className="w-5 h-5 text-primary-blue-2 hover:text-primary-blue hover:scale-110 transition-transform duration-200 text-2xl" />
               </Link>
 
