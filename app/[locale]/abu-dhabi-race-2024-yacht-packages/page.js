@@ -14,7 +14,7 @@ const yachtData = [
     imageSrc: "/Poseidon--F1.jpg",
     imageAlt: "118 Ft Yacht - Poseidon",
     infoBoxes: [
-      { label: "Brand", value: "MAJESTY", icon: FaShip },
+      { label: "Brand", value: "Majesty", icon: FaShip },
       { label: "Capacity", value: "30", icon: FaUsers },
       { label: "Sleeps", value: "6", icon: FaBed },
       { label: "Marina Passes", value: "15", icon: FaIdCard },
@@ -43,7 +43,7 @@ const yachtData = [
     imageSrc: "/Majesty-88-LR (1).webp",
     imageAlt: "85 Ft Yacht - Kronos",
     infoBoxes: [
-      { label: "Brand", value: "DURETTI", icon: FaShip },
+      { label: "Brand", value: "Duretti", icon: FaShip },
       { label: "Capacity", value: "50", icon: FaUsers },
       { label: "Sleeps", value: "6", icon: FaBed },
       { label: "Marina Passes", value: "25", icon: FaIdCard },
@@ -236,7 +236,7 @@ const Page = () => {
 
         {/* Two-column (Image + Text) Section */}
         <div className="container mx-auto py-10">
-          <div className="flex flex-col lg:flex-row items-center justify-center bg-white rounded-[4rem] overflow-hidden lg:mx-20">
+          <div className="flex flex-col lg:flex-row items-center justify-center bg-white rounded-lg overflow-hidden lg:mx-20">
             {/* Left: Image */}
             <div className="rounded rounded-l-xl">
               <img
@@ -247,7 +247,7 @@ const Page = () => {
             </div>
 
             {/* Right: Text & Content */}
-            <div className="flex flex-col items-center justify-center bg-primary-blue-2 px-5 py-5 xl:w-[40rem] lg:w-[160rem] md:h-[541px] xl:h-[570px] lg:h-[504px] p-5">
+            <div className="flex flex-col items-center justify-center bg-primary-blue px-5 py-5 xl:w-[40rem] lg:w-[160rem] md:h-[541px] xl:h-[570px] lg:h-[504px] p-5">
               <h3 className="text-primary-yellow uppercase  text-4xl font-bold text-center pb-1">
                 F1 YACHT PARTY TICKETS
               </h3>
@@ -288,7 +288,7 @@ const Page = () => {
               >
                 <div className="flex flex-col rounded-xl overflow-hidden">
                   <img src={item.src} className="w-full" alt={item.text} />
-                  <h5 className="bg-primary-blue-2 text-primary-yellow text-center p-7 h-20 flex items-center justify-center">
+                  <h5 className="bg-primary-blue-2 text-white text-center p-7 h-20 flex items-center justify-center">
                     {item.text}
                   </h5>
                 </div>
@@ -319,49 +319,54 @@ const Page = () => {
         <h3 className="text-2xl md:text-3xl font-bold text-center text-blue-900 mb-8">
           F1 LUXURY YACHT CHARTER PACKAGES
         </h3>
-        <div className="container mx-auto  ">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-24 px-20">
+        <div className="container mx-auto ">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 ">
             {yachtData.map((yacht) => (
-              <div key={yacht.id} className="bg-white rounded-2xl shadow-custom overflow-hidden ">
+              <div key={yacht.id} className="bg-white rounded-2xl shadow-custom overflow-hidden p-5">
+                <h4 className=" font-bold text-black">{yacht.title}</h4>
                 {/* Yacht Image */}
+                <div className='relative'>
                 <Image
                   src={yacht.imageSrc}
                   alt={yacht.imageAlt}
                   width={800}
                   height={500}
-                  className="w-full h-auto object-cover"
+                  className="w-full h-auto object-cover rounded-lg mt-3"
                 />
-                <div className="p-6">
-                  <h4 className=" font-bold text-black py-2">{yacht.title}</h4>
-                  {/* Info Boxes */}
-                  <div className="grid grid-cols-2 gap-2 md:gap-4 text-blue-900">
+                {yacht.id !== 1 && (
+                <div class="absolute flex items-center gap-2 top-4 left-0 bg-primary-red text-white text-sm py-0.5 px-2 rounded-r-lg"><p>Sold Out</p>
+                </div>)}
+                {yacht.id === 1 && (
+                <div class="absolute flex items-center gap-2 top-4 left-0 gradient-custom-2 text-white text-sm py-0.5 px-2 rounded-r-lg"><p>Available</p>
+                </div>)}
+                  <div className="absolute grid grid-cols-4 gap-2  -bottom-5 left-0 right-0 mx-3 text-blue-900 rounded-lg bg-primary-blue-light">
                     {yacht.infoBoxes.map((box, index) => (
-                      <div key={index} className="border-2 border-primary-blue rounded-xl flex items-center">
-                        <div className="p-1 sm:p-3 flex items-center justify-center">
-                          <box.icon size={30} />
-                        </div>
-                        <div className="hidden sm:block h-12 border-r border-primary-blue" />
+                      <div key={index} className="flex items-center">
+                    
+                        <div className="hidden sm:block h-12" />
                         <div className="p-1 text-center flex-1">
-                          <div className="font-bold text-lg text-primary-blue">{box.value}</div>
-                          <div className="text-xs text-primary-blue uppercase">{box.label}</div>
+                          <div className="text-xs text-primary-grey">{box.label}</div>
+                          <div className="font-bold text-xs md:text-sm text-black">{box.value}</div>
                         </div>
                       </div>
                     ))}
                   </div>
-                  <hr className="my-5 border-primary-blue " />
+                  </div>
+                <div className="">
+                  {/* Info Boxes */}
                   {/* Inclusions & Add-ons */}
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 py-3">
+                  <div className="grid grid-cols-2 gap-4 mt-8 mb-4">
                     <div>
-                      <p className="font-bold text-primary-blue">INCLUSIONS:</p>
-                      <ul className="text-md text-primary-blue list-disc ml-10 mt-2 space-y-1">
+                      <p className="font-bold text-primary-blue">Inclusions:</p>
+                      <ul className="text-md text-primary-grey list-disc ml-6 mt-2 space-y-1">
                         {yacht.inclusions.map((item, idx) => (
                           <li key={idx}>{item}</li>
                         ))}
                       </ul>
                     </div>
                     <div>
-                      <p className="font-bold text-primary-blue">ADD-ONS:</p>
-                      <ul className="text-md text-primary-blue list-disc ml-10 mt-2 space-y-1">
+                      <p className="font-bold text-primary-blue">Add-ons:</p>
+                      <ul className="text-md text-primary-grey list-disc ml-6 mt-2 space-y-1">
                         {yacht.addons.map((item, idx) => (
                           <li key={idx}>{item}</li>
                         ))}
@@ -369,9 +374,14 @@ const Page = () => {
                     </div>
                   </div>
                   {/* CTA Button */}
+                  {yacht.id === 1 ? (
                   <Link href="https://wa.link/5ti3ye" target="_blank" >
                   <button className="w-full blue-solid-button">{yacht.cta}</button>
-                </Link>
+                  </Link>) : (
+                  <button className="w-full blue-solid-button cursor-not-allowed opacity-30">
+                  {yacht.cta}
+                  </button>
+                  )}
                 </div>
               </div>
             ))}
