@@ -13,9 +13,11 @@ import Modalsharedtours from "../../components/Modelsharedtours";
 import Modal2 from "@/app/components/Modal2";
 import { Link } from "@/app/i18n/routing";
 import ToursCarousel from "@/app/components/Sharedtoursmob";
+import { id } from "date-fns/locale";
 // Example data
 const toursData = [
   {
+    id: 1,
     image: "/midday.webp",
     title: "MORNING TOURS",
     cruisingTime: "9:00 AM - 11:00 AM",
@@ -31,6 +33,23 @@ const toursData = [
       "https://fareharbor.com/embeds/book/centauruscharter/items/633603/?full-items=yes&flow=1283212",
   },
   {
+    id: 2,
+    image: "/images/afternoon.webp",
+    title: "AFTERNOON TOURS",
+    cruisingTime: "04:00 PM - 05:00 PM",
+    adultPrice: "AED 159",
+    childPrice: "AED 149",
+    liveBBQ: "Wines, Beers, Softdrinks & Water",
+    cruisingRoute: "Dubai Marina, Ain Dubai, Marina Canal and JBR",
+    departurePoint: "Dubai Marina/Dubai Marina Harbour",
+    blueHeadline: "ALL DAYS OF THE WEEK",
+	  validity: "*Valid from July 5-September 15, 2025",
+    yellowHeadline: "Limited Time Offer",
+    fareharborLink:
+      "https://fareharbor.com/embeds/book/centauruscharter/items/488868/?full-items=yes&flow=no",
+  },
+  {
+    id: 3,
     image: "/sunset.webp",
     title: "SUNSET TOURS",
     cruisingTime: "05:30 PM - 07:30 PM",
@@ -46,6 +65,7 @@ const toursData = [
       "https://fareharbor.com/embeds/book/centauruscharter/items/488868/?full-items=yes&flow=no",
   },
   {
+    id: 4,
     image: "/night.webp",
     title: "NIGHT TOURS",
     cruisingTime: "08:00 PM - 10:00 PM",
@@ -138,7 +158,7 @@ const Page = () => {
         </div>
         {/* Card Grid */}
         <div className="md:block hidden">
-        <div className="grid grid-cols-1 md:grid-cols-3 py-10 gap-4 container mx-auto items-start">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 py-10 gap-4 container mx-auto items-start">
           {toursData.map((tour, index) => (
             <div
               key={index}
@@ -167,13 +187,17 @@ const Page = () => {
                       </p>
                     </div>
                   )}
-				  {tour.validity && (
-					<div className="px-3 py-1">
-					  <p className="text-xs uppercase text-white">
+				  <div className="px-3 py-1">
+            {tour.id === 2 ? (
+            <p className="text-xs uppercase text-primary-blue">
 						{tour.validity}
 					  </p>
-					</div>
+            ) : (<p className="text-xs uppercase text-white">
+						{tour.validity}
+					  </p>
+        
 				  )}
+					</div>
                 </div>
               </div>
 
@@ -198,24 +222,21 @@ const Page = () => {
                 )}
 
                 <div className="space-y-3">
-                  <div className="flex flex-row gap-3 items-center ml-1 mb-4">
-                    <FaClock size={25} className="text-primary-yellow-light" />
+                  <div className="flex flex-row gap-3 items-center">
                     <p className="text-primary-grey text-sm">
                       <span className="font-bold">Cruising Time:</span>{" "}
                       {tour.cruisingTime}
                     </p>
                   </div>
 
-                  <div className="flex flex-row gap-2 items-center mb-4">
-                    <IoMan size={32} className="text-primary-yellow-light" />
+                  <div className="flex flex-row gap-2 items-center">
                     <p className="text-primary-grey text-sm">
                       <span className="font-bold">Adult (12+):</span>{" "}
                       {tour.adultPrice}
                     </p>
                   </div>
 
-                  <div className="flex flex-row gap-2 items-center mb-3">
-                    <FaChild size={30} className="text-primary-yellow-light" />
+                  <div className="flex flex-row gap-2 items-center">
                     <p className="text-primary-grey text-sm">
                       <span className="font-bold">Child (4-11):</span>{" "}
                       {tour.childPrice}
@@ -235,7 +256,7 @@ const Page = () => {
                   >
                     <div className="space-y-4">
                       <div className="flex flex-row gap-2 items-center">
-                        <MdOutlineLocalDining className="text-primary-yellow-light text-[6rem] sm:text-[2.2rem] md:text-[8rem] lg:text-[4rem]" />
+                  
                         <p className="text-primary-grey text-sm">
                           <span className="font-bold">Inclusions:</span>{" "}
                           {/* {tour.liveBBQ} */}
@@ -244,10 +265,6 @@ const Page = () => {
                       </div>
 
                       <div className="flex flex-row gap-2.5 items-center">
-                        <FaCameraRetro
-                          size={30}
-                          className="text-primary-yellow-light"
-                        />
                         <p className="text-primary-grey text-sm">
                           <span className="font-bold">Cruising Route:</span>{" "}
                           {tour.cruisingRoute}
@@ -255,10 +272,6 @@ const Page = () => {
                       </div>
 
                       <div className="flex flex-row gap-2 items-center">
-                        <IoLocationSharp
-                          size={32}
-                          className="text-primary-yellow-light"
-                        />
                         <p className="text-primary-grey text-sm">
                           <span className="font-bold text-primary-grey">
                             Departure Point:
