@@ -93,7 +93,7 @@ const YachtCard = ({ yacht }) => {
         <div className="overflow-hidden rounded-lg" ref={emblaRef}>
           <div className="flex">
             {yacht.images.map((img, index) => (
-              <div key={index} className="min-w-full relative aspect-[4/3]">
+              <div key={index} className="min-w-full relative aspect-[5/3]">
                 <Link href={`yacht-rentals/${yacht.slug}`}>
                   <Image
                     src={`https://www.centauruscharter.net/product/galleryimages/${img}`}
