@@ -74,9 +74,12 @@ export default function ToursCarousel({ toursData }) {
                     )}
 					{tour.validity && (
 					<div className="px-3 py-1">
-					  <p className="text-xs uppercase text-white">
+            {tour.id === 2 ? (
+					  <p className="text-xs uppercase text-primary-blue">
 						{tour.validity}
-					  </p>
+					  </p>) : (<p className="text-xs uppercase text-white">
+						{tour.validity}
+					  </p>)}
 					</div>
 				  )}
                   </div>
@@ -103,22 +106,19 @@ export default function ToursCarousel({ toursData }) {
                   )}
 
                   <div className="space-y-3">
-                    <div className="flex flex-row gap-2 items-center ml-1.5 mb-4">
-                      <FaClock size={25} className="text-primary-yellow-light" />
+                    <div className="flex flex-row gap-2 items-center mb-4">
                       <p className="text-primary-grey text-sm">
                         <span className="font-bold">Cruising Time:</span>{" "}
                         {tour.cruisingTime}
                       </p>
                     </div>
                     <div className="flex flex-row gap-2 items-center mb-4">
-                      <IoMan size={35} className="text-primary-yellow-light" />
                       <p className="text-primary-grey text-sm">
                         <span className="font-bold">Adult (12+):</span>{" "}
                         {tour.adultPrice}
                       </p>
                     </div>
-                    <div className="flex flex-row gap-2 items-center ml-0.5 mb-3">
-                      <FaChild size={30} className="text-primary-yellow-light" />
+                    <div className="flex flex-row gap-2 items-center mb-3">
                       <p className="text-primary-grey text-sm">
                         <span className="font-bold">Child (4-11):</span>{" "}
                         {tour.childPrice}
@@ -134,22 +134,19 @@ export default function ToursCarousel({ toursData }) {
                     >
                       <div className="space-y-4">
                         <div className="flex flex-row gap-3 items-center">
-                          <MdOutlineLocalDining className="text-primary-yellow-light text-[8rem] sm:text-[4rem] lg:text-[6rem]" />
                           <p className="text-primary-grey text-sm">
                             {/* <span className="font-bold">Live BBQ:</span>{" "}
                             {tour.liveBBQ} */}
 							<span dangerouslySetInnerHTML={{ __html: tour.liveBBQ }} />
                           </p>
                         </div>
-                        <div className="flex flex-row gap-2.5 items-center ml-0.5">
-                          <FaCameraRetro size={35} className="text-primary-yellow-light" />
+                        <div className="flex flex-row gap-2.5 items-center">
                           <p className="text-primary-grey text-sm">
                             <span className="font-bold">Cruising Route:</span>{" "}
                             {tour.cruisingRoute}
                           </p>
                         </div>
                         <div className="flex flex-row gap-2 items-center">
-                          <IoLocationSharp size={32} className="text-primary-yellow-light" />
                           <p className="text-primary-grey text-sm">
                             <span className="font-bold">
                               Departure Point:
