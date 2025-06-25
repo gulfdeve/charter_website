@@ -6,6 +6,7 @@ import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io"
 import Image from 'next/image'
 import { FaShip, FaUsers, FaBed, FaIdCard } from "react-icons/fa"
 import Link from 'next/link'
+import Modal2 from "@/app/components/Modal2";
 
 const yachtData = [
   {
@@ -185,6 +186,14 @@ const yachtData = [
 ]
 
 const Page = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const handleQuote = () => {
+    setIsModalOpen(true);
+  };
+  const closeModal = () => {
+    setIsModalOpen(false);
+  };
+
   const emblaRef = useRef(null)
   const [emblaApi, setEmblaApi] = useState(null)
 
@@ -389,7 +398,7 @@ const Page = () => {
                   <Link href="https://wa.link/jimth5" target="_blank" >
                   <button className="w-full red-solid-button">WhatsApp Us</button>
                   </Link>
-                  <button className="w-full red-solid-button">
+                  <button onClick={handleQuote} className="w-full red-solid-button">
                   Get a Quote
                   </button></div>
                   ) : (
@@ -397,7 +406,7 @@ const Page = () => {
                   <button className="w-full red-solid-button cursor-not-allowed opacity-30">
                   WhatsApp Us
                   </button>
-                  <button className="w-full red-solid-button cursor-not-allowed opacity-30">
+                  <button onClick={handleQuote} className="w-full red-solid-button cursor-not-allowed opacity-30">
                   Get a Quote
                   </button>
                   </div>
@@ -535,6 +544,12 @@ const Page = () => {
     </section>
     
     </section>
+    <Modal2
+        isModalOpen={isModalOpen}
+        closeModal={closeModal}
+        idName="offers_id"
+        idValue="49"
+      />
     </>
   )
 }
