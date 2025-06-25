@@ -1,6 +1,6 @@
 "use client";
 import React, { useState } from "react";
-import Videoresidentoffers from "@/app/components/Videoresidentoffers";
+// import Videoresidentoffers from "@/app/components/Videoresidentoffers";
 import { FaWhatsapp } from "react-icons/fa";
 import Link from "next/link";
 import Modal2 from "@/app/components/Modal2";

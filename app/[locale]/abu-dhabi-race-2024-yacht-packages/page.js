@@ -1,7 +1,7 @@
 'use client'
 import React, { useEffect, useRef, useState } from 'react'
 import EmblaCarousel from 'embla-carousel'
-import Videof1 from "@/app/components/Videof1"
+// import Videof1 from "@/app/components/Videof1"
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io"
 import Image from 'next/image'
 import { FaShip, FaUsers, FaBed, FaIdCard } from "react-icons/fa"
