@@ -8,6 +8,7 @@ import { FaUser } from "react-icons/fa";
 import { IoIosPricetag } from "react-icons/io";
 import { RiDiscountPercentFill } from "react-icons/ri";
 import { FiArrowRight } from "react-icons/fi";
+import VideoLocal from "@/app/components/VideoLocal";
 
 
 const page = () => {
@@ -278,9 +279,10 @@ const page = () => {
   ];
   return (
     <>
-      <div>
+      {/* <div>
         <Videoresidentoffers />
-      </div>
+      </div> */}
+      <VideoLocal filename="/shared yacht tours.mp4" section="resident-offer" />
       <div className="container mx-auto flex flex-col items-center justify-center pt-6 lg:pt-10">
         <h3 className=" text-primary-blue text-center font-bold  pb-4">
           EXCLUSIVE 40% DISCOUNT FOR UAE RESIDENTS
