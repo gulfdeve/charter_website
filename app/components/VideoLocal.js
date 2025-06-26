@@ -122,7 +122,7 @@ export default function VideoLocal({ filename, section }) {
         <div className="bg-black">
 
         <div className="container mx-auto block text-center py-10 lg:absolute lg:-translate-x-2/4 lg:-translate-y-2/4 lg:left-2/4 lg:top-2/4 lg:mt-0">
-        <h1 className="text-3xl font-bold mb-4 text-red-700 md:text-primary-yellow  xl:text-3xl 2xl:text-4xl text-shadow">
+        <h1 className=" font-bold mb-4 text-primary-yellow  xl:text-3xl 2xl:text-4xl text-shadow">
           
 F1 GRAND PRIX ABU DHABI 2025 <br/><span className="text-white md:text-white">Private Yachts & Ticket Bookings
        </span>
@@ -133,7 +133,7 @@ F1 GRAND PRIX ABU DHABI 2025 <br/><span className="text-white md:text-white">Pri
           <a
           target="_blank"
           href="https://wa.link/jimth5"
-          className="blue-solid-button"
+          className="red-solid-button"
           >
             BOOK NOW
           </a>
