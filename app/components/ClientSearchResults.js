@@ -10,12 +10,8 @@ export default function ClientSearchResults({ searchParams: initialSearchParams,
   const [error, setError] = useState(null);
   const [searchParams, setSearchParams] = useState(initialSearchParams);
   const [hasParams, setHasParams] = useState(initialHasParams);
-  // const [debugInfo, setDebugInfo] = useState({
-  //   apiCalled: false,
-  //   apiStatus: null,
-  //   apiDetails: null,
-  //   timestamp: new Date().toISOString()
-  // });
+  const [currentPage, setCurrentPage] = useState(1); // Separate page state
+  const resultsContainerRef = useRef(null); // Ref for scrolling
 
   // Effect to handle form submission
   useEffect(() => {
@@ -25,6 +21,7 @@ export default function ClientSearchResults({ searchParams: initialSearchParams,
     const handleSubmit = (e) => {
       e.preventDefault();
       setLoading(true);
+      setCurrentPage(1); // Reset to first page on new search
       
       // Get form data
       const formData = new FormData(form);
@@ -58,11 +55,13 @@ export default function ClientSearchResults({ searchParams: initialSearchParams,
     return () => form.removeEventListener('submit', handleSubmit);
   }, []);
 
-  // Effect to fetch data when search parameters change
+  // Effect to fetch data when search parameters (except page) change
   useEffect(() => {
     if (!hasParams) return;
+    setCurrentPage(1); // Reset to first page on new search
     fetchVessels();
-  }, [searchParams, hasParams]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [JSON.stringify({ ...searchParams, page: undefined })]); // Ignore page param
 
   // Function to fetch vessels from the API via our proxy
   async function fetchVessels() {
@@ -70,68 +69,30 @@ export default function ClientSearchResults({ searchParams: initialSearchParams,
     setError(null);
     
     try {
-      // console.log("🔍 Starting search with parameters:", searchParams);
-      
-      // Build the proxy URL with search parameters
+      // Build the proxy URL with search parameters (excluding page)
       const qp = new URLSearchParams();
-      
-      // Add all search parameters
       for (const [key, value] of Object.entries(searchParams)) {
+        if (key === 'page') continue; // Don't send page param to API
         if (value) {
           qp.append(key, value);
         }
       }
-      
-      // Ensure required parameters
       if (!qp.has('currency')) qp.append('currency', 'USD');
       if (!qp.has('priceMin')) qp.append('priceMin', '1000');
       if (!qp.has('priceMax')) qp.append('priceMax', '5000');
-      
-      // Construct the proxy URL
       const proxyUrl = `/api/ankor-proxy?${qp.toString()}`;
-      
-      // setDebugInfo(prev => ({ 
-      //   ...prev, 
-      //   apiCalled: true,
-      //   proxyUrl: proxyUrl,
-      //   fetchStartTime: new Date().toISOString() 
-      // }));
-      
-      // console.log("🛰️ Fetching data via proxy:", proxyUrl);
-      
-      // Create AbortController for timeout
       const controller = new AbortController();
-      const timeoutId = setTimeout(() => controller.abort(), 30000); // 30 second timeout
-      
+      const timeoutId = setTimeout(() => controller.abort(), 30000);
       try {
-        // Make the request to our proxy
         const response = await fetch(proxyUrl, {
           signal: controller.signal
         });
-        
         clearTimeout(timeoutId);
-        
-        // setDebugInfo(prev => ({ 
-        //   ...prev, 
-        //   apiStatus: `${response.status} ${response.statusText}`,
-        //   fetchEndTime: new Date().toISOString()
-        // }));
-        
-        // Handle error responses
         if (!response.ok) {
           const errorData = await response.json();
-          // setDebugInfo(prev => ({ 
-          //   ...prev, 
-          //   apiDetails: errorData
-          // }));
           throw new Error(errorData.error || `API Error: ${response.statusText}`);
         }
-        
-        // Parse the JSON response
         const responseData = await response.json();
-        // console.log("✅ API request successful!");
-        
-        // Update state with the data
         setData(responseData);
       } catch (fetchError) {
         clearTimeout(timeoutId);
@@ -141,7 +102,6 @@ export default function ClientSearchResults({ searchParams: initialSearchParams,
         throw fetchError;
       }
     } catch (err) {
-      // console.error("❌ Error fetching vessels:", err);
       setError(err.message || 'An unknown error occurred');
     } finally {
       setLoading(false);
@@ -150,23 +110,26 @@ export default function ClientSearchResults({ searchParams: initialSearchParams,
 
   // Calculate pagination from data
   const pageSize = 20;
-  const currentPage = parseInt(searchParams.page || "1", 10);
   const hits = data?.hits || [];
   const totalPages = Math.ceil(hits.length / pageSize);
-  const startIdx = (currentPage - 1) * pageSize;
-  const paginatedHits = hits.slice(startIdx, startIdx + pageSize);
+  const paginatedHits = hits.slice((currentPage - 1) * pageSize, currentPage * pageSize);
 
   // Function to handle page change
   const handlePageChange = (pageNum) => {
-    setLoading(true);
-    const newParams = { ...searchParams, page: pageNum.toString() };
-    setSearchParams(newParams);
-    
-    // Update URL without page reload
+    setCurrentPage(pageNum);
+
+    // Scroll to top of results container
+    if (resultsContainerRef.current) {
+      resultsContainerRef.current.scrollIntoView({ behavior: 'smooth' });
+    }
+
+    // Update URL without page reload (keep search params, update page param)
     const url = new URL(window.location.pathname, window.location.origin);
-    for (const [key, value] of Object.entries(newParams)) {
+    for (const [key, value] of Object.entries(searchParams)) {
+      if (key === 'page') continue;
       url.searchParams.set(key, value);
     }
+    url.searchParams.set('page', pageNum);
     window.history.pushState({}, '', url.toString());
   };
 
@@ -241,16 +204,18 @@ export default function ClientSearchResults({ searchParams: initialSearchParams,
       )} */}
 
       {/* Results */}
-      {hasParams && !loading && data && (
-        <SearchResultsClient
-          paginatedHits={paginatedHits}
-          currentPage={currentPage}
-          totalPages={totalPages}
-          previousPageLink={currentPage > 1 ? `#page-${currentPage - 1}` : null}
-          nextPageLink={currentPage < totalPages ? `#page-${currentPage + 1}` : null}
-          onPageChange={handlePageChange}
-        />
-      )}
+      <div ref={resultsContainerRef}>
+        {hasParams && !loading && data && (
+          <SearchResultsClient
+            paginatedHits={paginatedHits}
+            currentPage={currentPage}
+            totalPages={totalPages}
+            previousPageLink={currentPage > 1 ? `#page-${currentPage - 1}` : null}
+            nextPageLink={currentPage < totalPages ? `#page-${currentPage + 1}` : null}
+            onPageChange={handlePageChange}
+          />
+        )}
+      </div>
     </>
   );
 }
