@@ -35,7 +35,7 @@
   },
   "header": {
     "whatsapp_url": "https://api.whatsapp.com/send?phone=971547928626&text=Hi!%20I%20came%20across%20your%20website.%20I%20want%20to%20inquire%20about%20a%20yacht%20charter%20in%20Dubai.",
-	"navbar_whatsapp_url": "https://api.whatsapp.com/send?phone=971524901269"
+    "navbar_whatsapp_url": "https://api.whatsapp.com/send?phone=971524901269"
   },
   "checkout": {
     "trip-date-and-time": "Trip Date & Time",
@@ -61,7 +61,15 @@
     "tabby_order_amount_too_low": "The purchase amount is below the minimum amount required to use Tabby, try adding more items or use another payment method",
     "tabby_cancellation": "You aborted the payment. Please retry or choose another payment method.",
     "tabby_failure": "Sorry, Tabby is unable to approve this purchase. Please use an alternative payment method for your order",
-    "redirecting-to-tabby-payment-page": "Redirecting to Tabby payment page.."
+    "redirecting-to-tabby-payment-page": "Redirecting to Tabby payment page..",
+    "payment-details": "Payment Details",
+    "amount-paid": "Amount Paid",
+    "customer-details": "Customer Details",
+    "customer-name": "Customer Name",
+    "phone-number": "Phone Number",
+    "email-address": "Email Address",
+    "yacht-name": "Yacht Name",
+    "go-to-homepage": "Go to Homepage"
   },
   "home": {
     "centaurus-yacht-rental-dubai": "centaurus yacht rental dubai",
@@ -121,5 +129,11 @@
   },
   "input": {
     "your-email": "Your Email"
+  },
+  "payment_success": {
+    "payment-successful": "Payment Successful!"
+  },
+  "thank-you-paragraph": {
+    "thank-you-for-your-booking-a-confirmation-and-invoice-have-been-sent-to-your-email": "Thank you for your booking. A confirmation and invoice have been sent to your email."
   }
 }
