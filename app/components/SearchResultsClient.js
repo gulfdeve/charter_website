@@ -88,13 +88,8 @@ export default function SearchResultsClient({
                     </div>
                   </div>
 
-                  <div className="grid grid-cols-2 gap-2">
-                    <Link
-                      href={`/yachts-for-sale-dubai/${vessel.slug || "some-default"}`}
-                      className="blue-solid-button  mt-5"
-                    >
-                      KNOW MORE
-                    </Link>
+                  <div className="grid grid-cols-1 gap-2">
+                   
                     <button 
                       className="py-1 mt-5 
                         text-base font-bold tracking-wider uppercase
