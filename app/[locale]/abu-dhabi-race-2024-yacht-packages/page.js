@@ -492,12 +492,18 @@ const Page = () => {
       </div>
 
     <section className="container mx-auto py-12">
-      {/* Main Content: Image on Left, Gold BG + Text on Right */}
-      <div className="w-full flex flex-col md:flex-row items-stretch">
-        {/* Left Column: Image */}
+      <h4 className="text-center text-white text-xl md:text-2xl font-bold mb-4">
+            ABU DHABI GRAND PRIX 2025
+          </h4>
+          <p className="text-center text-white mb-4 leading-relaxed text-sm">
+           <strong> Formula 1  </strong>is heading back to Abu Dhabi this December. Catch the
+            glamour, action and excitement!
+          </p>
+      <div className="w-full flex flex-col lg:flex-row gap-4 items-center justify-center">
+            
         <div className="w-full">
           <Image
-            src="/f1-footer-2.jpg"
+            src="/images/yachts-formula-one.webp"
             alt="Yachts at Marina"
             width={900}
             height={500}
@@ -505,15 +511,8 @@ const Page = () => {
           />
         </div>
 
-        {/* Right Column: Gold BG + Text */}
-        <div className=" container w-full text-white  ">
-          <h4 className="text-xl md:text-2xl font-bold mb-4">
-            ABU DHABI GRAND PRIX 2025
-          </h4>
-          <p className="mb-4 leading-relaxed text-sm">
-           <strong> Formula 1  </strong>is heading back to Abu Dhabi this December. Catch the
-            glamour, action and excitement!
-          </p>
+        <div className=" w-full text-white  ">
+  
           <p className="mb-4 leading-relaxed text-sm">
             Take a break from your busy life and grab access to<strong> Abu Dhabi GP </strong>
             2025. Watch this thrilling F1 race at <strong>Yas Marina Circuit </strong>from the
@@ -530,6 +529,11 @@ const Page = () => {
             accommodation and comfy lounges to socialize while toasting your
             drinks.
           </p>
+        </div>
+      </div>
+      <div className="w-full flex flex-col lg:flex-row gap-4 items-center justify-center">
+  
+        <div className="w-full text-white  ">
           <p className="leading-relaxed text-sm">
             Centaurus corporate hospitality will surely impress your potential
             partners and strengthen your business relationships. Enjoy 4 nights
@@ -542,7 +546,18 @@ const Page = () => {
             1 and have a good time ahead.
           </p>
         </div>
+        
+        <div className="w-full">
+          <Image
+            src="/images/race-formula-one.webp"
+            alt="Yachts at Marina"
+            width={900}
+            height={500}
+            className="w-full h-full object-cover"
+          />
+        </div>
       </div>
+      
     </section>
     
     </section>
