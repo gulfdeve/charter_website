@@ -119,23 +119,26 @@ export default function VideoLocal({ filename, section }) {
         className="hidden lg:block absolute inset-0 bg-black opacity-50"
         style={{ pointerEvents: "none" }}
         ></div>
-        <div className="container mx-auto block text-center mt-10 lg:absolute lg:-translate-x-2/4 lg:-translate-y-2/4 lg:left-2/4 lg:top-2/4 lg:mt-0">
-        <h1 className="text-3xl font-bold mb-4 text-black md:text-primary-yellow  xl:text-3xl 2xl:text-4xl text-shadow">
+        <div className="bg-black">
+
+        <div className="container mx-auto block text-center py-10 lg:absolute lg:-translate-x-2/4 lg:-translate-y-2/4 lg:left-2/4 lg:top-2/4 lg:mt-0">
+        <h1 className=" font-bold mb-4 text-primary-yellow  xl:text-3xl 2xl:text-4xl text-shadow">
           
-F1 GRAND PRIX ABU DHABI 2025 <br/><span className="text-black md:text-white">Private Yachts & Ticket Bookings
+F1 GRAND PRIX ABU DHABI 2025 <br/><span className="text-white md:text-white">Private Yachts & Ticket Bookings
        </span>
        </h1> 
-       <p className="text-sm mb-6 xl:mb-8 text-center  md:text-white text-black  xl:text-lg 2xl:text-xl text-shadow">
+       <p className="text-sm mb-6 xl:mb-8 text-center  text-white  xl:text-lg 2xl:text-xl text-shadow">
         4 days Yacht Rentals, Gourmet Delights, Exclusive Marina Access
         </p>
           <a
           target="_blank"
-            href="https://wa.link/jimth5"
-            className="blue-solid-button"
-            >
+          href="https://wa.link/jimth5"
+          className="red-solid-button"
+          >
             BOOK NOW
           </a>
           </div>
+        </div>
             </>
       ) 
       : section === "resident-offer" ? (
