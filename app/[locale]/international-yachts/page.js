@@ -61,11 +61,11 @@ export default function VesselsPage({ searchParams }) {
             />
           </div>
 
-          <div className="w-full mb-2 md:mb-0">
+          <div className="w-full mb-2 md:mb-0 relative">
             <select
               name="region"
               defaultValue={searchParams.region || ""}
-              className="block w-full border border-gray-300 py-2 px-3 focus:outline-none"
+              className="block w-full border border-gray-300 py-2 px-3 pr-10 focus:outline-none appearance-none"
             >
               <option value="">CHOOSE DESTINATION</option>
               <option value="Africa">Africa</option>
@@ -80,13 +80,14 @@ export default function VesselsPage({ searchParams }) {
               <option value="South & Central America">South & Central America</option>
               <option value="West Mediterranean">West Mediterranean</option>
             </select>
+            <svg className="h-5 w-5 text-gray-500 absolute right-3 top-1/2 transform -translate-y-1/2 pointer-events-none" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" /></svg>
           </div>
 
-          <div className="w-full mb-2 md:mb-0">
+          <div className="w-full mb-2 md:mb-0 relative">
             <select
               name="yachtType"
               defaultValue={searchParams.yachtType || ""}
-              className="block w-full border border-gray-300 py-2 px-3 focus:outline-none"
+              className="block w-full border border-gray-300 py-2 px-3 pr-10 focus:outline-none appearance-none"
             >
               <option value="">CHOOSE TYPE OF BOAT</option>
               <option value="Gulet">Gulet</option>
@@ -98,18 +99,20 @@ export default function VesselsPage({ searchParams }) {
               <option value="Expedition">Expedition</option>
               <option value="Sport fishing">Sport fishing</option>
             </select>
+            <svg className="h-5 w-5 text-gray-500 absolute right-3 top-1/2 transform -translate-y-1/2 pointer-events-none" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" /></svg>
           </div>
 
-          <div className="w-full mb-2 md:mb-0">
+          <div className="w-full mb-2 md:mb-0 relative">
             <select
               name="charterType"
               defaultValue={searchParams.charterType || ""}
-              className="block w-full border border-gray-300 py-2 px-3 focus:outline-none"
+              className="block w-full border border-gray-300 py-2 px-3 pr-10 focus:outline-none appearance-none"
             >
               <option value="">CHOOSE TYPE OF CHARTER</option>
               <option value="Crewed">Crewed</option>
               <option value="Bareboat">Bareboat</option>
             </select>
+            <svg className="h-5 w-5 text-gray-500 absolute right-3 top-1/2 transform -translate-y-1/2 pointer-events-none" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" /></svg>
           </div>
 
           <div className="w-full mb-2 md:mb-0">
@@ -120,10 +123,10 @@ export default function VesselsPage({ searchParams }) {
           </div>
 
           {/* Length Dropdown */}
-          <div className="w-full mb-2 md:mb-0">
+          <div className="w-full mb-2 md:mb-0 relative">
             <select
               defaultValue={searchParams.lengthRange || ""}
-              className="block w-full border border-gray-300 py-2 px-3 focus:outline-none"
+              className="block w-full border border-gray-300 py-2 px-3 pr-10 focus:outline-none appearance-none"
               id="lengthRangeDropdown"
             >
               <option value="">CHOOSE LENGTH</option>
@@ -132,19 +135,21 @@ export default function VesselsPage({ searchParams }) {
               <option value="18-25">18M-25M (62-82ft)</option>
               <option value=">25">Over 25M (&gt;82ft)</option>
             </select>
+            <svg className="h-5 w-5 text-gray-500 absolute right-3 top-1/2 transform -translate-y-1/2 pointer-events-none" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" /></svg>
           </div>
 
-          <div className="w-full mb-2 md:mb-0">
+          <div className="w-full mb-2 md:mb-0 relative">
             <select
               name="sleeps"
               defaultValue={searchParams.sleeps || ""}
-              className="block w-full border border-gray-300 py-2 px-3 focus:outline-none"
+              className="block w-full border border-gray-300 py-2 px-3 pr-10 focus:outline-none appearance-none"
             >
               <option value="">GUEST</option>
               {Array.from({ length: 20 }, (_, i) => (
                 <option key={i + 1} value={i + 1}>{i + 1}</option>
               ))}
             </select>
+            <svg className="h-5 w-5 text-gray-500 absolute right-3 top-1/2 transform -translate-y-1/2 pointer-events-none" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" /></svg>
           </div>
 
           {/* Price Range Dropdown with Slider */}
