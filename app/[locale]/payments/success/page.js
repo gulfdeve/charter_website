@@ -1,5 +1,7 @@
 // File: app/payment/success/page.jsx
 import React from "react";
+import { getTranslations } from 'next-intl/server';
+import Link from "next/link";
 
 // Next.js App Router server component
 export const runtime = "edge";
@@ -37,6 +39,7 @@ async function fetchBooking(slug) {
 
 // The page component must be the default export named 'Page'
 export default async function Page({ searchParams }) {
+  const t = await getTranslations();
   const { slug } = searchParams;
   const paymentId = getRealPaymentId(searchParams.payment_id);
 
@@ -58,11 +61,10 @@ export default async function Page({ searchParams }) {
     <div className="container mx-auto py-10 bg-white nav-space">
       <div className="flex flex-col items-center justify-center pt-10">
         <h2 className="text-primary-blue-2 font-bold text-2xl mb-4">
-          Payment Successful!
+          {t('payment_success.payment-successful')}
         </h2>
         <p className="max-w-xl text-primary-grey text-center mb-6">
-          Thank you for your booking. A confirmation and invoice have been sent
-          to your email.
+          {t('thank-you-paragraph.thank-you-for-your-booking-a-confirmation-and-invoice-have-been-sent-to-your-email')}
         </p>
         <img
           src="/images/booking-confirmed.webp"
@@ -74,73 +76,80 @@ export default async function Page({ searchParams }) {
             {/* Booking Summary */}
             <div className="flex flex-col s:flex-row justify-between pb-5 border-b-2">
               <div className="flex flex-col">
-                <p className="text-primary-grey text-xs">Booking No.</p>
+                <p className="text-primary-grey text-xs">{t('checkout.booking-information')}</p>
                 <p className="text-black">{slug}</p>
               </div>
               <div className="flex flex-col">
-                <p className="text-primary-grey text-xs">Booking Date & Time</p>
+                <p className="text-primary-grey text-xs">{t('checkout.trip-date-and-time')}</p>
                 <p className="text-black">{formatDate(booking.created_at)}</p>
               </div>
             </div>
 
             {/* Yacht Trip Details */}
             <p className="text-xl font-bold text-primary-blue-2 pt-6 pb-3">
-              Yacht Trip Details
+              {t('checkout.trip-date-and-time')}
             </p>
             <div className="grid grid-cols-1 s:grid-cols-2 md:grid-cols-3 gap-4">
               <div className="flex flex-col">
-                <p className="text-primary-grey text-xs">Yacht Name</p>
+                <p className="text-primary-grey text-xs">{t('checkout.yacht-name')}</p>
                 <p className="text-black">{booking.title}</p>
               </div>
               <div className="flex flex-col">
-                <p className="text-primary-grey text-xs">Trip Hours</p>
+                <p className="text-primary-grey text-xs">{t('checkout.trip-hours')}</p>
                 <p className="text-black">{booking.hours} Hours</p>
               </div>
               <div className="flex flex-col">
-                <p className="text-primary-grey text-xs">Trip Date & Time</p>
+                <p className="text-primary-grey text-xs">{t('checkout.trip-date-and-time')}</p>
                 <p className="text-black">{formatDate(booking.booking_date)}</p>
               </div>
             </div>
 
             {/* Customer Details */}
             <p className="text-xl font-bold text-primary-blue-2 pt-6 pb-3">
-              Customer Details
+              {t('checkout.customer-details')}
             </p>
             <div className="grid grid-cols-1 s:grid-cols-2 md:grid-cols-3 gap-4">
               <div className="flex flex-col">
-                <p className="text-primary-grey text-xs">Customer Name</p>
+                <p className="text-primary-grey text-xs">{t('checkout.customer-name')}</p>
                 <p className="text-black">{`${booking.first_name} ${booking.last_name}`}</p>
               </div>
               <div className="flex flex-col">
-                <p className="text-primary-grey text-xs">Phone Number</p>
+                <p className="text-primary-grey text-xs">{t('checkout.phone-number')}</p>
                 <p className="text-black">{booking.mobile}</p>
               </div>
               <div className="flex flex-col">
-                <p className="text-primary-grey text-xs">Email Address</p>
+                <p className="text-primary-grey text-xs">{t('checkout.email-address')}</p>
                 <p className="text-black">{booking.email}</p>
               </div>
             </div>
 
             {/* Payment Details */}
             <p className="text-xl font-bold text-primary-blue-2 pt-6 pb-3">
-              Payment Details
+              {t('checkout.payment-details')}
             </p>
             <div className="grid grid-cols-1 s:grid-cols-2 md:grid-cols-3 gap-4">
               <div className="flex flex-col">
-                <p className="text-primary-grey text-xs">Payment Method</p>
+                <p className="text-primary-grey text-xs">{t('checkout.payment-method')}</p>
                 <p className="text-black">Tabby</p>
               </div>
               <div className="flex flex-col">
-                <p className="text-primary-grey text-xs">Total Price</p>
+                <p className="text-primary-grey text-xs">{t('checkout.total')}</p>
                 <p className="text-black">AED {booking.amount}</p>
               </div>
               <div className="flex flex-col">
-                <p className="text-primary-grey text-xs">Amount Paid</p>
+                <p className="text-primary-grey text-xs">{t('checkout.amount-paid')}</p>
                 <p className="text-black">AED {booking.amount}</p>
               </div>
             </div>
           </div>
         )}
+        {/* Add Go to Homepage button */}
+        <Link
+          href="/"
+          className="mt-8 inline-block px-6 py-3 bg-primary-blue-2 text-white font-semibold rounded-lg shadow hover:bg-primary-blue-1 transition-colors text-lg"
+        >
+          {t('checkout.go-to-homepage')}
+        </Link>
       </div>
     </div>
   );
