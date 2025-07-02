@@ -102,7 +102,7 @@ export default function FirstFooter() {
           </li>
           <li className="mb-2">
             <Link
-              href="/abu-dhabi-race-2024-yacht-packages"
+              href="/abu-dhabi-race-yacht-charter"
               onClick={scrollToTop}
               className="text-text-primary-white capitalize"
             >

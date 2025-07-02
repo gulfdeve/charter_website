@@ -51,8 +51,6 @@ export default function VesselsPage({ searchParams }) {
         >
           {/* Always include these hidden fields for the required parameters */}
           <input type="hidden" name="currency" value="USD" />
-          <input type="hidden" name="priceMin" value="1000" />
-          <input type="hidden" name="priceMax" value="5000" />
           
           <input
             name="name"
@@ -91,10 +89,12 @@ export default function VesselsPage({ searchParams }) {
             <option value="Bareboat">Bareboat</option>
           </select>
 
-          <MultiDatePicker
-            name="rentalPeriod"
-            defaultDates={searchParams.rentalPeriod || []}
-          />
+          <div className="w-full mb-2 md:mb-0">
+            <MultiDatePicker
+              name="rentalPeriod"
+              defaultDates={searchParams.rentalPeriod || []}
+            />
+          </div>
 
           <input
             name="minLength"
@@ -125,6 +125,107 @@ export default function VesselsPage({ searchParams }) {
           </button>
         </form>
       </section>
+
+      {/* Add script to handle lengthRange mapping on submit */}
+      <script dangerouslySetInnerHTML={{
+        __html: `
+          document.addEventListener('DOMContentLoaded', function() {
+            var form = document.getElementById('searchForm');
+            // Price dropdown logic
+            var priceToggle = document.getElementById('priceDropdownToggle');
+            var priceMenu = document.getElementById('priceDropdownMenu');
+            var priceSlider = document.getElementById('priceRangeSlider');
+            var minPriceLabel = document.getElementById('minPriceLabel');
+            var maxPriceLabel = document.getElementById('maxPriceLabel');
+            var priceApply = document.getElementById('priceDropdownApply');
+            var priceDropdownLabel = document.getElementById('priceDropdownLabel');
+            var selectedPrice = 0;
+            if (priceToggle && priceMenu) {
+              priceToggle.addEventListener('click', function(e) {
+                priceMenu.style.display = priceMenu.style.display === 'block' ? 'none' : 'block';
+              });
+              document.addEventListener('click', function(e) {
+                if (!priceToggle.contains(e.target) && !priceMenu.contains(e.target)) {
+                  priceMenu.style.display = 'none';
+                }
+              });
+            }
+            if (priceSlider && minPriceLabel && maxPriceLabel) {
+              priceSlider.addEventListener('input', function(e) {
+                selectedPrice = priceSlider.value;
+                minPriceLabel.textContent = '0';
+                maxPriceLabel.textContent = Number(selectedPrice).toLocaleString();
+              });
+            }
+            if (priceApply && priceMenu && priceDropdownLabel) {
+              priceApply.addEventListener('click', function() {
+                priceDropdownLabel.textContent = '0 - ' + Number(selectedPrice).toLocaleString();
+                priceMenu.style.display = 'none';
+              });
+            }
+            if (form) {
+              form.addEventListener('submit', function(e) {
+                // Remove any previous hidden min/max price
+                var oldMinP = form.querySelector('input[name=priceMin]');
+                var oldMaxP = form.querySelector('input[name=priceMax]');
+                if (oldMinP) oldMinP.remove();
+                if (oldMaxP) oldMaxP.remove();
+                // Add priceMin and priceMax if price selected
+                if (selectedPrice > 0) {
+                  var minInput = document.createElement('input');
+                  minInput.type = 'hidden';
+                  minInput.name = 'priceMin';
+                  minInput.value = '0';
+                  form.appendChild(minInput);
+                  var maxInput = document.createElement('input');
+                  maxInput.type = 'hidden';
+                  maxInput.name = 'priceMax';
+                  maxInput.value = selectedPrice;
+                  form.appendChild(maxInput);
+                }
+                // Length logic (existing)
+                var dropdown = document.getElementById('lengthRangeDropdown');
+                var selected = dropdown ? dropdown.value : '';
+                var oldMin = form.querySelector('input[name=minLength]');
+                var oldMax = form.querySelector('input[name=maxLength]');
+                if (oldMin) oldMin.remove();
+                if (oldMax) oldMax.remove();
+                if (selected) {
+                  var min = '';
+                  var max = '';
+                  if (selected === '<16') {
+                    min = '';
+                    max = '54';
+                  } else if (selected === '16-18') {
+                    min = '55';
+                    max = '62';
+                  } else if (selected === '18-25') {
+                    min = '62';
+                    max = '82';
+                  } else if (selected === '>25') {
+                    min = '82';
+                    max = '';
+                  }
+                  if (min) {
+                    var minInputL = document.createElement('input');
+                    minInputL.type = 'hidden';
+                    minInputL.name = 'minLength';
+                    minInputL.value = min;
+                    form.appendChild(minInputL);
+                  }
+                  if (max) {
+                    var maxInputL = document.createElement('input');
+                    maxInputL.type = 'hidden';
+                    maxInputL.name = 'maxLength';
+                    maxInputL.value = max;
+                    form.appendChild(maxInputL);
+                  }
+                }
+              });
+            }
+          });
+        `
+      }} />
 
       {/* Client-side component to handle API calls */}
       <ClientSearchResults searchParams={searchParams} hasParams={hasParams} />
