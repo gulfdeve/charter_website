@@ -13,4 +13,4 @@ Disallow: /privacy-and-policy
 Disallow: /landing_f1_test
 Disallow: /formula-1-grand-prix-2024-black-friday-sale
 
-Sitemap: https://www.centauruscharter.com/sitemap.xml
+Sitemap: https://www.centauruscharter.com/sitemap.html
