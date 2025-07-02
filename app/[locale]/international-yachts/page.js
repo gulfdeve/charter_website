@@ -47,7 +47,7 @@ export default function VesselsPage({ searchParams }) {
       <section className="max-w-6xl mx-auto px-4 pb-8">
         <form
           id="searchForm"
-          className="grid grid-cols-1 md:grid-cols-5 gap-4 items-end"
+          className="text-sm grid grid-cols-2 md:grid-cols-5 gap-4 items-end p-5 rounded-md bg-primary-blue-light"
         >
           {/* Always include these hidden fields for the required parameters */}
           <input type="hidden" name="currency" value="USD" />
@@ -56,7 +56,7 @@ export default function VesselsPage({ searchParams }) {
           
           <input
             name="name"
-            placeholder="VESSEL NAME"
+            placeholder="Vessel Name"
             defaultValue={searchParams.name || ""}
             className="block w-full border border-gray-300 py-2 px-3 focus:outline-none"
           />
@@ -66,7 +66,7 @@ export default function VesselsPage({ searchParams }) {
             defaultValue={searchParams.region || ""}
             className="block w-full border border-gray-300 py-2 px-3 focus:outline-none"
           >
-            <option value="">CHOOSE DESTINATION</option>
+            <option value="">Choose Destination</option>
             <option value="Africa">Africa</option>
             {/* … */}
           </select>
@@ -76,7 +76,7 @@ export default function VesselsPage({ searchParams }) {
             defaultValue={searchParams.yachtType || ""}
             className="block w-full border border-gray-300 py-2 px-3 focus:outline-none"
           >
-            <option value="">CHOOSE TYPE OF BOAT</option>
+            <option value="">Choose Type of Boat</option>
             <option value="Sailboat">Gulet</option>
             {/* … */}
           </select>
@@ -86,7 +86,7 @@ export default function VesselsPage({ searchParams }) {
             defaultValue={searchParams.charterType || ""}
             className="block w-full border border-gray-300 py-2 px-3 focus:outline-none"
           >
-            <option value="">CHOOSE TYPE OF CHARTER</option>
+            <option value="">Choose Type of Charter</option>
             <option value="Crewed">Crewed</option>
             <option value="Bareboat">Bareboat</option>
           </select>
@@ -98,28 +98,28 @@ export default function VesselsPage({ searchParams }) {
 
           <input
             name="minLength"
-            placeholder="MIN LENGTH"
+            placeholder="Min Length"
             defaultValue={searchParams.minLength || ""}
             className="block w-full border border-gray-300 py-2 px-3 focus:outline-none"
           />
 
           <input
             name="maxLength"
-            placeholder="MAX LENGTH"
+            placeholder="Max Length"
             defaultValue={searchParams.maxLength || ""}
             className="block w-full border border-gray-300 py-2 px-3 focus:outline-none"
           />
 
           <input
             name="sleeps"
-            placeholder="SLEEPS"
+            placeholder="Sleeps"
             defaultValue={searchParams.sleeps || ""}
             className="block w-full border border-gray-300 py-2 px-3 focus:outline-none"
           />
 
           <button
             type="submit"
-            className="col-span-2 bg-primary-blue text-white font-semibold py-2 px-6 uppercase"
+            className="col-span-2 bg-primary-blue text-white font-semibold py-2 px-6 rounded-md uppercase"
           >
             SEARCH
           </button>
