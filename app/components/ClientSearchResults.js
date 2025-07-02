@@ -12,6 +12,9 @@ export default function ClientSearchResults({ searchParams: initialSearchParams,
   const [hasParams, setHasParams] = useState(initialHasParams);
   const [currentPage, setCurrentPage] = useState(1); // Separate page state
   const resultsContainerRef = useRef(null); // Ref for scrolling
+  const [brandFilter, setBrandFilter] = useState('');
+  const [yearFilter, setYearFilter] = useState('');
+  const [cabinsFilter, setCabinsFilter] = useState('');
 
   // Effect to handle form submission
   useEffect(() => {
@@ -111,8 +114,25 @@ export default function ClientSearchResults({ searchParams: initialSearchParams,
   // Calculate pagination from data
   const pageSize = 20;
   const hits = data?.hits || [];
-  const totalPages = Math.ceil(hits.length / pageSize);
-  const paginatedHits = hits.slice((currentPage - 1) * pageSize, currentPage * pageSize);
+  // Get unique brands and years from hits
+  const uniqueBrands = Array.from(new Set(hits.map(h => h.make).filter(Boolean)));
+  const uniqueYears = Array.from(new Set(hits.map(h => h.builtYear).filter(Boolean))).sort((a, b) => b - a);
+  const uniqueCabins = Array.from(new Set(hits.map(h => h.cabins).filter(Boolean))).sort((a, b) => a - b);
+  // Filter hits by brand and year
+  const filteredHits = hits.filter(h => {
+    let brandMatch = true;
+    let yearMatch = true;
+    let cabinsMatch = true;
+    if (brandFilter) brandMatch = h.make === brandFilter;
+    if (yearFilter) yearMatch = String(h.builtYear) === String(yearFilter);
+    if (cabinsFilter) cabinsMatch = String(h.cabins) === String(cabinsFilter);
+    return brandMatch && yearMatch && cabinsMatch;
+  });
+  const totalPages = Math.ceil(filteredHits.length / pageSize);
+  const paginatedHits = filteredHits.slice((currentPage - 1) * pageSize, currentPage * pageSize);
+
+  // Only show available cabins in the dropdown (after brand/year filter)
+  const availableCabins = Array.from(new Set(filteredHits.map(h => h.cabins).filter(Boolean))).sort((a, b) => a - b);
 
   // Function to handle page change
   const handlePageChange = (pageNum) => {
@@ -144,6 +164,69 @@ export default function ClientSearchResults({ searchParams: initialSearchParams,
               <div className="text-lg font-semibold">Searching for yachts...</div>
             </div>
           </div>
+        </div>
+      )}
+
+      {/* Brand and Year Filters (only show if there are results) */}
+      {!loading && filteredHits.length > 0 && (
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-2 sm:gap-4 justify-center items-stretch my-4 sm:my-6 w-full max-w-2xl mx-auto px-4">
+          {uniqueBrands.length > 1 && (
+            <div className="relative w-full flex flex-col">
+              <label className="mb-1 font-semibold text-sm sm:text-base">Brand:</label>
+              <div className="relative">
+                <select
+                  value={brandFilter}
+                  onChange={e => { setBrandFilter(e.target.value); setCurrentPage(1); }}
+                  className="border border-gray-300 py-2 px-3 pr-10 appearance-none focus:outline-none focus:ring-2 focus:ring-primary-blue focus:border-primary-blue w-full rounded-none text-sm sm:text-base"
+                  style={{ borderRadius: 0 }}
+                >
+                  <option value="">All Brands</option>
+                  {uniqueBrands.map(brand => (
+                    <option key={brand} value={brand}>{brand}</option>
+                  ))}
+                </select>
+                <svg className="h-5 w-5 text-gray-500 absolute right-3 top-1/2 transform -translate-y-1/2 pointer-events-none" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" /></svg>
+              </div>
+            </div>
+          )}
+          {uniqueYears.length > 1 && (
+            <div className="relative w-full flex flex-col">
+              <label className="mb-1 font-semibold text-sm sm:text-base">Year:</label>
+              <div className="relative">
+                <select
+                  value={yearFilter}
+                  onChange={e => { setYearFilter(e.target.value); setCurrentPage(1); }}
+                  className="border border-gray-300 py-2 px-3 pr-10 appearance-none focus:outline-none focus:ring-2 focus:ring-primary-blue focus:border-primary-blue w-full rounded-none text-sm sm:text-base"
+                  style={{ borderRadius: 0 }}
+                >
+                  <option value="">All Years</option>
+                  {uniqueYears.map(year => (
+                    <option key={year} value={year}>{year}</option>
+                  ))}
+                </select>
+                <svg className="h-5 w-5 text-gray-500 absolute right-3 top-1/2 transform -translate-y-1/2 pointer-events-none" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" /></svg>
+              </div>
+            </div>
+          )}
+          {uniqueCabins.length > 1 && (
+            <div className="relative w-full flex flex-col">
+              <label className="mb-1 font-semibold text-sm sm:text-base">Cabins:</label>
+              <div className="relative">
+                <select
+                  value={cabinsFilter}
+                  onChange={e => { setCabinsFilter(e.target.value); setCurrentPage(1); }}
+                  className="border border-gray-300 py-2 px-3 pr-10 appearance-none focus:outline-none focus:ring-2 focus:ring-primary-blue focus:border-primary-blue w-full rounded-none text-sm sm:text-base"
+                  style={{ borderRadius: 0 }}
+                >
+                  <option value="">All Cabins</option>
+                  {availableCabins.map(cabins => (
+                    <option key={cabins} value={cabins}>{cabins}</option>
+                  ))}
+                </select>
+                <svg className="h-5 w-5 text-gray-500 absolute right-3 top-1/2 transform -translate-y-1/2 pointer-events-none" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" /></svg>
+              </div>
+            </div>
+          )}
         </div>
       )}
 

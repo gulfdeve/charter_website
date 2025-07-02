@@ -1,8 +1,21 @@
 // app/[locale]/international-yachts/page.js
+"use client"
 import MultiDatePicker from "@/app/components/MultiDatePicker";
 import ClientSearchResults from "@/app/components/ClientSearchResults"; // New client component
+import PriceRangeSlider from "@/app/components/PriceRangeSlider";
+import React, { useRef, useState, useEffect } from "react";
+import { useSearchParams } from 'next/navigation';
 
-export default function VesselsPage({ searchParams }) {
+export default function VesselsPage() {
+  const searchParamsObj = {};
+  const searchParams = useSearchParams();
+  // Convert searchParams (URLSearchParams) to plain object
+  if (searchParams && typeof searchParams.forEach === 'function') {
+    searchParams.forEach((value, key) => {
+      searchParamsObj[key] = value;
+    });
+  }
+
   // Additional diagnostic information
   // const renderInfo = {
   //   timestamp: new Date().toISOString(),
@@ -15,11 +28,43 @@ export default function VesselsPage({ searchParams }) {
   // };
   
   // Determine if we have search parameters
-  const hasParams = Object.keys(searchParams).length > 0;
+  const hasParams = Object.keys(searchParamsObj).length > 0;
   // renderInfo.hasParamsValue = hasParams;
 
+  // For controlled length range
+  const [lengthValue, setLengthValue] = useState(() => {
+    // Try to infer from minLength/maxLength in searchParamsObj
+    if (searchParamsObj.minLength && searchParamsObj.maxLength) {
+      return `${searchParamsObj.minLength}-${searchParamsObj.maxLength}`;
+    } else if (searchParamsObj.maxLength === '19') {
+      return '<20';
+    } else {
+      return '';
+    }
+  });
+
+  useEffect(() => {
+    // Sync hidden fields for minLength and maxLength with dropdown
+    const form = document.getElementById('searchForm');
+    if (!form) return;
+    const minField = form.querySelector('input[name="minLength"]');
+    const maxField = form.querySelector('input[name="maxLength"]');
+    if (!minField || !maxField) return;
+    if (lengthValue === '') {
+      minField.value = '';
+      maxField.value = '';
+    } else if (lengthValue === '<20') {
+      minField.value = '';
+      maxField.value = '19';
+    } else {
+      const [min, max] = lengthValue.split('-');
+      minField.value = min;
+      maxField.value = max;
+    }
+  }, [lengthValue]);
+
   return (
-    <div className="bg-white w-full h-full mt-14 md:mt-0 mb-36 nav-space">
+    <div className="bg-white w-full h-full  md:mt-0 mb-36 nav-space">
       {/* Always show basic diagnostic info at the top */}
       {/* <div className="bg-blue-50 border border-blue-200 rounded-md p-4 m-4">
         <h2 className="text-lg font-bold mb-2">Page Render Diagnostics</h2>
@@ -51,12 +96,15 @@ export default function VesselsPage({ searchParams }) {
         >
           {/* Always include these hidden fields for the required parameters */}
           <input type="hidden" name="currency" value="USD" />
+          {/* Hidden fields for minLength and maxLength */}
+          <input type="hidden" name="minLength" defaultValue={searchParamsObj.minLength || ''} />
+          <input type="hidden" name="maxLength" defaultValue={searchParamsObj.maxLength || ''} />
           
           <div className="w-full mb-2 md:mb-0">
             <input
               name="name"
               placeholder="VESSEL NAME"
-              defaultValue={searchParams.name || ""}
+              defaultValue={searchParamsObj.name || ""}
               className="block w-full border border-gray-300 py-2 px-3 focus:outline-none"
             />
           </div>
@@ -64,7 +112,7 @@ export default function VesselsPage({ searchParams }) {
           <div className="w-full mb-2 md:mb-0 relative">
             <select
               name="region"
-              defaultValue={searchParams.region || ""}
+              defaultValue={searchParamsObj.region || ""}
               className="block w-full border border-gray-300 py-2 px-3 pr-10 focus:outline-none appearance-none"
             >
               <option value="">CHOOSE DESTINATION</option>
@@ -86,7 +134,7 @@ export default function VesselsPage({ searchParams }) {
           <div className="w-full mb-2 md:mb-0 relative">
             <select
               name="yachtType"
-              defaultValue={searchParams.yachtType || ""}
+              defaultValue={searchParamsObj.yachtType || ""}
               className="block w-full border border-gray-300 py-2 px-3 pr-10 focus:outline-none appearance-none"
             >
               <option value="">CHOOSE TYPE OF BOAT</option>
@@ -105,7 +153,7 @@ export default function VesselsPage({ searchParams }) {
           <div className="w-full mb-2 md:mb-0 relative">
             <select
               name="charterType"
-              defaultValue={searchParams.charterType || ""}
+              defaultValue={searchParamsObj.charterType || ""}
               className="block w-full border border-gray-300 py-2 px-3 pr-10 focus:outline-none appearance-none"
             >
               <option value="">CHOOSE TYPE OF CHARTER</option>
@@ -118,22 +166,23 @@ export default function VesselsPage({ searchParams }) {
           <div className="w-full mb-2 md:mb-0">
             <MultiDatePicker
               name="rentalPeriod"
-              defaultDates={searchParams.rentalPeriod || []}
+              defaultDates={searchParamsObj.rentalPeriod || []}
             />
           </div>
 
           {/* Length Dropdown */}
           <div className="w-full mb-2 md:mb-0 relative">
             <select
-              defaultValue={searchParams.lengthRange || ""}
+              value={lengthValue}
+              onChange={e => setLengthValue(e.target.value)}
               className="block w-full border border-gray-300 py-2 px-3 pr-10 focus:outline-none appearance-none"
               id="lengthRangeDropdown"
             >
-              <option value="">CHOOSE LENGTH</option>
-              <option value="<16">less than 16M (&lt;54ft)</option>
-              <option value="16-18">16M-18M (55-62ft)</option>
-              <option value="18-25">18M-25M (62-82ft)</option>
-              <option value=">25">Over 25M (&gt;82ft)</option>
+              <option value="">LENGTH</option>
+              <option value="<20">Less than 20m</option>
+              <option value="20-29">20m - 29m</option>
+              <option value="30-39">30m - 39m</option>
+              <option value="40-54">40m - 54m</option>
             </select>
             <svg className="h-5 w-5 text-gray-500 absolute right-3 top-1/2 transform -translate-y-1/2 pointer-events-none" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" /></svg>
           </div>
@@ -141,10 +190,10 @@ export default function VesselsPage({ searchParams }) {
           <div className="w-full mb-2 md:mb-0 relative">
             <select
               name="sleeps"
-              defaultValue={searchParams.sleeps || ""}
+              defaultValue={searchParamsObj.sleeps || ""}
               className="block w-full border border-gray-300 py-2 px-3 pr-10 focus:outline-none appearance-none"
             >
-              <option value="">GUEST</option>
+              <option value="">SLEEPS</option>
               {Array.from({ length: 20 }, (_, i) => (
                 <option key={i + 1} value={i + 1}>{i + 1}</option>
               ))}
@@ -153,21 +202,16 @@ export default function VesselsPage({ searchParams }) {
           </div>
 
           {/* Price Range Dropdown with Slider */}
-          <div className="w-full mb-2 md:mb-0 relative" style={{ zIndex: 10 }}>
-            <div id="priceDropdownToggle" className="block w-full border border-gray-300 py-2 px-3 bg-white cursor-pointer focus:outline-none flex items-center justify-between" tabIndex={0}>
-              <span id="priceDropdownLabel" className="text-md">CHOOSE PRICE</span>
-              {/* Dropdown icon */}
-              <svg id="priceDropdownIcon" xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 ml-2 text-gray-500" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" /></svg>
-            </div>
-            <div id="priceDropdownMenu" style={{ display: 'none', position: 'absolute', left: 0, right: 0, background: 'white', border: '1px solid #ccc', padding: '16px', zIndex: 20 }}>
-              <label htmlFor="priceRangeSlider" className="block mb-2">Select Price Range</label>
-              <input type="range" id="priceRangeSlider" min="0" max="250000" step="1000" defaultValue="0" style={{ width: '100%' }} />
-              <div className="flex justify-between mt-2">
-                <span id="minPriceLabel">0</span>
-                <span id="maxPriceLabel">250,000</span>
-              </div>
-              <button type="button" id="priceDropdownApply" className="mt-4 w-full bg-primary-blue text-white font-semibold py-1 px-4">Apply</button>
-            </div>
+          <div className="w-full mb-2 md:mb-0">
+            <PriceRangeSlider
+              min={0}
+              max={250000}
+              step={1000}
+              defaultValue={[
+                Number(searchParamsObj.priceMin) || 0,
+                Number(searchParamsObj.priceMax) || 250000
+              ]}
+            />
           </div>
 
           <div className="w-full md:col-span-2">
@@ -181,109 +225,8 @@ export default function VesselsPage({ searchParams }) {
         </form>
       </section>
 
-      {/* Add script to handle lengthRange mapping on submit */}
-      <script dangerouslySetInnerHTML={{
-        __html: `
-          document.addEventListener('DOMContentLoaded', function() {
-            var form = document.getElementById('searchForm');
-            // Price dropdown logic
-            var priceToggle = document.getElementById('priceDropdownToggle');
-            var priceMenu = document.getElementById('priceDropdownMenu');
-            var priceSlider = document.getElementById('priceRangeSlider');
-            var minPriceLabel = document.getElementById('minPriceLabel');
-            var maxPriceLabel = document.getElementById('maxPriceLabel');
-            var priceApply = document.getElementById('priceDropdownApply');
-            var priceDropdownLabel = document.getElementById('priceDropdownLabel');
-            var selectedPrice = 0;
-            if (priceToggle && priceMenu) {
-              priceToggle.addEventListener('click', function(e) {
-                priceMenu.style.display = priceMenu.style.display === 'block' ? 'none' : 'block';
-              });
-              document.addEventListener('click', function(e) {
-                if (!priceToggle.contains(e.target) && !priceMenu.contains(e.target)) {
-                  priceMenu.style.display = 'none';
-                }
-              });
-            }
-            if (priceSlider && minPriceLabel && maxPriceLabel) {
-              priceSlider.addEventListener('input', function(e) {
-                selectedPrice = priceSlider.value;
-                minPriceLabel.textContent = '0';
-                maxPriceLabel.textContent = Number(selectedPrice).toLocaleString();
-              });
-            }
-            if (priceApply && priceMenu && priceDropdownLabel) {
-              priceApply.addEventListener('click', function() {
-                priceDropdownLabel.textContent = '0 - ' + Number(selectedPrice).toLocaleString();
-                priceMenu.style.display = 'none';
-              });
-            }
-            if (form) {
-              form.addEventListener('submit', function(e) {
-                // Remove any previous hidden min/max price
-                var oldMinP = form.querySelector('input[name=priceMin]');
-                var oldMaxP = form.querySelector('input[name=priceMax]');
-                if (oldMinP) oldMinP.remove();
-                if (oldMaxP) oldMaxP.remove();
-                // Add priceMin and priceMax if price selected
-                if (selectedPrice > 0) {
-                  var minInput = document.createElement('input');
-                  minInput.type = 'hidden';
-                  minInput.name = 'priceMin';
-                  minInput.value = '0';
-                  form.appendChild(minInput);
-                  var maxInput = document.createElement('input');
-                  maxInput.type = 'hidden';
-                  maxInput.name = 'priceMax';
-                  maxInput.value = selectedPrice;
-                  form.appendChild(maxInput);
-                }
-                // Length logic (existing)
-                var dropdown = document.getElementById('lengthRangeDropdown');
-                var selected = dropdown ? dropdown.value : '';
-                var oldMin = form.querySelector('input[name=minLength]');
-                var oldMax = form.querySelector('input[name=maxLength]');
-                if (oldMin) oldMin.remove();
-                if (oldMax) oldMax.remove();
-                if (selected) {
-                  var min = '';
-                  var max = '';
-                  if (selected === '<16') {
-                    min = '';
-                    max = '54';
-                  } else if (selected === '16-18') {
-                    min = '55';
-                    max = '62';
-                  } else if (selected === '18-25') {
-                    min = '62';
-                    max = '82';
-                  } else if (selected === '>25') {
-                    min = '82';
-                    max = '';
-                  }
-                  if (min) {
-                    var minInputL = document.createElement('input');
-                    minInputL.type = 'hidden';
-                    minInputL.name = 'minLength';
-                    minInputL.value = min;
-                    form.appendChild(minInputL);
-                  }
-                  if (max) {
-                    var maxInputL = document.createElement('input');
-                    maxInputL.type = 'hidden';
-                    maxInputL.name = 'maxLength';
-                    maxInputL.value = max;
-                    form.appendChild(maxInputL);
-                  }
-                }
-              });
-            }
-          });
-        `
-      }} />
-
       {/* Client-side component to handle API calls */}
-      <ClientSearchResults searchParams={searchParams} hasParams={hasParams} />
+      <ClientSearchResults searchParams={searchParamsObj} hasParams={hasParams} />
     </div>
   );
 }
