@@ -18,13 +18,15 @@ export async function createTabbySession(booking, locale = 'en', merchantUrls = 
   const firstOrderDate = allBookings.length > 0 ? new Date(allBookings[0].created_at).toISOString() : utcBookingDate;
 
   const buyer_history = {
-    registered_since: firstOrderDate,
+    registered_since: new Date(firstOrderDate).toISOString(),
     loyalty_level: 0,
     wishlist_count: 0,
     is_social_networks_connected: false,
     is_phone_number_verified: true,
     is_email_verified: true
   };
+
+  console.log("buyer_history: ", buyer_history);
 
   // --- Order History ---
   const order_history = (Array.isArray(past_booking) ? past_booking : []).map(pb => ({
@@ -93,7 +95,7 @@ export async function createTabbySession(booking, locale = 'en', merchantUrls = 
       webhook: `${process.env.NEXT_PUBLIC_BASE_URL}/api/webhooks/tabby`
     }
   };
-  console.log("Tabby payload: ", payload);
+  // console.log("Tabby payload: ", payload);
 
   // Add merchant URLs if provided (this will override the defaults)
   if (merchantUrls) {

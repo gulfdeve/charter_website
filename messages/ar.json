@@ -34,7 +34,7 @@
   },
   "header": {
     "whatsapp_url": "https://api.whatsapp.com/send?phone=971547928626&text=Hi!%20I%20came%20across%20your%20website.%20I%20want%20to%20inquire%20about%20a%20yacht%20charter%20in%20Dubai.",
-	"navbar_whatsapp_url": "https://api.whatsapp.com/send?phone=971524901269"
+    "navbar_whatsapp_url": "https://api.whatsapp.com/send?phone=971524901269"
   },
   "checkout": {
     "trip-date-and-time": "تاريخ الرحلة",
@@ -60,7 +60,14 @@
     "tabby_order_amount_too_low": "قيمة الطلب أقل من الحد الأدنى المطلوب لاستخدام خدمة تابي. يُرجى زيادة قيمة الطلب أو استخدام وسيلة دفع أخرى.",
     "tabby_cancellation": "لقد ألغيت الدفعة. فضلاً حاول مجددًا أو اختر طريقة دفع أخرى.",
     "tabby_failure": "نأسف، تابي غير قادرة على الموافقة على هذه العملية. الرجاء استخدام طريقة دفع أخرى.",
-    "redirecting-to-tabby-payment-page": "إعادة التوجيه إلى صفحة الدفع Tabby .."
+    "redirecting-to-tabby-payment-page": "إعادة التوجيه إلى صفحة الدفع Tabby ..",
+    "payment-details": "تفاصيل الدفع",
+    "amount-paid": "المبلغ المدفوع",
+    "customer-details": "تفاصيل العميل",
+    "customer-name": "اسم العميل",
+    "email-address": "عنوان البريد الإلكتروني",
+    "phone-number": "رقم التليفون",
+    "go-to-homepage": "اذهب إلى الصفحة الرئيسية"
   },
   "home": {
     "centaurus-yacht-rental-dubai": "تأجير يخت سنتوروس دبي",
@@ -120,5 +127,11 @@
   "input": {
     "sign-up": "اشتراك",
     "your-email": "بريدك الإلكتروني"
+  },
+  "payment_success": {
+    "payment-successful": "الدفع ناجح!"
+  },
+  "thank-you-paragraph": {
+    "thank-you-for-your-booking-a-confirmation-and-invoice-have-been-sent-to-your-email": "شكرا لك على حجزك. \nتم إرسال تأكيد وفاتورة إلى بريدك الإلكتروني."
   }
 }

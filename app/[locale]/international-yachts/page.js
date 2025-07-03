@@ -92,7 +92,7 @@ export default function VesselsPage() {
       <section className="max-w-6xl mx-auto px-4 pb-8">
         <form
           id="searchForm"
-          className="grid grid-cols-1 md:grid-cols-5 gap-4 items-end"
+          className="text-sm grid grid-cols-2 md:grid-cols-5 gap-4 items-end p-5 rounded-md bg-primary-blue-light"
         >
           {/* Always include these hidden fields for the required parameters */}
           <input type="hidden" name="currency" value="USD" />
@@ -214,14 +214,12 @@ export default function VesselsPage() {
             />
           </div>
 
-          <div className="w-full md:col-span-2">
-            <button
-              type="submit"
-              className="w-full bg-primary-blue text-white font-semibold py-2 px-6 uppercase"
-            >
-              SEARCH
-            </button>
-          </div>
+          <button
+            type="submit"
+            className="col-span-2 bg-primary-blue text-white font-semibold py-2 px-6 rounded-md uppercase"
+          >
+            SEARCH
+          </button>
         </form>
       </section>
 

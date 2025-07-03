@@ -467,6 +467,32 @@
 		"destination": "/ru/abu-dhabi-race-2024-yacht-packages",
 		"permanent": true
 	  },
+
+	  {
+		"source": "/abu-dhabi-race-2024-yacht-packages",
+		"destination": "/abu-dhabi-race-yacht-charter",
+		"permanent": true
+	  },
+	  {
+		"source": "/en/abu-dhabi-race-2024-yacht-packages",
+		"destination": "/abu-dhabi-race-yacht-charter",
+		"permanent": true
+	  },
+	  {
+		"source": "/ar/abu-dhabi-race-2024-yacht-packages",
+		"destination": "/ar/abu-dhabi-race-yacht-charter",
+		"permanent": true
+	  },
+	  {
+		"source": "/zh/abu-dhabi-race-2024-yacht-packages",
+		"destination": "/zh/abu-dhabi-race-yacht-charter",
+		"permanent": true
+	  },
+	  {
+		"source": "/ru/abu-dhabi-race-2024-yacht-packages",
+		"destination": "/ru/abu-dhabi-race-yacht-charter",
+		"permanent": true
+	  },
 	  
 	  {
 		"source": "/shared-tours",

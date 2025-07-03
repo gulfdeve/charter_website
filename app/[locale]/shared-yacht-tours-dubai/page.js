@@ -40,7 +40,7 @@ const toursData = [
     adultPrice: "AED 159",
     childPrice: "AED 149",
     liveBBQ: "Wines, Beers, Softdrinks & Water",
-    cruisingRoute: "Dubai Marina, Ain Dubai, Marina Canal and JBR",
+    cruisingRoute: "Dubai Marina, Ain Dubai and JBR",
     departurePoint: "Dubai Marina/Dubai Marina Harbour",
     blueHeadline: "EVERY SUNDAY-THURSDAY",
 	  validity: "*Valid from July 1-September 15, 2025",
@@ -55,7 +55,7 @@ const toursData = [
     cruisingTime: "05:30 PM - 07:30 PM",
     adultPrice: "AED 259",
     childPrice: "AED 149",
-    liveBBQ: "Club Sandwich, Chicken & Beef Sliders, Vegetable Spring Rolls, Chicken Samosa & Fruit Plater. Water, Soft Drinks, Beer, Red Wine, White Wine & Sparkling Wine<br>*Vegetarian food available on request",
+    liveBBQ: "Club Sandwich, Chicken & Beef Sliders, Vegetable Spring Rolls, Chicken Samosa & Fruit Platter. Water, Soft Drinks, Beer, Red Wine, White Wine & Sparkling Wine<br>*Vegetarian food available on request",
     cruisingRoute: "Dubai Marina, JBR and Burj Al Arab",
     departurePoint: "Dubai Marina/Dubai Marina Harbour",
     blueHeadline: "EVERY SUNDAY-THURSDAY",
@@ -71,7 +71,7 @@ const toursData = [
     cruisingTime: "08:00 PM - 10:00 PM",
     adultPrice: "AED 199",
     childPrice: "AED 149",
-    liveBBQ: "Club Sandwich, Chicken & Beef Sliders, Vegetable Spring Rolls, Chicken Samosa & Fruit Plater. Water, Soft Drinks, Beer, Red Wine, White Wine & Sparkling Wine<br>*Vegetarian food available on request",
+    liveBBQ: "Club Sandwich, Chicken & Beef Sliders, Vegetable Spring Rolls, Chicken Samosa & Fruit Platter. Water, Soft Drinks, Beer, Red Wine, White Wine & Sparkling Wine<br>*Vegetarian food available on request",
     cruisingRoute: "Dubai Marina, JBR and Burj Al Arab",
     departurePoint: "Dubai Marina/Dubai Marina Harbour",
     blueHeadline: "EVERY SUNDAY-THURSDAY",
@@ -323,14 +323,14 @@ const Page = () => {
               className="rounded-t-lg"
               alt="Picture Moments"
             />
-            <h3 className="bg-primary-blue-2 text-white text-center text-xs lg:text-base font-bold p-2 rounded-b-lg">
-              PICTURE MOMENTS
+            <h3 className="uppercase bg-primary-blue-2 text-white text-center text-xs lg:text-base font-bold p-2 rounded-b-lg">
+              Picture Moments
             </h3>
           </div>
           <div>
-            <img src="/images/chicken-beef-sliders-on-yacht-dubai.webp" className="rounded-t-lg" alt="Beef & Chicken Sliders" />
+            <img src="/images/savory-bites.webp" className="rounded-t-lg" alt="Savory Bites" />
             <h3 className="uppercase bg-primary-blue-2 text-white text-center text-xs lg:text-base font-bold p-2 rounded-b-lg">
-              Beef & Chicken Sliders
+              Savory Bites
             </h3>
           </div>
           <div>
@@ -339,8 +339,8 @@ const Page = () => {
               className="rounded-t-lg"
               alt="Amazing View"
             />
-            <h3 className="bg-primary-blue-2 text-white text-center text-xs lg:text-base font-bold p-2 rounded-b-lg">
-              AMAZING VIEW
+            <h3 className="uppercase bg-primary-blue-2 text-white text-center text-xs lg:text-base font-bold p-2 rounded-b-lg">
+              Amazing View
             </h3>
           </div>
           <div>
@@ -349,8 +349,8 @@ const Page = () => {
               className="rounded-t-lg"
               alt="Bubbly Drinks"
             />
-            <h3 className="bg-primary-blue-2 text-white text-center text-xs lg:text-base font-bold p-2 rounded-b-lg">
-              BUBBLY DRINKS
+            <h3 className="uppercase bg-primary-blue-2 text-white text-center text-xs lg:text-base font-bold p-2 rounded-b-lg">
+              Bubbly Drinks
             </h3>
           </div>
         </div>

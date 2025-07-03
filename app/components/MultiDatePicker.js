@@ -52,7 +52,7 @@ export default function MultiDatePicker({ name, init = [] }) {
     } else if (selectedDates?.length === 1) {
       return selectedDates[0]?.format?.("YYYY-MM-DD") || "";
     }
-    return "RENTAL PERIOD";
+    return "Rental Period";
   };
 
   return (
