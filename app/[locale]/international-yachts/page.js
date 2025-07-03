@@ -3,6 +3,7 @@
 import MultiDatePicker from "@/app/components/MultiDatePicker";
 import ClientSearchResults from "@/app/components/ClientSearchResults"; // New client component
 import PriceRangeSlider from "@/app/components/PriceRangeSlider";
+import LengthRangeSlider from "@/app/components/LengthRangeSlider";
 import React, { useRef, useState, useEffect } from "react";
 import { useSearchParams } from 'next/navigation';
 
@@ -170,22 +171,16 @@ export default function VesselsPage() {
             />
           </div>
 
-          {/* Length Dropdown */}
-          <div className="w-full mb-2 md:mb-0 relative">
-            <select
-              value={lengthValue}
-              onChange={e => setLengthValue(e.target.value)}
-              className="block w-full border border-gray-300 py-2 px-3 pr-10 focus:outline-none appearance-none"
-              id="lengthRangeDropdown"
-            >
-              <option value="">LENGTH</option>
-              <option value="<20">Less than 20m</option>
-              <option value="20-29">20m - 29m</option>
-              <option value="30-39">30m - 39m</option>
-              <option value="40-54">40m - 54m</option>
-            </select>
-            <svg className="h-5 w-5 text-gray-500 absolute right-3 top-1/2 transform -translate-y-1/2 pointer-events-none" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" /></svg>
-          </div>
+          {/* Length Dropdown replaced with LengthRangeSlider */}
+          <LengthRangeSlider
+            min={0}
+            max={54}
+            step={1}
+            defaultValue={[
+              Number(searchParamsObj.minLength) || 10,
+              Number(searchParamsObj.maxLength) || 54
+            ]}
+          />
 
           <div className="w-full mb-2 md:mb-0 relative">
             <select
@@ -202,7 +197,7 @@ export default function VesselsPage() {
           </div>
 
           {/* Price Range Dropdown with Slider */}
-          <div className="w-full mb-2 md:mb-0">
+          {/* <div className="w-full mb-2 md:mb-0">
             <PriceRangeSlider
               min={0}
               max={250000}
@@ -212,7 +207,7 @@ export default function VesselsPage() {
                 Number(searchParamsObj.priceMax) || 250000
               ]}
             />
-          </div>
+          </div> */}
 
           <button
             type="submit"
