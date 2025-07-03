@@ -47,7 +47,7 @@ export async function GET(request) {
     );
     
     // Ensure required parameters are present'
-  console.log(token)
+  
     const qp = new URLSearchParams();
     
     // Add currency, priceMin, priceMax
