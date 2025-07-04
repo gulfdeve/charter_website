@@ -3,52 +3,14 @@ import React from 'react'
 import Image from 'next/image';
 import { useState, useEffect } from 'react';
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
+import blogs from './blogs.json';
+import Link from 'next/link';
 
 const carouselImages = [
   '/images/formula1-2025-banner.webp',
   '/images/race-formula-one.webp',
   '/images/formula1-2025-banner.webp',
 ];
-
-const blogPosts = [
-  {
-    image: '/images/formula1-2025-banner.webp',
-    title: 'First Blog Post',
-    author: 'Centaurus Charter',
-    date: 'July 2, 2025',
-  },
-  {
-    image: '/images/race-formula-one.webp',
-    title: 'Second Blog Post',
-    author: 'Centaurus Charter',
-    date: 'July 1, 2025',
-  },
-  {
-    image: '/images/formula1-2025-banner.webp',
-    title: 'Third Blog Post',
-    author: 'Centaurus Charter',
-    date: 'June 30, 2025',
-  },
-  {
-    image: '/images/race-formula-one.webp',
-    title: 'Fourth Blog Post',
-    author: 'Centaurus Charter',
-    date: 'June 30, 2025',
-  },
-  {
-    image: '/images/formula1-2025-banner.webp',
-    title: 'Fifth Blog Post',
-    author: 'Centaurus Charter',
-    date: 'June 30, 2025',
-  },
-  {
-    image: '/images/race-formula-one.webp',
-    title: 'Sixth Blog Post',
-    author: 'Centaurus Charter',
-    date: 'June 30, 2025',
-  },
-];
-
 
 export default function BlogPage() {
   const [current, setCurrent] = useState(0);
@@ -63,6 +25,11 @@ export default function BlogPage() {
 
   const nextSlide = () => setCurrent((current + 1) % carouselImages.length);
   const prevSlide = () => setCurrent((current - 1 + carouselImages.length) % carouselImages.length);
+
+  // Use blogs.json data
+  const featuredBlogs = blogs.filter(blog => blog.isFeatured);
+  const featuredBlog = featuredBlogs[0];
+  const blogPosts = featuredBlogs;
 
   return (
     <>
@@ -101,17 +68,24 @@ export default function BlogPage() {
       <div className="container mx-auto flex flex-col md:flex-row items-center text-center md:text-left gap-8 py-10">
         <div className="flex-shrink-0 md:w-1/2">
           <Image
-            src="/images/formula1-2025-banner.webp"
-            alt="Feature"
+            src={featuredBlog.featured_image}
+            alt={featuredBlog.title}
             width={600}
             height={400}
             className="rounded-lg object-cover w-full h-64"
           />
         </div>
         <div className="md:w-1/2">
-          <h2 className="text-2xl font-bold mb-4">Featured Blog Section</h2>
-          <p>
-            Lorem ipsum dolor sit amet consectetur. Leo egestas lobortis pulvinar dignissim tellus faucibus euismod nunc. Aliquam eu massa semper ornare mi pretium proin tellus. Eu ullamcorper vitae sit egestas tristique lectus elementum mollis vitae. Id fermentum et scelerisque ac consequat ac. Auctor pulvinar sed a pretium risus amet venenatis.
+          <h2 className="text-2xl font-bold mb-4">
+            <Link href={`/blogs/single-blog/${featuredBlog.slug}`} className="text-blue-600 underline font-semibold">
+              {featuredBlog.title}
+            </Link>
+          </h2>
+          <div className="text-sm text-gray-500 mb-2">
+            By {featuredBlog.author} &middot; {featuredBlog.date}
+          </div>
+          <p className="mb-4">
+            {featuredBlog.moreText?.slice(0, 200)}...
           </p>
         </div>
       </div>
@@ -119,14 +93,18 @@ export default function BlogPage() {
         {blogPosts.map((post, idx) => (
           <div key={idx} className="bg-white rounded-lg custom-shadow p-4 flex flex-col">
             <Image
-              src={post.image}
+              src={post.featured_image}
               alt={post.title}
               width={300}
               height={200}
               className="rounded-md object-cover w-full h-40 mb-4"
             />
-            <h3 className="text-lg font-semibold mb-2">{post.title}</h3>
-            <div className="text-sm text-gray-500">
+            <h3 className="text-lg font-semibold mb-2">
+              <Link href={`/blogs/${post.slug}`} className="text-blue-600 underline">
+                {post.title}
+              </Link>
+            </h3>
+            <div className="text-sm text-gray-500 mb-2">
               By {post.author} &middot; {post.date}
             </div>
           </div>
