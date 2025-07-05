@@ -267,7 +267,7 @@ const Page = () => {
             {/* Right: Text & Content */}
             <div className="flex flex-col items-center justify-center bg-gradient-to-r from-[#010E1C] via-red-900 to-[#010E1C] px-5 py-5 xl:w-[40rem] lg:w-[160rem] md:h-[541px] xl:h-[570px] lg:h-[504px] p-5">
               <h3 className="text-white uppercase md:text-2xl lg:text-4xl font-bold text-center pb-6">
-                 F1 YACHT PARTY TICKETS
+                 F1 Yacht Charter Experience
               </h3>
               <p className="text-white text-center text-sm md:text-base pb-8 px-2 md:px-2">
                 Join Centaurus Charter for an exclusive 4-day Formula 1 Yacht Party experience.
@@ -280,7 +280,7 @@ const Page = () => {
                 INQUIRE NOW
               </button></Link>
               <p className="mt-8 text-sm text-gray-200 text-center">
-                Limited tickets are available. T&Cs apply.
+                Only one yacht available remaining. T&Cs apply.
               </p>
             </div>
           </div>
@@ -290,8 +290,8 @@ const Page = () => {
       {/* Carousel Section */}
       <div className="bg-[linear-gradient(to_bottom,_black_0%,_#010e1c_100%)] pb-12">
       <div className="container mx-auto ">
-      <h4 className="text-2xl md:text-3xl font-bold text-center text-white mb-8">
-          F1 TICKET INCLUSIONS
+        <h4 className="uppercase text-2xl md:text-3xl font-bold text-center text-white mb-8">
+          F1 Yacht Package Inclusions
         </h4>
         <div ref={emblaRef} className="overflow-hidden relative">
           <div className="flex">
@@ -514,20 +514,11 @@ const Page = () => {
         <div className=" w-full text-white  ">
   
           <p className="mb-4 leading-relaxed text-sm">
-            Take a break from your busy life and grab access to<strong> Abu Dhabi GP </strong>
-            2025. Watch this thrilling F1 race at <strong>Yas Marina Circuit </strong>from the
-            comfort of a supreme yacht. Entertain yourself, your loved ones or
-            your colleagues on this private yacht charter while cheering your
-            fav Formula one riders. Get most out of the experience on the <strong>race
-            weekend</strong> with Centaurus F1 VIP Yacht Hospitality. Our yachts are
-            docked close to the racing track to watch the uninterrupted views
-            and are equipped with unmatched services. Our spacious yacht can
-            accommodate from 28 to 100 guests, so appreciate the buzz around you
-            with your loved ones. Enter into the exciting world of luxury at Yas
-            Marina with beautiful sea view, aesthetically pleasing yacht
-            interiors packed with all amenities, spacious guest rooms for
-            accommodation and comfy lounges to socialize while toasting your
-            drinks.
+            Step away from the everyday and dive into the thrill of the<strong> Abu Dhabi Grand Prix 2025 </strong>
+            . Watch the electrifying <strong>Formula 1 </strong>action unfold at <strong>Yas Marina Circuit</strong> with Centaurus F1 VIP Yacht Hospitality. Our yachts are
+            — all from the luxurious comfort of your own <strong>Luxury private yacht</strong>. Entertain your friends, family, or colleagues on board as you cheer for your favorite F1 drivers, surrounded by the vibrant energy of race weekend. With Centaurus
+          <strong> F1 VIP Yacht Hospitality</strong>, you’ll enjoy <strong>unobstructed trackside views</strong>, exceptional service, and a fully immersive experience. Our fleet of<strong> spacious yachts</strong>, accommodating between <strong>28 to 100 guests</strong>, offer <strong>elegant interiors</strong>, open decks, and 
+          <strong> premium amenities</strong>. Relax in stylish lounges, sip your favorite drinks, and soak in <strong>panoramic views </strong>of the marina and race atmosphere in true <strong>luxury</strong>.  
           </p>
         </div>
       </div>
@@ -535,16 +526,11 @@ const Page = () => {
   
         <div className="w-full text-white  ">
           <p className="leading-relaxed text-sm">
-            Centaurus corporate hospitality will surely impress your potential
-            partners and strengthen your business relationships. Enjoy 4 nights
-            stay in our yacht with yummy breakfast delicacies and selected
-            drinks package. Besides these breathtaking moments, <strong>F1 Yacht Charter </strong>
-            is an ideal option for people who love luxury and privacy. Explore
-            the greatest race in the sunshine of Abu Dhabi. This vibrant
-            atmosphere, ever-happening yacht parties, and once-in-a-lifetime
-            magical experience await you. Reserve your private yacht for Formula
-            1 and have a good time ahead.
-          </p>
+            Impress your clients and elevate your business connections with Centaurus corporate hospitality during the <strong>Abu Dhabi F1 weekend</strong>
+            . Stay aboard for <strong>4 nights</strong>, complete with <strong>delicious breakfast spreads</strong> and a <strong>premium drinks package</strong>. More than just a race, this is a
+          <strong>one-of-a-kind experience</strong> for those who appreciate <strong>privacy, elegance, </strong>and <strong>high-end living</strong>. Feel the pulse of 
+          <strong>Formula 1 </strong>under the Abu Dhabi sun, surrounded by <strong>non-stop energy, exclusive yacht parties</strong>, and pure <strong>luxury</strong>
+          . Whether for <strong>business or pleasure</strong>, our <strong>F1 yacht charters</strong> offer the perfect escape — <strong>reserve your private yacht</strong> now and create <strong>memories that will last a lifetime.</strong>          </p>
         </div>
         
         <div className="w-full">
