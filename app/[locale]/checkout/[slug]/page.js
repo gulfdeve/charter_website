@@ -99,6 +99,9 @@ export default async function CheckoutPage({ params, searchParams }) {
     );
   }
 
+  // Check if already paid
+  const isAlreadyPaid = booking.payment_status === 'Completed' && Number(booking.amount) === Number(booking.received_amount);
+
   // Check Tabby pre-approval status
   const tabbyStatus = await checkTabbyPreApproval(booking, locale);
   // console.log(tabbyStatus);
@@ -128,6 +131,14 @@ export default async function CheckoutPage({ params, searchParams }) {
       <div className="flex flex-col items-center justify-center pt-10">
         <h1 className="text-primary-blue-2 font-bold text-2xl md:text-3xl">{t('checkout.checkout')}</h1>
       </div>
+      
+      {isAlreadyPaid && (
+        <div className="bg-green-50 border border-green-200 rounded-md p-4 mt-4 mx-auto max-w-7xl">
+          <p className="text-green-600 text-sm font-semibold">
+            Payment has already been received for this order.
+          </p>
+        </div>
+      )}
       
       {(callback === 'cancel' || callback === 'failure') && (
         <div className="bg-red-50 border border-red-200 rounded-md p-4 mt-4 mx-auto max-w-7xl">
@@ -200,59 +211,37 @@ export default async function CheckoutPage({ params, searchParams }) {
                 <p className="text-primary-grey text-xs">{t('checkout.debit-credit-card')}</p>
               </div>
             </label>
-            <label className="w-full sm:w-auto relative">
-              <input
-                type="radio"
-                name="method"
-                value="tabby"
-                defaultChecked={method === 'tabby'}
-                className="peer hidden"
-                disabled={!tabbyStatus.isApproved}
-              />
-              <div className={`border-2 rounded-lg p-4 flex items-center gap-2 cursor-pointer 
-                ${!tabbyStatus.isApproved ? 'opacity-60 cursor-not-allowed' : 'peer-checked:border-primary-blue-2 peer-checked:bg-primary-blue-light'}`}>
-                <img src="/images/tabby.webp" alt="Tabby" className="w-16" />
-                <div>
-                  <p className="text-primary-grey text-xs">{t('checkout.pay-in-4-no-interest-no-fees')}</p>
-                  {tabbyStatus.isApproved ? (
+            {tabbyStatus.isApproved && (
+              <label className="w-full sm:w-auto relative">
+                <input
+                  type="radio"
+                  name="method"
+                  value="tabby"
+                  defaultChecked={method === 'tabby'}
+                  className="peer hidden"
+                />
+                <div className={`border-2 rounded-lg p-4 flex items-center gap-2 cursor-pointer peer-checked:border-primary-blue-2 peer-checked:bg-primary-blue-light`}>
+                  <img src="/images/tabby.webp" alt="Tabby" className="w-16" />
+                  <div>
+                    <p className="text-primary-grey text-xs">{t('checkout.pay-in-4-no-interest-no-fees')}</p>
                     <span className="text-green-600 text-xs block"></span>
-                  ) : (
-                    <>
-                      {/* <span className="text-red-500 text-xs block">{t('checkout.not-available')}</span> */}
-                      {tabbyStatus.sessionData?.configuration?.products?.installments?.rejection_reason && (
-                        <span className="text-red-400 text-xs block mt-1">
-                          {getTabbyRejectionMessage(tabbyStatus.sessionData.configuration.products.installments.rejection_reason, t)}
-                        </span>
-                      )}
-                    </>
-                  )}
+                  </div>
                 </div>
-              </div>
-              {tabbyStatus.error && typeof tabbyStatus.error === 'string' && (
-                <div className="absolute bottom-0 translate-y-full left-0 text-xs text-red-500 mt-1">
-                  {tabbyStatus.error}
-                </div>
-              )}
-            </label>
+                {tabbyStatus.error && typeof tabbyStatus.error === 'string' && (
+                  <div className="absolute bottom-0 translate-y-full left-0 text-xs text-red-500 mt-1">
+                    {tabbyStatus.error}
+                  </div>
+                )}
+              </label>
+            )}
           </div>
-
-          {/* {tabbyStatus.isApproved && tabbyStatus.sessionData?.configuration?.available_products?.installments?.[0] && (
-            <div className="mt-4 p-3 bg-blue-50 rounded-md border border-blue-200">
-              <p className="text-sm font-medium text-gray-700 mb-1">Pay with Tabby:</p>
-              <p className="text-xs text-gray-600">
-                Split your payment into {tabbyStatus.sessionData.configuration.available_products.installments[0].installments_count} 
-                {' '}interest-free payments of {' '}
-                <span className="font-semibold">
-                  AED {tabbyStatus.sessionData.configuration.available_products.installments[0].pay_per_installment}
-                </span>
-              </p>
-            </div>
-          )} */}
 
           {/* Tabby Promo Section */}
-          <div className="mt-4">
-            <TabbyPromoSection total={total} locale={params.locale} />
-          </div>
+          {tabbyStatus.isApproved && (
+            <div className="mt-4">
+              <TabbyPromoSection total={total} locale={params.locale} />
+            </div>
+          )}
         </div>
 
         {/* Right Side - Booking Info */}
@@ -298,21 +287,23 @@ export default async function CheckoutPage({ params, searchParams }) {
       </form>
 
       {/* Buttons remain outside form but linked via form attribute */}
-      <div className="mx-auto grid md:grid-cols-2 gap-4 mt-12 md:px-24">
-        <button 
-          type="button"
-          className="p-2 rounded-md font-semibold border-2 border-gray-500"
-        >
-          {t('checkout.cancel')}
-        </button>
-        <button
-          type="submit"
-          form="checkout-form"
-          className="p-2 rounded-md font-semibold text-white bg-primary-blue-2 hover:bg-primary-blue"
-        >
-          {t('checkout.confirm-checkout')}
-        </button>
-      </div>
+      {!isAlreadyPaid && (
+        <div className="mx-auto grid md:grid-cols-2 gap-4 mt-12 md:px-24">
+          <button 
+            type="button"
+            className="p-2 rounded-md font-semibold border-2 border-gray-500"
+          >
+            {t('checkout.cancel')}
+          </button>
+          <button
+            type="submit"
+            form="checkout-form"
+            className="p-2 rounded-md font-semibold text-white bg-primary-blue-2 hover:bg-primary-blue"
+          >
+            {t('checkout.confirm-checkout')}
+          </button>
+        </div>
+      )}
     </div>
   );
 }
