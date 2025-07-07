@@ -6,8 +6,8 @@ export async function createTabbySession(booking, locale = 'en', merchantUrls = 
   
   // Convert booking_date to UTC ISO 8601 format
   const utcBookingDate = new Date(booking_date).toISOString();
-  console.log("utcBookingDate: " + utcBookingDate);
-  console.log("phone: " + phone);
+  // console.log("utcBookingDate: " + utcBookingDate);
+  // console.log("phone: " + phone);
   
   // --- Buyer History ---
   let allBookings = Array.isArray(past_booking) ? [...past_booking] : [];
@@ -17,16 +17,27 @@ export async function createTabbySession(booking, locale = 'en', merchantUrls = 
   allBookings = allBookings.filter(b => b.created_at).sort((a, b) => new Date(a.created_at) - new Date(b.created_at));
   const firstOrderDate = allBookings.length > 0 ? new Date(allBookings[0].created_at).toISOString() : utcBookingDate;
 
+  // Calculate loyalty_level and wishlist_count
+  // If payment_status is available, use only paid bookings; otherwise, use all
+  let paidBookings = Array.isArray(past_booking)
+    ? past_booking.filter(b => b.payment_status ? b.payment_status === 'Completed' : true)
+    : [];
+  const loyalty_level = paidBookings.length;
+  const wishlist_count = paidBookings.reduce((sum, b) => {
+    const amt = typeof b.amount === 'number' ? b.amount : parseFloat(b.amount);
+    return sum + (isNaN(amt) ? 0 : amt);
+  }, 0);
+
   const buyer_history = {
     registered_since: new Date(firstOrderDate).toISOString(),
-    loyalty_level: 0,
-    wishlist_count: 0,
+    loyalty_level,
+    wishlist_count,
     is_social_networks_connected: false,
     is_phone_number_verified: true,
     is_email_verified: true
   };
 
-  console.log("buyer_history: ", buyer_history);
+  // console.log("buyer_history: ", buyer_history);
 
   // --- Order History ---
   const order_history = (Array.isArray(past_booking) ? past_booking : []).map(pb => ({
@@ -95,7 +106,10 @@ export async function createTabbySession(booking, locale = 'en', merchantUrls = 
       webhook: `${process.env.NEXT_PUBLIC_BASE_URL}/api/webhooks/tabby`
     }
   };
+  // console.log("loyalty_level: ", loyalty_level);
+  // console.log("wishlist_count: ", wishlist_count);
   // console.log("Tabby payload: ", payload);
+  // console.log("Tabby payload: ENDED");
 
   // Add merchant URLs if provided (this will override the defaults)
   if (merchantUrls) {
