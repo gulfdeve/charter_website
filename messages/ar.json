@@ -44,7 +44,7 @@
     "personal-information": "معلومات شخصية",
     "payment-method": "طريقة الدفع",
     "debit-credit-card": "بطاقة الخصم/الائتمان",
-    "pay-in-4-no-interest-no-fees": "قسّمها على 4. بدون أي فوائد، أو رسوم",
+    "pay-in-4-no-interest-no-fees": "ادفع لاحقًا عبر تابي​",
     "booking-information": "معلومات الحجز",
     "yacht-price": "سعر اليخت",
     "add-ons-price": "سعر الوظائف الإضافية",
@@ -67,7 +67,8 @@
     "customer-name": "اسم العميل",
     "email-address": "عنوان البريد الإلكتروني",
     "phone-number": "رقم التليفون",
-    "go-to-homepage": "اذهب إلى الصفحة الرئيسية"
+    "go-to-homepage": "اذهب إلى الصفحة الرئيسية",
+    "payment-has-already-been-received-for-this-order": "تم بالفعل استلام الدفع لهذا الطلب."
   },
   "home": {
     "centaurus-yacht-rental-dubai": "تأجير يخت سنتوروس دبي",

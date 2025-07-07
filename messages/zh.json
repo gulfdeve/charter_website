@@ -44,7 +44,7 @@
     "personal-information": "个人信息",
     "payment-method": "付款方式",
     "debit-credit-card": "借记卡/信用卡",
-    "pay-in-4-no-interest-no-fees": "付款4。无利息，无费用。",
+    "pay-in-4-no-interest-no-fees": "稍后付款",
     "booking-information": "预订信息",
     "yacht-price": "游艇价格",
     "add-ons-price": "附加价格",
@@ -62,7 +62,8 @@
     "customer-name": "客户名称",
     "email-address": "电子邮件",
     "phone-number": "电话号码",
-    "go-to-homepage": "转到主页"
+    "go-to-homepage": "转到主页",
+    "payment-has-already-been-received-for-this-order": "该订单已收到付款。"
   },
   "home": {
     "centaurus-yacht-rental-dubai": "迪拜的半人马座游艇",

@@ -44,7 +44,7 @@
     "personal-information": "Персональная информация",
     "payment-method": "Способ оплаты",
     "debit-credit-card": "Дебет/кредитная карта",
-    "pay-in-4-no-interest-no-fees": "Заплатить в 4. Нет процентов, без сборов.",
+    "pay-in-4-no-interest-no-fees": "Заплатить позже с табби",
     "booking-information": "Информация о бронировании",
     "yacht-price": "Цена яхты",
     "add-ons-price": "Дополнительная цена",
@@ -62,7 +62,8 @@
     "customer-name": "Название клиента",
     "email-address": "Адрес электронной почты",
     "phone-number": "Номер телефона",
-    "go-to-homepage": "Пойдите на домашнюю страницу"
+    "go-to-homepage": "Пойдите на домашнюю страницу",
+    "payment-has-already-been-received-for-this-order": "Оплата уже получена за этот заказ."
   },
   "home": {
     "centaurus-yacht-rental-dubai": "Прокат яхты Centaurus Dubai",

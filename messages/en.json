@@ -45,7 +45,7 @@
     "personal-information": "Personal Information",
     "payment-method": "Payment Method",
     "debit-credit-card": "Debit/Credit Card",
-    "pay-in-4-no-interest-no-fees": "Pay in 4. No interest, no fees.",
+    "pay-in-4-no-interest-no-fees": "Pay later with Tabby​",
     "not-available": "Not available",
     "booking-information": "Booking Information",
     "add-ons-price": "Add-ons Price",
@@ -69,7 +69,8 @@
     "phone-number": "Phone Number",
     "email-address": "Email Address",
     "yacht-name": "Yacht Name",
-    "go-to-homepage": "Go to Homepage"
+    "go-to-homepage": "Go to Homepage",
+    "payment-has-already-been-received-for-this-order": "Payment has already been received for this order."
   },
   "home": {
     "centaurus-yacht-rental-dubai": "centaurus yacht rental dubai",

@@ -135,7 +135,7 @@ export default async function CheckoutPage({ params, searchParams }) {
       {isAlreadyPaid && (
         <div className="bg-green-50 border border-green-200 rounded-md p-4 mt-4 mx-auto max-w-7xl">
           <p className="text-green-600 text-sm font-semibold">
-            Payment has already been received for this order.
+            {t('checkout.payment-has-already-been-received-for-this-order')}
           </p>
         </div>
       )}
