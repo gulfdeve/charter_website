@@ -42,7 +42,7 @@ const Aboutus = () => {
         <div className="order-1 md:order-2">
           <img
             alt="about us"
-            src="HomeAboutUs.webp"
+            src="images/poseidon.webp"
             className="rounded-lg w-full"
           />
         </div>
