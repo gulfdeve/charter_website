@@ -231,6 +231,15 @@ export default function FirstFooter() {
 				  info@centauruscharter.com
 				</a>
 			  </li>
+        <li className="flex items-center gap-2">
+				<MdEmail className="w-5 h-5 flex-shrink-0" />
+				<a
+				  href="mailto:sales@centauruscharter.com"
+				  className="hover:text-white text-left"
+				>
+				  sales@centauruscharter.com
+				</a>
+			  </li>
 			</ul>
 		  </div>
 		),
@@ -238,15 +247,18 @@ export default function FirstFooter() {
     {
       title: t('footer.for-enquiries'),
       content: (
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
         <ul className="text-text-primary-white">
           <li className="flex flex-col md:items-start items-center text-center md:text-left">
             <p className="font-semibold pb-3">{t('footer.english-russian')}</p>
+            <p className="">Lilia</p>
             <a
               className="mb-2 inline-block"
               href="tel:+971505484685"
             >
               +971 50 548 4685
             </a>
+            <p className="">Aliona</p>
             <a
               className="mb-2 inline-block"
               href="tel:+971502484678"
@@ -262,6 +274,8 @@ export default function FirstFooter() {
           </li>
           <li className="flex flex-col md:items-start items-center text-center md:text-left">
             <p className="font-semibold py-3">{t('footer.english-spanish-portuguese')}</p>
+            <p className="">Jhonathan</p>
+            
             <a
               className="mb-2 inline-block"
               href="tel:+971567277387"
@@ -275,14 +289,55 @@ export default function FirstFooter() {
               +971 50 648 4625
             </a>
           </li> */}
+          </ul>
+          <ul className="text-text-primary-white">
+          <li className="flex flex-col md:items-start items-center text-center md:text-left">
+            <p className="font-semibold pb-3">{t('footer.english-filipino')}</p>
+            <p className="">Tracy</p>
+            <a
+              className="mb-2 inline-block"
+              href="tel:+971524901269"
+            >
+              +971 52 490 1269
+            </a>
+            <p className="">May</p>
+            <a
+              className="mb-2 inline-block"
+              href="tel:+971565017057"
+            >
+              +971 56 501 7057
+            </a>
+            <p className="">Vicky</p>
+            <a
+              className="mb-2 inline-block"
+              href="tel:+971544783156"
+            >
+              +971 54 478 7057
+            </a>
+          </li>
+          </ul>
+          <ul className="text-text-primary-white">
+          <ul>
+          <li className="flex flex-col md:items-start items-center text-center md:text-left">
+            <p className="font-semibold pb-3">{t('footer.english-chinese')}</p>
+            <p className="">Cher</p>          
+            <a
+              className="mb-2 inline-block"
+              href="tel:+971544948573"
+              >
+              +971 54 494 8573
+            </a>
+          </li>
           <li className="flex flex-col md:items-start items-center text-center md:text-left">
             <p className="font-semibold py-3">{t('footer.english-arabic')}</p>
+            <p className="">Hisham</p>
             <a
               className="mb-2 inline-block"
               href="tel:+971565017078"
             >
               +971 56 501 7078
             </a>
+            <p className="">Bilal</p>
             <a
               className="mb-2 inline-block"
               href="tel:++971501452203"
@@ -290,24 +345,7 @@ export default function FirstFooter() {
               +971 50 145 2203
             </a>
           </li>
-          <li className="flex flex-col md:items-start items-center text-center md:text-left">
-            <p className="font-semibold py-3">{t('footer.english-filipino')}</p>
-            <a
-              className="mb-2 inline-block"
-              href="tel:+971565017057"
-            >
-              +971 56 501 7057
-            </a>
-          </li>
-          <li className="flex flex-col md:items-start items-center text-center md:text-left">
-            <p className="font-semibold py-3">{t('footer.english-chinese')}</p>
-            <a
-              className="mb-2 inline-block"
-              href="tel:+971544948573"
-            >
-              +971 54 494 8573
-            </a>
-          </li>
+          </ul>
           {/* <li className="flex flex-col md:items-start items-center text-center md:text-left">
             <p className="font-semibold py-3">English / Hindi</p>
             <a className="mb-2 inline-block" href="tel:+971501452203" onClick={scrollToTop}>
@@ -315,6 +353,7 @@ export default function FirstFooter() {
             </a>
           </li> */}
         </ul>
+        </div>
       ),
     },
     {
@@ -381,16 +420,22 @@ export default function FirstFooter() {
     </div>
       <div className="container py-4 mx-auto">
         {/** DESKTOP / LARGER SCREENS (Grid) **/}
-        <div className="hidden md:grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 gap-8">
-          {footerSections.map((section, index) => (
-            <div key={index}>
-              <div className="text-white font-semibold mb-4">
-                {section.title}
-              </div>
-              {section.content}
+        <div className="hidden md:grid gap-8 lg:[grid-template-columns:repeat(4,1fr)]">
+        {footerSections.map((section, index) => (
+          <div
+            key={index}
+            className={`
+              ${index >= 4 ? 'col-span-2' : ''}
+            `}
+          >
+            <div className="text-white font-semibold mb-4">
+              {section.title}
             </div>
-          ))}
-        </div>
+            {section.content}
+          </div>
+        ))}
+      </div>
+
 
         {/** MOBILE SCREENS (Accordion) **/}
         <div className="block md:hidden">
