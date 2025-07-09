@@ -195,36 +195,84 @@ const Page = () => {
     setIsModalOpen(false);
   };
 
-  const emblaRef = useRef(null)
-  const [emblaApi, setEmblaApi] = useState(null)
+  const emblaRef1 = useRef(null)
+  const [emblaApi1, setEmblaApi1] = useState(null)
 
   useEffect(() => {
-    if (emblaRef.current) {
-      const embla = EmblaCarousel(emblaRef.current, {
+    if (emblaRef1.current) {
+      const embla = EmblaCarousel(emblaRef1.current, {
         loop: false,
         align: 'start',
       })
-      setEmblaApi(embla)
+      setEmblaApi1(embla)
     }
   }, [])
 
-  const scrollPrev = () => emblaApi?.scrollPrev()
-  const scrollNext = () => emblaApi?.scrollNext()
+  const scrollPrev1 = () => emblaApi1?.scrollPrev()
+  const scrollNext1 = () => emblaApi1?.scrollNext()
+// Carousel 2
+  const emblaRef2 = useRef(null);
+  const [emblaApi2, setEmblaApi2] = useState(null);
 
-  const slides = [
-    { src: "/4-DAY FREE-FLOWING HOPS, WINE & SPIRITS.webp", text: "4-DAY FREE-FLOWING HOPS, WINE & SPIRITS" },
-    { src: "/IN-HOUSE MIXOLOGIST, PREMIUM DRINKS.webp", text: "IN-HOUSE MIXOLOGIST, PREMIUM DRINKS" },
-    { src: "/LIVE DJ ENTERTAINMENT ONBOARD.webp", text: "LIVE DJ ENTERTAINMENT ONBOARD" },
-    { src: "/SPECTACULAR F1 TRACKSIDE VIEWS.webp", text: "SPECTACULAR F1 TRACKSIDE VIEWS" },
+  useEffect(() => {
+    if (emblaRef2.current) {
+      const embla = EmblaCarousel(emblaRef2.current, {
+        loop: false,
+        align: "start",
+      });
+      setEmblaApi2(embla);
+    }
+  }, []);
+
+  const scrollPrev2 = () => emblaApi2?.scrollPrev();
+  const scrollNext2 = () => emblaApi2?.scrollNext();
+
+  const slidesone = [
+    // { src: "/4-DAY FREE-FLOWING HOPS, WINE & SPIRITS.webp", text: "4-DAY FREE-FLOWING HOPS, WINE & SPIRITS" },
+    // { src: "/IN-HOUSE MIXOLOGIST, PREMIUM DRINKS.webp", text: "IN-HOUSE MIXOLOGIST, PREMIUM DRINKS" },
+    // { src: "/SPECTACULAR F1 TRACKSIDE VIEWS.webp", text: "SPECTACULAR F1 TRACKSIDE VIEWS" },
+    // { src: "/PITLANE WALK 1 TIME ACCESS.webp", text: "PITLANE WALK 1 TIME ACCESS" },
+    // { src: "/VIEW POST-RACE FIREWORKS CELEBRATIONS.webp", text: "VIEW POST-RACE FIREWORKS CELEBRATIONS" },
+    // { src: "/ACCESS TO AFTER-RACE CONCERTS.webp", text: "ACCESS TO AFTER-RACE CONCERTS" },
+    // { src: "/DAILY ACCESS TO F1 OASIS AREA.webp", text: "DAILY ACCESS TO F1 OASIS AREA" },
+    // { src: "/PANORAMIC VIEWS OF YAS MARINA.webp", text: "PANORAMIC VIEWS OF YAS MARINA" },
+    // { src: "/4-DAY VIP YACHT PARTY ACCESS.webp", text: "4-DAY YACHT PARTY ACCESS" },
+    // { src: "/4-DAY GOURMET FOOD CATERING.webp", text: "4-DAY GOURMET FOOD CATERING" },
+
+    { src: "/4-DAY VIP YACHT PARTY ACCESS.webp", text: "4-DAY YACHT RENTAL" },
+    { src: "/4-DAY GOURMET FOOD CATERING.webp", text: "CREW SERVICE" },
     { src: "/PITLANE WALK 1 TIME ACCESS.webp", text: "PITLANE WALK 1 TIME ACCESS" },
+    { src: "/4-DAY GOURMET FOOD CATERING.webp", text: "4-DAY GOURMET FOOD CATERING" },
+    { src: "/4-DAY FREE-FLOWING HOPS, WINE & SPIRITS.webp", text: "FREE-FLOWING HOPS, WINE & SPIRITS" },
+    { src: "/IN-HOUSE MIXOLOGIST, PREMIUM DRINKS.webp", text: "IN-HOUSE MIXOLOGIST, PREMIUM DRINKS" },
+    { src: "/SPECTACULAR F1 TRACKSIDE VIEWS.webp", text: "SPECTACULAR F1 TRACKSIDE VIEWS" },
     { src: "/VIEW POST-RACE FIREWORKS CELEBRATIONS.webp", text: "VIEW POST-RACE FIREWORKS CELEBRATIONS" },
     { src: "/ACCESS TO AFTER-RACE CONCERTS.webp", text: "ACCESS TO AFTER-RACE CONCERTS" },
     { src: "/DAILY ACCESS TO F1 OASIS AREA.webp", text: "DAILY ACCESS TO F1 OASIS AREA" },
     { src: "/PANORAMIC VIEWS OF YAS MARINA.webp", text: "PANORAMIC VIEWS OF YAS MARINA" },
-    { src: "/4-DAY VIP YACHT PARTY ACCESS.webp", text: "4-DAY VIP YACHT PARTY ACCESS" },
-    { src: "/4-DAY GOURMET FOOD CATERING.webp", text: "4-DAY GOURMET FOOD CATERING" },
-  ]
 
+  ]
+  const slidestwo = [
+    // { src: "/4-DAY FREE-FLOWING HOPS, WINE & SPIRITS.webp", text: "4-DAY FREE-FLOWING HOPS, WINE & SPIRITS" },
+    // { src: "/IN-HOUSE MIXOLOGIST, PREMIUM DRINKS.webp", text: "IN-HOUSE MIXOLOGIST, PREMIUM DRINKS" },
+    // { src: "/LIVE DJ ENTERTAINMENT ONBOARD.webp", text: "LIVE DJ ENTERTAINMENT ONBOARD" },
+    // { src: "/SPECTACULAR F1 TRACKSIDE VIEWS.webp", text: "SPECTACULAR F1 TRACKSIDE VIEWS" },
+    // { src: "/PITLANE WALK 1 TIME ACCESS.webp", text: "PITLANE WALK 1 TIME ACCESS" },
+    // { src: "/VIEW POST-RACE FIREWORKS CELEBRATIONS.webp", text: "VIEW POST-RACE FIREWORKS CELEBRATIONS" },
+    // { src: "/ACCESS TO AFTER-RACE CONCERTS.webp", text: "ACCESS TO AFTER-RACE CONCERTS" },
+    // { src: "/DAILY ACCESS TO F1 OASIS AREA.webp", text: "DAILY ACCESS TO F1 OASIS AREA" },
+    // { src: "/PANORAMIC VIEWS OF YAS MARINA.webp", text: "PANORAMIC VIEWS OF YAS MARINA" },
+    // { src: "/4-DAY VIP YACHT PARTY ACCESS.webp", text: "4-DAY VIP YACHT PARTY ACCESS" },
+    // { src: "/4-DAY GOURMET FOOD CATERING.webp", text: "4-DAY GOURMET FOOD CATERING" },
+
+    { src: "/VIEW POST-RACE FIREWORKS CELEBRATIONS.webp", text: "HOTEL TRANSFER" },
+    { src: "/LIVE DJ ENTERTAINMENT ONBOARD.webp", text: "LIVE DJ ENTERTAINMENT ONBOARD" },
+    { src: "/ACCESS TO AFTER-RACE CONCERTS.webp", text: "BUGGY SERVICE" },
+    { src: "/4-DAY GOURMET FOOD CATERING.webp", text: "CATERING" },
+    { src: "/images/bubbly-drinks-on-yacht-dubai.webp", text: "PREMIUM DRINKS" },
+    { src: "/LIVE DJ ENTERTAINMENT ONBOARD.webp", text: "EXTRA MARINA PASS" },
+    { src: "/LIVE DJ ENTERTAINMENT ONBOARD.webp", text: "HOSTESS" },
+  ]
   return (
     <>
       {/* Video Section */}
@@ -239,7 +287,7 @@ const Page = () => {
       <section className="flex flex-col items-center py-20 bg-black">
         <div className="container mx-auto">
           <img
-                src="/images/formula1-2025-banner.webp"
+                src="/images/f1-grand-prix-abu-dhabi-2025.webp"
                 alt="F1 2025"
                 className=""
           /></div>
@@ -293,9 +341,9 @@ const Page = () => {
         <h4 className="uppercase text-2xl md:text-3xl font-bold text-center text-white mb-8">
           F1 Yacht Package Inclusions
         </h4>
-        <div ref={emblaRef} className="overflow-hidden relative">
+        <div ref={emblaRef1} className="overflow-hidden relative">
           <div className="flex">
-            {slides.map((item, index) => (
+            {slidesone.map((item, index) => (
               <div
                 key={index}
                 className="
@@ -320,14 +368,14 @@ const Page = () => {
           <button
             aria-label="Previous Slide"
             className="absolute left-0 top-1/2 -translate-y-1/2 w-10 h-10 md:w-14 md:h-14 bg-[#1a1a1a] text-white rounded-full flex items-center justify-center hover:bg-gray-700 transition-colors z-10"
-            onClick={scrollPrev}
+            onClick={scrollPrev1}
           >
             <IoIosArrowBack size={30} />
           </button>
           <button
             aria-label="Next Slide"
             className="absolute right-0 top-1/2 -translate-y-1/2 w-10 h-10 md:w-14 md:h-14 bg-[#1a1a1a] text-white rounded-full flex items-center justify-center hover:bg-gray-700 transition-colors z-10"
-            onClick={scrollNext}
+            onClick={scrollNext1}
           >
             <IoIosArrowForward size={30} />
           </button>
@@ -376,7 +424,7 @@ const Page = () => {
                 <div className="">
                   {/* Info Boxes */}
                   {/* Inclusions & Add-ons */}
-                  <div className="grid grid-cols-2 gap-4 mt-8 mb-4">
+                  <div className="hidden grid-cols-2 gap-4 mt-8 mb-4">
                     <div>
                       <p className="font-bold text-gray-300">Inclusions:</p>
                       <ul className="text-sm text-gray-300 list-disc ml-6 mt-2 space-y-1">
@@ -395,6 +443,7 @@ const Page = () => {
                     </div>
                   </div>
                   {/* CTA Button */}
+                  <div className="mt-10">
                   {yacht.id === 1 ? (
                   <div className='grid grid-cols-1 s:grid-cols-2 sm:grid-cols-1 lg:grid-cols-2 gap-2'>
                   <Link href="https://wa.link/jimth5" target="_blank" >
@@ -412,14 +461,61 @@ const Page = () => {
                   Get a Quote
                   </button>
                   </div>
-                  
                   )}
+                </div>
                 </div>
               </div>
             ))}
           </div>
         </div>
       </section>
+      {/* Carousel Section */}
+      <div className="bg-[#010e1c] pb-12">
+      <div className="container mx-auto ">
+        <h4 className="uppercase text-2xl md:text-3xl font-bold text-center text-white mb-8">
+          F1 Yacht Package Additional
+        </h4>
+        <div ref={emblaRef2} className="overflow-hidden relative">
+          <div className="flex">
+            {slidestwo.map((item, index) => (
+              <div
+                key={index}
+                className="
+                  flex-[0_0_100%]
+                  sm:flex-[0_0_50%]
+                  md:flex-[0_0_33%]
+                  lg:flex-[0_0_25%]
+                  px-2
+                "
+              >
+                <div className="flex flex-col rounded-xl overflow-hidden">
+                  <img src={item.src} className="w-full" alt={item.text} />
+                  <p className="font-bold text-sm bg-red-950 text-white text-center p-7 h-20 flex items-center justify-center">
+                    {item.text}
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* Navigation Buttons (Arrows) */}
+          <button
+            aria-label="Previous Slide"
+            className="absolute left-0 top-1/2 -translate-y-1/2 w-10 h-10 md:w-14 md:h-14 bg-[#1a1a1a] text-white rounded-full flex items-center justify-center hover:bg-gray-700 transition-colors z-10"
+            onClick={scrollPrev2}
+          >
+            <IoIosArrowBack size={30} />
+          </button>
+          <button
+            aria-label="Next Slide"
+            className="absolute right-0 top-1/2 -translate-y-1/2 w-10 h-10 md:w-14 md:h-14 bg-[#1a1a1a] text-white rounded-full flex items-center justify-center hover:bg-gray-700 transition-colors z-10"
+            onClick={scrollNext2}
+          >
+            <IoIosArrowForward size={30} />
+          </button>
+        </div>
+      </div>
+      </div>
       <section className="w-full bg-[#010e1c]">
          <div className="md:block hidden">
           <div className="flex items-center justify-center w-full xl:px-36 lg:px-20 py-20 ">
