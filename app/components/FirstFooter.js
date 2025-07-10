@@ -312,7 +312,7 @@ export default function FirstFooter() {
               className="mb-2 inline-block"
               href="tel:+971544783156"
             >
-              +971 54 478 7057
+              +971 54 478 3156
             </a>
           </li>
           </ul>
@@ -340,7 +340,7 @@ export default function FirstFooter() {
             <p className="">Bilal</p>
             <a
               className="mb-2 inline-block"
-              href="tel:++971501452203"
+              href="tel:+971501452203"
             >
               +971 50 145 2203
             </a>
