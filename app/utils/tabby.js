@@ -40,27 +40,44 @@ export async function createTabbySession(booking, locale = 'en', merchantUrls = 
   // console.log("buyer_history: ", buyer_history);
 
   // --- Order History ---
-  const order_history = (Array.isArray(past_booking) ? past_booking : []).map(pb => ({
-    purchased_at: pb.created_at ? new Date(pb.created_at).toISOString() : new Date(pb.booking_date).toISOString(),
-    amount: pb.amount ? pb.amount.toString() : '0.00',
-    payment_method: pb.payment_method || 'card',
-    buyer: {
-      phone: pb.mobile || '',
-      email: pb.email || '',
-      name: `${pb.first_name || ''} ${pb.last_name || ''}`.trim(),
-    },
-    items: [
-      {
-        title: pb.title ? pb.title : `Booking ${pb.order_no}`,
-        description: `Yacht booking on ${pb.booking_date ? new Date(pb.booking_date).toISOString() : ''}`,
-        quantity: pb.hours || 1,
-        unit_price: pb.amount ? pb.amount.toString() : '0.00',
-        discount_amount: '0.00',
-        reference_id: pb.order_no || '',
-        category: 'yacht_booking',
+  const order_history = (Array.isArray(past_booking) ? past_booking : []).map(pb => {
+    const origStatus = pb.status || pb.payment_status || 'unknown';
+    const bookingDate = pb.booking_date ? new Date(pb.booking_date) : null;
+    const now = new Date();
+    let status = origStatus;
+    if (origStatus.toLowerCase() === 'pending' && bookingDate) {
+      if (bookingDate < now) {
+        status = 'cancelled';
+      } else {
+        status = 'new';
       }
-    ]
-  }));
+    } else if (origStatus.toLowerCase() === 'completed') {
+      status = 'complete';
+    }
+    return {
+      purchased_at: pb.created_at ? new Date(pb.created_at).toISOString() : new Date(pb.booking_date).toISOString(),
+      amount: pb.amount ? pb.amount.toString() : '0.00',
+      // payment_method: pb.payment_method || 'card',
+      payment_method: 'card',
+      status,
+      buyer: {
+        phone: pb.mobile || '',
+        email: pb.email || '',
+        name: `${pb.first_name || ''} ${pb.last_name || ''}`.trim(),
+      },
+      items: [
+        {
+          title: pb.title ? pb.title : `Booking ${pb.order_no}`,
+          description: `Yacht booking on ${pb.booking_date ? new Date(pb.booking_date).toISOString() : ''}`,
+          quantity: pb.hours || 1,
+          unit_price: pb.amount ? pb.amount.toString() : '0.00',
+          discount_amount: '0.00',
+          reference_id: pb.order_no || '',
+          category: 'yacht_booking',
+        }
+      ]
+    };
+  });
 
   const payload = {
     payment: {
