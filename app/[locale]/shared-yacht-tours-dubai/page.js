@@ -362,7 +362,7 @@ const Page = () => {
   </h2>
   <ul className="max-w-2xl mx-auto list-disc text-sm pt-5 space-y-2">
     <li className="">
-      Rates do not include alcohol. An alcohol menu is available for
+      Rates do not include premium drinks. Premium drinks are available for
       purchase on board.
     </li>
     <li className="">
@@ -379,7 +379,7 @@ const Page = () => {
     </li>
     <li className="">Rates cannot be combined with other offers.</li>
     <li className="">Guests under 18 years old must be accompanied by an adult.</li>
-    <li className="">The offer is valid until July 2, 2025</li>
+    <li className="">The offer is valid until September 15, 2025</li>
   </ul>
 </div>
   {/* CTA Section */}
