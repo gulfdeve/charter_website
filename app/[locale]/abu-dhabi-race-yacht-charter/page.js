@@ -240,9 +240,9 @@ const Page = () => {
     // { src: "/4-DAY GOURMET FOOD CATERING.webp", text: "4-DAY GOURMET FOOD CATERING" },
 
     { src: "/4-DAY VIP YACHT PARTY ACCESS.webp", text: "4-DAY YACHT RENTAL" },
-    { src: "/4-DAY GOURMET FOOD CATERING.webp", text: "CREW SERVICE" },
+    { src: "/images/crew-service.webp", text: "CREW SERVICE" },
     { src: "/PITLANE WALK 1 TIME ACCESS.webp", text: "PITLANE WALK 1 TIME ACCESS" },
-    { src: "/4-DAY GOURMET FOOD CATERING.webp", text: "4-DAY GOURMET FOOD CATERING" },
+    { src: "/4-DAY GOURMET FOOD CATERING.webp", text: "GOURMET CATERING" },
     { src: "/4-DAY FREE-FLOWING HOPS, WINE & SPIRITS.webp", text: "FREE-FLOWING HOPS, WINE & SPIRITS" },
     { src: "/IN-HOUSE MIXOLOGIST, PREMIUM DRINKS.webp", text: "IN-HOUSE MIXOLOGIST, PREMIUM DRINKS" },
     { src: "/SPECTACULAR F1 TRACKSIDE VIEWS.webp", text: "SPECTACULAR F1 TRACKSIDE VIEWS" },
@@ -265,13 +265,13 @@ const Page = () => {
     // { src: "/4-DAY VIP YACHT PARTY ACCESS.webp", text: "4-DAY VIP YACHT PARTY ACCESS" },
     // { src: "/4-DAY GOURMET FOOD CATERING.webp", text: "4-DAY GOURMET FOOD CATERING" },
 
-    { src: "/VIEW POST-RACE FIREWORKS CELEBRATIONS.webp", text: "HOTEL TRANSFER" },
+    { src: "/images/hotel-transfer.webp", text: "HOTEL TRANSFER" },
     { src: "/LIVE DJ ENTERTAINMENT ONBOARD.webp", text: "LIVE DJ ENTERTAINMENT ONBOARD" },
-    { src: "/ACCESS TO AFTER-RACE CONCERTS.webp", text: "BUGGY SERVICE" },
-    { src: "/4-DAY GOURMET FOOD CATERING.webp", text: "CATERING" },
+    { src: "/images/buggy-service.webp", text: "BUGGY SERVICE" },
+    { src: "/images/upgrade-gourmet-catering.webp", text: "UPGRADE TO PREMIUM GOURMET CATERING" },
     { src: "/images/bubbly-drinks-on-yacht-dubai.webp", text: "PREMIUM DRINKS" },
-    { src: "/LIVE DJ ENTERTAINMENT ONBOARD.webp", text: "EXTRA MARINA PASS" },
-    { src: "/LIVE DJ ENTERTAINMENT ONBOARD.webp", text: "HOSTESS" },
+    { src: "/images/marina-pass.webp", text: "EXTRA MARINA PASS" },
+    { src: "/images/hostess.webp", text: "HOSTESS" },
   ]
   return (
     <>
@@ -306,7 +306,7 @@ const Page = () => {
             {/* Left: Image */}
             <div className="rounded rounded-l-xl">
               <img
-                src="/F1TRACKSIDE.webp"
+                src="/images/trackside.webp"
                 alt="F1 Trackside"
                 className="xl:w-[40rem] sm:w-[170rem] lg:w-[160rem] md:h-[543px] xl:h-[570px] lg:h-[504px]"
               />
@@ -473,7 +473,7 @@ const Page = () => {
       <div className="bg-[#010e1c] pb-12">
       <div className="container mx-auto ">
         <h4 className="uppercase text-2xl md:text-3xl font-bold text-center text-white mb-8">
-          F1 Yacht Package Additional
+          F1 Yacht Package Add-Ons
         </h4>
         <div ref={emblaRef2} className="overflow-hidden relative">
           <div className="flex">
