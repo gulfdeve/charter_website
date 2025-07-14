@@ -47,7 +47,7 @@ export async function createTabbySession(booking, locale = 'en', merchantUrls = 
     let status = origStatus;
     if (origStatus.toLowerCase() === 'pending' && bookingDate) {
       if (bookingDate < now) {
-        status = 'cancelled';
+        status = 'canceled';
       } else {
         status = 'new';
       }
