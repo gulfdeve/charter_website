@@ -27,8 +27,7 @@ const Sociallink = () => {
           </svg>
         </div>
       )}
-      <div className="container mx-auto flex flex-col lg:flex-row items-center justify-between gap-5 lg:gap-8 xl:gap-20 pt-3 lg:pt-8 2xl:pt-24 3xl:pt-36 z-20">
-        
+      <div className="container mx-auto flex flex-col lg:flex-row items-center justify-between gap-5 lg:gap-8 xl:gap-20 pt-3 lg:pt-8 2xl:pt-24 3xl:pt-36 z-20">        
         {/* Social Media Links */}
         <div className="order-1 lg:order-2 flex flex-row items-center justify-center gap-5">
           {[
@@ -38,6 +37,7 @@ const Sociallink = () => {
             { href: "https://www.pinterest.com/centauruscharteryachtsdubai/", src: "/images/pinterest.webp", alt: "Pinterest" },
             { href: "https://www.linkedin.com/company/centauruscharter", src: "/images/linkedin.webp", alt: "LinkedIn" },
             { href: "https://www.youtube.com/channel/UCcvuO64sGm4HxfNMZRYfScQ?view_as=subscriber", src: "/images/youtube.webp", alt: "Youtube" },
+            { href: "https://www.threads.com/@centauruscharter", src: "/images/threads.webp", alt: "Threads" },
           ].map(({ href, src, alt }) => (
             <a key={href} href={href} target="_blank" rel="noopener noreferrer">
               <Image src={src} alt={alt} width={30} height={30} />
