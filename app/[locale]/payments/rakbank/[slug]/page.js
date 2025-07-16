@@ -72,9 +72,10 @@ export default async function PaymentTestPage({ params }) {
 			orderId: orderNo,
 			title: booking.title,
 			slug,
-			amount: total.toString(),
+			amount: Number(booking.amount),
 			currency: "AED",
 		};
+		// console.log("Rakbank payment payload:", payload);
 		const paymentRes = await fetch(`${baseUrl}/api/payment`, {
 			method: "POST",
 			headers: { "Content-Type": "application/json" },
