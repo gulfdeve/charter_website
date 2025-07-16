@@ -33,7 +33,8 @@ async function fetchBooking(slug) {
 
   if (!res.ok) {
     const text = await res.text();
-    throw new Error(`Failed to load booking data (${res.status}): ${text}`);
+    // throw new Error(`Failed to load booking data (${res.status}): ${text}`);
+    throw new Error(`Failed to load booking data`);
   }
 
   const data = await res.json();
@@ -80,8 +81,8 @@ function getTabbyRejectionMessage(reason, t) {
 // Server component - all async operations happen here
 export default async function CheckoutPage({ params, searchParams }) {
   const t = await getTranslations();
-  const { slug, locale } = params;
-  const { confirm, method,callback } = searchParams;
+  const { slug, locale } = await params;
+  const { confirm, method,callback } = await searchParams;
 
   if (confirm === '1') {
     if (method === 'tabby') return redirect(`/payments/tabby/${slug}`);
@@ -239,7 +240,7 @@ export default async function CheckoutPage({ params, searchParams }) {
           {/* Tabby Promo Section */}
           {tabbyStatus.isApproved && (
             <div className="mt-4">
-              <TabbyPromoSection total={total} locale={params.locale} />
+              <TabbyPromoSection total={total} locale={locale} />
             </div>
           )}
         </div>

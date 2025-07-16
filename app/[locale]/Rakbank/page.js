@@ -26,7 +26,7 @@ export default function CheckoutPage() {
       'order.currency': currency,
       'interaction.merchant.name': 'Centaurus Charter',
       'order.description': 'booking',
-      'interaction.returnUrl': 'https://www.centauruscharter.com/payment_complete',
+      'interaction.returnUrl': `${process.env.NEXT_PUBLIC_BASE_URL}/payment_complete`,
     });
 
     // Debug logs

@@ -161,7 +161,7 @@ export async function createTabbySession(
 	};
 	// console.log("loyalty_level: ", loyalty_level);
 	// console.log("wishlist_count: ", wishlist_count);
-	console.log("Tabby payload: ", payload);
+	// console.log("Tabby payload: ", payload);
 	// console.log("Tabby payload: ENDED");
 
 	// Add merchant URLs if provided (this will override the defaults)

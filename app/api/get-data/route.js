@@ -6,7 +6,7 @@ export const config = {
   export async function GET() {
 	try {
 	  const url = `${process.env.API_DOMAIN}/api/api_new/basic`;
-	  console.log("using url: ", url);
+	//   console.log("using url: ", url);
 	  
 	  // Add no-cache headers for development
 	  const fetchOptions = process.env.NODE_ENV === 'development' 

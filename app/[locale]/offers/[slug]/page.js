@@ -10,7 +10,7 @@ import ExperienceCarousal from "@/app/components/ExperienceCarousal";
 import { notFound } from "next/navigation";
 
 export default async function OfferDetailPage({ params }) {
-  const { slug, locale } = params;
+  const { slug, locale } = await params;
   const language = locale || "en";
   
   // Use the same fetchData utility that's used in the layout

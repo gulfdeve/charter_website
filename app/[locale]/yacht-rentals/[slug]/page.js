@@ -6,6 +6,9 @@ import Route from "@/app/components/Route";
 import YachtGallery from "./YachtGallery";
 import YachtDetails from "./YachtDetails";
 import { notFound } from "next/navigation";
+// import {TabbyPromoSection} from "@/app/%5Blocale%5D/checkout/%5Bslug%5D/TabbyPromoSection";
+import { TabbyPromoSection } from "@/app/[locale]/checkout/[slug]/TabbyPromoSection";
+
 const summeroffer = [
     {
       name: "36 Ft Yacht - Thunder",

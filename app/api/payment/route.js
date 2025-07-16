@@ -5,11 +5,13 @@ import { NextResponse } from 'next/server';
 export async function POST(request) {
   try {
     const data = await request.json();
-    const { orderId = "TEST-" + Date.now(), amount = "100", currency = "AED" } = data;
+    const { orderId = "TEST-" + Date.now(), amount = "100", currency = "AED", title = "booking", slug } = data;
     
     // Create payload for RAKBANK payment gateway
     const myHeaders = new Headers();
     myHeaders.append("Content-Type", "application/x-www-form-urlencoded");
+
+    // console.log("data", data);
     
     const urlencoded = new URLSearchParams();
     urlencoded.append("apiOperation", "INITIATE_CHECKOUT");
@@ -21,8 +23,9 @@ export async function POST(request) {
     urlencoded.append("order.amount", amount);
     urlencoded.append("order.currency", currency);
     urlencoded.append("interaction.merchant.name", "Centaurus Charter");
-    urlencoded.append("order.description", "booking");
-    urlencoded.append("interaction.returnUrl", "https://www.centauruscharter.com/payment_complete");
+    urlencoded.append("order.description", title);
+    urlencoded.append("interaction.returnUrl", `${process.env.NEXT_PUBLIC_BASE_URL}/payment_complete/${slug}`);
+    urlencoded.append("order.reference", orderId);
     
     const requestOptions = {
       method: "POST",
@@ -34,6 +37,7 @@ export async function POST(request) {
     // Make request to RAKBANK gateway
     const response = await fetch(process.env.RAKBANK_GATEWAY_URL, requestOptions);
     const result = await response.text();
+    // console.log("result: ", result);
     
     // Parse the NVP response for easier handling
     const parsedResult = {};
@@ -50,7 +54,7 @@ export async function POST(request) {
       parsedResponse: parsedResult
     });
   } catch (error) {
-    console.error("Payment API error:", error);
+    console.error("Payment API error here2:", error);
     return NextResponse.json(
       { success: false, error: error.message }, 
       { status: 500 }
