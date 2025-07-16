@@ -2,7 +2,7 @@
 import { FaQuestionCircle, FaWhatsapp, FaMapMarkerAlt } from "react-icons/fa";
 import { Link } from "@/app/i18n/routing";
 import { useLocale, useTranslations } from "next-intl";
-import { TabbyPromoSection } from "@/app/[locale]/checkout/[slug]/TabbyPromoSection";
+import TabbyPromoSection from "@/app/[locale]/checkout/[slug]/TabbyPromoSection";
 import summerRate from '../../resident-offer/summer-offer.json';
 
 export default function YachtDetails({
@@ -129,7 +129,7 @@ const matchingRate = summerRate.find(rate =>
         </div>
         </div>
         {matchingRate && (
-          <TabbyPromoSection total={1200} locale='en' />
+          <TabbyPromoSection total={matchingRate.discounted} locale='en' />
         )}
           <div className="flex gap-3 items-center mt-8">
             <div>
