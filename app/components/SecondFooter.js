@@ -45,7 +45,7 @@ const SecondFooter = () => {
           </a>
         </div>
         {/* For Google and TripAdvisor logos */}
-        <div className="flex flex-row md:flex-row items-center gap-16 xs:gap-9">
+        <div className="flex flex-row md:flex-row items-center gap-10">
           <div className="flex flex-row gap-3">
             {" "}
             {/* Changed to always be flex-row */}
@@ -69,6 +69,7 @@ const SecondFooter = () => {
           <div className="flex flex-row items-center gap-3">
             {" "}
             {/* Changed to always be flex-row */}
+            <Image src="/images/tabby-icon.webp" alt="tabby-logo" width={45} height={100} />
             <Image src="/Cash.png" alt="cash-logo" width={45} height={100} />
             <Image src="/Visa.png" alt="visa-logo" width={45} height={100} />
             <Image
@@ -77,7 +78,7 @@ const SecondFooter = () => {
               width={45}
               height={100}
             />
-            <Image src="/images/crypto.webp" alt="crpto-logo" width={45} height={100} />
+            <Image src="/images/crypto.webp" alt="crypto-logo" width={45} height={100} />
           </div>
         </div>
         <div className="flex lg:flex-col justify-between gap-4 xs:gap-10 lg:gap-2 text-text-primary-white">

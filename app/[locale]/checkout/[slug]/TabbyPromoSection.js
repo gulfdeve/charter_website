@@ -25,7 +25,7 @@ export default function TabbyPromoSection({ total, locale = 'en' }) {
               new window.TabbyPromo({
                 selector: '#TabbyPromo',
                 currency: 'AED',
-                price: total.toFixed(2),
+                price: Number(total).toFixed(2),
                 lang: locale,
                 source: 'product',
                 publicKey: process.env.NEXT_PUBLIC_TABBY_PUBLIC_KEY,

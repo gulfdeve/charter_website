@@ -2,6 +2,8 @@
 import { FaQuestionCircle, FaWhatsapp, FaMapMarkerAlt } from "react-icons/fa";
 import { Link } from "@/app/i18n/routing";
 import { useLocale, useTranslations } from "next-intl";
+import TabbyPromoSection from "@/app/[locale]/checkout/[slug]/TabbyPromoSection";
+import summerRate from '../../resident-offer/summer-offer.json';
 
 export default function YachtDetails({
   yachtDetails,
@@ -9,6 +11,12 @@ export default function YachtDetails({
   locale,
   whatsappUrl,
 }) {
+
+const normalize = str => str?.toLowerCase().replace(/[^a-z0-9]/g, '');
+const matchingRate = summerRate.find(rate =>
+  rate?.name && product?.slug && normalize(rate.name).includes(normalize(product.slug))
+);
+
   const t = useTranslations();
   const locationMap = {
     "56ft-vassia": {
@@ -120,6 +128,10 @@ export default function YachtDetails({
           <p className="font-bold text-white text-center text-xs ">We Accept Crypto Payment</p>
         </div>
         </div>
+        <div className="flex justify-center items-center mt-4">
+        {matchingRate && (
+          <TabbyPromoSection total={matchingRate.discounted} locale='en' />
+        )} </div>
           <div className="flex gap-3 items-center mt-8">
             <div>
               <FaMapMarkerAlt className="w-8 h-8 flex-shrink-0" />
