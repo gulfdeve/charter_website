@@ -128,9 +128,10 @@ const matchingRate = summerRate.find(rate =>
           <p className="font-bold text-white text-center text-xs ">We Accept Crypto Payment</p>
         </div>
         </div>
+        <div className="flex justify-center items-center mt-4">
         {matchingRate && (
           <TabbyPromoSection total={matchingRate.discounted} locale='en' />
-        )}
+        )} </div>
           <div className="flex gap-3 items-center mt-8">
             <div>
               <FaMapMarkerAlt className="w-8 h-8 flex-shrink-0" />
