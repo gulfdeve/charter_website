@@ -232,14 +232,14 @@ const Page = () => {
                   <div className="flex flex-row gap-2 items-center">
                     <p className="text-primary-grey text-sm">
                       <span className="font-bold">Adult (12+):</span>{" "}
-                      {tour.adultPrice}
+                      {tour.adultPrice} +VAT
                     </p>
                   </div>
 
                   <div className="flex flex-row gap-2 items-center">
                     <p className="text-primary-grey text-sm">
                       <span className="font-bold">Child (4-11):</span>{" "}
-                      {tour.childPrice}
+                      {tour.childPrice} +VAT
                     </p>
                   </div>
 
