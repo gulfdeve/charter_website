@@ -271,6 +271,13 @@ export default function FirstFooter() {
             >
               +971 50 201 4225
             </a>
+            <p className="">Maya</p>
+            <a
+              className="mb-2 inline-block"
+              href="tel:+971501452203"
+            >
+              +971 50 145 2203
+            </a>
           </li>
           <li className="flex flex-col md:items-start items-center text-center md:text-left">
             <p className="font-semibold py-3">{t('footer.english-spanish-portuguese')}</p>
@@ -336,13 +343,6 @@ export default function FirstFooter() {
               href="tel:+971565017078"
             >
               +971 56 501 7078
-            </a>
-            <p className="">Bilal</p>
-            <a
-              className="mb-2 inline-block"
-              href="tel:+971501452203"
-            >
-              +971 50 145 2203
             </a>
           </li>
           </ul>
