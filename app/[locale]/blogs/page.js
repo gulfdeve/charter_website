@@ -84,9 +84,14 @@ export default function BlogPage() {
           <div className="text-sm text-gray-500 mb-2">
             By {featuredBlog.author} &middot; {featuredBlog.date}
           </div>
-          <p className="mb-4">
-            {featuredBlog.moreText?.slice(0, 200)}...
-          </p>
+          <div
+          className="mb-4"
+          dangerouslySetInnerHTML={{
+            __html: featuredBlog.body
+              ? featuredBlog.body.slice(0, 200) + "..."
+              : ""
+          }}
+        />
         </div>
       </div>
       <div className="container mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 py-10">

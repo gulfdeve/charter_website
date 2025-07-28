@@ -28,9 +28,9 @@ Fermentum hendrerit ut commodo donec dapibus justo lacus pellentesque risus. Con
 const latestBlogs = [
   {
     image: "/images/formula1-2025-banner.webp",
-    title: "Latest Blog 1",
+    title: "Experience the Formula 1 Grand Prix from a Luxury Yacht in Dubai",
     author: "Centaurus Charter",
-    date: "July 1, 2025",
+    date: "July 29, 2025",
   },
   {
     image: "/images/footer-sunset.webp",

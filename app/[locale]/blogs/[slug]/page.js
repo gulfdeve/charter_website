@@ -41,7 +41,7 @@ export default function BlogDetailPage() {
         <div className="text-gray-500 mb-6">
           By {blog.author} &middot; {blog.date}
         </div>
-        <div className="mb-8">{blog.body}</div>
+        <div className="mb-8" dangerouslySetInnerHTML={{ __html: blog.body }} />
         {/* 2-column images */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
           {blog.images && blog.images.map((img, idx) => (
@@ -55,7 +55,7 @@ export default function BlogDetailPage() {
             />
           ))}
         </div>
-        <div>{blog.moreText}</div>
+        <div dangerouslySetInnerHTML={{ __html: blog.moreText }} />
       </div>
 
       {/* Right Side: Latest Blogs (fixed) */}
