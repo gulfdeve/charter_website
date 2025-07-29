@@ -32,7 +32,7 @@ export default function BlogDetailPage() {
       <div className="md:w-8/12">
         <Image
           src={blog.featured_image}
-          alt={blog.title}
+          alt={blog.featured_alt}
           width={900}
           height={400}
           className="rounded-lg object-cover w-full h-120 mt-12 mb-6"
@@ -48,7 +48,7 @@ export default function BlogDetailPage() {
             <Image
               key={idx}
               src={img}
-              alt={`Blog image ${idx + 1}`}
+              alt={blog.alt && blog.alt[idx] ? blog.alt[idx] : ""}
               width={400}
               height={300}
               className="rounded-md object-cover w-full h-64"
@@ -60,7 +60,7 @@ export default function BlogDetailPage() {
 
       {/* Right Side: Latest Blogs (fixed) */}
       <div className="md:w-4/12">
-        <div className="sticky top-48">
+        <div className="sticky top-32">
           <h2 className="text-xl font-bold mb-4 text-primary-blue-2">Latest Blogs</h2>
           <div className="grid grid-cols-1 gap-4 mb-4">
             {latestBlogs.map((item, idx) => (
@@ -83,10 +83,11 @@ export default function BlogDetailPage() {
               </div>
             ))}
           </div>
-          <a href="/blogs" className="flex items-center mt-auto pt-5 group text-primary-blue-2">
+          {/* <a href="/blogs" className="flex items-center mt-auto pt-5 group text-primary-blue-2">
             <div className="btn-info">View all Blogs</div>
             <FiArrowRight size={20} className="text-lg transform md:group-hover:translate-x-4 transition-transform duration-300" />
-          </a>
+          </a> */}
+          <p className="p-10 border-gray-300 bg-primary-blue-light text-center rounded-md">No new Blogs yet</p>
         </div>
       </div>
     </div>
