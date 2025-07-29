@@ -15,7 +15,7 @@ const {
 } = process.env;
 
 export const dynamicParams = true;
-export const runtime = "edge";
+// export const runtime = "edge";
 
 async function fetchBooking(slug) {
 	const url = new URL(

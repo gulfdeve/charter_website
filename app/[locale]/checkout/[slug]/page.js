@@ -1,5 +1,5 @@
 export const dynamicParams = true;
-export const runtime = 'edge';
+// export const runtime = 'edge';
 import React from 'react';
 import { redirect } from 'next/navigation';
 import { createTabbySession } from '@/app/utils/tabby';

@@ -4,7 +4,7 @@ import { getTranslations } from "next-intl/server";
 import Link from "next/link";
 
 // Next.js App Router server component
-export const runtime = "edge";
+// export const runtime = "edge";
 
 async function fetchBooking(slug) {
 	const url = new URL(

@@ -2,7 +2,7 @@ import React from 'react';
 import { redirect } from 'next/navigation';
 
 // Next.js App Router server component
-export const runtime = 'edge';
+// export const runtime = 'edge';
 const {
   NEXT_PUBLIC_SITE_URL,
   

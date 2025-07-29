@@ -7,7 +7,7 @@ import { getTranslations } from "next-intl/server";
 const { NEXT_PUBLIC_BASE_URL, CENTAURUS_API_KEY } = process.env;
 
 export const dynamicParams = true;
-export const runtime = "edge";
+// export const runtime = "edge";
 
 export default async function PaymentPage({ params, searchParams }) {
 	const t = await getTranslations();
