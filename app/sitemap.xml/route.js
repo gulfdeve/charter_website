@@ -1,22 +1,24 @@
 import blogs from "../[locale]/blogs/blogs.json";
 import buyYachtData from "@/app/components/buyYachtData.json";
 import generateSitemapLinks from "../utils/sitemap";
+import { fetchData } from '@/app/lib/fetchData';
 
 export async function GET(request) {
 	try {
-		// Get the base URL from the request
-		// const baseUrl = new URL(request.url).origin;
-		const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://charter.centarus.ae';
+		const data = await fetchData();
+		// // Get the base URL from the request
+		// // const baseUrl = new URL(request.url).origin;
+		const baseUrl = process.env.NEXT_PUBLIC_SITE_URL;
 
 
-		// Fetch data from our existing API
-		const response = await fetch(`${baseUrl}/api/get-data`);
+		// // Fetch data from our existing API
+		// const response = await fetch(`${baseUrl}/api/get-data`);
 
-		if (!response.ok) {
-			throw new Error("Failed to fetch data");
-		}
+		// if (!response.ok) {
+		// 	throw new Error("Failed to fetch data");
+		// }
 
-		const data = await response.json();
+		// const data = await response.json();
 
 		const languages = ["", "ar", "ru", "zh"];
 

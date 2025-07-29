@@ -1,20 +1,24 @@
 import blogs from '../[locale]/blogs/blogs.json';
 import buyYachtData from "@/app/components/buyYachtData.json";
 import generateSitemapLinks from "../utils/sitemap";
+import { fetchData } from '@/app/lib/fetchData';
 
 export default async function SitemapHtmlPage() {
+
+  const data = await fetchData();
+
   // Use a base URL for local rendering (can be window.location.origin if client-side, but here we use a placeholder)
-  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://charter.centarus.ae';
-  // Fetch data from the same API as the XML route
-  let data = {};
-  try {
-    const res = await fetch(`${baseUrl}/api/get-data`);
-    if (res.ok) {
-      data = await res.json();
-    }
-  } catch (e) {
-    // fallback to empty data
-  }
+  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL;
+  // // Fetch data from the same API as the XML route
+  // let data = {};
+  // try {
+  //   const res = await fetch(`${baseUrl}/api/get-data`);
+  //   if (res.ok) {
+  //     data = await res.json();
+  //   }
+  // } catch (e) {
+  //   // fallback to empty data
+  // }
   const languages = ["", "ar", "ru", "zh"];
   const links = generateSitemapLinks({ baseUrl, data, blogs, buyYachtData, languages });
   return (
