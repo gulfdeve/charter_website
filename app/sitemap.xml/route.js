@@ -1,11 +1,13 @@
-import blogs from '../[locale]/blogs/blogs.json';
+import blogs from "../[locale]/blogs/blogs.json";
 import buyYachtData from "@/app/components/buyYachtData.json";
-import { generateSitemapLinks } from "../utils/sitemap";
+import generateSitemapLinks from "../utils/sitemap";
 
 export async function GET(request) {
 	try {
 		// Get the base URL from the request
-		const baseUrl = new URL(request.url).origin;
+		// const baseUrl = new URL(request.url).origin;
+		const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://charter.centarus.ae';
+
 
 		// Fetch data from our existing API
 		const response = await fetch(`${baseUrl}/api/get-data`);
@@ -18,14 +20,20 @@ export async function GET(request) {
 
 		const languages = ["", "ar", "ru", "zh"];
 
-		const links = generateSitemapLinks({ baseUrl, data, blogs, buyYachtData, languages });
+		const links = generateSitemapLinks({
+			baseUrl,
+			data,
+			blogs,
+			buyYachtData,
+			languages,
+		});
 
 		const sitemap = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${links
-		.map(
-			(link) =>
-				`  <url>\n    <loc>${link.url}</loc>\n    <lastmod>${link.lastmod}</lastmod>\n    <changefreq>${link.changefreq}</changefreq>\n    <priority>${link.priority}</priority>\n  </url>`
-		)
-		.join("\n")}\n</urlset>`;
+			.map(
+				(link) =>
+					`  <url>\n    <loc>${link.url}</loc>\n    <lastmod>${link.lastmod}</lastmod>\n    <changefreq>${link.changefreq}</changefreq>\n    <priority>${link.priority}</priority>\n  </url>`
+			)
+			.join("\n")}\n</urlset>`;
 
 		return new Response(sitemap, {
 			status: 200,

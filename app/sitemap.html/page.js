@@ -1,6 +1,6 @@
 import blogs from '../[locale]/blogs/blogs.json';
 import buyYachtData from "@/app/components/buyYachtData.json";
-import { generateSitemapLinks } from "../utils/sitemap";
+import generateSitemapLinks from "../utils/sitemap";
 
 export default async function SitemapHtmlPage() {
   // Use a base URL for local rendering (can be window.location.origin if client-side, but here we use a placeholder)
