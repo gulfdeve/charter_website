@@ -23,12 +23,12 @@ export default async function SitemapHtmlPage() {
         <title>Sitemap</title>
         <meta name="robots" content="noindex, follow" />
       </head>
-      <body>
-        <h1>Sitemap</h1>
+      <body className='container mx-auto m-10'>
+        <h1 className='mb-10'>Sitemap</h1>
         <ul>
           {links.map((link, i) => (
-            <li key={i}>
-              <a href={link.url}>{link.url}</a>
+            <li className='py-2' key={i}>
+              <a className='hover:underline' href={link.url}>{link.url}</a>
             </li>
           ))}
         </ul>
