@@ -7,9 +7,9 @@ import blogs from './blogs.json';
 import Link from 'next/link';
 
 const carouselImages = [
-  '/images/formula1-2025-banner.webp',
-  '/images/race-formula-one.webp',
-  '/images/formula1-2025-banner.webp',
+  '/images/centaurus-charter-luxury-yacht-f1-dubai.webp',
+  '/images/f1-yacht-experience.webp',
+  '/images/formula1-track-race-car-abu-dhabi-grand-prix.webp',
 ];
 
 export default function BlogPage() {
@@ -65,7 +65,7 @@ export default function BlogPage() {
           <IoIosArrowForward size={30} />
         </button>
       </div>
-      <div className="container mx-auto flex flex-col md:flex-row items-center text-center md:text-left gap-8 py-10">
+      {/* FEATURED BLOG - unhide when there are many blogs <div className="container mx-auto flex flex-col md:flex-row items-center text-center md:text-left gap-8 py-10">
         <div className="flex-shrink-0 md:w-1/2">
           <Image
             src={featuredBlog.featured_image}
@@ -77,7 +77,7 @@ export default function BlogPage() {
         </div>
         <div className="md:w-1/2">
           <h2 className="text-2xl font-bold mb-4">
-            <Link href={`/blogs/single-blog/${featuredBlog.slug}`} className="text-blue-600 underline font-semibold">
+            <Link href={`/blogs/single-blog/${featuredBlog.slug}`} className="text-primary-blue-2 font-semibold">
               {featuredBlog.title}
             </Link>
           </h2>
@@ -93,10 +93,12 @@ export default function BlogPage() {
           }}
         />
         </div>
-      </div>
+      </div> */}
       <div className="container mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 py-10">
         {blogPosts.map((post, idx) => (
+          <Link href={`/blogs/${post.slug}`} className="text-primary-blue-2">
           <div key={idx} className="bg-white rounded-lg custom-shadow p-4 flex flex-col">
+            
             <Image
               src={post.featured_image}
               alt={post.title}
@@ -104,15 +106,15 @@ export default function BlogPage() {
               height={200}
               className="rounded-md object-cover w-full h-40 mb-4"
             />
-            <h3 className="text-lg font-semibold mb-2">
-              <Link href={`/blogs/${post.slug}`} className="text-blue-600 underline">
+            <h3 className="text-lg font-semibold mb-2 text-primary-blue-2">
                 {post.title}
-              </Link>
             </h3>
             <div className="text-sm text-gray-500 mb-2">
               By {post.author} &middot; {post.date}
             </div>
           </div>
+         </Link>
+
         ))}
       </div>
     </div>

@@ -102,6 +102,15 @@ export default function FirstFooter() {
           </li>
           <li className="mb-2">
             <Link
+              href="/blogs"
+              onClick={scrollToTop}
+              className="text-text-primary-white capitalize"
+            >
+              Blogs
+            </Link>
+          </li>
+          <li className="mb-2">
+            <Link
               href="/abu-dhabi-race-yacht-charter"
               onClick={scrollToTop}
               className="text-text-primary-white capitalize"
