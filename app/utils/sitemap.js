@@ -18,6 +18,10 @@ export default function generateSitemapLinks({ baseUrl, data, blogs, buyYachtDat
     "/yacht-trips",
     "/terms-and-condition",
     "/privacy-and-policy",
+    "/centaurus-gems-offer",
+    "/international-yachts",
+    "/rent-yacht-fifa-world-cup",
+    "/yacht-rentals-spring-offer"
   ];
   // Home links
   const homeLinks = languages.map(lang => {
