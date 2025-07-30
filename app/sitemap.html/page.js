@@ -31,7 +31,7 @@ export default async function SitemapHtmlPage() {
         <h1 className='mb-10'>Sitemap</h1>
         <ul>
           {links.map((link, i) => (
-            <li className='py-2' key={i}>
+            <li className='py-1 m-2 bg-green-100 text-green-800' key={i}>
               <a className='hover:underline' href={link.url}>{link.url}</a>
             </li>
           ))}

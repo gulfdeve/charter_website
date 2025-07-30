@@ -1,6 +1,17 @@
 {
 	"redirects": [
 		{
+			"source": "/:path*",
+			"has": [
+				{
+					"type": "host",
+					"value": "centauruscharter.com"
+				}
+			],
+			"destination": "https://www.centauruscharter.com/:path*",
+			"permanent": true
+		},
+		{
 			"source": "/shared-yacht-tours-in-dubai",
 			"destination": "https://www.centauruscharter.net/shared-yacht-tours-in-dubai",
 			"permanent": true
