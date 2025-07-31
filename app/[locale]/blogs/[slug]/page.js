@@ -83,11 +83,11 @@ export default function BlogDetailPage() {
               </div>
             ))}
           </div>
-          {/* <a href="/blogs" className="flex items-center mt-auto pt-5 group text-primary-blue-2">
+          <a href="/blogs" className="flex items-center mt-auto pt-5 group text-primary-blue-2">
             <div className="btn-info">View all Blogs</div>
             <FiArrowRight size={20} className="text-lg transform md:group-hover:translate-x-4 transition-transform duration-300" />
-          </a> */}
-          <p className="p-10 border-gray-300 bg-primary-blue-light text-center rounded-md">No new Blogs yet</p>
+          </a>
+          {/* <p className="p-10 border-gray-300 bg-primary-blue-light text-center rounded-md">No new Blogs yet</p> */}
         </div>
       </div>
     </div>
