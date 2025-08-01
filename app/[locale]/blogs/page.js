@@ -6,30 +6,24 @@ import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 import blogs from './blogs.json';
 import Link from 'next/link';
 
-const carouselImages = [
-  '/images/centaurus-charter-luxury-yacht-f1-dubai.webp',
-  '/images/f1-yacht-experience.webp',
-  '/images/formula1-track-race-car-abu-dhabi-grand-prix.webp',
-];
-
 export default function BlogPage() {
   const [current, setCurrent] = useState(0);
-
-  // Auto-scroll effect
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrent((prev) => (prev + 1) % carouselImages.length);
-    }, 3000); // Change image every 3 seconds
-    return () => clearInterval(interval);
-  }, []);
-
-  const nextSlide = () => setCurrent((current + 1) % carouselImages.length);
-  const prevSlide = () => setCurrent((current - 1 + carouselImages.length) % carouselImages.length);
 
   // Use blogs.json data
   const featuredBlogs = blogs.filter(blog => blog.isFeatured);
   const featuredBlog = featuredBlogs[0];
   const blogPosts = featuredBlogs;
+
+  // Auto-scroll effect
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrent((prev) => (prev + 1) % featuredBlogs.length);
+    }, 3000); // Change image every 3 seconds
+    return () => clearInterval(interval);
+  }, [featuredBlogs.length]);
+
+  const nextSlide = () => setCurrent((current + 1) % featuredBlogs.length);
+  const prevSlide = () => setCurrent((current - 1 + featuredBlogs.length) % featuredBlogs.length);
 
   return (
     <>
@@ -45,13 +39,38 @@ export default function BlogPage() {
       </div>
       <div className="">
       <div className="md:container md:mx-auto md:mt-10 relative">
-        <Image
-          src={carouselImages[current]}
-          alt="Banner"
-          width={1200}
-          height={400}
-          className="md:rounded-lg object-cover w-full h-64 md:h-[500px]"
-        />
+        <Link href={`/blogs/${featuredBlogs[current]?.slug}`}>
+          <Image
+            src={featuredBlogs[current]?.featured_image || '/images/default-blog.webp'}
+            alt={featuredBlogs[current]?.featured_alt || "Blog banner"}
+            width={1200}
+            height={400}
+            className="md:rounded-lg object-cover w-full h-64 md:h-[500px] cursor-pointer transition-transform duration-300"
+          />
+        </Link>
+        
+        {/* Blog Info Overlay */}
+        <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent p-6 md:p-8">
+          <div className="text-white">
+            <Link href={`/blogs/${featuredBlogs[current]?.slug}`} className="block">
+              <h2 className="text-xl md:text-2xl font-bold mb-2 line-clamp-2 hover:text-primary-yellow transition-colors duration-300 cursor-pointer">
+                {featuredBlogs[current]?.title}
+              </h2>
+            </Link>
+            <div className="text-sm md:text-base text-gray-200 mb-3">
+              By {featuredBlogs[current]?.author} • {featuredBlogs[current]?.date}
+            </div>
+            <div 
+              className="text-sm md:text-base text-gray-200 line-clamp-2"
+              dangerouslySetInnerHTML={{
+                __html: featuredBlogs[current]?.body 
+                  ? featuredBlogs[current].body.replace(/<[^>]*>/g, '').slice(0, 150) + "..."
+                  : ""
+              }}
+            />
+          </div>
+        </div>
+        
         <button
           onClick={prevSlide}
           className="hidden md:block absolute left-8 top-1/2 -translate-y-1/2 bg-white bg-opacity-70 rounded-full p-2"
