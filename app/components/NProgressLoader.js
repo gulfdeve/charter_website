@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect } from 'react';
+import { useEffect, useRef } from 'react';
 import { usePathname, useSearchParams } from 'next/navigation';
 import NProgress from 'nprogress';
 
@@ -47,16 +47,18 @@ const NProgressLoader = () => {
     NProgress.configure({ 
       showSpinner: false,
       minimum: 0.1,
-      speed: 300,
-      trickleSpeed: 100,
-      easing: 'ease-in-out'
+      speed: 200,
+      trickleSpeed: 150,
+      easing: 'ease-out'
     });
   }, []);
 
   // Handle route changes for App Router
   useEffect(() => {
+    // Start progress on navigation
     NProgress.start();
     
+    // Complete after a short delay
     const timer = setTimeout(() => {
       NProgress.done();
     }, 500);
@@ -88,6 +90,7 @@ const NProgressLoader = () => {
     const processLinks = () => {
       const links = document.querySelectorAll('a[href^="/"], a[href^="' + window.location.origin + '"]');
       links.forEach(link => {
+        link.removeEventListener('click', handleLinkClick);
         link.addEventListener('click', handleLinkClick);
       });
     };
