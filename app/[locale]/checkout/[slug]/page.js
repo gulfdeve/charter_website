@@ -112,6 +112,7 @@ export default async function CheckoutPage({ params, searchParams }) {
     image,
     booking_date,
     per_hour_price,
+    discounted_per_hour_price,
     hours,
     amount,
     addons_price = 0,
@@ -265,7 +266,7 @@ export default async function CheckoutPage({ params, searchParams }) {
           <div className="py-6 border-y-2 border-gray-300">
             <div className="flex justify-between text-primary-grey">
               <span>{t('checkout.yacht-price')}:</span>
-              <span>AED {per_hour_price} {t('checkout.per-hour')}</span>
+              <span>AED {discounted_per_hour_price > 0 ? discounted_per_hour_price : per_hour_price} {t('checkout.per-hour')}</span>
             </div>
             <div className="flex justify-between text-primary-grey mt-4">
               <span>{t('checkout.add-ons-price')}:</span>
