@@ -67,7 +67,7 @@ useEffect(() => {
           <div className={`absolute bottom-0 top-0 left-0 right-0 md:rounded-lg bg-black backdrop-blur-sm bg-opacity-80 p-6 md:p-24
             transition-opacity duration-700 flex items-center`}>
             <div className={`text-white max-w-2xl transition-opacity duration-700 ${show ? 'opacity-100' : 'opacity-0'}`}>
-              <h2 className="text-xl md:text-4xl font-bold mb-6 line-clamp-2 hover:text-primary-yellow transition-colors duration-300 cursor-pointer">
+              <h2 className="text-xl md:text-4xl font-bold mb-6 line-clamp-2">
                 {featuredBlogs[current]?.title}
               </h2>
               <div className="text-sm md:text-base text-gray-200 mb-3">
