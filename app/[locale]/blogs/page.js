@@ -107,8 +107,8 @@ useEffect(() => {
             <button
               key={idx}
               onClick={() => changeSlide(idx)}
-              className={`w-4 h-4 rounded-full border-2 border-primary-blue-2 transition-all duration-300
-                ${displayedIndex === idx ? 'bg-primary-blue-2' : 'bg-white'}`}
+              className={`w-3 h-3 rounded-full transition-all duration-300
+                ${displayedIndex === idx ? 'bg-white' : 'bg-primary-grey'}`}
               aria-label={`Go to slide ${idx + 1}`}
             />
           ))}
