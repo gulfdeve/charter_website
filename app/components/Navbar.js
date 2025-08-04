@@ -176,7 +176,7 @@ export default function Navbar() {
                 </li>
 
                 {/* Shared Tours */}
-                <li>
+                <li className="hidden">
                   <Link
                     href="/shared-yacht-tours-dubai"
                     className={`h-full flex items-center tracking-[1px] uppercase underline decoration-2 underline-offset-8 transition-all duration-200 font-primary ${

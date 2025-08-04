@@ -136,7 +136,7 @@ const Page = () => {
             </div>
 
             {/* Right Section - FareHarbor Calendar */}
-			<div className="w-full lg:w-1/2 flex justify-center items-center">
+			<div className="hidden w-full lg:w-1/2 flex justify-center items-center">
   <iframe
     src="https://www.centauruscharter.net/calendar.html"
     title="Centaurus Charter Calendar"
@@ -285,12 +285,15 @@ const Page = () => {
               </div>
 
               {/* Book Now Button - Always fully visible */}
-              <a
-                href={tour.fareharborLink}
-                className="blue-solid-button w-full block text-center"
+              {/* <a
+        
+                href={tour.fareharborLink} */}
+                <div
+                className="cursor-not-allowed opacity-20 blue-solid-button w-full block text-center"
               >
-                Book Now
-              </a>
+                Sold out
+                </div>
+              {/* </a> */}
             </div>
           ))}
         </div>
