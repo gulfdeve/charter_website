@@ -411,7 +411,10 @@ const page = () => {
           INCLUSIONS: WATER, SOFT DRINKS, BEER, RED WINE, WHITE WINE & SPARKLING WINE
           </h3>
         </div>
-        <p className="text-left md:text-center italic font-bold text-primary-blue pt-2 pb-5">
+        <p className="text-left md:text-center text-primary-grey pt-2 pb-2">
+        Minimum booking duration applies. Terms and conditions may vary based on yacht and package selected.
+        </p>
+        <p className="text-left md:text-center italic font-bold text-primary-blue pb-5">
         Premium drinks are available for purchase on board
         </p>
         <h3 className="text-black text-base text-center font-bold pb-5">
@@ -551,7 +554,10 @@ const page = () => {
             INCLUSIONS: WATER, SOFT DRINKS, BEER, RED WINE, WHITE WINE & SPARKLING WINE
           </h3>
         </div>
-        <p className="text-left md:text-center italic font-bold text-primary-blue pt-2 pb-5">
+        <p className="text-left md:text-center text-primary-grey pt-2 pb-2">
+        Minimum booking duration applies. Terms and conditions may vary based on yacht and package selected.
+        </p>
+        <p className="text-left md:text-center italic font-bold text-primary-blue pb-5">
         Premium drinks are available for purchase on board
         </p>
         <h3 className="text-black text-base text-center font-bold pb-2">
