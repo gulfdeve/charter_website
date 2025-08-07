@@ -1,5 +1,6 @@
 [
  {
+    "idx": 4,
     "slug": "your-complete-guide-to-yacht-party-rentals-in-dubai",
     "title": "Your Complete Guide to Yacht Party Rentals in Dubai",
     "author": "Centaurus Charter",
@@ -19,6 +20,7 @@
     "isFeatured": true
   },
  {
+  "idx": 3,
     "slug": "why-summer-is-still-a-great-time-to-charter-a-yacht-in-dubai",
     "title": "Why Summer is Still a Great Time to Charter a Yacht in Dubai",
     "author": "Centaurus Charter",
@@ -38,6 +40,7 @@
     "isFeatured": true
   },
   {
+    "idx": 2,
     "slug": "top-tips-to-stay-cool-and-comfortable-on-a-yacht-this-summer",
     "title": "Top Tips to Stay Cool and Comfortable on a Yacht This Summer",
     "author": "Centaurus Charter",
@@ -57,6 +60,7 @@
     "isFeatured": true
   },
   {
+    "idx": 1,
     "slug": "grand-prix-experience-from-a-yacht",
     "title": "Experience the Formula 1 Grand Prix from a Luxury Yacht in Dubai",
     "author": "Centaurus Charter",

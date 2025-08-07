@@ -12,6 +12,11 @@ export default function BlogPage() {
 const [current, setCurrent] = useState(0);
 const [show, setShow] = useState(true);
 const [displayedIndex, setDisplayedIndex] = useState(0);
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
 const changeSlide = (newIndex) => {
   setShow(false);
@@ -39,6 +44,11 @@ useEffect(() => {
   }, 5000);
   return () => clearInterval(interval);
 }, [current, featuredBlogs.length]);
+
+const featuredBlog = blogs.find(
+  (blog) => blog.title === "Experience the Formula 1 Grand Prix from a Luxury Yacht in Dubai"
+);
+ if (!mounted) return null; // Prevents SSR mismatch
 
   return (
     <>
@@ -114,8 +124,10 @@ useEffect(() => {
           ))}
         </div>
         </div>
-      {/* FEATURED BLOG - unhide when there are many blogs <div className="container mx-auto flex flex-col md:flex-row items-center text-center md:text-left gap-8 py-10">
+      {/* FEATURED BLOG - unhide when there are many blogs  */}
+      <div className="container mx-auto flex flex-col md:flex-row items-center text-center md:text-left gap-8 py-10">
         <div className="flex-shrink-0 md:w-1/2">
+          <Link href={`/blogs/${featuredBlog.slug}`} className="text-primary-blue-2 font-semibold">
           <Image
             src={featuredBlog.featured_image}
             alt={featuredBlog.title}
@@ -123,6 +135,7 @@ useEffect(() => {
             height={400}
             className="rounded-lg object-cover w-full h-64"
           />
+          </Link>
         </div>
         <div className="md:w-1/2">
           <h2 className="text-2xl font-bold mb-4">
@@ -142,11 +155,11 @@ useEffect(() => {
           }}
         />
         </div>
-      </div> */}
+      </div>
       <div className="container mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 py-10">
         {blogPosts.map((post, idx) => (
-          <Link href={`/blogs/${post.slug}`} className="text-primary-blue-2">
-          <div key={idx} className="bg-white rounded-lg custom-shadow p-4 flex flex-col">
+          <Link href={`/blogs/${post.slug}`} key={post.slug} className="text-primary-blue-2">
+          <div className="bg-white rounded-lg custom-shadow p-4 flex flex-col">
             
             <Image
               src={post.featured_image}
@@ -163,6 +176,7 @@ useEffect(() => {
             </div>
           </div>
          </Link>
+
 
         ))}
       </div>
