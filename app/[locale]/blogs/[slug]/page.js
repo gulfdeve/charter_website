@@ -1,9 +1,10 @@
 "use client";
 
 import Image from "next/image";
-import { FiArrowRight } from "react-icons/fi";
 import blogsData from "../blogs.json";
 import { useParams, notFound } from "next/navigation";
+import { FiArrowRight, FiArrowLeft } from "react-icons/fi";
+
 
 function slugify(title) {
   return title
@@ -56,6 +57,16 @@ export default function BlogDetailPage() {
           ))}
         </div>
         <div dangerouslySetInnerHTML={{ __html: blog.moreText }} />
+        <div className="flex justify-between">
+        <a href="" className="flex items-center mt-auto pt-5 group text-primary-blue-2">
+                    <FiArrowLeft size={20} className="text-lg transform md:group-hover:-translate-x-4 transition-transform duration-300" />
+                    <div className="btn-back">Previous</div>
+        </a>
+        <a href="" className="flex items-center mt-auto pt-5 group text-primary-blue-2">
+                    <div className="btn-info">Next</div>
+                    <FiArrowRight size={20} className="text-lg transform md:group-hover:translate-x-4 transition-transform duration-300" />
+        </a>
+        </div>
       </div>
 
       {/* Right Side: Latest Blogs (fixed) */}
