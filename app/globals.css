@@ -90,6 +90,11 @@ h1, h2, h3, h4, h5, h6 {
           text-base font-bold tracking-wider uppercase
           transition duration-150 ease-in-out transform ;
 }
+.btn-back {
+  @apply  py-3 pl-3
+          text-base font-bold tracking-wider uppercase
+          transition duration-150 ease-in-out transform ;
+}
 
 .header_links {
   @apply text-primary-yellow hover:text-primary-yellow-dark text-primary-yellow hover:text-yellow-600 font-bold tracking-wide uppercase text-base;

@@ -1,9 +1,10 @@
 "use client";
 
 import Image from "next/image";
-import { FiArrowRight } from "react-icons/fi";
 import blogsData from "../blogs.json";
 import { useParams, notFound } from "next/navigation";
+import { FiArrowRight, FiArrowLeft } from "react-icons/fi";
+
 
 function slugify(title) {
   return title
@@ -25,6 +26,11 @@ export default function BlogDetailPage() {
 
   // Latest blogs (excluding current)
   const latestBlogs = blogsData.filter((b) => b.slug !== blog.slug).slice(0, 5);
+
+  // Previous and next blogs based on date
+  const blogIndex = blogsData.findIndex((b) => b.slug === slug);
+  const nextBlog = blogIndex > 0 ? blogsData[blogIndex - 1] : null;
+  const prevBlog = blogIndex < blogsData.length - 1 ? blogsData[blogIndex + 1] : null;
 
   return (
     <div className="nav-space container flex flex-col md:flex-row md:w-11/12 mx-auto gap-6 lg:gap-10 mb-10">
@@ -56,6 +62,16 @@ export default function BlogDetailPage() {
           ))}
         </div>
         <div dangerouslySetInnerHTML={{ __html: blog.moreText }} />
+        <div className="flex justify-between">
+        <a href={prevBlog ? `/blogs/${prevBlog.slug}` : "#"} aria-disabled={!prevBlog} className="flex items-center mt-auto pt-5 group text-primary-blue-2">
+                    <FiArrowLeft size={20} className="text-lg transform md:group-hover:-translate-x-4 transition-transform duration-300" />
+                    <div className="btn-back">Previous</div>
+        </a>
+        <a href={nextBlog ? `/blogs/${nextBlog.slug}` : "#"} aria-disabled={!nextBlog} className="flex items-center mt-auto pt-5 group text-primary-blue-2">
+                    <div className="btn-info">Next</div>
+                    <FiArrowRight size={20} className="text-lg transform md:group-hover:translate-x-4 transition-transform duration-300" />
+        </a>
+        </div>
       </div>
 
       {/* Right Side: Latest Blogs (fixed) */}
