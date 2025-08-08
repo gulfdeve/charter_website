@@ -281,7 +281,7 @@ const Page = () => {
       </div> */}
       <VideoLocal filename="/F1 2023 720p.mp4" section="f1" />
 <div className="bg-red-900 text-white text-center py-2 text-sm font-semibold sticky top-14 lg:top-[4.5rem] z-20">
-  🎉 Promo: 10% OFF on All F1 Yacht Packages – Offer ends July 31, 2025!
+  🎉 Promo: 10% OFF on All F1 Yacht Packages – Offer ends August 31, 2025!
 </div>
       {/* Heading Section */}
       <section className="flex flex-col items-center py-20 bg-black">
@@ -457,7 +457,7 @@ const Page = () => {
                   <button className="w-full red-solid-button cursor-not-allowed opacity-30">
                   WhatsApp Us
                   </button>
-                  <button onClick={handleQuote} className="w-full red-solid-button cursor-not-allowed opacity-30">
+                  <button className="w-full red-solid-button cursor-not-allowed opacity-30">
                   Get a Quote
                   </button>
                   </div>
