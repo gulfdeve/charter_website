@@ -281,7 +281,19 @@ export default function Navbar() {
                     {t('navbar.summer-offers')}
                   </Link>
                 </li>
-
+                {/* Formula 1 */}
+                <li>
+                  <Link
+                    href="/abu-dhabi-race-yacht-charter"
+                    className={`h-full flex items-center tracking-[1px] uppercase underline decoration-2 underline-offset-8 transition-all duration-200 font-primary ${
+                      pathname === "/abu-dhabi-race-yacht-charter" || pathname.startsWith("/abu-dhabi")
+                        ? "text-primary-blue decoration-primary-yellow font-semibold"
+                        : "text-primary-blue decoration-transparent hover:decoration-primary-yellow"
+                    }`}
+                  >
+                    Formula 1
+                  </Link>
+                </li>
                 {/* Events */}
                 <li>
                   <Link
