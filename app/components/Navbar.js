@@ -291,7 +291,7 @@ export default function Navbar() {
                         : "text-primary-blue decoration-transparent hover:decoration-primary-yellow"
                     }`}
                   >
-                    Formula 1
+                    {t("navbar.formula-1")}
                   </Link>
                 </li>
                 {/* Events */}

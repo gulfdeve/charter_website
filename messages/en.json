@@ -14,7 +14,8 @@
     "home": "Home",
     "about": "About",
     "yacht-rentals": "Yacht Rentals",
-    "summer-offers": "Summer Offers"
+    "summer-offers": "SUMMER OFFERS",
+    "formula-1": "FORMULA 1"
   },
   "footer": {
     "reach-out-to-us": "REACH US",
@@ -136,5 +137,6 @@
   },
   "thank-you-paragraph": {
     "thank-you-for-your-booking-a-confirmation-and-invoice-have-been-sent-to-your-email": "Thank you for your booking. A confirmation and invoice have been sent to your email."
-  }
+  },
+  "summer-offers": "SUMMER OFFERS"
 }
