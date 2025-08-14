@@ -7,11 +7,11 @@ import Link from 'next/link';
 
 export default function BlogPage() {
   // Get featured blogs
-  const featuredBlogs = blogs.filter(blog => blog.isFeatured);
+  const featuredBlogs = blogs.filter(blog => blog.isFeatured).slice(0, 5);
   const blogPosts = blogs;
-const [current, setCurrent] = useState(0);
-const [show, setShow] = useState(true);
-const [displayedIndex, setDisplayedIndex] = useState(0);
+  const [current, setCurrent] = useState(0);
+  const [show, setShow] = useState(true);
+  const [displayedIndex, setDisplayedIndex] = useState(0);
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
