@@ -408,7 +408,7 @@ const page = () => {
       <div className="container mx-auto flex flex-col  px-4">
         <div className="bg-primary-blue-4 p-0.5 ">
           <h3 className=" font-bold text-center text-white text-[1rem]">
-          INCLUSIONS: WATER, SOFT DRINKS, BEER, RED WINE, WHITE WINE & SPARKLING WINE
+          INCLUSIONS: WATER, SOFT DRINKS, COFFEE & TEA
           </h3>
         </div>
         <p className="text-left md:text-center text-primary-grey pt-2 pb-2">
@@ -551,7 +551,7 @@ const page = () => {
       <div className="container mx-auto flex flex-col  px-4">
         <div className="bg-primary-blue-4 p-0.5 ">
           <h3 className=" font-bold text-center text-white text-[1rem]">
-            INCLUSIONS: WATER, SOFT DRINKS, BEER, RED WINE, WHITE WINE & SPARKLING WINE
+            INCLUSIONS: WATER, SOFT DRINKS, COFFEE & TEA
           </h3>
         </div>
         <p className="text-left md:text-center text-primary-grey pt-2 pb-2">
@@ -584,9 +584,6 @@ const page = () => {
             </li>
             <li className="mb-1">
             The offer is not valid on public holidays
-            </li>
-            <li className="mb-1">
-            Drinks are included with bookings of 3 hours or more
             </li>
             <li className="mb-1">
             ⁠Terms are subject to change without prior notice.

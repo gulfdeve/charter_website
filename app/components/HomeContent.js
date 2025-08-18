@@ -276,18 +276,6 @@ export default function Home() {
         
                     <div>
                       <div className="text-sm font-semibold mt-3 mb-2">
-                        Trip inclusions from 3 hours onwards:
-                      </div>
-                      <div>
-                      <ol className="text-xs">
-                        <li>
-                          {" "}
-                          Hops, Wines, Bubbly Drinks, Coffee, Tea, Water, &
-                          Softdrinks
-                        </li>
-                      </ol>
-                      </div>
-                      <div className="text-sm font-semibold mt-3 mb-2">
                         Extras: <span className="text-xs text-primary-grey font-normal">(additional charges apply)</span> 
                       </div>
                       <div>

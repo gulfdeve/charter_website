@@ -223,10 +223,6 @@ export default function YachtmobileCarousal() {
                 )}</div>
                 <div className="flex flex-row justify-between items-center xl:w-[32rem] z-10">
                   <div>
-                    <div className="font-semibold text-xs mt-3 mb-2">Trip inclusions from 3 hours onwards:</div>
-                    <ol className="text-xs list-disc list-inside">
-                      <li>Hops, Wines, Bubbly Drinks, Coffee, Tea, Water, & Softdrinks</li>
-                    </ol>
                     <div className="text-sm font-semibold mt-3 mb-2">
                       Extras: <span className="text-xs text-primary-grey font-normal">(additional charges apply)</span>
                     </div>
