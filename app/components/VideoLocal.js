@@ -57,7 +57,7 @@ export default function VideoLocal({ filename, section }) {
           </p>
           <a
             href="https://fareharbor.com/embeds/book/centauruscharter/items/?flow=1038617&full-items=yes&back=https%3A%2F%2Fwww.centauruscharter.com%2F&g4=yes&u=9f3aff5e-960d-40db-8df8-e819cbeaee55&from-ssl=yes&ga=UA-131086702-1%2C48011385.1727165629%3B&ga4t=G-5GL7VDTRSD%2C48011385.1727165629__1742205820%3BG-RK197B1TRV%2C48011385.1727165629__1742205820%3BAW-761360769%2Cundefined__undefined%3BG-319350371%2C48011385.1727165629__1742205821%3B&cp=no&csp=no"
-            className="blue-solid-button"
+            className="hidden blue-solid-button"
             >
             GET THE OFFER NOW!
           </a>
@@ -86,15 +86,17 @@ export default function VideoLocal({ filename, section }) {
           <h1 className="uppercase font-bold mb-4 text-primary-blue-2 lg:text-white lg:text-[32px] p-0  md:px-0 text-xl s:text-2xl sm:text-2xl md:text-3xl 2xl:text-4xl">
           {t('home.centaurus-yacht-rental-dubai')}<br />
           </h1>
-          <p className="text-sm xl:text-2xl mb-1  text-primary-blue-2 lg:text-white">
+          {/* <p className="text-sm xl:text-2xl mb-1  text-primary-blue-2 lg:text-white">
           {t('home.daily-yacht-sharing-tours-in-dubai')} <br/>
           {t('home.including-food-and-drinks')} </p>
           <p className="text-sm xl:text-2xl mb-4 text-primary-blue-2 lg:text-white  2xl:text-3xl font-bold">
-          {t('home.starting-aed-99')} </p>
-          <Link href="/shared-yacht-tours-dubai"
+          {t('home.starting-aed-99')} </p> */}
+          <p className="text-sm xl:text-2xl mb-8  text-primary-blue-2 lg:text-white">
+          Luxury yacht rentals in Dubai <br/>for private charters and unforgettable cruises.</p>
+          <Link href="/yacht-rentals"
             className="blue-solid-button"
             >
-            GET YOUR TICKET NOW!
+            BOOK NOW
           </Link>
         </div>
         </>

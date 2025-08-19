@@ -160,12 +160,17 @@ export default function ToursCarousel({ toursData }) {
                 </div>
 
                 {/* Book Now Button */}
-                <a
+                {/* <a
                   href={tour.fareharborLink}
                   className="blue-solid-button w-full block text-center"
                 >
                   Book Now
-                </a>
+                </a> */}
+                <div
+                className="cursor-not-allowed opacity-20 blue-solid-button w-full block text-center"
+              >
+                Sold out
+                </div>
               </div>
             </div>
           ))}
