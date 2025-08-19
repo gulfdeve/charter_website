@@ -139,7 +139,7 @@ const featuredBlog = blogs.find(
         </div>
         <div className="md:w-1/2">
           <h2 className="text-2xl font-bold mb-4">
-            <Link href={`/blogs/single-blog/${featuredBlog.slug}`} className="text-primary-blue-2 font-semibold">
+            <Link href={`/blogs/${featuredBlog.slug}`} className="text-primary-blue-2 font-semibold">
               {featuredBlog.title}
             </Link>
           </h2>
