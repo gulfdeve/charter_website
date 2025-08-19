@@ -86,15 +86,17 @@ export default function VideoLocal({ filename, section }) {
           <h1 className="uppercase font-bold mb-4 text-primary-blue-2 lg:text-white lg:text-[32px] p-0  md:px-0 text-xl s:text-2xl sm:text-2xl md:text-3xl 2xl:text-4xl">
           {t('home.centaurus-yacht-rental-dubai')}<br />
           </h1>
-          <p className="text-sm xl:text-2xl mb-1  text-primary-blue-2 lg:text-white">
+          {/* <p className="text-sm xl:text-2xl mb-1  text-primary-blue-2 lg:text-white">
           {t('home.daily-yacht-sharing-tours-in-dubai')} <br/>
           {t('home.including-food-and-drinks')} </p>
           <p className="text-sm xl:text-2xl mb-4 text-primary-blue-2 lg:text-white  2xl:text-3xl font-bold">
-          {t('home.starting-aed-99')} </p>
-          <Link href="/shared-yacht-tours-dubai"
+          {t('home.starting-aed-99')} </p> */}
+          <p className="text-sm xl:text-2xl mb-8  text-primary-blue-2 lg:text-white">
+          Luxury yacht rentals in Dubai <br/>for private charters and unforgettable cruises.</p>
+          <Link href="/yacht-rentals"
             className="blue-solid-button"
             >
-            GET YOUR TICKET NOW!
+            BOOK NOW
           </Link>
         </div>
         </>
