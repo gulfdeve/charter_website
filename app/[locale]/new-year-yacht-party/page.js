@@ -1,9 +1,59 @@
-import React from "react";
+'use client'
 import Image from "next/image";
 import Videonewyear from "@/app/components/Videonewyear";
 import Nycard from "@/app/components/Nycard";
+import React, { useEffect, useRef, useState } from 'react'
+import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io"
+import EmblaCarousel from 'embla-carousel'
+
 
 const Page = () => {
+  // Carousel 1
+    const emblaRef1 = useRef(null)
+    const [emblaApi1, setEmblaApi1] = useState(null)
+  
+    useEffect(() => {
+      if (emblaRef1.current) {
+        const embla = EmblaCarousel(emblaRef1.current, {
+          loop: false,
+          align: 'start',
+        })
+        setEmblaApi1(embla)
+      }
+    }, [])
+  
+    const scrollPrev1 = () => emblaApi1?.scrollPrev()
+    const scrollNext1 = () => emblaApi1?.scrollNext()
+  // Carousel 2
+    const emblaRef2 = useRef(null);
+    const [emblaApi2, setEmblaApi2] = useState(null);
+  
+    useEffect(() => {
+      if (emblaRef2.current) {
+        const embla = EmblaCarousel(emblaRef2.current, {
+          loop: false,
+          align: "start",
+        });
+        setEmblaApi2(embla);
+      }
+    }, []);
+  
+    const scrollPrev2 = () => emblaApi2?.scrollPrev();
+    const scrollNext2 = () => emblaApi2?.scrollNext();
+    const slidesone = [
+      { src: "/LIVE DJ & DANCE FLOOR.webp", text: "LIVE DJ & DANCE FLOOR" },
+      { src: "/SPECTACULARVIEWS.webp", text: "SPECTACULAR VIEWS" },
+      { src: "/PREMIUM DRINKS.webp", text: "PREMIUM DRINKS" },
+      { src: "/GOURMET FOOD.webp", text: "GOURMET FOOD" },
+    ]
+      const slidestwo = [
+      { src: "/drinks.webp", text: "PREMIUM DRINKS" },
+      { src: "/Catering.webp", text: "CATERING SERVICE" },
+      { src: "/decorations.webp", text: "PARTY DECORATION" },
+      { src: "/cake.webp", text: "NEW YEAR CAKE" },
+      { src: "/dj.webp", text: "PROFESSIONAL DJ SERVICES" },
+      { src: "/photographer.webp", text: "PHOTOGRAPHER & VIDEOGRAPHER SERVICE" },
+    ]
   return (
     <div className="bg-white bg-opacity-90 w-full min-h-screen mt-14 md:mt-0">
       <Videonewyear />
@@ -19,7 +69,7 @@ const Page = () => {
           </div>
           <div className="flex flex-col md:flex-row items-center justify-center px-4 md:px-8 lg:px-20 py-8">
             {/* Container with a shadow and rounded corners */}
-            <div className="flex flex-col md:flex-row w-full max-w-5xl rounded-[3em] overflow-hidden shadow-lg">
+            <div className="flex flex-col md:flex-row w-full max-w-5xl rounded-lg overflow-hidden shadow-lg">
               {/* Left side - Image */}
               <div className="md:w-1/2 w-full">
                 <Image
@@ -32,21 +82,21 @@ const Page = () => {
                 />
               </div>
               {/* Right side - Text & Button */}
-              <div className="md:w-1/2 w-full bg-primary-yellow p-6 flex flex-col justify-center items-center">
-                <h2 className="text-2xl md:text-2xl text-center font-bold text-primary-blue-2 mb-2">
+              <div className="md:w-1/2 w-full bg-primary-blue p-6 flex flex-col justify-center items-center">
+                <h2 className="text-2xl md:text-2xl text-center font-bold text-white mb-2">
                   NYE YACHT PARTY TICKETS
                 </h2>
-                <p className="text-md text-primary-blue mb-10 text-center">
+                <p className="text-md text-white mb-10 text-center">
                   31 December 2024 | Dubai Harbour | 9 PM - 3 AM
                 </p>
-                <p className="text-sm text-primary-blue mb-6 text-center leading-relaxed px-2">
+                <p className="text-sm text-white mb-6 text-center leading-relaxed px-2">
                   Celebrate New Year’s Eve in ultimate style aboard a luxury
                   yacht in Dubai! Enjoy a night of glamour, non-stop
                   entertainment, premium food and drinks, and breathtaking views
                   of the city’s iconic skyline. Sail into 2025 under the stars
                   with unforgettable memories and a dazzling atmosphere.
                 </p>
-                <button className="bg-primary-blue-2 text-primary-yellow font-bold py-3 px-4 lg:px-2 rounded-lg text-md mb-4 lg:w-[56%] mx-auto">
+                <button className="yellow-solid-button">
                   GET YOUR TICKETS NOW
                 </button>
                 <p className="text-md text-primary-blue text-center pt-4">
@@ -55,38 +105,50 @@ const Page = () => {
               </div>
             </div>
           </div>
-
-          <div className="flex items-center justify-center w-full mt-10 mb-5">
-            <h3 className="px-4 text-2xl 2xl:text-4xl font-semibold text-primary-yellow">
+          <div className="container mx-auto ">
+            <h3 className="uppercase text-2xl md:text-3xl font-bold text-center text-primary-yellow mb-8">
               TICKETS INCLUSION
             </h3>
+            <div ref={emblaRef1} className="overflow-hidden relative">
+                      <div className="flex">
+                        {slidesone.map((item, index) => (
+                          <div
+                            key={index}
+                            className="
+                              flex-[0_0_100%]
+                              sm:flex-[0_0_50%]
+                              md:flex-[0_0_33%]
+                              lg:flex-[0_0_25%]
+                              px-2
+                            "
+                          >
+                            <div className="flex flex-col rounded-xl overflow-hidden">
+                              <img src={item.src} className="w-full" alt={item.text} />
+                              <p className="font-bold text-sm bg-primary-blue text-white text-center p-7 h-20 flex items-center justify-center">
+                                {item.text}
+                              </p>
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+            
+                      {/* Navigation Buttons (Arrows) */}
+                      <button
+                        aria-label="Previous Slide"
+                        className="lg:hidden absolute left-0 top-1/2 -translate-y-1/2 w-10 h-10 md:w-14 md:h-14 bg-[#1a1a1a] text-white rounded-full flex items-center justify-center hover:bg-gray-700 transition-colors z-10"
+                        onClick={scrollPrev2}
+                      >
+                        <IoIosArrowBack size={30} />
+                      </button>
+                      <button
+                        aria-label="Next Slide"
+                        className="lg:hidden absolute right-0 top-1/2 -translate-y-1/2 w-10 h-10 md:w-14 md:h-14 bg-[#1a1a1a] text-white rounded-full flex items-center justify-center hover:bg-gray-700 transition-colors z-10"
+                        onClick={scrollNext2}
+                      >
+                        <IoIosArrowForward size={30} />
+                      </button>
+                    </div>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 px-4 py-10 xl:px-12">
-            {[
-              {
-                src: "/LIVE DJ & DANCE FLOOR.webp",
-                text: "LIVE DJ & DANCE FLOOR",
-              },
-              { src: "/SPECTACULARVIEWS.webp", text: "SPECTACULAR VIEWS" },
-              { src: "/PREMIUM DRINKS.webp", text: "PREMIUM DRINKS" },
-              { src: "/GOURMET FOOD.webp", text: "GOURMET FOOD" },
-            ].map((item, index) => (
-              <div key={index} className="flex flex-col">
-                <div className="relative w-full h-48">
-                  <Image
-                    src={item.src}
-                    alt={item.text}
-                    fill
-                    className="rounded-t-3xl object-cover"
-                  />
-                </div>
-                <h4 className="bg-primary-yellow text-primary-blue-2 text-center font-bold p-5 rounded-b-3xl md:px-10 lg:px-10 h-20 flex items-center justify-center">
-                  {item.text}
-                </h4>
-              </div>
-            ))}
-          </div>
-
           <div className="lg:px-20 px-5">
             <div className="flex flex-col items-center justify-center w-full mt-10 mb-5 px-10">
               <h3 className="text-[20px] px-4 font-semibold text-primary-yellow">
@@ -144,7 +206,7 @@ const Page = () => {
                   stunning views of the city.
                 </li>
               </ul>
-              <h3 className="flex flex-row items-center text-center justify-center py-2 px-6 md:py-4 md:px-6 rounded-lg bg-transparent text-primary-yellow font-bold text-[20px] md:text-lg xl:text-2xl outline outline-primary-yellow">
+              <h3 className="flex flex-row items-center text-center justify-center py-2 px-6 md:py-4 md:px-6 rounded-lg bg-transparent text-primary-yellow font-bold text-[20px] md:text-lg xl:text-2xl">
                 PREMIUM YACHTS
               </h3>
             </div>
@@ -152,113 +214,70 @@ const Page = () => {
         </div>
         <Nycard />
       </div>
-      <div className="bg-white w-full h-full py-10">
-        <div className="container mx-auto">
-          <div className="flex flex-col items-center justify-center px-7">
-            <h3 className="text-primary-yellow text-lg font-bold text-center">
+      <div className="bg-black w-full h-full py-10">
+        <div className="container mx-auto ">
+            <h3 className="uppercase text-2xl md:text-3xl font-bold text-center text-primary-yellow mb-4">
               EXTRA SERVICES ON DEMAND
             </h3>
-            <p className="text-black font-light">(48 HOURS NOTICE PERIOD)</p>
-            <p className="text-black font-light text-center py-5">
+            <p className="text-white text-center">(48 HOURS NOTICE PERIOD)</p>
+            <p className="text-white  text-center py-2 mb-8">
               For those looking to have a touch of luxury to their celebration,
               we offer additional services.
             </p>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-6 gap-3 px-4 xl:px-10">
-            <div>
-              <div className="relative w-full h-40">
-                <Image
-                  src="/drinks.webp"
-                  alt="Premium Drinks"
-                  fill
-                  className="object-cover"
-                />
-              </div>
-              <h4 className="text-black font-bold text-sm py-7 text-center">
-                Premium Drinks
-              </h4>
-            </div>
-            <div>
-              <div className="relative w-full h-40">
-                <Image
-                  src="/Catering.webp"
-                  alt="Catering Service"
-                  fill
-                  className="object-cover"
-                />
-              </div>
-              <h4 className="text-black font-bold text-sm py-7 text-center">
-                Catering Service
-              </h4>
-            </div>
-            <div>
-              <div className="relative w-full h-40">
-                <Image
-                  src="/decorations.webp"
-                  alt="Party Decoration"
-                  fill
-                  className="object-cover"
-                />
-              </div>
-              <h4 className="text-black font-bold text-sm py-7 text-center">
-                Party Decoration
-              </h4>
-            </div>
-            <div>
-              <div className="relative w-full h-40">
-                <Image
-                  src="/cake.webp"
-                  alt="New Year Cake"
-                  fill
-                  className="object-cover"
-                />
-              </div>
-              <h4 className="text-black font-bold text-sm py-7 text-center">
-                New Year Cake
-              </h4>
-            </div>
-            <div>
-              <div className="relative w-full h-40">
-                <Image
-                  src="/DJ.webp"
-                  alt="Professional DJ Services"
-                  fill
-                  className="object-cover"
-                />
-              </div>
-              <h4 className="text-black font-bold text-sm py-7 text-center">
-                Professional DJ Services
-              </h4>
-            </div>
-            <div>
-              <div className="relative w-full h-40">
-                <Image
-                  src="/photographer.webp"
-                  alt="Photographer & Videographer Service"
-                  fill
-                  className="object-cover"
-                />
-              </div>
-              <h4 className="text-black font-bold text-sm py-7 text-center px-3">
-                Photographer & Videographer Service
-              </h4>
-            </div>
+            <div ref={emblaRef2} className="overflow-hidden relative">
+                      <div className="flex">
+                        {slidestwo.map((item, index) => (
+                          <div
+                            key={index}
+                            className="
+                              flex-[0_0_100%]
+                              sm:flex-[0_0_50%]
+                              md:flex-[0_0_33%]
+                              lg:flex-[0_0_25%]
+                              px-2
+                            "
+                          >
+                            <div className="flex flex-col rounded-xl overflow-hidden">
+                              <img src={item.src} className="w-full" alt={item.text} />
+                              <p className="font-bold text-sm bg-primary-blue text-white text-center p-7 h-20 flex items-center justify-center">
+                                {item.text}
+                              </p>
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+            
+                      {/* Navigation Buttons (Arrows) */}
+                      <button
+                        aria-label="Previous Slide"
+                        className="absolute left-0 top-1/2 -translate-y-1/2 w-10 h-10 md:w-14 md:h-14 bg-[#1a1a1a] text-white rounded-full flex items-center justify-center hover:bg-gray-700 transition-colors z-10"
+                        onClick={scrollPrev2}
+                      >
+                        <IoIosArrowBack size={30} />
+                      </button>
+                      <button
+                        aria-label="Next Slide"
+                        className="absolute right-0 top-1/2 -translate-y-1/2 w-10 h-10 md:w-14 md:h-14 bg-[#1a1a1a] text-white rounded-full flex items-center justify-center hover:bg-gray-700 transition-colors z-10"
+                        onClick={scrollNext2}
+                      >
+                        <IoIosArrowForward size={30} />
+                      </button>
+                    </div>
           </div>
           <div className="flex flex-col items-center justify-center py-7">
             <button className="yellow-solid-button">CONTACT US</button>
-            <p className="text-black font-light text-center py-4 px-3">
+            <p className="text-white font-light text-center py-4 px-3">
               To secure the best deal for your New Year's Eve celebration on the
               water, reach out to us today.
             </p>
-            <p className="text-black font-bold text-center py-4 px-3">
+            <p className="text-white font-bold text-center py-4 px-3">
               New Year’s Eve Package Disclaimer
             </p>
-            <p className="text-black font-light text-center py-1 px-3">
+            <p className="text-white font-light text-center py-1 px-3">
               Inclusions, timings, prices, and capacity for the New Year’s Eve
               packages are subject to change without prior notice.
             </p>
           </div>
-        </div>
       </div>
 
       <div>
