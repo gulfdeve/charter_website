@@ -280,13 +280,13 @@ export default function FirstFooter() {
             >
               +971 50 201 4225
             </a>
-            <p className="">Maya</p>
+            {/* <p className="">Maya</p>
             <a
               className="mb-2 inline-block"
               href="tel:+971501452203"
             >
               +971 50 145 2203
-            </a>
+            </a> */}
           </li>
           <li className="flex flex-col md:items-start items-center text-center md:text-left">
             <p className="font-semibold py-3">{t('footer.english-spanish-portuguese')}</p>
@@ -323,13 +323,13 @@ export default function FirstFooter() {
             >
               +971 56 501 7057
             </a>
-            <p className="">Vicky</p>
+            {/* <p className="">Vicky</p>
             <a
               className="mb-2 inline-block"
               href="tel:+971544783156"
             >
               +971 54 478 3156
-            </a>
+            </a> */}
           </li>
           </ul>
           <ul className="text-text-primary-white">
@@ -346,7 +346,7 @@ export default function FirstFooter() {
           </li>
           <li className="flex flex-col md:items-start items-center text-center md:text-left">
             <p className="font-semibold py-3">{t('footer.english-arabic')}</p>
-            <p className="">Hisham</p>
+            <p className="">Hesham</p>
             <a
               className="mb-2 inline-block"
               href="tel:+971565017078"
