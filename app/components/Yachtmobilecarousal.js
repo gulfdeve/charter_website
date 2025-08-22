@@ -100,7 +100,7 @@ export default function YachtmobileCarousal() {
   return (
     <div className="container mx-auto py-6">
       {/* Filter Buttons */}
-      <div className="hidden flex justify-center items-center gap-8 md:gap-8 text-xs sm:text-base md:text-lg font-semibold py-2 pb-10 md:py-2 px-2">
+      <div className="hidden justify-center items-center gap-8 md:gap-8 text-xs sm:text-base md:text-lg font-semibold py-2 pb-10 md:py-2 px-2">
         <button
           onClick={() => setActiveFilter("bestSellers")}
           className={getFilterStyle("bestSellers")}
