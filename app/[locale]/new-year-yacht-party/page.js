@@ -95,7 +95,7 @@ const Page = () => {
                   Celebrate New Year’s Eve in ultimate style aboard a luxury
                   yacht in Dubai! Enjoy a night of glamour, non-stop
                   entertainment, premium food and drinks, and breathtaking views
-                  of the city’s iconic skyline. Sail into 2025 under the stars
+                  of the city’s iconic skyline. Sail into 2026 under the stars
                   with unforgettable memories and a dazzling atmosphere.
                 </p>
                 <Link href="https://wa.link/4qpg10" target="_blank" >

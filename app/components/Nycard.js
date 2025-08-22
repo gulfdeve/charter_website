@@ -1,7 +1,5 @@
 'use client'
 import React,{ useState } from 'react';
-import { FaShip, FaClock, FaBed } from "react-icons/fa6";
-import { IoIosPeople, IoMdPricetag } from "react-icons/io";
 import Link from 'next/link';
 
 import Modal2 from './Modal2';
@@ -201,37 +199,6 @@ const yachts = [
                     ))}
             </div>  
             </div> 
-                    
-            {/* <div className=" grid grid-cols-4 gap-2  -bottom-5 left-0 right-0 mx-3 text-blue-900 rounded-lg bg-primary-blue-3">
-              <div className="flex flex-row items-center justify-between  p-4 md:p-2 px-16 md:px-4 xl:px-5 outline md:outline-none outline-primary-blue">
-                <FaShip className="text-4xl md:text-4xl text-primary-yellow" />
-                <div className="font-bold text-center md:text-sm  text-primary-blue uppercase">
-                  Model<br />
-                  <span className=" font-medium">{yacht.model}</span>
-                </div>
-              </div>
-              <div className="flex flex-row items-center justify-between p-4 md:p-2 px-16 md:px-4 xl:px-5 outline outline-primary-blue md:outline-none">
-                <FaClock className="text-4xl md:text-3xl text-primary-yellow" />
-                <div className="font-bold text-center md:text-sm  text-primary-blue">
-                  {yacht.timings}<br />
-                  <span className="font-medium">TIMINGS</span>
-                </div>
-              </div>
-              <div className="flex flex-row items-center justify-between p-4 md:p-2 px-16 md:px-4  outline outline-primary-blue md:outline-none">
-                <IoIosPeople className="text-4xl md:text-5xl text-primary-yellow" />
-                <div className="font-bold text-center md:text-sm  text-primary-blue">
-                  {yacht.capacity}<br />
-                  <span className="font-medium">CAPACITY</span>
-                </div>
-              </div>
-              <div className="flex flex-row items-center justify-between p-4 md:p-2 px-16 md:px-4 xl:px-7 outline outline-primary-blue  md:outline-none">
-                <FaBed className="text-4xl md:text-4xl text-primary-yellow" />
-                <div className="font-bold text-center md:text-sm text-primary-blue">
-                  {yacht.cabins}<br />
-                  <span className="font-medium md:text-sm">CABINS</span>
-                </div>
-              </div>
-            </div> */}
             <div className="mt-10">
               <div className="bg-primary-blue rounded-lg p-4 space-y-2 py-5">
                 <h5 className=" text-primary-yellow text-center font-bold text-xl">
@@ -241,15 +208,6 @@ const yachts = [
                   {yacht.packageInclusions}
                 </div>
               </div>
-              {/* <div className="flex flex-row items-center justify-center p-3">
-                <IoMdPricetag className="text-5xl md:text-4xl text-primary-yellow" />
-                <h1 className=" text-primary-blue font-bold text-3xl text-center">
-                  {yacht.price}
-                </h1>
-              </div>
-              <h3 className=" text-primary-blue text-lg text-center">
-                {yacht.rate}
-              </h3> */}
               {/* CTA Button */}
                   <div className="mt-10">
                   {yacht.isSold === 0 ? (
