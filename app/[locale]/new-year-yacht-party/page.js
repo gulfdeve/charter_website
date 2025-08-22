@@ -288,7 +288,7 @@ const Page = () => {
 
       <div>
         <div className="bg-[url('/atlantis-royal.jpg')] bg-cover bg-center bg-no-repeat min-h-screen">
-          <div className="flex flex-col items-start justify-start px-16 py-10 lg:px-0 lg:pl-10 xl:w-1/2 md:w-10/12 lg:w-1/2">
+          <div className="flex flex-col items-start justify-start mx-auto container lg:mx-0 py-10 lg:px-0 lg:pl-10 xl:w-1/2 md:w-10/12 lg:w-1/2">
             <h3 className="text-white font-medium">
               Why Choose Our New Year's Eve Yacht Rental?
             </h3>
