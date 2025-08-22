@@ -53,7 +53,7 @@ const Page = () => {
       { src: "/Catering.webp", text: "CATERING SERVICE" },
       { src: "/decorations.webp", text: "PARTY DECORATION" },
       { src: "/cake.webp", text: "NEW YEAR CAKE" },
-      { src: "/dj.webp", text: "PROFESSIONAL DJ SERVICES" },
+      { src: "/DJ.webp", text: "PROFESSIONAL DJ SERVICES" },
       { src: "/photographer.webp", text: "PHOTOGRAPHER & VIDEOGRAPHER SERVICE" },
     ]
   return (
@@ -140,14 +140,14 @@ const Page = () => {
                       <button
                         aria-label="Previous Slide"
                         className="lg:hidden absolute left-0 top-1/2 -translate-y-1/2 w-10 h-10 md:w-14 md:h-14 bg-[#1a1a1a] text-white rounded-full flex items-center justify-center hover:bg-gray-700 transition-colors z-10"
-                        onClick={scrollPrev2}
+                        onClick={scrollPrev1}
                       >
                         <IoIosArrowBack size={30} />
                       </button>
                       <button
                         aria-label="Next Slide"
                         className="lg:hidden absolute right-0 top-1/2 -translate-y-1/2 w-10 h-10 md:w-14 md:h-14 bg-[#1a1a1a] text-white rounded-full flex items-center justify-center hover:bg-gray-700 transition-colors z-10"
-                        onClick={scrollNext2}
+                        onClick={scrollNext1}
                       >
                         <IoIosArrowForward size={30} />
                       </button>
