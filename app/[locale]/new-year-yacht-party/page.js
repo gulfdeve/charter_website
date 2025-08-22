@@ -5,6 +5,8 @@ import Nycard from "@/app/components/Nycard";
 import React, { useEffect, useRef, useState } from 'react'
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io"
 import EmblaCarousel from 'embla-carousel'
+import Link from 'next/link'
+
 
 
 const Page = () => {
@@ -87,7 +89,7 @@ const Page = () => {
                   NYE YACHT PARTY TICKETS
                 </h2>
                 <p className="text-md text-white mb-10 text-center">
-                  31 December 2024 | Dubai Harbour | 9 PM - 3 AM
+                  31 December 2025 | Dubai Harbour | 9 PM - 3 AM
                 </p>
                 <p className="text-sm text-white mb-6 text-center leading-relaxed px-2">
                   Celebrate New Year’s Eve in ultimate style aboard a luxury
@@ -96,9 +98,11 @@ const Page = () => {
                   of the city’s iconic skyline. Sail into 2025 under the stars
                   with unforgettable memories and a dazzling atmosphere.
                 </p>
+                <Link href="https://wa.link/4qpg10" target="_blank" >
                 <button className="yellow-solid-button">
                   GET YOUR TICKETS NOW
                 </button>
+                </Link>
                 <p className="text-md text-primary-blue text-center pt-4">
                   Limited tickets are available. T&Cs apply.
                 </p>
@@ -163,7 +167,7 @@ const Page = () => {
               <h3 className="text-[20px] px-4 font-semibold text-primary-yellow">RSVP</h3>
               <p className="text-md text-white text-center">
                 Secure your spot today, Bookings are non-refundable after 15
-                December 2024.
+                December 2025.
               </p>
             </div>
             <div className="flex items-center justify-center w-full my-6">
@@ -265,7 +269,9 @@ const Page = () => {
                     </div>
           </div>
           <div className="flex flex-col items-center justify-center py-7">
+            <Link href="https://wa.link/4qpg10" target="_blank" >
             <button className="yellow-solid-button">CONTACT US</button>
+            </Link>
             <p className="text-white font-light text-center py-4 px-3">
               To secure the best deal for your New Year's Eve celebration on the
               water, reach out to us today.
@@ -273,7 +279,7 @@ const Page = () => {
             <p className="text-white font-bold text-center py-4 px-3">
               New Year’s Eve Package Disclaimer
             </p>
-            <p className="text-white font-light text-center py-1 px-3">
+            <p className="text-white font-light text-center py-1 px-3 italic">
               Inclusions, timings, prices, and capacity for the New Year’s Eve
               packages are subject to change without prior notice.
             </p>
@@ -283,7 +289,7 @@ const Page = () => {
       <div>
         <div className="bg-[url('/atlantis-royal.jpg')] bg-cover bg-center bg-no-repeat min-h-screen">
           <div className="flex flex-col items-start justify-start px-16 py-10 lg:px-0 lg:pl-10 xl:w-1/2 md:w-10/12 lg:w-1/2">
-            <h3 className="text-white text-lg font-medium">
+            <h3 className="text-white font-medium">
               Why Choose Our New Year's Eve Yacht Rental?
             </h3>
             <ul className="list-disc text-sm pl-4 xl:pl-10 text-white py-5">
@@ -338,7 +344,7 @@ const Page = () => {
               the spectacular shows along the Palm Jumeirah, you won't miss a
               moment of the action.
             </p>
-            <h3 className="text-white text-lg font-medium">
+            <h3 className="text-white font-medium">
               Book Now and Make Your Reservation
             </h3>
             <p className="text-white text-sm py-4 font-normal">

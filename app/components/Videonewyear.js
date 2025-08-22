@@ -1,5 +1,6 @@
 "use client"
 import React, { useEffect, useState } from "react";
+import Link from 'next/link'
 
 export default function Videonewyear() {
   const [scriptsLoaded, setScriptsLoaded] = useState(false);
@@ -71,8 +72,9 @@ export default function Videonewyear() {
         <p className="text-sm xl:text-2xl font-bold mb-4 text-black md:text-white  2xl:text-3xl text-shadow">
         Celebrate the most glamorous night of the year
         </p>
-
+        <Link href="https://wa.link/4qpg10" target="_blank" >
         <button className="blue-solid-button">BOOK NOW</button>
+        </Link>
       </div>
       </div>
      

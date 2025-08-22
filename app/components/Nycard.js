@@ -19,7 +19,7 @@ const Nycard = () => {
 const yachts = [
   {
     id: 1,
-    image: "/61-Silver-Creeknewyear.webp",
+    image: "/images/36ft-yacht-thunder-new-year.webp",
     name: "36ft Yacht - Thunder",
     infoBoxes: [
       { label: "Brand", value: "Silver Craft" },
@@ -34,10 +34,10 @@ const yachts = [
   },
   {
     id: 2,
-    image: "/61-Silver-Creeknewyear.webp",
+    image: "/images/36ft-yacht-storm-new-year.webp",
     name: "36ft Yacht - Storm",
     infoBoxes: [
-      { label: "Brand", value: "Majesty" },
+      { label: "Brand", value: "Silver Craft" },
       { label: "Capacity", value: "10" },
       { label: "Cabins", value: "N/A" },
       { label: "Timings", value: "9PM - 3AM" }
@@ -49,7 +49,7 @@ const yachts = [
   },
   {
     id: 3,
-    image: "/61-Silver-Creeknewyear.webp",
+    image: "/images/40ft-yacht-riverside-new-year.webp",
     name: "40ft Yacht - Riverside",
     infoBoxes: [
       { label: "Brand", value: "Yamaha" },
@@ -64,11 +64,11 @@ const yachts = [
   },
   {
     id: 4,
-    image: "/61-Silver-Creeknewyear.webp",
+    image: "/images/56ft-yacht-vassia-new-year.webp",
     name: "56ft Yacht - Vassia",
     infoBoxes: [
       { label: "Brand", value: "Majesty" },
-      { label: "Capacity", value: "30" },
+      { label: "Capacity", value: "28" },
       { label: "Cabins", value: "3" },
       { label: "Timings", value: "9PM - 3AM" }
     ],
@@ -79,11 +79,11 @@ const yachts = [
   },
   {
     id: 5,
-    image: "/61-Silver-Creeknewyear.webp",
+    image: "/images/56ft-yacht-lagoona-new-year.webp",
     name: "56ft Yacht - Lagoona",
     infoBoxes: [
       { label: "Brand", value: "Majesty" },
-      { label: "Capacity", value: "26" },
+      { label: "Capacity", value: "28" },
       { label: "Cabins", value: "3" },
       { label: "Timings", value: "9PM - 3AM" }
     ],
@@ -94,7 +94,7 @@ const yachts = [
   },
   {
     id: 6,
-    image: "/61-Silver-Creeknewyear.webp",
+    image: "/images/58ft-yacht-etosha-new-year.webp",
     name: "58ft Yacht - Etosha",
     infoBoxes: [
       { label: "Brand", value: "Azimut" },
@@ -109,7 +109,7 @@ const yachts = [
   },
   {
     id: 7,
-    image: "/61-Silver-Creeknewyear.webp",
+    image: "/images/61ft-yacht-silver-creek-new-year.webp",
     name: "61ft Yacht - Silver Creek",
     infoBoxes: [
       { label: "Brand", value: "Majesty" },
@@ -124,11 +124,11 @@ const yachts = [
   },
   {
     id: 8,
-    image: "/61-Silver-Creeknewyear.webp",
+    image: "/images/77ft-yacht-dionysos-new-year.webp",
     name: "77ft Yacht - Dionysos",
     infoBoxes: [
       { label: "Brand", value: "Majesty" },
-      { label: "Capacity", value: "30" },
+      { label: "Capacity", value: "20" },
       { label: "Cabins", value: "3" },
       { label: "Timings", value: "9PM - 3AM" }
     ],
@@ -139,7 +139,7 @@ const yachts = [
   },
   {
     id: 9,
-    image: "/61-Silver-Creeknewyear.webp",
+    image: "/images/85ft-yacht-kronos-new-year.webp",
     name: "85ft Yacht - Kronos",
     infoBoxes: [
       { label: "Brand", value: "Duretti" },
@@ -154,7 +154,7 @@ const yachts = [
   },
   {
     id: 10,
-    image: "/61-Silver-Creeknewyear.webp",
+    image: "/images/118ft-yacht-poseidon-new-year.webp",
     name: "118ft Yacht - Poseidon",
     infoBoxes: [
       { label: "Brand", value: "Hatteras" },
@@ -254,7 +254,7 @@ const yachts = [
                   <div className="mt-10">
                   {yacht.isSold === 0 ? (
                   <div className='grid grid-cols-1 s:grid-cols-2 sm:grid-cols-1 lg:grid-cols-2 gap-2'>
-                  <Link href="https://wa.link/jimth5" target="_blank" >
+                  <Link href="https://wa.link/4qpg10" target="_blank" >
                   <button className="w-full yellow-solid-button">WhatsApp Us</button>
                   </Link>
                   <button onClick={handlequote} className="w-full yellow-solid-button">
@@ -271,26 +271,6 @@ const yachts = [
                   </div>
                   )}
                 </div>
-              {/* <div className="space-y-3 py-3">
-                {yacht.isSold === 1 ? (
-                  <button className="flex items-center justify-center w-full px-4 py-3  bg-gray-400 text-white font-bold rounded-md">
-                    SOLD OUT
-                  </button>
-                ) : (
-                  <>
-                  <div className='flex flex-col items-center justify-between md:flex-row gap-5'>
-                  <Link href={"https://wa.link/eyg3by"}>
-                    <button className="yellow-solid-button  md:text-sm">
-                      WHATSAPP US
-                    </button>
-                  </Link>
-                    <button onClick={handlequote} className="yellow-solid-button md:text-sm uppercase">
-                     GET A QUOTE
-                    </button>
-                    </div>
-                  </>
-                )}
-              </div> */}
             </div>
           </div>
         ))}y
