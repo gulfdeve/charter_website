@@ -29,7 +29,7 @@ export default function generateSitemapLinks({ baseUrl, data, blogs, buyYachtDat
     return {
       url: `${baseUrl}${langPrefix || ''}`,
       lastmod: now,
-      changefreq: 'daily',
+      changefreq: 'weekly',
       priority: 1.0,
     };
   });
@@ -40,7 +40,7 @@ export default function generateSitemapLinks({ baseUrl, data, blogs, buyYachtDat
       return {
         url: `${baseUrl}${langPrefix}${url}`,
         lastmod: now,
-        changefreq: 'monthly',
+        changefreq: 'weekly',
         priority: 0.8,
       };
     })
@@ -109,7 +109,7 @@ export default function generateSitemapLinks({ baseUrl, data, blogs, buyYachtDat
           return {
             url: `${baseUrl}${langPrefix}/yacht-trips/${experience.slug}`,
             lastmod: now,
-            changefreq: 'monthly',
+            changefreq: 'weekly',
             priority: 0.6,
           };
         })
@@ -123,7 +123,7 @@ export default function generateSitemapLinks({ baseUrl, data, blogs, buyYachtDat
           return {
             url: `${baseUrl}${langPrefix}/watersports/${pkg.slug}`,
             lastmod: now,
-            changefreq: 'monthly',
+            changefreq: 'weekly',
             priority: 0.6,
           };
         })
