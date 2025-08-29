@@ -106,7 +106,7 @@ export default function FirstFooter() {
               onClick={scrollToTop}
               className="text-text-primary-white capitalize"
             >
-              Blogs
+              {t('navbar.blogs')}
             </Link>
           </li>
           <li className="mb-2">
@@ -115,7 +115,7 @@ export default function FirstFooter() {
               onClick={scrollToTop}
               className="text-text-primary-white capitalize"
             >
-              Formula 1
+              {t('navbar.formula-1')}
             </Link>
           </li>
           <li className="mb-2">
@@ -124,7 +124,7 @@ export default function FirstFooter() {
               onClick={scrollToTop}
               className="text-text-primary-white capitalize"
             >
-              New Year
+              {t('navbar.new-year')}
             </Link>
           </li>
           <li className="mb-2">

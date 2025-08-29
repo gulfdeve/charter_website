@@ -7,8 +7,10 @@ import { useLocale } from "next-intl";
 import { FaYoutube } from "react-icons/fa";
 import { BsStars } from "react-icons/bs";
 import {IoIosSunny } from "react-icons/io";
+import { useTranslations } from "next-intl";
 
 export default function YachtmobileCarousal() {
+  const t = useTranslations();
   const emblaRef = useRef(null);
   const [embla, setEmbla] = useState(null);
   const { data, loading, error } = useData();
@@ -168,18 +170,18 @@ export default function YachtmobileCarousal() {
                   {product.id !== 20 && (
                   <a href="/resident-offer" target="_blank" className="cursor-pointer font-semibold absolute z-10 flex items-center gap-2 top-6 left-0 gradient-custom-3 text-primary-blue-2 text-xs s:text-md py-0.5 px-2 rounded-r-lg hover:pl-5 transition-all">
                     <IoIosSunny/>
-                    <p>Summer Offer up to 40%</p>
+                    <p>{t('offers.summer-offer-up-to-40')}</p>
                   </a>)}
                   {["56ft-lagoona", "61ft-silvercreek"].includes(product.slug) && (
                     <div className="absolute flex items-center gap-2 top-12 s:top-14 left-0 gradient-custom-2 text-primary-yellow-light text-xs s:text-md py-0.5 px-2 rounded-r-lg">
                       <BsStars />
-                      <p>Best Seller</p>
+                      <p>{t('offers.best-seller')}</p>
                     </div>
                   )}
                   {product.per_hour_price > 4000 && (
                     <div className="absolute flex items-center gap-2 top-12 s:top-14 left-0 gradient-custom-2 text-primary-yellow-light text-xs s:text-md  py-0.5 px-2 rounded-r-lg">
                       <BsStars />
-                      <p>Premium Yacht</p>
+                      <p>{t('offers.premium-yacht')}</p>
                     </div>
                   )}
 

@@ -7,6 +7,8 @@ import { FaArrowLeft, FaArrowRight, FaYoutube } from "react-icons/fa";
 import BookNowButton from "@/app/components/BookNowButton";
 import { BsStars } from "react-icons/bs";
 import { IoIosSunny } from "react-icons/io";
+import { useTranslations } from "next-intl";
+
 const summeroffer = [
     {
       name: "36 Ft Yacht - Thunder",
@@ -52,7 +54,7 @@ function getDiscountedPrice(yachtName) {
   const offer = summeroffer.find(item => normalize(item.name) === yachtNorm);
   return offer ? offer.discounted : null;
 }  
-const YachtCard = ({ yacht }) => {
+const YachtCard = ({ yacht, t }) => {
   const emblaRef = useRef(null);
   const emblaApi = useRef(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -147,20 +149,20 @@ const YachtCard = ({ yacht }) => {
         {yacht.category.includes("bestSellers") && (
           <div className="absolute flex items-center gap-2 top-12 left-0 gradient-custom-2 text-primary-yellow-light text-sm py-0.5 px-2 rounded-r-lg">
             <BsStars />
-            <p>Best Seller</p>
+            <p>{t('offers.best-seller')}</p>
           </div>
         )}
         {yacht.category.includes("premium") && (
           <div className="absolute flex items-center gap-2 top-12 left-0 gradient-custom-2 text-primary-yellow-light text-sm py-0.5 px-2 rounded-r-lg">
             <BsStars />
-            <p>Premium Yacht</p>
+            <p>{t('offers.premium-yacht')}</p>
           </div>
         )}
         {/* Summer Offer Tag */}
         {yacht.id !== 20 && (
           <a href="/resident-offer" target="_blank" className="cursor-pointer font-semibold absolute flex items-center gap-2 top-4 left-0 gradient-custom-3 text-primary-blue-2 text-sm py-0.5 px-2 rounded-r-lg hover:pl-5 transition-all">
             <IoIosSunny/>
-            <p>Summer Offer up to 40%</p>
+            <p>{t('offers.summer-offer-up-to-40')}</p>
           </a>
         )}
         {/* YouTube Icon (same design, moved above carousel) */}
@@ -272,6 +274,7 @@ const YachtCard = ({ yacht }) => {
 };
 
 export default function YachtList({ yachts }) {
+  const t = useTranslations();
   const [activeTab, setActiveTab] = useState("allYachts");
 
   const filteredYachts =
@@ -311,7 +314,7 @@ export default function YachtList({ yachts }) {
       <div className="p-0 md:p-6 text-center">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 pb-10 gap-6 container mx-auto">
           {filteredYachts.map((yacht) => (
-            <YachtCard key={yacht.id} yacht={yacht} />
+            <YachtCard key={yacht.id} yacht={yacht} t={t} />
           ))}
         </div>
       </div>

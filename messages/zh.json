@@ -15,7 +15,8 @@
     "about": "关于",
     "yacht-rentals": "游艇租赁",
     "summer-offers": "夏季优惠",
-    "formula-1": "方程式1"
+    "formula-1": "方程式1",
+    "blogs": "博客"
   },
   "footer": {
     "reach-out-to-us": "联系我们",
@@ -28,10 +29,14 @@
     "english-russian": "英语 /俄语",
     "english-spanish-portuguese": "英语 /西班牙 /葡萄牙语",
     "english-arabic": "英语 /阿拉伯语",
-    "english-filipino": "英语 /菲律宾"
+    "english-filipino": "英语 /菲律宾",
+    "english-chinese": "英语 /中文"
   },
   "offers": {
-    "validity-until": "有效直到"
+    "validity-until": "有效直到",
+    "summer-offer-up-to-40": "夏季提供高达40％",
+    "best-seller": "畅销书",
+    "premium-yacht": "高级游艇"
   },
   "header": {
     "whatsapp_url": "https://api.whatsapp.com/send?phone=971547928626&text=Hi!%20I%20came%20across%20your%20website.%20I%20want%20to%20inquire%20about%20a%20yacht%20charter%20in%20Dubai.",

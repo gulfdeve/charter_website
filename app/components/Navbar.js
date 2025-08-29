@@ -119,7 +119,7 @@ export default function Navbar() {
                         : "text-primary-blue border-transparent"
                     }`}
                   >
-                    <Link href="/yacht-rentals" className="tracking-[1px]">
+                    <Link href="/yacht-rentals" className="tracking-[1px] uppercase">
                       {t("navbar.private-yachts")}
                     </Link>
                     <svg
@@ -205,7 +205,7 @@ export default function Navbar() {
                         : "text-primary-blue underline-transparent"
                     }`}
                   >
-                    <Link href="/yacht-trips" className="tracking-[1px]">
+                    <Link href="/yacht-trips" className="tracking-[1px] uppercase">
                       {t("navbar.experiences")}
                     </Link>
                     <svg

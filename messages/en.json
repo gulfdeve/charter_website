@@ -1,10 +1,10 @@
 {
   "navbar": {
     "contact-us": "Contact",
-    "private-yachts": "PRIVATE YACHTS",
-    "buy-a-yacht": "BUY A YACHT",
-    "shared-tours": "SHARED TOURS",
-    "experiences": "EXPERIENCES",
+    "private-yachts": "Private Yachts",
+    "buy-a-yacht": "Buy a Yacht",
+    "shared-tours": "Shared Tours",
+    "experiences": "Experiences",
     "offers": "Offers",
     "water-sports": "Water Sports",
     "new-year": "New Year",
@@ -14,16 +14,17 @@
     "home": "Home",
     "about": "About",
     "yacht-rentals": "Yacht Rentals",
-    "summer-offers": "SUMMER OFFERS",
-    "formula-1": "FORMULA 1"
+    "summer-offers": "Summer Offers",
+    "formula-1": "Formula 1",
+    "blogs": "Blogs"
   },
   "footer": {
-    "reach-out-to-us": "REACH US",
+    "reach-out-to-us": "Reach Us",
     "centaurus-charter": "Centaurus Charter",
     "amazing-offers-just-for-you": "Amazing Offers just for you",
-    "luxury-yachts": "LUXURY YACHTS",
-    "for-enquiries": "FOR ENQUIRIES",
-    "yachts-location": "YACHTS LOCATION",
+    "luxury-yachts": "Luxury Yachts",
+    "for-enquiries": "For Enquiries",
+    "yachts-location": "Yachts Location",
     "office-location": "Office 402, Galadari Bldg. 17, Dubai Production City (IMPZ), P.O. Box 74461, United Arab Emirates",
     "english-russian": "English / Russian",
     "english-spanish-portuguese": "English / Spanish / Portuguese",
@@ -32,7 +33,10 @@
     "english-chinese": "English / Chinese"
   },
   "offers": {
-    "validity-until": "Validity Until"
+    "validity-until": "Validity Until",
+    "summer-offer-up-to-40": "Summer Offer up to 40%",
+    "best-seller": "Best Seller",
+    "premium-yacht": "Premium Yacht"
   },
   "header": {
     "whatsapp_url": "https://api.whatsapp.com/send?phone=971547928626&text=Hi!%20I%20came%20across%20your%20website.%20I%20want%20to%20inquire%20about%20a%20yacht%20charter%20in%20Dubai.",
