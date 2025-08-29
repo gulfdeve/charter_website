@@ -15,7 +15,8 @@
     "about": "عن",
     "yacht-rentals": "تأجير اليخوت",
     "summer-offers": "عروض الصيف",
-    "formula-1": "الصيغة 1"
+    "formula-1": "الصيغة 1",
+    "blogs": "المدونات"
   },
   "footer": {
     "reach-out-to-us": "تواصل معنا",
@@ -28,10 +29,14 @@
     "english-russian": "الإنجليزية / الروسية",
     "english-spanish-portuguese": "الإنجليزية / الإسبانية / البرتغالية",
     "english-arabic": "الإنجليزية / العربية",
-    "english-filipino": "الإنجليزية / الفلبينية"
+    "english-filipino": "الإنجليزية / الفلبينية",
+    "english-chinese": "الإنجليزية / الصينية"
   },
   "offers": {
-    "validity-until": "الصلاحية حتى"
+    "validity-until": "الصلاحية حتى",
+    "summer-offer-up-to-40": "عرض الصيف يصل إلى 40 ٪",
+    "best-seller": "الأكثر مبيعًا",
+    "premium-yacht": "يخت مميز"
   },
   "header": {
     "whatsapp_url": "https://api.whatsapp.com/send?phone=971547928626&text=Hi!%20I%20came%20across%20your%20website.%20I%20want%20to%20inquire%20about%20a%20yacht%20charter%20in%20Dubai.",
