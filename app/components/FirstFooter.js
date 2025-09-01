@@ -495,20 +495,20 @@ export default function FirstFooter() {
         </div>
       </div>
 	  <div className="container mx-auto px-4">
-    {/* <a
+    <a
       href={pathname.includes('shared-yacht-tours-dubai') 
         ? "https://fareharbor.com/embeds/book/centauruscharter/?full-items=yes&flow=1038617" 
         : "https://fareharbor.com/embeds/book/centauruscharter/?full-items=yes"}
       className="flex items-center justify-center gap-2 blue-solid-button fixed fixed-btn bottom-4 hover:no-underline z-40 w-[calc(100%-2rem)] md:w-auto mx-auto left-0 right-0 text-center md:left-auto md:right-4"
     ><IoBoat size={20}/>
       BOOK YOUR YACHT
-    </a> */}
-    <a
+    </a>
+    {/* <a
       href='yacht-rentals'
       className="flex items-center justify-center gap-2 blue-solid-button fixed fixed-btn bottom-4 hover:no-underline z-40 w-[calc(100%-2rem)] md:w-auto mx-auto left-0 right-0 text-center md:left-auto md:right-4"
     ><IoBoat size={20}/>
       BOOK YOUR YACHT
-    </a>
+    </a> */}
   </div>
     </footer>
     </>
