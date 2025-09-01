@@ -98,7 +98,7 @@ const Page = () => {
                   of the city’s iconic skyline. Sail into 2026 under the stars
                   with unforgettable memories and a dazzling atmosphere.
                 </p>
-                <Link href="https://wa.link/4qpg10" target="_blank" >
+                <Link href="https://wa.link/v9pn97" target="_blank" >
                 <button className="yellow-solid-button">
                   GET YOUR TICKETS NOW
                 </button>
@@ -269,7 +269,7 @@ const Page = () => {
                     </div>
           </div>
           <div className="flex flex-col items-center justify-center py-7">
-            <Link href="https://wa.link/4qpg10" target="_blank" >
+            <Link href="https://wa.link/v9pn97" target="_blank" >
             <button className="yellow-solid-button">CONTACT US</button>
             </Link>
             <p className="text-white font-light text-center py-4 px-3">
