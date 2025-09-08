@@ -212,7 +212,7 @@ const yachts = [
                   <div className="mt-10">
                   {yacht.isSold === 0 ? (
                   <div className='grid grid-cols-1 s:grid-cols-2 sm:grid-cols-1 lg:grid-cols-2 gap-2'>
-                  <Link href="https://wa.link/v9pn97" target="_blank" >
+                  <Link href="https://wa.link/0uimnx" target="_blank" >
                   <button className="w-full yellow-solid-button">WhatsApp Us</button>
                   </Link>
                   <button onClick={handlequote} className="w-full yellow-solid-button">
