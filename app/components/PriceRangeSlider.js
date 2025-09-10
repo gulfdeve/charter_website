@@ -27,10 +27,10 @@ const PriceDropdownWithSlider = ({ min = 0, max = 250000, step = 1000, defaultVa
   const label = `${range[0].toLocaleString()} € - ${range[1].toLocaleString()} €`;
 
   return (
-    <div className="w-full mb-2 md:mb-0 relative" ref={dropdownRef} style={{ zIndex: 10 }}>
+    <div className="w-full relative" ref={dropdownRef} style={{ zIndex: 10 }}>
       <button
         type="button"
-        className="block w-full border border-gray-300 py-2 px-3 bg-white cursor-pointer focus:outline-none flex items-center justify-between"
+        className="block w-full border border-gray-300 rounded-md py-2 px-3 bg-white cursor-pointer focus:outline-none flex items-center justify-between"
         onClick={() => setOpen((v) => !v)}
       >
         <span className="text-md">{label}</span>

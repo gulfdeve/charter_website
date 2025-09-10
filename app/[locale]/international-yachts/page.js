@@ -30,6 +30,9 @@ export default function VesselsPage() {
   
   // Determine if we have search parameters
   const hasParams = Object.keys(searchParamsObj).length > 0;
+  // Render the client-side search results component
+  <ClientSearchResults searchParams={searchParamsObj} hasParams={hasParams} />
+
   // renderInfo.hasParamsValue = hasParams;
 
   // For controlled length range
@@ -75,7 +78,9 @@ export default function VesselsPage() {
       </div> */}
 
       {/* Hero */}
-      <div className="relative w-full h-[500px]">
+      <div className="relative bg-black ">
+
+      <div className="relative w-full h-[500px] opacity-40">
         <img
           src="/international-yacht.jpeg"
           alt="Hero"
@@ -84,16 +89,17 @@ export default function VesselsPage() {
       </div>
 
       {/* Header */}
-      <div className="text-center my-8">
-        <h1 className="font-extrabold mb-2 tracking-tight">HEADER</h1>
-        <h3 className="font-light">SUB HEADER</h3>
+      <div className="absolute top-10 bottom-10 left-0 right-0 text-center my-8">
+        <h1 className="text-xl font-bold mb-4 text-white lg:text-[32px] px-6 md:px-0 sm:text-2xl md:text-3xl 2xl:text-4xl">International Yachts – Global Luxury on the Water</h1>
+        <h2 className="text-sm font-semibold italic mb-4 text-white lg:text-[20px] px-5 md:px-0 sm:text-lg md:text-2xl 2xl:text-2xl">Sail in style with exclusive yachts available for global adventures</h2>
       </div>
 
       {/* Search Form */}
-      <section className="max-w-6xl mx-auto px-4 pb-8">
+      <div className="absolute bottom-0 md:bottom-[8rem] left-0 right-0 mb-8 px-4">
+      <section className="max-w-6xl mx-auto ">
         <form
           id="searchForm"
-          className="text-sm grid grid-cols-2 md:grid-cols-5 gap-4 items-end p-5 rounded-md bg-primary-blue-light"
+          className="text-sm grid grid-cols-2 md:grid-cols-4 gap-2 items-end p-3 md:p-5 rounded-md bg-primary-blue-light bg-opacity-50"
         >
           {/* Always include these hidden fields for the required parameters */}
           <input type="hidden" name="currency" value="USD" />
@@ -101,22 +107,22 @@ export default function VesselsPage() {
           <input type="hidden" name="minLength" defaultValue={searchParamsObj.minLength || ''} />
           <input type="hidden" name="maxLength" defaultValue={searchParamsObj.maxLength || ''} />
           
-          <div className="w-full mb-2 md:mb-0">
+          <div className="w-full md:mb-0 col-span-2 md:col-span-1">
             <input
               name="name"
-              placeholder="VESSEL NAME"
+              placeholder="Vessel Name"
               defaultValue={searchParamsObj.name || ""}
-              className="block w-full border border-gray-300 py-2 px-3 focus:outline-none"
+              className="block w-full border border-gray-300 rounded-md py-2 px-3 focus:outline-none"
             />
           </div>
 
-          <div className="w-full mb-2 md:mb-0 relative">
+          <div className="w-full relative">
             <select
               name="region"
               defaultValue={searchParamsObj.region || ""}
-              className="block w-full border border-gray-300 py-2 px-3 pr-10 focus:outline-none appearance-none"
+              className="block w-full border border-gray-300 rounded-md py-2 px-3 pr-6 focus:outline-none appearance-none"
             >
-              <option value="">CHOOSE DESTINATION</option>
+              <option value="">Destination</option>
               <option value="Africa">Africa</option>
               <option value="Antarctica">Antarctica</option>
               <option value="Arabian Gulf">Arabian Gulf</option>
@@ -132,13 +138,13 @@ export default function VesselsPage() {
             <svg className="h-5 w-5 text-gray-500 absolute right-3 top-1/2 transform -translate-y-1/2 pointer-events-none" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" /></svg>
           </div>
 
-          <div className="w-full mb-2 md:mb-0 relative">
+          <div className="w-full relative">
             <select
               name="yachtType"
               defaultValue={searchParamsObj.yachtType || ""}
-              className="block w-full border border-gray-300 py-2 px-3 pr-10 focus:outline-none appearance-none"
+              className="block w-full border border-gray-300 rounded-md py-2 px-3 pr-6 focus:outline-none appearance-none"
             >
-              <option value="">CHOOSE TYPE OF BOAT</option>
+              <option value="">Type of Boat</option>
               <option value="Gulet">Gulet</option>
               <option value="Sailing">Sailing</option>
               <option value="Catamaran">Catamaran</option>
@@ -151,20 +157,20 @@ export default function VesselsPage() {
             <svg className="h-5 w-5 text-gray-500 absolute right-3 top-1/2 transform -translate-y-1/2 pointer-events-none" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" /></svg>
           </div>
 
-          <div className="w-full mb-2 md:mb-0 relative">
+          <div className="w-full relative">
             <select
               name="charterType"
               defaultValue={searchParamsObj.charterType || ""}
-              className="block w-full border border-gray-300 py-2 px-3 pr-10 focus:outline-none appearance-none"
+              className="block w-full border border-gray-300 rounded-md py-2 px-3 pr-6 focus:outline-none appearance-none"
             >
-              <option value="">CHOOSE TYPE OF CHARTER</option>
+              <option value="">Type of Charter</option>
               <option value="Crewed">Crewed</option>
               <option value="Bareboat">Bareboat</option>
             </select>
             <svg className="h-5 w-5 text-gray-500 absolute right-3 top-1/2 transform -translate-y-1/2 pointer-events-none" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" /></svg>
           </div>
 
-          <div className="w-full mb-2 md:mb-0">
+          <div className="w-full rounded-md">
             <MultiDatePicker
               name="rentalPeriod"
               defaultDates={searchParamsObj.rentalPeriod || []}
@@ -182,13 +188,13 @@ export default function VesselsPage() {
             ]}
           />
 
-          <div className="w-full mb-2 md:mb-0 relative">
+          <div className="w-full relative">
             <select
               name="sleeps"
               defaultValue={searchParamsObj.sleeps || ""}
-              className="block w-full border border-gray-300 py-2 px-3 pr-10 focus:outline-none appearance-none"
+              className="block w-full border border-gray-300 rounded-md py-2 px-3 pr-6 focus:outline-none appearance-none"
             >
-              <option value="">SLEEPS</option>
+              <option value="">Sleeps</option>
               {Array.from({ length: 20 }, (_, i) => (
                 <option key={i + 1} value={i + 1}>{i + 1}</option>
               ))}
@@ -197,7 +203,7 @@ export default function VesselsPage() {
           </div>
 
           {/* Price Range Dropdown with Slider */}
-          {/* <div className="w-full mb-2 md:mb-0">
+          {/* <div className="w-full">
             <PriceRangeSlider
               min={0}
               max={250000}
@@ -211,12 +217,15 @@ export default function VesselsPage() {
 
           <button
             type="submit"
-            className="col-span-2 bg-primary-blue text-white font-semibold py-2 px-6 rounded-md uppercase"
+            className="col-span-2 md:col-span-1 bg-primary-blue-2 text-white font-semibold py-2 px-6 rounded-md uppercase"
           >
             SEARCH
           </button>
         </form>
       </section>
+            </div>
+            </div>
+
 
       {/* Client-side component to handle API calls */}
       <ClientSearchResults searchParams={searchParamsObj} hasParams={hasParams} />

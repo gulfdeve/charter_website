@@ -392,6 +392,10 @@ footer a:hover {
     border-radius: 0.375rem !important;
 	border-left-width: 4px !important;
   }
+  .rmdp-input{
+    background-color: transparent !important;
+    border: none !important;
+  }
   .table-striped tbody tr:nth-of-type(odd) {
     background-color: #F0F4FA;
 }
