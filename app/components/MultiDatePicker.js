@@ -60,19 +60,19 @@ export default function MultiDatePicker({ name, init = [] }) {
       <button
         type="button"
         onClick={toggleCalendar}
-        className="block w-full appearance-none border border-gray-300 rounded-none px-3 pr-10 leading-tight focus:outline-none focus:ring-2 focus:ring-blue-500 bg-white text-gray-700 text-left relative z-10 h-10 overflow-hidden whitespace-nowrap truncate"
+        className="block w-full  border border-gray-300 rounded-md px-3 pr-10 leading-tight bg-white text-gray-700 text-left relative z-10 h-10 overflow-hidden whitespace-nowrap truncate"
       >
         {renderDisplayText()}
       </button>
 
       <div
         onClick={toggleCalendar}
-        className="absolute inset-y-0 right-0 flex items-center justify-center bg-primary-blue px-2 cursor-pointer z-10"
+        className="absolute inset-y-0 right-0 rounded-r-md flex items-center justify-center bg-primary-blue-2 px-2 cursor-pointer z-10"
       >
         <FaChevronDown className="text-white" />
       </div>
 
-      <div className="absolute top-0 left-0 w-full h-full flex items-center bg-white">
+      <div className="absolute top-0 left-0 w-full h-full flex items-center">
         <DatePicker
           ref={datePickerRef}
           range

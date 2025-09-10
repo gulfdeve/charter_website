@@ -66,6 +66,11 @@ export default function ClientSearchResults({ searchParams: initialSearchParams,
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [JSON.stringify({ ...searchParams, page: undefined })]); // Ignore page param
 
+  useEffect(() => {
+  setCurrentPage(1);
+  fetchVessels();
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+}, [JSON.stringify({ ...searchParams, page: undefined })]);
   // Function to fetch vessels from the API via our proxy
   async function fetchVessels() {
     setLoading(true);
@@ -169,7 +174,7 @@ export default function ClientSearchResults({ searchParams: initialSearchParams,
 
       {/* Brand and Year Filters (only show if there are results) */}
       {!loading && filteredHits.length > 0 && (
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-2 sm:gap-4 justify-center items-stretch my-4 sm:my-6 w-full max-w-2xl mx-auto px-4">
+        <div className="grid grid-cols-1 xs:grid-cols-3 gap-2 sm:gap-4 justify-center items-stretch my-4 sm:my-6 w-full max-w-2xl mx-auto px-4">
           {uniqueBrands.length > 1 && (
             <div className="relative w-full flex flex-col">
               <label className="mb-1 font-semibold text-sm sm:text-base">Brand:</label>
@@ -177,8 +182,7 @@ export default function ClientSearchResults({ searchParams: initialSearchParams,
                 <select
                   value={brandFilter}
                   onChange={e => { setBrandFilter(e.target.value); setCurrentPage(1); }}
-                  className="border border-gray-300 py-2 px-3 pr-10 appearance-none focus:outline-none focus:ring-2 focus:ring-primary-blue focus:border-primary-blue w-full rounded-none text-sm sm:text-base"
-                  style={{ borderRadius: 0 }}
+                  className="border border-gray-300 py-2 px-3 pr-10 appearance-none rounded-md focus:outline-none focus:ring-2 focus:ring-primary-blue-light-2 focus:border-primary-blue-light-2 w-full text-sm sm:text-base"
                 >
                   <option value="">All Brands</option>
                   {uniqueBrands.map(brand => (
@@ -196,8 +200,7 @@ export default function ClientSearchResults({ searchParams: initialSearchParams,
                 <select
                   value={yearFilter}
                   onChange={e => { setYearFilter(e.target.value); setCurrentPage(1); }}
-                  className="border border-gray-300 py-2 px-3 pr-10 appearance-none focus:outline-none focus:ring-2 focus:ring-primary-blue focus:border-primary-blue w-full rounded-none text-sm sm:text-base"
-                  style={{ borderRadius: 0 }}
+                  className="border border-gray-300 py-2 px-3 pr-10 appearance-none rounded-md focus:outline-none focus:ring-2 focus:ring-primary-blue-light-2 focus:border-primary-blue-light-2 w-full text-sm sm:text-base"
                 >
                   <option value="">All Years</option>
                   {uniqueYears.map(year => (
@@ -215,8 +218,7 @@ export default function ClientSearchResults({ searchParams: initialSearchParams,
                 <select
                   value={cabinsFilter}
                   onChange={e => { setCabinsFilter(e.target.value); setCurrentPage(1); }}
-                  className="border border-gray-300 py-2 px-3 pr-10 appearance-none focus:outline-none focus:ring-2 focus:ring-primary-blue focus:border-primary-blue w-full rounded-none text-sm sm:text-base"
-                  style={{ borderRadius: 0 }}
+                  className="border border-gray-300 py-2 px-3 pr-10 appearance-none rounded-md focus:outline-none focus:ring-2 focus:ring-primary-blue-light-2 focus:border-primary-blue-light-2 w-full text-sm sm:text-base"
                 >
                   <option value="">All Cabins</option>
                   {availableCabins.map(cabins => (
@@ -288,7 +290,7 @@ export default function ClientSearchResults({ searchParams: initialSearchParams,
 
       {/* Results */}
       <div ref={resultsContainerRef}>
-        {hasParams && !loading && data && (
+        {!loading && data && (
           <SearchResultsClient
             paginatedHits={paginatedHits}
             currentPage={currentPage}

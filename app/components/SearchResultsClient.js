@@ -29,10 +29,10 @@ export default function SearchResultsClient({
 
   return (
     <div className="mt-12 flex flex-col items-center justify-center px-4 container mx-auto">
-      <h2 className=" font-semibold text-center mb-6">Search Results</h2>
+      <h2 className="text-primary-blue font-semibold text-center mb-6">Search Results</h2>
       {paginatedHits && paginatedHits.length > 0 ? (
         <>
-          <div className="flex flex-wrap justify-center gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 ">
             {paginatedHits.map((vessel, index) => (
               <div
                 key={index}
@@ -87,21 +87,14 @@ export default function SearchResultsClient({
                       </h6>
                     </div>
                   </div>
-
-                  <div className="grid grid-cols-1 gap-2">
-                   
-                    <button 
-                      className="py-1 mt-5 
-                        text-base font-bold tracking-wider uppercase
-                        text-primary-yellow bg-primary-blue
-                        hover:bg-primary-yellow hover:text-primary-blue hover:scale-105
-                        rounded-md shadow
-                        transition duration-150 ease-in-out transform"
-                      onClick={(e) => handleQuote(e, vessel)}
-                    >
-                      INQUIRE NOW
-                    </button>
-                  </div>
+                  <div className="grid grid-cols-1 s:grid-cols-2 sm:grid-cols-1 lg:grid-cols-2 gap-2">
+                 <Link href="https://wa.link/i4yciu" target="_blank" >
+                  <button className="w-full blue-solid-button">WhatsApp Us</button>
+                  </Link>
+                  <button onClick={(e) => handleQuote(e, vessel)} className="blue-solid-button">
+                    INQUIRE NOW
+                  </button>
+                </div>
                 </div>
               </div>
             ))}
