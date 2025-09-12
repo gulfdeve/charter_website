@@ -22,66 +22,75 @@ const Page = () => {
     {
       name: "THUNDER - 36FT",
       capacity: 10,
-      ratePerHour: "AED 595",
-      rate2Hours: "AED 950",
-      rate3Hours: "AED 1070",
-      rate4Hours: "AED 1430",
+      ratePerHour: "AED 650",
+      rate4Hours: "AED 1560",
+      rate5Hours: "AED 1950",
       fareharbor_id: "353083",
     },
     {
       name: "STORM - 36FT",
       capacity: 10,
-      ratePerHour: "AED 595",
-      rate2Hours: "AED 950",
-      rate3Hours: "AED 1070",
-      rate4Hours: "AED 1430",
+      ratePerHour: "AED 650",
+      rate4Hours: "AED 1560",
+      rate5Hours: "AED 1950",
       fareharbor_id: "429263",
     },
     {
       name: "RIVERSIDE - 40FT",
       capacity: 12,
-      ratePerHour: "AED 750",
-      rate2Hours: "AED 1200",
-      rate3Hours: "AED 1350",
-      rate4Hours: "AED 1800",
+      ratePerHour: "AED 815",
+      rate4Hours: "AED 1956",
+      rate5Hours: "AED 2445",
       fareharbor_id: "583211",
     },
     {
       name: "VASSIA - 56FT",
       capacity: 28,
-      ratePerHour: "AED 1040",
-      rate2Hours: "AED 1665",
-      rate3Hours: "AED 1870",
-      rate4Hours: "AED 2495",
+      ratePerHour: "AED 1150",
+      rate4Hours: "AED 2760",
+      rate5Hours: "AED 3450",
       fareharbor_id: "340280",
     },
     {
       name: "ETOSHA - 58FT",
       capacity: 28,
-      ratePerHour: "AED 1080",
-      rate2Hours: "AED 1730",
-      rate3Hours: "AED 1945",
-      rate4Hours: "AED 2590",
+      ratePerHour: "AED 1150",
+      rate4Hours: "AED 2760",
+      rate5Hours: "AED 3450",
       fareharbor_id: "340265",
     },
     {
       name: "LAGOONA - 56FT",
       capacity: 28,
-      ratePerHour: "AED 1150",
-      rate2Hours: "AED 1840",
-      rate3Hours: "AED 2070",
-      rate4Hours: "AED 2760",
+      ratePerHour: "AED 1250",
+      rate4Hours: "AED 3000",
+      rate5Hours: "AED 3750",
       fareharbor_id: "340459",
 
     },
     {
       name: "SILVER CREEK - 61FT",
       capacity: 30,
-      ratePerHour: "AED 1250",
-      rate2Hours: "AED 1995",
-      rate3Hours: "AED 2250",
-      rate4Hours: "AED 3000",
-       fareharbor_id: "340286",
+      ratePerHour: "AED 1,250",
+      rate4Hours: "AED 3,000",
+      rate5Hours: "AED 3,750",
+      fareharbor_id: "340286",
+    },
+    {
+      name: "KRONOS - 86FT",
+      capacity: 50,
+      ratePerHour: "AED 3,800",
+      rate4Hours: "AED 9,120",
+      rate5Hours: "AED 11400",
+      fareharbor_id: "577212",
+    },
+    {
+      name: "POSEIDON - 118FT",
+      capacity: 100,
+      ratePerHour: "AED 6000",
+      rate4Hours: "AED 14,400",
+      rate5Hours: "AED 18,000",
+      fareharbor_id: "417962",
     },
   ];
 
@@ -126,8 +135,8 @@ const Page = () => {
                         <div className="flex flex-col mb-4">
                           <div className="flex"><RiDiscountPercentFill size={20} className="mr-3 mt-1 text-primary-blue-light-2"/>
                             <div className="flex flex-col text-sm text-primary-grey">Discounted Rate:
-                            <p className="font-semibold text-base">3 Hours: <span className="text-black ml-4">{yacht.rate3Hours}</span></p>
                             <p className="font-semibold text-base">4 Hours: <span className="text-black ml-4">{yacht.rate4Hours}</span></p>
+                            <p className="font-semibold text-base">5 Hours: <span className="text-black ml-4">{yacht.rate5Hours}</span></p>
                             </div>
                           </div>
                         </div>
@@ -136,9 +145,9 @@ const Page = () => {
                           <a href={`https://fareharbor.com/embeds/book/centauruscharter/items/${yacht.fareharbor_id}/?full-items=yes&flow=645487`}
                                 target="_self"
                                 rel="noopener noreferrer" 
-                                className="btn-info">Book Now
-                          <FiArrowRight size={20} className=" text-lg transform md:group-hover:translate-x-4 transition-transform duration-300" />
-                          </a>
+                                className="flex items-center mt-5 pt-3 group justify-between px-5 text-primary-blue-2 border-t border-gray-400">
+                        <div className="btn-info">Book Now</div>
+                        <FiArrowRight size={20} className=" text-lg transform md:group-hover:translate-x-4 transition-transform duration-300" />                          </a>
                       
                       </div>
                     ))}
@@ -186,10 +195,10 @@ const Page = () => {
                       {yacht.ratePerHour}
                     </td>
                     <td className="font-secondary p-3 font-semibold">
-                      {yacht.rate3Hours}
+                      {yacht.rate4Hours}
                     </td>
                     <td className="font-secondary p-3 font-semibold">
-                      {yacht.rate4Hours}
+                      {yacht.rate5Hours}
                     </td>
                     <td className="p-3 font-bold">
                        <a href={`https://fareharbor.com/embeds/book/centauruscharter/items/${yacht.fareharbor_id}/?full-items=yes&flow=645487`}
@@ -207,6 +216,26 @@ const Page = () => {
             </table>
           </div>
         </div>
+        <div className="container mx-auto flex flex-col  px-4">
+        <div className="bg-primary-blue-4 p-0.5 ">
+          <h3 className=" font-bold text-center text-white text-[1rem]">
+          INCLUSIONS: WATER, SOFT DRINKS, WINES, AND BEERS.
+          </h3>
+        </div>
+        <p className="text-left md:text-center text-primary-grey pt-2 pb-2">
+        Minimum booking duration applies. Terms and conditions may vary based on yacht and package selected.
+        </p>
+        <p className="text-left md:text-center italic font-bold text-primary-blue pb-5">
+        Premium drinks are available for purchase on board
+        </p>
+        <h3 className="text-black text-base text-center font-bold pb-5">
+            DISCOUNTED RATES ARE VALID FOR BOOKINGS FROM 6AM-2PM (MORNING TRIPS)
+            & 8 PM ONWARDS (NIGHT TRIPS)
+        </h3>
+        <p className=" text-left md:text-center italic text-primary-grey py-5">
+        Escape the ordinary and embark on a private yacht adventure with our limited-time 40% discount for UAE residents. To avail this exclusive offer, simply book a minimum 4-hours yacht tour and let us take care of the rest. Enjoy unlimited drinks and snacks during your private yacht tour. Watersports are also available on request.
+        </p>
+      </div>
         <div className="flex flex-col">
           <p className="text-black  text-center font-bold">
             INCLUSIONS: WATER, SOFT DRINKS, WINES, AND BEERS.
@@ -312,9 +341,9 @@ const Page = () => {
               TERMS & CONDITION
             </p>
             <ul className="container mx-auto list-disc text-left text-primary-blue text-sm pl-4 pt-5">
-              <li>The UAE Residents offer is valid until 31 May 2025.</li>
+              <li>The UAE Residents offer is valid until 31 October 2025.</li>
               <li>This offer cannot be combined with other promotions.</li>
-              <li>⁠A minimum booking duration of 3 hours is required.</li>
+              <li>⁠A minimum booking duration of 4 hours is required.</li>
               <li>
                 ⁠The offer is exclusive to UAE residents (proof of residency may
                 be required).
