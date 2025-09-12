@@ -134,7 +134,7 @@ F1 GRAND PRIX ABU DHABI 2025 <br/><span className="text-white md:text-white">Pri
         </p>
           <a
           target="_blank"
-          href="https://wa.link/bpp9px"
+          href="https://wa.link/jimth5"
           className="red-solid-button"
           >
             BOOK NOW
