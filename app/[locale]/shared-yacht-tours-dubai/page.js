@@ -9,7 +9,7 @@ import { IoLocationSharp, IoMan } from "react-icons/io5";
 import { MdOutlineLocalDining } from "react-icons/md";
 import YachtCarousal from "@/app/components/YachtCarousel";
 import FareHarborCalendar from "@/app/components/FareHarborCalendar";
-import Modalsharedtours from "../../components/Modelsharedtours";
+// import Modalsharedtours from "../../components/Modelsharedtours";
 import Modal2 from "@/app/components/Modal2";
 import { Link } from "@/app/i18n/routing";
 import ToursCarousel from "@/app/components/Sharedtoursmob";
@@ -21,14 +21,14 @@ const toursData = [
     image: "/midday.webp",
     title: "MORNING TOURS",
     cruisingTime: "9:00 AM - 11:00 AM",
-    adultPrice: "AED 199",
-    childPrice: "AED 149",
+    adultPrice: "AED 219",
+    childPrice: "AED 159",
     liveBBQ: "Sandwiches, Assorted Croissants, Strawberry & Honey Jam, Muffins, & Fresh Fruits. Welcome Mimosa, Water, Tea, Coffee, Juices & Soft Drinks.<br/>*Vegetarian food available on request*",
     cruisingRoute: "Dubai Marina, JBR and Burj Al Arab",
-    departurePoint: "Dubai Marina/Dubai Marina Harbour",
-    blueHeadline: "EVERY SUNDAY-THURSDAY",
+    departurePoint: "Marina Harbour Office",
+    blueHeadline: "AVAILABLE ALL DAYS OF THE WEEK",
 	  validity: "*Valid from July 1-September 15, 2025",
-    yellowHeadline: "50% OFF",
+    yellowHeadline: "",
     fareharborLink:
       "https://fareharbor.com/embeds/book/centauruscharter/items/633603/?full-items=yes&flow=1283212",
   },
@@ -38,13 +38,13 @@ const toursData = [
     title: "AFTERNOON TOURS",
     cruisingTime: "04:00 PM - 05:00 PM",
     adultPrice: "AED 159",
-    childPrice: "AED 149",
+    childPrice: "AED 139",
     liveBBQ: "Wines, Beers, Softdrinks & Water",
     cruisingRoute: "Dubai Marina, Ain Dubai and JBR",
-    departurePoint: "Dubai Marina/Dubai Marina Harbour",
-    blueHeadline: "EVERY SUNDAY-THURSDAY",
+    departurePoint: "Marina Harbour Office",
+    blueHeadline: "AVAILABLE ALL DAYS OF THE WEEK",
 	  validity: "*Valid from July 1-September 15, 2025",
-    yellowHeadline: "50% OFF",
+    yellowHeadline: "",
     fareharborLink:
       "https://fareharbor.com/embeds/book/centauruscharter/items/646208/calendar/2025/06/?full-items=yes",
   },
@@ -53,14 +53,14 @@ const toursData = [
     image: "/sunset.webp",
     title: "SUNSET TOURS",
     cruisingTime: "05:30 PM - 07:30 PM",
-    adultPrice: "AED 259",
-    childPrice: "AED 149",
+    adultPrice: "AED 289",
+    childPrice: "AED 159",
     liveBBQ: "Club Sandwich, Chicken & Beef Sliders, Vegetable Spring Rolls, Chicken Samosa & Fruit Platter. Water, Soft Drinks, Beer, Red Wine, White Wine & Sparkling Wine<br>*Vegetarian food available on request",
     cruisingRoute: "Dubai Marina, JBR and Burj Al Arab",
-    departurePoint: "Dubai Marina/Dubai Marina Harbour",
-    blueHeadline: "EVERY SUNDAY-THURSDAY",
+    departurePoint: "Marina Harbour Office",
+    blueHeadline: "AVAILABLE ALL DAYS OF THE WEEK",
 	  validity: "*Valid from July 1-September 15, 2025",
-    yellowHeadline: "50% OFF",
+    yellowHeadline: "",
     fareharborLink:
       "https://fareharbor.com/embeds/book/centauruscharter/items/488868/?full-items=yes&flow=no",
   },
@@ -69,14 +69,14 @@ const toursData = [
     image: "/night.webp",
     title: "NIGHT TOURS",
     cruisingTime: "08:00 PM - 10:00 PM",
-    adultPrice: "AED 199",
-    childPrice: "AED 149",
+    adultPrice: "AED 249",
+    childPrice: "AED 159",
     liveBBQ: "Club Sandwich, Chicken & Beef Sliders, Vegetable Spring Rolls, Chicken Samosa & Fruit Platter. Water, Soft Drinks, Beer, Red Wine, White Wine & Sparkling Wine<br>*Vegetarian food available on request",
     cruisingRoute: "Dubai Marina, JBR and Burj Al Arab",
-    departurePoint: "Dubai Marina/Dubai Marina Harbour",
-    blueHeadline: "EVERY SUNDAY-THURSDAY",
+    departurePoint: "Marina Harbour Office",
+    blueHeadline: "AVAILABLE ALL DAYS OF THE WEEK",
 	  validity: "*Valid from July 1-September 15, 2025",
-    yellowHeadline: "50% OFF",
+    yellowHeadline: "",
     fareharborLink:
       "https://fareharbor.com/embeds/book/centauruscharter/items/488872/?full-items=yes&flow=no",
   },
@@ -104,7 +104,7 @@ const Page = () => {
   return (
     <>
       {/* Hero Video or Banner */}
-      <Modalsharedtours />
+      {/* <Modalsharedtours /> */}
       <VideoLocal filename="/shared yacht tours.mp4" section="shared-tours" />
 
       {/* Main Container */}
@@ -136,7 +136,7 @@ const Page = () => {
             </div>
 
             {/* Right Section - FareHarbor Calendar */}
-			<div className="hidden w-full lg:w-1/2 flex justify-center items-center">
+			<div className="w-full lg:w-1/2 flex justify-center items-center">
   <iframe
     src="https://www.centauruscharter.net/calendar.html"
     title="Centaurus Charter Calendar"
@@ -182,12 +182,12 @@ const Page = () => {
                   )}
                   {tour.blueHeadline && (
                     <div className="bg-primary-yellow-light px-3 py-1 rounded-sm">
-                      <p className="text-xs lg:text-sm uppercase text-primary-blue-2 font-bold">
+                      <p className="text-xs lg:text-xs uppercase text-primary-blue-2 font-bold">
                         {tour.blueHeadline}
                       </p>
                     </div>
                   )}
-				  <div className="px-3 py-1">
+				  {/* <div className="px-3 py-1">
             {tour.id === 2 ? (
             <p className="text-xs uppercase text-primary-blue">
 						{tour.validity}
@@ -197,7 +197,7 @@ const Page = () => {
 					  </p>
         
 				  )}
-					</div>
+					</div> */}
                 </div>
               </div>
 
@@ -232,14 +232,14 @@ const Page = () => {
                   <div className="flex flex-row gap-2 items-center">
                     <p className="text-primary-grey text-sm">
                       <span className="font-bold">Adult (12+):</span>{" "}
-                      {tour.adultPrice} +VAT
+                      {tour.adultPrice}
                     </p>
                   </div>
 
                   <div className="flex flex-row gap-2 items-center">
                     <p className="text-primary-grey text-sm">
                       <span className="font-bold">Child (4-11):</span>{" "}
-                      {tour.childPrice} +VAT
+                      {tour.childPrice}
                     </p>
                   </div>
 
@@ -285,15 +285,15 @@ const Page = () => {
               </div>
 
               {/* Book Now Button - Always fully visible */}
-              {/* <a
+              <a
         
-                href={tour.fareharborLink} */}
-                <div
-                className="cursor-not-allowed opacity-20 blue-solid-button w-full block text-center"
+                href={tour.fareharborLink}
+              
+                className="blue-solid-button w-full block text-center"
               >
-                Sold out
-                </div>
-              {/* </a> */}
+                Book Now
+                
+              </a>
             </div>
           ))}
         </div>
@@ -382,7 +382,7 @@ const Page = () => {
     </li>
     <li className="">Rates cannot be combined with other offers.</li>
     <li className="">Guests under 18 years old must be accompanied by an adult.</li>
-    <li className="">The offer is valid until September 15, 2025</li>
+    {/* <li className="">The offer is valid until September 15, 2025</li> */}
   </ul>
 </div>
   {/* CTA Section */}
@@ -396,7 +396,7 @@ const Page = () => {
               <a
                 target="_blank"
                 className="blue-lined-button"
-                href="https://wa.link/vpunoz"
+                href="https://wa.link/6lx1fu"
               >
                 <FaWhatsapp size={20} />
                 WHATSAPP US
