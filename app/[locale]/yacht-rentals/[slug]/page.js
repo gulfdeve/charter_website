@@ -131,14 +131,17 @@ export default async function YachtPage({ params: paramsPromise }) {
         </h3>
         <h3 className=" p-2 flex flex-col items-center">
           <span className="text-sm text-primary-grey">Price per hour:</span>
-          {product.id !== 20 && (
+          <span className="font-bold text-md md:text-lg lg:text-xl text-primary-red text-center">
+            AED {product.per_hour_price.toLocaleString()} 
+          </span>
+          {/* {product.id !== 20 && (
           <span className="font-semibold text-xs text-primary-blue xl:text-xs line-through">
             AED {product.per_hour_price.toLocaleString()} 
-          </span>)}
-          <span className="font-bold text-md md:text-lg lg:text-xl text-primary-red text-center">
+          </span>)} */}
+          {/* <span className="font-bold text-md md:text-lg lg:text-xl text-primary-red text-center">
               {getDiscountedPrice(product.title) || `AED ${parseInt(product.per_hour_price).toLocaleString()}`}
             {product.id === 24 && (<span className="text-xs text-primary-grey"><br className="s:hidden"/> (40 Pax)</span>)}
-            </span>
+            </span> */}
         </h3>
       <div className=" text-primary-blue rounded-lg p-2 lg:p-1.5 xl:p-2 flex flex-col col-span-2 md:col-span-4 lg:col-span-1 items-end">
         <a

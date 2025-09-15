@@ -3,7 +3,7 @@ import { FaQuestionCircle, FaWhatsapp, FaMapMarkerAlt } from "react-icons/fa";
 import { Link } from "@/app/i18n/routing";
 import { useLocale, useTranslations } from "next-intl";
 import TabbyPromoSection from "@/app/[locale]/checkout/[slug]/TabbyPromoSection";
-import summerRate from '../../resident-offer/summer-offer.json';
+import summerRate from '../../resident-offer/tabby-rate.json';
 
 export default function YachtDetails({
   yachtDetails,
