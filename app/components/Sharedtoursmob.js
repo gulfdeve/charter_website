@@ -72,7 +72,7 @@ export default function ToursCarousel({ toursData }) {
                         </p>
                       </div>
                     )}
-					{tour.validity && (
+					{/* {tour.validity && (
 					<div className="px-3 py-1">
             {tour.id === 2 ? (
 					  <p className="text-xs uppercase text-primary-blue">
@@ -81,7 +81,7 @@ export default function ToursCarousel({ toursData }) {
 						{tour.validity}
 					  </p>)}
 					</div>
-				  )}
+				  )} */}
                   </div>
                 </div>
 
@@ -160,17 +160,17 @@ export default function ToursCarousel({ toursData }) {
                 </div>
 
                 {/* Book Now Button */}
-                {/* <a
+                <a
                   href={tour.fareharborLink}
                   className="blue-solid-button w-full block text-center"
                 >
                   Book Now
-                </a> */}
-                <div
+                </a>
+                {/* <div
                 className="cursor-not-allowed opacity-20 blue-solid-button w-full block text-center"
               >
                 Sold out
-                </div>
+                </div> */}
               </div>
             </div>
           ))}

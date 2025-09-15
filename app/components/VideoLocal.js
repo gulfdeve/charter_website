@@ -50,9 +50,9 @@ export default function VideoLocal({ filename, section }) {
             All-Inclusive Sharing Yacht Trips In Dubai
           </h1>
           <p className="text-xl mb-2  text-primary-blue-2 lg:text-white  2xl:text-3xl">
-            Limited-Time Offer
+            Affordable Luxury Cruises with Stunning Skyline Views
           </p>
-          <p className="text-xl mb-8 text-primary-blue-2 lg:text-white  2xl:text-3xl font-bold">
+          <p className="hidden text-xl mb-8 text-primary-blue-2 lg:text-white  2xl:text-3xl font-bold">
             50% OFF
           </p>
           <a
