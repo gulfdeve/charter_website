@@ -83,11 +83,11 @@ export default async function OffersPage({ params }) {
       <div className="container mx-auto bg-primary-yellow flex flex-col md:flex-row gap-3 items-center justify-between rounded-xl py-3">
           {/* Left Text */}
           <span className="text-primary-blue font-bold text-base md:text-lg uppercase">
-            EXPLORE OUR SUMMER OFFERS
+            EXPLORE OUR WINTER OFFER
           </span>
 
           {/* Right Button */}
-          <Link href="/resident-offer">
+          <Link href="/offers/dubai-yachts-winter-offers">
             <button
               className="px-10 py-2
           text-base font-bold tracking-wider uppercase
