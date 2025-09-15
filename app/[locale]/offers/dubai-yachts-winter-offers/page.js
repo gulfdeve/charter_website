@@ -311,7 +311,7 @@ const Page = () => {
            <section className="w-full p-4 container mx-auto space-y-10">
           <div className="container bg-primary-yellow flex flex-col md:flex-row gap-3 items-center justify-between rounded-xl py-3">
           {/* Left Text */}
-          <span className="text-primary-blue font-bold text-base md:text-lg uppercase">
+          <span className="text-center md:text-left text-primary-blue font-bold text-base md:text-lg uppercase">
             EXPLORE MORE YACHT OFFERS
           </span>
 

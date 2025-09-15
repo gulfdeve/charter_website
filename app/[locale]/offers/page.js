@@ -80,9 +80,10 @@ export default async function OffersPage({ params }) {
       <div className="block md:hidden">
         <OfferMobilecarousal />
       </div>
+      <section className="container mx-auto">
       <div className="container mx-auto bg-primary-yellow flex flex-col md:flex-row gap-3 items-center justify-between rounded-xl py-3">
           {/* Left Text */}
-          <span className="text-primary-blue font-bold text-base md:text-lg uppercase">
+          <span className="text-center md:text-left text-primary-blue font-bold text-base md:text-lg uppercase">
             EXPLORE OUR WINTER OFFER
           </span>
 
@@ -100,6 +101,7 @@ export default async function OffersPage({ params }) {
             </button>
           </Link>
       </div>
+      </section>
       <div className="container mx-auto px-3 py-5 pb-8">
         <p className="text-base text-primary-grey">
           Centaurus Charter offers range of membership discounts &{" "}
