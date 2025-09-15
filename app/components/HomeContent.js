@@ -214,19 +214,19 @@ export default function Home() {
 
                   {/* Category Badges */}
                   {/* Summer Offer Tag */}
-                  {product.id !== 20 && (
+                  {/* {product.id !== 20 && (
                   <a href="/resident-offer" target="_blank" className="cursor-pointer font-semibold absolute z-10 flex items-center gap-2 top-6 left-0 gradient-custom-3 text-primary-blue-2 text-sm py-0.5 px-2 rounded-r-lg hover:pl-5 transition-all">
                     <IoIosSunny/>
                     <p>{t('offers.summer-offer-up-to-40')}</p>
-                  </a>)}           
+                  </a>)}            */}
                   {["56ft-lagoona", "61ft-silvercreek"].includes(product.slug) && (
-                    <div className="absolute flex items-center gap-2 top-14 left-0 gradient-custom-2 text-primary-yellow-light text-sm py-0.5 px-2 rounded-r-lg">
+                    <div className="absolute flex items-center gap-2 top-6 left-0 gradient-custom-2 text-primary-yellow-light text-sm py-0.5 px-2 rounded-r-lg">
                       <BsStars />
                       <p>{t('offers.best-seller')}</p>
                     </div>
                   )}
                   {product.per_hour_price > 4000 && (
-                    <div className="absolute flex items-center gap-2 top-14 left-0 gradient-custom-2 text-primary-yellow-light text-sm py-0.5 px-2 rounded-r-lg">
+                    <div className="absolute flex items-center gap-2 top-6 left-0 gradient-custom-2 text-primary-yellow-light text-sm py-0.5 px-2 rounded-r-lg">
                       <BsStars />
                       <p>{t('offers.premium-yacht')}</p>
                     </div>
@@ -272,9 +272,18 @@ export default function Home() {
                   }
                   </div>
 
-                  <div className="flex flex-row justify-between items-end z-10">
-        
+                  <div className="flex flex-row justify-between items-start z-10">
                     <div>
+                      <div className="text-sm font-semibold mt-3 mb-2">
+                        Inclusion: <span className="text-xs text-primary-grey font-normal">(min. booking of 3 hrs)</span> 
+                      </div>
+                      <div>
+                      <ol className="text-xs">
+                        <li>
+                          Hops & Grapes
+                        </li>
+                      </ol>
+                      </div>
                       <div className="text-sm font-semibold mt-3 mb-2">
                         Extras: <span className="text-xs text-primary-grey font-normal">(additional charges apply)</span> 
                       </div>
@@ -299,12 +308,12 @@ export default function Home() {
                         <img
                           src="/centaurus_link.svg"
                           alt="centaurus link"
-                          className="w-[11rem]"
+                          className="w-[10rem]"
                         />
                       </Link>
                       <div className="flex flex-col items-center justify-center">
                       <span className=" text-primary-blue-2 text-xs text-center">
-                        <a href="https://www.centauruscharter.com/terms-and-condition" target="_blank">T&C's Apply</a>
+                        <a href="https://www.centauruscharter.com/terms-and-condition" target="_blank">T&Cs Apply</a>
                       </span>
                     </div>
                     </div>
@@ -313,26 +322,29 @@ export default function Home() {
                   <div className="flex flex-grow gap-2 flex-col lg:flex-row justify-end lg:justify-between lg:items-end z-20 border-t border-gray-400 pt-3 mt-5">
                     {/* Price per Hour */}
                     <div className="">
-                      {product.id === 20 && (<span className=" text-sm">Price per hour:</span>)}
-                      {product.id !== 20 && (<div>
-                      <span className=" text-sm">Regular Price:</span>
-                      <div className="flex gap-2 font-semibold text-sm lg:text-md text-primary-grey">
-                      <span className="line-through">
-                      AED {product.per_hour_price.toLocaleString()}
-                      </span> <span>per hour</span>
-                      </div>
-                      </div>)}
+                      
+                      {/* {product.id === 20 && (<span className=" text-sm  ">Price per hour:</span>)} */}
                       <span>
-                        {product.id !== 20 && (
-                        <div>   
-                        <p className="text-xs font-semibold italic mt-4 text-primary-grey">Summer Offer Exclusive
-                        </p>
-                        <p className="text-xxs font-normal italic text-primary-grey">minimum booking of 2 hours<br/>Exclusive for UAE Residents
-                        </p>
+                        {/* {product.id !== 20 && ( */}
+                          <div>   
+                        {/* <p className="text-xs font-semibold italic text-primary-grey">Summer Offer Exclusive
+                        </p> */}
+                        {/* <p className="text-xs font-normal italic text-primary-red">Minimum booking of 3 hours
+                        </p> */}
+                          {/* {product.id !== 20 && ( */}
+                            <div>
+                          {/* <span className=" text-sm">Regular Price:</span> */}
+                          <div className="flex gap-2 font-bold text-base lg:text-lg text-primary-red items-center mt-4">
+                          <span className="">
+                          AED {product.per_hour_price.toLocaleString()}
+                          </span> <span className="text-sm text-primary-grey">per hour</span>
+                          </div>
+                          </div>
+                          {/* )} */}
                         </div>
-                        )}
+                        {/* )} */}
                       </span>
-                      <div className="flex gap-2 items-center">
+                      {/* <div className="flex gap-2 items-center">
                       <span className="font-bold text-base lg:text-lg text-primary-red line">
                       {
                         summeroffer.find(offer =>
@@ -344,7 +356,7 @@ export default function Home() {
                       {product.id === 24 && (<span className="text-xs text-primary-grey"> (40 Pax)</span>)}
                       </span>
                       <span className="font-semibold text-sm text-primary-grey"></span>
-                      </div>
+                      </div> */}
                     </div>
                     <a
                       href={`https://fareharbor.com/embeds/book/centauruscharter/items/${product.fareharbor_id}/?full-items=yes&flow=645487`}

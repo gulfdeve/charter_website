@@ -167,19 +167,19 @@ export default function YachtmobileCarousal() {
 
                   {/* Category Badges */}
                   {/* Summer Offer Tag */}
-                  {product.id !== 20 && (
+                  {/* {product.id !== 20 && (
                   <a href="/resident-offer" target="_blank" className="cursor-pointer font-semibold absolute z-10 flex items-center gap-2 top-6 left-0 gradient-custom-3 text-primary-blue-2 text-xs s:text-md py-0.5 px-2 rounded-r-lg hover:pl-5 transition-all">
                     <IoIosSunny/>
                     <p>{t('offers.summer-offer-up-to-40')}</p>
-                  </a>)}
+                  </a>)} */}
                   {["56ft-lagoona", "61ft-silvercreek"].includes(product.slug) && (
-                    <div className="absolute flex items-center gap-2 top-12 s:top-14 left-0 gradient-custom-2 text-primary-yellow-light text-xs s:text-md py-0.5 px-2 rounded-r-lg">
+                    <div className="absolute flex items-center gap-2 top-6 left-0 gradient-custom-2 text-primary-yellow-light text-xs s:text-md py-0.5 px-2 rounded-r-lg">
                       <BsStars />
                       <p>{t('offers.best-seller')}</p>
                     </div>
                   )}
                   {product.per_hour_price > 4000 && (
-                    <div className="absolute flex items-center gap-2 top-12 s:top-14 left-0 gradient-custom-2 text-primary-yellow-light text-xs s:text-md  py-0.5 px-2 rounded-r-lg">
+                    <div className="absolute flex items-center gap-2 top-6 left-0 gradient-custom-2 text-primary-yellow-light text-xs s:text-md  py-0.5 px-2 rounded-r-lg">
                       <BsStars />
                       <p>{t('offers.premium-yacht')}</p>
                     </div>
@@ -226,6 +226,16 @@ export default function YachtmobileCarousal() {
                 <div className="flex flex-row justify-between items-center xl:w-[32rem] z-10">
                   <div>
                     <div className="text-sm font-semibold mt-3 mb-2">
+                        Inclusion: <span className="text-xs text-primary-grey font-normal">(min. booking of 3 hrs)</span> 
+                      </div>
+                      <div>
+                      <ol className="text-xs">
+                        <li>
+                          Hops & Grapes
+                        </li>
+                      </ol>
+                      </div>
+                    <div className="text-sm font-semibold mt-3 mb-2">
                       Extras: <span className="text-xs text-primary-grey font-normal">(additional charges apply)</span>
                     </div>
                     <ol className="text-xs list-disc list-inside">
@@ -233,7 +243,7 @@ export default function YachtmobileCarousal() {
                       <li>Canapés & Snacks</li>
                       <li>DJ</li>
                     </ol>
-                    <span className="text-primary-blue text-xs">T&C's Apply</span>
+                    <span className="text-primary-blue text-xs">T&Cs Apply</span>
                   </div>
                 </div>
                 <Link
@@ -252,23 +262,25 @@ export default function YachtmobileCarousal() {
                 <div className="flex s:flex-row xxs:flex-col-reverse justify-between items-center z-10 xl:w-[32rem] mt-3">
                   <div className="flex flex-col sm:flex-row w-full justify-between sm:items-end border-t border-gray-400 pt-3 pb-2 md:pb-0">
                     <div className="xl:p-2 flex flex-col xl:rounded-r-lg">
-                      {product.id === 20 && (<span className="text-sm">Price Per Hour:</span>)}
-                      {product.id !== 20 && (<div>
-                      <span className=" text-sm">Regular Price:</span>
-                      <div className="flex gap-2 font-semibold text-sm text-primary-grey">
-                      <span className="line-through">AED {product.per_hour_price.toLocaleString()}</span>
-                      <span>per hour</span></div></div>)}
+                      {/* {product.id === 20 && (<span className="text-sm">Price Per Hour:</span>)}
+                      {product.id !== 20 && ( */}
+                        <div>
+                      {/* <span className=" text-sm">Regular Price:</span> */}
+                      <div className="flex gap-2 font-bold text-lg text-primary-red items-center">
+                      <span className="">AED {product.per_hour_price.toLocaleString()}</span>
+                      <span className="text-sm text-primary-grey">per hour</span></div></div>
+                    {/* )} */}
                       <span>
-                        {product.id !== 20 && (
+                        {/* {product.id !== 20 && (
                         <div>   
                         <p className="text-xs font-semibold italic mt-4 text-primary-grey">Summer Offer Exclusive
                         </p>
                         <p className="text-xxs font-normal italic text-primary-grey">minimum booking of 2 hours<br/>Exclusive for UAE Residents
                         </p>
                         </div>
-                        )}
+                        )} */}
                       </span>
-                      <span className="font-bold text-lg text-primary-red">
+                      {/* <span className="font-bold text-lg text-primary-red">
                       {
                         summeroffer.find(offer =>
                           product.translations?.[locale].name_of_yacht
@@ -277,7 +289,7 @@ export default function YachtmobileCarousal() {
                         )?.discounted || `AED ${product.per_hour_price.toLocaleString()}`
                       } 
                       {product.id === 24 && (<span className="text-xs text-primary-grey"> (40 Pax)</span>)}
-                      </span>
+                      </span> */}
                       
                     </div>
                     <div className="">
