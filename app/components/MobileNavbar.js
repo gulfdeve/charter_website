@@ -109,11 +109,11 @@ export default function MobileNavbar({
                   {t("navbar.buy-a-yacht")}
                 </Link>
               </li>
-              {/* <li onClick={() => setMobileDropdownOpen(false)} className="font-bold hover:text-primary-blue-2">
+              <li onClick={() => setMobileDropdownOpen(false)} className="font-bold hover:text-primary-blue-2">
                 <Link href="/shared-yacht-tours-dubai">
                   {t("navbar.shared-tours")}
                 </Link>
-              </li> */}
+              </li>
               <li className="font-bold cursor-pointer hover:text-primary-blue-2" onClick={() => { toggleSubmenu(1); }}>
                 <Link href="/yacht-trips" onClick={() => setMobileDropdownOpen(false)}>
                   {t("navbar.experiences")}
@@ -122,8 +122,11 @@ export default function MobileNavbar({
               {/* <li onClick={() => setMobileDropdownOpen(false)} className="font-bold hover:text-primary-blue-2">
                 <Link href="/offers">{t("navbar.offers")}</Link>
               </li> */}
-              <li onClick={() => setMobileDropdownOpen(false)} className="font-bold hover:text-primary-blue-2">
+              <li onClick={() => setMobileDropdownOpen(false)} className="hidden font-bold hover:text-primary-blue-2">
                 <Link href="/resident-offer">{t('navbar.summer-offers')}</Link>
+              </li>
+              <li onClick={() => setMobileDropdownOpen(false)} className="font-bold hover:text-primary-blue-2">
+                <Link href="/resident-offer">{t('navbar.winter-offer')}</Link>
               </li>
               <li onClick={() => setMobileDropdownOpen(false)} className="font-bold hover:text-primary-blue-2">
                 <Link href="/abu-dhabi-race-yacht-charter">{t('navbar.formula-1')}</Link>

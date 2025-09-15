@@ -26,7 +26,7 @@ const yachts = [
       { label: "Timings", value: "9PM - 3AM" }
     ],
     packageInclusions: "CANAPÉS, WINES, BEERS & 2 BOTTLES OF CHAMPAGNE",
-    price: "AED 15,000 + VAT",
+    price: "AED 14,000 + VAT",
     rate: "6 HOURS RATE",
     isSold: 0,
   },
@@ -41,7 +41,7 @@ const yachts = [
       { label: "Timings", value: "9PM - 3AM" }
     ],
     packageInclusions: "CANAPÉS, WINES, BEERS & 2 BOTTLES OF CHAMPAGNE",
-    price: "AED 15,000 + VAT",
+    price: "AED 14,000 + VAT",
     rate: "6 HOURS RATE",
     isSold: 0,
   },
@@ -56,7 +56,7 @@ const yachts = [
       { label: "Timings", value: "9PM - 3AM" }
     ],
     packageInclusions: "CANAPÉS, WINES, BEERS & 2 BOTTLES OF CHAMPAGNE",
-    price: "AED 18,000 + VAT",
+    price: "AED 16,000 + VAT",
     rate: "6 HOURS RATE",
     isSold: 0,
   },
@@ -86,7 +86,7 @@ const yachts = [
       { label: "Timings", value: "9PM - 3AM" }
     ],
     packageInclusions: "CANAPÉS, WINES, BEERS & 5 BOTTLES OF CHAMPAGNE",
-    price: "AED 30,000 + VAT",
+    price: "AED 28,500 + VAT",
     rate: "6 HOURS RATE",
     isSold: 0,
   },
@@ -101,7 +101,7 @@ const yachts = [
       { label: "Timings", value: "9PM - 3AM" }
     ],
     packageInclusions: "CANAPÉS, WINES, BEERS & 4 BOTTLES OF CHAMPAGNE",
-    price: "AED 25,000 + VAT",
+    price: "AED 27,000 + VAT",
     rate: "6 HOURS RATE",
     isSold: 0,
   },
@@ -116,7 +116,7 @@ const yachts = [
       { label: "Timings", value: "9PM - 3AM" }
     ],
     packageInclusions: "CANAPÉS, WINES, BEERS & 5 BOTTLES OF CHAMPAGNE",
-    price: "AED 38,500 + VAT",
+    price: "AED 30,000 + VAT",
     rate: "6 HOURS RATE",
     isSold: 0,
   },
@@ -148,7 +148,7 @@ const yachts = [
     packageInclusions: "GOURMET CANAPÉS, PREMIUM WINES, BEERS, SPIRITS & 10 BOTTLES OF CHAMPAGNE",
     price: "AED 55,000 + VAT",
     rate: "6 HOURS RATE",
-    isSold: 0,
+    isSold: 1,
   },
   {
     id: 10,
