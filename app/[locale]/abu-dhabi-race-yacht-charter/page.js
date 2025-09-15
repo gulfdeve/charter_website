@@ -280,7 +280,7 @@ const Page = () => {
         <Videof1 />
       </div> */}
       <VideoLocal filename="/F1 2023 720p.mp4" section="f1" />
-<div className="bg-red-900 text-white text-center py-2 text-sm font-semibold sticky top-14 lg:top-[4.5rem] z-20">
+<div className="hidden bg-red-900 text-white text-center py-2 text-sm font-semibold sticky top-14 lg:top-[4.5rem] z-20">
   🎉 Promo: 10% OFF on All F1 Yacht Packages – Offer ends September 15, 2025!
 </div>
       {/* Heading Section */}

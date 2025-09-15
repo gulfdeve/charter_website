@@ -176,7 +176,7 @@ export default function Navbar() {
                 </li>
 
                 {/* Shared Tours */}
-                <li className="hidden">
+                <li>
                   <Link
                     href="/shared-yacht-tours-dubai"
                     className={`h-full flex items-center tracking-[1px] uppercase underline decoration-2 underline-offset-8 transition-all duration-200 font-primary ${
@@ -269,7 +269,7 @@ export default function Navbar() {
                 </li> */}
 
                 {/* SUMMER Offers */}
-                <li>
+                <li className="hidden">
                   <Link
                     href="/resident-offer"
                     className={`h-full flex items-center tracking-[1px] uppercase underline decoration-2 underline-offset-8 transition-all duration-200 font-primary ${
@@ -279,6 +279,19 @@ export default function Navbar() {
                     }`}
                   >
                     {t('navbar.summer-offers')}
+                  </Link>
+                </li>
+                {/* WINTER Offers */}
+                <li>
+                  <Link
+                    href="offers/dubai-yachts-winter-offers"
+                    className={`h-full flex items-center tracking-[1px] uppercase underline decoration-2 underline-offset-8 transition-all duration-200 font-primary ${
+                      pathname === "/resident-offer" || pathname.startsWith("/resident-offer/")
+                        ? "text-primary-blue decoration-primary-yellow font-semibold"
+                        : "text-primary-blue decoration-transparent hover:decoration-primary-yellow"
+                    }`}
+                  >
+                    {t('navbar.winter-offer')}
                   </Link>
                 </li>
                 {/* Formula 1 */}
