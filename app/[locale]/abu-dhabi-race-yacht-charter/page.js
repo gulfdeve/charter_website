@@ -15,6 +15,7 @@ const yachtData = [
     title: "118 Ft Yacht - Poseidon",
     imageSrc: "/Poseidon--F1.jpg",
     imageAlt: "118 Ft Yacht - Poseidon",
+    isSold: false,
     infoBoxes: [
       { label: "Brand", value: "Majesty", icon: FaShip },
       { label: "Capacity", value: "100", icon: FaUsers },
@@ -44,6 +45,7 @@ const yachtData = [
     title: "85 Ft Yacht - Kronos",
     imageSrc: "/Majesty-88-LR (1).webp",
     imageAlt: "85 Ft Yacht - Kronos",
+    isSold: true,
     infoBoxes: [
       { label: "Brand", value: "Duretti", icon: FaShip },
       { label: "Capacity", value: "50", icon: FaUsers },
@@ -73,6 +75,7 @@ const yachtData = [
     title: "61 Ft Yacht - Silver Creek",
     imageSrc: "/Silver-Creek-F1.jpg",
     imageAlt: "85 Ft Yacht - Kronos",
+    isSold: true,
     infoBoxes: [
       { label: "Brand", value: "Majesty", icon: FaShip },
       { label: "Capacity", value: "30", icon: FaUsers },
@@ -102,6 +105,7 @@ const yachtData = [
     title: "58 Ft Yacht - Etosha",
     imageSrc: "/Etosha-F1.jpg",
     imageAlt: "58 Ft Yacht - Etosha",
+    isSold: true,
     infoBoxes: [
       { label: "Brand", value: "Azimut", icon: FaShip },
       { label: "Capacity", value: "28", icon: FaUsers },
@@ -131,6 +135,7 @@ const yachtData = [
     title: "77 Ft Yacht - Dionysos",
     imageSrc: "/Dionysos-F1 (1).jpg",
     imageAlt: "56 Ft Yacht - Lagoona",
+    isSold: true,
     infoBoxes: [
       { label: "Brand", value: "Majesty", icon: FaShip },
       { label: "Capacity", value: "28", icon: FaUsers },
@@ -160,11 +165,252 @@ const yachtData = [
     title: "56 Ft Yacht - Lagoona",
     imageSrc: "/Lagoona--F1.jpg",
     imageAlt: "56 Ft Yacht - Lagoona",
+    isSold: true,
     infoBoxes: [
       { label: "Brand", value: "Majesty", icon: FaShip },
       { label: "Capacity", value: "28", icon: FaUsers },
       { label: "Sleeps", value: "6", icon: FaBed },
       { label: "Marina Passes", value: "28", icon: FaIdCard },
+    ],
+    inclusions: [
+        "4 days yacht rental",
+        "Crew service",
+        "Full board food",
+        "House drinks",
+        "Marina passes",
+      ],
+      addons: [
+        "Transfer",
+        "Live DJ",
+        "Alcohol",
+        "Catering",
+        "Premium drinks",
+        "Extra marina pass",
+        "Hostess",
+      ],
+    cta: "INQUIRE NOW",
+  },
+  {
+    id: 7,
+    title: "70 Ft Yacht - Serenity",
+    imageSrc: "/images/serenity-70-ft.webp",
+    imageAlt: "70 Ft Yacht - Serenity",
+    isSold: false,
+    infoBoxes: [
+      { label: "Brand", value: "Sunseeker", icon: FaShip },
+      { label: "Capacity", value: "TBE", icon: FaUsers },
+      { label: "Sleeps", value: "6", icon: FaBed },
+      { label: "Marina Passes", value: "8", icon: FaIdCard },
+    ],
+    inclusions: [
+        "4 days yacht rental",
+        "Crew service",
+        "Full board food",
+        "House drinks",
+        "Marina passes",
+      ],
+      addons: [
+        "Transfer",
+        "Live DJ",
+        "Alcohol",
+        "Catering",
+        "Premium drinks",
+        "Extra marina pass",
+        "Hostess",
+      ],
+    cta: "INQUIRE NOW",
+  },
+  {
+    id: 8,
+    title: "82 Ft Yacht - Matrix",
+    imageSrc: "/images/matrix-82-ft.webp",
+    imageAlt: "82 Ft Yacht - Matrix",
+    isSold: false,
+    infoBoxes: [
+      { label: "Brand", value: "Sunseeker", icon: FaShip },
+      { label: "Capacity", value: "TBE", icon: FaUsers },
+      { label: "Sleeps", value: "8", icon: FaBed },
+      { label: "Marina Passes", value: "40", icon: FaIdCard },
+    ],
+    inclusions: [
+        "4 days yacht rental",
+        "Crew service",
+        "Full board food",
+        "House drinks",
+        "Marina passes",
+      ],
+      addons: [
+        "Transfer",
+        "Live DJ",
+        "Alcohol",
+        "Catering",
+        "Premium drinks",
+        "Extra marina pass",
+        "Hostess",
+      ],
+    cta: "INQUIRE NOW",
+  },
+  {
+    id: 9,
+    title: "88 Ft Yacht - San Lorenzo",
+    imageSrc: "/images/san-lorenzo-88-ft.webp",
+    imageAlt: "88 Ft Yacht - San Lorenzo",
+    isSold: false,
+    infoBoxes: [
+      { label: "Brand", value: "San Lorenzo", icon: FaShip },
+      { label: "Capacity", value: "TBA", icon: FaUsers },
+      { label: "Sleeps", value: "8", icon: FaBed },
+      { label: "Marina Passes", value: "30", icon: FaIdCard },
+    ],
+    inclusions: [
+        "4 days yacht rental",
+        "Crew service",
+        "Full board food",
+        "House drinks",
+        "Marina passes",
+      ],
+      addons: [
+        "Transfer",
+        "Live DJ",
+        "Alcohol",
+        "Catering",
+        "Premium drinks",
+        "Extra marina pass",
+        "Hostess",
+      ],
+    cta: "INQUIRE NOW",
+  },
+  {
+    id: 10,
+    title: "90 Ft Yacht - Aarna",
+    imageSrc: "/images/aarna-90-ft.webp",
+    imageAlt: "56 Ft Yacht - Lagoona",
+    isSold: false,
+    infoBoxes: [
+      { label: "Brand", value: "Sunseeker", icon: FaShip },
+      { label: "Capacity", value: "TBE", icon: FaUsers },
+      { label: "Sleeps", value: "8", icon: FaBed },
+      { label: "Marina Passes", value: "40", icon: FaIdCard },
+    ],
+    inclusions: [
+        "4 days yacht rental",
+        "Crew service",
+        "Full board food",
+        "House drinks",
+        "Marina passes",
+      ],
+      addons: [
+        "Transfer",
+        "Live DJ",
+        "Alcohol",
+        "Catering",
+        "Premium drinks",
+        "Extra marina pass",
+        "Hostess",
+      ],
+    cta: "INQUIRE NOW",
+  },
+  {
+    id: 11,
+    title: "100 Ft Yacht - Spectre",
+    imageSrc: "/images/spectre-100-ft.webp",
+    imageAlt: "100 Ft Yacht - Spectre",
+    isSold: false,
+    infoBoxes: [
+      { label: "Brand", value: "Azimut", icon: FaShip },
+      { label: "Capacity", value: "80", icon: FaUsers },
+      { label: "Sleeps", value: "8", icon: FaBed },
+      { label: "Marina Passes", value: "40", icon: FaIdCard },
+    ],
+    inclusions: [
+        "4 days yacht rental",
+        "Crew service",
+        "Full board food",
+        "House drinks",
+        "Marina passes",
+      ],
+      addons: [
+        "Transfer",
+        "Live DJ",
+        "Alcohol",
+        "Catering",
+        "Premium drinks",
+        "Extra marina pass",
+        "Hostess",
+      ],
+    cta: "INQUIRE NOW",
+  },
+  {
+    id: 12,
+    title: "101 Ft Yacht - KOH",
+    imageSrc: "/images/koh-azimut-100-ft.webp",
+    imageAlt: "101 Ft Yacht - KOH",
+    isSold: false,
+    infoBoxes: [
+      { label: "Brand", value: "Azimut", icon: FaShip },
+      { label: "Capacity", value: "50", icon: FaUsers },
+      { label: "Sleeps", value: "10", icon: FaBed },
+      { label: "Marina Passes", value: "30", icon: FaIdCard },
+    ],
+    inclusions: [
+        "4 days yacht rental",
+        "Crew service",
+        "Full board food",
+        "House drinks",
+        "Marina passes",
+      ],
+      addons: [
+        "Transfer",
+        "Live DJ",
+        "Alcohol",
+        "Catering",
+        "Premium drinks",
+        "Extra marina pass",
+        "Hostess",
+      ],
+    cta: "INQUIRE NOW",
+  },
+  {
+    id: 13,
+    title: "101 Ft Yacht - Majesty 101",
+    imageSrc: "/images/majesty-101-ft.webp",
+    imageAlt: "101 Ft Yacht - Majesty 101",
+    isSold: false,
+    infoBoxes: [
+      { label: "Brand", value: "Majesty", icon: FaShip },
+      { label: "Capacity", value: "TBA", icon: FaUsers },
+      { label: "Sleeps", value: "12", icon: FaBed },
+      { label: "Marina Passes", value: "40", icon: FaIdCard },
+    ],
+    inclusions: [
+        "4 days yacht rental",
+        "Crew service",
+        "Full board food",
+        "House drinks",
+        "Marina passes",
+      ],
+      addons: [
+        "Transfer",
+        "Live DJ",
+        "Alcohol",
+        "Catering",
+        "Premium drinks",
+        "Extra marina pass",
+        "Hostess",
+      ],
+    cta: "INQUIRE NOW",
+  },
+  {
+    id: 14,
+    title: "105 Ft Yacht - Dolce Vita",
+    imageSrc: "/images/dolce-vita-105-ft.webp",
+    imageAlt: "105 Ft Yacht - Dolce Vita",
+    isSold: false,
+    infoBoxes: [
+      { label: "Brand", value: "Numarine", icon: FaShip },
+      { label: "Capacity", value: "TBE", icon: FaUsers },
+      { label: "Sleeps", value: "8", icon: FaBed },
+      { label: "Marina Passes", value: "40", icon: FaIdCard },
     ],
     inclusions: [
         "4 days yacht rental",
@@ -402,12 +648,15 @@ const Page = () => {
                   height={500}
                   className="w-full h-auto object-cover rounded-lg mt-3"
                 />
-                {yacht.id !== 1 && (
-                <div className="absolute flex items-center gap-2 top-4 left-0 bg-primary-red text-white text-sm py-0.5 px-2 rounded-r-lg"><p>Sold Out</p>
-                </div>)}
-                {yacht.id === 1 && (
-                <div className="absolute flex items-center gap-2 top-4 left-0 gradient-custom-2 text-white text-sm py-0.5 px-2 rounded-r-lg"><p>Available</p>
-                </div>)}
+                {yacht.isSold ? (
+                  <div className="absolute flex items-center gap-2 top-4 left-0 bg-primary-red text-white text-sm py-0.5 px-2 rounded-r-lg">
+                    <p>Sold Out</p>
+                  </div>
+                ) : (
+                  <div className="absolute flex items-center gap-2 top-4 left-0 gradient-custom-2 text-white text-sm py-0.5 px-2 rounded-r-lg">
+                    <p>Available</p>
+                  </div>
+                )}
                   <div className="absolute grid grid-cols-4 gap-2  -bottom-5 left-0 right-0 mx-3 text-blue-900 rounded-lg bg-primary-blue-3">
                     {yacht.infoBoxes.map((box, index) => (
                       <div key={index} className="flex items-center">
@@ -444,7 +693,7 @@ const Page = () => {
                   </div>
                   {/* CTA Button */}
                   <div className="mt-10">
-                  {yacht.id === 1 ? (
+                  {!yacht.isSold ? (
                   <div className='grid grid-cols-1 s:grid-cols-2 sm:grid-cols-1 lg:grid-cols-2 gap-2'>
                   <Link href="https://wa.link/jimth5" target="_blank" >
                   <button className="w-full red-solid-button">WhatsApp Us</button>
