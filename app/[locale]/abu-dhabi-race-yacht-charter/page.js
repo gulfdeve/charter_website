@@ -284,7 +284,7 @@ const yachtData = [
     id: 10,
     title: "90 Ft Yacht - Aarna",
     imageSrc: "/images/aarna-90-ft.webp",
-    imageAlt: "56 Ft Yacht - Lagoona",
+    imageAlt: "90 Ft Yacht - Aarna",
     isSold: false,
     infoBoxes: [
       { label: "Brand", value: "Sunseeker", icon: FaShip },
