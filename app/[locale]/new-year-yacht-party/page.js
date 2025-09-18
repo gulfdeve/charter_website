@@ -98,6 +98,9 @@ const Page = () => {
                   of the city’s iconic skyline. Sail into 2026 under the stars
                   with unforgettable memories and a dazzling atmosphere.
                 </p>
+                <h2 className="text-2xl md:text-2xl text-center font-bold text-white mb-2">
+                  AED 2100 PER PERSON
+                </h2>
                 <Link href="https://wa.link/8ske9y" target="_blank" >
                 <button className="yellow-solid-button">
                   GET YOUR TICKETS NOW
