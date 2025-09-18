@@ -163,7 +163,7 @@ const yachts = [
     packageInclusions: "CANAPÉS, WINES, BEERS & 24 BOTTLES OF CHAMPAGNE",
     price: "AED 125,000 + VAT",
     rate: "6 HOURS RATE",
-    isSold: 0,
+    isSold: 1,
   }
 ];
 
@@ -208,8 +208,16 @@ const yachts = [
                   {yacht.packageInclusions}
                 </div>
               </div>
+              {yacht.isSold === 0 ? (
+              <div className="flex gap-2 font-bold text-base lg:text-lg text-white items-center mt-5">
+              {yacht.price}
+              </div>):(
+                <div className="">
+                </div>
+              )}
+              
               {/* CTA Button */}
-                  <div className="mt-10">
+                  <div className="mt-5">
                   {yacht.isSold === 0 ? (
                   <div className='grid grid-cols-1 s:grid-cols-2 sm:grid-cols-1 lg:grid-cols-2 gap-2'>
                   <Link href="https://wa.link/8ske9y" target="_blank" >
