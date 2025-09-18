@@ -6,6 +6,60 @@ import { useLocale } from "next-intl";
 import { notFound, useParams } from "next/navigation";
 import PageTitleHeading from "../../../components/PageTitleHeading";
 import WaterSportCarousal2 from "../../../components/WaterSportCarousal2";
+const waterSportRate = [
+  {
+    id: 1,
+    title: "JET SKI",
+    infoBoxes: [
+      { label: "Recreational Jet Ski", duration: "30", price: "350"},
+      { label: "Recreational Jet Ski", duration: "60", price: "600"},
+
+      { label: "Performance Jet Ski", duration: "30", price: "480"},
+      { label: "Performance Jet Ski", duration: "60", price: "750"},
+    ]
+  },
+  {
+    id: 2,
+    title: "DONUT BOAT RIDE",
+    infoBoxes: [
+      { label: "DONUT BOAT RIDE", duration: "30", price: "450"},
+      { label: "DONUT BOAT RIDE", duration: "60", price: "700"}
+    ]
+  },
+  {
+    id: 3,
+    title: "BANANA BOAT",
+    infoBoxes: [
+      { label: "BANANA BOAT", duration: "30", price: "450"},
+      { label: "BANANA BOAT", duration: "60", price: "700"}
+    ]
+  },
+  {
+    id: 4,
+    title: "FLYBOARD",
+    infoBoxes: [
+      { label: "FLYBOARD", duration: "25", price: "850"},
+      { label: "FLYBOARD", duration: "60", price: "1680"}
+    ]
+  },
+  {
+    id: 5,
+    title: "EFOIL",
+    infoBoxes: [
+      { label: "EFOIL", duration: "30", price: "650"},
+      { label: "EFOIL", duration: "60", price: "1280"}
+    ]
+  },
+    {
+    id: 5,
+    title: "JET CAR",
+    infoBoxes: [
+      { label: "JET CAR", duration: "30", price: "900"},
+      { label: "JET CAR", duration: "60", price: "1750"}
+    ]
+  },
+];
+
 
 const Page = () => {
   const { data, loading, error } = useData();
@@ -28,6 +82,11 @@ const Page = () => {
   if (!packageItem) {
     notFound();
   }
+  const waterSport = waterSportRate.find(
+  (item) =>
+    item.title.toLowerCase() ===
+    packageItem.translations[locale].title.toLowerCase()
+);
 
   return (
     <><div className="container mx-auto nav-space">
@@ -52,30 +111,64 @@ const Page = () => {
           </h2>
           <div className="text-center grid grid-cols-1  items-center gap-2  w-full overflow-hidden mb-7">
 
-
-            <div className="grid grid-cols-1 sm:grid-cols-3 bg-primary-yellow-light rounded-lg text-primary-blue">
-              {/* Ride Title */}
+{/* ORIGINAL CODE FOR SINGLE RATE FROM ADMIN PANEL
+            <div className="grid grid-cols-3 bg-primary-blue-light rounded-lg text-primary-blue">
+              
               <div className=" p-2 flex flex-col items-center ">
                 <span className="font-bold text-sm">Ride:</span>
                 <span className="font-semibold text-sm  xl:text-sm">
                   {packageItem.translations[locale].title}
                 </span>
               </div>
-              {/* Duration */}
+             
               <div className="  p-2 flex flex-col items-center">
                 <span className="font-bold text-sm">Duration:</span>
                 <span className="font-semibold text-sm  xl:text-sm">
                   30 mins
                 </span>
               </div>
-              {/* Price */}
-              <div className="bg-primary-yellow rounded-b-lg sm:rounded-l-none sm:rounded-r-lg p-2 flex flex-col items-center">
+              
+              <div className="text-white bg-primary-blue rounded-r-lg p-2 flex flex-col items-center">
                 <span className="font-bold text-sm">Price:</span>
                 <span className="font-semibold text-sm xl:text-sm">
                   {packageItem.amount} AED
                 </span>
               </div>
+            </div> */}
+            {waterSport && (
+            <div className="text-center grid grid-cols-1  items-center gap-2  w-full overflow-hidden mb-7">
+              {waterSport.infoBoxes.map((rate, idx) => (
+                <div
+                  key={rate.label + rate.duration + idx}
+                  className="grid grid-cols-3 bg-primary-blue-light rounded-lg text-primary-blue"
+                >
+              
+                  {/* Ride Title */}
+                      <div className=" p-2 flex flex-col items-center ">
+                        <span className="font-bold text-sm">Ride:</span>
+                        <span className="font-semibold text-sm  xl:text-sm">
+                          {rate.label}
+                        </span>
+                      </div>
+                      {/* Duration */}
+                      <div className="  p-2 flex flex-col items-center">
+                        <span className="font-bold text-sm">Duration:</span>
+                        <span className="font-semibold text-sm  xl:text-sm">
+                          {rate.duration} mins
+                        </span>
+                      </div>
+                      {/* Price */}
+                      <div className="text-white bg-primary-blue rounded-r-lg p-2 flex flex-col items-center">
+                        <span className="font-bold text-sm">Price:</span>
+                        <span className="font-semibold text-sm xl:text-sm">
+                          {rate.price} AED
+                        </span>
+                      </div>
+                </div>
+              ))}
             </div>
+
+)}
 
           </div>
 

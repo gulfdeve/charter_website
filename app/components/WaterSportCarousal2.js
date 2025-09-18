@@ -69,18 +69,18 @@ export default function WaterSportCarousal2({packages}) {
                       <div className="absolute inset-0 bg-black-gradient rounded-lg" />
                       <div className="absolute bottom-0 left-0 w-full p-4 z-10">
                         <h3 className="text-xl lg:text-2xl font-bold text-white mb-2">
-                          <Link href={`/yacht-trips/${package_a.slug}`}>
+                          <Link href={`/watersports/${package_a.slug}`}>
                             {package_a.translations[language].title}
                           </Link>
                         </h3>
                         <p className="text-sm text-white mb-4 line-clamp-2">
                           {package_a.translations[language].preview_text}
                         </p>
-                        <Link href={`/yacht-trips/${package_a.slug}`}>
+                        {/* <Link href={`/watersports/${package_a.slug}`}>
                           <button className="yellow-solid-button uppercase text-sm lg:text-base py-2 px-4">
                             Book Now
                           </button>
-                        </Link>
+                        </Link> */}
                       </div>
                     </div>
                   </div>
