@@ -569,7 +569,7 @@ const Page = () => {
                 Perfect for corporate events or private celebrations, this hospitality package offers the
                 ultimate way to enjoy the excitement of Formula 1.
               </p>
-              <Link href="https://wa.link/jimth5" target="_blank" >
+              <Link href="https://wa.link/fd8pqt" target="_blank" >
               <button className="bg-white text-primary-blue font-bold px-7 py-4 rounded-xl shadow-md hover:bg-gray-200 transition-colors">
                 INQUIRE NOW
               </button></Link>
@@ -695,7 +695,7 @@ const Page = () => {
                   <div className="mt-10">
                   {!yacht.isSold ? (
                   <div className='grid grid-cols-1 s:grid-cols-2 sm:grid-cols-1 lg:grid-cols-2 gap-2'>
-                  <Link href="https://wa.link/jimth5" target="_blank" >
+                  <Link href="https://wa.link/fd8pqt" target="_blank" >
                   <button className="w-full red-solid-button">WhatsApp Us</button>
                   </Link>
                   <button onClick={handleQuote} className="w-full red-solid-button">
@@ -831,7 +831,7 @@ const Page = () => {
         <p className="mt-2 text-xl">
           For More Information and Viewing Feel Free To Contact:<br/>{" "}
           <span className="">
-          <strong>info@centauruscharter.com | +971 56 727 7387</strong>
+          <strong>info@centauruscharter.com | +971 54 494 8573</strong>
           </span>
         </p>
       </div>
