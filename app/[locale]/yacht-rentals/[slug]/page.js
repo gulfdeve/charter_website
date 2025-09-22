@@ -156,7 +156,7 @@ export default async function YachtPage({ params: paramsPromise }) {
     </div>
     {product.id !== 20 && (
       <p className="text-sm text-center my-2 italic text-primary-grey">
-        Summer Offer: Minimum Booking of 2 hours. T&Cs Apply.
+        Winter Offer: Minimum Booking of 4 hours. T&Cs Apply.
       </p>
     )}
     {product.id === 24 && (
