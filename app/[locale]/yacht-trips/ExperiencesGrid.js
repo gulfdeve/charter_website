@@ -10,7 +10,7 @@ export default function ExperiencesGrid({ experiences, locale }) {
       <div className="flex flex-col justify-start lg:justify-between rounded-md bg-white custom-shadow">
         <Link href="/watersports">
           <img
-            src="https://www.centauruscharter.net/product/images/1653475028BANANA%20BOAT%20THUMB.webp"
+            src="/images/watersports-cover.webp"
             alt="Water Sports"
             className="rounded-tl-md rounded-tr-md w-full object-cover"
           />
@@ -33,7 +33,7 @@ export default function ExperiencesGrid({ experiences, locale }) {
                   Starting
                   <br className="hidden sm:block"/>
                   <span className="xl:text-xl text-primary-red font-bold">
-                    AED 299
+                    AED 350
                   </span>
                 </p>
               </div>
