@@ -3,7 +3,7 @@ import React, { useRef, useEffect } from "react";
 import { Link } from "@/app/i18n/routing";
 import { useLocale, useTranslations } from "next-intl";
 
-export default function VideoLocal({ filename, section }) {
+export default function VideoLocal({ filename, section, ctaLink }) {
   const t = useTranslations();
   const videoRef = useRef(null);
 
@@ -134,7 +134,7 @@ F1 GRAND PRIX ABU DHABI 2025 <br/><span className="text-white md:text-white">Pri
         </p>
           <a
           target="_blank"
-          href="https://wa.link/8nj51w"
+          href={ctaLink}
           className="red-solid-button"
           >
             BOOK NOW
