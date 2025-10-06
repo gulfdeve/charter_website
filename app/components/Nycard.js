@@ -3,7 +3,7 @@ import React,{ useState } from 'react';
 import Link from 'next/link';
 
 import Modal2 from './Modal2';
-const Nycard = () => {
+const Nycard = ({whatsappLink}) => {
    const [isModalOpen, setIsModalOpen] = useState(false);
   
     const handlequote = () => {
@@ -220,7 +220,7 @@ const yachts = [
                   <div className="mt-5">
                   {yacht.isSold === 0 ? (
                   <div className='grid grid-cols-1 s:grid-cols-2 sm:grid-cols-1 lg:grid-cols-2 gap-2'>
-                  <Link href="https://wa.link/v9pn97" target="_blank" >
+                  <Link href={whatsappLink} target="_blank" >
                   <button className="w-full yellow-solid-button">WhatsApp Us</button>
                   </Link>
                   <button onClick={handlequote} className="w-full yellow-solid-button">
@@ -239,7 +239,7 @@ const yachts = [
                 </div>
             </div>
           </div>
-        ))}y
+        ))}
          <Modal2
           isModalOpen={isModalOpen}
           closeModal={closeModal}

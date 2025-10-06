@@ -8,7 +8,7 @@ import { FaShip, FaUsers, FaBed, FaIdCard } from "react-icons/fa"
 import Link from 'next/link'
 import Modal2 from "@/app/components/Modal2";
 import VideoLocal from "@/app/components/VideoLocal";
-
+const whatsappLink = "https://wa.link/pgrzh7";
 const yachtData = [
   {
     id: 1,
@@ -540,7 +540,7 @@ const Page = () => {
       {/* <div>
         <Videof1 />
       </div> */}
-      <VideoLocal filename="/F1 2023 720p.mp4" section="f1" ctaLink="https://wa.link/pgrzh7" />
+      <VideoLocal filename="/F1 2023 720p.mp4" section="f1" ctaLink={whatsappLink} />
 <div className="hidden bg-red-900 text-white text-center py-2 text-sm font-semibold sticky top-14 lg:top-[4.5rem] z-20">
   🎉 Promo: 10% OFF on All F1 Yacht Packages – Offer ends September 15, 2025!
 </div>
@@ -584,7 +584,7 @@ const Page = () => {
                 Perfect for corporate events or private celebrations, this hospitality package offers the
                 ultimate way to enjoy the excitement of Formula 1.
               </p>
-              <Link href="https://wa.link/pgrzh7" target="_blank" >
+              <Link href={whatsappLink} target="_blank" >
               <button className="bg-white text-primary-blue font-bold px-7 py-4 rounded-xl shadow-md hover:bg-gray-200 transition-colors">
                 INQUIRE NOW
               </button></Link>
@@ -711,7 +711,7 @@ const Page = () => {
                   <div className="mt-10">
                   {!yacht.isSold ? (
                   <div className='grid grid-cols-1 s:grid-cols-2 sm:grid-cols-1 lg:grid-cols-2 gap-2'>
-                  <Link href="https://wa.link/pgrzh7" target="_blank" >
+                  <Link href={whatsappLink} target="_blank" >
                   <button className="w-full red-solid-button">WhatsApp Us</button>
                   </Link>
                   <button onClick={handleQuote} className="w-full red-solid-button">
