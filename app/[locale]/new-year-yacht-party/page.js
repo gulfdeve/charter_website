@@ -101,7 +101,7 @@ const Page = () => {
                 <h2 className="text-2xl md:text-2xl text-center font-bold text-white mb-2">
                   AED 2100 PER PERSON
                 </h2>
-                <Link href="https://wa.link/4qpg10" target="_blank" >
+                <Link href="https://wa.link/v9pn97" target="_blank" >
                 <button className="yellow-solid-button">
                   GET YOUR TICKETS NOW
                 </button>
@@ -272,7 +272,7 @@ const Page = () => {
                     </div>
           </div>
           <div className="flex flex-col items-center justify-center py-7">
-            <Link href="https://wa.link/4qpg10" target="_blank" >
+            <Link href="https://wa.link/v9pn97" target="_blank" >
             <button className="yellow-solid-button">CONTACT US</button>
             </Link>
             <p className="text-white font-light text-center py-4 px-3">
