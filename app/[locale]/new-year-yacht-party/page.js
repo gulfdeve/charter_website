@@ -1,11 +1,12 @@
 'use client'
 import Image from "next/image";
-import Videonewyear from "@/app/components/Videonewyear";
+// import Videonewyear from "@/app/components/Videonewyear";
 import Nycard from "@/app/components/Nycard";
 import React, { useEffect, useRef, useState } from 'react'
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io"
 import EmblaCarousel from 'embla-carousel'
 import Link from 'next/link'
+import VideoLocal from "@/app/components/VideoLocal";
 
 
 const whatsappLink = "https://wa.link/v9pn97";
@@ -57,8 +58,9 @@ const Page = () => {
       { src: "/photographer.webp", text: "PHOTOGRAPHER & VIDEOGRAPHER SERVICE" },
     ]
   return (
-    <div className="bg-white bg-opacity-90 w-full min-h-screen mt-14 md:mt-0">
-      <Videonewyear />
+    <div className="">
+      {/* <Videonewyear /> */}
+	  <VideoLocal filename="/New_years_video.mp4" section="new_year" ctaLink={whatsappLink} />
       <div className="bg-[url('/nye24.webp')] bg-cover bg-center bg-no-repeat min-h-screen ">
         <div className="container mx-auto">
           <div className="flex flex-col items-center justify-center pb-10 pt-10">
