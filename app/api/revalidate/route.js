@@ -5,11 +5,15 @@ import { NextResponse } from 'next/server';
 
 async function purgeVercelCache() {
 	try {
+		console.log('Starting Vercel cache purge...');
+		
 		if (!process.env.VERCEL_TOKEN) {
 			console.error('VERCEL_TOKEN environment variable is required');
-			return false;
+			return { success: false, error: 'Missing VERCEL_TOKEN' };
 		}
 
+		console.log('Making request to Vercel purge API...');
+		
 		// Use Vercel's purge API endpoint for personal accounts
 		const response = await fetch('https://api.vercel.com/v1/purge', {
 			method: 'POST',
@@ -22,18 +26,20 @@ async function purgeVercelCache() {
 			})
 		});
 		
+		console.log('Purge API response status:', response.status);
+		
 		if (!response.ok) {
 			const errorText = await response.text();
 			console.error('Failed to purge Vercel cache:', response.status, errorText);
-			return false;
+			return { success: false, error: `${response.status}: ${errorText}` };
 		}
 		
 		const result = await response.json();
 		console.log('Vercel cache purged successfully:', result);
-		return true;
+		return { success: true, result: result };
 	} catch (error) {
 		console.error('Error purging Vercel cache:', error);
-		return false;
+		return { success: false, error: error.message };
 	}
 }
 
@@ -49,7 +55,7 @@ export async function GET(request) {
 	revalidateTag('data-cache');
 	
 	// Also purge Vercel's edge cache
-	const vercelPurged = await purgeVercelCache();
+	const vercelResult = await purgeVercelCache();
 	
 	// Also revalidate paths that use this data
 	revalidatePath('/');
@@ -95,7 +101,10 @@ export async function GET(request) {
 	
 	const response = NextResponse.json({ 
 		revalidated: true, 
-		vercelCachePurged: vercelPurged,
+		vercelCachePurged: vercelResult.success,
+		vercelError: vercelResult.success ? null : vercelResult.error,
+		vercelResult: vercelResult.success ? vercelResult.result : null,
+		hasVercelToken: !!process.env.VERCEL_TOKEN,
 		now: Date.now() 
 	});
 	
