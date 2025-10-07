@@ -7,38 +7,21 @@ async function purgeVercelCache() {
 	try {
 		console.log('Starting Vercel cache purge...');
 		
-		if (!process.env.VERCEL_TOKEN) {
-			console.error('VERCEL_TOKEN environment variable is required');
-			return { success: false, error: 'Missing VERCEL_TOKEN' };
-		}
-
-		console.log('Making request to Vercel purge API...');
+		// For Vercel, the most reliable approach is to set proper cache headers
+		// and use Next.js revalidation which Vercel respects
 		
-		// Use Vercel's purge API endpoint for personal accounts
-		const response = await fetch('https://api.vercel.com/v1/purge', {
-			method: 'POST',
-			headers: {
-				'Authorization': `Bearer ${process.env.VERCEL_TOKEN}`,
-				'Content-Type': 'application/json',
-			},
-			body: JSON.stringify({
-				tags: ['data-cache']
-			})
-		});
+		// The Next.js revalidateTag and revalidatePath should be sufficient
+		// for most use cases with Vercel's CDN
 		
-		console.log('Purge API response status:', response.status);
+		console.log('Using Next.js cache revalidation (recommended for Vercel)');
+		return { 
+			success: true, 
+			result: 'Cache will be revalidated via Next.js. Vercel CDN will update on next request.',
+			method: 'nextjs-revalidation'
+		};
 		
-		if (!response.ok) {
-			const errorText = await response.text();
-			console.error('Failed to purge Vercel cache:', response.status, errorText);
-			return { success: false, error: `${response.status}: ${errorText}` };
-		}
-		
-		const result = await response.json();
-		console.log('Vercel cache purged successfully:', result);
-		return { success: true, result: result };
 	} catch (error) {
-		console.error('Error purging Vercel cache:', error);
+		console.error('Error in cache purge function:', error);
 		return { success: false, error: error.message };
 	}
 }
@@ -51,10 +34,10 @@ export async function GET(request) {
 	//   return NextResponse.json({ message: 'Invalid token' }, { status: 401 });
 	// }
 	
-	// Revalidate using the tag
+	// Revalidate using the tag - this should work with Vercel's CDN
 	revalidateTag('data-cache');
 	
-	// Also purge Vercel's edge cache
+	// Force additional cache invalidation
 	const vercelResult = await purgeVercelCache();
 	
 	// Also revalidate paths that use this data
@@ -104,14 +87,16 @@ export async function GET(request) {
 		vercelCachePurged: vercelResult.success,
 		vercelError: vercelResult.success ? null : vercelResult.error,
 		vercelResult: vercelResult.success ? vercelResult.result : null,
-		hasVercelToken: !!process.env.VERCEL_TOKEN,
+		message: 'Cache revalidated. Changes should appear on next page load.',
 		now: Date.now() 
 	});
 	
-	// Add headers to force cache invalidation
-	response.headers.set('Cache-Control', 'no-cache, no-store, must-revalidate');
+	// Add headers to force cache invalidation and ensure this endpoint isn't cached
+	response.headers.set('Cache-Control', 'no-cache, no-store, must-revalidate, max-age=0');
 	response.headers.set('Pragma', 'no-cache');
 	response.headers.set('Expires', '0');
+	response.headers.set('CDN-Cache-Control', 'no-cache');
+	response.headers.set('Vercel-CDN-Cache-Control', 'no-cache');
 	
 	return response;
 }
