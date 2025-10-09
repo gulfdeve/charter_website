@@ -52,7 +52,7 @@ const toursData = [
     id: 3,
     image: "/sunset.webp",
     title: "SUNSET TOURS",
-    cruisingTime: "05:30 PM - 07:30 PM",
+    cruisingTime: "05:00 PM - 07:00 PM",
     adultPrice: "AED 289",
     childPrice: "AED 159",
     liveBBQ: "Club Sandwich, Chicken & Beef Sliders, Vegetable Spring Rolls, Chicken Samosa & Fruit Platter. Water, Soft Drinks, Beer, Red Wine, White Wine & Sparkling Wine<br>*Vegetarian food available on request",
