@@ -118,7 +118,7 @@ const yachts = [
     packageInclusions: "CANAPÉS, WINES, BEERS & 5 BOTTLES OF CHAMPAGNE",
     price: "AED 30,000 + VAT",
     rate: "6 HOURS RATE",
-    isSold: 0,
+    isSold: 1,
   },
   {
     id: 8,
