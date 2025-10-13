@@ -334,7 +334,7 @@ export default function FirstFooter() {
           </ul>
           <ul className="text-text-primary-white">
           <ul>
-          <li className="flex flex-col md:items-start items-center text-center md:text-left">
+          {/* <li className="flex flex-col md:items-start items-center text-center md:text-left">
             <p className="font-semibold pb-3">{t('footer.english-chinese')}</p>
             <p className="">Cher</p>          
             <a
@@ -343,7 +343,7 @@ export default function FirstFooter() {
               >
               +971 54 494 8573
             </a>
-          </li>
+          </li> */}
           <li className="flex flex-col md:items-start items-center text-center md:text-left">
             <p className="font-semibold py-3">{t('footer.english-arabic')}</p>
             <p className="">Hesham</p>
