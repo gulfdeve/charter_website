@@ -345,7 +345,7 @@ export default function FirstFooter() {
             </a>
           </li> */}
           <li className="flex flex-col md:items-start items-center text-center md:text-left">
-            <p className="font-semibold py-3">{t('footer.english-arabic')}</p>
+            <p className="font-semibold pb-3">{t('footer.english-arabic')}</p>
             <p className="">Hesham</p>
             <a
               className="mb-2 inline-block"
