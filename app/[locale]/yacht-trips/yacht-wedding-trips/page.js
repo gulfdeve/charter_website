@@ -63,7 +63,7 @@ const page = () => {
             </Link>
             <div className="absolute grid grid-cols-3 items-center gap-0 rounded-lg center-absolute -bottom-5 left-0 right-0 px-3">
               <div className="bg-primary-blue-light text-primary-grey p-1 xl:p-2 flex flex-col items-center rounded-l-lg">
-                <span className="text-xs">Model:</span>
+                <span className="text-xs">Build:</span>
                 <span className="font-bold text-xs md:text-sm text-black">{product.translations?.[locale]?.model}</span>
               </div>
               <div className="bg-primary-blue-light text-primary-grey p-1 xl:p-2 flex flex-col items-center">

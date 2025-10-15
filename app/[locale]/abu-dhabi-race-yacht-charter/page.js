@@ -18,7 +18,7 @@ const yachtData = [
     trackView: "Track View: Berth No. 63",
     isSold: false,
     infoBoxes: [
-      { label: "Brand", value: "Majesty", icon: FaShip },
+      { label: "Build", value: "Majesty", icon: FaShip },
       { label: "Capacity", value: "100", icon: FaUsers },
       { label: "Sleeps", value: "8", icon: FaBed },
       { label: "Marina Passes", value: "50", icon: FaIdCard },
@@ -49,7 +49,7 @@ const yachtData = [
     trackView: "Track View: Berth No. 62",
     isSold: false,
     infoBoxes: [
-      { label: "Brand", value: "Numarine", icon: FaShip },
+      { label: "Build", value: "Numarine", icon: FaShip },
       { label: "Capacity", value: "TBE", icon: FaUsers },
       { label: "Sleeps", value: "8", icon: FaBed },
       { label: "Marina Passes", value: "40", icon: FaIdCard },
@@ -80,7 +80,7 @@ const yachtData = [
     trackView: "",
     isSold: false,
     infoBoxes: [
-      { label: "Brand", value: "Majesty", icon: FaShip },
+      { label: "Build", value: "Majesty", icon: FaShip },
       { label: "Capacity", value: "TBA", icon: FaUsers },
       { label: "Sleeps", value: "12", icon: FaBed },
       { label: "Marina Passes", value: "40", icon: FaIdCard },
@@ -142,7 +142,7 @@ const yachtData = [
     trackView: "Track View: Berth No. 50A",
     isSold: false,
     infoBoxes: [
-      { label: "Brand", value: "Azimut", icon: FaShip },
+      { label: "Build", value: "Azimut", icon: FaShip },
       { label: "Capacity", value: "80", icon: FaUsers },
       { label: "Sleeps", value: "8", icon: FaBed },
       { label: "Marina Passes", value: "40", icon: FaIdCard },
@@ -173,7 +173,7 @@ const yachtData = [
     trackView: "",
     isSold: false,
     infoBoxes: [
-      { label: "Brand", value: "Sunseeker", icon: FaShip },
+      { label: "Build", value: "Sunseeker", icon: FaShip },
       { label: "Capacity", value: "TBE", icon: FaUsers },
       { label: "Sleeps", value: "8", icon: FaBed },
       { label: "Marina Passes", value: "40", icon: FaIdCard },
@@ -204,7 +204,7 @@ const yachtData = [
     trackView: "",
     isSold: false,
     infoBoxes: [
-      { label: "Brand", value: "San Lorenzo", icon: FaShip },
+      { label: "Build", value: "San Lorenzo", icon: FaShip },
       { label: "Capacity", value: "TBA", icon: FaUsers },
       { label: "Sleeps", value: "8", icon: FaBed },
       { label: "Marina Passes", value: "30", icon: FaIdCard },
@@ -235,7 +235,7 @@ const yachtData = [
     trackView: "Track View: Berth No. E05",
     isSold: false,
     infoBoxes: [
-      { label: "Brand", value: "Sunseeker", icon: FaShip },
+      { label: "Build", value: "Sunseeker", icon: FaShip },
       { label: "Capacity", value: "TBE", icon: FaUsers },
       { label: "Sleeps", value: "8", icon: FaBed },
       { label: "Marina Passes", value: "40", icon: FaIdCard },
@@ -266,7 +266,7 @@ const yachtData = [
     trackView: "Track View: Berth No. 44A",
     isSold: false,
     infoBoxes: [
-      { label: "Brand", value: "Sunseeker", icon: FaShip },
+      { label: "Build", value: "Sunseeker", icon: FaShip },
       { label: "Capacity", value: "TBE", icon: FaUsers },
       { label: "Sleeps", value: "6", icon: FaBed },
       { label: "Marina Passes", value: "8", icon: FaIdCard },
@@ -297,7 +297,7 @@ const yachtData = [
     trackView: "",
     isSold: true,
     infoBoxes: [
-      { label: "Brand", value: "Duretti", icon: FaShip },
+      { label: "Build", value: "Duretti", icon: FaShip },
       { label: "Capacity", value: "50", icon: FaUsers },
       { label: "Sleeps", value: "6", icon: FaBed },
       { label: "Marina Passes", value: "25", icon: FaIdCard },
@@ -328,7 +328,7 @@ const yachtData = [
     trackView: "",
     isSold: true,
     infoBoxes: [
-      { label: "Brand", value: "Majesty", icon: FaShip },
+      { label: "Build", value: "Majesty", icon: FaShip },
       { label: "Capacity", value: "28", icon: FaUsers },
       { label: "Sleeps", value: "6", icon: FaBed },
       { label: "Marina Passes", value: "28", icon: FaIdCard },
@@ -359,7 +359,7 @@ const yachtData = [
     trackView: "",
     isSold: true,
     infoBoxes: [
-      { label: "Brand", value: "Majesty", icon: FaShip },
+      { label: "Build", value: "Majesty", icon: FaShip },
       { label: "Capacity", value: "30", icon: FaUsers },
       { label: "Sleeps", value: "6", icon: FaBed },
       { label: "Marina Passes", value: "15", icon: FaIdCard },
@@ -390,7 +390,7 @@ const yachtData = [
     trackView: "",
     isSold: true,
     infoBoxes: [
-      { label: "Brand", value: "Azimut", icon: FaShip },
+      { label: "Build", value: "Azimut", icon: FaShip },
       { label: "Capacity", value: "28", icon: FaUsers },
       { label: "Sleeps", value: "6", icon: FaBed },
       { label: "Marina Passes", value: "28", icon: FaIdCard },
@@ -421,7 +421,7 @@ const yachtData = [
     trackView: "",
     isSold: true,
     infoBoxes: [
-      { label: "Brand", value: "Majesty", icon: FaShip },
+      { label: "Build", value: "Majesty", icon: FaShip },
       { label: "Capacity", value: "28", icon: FaUsers },
       { label: "Sleeps", value: "6", icon: FaBed },
       { label: "Marina Passes", value: "28", icon: FaIdCard },

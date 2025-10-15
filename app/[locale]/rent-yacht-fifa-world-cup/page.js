@@ -147,7 +147,7 @@ const page = () => {
               </Link>
               <div className="grid grid-cols-2 lg:grid-cols-4 gap-0 rounded-lg w-full overflow-hidden shadow-md mb-7">
                 <div className="bg-primary-red text-white p-2 text-center">
-                  <span className="font-bold text-sm">Model:</span>
+                  <span className="font-bold text-sm">Build:</span>
                   <span className="font-semibold text-sm text-primary-yellow"> {yacht.model}</span>
                 </div>
                 <div className="bg-primary-red text-white p-2 text-center">

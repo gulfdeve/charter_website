@@ -96,7 +96,7 @@ const page = ({ params }) => {
         <div className="lg:absolute grid grid-cols-2 sm:grid-cols-4 md:grid-cols-2 lg:grid-cols-4 items-center gap-0 bg-primary-blue-light rounded-lg center-absolute -bottom-5 left-0 right-0 lg:mx-5 mt-4 lg:mt-0">
                   {/* Model */}
                   <div className="text-primary-grey p-2 flex flex-col items-center justify-center text-center w-full h-full">
-                    <span className="text-sm">Model:</span>
+                    <span className="text-sm">Build:</span>
                     <span className="font-semibold text-sm text-black">
                       {yacht.translations?.[locale]?.[0]?.model}
                     </span>

@@ -95,7 +95,7 @@ export default async function YachtPage({ params: paramsPromise }) {
     { label: "Location", value: product.translations?.[locale]?.location },
     {
       label: "Inclusions",
-      value: "Drinks (Bubbly drinks, Soft drinks, Coffee & Water) <br> <p class=\"text-gray-500 text-xs pt-2\">Minimum booking duration applies. Terms and conditions may vary based on yacht and package selected.</p>",
+      value: "Drinks (Bubbly drinks, Soft drinks, Coffee & Water) <br> <p className=\"text-gray-500 text-xs pt-2\">Minimum booking duration applies. Terms and conditions may vary based on yacht and package selected.</p>",
     },
   ];
 
@@ -112,7 +112,7 @@ export default async function YachtPage({ params: paramsPromise }) {
         <div className="lg:absolute bottom-0 lg:pr-4 lg:pl-48 lg:pb-4 w-full overflow-hidden">
         <div className=" bg-[#f1f1f1] lg:bg-opacity-80 grid grid-cols-2 lg:grid-cols-5 md:grid-cols-4 items-center gap-0 rounded-lg w-full overflow-hidden lg:shadow-none shadow-md mt-6 mx-auto">
           <h3 className="text-primary-grey p-2 flex flex-col items-center">
-            <span className="font-bold text-sm">Model:</span>
+            <span className="font-bold text-sm">Build:</span>
             <span className="font-semibold text-sm text-primary-blue xl:text-xl">
               {product.translations?.[locale]?.model}
             </span>

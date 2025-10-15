@@ -236,7 +236,7 @@ export default function Home() {
                     {/* Model */}
                     <div className="bg-primary-blue-light text-primary-grey p-1 xl:p-2 flex flex-col items-center rounded-l-lg">
                       <span className="text-xs">
-                        Model:
+                        Build:
                       </span>
                       <span className="font-bold text-sm text-black">
                         {product.translations?.[locale].model}

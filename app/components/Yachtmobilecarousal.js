@@ -190,7 +190,7 @@ export default function YachtmobileCarousal() {
                     {/* Model */}
                     <div className="bg-primary-blue-light p-1 xl:p-2.5 flex flex-col items-center rounded-l-lg">
                       <span className="font-semibold text-primary-grey text-[0.6rem]">
-                        Model:
+                        Build:
                       </span>
                       <span className="font-semibold text-xxs">
                         {product.translations?.[locale].model}

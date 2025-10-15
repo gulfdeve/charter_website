@@ -20,7 +20,7 @@ const yachts = [
     image: "/images/36ft-yacht-thunder-new-year.webp",
     name: "36ft Yacht - Thunder",
     infoBoxes: [
-      { label: "Brand", value: "Silver Craft" },
+      { label: "Build", value: "Silver Craft" },
       { label: "Capacity", value: "10" },
       { label: "Cabins", value: "N/A" },
       { label: "Timings", value: "9PM - 3AM" }
@@ -35,7 +35,7 @@ const yachts = [
     image: "/images/36ft-yacht-storm-new-year.webp",
     name: "36ft Yacht - Storm",
     infoBoxes: [
-      { label: "Brand", value: "Silver Craft" },
+      { label: "Build", value: "Silver Craft" },
       { label: "Capacity", value: "10" },
       { label: "Cabins", value: "N/A" },
       { label: "Timings", value: "9PM - 3AM" }
@@ -50,7 +50,7 @@ const yachts = [
     image: "/images/40ft-yacht-riverside-new-year.webp",
     name: "40ft Yacht - Riverside",
     infoBoxes: [
-      { label: "Brand", value: "Yamaha" },
+      { label: "Build", value: "Yamaha" },
       { label: "Capacity", value: "12" },
       { label: "Cabins", value: "1" },
       { label: "Timings", value: "9PM - 3AM" }
@@ -80,7 +80,7 @@ const yachts = [
     image: "/images/56ft-yacht-lagoona-new-year.webp",
     name: "56ft Yacht - Lagoona",
     infoBoxes: [
-      { label: "Brand", value: "Majesty" },
+      { label: "Build", value: "Majesty" },
       { label: "Capacity", value: "28" },
       { label: "Cabins", value: "3" },
       { label: "Timings", value: "9PM - 3AM" }
@@ -95,7 +95,7 @@ const yachts = [
     image: "/images/58ft-yacht-etosha-new-year.webp",
     name: "58ft Yacht - Etosha",
     infoBoxes: [
-      { label: "Brand", value: "Azimut" },
+      { label: "Build", value: "Azimut" },
       { label: "Capacity", value: "28" },
       { label: "Cabins", value: "3" },
       { label: "Timings", value: "9PM - 3AM" }
@@ -110,7 +110,7 @@ const yachts = [
     image: "/images/61ft-yacht-silver-creek-new-year.webp",
     name: "61ft Yacht - Silver Creek",
     infoBoxes: [
-      { label: "Brand", value: "Majesty" },
+      { label: "Build", value: "Majesty" },
       { label: "Capacity", value: "30" },
       { label: "Cabins", value: "3" },
       { label: "Timings", value: "9PM - 3AM" }
@@ -140,7 +140,7 @@ const yachts = [
     image: "/images/85ft-yacht-kronos-new-year.webp",
     name: "85ft Yacht - Kronos",
     infoBoxes: [
-      { label: "Brand", value: "Duretti" },
+      { label: "Build", value: "Duretti" },
       { label: "Capacity", value: "50" },
       { label: "Cabins", value: "4" },
       { label: "Timings", value: "9PM - 3AM" }
@@ -155,7 +155,7 @@ const yachts = [
     image: "/images/118ft-yacht-poseidon-new-year.webp",
     name: "118ft Yacht - Poseidon",
     infoBoxes: [
-      { label: "Brand", value: "Hatteras" },
+      { label: "Build", value: "Hatteras" },
       { label: "Capacity", value: "100" },
       { label: "Cabins", value: "4" },
       { label: "Timings", value: "9PM - 3AM" }
@@ -244,7 +244,7 @@ const yachts = [
           isModalOpen={isModalOpen}
           closeModal={closeModal}
           idName="offers_id"
-          idValue="44"
+          idValue="51"
         />
       </div>
     </div>
