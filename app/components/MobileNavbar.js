@@ -131,8 +131,14 @@ export default function MobileNavbar({
               <li onClick={() => setMobileDropdownOpen(false)} className="font-bold hover:text-primary-blue-2">
                 <Link href="/abu-dhabi-race-yacht-charter">{t('navbar.formula-1')}</Link>
               </li>
-              <li onClick={() => setMobileDropdownOpen(false)} className="font-bold hover:text-primary-blue-2">
+			  <li onClick={() => setMobileDropdownOpen(false)} className="font-bold hover:text-primary-blue-2">
+                <Link href="/new-year-yacht-party">{t('navbar.new-year')}</Link>
+              </li>
+              {/* <li onClick={() => setMobileDropdownOpen(false)} className="font-bold hover:text-primary-blue-2">
                 <Link href="/events">{t("navbar.events")}</Link>
+              </li> */}
+			  <li onClick={() => setMobileDropdownOpen(false)} className="font-bold hover:text-primary-blue-2">
+                <Link href="/contact">{t("navbar.contact-us")}</Link>
               </li>
             </ul>
           </div>
