@@ -25,7 +25,7 @@ const toursData = [
     childPrice: "AED 159",
     liveBBQ: "Sandwiches, Assorted Croissants, Strawberry & Honey Jam, Muffins, & Fresh Fruits. Welcome Mimosa, Water, Tea, Coffee, Juices & Soft Drinks.<br/>*Vegetarian food available on request*",
     cruisingRoute: "Dubai Marina, JBR and Burj Al Arab",
-    departurePoint: "Marina Harbour Office",
+    departurePoint: "Outside Dubai Harbour Office (Taxi drop-off area)",
     blueHeadline: "AVAILABLE ALL DAYS OF THE WEEK",
 	  validity: "*Valid from July 1-September 15, 2025",
     yellowHeadline: "",
@@ -41,7 +41,7 @@ const toursData = [
     childPrice: "AED 139",
     liveBBQ: "Wines, Beers, Softdrinks & Water",
     cruisingRoute: "Dubai Marina, Ain Dubai and JBR",
-    departurePoint: "Marina Harbour Office",
+    departurePoint: "Outside Dubai Harbour Office (Taxi drop-off area)",
     blueHeadline: "AVAILABLE ALL DAYS OF THE WEEK",
 	  validity: "*Valid from July 1-September 15, 2025",
     yellowHeadline: "",
@@ -57,7 +57,7 @@ const toursData = [
     childPrice: "AED 159",
     liveBBQ: "Club Sandwich, Chicken & Beef Sliders, Vegetable Spring Rolls, Chicken Samosa & Fruit Platter. Water, Soft Drinks, Beer, Red Wine, White Wine & Sparkling Wine<br>*Vegetarian food available on request",
     cruisingRoute: "Dubai Marina, JBR and Burj Al Arab",
-    departurePoint: "Marina Harbour Office",
+    departurePoint: "Outside Dubai Harbour Office (Taxi drop-off area)",
     blueHeadline: "AVAILABLE ALL DAYS OF THE WEEK",
 	  validity: "*Valid from July 1-September 15, 2025",
     yellowHeadline: "",
@@ -73,7 +73,7 @@ const toursData = [
     childPrice: "AED 159",
     liveBBQ: "Club Sandwich, Chicken & Beef Sliders, Vegetable Spring Rolls, Chicken Samosa & Fruit Platter. Water, Soft Drinks, Beer, Red Wine, White Wine & Sparkling Wine<br>*Vegetarian food available on request",
     cruisingRoute: "Dubai Marina, JBR and Burj Al Arab",
-    departurePoint: "Marina Harbour Office",
+    departurePoint: "Outside Dubai Harbour Office (Taxi drop-off area)",
     blueHeadline: "AVAILABLE ALL DAYS OF THE WEEK",
 	  validity: "*Valid from July 1-September 15, 2025",
     yellowHeadline: "",
@@ -274,7 +274,7 @@ const Page = () => {
                       <div className="flex flex-row gap-2 items-center">
                         <p className="text-primary-grey text-sm">
                           <span className="font-bold text-primary-grey">
-                            Departure Point:
+                            Meeting Point:
                           </span>{" "}
                           {tour.departurePoint}
                         </p>
