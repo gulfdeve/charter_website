@@ -71,6 +71,8 @@ const toursData = [
     cruisingTime: "08:00 PM - 10:00 PM",
     adultPrice: "AED 249",
     childPrice: "AED 159",
+	newAdultPrice: "AED 200",
+	newChildPrice: "AED 125",
     liveBBQ: "Club Sandwich, Chicken & Beef Sliders, Vegetable Spring Rolls, Chicken Samosa & Fruit Platter. Water, Soft Drinks, Beer, Red Wine, White Wine & Sparkling Wine<br>*Vegetarian food available on request",
     cruisingRoute: "Dubai Marina, JBR and Burj Al Arab",
     departurePoint: "Outside Dubai Harbour Office (Taxi drop-off area)",
@@ -171,6 +173,7 @@ const Page = () => {
                   alt={tour.title}
                   className="rounded-lg w-full"
                 />
+				{tour.id === 4 ? (<p className="text-[8px] text-center text-primary-blue-2 py-1 font-bold">Limited time offer: 20% Discount is valid until 21 nov 2025</p>) : <p className="text-[8px] text-center text-primary-blue-2 py-1 font-bold">&nbsp;</p>}
                 {/* Overlay Container */}
                 <div className="absolute top-2">
                   {tour.yellowHeadline && (
@@ -232,16 +235,32 @@ const Page = () => {
                   <div className="flex flex-row gap-2 items-center">
                     <p className="text-primary-grey text-sm">
                       <span className="font-bold">Adult (12+):</span>{" "}
-                      {tour.adultPrice}
+                      {tour.newAdultPrice ? (
+						<><span className="line-through">{tour.adultPrice}</span> <span className="text-primary-blue-2 font-bold">{tour.newAdultPrice}</span></>
+					  ) : (
+						tour.adultPrice
+					  )}
                     </p>
                   </div>
 
                   <div className="flex flex-row gap-2 items-center">
                     <p className="text-primary-grey text-sm">
                       <span className="font-bold">Child (4-11):</span>{" "}
-                      {tour.childPrice}
+                      {tour.newChildPrice ? (
+						<><span className="line-through">{tour.childPrice}</span> <span className="text-primary-blue-2 font-bold">{tour.newChildPrice}</span></>
+					  ) : (
+						tour.childPrice
+					  )}
                     </p>
                   </div>
+
+				                        <div className="flex flex-row gap-2.5 items-center">
+                        <p className="text-primary-grey text-sm">
+                          <span className="font-bold">Cruising Route:</span>{" "}
+                          {tour.cruisingRoute}
+                        </p>
+                      </div>
+
 
                   {/* Collapsible Details Section */}
                   <div
@@ -255,7 +274,8 @@ const Page = () => {
         `}
                   >
                     <div className="space-y-4">
-                      <div className="flex flex-row gap-2 items-center">
+
+										                        <div className="flex flex-row gap-2 items-center">
                   
                         <p className="text-primary-grey text-sm">
                           <span className="font-bold">Inclusions:</span>{" "}
@@ -264,12 +284,7 @@ const Page = () => {
                         </p>
                       </div>
 
-                      <div className="flex flex-row gap-2.5 items-center">
-                        <p className="text-primary-grey text-sm">
-                          <span className="font-bold">Cruising Route:</span>{" "}
-                          {tour.cruisingRoute}
-                        </p>
-                      </div>
+
 
                       <div className="flex flex-row gap-2 items-center">
                         <p className="text-primary-grey text-sm">
