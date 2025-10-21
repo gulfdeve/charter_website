@@ -619,7 +619,7 @@ const Page = () => {
 								F1 Yacht Charter Experience
 							</h3> */}
               <h3 className="text-white uppercase md:text-2xl lg:text-4xl font-bold text-center pb-6">
-                FORMULA 1 YACH PARTY HOSPITALITY PACKAGE
+                FORMULA 1 YACHT PARTY HOSPITALITY PACKAGE
               </h3>
               <p className="text-white text-center text-sm md:text-base pb-8 px-2 md:px-2">
                 Join Centaurus Charter for an exclusive 4-day Formula 1 Yacht
