@@ -30,6 +30,7 @@
     "next.config.ts",
     "app/[locale]/page.js",
     "app/[locale]/layout.tsx",
-	"app/layout.js"  ],
+    "app/layout.js"
+  ],
   "exclude": ["node_modules"]
 }
