@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/style.css";
 import {
-  isValidPhoneNumber,
   parsePhoneNumberFromString,
 } from "libphonenumber-js";
 
@@ -19,6 +18,7 @@ const Modal2 = ({ isModalOpen, closeModal, idName, idValue, selectedVessel }) =>
   const [message, setMessage] = useState("");
   const [errors, setErrors] = useState({});
   const [submissionSuccess, setSubmissionSuccess] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const validateForm = () => {
     const newErrors = {};
@@ -31,6 +31,8 @@ const Modal2 = ({ isModalOpen, closeModal, idName, idValue, selectedVessel }) =>
       newErrors.phoneNumber = "Phone Number is required.";
     } else {
       try {
+        // react-phone-input-2 returns numbers like "971501234567" (no +),
+        // so we prefix a '+' for parsePhoneNumberFromString
         const parsedPhone = parsePhoneNumberFromString("+" + phoneNumber);
         if (!parsedPhone || !parsedPhone.isValid()) {
           newErrors.phoneNumber = "Please enter a valid phone number.";
@@ -57,6 +59,8 @@ const Modal2 = ({ isModalOpen, closeModal, idName, idValue, selectedVessel }) =>
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (!validateForm()) return;
+    if (isSubmitting) return;
+    setIsSubmitting(true);
 
     // Build enquiry comments, including yacht details if provided
     let enquiryComments = message;
@@ -73,42 +77,70 @@ const Modal2 = ({ isModalOpen, closeModal, idName, idValue, selectedVessel }) =>
     }
 
     try {
-      const queryParams = new URLSearchParams({
+      // Prepare form-encoded body
+      const params = new URLSearchParams({
         name: fullName,
         phone: phoneNumber,
         email,
         comments: enquiryComments,
       });
-      queryParams.set(idName, idValue);
+      params.set(idName, idValue);
 
-      const endpoint =
-        idName === "events_id"
-          ? "https://www.centauruscharter.net/api/api_new/save_enquiry_events"
-          : "https://www.centauruscharter.net/api/api_new/save_enquiry";
-      const url = `${endpoint}?${queryParams}`;
+      // <<-- USE LOCAL PROXY ENDPOINT (no CORS) -->
+      const endpoint = "/api/proxy-save-enquiry";
 
-      const response = await fetch(url, { method: "POST" });
-      const data = await response.json();
-      console.log('Submitting enquiry with params:', queryParams.toString());
+      const response = await fetch(endpoint, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/x-www-form-urlencoded;charset=UTF-8",
+        },
+        body: params.toString(),
+      });
 
-      console.log("API response:", data);
+      console.log("Request sent to proxy:", endpoint);
+      console.log("Request body:", params.toString());
+      console.log("fetch status:", response.status, response.statusText);
 
-      if (response.ok) {
+      // Try parsing JSON, else fallback to text
+      let data;
+      try {
+        data = await response.json();
+      } catch (err) {
+        data = await response.text();
+      }
+      console.log("Proxy response body:", data);
+
+      const bodyIsObject = typeof data === "object" && data !== null;
+      const bodyIsString = typeof data === "string";
+      const serverSaysSuccess =
+        bodyIsObject && (data.success === true || data.status === "success" || data.code === 200);
+      const textLooksOk = bodyIsString && /success|ok|saved/i.test(data);
+
+      if (response.ok || serverSaysSuccess || textLooksOk) {
         setSubmissionSuccess(true);
         setFullName("");
         setPhoneNumber("");
         setEmail("");
         setMessage("");
+        setErrors({});
+        // auto-close after 5s
         setTimeout(() => {
           setSubmissionSuccess(false);
           closeModal();
         }, 5000);
       } else {
-        alert("Something went wrong while sending the form.");
+        // surface helpful server message when possible
+        const serverMessage = bodyIsObject
+          ? (data.message || JSON.stringify(data))
+          : data;
+        alert("Something went wrong while sending the form. Server replied: " + serverMessage);
+        console.warn("Non-success response", response.status, data);
       }
     } catch (error) {
-      console.error("Error submitting form:", error);
-      alert("An error occurred. Please try again later.");
+      console.error("Error submitting form (network or parsing):", error);
+      alert("Network or server error occurred. Please try again later.");
+    } finally {
+      setIsSubmitting(false);
     }
   };
 
@@ -118,6 +150,7 @@ const Modal2 = ({ isModalOpen, closeModal, idName, idValue, selectedVessel }) =>
         <button
           onClick={closeModal}
           className="absolute top-4 right-4 text-3xl p-3 w-10 h-10 rounded-full flex items-center justify-center text-primary-grey hover:text-primary-grey"
+          aria-label="Close modal"
         >
           &times;
         </button>
@@ -159,7 +192,7 @@ const Modal2 = ({ isModalOpen, closeModal, idName, idValue, selectedVessel }) =>
                   value={phoneNumber}
                   onChange={(val, country) => {
                     setPhoneNumber(val);
-                    setPhoneCountry(country);
+                    setPhoneCountry(country || phoneCountry);
                   }}
                   placeholder="Enter phone number"
                   isValid={(value, country) => {
@@ -216,8 +249,12 @@ const Modal2 = ({ isModalOpen, closeModal, idName, idValue, selectedVessel }) =>
                 )}
               </div>
 
-              <button type="submit" className="blue-solid-button">
-                SEND
+              <button
+                type="submit"
+                className={`blue-solid-button ${isSubmitting ? "opacity-60 cursor-not-allowed" : ""}`}
+                disabled={isSubmitting}
+              >
+                {isSubmitting ? "SENDING..." : "SEND"}
               </button>
             </form>
           </div>
