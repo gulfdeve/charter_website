@@ -8,7 +8,7 @@ import EmblaCarousel from "embla-carousel";
 import Link from "next/link";
 import VideoLocal from "@/app/components/VideoLocal";
 
-const whatsappLink = "https://wa.link/0uimnx";
+const whatsappLink = "https://wa.link/8ske9y";
 const Page = () => {
 	// Carousel 1
 	const emblaRef1 = useRef(null);
