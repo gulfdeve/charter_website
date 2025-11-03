@@ -8,7 +8,7 @@ import { FaShip, FaUsers, FaBed, FaIdCard } from 'react-icons/fa';
 import Link from 'next/link';
 import Modal2 from '@/app/components/Modal2';
 import VideoLocal from '@/app/components/VideoLocal';
-const whatsappLink = 'https://wa.link/jimth5';
+const whatsappLink = 'https://wa.link/8nj51w';
 const yachtData = [
   {
     id: 1,
