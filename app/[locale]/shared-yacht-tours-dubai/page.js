@@ -176,20 +176,21 @@ const Page = () => {
 				{tour.id === 4 ? (<p className="text-[12px] text-center text-primary-blue-2 py-1 font-bold">Limited time offer: 20% Discount is valid until 21 nov 2025</p>) : <p className="text-[8px] text-center text-primary-blue-2 py-1 font-bold">&nbsp;</p>}
                 {/* Overlay Container */}
                 <div className="absolute top-2">
-                {tour.blueHeadline && (
+                {tour.yellowHeadline && (
+                    <div className="bg-primary-blue-2 px-3 py-1">
+                      <span className="text-xl font-bold uppercase  text-white">
+                        {tour.yellowHeadline}
+                      </span>
+                    </div>
+                  )}
+				{tour.blueHeadline && (
                     <div className="bg-primary-yellow-light px-3 py-1">
                       <p className="text-xs lg:text-xs uppercase text-primary-blue-2 font-bold">
                         {tour.blueHeadline}
                       </p>
                     </div>
                   )}
-				  {tour.yellowHeadline && (
-                    <div className="bg-white px-3 py-1">
-                      <span className="text-xl font-bold uppercase text-primary-blue-2">
-                        {tour.yellowHeadline}
-                      </span>
-                    </div>
-                  )}
+				  
 
 				  {/* <div className="px-3 py-1">
             {tour.id === 2 ? (
