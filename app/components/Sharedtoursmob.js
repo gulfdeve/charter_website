@@ -1,11 +1,11 @@
-"use client";
-import { useEffect, useRef, useState } from "react";
-import EmblaCarousel from "embla-carousel";
-import { Link } from "@/app/i18n/routing";
+'use client';
+import { useEffect, useRef, useState } from 'react';
+import EmblaCarousel from 'embla-carousel';
+import { Link } from '@/app/i18n/routing';
 // Import icons used in the tour cards
-import { FaClock, FaChild, FaCameraRetro } from "react-icons/fa";
-import { IoMan, IoLocationSharp } from "react-icons/io5";
-import { MdOutlineLocalDining } from "react-icons/md";
+import { FaClock, FaChild, FaCameraRetro } from 'react-icons/fa';
+import { IoMan, IoLocationSharp } from 'react-icons/io5';
+import { MdOutlineLocalDining } from 'react-icons/md';
 
 export default function ToursCarousel({ toursData }) {
   const emblaRef = useRef(null);
@@ -22,7 +22,7 @@ export default function ToursCarousel({ toursData }) {
     if (!embla && emblaRef.current) {
       const emblaInstance = EmblaCarousel(emblaRef.current, {
         loop: true,
-        align: "start",
+        align: 'start',
         slidesToScroll: 1,
       });
       setEmbla(emblaInstance);
@@ -30,8 +30,8 @@ export default function ToursCarousel({ toursData }) {
   }, [embla]);
 
   // Toggle function for collapsing/expanding tour details
-  const toggleDetails = (index) => {
-    setShowDetails((prevState) => {
+  const toggleDetails = index => {
+    setShowDetails(prevState => {
       const newState = [...prevState];
       newState[index] = !newState[index];
       return newState;
@@ -57,24 +57,36 @@ export default function ToursCarousel({ toursData }) {
                     alt={tour.title}
                     className="rounded-lg w-full object-cover"
                   />
-				  {tour.id === 4 ? (<p className="text-[12px] text-center text-primary-blue-2 py-1 font-bold">Limited time offer: 20% Discount is valid until 21 nov 2025</p>) : <p className="text-[12px] text-center text-primary-blue-2 py-1 font-bold">&nbsp;</p>}
+                  {tour.id === 4 ? (
+                    <p className="text-[12px] text-center text-primary-blue-2 py-1 font-bold">
+                      Limited time offer: 20% Discount is valid until 21 nov
+                      2025
+                    </p>
+                  ) : (
+                    <p className="text-[12px] text-center text-primary-blue-2 py-1 font-bold">
+                      &nbsp;
+                    </p>
+                  )}
                   <div className="absolute top-2 ">
-                                        {tour.blueHeadline && (
+                    {tour.yellowHeadline && (
+                      <div className="bg-primary-blue-2 px-3 py-1">
+                        <span className="text-xl font-bold uppercase text-white">
+                          {tour.yellowHeadline}
+                        </span><br />
+						<span className="text-[9px] font-bold uppercase  text-white">
+                          {tour.smallHeadline}
+                        </span>
+                      </div>
+                    )}
+                    {tour.blueHeadline && (
                       <div className="bg-primary-yellow-light px-3 py-1">
                         <p className="text-sm uppercase text-primary-blue-2 font-bold">
                           {tour.blueHeadline}
                         </p>
                       </div>
                     )}
-					{tour.yellowHeadline && (
-                      <div className="bg-white px-3 py-1">
-                        <span className="text-xl font-bold uppercase text-primary-blue-2">
-                          {tour.yellowHeadline}
-                        </span>
-                      </div>
-                    )}
 
-					{/* {tour.validity && (
+                    {/* {tour.validity && (
 					<div className="px-3 py-1">
             {tour.id === 2 ? (
 					  <p className="text-xs uppercase text-primary-blue">
@@ -96,7 +108,7 @@ export default function ToursCarousel({ toursData }) {
                     onClick={() => toggleDetails(index)}
                     className="bg-gray-100 text-gray-400 w-full py-2 rounded font-semibold text-sm hover:bg-gray-200 transition-colors duration-300 mb-2"
                   >
-                    {showDetails[index] ? "Hide Details" : "Show Details"}
+                    {showDetails[index] ? 'Hide Details' : 'Show Details'}
                   </button>
                 </div>
 
@@ -110,15 +122,22 @@ export default function ToursCarousel({ toursData }) {
                   <div className="space-y-3">
                     <div className="flex flex-row gap-2 items-center mb-4">
                       <p className="text-primary-grey text-sm">
-                        <span className="font-bold">Cruising Time:</span>{" "}
+                        <span className="font-bold">Cruising Time:</span>{' '}
                         {tour.cruisingTime}
                       </p>
                     </div>
                     <div className="flex flex-row gap-2 items-center mb-4">
                       <p className="text-primary-grey text-sm">
-                        <span className="font-bold">Adult (12+):</span>{" "}
+                        <span className="font-bold">Adult (12+):</span>{' '}
                         {tour.adultPrice ? (
-                          <><span className="line-through">{tour.adultPrice}</span> <span className="text-primary-blue-2 font-bold">{tour.newAdultPrice}</span></>
+                          <>
+                            <span className="line-through">
+                              {tour.adultPrice}
+                            </span>{' '}
+                            <span className="text-primary-blue-2 font-bold">
+                              {tour.newAdultPrice}
+                            </span>
+                          </>
                         ) : (
                           tour.adultPrice
                         )}
@@ -126,27 +145,34 @@ export default function ToursCarousel({ toursData }) {
                     </div>
                     <div className="flex flex-row gap-2 items-center mb-3">
                       <p className="text-primary-grey text-sm">
-                        <span className="font-bold">Child (4-11):</span>{" "}
+                        <span className="font-bold">Child (4-11):</span>{' '}
                         {tour.childPrice ? (
-                          <><span className="line-through">{tour.childPrice}</span> <span className="text-primary-blue-2 font-bold">{tour.newChildPrice}</span></>
+                          <>
+                            <span className="line-through">
+                              {tour.childPrice}
+                            </span>{' '}
+                            <span className="text-primary-blue-2 font-bold">
+                              {tour.newChildPrice}
+                            </span>
+                          </>
                         ) : (
                           tour.childPrice
                         )}
                       </p>
                     </div>
 
-					<div className="flex flex-row gap-2.5 items-center">
-                          <p className="text-primary-grey text-sm">
-                            <span className="font-bold">Cruising Route:</span>{" "}
-                            {tour.cruisingRoute}
-                          </p>
-                        </div>
+                    <div className="flex flex-row gap-2.5 items-center">
+                      <p className="text-primary-grey text-sm">
+                        <span className="font-bold">Cruising Route:</span>{' '}
+                        {tour.cruisingRoute}
+                      </p>
+                    </div>
 
                     {/* Collapsible Details Section */}
                     <div
                       className={`
                         transition-all duration-300 overflow-hidden
-                        ${showDetails[index] ? "max-h-[999px] opacity-100" : "max-h-0 opacity-0"}
+                        ${showDetails[index] ? 'max-h-[999px] opacity-100' : 'max-h-0 opacity-0'}
                       `}
                     >
                       <div className="space-y-4">
@@ -154,16 +180,16 @@ export default function ToursCarousel({ toursData }) {
                           <p className="text-primary-grey text-sm">
                             {/* <span className="font-bold">Live BBQ:</span>{" "}
                             {tour.liveBBQ} */}
-							<span className="font-bold">Inclusions:</span>{" "}
-							<span dangerouslySetInnerHTML={{ __html: tour.liveBBQ }} />
+                            <span className="font-bold">Inclusions:</span>{' '}
+                            <span
+                              dangerouslySetInnerHTML={{ __html: tour.liveBBQ }}
+                            />
                           </p>
                         </div>
-                        
+
                         <div className="flex flex-row gap-2 items-center">
                           <p className="text-primary-grey text-sm">
-                            <span className="font-bold">
-                              Meeting Point:
-                            </span>{" "}
+                            <span className="font-bold">Meeting Point:</span>{' '}
                             {tour.departurePoint}
                           </p>
                         </div>
