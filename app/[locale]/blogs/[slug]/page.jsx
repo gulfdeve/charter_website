@@ -5,7 +5,8 @@ import ShareButtons from "./sharebuttons";
 import { FiArrowRight, FiArrowLeft } from "react-icons/fi";
 
 export async function generateMetadata({ params }) {
-  const slugLower = params.slug.toLowerCase();
+	const { slug } = await params;
+  const slugLower = slug.toLowerCase();
   const blog = blogsData.find((b) => b.slug.toLowerCase() === slugLower);
   if (!blog) return {};
 
@@ -34,8 +35,9 @@ export async function generateMetadata({ params }) {
   };
 }
 
-export default function BlogDetailPage({ params }) {
-  const slugLower = params.slug.toLowerCase();
+export default async function BlogDetailPage({ params }) {
+	const { slug } = await params;
+  const slugLower = slug.toLowerCase();
   const blog = blogsData.find((b) => b.slug.toLowerCase() === slugLower);
 
   if (!blog) return notFound();
