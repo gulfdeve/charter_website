@@ -88,7 +88,7 @@ const Nycard = ({ whatsappLink }) => {
 			packageInclusions: "CANAPÉS, WINES, BEERS & 5 BOTTLES OF CHAMPAGNE",
 			price: "AED 28,500 + VAT",
 			rate: "6 HOURS RATE",
-			isSold: 0,
+			isSold: 1,
 		},
 		{
 			id: 6,
