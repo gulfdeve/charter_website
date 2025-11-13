@@ -29,6 +29,7 @@ const Nycard = ({ whatsappLink }) => {
 			price: "AED 14,000 + VAT",
 			rate: "6 HOURS RATE",
 			isSold: 0,
+			availableText: "Available",
 		},
 		{
 			id: 2,
@@ -44,6 +45,7 @@ const Nycard = ({ whatsappLink }) => {
 			price: "AED 14,000 + VAT",
 			rate: "6 HOURS RATE",
 			isSold: 0,
+			availableText: "Available",
 		},
 		{
 			id: 3,
@@ -59,83 +61,9 @@ const Nycard = ({ whatsappLink }) => {
 			price: "AED 16,000 + VAT",
 			rate: "6 HOURS RATE",
 			isSold: 0,
+			availableText: "Available",
 		},
-		{
-			id: 4,
-			image: "/images/56ft-yacht-vassia-new-year.webp",
-			name: "56ft Yacht - Vassia",
-			infoBoxes: [
-				{ label: "Brand", value: "Majesty" },
-				{ label: "Capacity", value: "28" },
-				{ label: "Cabins", value: "3" },
-				{ label: "Timings", value: "9PM - 3AM" },
-			],
-			packageInclusions: "CANAPÉS, WINES, BEERS & 4 BOTTLES OF CHAMPAGNE",
-			price: "AED 25,000 + VAT",
-			rate: "6 HOURS RATE",
-			isSold: 1,
-		},
-		{
-			id: 5,
-			image: "/images/56ft-yacht-lagoona-new-year.webp",
-			name: "56ft Yacht - Lagoona",
-			infoBoxes: [
-				{ label: "Build", value: "Majesty" },
-				{ label: "Capacity", value: "28" },
-				{ label: "Cabins", value: "3" },
-				{ label: "Timings", value: "9PM - 3AM" },
-			],
-			packageInclusions: "CANAPÉS, WINES, BEERS & 5 BOTTLES OF CHAMPAGNE",
-			price: "AED 28,500 + VAT",
-			rate: "6 HOURS RATE",
-			isSold: 1,
-		},
-		{
-			id: 6,
-			image: "/images/58ft-yacht-etosha-new-year.webp",
-			name: "58ft Yacht - Etosha",
-			infoBoxes: [
-				{ label: "Build", value: "Azimut" },
-				{ label: "Capacity", value: "28" },
-				{ label: "Cabins", value: "3" },
-				{ label: "Timings", value: "9PM - 3AM" },
-			],
-			packageInclusions: "CANAPÉS, WINES, BEERS & 4 BOTTLES OF CHAMPAGNE",
-			price: "AED 27,000 + VAT",
-			rate: "6 HOURS RATE",
-			isSold: 0,
-		},
-		{
-			id: 7,
-			image: "/images/61ft-yacht-silver-creek-new-year.webp",
-			name: "61ft Yacht - Silver Creek",
-			infoBoxes: [
-				{ label: "Build", value: "Majesty" },
-				{ label: "Capacity", value: "30" },
-				{ label: "Cabins", value: "3" },
-				{ label: "Timings", value: "9PM - 3AM" },
-			],
-			packageInclusions: "CANAPÉS, WINES, BEERS & 5 BOTTLES OF CHAMPAGNE",
-			price: "AED 30,000 + VAT",
-			rate: "6 HOURS RATE",
-			isSold: 1,
-		},
-		{
-			id: 8,
-			image: "/images/77ft-yacht-dionysos-new-year.webp",
-			name: "77ft Yacht - Dionysos",
-			infoBoxes: [
-				{ label: "Brand", value: "Majesty" },
-				{ label: "Capacity", value: "20" },
-				{ label: "Cabins", value: "3" },
-				{ label: "Timings", value: "9PM - 3AM" },
-			],
-			packageInclusions:
-				"GOURMET CANAPÉS, PREMIUM WINES, BEERS, SPIRITS & 10 BOTTLES OF CHAMPAGNE",
-			price: "AED 60,000 + VAT",
-			rate: "6 HOURS RATE",
-			isSold: 1,
-		},
+		
 		{
 			id: 9,
 			image: "/images/85ft-yacht-kronos-new-year.webp",
@@ -150,7 +78,8 @@ const Nycard = ({ whatsappLink }) => {
 				"GOURMET CANAPÉS, PREMIUM WINES, BEERS, SPIRITS & 10 BOTTLES OF CHAMPAGNE",
 			price: "AED 55,000 + VAT",
 			rate: "6 HOURS RATE",
-			isSold: 1,
+			isSold: 0,
+			availableText: "Available for Shared Tours",
 		},
 		{
 			id: 10,
@@ -167,6 +96,88 @@ const Nycard = ({ whatsappLink }) => {
 			price: "AED 125,000 + VAT",
 			rate: "6 HOURS RATE",
 			isSold: 0,
+			availableText: "Available for Shared Tours",
+		},
+				{
+			id: 4,
+			image: "/images/56ft-yacht-vassia-new-year.webp",
+			name: "56ft Yacht - Vassia",
+			infoBoxes: [
+				{ label: "Brand", value: "Majesty" },
+				{ label: "Capacity", value: "28" },
+				{ label: "Cabins", value: "3" },
+				{ label: "Timings", value: "9PM - 3AM" },
+			],
+			packageInclusions: "CANAPÉS, WINES, BEERS & 4 BOTTLES OF CHAMPAGNE",
+			price: "AED 25,000 + VAT",
+			rate: "6 HOURS RATE",
+			isSold: 1,
+			availableText: "Available",
+		},
+				{
+			id: 5,
+			image: "/images/56ft-yacht-lagoona-new-year.webp",
+			name: "56ft Yacht - Lagoona",
+			infoBoxes: [
+				{ label: "Build", value: "Majesty" },
+				{ label: "Capacity", value: "28" },
+				{ label: "Cabins", value: "3" },
+				{ label: "Timings", value: "9PM - 3AM" },
+			],
+			packageInclusions: "CANAPÉS, WINES, BEERS & 5 BOTTLES OF CHAMPAGNE",
+			price: "AED 28,500 + VAT",
+			rate: "6 HOURS RATE",
+			isSold: 1,
+			availableText: "Available",
+		},
+				{
+			id: 6,
+			image: "/images/58ft-yacht-etosha-new-year.webp",
+			name: "58ft Yacht - Etosha",
+			infoBoxes: [
+				{ label: "Build", value: "Azimut" },
+				{ label: "Capacity", value: "28" },
+				{ label: "Cabins", value: "3" },
+				{ label: "Timings", value: "9PM - 3AM" },
+			],
+			packageInclusions: "CANAPÉS, WINES, BEERS & 4 BOTTLES OF CHAMPAGNE",
+			price: "AED 27,000 + VAT",
+			rate: "6 HOURS RATE",
+			isSold: 1,
+			availableText: "Available",
+		},
+		{
+			id: 7,
+			image: "/images/61ft-yacht-silver-creek-new-year.webp",
+			name: "61ft Yacht - Silver Creek",
+			infoBoxes: [
+				{ label: "Build", value: "Majesty" },
+				{ label: "Capacity", value: "30" },
+				{ label: "Cabins", value: "3" },
+				{ label: "Timings", value: "9PM - 3AM" },
+			],
+			packageInclusions: "CANAPÉS, WINES, BEERS & 5 BOTTLES OF CHAMPAGNE",
+			price: "AED 30,000 + VAT",
+			rate: "6 HOURS RATE",
+			isSold: 1,
+			availableText: "Available",
+		},
+		{
+			id: 8,
+			image: "/images/77ft-yacht-dionysos-new-year.webp",
+			name: "77ft Yacht - Dionysos",
+			infoBoxes: [
+				{ label: "Brand", value: "Majesty" },
+				{ label: "Capacity", value: "20" },
+				{ label: "Cabins", value: "3" },
+				{ label: "Timings", value: "9PM - 3AM" },
+			],
+			packageInclusions:
+				"GOURMET CANAPÉS, PREMIUM WINES, BEERS, SPIRITS & 10 BOTTLES OF CHAMPAGNE",
+			price: "AED 60,000 + VAT",
+			rate: "6 HOURS RATE",
+			isSold: 1,
+			availableText: "Available",
 		},
 	];
 
@@ -194,7 +205,7 @@ const Nycard = ({ whatsappLink }) => {
 							)}
 							{yacht.isSold !== 1 && (
 								<div className="absolute flex items-center gap-2 top-4 left-0 gradient-custom-2 text-white text-sm py-0.5 px-2 rounded-r-lg">
-									<p>Available</p>
+									<p>{yacht.availableText}</p>
 								</div>
 							)}
 							<div className="absolute grid grid-cols-4 gap-2  -bottom-5 left-0 right-0 mx-3 text-blue-900 rounded-lg bg-primary-blue-3">
@@ -217,7 +228,8 @@ const Nycard = ({ whatsappLink }) => {
 							</div>
 						</div>
 						<div className="mt-10">
-							<div className="bg-primary-blue rounded-lg p-4 space-y-2 py-5">
+							{/* add hidden class if yacht.id is 10 */}
+							<div className={`${yacht.id === 10 || yacht.id === 9 ? 'hidden' : ''} bg-primary-blue rounded-lg p-4 space-y-2 py-5`}>
 								<h5 className=" text-primary-yellow text-center font-bold text-xl">
 									PACKAGE INCLUSIONS:
 								</h5>
@@ -226,7 +238,7 @@ const Nycard = ({ whatsappLink }) => {
 								</div>
 							</div>
 							{yacht.isSold === 0 ? (
-								<div className="flex gap-2 font-bold text-base lg:text-lg text-white items-center mt-5">
+								<div className={`${yacht.id === 10 || yacht.id === 9 ? 'hidden' : ''} flex gap-2 font-bold text-base lg:text-lg text-white items-center mt-5`}>
 									{yacht.price}
 								</div>
 							) : (
