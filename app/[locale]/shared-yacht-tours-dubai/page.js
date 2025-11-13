@@ -73,8 +73,8 @@ const toursData = [
     cruisingTime: '08:00 PM - 10:00 PM',
     adultPrice: 'AED 249',
     childPrice: 'AED 159',
-    newAdultPrice: 'AED 200',
-    newChildPrice: 'AED 125',
+    // newAdultPrice: 'AED 200',
+    // newChildPrice: 'AED 125',
     liveBBQ:
       'Club Sandwich, Chicken & Beef Sliders, Vegetable Spring Rolls, Chicken Samosa & Fruit Platter. Water, Soft Drinks, Beer, Red Wine, White Wine & Sparkling Wine<br>*Vegetarian food available on request',
     cruisingRoute: 'Dubai Marina, JBR and Burj Al Arab',
@@ -181,7 +181,7 @@ const Page = () => {
                     alt={tour.title}
                     className="rounded-lg w-full"
                   />
-                  {tour.id === 4 ? (
+                  {tour.id === 4 && false ? (
                     <p className="text-[12px] text-center text-primary-blue-2 py-1 font-bold">
                       Limited time offer: 20% Discount is valid until 21 nov
                       2025
