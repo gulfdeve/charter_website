@@ -229,7 +229,7 @@ const Nycard = ({ whatsappLink }) => {
 						</div>
 						<div className="mt-10">
 							{/* add hidden class if yacht.id is 10 */}
-							<div className={`${yacht.id === 10 || yacht.id === 9 ? 'hidden' : ''} bg-primary-blue rounded-lg p-4 space-y-2 py-5`}>
+							<div className={`${yacht.id === 10 || yacht.id === 9 ? 'invisible' : ''} bg-primary-blue rounded-lg p-4 space-y-2 py-5`}>
 								<h5 className=" text-primary-yellow text-center font-bold text-xl">
 									PACKAGE INCLUSIONS:
 								</h5>
