@@ -81,8 +81,8 @@ const toursData = [
     departurePoint: 'Outside Dubai Harbour Office (Taxi drop-off area)',
     blueHeadline: 'AVAILABLE ALL DAYS OF THE WEEK',
     validity: '*Valid from July 1-September 15, 2025',
-    yellowHeadline: '20% DISCOUNT',
-    smallHeadline: 'EVERY MONDAY, WEDNESDAY & FRIDAY',
+    // yellowHeadline: '20% DISCOUNT',
+    // smallHeadline: 'EVERY MONDAY, WEDNESDAY & FRIDAY',
     fareharborLink:
       'https://fareharbor.com/embeds/book/centauruscharter/items/488872/?full-items=yes&flow=no',
   },
