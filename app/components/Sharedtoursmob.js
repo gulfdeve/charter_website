@@ -57,7 +57,7 @@ export default function ToursCarousel({ toursData }) {
                     alt={tour.title}
                     className="rounded-lg w-full object-cover"
                   />
-                  {tour.id === 4 ? (
+                  {tour.id === 4 && false ? (
                     <p className="text-[12px] text-center text-primary-blue-2 py-1 font-bold">
                       Limited time offer: 20% Discount is valid until 21 nov
                       2025
