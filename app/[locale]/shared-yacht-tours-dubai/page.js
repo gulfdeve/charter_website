@@ -33,22 +33,22 @@ const toursData = [
     fareharborLink:
       'https://fareharbor.com/embeds/book/centauruscharter/items/633603/?full-items=yes&flow=1283212',
   },
-  {
-    id: 2,
-    image: '/images/afternoon.webp',
-    title: 'AFTERNOON TOURS',
-    cruisingTime: '04:00 PM - 05:00 PM',
-    adultPrice: 'AED 159',
-    childPrice: 'AED 139',
-    liveBBQ: 'Wines, Beers, Softdrinks & Water',
-    cruisingRoute: 'Dubai Marina, Ain Dubai and JBR',
-    departurePoint: 'Outside Dubai Harbour Office (Taxi drop-off area)',
-    blueHeadline: 'AVAILABLE ALL DAYS OF THE WEEK',
-    validity: '*Valid from July 1-September 15, 2025',
-    yellowHeadline: '',
-    fareharborLink:
-      'https://fareharbor.com/embeds/book/centauruscharter/items/646208/calendar/2025/06/?full-items=yes',
-  },
+//   {
+//     id: 2,
+//     image: '/images/afternoon.webp',
+//     title: 'AFTERNOON TOURS',
+//     cruisingTime: '04:00 PM - 05:00 PM',
+//     adultPrice: 'AED 159',
+//     childPrice: 'AED 139',
+//     liveBBQ: 'Wines, Beers, Softdrinks & Water',
+//     cruisingRoute: 'Dubai Marina, Ain Dubai and JBR',
+//     departurePoint: 'Outside Dubai Harbour Office (Taxi drop-off area)',
+//     blueHeadline: 'AVAILABLE ALL DAYS OF THE WEEK',
+//     validity: '*Valid from July 1-September 15, 2025',
+//     yellowHeadline: '',
+//     fareharborLink:
+//       'https://fareharbor.com/embeds/book/centauruscharter/items/646208/calendar/2025/06/?full-items=yes',
+//   },
   {
     id: 3,
     image: '/sunset.webp',
@@ -168,7 +168,7 @@ const Page = () => {
         </div>
         {/* Card Grid */}
         <div className="md:block hidden">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 py-10 gap-4 container mx-auto items-start">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 py-10 gap-4 container mx-auto items-start">
             {toursData.map((tour, index) => (
               <div
                 key={index}
