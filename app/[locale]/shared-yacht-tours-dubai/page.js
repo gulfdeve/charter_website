@@ -73,16 +73,16 @@ const toursData = [
     cruisingTime: '08:00 PM - 10:00 PM',
     adultPrice: 'AED 249',
     childPrice: 'AED 159',
-    // newAdultPrice: 'AED 200',
-    // newChildPrice: 'AED 125',
+    newAdultPrice: 'AED 210',
+    newChildPrice: 'AED 119',
     liveBBQ:
       'Club Sandwich, Chicken & Beef Sliders, Vegetable Spring Rolls, Chicken Samosa & Fruit Platter. Water, Soft Drinks, Beer, Red Wine, White Wine & Sparkling Wine<br>*Vegetarian food available on request',
     cruisingRoute: 'Dubai Marina, JBR and Burj Al Arab',
     departurePoint: 'Outside Dubai Harbour Office (Taxi drop-off area)',
     blueHeadline: 'AVAILABLE ALL DAYS OF THE WEEK',
     validity: '*Valid from July 1-September 15, 2025',
-    // yellowHeadline: '20% DISCOUNT',
-    // smallHeadline: 'EVERY MONDAY, WEDNESDAY & FRIDAY',
+    yellowHeadline: '🇦🇪 NATIONAL DAY OFFER - ENJOY 15% OFF',
+    smallHeadline: '(VALID FOR NIGHT TOURS SCHEDULED ON 1-2 DECEMBER)',
     fareharborLink:
       'https://fareharbor.com/embeds/book/centauruscharter/items/488872/?full-items=yes&flow=no',
   },
@@ -181,10 +181,9 @@ const Page = () => {
                     alt={tour.title}
                     className="rounded-lg w-full"
                   />
-                  {tour.id === 4 && false ? (
+                  {tour.id === 4 ? (
                     <p className="text-[12px] text-center text-primary-blue-2 py-1 font-bold">
-                      Limited time offer: 20% Discount is valid until 21 nov
-                      2025
+                      Limited time offer! 15% OFF is valid on booking made between 18-30 November only
                     </p>
                   ) : (
                     <p className="text-[8px] text-center text-primary-blue-2 py-1 font-bold">
@@ -195,13 +194,12 @@ const Page = () => {
                   <div className="absolute top-2">
                     {tour.yellowHeadline && (
                       <div className="bg-primary-blue-2 px-3 py-1">
-                        <span className="text-xl font-bold uppercase  text-white">
+                        <div className="text-base font-bold uppercase  text-white">
                           {tour.yellowHeadline}
-                        </span>
-                        <br />
-                        <span className="text-[9px] font-bold uppercase  text-white">
+                        </div>
+                        <div className="text-[9px] font-bold uppercase  text-white">
                           {tour.smallHeadline}
-                        </span>
+                        </div>
                       </div>
                     )}
                     {tour.blueHeadline && (
