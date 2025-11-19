@@ -9,12 +9,15 @@ export const fetchData = cache(async () => {
         : '';
 
     // ISR: Revalidate every 24 hours (86400 seconds) since API rarely changes
-    const fetchOptions = { 
-      next: { 
-        revalidate: 86400, // 24 hours
-        tags: ['data-cache'] 
-      } 
-    };
+    // In development, use no-store to always fetch fresh data for easier debugging
+    const fetchOptions = process.env.NODE_ENV === 'development'
+      ? { cache: 'no-store' } // Dev: Always fetch fresh
+      : { 
+          next: { 
+            revalidate: 86400, // Production: 24 hours cache
+            tags: ['data-cache'] 
+          } 
+        };
 
     const response = await fetch(`${baseUrl}/api/get-data`, fetchOptions);
 

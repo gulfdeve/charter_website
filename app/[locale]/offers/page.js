@@ -34,6 +34,7 @@ export default async function OffersPage({ params }) {
 
   // Use the same fetchData utility
   const data = await fetchData();
+  console.log("offers data: ", data?.offers);
 
   if (!data) {
     return <div>Loading...</div>;

@@ -5,17 +5,19 @@ export const config = {
 
 export async function GET() {
   try {
-    const url = `${process.env.API_DOMAIN}/api/api_new/basic`;
-    //   console.log("using url: ", url);
+    const url = `${process.env.API_DOMAIN}/api/api_new/basic/generate`;
+      console.log("using url: ", url);
 
-    // ISR: Cache for 24 hours (86400 seconds) in all environments
-    // Use the SAME tag so revalidation clears this cache too
-    const fetchOptions = {
-      next: { 
-        revalidate: 86400, // 24 hours
-        tags: ['data-cache'] // Same tag as fetchData - critical for revalidation!
-      },
-    };
+    // ISR: Cache for 24 hours (86400 seconds) in production
+    // In development, always fetch fresh data for easier debugging
+    const fetchOptions = process.env.NODE_ENV === 'development'
+      ? { cache: 'no-store' } // Dev: Always fetch fresh
+      : {
+          next: { 
+            revalidate: 86400, // Production: 24 hours
+            tags: ['data-cache'] // Same tag as fetchData - critical for revalidation!
+          },
+        };
 
     const response = await fetch(url, fetchOptions);
 
