@@ -2,6 +2,20 @@
 import HomeContent from '@/app/components/HomeContent';
 import { fetchData } from '@/app/lib/fetchData';
 
+// Force static generation with ISR (24 hours revalidation)
+export const dynamic = 'force-static';
+export const revalidate = 86400; // 24 hours
+
+// Pre-generate all locale versions at build time
+export async function generateStaticParams() {
+  return [
+    { locale: 'en' },
+    { locale: 'ar' },
+    { locale: 'ru' },
+    { locale: 'zh' },
+  ];
+}
+
 export async function generateMetadata({ params }) {
   const { locale } = await params;
   const resolvedLocale = locale || 'en';

@@ -68,6 +68,7 @@ export async function GET(request) {
         '/', // home page
         '/offers',
         '/faq',
+        '/terms-and-condition',
         '/yacht-rentals',
         '/events',
         '/yacht-trips',
