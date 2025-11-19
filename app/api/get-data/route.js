@@ -3,21 +3,28 @@ export const config = {
   regions: ['fra1'],
 };
 
+// Make this route dynamic (not cached) - only the fetch inside should be cached
+export const dynamic = 'force-dynamic';
+
 export async function GET() {
   try {
     const url = `${process.env.API_DOMAIN}/api/api_new/basic/generate`;
-    console.log("using url: ", url);
+    console.log("✅ Fetching from external API:", url);
+    console.log("⏰ Request time:", new Date().toISOString());
 
-    // ISR: Cache for 24 hours (86400 seconds) in production
+    // ISR: Cache the FETCH (not the route) for 24 hours with tags
     // In development, always fetch fresh data for easier debugging
     const fetchOptions = process.env.NODE_ENV === 'development'
       ? { cache: 'no-store' } // Dev: Always fetch fresh
       : {
+          cache: 'force-cache', // Explicitly cache this fetch
           next: { 
             revalidate: 86400, // Production: 24 hours
-            tags: ['data-cache'] // Same tag as fetchData - critical for revalidation!
+            tags: ['data-cache'] // Critical: This tag enables revalidation!
           },
         };
+
+    console.log("🔧 Fetch options:", JSON.stringify(fetchOptions, null, 2));
 
     // Fetch from external API
     const response = await fetch(url, fetchOptions);
@@ -34,15 +41,16 @@ export async function GET() {
     
     // Log a sample to verify we're getting fresh data
     if (data?.offers?.[0]) {
-      console.log("Sample offer validity:", data.offers[0].validity);
+      console.log("📦 Sample offer validity:", data.offers[0].validity);
     }
 
-    // ISR-optimized cache headers
-    // Important: Must match the revalidate time and allow tag-based revalidation
+    // IMPORTANT: Don't cache the API route response itself
+    // The fetch inside is cached with tags, but the route must be dynamic
+    // This ensures revalidateTag works correctly
     const headers = {
-      'Cache-Control': 'public, max-age=0, s-maxage=86400, stale-while-revalidate=172800, must-revalidate',
-      'CDN-Cache-Control': 'max-age=0, s-maxage=86400',
-      'Vercel-CDN-Cache-Control': 'max-age=0, s-maxage=86400',
+      'Cache-Control': 'no-store, must-revalidate',
+      'CDN-Cache-Control': 'no-store',
+      'Vercel-CDN-Cache-Control': 'no-store',
     };
 
     return new Response(JSON.stringify(data), {
