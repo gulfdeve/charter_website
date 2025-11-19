@@ -9,9 +9,12 @@ export async function GET() {
     //   console.log("using url: ", url);
 
     // ISR: Cache for 24 hours (86400 seconds) in all environments
-    // Use 'force-cache' to respect revalidation settings from consuming pages
+    // Use the SAME tag so revalidation clears this cache too
     const fetchOptions = {
-      next: { revalidate: 86400 }, // 24 hours
+      next: { 
+        revalidate: 86400, // 24 hours
+        tags: ['data-cache'] // Same tag as fetchData - critical for revalidation!
+      },
     };
 
     const response = await fetch(url, fetchOptions);
