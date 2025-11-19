@@ -1,71 +1,52 @@
-"use client";
 import React from "react";
-import { use } from "react";
 import { IoIosPricetag } from "react-icons/io";
 import { FaWhatsapp } from "react-icons/fa";
-import { useRouter, usePathname, Link } from "@/app/i18n/routing";
-import { useLocale, useTranslations } from "next-intl";
-import { useData } from "@/app/context/DataContext";
-import Route from "@/app/components/Route";
+import { Link } from "@/app/i18n/routing";
+import { getLocale } from "next-intl/server";
+import { fetchData } from "@/app/lib/fetchData";
 import ExperienceCarousal from "@/app/components/ExperienceCarousal";
-import ExperienceMobilecarousel from "@/app/components/ExperienceMobilecarousal";
 import PageTitleHeading from "@/app/components/PageTitleHeading";
 import { notFound } from "next/navigation";
-const page = ({ params }) => {
-  const { slug } = use(params); // Get slug from the URL
-  const locale = useLocale();
-  console.log(slug);
-  const { data, loading, error } = useData();
-  const experience = data?.experiences?.find(
-    (experience) => experience.slug === slug
-  );
-  console.log(locale);
-  console.log(experience);
 
-  if (loading) return <div>Loading...</div>;
-  if (error) return <div>Error: {error.message}</div>;
+// Generate metadata for SEO
+export async function generateMetadata({ params }) {
+  const { slug } = await params;
+  const locale = await getLocale();
+  const data = await fetchData();
+  
+  const experience = data?.experiences?.find((exp) => exp.slug === slug);
+  
+  if (!experience) {
+    return {
+      title: "Experience Not Found",
+    };
+  }
+  
+  return {
+    title: experience.translations?.[locale]?.title || "Yacht Experience",
+    description: experience.translations?.[locale]?.preivew_text || "Luxury yacht experience in Dubai",
+  };
+}
+
+const page = async ({ params }) => {
+  // Await params to get slug
+  const { slug } = await params;
+  
+  // Get locale server-side
+  const locale = await getLocale();
+  
+  // Fetch data server-side
+  const data = await fetchData();
+  
+  // Find the experience
+  const experience = data?.experiences?.find(
+    (exp) => exp.slug === slug
+  );
+
+  // If no experience found, show 404
   if (!experience) {
     notFound();
   }
-
-  console.log(locale);
-  const offers = [
-    {
-      id: 1,
-      image: "./yacht1.webp",
-      title: "56 Ft Yacht - Vassia",
-      note: "Your Perfect Yacht Wedding in Dubai",
-      validity: "AED 5000",
-    },
-    {
-      id: 2,
-      image: "./yacht2.webp",
-      title: "NIGHT PARTY",
-      note: "Get the vibrant night party on a luxurious yacht",
-      validity: "AED 5000",
-    },
-    {
-      id: 3,
-      image: "./yacht3.webp",
-      title: "FISHING TRIP",
-      note: "Have a deep sea fishing experience aboard a boat",
-      validity: "AED 1725",
-    },
-    {
-      id: 4,
-      image: "./yacht4.webp",
-      title: "BIRTHDAY PARTY",
-      note: "Invite your mates and throw a yacht B'Day party in style",
-      validity: "AED 3120",
-    },
-    {
-      id: 5,
-      image: "./yacht5.webp",
-      title: "CORPORATE EVENTS",
-      note: "Organize your business parties and events on a stylish yacht",
-      validity: "AED 3120",
-    },
-  ];
 
   return (
     <>
@@ -153,6 +134,7 @@ const page = ({ params }) => {
                     <a
                       href={experience.whatsapp_url}
                       target="_blank"
+                      rel="noopener noreferrer"
                       className="w-full flex items-center justify-center py-2 px-4 text-base md:text-sm xl:text-lg font-bold tracking-wider uppercase text-white bg-primary-blue-2 hover:scale-105 rounded-md shadow transition duration-150 ease-in-out transform"
                     >
                       <FaWhatsapp className="sm:text-md  mr-1" />
