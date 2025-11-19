@@ -72,7 +72,7 @@ export default function ToursCarousel({ toursData }) {
                         <div className="text-base font-bold uppercase text-white">
                           {tour.yellowHeadline}
                         </div>
-						<div className="text-[9px] font-bold uppercase  text-white">
+						<div className="text-[11px] font-bold uppercase  text-white">
                           {tour.smallHeadline}
                         </div>
                       </div>

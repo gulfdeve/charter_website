@@ -1,16 +1,11 @@
 
-"use client";
-import { useState } from "react";
 import ExclusiveOffers from "@/app/components/ExclusiveOffers";
 import TailorYachtExperience from "@/app/components/TailorYachtExperience";
-import { useRouter, usePathname, Link } from "@/app/i18n/routing";
-const page = () => {
-    const [activeIndex, setActiveIndex] = useState(null);
+import { Link } from "@/app/i18n/routing";
+import FAQAccordion from "./FAQAccordion";
 
-    const toggleAnswer = (index) => {
-      setActiveIndex(activeIndex === index ? null : index);
-    };
-    const faqs = [
+const page = () => {
+  const faqs = [
       {
         question: "How much does it cost to rent a yacht?",
         answer:
@@ -119,44 +114,8 @@ Got a question? We’ve answered the most frequently asked questions about yacht
             <Link href="/contact"><span className="text-blue-600">contact us</span></Link> and let us know your requirements.
           </p>
         </div>
-        <div
-          className={`container my-5 mx-auto`}
-        >
-          <div className="space-y-6">
-            {faqs.map((faq, index) => (
-              <div
-                key={index}
-                className={`  transition-colors duration-200  ${
-                  activeIndex === index
-                    ? "text-primary-blue-2 bg-white"
-                    : "  border-b-[0.5px] border-gray-300"
-                }`}
-              >
-                <h2
-                  onClick={() => toggleAnswer(index)}
-                  className={`font-secondary w-full text-left text-lg md:text-lg font-normal  py-3 px-3 block flex justify-between items-center focus:outline-none hover:cursor-pointer ${
-                    activeIndex === index ? "text-primary-blue-2" : "text-grey-600"
-                  }`}
-                >
-                  {faq.question}
-                  <span className="text-2xl">
-                    {activeIndex === index ? "-" : "+"}
-                  </span>
-                </h2>
-                <div
-                  className={`overflow-hidden transition-[max-height] w-full duration-300 ease-in-out ${
-                    activeIndex === index ? "max-h-40" : "max-h-0"
-                  }`}
-                >
-                  <p className="bg-white px-4 py-3 text-primary-grey text-sm md:text-base mt-3 whitespace-pre-line">
-
-                    {faq.answer}
-                  </p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
+        
+        <FAQAccordion faqs={faqs} />
         
         <ExclusiveOffers />
   

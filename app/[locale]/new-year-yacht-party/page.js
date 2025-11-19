@@ -1,64 +1,33 @@
-"use client";
 import Image from "next/image";
 // import Videonewyear from "@/app/components/Videonewyear";
 import Nycard from "@/app/components/Nycard";
-import React, { useEffect, useRef, useState } from "react";
-import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
-import EmblaCarousel from "embla-carousel";
+import React from "react";
 import Link from "next/link";
 import VideoLocal from "@/app/components/VideoLocal";
+import CarouselSection from "./CarouselSection";
 
 const whatsappLink = "https://wa.link/4qpg10";
+
+const slidesone = [
+	{ src: "/LIVE DJ & DANCE FLOOR.webp", text: "LIVE DJ & DANCE FLOOR" },
+	{ src: "/SPECTACULARVIEWS.webp", text: "SPECTACULAR VIEWS" },
+	{ src: "/PREMIUM DRINKS.webp", text: "PREMIUM DRINKS" },
+	{ src: "/GOURMET FOOD.webp", text: "GOURMET FOOD" },
+];
+
+const slidestwo = [
+	{ src: "/drinks.webp", text: "PREMIUM DRINKS" },
+	{ src: "/Catering.webp", text: "CATERING SERVICE" },
+	{ src: "/decorations.webp", text: "PARTY DECORATION" },
+	{ src: "/cake.webp", text: "NEW YEAR CAKE" },
+	{ src: "/DJ.webp", text: "PROFESSIONAL DJ SERVICES" },
+	{
+		src: "/photographer.webp",
+		text: "PHOTOGRAPHER & VIDEOGRAPHER SERVICE",
+	},
+];
+
 const Page = () => {
-	// Carousel 1
-	const emblaRef1 = useRef(null);
-	const [emblaApi1, setEmblaApi1] = useState(null);
-
-	useEffect(() => {
-		if (emblaRef1.current) {
-			const embla = EmblaCarousel(emblaRef1.current, {
-				loop: false,
-				align: "start",
-			});
-			setEmblaApi1(embla);
-		}
-	}, []);
-
-	const scrollPrev1 = () => emblaApi1?.scrollPrev();
-	const scrollNext1 = () => emblaApi1?.scrollNext();
-	// Carousel 2
-	const emblaRef2 = useRef(null);
-	const [emblaApi2, setEmblaApi2] = useState(null);
-
-	useEffect(() => {
-		if (emblaRef2.current) {
-			const embla = EmblaCarousel(emblaRef2.current, {
-				loop: false,
-				align: "start",
-			});
-			setEmblaApi2(embla);
-		}
-	}, []);
-
-	const scrollPrev2 = () => emblaApi2?.scrollPrev();
-	const scrollNext2 = () => emblaApi2?.scrollNext();
-	const slidesone = [
-		{ src: "/LIVE DJ & DANCE FLOOR.webp", text: "LIVE DJ & DANCE FLOOR" },
-		{ src: "/SPECTACULARVIEWS.webp", text: "SPECTACULAR VIEWS" },
-		{ src: "/PREMIUM DRINKS.webp", text: "PREMIUM DRINKS" },
-		{ src: "/GOURMET FOOD.webp", text: "GOURMET FOOD" },
-	];
-	const slidestwo = [
-		{ src: "/drinks.webp", text: "PREMIUM DRINKS" },
-		{ src: "/Catering.webp", text: "CATERING SERVICE" },
-		{ src: "/decorations.webp", text: "PARTY DECORATION" },
-		{ src: "/cake.webp", text: "NEW YEAR CAKE" },
-		{ src: "/DJ.webp", text: "PROFESSIONAL DJ SERVICES" },
-		{
-			src: "/photographer.webp",
-			text: "PHOTOGRAPHER & VIDEOGRAPHER SERVICE",
-		},
-	];
 	return (
 		<div className="">
 			{/* <Videonewyear /> */}
@@ -127,52 +96,10 @@ const Page = () => {
 						<h3 className="uppercase text-2xl md:text-3xl font-bold text-center text-primary-yellow mb-8">
 							TICKETS INCLUSION
 						</h3>
-						<div
-							ref={emblaRef1}
-							className="overflow-hidden relative"
-						>
-							<div className="flex">
-								{slidesone.map((item, index) => (
-									<div
-										key={index}
-										className="
-                              flex-[0_0_100%]
-                              sm:flex-[0_0_50%]
-                              md:flex-[0_0_33%]
-                              lg:flex-[0_0_25%]
-                              px-2
-                            "
-									>
-										<div className="flex flex-col rounded-xl overflow-hidden">
-											<img
-												src={item.src}
-												className="w-full"
-												alt={item.text}
-											/>
-											<p className="font-bold text-sm bg-primary-blue text-white text-center p-7 h-20 flex items-center justify-center">
-												{item.text}
-											</p>
-										</div>
-									</div>
-								))}
-							</div>
-
-							{/* Navigation Buttons (Arrows) */}
-							<button
-								aria-label="Previous Slide"
-								className="lg:hidden absolute left-0 top-1/2 -translate-y-1/2 w-10 h-10 md:w-14 md:h-14 bg-[#1a1a1a] text-white rounded-full flex items-center justify-center hover:bg-gray-700 transition-colors z-10"
-								onClick={scrollPrev1}
-							>
-								<IoIosArrowBack size={30} />
-							</button>
-							<button
-								aria-label="Next Slide"
-								className="lg:hidden absolute right-0 top-1/2 -translate-y-1/2 w-10 h-10 md:w-14 md:h-14 bg-[#1a1a1a] text-white rounded-full flex items-center justify-center hover:bg-gray-700 transition-colors z-10"
-								onClick={scrollNext1}
-							>
-								<IoIosArrowForward size={30} />
-							</button>
-						</div>
+						<CarouselSection
+							slides={slidesone}
+							showNavOnLargeScreens={false}
+						/>
 					</div>
 					<div className="lg:px-20 px-5">
 						<div className="flex flex-col items-center justify-center w-full mt-10 mb-5 px-10">
@@ -256,49 +183,10 @@ const Page = () => {
 						For those looking to have a touch of luxury to their
 						celebration, we offer additional services.
 					</p>
-					<div ref={emblaRef2} className="overflow-hidden relative">
-						<div className="flex">
-							{slidestwo.map((item, index) => (
-								<div
-									key={index}
-									className="
-                              flex-[0_0_100%]
-                              sm:flex-[0_0_50%]
-                              md:flex-[0_0_33%]
-                              lg:flex-[0_0_25%]
-                              px-2
-                            "
-								>
-									<div className="flex flex-col rounded-xl overflow-hidden">
-										<img
-											src={item.src}
-											className="w-full"
-											alt={item.text}
-										/>
-										<p className="font-bold text-sm bg-primary-blue text-white text-center p-7 h-20 flex items-center justify-center">
-											{item.text}
-										</p>
-									</div>
-								</div>
-							))}
-						</div>
-
-						{/* Navigation Buttons (Arrows) */}
-						<button
-							aria-label="Previous Slide"
-							className="absolute left-0 top-1/2 -translate-y-1/2 w-10 h-10 md:w-14 md:h-14 bg-[#1a1a1a] text-white rounded-full flex items-center justify-center hover:bg-gray-700 transition-colors z-10"
-							onClick={scrollPrev2}
-						>
-							<IoIosArrowBack size={30} />
-						</button>
-						<button
-							aria-label="Next Slide"
-							className="absolute right-0 top-1/2 -translate-y-1/2 w-10 h-10 md:w-14 md:h-14 bg-[#1a1a1a] text-white rounded-full flex items-center justify-center hover:bg-gray-700 transition-colors z-10"
-							onClick={scrollNext2}
-						>
-							<IoIosArrowForward size={30} />
-						</button>
-					</div>
+					<CarouselSection
+						slides={slidestwo}
+						showNavOnLargeScreens={true}
+					/>
 				</div>
 				<div className="flex flex-col items-center justify-center py-7">
 					<Link href={whatsappLink} target="_blank">
