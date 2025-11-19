@@ -1,4 +1,4 @@
-"use client";
+// "use client";
 import { Link } from "../i18n/routing";
 import Image from "next/image";
 
@@ -25,8 +25,8 @@ export default function LandingNavbar() {
             {/* Book Now Button */}
             <div className="flex items-center">
               <Link
-                href="/contact"
-                className="bg-primary-blue text-white px-6 py-3 rounded-lg font-semibold uppercase tracking-wider hover:bg-primary-blue-2 transition-all duration-300 font-primary"
+                href="https://wa.link/8nj51w"
+                className="red-solid-button"
               >
                 Book Now
               </Link>
@@ -54,12 +54,13 @@ export default function LandingNavbar() {
 
             {/* Book Now Button */}
             <div className="flex items-center">
-              <Link
-                href="/contact"
-                className="bg-primary-blue text-white px-4 py-2 rounded-lg font-semibold uppercase text-sm tracking-wider hover:bg-primary-blue-2 transition-all duration-300 font-primary"
+              <a
+                href="https://wa.link/8nj51w"
+                target="_blank"
+                className="red-solid-button"
               >
                 Book Now
-              </Link>
+              </a>
             </div>
           </nav>
         </div>
