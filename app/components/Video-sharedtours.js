@@ -1,46 +1,48 @@
-"use client";
-import React, { useEffect, useState } from "react";
+'use client';
+import React, { useEffect, useState } from 'react';
 
 export default function Videosharedtours() {
   const [scriptsLoaded, setScriptsLoaded] = useState(false);
   const [playerReady, setPlayerReady] = useState(false);
 
   useEffect(() => {
-    const loadScript = (src, type = "text/javascript", isModule = false) => {
-      const script = document.createElement("script");
+    const loadScript = (src, type = 'text/javascript', isModule = false) => {
+      const script = document.createElement('script');
       script.src = src;
       script.async = true;
-      script.type = isModule ? "module" : type;
+      script.type = isModule ? 'module' : type;
       document.body.appendChild(script);
       return script;
     };
 
     const loadWistiaScripts = () => {
       // Load scripts in parallel instead of sequentially
-      const playerScript = loadScript("https://fast.wistia.com/player.js");
+      const playerScript = loadScript('https://fast.wistia.com/player.js');
       // const embedScript = loadScript(
       //   "https://fast.wistia.com/embed/rbm8fusw7r.js",
       //   "module",
       //   true
       // );
-      
+
       // Set scripts as loaded when player.js is ready (main dependency)
       playerScript.onload = () => {
         setScriptsLoaded(true);
-        
+
         // Check if custom element is defined
         if (window.customElements) {
           if (customElements.get('wistia-player')) {
             setPlayerReady(true);
           } else {
-            customElements.whenDefined("wistia-player")
+            customElements
+              .whenDefined('wistia-player')
               .then(() => setPlayerReady(true))
-              .catch(err => console.error("Error with custom element:", err));
+              .catch(err => console.error('Error with custom element:', err));
           }
         }
       };
-      
-      playerScript.onerror = (error) => console.log("Error loading Wistia player script:", error);
+
+      playerScript.onerror = error =>
+        console.log('Error loading Wistia player script:', error);
       // embedScript.onerror = (error) => console.log("Error loading Wistia embed script:", error);
     };
 
@@ -49,7 +51,7 @@ export default function Videosharedtours() {
     return () => {
       // Clean up dynamically added scripts
       const scripts = document.querySelectorAll("script[src*='wistia']");
-      scripts.forEach((script) => document.body.removeChild(script));
+      scripts.forEach(script => document.body.removeChild(script));
     };
   }, []);
 
@@ -65,7 +67,7 @@ export default function Videosharedtours() {
           }
         `}
       </style>
-      <div className="" style={{ pointerEvents: "none" }}>
+      <div className="" style={{ pointerEvents: 'none' }}>
         {scriptsLoaded && playerReady ? (
           <wistia-player media-id="x5zlv6005o" seo="false"></wistia-player>
         ) : (

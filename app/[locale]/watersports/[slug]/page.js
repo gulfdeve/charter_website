@@ -1,61 +1,61 @@
-import React from "react";
-import { FaWhatsapp } from "react-icons/fa";
-import { notFound } from "next/navigation";
-import { fetchData } from "@/app/lib/fetchData";
-import PageTitleHeading from "../../../components/PageTitleHeading";
-import WaterSportCarousal2 from "../../../components/WaterSportCarousal2";
+import React from 'react';
+import { FaWhatsapp } from 'react-icons/fa';
+import { notFound } from 'next/navigation';
+import { fetchData } from '@/app/lib/fetchData';
+import PageTitleHeading from '../../../components/PageTitleHeading';
+import WaterSportCarousal2 from '../../../components/WaterSportCarousal2';
 
 const waterSportRate = [
   {
     id: 1,
-    title: "JET SKI",
+    title: 'JET SKI',
     infoBoxes: [
-      { label: "Recreational Jet Ski", duration: "30", price: "350"},
-      { label: "Recreational Jet Ski", duration: "60", price: "600"},
+      { label: 'Recreational Jet Ski', duration: '30', price: '350' },
+      { label: 'Recreational Jet Ski', duration: '60', price: '600' },
 
-      { label: "Performance Jet Ski", duration: "30", price: "480"},
-      { label: "Performance Jet Ski", duration: "60", price: "750"},
-    ]
+      { label: 'Performance Jet Ski', duration: '30', price: '480' },
+      { label: 'Performance Jet Ski', duration: '60', price: '750' },
+    ],
   },
   {
     id: 2,
-    title: "DONUT BOAT RIDE",
+    title: 'DONUT BOAT RIDE',
     infoBoxes: [
-      { label: "DONUT BOAT RIDE", duration: "30", price: "450"},
-      { label: "DONUT BOAT RIDE", duration: "60", price: "700"}
-    ]
+      { label: 'DONUT BOAT RIDE', duration: '30', price: '450' },
+      { label: 'DONUT BOAT RIDE', duration: '60', price: '700' },
+    ],
   },
   {
     id: 3,
-    title: "BANANA BOAT",
+    title: 'BANANA BOAT',
     infoBoxes: [
-      { label: "BANANA BOAT", duration: "30", price: "450"},
-      { label: "BANANA BOAT", duration: "60", price: "700"}
-    ]
+      { label: 'BANANA BOAT', duration: '30', price: '450' },
+      { label: 'BANANA BOAT', duration: '60', price: '700' },
+    ],
   },
   {
     id: 4,
-    title: "FLYBOARD",
+    title: 'FLYBOARD',
     infoBoxes: [
-      { label: "FLYBOARD", duration: "25", price: "850"},
-      { label: "FLYBOARD", duration: "60", price: "1680"}
-    ]
+      { label: 'FLYBOARD', duration: '25', price: '850' },
+      { label: 'FLYBOARD', duration: '60', price: '1680' },
+    ],
   },
   {
     id: 5,
-    title: "EFOIL",
+    title: 'EFOIL',
     infoBoxes: [
-      { label: "EFOIL", duration: "30", price: "650"},
-      { label: "EFOIL", duration: "60", price: "1280"}
-    ]
+      { label: 'EFOIL', duration: '30', price: '650' },
+      { label: 'EFOIL', duration: '60', price: '1280' },
+    ],
   },
-    {
+  {
     id: 5,
-    title: "JET CAR",
+    title: 'JET CAR',
     infoBoxes: [
-      { label: "JET CAR", duration: "30", price: "900"},
-      { label: "JET CAR", duration: "60", price: "1750"}
-    ]
+      { label: 'JET CAR', duration: '30', price: '900' },
+      { label: 'JET CAR', duration: '60', price: '1750' },
+    ],
   },
 ];
 
@@ -63,7 +63,7 @@ const waterSportRate = [
 export default async function Page({ params }) {
   // Await params to get slug and locale
   const { slug, locale } = await params;
-  
+
   // Fetch data on the server
   const data = await fetchData();
 
@@ -72,21 +72,18 @@ export default async function Page({ params }) {
   }
 
   const settingsItem = data?.settings?.[0];
-  const {
-    header_email,
-    header_phone_number_url,
-    header_whatsapp_url,
-  } = settingsItem || {};
+  const { header_email, header_phone_number_url, header_whatsapp_url } =
+    settingsItem || {};
 
   // Find the package matching the slug
-  const packageItem = data?.packages?.find((pkg) => pkg.slug === slug);
+  const packageItem = data?.packages?.find(pkg => pkg.slug === slug);
 
   if (!packageItem) {
     notFound();
   }
-  
+
   const waterSport = waterSportRate.find(
-    (item) =>
+    item =>
       item.title.toLowerCase() ===
       packageItem.translations[locale].title.toLowerCase()
   );
@@ -100,19 +97,22 @@ export default async function Page({ params }) {
             <img
               src={`https://www.centauruscharter.net/product/images/${packageItem.image}`}
               alt={packageItem.translations[locale].title}
-              className="w-full rounded-lg" />
+              className="w-full rounded-lg"
+            />
           </div>
 
           {/* Second column (70%) */}
           <div className="lg:w-5/12">
-            <PageTitleHeading title={packageItem.translations[locale].title} className="py-0 lg:pt-0 pb-0" />
+            <PageTitleHeading
+              title={packageItem.translations[locale].title}
+              className="py-0 lg:pt-0 pb-0"
+            />
             <h2 className="text-base text-primary-grey text-center font-bold mb-5">
               {packageItem.translations[locale].preview_text}
               <br />
             </h2>
             <div className="text-center grid grid-cols-1  items-center gap-2  w-full overflow-hidden mb-7">
-
-{/* ORIGINAL CODE FOR SINGLE RATE FROM ADMIN PANEL
+              {/* ORIGINAL CODE FOR SINGLE RATE FROM ADMIN PANEL
               <div className="grid grid-cols-3 bg-primary-blue-light rounded-lg text-primary-blue">
                 
                 <div className=" p-2 flex flex-col items-center ">
@@ -137,53 +137,58 @@ export default async function Page({ params }) {
                 </div>
               </div> */}
               {waterSport && (
-              <div className="text-center grid grid-cols-1  items-center gap-2  w-full overflow-hidden mb-7">
-                {waterSport.infoBoxes.map((rate, idx) => (
-                  <div
-                    key={rate.label + rate.duration + idx}
-                    className="grid grid-cols-3 bg-primary-blue-light rounded-lg text-primary-blue"
-                  >
-                
-                    {/* Ride Title */}
-                        <div className=" p-2 flex flex-col items-center ">
-                          <span className="font-bold text-sm">Ride:</span>
-                          <span className="font-semibold text-sm  xl:text-sm">
-                            {rate.label}
-                          </span>
-                        </div>
-                        {/* Duration */}
-                        <div className="  p-2 flex flex-col items-center">
-                          <span className="font-bold text-sm">Duration:</span>
-                          <span className="font-semibold text-sm  xl:text-sm">
-                            {rate.duration} mins
-                          </span>
-                        </div>
-                        {/* Price */}
-                        <div className="text-white bg-primary-blue rounded-r-lg p-2 flex flex-col items-center">
-                          <span className="font-bold text-sm">Price:</span>
-                          <span className="font-semibold text-sm xl:text-sm">
-                            {rate.price} AED
-                          </span>
-                        </div>
-                  </div>
-                ))}
-              </div>
-
-)}
-
+                <div className="text-center grid grid-cols-1  items-center gap-2  w-full overflow-hidden mb-7">
+                  {waterSport.infoBoxes.map((rate, idx) => (
+                    <div
+                      key={rate.label + rate.duration + idx}
+                      className="grid grid-cols-3 bg-primary-blue-light rounded-lg text-primary-blue"
+                    >
+                      {/* Ride Title */}
+                      <div className=" p-2 flex flex-col items-center ">
+                        <span className="font-bold text-sm">Ride:</span>
+                        <span className="font-semibold text-sm  xl:text-sm">
+                          {rate.label}
+                        </span>
+                      </div>
+                      {/* Duration */}
+                      <div className="  p-2 flex flex-col items-center">
+                        <span className="font-bold text-sm">Duration:</span>
+                        <span className="font-semibold text-sm  xl:text-sm">
+                          {rate.duration} mins
+                        </span>
+                      </div>
+                      {/* Price */}
+                      <div className="text-white bg-primary-blue rounded-r-lg p-2 flex flex-col items-center">
+                        <span className="font-bold text-sm">Price:</span>
+                        <span className="font-semibold text-sm xl:text-sm">
+                          {rate.price} AED
+                        </span>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              )}
             </div>
 
             <div className="flex flex-col xl:flex-row items-stretch xl:items-center text-center w-full justify-center">
               {/* WhatsApp Button */}
               <div className=" p-1 flex flex-col items-center">
-                <a href={header_whatsapp_url || "#"} className="w-full blue-solid-button flex justify-center items-center gap-1 text-center">
+                <a
+                  href={header_whatsapp_url || '#'}
+                  className="w-full blue-solid-button flex justify-center items-center gap-1 text-center"
+                >
                   <FaWhatsapp size={20} />
                   WHATSAPP US
                 </a>
               </div>
               {/* Book Now Button */}
               <div className=" p-1 flex flex-col items-center xl:rounded-r-lg">
-                <a href="https://fareharbor.com/embeds/book/centauruscharter/?full-items=yes" className="w-full blue-solid-button">BOOK NOW WITH {packageItem.translations[locale].title}</a>
+                <a
+                  href="https://fareharbor.com/embeds/book/centauruscharter/?full-items=yes"
+                  className="w-full blue-solid-button"
+                >
+                  BOOK NOW WITH {packageItem.translations[locale].title}
+                </a>
               </div>
             </div>
           </div>
@@ -192,8 +197,9 @@ export default async function Page({ params }) {
           <div
             className="text-base text-primary-grey"
             dangerouslySetInnerHTML={{
-              __html: packageItem.translations[locale].description || "",
-            }} />
+              __html: packageItem.translations[locale].description || '',
+            }}
+          />
         </div>
       </div>
       <WaterSportCarousal2 packages={data?.packages} language={locale} />

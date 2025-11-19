@@ -10,9 +10,9 @@ const NProgressStyles = () => (
     #nprogress {
       pointer-events: none;
     }
-    
+
     #nprogress .bar {
-      background: #E1BA4D;
+      background: #e1ba4d;
       position: fixed;
       z-index: 9999;
       top: 0;
@@ -20,18 +20,20 @@ const NProgressStyles = () => (
       width: 100%;
       height: 3px;
     }
-    
+
     #nprogress .peg {
       display: block;
       position: absolute;
       right: 0px;
       width: 100px;
       height: 100%;
-      box-shadow: 0 0 10px #E1BA4D, 0 0 5px #E1BA4D;
-      opacity: 1.0;
+      box-shadow:
+        0 0 10px #e1ba4d,
+        0 0 5px #e1ba4d;
+      opacity: 1;
       transform: rotate(3deg) translate(0px, -4px);
     }
-    
+
     #nprogress .spinner {
       display: none;
     }
@@ -44,12 +46,12 @@ const NProgressLoader = () => {
 
   // Configure NProgress
   useEffect(() => {
-    NProgress.configure({ 
+    NProgress.configure({
       showSpinner: false,
       minimum: 0.1,
       speed: 200,
       trickleSpeed: 150,
-      easing: 'ease-out'
+      easing: 'ease-out',
     });
   }, []);
 
@@ -57,12 +59,12 @@ const NProgressLoader = () => {
   useEffect(() => {
     // Start progress on navigation
     NProgress.start();
-    
+
     // Complete after a short delay
     const timer = setTimeout(() => {
       NProgress.done();
     }, 500);
-    
+
     return () => {
       clearTimeout(timer);
       NProgress.done();
@@ -73,7 +75,7 @@ const NProgressLoader = () => {
   useEffect(() => {
     if (typeof window === 'undefined') return;
 
-    const handleLinkClick = (e) => {
+    const handleLinkClick = e => {
       const target = e.currentTarget;
       if (
         target.tagName === 'A' &&
@@ -88,7 +90,9 @@ const NProgressLoader = () => {
 
     // Handle all internal links
     const processLinks = () => {
-      const links = document.querySelectorAll('a[href^="/"], a[href^="' + window.location.origin + '"]');
+      const links = document.querySelectorAll(
+        'a[href^="/"], a[href^="' + window.location.origin + '"]'
+      );
       links.forEach(link => {
         link.removeEventListener('click', handleLinkClick);
         link.addEventListener('click', handleLinkClick);
@@ -105,11 +109,13 @@ const NProgressLoader = () => {
 
     observer.observe(document.body, {
       childList: true,
-      subtree: true
+      subtree: true,
     });
 
     return () => {
-      const links = document.querySelectorAll('a[href^="/"], a[href^="' + window.location.origin + '"]');
+      const links = document.querySelectorAll(
+        'a[href^="/"], a[href^="' + window.location.origin + '"]'
+      );
       links.forEach(link => {
         link.removeEventListener('click', handleLinkClick);
       });

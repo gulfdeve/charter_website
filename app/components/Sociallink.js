@@ -1,18 +1,18 @@
-'use client'
-import Image from "next/image";
-import { useRouter, usePathname, Link } from "../i18n/routing";
-import EmailSubscription from "@/app/components/EmailSubscription"; // Client component
-import { useTranslations } from "next-intl";
+'use client';
+import Image from 'next/image';
+import { useRouter, usePathname, Link } from '../i18n/routing';
+import EmailSubscription from '@/app/components/EmailSubscription'; // Client component
+import { useTranslations } from 'next-intl';
 
 const Sociallink = () => {
-	const pathname = usePathname(); // Get the current path
-	const isHomePage = pathname === "/" || pathname === ""; // Check if it's the homepage
+  const pathname = usePathname(); // Get the current path
+  const isHomePage = pathname === '/' || pathname === ''; // Check if it's the homepage
   const t = useTranslations();
   return (
     <div className="relative bg-primary-blue-2 w-full h-[24rem] lg:h-[15rem] 2xl:h-[18rem] flex items-center justify-center">
-       {/* SVG Divider */}
-{/* SVG Divider - Only show on homepage */}
-{isHomePage && (
+      {/* SVG Divider */}
+      {/* SVG Divider - Only show on homepage */}
+      {isHomePage && (
         <div className="divider-top -top-2 w-full z-10">
           <svg
             data-name="Layer 1"
@@ -27,17 +27,45 @@ const Sociallink = () => {
           </svg>
         </div>
       )}
-      <div className="container mx-auto flex flex-col lg:flex-row items-center justify-between gap-5 lg:gap-8 xl:gap-20 pt-3 lg:pt-8 2xl:pt-24 3xl:pt-36 z-20">        
+      <div className="container mx-auto flex flex-col lg:flex-row items-center justify-between gap-5 lg:gap-8 xl:gap-20 pt-3 lg:pt-8 2xl:pt-24 3xl:pt-36 z-20">
         {/* Social Media Links */}
         <div className="order-1 lg:order-2 flex flex-row items-center justify-center gap-5">
           {[
-            { href: "https://www.facebook.com/centauruscharteryachtsrental/", src: "/images/facebook.webp", alt: "Facebook" },
-            { href: "https://twitter.com/centaurscharter", src: "/images/twitter.webp", alt: "Twitter" },
-            { href: "https://www.instagram.com/centauruscharter/", src: "/images/instagram.webp", alt: "Instagram" },
-            { href: "https://www.pinterest.com/centauruscharteryachtsdubai/", src: "/images/pinterest.webp", alt: "Pinterest" },
-            { href: "https://www.linkedin.com/company/centauruscharter", src: "/images/linkedin.webp", alt: "LinkedIn" },
-            { href: "https://www.youtube.com/channel/UCcvuO64sGm4HxfNMZRYfScQ?view_as=subscriber", src: "/images/youtube.webp", alt: "Youtube" },
-            { href: "https://www.threads.com/@centauruscharter", src: "/images/threads.webp", alt: "Threads" },
+            {
+              href: 'https://www.facebook.com/centauruscharteryachtsrental/',
+              src: '/images/facebook.webp',
+              alt: 'Facebook',
+            },
+            {
+              href: 'https://twitter.com/centaurscharter',
+              src: '/images/twitter.webp',
+              alt: 'Twitter',
+            },
+            {
+              href: 'https://www.instagram.com/centauruscharter/',
+              src: '/images/instagram.webp',
+              alt: 'Instagram',
+            },
+            {
+              href: 'https://www.pinterest.com/centauruscharteryachtsdubai/',
+              src: '/images/pinterest.webp',
+              alt: 'Pinterest',
+            },
+            {
+              href: 'https://www.linkedin.com/company/centauruscharter',
+              src: '/images/linkedin.webp',
+              alt: 'LinkedIn',
+            },
+            {
+              href: 'https://www.youtube.com/channel/UCcvuO64sGm4HxfNMZRYfScQ?view_as=subscriber',
+              src: '/images/youtube.webp',
+              alt: 'Youtube',
+            },
+            {
+              href: 'https://www.threads.com/@centauruscharter',
+              src: '/images/threads.webp',
+              alt: 'Threads',
+            },
           ].map(({ href, src, alt }) => (
             <a key={href} href={href} target="_blank" rel="noopener noreferrer">
               <Image src={src} alt={alt} width={30} height={30} />
@@ -47,8 +75,12 @@ const Sociallink = () => {
 
         {/* Subscription Section */}
         <div className="order-2 lg:order-1 flex flex-col items-center lg:items-start">
-          <p className="text-white text-lg lg:text-2xl 3xl:text-4xl font-bold">{t('footer.amazing-offers-just-for-you')}</p>
-          <p className="text-white text-lg text-center lg:text-left">{t('home.sign-up-to-receive-amazing-offers-and-tips')}</p>
+          <p className="text-white text-lg lg:text-2xl 3xl:text-4xl font-bold">
+            {t('footer.amazing-offers-just-for-you')}
+          </p>
+          <p className="text-white text-lg text-center lg:text-left">
+            {t('home.sign-up-to-receive-amazing-offers-and-tips')}
+          </p>
         </div>
 
         {/* Email Subscription Form (Client Component) */}

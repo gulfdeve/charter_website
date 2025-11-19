@@ -1,6 +1,6 @@
-import { useRouter, usePathname, Link } from "@/app/i18n/routing";
-import React from "react";
-import Image from "next/image";
+import { useRouter, usePathname, Link } from '@/app/i18n/routing';
+import React from 'react';
+import Image from 'next/image';
 
 const SecondFooter = () => {
   return (
@@ -47,29 +47,42 @@ const SecondFooter = () => {
         {/* For Google and TripAdvisor logos */}
         <div className="flex flex-row md:flex-row items-center gap-10">
           <div className="flex flex-row gap-3">
-            {" "}
+            {' '}
             {/* Changed to always be flex-row */}
-            <Link href="https://g.co/kgs/jfR6mP6" target="_blank" rel="noopener noreferrer">
-            <Image
-              src="/images/google-logo.webp"
-              alt="google logo"
-              width={80}
-              height={100}
-            />
+            <Link
+              href="https://g.co/kgs/jfR6mP6"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Image
+                src="/images/google-logo.webp"
+                alt="google logo"
+                width={80}
+                height={100}
+              />
             </Link>
-            <Link href="https://www.tripadvisor.com/Attraction_Review-g295424-d15699786-Reviews-Centaurus_Yachts_Boats_Dubai-Dubai_Emirate_of_Dubai.html" target="_blank" rel="noopener noreferrer">
-            <Image
-              src="/Tripadvisor-logo.webp"
-              alt="tripadvisor logo"
-              width={80}
-              height={0}
-            />
+            <Link
+              href="https://www.tripadvisor.com/Attraction_Review-g295424-d15699786-Reviews-Centaurus_Yachts_Boats_Dubai-Dubai_Emirate_of_Dubai.html"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Image
+                src="/Tripadvisor-logo.webp"
+                alt="tripadvisor logo"
+                width={80}
+                height={0}
+              />
             </Link>
           </div>
           <div className="flex flex-row items-center gap-3">
-            {" "}
+            {' '}
             {/* Changed to always be flex-row */}
-            <Image src="/images/tabby-icon.webp" alt="tabby-logo" width={45} height={100} />
+            <Image
+              src="/images/tabby-icon.webp"
+              alt="tabby-logo"
+              width={45}
+              height={100}
+            />
             <Image src="/Cash.png" alt="cash-logo" width={45} height={100} />
             <Image src="/Visa.png" alt="visa-logo" width={45} height={100} />
             <Image
@@ -78,7 +91,12 @@ const SecondFooter = () => {
               width={45}
               height={100}
             />
-            <Image src="/images/crypto.webp" alt="crypto-logo" width={45} height={100} />
+            <Image
+              src="/images/crypto.webp"
+              alt="crypto-logo"
+              width={45}
+              height={100}
+            />
           </div>
         </div>
         <div className="flex lg:flex-col justify-between gap-4 xs:gap-10 lg:gap-2 text-text-primary-white">

@@ -47,7 +47,7 @@
       ],
       "translations": {
         "ar": {
-          "price":"UPON REQUEST", 
+          "price": "UPON REQUEST",
           "name_of_yacht": "88 FT YACHT SUNSEEKER",
           "year": "2024",
           "condition": "New",
@@ -68,7 +68,7 @@
           "meta_keyword": "Luxury Yacht Dubai, luxury yachts, dubai luxury yachts, yachting holiday, yachting vacation, luxury yacht rental"
         },
         "en": {
-          "price":"UPON REQUEST", 
+          "price": "UPON REQUEST",
           "name_of_yacht": "88 FT YACHT SUNSEEKER",
           "year": "2024",
           "condition": "New",
@@ -89,7 +89,7 @@
           "meta_keyword": "Luxury Yacht Dubai, luxury yachts, dubai luxury yachts, yachting holiday, yachting vacation, luxury yacht rental"
         },
         "ru": {
-          "price":"UPON REQUEST", 
+          "price": "UPON REQUEST",
           "name_of_yacht": "88 FT YACHT SUNSEEKER",
           "year": "2024",
           "condition": "New",
@@ -110,7 +110,7 @@
           "meta_keyword": "Luxury Yacht Dubai, luxury yachts, dubai luxury yachts, yachting holiday, yachting vacation, luxury yacht rental"
         },
         "zh": {
-          "price":"UPON REQUEST", 
+          "price": "UPON REQUEST",
           "name_of_yacht": "88 FT YACHT SUNSEEKER",
           "year": "2024",
           "condition": "New",
@@ -179,7 +179,7 @@
       ],
       "translations": {
         "ar": {
-          "price":"UPON REQUEST", 
+          "price": "UPON REQUEST",
           "name_of_yacht": "78 FT YACHTCRANCHI",
           "year": "2022",
           "condition": "USED",
@@ -200,7 +200,7 @@
           "meta_keyword": "Luxury Yacht Dubai, luxury yachts, dubai luxury yachts, yachting holiday, yachting vacation, luxury yacht rental"
         },
         "en": {
-          "price":"UPON REQUEST", 
+          "price": "UPON REQUEST",
           "name_of_yacht": "78 FT YACHTCRANCHI",
           "year": "2022",
           "condition": "USED",
@@ -220,8 +220,8 @@
 
           "meta_keyword": "Luxury Yacht Dubai, luxury yachts, dubai luxury yachts, yachting holiday, yachting vacation, luxury yacht rental"
         },
-        "ru":  {
-          "price":"UPON REQUEST", 
+        "ru": {
+          "price": "UPON REQUEST",
           "name_of_yacht": "78 FT YACHTCRANCHI",
           "year": "2022",
           "condition": "USED",
@@ -241,8 +241,8 @@
 
           "meta_keyword": "Luxury Yacht Dubai, luxury yachts, dubai luxury yachts, yachting holiday, yachting vacation, luxury yacht rental"
         },
-        "zh":  {
-          "price":"UPON REQUEST", 
+        "zh": {
+          "price": "UPON REQUEST",
           "name_of_yacht": "78 FT YACHTCRANCHI",
           "year": "2022",
           "condition": "USED",
@@ -311,7 +311,7 @@
       ],
       "translations": {
         "ar": {
-          "price":"UPON REQUEST", 
+          "price": "UPON REQUEST",
           "name_of_yacht": "90 FT YACHT SUNSEEKER",
           "year": "2008",
           "condition": "USED",
@@ -331,8 +331,8 @@
 
           "meta_keyword": "Luxury Yacht Dubai, luxury yachts, dubai luxury yachts, yachting holiday, yachting vacation, luxury yacht rental"
         },
-        "en":  {
-          "price":"UPON REQUEST",
+        "en": {
+          "price": "UPON REQUEST",
           "name_of_yacht": "90 FT YACHT SUNSEEKER",
           "year": "2008",
           "condition": "USED",
@@ -352,8 +352,8 @@
 
           "meta_keyword": "Luxury Yacht Dubai, luxury yachts, dubai luxury yachts, yachting holiday, yachting vacation, luxury yacht rental"
         },
-        "ru":   {
-          "price":"UPON REQUEST",
+        "ru": {
+          "price": "UPON REQUEST",
           "name_of_yacht": "90 FT YACHT SUNSEEKER",
           "year": "2008",
           "condition": "USED",
@@ -373,8 +373,8 @@
 
           "meta_keyword": "Luxury Yacht Dubai, luxury yachts, dubai luxury yachts, yachting holiday, yachting vacation, luxury yacht rental"
         },
-        "zh":  {
-          "price":"UPON REQUEST",
+        "zh": {
+          "price": "UPON REQUEST",
           "name_of_yacht": "90 FT YACHT SUNSEEKER",
           "year": "2008",
           "condition": "USED",
@@ -443,7 +443,7 @@
       ],
       "translations": {
         "ar": {
-          "price":"UPON REQUEST",
+          "price": "UPON REQUEST",
           "name_of_yacht": "90 FT YACHT SUNSEEKER",
           "year": "2008",
           "condition": "USED",
@@ -463,8 +463,8 @@
 
           "meta_keyword": "Luxury Yacht Dubai, luxury yachts, dubai luxury yachts, yachting holiday, yachting vacation, luxury yacht rental"
         },
-        "en":  {
-          "price":"UPON REQUEST",
+        "en": {
+          "price": "UPON REQUEST",
           "name_of_yacht": "90 FT YACHT SUNSEEKER",
           "year": "2008",
           "condition": "USED",
@@ -484,8 +484,8 @@
 
           "meta_keyword": "Luxury Yacht Dubai, luxury yachts, dubai luxury yachts, yachting holiday, yachting vacation, luxury yacht rental"
         },
-        "ru":   {
-          "price":"UPON REQUEST",
+        "ru": {
+          "price": "UPON REQUEST",
           "name_of_yacht": "90 FT YACHT SUNSEEKER",
           "year": "2008",
           "condition": "USED",
@@ -506,7 +506,7 @@
           "meta_keyword": "Luxury Yacht Dubai, luxury yachts, dubai luxury yachts, yachting holiday, yachting vacation, luxury yacht rental"
         },
         "zh": {
-          "price":"UPON REQUEST",
+          "price": "UPON REQUEST",
           "name_of_yacht": "90 FT YACHT SUNSEEKER",
           "year": "2008",
           "condition": "USED",

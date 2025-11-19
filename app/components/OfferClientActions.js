@@ -1,7 +1,7 @@
-"use client";
-import React, { useState } from "react";
-import { FaWhatsapp } from "react-icons/fa";
-import Modal2 from "@/app/components/Modal2";
+'use client';
+import React, { useState } from 'react';
+import { FaWhatsapp } from 'react-icons/fa';
+import Modal2 from '@/app/components/Modal2';
 
 export default function OfferClientActions({ offer }) {
   const [isModalOpen, setIsModalOpen] = useState(false);

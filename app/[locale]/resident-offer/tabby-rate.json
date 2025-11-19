@@ -1,42 +1,42 @@
 [
-    {
-      "name": "36ft-thunder",
-      "discounted": "650"
-    },
-    {
-      "name": "36ft-Storm",
-      "discounted": "650"
-    },
-    {
-      "name": "40ft-yacht-Riverside",
-      "discounted": "815"
-    },
-    {
-      "name": "56ft-vassia",
-      "discounted": "1150"
-    },
-    {
-      "name": "58ft-etosha",
-      "discounted": "1150"
-    },
-    {
-      "name": "56ft-lagoona",
-      "discounted": "1250"
-    },
-    {
-      "name": "61ft-silvercreek",
-      "discounted": "1250"
-    },
-    {
-      "name": "85ft-yacht-Kronos",
-      "discounted": "3800"
-    },
-    {
-      "name": "118ft-poseidon",
-      "discounted": "6000"
-    },
-    {
-      "name": "77ft-dionysos",
-      "discounted": "8500" 
-    }
+  {
+    "name": "36ft-thunder",
+    "discounted": "650"
+  },
+  {
+    "name": "36ft-Storm",
+    "discounted": "650"
+  },
+  {
+    "name": "40ft-yacht-Riverside",
+    "discounted": "815"
+  },
+  {
+    "name": "56ft-vassia",
+    "discounted": "1150"
+  },
+  {
+    "name": "58ft-etosha",
+    "discounted": "1150"
+  },
+  {
+    "name": "56ft-lagoona",
+    "discounted": "1250"
+  },
+  {
+    "name": "61ft-silvercreek",
+    "discounted": "1250"
+  },
+  {
+    "name": "85ft-yacht-Kronos",
+    "discounted": "3800"
+  },
+  {
+    "name": "118ft-poseidon",
+    "discounted": "6000"
+  },
+  {
+    "name": "77ft-dionysos",
+    "discounted": "8500"
+  }
 ]

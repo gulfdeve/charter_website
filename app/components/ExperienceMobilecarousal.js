@@ -1,10 +1,10 @@
-"use client";
-import { useEffect, useRef, useState } from "react";
-import EmblaCarousel from "embla-carousel";
-import { Link } from "@/app/i18n/routing";
-import { useData } from "@/app/context/DataContext";
-import { useLocale } from "next-intl";
-import { IoIosPricetag } from "react-icons/io"; // <-- Import your icon
+'use client';
+import { useEffect, useRef, useState } from 'react';
+import EmblaCarousel from 'embla-carousel';
+import { Link } from '@/app/i18n/routing';
+import { useData } from '@/app/context/DataContext';
+import { useLocale } from 'next-intl';
+import { IoIosPricetag } from 'react-icons/io'; // <-- Import your icon
 
 export default function ExperiencesCarousel() {
   const emblaRef = useRef(null);
@@ -16,7 +16,7 @@ export default function ExperiencesCarousel() {
     if (!embla && emblaRef.current) {
       const emblaInstance = EmblaCarousel(emblaRef.current, {
         loop: true,
-        align: "start",
+        align: 'start',
         slidesToScroll: 1,
       });
       setEmbla(emblaInstance);
@@ -41,12 +41,12 @@ export default function ExperiencesCarousel() {
               </Link>
               <div className="flex flex-col items-start justify-start px-3 sm:px-5">
                 <h2 className="text-primary-black text-base sm:text-xl font-bold pt-6 hover:text-blue-600 transition-all duration-300 cursor-pointer">
-                  <Link href="/watersports">
-                    Water Sports
-                  </Link>
+                  <Link href="/watersports">Water Sports</Link>
                 </h2>
                 <p className="text-primary-grey text-xs pt-2 pb-9">
-                  Experience thrilling water sports activities in Dubai's beautiful waters. From banana boat rides to jet skiing, we offer a variety of exciting water adventures.
+                  Experience thrilling water sports activities in Dubai's
+                  beautiful waters. From banana boat rides to jet skiing, we
+                  offer a variety of exciting water adventures.
                 </p>
                 <div className="bg-primary-black w-full h-[0.05rem]" />
                 <div className="flex gap-3 sm:gap-0 flex-col sm:flex-row items-center w-full py-5">
@@ -74,12 +74,12 @@ export default function ExperiencesCarousel() {
           </div>
 
           {!loading &&
-            data?.experiences?.map((experience) => {
+            data?.experiences?.map(experience => {
               // Fallback title logic
               const title =
                 experience.translations?.[locale]?.title ||
                 experience.translations?.en?.title ||
-                "Untitled";
+                'Untitled';
 
               return (
                 <div
@@ -108,7 +108,7 @@ export default function ExperiencesCarousel() {
                       <p className="text-primary-grey text-xs pt-2 pb-9">
                         {experience.translations?.[locale]?.preivew_text}
                       </p>
-                
+
                       <div className="bg-primary-black w-full h-[0.05rem]" />
 
                       <div className="flex gap-3 sm:gap-0 flex-col sm:flex-row items-center w-full py-5">
@@ -118,7 +118,9 @@ export default function ExperiencesCarousel() {
                             <p className="text-primary-black font-bold text-xs xl:text-base">
                               Starting
                               <br className="hidden sm:block" />
-                              <span className="text-xs pl-1 sm:pl-0">AED {experience.amount.toLocaleString()}</span>
+                              <span className="text-xs pl-1 sm:pl-0">
+                                AED {experience.amount.toLocaleString()}
+                              </span>
                             </p>
                           </div>
                         </div>

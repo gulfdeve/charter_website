@@ -1,11 +1,11 @@
-"use client";
+'use client';
 
-import { useState, useRef, useEffect } from "react";
-import DatePicker ,{ DateObject}from "react-multi-date-picker";
+import { useState, useRef, useEffect } from 'react';
+import DatePicker, { DateObject } from 'react-multi-date-picker';
 
-import { FaChevronDown } from "react-icons/fa";
-import SearchResultsClient from "./SearchResultsClient";
-import Modal3 from "./Modal3";
+import { FaChevronDown } from 'react-icons/fa';
+import SearchResultsClient from './SearchResultsClient';
+import Modal3 from './Modal3';
 
 export default function MultiDatePicker({ name, init = [] }) {
   const datePickerRef = useRef(null);
@@ -14,12 +14,12 @@ export default function MultiDatePicker({ name, init = [] }) {
 
   // Load from localStorage on mount
   useEffect(() => {
-    const stored = localStorage.getItem("selectedDates");
+    const stored = localStorage.getItem('selectedDates');
     if (stored) {
       try {
         const parsed = JSON.parse(stored);
         // Convert stored strings back to DateObject
-        const restoredDates = parsed.map((d) => new DateObject(d));
+        const restoredDates = parsed.map(d => new DateObject(d));
         setSelectedDates(restoredDates);
       } catch {
         setSelectedDates([]);
@@ -32,8 +32,8 @@ export default function MultiDatePicker({ name, init = [] }) {
   // Save to localStorage whenever it changes
   useEffect(() => {
     if (selectedDates?.length) {
-      const serialized = selectedDates.map((d) => d?.toString?.()); // Save in format DateObject understands
-      localStorage.setItem("selectedDates", JSON.stringify(serialized));
+      const serialized = selectedDates.map(d => d?.toString?.()); // Save in format DateObject understands
+      localStorage.setItem('selectedDates', JSON.stringify(serialized));
     }
   }, [selectedDates]);
 
@@ -48,11 +48,11 @@ export default function MultiDatePicker({ name, init = [] }) {
 
   const renderDisplayText = () => {
     if (selectedDates?.length === 2) {
-      return `${selectedDates[0]?.format?.("YYYY-MM-DD") || ""} to ${selectedDates[1]?.format?.("YYYY-MM-DD") || ""}`;
+      return `${selectedDates[0]?.format?.('YYYY-MM-DD') || ''} to ${selectedDates[1]?.format?.('YYYY-MM-DD') || ''}`;
     } else if (selectedDates?.length === 1) {
-      return selectedDates[0]?.format?.("YYYY-MM-DD") || "";
+      return selectedDates[0]?.format?.('YYYY-MM-DD') || '';
     }
-    return "Rental Period";
+    return 'Rental Period';
   };
 
   return (
@@ -77,9 +77,9 @@ export default function MultiDatePicker({ name, init = [] }) {
           ref={datePickerRef}
           range
           value={selectedDates}
-          onChange={(dates) => setSelectedDates(dates)}
+          onChange={dates => setSelectedDates(dates)}
           format="YYYY-MM-DD"
-          style={{ backgroundColor: "white" }}
+          style={{ backgroundColor: 'white' }}
           calendarClassName="bg-white"
           onOpen={() => setIsOpen(true)}
           onClose={() => setIsOpen(false)}

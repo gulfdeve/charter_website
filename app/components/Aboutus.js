@@ -1,11 +1,11 @@
-"use client";
-import React from "react";
-import Link from "next/link";
-import { useLocale, useTranslations } from "next-intl";
+'use client';
+import React from 'react';
+import Link from 'next/link';
+import { useLocale, useTranslations } from 'next-intl';
 
 const Aboutus = () => {
   const t = useTranslations();
-  
+
   return (
     <div className="relative lg:flex-row center justify-center lg:justify-between py-10 lg:py-32">
       {/* Background Image */}
@@ -13,9 +13,9 @@ const Aboutus = () => {
         className="absolute inset-0 bg-white"
         style={{
           // backgroundImage: "url('/images/bg-water.webp')",
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-          backgroundRepeat: "no-repeat",
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundRepeat: 'no-repeat',
           zIndex: -2, // Place behind everything
         }}
       ></div>
@@ -32,10 +32,10 @@ const Aboutus = () => {
             {t('home.about-us-description')}
           </p>
           <div className="mx-auto md:mx-0">
-          <Link href="/aboutus">
-            <button className="blue-solid-button">
-              {t('button.read-more')}
-            </button>
+            <Link href="/aboutus">
+              <button className="blue-solid-button">
+                {t('button.read-more')}
+              </button>
             </Link>
           </div>
         </div>

@@ -1,64 +1,64 @@
-"use client";
-import React, { useState, useRef, useEffect } from "react";
-import { Link } from "@/app/i18n/routing";
-import Image from "next/image";
-import EmblaCarousel from "embla-carousel";
-import { FaArrowLeft, FaArrowRight, FaYoutube } from "react-icons/fa";
-import BookNowButton from "@/app/components/BookNowButton";
-import { BsStars } from "react-icons/bs";
-import { IoIosSunny } from "react-icons/io";
-import { useTranslations } from "next-intl";
+'use client';
+import React, { useState, useRef, useEffect } from 'react';
+import { Link } from '@/app/i18n/routing';
+import Image from 'next/image';
+import EmblaCarousel from 'embla-carousel';
+import { FaArrowLeft, FaArrowRight, FaYoutube } from 'react-icons/fa';
+import BookNowButton from '@/app/components/BookNowButton';
+import { BsStars } from 'react-icons/bs';
+import { IoIosSunny } from 'react-icons/io';
+import { useTranslations } from 'next-intl';
 
 const summeroffer = [
-    {
-      name: "36 Ft Yacht - Thunder",
-      discounted: "AED 415",
-    },
-    {
-      name: "36 Ft Yacht - Storm",
-      discounted: "AED 415"
-    },
-    {
-      name: "40 Ft Yacht - Riverside",
-      discounted: "AED 525",
-    },
-    {
-      name: "56 Ft Yacht - Vassia",
-      discounted: "AED 725",
-    },
-    {
-      name: "58 Ft Yacht - Etosha",
-      discounted: "AED 755",
-    },
-    {
-      name: "56 Ft Yacht - Lagoona",
-      discounted: "AED 805",
-    },
-    {
-      name: "61 Ft Yacht - Silver Creek",
-      discounted: "AED 875",
-    },
-    {
-      name: "85 Ft Yacht - Kronos",
-      discounted: "AED 2,450",
-    },
-    {
-      name: "118 Ft Yacht - Poseidon",
-      discounted: "AED 3,500",
-    }
-  ]
+  {
+    name: '36 Ft Yacht - Thunder',
+    discounted: 'AED 415',
+  },
+  {
+    name: '36 Ft Yacht - Storm',
+    discounted: 'AED 415',
+  },
+  {
+    name: '40 Ft Yacht - Riverside',
+    discounted: 'AED 525',
+  },
+  {
+    name: '56 Ft Yacht - Vassia',
+    discounted: 'AED 725',
+  },
+  {
+    name: '58 Ft Yacht - Etosha',
+    discounted: 'AED 755',
+  },
+  {
+    name: '56 Ft Yacht - Lagoona',
+    discounted: 'AED 805',
+  },
+  {
+    name: '61 Ft Yacht - Silver Creek',
+    discounted: 'AED 875',
+  },
+  {
+    name: '85 Ft Yacht - Kronos',
+    discounted: 'AED 2,450',
+  },
+  {
+    name: '118 Ft Yacht - Poseidon',
+    discounted: 'AED 3,500',
+  },
+];
 function getDiscountedPrice(yachtName) {
   if (!yachtName) return null;
   const normalize = str => str.replace(/[\s\-]/g, '').toLowerCase();
   const yachtNorm = normalize(yachtName);
   const offer = summeroffer.find(item => normalize(item.name) === yachtNorm);
   return offer ? offer.discounted : null;
-}  
+}
 const YachtCard = ({ yacht, t }) => {
   const emblaRef = useRef(null);
   const emblaApi = useRef(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [selectedVideo, setSelectedVideo] = useState("");
+  const [selectedVideo, setSelectedVideo] = useState('');
 
   useEffect(() => {
     if (emblaRef.current) {
@@ -70,13 +70,13 @@ const YachtCard = ({ yacht, t }) => {
   const scrollPrev = () => emblaApi.current?.scrollPrev();
   const scrollNext = () => emblaApi.current?.scrollNext();
 
-  const openModal = (videoUrl) => {
+  const openModal = videoUrl => {
     setSelectedVideo(videoUrl);
     setIsModalOpen(true);
   };
 
   const closeModal = () => {
-    setSelectedVideo("");
+    setSelectedVideo('');
     setIsModalOpen(false);
   };
 
@@ -146,13 +146,13 @@ const YachtCard = ({ yacht, t }) => {
         )}
 
         {/* Category Badges */}
-        {yacht.category.includes("bestSellers") && (
+        {yacht.category.includes('bestSellers') && (
           <div className="absolute flex items-center gap-2 top-4 left-0 gradient-custom-2 text-primary-yellow-light text-sm py-0.5 px-2 rounded-r-lg">
             <BsStars />
             <p>{t('offers.best-seller')}</p>
           </div>
         )}
-        {yacht.category.includes("premium") && (
+        {yacht.category.includes('premium') && (
           <div className="absolute flex items-center gap-2 top-4 left-0 gradient-custom-2 text-primary-yellow-light text-sm py-0.5 px-2 rounded-r-lg">
             <BsStars />
             <p>{t('offers.premium-yacht')}</p>
@@ -213,13 +213,13 @@ const YachtCard = ({ yacht, t }) => {
             {/* {yacht.id === 20 && (<span className=" text-sm">Price per hour:</span>)}
             {yacht.id !== 20 && ( */}
             <div>
-            {/* <span className=" text-sm">Regular Price:</span> */}
-            <div className="flex gap-2 font-bold text-base lg:text-lg text-primary-red items-center">
-            <span className="">
-            AED {parseInt(yacht.price).toLocaleString()}
-            </span> 
-            <span className="text-sm text-primary-grey">per hour</span>
-            </div>
+              {/* <span className=" text-sm">Regular Price:</span> */}
+              <div className="flex gap-2 font-bold text-base lg:text-lg text-primary-red items-center">
+                <span className="">
+                  AED {parseInt(yacht.price).toLocaleString()}
+                </span>
+                <span className="text-sm text-primary-grey">per hour</span>
+              </div>
             </div>
             {/* )} */}
             {/* <span>
@@ -237,9 +237,8 @@ const YachtCard = ({ yacht, t }) => {
             {yacht.id === 24 && (<span className="text-xs text-primary-grey"> (40 Pax)</span>)}
             </span> */}
           </div>
-       
+
           <BookNowButton fareharborId={yacht.fareharbor_id} />
-          
         </div>
       </div>
 
@@ -271,37 +270,38 @@ const YachtCard = ({ yacht, t }) => {
 
 export default function YachtList({ yachts }) {
   const t = useTranslations();
-  const [activeTab, setActiveTab] = useState("allYachts");
+  const [activeTab, setActiveTab] = useState('allYachts');
 
   const filteredYachts =
-    activeTab === "allYachts"
+    activeTab === 'allYachts'
       ? yachts
-      : yachts.filter((yacht) => yacht.category.includes(activeTab));
+      : yachts.filter(yacht => yacht.category.includes(activeTab));
 
-  const getTabStyle = (tabName) => `px-2 py-1 transition-all duration-300 ${
-    activeTab === tabName
-      ? "text-primary-blue border-b-2 border-primary-blue"
-      : "hover:text-primary-blue"
-  }`;
+  const getTabStyle = tabName =>
+    `px-2 py-1 transition-all duration-300 ${
+      activeTab === tabName
+        ? 'text-primary-blue border-b-2 border-primary-blue'
+        : 'hover:text-primary-blue'
+    }`;
 
   return (
     <>
       <div className="flex justify-center items-center gap-8 md:gap-8 text-xs sm:text-base md:text-lg font-semibold py-2 pb-10 md:py-2 px-2">
         <button
-          onClick={() => setActiveTab("allYachts")}
-          className={getTabStyle("allYachts")}
+          onClick={() => setActiveTab('allYachts')}
+          className={getTabStyle('allYachts')}
         >
           ALL YACHTS
         </button>
         <button
-          onClick={() => setActiveTab("bestSellers")}
-          className={getTabStyle("bestSellers")}
+          onClick={() => setActiveTab('bestSellers')}
+          className={getTabStyle('bestSellers')}
         >
           BEST SELLERS
         </button>
         <button
-          onClick={() => setActiveTab("premium")}
-          className={getTabStyle("premium")}
+          onClick={() => setActiveTab('premium')}
+          className={getTabStyle('premium')}
         >
           PREMIUM
         </button>
@@ -309,7 +309,7 @@ export default function YachtList({ yachts }) {
 
       <div className="p-0 md:p-6 text-center">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 pb-10 gap-6 container mx-auto">
-          {filteredYachts.map((yacht) => (
+          {filteredYachts.map(yacht => (
             <YachtCard key={yacht.id} yacht={yacht} t={t} />
           ))}
         </div>

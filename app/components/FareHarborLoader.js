@@ -1,10 +1,10 @@
-"use client";
+'use client';
 import { useEffect } from 'react';
 
 const FareHarborLoader = () => {
   useEffect(() => {
     // Function to dynamically load the FareHarbor script
-    const loadFareHarborScript = (callback) => {
+    const loadFareHarborScript = callback => {
       const script = document.createElement('script');
       script.src = 'https://fareharbor.com/embeds/api/v1/?autolightframe=yes';
       script.defer = true; // Use defer to prevent blocking
@@ -18,13 +18,16 @@ const FareHarborLoader = () => {
     };
 
     // Add event listener for all clicks on links starting with "https://fareharbor.com"
-    const handleClick = (event) => {
+    const handleClick = event => {
       const target = event.target;
 
       // Check if the clicked element is a link and its href starts with the desired URL
       if (
-        (target.tagName === 'A' && target.href.startsWith('https://fareharbor.com')) || 
-        (target.tagName === 'IMG' && target.closest('a') && target.closest('a').href.startsWith('https://fareharbor.com'))
+        (target.tagName === 'A' &&
+          target.href.startsWith('https://fareharbor.com')) ||
+        (target.tagName === 'IMG' &&
+          target.closest('a') &&
+          target.closest('a').href.startsWith('https://fareharbor.com'))
       ) {
         event.preventDefault(); // Prevent the link from redirecting immediately
 

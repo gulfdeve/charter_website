@@ -1,27 +1,33 @@
 // Utility to generate all sitemap URLs as objects for XML or HTML rendering
-export default function generateSitemapLinks({ baseUrl, data, blogs, buyYachtData, languages = ["", "ar", "ru", "zh"] }) {
+export default function generateSitemapLinks({
+  baseUrl,
+  data,
+  blogs,
+  buyYachtData,
+  languages = ['', 'ar', 'ru', 'zh'],
+}) {
   const now = new Date().toISOString();
   const staticUrls = [
-    "/contact",
-    "/faq",
-    "/new-year-yacht-party",
-    "/abu-dhabi-race-yacht-charter",
-    "/blogs",
-    "/resident-offer",
-    "/aboutus",
-    "/events",
-    "/offers",
-    "/yacht-rentals",
-    "/watersports",
-    "/yachts-for-sale-dubai",
-    "/shared-yacht-tours-dubai",
-    "/yacht-trips",
-    "/terms-and-condition",
-    "/privacy-and-policy",
-    "/centaurus-gems-offer",
-    "/international-yachts",
-    "/rent-yacht-fifa-world-cup",
-    "/yacht-rentals-spring-offer"
+    '/contact',
+    '/faq',
+    '/new-year-yacht-party',
+    '/abu-dhabi-race-yacht-charter',
+    '/blogs',
+    '/resident-offer',
+    '/aboutus',
+    '/events',
+    '/offers',
+    '/yacht-rentals',
+    '/watersports',
+    '/yachts-for-sale-dubai',
+    '/shared-yacht-tours-dubai',
+    '/yacht-trips',
+    '/terms-and-condition',
+    '/privacy-and-policy',
+    '/centaurus-gems-offer',
+    '/international-yachts',
+    '/rent-yacht-fifa-world-cup',
+    '/yacht-rentals-spring-offer',
   ];
   // Home links
   const homeLinks = languages.map(lang => {
@@ -154,4 +160,4 @@ export default function generateSitemapLinks({ baseUrl, data, blogs, buyYachtDat
     ...blogsLinks,
     ...productsBuyLinks,
   ];
-} 
+}

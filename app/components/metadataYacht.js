@@ -1,4 +1,3 @@
-
 import { Metadata } from 'next';
 
 export async function generateMetadata({ params }) {
@@ -6,9 +5,11 @@ export async function generateMetadata({ params }) {
   const locale = useLocale();
 
   // Fetch the product data (you can reuse the fetch logic from your component)
-  const response = await fetch("https://www.centauruscharter.net/api/api_new/basic");
+  const response = await fetch(
+    'https://www.centauruscharter.net/api/api_new/basic'
+  );
   const data = await response.json();
-  const product = data.products.find((item) => item.slug === slug);
+  const product = data.products.find(item => item.slug === slug);
 
   if (!product) {
     return {
@@ -19,10 +20,14 @@ export async function generateMetadata({ params }) {
 
   return {
     title: product.translations?.[locale]?.meta_title || 'Centaurus Charter',
-    description: product.translations?.[locale]?.meta_description || 'Luxury Yacht Charter in Dubai',
+    description:
+      product.translations?.[locale]?.meta_description ||
+      'Luxury Yacht Charter in Dubai',
     openGraph: {
       title: product.translations?.[locale]?.meta_title || 'Centaurus Charter',
-      description: product.translations?.[locale]?.meta_description || 'Luxury Yacht Charter in Dubai',
+      description:
+        product.translations?.[locale]?.meta_description ||
+        'Luxury Yacht Charter in Dubai',
       type: 'website',
       url: `https://www.centauruscharter.com/yacht/${slug}`,
       images: [

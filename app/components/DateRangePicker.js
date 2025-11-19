@@ -1,12 +1,12 @@
 // app/components/DateRangePicker.jsx
-"use client";
+'use client';
 
-import { useState } from "react";
-import { DateRange } from "react-date-range";
+import { useState } from 'react';
+import { DateRange } from 'react-date-range';
 
 // Import required styles for the date range picker.
-import "react-date-range/dist/styles.css";
-import "react-date-range/dist/theme/default.css";
+import 'react-date-range/dist/styles.css';
+import 'react-date-range/dist/theme/default.css';
 
 export default function DateRangePicker({ init, onChange }) {
   // Initialize with provided dates or default to the current date.
@@ -14,11 +14,11 @@ export default function DateRangePicker({ init, onChange }) {
     {
       startDate: init?.startDate ? new Date(init.startDate) : new Date(),
       endDate: init?.endDate ? new Date(init.endDate) : new Date(),
-      key: "selection",
+      key: 'selection',
     },
   ]);
 
-  const handleChange = (ranges) => {
+  const handleChange = ranges => {
     setRange([ranges.selection]);
     // Call the parent's onChange callback passing the updated range.
     if (onChange) {

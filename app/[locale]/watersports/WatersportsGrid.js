@@ -1,11 +1,11 @@
-import React from "react";
-import { IoIosPricetag } from "react-icons/io";
-import { Link } from "@/app/i18n/routing";
+import React from 'react';
+import { IoIosPricetag } from 'react-icons/io';
+import { Link } from '@/app/i18n/routing';
 
 export default function WatersportsGrid({ packages, language }) {
   return (
     <div className="grid grid-col-1 md:grid-cols-2 gap-7 pb-8">
-      {packages?.map((package_a) => (
+      {packages?.map(package_a => (
         <div
           key={package_a.id}
           className="flex flex-col justify-start lg:justify-between rounded-md bg-white custom-shadow"
@@ -40,11 +40,16 @@ export default function WatersportsGrid({ packages, language }) {
                   </p>
                 </div>
               </div>
-              <Link href={`/watersports/${package_a.slug}`} className="blue-solid-button">KNOW MORE</Link>
+              <Link
+                href={`/watersports/${package_a.slug}`}
+                className="blue-solid-button"
+              >
+                KNOW MORE
+              </Link>
             </div>
           </div>
         </div>
       ))}
     </div>
   );
-} 
+}

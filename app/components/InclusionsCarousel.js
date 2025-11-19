@@ -64,4 +64,3 @@ const InclusionsCarousel = ({ slides }) => {
 };
 
 export default InclusionsCarousel;
-

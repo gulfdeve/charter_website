@@ -1,8 +1,8 @@
-"use client";
-import React, { useState } from "react";
-import Link from "next/link";
-import Modal2 from "@/app/components/Modal2";
-import { FaWhatsapp } from "react-icons/fa";
+'use client';
+import React, { useState } from 'react';
+import Link from 'next/link';
+import Modal2 from '@/app/components/Modal2';
+import { FaWhatsapp } from 'react-icons/fa';
 
 const ReachOutSection = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -44,7 +44,7 @@ const ReachOutSection = () => {
           REACH OUT TO US
         </button>
         <div className=" flex flex-col md:flex-row md:gap-10 gap-5">
-          <Link href={"https://wa.link/eyg3by"}>
+          <Link href={'https://wa.link/eyg3by'}>
             <button className="flex items-center justify-center gap-3 px-4 py-2 bg-primary-blue text-primary-yellow border border-primary-yellow-dark  font-bold rounded-md  transition">
               <FaWhatsapp size={20} />
               WHATSAPP US
@@ -69,4 +69,3 @@ const ReachOutSection = () => {
 };
 
 export default ReachOutSection;
-

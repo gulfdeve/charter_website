@@ -1,21 +1,25 @@
-import React, { useState } from "react";
-import PhoneInput from "react-phone-input-2";
-import "react-phone-input-2/lib/style.css";
-import {
-  parsePhoneNumberFromString,
-} from "libphonenumber-js";
+import React, { useState } from 'react';
+import PhoneInput from 'react-phone-input-2';
+import 'react-phone-input-2/lib/style.css';
+import { parsePhoneNumberFromString } from 'libphonenumber-js';
 
-const Modal2 = ({ isModalOpen, closeModal, idName, idValue, selectedVessel }) => {
+const Modal2 = ({
+  isModalOpen,
+  closeModal,
+  idName,
+  idValue,
+  selectedVessel,
+}) => {
   if (!isModalOpen) return null;
 
-  const [fullName, setFullName] = useState("");
-  const [phoneNumber, setPhoneNumber] = useState("");
+  const [fullName, setFullName] = useState('');
+  const [phoneNumber, setPhoneNumber] = useState('');
   const [phoneCountry, setPhoneCountry] = useState({
-    countryCode: "ae",
-    format: "",
+    countryCode: 'ae',
+    format: '',
   });
-  const [email, setEmail] = useState("");
-  const [message, setMessage] = useState("");
+  const [email, setEmail] = useState('');
+  const [message, setMessage] = useState('');
   const [errors, setErrors] = useState({});
   const [submissionSuccess, setSubmissionSuccess] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -24,39 +28,39 @@ const Modal2 = ({ isModalOpen, closeModal, idName, idValue, selectedVessel }) =>
     const newErrors = {};
 
     if (!fullName.trim()) {
-      newErrors.fullName = "Full Name is required.";
+      newErrors.fullName = 'Full Name is required.';
     }
 
     if (!phoneNumber.trim()) {
-      newErrors.phoneNumber = "Phone Number is required.";
+      newErrors.phoneNumber = 'Phone Number is required.';
     } else {
       try {
         // react-phone-input-2 returns numbers like "971501234567" (no +),
         // so we prefix a '+' for parsePhoneNumberFromString
-        const parsedPhone = parsePhoneNumberFromString("+" + phoneNumber);
+        const parsedPhone = parsePhoneNumberFromString('+' + phoneNumber);
         if (!parsedPhone || !parsedPhone.isValid()) {
-          newErrors.phoneNumber = "Please enter a valid phone number.";
+          newErrors.phoneNumber = 'Please enter a valid phone number.';
         }
       } catch (e) {
-        newErrors.phoneNumber = "Please enter a valid phone number.";
+        newErrors.phoneNumber = 'Please enter a valid phone number.';
       }
     }
 
     if (!email.trim()) {
-      newErrors.email = "Email is required.";
+      newErrors.email = 'Email is required.';
     } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-      newErrors.email = "Invalid email format.";
+      newErrors.email = 'Invalid email format.';
     }
 
     if (!message.trim()) {
-      newErrors.message = "Message is required.";
+      newErrors.message = 'Message is required.';
     }
 
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
   };
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = async e => {
     e.preventDefault();
     if (!validateForm()) return;
     if (isSubmitting) return;
@@ -65,8 +69,10 @@ const Modal2 = ({ isModalOpen, closeModal, idName, idValue, selectedVessel }) =>
     // Build enquiry comments, including yacht details if provided
     let enquiryComments = message;
     if (selectedVessel) {
-      const { name, build, cabins, length, guests, year, price } = selectedVessel;
-      enquiryComments += `<br><br>Yacht Details:<br>` +
+      const { name, build, cabins, length, guests, year, price } =
+        selectedVessel;
+      enquiryComments +=
+        `<br><br>Yacht Details:<br>` +
         `Name: ${name || 'N/A'}<br>` +
         `Build: ${build || 'N/A'}<br>` +
         `Cabins: ${cabins || 'N/A'}<br>` +
@@ -87,19 +93,19 @@ const Modal2 = ({ isModalOpen, closeModal, idName, idValue, selectedVessel }) =>
       params.set(idName, idValue);
 
       // <<-- USE LOCAL PROXY ENDPOINT (no CORS) -->
-      const endpoint = "/api/proxy-save-enquiry";
+      const endpoint = '/api/proxy-save-enquiry';
 
       const response = await fetch(endpoint, {
-        method: "POST",
+        method: 'POST',
         headers: {
-          "Content-Type": "application/x-www-form-urlencoded;charset=UTF-8",
+          'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8',
         },
         body: params.toString(),
       });
 
-      console.log("Request sent to proxy:", endpoint);
-      console.log("Request body:", params.toString());
-      console.log("fetch status:", response.status, response.statusText);
+      console.log('Request sent to proxy:', endpoint);
+      console.log('Request body:', params.toString());
+      console.log('fetch status:', response.status, response.statusText);
 
       // Try parsing JSON, else fallback to text
       let data;
@@ -108,20 +114,23 @@ const Modal2 = ({ isModalOpen, closeModal, idName, idValue, selectedVessel }) =>
       } catch (err) {
         data = await response.text();
       }
-      console.log("Proxy response body:", data);
+      console.log('Proxy response body:', data);
 
-      const bodyIsObject = typeof data === "object" && data !== null;
-      const bodyIsString = typeof data === "string";
+      const bodyIsObject = typeof data === 'object' && data !== null;
+      const bodyIsString = typeof data === 'string';
       const serverSaysSuccess =
-        bodyIsObject && (data.success === true || data.status === "success" || data.code === 200);
+        bodyIsObject &&
+        (data.success === true ||
+          data.status === 'success' ||
+          data.code === 200);
       const textLooksOk = bodyIsString && /success|ok|saved/i.test(data);
 
       if (response.ok || serverSaysSuccess || textLooksOk) {
         setSubmissionSuccess(true);
-        setFullName("");
-        setPhoneNumber("");
-        setEmail("");
-        setMessage("");
+        setFullName('');
+        setPhoneNumber('');
+        setEmail('');
+        setMessage('');
         setErrors({});
         // auto-close after 5s
         setTimeout(() => {
@@ -131,14 +140,17 @@ const Modal2 = ({ isModalOpen, closeModal, idName, idValue, selectedVessel }) =>
       } else {
         // surface helpful server message when possible
         const serverMessage = bodyIsObject
-          ? (data.message || JSON.stringify(data))
+          ? data.message || JSON.stringify(data)
           : data;
-        alert("Something went wrong while sending the form. Server replied: " + serverMessage);
-        console.warn("Non-success response", response.status, data);
+        alert(
+          'Something went wrong while sending the form. Server replied: ' +
+            serverMessage
+        );
+        console.warn('Non-success response', response.status, data);
       }
     } catch (error) {
-      console.error("Error submitting form (network or parsing):", error);
-      alert("Network or server error occurred. Please try again later.");
+      console.error('Error submitting form (network or parsing):', error);
+      alert('Network or server error occurred. Please try again later.');
     } finally {
       setIsSubmitting(false);
     }
@@ -178,7 +190,7 @@ const Modal2 = ({ isModalOpen, closeModal, idName, idValue, selectedVessel }) =>
                   type="text"
                   placeholder="Full Name"
                   value={fullName}
-                  onChange={(e) => setFullName(e.target.value)}
+                  onChange={e => setFullName(e.target.value)}
                   className="w-full border-l-4 rounded-md bg-[#f5f5f5] text-primary-grey focus:outline-none border-[#1b498f] focus:border-primary-yellow focus:bg-[#f3f7fd] transition duration-200 ease-in-out p-3"
                 />
                 {errors.fullName && (
@@ -197,25 +209,25 @@ const Modal2 = ({ isModalOpen, closeModal, idName, idValue, selectedVessel }) =>
                   placeholder="Enter phone number"
                   isValid={(value, country) => {
                     try {
-                      const parsed = parsePhoneNumberFromString("+" + value);
+                      const parsed = parsePhoneNumberFromString('+' + value);
                       return parsed && parsed.isValid();
                     } catch {
                       return false;
                     }
                   }}
                   inputStyle={{
-                    width: "100%",
-                    padding: "20px",
-                    paddingLeft: "65px",
-                    border: "1px solid #ddd",
-                    borderRadius: "4px"
+                    width: '100%',
+                    padding: '20px',
+                    paddingLeft: '65px',
+                    border: '1px solid #ddd',
+                    borderRadius: '4px',
                   }}
                   buttonStyle={{
-                    padding: "10px",
-                    border: "1px solid #ddd",
-                    borderRadius: "4px",
-                    fontSize: "14px",
-                    width: "60px"
+                    padding: '10px',
+                    border: '1px solid #ddd',
+                    borderRadius: '4px',
+                    fontSize: '14px',
+                    width: '60px',
                   }}
                 />
                 {errors.phoneNumber && (
@@ -228,7 +240,7 @@ const Modal2 = ({ isModalOpen, closeModal, idName, idValue, selectedVessel }) =>
                   type="email"
                   placeholder="Email Address"
                   value={email}
-                  onChange={(e) => setEmail(e.target.value)}
+                  onChange={e => setEmail(e.target.value)}
                   className="w-full border-l-4 rounded-md bg-[#f5f5f5] text-primary-grey focus:outline-none border-[#1b498f] focus:border-primary-yellow focus:bg-[#f3f7fd] transition duration-200 ease-in-out p-3"
                 />
                 {errors.email && (
@@ -240,7 +252,7 @@ const Modal2 = ({ isModalOpen, closeModal, idName, idValue, selectedVessel }) =>
                 <textarea
                   placeholder="Comments"
                   value={message}
-                  onChange={(e) => setMessage(e.target.value)}
+                  onChange={e => setMessage(e.target.value)}
                   rows="8"
                   className="w-full border-l-4 rounded-md bg-[#f5f5f5] text-primary-grey focus:outline-none border-[#1b498f] focus:border-primary-yellow focus:bg-[#f3f7fd] transition duration-200 ease-in-out p-3"
                 />
@@ -251,10 +263,10 @@ const Modal2 = ({ isModalOpen, closeModal, idName, idValue, selectedVessel }) =>
 
               <button
                 type="submit"
-                className={`blue-solid-button ${isSubmitting ? "opacity-60 cursor-not-allowed" : ""}`}
+                className={`blue-solid-button ${isSubmitting ? 'opacity-60 cursor-not-allowed' : ''}`}
                 disabled={isSubmitting}
               >
-                {isSubmitting ? "SENDING..." : "SEND"}
+                {isSubmitting ? 'SENDING...' : 'SEND'}
               </button>
             </form>
           </div>

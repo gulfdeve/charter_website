@@ -7,14 +7,15 @@ function FareHarborCalendar() {
 
   useEffect(() => {
     if (!calendarRef.current) return;
-    
+
     const script = document.createElement('script');
-    script.src = 'https://fareharbor.com/embeds/script/calendar/centauruscharter/?fallback=simple&full-items=yes&flow=1354497';
+    script.src =
+      'https://fareharbor.com/embeds/script/calendar/centauruscharter/?fallback=simple&full-items=yes&flow=1354497';
     script.async = true;
-    
+
     // Append to the calendar div
     calendarRef.current.appendChild(script);
-    
+
     return () => {
       // Cleanup
       if (calendarRef.current && calendarRef.current.contains(script)) {

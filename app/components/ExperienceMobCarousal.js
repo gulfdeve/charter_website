@@ -1,12 +1,12 @@
-import React, { useEffect, useRef } from "react";
-import EmblaCarousel from "embla-carousel";
+import React, { useEffect, useRef } from 'react';
+import EmblaCarousel from 'embla-carousel';
 
-import { useData } from "../context/DataContext";
+import { useData } from '../context/DataContext';
 
-import { useLocale } from "next-intl";
-import Image from "next/image";
+import { useLocale } from 'next-intl';
+import Image from 'next/image';
 
-import { useRouter, usePathname, Link } from "@/app/i18n/routing";
+import { useRouter, usePathname, Link } from '@/app/i18n/routing';
 
 // Mobile Version: Uses updated card design and responsive widths
 export default function YachtmobCarousel() {
@@ -18,7 +18,7 @@ export default function YachtmobCarousel() {
   useEffect(() => {
     if (emblaRef.current) {
       emblaInstance.current = EmblaCarousel(emblaRef.current, {
-        align: "start",
+        align: 'start',
         loop: true,
       });
       const autoplay = setInterval(() => {
@@ -44,7 +44,7 @@ export default function YachtmobCarousel() {
           {/* Embla container */}
           <div className="flex  px-1">
             {!loading &&
-              data?.experiences?.map((experience) => (
+              data?.experiences?.map(experience => (
                 <div
                   key={experience.id}
                   // Control how many cards appear at once (85%, 50%, 40%, etc.)

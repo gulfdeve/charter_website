@@ -1,34 +1,38 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState } from 'react';
 
 export default function Video() {
   const [scriptsLoaded, setScriptsLoaded] = useState(false);
   const [playerReady, setPlayerReady] = useState(false);
 
   useEffect(() => {
-    const loadScript = (src, type = "text/javascript", isModule = false) =>
+    const loadScript = (src, type = 'text/javascript', isModule = false) =>
       new Promise((resolve, reject) => {
-        const script = document.createElement("script");
+        const script = document.createElement('script');
         script.src = src;
         script.async = true;
-        script.type = isModule ? "module" : type;
+        script.type = isModule ? 'module' : type;
         script.onload = () => resolve(true);
-        script.onerror = (error) => reject(error);
+        script.onerror = error => reject(error);
         document.body.appendChild(script);
       });
 
     const loadWistiaScripts = async () => {
       try {
-        await loadScript("https://fast.wistia.com/player.js");
-        await loadScript("https://fast.wistia.com/embed/rbm8fusw7r.js", "module", true);
+        await loadScript('https://fast.wistia.com/player.js');
+        await loadScript(
+          'https://fast.wistia.com/embed/rbm8fusw7r.js',
+          'module',
+          true
+        );
         setScriptsLoaded(true);
 
         // Wait for the custom element to be defined
         if (window.customElements) {
-          await customElements.whenDefined("wistia-player");
+          await customElements.whenDefined('wistia-player');
           setPlayerReady(true);
         }
       } catch (error) {
-        console.log("Error loading Wistia scripts:", error);
+        console.log('Error loading Wistia scripts:', error);
       }
     };
 
@@ -37,7 +41,7 @@ export default function Video() {
     return () => {
       // Clean up dynamically added scripts
       const scripts = document.querySelectorAll("script[src*='wistia']");
-      scripts.forEach((script) => document.body.removeChild(script));
+      scripts.forEach(script => document.body.removeChild(script));
     };
   }, []);
 
@@ -70,14 +74,14 @@ export default function Video() {
           Yacht Rental in Dubai for Unforgettable Moments
         </h1>
         <h2 className="text-sm mb-6 xl:mb-8 text-center  md:text-white text-black  xl:text-lg 2xl:text-xl text-shadow">
-          Hottest event this season<br />NYE Party New Year's Eve 2024 On a Luxury Yacht
+          Hottest event this season
+          <br />
+          NYE Party New Year's Eve 2024 On a Luxury Yacht
         </h2>
         <h2 className="text-sm mb-6 xl:mb-8  text-black md:text-white xl:text-lg 2xl:text-xl md:text-shadow">
           Starting at AED1799
         </h2>
-        <button className="blue-solid-button">
-          GET OFFER
-        </button>
+        <button className="blue-solid-button">GET OFFER</button>
       </div>
     </div>
   );

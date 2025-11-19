@@ -15,7 +15,7 @@ export default function TabbyPromoSection({ total, locale = 'en' }) {
       const script = document.createElement('script');
       script.src = 'https://checkout.tabby.ai/tabby-promo.js';
       script.async = true;
-      
+
       script.onload = () => {
         // Wait for TabbyPromo to be available
         const checkTabby = setInterval(() => {
@@ -29,7 +29,7 @@ export default function TabbyPromoSection({ total, locale = 'en' }) {
                 lang: locale,
                 source: 'product',
                 publicKey: process.env.NEXT_PUBLIC_TABBY_PUBLIC_KEY,
-                merchantCode: process.env.NEXT_PUBLIC_TABBY_MERCHANT_CODE
+                merchantCode: process.env.NEXT_PUBLIC_TABBY_MERCHANT_CODE,
               });
             } catch (error) {
               console.error('Error initializing Tabby:', error);
@@ -48,7 +48,9 @@ export default function TabbyPromoSection({ total, locale = 'en' }) {
 
     // Cleanup function
     return () => {
-      const script = document.querySelector('script[src="https://checkout.tabby.ai/tabby-promo.js"]');
+      const script = document.querySelector(
+        'script[src="https://checkout.tabby.ai/tabby-promo.js"]'
+      );
       if (script) {
         script.remove();
       }
@@ -60,4 +62,4 @@ export default function TabbyPromoSection({ total, locale = 'en' }) {
       <div id="TabbyPromo"></div>
     </div>
   );
-} 
+}

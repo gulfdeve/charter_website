@@ -6,8 +6,8 @@ import fs from 'fs';
 export default async function handler(req, res) {
   try {
     // Read your private key from a secure location
-//   const privateKey = fs.readFileSync("private_key.pem", "utf8");
-const privateKey = process.env.ANKOR_PRIVATE_KEY;
+    //   const privateKey = fs.readFileSync("private_key.pem", "utf8");
+    const privateKey = process.env.ANKOR_PRIVATE_KEY;
 
     // Token settings - replace these values with your actual data
     const kid = 'jSZNvbnPK03KXEEo0-bJw4XPF1z68eW_OpHFW_9XvLY';
@@ -47,14 +47,16 @@ const privateKey = process.env.ANKOR_PRIVATE_KEY;
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        'Authorization': `Bearer ${token}`,
+        Authorization: `Bearer ${token}`,
       },
       body: JSON.stringify(searchParams),
     });
 
     if (!searchResponse.ok) {
       const errorText = await searchResponse.text();
-      throw new Error(`Search API error: ${searchResponse.status} - ${errorText}`);
+      throw new Error(
+        `Search API error: ${searchResponse.status} - ${errorText}`
+      );
     }
 
     const data = await searchResponse.json();

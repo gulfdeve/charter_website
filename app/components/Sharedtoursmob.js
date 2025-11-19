@@ -59,7 +59,8 @@ export default function ToursCarousel({ toursData }) {
                   />
                   {tour.id === 4 ? (
                     <p className="text-[12px] text-center text-primary-blue-2 py-1 font-bold">
-                      Limited time offer! 15% OFF is valid on booking made between 18-30 November only
+                      Limited time offer! 15% OFF is valid on booking made
+                      between 18-30 November only
                     </p>
                   ) : (
                     <p className="text-[12px] text-center text-primary-blue-2 py-1 font-bold">
@@ -72,7 +73,7 @@ export default function ToursCarousel({ toursData }) {
                         <div className="text-base font-bold uppercase text-white">
                           {tour.yellowHeadline}
                         </div>
-						<div className="text-[11px] font-bold uppercase  text-white">
+                        <div className="text-[11px] font-bold uppercase  text-white">
                           {tour.smallHeadline}
                         </div>
                       </div>

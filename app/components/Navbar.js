@@ -1,14 +1,14 @@
-"use client";
-import { useLocale, useTranslations } from "next-intl";
-import { useEffect, useState, useRef } from "react";
-import { FaPhoneAlt } from "react-icons/fa";
-import { IoLogoWhatsapp } from "react-icons/io";
-import { MdEmail } from "react-icons/md";
-import { useData } from "../context/DataContext";
-import { useRouter, usePathname, Link } from "../i18n/routing";
-import { GiHamburgerMenu } from "react-icons/gi";
-import Image from "next/image";
-import MobileNavbar from "./MobileNavbar";
+'use client';
+import { useLocale, useTranslations } from 'next-intl';
+import { useEffect, useState, useRef } from 'react';
+import { FaPhoneAlt } from 'react-icons/fa';
+import { IoLogoWhatsapp } from 'react-icons/io';
+import { MdEmail } from 'react-icons/md';
+import { useData } from '../context/DataContext';
+import { useRouter, usePathname, Link } from '../i18n/routing';
+import { GiHamburgerMenu } from 'react-icons/gi';
+import Image from 'next/image';
+import MobileNavbar from './MobileNavbar';
 
 export default function Navbar() {
   const t = useTranslations();
@@ -27,11 +27,11 @@ export default function Navbar() {
   const { header_email, header_phone_number_url, header_whatsapp_url } =
     settingsItem || {};
 
-  const toggleSubmenu = (index) => {
+  const toggleSubmenu = index => {
     setSubmenuOpen(submenuOpen === index ? null : index);
   };
 
-  const handleLanguageChange = (lang) => {
+  const handleLanguageChange = lang => {
     router.replace(pathname, { locale: lang });
     setLanguageDropdownOpen(false);
   };
@@ -43,27 +43,27 @@ export default function Navbar() {
     }
   };
   useEffect(() => {
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener('scroll', handleScroll);
     return () => {
-      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener('scroll', handleScroll);
     };
   }, []);
   // Refs for dropdown containers
 
   const languages = [
-    { code: "en", name: "English", flag: "/uk.svg" },
-    { code: "ar", name: "Arabic", flag: "/uae.svg" },
-    { code: "ru", name: "Russian", flag: "/ru.svg" },
-    { code: "zh", name: "Chinese", flag: "/zh.svg" },
+    { code: 'en', name: 'English', flag: '/uk.svg' },
+    { code: 'ar', name: 'Arabic', flag: '/uae.svg' },
+    { code: 'ru', name: 'Russian', flag: '/ru.svg' },
+    { code: 'zh', name: 'Chinese', flag: '/zh.svg' },
   ];
 
-  const currentLanguage = languages.find((lang) => lang.code === locale);
+  const currentLanguage = languages.find(lang => lang.code === locale);
   const languageDropdownRef = useRef(null);
   const privateYachtsRef = useRef(null);
   const experiencesRef = useRef(null);
   // Handle clicks outside dropdowns
   useEffect(() => {
-    const handleClickOutside = (event) => {
+    const handleClickOutside = event => {
       if (
         languageDropdownRef.current &&
         !languageDropdownRef.current.contains(event.target) &&
@@ -78,8 +78,8 @@ export default function Navbar() {
       }
     };
 
-    document.addEventListener("mousedown", handleClickOutside);
-    return () => document.removeEventListener("mousedown", handleClickOutside);
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
   }, []);
 
   return (
@@ -113,18 +113,21 @@ export default function Navbar() {
                 >
                   <span
                     className={`h-full flex items-center justify-between cursor-pointer gap-1 py-2 transition-all duration-200 font-primary ${
-                      pathname === "/yacht-rentals" ||
-                      pathname.startsWith("/yacht-rentals/")
-                        ? "text-primary-blue border-primary-yellow font-semibold"
-                        : "text-primary-blue border-transparent"
+                      pathname === '/yacht-rentals' ||
+                      pathname.startsWith('/yacht-rentals/')
+                        ? 'text-primary-blue border-primary-yellow font-semibold'
+                        : 'text-primary-blue border-transparent'
                     }`}
                   >
-                    <Link href="/yacht-rentals" className="tracking-[1px] uppercase">
-                      {t("navbar.private-yachts")}
+                    <Link
+                      href="/yacht-rentals"
+                      className="tracking-[1px] uppercase"
+                    >
+                      {t('navbar.private-yachts')}
                     </Link>
                     <svg
                       className={`w-4 h-4 transform transition-transform duration-300 ${
-                        isPrivateYachtsOpen ? "rotate-180" : ""
+                        isPrivateYachtsOpen ? 'rotate-180' : ''
                       }`}
                       xmlns="http://www.w3.org/2000/svg"
                       fill="none"
@@ -142,7 +145,7 @@ export default function Navbar() {
                   {isPrivateYachtsOpen && (
                     <ul className="absolute top-full left-0 w-60 bg-white text-black shadow-lg rounded-lg overflow-hidden border border-gray-200 z-50">
                       {!loading &&
-                        data?.products?.map((product) => (
+                        data?.products?.map(product => (
                           <li
                             key={product.id}
                             onClick={() => setPrivateYachtsOpen(false)}
@@ -165,13 +168,13 @@ export default function Navbar() {
                   <Link
                     href="/yachts-for-sale-dubai"
                     className={`h-full flex items-center tracking-[1px] uppercase underline decoration-2 underline-offset-8 transition-all duration-200 font-primary ${
-                      pathname === "/yachts-for-sale-dubai" ||
-                      pathname.startsWith("/yachts-for-sale-dubai/")
-                        ? "text-primary-blue decoration-primary-yellow font-semibold"
-                        : "text-primary-blue decoration-transparent hover:decoration-primary-yellow"
+                      pathname === '/yachts-for-sale-dubai' ||
+                      pathname.startsWith('/yachts-for-sale-dubai/')
+                        ? 'text-primary-blue decoration-primary-yellow font-semibold'
+                        : 'text-primary-blue decoration-transparent hover:decoration-primary-yellow'
                     }`}
                   >
-                    {t("navbar.buy-a-yacht")}
+                    {t('navbar.buy-a-yacht')}
                   </Link>
                 </li>
 
@@ -180,13 +183,13 @@ export default function Navbar() {
                   <Link
                     href="/shared-yacht-tours-dubai"
                     className={`h-full flex items-center tracking-[1px] uppercase underline decoration-2 underline-offset-8 transition-all duration-200 font-primary ${
-                      pathname === "/shared-yacht-tours-dubai" ||
-                      pathname.startsWith("/shared-yacht-tours-dubai/")
-                        ? "text-primary-blue decoration-primary-yellow font-semibold"
-                        : "text-primary-blue decoration-transparent hover:decoration-primary-yellow"
+                      pathname === '/shared-yacht-tours-dubai' ||
+                      pathname.startsWith('/shared-yacht-tours-dubai/')
+                        ? 'text-primary-blue decoration-primary-yellow font-semibold'
+                        : 'text-primary-blue decoration-transparent hover:decoration-primary-yellow'
                     }`}
                   >
-                    {t("navbar.shared-tours")}
+                    {t('navbar.shared-tours')}
                   </Link>
                 </li>
 
@@ -199,18 +202,21 @@ export default function Navbar() {
                 >
                   <span
                     className={`h-full flex items-center justify-between cursor-pointer gap-1 py-2 transition-all duration-200 font-primary ${
-                      pathname === "/yacht-trips" ||
-                      pathname.startsWith("/yacht-trips/")
-                        ? "text-primary-blue underline-primary-yellow font-semibold"
-                        : "text-primary-blue underline-transparent"
+                      pathname === '/yacht-trips' ||
+                      pathname.startsWith('/yacht-trips/')
+                        ? 'text-primary-blue underline-primary-yellow font-semibold'
+                        : 'text-primary-blue underline-transparent'
                     }`}
                   >
-                    <Link href="/yacht-trips" className="tracking-[1px] uppercase">
-                      {t("navbar.experiences")}
+                    <Link
+                      href="/yacht-trips"
+                      className="tracking-[1px] uppercase"
+                    >
+                      {t('navbar.experiences')}
                     </Link>
                     <svg
                       className={`w-4 h-4 transform transition-transform duration-300 ${
-                        isExperiencesOpen ? "rotate-180" : ""
+                        isExperiencesOpen ? 'rotate-180' : ''
                       }`}
                       xmlns="http://www.w3.org/2000/svg"
                       fill="none"
@@ -232,11 +238,11 @@ export default function Navbar() {
                         className="cursor-pointer capitalize text-xs font-medium text-primary-grey hover:text-white hover:bg-primary-blue transition-all duration-300 font-primary"
                       >
                         <Link href="/watersports" className="py-2 px-4 block">
-                          {t("navbar.water-sports")}
+                          {t('navbar.water-sports')}
                         </Link>
                       </li>
                       {!loading &&
-                        data?.experiences?.map((experience) => (
+                        data?.experiences?.map(experience => (
                           <li
                             key={experience.id}
                             onClick={() => setExperiencesOpen(false)}
@@ -273,9 +279,10 @@ export default function Navbar() {
                   <Link
                     href="/resident-offer"
                     className={`h-full flex items-center tracking-[1px] uppercase underline decoration-2 underline-offset-8 transition-all duration-200 font-primary ${
-                      pathname === "/resident-offer" || pathname.startsWith("/resident-offer/")
-                        ? "text-primary-blue decoration-primary-yellow font-semibold"
-                        : "text-primary-blue decoration-transparent hover:decoration-primary-yellow"
+                      pathname === '/resident-offer' ||
+                      pathname.startsWith('/resident-offer/')
+                        ? 'text-primary-blue decoration-primary-yellow font-semibold'
+                        : 'text-primary-blue decoration-transparent hover:decoration-primary-yellow'
                     }`}
                   >
                     {t('navbar.summer-offers')}
@@ -286,9 +293,10 @@ export default function Navbar() {
                   <Link
                     href="offers/dubai-yachts-winter-offers"
                     className={`h-full flex items-center tracking-[1px] uppercase underline decoration-2 underline-offset-8 transition-all duration-200 font-primary ${
-                      pathname === "/resident-offer" || pathname.startsWith("/resident-offer/")
-                        ? "text-primary-blue decoration-primary-yellow font-semibold"
-                        : "text-primary-blue decoration-transparent hover:decoration-primary-yellow"
+                      pathname === '/resident-offer' ||
+                      pathname.startsWith('/resident-offer/')
+                        ? 'text-primary-blue decoration-primary-yellow font-semibold'
+                        : 'text-primary-blue decoration-transparent hover:decoration-primary-yellow'
                     }`}
                   >
                     {t('navbar.winter-offer')}
@@ -299,12 +307,13 @@ export default function Navbar() {
                   <Link
                     href="/abu-dhabi-race-yacht-charter"
                     className={`h-full flex items-center tracking-[1px] uppercase underline decoration-2 underline-offset-8 transition-all duration-200 font-primary ${
-                      pathname === "/abu-dhabi-race-yacht-charter" || pathname.startsWith("/abu-dhabi")
-                        ? "text-primary-blue decoration-primary-yellow font-semibold"
-                        : "text-primary-blue decoration-transparent hover:decoration-primary-yellow"
+                      pathname === '/abu-dhabi-race-yacht-charter' ||
+                      pathname.startsWith('/abu-dhabi')
+                        ? 'text-primary-blue decoration-primary-yellow font-semibold'
+                        : 'text-primary-blue decoration-transparent hover:decoration-primary-yellow'
                     }`}
                   >
-                    {t("navbar.formula-1")}
+                    {t('navbar.formula-1')}
                   </Link>
                 </li>
                 {/* Events */}
@@ -320,14 +329,15 @@ export default function Navbar() {
                     {t("navbar.events")}
                   </Link>
                 </li> */}
-				{/* New Year Party */}
-				<li>
+                {/* New Year Party */}
+                <li>
                   <Link
                     href="/new-year-yacht-party"
                     className={`h-full flex items-center tracking-[1px] uppercase underline decoration-2 underline-offset-8 transition-all duration-200 font-primary ${
-                      pathname === "/new-year-yacht-party" || pathname.startsWith("/new-year-yacht-party/")
-                        ? "text-primary-blue decoration-primary-yellow font-semibold"
-                        : "text-primary-blue decoration-transparent hover:decoration-primary-yellow"
+                      pathname === '/new-year-yacht-party' ||
+                      pathname.startsWith('/new-year-yacht-party/')
+                        ? 'text-primary-blue decoration-primary-yellow font-semibold'
+                        : 'text-primary-blue decoration-transparent hover:decoration-primary-yellow'
                     }`}
                   >
                     {t('navbar.new-year')}
@@ -339,13 +349,13 @@ export default function Navbar() {
                   <Link
                     href="/contact"
                     className={`h-full flex items-center tracking-[1px] uppercase underline decoration-2 underline-offset-8 transition-all duration-200 font-primary ${
-                      pathname === "/contact" ||
-                      pathname.startsWith("/contact/")
-                        ? "text-primary-blue decoration-primary-yellow font-semibold"
-                        : "text-primary-blue decoration-transparent hover:decoration-primary-yellow"
+                      pathname === '/contact' ||
+                      pathname.startsWith('/contact/')
+                        ? 'text-primary-blue decoration-primary-yellow font-semibold'
+                        : 'text-primary-blue decoration-transparent hover:decoration-primary-yellow'
                     }`}
                   >
-                    {t("navbar.contact-us")}
+                    {t('navbar.contact-us')}
                   </Link>
                 </li>
               </ul>
@@ -354,13 +364,16 @@ export default function Navbar() {
             {/* Contact & Language Section */}
             <div className="flex items-center gap-4">
               {/* Contact Icons */}
-              <Link href={header_email || "#"} aria-label="Email">
+              <Link href={header_email || '#'} aria-label="Email">
                 <MdEmail className="w-5 h-5 text-primary-blue-2 hover:text-primary-blue hover:scale-110 transition-transform duration-200 text-2xl" />
               </Link>
-              <Link href={header_phone_number_url || "#"} aria-label="Phone">
+              <Link href={header_phone_number_url || '#'} aria-label="Phone">
                 <FaPhoneAlt className="w-4 h-4 text-primary-blue-2 hover:text-primary-blue hover:scale-110 transition-transform duration-200 text-2xl" />
               </Link>
-              <Link href={t("header.navbar_whatsapp_url")} aria-label="WhatsApp">
+              <Link
+                href={t('header.navbar_whatsapp_url')}
+                aria-label="WhatsApp"
+              >
                 <IoLogoWhatsapp className="w-5 h-5 text-primary-blue-2 hover:text-primary-blue hover:scale-110 transition-transform duration-200 text-2xl" />
               </Link>
 
@@ -383,10 +396,10 @@ export default function Navbar() {
                 </div>
                 {isLanguageDropdownOpen && (
                   <ul className="absolute right-0 w-36 bg-white text-primary-blue border rounded-md shadow-lg z-20 text-xs">
-                    {languages.map((lang) => (
+                    {languages.map(lang => (
                       <li
                         key={lang.code}
-                        onClick={(e) => {
+                        onClick={e => {
                           e.stopPropagation();
                           handleLanguageChange(lang.code);
                         }}

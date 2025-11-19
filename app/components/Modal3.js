@@ -3,30 +3,30 @@ import React, {
   forwardRef,
   useImperativeHandle,
   useEffect,
-} from "react";
-import PhoneInput from "react-phone-input-2";
-import "react-phone-input-2/lib/style.css";
+} from 'react';
+import PhoneInput from 'react-phone-input-2';
+import 'react-phone-input-2/lib/style.css';
 import {
   isValidPhoneNumber,
   parsePhoneNumberFromString,
-} from "libphonenumber-js";
+} from 'libphonenumber-js';
 
 const Modal3 = forwardRef(
   ({ idName, idValue, selectedVessel, rentalPeriod }, ref) => {
     const [isVisible, setIsVisible] = useState(false);
-    const [fullName, setFullName] = useState("");
-    const [phoneNumber, setPhoneNumber] = useState("");
+    const [fullName, setFullName] = useState('');
+    const [phoneNumber, setPhoneNumber] = useState('');
     const [phoneCountry, setPhoneCountry] = useState({
-      countryCode: "ae",
-      format: "",
+      countryCode: 'ae',
+      format: '',
     });
-    const [email, setEmail] = useState("");
-    const [message, setMessage] = useState("");
+    const [email, setEmail] = useState('');
+    const [message, setMessage] = useState('');
     const [errors, setErrors] = useState({});
     const [submissionSuccess, setSubmissionSuccess] = useState(false);
 
     useEffect(() => {
-      console.log("Modal3 received rentalPeriod:", rentalPeriod);
+      console.log('Modal3 received rentalPeriod:', rentalPeriod);
     }, [rentalPeriod]);
 
     useImperativeHandle(ref, () => ({
@@ -36,57 +36,57 @@ const Modal3 = forwardRef(
 
     const validateForm = () => {
       const newErrors = {};
-      if (!fullName.trim()) newErrors.fullName = "Full Name is required.";
+      if (!fullName.trim()) newErrors.fullName = 'Full Name is required.';
       if (!phoneNumber.trim()) {
-        newErrors.phoneNumber = "Phone Number is required.";
+        newErrors.phoneNumber = 'Phone Number is required.';
       } else {
         try {
-          const parsedPhone = parsePhoneNumberFromString("+" + phoneNumber);
+          const parsedPhone = parsePhoneNumberFromString('+' + phoneNumber);
           if (!parsedPhone || !parsedPhone.isValid()) {
-            newErrors.phoneNumber = "Please enter a valid phone number.";
+            newErrors.phoneNumber = 'Please enter a valid phone number.';
           }
         } catch (e) {
-          newErrors.phoneNumber = "Please enter a valid phone number.";
+          newErrors.phoneNumber = 'Please enter a valid phone number.';
         }
       }
       if (!email.trim()) {
-        newErrors.email = "Email is required.";
+        newErrors.email = 'Email is required.';
       } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-        newErrors.email = "Invalid email format.";
+        newErrors.email = 'Invalid email format.';
       }
-      if (!message.trim()) newErrors.message = "Message is required.";
+      if (!message.trim()) newErrors.message = 'Message is required.';
 
       setErrors(newErrors);
       return Object.keys(newErrors).length === 0;
     };
 
-    const handleSubmit = async (e) => {
+    const handleSubmit = async e => {
       e.preventDefault();
       if (!validateForm()) return;
 
       const selectedDates =
-        JSON.parse(localStorage.getItem("selectedDates")) || [];
+        JSON.parse(localStorage.getItem('selectedDates')) || [];
 
       const vesselDetails = selectedVessel
-        ? `<br>Vessel Details:<br>Name: ${selectedVessel.name || "N/A"}<br>Build: ${
-            selectedVessel.make || "N/A"
-          }<br>Length: ${selectedVessel.length || "N/A"}<br>Year: ${
-            selectedVessel.builtYear || "N/A"
-          }<br>Price: ${selectedVessel.price || "N/A"}<br>Cabins: ${
-            selectedVessel.cabins || "N/A"
-          }<br>Guests: ${selectedVessel.sleeps || "N/A"}`
-        : "";
+        ? `<br>Vessel Details:<br>Name: ${selectedVessel.name || 'N/A'}<br>Build: ${
+            selectedVessel.make || 'N/A'
+          }<br>Length: ${selectedVessel.length || 'N/A'}<br>Year: ${
+            selectedVessel.builtYear || 'N/A'
+          }<br>Price: ${selectedVessel.price || 'N/A'}<br>Cabins: ${
+            selectedVessel.cabins || 'N/A'
+          }<br>Guests: ${selectedVessel.sleeps || 'N/A'}`
+        : '';
 
       const vesselIdText =
-        idName && idValue ? `<br>Vessel ID (${idName}): ${idValue}` : "";
+        idName && idValue ? `<br>Vessel ID (${idName}): ${idValue}` : '';
 
       const rentalDatesText =
         selectedDates.length > 0
-          ? `<br>Rental Dates: ${selectedDates.join(", ")}`
-          : "";
+          ? `<br>Rental Dates: ${selectedDates.join(', ')}`
+          : '';
 
       const fullMessagePayload = `Comments: ${message}<br><br>${vesselDetails}${vesselIdText}${rentalDatesText}`;
-      console.log("Full message payload:", fullMessagePayload);
+      console.log('Full message payload:', fullMessagePayload);
       const queryParams = new URLSearchParams({
         name: fullName,
         phone: phoneNumber,
@@ -94,39 +94,39 @@ const Modal3 = forwardRef(
         comments: fullMessagePayload,
       });
 
-      queryParams.set("offers_id", "45");
+      queryParams.set('offers_id', '45');
       if (idName && idValue) {
         queryParams.set(idName, idValue);
       }
 
       console.log(
-        "Sending enquiry with query parameters:",
+        'Sending enquiry with query parameters:',
         queryParams.toString()
       );
 
       try {
         const url = `https://www.centauruscharter.net/api/api_new/save_enquiry?${queryParams}`;
-        const response = await fetch(url, { method: "POST" });
+        const response = await fetch(url, { method: 'POST' });
         const data = await response.json();
 
         if (response.ok) {
-          console.log("Response from server:", data);
+          console.log('Response from server:', data);
           setSubmissionSuccess(true);
-          setFullName("");
-          setPhoneNumber("");
-          setEmail("");
-          setMessage("");
+          setFullName('');
+          setPhoneNumber('');
+          setEmail('');
+          setMessage('');
 
           setTimeout(() => {
             setSubmissionSuccess(false);
             setIsVisible(false);
           }, 5000);
         } else {
-          alert("Something went wrong while sending the form.");
+          alert('Something went wrong while sending the form.');
         }
       } catch (error) {
-        console.error("Error submitting form:", error);
-        alert("An error occurred. Please try again later.");
+        console.error('Error submitting form:', error);
+        alert('An error occurred. Please try again later.');
       }
     };
 
@@ -164,7 +164,7 @@ const Modal3 = forwardRef(
                     type="text"
                     placeholder="Full Name"
                     value={fullName}
-                    onChange={(e) => setFullName(e.target.value)}
+                    onChange={e => setFullName(e.target.value)}
                     className="w-full border outline outline-primary-blue bg-gray-100 border-primary-blue rounded-md p-3"
                   />
                   {errors.fullName && (
@@ -183,7 +183,7 @@ const Modal3 = forwardRef(
                     placeholder="Enter phone number"
                     isValid={(value, country) => {
                       try {
-                        const parsed = parsePhoneNumberFromString("+" + value);
+                        const parsed = parsePhoneNumberFromString('+' + value);
                         return parsed && parsed.isValid();
                       } catch {
                         return false;
@@ -191,18 +191,18 @@ const Modal3 = forwardRef(
                     }}
                     //   defaultErrorMessage="Please enter a valid phone number"
                     inputStyle={{
-                      width: "100%",
-                      padding: "20px",
-                      paddingLeft: "65px",
-                      border: "1px solid #ddd",
-                      borderRadius: "4px"
+                      width: '100%',
+                      padding: '20px',
+                      paddingLeft: '65px',
+                      border: '1px solid #ddd',
+                      borderRadius: '4px',
                     }}
                     buttonStyle={{
-                      padding: "10px",
-                      border: "1px solid #ddd",
-                      borderRadius: "4px",
-                      fontSize: "14px",
-                      width: "60px"
+                      padding: '10px',
+                      border: '1px solid #ddd',
+                      borderRadius: '4px',
+                      fontSize: '14px',
+                      width: '60px',
                     }}
                   />
                   {errors.phoneNumber && (
@@ -215,7 +215,7 @@ const Modal3 = forwardRef(
                     type="email"
                     placeholder="Email Address"
                     value={email}
-                    onChange={(e) => setEmail(e.target.value)}
+                    onChange={e => setEmail(e.target.value)}
                     className="w-full border outline outline-primary-blue bg-gray-100 border-primary-blue rounded-md p-3"
                   />
                   {errors.email && (
@@ -227,7 +227,7 @@ const Modal3 = forwardRef(
                   <textarea
                     placeholder="Comments"
                     value={message}
-                    onChange={(e) => setMessage(e.target.value)}
+                    onChange={e => setMessage(e.target.value)}
                     rows="8"
                     className="w-full border outline outline-primary-blue bg-gray-100 border-primary-blue rounded-md p-3"
                   />

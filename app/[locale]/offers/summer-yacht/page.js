@@ -1,11 +1,11 @@
-"use client";
-import React, { useState } from "react";
-import Image from "next/image";
-import summeryacht from "@/public/summer-yacht-offer.webp";
-import PageTitleHeading from "@/app/components/PageTitleHeading";
-import Modal2 from "@/app/components/Modal2";
-import { FaWhatsapp } from "react-icons/fa";
-import ExperienceCarousal from "@/app/components/ExperienceCarousal";
+'use client';
+import React, { useState } from 'react';
+import Image from 'next/image';
+import summeryacht from '@/public/summer-yacht-offer.webp';
+import PageTitleHeading from '@/app/components/PageTitleHeading';
+import Modal2 from '@/app/components/Modal2';
+import { FaWhatsapp } from 'react-icons/fa';
+import ExperienceCarousal from '@/app/components/ExperienceCarousal';
 const page = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const handleQuote = () => {
@@ -17,58 +17,58 @@ const page = () => {
   };
   const yachts = [
     {
-      name: "THUNDER 36FT",
+      name: 'THUNDER 36FT',
       capacity: 10,
       rate: 490,
       twoHr: 980,
       threeHr: 1470,
       fourHr: 1960,
-      fareharbor_id: "353083",
+      fareharbor_id: '353083',
     },
     {
-      name: "STORM 36FT",
+      name: 'STORM 36FT',
       capacity: 10,
       rate: 490,
       twoHr: 980,
       threeHr: 1470,
       fourHr: 1960,
-      fareharbor_id: "429263",
+      fareharbor_id: '429263',
     },
     {
-      name: "VASSIA 56FT",
+      name: 'VASSIA 56FT',
       capacity: 21,
       rate: 845,
       twoHr: 1690,
       threeHr: 2535,
       fourHr: 3380,
-      fareharbor_id: "340280",
+      fareharbor_id: '340280',
     },
     {
-      name: "ETOSHA 58FT",
+      name: 'ETOSHA 58FT',
       capacity: 28,
       rate: 845,
       twoHr: 1690,
       threeHr: 2535,
       fourHr: 3380,
-      fareharbor_id: "340265",
+      fareharbor_id: '340265',
     },
     {
-      name: "LAGOONA 56FT",
+      name: 'LAGOONA 56FT',
       capacity: 24,
       rate: 980,
       twoHr: 1960,
       threeHr: 2940,
       fourHr: 3920,
-      fareharbor_id: "340459",
+      fareharbor_id: '340459',
     },
     {
-      name: "SILVER CREEK 61FT",
+      name: 'SILVER CREEK 61FT',
       capacity: 30,
       rate: 980,
       twoHr: 1960,
       threeHr: 2940,
       fourHr: 3920,
-      fareharbor_id: "340286",
+      fareharbor_id: '340286',
     },
   ];
 
@@ -87,7 +87,7 @@ const page = () => {
           />
         </div>
         <h2 className="font-bold text-center pt-5">
-          {" "}
+          {' '}
           SUMMER OFFERS - DAYTIME YACHT BOOKINGS
         </h2>
 
@@ -101,14 +101,14 @@ const page = () => {
             {/* Header */}
             <div className="grid grid-cols-7 border-t border-b border-gray-300 py-4 mb-4 min-w-[800px]">
               {[
-                "YACHT",
-                "CAPACITY",
-                "RATE/HR",
-                "2-Hours",
-                "3-Hours",
-                "4-Hours",
-                "",
-              ].map((heading) => (
+                'YACHT',
+                'CAPACITY',
+                'RATE/HR',
+                '2-Hours',
+                '3-Hours',
+                '4-Hours',
+                '',
+              ].map(heading => (
                 <div
                   key={heading}
                   className="text-sm text-center font-bold uppercase text-gray-700"
@@ -122,11 +122,11 @@ const page = () => {
             <div className="flex flex-col space-y-3">
               {yachts.map((yacht, idx) => {
                 const isEven = idx % 2 === 0;
-                const bgClass = isEven ? "bg-[#0E2243]" : "bg-[#08396e]";
-                const textClass = isEven ? "text-[#E1BA4D]" : "text-white";
+                const bgClass = isEven ? 'bg-[#0E2243]' : 'bg-[#08396e]';
+                const textClass = isEven ? 'text-[#E1BA4D]' : 'text-white';
                 const borderClass = isEven
-                  ? "border-[#E1BA4D]"
-                  : "border-black";
+                  ? 'border-[#E1BA4D]'
+                  : 'border-black';
 
                 return (
                   <div
@@ -140,19 +140,19 @@ const page = () => {
                       `AED ${yacht.twoHr.toLocaleString()}.00`,
                       `AED ${yacht.threeHr.toLocaleString()}.00`,
                       `AED ${yacht.fourHr.toLocaleString()}.00`,
-                      "Book Now",
+                      'Book Now',
                     ].map((content, colIdx) => {
                       const isBook = colIdx === 6;
                       const noBorderForFourHr = colIdx === 5;
-                      const cellBg = isBook ? "bg-[#E1BA4D]" : "";
+                      const cellBg = isBook ? 'bg-[#E1BA4D]' : '';
                       const cellText = isBook
-                        ? "text-black font-semibold"
+                        ? 'text-black font-semibold'
                         : textClass;
                       const cellBorder =
                         isBook || noBorderForFourHr
-                          ? ""
+                          ? ''
                           : `border-r ${borderClass}`;
-                      const justify = "justify-center";
+                      const justify = 'justify-center';
 
                       return (
                         <div
@@ -160,14 +160,18 @@ const page = () => {
                           className={`px-4 py-3 flex items-center ${justify} ${cellBorder} ${cellBg} ${cellText}`}
                         >
                           {isBook ? (
-                               <a href={`https://fareharbor.com/embeds/book/centauruscharter/items/${yacht.fareharbor_id}/?full-items=yes&flow=645487`}
-                               target="_self"
-                               rel="noopener noreferrer" 
-                               className="">
-                            <button className="w-full h-full">{content}</button>
+                            <a
+                              href={`https://fareharbor.com/embeds/book/centauruscharter/items/${yacht.fareharbor_id}/?full-items=yes&flow=645487`}
+                              target="_self"
+                              rel="noopener noreferrer"
+                              className=""
+                            >
+                              <button className="w-full h-full">
+                                {content}
+                              </button>
                             </a>
                           ) : (
-                            <span className={colIdx === 0 ? "font-bold" : ""}>
+                            <span className={colIdx === 0 ? 'font-bold' : ''}>
                               {content}
                             </span>
                           )}
@@ -202,7 +206,7 @@ const page = () => {
               <li>Deal is valid until 30 September 2023</li>
             </ul>
             <h6 className="text-center">
-              {" "}
+              {' '}
               Rent a yacht with an amazing deal today
             </h6>
           </div>

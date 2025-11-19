@@ -1,11 +1,11 @@
-"use client";
-import React, { useEffect, useRef } from "react";
-import EmblaCarousel from "embla-carousel";
-import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
-import { useData } from "../context/DataContext";
-import { useLanguage } from "@/app/context/LanguageContext";
-import Image from "next/image";
-import { Link } from "@/app/i18n/routing";
+'use client';
+import React, { useEffect, useRef } from 'react';
+import EmblaCarousel from 'embla-carousel';
+import { IoIosArrowBack, IoIosArrowForward } from 'react-icons/io';
+import { useData } from '../context/DataContext';
+import { useLanguage } from '@/app/context/LanguageContext';
+import Image from 'next/image';
+import { Link } from '@/app/i18n/routing';
 
 export default function ExperienceCarousal() {
   const { data, loading } = useData();
@@ -16,22 +16,22 @@ export default function ExperienceCarousal() {
   useEffect(() => {
     if (emblaRef.current) {
       const options = {
-        align: "start",
+        align: 'start',
         loop: true,
         slidesToScroll: 1,
         breakpoints: {
           '(min-width: 768px)': { slidesToScroll: 2 },
-          '(min-width: 1024px)': { slidesToScroll: 3 }
-        }
+          '(min-width: 1024px)': { slidesToScroll: 3 },
+        },
       };
-  
+
       emblaInstance.current = EmblaCarousel(emblaRef.current, options);
-      
+
       // Autoplay functionality
       const autoplay = setInterval(() => {
         emblaInstance.current?.scrollNext();
       }, 100000000);
-  
+
       return () => {
         clearInterval(autoplay);
         emblaInstance.current?.destroy();
@@ -52,7 +52,7 @@ export default function ExperienceCarousal() {
         <div className="embla__viewport" ref={emblaRef}>
           <div className="embla__container flex">
             {!loading &&
-              data?.experiences?.map((experience) => (
+              data?.experiences?.map(experience => (
                 <div
                   key={experience.id}
                   className="flex-[0_0_90%] md:flex-[0_0_calc(50%-10px)] lg:flex-[0_0_calc(33.33%-10px)] min-w-0 px-2"
@@ -106,7 +106,7 @@ export default function ExperienceCarousal() {
           <IoIosArrowForward size={30} />
         </button>
       </div>
-      
+
       <div className="pt-12"></div>
     </div>
   );

@@ -1,11 +1,11 @@
-"use client";
-import { useEffect, useRef, useState } from "react";
-import EmblaCarousel from "embla-carousel";
-import { Link } from "@/app/i18n/routing";
-import { useData } from "@/app/context/DataContext";
-import { useLocale } from "next-intl";
-import { FaWhatsapp } from "react-icons/fa";
-import Image from "next/image";
+'use client';
+import { useEffect, useRef, useState } from 'react';
+import EmblaCarousel from 'embla-carousel';
+import { Link } from '@/app/i18n/routing';
+import { useData } from '@/app/context/DataContext';
+import { useLocale } from 'next-intl';
+import { FaWhatsapp } from 'react-icons/fa';
+import Image from 'next/image';
 
 export default function EventCarousel() {
   const emblaRef = useRef(null);
@@ -17,7 +17,7 @@ export default function EventCarousel() {
     if (!embla && emblaRef.current) {
       const emblaInstance = EmblaCarousel(emblaRef.current, {
         loop: true,
-        align: "start",
+        align: 'start',
         slidesToScroll: 1,
       });
       setEmbla(emblaInstance);
@@ -40,15 +40,15 @@ export default function EventCarousel() {
                 <div className="flex flex-col justify-start lg:justify-between rounded-md bg-white h-full overflow-hidden border border-gray-400 md:border-none xl:p-10 shadow-none">
                   {/* Event Image */}
                   <Link href={`/events/${event.slug}`}>
-							<Image 
-							  src={`https://www.centauruscharter.net/product/images/${event.image}`}
-							  alt={event.translations[locale].title} 
-							  className="rounded-tl-md rounded-tr-md w-full object-cover"
-							  width={1000}
-							  height={600}
-							  priority={index < 2}
-            loading={index < 2 ? "eager" : "lazy"}
-						/>
+                    <Image
+                      src={`https://www.centauruscharter.net/product/images/${event.image}`}
+                      alt={event.translations[locale].title}
+                      className="rounded-tl-md rounded-tr-md w-full object-cover"
+                      width={1000}
+                      height={600}
+                      priority={index < 2}
+                      loading={index < 2 ? 'eager' : 'lazy'}
+                    />
                   </Link>
                   <div className="flex flex-col justify-start px-5 lg:px-5 flex-grow">
                     {/* Event Title */}
@@ -80,7 +80,8 @@ export default function EventCarousel() {
                         target="_blank"
                         className="w-full flex justify-center py-2 px-4 text-base md:text-sm xl:text-lg font-bold tracking-wider uppercase text-white bg-primary-blue-2 hover:scale-105 rounded-md shadow transition duration-150 ease-in-out transform items-center"
                       >
-                        <FaWhatsapp className="xs:text-xl text-lg mr-1" />WHATSAPP
+                        <FaWhatsapp className="xs:text-xl text-lg mr-1" />
+                        WHATSAPP
                       </a>
                       <Link
                         href={`/events/${event.slug}`}

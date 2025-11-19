@@ -1,22 +1,22 @@
-import createMiddleware from 'next-intl/middleware'
-import { routing } from './app/i18n/routing'
-import { NextRequest, NextResponse } from 'next/server'
+import createMiddleware from 'next-intl/middleware';
+import { routing } from './app/i18n/routing';
+import { NextRequest, NextResponse } from 'next/server';
 
-const intlMiddleware = createMiddleware(routing)
+const intlMiddleware = createMiddleware(routing);
 
 export default function middleware(request: NextRequest) {
-  const { pathname } = request.nextUrl
-  
+  const { pathname } = request.nextUrl;
+
   // Clone request headers and add the current pathname
-  const requestHeaders = new Headers(request.headers)
-  requestHeaders.set('x-current-path', pathname)
-  
+  const requestHeaders = new Headers(request.headers);
+  requestHeaders.set('x-current-path', pathname);
+
   // Call intl middleware with updated headers
   const modifiedRequest = new NextRequest(request, {
     headers: requestHeaders,
-  })
-  
-  return intlMiddleware(modifiedRequest)
+  });
+
+  return intlMiddleware(modifiedRequest);
 }
 
 export const config = {
@@ -30,4 +30,4 @@ export const config = {
     // However, match all pathnames within `/users`, optionally with a locale prefix
     // '/([\\w-]+)?/users/(.+)'
   ],
-}
+};

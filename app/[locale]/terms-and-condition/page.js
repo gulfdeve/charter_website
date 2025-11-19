@@ -1,6 +1,6 @@
-import React from "react";
-import Image from "next/image";
-import { useRouter, usePathname, Link } from "@/app/i18n/routing";
+import React from 'react';
+import Image from 'next/image';
+import { useRouter, usePathname, Link } from '@/app/i18n/routing';
 const page = () => {
   return (
     <>
@@ -19,7 +19,7 @@ const page = () => {
       <div className="container mx-auto">
         <div className="flex items-center justify-center pt-10">
           <h1 className=" text-primary-blue text-center">
-            {" "}
+            {' '}
             TERMS AND CONDITIONS
           </h1>
         </div>
@@ -40,7 +40,9 @@ const page = () => {
             qualified and trained Captain will accommodate the yacht at the
             period of the trip. Guests, staff, and yachts are fully insured.
           </p>
-          <h2 className="text-[24px] text-left pt-8 pb-4">DEPOSIT AND INSURANCE</h2>
+          <h2 className="text-[24px] text-left pt-8 pb-4">
+            DEPOSIT AND INSURANCE
+          </h2>
           <p>
             Our yachts are covered with an insurance amount according to the
             Price List for the current year. The insurance policy covers
@@ -146,7 +148,9 @@ const page = () => {
               100% of the total booking charge.
             </li>
           </ul>
-          <h2 className="text-[24px] text-left pt-8 pb-4">YACHT DELIVERY PROCEDURE (CHECK -IN)</h2>
+          <h2 className="text-[24px] text-left pt-8 pb-4">
+            YACHT DELIVERY PROCEDURE (CHECK -IN)
+          </h2>
           <p>
             The yacht boarding takes place upon bookings which will be Sunday –
             Saturday 9 am – 2 am. All guests shall deliver a verified original
@@ -164,7 +168,9 @@ const page = () => {
             timings will be made once approved by us.
           </p>
 
-          <h2 className="text-[24px] text-left pt-8 pb-4">LIABILITY OF GUESTS</h2>
+          <h2 className="text-[24px] text-left pt-8 pb-4">
+            LIABILITY OF GUESTS
+          </h2>
           <p>
             All guests undertake not to accept more passengers onboard of the
             Yacht than it is specified in the Centaurus Charter. The guests
@@ -179,7 +185,9 @@ const page = () => {
             (dogs, cats, birds, etc.) without the prior written consent by
             Centaurus Charter.
           </p>
-          <h2 className="text-[24px] text-left pt-8 pb-4">LIABILITY OF CENTAURUS CHARTER</h2>
+          <h2 className="text-[24px] text-left pt-8 pb-4">
+            LIABILITY OF CENTAURUS CHARTER
+          </h2>
           <p>
             Centaurus Charter shall be obliged to deliver the vessel in good
             working order, cleaned and with full fuel and water tanks. In case
@@ -199,14 +207,20 @@ const page = () => {
             Depending on the time the route shall include the Marina Canal,
             Lagoon, Burj Al Arab and Atlantis the Palm.
           </p>
-          <h2 className="text-[24px] text-left pt-8 pb-4">FOOD AND BEVERAGES</h2>
+          <h2 className="text-[24px] text-left pt-8 pb-4">
+            FOOD AND BEVERAGES
+          </h2>
           <p>
             Refrigerator, AC, GPS, Cutlery, drinkware, plates etc. No food or
             refreshments will be sold to guests; however, guests can bring their
             own food onboard. Drinks can be ordered from www.centaurusint.net
           </p>
-          <h2 className="text-[24px] text-left pt-8">CENTAURUS CHARTER SERVICES </h2>
-          <h3 className="text-[20px] text-left py-5">Yacht Offers and Deals in Dubai</h3>
+          <h2 className="text-[24px] text-left pt-8">
+            CENTAURUS CHARTER SERVICES{' '}
+          </h2>
+          <h3 className="text-[20px] text-left py-5">
+            Yacht Offers and Deals in Dubai
+          </h3>
           <p>
             Yacht offers blackout dates: 1-3 December (National Day) and 20
             December 2024 -01 January. All offers cannot be combined with other
@@ -234,7 +248,9 @@ const page = () => {
             </li>
             <li>The Offer is valid until 28 February 2025.</li>
           </ul>
-          <h3 className="text-[20px] text-left py-5">Emirates Staff Discount</h3>
+          <h3 className="text-[20px] text-left py-5">
+            Emirates Staff Discount
+          </h3>
           <ul className="list-disc pl-12   text-left  ">
             <li>Minimum Booking Rental time 4 hours.</li>
             <li>Inclusions: Water , Tea , Coffee and soft drinks</li>
@@ -259,7 +275,9 @@ const page = () => {
             </li>
           </ul>
 
-          <h3 className="text-[20px] text-left py-5">Business Council Members Offer</h3>
+          <h3 className="text-[20px] text-left py-5">
+            Business Council Members Offer
+          </h3>
 
           <ul className="list-disc pl-12   text-left  ">
             <li>A minimum booking duration of 2 hours is required.</li>

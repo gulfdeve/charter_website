@@ -1,16 +1,16 @@
 // components/ClientPaymentInitializer.jsx
-"use client";
-import { useEffect } from "react";
+'use client';
+import { useEffect } from 'react';
 
 export default function ClientPaymentInitializer({
-	slug,
-	CENTAURUS_API_KEY,
-	sessionId,
-	sessionVersion,
-	successIndicator,
-	children,
+  slug,
+  CENTAURUS_API_KEY,
+  sessionId,
+  sessionVersion,
+  successIndicator,
+  children,
 }) {
-	/*useEffect(() => {
+  /*useEffect(() => {
 		// build the status URL exactly the same way you do on the server:
 		const statusUrl = new URL(
 			`https://www.centauruscharter.net/api/api_new/payments/rakbank/${slug}`
@@ -42,6 +42,6 @@ export default function ClientPaymentInitializer({
 			);
 	}, [slug, CENTAURUS_API_KEY, sessionId, sessionVersion, successIndicator]);*/
 
-	// render children only once the effect has been scheduled
-	return <>{children}</>;
+  // render children only once the effect has been scheduled
+  return <>{children}</>;
 }

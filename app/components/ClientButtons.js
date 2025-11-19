@@ -1,7 +1,7 @@
-"use client";
-import React from "react";
-import { FaWhatsapp } from "react-icons/fa";
-import { Link } from "@/app/i18n/routing";
+'use client';
+import React from 'react';
+import { FaWhatsapp } from 'react-icons/fa';
+import { Link } from '@/app/i18n/routing';
 
 export default function ClientButtons({ offer }) {
   return (
@@ -14,10 +14,7 @@ export default function ClientButtons({ offer }) {
         <FaWhatsapp className="xs:text-xl text-lg mr-1" />
         WHATSAPP
       </a>
-      <Link
-        href={`/offers/${offer.slug}`}
-        className="blue-solid-button"
-      >
+      <Link href={`/offers/${offer.slug}`} className="blue-solid-button">
         KNOW MORE
       </Link>
     </div>

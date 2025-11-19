@@ -1,13 +1,13 @@
-import { Link } from "@/app/i18n/routing";
+import { Link } from '@/app/i18n/routing';
 import React, { useState } from 'react';
-import { useLocale } from "next-intl";
-import Modal2 from "./Modal2";
+import { useLocale } from 'next-intl';
+import Modal2 from './Modal2';
 
 const YachtCard = ({ yacht }) => {
   const locale = useLocale();
   const [isModalOpen, setIsModalOpen] = useState(false);
 
-  const openModal = (e) => {
+  const openModal = e => {
     e.preventDefault();
     setIsModalOpen(true);
   };
@@ -16,13 +16,19 @@ const YachtCard = ({ yacht }) => {
   return (
     <>
       <div className="bg-white rounded-lg border-2 md:border-0 md:shadow-lg overflow-hidden flex flex-col h-full">
-        <Link href={`/${locale}/yachts-for-sale-dubai/${yacht.slug}`}>  
-          <img src={yacht.image} alt={yacht.name} className="w-full object-cover" />
+        <Link href={`/${locale}/yachts-for-sale-dubai/${yacht.slug}`}>
+          <img
+            src={yacht.image}
+            alt={yacht.name}
+            className="w-full object-cover"
+          />
         </Link>
         <div className="p-6 flex flex-col justify-between flex-grow">
           <div>
-            <Link href={`/${locale}/yachts-for-sale-dubai/${yacht.slug}`}>  
-              <h2 className="text-base sm:text-xl font-bold text-navy-900 mb-4">{yacht.name}</h2>
+            <Link href={`/${locale}/yachts-for-sale-dubai/${yacht.slug}`}>
+              <h2 className="text-base sm:text-xl font-bold text-navy-900 mb-4">
+                {yacht.name}
+              </h2>
             </Link>
             <div className="grid grid-cols-2 gap-6 mb-6">
               {/* Yacht detail items */}
@@ -53,7 +59,10 @@ const YachtCard = ({ yacht }) => {
             </div>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <Link href={`/${locale}/yachts-for-sale-dubai/${yacht.slug}`} className="blue-solid-button text-center">
+            <Link
+              href={`/${locale}/yachts-for-sale-dubai/${yacht.slug}`}
+              className="blue-solid-button text-center"
+            >
               KNOW MORE
             </Link>
             <button onClick={openModal} className="blue-solid-button">
@@ -77,49 +86,49 @@ const YachtCard = ({ yacht }) => {
 const YachtListings = () => {
   const yachts = [
     {
-      slug: "88ft-sunseeker",
-      name: "88 FT YACHT SUNSEEKER",
-      build: "88 FT YACHT SUNSEEKER",
-      cabins: "4",
-      length: "86.7 FT / 26.43 M",
-      guests: "8",
-      year: "2024",
-      price: "UPON REQUEST",
-      image: "/buy_yacht/SUNSEEKER 88 YACHT-1.webp"
+      slug: '88ft-sunseeker',
+      name: '88 FT YACHT SUNSEEKER',
+      build: '88 FT YACHT SUNSEEKER',
+      cabins: '4',
+      length: '86.7 FT / 26.43 M',
+      guests: '8',
+      year: '2024',
+      price: 'UPON REQUEST',
+      image: '/buy_yacht/SUNSEEKER 88 YACHT-1.webp',
     },
     {
-      slug: "78ft-cranchi",
-      name: "78 FT YACHTCRANCHI",
-      build: "78 FT YACHTCRANCHI",
-      cabins: "4",
-      length: "82.6 FT / 25.18 M",
-      guests: "8",
-      year: "2022",
-      price: "UPON REQUEST",
-      image: "/buy_yacht/MAIN CRANCHI 78 FT YACHT.webp"
+      slug: '78ft-cranchi',
+      name: '78 FT YACHTCRANCHI',
+      build: '78 FT YACHTCRANCHI',
+      cabins: '4',
+      length: '82.6 FT / 25.18 M',
+      guests: '8',
+      year: '2022',
+      price: 'UPON REQUEST',
+      image: '/buy_yacht/MAIN CRANCHI 78 FT YACHT.webp',
     },
     {
-      slug: "90ft-sunseeker",
-      name: "90 FT YACHT SUNSEEKER",
-      build: "90 FT YACHT SUNSEEKER",
-      cabins: "4",
-      length: "91.1 FT / 27.77 M",
-      guests: "10",
-      year: "2008",
-      price: "UPON REQUEST",
-      image: "/buy_yacht/90ftsunseeker.webp"
+      slug: '90ft-sunseeker',
+      name: '90 FT YACHT SUNSEEKER',
+      build: '90 FT YACHT SUNSEEKER',
+      cabins: '4',
+      length: '91.1 FT / 27.77 M',
+      guests: '10',
+      year: '2008',
+      price: 'UPON REQUEST',
+      image: '/buy_yacht/90ftsunseeker.webp',
     },
     {
-      slug: "76ft-canados",
-      name: "76 FT YACHT CANADOS",
-      build: "77.76 FT / 23.7 M",
-      cabins: "4",
-      length: "82.6 FT / 25.18 M",
-      guests: "8",
-      year: "2008",
-      price: "UPON REQUEST",
-      image: "/buy_yacht/76 FT YACHT CANADOS MAIN.webp"
-    }
+      slug: '76ft-canados',
+      name: '76 FT YACHT CANADOS',
+      build: '77.76 FT / 23.7 M',
+      cabins: '4',
+      length: '82.6 FT / 25.18 M',
+      guests: '8',
+      year: '2008',
+      price: 'UPON REQUEST',
+      image: '/buy_yacht/76 FT YACHT CANADOS MAIN.webp',
+    },
   ];
 
   return (

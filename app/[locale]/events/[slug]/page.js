@@ -1,21 +1,21 @@
-"use client";
-import React, { useState, useEffect } from "react";
-import { use } from "react";
-import { FaWhatsapp } from "react-icons/fa";
-import Modal2 from "@/app/components/Modal2";
-import { useData } from "@/app/context/DataContext";
+'use client';
+import React, { useState, useEffect } from 'react';
+import { use } from 'react';
+import { FaWhatsapp } from 'react-icons/fa';
+import Modal2 from '@/app/components/Modal2';
+import { useData } from '@/app/context/DataContext';
 
-import { useLocale, useTranslations } from "next-intl";
-import Image from "next/image";
-import ExperienceCarousal from "@/app/components/ExperienceCarousal";
-import { notFound } from "next/navigation";
+import { useLocale, useTranslations } from 'next-intl';
+import Image from 'next/image';
+import ExperienceCarousal from '@/app/components/ExperienceCarousal';
+import { notFound } from 'next/navigation';
 const page = ({ params }) => {
   const { slug } = use(params); // Get slug from the URL
   const { data, loading, error } = useData();
   const [isModalOpen, setIsModalOpen] = useState(false);
   const locale = useLocale();
   // Find the event by slug
-  const event = data?.events?.find((event) => event.slug === slug);
+  const event = data?.events?.find(event => event.slug === slug);
   console.log(event);
   console.log(locale);
 
@@ -62,7 +62,7 @@ const page = ({ params }) => {
           <div
             className="text-base font-secondary"
             dangerouslySetInnerHTML={{
-              __html: event.translations?.[locale]?.description || "",
+              __html: event.translations?.[locale]?.description || '',
             }}
           />
 
@@ -80,20 +80,18 @@ const page = ({ params }) => {
                   <FaWhatsapp size={20} />
                   WHATSAPP US
                 </a>
-				{
-					event.id === 44 ? (
-					<a
-					  className="blue-lined-button"
-					  href="https://fareharbor.com/embeds/book/centauruscharter/items/469615/?full-items=yes&flow=645487">BOOK NOW
-
-					  </a>
-					)
-					: (
-						<button onClick={handleQuote} className="blue-lined-button">
-                  			GET A QUOTE
-                		</button>
-					)
-				}
+                {event.id === 44 ? (
+                  <a
+                    className="blue-lined-button"
+                    href="https://fareharbor.com/embeds/book/centauruscharter/items/469615/?full-items=yes&flow=645487"
+                  >
+                    BOOK NOW
+                  </a>
+                ) : (
+                  <button onClick={handleQuote} className="blue-lined-button">
+                    GET A QUOTE
+                  </button>
+                )}
               </div>
             </div>
           </div>
@@ -106,7 +104,7 @@ const page = ({ params }) => {
         idName="events_id"
         idValue={event.id}
       />
-	  <ExperienceCarousal />
+      <ExperienceCarousal />
     </>
   );
 };

@@ -1,8 +1,8 @@
-"use client";
-import { useEffect, useRef, useState } from "react";
-import Image from "next/image";
-import EmblaCarousel from "embla-carousel";
-import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
+'use client';
+import { useEffect, useRef, useState } from 'react';
+import Image from 'next/image';
+import EmblaCarousel from 'embla-carousel';
+import { IoIosArrowBack, IoIosArrowForward } from 'react-icons/io';
 
 export default function YachtGallery({ gallery }) {
   const emblaRef = useRef(null);
@@ -11,37 +11,39 @@ export default function YachtGallery({ gallery }) {
   const thumbnailRef = useRef(null);
 
   useEffect(() => {
-  if (thumbnailRef.current) {
-    const thumbnails = thumbnailRef.current.children;
-    const thumbnail = thumbnails[activeIndex];
-    if (!thumbnail) return;
+    if (thumbnailRef.current) {
+      const thumbnails = thumbnailRef.current.children;
+      const thumbnail = thumbnails[activeIndex];
+      if (!thumbnail) return;
 
-    // Check if mobile (horizontal) or desktop (vertical)
-    if (window.innerWidth < 768) {
-      // Horizontal scroll for mobile
-      const container = thumbnailRef.current;
-      const thumbnailLeft = thumbnail.offsetLeft;
-      const thumbnailWidth = thumbnail.offsetWidth;
-      const containerWidth = container.offsetWidth;
-      // Scroll so the selected thumbnail is centered
-      container.scrollLeft = thumbnailLeft - (containerWidth - thumbnailWidth) / 2;
-    } else {
-      // Vertical scroll for desktop
-      const container = thumbnailRef.current;
-      const thumbnailTop = thumbnail.offsetTop;
-      const thumbnailHeight = thumbnail.offsetHeight;
-      const containerHeight = container.offsetHeight;
-      // Scroll so the selected thumbnail is centered
-      container.scrollTop = thumbnailTop - (containerHeight - thumbnailHeight) / 2;
+      // Check if mobile (horizontal) or desktop (vertical)
+      if (window.innerWidth < 768) {
+        // Horizontal scroll for mobile
+        const container = thumbnailRef.current;
+        const thumbnailLeft = thumbnail.offsetLeft;
+        const thumbnailWidth = thumbnail.offsetWidth;
+        const containerWidth = container.offsetWidth;
+        // Scroll so the selected thumbnail is centered
+        container.scrollLeft =
+          thumbnailLeft - (containerWidth - thumbnailWidth) / 2;
+      } else {
+        // Vertical scroll for desktop
+        const container = thumbnailRef.current;
+        const thumbnailTop = thumbnail.offsetTop;
+        const thumbnailHeight = thumbnail.offsetHeight;
+        const containerHeight = container.offsetHeight;
+        // Scroll so the selected thumbnail is centered
+        container.scrollTop =
+          thumbnailTop - (containerHeight - thumbnailHeight) / 2;
+      }
     }
-  }
-}, [activeIndex]);
+  }, [activeIndex]);
 
   useEffect(() => {
     if (emblaRef.current) {
       emblaInstance.current = EmblaCarousel(emblaRef.current, { loop: true });
 
-      emblaInstance.current.on("select", () => {
+      emblaInstance.current.on('select', () => {
         const index = emblaInstance.current.selectedScrollSnap();
         setActiveIndex(index);
       });
@@ -78,7 +80,7 @@ export default function YachtGallery({ gallery }) {
               key={index}
               onClick={() => emblaInstance.current?.scrollTo(index)}
               className={`flex-shrink-0 md:w-full aspect-video border-2 rounded 
-                ${activeIndex === index ? "border-primary-blue-2" : "border-transparent"}`}
+                ${activeIndex === index ? 'border-primary-blue-2' : 'border-transparent'}`}
               style={{ minHeight: 70, minWidth: 0 }}
             >
               <Image
@@ -104,10 +106,16 @@ export default function YachtGallery({ gallery }) {
           <IoIosArrowBack size={20} />
         </button>
 
-        <div className="embla__viewport overflow-hidden rounded-lg" ref={emblaRef}>
+        <div
+          className="embla__viewport overflow-hidden rounded-lg"
+          ref={emblaRef}
+        >
           <div className="embla__container flex">
             {gallery.map((item, index) => (
-              <div key={index} className="embla__slide min-w-full flex justify-center items-center lg:pb-0">
+              <div
+                key={index}
+                className="embla__slide min-w-full flex justify-center items-center lg:pb-0"
+              >
                 <Image
                   src={`https://www.centauruscharter.net/product/galleryimages/${item.image}`}
                   alt={`Slide ${index + 1}`}

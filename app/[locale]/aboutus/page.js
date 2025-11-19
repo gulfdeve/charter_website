@@ -1,6 +1,6 @@
-import React from "react";
-import YachtCarousal from "../../components/YachtCarousel";
-import LocationCarousel from "../../components/LocationCarousel";
+import React from 'react';
+import YachtCarousal from '../../components/YachtCarousel';
+import LocationCarousel from '../../components/LocationCarousel';
 
 const AboutPage = () => {
   return (
@@ -95,7 +95,7 @@ const AboutPage = () => {
         </div>
       </div>
       <YachtCarousal />
-	  <LocationCarousel />
+      <LocationCarousel />
     </>
   );
 };

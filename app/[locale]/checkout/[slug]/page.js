@@ -8,11 +8,8 @@ import TabbyPromoSection from './TabbyPromoSection';
 import { getTranslations } from 'next-intl/server';
 
 // Make sure we import the environment variables at the top
-const {
-  NEXT_PUBLIC_TABBY_MERCHANT_CODE,
-  TABBY_SECRET_KEY,
-  CENTAURUS_API_KEY,
-} = process.env;
+const { NEXT_PUBLIC_TABBY_MERCHANT_CODE, TABBY_SECRET_KEY, CENTAURUS_API_KEY } =
+  process.env;
 
 async function fetchBooking(slug) {
   const url = new URL(
@@ -44,21 +41,22 @@ async function fetchBooking(slug) {
 async function checkTabbyPreApproval(booking, locale) {
   try {
     const session = await createTabbySession(booking, locale);
-    
+
     // Check if installments are available (pre-approved)
-    const installments = session.configuration?.available_products?.installments;
-    
+    const installments =
+      session.configuration?.available_products?.installments;
+
     return {
       isApproved: !!installments && installments.length > 0,
       sessionData: session,
-      error: null
+      error: null,
     };
   } catch (error) {
     console.error('Tabby pre-approval check failed:', error);
-    return { 
-      isApproved: false, 
+    return {
+      isApproved: false,
       error: error.message || 'Failed to check Tabby eligibility',
-      sessionData: null
+      sessionData: null,
     };
   }
 }
@@ -82,7 +80,7 @@ function getTabbyRejectionMessage(reason, t) {
 export default async function CheckoutPage({ params, searchParams }) {
   const t = await getTranslations();
   const { slug, locale } = await params;
-  const { confirm, method,callback } = await searchParams;
+  const { confirm, method, callback } = await searchParams;
 
   if (confirm === '1') {
     if (method === 'tabby') return redirect(`/payments/tabby/${slug}`);
@@ -101,7 +99,9 @@ export default async function CheckoutPage({ params, searchParams }) {
   }
 
   // Check if already paid
-  const isAlreadyPaid = booking.payment_status === 'Completed' && Number(booking.amount) === Number(booking.received_amount);
+  const isAlreadyPaid =
+    booking.payment_status === 'Completed' &&
+    Number(booking.amount) === Number(booking.received_amount);
 
   // Check Tabby pre-approval status
   const tabbyStatus = await checkTabbyPreApproval(booking, locale);
@@ -124,16 +124,18 @@ export default async function CheckoutPage({ params, searchParams }) {
   } = booking;
 
   const yachtPrice = parseFloat(amount);
-//   const subtotal = yachtPrice * hours + addons_price;
-  const subtotal = parseFloat(amount)
+  //   const subtotal = yachtPrice * hours + addons_price;
+  const subtotal = parseFloat(amount);
   const total = subtotal - promo_discount;
 
   return (
     <div className="container mx-auto py-10 bg-white nav-space">
       <div className="flex flex-col items-center justify-center pt-10">
-        <h1 className="text-primary-blue-2 font-bold text-2xl md:text-3xl">{t('checkout.checkout')}</h1>
+        <h1 className="text-primary-blue-2 font-bold text-2xl md:text-3xl">
+          {t('checkout.checkout')}
+        </h1>
       </div>
-      
+
       {isAlreadyPaid && (
         <div className="bg-green-50 border border-green-200 rounded-md p-4 mt-4 mx-auto max-w-7xl">
           <p className="text-green-600 text-sm font-semibold">
@@ -141,7 +143,7 @@ export default async function CheckoutPage({ params, searchParams }) {
           </p>
         </div>
       )}
-      
+
       {(callback === 'cancel' || callback === 'failure') && (
         <div className="bg-red-50 border border-red-200 rounded-md p-4 mt-4 mx-auto max-w-7xl">
           <p className="text-red-600 text-sm">
@@ -151,14 +153,20 @@ export default async function CheckoutPage({ params, searchParams }) {
           </p>
         </div>
       )}
-      
+
       {/* Form with ID for button association */}
-      <form id="checkout-form" method="get" className="flex flex-col lg:flex-row gap-6 mt-8">
+      <form
+        id="checkout-form"
+        method="get"
+        className="flex flex-col lg:flex-row gap-6 mt-8"
+      >
         <input type="hidden" name="confirm" value="1" />
-        
+
         {/* Left Side - Personal & Payment */}
         <div className="w-full lg:w-2/3 bg-[#f5f5f5] rounded-lg p-4 md:p-6">
-          <p className="text-xl font-bold text-primary-blue-2 pt-4 pb-3">{t('checkout.personal-information')}</p>
+          <p className="text-xl font-bold text-primary-blue-2 pt-4 pb-3">
+            {t('checkout.personal-information')}
+          </p>
           <div className="font-secondary flex flex-col gap-4">
             <div className="flex flex-col md:flex-row gap-3">
               <input
@@ -198,7 +206,9 @@ export default async function CheckoutPage({ params, searchParams }) {
             </div>
           </div>
 
-          <p className="text-xl font-bold text-primary-blue-2 pt-6 pb-3">{t('checkout.payment-method')}</p>
+          <p className="text-xl font-bold text-primary-blue-2 pt-6 pb-3">
+            {t('checkout.payment-method')}
+          </p>
           <div className="flex flex-col sm:flex-row gap-4">
             <label className="w-full sm:w-auto">
               <input
@@ -209,8 +219,14 @@ export default async function CheckoutPage({ params, searchParams }) {
                 className="peer hidden"
               />
               <div className="border-2 rounded-lg p-4 flex items-center gap-2 cursor-pointer peer-checked:border-primary-blue-2 peer-checked:bg-primary-blue-light">
-                <img src="/images/debit-credit.webp" alt="Debit/Credit Card" className="w-16" />
-                <p className="text-primary-grey text-xs">{t('checkout.debit-credit-card')}</p>
+                <img
+                  src="/images/debit-credit.webp"
+                  alt="Debit/Credit Card"
+                  className="w-16"
+                />
+                <p className="text-primary-grey text-xs">
+                  {t('checkout.debit-credit-card')}
+                </p>
               </div>
             </label>
             {tabbyStatus.isApproved && (
@@ -222,10 +238,14 @@ export default async function CheckoutPage({ params, searchParams }) {
                   defaultChecked={method === 'tabby'}
                   className="peer hidden"
                 />
-                <div className={`border-2 rounded-lg p-4 flex items-center gap-2 cursor-pointer peer-checked:border-primary-blue-2 peer-checked:bg-primary-blue-light`}>
+                <div
+                  className={`border-2 rounded-lg p-4 flex items-center gap-2 cursor-pointer peer-checked:border-primary-blue-2 peer-checked:bg-primary-blue-light`}
+                >
                   <img src="/images/tabby.webp" alt="Tabby" className="w-16" />
                   <div>
-                    <p className="text-primary-grey text-xs">{t('checkout.pay-in-4-no-interest-no-fees')}</p>
+                    <p className="text-primary-grey text-xs">
+                      {t('checkout.pay-in-4-no-interest-no-fees')}
+                    </p>
                     <span className="text-green-600 text-xs block"></span>
                   </div>
                 </div>
@@ -248,25 +268,43 @@ export default async function CheckoutPage({ params, searchParams }) {
 
         {/* Right Side - Booking Info */}
         <div className="w-full lg:w-1/3 bg-[#f5f5f5] rounded-lg p-4 md:p-5">
-          <p className="text-xl font-bold text-primary-blue-2 pt-4 pb-3">{t('checkout.booking-information')}</p>
+          <p className="text-xl font-bold text-primary-blue-2 pt-4 pb-3">
+            {t('checkout.booking-information')}
+          </p>
           <p className="text-lg font-bold pt-4 pb-3">{title}</p>
           <img
             src={`https://www.centauruscharter.net/product/images/${image}`}
             alt="Yacht"
             className="w-24 md:w-32 rounded-lg mb-4"
           />
-          <p className="text-primary-grey text-xs">{t('checkout.trip-date-and-time')}</p>
+          <p className="text-primary-grey text-xs">
+            {t('checkout.trip-date-and-time')}
+          </p>
           <p className="text-black mb-2">
             {/* {new Date(booking_date).toISOString()} */}
-            {new Date(booking_date).toLocaleDateString('en-GB', { day: '2-digit', month: 'short', year: 'numeric' })}
+            {new Date(booking_date).toLocaleDateString('en-GB', {
+              day: '2-digit',
+              month: 'short',
+              year: 'numeric',
+            })}
           </p>
-          <p className="text-primary-grey text-xs">{t('checkout.trip-hours')}</p>
-          <p className="text-black mb-4">{hours} {t('checkout.hours')}</p>
+          <p className="text-primary-grey text-xs">
+            {t('checkout.trip-hours')}
+          </p>
+          <p className="text-black mb-4">
+            {hours} {t('checkout.hours')}
+          </p>
 
           <div className="py-6 border-y-2 border-gray-300">
             <div className="flex justify-between text-primary-grey">
               <span>{t('checkout.yacht-price')}:</span>
-              <span>AED {discounted_per_hour_price > 0 ? discounted_per_hour_price : per_hour_price} {t('checkout.per-hour')}</span>
+              <span>
+                AED{' '}
+                {discounted_per_hour_price > 0
+                  ? discounted_per_hour_price
+                  : per_hour_price}{' '}
+                {t('checkout.per-hour')}
+              </span>
             </div>
             <div className="flex justify-between text-primary-grey mt-4">
               <span>{t('checkout.add-ons-price')}:</span>
@@ -291,7 +329,7 @@ export default async function CheckoutPage({ params, searchParams }) {
       {/* Buttons remain outside form but linked via form attribute */}
       {!isAlreadyPaid && (
         <div className="mx-auto grid md:grid-cols-2 gap-4 mt-12 md:px-24">
-          <button 
+          <button
             type="button"
             className="p-2 rounded-md font-semibold border-2 border-gray-500"
           >

@@ -1,6 +1,6 @@
-"use client";
-import { FaFacebookF, FaLinkedinIn, FaWhatsapp } from "react-icons/fa";
-import { FaXTwitter } from "react-icons/fa6";
+'use client';
+import { FaFacebookF, FaLinkedinIn, FaWhatsapp } from 'react-icons/fa';
+import { FaXTwitter } from 'react-icons/fa6';
 
 export default function ShareButtons({ url, title }) {
   return (
@@ -36,7 +36,7 @@ export default function ShareButtons({ url, title }) {
       </a>
 
       <a
-        href={`https://api.whatsapp.com/send?text=${encodeURIComponent(title + " " + url)}`}
+        href={`https://api.whatsapp.com/send?text=${encodeURIComponent(title + ' ' + url)}`}
         target="_blank"
         rel="noopener noreferrer"
         className="btn-share text-sm bg-green-500 text-white px-4 py-2 rounded flex justify-center items-center gap-2"

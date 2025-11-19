@@ -5,9 +5,9 @@ import React, { createContext, useContext, useEffect } from 'react';
 const FareHarborContext = createContext();
 
 export const FareHarborProvider = ({ children }) => {
-  const openFareHarborModal = (id) => {
+  const openFareHarborModal = id => {
     const url = `https://fareharbor.com/embeds/book/centauruscharter/items/${id}/?full-items=yes&flow=645487&back=${encodeURIComponent(window.location.href)}`;
-    
+
     if (typeof window.FH === 'undefined') {
       console.log('FareHarbor script not loaded. Loading now...');
       loadFareHarborScript(() => {
@@ -22,7 +22,7 @@ export const FareHarborProvider = ({ children }) => {
     }
   };
 
-  const loadFareHarborScript = (callback) => {
+  const loadFareHarborScript = callback => {
     const existingScript = document.querySelector(
       'script[src="https://fareharbor.com/embeds/api/v1/?autolightframe=yes"]'
     );

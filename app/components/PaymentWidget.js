@@ -5,13 +5,13 @@ import Script from 'next/script';
 
 export default function PaymentWidget({
   checkoutScriptUrl,
-  merchantId,       // ← new prop
+  merchantId, // ← new prop
   sessionId,
   cancelUrl,
 }) {
   useEffect(() => {
     // Handle any checkout errors
-    window.errorCallback = (error) => {
+    window.errorCallback = error => {
       console.error('Checkout Error:', error);
     };
     // On cancel, redirect to provided cancelUrl
@@ -29,8 +29,8 @@ export default function PaymentWidget({
       onLoad={() => {
         if (window.Checkout) {
           window.Checkout.configure({
-            merchant: { id: merchantId },   // ← merchant settings
-            session:  { id: sessionId },
+            merchant: { id: merchantId }, // ← merchant settings
+            session: { id: sessionId },
           });
           window.Checkout.showPaymentPage();
         } else {

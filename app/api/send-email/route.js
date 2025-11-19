@@ -1,6 +1,6 @@
 // File: app/api/send-email/route.js
-import { NextResponse } from "next/server";
-import nodemailer from "nodemailer";
+import { NextResponse } from 'next/server';
+import nodemailer from 'nodemailer';
 
 export async function POST(request) {
   try {
@@ -17,7 +17,7 @@ export async function POST(request) {
     // Create a transporter with your SMTP configuration
     const transporter = nodemailer.createTransport({
       host: process.env.SMTP_HOST,
-      port: parseInt(process.env.SMTP_PORT || "465"),
+      port: parseInt(process.env.SMTP_PORT || '465'),
       secure: true, // Always true for port 465
       auth: {
         user: process.env.SMTP_USER,
@@ -30,11 +30,11 @@ export async function POST(request) {
     });
 
     // Default email subject
-    const defaultSubject = "New contact form inquiry on centauruscharter.com";
+    const defaultSubject = 'New contact form inquiry on centauruscharter.com';
 
     // Default recipients
     const defaultRecipients =
-      "habibjutt868@gmail.com, sales@centauruscharter.com";
+      'habibjutt868@gmail.com, sales@centauruscharter.com';
 
     // Format the email content
     const emailContent = `
@@ -49,7 +49,7 @@ export async function POST(request) {
     // Send the email
     const mailOptions = {
       from: process.env.SMTP_FROM_EMAIL,
-    //   to: "habibjutt868@gmail.com",
+      //   to: "habibjutt868@gmail.com",
       //   to: "habibjutt868@gmail.com, sales@centauruscharter.com",
       to: recipients && recipients.trim() ? recipients : defaultRecipients,
       subject: subject && subject.trim() ? subject : defaultSubject,
@@ -60,13 +60,13 @@ export async function POST(request) {
     await transporter.sendMail(mailOptions);
 
     return NextResponse.json(
-      { message: "Email sent successfully" },
+      { message: 'Email sent successfully' },
       { status: 200 }
     );
   } catch (error) {
-    console.error("Error sending email:", error);
+    console.error('Error sending email:', error);
     return NextResponse.json(
-      { message: "Error sending email", error: error.message },
+      { message: 'Error sending email', error: error.message },
       { status: 500 }
     );
   }

@@ -1,50 +1,50 @@
-"use client";
-import React, { useState, useEffect } from "react";
+'use client';
+import React, { useState, useEffect } from 'react';
 
 const Modal = ({ show, onClose }) => {
   const [isVisible, setIsVisible] = useState(false);
-  const [animationState, setAnimationState] = useState(""); // Manage animation classes
+  const [animationState, setAnimationState] = useState(''); // Manage animation classes
   const [submissionSuccess, setSubmissionSuccess] = useState(false); // success state
   const [errors, setErrors] = useState({}); // validation errors
 
   useEffect(() => {
-    if (typeof document === "undefined") return; // Ensure it runs only on client
+    if (typeof document === 'undefined') return; // Ensure it runs only on client
 
-    const getCookie = (name) => {
-      const cookieArr = document.cookie.split("; ");
+    const getCookie = name => {
+      const cookieArr = document.cookie.split('; ');
       for (let cookie of cookieArr) {
-        const [key, value] = cookie.split("=");
+        const [key, value] = cookie.split('=');
         if (key === name) return value;
       }
       return null;
     };
 
-    const isSubmitted = getCookie("emailSubmitted");
-    const isClosed = getCookie("modalClosed");
+    const isSubmitted = getCookie('emailSubmitted');
+    const isClosed = getCookie('modalClosed');
 
     // Show the modal after 5 seconds if user hasn't submitted or closed it before
     if (!isSubmitted && !isClosed) {
       setTimeout(() => {
         setIsVisible(true);
-        setAnimationState("fade-slide-down"); // Trigger show animation
+        setAnimationState('fade-slide-down'); // Trigger show animation
       }, 5000);
     }
   }, []);
 
   // Basic email validation
-  const validateForm = (email) => {
+  const validateForm = email => {
     const newErrors = {};
     if (!email.trim()) {
-      newErrors.email = "Email is required.";
+      newErrors.email = 'Email is required.';
     } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-      newErrors.email = "Invalid email format.";
+      newErrors.email = 'Invalid email format.';
     }
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
   };
 
   // Submit Handler
-  const handleSubmit = async (e) => {
+  const handleSubmit = async e => {
     e.preventDefault();
     const email = e.target.email.value;
 
@@ -61,17 +61,17 @@ const Modal = ({ show, onClose }) => {
 
       // Make a POST request with the query params
       const response = await fetch(url, {
-        method: "POST",
+        method: 'POST',
       });
 
       // Parse the JSON response
       const data = await response.json();
-      console.log("API Response:", data);
+      console.log('API Response:', data);
 
       // Check for success
-      if (response.ok && data.status === "success") {
+      if (response.ok && data.status === 'success') {
         // Mark as submitted so it doesn't appear again
-        setCookie("emailSubmitted", "true", 15);
+        setCookie('emailSubmitted', 'true', 15);
 
         // Show success bar
         setSubmissionSuccess(true);
@@ -82,17 +82,17 @@ const Modal = ({ show, onClose }) => {
           setSubmissionSuccess(false);
         }, 5000);
       } else {
-        alert("Something went wrong: " + (data.message || "Please try again."));
+        alert('Something went wrong: ' + (data.message || 'Please try again.'));
       }
     } catch (error) {
-      console.log("Error submitting form:", error);
-      alert("An error occurred. Please try again later.");
+      console.log('Error submitting form:', error);
+      alert('An error occurred. Please try again later.');
     }
   };
 
   const closeWithAnimation = () => {
-    setCookie("modalClosed", "true", 15); // Store cookie when closing
-    setAnimationState("fade-slide-up"); // Trigger hide animation
+    setCookie('modalClosed', 'true', 15); // Store cookie when closing
+    setAnimationState('fade-slide-up'); // Trigger hide animation
     setTimeout(() => {
       setIsVisible(false);
       onClose(); // Trigger parent onClose after animation completes
@@ -100,7 +100,7 @@ const Modal = ({ show, onClose }) => {
   };
 
   const setCookie = (name, value, days) => {
-    if (typeof document === "undefined") return; // Prevent execution on server
+    if (typeof document === 'undefined') return; // Prevent execution on server
 
     const date = new Date();
     date.setTime(date.getTime() + days * 24 * 60 * 60 * 1000);
@@ -116,7 +116,7 @@ const Modal = ({ show, onClose }) => {
       {/* Success Bar: appears on successful submission, closes after 5s */}
       {submissionSuccess && (
         <div className="absolute top-0 left-0 right-0 bg-green-500 text-white p-3 text-center z-10">
-          You have successfully subscribed! 
+          You have successfully subscribed!
         </div>
       )}
 

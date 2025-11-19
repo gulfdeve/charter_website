@@ -1,108 +1,108 @@
-import React from "react";
-import Image from "next/image";
+import React from 'react';
+import Image from 'next/image';
 
-import ContactGem from "@/app/components/ContactGem";
-import PageTitleHeading from "@/app/components/PageTitleHeading";
+import ContactGem from '@/app/components/ContactGem';
+import PageTitleHeading from '@/app/components/PageTitleHeading';
 
 const page = () => {
   const yachts = [
     {
-      name: "THUNDER/STORM - 36FT",
-      capacity: "10",
-      regular: "AED 2,380",
-      discounted: "AED 1,430",
+      name: 'THUNDER/STORM - 36FT',
+      capacity: '10',
+      regular: 'AED 2,380',
+      discounted: 'AED 1,430',
     },
     {
-      name: "RIVERSIDE - 40FT",
-      capacity: "12",
-      regular: "AED 3,000",
-      discounted: "AED 1,800",
+      name: 'RIVERSIDE - 40FT',
+      capacity: '12',
+      regular: 'AED 3,000',
+      discounted: 'AED 1,800',
     },
     {
-      name: "VASSIA - 56FT",
-      capacity: "21",
-      regular: "AED 4,160",
-      discounted: "AED 2,495",
+      name: 'VASSIA - 56FT',
+      capacity: '21',
+      regular: 'AED 4,160',
+      discounted: 'AED 2,495',
     },
     {
-      name: "LAGOONA - 56FT",
-      capacity: "24",
-      regular: "AED 4,600",
-      discounted: "AED 2,760",
+      name: 'LAGOONA - 56FT',
+      capacity: '24',
+      regular: 'AED 4,600',
+      discounted: 'AED 2,760',
     },
     {
-      name: "ETOSHA - 58FT",
-      capacity: "28",
-      regular: "AED 4,320",
-      discounted: "AED 2,590",
+      name: 'ETOSHA - 58FT',
+      capacity: '28',
+      regular: 'AED 4,320',
+      discounted: 'AED 2,590',
     },
     {
-      name: "SILVER CREEK - 61FT",
-      capacity: "30",
-      regular: "AED 5,000",
-      discounted: "AED 3,000",
+      name: 'SILVER CREEK - 61FT',
+      capacity: '30',
+      regular: 'AED 5,000',
+      discounted: 'AED 3,000',
     },
     {
-      name: "KRONOS - 86FT",
-      capacity: "50",
-      regular: "AED 14,000",
-      discounted: "AED 8,400",
+      name: 'KRONOS - 86FT',
+      capacity: '50',
+      regular: 'AED 14,000',
+      discounted: 'AED 8,400',
     },
     {
-      name: "POSEIDON - 118FT",
-      capacity: "up to 40",
-      regular: "AED 20,000",
-      discounted: " AED 12,000",
+      name: 'POSEIDON - 118FT',
+      capacity: 'up to 40',
+      regular: 'AED 20,000',
+      discounted: ' AED 12,000',
     },
   ];
   const yachts2 = [
     {
-      name: "THUNDER/STORM - 36FT",
-      capacity: "10",
-      regular: "AED 595",
-      discounted: "AED 450/hr",
+      name: 'THUNDER/STORM - 36FT',
+      capacity: '10',
+      regular: 'AED 595',
+      discounted: 'AED 450/hr',
     },
     {
-      name: "RIVERSIDE - 40FT",
-      capacity: "12",
-      regular: "AED 750",
-      discounted: "AED 565/hr",
+      name: 'RIVERSIDE - 40FT',
+      capacity: '12',
+      regular: 'AED 750',
+      discounted: 'AED 565/hr',
     },
     {
-      name: "VASSIA - 56FT",
-      capacity: "21",
-      regular: "AED 1,080",
-      discounted: "AED 810/hr",
+      name: 'VASSIA - 56FT',
+      capacity: '21',
+      regular: 'AED 1,080',
+      discounted: 'AED 810/hr',
     },
     {
-      name: "LAGOONA - 56FT",
-      capacity: "24",
-      regular: "AED 1,150",
-      discounted: "AED 865/hr",
+      name: 'LAGOONA - 56FT',
+      capacity: '24',
+      regular: 'AED 1,150',
+      discounted: 'AED 865/hr',
     },
     {
-      name: "ETOSHA - 58FT",
-      capacity: "28",
-      regular: "AED 1,040",
-      discounted: "AED 780/hr",
+      name: 'ETOSHA - 58FT',
+      capacity: '28',
+      regular: 'AED 1,040',
+      discounted: 'AED 780/hr',
     },
     {
-      name: "SILVER CREEK - 61FT",
-      capacity: "30",
-      regular: "AED 1,250",
-      discounted: "AED 940/hr",
+      name: 'SILVER CREEK - 61FT',
+      capacity: '30',
+      regular: 'AED 1,250',
+      discounted: 'AED 940/hr',
     },
     {
-      name: "KRONOS - 86FT",
-      capacity: "50",
-      regular: "AED 3,500",
-      discounted: "AED 2,625/hr",
+      name: 'KRONOS - 86FT',
+      capacity: '50',
+      regular: 'AED 3,500',
+      discounted: 'AED 2,625/hr',
     },
     {
-      name: "POSEIDON - 118FT",
-      capacity: "up to 40",
-      regular: "AED 5,000",
-      discounted: " AED 3,750/hr",
+      name: 'POSEIDON - 118FT',
+      capacity: 'up to 40',
+      regular: 'AED 5,000',
+      discounted: ' AED 3,750/hr',
     },
   ];
   return (
@@ -110,7 +110,7 @@ const page = () => {
       <PageTitleHeading title="Exclusive Yacht Charter Discounts for GEMS Rewards Members" />
       <div>
         <div className="flex items-center justify-center pb-10">
-		  <Image
+          <Image
             src="/GEMS-Offer-Banner.png"
             alt="Exclusive Yacht Charter Discounts for GEMS Rewards Members"
             className="w-full h-auto object-contain" // Full width with proper object fitting
@@ -131,12 +131,12 @@ const page = () => {
           <p>
             We’re thrilled to announce a special collaboration between GEMS
             Education and Centaurus Charter, bringing you an exclusive offer for
-            a <strong> 50% discount </strong>on a{" "}
+            a <strong> 50% discount </strong>on a{' '}
             <strong>one-time 3-hour morning yacht rental.</strong> This
-            incredible offer is available during the{" "}
+            incredible offer is available during the{' '}
             <strong>morning timings (6 AM – 2 PM),</strong> giving you the
             chance to enjoy the calm waters and stunning views of Dubai’s
-            coastline at half the price. Your journey will include{" "}
+            coastline at half the price. Your journey will include{' '}
             <strong> welcome drinks</strong> upon arrival, ensuring a refreshing
             start to your luxurious experience on board. Don’t miss out on this
             limited-time deal to experience the best of Dubai from the water.
@@ -206,7 +206,7 @@ const page = () => {
               {yachts.map((yacht, idx) => {
                 const isLast = idx === yachts.length - 1;
                 return (
-                  <tr key={idx} className={idx % 2 === 1 ? "bg-[#F5F9FF]" : ""}>
+                  <tr key={idx} className={idx % 2 === 1 ? 'bg-[#F5F9FF]' : ''}>
                     {/* Yacht Name */}
                     <td className="py-4 px-1 sm:px-2 font-semibold border border-white">
                       {yacht.name}
@@ -215,7 +215,7 @@ const page = () => {
                     {/* Capacity: normal font + italic for last row */}
                     <td
                       className={`py-4 px-1 sm:px-2 border border-white text-center ${
-                        isLast ? " font-bold" : "font-bold"
+                        isLast ? ' font-bold' : 'font-bold'
                       }`}
                     >
                       {yacht.capacity}
@@ -282,7 +282,7 @@ const page = () => {
               {yachts2.map((yacht, idx) => {
                 const isLast = idx === yachts.length - 1;
                 return (
-                  <tr key={idx} className={idx % 2 === 1 ? "bg-[#F5F9FF]" : ""}>
+                  <tr key={idx} className={idx % 2 === 1 ? 'bg-[#F5F9FF]' : ''}>
                     {/* Yacht Name */}
                     <td className="py-4 px-1 sm:px-2 font-semibold border border-white">
                       {yacht.name}
@@ -291,7 +291,7 @@ const page = () => {
                     {/* Capacity: normal font + italic for last row */}
                     <td
                       className={`py-4 px-1 sm:px-2 border border-white text-center ${
-                        isLast ? " font-bold" : "font-bold"
+                        isLast ? ' font-bold' : 'font-bold'
                       }`}
                     >
                       {yacht.capacity}

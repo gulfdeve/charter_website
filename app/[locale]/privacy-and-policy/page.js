@@ -1,5 +1,5 @@
-import React from "react";
-import Image from "next/image";
+import React from 'react';
+import Image from 'next/image';
 
 const page = () => {
   return (
@@ -17,25 +17,18 @@ const page = () => {
       </div>
       <div className="container mx-auto">
         <div className="flex items-center justify-center pt-10">
-          <h1 className=" text-primary-blue text-center">
-            {" "}
-            PRIVACY POLICY
-          </h1>
+          <h1 className=" text-primary-blue text-center"> PRIVACY POLICY</h1>
         </div>
 
         <div className="flex flex-col items-start justify-center py-10 text-primary-grey">
-          <h2 className="  text-left py-5  ">
-            Who we are
-          </h2>
+          <h2 className="  text-left py-5  ">Who we are</h2>
           <p className="  text-left     ">
             Our website address is: www.centauruscharter.com
           </p>
           <h2 className="  text-left py-5  ">
             What personal data we collect and why we collect it
           </h2>
-          <h3 className="  text-left py-5  ">
-            Comments
-          </h3>
+          <h3 className="  text-left py-5  ">Comments</h3>
           <p className="  text-left     ">
             When visitors leave comments on the site we collect the data shown
             in the comments form, and also the visitor’s IP address and browser
@@ -50,21 +43,15 @@ const page = () => {
             comment.
           </p>
 
-          <h3 className="  text-left py-5  ">
-            Media
-          </h3>
+          <h3 className="  text-left py-5  ">Media</h3>
           <p className="  text-left     ">
             If you upload images to the website, you should avoid uploading
             images with embedded location data (EXIF GPS) included. Visitors to
             the website can download and extract any location data from images
             on the website.
           </p>
-          <h2 className="  text-left py-5  ">
-            Contact forms
-          </h2>
-          <h3 className="  text-left py-5  ">
-            Cookies
-          </h3>
+          <h2 className="  text-left py-5  ">Contact forms</h2>
+          <h3 className="  text-left py-5  ">Cookies</h3>
           <p className="  text-left     ">
             If you leave a comment on our site you may opt-in to save your name,
             email address and website in cookies. These are for your convenience
@@ -105,15 +92,9 @@ const page = () => {
             website.
           </p>
 
-          <h3 className="  text-left py-5  ">
-            Analytics
-          </h3>
-          <h2 className="  text-left py-5  ">
-            Who we share your data with
-          </h2>
-          <h3 className="  text-left py-5  ">
-            How long we retain your data
-          </h3>
+          <h3 className="  text-left py-5  ">Analytics</h3>
+          <h2 className="  text-left py-5  ">Who we share your data with</h2>
+          <h3 className="  text-left py-5  ">How long we retain your data</h3>
           <p className="  text-left     ">
             If you leave a comment, the comment and its metadata are retained
             indefinitely. This is so we can recognize and approve any follow-up
@@ -138,9 +119,7 @@ const page = () => {
             not include any data we are obliged to keep for administrative,
             legal, or security purposes.
           </p>
-          <h3 className="  text-left py-5  ">
-            Where we send your data
-          </h3>
+          <h3 className="  text-left py-5  ">Where we send your data</h3>
           <p className="  text-left     ">
             Visitor comments may be checked through an automated spam detection
             service.

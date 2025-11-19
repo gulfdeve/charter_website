@@ -1,21 +1,21 @@
-import React from "react";
+import React from 'react';
 import { fetchData } from '@/app/lib/fetchData';
 import { getTranslations } from 'next-intl/server';
-import YachtCarousal from "@/app/components/YachtCarousel";
-import LocationCarousel from "@/app/components/LocationCarousel";
-import WatersportCarousal from "@/app/components/WatersportCarousal";
-import TailorYachtExperience from "@/app/components/TailorYachtExperience";
-import ExclusiveOffers from "@/app/components/ExclusiveOffers";
-import PageTitleHeading from "@/app/components/PageTitleHeading";
-import WatersportsGrid from "./WatersportsGrid";
+import YachtCarousal from '@/app/components/YachtCarousel';
+import LocationCarousel from '@/app/components/LocationCarousel';
+import WatersportCarousal from '@/app/components/WatersportCarousal';
+import TailorYachtExperience from '@/app/components/TailorYachtExperience';
+import ExclusiveOffers from '@/app/components/ExclusiveOffers';
+import PageTitleHeading from '@/app/components/PageTitleHeading';
+import WatersportsGrid from './WatersportsGrid';
 
 export default async function WatersportsPage({ params }) {
   const resolvedParams = await params;
-  const language = resolvedParams.locale || "en";
+  const language = resolvedParams.locale || 'en';
   const t = await getTranslations();
-  
+
   const data = await fetchData();
-  
+
   if (!data) {
     return <div>Loading...</div>;
   }
@@ -28,14 +28,14 @@ export default async function WatersportsPage({ params }) {
         <div className="md:block hidden">
           <WatersportsGrid packages={data?.packages} language={language} />
         </div>
-        
+
         <div className="md:hidden block">
-          <WatersportCarousal packages={data?.packages} language={language}/>
+          <WatersportCarousal packages={data?.packages} language={language} />
         </div>
       </div>
 
       <div className="container mx-auto px-3 py-5 pb-8">
-	  <p className="text-base text-primary-grey">
+        <p className="text-base text-primary-grey">
           Explore the beautiful coastline of the Arabian Gulf, the sun warming
           your skin, water lapping at your feet, and a warm breeze whispering in
           your ears. We have the best watersports activities with yacht
@@ -46,8 +46,8 @@ export default async function WatersportsPage({ params }) {
           or an easygoing day on the water, we've got something for everyone.
           <br />
           <br />
-          For a perfect excursion with friends and family, book your yachts
-          with water sports activity in Dubai today.
+          For a perfect excursion with friends and family, book your yachts with
+          water sports activity in Dubai today.
         </p>
       </div>
 

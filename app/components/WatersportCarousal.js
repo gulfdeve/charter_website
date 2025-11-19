@@ -1,10 +1,10 @@
-"use client";
-import { useEffect, useRef, useState } from "react";
-import EmblaCarousel from "embla-carousel";
-import { Link } from "@/app/i18n/routing";
-import { useData } from "@/app/context/DataContext";
-import { useLocale } from "next-intl";
-import { IoIosPricetag } from "react-icons/io"; // <-- Import your icon
+'use client';
+import { useEffect, useRef, useState } from 'react';
+import EmblaCarousel from 'embla-carousel';
+import { Link } from '@/app/i18n/routing';
+import { useData } from '@/app/context/DataContext';
+import { useLocale } from 'next-intl';
+import { IoIosPricetag } from 'react-icons/io'; // <-- Import your icon
 
 export default function WatersportCarousal({ packages, language }) {
   const emblaRef = useRef(null);
@@ -16,7 +16,7 @@ export default function WatersportCarousal({ packages, language }) {
     if (!embla && emblaRef.current) {
       const emblaInstance = EmblaCarousel(emblaRef.current, {
         loop: true,
-        align: "start",
+        align: 'start',
         slidesToScroll: 1,
       });
       setEmbla(emblaInstance);
@@ -29,7 +29,7 @@ export default function WatersportCarousal({ packages, language }) {
       <div ref={emblaRef} className="overflow-hidden">
         {/* Embla "container" for slides: using flex for horizontal layout */}
         <div className="flex gap-4 px-2">
-          {packages?.map((package_a) => (
+          {packages?.map(package_a => (
             // Fallback title logic
 
             <div
@@ -69,7 +69,7 @@ export default function WatersportCarousal({ packages, language }) {
                           Starting
                           <br className="hidden sm:block" />
                           <span className="text-xs pl-1 sm:pl-0">
-                            {" "}
+                            {' '}
                             AED {package_a.amount.toLocaleString()}
                           </span>
                         </p>

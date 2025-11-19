@@ -1,6 +1,6 @@
 // "use client";
-import { Link } from "../i18n/routing";
-import Image from "next/image";
+import { Link } from '../i18n/routing';
+import Image from 'next/image';
 
 export default function LandingNavbar() {
   return (
@@ -24,10 +24,7 @@ export default function LandingNavbar() {
 
             {/* Book Now Button */}
             <div className="flex items-center">
-              <Link
-                href="https://wa.link/8nj51w"
-                className="red-solid-button"
-              >
+              <Link href="https://wa.link/8nj51w" className="red-solid-button">
                 Book Now
               </Link>
             </div>

@@ -3,11 +3,11 @@ import React, { useEffect, useRef, useState } from 'react';
 const CalendarSection = () => {
   const iframeRef = useRef(null);
   const [iframeHeight, setIframeHeight] = useState(500); // Start taller
-  
+
   useEffect(() => {
     const iframe = iframeRef.current;
     if (!iframe) return;
-    
+
     // Function to attempt to adjust height
     const checkContentHeight = () => {
       try {
@@ -20,24 +20,24 @@ const CalendarSection = () => {
         // CORS restriction
       }
     };
-    
+
     // Run on load
     iframe.onload = checkContentHeight;
-    
+
     // Message event listener (if the iframe content is configured to send them)
-    const handleMessage = (event) => {
-      if (event.origin === "https://www.centauruscharter.net") {
+    const handleMessage = event => {
+      if (event.origin === 'https://www.centauruscharter.net') {
         if (event.data && event.data.height) {
           setIframeHeight(Math.max(event.data.height, 400));
         }
       }
     };
-    
+
     window.addEventListener('message', handleMessage);
-    
+
     // Polling as a fallback (check every 2 seconds)
     const intervalId = setInterval(checkContentHeight, 2000);
-    
+
     return () => {
       window.removeEventListener('message', handleMessage);
       clearInterval(intervalId);

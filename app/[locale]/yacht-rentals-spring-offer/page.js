@@ -1,15 +1,15 @@
 // app/spring-offer/page.jsx
-"use client";
+'use client';
 
-import React, { useEffect, useState } from "react";
-import Image from "next/image";
-import { Link } from "@/app/i18n/routing";
-import { useLocale } from "next-intl";
-import { FaYoutube } from "react-icons/fa";
+import React, { useEffect, useState } from 'react';
+import Image from 'next/image';
+import { Link } from '@/app/i18n/routing';
+import { useLocale } from 'next-intl';
+import { FaYoutube } from 'react-icons/fa';
 
 // Import your context hooks (adjust the import paths as needed)
-import { useData } from "@/app/context/DataContext";
-import { useLanguage } from "@/app/context/LanguageContext";
+import { useData } from '@/app/context/DataContext';
+import { useLanguage } from '@/app/context/LanguageContext';
 
 /*
   YachtCard Component (No Carousel):
@@ -38,12 +38,12 @@ const YachtCard = ({ yacht }) => {
         {/* Category Badge Overlay */}
         <div className="absolute top-4 flex flex-col items-start">
           {/* BEST SELLER or PREMIUM YACHT if applicable */}
-          {yacht.category.includes("bestSellers") && (
+          {yacht.category.includes('bestSellers') && (
             <div className="bg-primary-blue text-primary-yellow text-lg px-5">
               BEST SELLER
             </div>
           )}
-          {yacht.category.includes("premium") && (
+          {yacht.category.includes('premium') && (
             <div className="bg-primary-blue text-primary-yellow text-lg px-5">
               PREMIUM YACHT
             </div>
@@ -62,8 +62,8 @@ const YachtCard = ({ yacht }) => {
           {yacht.title}
         </h2>
         <p className="text-sm text-primary-blue text-left">
-          Build: <span className="font-bold">{yacht.model}</span> | Length:{" "}
-          <span className="font-bold">{yacht.length}</span> | Guests:{" "}
+          Build: <span className="font-bold">{yacht.model}</span> | Length:{' '}
+          <span className="font-bold">{yacht.length}</span> | Guests:{' '}
           <span className="font-bold">{yacht.guests}</span>
         </p>
         <p className="text-primary-blue font-bold text-xl pt-5 pb-2">
@@ -86,7 +86,7 @@ const YachtCard = ({ yacht }) => {
   - Filters yachts by active tab and renders a list of YachtCard components.
 */
 const Tabs = () => {
-  const [activeTab, setActiveTab] = useState("allYachts");
+  const [activeTab, setActiveTab] = useState('allYachts');
   const [yachts, setYachts] = useState([]);
   const { language } = useLanguage();
   const { data, loading, error } = useData();
@@ -95,15 +95,15 @@ const Tabs = () => {
   useEffect(() => {
     if (data?.products) {
       // Map each product to include its gallery images as an array.
-      const mappedYachts = data.products.map((item) => {
-        let category = ["allYachts"];
-        if (item.per_hour_price > 4000) category.push("premium");
-        if (["56ft-lagoona", "61ft-silvercreek"].includes(item.slug)) {
-          category.push("bestSellers");
+      const mappedYachts = data.products.map(item => {
+        let category = ['allYachts'];
+        if (item.per_hour_price > 4000) category.push('premium');
+        if (['56ft-lagoona', '61ft-silvercreek'].includes(item.slug)) {
+          category.push('bestSellers');
         }
         return {
           id: item.id,
-          images: item.gallery?.map((img) => img.image) || [],
+          images: item.gallery?.map(img => img.image) || [],
           title: item.translations?.[locale]?.name_of_yacht,
           slug: item.slug,
           fareharbor_id: item.fareharbor_id,
@@ -119,13 +119,11 @@ const Tabs = () => {
   }, [data, locale]);
 
   const renderContent = () => {
-    const filteredYachts = yachts.filter((yacht) =>
+    const filteredYachts = yachts.filter(yacht =>
       yacht.category.includes(activeTab)
     );
-    if (loading)
-      return <div className="text-center mt-20">Loading...</div>;
-    if (error)
-      return <div className="text-center mt-20">Error: {error}</div>;
+    if (loading) return <div className="text-center mt-20">Loading...</div>;
+    if (error) return <div className="text-center mt-20">Error: {error}</div>;
     if (filteredYachts.length === 0) {
       return (
         <div className="text-center mt-20">
@@ -135,7 +133,7 @@ const Tabs = () => {
     }
     return (
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 pb-10 gap-6 container mx-auto">
-        {filteredYachts.map((yacht) => (
+        {filteredYachts.map(yacht => (
           <YachtCard key={yacht.id} yacht={yacht} />
         ))}
       </div>
@@ -145,9 +143,11 @@ const Tabs = () => {
   return (
     <div className="w-full bg-white mt-14 lg:mt-0">
       <div className="flex justify-center items-center gap-8 text-xs sm:text-base md:text-lg font-semibold py-2 pb-10 md:py-7 px-2">
-        <button onClick={() => setActiveTab("allYachts")}>ALL YACHTS</button>
-        <button onClick={() => setActiveTab("bestSellers")}>BEST SELLERS</button>
-        <button onClick={() => setActiveTab("premium")}>PREMIUM</button>
+        <button onClick={() => setActiveTab('allYachts')}>ALL YACHTS</button>
+        <button onClick={() => setActiveTab('bestSellers')}>
+          BEST SELLERS
+        </button>
+        <button onClick={() => setActiveTab('premium')}>PREMIUM</button>
       </div>
       <div className="p-0 md:p-6 text-center">{renderContent()}</div>
     </div>
@@ -182,22 +182,23 @@ export default function SpringOffer() {
       {/* Description */}
       <div className="max-w-6xl text-center text-gray-500 space-y-4">
         <p>
-          Experience the perfect spring escape with an exclusive{" "}
-          <strong>30% discount</strong> on our afternoon yacht charters in Dubai.
-          Relax and unwind as you cruise along the stunning coastline, enjoying{" "}
-          <strong>unlimited complimentary drinks</strong> and the refreshing sea
-          breeze. With <strong>free transfers</strong> included (subject to
-          availability), all you need to do is sit back, relax, and enjoy the
-          ultimate luxury experience with your loved ones.
+          Experience the perfect spring escape with an exclusive{' '}
+          <strong>30% discount</strong> on our afternoon yacht charters in
+          Dubai. Relax and unwind as you cruise along the stunning coastline,
+          enjoying <strong>unlimited complimentary drinks</strong> and the
+          refreshing sea breeze. With <strong>free transfers</strong> included
+          (subject to availability), all you need to do is sit back, relax, and
+          enjoy the ultimate luxury experience with your loved ones.
         </p>
         <p>
           A wide range of itineraries and destinations are available, from Dubai
-          Marina to Burj Al Arab, JBR, and Atlantis. Renting a yacht in Dubai Marina
-          or Dubai Harbour is seamless with instant booking options.
+          Marina to Burj Al Arab, JBR, and Atlantis. Renting a yacht in Dubai
+          Marina or Dubai Harbour is seamless with instant booking options.
         </p>
         <p className="font-semibold">
-          This offer is <strong>valid on weekdays only</strong>, excluding weekends
-          and public holidays, and is available until <strong>April 18, 2025</strong>.
+          This offer is <strong>valid on weekdays only</strong>, excluding
+          weekends and public holidays, and is available until{' '}
+          <strong>April 18, 2025</strong>.
         </p>
       </div>
 

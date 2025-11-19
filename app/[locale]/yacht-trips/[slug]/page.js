@@ -1,47 +1,47 @@
-import React from "react";
-import { IoIosPricetag } from "react-icons/io";
-import { FaWhatsapp } from "react-icons/fa";
-import { Link } from "@/app/i18n/routing";
-import { getLocale } from "next-intl/server";
-import { fetchData } from "@/app/lib/fetchData";
-import ExperienceCarousal from "@/app/components/ExperienceCarousal";
-import PageTitleHeading from "@/app/components/PageTitleHeading";
-import { notFound } from "next/navigation";
+import React from 'react';
+import { IoIosPricetag } from 'react-icons/io';
+import { FaWhatsapp } from 'react-icons/fa';
+import { Link } from '@/app/i18n/routing';
+import { getLocale } from 'next-intl/server';
+import { fetchData } from '@/app/lib/fetchData';
+import ExperienceCarousal from '@/app/components/ExperienceCarousal';
+import PageTitleHeading from '@/app/components/PageTitleHeading';
+import { notFound } from 'next/navigation';
 
 // Generate metadata for SEO
 export async function generateMetadata({ params }) {
   const { slug } = await params;
   const locale = await getLocale();
   const data = await fetchData();
-  
-  const experience = data?.experiences?.find((exp) => exp.slug === slug);
-  
+
+  const experience = data?.experiences?.find(exp => exp.slug === slug);
+
   if (!experience) {
     return {
-      title: "Experience Not Found",
+      title: 'Experience Not Found',
     };
   }
-  
+
   return {
-    title: experience.translations?.[locale]?.title || "Yacht Experience",
-    description: experience.translations?.[locale]?.preivew_text || "Luxury yacht experience in Dubai",
+    title: experience.translations?.[locale]?.title || 'Yacht Experience',
+    description:
+      experience.translations?.[locale]?.preivew_text ||
+      'Luxury yacht experience in Dubai',
   };
 }
 
 const page = async ({ params }) => {
   // Await params to get slug
   const { slug } = await params;
-  
+
   // Get locale server-side
   const locale = await getLocale();
-  
+
   // Fetch data server-side
   const data = await fetchData();
-  
+
   // Find the experience
-  const experience = data?.experiences?.find(
-    (exp) => exp.slug === slug
-  );
+  const experience = data?.experiences?.find(exp => exp.slug === slug);
 
   // If no experience found, show 404
   if (!experience) {
@@ -53,28 +53,27 @@ const page = async ({ params }) => {
       <div className="container mx-auto nav-space">
         <PageTitleHeading title={experience.translations?.[locale]?.title} />
         <div className="grid grid-col-1 md:grid-cols-2 gap-7 pb-10">
-          {experience.yachts_data.map((yacht) => (
+          {experience.yachts_data.map(yacht => (
             <div
               key={yacht.yacht_id}
               className="flex flex-col p-3 sm:p-5 overflow-hidden rounded-md bg-white custom-shadow"
             >
-                {/* Title with Link */}
-                <Link href={`/yacht-rentals/${yacht.slug}`}>
-                  <h2 className="text-primary-blue text-xl font-bold pb-4 hover:text-primary-blue-2 transition-all duration-300 cursor-pointer">
-                    {yacht.translations?.[locale]?.[0]?.name_of_yacht}
-                  </h2>
-                </Link>
+              {/* Title with Link */}
+              <Link href={`/yacht-rentals/${yacht.slug}`}>
+                <h2 className="text-primary-blue text-xl font-bold pb-4 hover:text-primary-blue-2 transition-all duration-300 cursor-pointer">
+                  {yacht.translations?.[locale]?.[0]?.name_of_yacht}
+                </h2>
+              </Link>
               {/* Image with object-cover for proper scaling */}
               <div className="relative">
-
-              <Link href={`/yacht-rentals/${yacht.slug}`}>
-			  <img
-                src={`https://www.centauruscharter.net/product/images/${yacht.yacht_image}`}
-                alt={yacht.translations?.[locale]?.[0]?.name_of_yacht}
-                className="rounded-lg w-full object-cover"
-                />
-			  </Link>
-        <div className="lg:absolute grid grid-cols-2 sm:grid-cols-4 md:grid-cols-2 lg:grid-cols-4 items-center gap-0 bg-primary-blue-light rounded-lg center-absolute -bottom-5 left-0 right-0 lg:mx-5 mt-4 lg:mt-0">
+                <Link href={`/yacht-rentals/${yacht.slug}`}>
+                  <img
+                    src={`https://www.centauruscharter.net/product/images/${yacht.yacht_image}`}
+                    alt={yacht.translations?.[locale]?.[0]?.name_of_yacht}
+                    className="rounded-lg w-full object-cover"
+                  />
+                </Link>
+                <div className="lg:absolute grid grid-cols-2 sm:grid-cols-4 md:grid-cols-2 lg:grid-cols-4 items-center gap-0 bg-primary-blue-light rounded-lg center-absolute -bottom-5 left-0 right-0 lg:mx-5 mt-4 lg:mt-0">
                   {/* Model */}
                   <div className="text-primary-grey p-2 flex flex-col items-center justify-center text-center w-full h-full">
                     <span className="text-sm">Build:</span>
@@ -105,10 +104,8 @@ const page = async ({ params }) => {
                     </span>
                   </div>
                 </div>
-                </div>
+              </div>
               <div className="w-full flex justify-stretch flex-col pt-5 lg:pt-10">
-                
-
                 <div className="bg-primary-black w-full h-[0.05rem] "></div>
                 <div className="flex flex-col sm:flex-row flex-grow items-left lg:items-end justify-between w-full pt-5 gap-2 md:gap-3">
                   {/* Pricing Section */}
@@ -119,10 +116,11 @@ const page = async ({ params }) => {
                         {yacht.hours} Hours Rate
                         <br />
                         <span className="font-bold text-lg lg:text-xl text-primary-red">
-                         AED {(Number(yacht.yacht_price) || 0).toLocaleString()}
+                          AED{' '}
+                          {(Number(yacht.yacht_price) || 0).toLocaleString()}
                         </span>
                         <span className="text-primary-blue-2 s:text-sm  text-xs">
-                          {" "}
+                          {' '}
                           +VAT
                         </span>
                       </p>
@@ -157,7 +155,7 @@ const page = async ({ params }) => {
           <p
             className="text-base text-primary-grey"
             dangerouslySetInnerHTML={{
-              __html: experience.translations?.[locale]?.description || "",
+              __html: experience.translations?.[locale]?.description || '',
             }}
           />
         </div>

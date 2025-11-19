@@ -46,4 +46,3 @@ const YachtBookingButtons = ({ whatsappLink, isSold }) => {
 };
 
 export default YachtBookingButtons;
-

@@ -1,20 +1,20 @@
-import React, { useEffect, useRef } from "react";
-import EmblaCarousel from "embla-carousel";
-import { useData } from "../context/DataContext";
-import { useLocale } from "next-intl";
-import Image from "next/image";
-import { useRouter, usePathname, Link } from "@/app/i18n/routing";
+import React, { useEffect, useRef } from 'react';
+import EmblaCarousel from 'embla-carousel';
+import { useData } from '../context/DataContext';
+import { useLocale } from 'next-intl';
+import Image from 'next/image';
+import { useRouter, usePathname, Link } from '@/app/i18n/routing';
 
 export default function YachtmobCarousel() {
   const { data, loading } = useData();
-  const locale = useLocale()
+  const locale = useLocale();
   const emblaRef = useRef(null);
   const emblaInstance = useRef(null);
 
   useEffect(() => {
     if (emblaRef.current) {
       emblaInstance.current = EmblaCarousel(emblaRef.current, {
-        align: "start",
+        align: 'start',
         loop: true,
       });
       const autoplay = setInterval(() => {
@@ -38,7 +38,7 @@ export default function YachtmobCarousel() {
           {/* Embla container */}
           <div className="flex">
             {!loading &&
-              data?.products?.map((product) => (
+              data?.products?.map(product => (
                 <div
                   key={product.id}
                   className="flex-[0_0_90%] min-w-0 pl-2 pr-2"

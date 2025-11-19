@@ -13,7 +13,7 @@ const TopLoader = () => {
   useEffect(() => {
     setLoading(true);
     setProgress(20);
-    
+
     // Simulate progress
     const timer1 = setTimeout(() => setProgress(40), 100);
     const timer2 = setTimeout(() => setProgress(60), 200);
@@ -38,7 +38,7 @@ const TopLoader = () => {
   useEffect(() => {
     if (typeof window === 'undefined') return;
 
-    const handleLinkClick = (e) => {
+    const handleLinkClick = e => {
       // Only trigger for internal links
       const target = e.currentTarget;
       if (
@@ -55,7 +55,9 @@ const TopLoader = () => {
 
     // Add event listeners
     const addLinkListeners = () => {
-      const links = document.querySelectorAll('a[href^="/"], a[href^="' + window.location.origin + '"]');
+      const links = document.querySelectorAll(
+        'a[href^="/"], a[href^="' + window.location.origin + '"]'
+      );
       links.forEach(link => {
         link.addEventListener('click', handleLinkClick);
       });
@@ -65,7 +67,7 @@ const TopLoader = () => {
     addLinkListeners();
 
     // Setup mutation observer to handle dynamically added links
-    const observer = new MutationObserver((mutations) => {
+    const observer = new MutationObserver(mutations => {
       mutations.forEach(mutation => {
         if (mutation.type === 'childList') {
           addLinkListeners();
@@ -75,11 +77,13 @@ const TopLoader = () => {
 
     observer.observe(document.body, {
       childList: true,
-      subtree: true
+      subtree: true,
     });
 
     return () => {
-      const links = document.querySelectorAll('a[href^="/"], a[href^="' + window.location.origin + '"]');
+      const links = document.querySelectorAll(
+        'a[href^="/"], a[href^="' + window.location.origin + '"]'
+      );
       links.forEach(link => {
         link.removeEventListener('click', handleLinkClick);
       });
@@ -111,7 +115,7 @@ const TopLoader = () => {
   if (!loading) return null;
 
   return (
-    <div 
+    <div
       style={{
         position: 'fixed',
         top: 0,

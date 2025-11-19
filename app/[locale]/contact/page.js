@@ -1,10 +1,10 @@
-import React from "react";
-import { MdLocationOn } from "react-icons/md";
-import { IoCallSharp } from "react-icons/io5";
-import { FaWhatsapp } from "react-icons/fa";
-import { MdEmail } from "react-icons/md";
-import { useTranslations } from "next-intl";
-import ContactForm from "./ContactForm";
+import React from 'react';
+import { MdLocationOn } from 'react-icons/md';
+import { IoCallSharp } from 'react-icons/io5';
+import { FaWhatsapp } from 'react-icons/fa';
+import { MdEmail } from 'react-icons/md';
+import { useTranslations } from 'next-intl';
+import ContactForm from './ContactForm';
 
 export default function Page() {
   const t = useTranslations();
@@ -37,9 +37,13 @@ export default function Page() {
           <div className="flex flex-col items-start md:items-center justify-center space-y-7 md:-mt-40">
             <div className="flex flex-row items-start justify-start">
               <div className="p-3 rounded-full bg-primary-blue-2">
-                <MdLocationOn className="text-2xl text-primary-yellow" />{" "}
+                <MdLocationOn className="text-2xl text-primary-yellow" />{' '}
               </div>
-              <a href="https://maps.app.goo.gl/mFvSe2XsrVUDRdfK6" target="_blank" className="text-sm w-[16rem] xs:w-[19rem] pl-5 font-medium">
+              <a
+                href="https://maps.app.goo.gl/mFvSe2XsrVUDRdfK6"
+                target="_blank"
+                className="text-sm w-[16rem] xs:w-[19rem] pl-5 font-medium"
+              >
                 {t('footer.office-location')}
               </a>
             </div>
@@ -56,10 +60,10 @@ export default function Page() {
             </div>
             <div className="flex flex-row items-center justify-start">
               <div className="p-3 rounded-full bg-primary-blue-2">
-                <FaWhatsapp className="text-2xl text-primary-yellow" />{" "}
+                <FaWhatsapp className="text-2xl text-primary-yellow" />{' '}
               </div>
               <a
-                href={t("header.whatsapp_url")}
+                href={t('header.whatsapp_url')}
                 target="_blank"
                 className="text-sm w-[16rem] xs:w-[19rem] pl-5 text-primary-blue-2 font-medium"
                 rel="noopener noreferrer"
@@ -75,7 +79,7 @@ export default function Page() {
                 href="mailto:info@centauruscharter.com"
                 className="text-sm w-[16rem] xs:w-[19rem] pl-5 text-primary-blue-2 font-medium"
               >
-                <span className="text-black">Email:</span>{" "}
+                <span className="text-black">Email:</span>{' '}
                 info@centauruscharter.com
               </a>
             </div>

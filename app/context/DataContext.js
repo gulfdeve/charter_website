@@ -1,5 +1,5 @@
 // app/context/DataContext.js
-'use client'
+'use client';
 import React, { createContext, useContext, useState, useEffect } from 'react';
 import { fetchData } from '@/app/lib/fetchData';
 
@@ -21,7 +21,7 @@ export const DataProvider = ({ children, initialData = null }) => {
   useEffect(() => {
     if (initialData) {
       setLoading(false);
-      console.log("using initital data instead of making api call")
+      console.log('using initital data instead of making api call');
       return;
     }
 
@@ -34,7 +34,7 @@ export const DataProvider = ({ children, initialData = null }) => {
           throw new Error('Failed to fetch data');
         }
       } catch (error) {
-        console.error("Error fetching data:", error);
+        console.error('Error fetching data:', error);
         setError(error.message);
       } finally {
         setLoading(false);
