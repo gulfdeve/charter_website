@@ -1,4 +1,3 @@
-"use client";
 import React from "react";
 import { IoIosPricetag } from "react-icons/io";
 import { Link } from "@/app/i18n/routing";

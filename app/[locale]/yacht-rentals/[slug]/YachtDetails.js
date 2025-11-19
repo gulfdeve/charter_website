@@ -1,4 +1,3 @@
-"use client";
 import { FaQuestionCircle, FaWhatsapp, FaMapMarkerAlt } from "react-icons/fa";
 import { Link } from "@/app/i18n/routing";
 import { useLocale, useTranslations } from "next-intl";

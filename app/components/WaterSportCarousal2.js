@@ -2,14 +2,10 @@
 import React, { useEffect, useRef } from "react";
 import EmblaCarousel from "embla-carousel";
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
-import { useData } from "../context/DataContext";
-import { useLanguage } from "@/app/context/LanguageContext";
 import Image from "next/image";
 import { Link } from "@/app/i18n/routing";
 
-export default function WaterSportCarousal2({packages}) {
-  const { data, loading } = useData();
-  const { language } = useLanguage();
+export default function WaterSportCarousal2({ packages, language }) {
   const emblaRef = useRef(null);
   const emblaInstance = useRef(null);
 

@@ -1,11 +1,10 @@
-"use client";
 import React from "react";
 import { FaWhatsapp } from "react-icons/fa";
-import { useData } from "@/app/context/DataContext";
-import { useLocale } from "next-intl";
-import { notFound, useParams } from "next/navigation";
+import { notFound } from "next/navigation";
+import { fetchData } from "@/app/lib/fetchData";
 import PageTitleHeading from "../../../components/PageTitleHeading";
 import WaterSportCarousal2 from "../../../components/WaterSportCarousal2";
+
 const waterSportRate = [
   {
     id: 1,
@@ -60,11 +59,17 @@ const waterSportRate = [
   },
 ];
 
+// Server Component - data fetching happens on the server
+export default async function Page({ params }) {
+  // Await params to get slug and locale
+  const { slug, locale } = await params;
+  
+  // Fetch data on the server
+  const data = await fetchData();
 
-const Page = () => {
-  const { data, loading, error } = useData();
-  const locale = useLocale();
-  const { slug } = useParams(); // Gets the current slug from the URL
+  if (!data) {
+    return <p>Error loading data</p>;
+  }
 
   const settingsItem = data?.settings?.[0];
   const {
@@ -73,129 +78,125 @@ const Page = () => {
     header_whatsapp_url,
   } = settingsItem || {};
 
-  if (loading) return <p>Loading...</p>;
-  if (error) return <p>Error: {error.message}</p>;
-
   // Find the package matching the slug
   const packageItem = data?.packages?.find((pkg) => pkg.slug === slug);
 
   if (!packageItem) {
     notFound();
   }
+  
   const waterSport = waterSportRate.find(
-  (item) =>
-    item.title.toLowerCase() ===
-    packageItem.translations[locale].title.toLowerCase()
-);
+    (item) =>
+      item.title.toLowerCase() ===
+      packageItem.translations[locale].title.toLowerCase()
+  );
 
   return (
-    <><div className="container mx-auto nav-space">
+    <>
+      <div className="container mx-auto nav-space">
+        <div className="flex flex-col lg:flex-row justify-between items-center gap-5 pt-6 md:mt-20 ">
+          {/* First column (30%) */}
+          <div className="flex items-start lg:w-7/12">
+            <img
+              src={`https://www.centauruscharter.net/product/images/${packageItem.image}`}
+              alt={packageItem.translations[locale].title}
+              className="w-full rounded-lg" />
+          </div>
 
-
-      <div className="flex flex-col lg:flex-row justify-between items-center gap-5 pt-6 md:mt-20 ">
-        {/* First column (30%) */}
-        <div className="flex items-start lg:w-7/12">
-          <img
-            src={`https://www.centauruscharter.net/product/images/${packageItem.image}`}
-            alt={packageItem.translations[locale].title}
-            className="w-full rounded-lg" />
-        </div>
-
-        {/* Second column (70%) */}
-
-        <div className="lg:w-5/12">
-          <PageTitleHeading title={packageItem.translations[locale].title} className="py-0 lg:pt-0 pb-0" />
-          <h2 className="text-base text-primary-grey text-center font-bold mb-5">
-            {packageItem.translations[locale].preview_text}
-            <br />
-          </h2>
-          <div className="text-center grid grid-cols-1  items-center gap-2  w-full overflow-hidden mb-7">
+          {/* Second column (70%) */}
+          <div className="lg:w-5/12">
+            <PageTitleHeading title={packageItem.translations[locale].title} className="py-0 lg:pt-0 pb-0" />
+            <h2 className="text-base text-primary-grey text-center font-bold mb-5">
+              {packageItem.translations[locale].preview_text}
+              <br />
+            </h2>
+            <div className="text-center grid grid-cols-1  items-center gap-2  w-full overflow-hidden mb-7">
 
 {/* ORIGINAL CODE FOR SINGLE RATE FROM ADMIN PANEL
-            <div className="grid grid-cols-3 bg-primary-blue-light rounded-lg text-primary-blue">
-              
-              <div className=" p-2 flex flex-col items-center ">
-                <span className="font-bold text-sm">Ride:</span>
-                <span className="font-semibold text-sm  xl:text-sm">
-                  {packageItem.translations[locale].title}
-                </span>
-              </div>
-             
-              <div className="  p-2 flex flex-col items-center">
-                <span className="font-bold text-sm">Duration:</span>
-                <span className="font-semibold text-sm  xl:text-sm">
-                  30 mins
-                </span>
-              </div>
-              
-              <div className="text-white bg-primary-blue rounded-r-lg p-2 flex flex-col items-center">
-                <span className="font-bold text-sm">Price:</span>
-                <span className="font-semibold text-sm xl:text-sm">
-                  {packageItem.amount} AED
-                </span>
-              </div>
-            </div> */}
-            {waterSport && (
-            <div className="text-center grid grid-cols-1  items-center gap-2  w-full overflow-hidden mb-7">
-              {waterSport.infoBoxes.map((rate, idx) => (
-                <div
-                  key={rate.label + rate.duration + idx}
-                  className="grid grid-cols-3 bg-primary-blue-light rounded-lg text-primary-blue"
-                >
-              
-                  {/* Ride Title */}
-                      <div className=" p-2 flex flex-col items-center ">
-                        <span className="font-bold text-sm">Ride:</span>
-                        <span className="font-semibold text-sm  xl:text-sm">
-                          {rate.label}
-                        </span>
-                      </div>
-                      {/* Duration */}
-                      <div className="  p-2 flex flex-col items-center">
-                        <span className="font-bold text-sm">Duration:</span>
-                        <span className="font-semibold text-sm  xl:text-sm">
-                          {rate.duration} mins
-                        </span>
-                      </div>
-                      {/* Price */}
-                      <div className="text-white bg-primary-blue rounded-r-lg p-2 flex flex-col items-center">
-                        <span className="font-bold text-sm">Price:</span>
-                        <span className="font-semibold text-sm xl:text-sm">
-                          {rate.price} AED
-                        </span>
-                      </div>
+              <div className="grid grid-cols-3 bg-primary-blue-light rounded-lg text-primary-blue">
+                
+                <div className=" p-2 flex flex-col items-center ">
+                  <span className="font-bold text-sm">Ride:</span>
+                  <span className="font-semibold text-sm  xl:text-sm">
+                    {packageItem.translations[locale].title}
+                  </span>
                 </div>
-              ))}
-            </div>
+               
+                <div className="  p-2 flex flex-col items-center">
+                  <span className="font-bold text-sm">Duration:</span>
+                  <span className="font-semibold text-sm  xl:text-sm">
+                    30 mins
+                  </span>
+                </div>
+                
+                <div className="text-white bg-primary-blue rounded-r-lg p-2 flex flex-col items-center">
+                  <span className="font-bold text-sm">Price:</span>
+                  <span className="font-semibold text-sm xl:text-sm">
+                    {packageItem.amount} AED
+                  </span>
+                </div>
+              </div> */}
+              {waterSport && (
+              <div className="text-center grid grid-cols-1  items-center gap-2  w-full overflow-hidden mb-7">
+                {waterSport.infoBoxes.map((rate, idx) => (
+                  <div
+                    key={rate.label + rate.duration + idx}
+                    className="grid grid-cols-3 bg-primary-blue-light rounded-lg text-primary-blue"
+                  >
+                
+                    {/* Ride Title */}
+                        <div className=" p-2 flex flex-col items-center ">
+                          <span className="font-bold text-sm">Ride:</span>
+                          <span className="font-semibold text-sm  xl:text-sm">
+                            {rate.label}
+                          </span>
+                        </div>
+                        {/* Duration */}
+                        <div className="  p-2 flex flex-col items-center">
+                          <span className="font-bold text-sm">Duration:</span>
+                          <span className="font-semibold text-sm  xl:text-sm">
+                            {rate.duration} mins
+                          </span>
+                        </div>
+                        {/* Price */}
+                        <div className="text-white bg-primary-blue rounded-r-lg p-2 flex flex-col items-center">
+                          <span className="font-bold text-sm">Price:</span>
+                          <span className="font-semibold text-sm xl:text-sm">
+                            {rate.price} AED
+                          </span>
+                        </div>
+                  </div>
+                ))}
+              </div>
 
 )}
 
-          </div>
-
-          <div className="flex flex-col xl:flex-row items-stretch xl:items-center text-center w-full justify-center">
-            {/* WhatsApp Button */}
-            <div className=" p-1 flex flex-col items-center">
-              <a href={header_whatsapp_url || "#"} className="w-full blue-solid-button flex justify-center items-center gap-1 text-center">
-                <FaWhatsapp size={20} />
-                WHATSAPP US
-              </a>
             </div>
-            {/* Book Now Button */}
-            <div className=" p-1 flex flex-col items-center xl:rounded-r-lg">
-              <a href="https://fareharbor.com/embeds/book/centauruscharter/?full-items=yes" className="w-full blue-solid-button">BOOK NOW WITH {packageItem.translations[locale].title}</a>
+
+            <div className="flex flex-col xl:flex-row items-stretch xl:items-center text-center w-full justify-center">
+              {/* WhatsApp Button */}
+              <div className=" p-1 flex flex-col items-center">
+                <a href={header_whatsapp_url || "#"} className="w-full blue-solid-button flex justify-center items-center gap-1 text-center">
+                  <FaWhatsapp size={20} />
+                  WHATSAPP US
+                </a>
+              </div>
+              {/* Book Now Button */}
+              <div className=" p-1 flex flex-col items-center xl:rounded-r-lg">
+                <a href="https://fareharbor.com/embeds/book/centauruscharter/?full-items=yes" className="w-full blue-solid-button">BOOK NOW WITH {packageItem.translations[locale].title}</a>
+              </div>
             </div>
           </div>
         </div>
+        <div className="py-12">
+          <div
+            className="text-base text-primary-grey"
+            dangerouslySetInnerHTML={{
+              __html: packageItem.translations[locale].description || "",
+            }} />
+        </div>
       </div>
-      <div className="py-12">
-        <div
-          className="text-base text-primary-grey"
-          dangerouslySetInnerHTML={{
-            __html: packageItem.translations[locale].description || "",
-          }} />
-      </div>
-    </div><WaterSportCarousal2 packages={data?.packages} language={locale} /></>
+      <WaterSportCarousal2 packages={data?.packages} language={locale} />
+    </>
   );
-};
-
-export default Page;
+}
