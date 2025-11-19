@@ -82,7 +82,7 @@ const toursData = [
     blueHeadline: 'AVAILABLE ALL DAYS OF THE WEEK',
     validity: '*Valid from July 1-September 15, 2025',
     yellowHeadline: '🇦🇪 NATIONAL DAY OFFER - ENJOY 15% OFF',
-    smallHeadline: '(VALID FOR NIGHT TOURS SCHEDULED ON 1-2 DECEMBER)',
+    smallHeadline: '(VALID FOR NIGHT TOURS ON 1-2 DEC)',
     fareharborLink:
       'https://fareharbor.com/embeds/book/centauruscharter/items/488872/?full-items=yes&flow=no',
   },
