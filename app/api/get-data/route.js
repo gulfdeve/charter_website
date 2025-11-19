@@ -3,10 +3,6 @@ export const config = {
   regions: ['fra1'],
 };
 
-// Add dynamic route config to ensure revalidation works
-export const revalidate = 86400; // 24 hours
-export const dynamic = 'force-cache'; // Use cache but allow revalidation
-
 export async function GET() {
   try {
     const url = `${process.env.API_DOMAIN}/api/api_new/basic/generate`;
