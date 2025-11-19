@@ -4,6 +4,28 @@ import { notFound } from 'next/navigation';
 import ShareButtons from './sharebuttons';
 import { FiArrowRight, FiArrowLeft } from 'react-icons/fi';
 
+// Force static generation with ISR (24 hours revalidation)
+export const dynamic = 'force-static';
+export const revalidate = 86400; // 24 hours
+
+// Pre-generate all blog slug + locale combinations at build time
+export async function generateStaticParams() {
+  const locales = ['en', 'ar', 'ru', 'zh'];
+  
+  // Generate a param combination for each blog slug × each locale
+  const params = [];
+  blogsData.forEach(blog => {
+    locales.forEach(locale => {
+      params.push({
+        slug: blog.slug,
+        locale: locale,
+      });
+    });
+  });
+
+  return params;
+}
+
 export async function generateMetadata({ params }) {
   const { slug } = await params;
   const slugLower = slug.toLowerCase();

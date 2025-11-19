@@ -69,6 +69,8 @@ export async function GET(request) {
         '/offers',
         '/faq',
         '/terms-and-condition',
+        '/blogs',
+        '/abu-dhabi-race-yacht-charter',
         '/yacht-rentals',
         '/events',
         '/yacht-trips',
@@ -92,6 +94,7 @@ export async function GET(request) {
       // Also revalidate dynamic routes (this will revalidate ALL pages under these paths)
       const dynamicRoutes = [
         '/offers/[slug]',
+        '/blogs/[slug]',
         '/yacht-rentals/[slug]',
         '/events/[slug]',
         '/yacht-trips/[slug]',

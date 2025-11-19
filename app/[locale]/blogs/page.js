@@ -4,6 +4,20 @@ import Link from 'next/link';
 import blogs from './blogs.json';
 import FeaturedBlogsCarousel from './FeaturedBlogsCarousel';
 
+// Force static generation with ISR (24 hours revalidation)
+export const dynamic = 'force-static';
+export const revalidate = 86400; // 24 hours
+
+// Pre-generate all locale versions at build time
+export async function generateStaticParams() {
+  return [
+    { locale: 'en' },
+    { locale: 'ar' },
+    { locale: 'ru' },
+    { locale: 'zh' },
+  ];
+}
+
 export default function BlogPage() {
   // Get featured blogs
   const featuredBlogs = blogs.filter(blog => blog.isFeatured).slice(0, 5);

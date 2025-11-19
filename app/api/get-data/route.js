@@ -8,7 +8,7 @@ export const dynamic = 'force-dynamic';
 
 export async function GET() {
   try {
-    const url = `${process.env.API_DOMAIN}/api/api_new/basic/generate`;
+    const url = `${process.env.API_DOMAIN}/api/api_new/basic`;
     console.log("✅ Fetching from external API:", url);
     console.log("⏰ Request time:", new Date().toISOString());
 
