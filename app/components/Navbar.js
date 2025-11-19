@@ -112,7 +112,7 @@ export default function Navbar() {
                   onMouseLeave={() => setPrivateYachtsOpen(false)}
                 >
                   <span
-                    className={`h-full flex items-center justify-between cursor-pointer gap-1 py-2 transition-all duration-200 font-primary ${
+                    className={`h-full flex items-center justify-between cursor-pointer gap-1 transition-all duration-200 font-primary ${
                       pathname === '/yacht-rentals' ||
                       pathname.startsWith('/yacht-rentals/')
                         ? 'text-primary-blue border-primary-yellow font-semibold'
@@ -121,7 +121,7 @@ export default function Navbar() {
                   >
                     <Link
                       href="/yacht-rentals"
-                      className="tracking-[1px] uppercase"
+                      className="tracking-[1px] uppercase h-full flex items-center py-2"
                     >
                       {t('navbar.private-yachts')}
                     </Link>
@@ -201,7 +201,7 @@ export default function Navbar() {
                   onMouseLeave={() => setExperiencesOpen(false)}
                 >
                   <span
-                    className={`h-full flex items-center justify-between cursor-pointer gap-1 py-2 transition-all duration-200 font-primary ${
+                    className={`h-full flex items-center justify-between cursor-pointer gap-1 transition-all duration-200 font-primary ${
                       pathname === '/yacht-trips' ||
                       pathname.startsWith('/yacht-trips/')
                         ? 'text-primary-blue underline-primary-yellow font-semibold'
@@ -210,7 +210,7 @@ export default function Navbar() {
                   >
                     <Link
                       href="/yacht-trips"
-                      className="tracking-[1px] uppercase"
+                      className="tracking-[1px] uppercase h-full flex items-center py-2"
                     >
                       {t('navbar.experiences')}
                     </Link>

@@ -4,6 +4,20 @@ import Image from 'next/image';
 import ContactGem from '@/app/components/ContactGem';
 import PageTitleHeading from '@/app/components/PageTitleHeading';
 
+// Force static generation with ISR (24 hours revalidation)
+export const dynamic = 'force-static';
+export const revalidate = 86400; // 24 hours
+
+// Pre-generate all locale versions at build time
+export async function generateStaticParams() {
+  return [
+    { locale: 'en' },
+    { locale: 'ar' },
+    { locale: 'ru' },
+    { locale: 'zh' },
+  ];
+}
+
 const page = () => {
   const yachts = [
     {
