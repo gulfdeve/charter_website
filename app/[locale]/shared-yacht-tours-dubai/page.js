@@ -82,7 +82,7 @@ const toursData = [
     blueHeadline: 'AVAILABLE ALL DAYS OF THE WEEK',
     validity: '*Valid from July 1-September 15, 2025',
     yellowHeadline: '🇦🇪 NATIONAL DAY OFFER - ENJOY 15% OFF',
-    smallHeadline: '(VALID FOR NIGHT TOURS ON 1-2 DEC)',
+    smallHeadline: '(VALID FOR NIGHT TOURS ON 1-3 DEC)',
     fareharborLink:
       'https://fareharbor.com/embeds/book/centauruscharter/items/488872/?full-items=yes&flow=no',
   },
@@ -168,11 +168,11 @@ const Page = () => {
         </div>
         {/* Card Grid */}
         <div className="md:block hidden">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 py-10 gap-4 container mx-auto items-start">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 py-10 gap-4 container mx-auto">
             {toursData.map((tour, index) => (
               <div
                 key={index}
-                className="bg-white rounded-lg shadow-custom duration-300 p-3 lg:p-5 space-y-3"
+                className="bg-white rounded-lg shadow-custom duration-300 p-3 lg:p-5 space-y-3 flex flex-col h-full"
               >
                 {/* Image Wrapper */}
                 <div className="relative">
@@ -238,7 +238,7 @@ const Page = () => {
                 </div>
 
                 {/* Basic info with gradual opacity effect */}
-                <div className="relative">
+                <div className="relative flex-grow">
                   {/* Gradient overlay that appears when details are hidden */}
                   {!showDetails[index] && (
                     <div className="absolute bottom-0 left-0 right-0 h-full bg-gradient-to-b from-transparent from-0% via-white/0 via-30% to-white/90 to-100% pointer-events-none z-10"></div>
@@ -333,7 +333,7 @@ const Page = () => {
                 {/* Book Now Button - Always fully visible */}
                 <a
                   href={tour.fareharborLink}
-                  className="blue-solid-button w-full block text-center"
+                  className="blue-solid-button w-full block text-center mt-auto flex-shrink-0"
                 >
                   Book Now
                 </a>

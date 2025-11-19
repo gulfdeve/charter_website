@@ -57,7 +57,7 @@ export default function ToursCarousel({ toursData }) {
                     alt={tour.title}
                     className="rounded-lg w-full object-cover"
                   />
-                  {tour.id === 4 && false ? (
+                  {tour.id === 4 ? (
                     <p className="text-[12px] text-center text-primary-blue-2 py-1 font-bold">
                       Limited time offer! 15% OFF is valid on booking made between 18-30 November only
                     </p>
