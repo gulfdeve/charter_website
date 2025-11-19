@@ -19,6 +19,7 @@ import { FareHarborProvider } from "@/app/context/FareHarborContext";
 // import 'react-phone-input-2/lib/style.css';
 import { headers } from 'next/headers';
 import { fetchData } from '@/app/lib/fetchData';
+import LandingNavbar from "@/app/components/LandingNavbar";
 
 // const montserrat = Montserrat({
 //   subsets: ["latin"],
@@ -45,11 +46,16 @@ export default async function RootLayout({
   // Define your base URL.
   const baseUrl = "https://www.centauruscharter.com";
   // Read the current pathname from the header (set by middleware).
-  const currentPath = (await headers()).get("x-current-path");
+  const headersList = await headers();
+  const currentPath = headersList.get("x-current-path");
+  
   // Use the middleware header if available; otherwise, fallback to the slug-based path.
   const canonicalUrl = currentPath
     ? `${baseUrl}${currentPath}`
     : (slug ? `${baseUrl}/${slug.join("/")}` : baseUrl);
+
+  // Check if the current page is the landing page
+  const isLandingPage = currentPath?.includes('landing-abu-dhabi-race-yacht-charter') || false;
 
   return (
     <html lang={locale}>
@@ -99,14 +105,14 @@ export default async function RootLayout({
         <NextIntlClientProvider locale={locale} messages={messages}>
           <DataProvider initialData={serverData}>
             <LanguageProvider>
-              <Navbar />
+              {isLandingPage ? <LandingNavbar /> : <Navbar />}
               <FareHarborProvider>
                 {children}
               </FareHarborProvider>
-              <Sociallink />
-              <FirstFooter />
-              <SecondFooter />
-              <CopyrightFooter />
+              {isLandingPage ? null : <Sociallink />}
+              {isLandingPage ? null : <FirstFooter />}
+              {isLandingPage ? null : <SecondFooter />}
+              {isLandingPage ? null : <CopyrightFooter />}
               <FareHarborLoader />
             </LanguageProvider>
           </DataProvider>
