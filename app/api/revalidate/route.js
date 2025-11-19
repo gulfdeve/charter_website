@@ -51,9 +51,15 @@ export async function GET(request) {
     } 
     // Default: Revalidate the main data-cache tag (all pages using fetchData)
     else {
+      // Revalidate by tag
       revalidateTag('data-cache');
       revalidatedItems.push('tag:data-cache (all pages)');
       console.log('✅ Revalidated all pages with data-cache tag');
+      
+      // Also explicitly revalidate the API route itself
+      revalidatePath('/api/get-data');
+      revalidatedItems.push('path:/api/get-data (API route)');
+      console.log('✅ Revalidated API route: /api/get-data');
     }
 
     const response = NextResponse.json({
