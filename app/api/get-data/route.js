@@ -8,11 +8,11 @@ export async function GET() {
     const url = `${process.env.API_DOMAIN}/api/api_new/basic`;
     //   console.log("using url: ", url);
 
-    // Add no-cache headers for development
-    const fetchOptions =
-      process.env.NODE_ENV === 'development'
-        ? { cache: 'no-store', headers: { 'Cache-Control': 'no-cache' } }
-        : {};
+    // ISR: Cache for 24 hours (86400 seconds) in all environments
+    // Use 'force-cache' to respect revalidation settings from consuming pages
+    const fetchOptions = {
+      next: { revalidate: 86400 }, // 24 hours
+    };
 
     const response = await fetch(url, fetchOptions);
 
@@ -24,17 +24,12 @@ export async function GET() {
     //   console.log("loading data from api");
     const data = await response.json();
 
-    // Add no-cache headers to response in development
-    const headers =
-      process.env.NODE_ENV === 'development'
-        ? {
-            'Cache-Control':
-              'no-store, no-cache, must-revalidate, proxy-revalidate',
-          }
-        : {
-            'Cache-Control':
-              'public, max-age=3600, s-maxage=7200, stale-while-revalidate=86400',
-          };
+    // ISR-optimized cache headers for all environments
+    // Cache for 24 hours, serve stale content while revalidating for up to 48 hours
+    const headers = {
+      'Cache-Control':
+        'public, max-age=86400, s-maxage=86400, stale-while-revalidate=172800',
+    };
 
     return new Response(JSON.stringify(data), {
       status: 200,

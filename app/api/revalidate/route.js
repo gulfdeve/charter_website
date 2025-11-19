@@ -1,101 +1,94 @@
-// Create an API route that triggers revalidation
-// app/api/revalidate/route.js
+/**
+ * On-Demand Revalidation API Route
+ * 
+ * This endpoint triggers instant cache revalidation when your API data changes.
+ * Call this after updating your backend API to see changes immediately.
+ * 
+ * Usage:
+ *   GET /api/revalidate?secret=YOUR_SECRET
+ *   GET /api/revalidate?secret=YOUR_SECRET&tag=data-cache
+ *   GET /api/revalidate?secret=YOUR_SECRET&path=/offers
+ * 
+ * Security: Requires REVALIDATION_SECRET environment variable
+ */
+
 import { revalidatePath, revalidateTag } from 'next/cache';
 import { NextResponse } from 'next/server';
 
-async function purgeVercelCache() {
+export async function GET(request) {
   try {
-    console.log('Starting Vercel cache purge...');
+    const searchParams = request.nextUrl.searchParams;
+    const secret = searchParams.get('secret');
+    const tag = searchParams.get('tag');
+    const path = searchParams.get('path');
+    const locale = searchParams.get('locale'); // optional locale prefix
 
-    // For Vercel, the most reliable approach is to set proper cache headers
-    // and use Next.js revalidation which Vercel respects
+    // Security: Verify secret token
+    if (!secret || secret !== process.env.REVALIDATION_SECRET) {
+      return NextResponse.json(
+        { 
+          success: false,
+          message: 'Invalid or missing secret token' 
+        },
+        { status: 401 }
+      );
+    }
 
-    // The Next.js revalidateTag and revalidatePath should be sufficient
-    // for most use cases with Vercel's CDN
+    const revalidatedItems = [];
 
-    console.log('Using Next.js cache revalidation (recommended for Vercel)');
-    return {
+    // Option 1: Revalidate by tag (RECOMMENDED - revalidates all pages using this data)
+    if (tag) {
+      revalidateTag(tag);
+      revalidatedItems.push(`tag:${tag}`);
+      console.log(`✅ Revalidated cache tag: ${tag}`);
+    } 
+    // Option 2: Revalidate specific path
+    else if (path) {
+      const fullPath = locale ? `/${locale}${path}` : path;
+      revalidatePath(fullPath);
+      revalidatedItems.push(`path:${fullPath}`);
+      console.log(`✅ Revalidated path: ${fullPath}`);
+    } 
+    // Default: Revalidate the main data-cache tag (all pages using fetchData)
+    else {
+      revalidateTag('data-cache');
+      revalidatedItems.push('tag:data-cache (all pages)');
+      console.log('✅ Revalidated all pages with data-cache tag');
+    }
+
+    const response = NextResponse.json({
       success: true,
-      result:
-        'Cache will be revalidated via Next.js. Vercel CDN will update on next request.',
-      method: 'nextjs-revalidation',
-    };
+      revalidated: true,
+      items: revalidatedItems,
+      message: 'Cache revalidated successfully. Changes will appear on next page visit.',
+      timestamp: new Date().toISOString(),
+      note: 'Pages will regenerate in the background on the next request',
+    });
+
+    // Ensure this endpoint itself is never cached
+    response.headers.set(
+      'Cache-Control',
+      'no-cache, no-store, must-revalidate, max-age=0'
+    );
+    response.headers.set('Pragma', 'no-cache');
+    response.headers.set('Expires', '0');
+
+    return response;
+
   } catch (error) {
-    console.error('Error in cache purge function:', error);
-    return { success: false, error: error.message };
+    console.error('❌ Revalidation error:', error);
+    return NextResponse.json(
+      {
+        success: false,
+        message: 'Revalidation failed',
+        error: error.message,
+      },
+      { status: 500 }
+    );
   }
 }
 
-export async function GET(request) {
-  const secret = request.nextUrl.searchParams.get('secret');
-
-  // Uncomment this in production
-  // if (secret !== process.env.REVALIDATION_SECRET) {
-  //   return NextResponse.json({ message: 'Invalid token' }, { status: 401 });
-  // }
-
-  // Revalidate using the tag - this should work with Vercel's CDN
-  revalidateTag('data-cache');
-
-  // Force additional cache invalidation
-  const vercelResult = await purgeVercelCache();
-
-  // Also revalidate paths that use this data
-  revalidatePath('/');
-  revalidatePath('/yacht-rentals');
-  revalidatePath('/yacht-rentals/[slug]');
-  revalidatePath('/yacht-rentals/36ft-Storm');
-  revalidatePath('/yacht-rentals/56ft-lagoona');
-  revalidatePath('/yacht-rentals/85ft-yacht-Kronos');
-  revalidatePath('/yacht-rentals/36ft-thunder');
-  revalidatePath('/yacht-rentals/40ft-yacht-Riverside');
-  revalidatePath('/yacht-rentals/56ft-vassia');
-  revalidatePath('/yacht-rentals/58ft-etosha');
-  revalidatePath('/yacht-rentals/61ft-silvercreek');
-  revalidatePath('/yacht-rentals/77ft-dionysos');
-  revalidatePath('/yacht-rentals/118ft-poseidon');
-
-  revalidatePath('/offers');
-  revalidatePath('/offers/[slug]');
-  revalidatePath('/offers/business-council');
-  revalidatePath('/offers/emirates-staff');
-  revalidatePath('/offers/dubai-yachts-winter-offers');
-  revalidatePath('/offers/fazaa-card');
-
-  revalidatePath('/events');
-  revalidatePath('/events/[slug]');
-  revalidatePath('/events/super-yacht-party-dubai');
-
-  revalidatePath('/yacht-trips');
-  revalidatePath('/yacht-trips/[slug]');
-  revalidatePath('/watersports');
-  revalidatePath('/watersports/[slug]');
-
-  revalidatePath('/shared-yacht-tours-dubai');
-  revalidatePath('/contact');
-  revalidatePath('/aboutus');
-  revalidatePath('/terms-and-condition');
-  revalidatePath('/privacy-and-policy');
-  revalidatePath('/faq');
-
-  const response = NextResponse.json({
-    revalidated: true,
-    vercelCachePurged: vercelResult.success,
-    vercelError: vercelResult.success ? null : vercelResult.error,
-    vercelResult: vercelResult.success ? vercelResult.result : null,
-    message: 'Cache revalidated. Changes should appear on next page load.',
-    now: Date.now(),
-  });
-
-  // Add headers to force cache invalidation and ensure this endpoint isn't cached
-  response.headers.set(
-    'Cache-Control',
-    'no-cache, no-store, must-revalidate, max-age=0'
-  );
-  response.headers.set('Pragma', 'no-cache');
-  response.headers.set('Expires', '0');
-  response.headers.set('CDN-Cache-Control', 'no-cache');
-  response.headers.set('Vercel-CDN-Cache-Control', 'no-cache');
-
-  return response;
+// Also support POST requests for webhooks
+export async function POST(request) {
+  return GET(request);
 }

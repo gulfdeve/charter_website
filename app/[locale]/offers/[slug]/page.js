@@ -9,6 +9,38 @@ import { fetchData } from '@/app/lib/fetchData';
 import ExperienceCarousal from '@/app/components/ExperienceCarousal';
 import { notFound } from 'next/navigation';
 
+// Force static generation with ISR (24 hours revalidation)
+export const dynamic = 'force-static';
+export const revalidate = 86400; // 24 hours
+
+// Pre-generate all offer slug + locale combinations at build time
+export async function generateStaticParams() {
+  try {
+    const data = await fetchData();
+    const locales = ['en', 'ar', 'ru', 'zh'];
+    
+    if (!data?.offers) {
+      return [];
+    }
+
+    // Generate a param combination for each offer slug × each locale
+    const params = [];
+    data.offers.forEach(offer => {
+      locales.forEach(locale => {
+        params.push({
+          slug: offer.slug,
+          locale: locale,
+        });
+      });
+    });
+
+    return params;
+  } catch (error) {
+    console.error('Error generating static params for offers:', error);
+    return [];
+  }
+}
+
 export default async function OfferDetailPage({ params }) {
   const { slug, locale } = await params;
   const language = locale || 'en';

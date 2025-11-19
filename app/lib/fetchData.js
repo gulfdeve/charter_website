@@ -8,11 +8,13 @@ export const fetchData = cache(async () => {
         ? process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3000'
         : '';
 
-    // Determine fetch options based on environment
-    const fetchOptions =
-      process.env.NODE_ENV === 'development'
-        ? { cache: 'no-store', next: { revalidate: 0 } }
-        : { next: { revalidate: 3600, tags: ['data-cache'] } };
+    // ISR: Revalidate every 24 hours (86400 seconds) since API rarely changes
+    const fetchOptions = { 
+      next: { 
+        revalidate: 86400, // 24 hours
+        tags: ['data-cache'] 
+      } 
+    };
 
     const response = await fetch(`${baseUrl}/api/get-data`, fetchOptions);
 
