@@ -1,13 +1,10 @@
-'use client';
-import React, { useEffect, useRef, useState } from 'react';
-import EmblaCarousel from 'embla-carousel';
-// import Videof1 from "@/app/components/Videof1"
-import { IoIosArrowBack, IoIosArrowForward } from 'react-icons/io';
+import React from 'react';
 import Image from 'next/image';
 import { FaShip, FaUsers, FaBed, FaIdCard } from 'react-icons/fa';
 import Link from 'next/link';
-import Modal2 from '@/app/components/Modal2';
 import VideoLocal from '@/app/components/VideoLocal';
+import InclusionsCarousel from '@/app/components/InclusionsCarousel';
+import YachtBookingButtons from '@/app/components/YachtBookingButtons';
 const whatsappLink = 'https://wa.link/8nj51w';
 const yachtData = [
   {
@@ -447,46 +444,6 @@ const yachtData = [
 ];
 
 const Page = () => {
-  const [isModalOpen, setIsModalOpen] = useState(false);
-  const handleQuote = () => {
-    setIsModalOpen(true);
-  };
-  const closeModal = () => {
-    setIsModalOpen(false);
-  };
-
-  const emblaRef1 = useRef(null);
-  const [emblaApi1, setEmblaApi1] = useState(null);
-
-  useEffect(() => {
-    if (emblaRef1.current) {
-      const embla = EmblaCarousel(emblaRef1.current, {
-        loop: false,
-        align: 'start',
-      });
-      setEmblaApi1(embla);
-    }
-  }, []);
-
-  const scrollPrev1 = () => emblaApi1?.scrollPrev();
-  const scrollNext1 = () => emblaApi1?.scrollNext();
-  // Carousel 2
-  const emblaRef2 = useRef(null);
-  const [emblaApi2, setEmblaApi2] = useState(null);
-
-  useEffect(() => {
-    if (emblaRef2.current) {
-      const embla = EmblaCarousel(emblaRef2.current, {
-        loop: false,
-        align: 'start',
-      });
-      setEmblaApi2(embla);
-    }
-  }, []);
-
-  const scrollPrev2 = () => emblaApi2?.scrollPrev();
-  const scrollNext2 = () => emblaApi2?.scrollNext();
-
   const slidesone = [
     // { src: "/4-DAY FREE-FLOWING HOPS, WINE & SPIRITS.webp", text: "4-DAY FREE-FLOWING HOPS, WINE & SPIRITS" },
     // { src: "/IN-HOUSE MIXOLOGIST, PREMIUM DRINKS.webp", text: "IN-HOUSE MIXOLOGIST, PREMIUM DRINKS" },
@@ -657,45 +614,7 @@ const Page = () => {
           <h4 className="uppercase text-2xl md:text-3xl font-bold text-center text-white mb-8">
             WHAT YOU CAN ENJOY WITH YOUR TICKET
           </h4>
-          <div ref={emblaRef1} className="overflow-hidden relative">
-            <div className="flex">
-              {slidesone.map((item, index) => (
-                <div
-                  key={index}
-                  className="
-                  flex-[0_0_100%]
-                  sm:flex-[0_0_50%]
-                  md:flex-[0_0_33%]
-                  lg:flex-[0_0_25%]
-                  px-2
-                "
-                >
-                  <div className="flex flex-col rounded-xl overflow-hidden">
-                    <img src={item.src} className="w-full" alt={item.text} />
-                    <p className="font-bold text-sm bg-red-950 text-white text-center p-7 h-20 flex items-center justify-center">
-                      {item.text}
-                    </p>
-                  </div>
-                </div>
-              ))}
-            </div>
-
-            {/* Navigation Buttons (Arrows) */}
-            <button
-              aria-label="Previous Slide"
-              className="absolute left-0 top-1/2 -translate-y-1/2 w-10 h-10 md:w-14 md:h-14 bg-[#1a1a1a] text-white rounded-full flex items-center justify-center hover:bg-gray-700 transition-colors z-10"
-              onClick={scrollPrev1}
-            >
-              <IoIosArrowBack size={30} />
-            </button>
-            <button
-              aria-label="Next Slide"
-              className="absolute right-0 top-1/2 -translate-y-1/2 w-10 h-10 md:w-14 md:h-14 bg-[#1a1a1a] text-white rounded-full flex items-center justify-center hover:bg-gray-700 transition-colors z-10"
-              onClick={scrollNext1}
-            >
-              <IoIosArrowForward size={30} />
-            </button>
-          </div>
+          <InclusionsCarousel slides={slidesone} />
         </div>
       </div>
 
@@ -966,30 +885,10 @@ const Page = () => {
                   </div>
                   {/* CTA Button */}
                   <div className="mt-10">
-                    {!yacht.isSold ? (
-                      <div className="grid grid-cols-1 s:grid-cols-2 sm:grid-cols-1 lg:grid-cols-2 gap-2">
-                        <Link href={whatsappLink} target="_blank">
-                          <button className="w-full red-solid-button">
-                            WhatsApp Us
-                          </button>
-                        </Link>
-                        <button
-                          onClick={handleQuote}
-                          className="w-full red-solid-button"
-                        >
-                          Get a Quote
-                        </button>
-                      </div>
-                    ) : (
-                      <div className="grid grid-cols-1 s:grid-cols-2 sm:grid-cols-1 lg:grid-cols-2 gap-2">
-                        <button className="w-full red-solid-button cursor-not-allowed opacity-30">
-                          WhatsApp Us
-                        </button>
-                        <button className="w-full red-solid-button cursor-not-allowed opacity-30">
-                          Get a Quote
-                        </button>
-                      </div>
-                    )}
+                    <YachtBookingButtons
+                      whatsappLink={whatsappLink}
+                      isSold={yacht.isSold}
+                    />
                   </div>
                 </div>
               </div>
@@ -1003,45 +902,7 @@ const Page = () => {
           <h4 className="uppercase text-2xl md:text-3xl font-bold text-center text-white mb-8">
             F1 Yacht Package Add-Ons
           </h4>
-          <div ref={emblaRef2} className="overflow-hidden relative">
-            <div className="flex">
-              {slidestwo.map((item, index) => (
-                <div
-                  key={index}
-                  className="
-                  flex-[0_0_100%]
-                  sm:flex-[0_0_50%]
-                  md:flex-[0_0_33%]
-                  lg:flex-[0_0_25%]
-                  px-2
-                "
-                >
-                  <div className="flex flex-col rounded-xl overflow-hidden">
-                    <img src={item.src} className="w-full" alt={item.text} />
-                    <p className="font-bold text-sm bg-red-950 text-white text-center p-7 h-20 flex items-center justify-center">
-                      {item.text}
-                    </p>
-                  </div>
-                </div>
-              ))}
-            </div>
-
-            {/* Navigation Buttons (Arrows) */}
-            <button
-              aria-label="Previous Slide"
-              className="absolute left-0 top-1/2 -translate-y-1/2 w-10 h-10 md:w-14 md:h-14 bg-[#1a1a1a] text-white rounded-full flex items-center justify-center hover:bg-gray-700 transition-colors z-10"
-              onClick={scrollPrev2}
-            >
-              <IoIosArrowBack size={30} />
-            </button>
-            <button
-              aria-label="Next Slide"
-              className="absolute right-0 top-1/2 -translate-y-1/2 w-10 h-10 md:w-14 md:h-14 bg-[#1a1a1a] text-white rounded-full flex items-center justify-center hover:bg-gray-700 transition-colors z-10"
-              onClick={scrollNext2}
-            >
-              <IoIosArrowForward size={30} />
-            </button>
-          </div>
+          <InclusionsCarousel slides={slidestwo} />
         </div>
       </div>
       <section className="w-full bg-[#010e1c]">
@@ -1218,12 +1079,6 @@ const Page = () => {
           </div>
         </section>
       </section>
-      <Modal2
-        isModalOpen={isModalOpen}
-        closeModal={closeModal}
-        idName="offers_id"
-        idValue="49"
-      />
     </>
   );
 };
