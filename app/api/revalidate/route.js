@@ -51,15 +51,64 @@ export async function GET(request) {
     } 
     // Default: Revalidate the main data-cache tag (all pages using fetchData)
     else {
-      // Revalidate by tag
+      // Step 1: Revalidate by tag (clears Data Cache)
       revalidateTag('data-cache');
-      revalidatedItems.push('tag:data-cache (all pages)');
-      console.log('✅ Revalidated all pages with data-cache tag');
+      revalidatedItems.push('tag:data-cache');
+      console.log('✅ Revalidated data-cache tag');
       
-      // Also explicitly revalidate the API route itself
+      // Step 2: Revalidate API route
       revalidatePath('/api/get-data');
-      revalidatedItems.push('path:/api/get-data (API route)');
-      console.log('✅ Revalidated API route: /api/get-data');
+      revalidatedItems.push('path:/api/get-data');
+      console.log('✅ Revalidated API route');
+      
+      // Step 3: CRITICAL - Revalidate actual pages (Full Route Cache)
+      // This clears the static HTML so pages regenerate with fresh data
+      const locales = ['en', 'ar', 'ru', 'zh'];
+      const pagesToRevalidate = [
+        '/', // home page
+        '/offers',
+        '/faq',
+        '/yacht-rentals',
+        '/events',
+        '/yacht-trips',
+        '/watersports',
+      ];
+      
+      // Revalidate all static pages
+      pagesToRevalidate.forEach(page => {
+        locales.forEach(loc => {
+          const path = loc === 'en' ? page : `/${loc}${page}`;
+          try {
+            revalidatePath(path);
+            revalidatedItems.push(`path:${path}`);
+            console.log(`✅ Revalidated page: ${path}`);
+          } catch (error) {
+            console.error(`❌ Failed to revalidate ${path}:`, error.message);
+          }
+        });
+      });
+      
+      // Also revalidate dynamic routes (this will revalidate ALL pages under these paths)
+      const dynamicRoutes = [
+        '/offers/[slug]',
+        '/yacht-rentals/[slug]',
+        '/events/[slug]',
+        '/yacht-trips/[slug]',
+        '/watersports/[slug]',
+      ];
+      
+      dynamicRoutes.forEach(route => {
+        locales.forEach(loc => {
+          const path = loc === 'en' ? route : `/${loc}${route}`;
+          try {
+            revalidatePath(path, 'page');
+            revalidatedItems.push(`dynamic:${path}`);
+            console.log(`✅ Revalidated dynamic route: ${path}`);
+          } catch (error) {
+            console.error(`❌ Failed to revalidate ${path}:`, error.message);
+          }
+        });
+      });
     }
 
     const response = NextResponse.json({
