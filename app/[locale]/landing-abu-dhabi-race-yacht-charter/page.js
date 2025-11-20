@@ -658,7 +658,7 @@ const Page = () => {
                 <div className="text-lg font-bold mb-3">13,500 AED</div>
                 <a
                   className="w-full block bg-red-950 text-white font-bold rounded-lg px-4 py-3 flex items-center justify-center"
-                  href=""
+                  href="https://fareharbor.com/embeds/book/centauruscharter/items/507113/?full-items=yes&flow=1279218"
                 >
                   BOOK NOW
                 </a>
@@ -676,7 +676,7 @@ const Page = () => {
                 <div className="text-lg font-bold mb-3">12,500 AED</div>
                 <a
                   className="w-full block bg-red-950 text-white font-bold rounded-lg px-4 py-3 flex items-center justify-center"
-                  href=""
+                  href="https://fareharbor.com/embeds/book/centauruscharter/items/507113/?full-items=yes&flow=1279218"
                 >
                   BOOK NOW
                 </a>
@@ -694,7 +694,7 @@ const Page = () => {
                 <div className="text-lg font-bold mb-3">11,500 AED</div>
                 <a
                   className="w-full block bg-red-950 text-white font-bold rounded-lg px-4 py-3 flex items-center justify-center"
-                  href=""
+                  href="https://fareharbor.com/embeds/book/centauruscharter/items/507113/?full-items=yes&flow=1279218"
                 >
                   BOOK NOW
                 </a>
@@ -712,7 +712,7 @@ const Page = () => {
                 <div className="text-lg font-bold mb-3">6,000 AED</div>
                 <a
                   className="w-full block bg-red-950 text-white font-bold rounded-lg px-4 py-3 flex items-center justify-center"
-                  href=""
+                  href="https://fareharbor.com/embeds/book/centauruscharter/items/507113/?full-items=yes&flow=1279218"
                 >
                   BOOK NOW
                 </a>
@@ -730,7 +730,7 @@ const Page = () => {
                 <div className="text-lg font-bold mb-3">7,200 AED</div>
                 <a
                   className="w-full block bg-red-950 text-white font-bold rounded-lg px-4 py-3 flex items-center justify-center"
-                  href=""
+                  href="https://fareharbor.com/embeds/book/centauruscharter/items/507113/?full-items=yes&flow=1279218"
                 >
                   BOOK NOW
                 </a>
