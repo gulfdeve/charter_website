@@ -3,6 +3,9 @@ import buyYachtData from '@/app/components/buyYachtData.json';
 import generateSitemapLinks from '../utils/sitemap';
 import { fetchData } from '@/app/lib/fetchData';
 
+// Force this route to be dynamic (not static)
+export const dynamic = 'force-dynamic';
+
 export async function GET(request) {
   try {
     const data = await fetchData();
