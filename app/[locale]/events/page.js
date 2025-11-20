@@ -31,6 +31,11 @@ export default async function Page({ params }) {
     return <div>Loading...</div>;
   }
 
+  // Filter events to only include those with translations for the current language
+  const filteredEvents = data?.events?.filter(
+    event => event.translations && event.translations[language]
+  ) || [];
+
   return (
     <>
       <div className="container mx-auto nav-space">
@@ -38,7 +43,7 @@ export default async function Page({ params }) {
 
         <div className="hidden md:block">
           <div className="grid grid-col-1 md:grid-cols-2 gap-7 pb-4">
-            {data?.events?.map((event, index) => (
+            {filteredEvents?.map((event, index) => (
               <EventCard
                 key={event.id}
                 event={event}

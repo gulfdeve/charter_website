@@ -3,9 +3,14 @@ import { IoIosPricetag } from 'react-icons/io';
 import { Link } from '@/app/i18n/routing';
 
 export default function WatersportsGrid({ packages, language }) {
+  // Filter packages to only include those with translations for the current language
+  const filteredPackages = packages?.filter(
+    pkg => pkg.translations && pkg.translations[language]
+  ) || [];
+
   return (
     <div className="grid grid-col-1 md:grid-cols-2 gap-7 pb-8">
-      {packages?.map(package_a => (
+      {filteredPackages?.map(package_a => (
         <div
           key={package_a.id}
           className="flex flex-col justify-start lg:justify-between rounded-md bg-white custom-shadow"

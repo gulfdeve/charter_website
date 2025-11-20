@@ -24,13 +24,17 @@ export async function generateStaticParams() {
     }
 
     // Generate a param combination for each yacht slug × each locale
+    // Only generate params where the translation exists
     const params = [];
     data.products.forEach(product => {
       locales.forEach(locale => {
-        params.push({
-          slug: product.slug,
-          locale: locale,
-        });
+        // Only add param if translation exists for this locale
+        if (product.translations && product.translations[locale]) {
+          params.push({
+            slug: product.slug,
+            locale: locale,
+          });
+        }
       });
     });
 
@@ -103,6 +107,11 @@ export default async function YachtPage({ params: paramsPromise }) {
   const { header_whatsapp_url } = settingsItem || {};
 
   if (!product) {
+    notFound();
+  }
+
+  // Check if translation exists for this locale
+  if (!product.translations || !product.translations[locale]) {
     notFound();
   }
 

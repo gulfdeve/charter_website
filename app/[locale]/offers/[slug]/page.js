@@ -24,13 +24,17 @@ export async function generateStaticParams() {
     }
 
     // Generate a param combination for each offer slug × each locale
+    // Only generate params where the translation exists
     const params = [];
     data.offers.forEach(offer => {
       locales.forEach(locale => {
-        params.push({
-          slug: offer.slug,
-          locale: locale,
-        });
+        // Only add param if translation exists for this locale
+        if (offer.translations && offer.translations[locale]) {
+          params.push({
+            slug: offer.slug,
+            locale: locale,
+          });
+        }
       });
     });
 
@@ -55,6 +59,11 @@ export default async function OfferDetailPage({ params }) {
   const t = await getTranslations();
 
   if (!offer) {
+    notFound();
+  }
+
+  // Check if translation exists for this locale
+  if (!offer.translations || !offer.translations[language]) {
     notFound();
   }
 

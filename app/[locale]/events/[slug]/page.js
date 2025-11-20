@@ -21,13 +21,17 @@ export async function generateStaticParams() {
     }
 
     // Generate a param combination for each event slug × each locale
+    // Only generate params where the translation exists
     const params = [];
     data.events.forEach(event => {
       locales.forEach(locale => {
-        params.push({
-          slug: event.slug,
-          locale: locale,
-        });
+        // Only add param if translation exists for this locale
+        if (event.translations && event.translations[locale]) {
+          params.push({
+            slug: event.slug,
+            locale: locale,
+          });
+        }
       });
     });
 
@@ -51,6 +55,11 @@ const page = async ({ params }) => {
   const event = data?.events?.find(event => event.slug === slug);
 
   if (!event) {
+    notFound();
+  }
+
+  // Check if translation exists for this locale
+  if (!event.translations || !event.translations[locale]) {
     notFound();
   }
 

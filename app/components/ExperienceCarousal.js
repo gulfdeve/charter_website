@@ -42,6 +42,11 @@ export default function ExperienceCarousal() {
   const scrollPrev = () => emblaInstance.current?.scrollPrev();
   const scrollNext = () => emblaInstance.current?.scrollNext();
 
+  // Filter experiences to only include those with translations for the current language
+  const filteredExperiences = data?.experiences?.filter(
+    experience => experience.translations && experience.translations[language]
+  ) || [];
+
   return (
     <div className="flex flex-col items-center justify-center bg-primary-blue-light">
       <h2 className="text-primary-blue text-center font-bold text-2xl xl:text-4xl py-10">
@@ -52,7 +57,7 @@ export default function ExperienceCarousal() {
         <div className="embla__viewport" ref={emblaRef}>
           <div className="embla__container flex">
             {!loading &&
-              data?.experiences?.map(experience => (
+              filteredExperiences?.map(experience => (
                 <div
                   key={experience.id}
                   className="flex-[0_0_90%] md:flex-[0_0_calc(50%-10px)] lg:flex-[0_0_calc(33.33%-10px)] min-w-0 px-2"

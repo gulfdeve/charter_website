@@ -30,6 +30,11 @@ export default function YachtmobCarousel() {
   const scrollPrev = () => emblaInstance.current?.scrollPrev();
   const scrollNext = () => emblaInstance.current?.scrollNext();
 
+  // Filter products to only include those with translations for the current locale
+  const filteredProducts = data?.products?.filter(
+    product => product.translations && product.translations[locale]
+  ) || [];
+
   return (
     <div className="container mx-auto lg:hidden">
       <div className="relative">
@@ -38,7 +43,7 @@ export default function YachtmobCarousel() {
           {/* Embla container */}
           <div className="flex">
             {!loading &&
-              data?.products?.map(product => (
+              filteredProducts?.map(product => (
                 <div
                   key={product.id}
                   className="flex-[0_0_90%] min-w-0 pl-2 pr-2"

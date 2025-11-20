@@ -34,6 +34,11 @@ export default function YachtmobCarousel() {
   const scrollPrev = () => emblaInstance.current?.scrollPrev();
   const scrollNext = () => emblaInstance.current?.scrollNext();
 
+  // Filter experiences to only include those with translations for the current locale
+  const filteredExperiences = data?.experiences?.filter(
+    experience => experience.translations && experience.translations[locale]
+  ) || [];
+
   return (
     <div className="container mx-auto md:px-4 pb-16 md:hidden">
       {/* Optional heading */}
@@ -44,7 +49,7 @@ export default function YachtmobCarousel() {
           {/* Embla container */}
           <div className="flex  px-1">
             {!loading &&
-              data?.experiences?.map(experience => (
+              filteredExperiences?.map(experience => (
                 <div
                   key={experience.id}
                   // Control how many cards appear at once (85%, 50%, 40%, etc.)

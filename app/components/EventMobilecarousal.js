@@ -24,6 +24,11 @@ export default function EventCarousel() {
     }
   }, [embla]);
 
+  // Filter events to only include those with translations for the current locale
+  const filteredEvents = data?.events?.filter(
+    event => event.translations && event.translations[locale]
+  ) || [];
+
   return (
     <div className="md:px-4 pb-16">
       {/* Embla "viewport" container */}
@@ -31,7 +36,7 @@ export default function EventCarousel() {
         {/* Embla "container" for slides: using flex for horizontal layout */}
         <div className="flex gap-4">
           {!loading &&
-            data?.events?.map((event, index) => (
+            filteredEvents?.map((event, index) => (
               <div
                 key={event.id}
                 // This width shows one full event card plus a partial view of the next

@@ -23,13 +23,17 @@ export async function generateStaticParams() {
     }
 
     // Generate a param combination for each experience slug × each locale
+    // Only generate params where the translation exists
     const params = [];
     data.experiences.forEach(experience => {
       locales.forEach(locale => {
-        params.push({
-          slug: experience.slug,
-          locale: locale,
-        });
+        // Only add param if translation exists for this locale
+        if (experience.translations && experience.translations[locale]) {
+          params.push({
+            slug: experience.slug,
+            locale: locale,
+          });
+        }
       });
     });
 
@@ -77,6 +81,11 @@ const page = async ({ params }) => {
 
   // If no experience found, show 404
   if (!experience) {
+    notFound();
+  }
+
+  // Check if translation exists for this locale
+  if (!experience.translations || !experience.translations[locale]) {
     notFound();
   }
 

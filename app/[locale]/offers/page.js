@@ -40,6 +40,11 @@ export default async function OffersPage({ params }) {
     return <div>Loading...</div>;
   }
 
+  // Filter offers to only include those with translations for the current language
+  const filteredOffers = data?.offers?.filter(
+    offer => offer.translations && offer.translations[language]
+  ) || [];
+
   return (
     <>
       <div className="container mx-auto nav-space">
@@ -47,7 +52,7 @@ export default async function OffersPage({ params }) {
 
         <div className="md:block hidden">
           <div className="grid grid-col-1 md:grid-cols-2 gap-7 pb-8">
-            {data?.offers?.map(offer => (
+            {filteredOffers?.map(offer => (
               <div
                 key={offer.id}
                 className="flex flex-col justify-start lg:justify-between rounded-md bg-white custom-shadow"

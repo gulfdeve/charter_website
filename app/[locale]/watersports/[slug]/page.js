@@ -20,13 +20,17 @@ export async function generateStaticParams() {
     }
 
     // Generate a param combination for each package slug × each locale
+    // Only generate params where the translation exists
     const params = [];
     data.packages.forEach(packageItem => {
       locales.forEach(locale => {
-        params.push({
-          slug: packageItem.slug,
-          locale: locale,
-        });
+        // Only add param if translation exists for this locale
+        if (packageItem.translations && packageItem.translations[locale]) {
+          params.push({
+            slug: packageItem.slug,
+            locale: locale,
+          });
+        }
       });
     });
 
@@ -111,6 +115,11 @@ export default async function Page({ params }) {
   const packageItem = data?.packages?.find(pkg => pkg.slug === slug);
 
   if (!packageItem) {
+    notFound();
+  }
+
+  // Check if translation exists for this locale
+  if (!packageItem.translations || !packageItem.translations[locale]) {
     notFound();
   }
 

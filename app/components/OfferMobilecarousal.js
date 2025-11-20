@@ -36,6 +36,11 @@ export default function OfferCarousel() {
   const scrollPrev = () => emblaInstance.current?.scrollPrev();
   const scrollNext = () => emblaInstance.current?.scrollNext();
 
+  // Filter offers to only include those with translations for the current locale
+  const filteredOffers = data?.offers?.filter(
+    offer => offer.translations && offer.translations[locale]
+  ) || [];
+
   return (
     <div className="container mx-auto md:px-4 pb-16">
       {/* Embla "viewport" container */}
@@ -43,7 +48,7 @@ export default function OfferCarousel() {
         {/* Embla "container" for slides: using flex for horizontal layout */}
         <div className="flex gap-4">
           {!loading &&
-            data?.offers?.map(offer => (
+            filteredOffers?.map(offer => (
               <div
                 key={offer.id}
                 // This width shows one full offer card plus a partial view of the next

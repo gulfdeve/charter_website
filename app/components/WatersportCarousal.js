@@ -23,13 +23,18 @@ export default function WatersportCarousal({ packages, language }) {
     }
   }, [embla]);
 
+  // Filter packages to only include those with translations for the current language
+  const filteredPackages = packages?.filter(
+    pkg => pkg.translations && pkg.translations[language]
+  ) || [];
+
   return (
     <div className="pb-16">
       {/* Embla "viewport" container */}
       <div ref={emblaRef} className="overflow-hidden">
         {/* Embla "container" for slides: using flex for horizontal layout */}
         <div className="flex gap-4 px-2">
-          {packages?.map(package_a => (
+          {filteredPackages?.map(package_a => (
             // Fallback title logic
 
             <div

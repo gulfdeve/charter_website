@@ -38,6 +38,11 @@ export default function WaterSportCarousal2({ packages, language }) {
   const scrollPrev = () => emblaInstance.current?.scrollPrev();
   const scrollNext = () => emblaInstance.current?.scrollNext();
 
+  // Filter packages to only include those with translations for the current language
+  const filteredPackages = packages?.filter(
+    pkg => pkg.translations && pkg.translations[language]
+  ) || [];
+
   return (
     <div className="flex flex-col items-center justify-center bg-primary-blue-light">
       <h2 className="text-primary-blue text-center font-bold text-2xl xl:text-4xl py-10">
@@ -47,7 +52,7 @@ export default function WaterSportCarousal2({ packages, language }) {
       <div className="relative container h-full overflow-hidden mx-auto px-3">
         <div className="embla__viewport" ref={emblaRef}>
           <div className="embla__container flex">
-            {packages?.map(package_a => (
+            {filteredPackages?.map(package_a => (
               <div
                 key={package_a.id}
                 className="flex-[0_0_90%] md:flex-[0_0_calc(50%-10px)] lg:flex-[0_0_calc(33.33%-10px)] min-w-0 px-2"

@@ -15,13 +15,17 @@ export async function generateStaticParams() {
   const locales = ['en', 'ar', 'ru', 'zh'];
   
   // Generate a param combination for each yacht slug × each locale
+  // Only generate params where the translation exists
   const params = [];
   yachtdata.products.forEach(yacht => {
     locales.forEach(locale => {
-      params.push({
-        slug: yacht.slug,
-        locale: locale,
-      });
+      // Only add param if translation exists for this locale
+      if (yacht.translations && yacht.translations[locale]) {
+        params.push({
+          slug: yacht.slug,
+          locale: locale,
+        });
+      }
     });
   });
 
@@ -34,6 +38,11 @@ export default async function Home({ params }) {
   const product = yachtdata.products.find(item => item.slug === slug);
 
   if (!product) {
+    notFound();
+  }
+
+  // Check if translation exists for this locale
+  if (!product.translations || !product.translations[locale]) {
     notFound();
   }
 
