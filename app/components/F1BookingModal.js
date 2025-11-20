@@ -5,7 +5,7 @@ import 'react-phone-input-2/lib/style.css';
 import { parsePhoneNumberFromString } from 'libphonenumber-js';
 import { IoClose } from 'react-icons/io5';
 
-export default function F1BookingModal({ isOpen, onClose }) {
+export default function F1BookingModal({ isOpen, onClose, idName = 'offers_id', idValue = '49' }) {
   const [fullName, setFullName] = useState('');
   const [email, setEmail] = useState('');
   const [phoneNumber, setPhoneNumber] = useState('');
@@ -48,6 +48,7 @@ export default function F1BookingModal({ isOpen, onClose }) {
     setIsSubmitting(true);
 
     try {
+      // First, send the email
       const emailResponse = await fetch('/api/send-email', {
         method: 'POST',
         headers: {
@@ -59,13 +60,60 @@ export default function F1BookingModal({ isOpen, onClose }) {
           phoneNumber,
           message,
           subject: 'Formula 1 Abu Dhabi 2025 Yacht Party Booking Inquiry',
-          recipients: 'habibjutt868@gmail.com, qadooshabib@gmail.com',
+          recipients: 'habibjutt868@gmail.com',
         }),
       });
 
       const emailData = await emailResponse.json();
 
-      if (emailResponse.ok) {
+      if (!emailResponse.ok) {
+        setErrors({
+          submit: emailData.message || 'Failed to send inquiry. Please try again.',
+        });
+        return;
+      }
+
+      // Second, submit the enquiry to the proxy endpoint (like Modal2)
+      const params = new URLSearchParams({
+        name: fullName,
+        phone: phoneNumber,
+        email,
+        comments: message,
+      });
+      params.set(idName, idValue);
+
+      const enquiryResponse = await fetch('/api/proxy-save-enquiry', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8',
+        },
+        body: params.toString(),
+      });
+
+      console.log('Enquiry request sent to proxy:', '/api/proxy-save-enquiry');
+      console.log('Enquiry request body:', params.toString());
+      console.log('Enquiry fetch status:', enquiryResponse.status, enquiryResponse.statusText);
+
+      // Try parsing JSON, else fallback to text
+      let enquiryData;
+      try {
+        enquiryData = await enquiryResponse.json();
+      } catch (err) {
+        enquiryData = await enquiryResponse.text();
+      }
+      console.log('Enquiry proxy response body:', enquiryData);
+
+      const bodyIsObject = typeof enquiryData === 'object' && enquiryData !== null;
+      const bodyIsString = typeof enquiryData === 'string';
+      const serverSaysSuccess =
+        bodyIsObject &&
+        (enquiryData.success === true ||
+          enquiryData.status === 'success' ||
+          enquiryData.code === 200);
+      const textLooksOk = bodyIsString && /success|ok|saved/i.test(enquiryData);
+
+      if (enquiryResponse.ok || serverSaysSuccess || textLooksOk) {
+        // Both email and enquiry submitted successfully
         setSuccessMessage(
           'Thank you! Your booking inquiry has been submitted successfully. Our team will get back to you shortly.'
         );
@@ -83,8 +131,13 @@ export default function F1BookingModal({ isOpen, onClose }) {
           setSuccessMessage('');
         }, 3000);
       } else {
+        // Email succeeded but enquiry failed
+        const serverMessage = bodyIsObject
+          ? enquiryData.message || JSON.stringify(enquiryData)
+          : enquiryData;
+        console.warn('Enquiry submission failed:', enquiryResponse.status, enquiryData);
         setErrors({
-          submit: emailData.message || 'Failed to send inquiry. Please try again.',
+          submit: 'Email sent but enquiry submission failed: ' + serverMessage,
         });
       }
     } catch (error) {

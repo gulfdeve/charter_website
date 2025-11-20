@@ -1008,7 +1008,12 @@ const Page = () => {
       </section>
 
       {/* F1 Booking Modal */}
-      <F1BookingModal isOpen={isModalOpen} onClose={closeModal} />
+      <F1BookingModal
+        isOpen={isModalOpen}
+        onClose={closeModal}
+        idName="offers_id"
+        idValue="49"
+      />
     </>
   );
 };
