@@ -1,14 +1,14 @@
 'use client';
-import React, { useEffect, useRef, useState } from 'react';
-import EmblaCarousel from 'embla-carousel';
-// import Videof1 from "@/app/components/Videof1"
-import { IoIosArrowBack, IoIosArrowForward } from 'react-icons/io';
+import React, { useState } from 'react';
 import Image from 'next/image';
 import { FaShip, FaUsers, FaBed, FaIdCard } from 'react-icons/fa';
 import Link from 'next/link';
-import Modal2 from '@/app/components/Modal2';
 import VideoLocal from '@/app/components/VideoLocal';
+import InclusionsCarousel from '@/app/components/InclusionsCarousel';
+import YachtBookingButtons from '@/app/components/YachtBookingButtons';
+import F1BookingModal from '@/app/components/F1BookingModal';
 const whatsappLink = 'https://wa.link/8nj51w';
+
 const yachtData = [
   {
     id: 1,
@@ -448,44 +448,9 @@ const yachtData = [
 
 const Page = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const handleQuote = () => {
-    setIsModalOpen(true);
-  };
-  const closeModal = () => {
-    setIsModalOpen(false);
-  };
 
-  const emblaRef1 = useRef(null);
-  const [emblaApi1, setEmblaApi1] = useState(null);
-
-  useEffect(() => {
-    if (emblaRef1.current) {
-      const embla = EmblaCarousel(emblaRef1.current, {
-        loop: false,
-        align: 'start',
-      });
-      setEmblaApi1(embla);
-    }
-  }, []);
-
-  const scrollPrev1 = () => emblaApi1?.scrollPrev();
-  const scrollNext1 = () => emblaApi1?.scrollNext();
-  // Carousel 2
-  const emblaRef2 = useRef(null);
-  const [emblaApi2, setEmblaApi2] = useState(null);
-
-  useEffect(() => {
-    if (emblaRef2.current) {
-      const embla = EmblaCarousel(emblaRef2.current, {
-        loop: false,
-        align: 'start',
-      });
-      setEmblaApi2(embla);
-    }
-  }, []);
-
-  const scrollPrev2 = () => emblaApi2?.scrollPrev();
-  const scrollNext2 = () => emblaApi2?.scrollNext();
+  const openModal = () => setIsModalOpen(true);
+  const closeModal = () => setIsModalOpen(false);
 
   const slidesone = [
     // { src: "/4-DAY FREE-FLOWING HOPS, WINE & SPIRITS.webp", text: "4-DAY FREE-FLOWING HOPS, WINE & SPIRITS" },
@@ -576,130 +541,11 @@ const Page = () => {
       </div> */}
       <VideoLocal
         filename="/F1 2023 720p.mp4"
-        section="f1"
+        section="f1-landing"
         ctaLink={whatsappLink}
       />
-      <div className="hidden bg-red-900 text-white text-center py-2 text-sm font-semibold sticky top-14 lg:top-[4.5rem] z-20">
-        🎉 Promo: 10% OFF on All F1 Yacht Packages – Offer ends September 15,
-        2025!
-      </div>
-      {/* Heading Section */}
-      <section className="flex flex-col items-center py-20 bg-black">
-        <div className="container mx-auto">
-          <img
-            src="/images/f1-grand-prix-abu-dhabi-2025.webp"
-            alt="F1 2025"
-            className=""
-          />
-        </div>
-        <h2 className="text-3xl font-bold text-center text-red-700 pt-5">
-          FORMULA 1 ABU DHABI GP 2025
-        </h2>
-        <p className="font-medium text-center text-white my-3 tracking-[0.70rem]">
-          LUXURY YACHT CHARTER PACKAGES
-        </p>
-        <p className=" text-center font-bold text-white mt-2 ">
-          EVENT DATES: 04 - 07 DECEMBER 2025 | YAS MARINA, ABU DHABI
-        </p>
-        {/* Two-column (Image + Text) Section */}
-        <div className="container mx-auto py-10">
-          <div className="flex flex-col lg:flex-row items-center justify-center rounded-lg overflow-hidden lg:mx-20">
-            {/* Left: Image */}
-            <div className="rounded rounded-l-xl">
-              <img
-                src="/images/trackside.webp"
-                alt="F1 Trackside"
-                className="xl:w-[40rem] sm:w-[170rem] lg:w-[160rem] md:h-[543px] xl:h-[570px] lg:h-[504px]"
-              />
-            </div>
 
-            {/* Right: Text & Content */}
-            <div className="flex flex-col items-center justify-center bg-gradient-to-r from-[#010E1C] via-red-900 to-[#010E1C] px-5 py-5 xl:w-[40rem] lg:w-[160rem] md:h-[541px] xl:h-[570px] lg:h-[504px] p-5">
-              {/* <h3 className="text-white uppercase md:text-2xl lg:text-4xl font-bold text-center pb-6">
-								F1 Yacht Charter Experience
-							</h3> */}
-              <h3 className="text-white uppercase md:text-2xl lg:text-4xl font-bold text-center pb-6">
-                FORMULA 1 YACHT PARTY HOSPITALITY PACKAGE
-              </h3>
-              <p className="text-white text-center text-sm md:text-base pb-8 px-2 md:px-2">
-                Join Centaurus Charter for an exclusive 4-day Formula 1 Yacht
-                Party experience. Enjoy a luxurious setting, breathtaking views,
-                and an unforgettable race weekend atmosphere. Perfect for
-                corporate events or private celebrations, this hospitality
-                package offers the ultimate way to enjoy the excitement of
-                Formula 1.
-              </p>
-              <Link href={whatsappLink} target="_blank">
-                <button className="bg-white text-primary-blue font-bold px-7 py-4 rounded-xl shadow-md hover:bg-gray-200 transition-colors">
-                  INQUIRE NOW
-                </button>
-              </Link>
-              {/* <p className="mt-8 text-sm text-gray-200 text-center">
-								Only one yacht available remaining. T&Cs apply.
-							</p> */}
-              <p className="mt-8 text-sm text-gray-200 text-center">
-                Limited tickets available — book early to secure your spot!
-                <br />
-                T&Cs apply. Inclusions may vary based on the date and package
-                selected
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Carousel Section */}
-      <div className="bg-[linear-gradient(to_bottom,_black_0%,_#010e1c_100%)] pb-12">
-        <div className="container mx-auto ">
-          {/* <h4 className="uppercase text-2xl md:text-3xl font-bold text-center text-white mb-8">
-						F1 Yacht Package Inclusions
-					</h4> */}
-          <h4 className="uppercase text-2xl md:text-3xl font-bold text-center text-white mb-8">
-            WHAT YOU CAN ENJOY WITH YOUR TICKET
-          </h4>
-          <div ref={emblaRef1} className="overflow-hidden relative">
-            <div className="flex">
-              {slidesone.map((item, index) => (
-                <div
-                  key={index}
-                  className="
-                  flex-[0_0_100%]
-                  sm:flex-[0_0_50%]
-                  md:flex-[0_0_33%]
-                  lg:flex-[0_0_25%]
-                  px-2
-                "
-                >
-                  <div className="flex flex-col rounded-xl overflow-hidden">
-                    <img src={item.src} className="w-full" alt={item.text} />
-                    <p className="font-bold text-sm bg-red-950 text-white text-center p-7 h-20 flex items-center justify-center">
-                      {item.text}
-                    </p>
-                  </div>
-                </div>
-              ))}
-            </div>
-
-            {/* Navigation Buttons (Arrows) */}
-            <button
-              aria-label="Previous Slide"
-              className="absolute left-0 top-1/2 -translate-y-1/2 w-10 h-10 md:w-14 md:h-14 bg-[#1a1a1a] text-white rounded-full flex items-center justify-center hover:bg-gray-700 transition-colors z-10"
-              onClick={scrollPrev1}
-            >
-              <IoIosArrowBack size={30} />
-            </button>
-            <button
-              aria-label="Next Slide"
-              className="absolute right-0 top-1/2 -translate-y-1/2 w-10 h-10 md:w-14 md:h-14 bg-[#1a1a1a] text-white rounded-full flex items-center justify-center hover:bg-gray-700 transition-colors z-10"
-              onClick={scrollNext1}
-            >
-              <IoIosArrowForward size={30} />
-            </button>
-          </div>
-        </div>
-      </div>
-
-      <section className="bg-[#010e1c] py-12">
+      <section className="bg-black py-12">
         <div className="container mx-auto w-full">
           <h3 className="text-2xl md:text-3xl font-bold text-center text-white mb-8">
             TICKET RATES
@@ -894,156 +740,98 @@ const Page = () => {
         </div>
       </section>
 
-      {/* Yacht Cards Section */}
-      <section className="bg-[#010e1c] py-12">
-        <h3 className="text-2xl md:text-3xl font-bold text-center text-white mb-8">
-          F1 LUXURY YACHT CHARTER PACKAGES
-        </h3>
-        <div className="container mx-auto ">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 ">
-            {yachtData.map(yacht => (
-              <div
-                key={yacht.id}
-                className="bg-[#09162a] rounded-lg overflow-hidden p-3 md:p-5"
+      <div className="hidden bg-red-900 text-white text-center py-2 text-sm font-semibold sticky top-14 lg:top-[4.5rem] z-20">
+        🎉 Promo: 10% OFF on All F1 Yacht Packages – Offer ends September 15,
+        2025!
+      </div>
+      {/* Heading Section */}
+      <section className="flex flex-col items-center py-10 bg-black">
+        {/* <div className="container mx-auto">
+          <img
+            src="/images/f1-grand-prix-abu-dhabi-2025.webp"
+            alt="F1 2025"
+            className=""
+          />
+        </div> */}
+        <h2 className="text-3xl font-bold text-center text-red-700 pt-5">
+          FORMULA 1 ABU DHABI GP 2025
+        </h2>
+        <p className="font-medium text-center text-white my-3 tracking-[0.70rem]">
+          LUXURY YACHT CHARTER PACKAGES
+        </p>
+        <p className=" text-center font-bold text-white mt-2 ">
+          EVENT DATES: 04 - 07 DECEMBER 2025 | YAS MARINA, ABU DHABI
+        </p>
+        {/* Two-column (Image + Text) Section */}
+        <div className="container mx-auto py-10">
+          <div className="flex flex-col lg:flex-row items-center justify-center rounded-lg overflow-hidden lg:mx-20">
+            {/* Left: Image */}
+            <div className="rounded rounded-l-xl">
+              <img
+                src="/images/trackside.webp"
+                alt="F1 Trackside"
+                className="xl:w-[40rem] sm:w-[170rem] lg:w-[160rem] md:h-[543px] xl:h-[570px] lg:h-[504px]"
+              />
+            </div>
+
+            {/* Right: Text & Content */}
+            <div className="flex flex-col items-center justify-center bg-gradient-to-r from-[#010E1C] via-red-900 to-[#010E1C] px-5 py-5 xl:w-[40rem] lg:w-[160rem] md:h-[541px] xl:h-[570px] lg:h-[504px] p-5">
+              {/* <h3 className="text-white uppercase md:text-2xl lg:text-4xl font-bold text-center pb-6">
+								F1 Yacht Charter Experience
+							</h3> */}
+              <h3 className="text-white uppercase md:text-2xl lg:text-4xl font-bold text-center pb-6">
+                FORMULA 1 YACHT PARTY HOSPITALITY PACKAGE
+              </h3>
+              <p className="text-white text-center text-sm md:text-base pb-8 px-2 md:px-2">
+                Join Centaurus Charter for an exclusive 4-day Formula 1 Yacht
+                Party experience. Enjoy a luxurious setting, breathtaking views,
+                and an unforgettable race weekend atmosphere. Perfect for
+                corporate events or private celebrations, this hospitality
+                package offers the ultimate way to enjoy the excitement of
+                Formula 1.
+              </p>
+              <button
+                onClick={openModal}
+                className="bg-white text-primary-blue font-bold px-7 py-4 rounded-xl shadow-md hover:bg-gray-200 transition-colors"
               >
-                <h4 className=" font-bold text-white">{yacht.title}</h4>
-                {/* Yacht Image */}
-                <div className="relative">
-                  <Image
-                    src={yacht.imageSrc}
-                    alt={yacht.imageAlt}
-                    width={800}
-                    height={500}
-                    className="w-full h-auto object-cover rounded-lg mt-3"
-                  />
-                  {yacht.isSold ? (
-                    <div className="absolute flex items-center gap-2 top-4 left-0 bg-primary-red text-white text-sm py-0.5 px-2 rounded-r-lg">
-                      <p>Sold Out</p>
-                    </div>
-                  ) : (
-                    yacht.trackView && (
-                      <div className="absolute flex items-center gap-2 top-4 left-0 gradient-custom-2 text-white text-sm py-0.5 px-2 rounded-r-lg">
-                        {yacht.trackView}
-                      </div>
-                    )
-                  )}
-                  <div className="absolute grid grid-cols-4 gap-2  -bottom-5 left-0 right-0 mx-3 text-blue-900 rounded-lg bg-primary-blue-3">
-                    {yacht.infoBoxes.map((box, index) => (
-                      <div key={index} className="flex items-center">
-                        <div className="hidden sm:block h-12" />
-                        <div className="p-1 text-center flex-1">
-                          <div className="text-xs text-[#f2f2f2]">
-                            {box.label}
-                          </div>
-                          <div className="font-bold text-xs md:text-sm text-white">
-                            {box.value}
-                          </div>
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-                <div className="">
-                  {/* Info Boxes */}
-                  {/* Inclusions & Add-ons */}
-                  <div className="hidden grid-cols-2 gap-4 mt-8 mb-4">
-                    <div>
-                      <p className="font-bold text-gray-300">Inclusions:</p>
-                      <ul className="text-sm text-gray-300 list-disc ml-6 mt-2 space-y-1">
-                        {yacht.inclusions.map((item, idx) => (
-                          <li key={idx}>{item}</li>
-                        ))}
-                      </ul>
-                    </div>
-                    <div>
-                      <p className="font-bold text-gray-300">Add-ons:</p>
-                      <ul className="text-sm text-gray-300 list-disc ml-6 mt-2 space-y-1">
-                        {yacht.addons.map((item, idx) => (
-                          <li key={idx}>{item}</li>
-                        ))}
-                      </ul>
-                    </div>
-                  </div>
-                  {/* CTA Button */}
-                  <div className="mt-10">
-                    {!yacht.isSold ? (
-                      <div className="grid grid-cols-1 s:grid-cols-2 sm:grid-cols-1 lg:grid-cols-2 gap-2">
-                        <Link href={whatsappLink} target="_blank">
-                          <button className="w-full red-solid-button">
-                            WhatsApp Us
-                          </button>
-                        </Link>
-                        <button
-                          onClick={handleQuote}
-                          className="w-full red-solid-button"
-                        >
-                          Get a Quote
-                        </button>
-                      </div>
-                    ) : (
-                      <div className="grid grid-cols-1 s:grid-cols-2 sm:grid-cols-1 lg:grid-cols-2 gap-2">
-                        <button className="w-full red-solid-button cursor-not-allowed opacity-30">
-                          WhatsApp Us
-                        </button>
-                        <button className="w-full red-solid-button cursor-not-allowed opacity-30">
-                          Get a Quote
-                        </button>
-                      </div>
-                    )}
-                  </div>
-                </div>
-              </div>
-            ))}
+                INQUIRE NOW
+              </button>
+              {/* <p className="mt-8 text-sm text-gray-200 text-center">
+								Only one yacht available remaining. T&Cs apply.
+							</p> */}
+              <p className="mt-8 text-sm text-gray-200 text-center">
+                Limited tickets available — book early to secure your spot!
+                <br />
+                T&Cs apply. Inclusions may vary based on the date and package
+                selected
+              </p>
+            </div>
           </div>
         </div>
       </section>
+
       {/* Carousel Section */}
-      <div className="bg-[#010e1c] pb-12">
+      <div className="bg-[linear-gradient(to_bottom,_black_0%,_#010e1c_100%)] pb-8">
+        <div className="container mx-auto ">
+          {/* <h4 className="uppercase text-2xl md:text-3xl font-bold text-center text-white mb-8">
+						F1 Yacht Package Inclusions
+					</h4> */}
+          <h4 className="uppercase text-2xl md:text-3xl font-bold text-center text-white mb-8">
+            WHAT YOU CAN ENJOY WITH YOUR TICKET
+          </h4>
+          <InclusionsCarousel slides={slidesone} />
+        </div>
+      </div>
+
+      {/* Carousel Section */}
+      {/* <div className="bg-[#010e1c] pb-12">
         <div className="container mx-auto ">
           <h4 className="uppercase text-2xl md:text-3xl font-bold text-center text-white mb-8">
             F1 Yacht Package Add-Ons
           </h4>
-          <div ref={emblaRef2} className="overflow-hidden relative">
-            <div className="flex">
-              {slidestwo.map((item, index) => (
-                <div
-                  key={index}
-                  className="
-                  flex-[0_0_100%]
-                  sm:flex-[0_0_50%]
-                  md:flex-[0_0_33%]
-                  lg:flex-[0_0_25%]
-                  px-2
-                "
-                >
-                  <div className="flex flex-col rounded-xl overflow-hidden">
-                    <img src={item.src} className="w-full" alt={item.text} />
-                    <p className="font-bold text-sm bg-red-950 text-white text-center p-7 h-20 flex items-center justify-center">
-                      {item.text}
-                    </p>
-                  </div>
-                </div>
-              ))}
-            </div>
-
-            {/* Navigation Buttons (Arrows) */}
-            <button
-              aria-label="Previous Slide"
-              className="absolute left-0 top-1/2 -translate-y-1/2 w-10 h-10 md:w-14 md:h-14 bg-[#1a1a1a] text-white rounded-full flex items-center justify-center hover:bg-gray-700 transition-colors z-10"
-              onClick={scrollPrev2}
-            >
-              <IoIosArrowBack size={30} />
-            </button>
-            <button
-              aria-label="Next Slide"
-              className="absolute right-0 top-1/2 -translate-y-1/2 w-10 h-10 md:w-14 md:h-14 bg-[#1a1a1a] text-white rounded-full flex items-center justify-center hover:bg-gray-700 transition-colors z-10"
-              onClick={scrollNext2}
-            >
-              <IoIosArrowForward size={30} />
-            </button>
-          </div>
+          <InclusionsCarousel slides={slidestwo} />
         </div>
-      </div>
+      </div> */}
       <section className="w-full bg-[#010e1c]">
         <div className="md:block hidden">
           <div className="flex items-center justify-center w-full xl:px-36 lg:px-20 py-20 ">
@@ -1218,12 +1006,9 @@ const Page = () => {
           </div>
         </section>
       </section>
-      <Modal2
-        isModalOpen={isModalOpen}
-        closeModal={closeModal}
-        idName="offers_id"
-        idValue="49"
-      />
+
+      {/* F1 Booking Modal */}
+      <F1BookingModal isOpen={isModalOpen} onClose={closeModal} />
     </>
   );
 };
