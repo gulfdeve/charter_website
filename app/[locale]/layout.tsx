@@ -63,10 +63,21 @@ export default async function RootLayout({
   return (
     <html lang={locale}>
       <head>
+        {/* Preconnect to Adobe Fonts for faster loading */}
+        <link rel="preconnect" href="https://use.typekit.net" />
+        <link rel="preconnect" href="https://p.typekit.net" />
+        <link rel="dns-prefetch" href="https://use.typekit.net" />
+        
+        {/* Preload critical font stylesheet */}
+        <link
+          rel="preload"
+          href="https://use.typekit.net/kkb1lse.css"
+          as="style"
+        />
         <link
           rel="stylesheet"
           href="https://use.typekit.net/kkb1lse.css"
-        ></link>
+        />
         <Script
           id="gtm-script"
           strategy="afterInteractive"

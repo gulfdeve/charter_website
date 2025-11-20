@@ -1,6 +1,6 @@
 export const config = {
   runtime: 'edge',
-  regions: ['fra1'],
+  regions: ['dxb1'], // Dubai - optimal for UAE users
 };
 
 // Make this route dynamic (not cached) - only the fetch inside should be cached
