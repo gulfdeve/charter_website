@@ -5,6 +5,38 @@ import { fetchData } from '@/app/lib/fetchData';
 import PageTitleHeading from '../../../components/PageTitleHeading';
 import WaterSportCarousal2 from '../../../components/WaterSportCarousal2';
 
+// Force static generation with ISR (24 hours revalidation)
+export const dynamic = 'force-static';
+export const revalidate = 86400; // 24 hours
+
+// Pre-generate all watersports slug + locale combinations at build time
+export async function generateStaticParams() {
+  try {
+    const data = await fetchData();
+    const locales = ['en', 'ar', 'ru', 'zh'];
+    
+    if (!data?.packages) {
+      return [];
+    }
+
+    // Generate a param combination for each package slug × each locale
+    const params = [];
+    data.packages.forEach(packageItem => {
+      locales.forEach(locale => {
+        params.push({
+          slug: packageItem.slug,
+          locale: locale,
+        });
+      });
+    });
+
+    return params;
+  } catch (error) {
+    console.error('Error generating static params for watersports:', error);
+    return [];
+  }
+}
+
 const waterSportRate = [
   {
     id: 1,

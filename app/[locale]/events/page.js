@@ -8,6 +8,20 @@ import EventCard from '@/app/components/EventCard';
 import { usePathname, Link } from '@/app/i18n/routing';
 import { fetchData } from '@/app/lib/fetchData';
 
+// Force static generation with ISR (24 hours revalidation)
+export const dynamic = 'force-static';
+export const revalidate = 86400; // 24 hours
+
+// Pre-generate all locale versions at build time
+export async function generateStaticParams() {
+  return [
+    { locale: 'en' },
+    { locale: 'ar' },
+    { locale: 'ru' },
+    { locale: 'zh' },
+  ];
+}
+
 export default async function Page({ params }) {
   // We need to await params before accessing its properties
   const resolvedParams = await params;

@@ -8,6 +8,38 @@ import ExperienceCarousal from '@/app/components/ExperienceCarousal';
 import PageTitleHeading from '@/app/components/PageTitleHeading';
 import { notFound } from 'next/navigation';
 
+// Force static generation with ISR (24 hours revalidation)
+export const dynamic = 'force-static';
+export const revalidate = 86400; // 24 hours
+
+// Pre-generate all yacht-trips slug + locale combinations at build time
+export async function generateStaticParams() {
+  try {
+    const data = await fetchData();
+    const locales = ['en', 'ar', 'ru', 'zh'];
+    
+    if (!data?.experiences) {
+      return [];
+    }
+
+    // Generate a param combination for each experience slug × each locale
+    const params = [];
+    data.experiences.forEach(experience => {
+      locales.forEach(locale => {
+        params.push({
+          slug: experience.slug,
+          locale: locale,
+        });
+      });
+    });
+
+    return params;
+  } catch (error) {
+    console.error('Error generating static params for yacht-trips:', error);
+    return [];
+  }
+}
+
 // Generate metadata for SEO
 export async function generateMetadata({ params }) {
   const { slug } = await params;

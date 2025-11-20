@@ -1,30 +1,35 @@
-'use client';
-import React, { useState } from 'react';
-import Videoweddingtrip from '@/app/components/Videoweddingtrip';
-import { useRouter, usePathname, Link } from '@/app/i18n/routing';
-import Videosharedtours from '@/app/components/Video-sharedtours';
+import React from 'react';
+import { Link } from '@/app/i18n/routing';
 import { FaWhatsapp } from 'react-icons/fa';
 import YachtCarousel from '@/app/components/YachtCarousel';
-import { useData } from '@/app/context/DataContext';
-import { useLocale, useTranslations } from 'next-intl';
+import { getLocale } from 'next-intl/server';
 import VideoLocal from '@/app/components/VideoLocal';
-import Modal2 from '@/app/components/Modal2';
-const page = () => {
-  const { data, loading, error } = useData();
-  const locale = useLocale();
-  const [isModalOpen, setIsModalOpen] = useState(false);
-  const handleQuote = () => {
-    setIsModalOpen(true);
-  };
+import { fetchData } from '@/app/lib/fetchData';
+import WeddingTripsClient, { WeddingTripsQuoteButton } from './WeddingTripsClient';
 
-  const closeModal = () => {
-    setIsModalOpen(false);
-  };
+// Force static generation with ISR (24 hours revalidation)
+export const dynamic = 'force-static';
+export const revalidate = 86400; // 24 hours
+
+// Pre-generate all locale versions at build time
+export async function generateStaticParams() {
+  return [
+    { locale: 'en' },
+    { locale: 'ar' },
+    { locale: 'ru' },
+    { locale: 'zh' },
+  ];
+}
+
+const page = async () => {
+  const data = await fetchData();
+  const locale = await getLocale();
+  if (!data) {
+    return <div>Loading...</div>;
+  }
+
   return (
     <>
-      {/* <div>
-        <Videosharedtours/>
-      </div> */}
       <VideoLocal
         filename="/yacht-wedding-trips.mp4"
         section="yacht-wedding-trips.mp4"
@@ -41,9 +46,8 @@ const page = () => {
         </div>
 
         <div className="md:container grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-7 md:gap-10">
-          {!loading &&
-            data?.products?.map(product =>
-              product.id === 20 || product.id === 24 || product.id === 50 ? (
+          {data?.products?.map(product =>
+            product.id === 20 || product.id === 24 || product.id === 50 ? (
                 <div
                   key={product.id}
                   className="relative flex flex-col md:p-5 p-3 rounded-lg shadow-custom"
@@ -141,9 +145,7 @@ const page = () => {
                 reality. Our yacht wedding charter redefines romance, offering
                 an extraordinary backdrop for your special day.
               </p>
-              <button onClick={handleQuote} className="blue-solid-button">
-                INQUIRE
-              </button>
+              <WeddingTripsClient />
             </div>
           </div>
         </div>
@@ -303,22 +305,11 @@ const page = () => {
                 <FaWhatsapp size={20} />
                 WHATSAPP US
               </button>
-              <button
-                onClick={handleQuote}
-                className="flex items-center justify-center gap-2 px-4 py-3 bg-primary-blue text-primary-yellow border border-primary-yellow-dark  font-bold rounded-md hover:bg-primary-blue-2 transition"
-              >
-                GET A QUOTE
-              </button>
+              <WeddingTripsQuoteButton />
             </div>
           </div>
         </div>
       </div>
-      <Modal2
-        isModalOpen={isModalOpen}
-        closeModal={closeModal}
-        idName="offers_id"
-        idValue="47"
-      />
       <YachtCarousel />
     </>
   );

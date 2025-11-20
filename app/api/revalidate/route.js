@@ -72,8 +72,11 @@ export async function GET(request) {
         '/blogs',
         '/abu-dhabi-race-yacht-charter',
         '/yacht-rentals',
+        '/yacht-rentals-spring-offer',
+        '/yachts-for-sale-dubai',
         '/events',
         '/yacht-trips',
+        '/yacht-trips/yacht-wedding-trips',
         '/watersports',
       ];
       
@@ -96,6 +99,7 @@ export async function GET(request) {
         '/offers/[slug]',
         '/blogs/[slug]',
         '/yacht-rentals/[slug]',
+        '/yachts-for-sale-dubai/[slug]',
         '/events/[slug]',
         '/yacht-trips/[slug]',
         '/watersports/[slug]',

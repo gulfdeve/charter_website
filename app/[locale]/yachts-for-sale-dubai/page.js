@@ -1,13 +1,25 @@
-'use client';
-import { useLocale, useTranslations } from 'next-intl';
-import React, { useEffect } from 'react';
+import { getTranslations } from 'next-intl/server';
 import { FaWhatsapp } from 'react-icons/fa';
 import YachtListings from '@/app/components/cardBuyYacht';
 import VideoLocal from '@/app/components/VideoLocal';
 import { Link } from '@/app/i18n/routing';
 
-const Page = () => {
-  const t = useTranslations();
+// Force static generation with ISR (24 hours revalidation)
+export const dynamic = 'force-static';
+export const revalidate = 86400; // 24 hours
+
+// Pre-generate all locale versions at build time
+export async function generateStaticParams() {
+  return [
+    { locale: 'en' },
+    { locale: 'ar' },
+    { locale: 'ru' },
+    { locale: 'zh' },
+  ];
+}
+
+const Page = async () => {
+  const t = await getTranslations();
 
   return (
     <>

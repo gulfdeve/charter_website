@@ -1,34 +1,55 @@
-'use client';
-import React, { useState, useEffect } from 'react';
-import { use } from 'react';
-import { FaWhatsapp } from 'react-icons/fa';
-import Modal2 from '@/app/components/Modal2';
-import { useData } from '@/app/context/DataContext';
-
-import { useLocale, useTranslations } from 'next-intl';
+import React from 'react';
 import Image from 'next/image';
 import ExperienceCarousal from '@/app/components/ExperienceCarousal';
 import { notFound } from 'next/navigation';
-const page = ({ params }) => {
-  const { slug } = use(params); // Get slug from the URL
-  const { data, loading, error } = useData();
-  const [isModalOpen, setIsModalOpen] = useState(false);
-  const locale = useLocale();
+import { fetchData } from '@/app/lib/fetchData';
+import { getLocale } from 'next-intl/server';
+import EventClient from './EventClient';
+
+// Force static generation with ISR (24 hours revalidation)
+export const dynamic = 'force-static';
+export const revalidate = 86400; // 24 hours
+
+// Pre-generate all events slug + locale combinations at build time
+export async function generateStaticParams() {
+  try {
+    const data = await fetchData();
+    const locales = ['en', 'ar', 'ru', 'zh'];
+    
+    if (!data?.events) {
+      return [];
+    }
+
+    // Generate a param combination for each event slug × each locale
+    const params = [];
+    data.events.forEach(event => {
+      locales.forEach(locale => {
+        params.push({
+          slug: event.slug,
+          locale: locale,
+        });
+      });
+    });
+
+    return params;
+  } catch (error) {
+    console.error('Error generating static params for events:', error);
+    return [];
+  }
+}
+
+const page = async ({ params }) => {
+  const { slug, locale } = await params;
+  
+  const data = await fetchData();
+  
+  if (!data) {
+    return <div>Loading...</div>;
+  }
+
   // Find the event by slug
   const event = data?.events?.find(event => event.slug === slug);
-  console.log(event);
-  console.log(locale);
 
-  const handleQuote = () => {
-    setIsModalOpen(true);
-  };
-
-  const closeModal = () => {
-    setIsModalOpen(false);
-  };
-
-  if (loading) return <div>Loading...</div>;
-  if (error) return <div>Error: {error.message}</div>;
   if (!event) {
     notFound();
   }
@@ -66,44 +87,10 @@ const page = ({ params }) => {
             }}
           />
 
-          <div className="py-10 w-full">
-            <div className="flex flex-col md:flex-row rounded-lg items-center gap-5 justify-center md:justify-between bg-primary-blue p-5">
-              <p className="text-white text-center md:text-left font-bold bg-primary-blue text-xl rounded">
-                Validity Until: {event.validity}
-              </p>
-              <div className="flex flex-col md:flex-row md:gap-10 gap-5">
-                <a
-                  target="_blank"
-                  className="blue-lined-button"
-                  href={event.whatsapp_url}
-                >
-                  <FaWhatsapp size={20} />
-                  WHATSAPP US
-                </a>
-                {event.id === 44 ? (
-                  <a
-                    className="blue-lined-button"
-                    href="https://fareharbor.com/embeds/book/centauruscharter/items/469615/?full-items=yes&flow=645487"
-                  >
-                    BOOK NOW
-                  </a>
-                ) : (
-                  <button onClick={handleQuote} className="blue-lined-button">
-                    GET A QUOTE
-                  </button>
-                )}
-              </div>
-            </div>
-          </div>
+          <EventClient event={event} locale={locale} />
         </div>
       </div>
 
-      <Modal2
-        isModalOpen={isModalOpen}
-        closeModal={closeModal}
-        idName="events_id"
-        idValue={event.id}
-      />
       <ExperienceCarousal />
     </>
   );

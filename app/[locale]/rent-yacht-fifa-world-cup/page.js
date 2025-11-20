@@ -1,9 +1,23 @@
-'use client';
+// 'use client';
 import React from 'react';
 import { IoIosPricetag } from 'react-icons/io';
 import { FaWhatsapp } from 'react-icons/fa';
 import { Link } from '@/app/i18n/routing';
 import ExperienceCarousal from '@/app/components/ExperienceCarousal';
+
+// Force static generation with ISR (24 hours revalidation)
+export const dynamic = 'force-static';
+export const revalidate = 86400; // 24 hours
+
+// Pre-generate all locale versions at build time
+export async function generateStaticParams() {
+  return [
+    { locale: 'en' },
+    { locale: 'ar' },
+    { locale: 'ru' },
+    { locale: 'zh' },
+  ];
+}
 
 const yachts = [
   {

@@ -1,47 +1,38 @@
-'use client';
-import { useEffect, useRef, useState } from 'react';
-import EmblaCarousel from 'embla-carousel';
-import { IoIosArrowBack, IoIosArrowForward } from 'react-icons/io';
-import { FaQuestionCircle, FaWhatsapp } from 'react-icons/fa';
-import { useLanguage } from '@/app/context/LanguageContext';
 import ContactForm from '@/app/components/Contactform';
 import YachtCarousel from '@/app/components/YachtCarousel';
 import YachtGallery from '../YachGallery';
 import yachtdata from '@/app/components/buyYachtData.json';
-import { use } from 'react';
-import { useLocale } from 'next-intl';
 import { notFound } from 'next/navigation';
 import PageTitleHeading from '@/app/components/PageTitleHeading';
 import { Link } from '@/app/i18n/routing';
-export default function Home({ params }) {
-  const { slug } = use(params);
-  const emblaRef = useRef(null);
-  const emblaInstance = useRef(null);
-  const [product, setProduct] = useState(null);
-  const [isLoading, setIsLoading] = useState(true);
-  const { language } = useLanguage();
-  const locale = useLocale();
 
-  useEffect(() => {
-    if (!slug) return;
+// Force static generation with ISR (24 hours revalidation)
+export const dynamic = 'force-static';
+export const revalidate = 86400; // 24 hours
 
-    const yacht = yachtdata.products.find(item => item.slug === slug);
-    setProduct(yacht);
-    setIsLoading(false);
-  }, [slug]);
+// Pre-generate all yacht-for-sale slug + locale combinations at build time
+export async function generateStaticParams() {
+  const locales = ['en', 'ar', 'ru', 'zh'];
+  
+  // Generate a param combination for each yacht slug × each locale
+  const params = [];
+  yachtdata.products.forEach(yacht => {
+    locales.forEach(locale => {
+      params.push({
+        slug: yacht.slug,
+        locale: locale,
+      });
+    });
+  });
 
-  useEffect(() => {
-    if (emblaRef.current && product) {
-      emblaInstance.current = EmblaCarousel(emblaRef.current, { loop: true });
-    }
-    return () => emblaInstance.current && emblaInstance.current.destroy();
-  }, [product]);
+  return params;
+}
 
-  const scrollPrev = () => emblaInstance.current?.scrollPrev();
-  const scrollNext = () => emblaInstance.current?.scrollNext();
+export default async function Home({ params }) {
+  const { slug, locale } = await params;
+  
+  const product = yachtdata.products.find(item => item.slug === slug);
 
-  if (isLoading)
-    return <div className="text-center mt-20 uppercase">Loading...</div>;
   if (!product) {
     notFound();
   }

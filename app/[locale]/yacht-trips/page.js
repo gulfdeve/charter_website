@@ -8,6 +8,20 @@ import PageTitleHeading from '@/app/components/PageTitleHeading';
 import ExperiencesGrid from './ExperiencesGrid'; // We'll create this client component
 import LocationCarousel from '@/app/components/LocationCarousel';
 
+// Force static generation with ISR (24 hours revalidation)
+export const dynamic = 'force-static';
+export const revalidate = 86400; // 24 hours
+
+// Pre-generate all locale versions at build time
+export async function generateStaticParams() {
+  return [
+    { locale: 'en' },
+    { locale: 'ar' },
+    { locale: 'ru' },
+    { locale: 'zh' },
+  ];
+}
+
 export default async function YachtTripsPage({ params }) {
   const resolvedParams = await params;
   const locale = resolvedParams.locale || 'en';

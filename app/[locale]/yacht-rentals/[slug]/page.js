@@ -9,6 +9,38 @@ import { notFound } from 'next/navigation';
 // import {TabbyPromoSection} from "@/app/%5Blocale%5D/checkout/%5Bslug%5D/TabbyPromoSection";
 import { TabbyPromoSection } from '@/app/[locale]/checkout/[slug]/TabbyPromoSection';
 
+// Force static generation with ISR (24 hours revalidation)
+export const dynamic = 'force-static';
+export const revalidate = 86400; // 24 hours
+
+// Pre-generate all yacht slug + locale combinations at build time
+export async function generateStaticParams() {
+  try {
+    const data = await fetchData();
+    const locales = ['en', 'ar', 'ru', 'zh'];
+    
+    if (!data?.products) {
+      return [];
+    }
+
+    // Generate a param combination for each yacht slug × each locale
+    const params = [];
+    data.products.forEach(product => {
+      locales.forEach(locale => {
+        params.push({
+          slug: product.slug,
+          locale: locale,
+        });
+      });
+    });
+
+    return params;
+  } catch (error) {
+    console.error('Error generating static params for yacht-rentals:', error);
+    return [];
+  }
+}
+
 const summeroffer = [
   {
     name: '36 Ft Yacht - Thunder',
