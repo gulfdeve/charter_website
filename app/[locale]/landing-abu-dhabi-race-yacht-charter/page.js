@@ -542,7 +542,7 @@ const Page = () => {
       <VideoLocal
         filename="/F1 2023 720p.mp4"
         section="f1-landing"
-        ctaLink={whatsappLink}
+        ctaLink={`https://wa.link/k3yiet`}
       />
 
       <section className="bg-black py-12">

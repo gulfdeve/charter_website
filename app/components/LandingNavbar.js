@@ -28,7 +28,7 @@ export default function LandingNavbar() {
           <div className="flex items-center gap-6 lg:gap-6">
             {/* WhatsApp Icon */}
             <a
-              href="https://wa.link/8nj51w"
+              href="https://wa.link/k3yiet"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center justify-center"
