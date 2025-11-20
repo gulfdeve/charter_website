@@ -291,7 +291,7 @@ export default function Navbar() {
                 {/* WINTER Offers */}
                 <li>
                   <Link
-                    href="offers/dubai-yachts-winter-offers"
+                    href="/offers/dubai-yachts-winter-offers"
                     className={`h-full flex items-center tracking-[1px] uppercase underline decoration-2 underline-offset-8 transition-all duration-200 font-primary ${
                       pathname === '/resident-offer' ||
                       pathname.startsWith('/resident-offer/')
