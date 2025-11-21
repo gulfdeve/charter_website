@@ -574,8 +574,10 @@ const Page = () => {
 
       <section className="bg-black py-12">
         <section className="container mx-auto text-center bg-black text-white">
-          <h1 className='text-uppercase py-2'>FORMULA 1 YACHT PARTY HOSPITALITY PACKAGE</h1>
-          <p className='text-white text-base'>
+          <h1 className="text-uppercase py-8">
+            ABU DHABI RACE YACHT PARTY HOSPITALITY PACKAGE
+          </h1>
+          <p className="text-gray-300 text-base">
             Join Centaurus Charter for an exclusive 4-day Abu Dhabi Race Yacht
             Party Experience! Indulge in luxury, soak in spectacular circuit
             views, and immerse yourself in the electrifying race weekend
@@ -843,14 +845,15 @@ const Page = () => {
                 )}
 
                 {/* Description */}
-                <p className="text-sm md:text-base leading-relaxed mb-4 text-white/90">
-                  This exclusive 4-day Abu Dhabi Race Yacht Party will take place
-                  aboard the magnificent {yachtData[currentYachtIndex]?.title || 'yacht'},
-                  a stunning superyacht that radiates luxury, style, and sophistication.
+                <p className="text-sm md:text-base leading-relaxed mb-4 text-white">
+                  This exclusive 4-day Abu Dhabi Race Yacht Party will take
+                  place aboard the magnificent{' '}
+                  {yachtData[currentYachtIndex]?.title || 'yacht'}, a stunning
+                  superyacht that radiates luxury, style, and sophistication.
                 </p>
               </div>
 
-              <div className='flex flex-col items-center justify-center'>
+              <div className="flex flex-col items-center justify-center">
                 {/* CTA Button */}
                 <button
                   onClick={openModal}
@@ -861,8 +864,13 @@ const Page = () => {
 
                 {/* Disclaimer */}
                 <div className="text-xs md:text-sm text-white space-y-1 text-center">
-                  <p>Limited tickets available — book early to secure your spot!</p>
-                  <p>T&Cs apply. Inclusions may vary based on the date and package selected</p>
+                  <p>
+                    Limited tickets available — book early to secure your spot!
+                  </p>
+                  <p>
+                    T&Cs apply. Inclusions may vary based on the date and
+                    package selected
+                  </p>
                 </div>
               </div>
             </div>
@@ -875,75 +883,65 @@ const Page = () => {
         2025!
       </div>
       {/* Heading Section */}
-      <section className="bg-black">
-      <section className="container mx-auto flex flex-col items-center py-10 bg-black">
-        {/* <div className="container mx-auto">
-          <img
-            src="/images/f1-grand-prix-abu-dhabi-2025.webp"
-            alt="F1 2025"
-            className=""
-          />
-        </div> */}
-        <h2 className="text-3xl font-bold text-center text-red-700 pt-5">
-          FORMULA 1 ABU DHABI GP 2025
-        </h2>
-        <p className="font-medium text-center text-white my-3 tracking-[0.70rem]">
-          LUXURY YACHT CHARTER PACKAGES
-        </p>
-        <p className=" text-center font-bold text-white mt-2 ">
-          EVENT DATES: 04 - 07 DECEMBER 2025 | YAS MARINA, ABU DHABI
-        </p>
-        {/* Two-column (Image + Text) Section */}
-        <div className="container mx-auto py-10">
-          <div className="flex flex-col lg:flex-row items-center justify-center rounded-lg overflow-hidden lg:mx-20">
-            {/* Left: Image */}
-            <div className="rounded rounded-l-xl">
-              <img
-                src="/images/trackside.webp"
-                alt="F1 Trackside"
-                className="xl:w-[40rem] sm:w-[170rem] lg:w-[160rem] md:h-[543px] xl:h-[570px] lg:h-[504px]"
-              />
-            </div>
-
-            {/* Right: Text & Content */}
-            <div className="flex flex-col items-center justify-center bg-gradient-to-r from-[#010E1C] via-red-900 to-[#010E1C] px-5 py-5 xl:w-[40rem] lg:w-[160rem] md:h-[541px] xl:h-[570px] lg:h-[504px] p-5">
-              {/* <h3 className="text-white uppercase md:text-2xl lg:text-4xl font-bold text-center pb-6">
-								F1 Yacht Charter Experience
-							</h3> */}
-              <h3 className="text-white uppercase md:text-2xl lg:text-4xl font-bold text-center pb-6">
-                FORMULA 1 YACHT PARTY HOSPITALITY PACKAGE
-              </h3>
-              <p className="text-white text-center text-sm md:text-base pb-8 px-2 md:px-2">
-                Join Centaurus Charter for an exclusive 4-day Formula 1 Yacht
-                Party experience. Enjoy a luxurious setting, breathtaking views,
-                and an unforgettable race weekend atmosphere. Perfect for
-                corporate events or private celebrations, this hospitality
-                package offers the ultimate way to enjoy the excitement of
-                Formula 1.
-              </p>
-              <button
-                onClick={openModal}
-                className="bg-white text-primary-blue font-bold px-7 py-4 rounded-xl shadow-md hover:bg-gray-200 transition-colors"
-              >
-                INQUIRE NOW
-              </button>
-              {/* <p className="mt-8 text-sm text-gray-200 text-center">
-								Only one yacht available remaining. T&Cs apply.
-							</p> */}
-              <p className="mt-8 text-sm text-gray-200 text-center">
-                Limited tickets available — book early to secure your spot!
-                <br />
-                T&Cs apply. Inclusions may vary based on the date and package
-                selected
-              </p>
+      {/* <section className="bg-black">
+        <section className="container mx-auto flex flex-col items-center py-10 bg-black">
+          <div className="container mx-auto">
+            <img
+              src="/images/f1-grand-prix-abu-dhabi-2025.webp"
+              alt="F1 2025"
+              className=""
+            />
+          </div>
+          <h2 className="text-3xl font-bold text-center text-red-700 pt-5">
+            FORMULA 1 ABU DHABI GP 2025
+          </h2>
+          <p className="font-medium text-center text-white my-3 tracking-[0.70rem]">
+            LUXURY YACHT CHARTER PACKAGES
+          </p>
+          <p className=" text-center font-bold text-white mt-2 ">
+            EVENT DATES: 04 - 07 DECEMBER 2025 | YAS MARINA, ABU DHABI
+          </p>
+          <div className="container mx-auto py-10">
+            <div className="flex flex-col lg:flex-row items-center justify-center rounded-lg overflow-hidden lg:mx-20">
+              <div className="rounded rounded-l-xl">
+                <img
+                  src="/images/trackside.webp"
+                  alt="F1 Trackside"
+                  className="xl:w-[40rem] sm:w-[170rem] lg:w-[160rem] md:h-[543px] xl:h-[570px] lg:h-[504px]"
+                />
+              </div>
+              <div className="flex flex-col items-center justify-center bg-gradient-to-r from-[#010E1C] via-red-900 to-[#010E1C] px-5 py-5 xl:w-[40rem] lg:w-[160rem] md:h-[541px] xl:h-[570px] lg:h-[504px] p-5">
+                <h3 className="text-white uppercase md:text-2xl lg:text-4xl font-bold text-center pb-6">
+                  FORMULA 1 YACHT PARTY HOSPITALITY PACKAGE
+                </h3>
+                <p className="text-white text-center text-sm md:text-base pb-8 px-2 md:px-2">
+                  Join Centaurus Charter for an exclusive 4-day Formula 1 Yacht
+                  Party experience. Enjoy a luxurious setting, breathtaking
+                  views, and an unforgettable race weekend atmosphere. Perfect
+                  for corporate events or private celebrations, this hospitality
+                  package offers the ultimate way to enjoy the excitement of
+                  Formula 1.
+                </p>
+                <button
+                  onClick={openModal}
+                  className="bg-white text-primary-blue font-bold px-7 py-4 rounded-xl shadow-md hover:bg-gray-200 transition-colors"
+                >
+                  INQUIRE NOW
+                </button>
+                <p className="mt-8 text-sm text-gray-200 text-center">
+                  Limited tickets available — book early to secure your spot!
+                  <br />
+                  T&Cs apply. Inclusions may vary based on the date and package
+                  selected
+                </p>
+              </div>
             </div>
           </div>
-        </div>
-      </section>
-      </section>
+        </section>
+      </section> */}
 
       {/* Carousel Section */}
-      <div className="bg-[linear-gradient(to_bottom,_black_0%,_#010e1c_100%)] pb-8">
+      <div className="bg-[linear-gradient(to_bottom,_black_0%,_#010e1c_100%)] py-12">
         <div className="container mx-auto ">
           {/* <h4 className="uppercase text-2xl md:text-3xl font-bold text-center text-white mb-8">
 						F1 Yacht Package Inclusions
@@ -979,7 +977,7 @@ const Page = () => {
             <h2 className="block md:hidden text-red-700 text-center font-bold text-2xl xl:text-3xl py-7">
               Trackside Yacht Hospitality Inclusions
             </h2>
-            <div className="grid grid-cols-1 md:grid-cols-4 gap-4 lg:gap-0">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 lg:gap-0">
               <div>
                 <div className="flex flex-col items-center justify-center text-center gap-y-4 lg:px-10">
                   <img
@@ -992,12 +990,12 @@ const Page = () => {
                   </h3>
                   <p className="text-gray-300 text-center text-md sm:text-sm xl:text-md pb-10">
                     Our all-inclusive package offers 4 days of unparalleled
-                    yacht rental, granting you the ultimate vantage point to
-                    witness the adrenaline-fueled action of the Formula 1 race.
+                    yacht party, granting you the ultimate vantage point to
+                    witness the adrenaline-fueled action of the Abu Dhabi race.
                   </p>
                 </div>
               </div>
-              <div>
+              {/* <div>
                 <div className="flex flex-col items-center justify-center text-center gap-y-4 lg:px-10">
                   <img alt="" className="w-16" src="/images/marina-view.png" />
                   <h3 className="text-gray-300 text-base lg:text-lg text-center">
@@ -1010,7 +1008,7 @@ const Page = () => {
                     utmost comfort and tranquility at Yas Marina.
                   </p>
                 </div>
-              </div>
+              </div> */}
               <div>
                 <div className="flex flex-col items-center justify-center text-center gap-y-4 lg:px-10">
                   <img
@@ -1047,17 +1045,22 @@ const Page = () => {
         </div>
         {/* Disclaimer & Contact */}
         <div className="text-center p-4 text-sm text-gray-300">
-          <p className="">Formula 1 Hospitality Packages Disclaimer</p>
-          <p>
+          {/* <p className="">Formula 1 Hospitality Packages Disclaimer</p> */}
+          {/* <p>
             Inclusions, timings, places, etc. provided by the Formula 1
             hospitality packages are subject to change without prior notice.
-          </p>
+          </p> */}
           <p className="mt-2 text-xl">
-            For More Information and Viewing Feel Free To Contact:
+            For more information and viewing, feel free to contact:
             <br />{' '}
             <span className="">
               <strong>info@centauruscharter.com | +971 52 490 1269</strong>
             </span>
+          </p>
+          <p className="py-8">
+            Abu Dhabi Hospitality Package Disclaimer <br />
+            Inclusions, timings, places, etc. provided by the Abu Dhabi race
+            hospitality package are subject to change without prior notice.
           </p>
         </div>
 
@@ -1066,8 +1069,8 @@ const Page = () => {
             ABU DHABI GRAND PRIX 2025
           </h4>
           <p className="text-center text-white mb-4 leading-relaxed text-sm">
-            <strong> Formula 1 </strong>is heading back to Abu Dhabi this
-            December. Catch the glamour, action and excitement!
+            Is heading back to Abu Dhabi this December. Catch the glamour,
+            action and excitement!
           </p>
           <div className="w-full flex flex-col lg:flex-row gap-4 items-center justify-center">
             <div className="w-full">
@@ -1081,48 +1084,34 @@ const Page = () => {
             </div>
 
             <div className=" w-full text-white  ">
-              <p className="mb-4 leading-relaxed text-sm">
-                Step away from the everyday and dive into the thrill of the
-                <strong> Abu Dhabi Grand Prix 2025 </strong>. Watch the
-                electrifying <strong>Formula 1 </strong>action unfold at{' '}
-                <strong>Yas Marina Circuit</strong> with Centaurus F1 VIP Yacht
-                Hospitality. Our yachts are — all from the luxurious comfort of
-                your own <strong>Luxury private yacht</strong>. Entertain your
-                friends, family, or colleagues on board as you cheer for your
-                favorite F1 drivers, surrounded by the vibrant energy of race
-                weekend. With Centaurus
-                <strong> F1 VIP Yacht Hospitality</strong>, you’ll enjoy{' '}
-                <strong>unobstructed trackside views</strong>, exceptional
-                service, and a fully immersive experience. Our fleet of
-                <strong> spacious yachts</strong>, accommodating between{' '}
-                <strong>28 to 100 guests</strong>, offer{' '}
-                <strong>elegant interiors</strong>, open decks, and
-                <strong> premium amenities</strong>. Relax in stylish lounges,
-                sip your favorite drinks, and soak in{' '}
-                <strong>panoramic views </strong>of the marina and race
-                atmosphere in true <strong>luxury</strong>.
+              <p className="mb-4 leading-relaxed text-base text-center p-4">
+                Step away from the everyday and dive into the thrill of the Abu
+                Dhabi Grand Prix 2025. Watch the electrifying race action unfold
+                at Yas Marina Circuit with Centaurus VIP Yacht Hospitality.
+                Enjoy with your friends, family, or colleagues on board as you
+                cheer for your favorite drivers, surrounded by the vibrant
+                energy of race weekend. With Centaurus VIP Yacht Hospitality,
+                you'll enjoy unobstructed trackside views, exceptional service,
+                and a fully immersive experience. Our spacious yacht,
+                accommodates up to 100 guests, offer elegant interiors, open
+                decks, and premium amenities. Relax in stylish lounges, sip your
+                favorite drinks, and soak in panoramic views of the marina and
+                race atmosphere in true luxury.
               </p>
             </div>
           </div>
           <div className="w-full flex flex-col lg:flex-row gap-4 items-center justify-center">
             <div className="w-full text-white  ">
-              <p className="leading-relaxed text-sm">
+              <p className="leading-relaxed text-base text-center  p-4">
                 Impress your clients and elevate your business connections with
-                Centaurus corporate hospitality during the{' '}
-                <strong>Abu Dhabi F1 weekend</strong>. Stay aboard for{' '}
-                <strong>4 nights</strong>, complete with{' '}
-                <strong>delicious breakfast spreads</strong> and a{' '}
-                <strong>premium drinks package</strong>. More than just a race,
-                this is a<strong>one-of-a-kind experience</strong> for those who
-                appreciate <strong>privacy, elegance, </strong>and{' '}
-                <strong>high-end living</strong>. Feel the pulse of
-                <strong>Formula 1 </strong>under the Abu Dhabi sun, surrounded
-                by <strong>non-stop energy, exclusive yacht parties</strong>,
-                and pure <strong>luxury</strong>. Whether for{' '}
-                <strong>business or pleasure</strong>, our{' '}
-                <strong>F1 yacht charters</strong> offer the perfect escape —{' '}
-                <strong>reserve your private yacht</strong> now and create{' '}
-                <strong>memories that will last a lifetime.</strong>{' '}
+                Centaurus corporate hospitality during the Abu Dhabi Race
+                weekend. More than just a race, this is a one-of-a-kind
+                experience for those who appreciate elegance, and high-end
+                living. Feel the pulse of the Abu Dhabi Race, surrounded by
+                non-stop energy, exclusive yacht parties, and pure luxury.
+                Whether for business or pleasure, We offer the perfect escape —
+                Get your tickets now and create memories that will last a
+                lifetime.
               </p>
             </div>
 
