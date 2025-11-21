@@ -1,12 +1,14 @@
 'use client';
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import Image from 'next/image';
 import { FaShip, FaUsers, FaBed, FaIdCard } from 'react-icons/fa';
+import { IoIosArrowBack, IoIosArrowForward } from 'react-icons/io';
 import Link from 'next/link';
 import VideoLocal from '@/app/components/VideoLocal';
 import InclusionsCarousel from '@/app/components/InclusionsCarousel';
 import YachtBookingButtons from '@/app/components/YachtBookingButtons';
 import F1BookingModal from '@/app/components/F1BookingModal';
+import EmblaCarousel from 'embla-carousel';
 const whatsappLink = 'https://wa.link/8nj51w';
 
 const yachtData = [
@@ -448,9 +450,34 @@ const yachtData = [
 
 const Page = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [currentYachtIndex, setCurrentYachtIndex] = useState(0);
+  const yachtCarouselRef = useRef(null);
+  const [yachtEmblaApi, setYachtEmblaApi] = useState(null);
 
   const openModal = () => setIsModalOpen(true);
   const closeModal = () => setIsModalOpen(false);
+
+  // Initialize yacht carousel
+  useEffect(() => {
+    if (yachtCarouselRef.current) {
+      const embla = EmblaCarousel(yachtCarouselRef.current, {
+        loop: true,
+        align: 'start',
+      });
+      setYachtEmblaApi(embla);
+
+      embla.on('select', () => {
+        setCurrentYachtIndex(embla.selectedScrollSnap());
+      });
+
+      return () => {
+        embla.destroy();
+      };
+    }
+  }, []);
+
+  const scrollYachtPrev = () => yachtEmblaApi?.scrollPrev();
+  const scrollYachtNext = () => yachtEmblaApi?.scrollNext();
 
   const slidesone = [
     // { src: "/4-DAY FREE-FLOWING HOPS, WINE & SPIRITS.webp", text: "4-DAY FREE-FLOWING HOPS, WINE & SPIRITS" },
@@ -471,7 +498,7 @@ const Page = () => {
     { src: '/images/crew-service.webp', text: 'CREW SERVICE' },
     {
       src: '/PITLANE WALK 1 TIME ACCESS.webp',
-      text: 'PITLANE WALK 1 TIME ACCESS',
+      text: 'PITLANE WALK 1 TIME ACCESS <br /> (THURSDAY)',
     },
     { src: '/4-DAY GOURMET FOOD CATERING.webp', text: 'GOURMET CATERING' },
     {
@@ -546,13 +573,27 @@ const Page = () => {
       />
 
       <section className="bg-black py-12">
+        <section className="container mx-auto text-center bg-black text-white">
+          <h1 className='text-uppercase py-2'>FORMULA 1 YACHT PARTY HOSPITALITY PACKAGE</h1>
+          <p className='text-white text-base'>
+            Join Centaurus Charter for an exclusive 4-day Abu Dhabi Race Yacht
+            Party Experience! Indulge in luxury, soak in spectacular circuit
+            views, and immerse yourself in the electrifying race weekend
+            atmosphere. Our premium hospitality package offers the ultimate way
+            to experience the Abu Dhabi Race—stylishly, comfortably, and
+            unforgettable in every way.
+          </p>
+        </section>
+      </section>
+
+      <section className="bg-black py-12">
         <div className="container mx-auto w-full">
           <h3 className="text-2xl md:text-3xl font-bold text-center text-white mb-8">
             TICKET RATES
           </h3>
           <div className="hidden md:block">
             <table className="bg-white w-full text-center table-auto rounded-lg overflow-hidden">
-              <thead className="text-red-950">
+              <thead className="text-red-700">
                 <tr>
                   <th className="border border-gray-300 px-4 py-3">
                     FULL RACE PASS (4 DAYS)
@@ -602,7 +643,7 @@ const Page = () => {
                 <tr>
                   <td className="border border-gray-300">
                     <a
-                      className="font-bold rounded-lg w-full h-full block bg-red-950 text-white px-4 py-3 flex items-center justify-center"
+                      className="font-bold rounded-lg w-full h-full block bg-red-700 hover:bg-red-800 text-white px-4 py-3 flex items-center justify-center"
                       href="https://fareharbor.com/embeds/book/centauruscharter/items/507113/?full-items=yes&flow=1279218"
                     >
                       BOOK NOW
@@ -610,7 +651,7 @@ const Page = () => {
                   </td>
                   <td className="border border-gray-300">
                     <a
-                      className="font-bold rounded-lg w-full h-full block bg-red-950 text-white px-4 py-3 flex items-center justify-center"
+                      className="font-bold rounded-lg w-full h-full block bg-red-700 hover:bg-red-800 text-white px-4 py-3 flex items-center justify-center"
                       href="https://fareharbor.com/embeds/book/centauruscharter/items/507113/?full-items=yes&flow=1279218"
                     >
                       BOOK NOW
@@ -618,7 +659,7 @@ const Page = () => {
                   </td>
                   <td className="border border-gray-300">
                     <a
-                      className="font-bold rounded-lg w-full h-full block bg-red-950 text-white px-4 py-3 flex items-center justify-center"
+                      className="font-bold rounded-lg w-full h-full block bg-red-700 hover:bg-red-800 text-white px-4 py-3 flex items-center justify-center"
                       href="https://fareharbor.com/embeds/book/centauruscharter/items/507113/?full-items=yes&flow=1279218"
                     >
                       BOOK NOW
@@ -626,7 +667,7 @@ const Page = () => {
                   </td>
                   <td className="border border-gray-300">
                     <a
-                      className="font-bold rounded-lg w-full h-full block bg-red-950 text-white px-4 py-3 flex items-center justify-center"
+                      className="font-bold rounded-lg w-full h-full block bg-red-700 hover:bg-red-800 text-white px-4 py-3 flex items-center justify-center"
                       href="https://fareharbor.com/embeds/book/centauruscharter/items/507113/?full-items=yes&flow=1279218"
                     >
                       BOOK NOW
@@ -634,7 +675,7 @@ const Page = () => {
                   </td>
                   <td className="border border-gray-300">
                     <a
-                      className="font-bold rounded-lg w-full h-full block bg-red-950 text-white px-4 py-3 flex items-center justify-center"
+                      className="font-bold rounded-lg w-full h-full block bg-red-700 hover:bg-red-800 text-white px-4 py-3 flex items-center justify-center"
                       href="https://fareharbor.com/embeds/book/centauruscharter/items/507113/?full-items=yes&flow=1279218"
                     >
                       BOOK NOW
@@ -649,7 +690,7 @@ const Page = () => {
           <div className="md:hidden grid grid-cols-2 gap-4">
             {/* Card 1 */}
             <div className="bg-white rounded-lg overflow-hidden flex flex-col">
-              <div className="p-4 text-center text-sm text-red-950 font-semibold">
+              <div className="p-4 text-center text-sm text-red-700 font-semibold">
                 FULL RACE PASS (4 DAYS)
                 <br />
                 <span className="text-xs text-gray-500">THURSDAY - SUNDAY</span>
@@ -657,7 +698,7 @@ const Page = () => {
               <div className="px-4 pb-4 text-center">
                 <div className="text-lg font-bold mb-3">13,500 AED</div>
                 <a
-                  className="w-full block bg-red-950 text-white font-bold rounded-lg px-4 py-3 flex items-center justify-center"
+                  className="w-full block bg-red-700 hover:bg-red-800 text-white font-bold rounded-lg px-4 py-3 flex items-center justify-center"
                   href="https://fareharbor.com/embeds/book/centauruscharter/items/507113/?full-items=yes&flow=1279218"
                 >
                   BOOK NOW
@@ -667,7 +708,7 @@ const Page = () => {
 
             {/* Card 2 */}
             <div className="bg-white rounded-lg overflow-hidden flex flex-col">
-              <div className="p-4 text-center text-sm text-red-950 font-semibold">
+              <div className="p-4 text-center text-sm text-red-700 font-semibold">
                 FULL WEEKEND PASS (3 DAYS)
                 <br />
                 <span className="text-xs text-gray-500">FRIDAY - SUNDAY</span>
@@ -675,7 +716,7 @@ const Page = () => {
               <div className="px-4 pb-4 text-center">
                 <div className="text-lg font-bold mb-3">12,500 AED</div>
                 <a
-                  className="w-full block bg-red-950 text-white font-bold rounded-lg px-4 py-3 flex items-center justify-center"
+                  className="w-full block bg-red-700 hover:bg-red-800 text-white font-bold rounded-lg px-4 py-3 flex items-center justify-center"
                   href="https://fareharbor.com/embeds/book/centauruscharter/items/507113/?full-items=yes&flow=1279218"
                 >
                   BOOK NOW
@@ -685,7 +726,7 @@ const Page = () => {
 
             {/* Card 3 */}
             <div className="bg-white rounded-lg overflow-hidden flex flex-col">
-              <div className="p-4 text-center text-sm text-red-950 font-semibold">
+              <div className="p-4 text-center text-sm text-red-700 font-semibold">
                 WEEKEND PASS (2 DAYS)
                 <br />
                 <span className="text-xs text-gray-500">SATURDAY - SUNDAY</span>
@@ -693,7 +734,7 @@ const Page = () => {
               <div className="px-4 pb-4 text-center">
                 <div className="text-lg font-bold mb-3">11,500 AED</div>
                 <a
-                  className="w-full block bg-red-950 text-white font-bold rounded-lg px-4 py-3 flex items-center justify-center"
+                  className="w-full block bg-red-700 hover:bg-red-800 text-white font-bold rounded-lg px-4 py-3 flex items-center justify-center"
                   href="https://fareharbor.com/embeds/book/centauruscharter/items/507113/?full-items=yes&flow=1279218"
                 >
                   BOOK NOW
@@ -703,7 +744,7 @@ const Page = () => {
 
             {/* Card 4 */}
             <div className="bg-white rounded-lg overflow-hidden flex flex-col">
-              <div className="p-4 text-center text-sm text-red-950 font-semibold">
+              <div className="p-4 text-center text-sm text-red-700 font-semibold">
                 WEEKEND PASS (1 DAY)
                 <br />
                 <span className="text-xs text-gray-500">SATURDAY</span>
@@ -711,7 +752,7 @@ const Page = () => {
               <div className="px-4 pb-4 text-center">
                 <div className="text-lg font-bold mb-3">6,000 AED</div>
                 <a
-                  className="w-full block bg-red-950 text-white font-bold rounded-lg px-4 py-3 flex items-center justify-center"
+                  className="w-full block bg-red-700 hover:bg-red-800 text-white font-bold rounded-lg px-4 py-3 flex items-center justify-center"
                   href="https://fareharbor.com/embeds/book/centauruscharter/items/507113/?full-items=yes&flow=1279218"
                 >
                   BOOK NOW
@@ -721,7 +762,7 @@ const Page = () => {
 
             {/* Card 5 */}
             <div className="bg-white rounded-lg overflow-hidden flex flex-col col-span-2 sm:col-span-1">
-              <div className="p-4 text-center text-sm text-red-950 font-semibold">
+              <div className="p-4 text-center text-sm text-red-700 font-semibold">
                 WEEKEND PASS (1 DAY)
                 <br />
                 <span className="text-xs text-gray-500">SUNDAY</span>
@@ -729,11 +770,100 @@ const Page = () => {
               <div className="px-4 pb-4 text-center">
                 <div className="text-lg font-bold mb-3">7,200 AED</div>
                 <a
-                  className="w-full block bg-red-950 text-white font-bold rounded-lg px-4 py-3 flex items-center justify-center"
+                  className="w-full block bg-red-700 hover:bg-red-800 text-white font-bold rounded-lg px-4 py-3 flex items-center justify-center"
                   href="https://fareharbor.com/embeds/book/centauruscharter/items/507113/?full-items=yes&flow=1279218"
                 >
                   BOOK NOW
                 </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Yacht Carousel Section */}
+      <section className="bg-black py-12">
+        <div className="container mx-auto px-4">
+          <div className="flex flex-col lg:flex-row items-stretch rounded-xl overflow-hidden max-w-7xl mx-auto">
+            {/* Left: Image Carousel */}
+            <div className="w-full lg:w-1/2 relative">
+              <div
+                ref={yachtCarouselRef}
+                className="overflow-hidden relative h-[350px] md:h-[400px] lg:h-[450px]"
+              >
+                <div className="flex h-full">
+                  {yachtData.map((yacht, index) => (
+                    <div
+                      key={yacht.id}
+                      className="flex-[0_0_100%] min-w-0 relative h-full w-full"
+                    >
+                      <Image
+                        src={yacht.imageSrc}
+                        alt={yacht.imageAlt || yacht.title}
+                        fill
+                        className="object-cover"
+                        priority={index === 0}
+                        sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 50vw"
+                      />
+                    </div>
+                  ))}
+                </div>
+
+                {/* Navigation Arrows */}
+                <button
+                  aria-label="Previous yacht"
+                  className="absolute left-4 top-1/2 -translate-y-1/2 w-12 h-12 bg-black/50 hover:bg-black/70 text-white rounded-full flex items-center justify-center transition-colors z-10"
+                  onClick={scrollYachtPrev}
+                >
+                  <IoIosArrowBack size={24} />
+                </button>
+                <button
+                  aria-label="Next yacht"
+                  className="absolute right-4 top-1/2 -translate-y-1/2 w-12 h-12 bg-black/50 hover:bg-black/70 text-white rounded-full flex items-center justify-center transition-colors z-10"
+                  onClick={scrollYachtNext}
+                >
+                  <IoIosArrowForward size={24} />
+                </button>
+              </div>
+            </div>
+
+            {/* Right: Text Content */}
+            <div className="w-full lg:w-1/2 bg-red-700 text-white flex flex-col justify-between p-8 lg:p-12">
+              <div>
+                {/* Title */}
+                <h3 className="text-2xl md:text-3xl text-center lg:text-4xl font-bold uppercase mb-4">
+                  {yachtData[currentYachtIndex]?.title || 'SUPERYACHT'}
+                </h3>
+
+                {/* Subtitle */}
+                {yachtData[currentYachtIndex]?.trackView && (
+                  <p className="text-base md:text-lg mb-6 uppercase text-white text-center tracking-[0.30rem]">
+                    {yachtData[currentYachtIndex].trackView}
+                  </p>
+                )}
+
+                {/* Description */}
+                <p className="text-sm md:text-base leading-relaxed mb-4 text-white/90">
+                  This exclusive 4-day Abu Dhabi Race Yacht Party will take place
+                  aboard the magnificent {yachtData[currentYachtIndex]?.title || 'yacht'},
+                  a stunning superyacht that radiates luxury, style, and sophistication.
+                </p>
+              </div>
+
+              <div className='flex flex-col items-center justify-center'>
+                {/* CTA Button */}
+                <button
+                  onClick={openModal}
+                  className=" bg-white text-red-700 font-bold px-8 py-4 rounded-lg hover:bg-gray-100 transition-colors mb-6 text-lg"
+                >
+                  INQUIRE NOW
+                </button>
+
+                {/* Disclaimer */}
+                <div className="text-xs md:text-sm text-white space-y-1 text-center">
+                  <p>Limited tickets available — book early to secure your spot!</p>
+                  <p>T&Cs apply. Inclusions may vary based on the date and package selected</p>
+                </div>
               </div>
             </div>
           </div>
@@ -745,7 +875,8 @@ const Page = () => {
         2025!
       </div>
       {/* Heading Section */}
-      <section className="flex flex-col items-center py-10 bg-black">
+      <section className="bg-black">
+      <section className="container mx-auto flex flex-col items-center py-10 bg-black">
         {/* <div className="container mx-auto">
           <img
             src="/images/f1-grand-prix-abu-dhabi-2025.webp"
@@ -808,6 +939,7 @@ const Page = () => {
             </div>
           </div>
         </div>
+      </section>
       </section>
 
       {/* Carousel Section */}
@@ -924,7 +1056,7 @@ const Page = () => {
             For More Information and Viewing Feel Free To Contact:
             <br />{' '}
             <span className="">
-              <strong>info@centauruscharter.com | +971 50 201 4225</strong>
+              <strong>info@centauruscharter.com | +971 52 490 1269</strong>
             </span>
           </p>
         </div>

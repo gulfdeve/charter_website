@@ -36,8 +36,13 @@ const InclusionsCarousel = ({ slides }) => {
           >
             <div className="flex flex-col rounded-xl overflow-hidden">
               <img src={item.src} className="w-full" alt={item.text} />
-              <p className="font-bold text-sm bg-red-950 text-white text-center p-7 h-20 flex items-center justify-center">
-                {item.text}
+              <p className="font-bold text-sm bg-red-700 text-white text-center p-7 h-20 flex items-center justify-center">
+                {item.text.split('<br />').map((line, index) => (
+                  <React.Fragment key={index}>
+                    {line}
+                    {index < item.text.split('<br />').length - 1 && <br />}
+                  </React.Fragment>
+                ))}
               </p>
             </div>
           </div>
@@ -47,14 +52,14 @@ const InclusionsCarousel = ({ slides }) => {
       {/* Navigation Buttons (Arrows) */}
       <button
         aria-label="Previous Slide"
-        className="absolute left-0 top-1/2 -translate-y-1/2 w-10 h-10 md:w-14 md:h-14 bg-[#1a1a1a] text-white rounded-full flex items-center justify-center hover:bg-gray-700 transition-colors z-10"
+        className="absolute left-0 top-1/2 -translate-y-1/2 w-10 h-10 md:w-14 md:h-14 bg-red-700 text-white rounded-full flex items-center justify-center hover:bg-red-800 transition-colors z-10"
         onClick={scrollPrev}
       >
         <IoIosArrowBack size={30} />
       </button>
       <button
         aria-label="Next Slide"
-        className="absolute right-0 top-1/2 -translate-y-1/2 w-10 h-10 md:w-14 md:h-14 bg-[#1a1a1a] text-white rounded-full flex items-center justify-center hover:bg-gray-700 transition-colors z-10"
+        className="absolute right-0 top-1/2 -translate-y-1/2 w-10 h-10 md:w-14 md:h-14 bg-red-700 text-white rounded-full flex items-center justify-center hover:bg-red-800 transition-colors z-10"
         onClick={scrollNext}
       >
         <IoIosArrowForward size={30} />

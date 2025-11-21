@@ -1,0 +1,560 @@
+# Centaurus Charter - Next.js Project Rules
+
+## Project Overview
+This is a Next.js 15 yacht charter booking platform with multilingual support (en, ar, ru, zh), payment integration, and third-party services (FareHarbor, email notifications, WhatsApp).
+
+## Tech Stack
+
+### Core Framework
+- **Next.js 15** with App Router architecture
+- **React 19 RC** (19.0.0-rc-66855b96-20241106)
+- **TypeScript + JavaScript** mixed codebase (gradual TS adoption)
+- **Tailwind CSS** for styling with custom theme
+- **next-intl** for internationalization
+
+### Key Dependencies
+- date-fns for date manipulation
+- embla-carousel for carousels
+- nodemailer for email sending
+- react-icons for icons
+- react-phone-input-2 for phone number inputs
+- jsonwebtoken for JWT handling
+- libphonenumber-js for phone validation
+
+## Code Style & Formatting
+
+### Prettier Configuration
+- **Indent**: 2 spaces (no tabs)
+- **Quotes**: Single quotes
+- **Semicolons**: Always use semicolons
+- **Line width**: 80 characters
+- **Trailing commas**: ES5 style
+- **Arrow parens**: Avoid when possible
+- **End of line**: LF
+
+### ESLint Rules
+- Prefer `const` over `let`, never use `var`
+- Use arrow functions (`prefer-arrow-callback`)
+- Use object shorthand syntax
+- No unused variables (except those prefixed with `_`)
+- Console statements are allowed (for debugging)
+
+### Import Conventions
+- Always use `@/` alias for imports (e.g., `@/app/components/Navbar`)
+- Import from `app/i18n/routing` for `Link`, `useRouter`, `usePathname`
+- Use `next/image` instead of regular `<img>` tags
+- Use named exports for components
+
+## File & Component Conventions
+
+### Component Structure
+- **Server Components by default**: Don't add 'use client' unless necessary
+- **Client Components**: Must have 'use client' directive at the top when:
+  - Using React hooks (useState, useEffect, useRef, etc.)
+  - Using browser APIs
+  - Using event handlers
+  - Using Context consumers (useTranslations, useLocale, useData, etc.)
+
+### File Extensions
+- Mix of `.js` and `.tsx/.ts` extensions (historical reasons)
+- Prefer `.tsx` for new TypeScript files
+- Prefer `.ts` for utility files
+- Keep `.js` for existing files unless converting to TypeScript
+
+### Directory Structure
+```
+app/
+├── [locale]/              # Locale-prefixed routes
+│   ├── layout.tsx         # Root layout with providers
+│   ├── page.js            # Home page
+│   └── [feature]/         # Feature-specific pages
+│       ├── layout.tsx     # Feature layout
+│       └── page.js        # Feature page
+├── api/                   # API route handlers
+│   └── [endpoint]/
+│       └── route.js       # API route
+├── components/            # Shared UI components
+├── context/               # React Context providers
+├── i18n/                  # i18n configuration
+│   ├── routing.ts         # Routing configuration
+│   └── request.ts         # Request configuration
+├── lib/                   # Server-side utilities
+└── utils/                 # Client/shared utilities
+```
+
+## Next.js Patterns
+
+### Component Types
+- **Server Components**: For static content, data fetching, SEO
+- **Client Components**: For interactivity, hooks, browser APIs
+- Always await `params` and `searchParams` in Server Components (Next.js 15)
+
+### Navigation
+```javascript
+// CORRECT: Use i18n-aware routing
+import { Link, useRouter, usePathname } from '@/app/i18n/routing';
+
+// INCORRECT: Don't use next/link directly
+import Link from 'next/link'; // ❌
+```
+
+### Image Optimization
+```javascript
+import Image from 'next/image';
+
+<Image
+  src="/images/example.webp"
+  alt="Descriptive alt text"
+  width={150}
+  height={150}
+  priority={true} // For above-fold images
+  className="w-full"
+/>
+```
+
+### Data Fetching
+- Fetch data in Server Components using async/await
+- Use `fetchData()` from `@/app/lib/fetchData` for API calls
+- Pass data as props to Client Components
+- Use Context for global state (DataContext, LanguageContext, FareHarborContext)
+
+### Layouts
+- Root layout at `app/[locale]/layout.tsx`
+- Include locale validation and next-intl providers
+- Handle conditional rendering (e.g., landing pages vs regular pages)
+- Await params: `const { locale } = await params;`
+
+## Internationalization (i18n)
+
+### Translation Usage
+```javascript
+// Client Component
+'use client';
+import { useTranslations, useLocale } from 'next-intl';
+
+export default function Component() {
+  const t = useTranslations();
+  const locale = useLocale();
+  
+  return <h1>{t('key')}</h1>;
+}
+```
+
+### Supported Locales
+- `en` - English (default)
+- `ar` - Arabic
+- `ru` - Russian
+- `zh` - Chinese
+
+### Translation Files
+- Located in `messages/` directory (en.json, ar.json, ru.json, zh.json)
+- All user-facing text MUST use translations
+- No hardcoded strings in components
+
+### Routing
+- All routes are prefixed with locale: `/en/about`, `/ar/about`
+- Use `Link` from `app/i18n/routing` for locale-aware navigation
+- Handle locale changes with `router.replace(pathname, { locale: newLocale })`
+
+## Styling with Tailwind CSS
+
+### Custom Theme Colors
+```javascript
+// Primary colors
+'primary-blue': '#003057'
+'primary-blue-light': '#E8F1FF'
+'primary-red': '#8A1538'
+'primary-red-light': '#FFE3E2'
+'primary-yellow': '#F7CE03'
+'primary-yellow-dark': 'rgb(234 174 6)'
+'primary-grey': '#575757'
+'primary-black': '#1D1D1D'
+'text-primary-white': '#ababab'
+'text-primary-black': '#212529'
+```
+
+### Custom Breakpoints
+```javascript
+xxs: '320px'
+xs: '375px'
+s: '425px'
+sm: '640px'
+md: '768px'
+lg: '1200px'
+xl: '1280px'
+'2xl': '1310px'
+```
+
+### Custom Font Families
+```javascript
+font-primary: ['proxima-nova', 'Verdana']
+```
+
+### Custom Classes
+- `red-solid-button`: Standard call-to-action button style
+- Use existing custom classes before creating new ones
+- Keep responsive design mobile-first
+
+### Styling Best Practices
+- Use Tailwind utility classes, avoid inline styles
+- Use responsive modifiers: `sm:`, `md:`, `lg:`, etc.
+- Group related classes: layout, spacing, colors, typography
+- Use custom colors from theme, not arbitrary values
+
+## State Management
+
+### Context Providers
+```javascript
+// DataContext: Global data from API
+import { useData } from '@/app/context/DataContext';
+
+// LanguageContext: Language preferences
+import { LanguageProvider } from '@/app/context/LanguageContext';
+
+// FareHarborContext: Booking integration
+import { FareHarborProvider } from '@/app/context/FareHarborContext';
+```
+
+### Usage Pattern
+```javascript
+'use client';
+import { useData } from '@/app/context/DataContext';
+
+export default function Component() {
+  const { data, loading, error } = useData();
+  
+  if (loading) return <div>Loading...</div>;
+  if (error) return <div>Error loading data</div>;
+  
+  return <div>{data.settings[0].site_title}</div>;
+}
+```
+
+## API Routes & Backend
+
+### API Structure
+- Located in `app/api/` directory
+- Use route handlers (`route.js` files)
+- Handle POST requests for forms and actions
+- Return JSON responses with proper status codes
+
+### Common API Routes
+- `/api/send-email` - Email sending via Nodemailer
+- `/api/payment` - Payment processing
+- `/api/subscribe` - Newsletter subscriptions
+- `/api/get-data` - Fetch yacht data
+- `/api/revalidate` - On-demand revalidation
+
+### Error Handling
+```javascript
+try {
+  // API logic
+  return Response.json({ success: true, data });
+} catch (error) {
+  console.error('Error:', error);
+  return Response.json(
+    { success: false, error: 'Error message' },
+    { status: 500 }
+  );
+}
+```
+
+## Third-Party Integrations
+
+### FareHarbor (Booking System)
+- Load via `FareHarborLoader` component
+- Use `FareHarborProvider` for context
+- Load calendar widget with `FareHarborCalendar` component
+
+### Payment Gateways
+- Tabby (Buy now, pay later)
+- RakBank payment integration
+- Handle payment callbacks and webhooks
+
+### Email (Nodemailer)
+- Send booking confirmations
+- Send contact form submissions
+- Handle email templates
+
+### WhatsApp
+- Use dynamic WhatsApp links from settings API
+- Format: `https://wa.link/[code]`
+- Display WhatsApp icon for contact
+
+### Google Tag Manager
+- Loaded in root layout
+- Track page views and conversions
+- GTM ID: GTM-NPBPZQ2
+
+## Domain-Specific Rules
+
+### Yacht Charter Entities
+- **Yacht Rentals**: Private yacht bookings
+- **Yacht Trips**: Shared tours and experiences
+- **Offers**: Special promotions and packages
+- **Events**: F1 racing, New Year, special occasions
+- **Water Sports**: Additional activities
+- **Yachts for Sale**: Yacht sales listings
+
+### Booking Flow
+1. Browse yachts/trips
+2. View details with image carousel
+3. Check availability via FareHarbor
+4. Fill booking form (Modal/Modal2/Modal3)
+5. Payment processing
+6. Confirmation email
+
+### Contact Methods
+- WhatsApp button (primary)
+- Contact form (secondary)
+- Phone number link
+- Email link
+- All contact info from settings API
+
+### Forms & Validation
+- Use `react-phone-input-2` for phone inputs
+- Validate email addresses
+- Validate dates with `react-date-range` or `react-multi-date-picker`
+- Show loading states during submission
+- Display success/error messages
+
+## Performance & SEO
+
+### Image Optimization
+- Use `.webp` format for images
+- Store images in `/public/images/`
+- Use Next.js Image component with proper dimensions
+- Set `priority={true}` for above-fold images
+- Use responsive images with srcSet
+
+### Metadata & SEO
+```javascript
+// layout.tsx or page.tsx
+export async function generateMetadata({ params }) {
+  const { locale } = await params;
+  
+  return {
+    title: 'Page Title',
+    description: 'Page description',
+    canonical: 'https://www.centauruscharter.com/path',
+    // ... more metadata
+  };
+}
+```
+
+### Caching Strategy
+- Static assets: 1 year cache (immutable)
+- HTML pages: 60s browser, 1h CDN, stale-while-revalidate
+- API routes: No cache by default
+- Images: 30 days cache (configured in next.config.ts)
+
+### Performance Best Practices
+- Preconnect to external domains (Adobe Fonts, FareHarbor)
+- Lazy load below-fold content
+- Use loading states for async operations
+- Minimize client-side JavaScript
+- Prefer Server Components when possible
+
+## Error Handling & User Experience
+
+### Loading States
+```javascript
+const [loading, setLoading] = useState(false);
+
+const handleSubmit = async () => {
+  setLoading(true);
+  try {
+    await submitForm();
+  } catch (error) {
+    console.error(error);
+  } finally {
+    setLoading(false);
+  }
+};
+```
+
+### Error Messages
+- Show user-friendly error messages
+- Log detailed errors to console
+- Provide fallback UI for failed data fetches
+- Handle 404s with custom not-found page
+
+### Modals
+- Modal: Basic modal for forms
+- Modal2: Enhanced modal with custom logic
+- Modal3: Alternative modal variant
+- Close modals on successful submission
+- Handle modal state with useState
+
+### Form Validation
+- Required field validation
+- Email format validation
+- Phone number validation with libphonenumber-js
+- Date range validation
+- Display validation errors inline
+
+## Special Page Types
+
+### Landing Pages
+- Different navbar (LandingNavbar vs Navbar)
+- No footer components
+- Optimized for conversions
+- Example: `/landing-abu-dhabi-race-yacht-charter`
+
+### Detection Pattern
+```javascript
+const isLandingPage = currentPath?.includes('landing-') || false;
+
+{isLandingPage ? <LandingNavbar /> : <Navbar />}
+{isLandingPage ? null : <FirstFooter />}
+```
+
+### Checkout Pages
+- Multi-step checkout flow
+- Payment widget integration
+- Order confirmation
+- Dynamic routing: `/checkout/[slug]`
+
+## Important Constraints
+
+### DO NOT
+- Remove 'use client' from existing client components
+- Use `next/link` directly (use `app/i18n/routing` instead)
+- Hardcode user-facing text (use translations)
+- Use inline styles (use Tailwind classes)
+- Modify .prettierrc or eslint.config.js without reason
+- Break backwards compatibility with existing .js components
+- Remove existing custom Tailwind classes
+- Change WhatsApp/contact info (must come from settings API)
+
+### ALWAYS
+- Test changes with multiple locales (en, ar, ru, zh)
+- Await params in Server Components (Next.js 15 requirement)
+- Use proper TypeScript types when in .tsx files
+- Optimize images with Next.js Image component
+- Handle loading and error states
+- Validate user inputs
+- Use semantic HTML
+- Add proper alt text to images
+- Follow existing component patterns
+
+### CODE REVIEW CHECKLIST
+- [ ] Uses correct imports from `@/app/i18n/routing`
+- [ ] Client components have 'use client' directive
+- [ ] All user-facing text uses translations
+- [ ] Images use Next.js Image component
+- [ ] Proper error handling and loading states
+- [ ] Responsive design with Tailwind breakpoints
+- [ ] Follows Prettier formatting (2 spaces, single quotes)
+- [ ] No console.log in production code (console.error is OK)
+- [ ] Proper TypeScript types (if .tsx file)
+- [ ] SEO metadata included (if page route)
+
+## Common Patterns
+
+### Page Component Template
+```javascript
+// Server Component
+import { useTranslations } from 'next-intl';
+import { getTranslations } from 'next-intl/server';
+import Navbar from '@/app/components/Navbar';
+
+export async function generateMetadata({ params }) {
+  const { locale } = await params;
+  const t = await getTranslations({ locale });
+  
+  return {
+    title: t('page.title'),
+    description: t('page.description'),
+  };
+}
+
+export default async function Page({ params }) {
+  const { locale } = await params;
+  const data = await fetchData();
+  
+  return (
+    <div>
+      <h1>{data.title}</h1>
+      <ClientComponent data={data} />
+    </div>
+  );
+}
+```
+
+### Client Component Template
+```javascript
+'use client';
+import { useState } from 'react';
+import { useTranslations } from 'next-intl';
+import { Link } from '@/app/i18n/routing';
+
+export default function Component({ data }) {
+  const t = useTranslations();
+  const [state, setState] = useState(false);
+  
+  return (
+    <div className="container mx-auto px-4">
+      <h2>{t('component.title')}</h2>
+      <Link href="/about">{t('nav.about')}</Link>
+    </div>
+  );
+}
+```
+
+### API Route Template
+```javascript
+export async function POST(request) {
+  try {
+    const body = await request.json();
+    
+    // Validate input
+    if (!body.email) {
+      return Response.json(
+        { success: false, error: 'Email is required' },
+        { status: 400 }
+      );
+    }
+    
+    // Process request
+    const result = await processData(body);
+    
+    return Response.json({ success: true, data: result });
+  } catch (error) {
+    console.error('API Error:', error);
+    return Response.json(
+      { success: false, error: error.message },
+      { status: 500 }
+    );
+  }
+}
+```
+
+## Development Workflow
+
+### Running the Project
+```bash
+npm run dev          # Start development server
+npm run build        # Build for production
+npm run start        # Start production server
+npm run lint         # Run ESLint
+npm run format       # Format with Prettier
+npm run format:check # Check formatting
+```
+
+### Environment
+- Development: http://localhost:3000
+- Production: https://www.centauruscharter.com
+- Node.js 18+ required
+
+### Git Workflow
+- Commit with meaningful messages
+- Test with multiple locales before committing
+- Run linter before pushing
+- Keep changes focused and atomic
+
+---
+
+**Last Updated**: Based on Next.js 15.0.3, React 19 RC, next-intl 3.26.3
+
+

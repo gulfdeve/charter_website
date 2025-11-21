@@ -172,8 +172,8 @@ export default function VideoLocal({ filename, section, ctaLink }) {
           ></div>
           <div className="bg-black">
             <div className="container mx-auto block text-center py-10 lg:absolute lg:-translate-x-2/4 lg:-translate-y-2/4 lg:left-2/4 lg:top-2/4 lg:mt-0">
-              <h1 className=" font-bold mb-4 text-primary-yellow  xl:text-xl 2xl:text-xl text-shadow">
-                THE GREATEST RACE IN <br />
+              <h1 className=" font-bold mb-4 text-white  xl:text-xl 2xl:text-xl text-shadow">
+                THE GREATEST RACE <br />
                 <span className="text-white md:text-white xl:text-3xl 2xl:text-4xl">
                   ABU DHABI GRAND PRIX
                 </span>
