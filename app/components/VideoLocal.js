@@ -167,22 +167,22 @@ export default function VideoLocal({ filename, section, ctaLink }) {
       ) : section === 'f1-landing' ? (
         <>
           <div
-            className="hidden lg:block absolute inset-0 bg-black opacity-50"
+            className="hidden lg:block absolute inset-0 bg-black opacity-50 font-primary"
             style={{ pointerEvents: 'none' }}
           ></div>
           <div className="bg-black">
             <div className="container mx-auto block text-center py-10 lg:absolute lg:-translate-x-2/4 lg:-translate-y-2/4 lg:left-2/4 lg:top-2/4 lg:mt-0">
-              <h1 className=" font-bold mb-4 text-white  xl:text-xl 2xl:text-xl text-shadow">
-                THE GREATEST RACE <br />
+              <h1 className=" font-primary font-bold mb-4 text-white  xl:text-xl 2xl:text-xl text-shadow">
+                THE GREATEST RACE IN <br />
                 <span className="text-white md:text-white xl:text-3xl 2xl:text-4xl">
                   ABU DHABI GRAND PRIX
                 </span>
               </h1>
-              <p className="text-sm mb-6 xl:mb-1 text-center  text-white  xl:text-lg 2xl:text-xl text-shadow">
-                4-7 DECEMBER 2025
+              <p className="font-bold font-primary text-sm mb-6 xl:mb-1 text-center  text-white  xl:text-lg 2xl:text-xl text-shadow">
+                4-7 DECEMBER 2025 | YAS MARINA, ABU DHABI
               </p>
-              <p className='font-bold text-sm mb-6 xl:mb-8 text-center  text-white  xl:text-lg 2xl:text-xl text-shadow'>
-              Ticket Bookings: 4 days Yacht Rentals, Gourmet Delights, Exclusive Marina Access</p>
+              <p className='font-light font-primary text-sm mb-6 xl:mb-8 text-center  text-white  xl:text-lg 2xl:text-xl text-shadow'>
+              EXCLUSIVE MARINA ACCESS, LIVE DJ, GOURMET DELIGHTS & UNLIMITED DRINKS</p>
               <a target="_blank" href={ctaLink} className="red-solid-button">
                 BOOK NOW
               </a>
