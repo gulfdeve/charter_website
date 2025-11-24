@@ -20,7 +20,7 @@ export async function generateStaticParams() {
   ];
 }
 
-const whatsappLink = 'https://wa.link/4qpg10';
+const whatsappLink = 'https://wa.link/v9pn97';
 
 const slidesone = [
   { src: '/LIVE DJ & DANCE FLOOR.webp', text: 'LIVE DJ & DANCE FLOOR' },

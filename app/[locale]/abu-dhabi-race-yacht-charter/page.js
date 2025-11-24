@@ -5,7 +5,7 @@ import Link from 'next/link';
 import VideoLocal from '@/app/components/VideoLocal';
 import InclusionsCarousel from '@/app/components/InclusionsCarousel';
 import YachtBookingButtons from '@/app/components/YachtBookingButtons';
-const whatsappLink = 'https://wa.link/8nj51w';
+const whatsappLink = 'https://wa.link/pgrzh7';
 
 // Force static generation with ISR (24 hours revalidation)
 export const dynamic = 'force-static';
