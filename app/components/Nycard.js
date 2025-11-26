@@ -47,22 +47,6 @@ const Nycard = ({ whatsappLink }) => {
       isSold: 0,
       availableText: 'Available',
     },
-    {
-      id: 3,
-      image: '/images/40ft-yacht-riverside-new-year.webp',
-      name: '40ft Yacht - Riverside',
-      infoBoxes: [
-        { label: 'Build', value: 'Yamaha' },
-        { label: 'Capacity', value: '12' },
-        { label: 'Cabins', value: '1' },
-        { label: 'Timings', value: '9PM - 3AM' },
-      ],
-      packageInclusions: 'CANAPÉS, WINES, BEERS & 2 BOTTLES OF CHAMPAGNE',
-      price: 'AED 16,000 + VAT',
-      rate: '6 HOURS RATE',
-      isSold: 0,
-      availableText: 'Available',
-    },
 
     {
       id: 9,
@@ -96,6 +80,22 @@ const Nycard = ({ whatsappLink }) => {
       rate: '6 HOURS RATE',
       isSold: 0,
       availableText: 'Available for Shared Tours',
+    },
+    {
+      id: 3,
+      image: '/images/40ft-yacht-riverside-new-year.webp',
+      name: '40ft Yacht - Riverside',
+      infoBoxes: [
+        { label: 'Build', value: 'Yamaha' },
+        { label: 'Capacity', value: '12' },
+        { label: 'Cabins', value: '1' },
+        { label: 'Timings', value: '9PM - 3AM' },
+      ],
+      packageInclusions: 'CANAPÉS, WINES, BEERS & 2 BOTTLES OF CHAMPAGNE',
+      price: 'AED 16,000 + VAT',
+      rate: '6 HOURS RATE',
+      isSold: 1,
+      availableText: 'Available',
     },
     {
       id: 4,
