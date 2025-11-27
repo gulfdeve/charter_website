@@ -22,13 +22,7 @@
       "minutes": "180 mins",
       "bgColorClass": "bg-green-100",
       "headerBgColorClass": "bg-green-700",
-      "points": [
-        "Dubai Canal",
-        "Burj Khalifa View ",
-        "Burj Al Arab",
-        "Atlantis",
-        "Palm Jumeirah"
-      ]
+      "points": ["Dubai Canal", "Burj Khalifa View ", "Burj Al Arab", "Atlantis", "Palm Jumeirah"]
     },
     {
       "title": "Dubai Marina ",
@@ -36,17 +30,7 @@
       "minutes": "240-360 mins",
       "bgColorClass": "bg-yellow-100",
       "headerBgColorClass": "bg-primary-yellow-dark",
-      "points": [
-        "Dubai Canal",
-        "Burj Khalifa View ",
-        "Burj Al Arab",
-        "Atlantis",
-        "Palm Jumeirah",
-        "JBR",
-        "Bluewaters Island",
-        "Ain Dubai",
-        "Dubai Marina"
-      ]
+      "points": ["Dubai Canal", "Burj Khalifa View ", "Burj Al Arab", "Atlantis", "Palm Jumeirah", "JBR", "Bluewaters Island", "Ain Dubai", "Dubai Marina"]
     }
   ],
   "56ft-lagoona": [
@@ -64,14 +48,7 @@
       "minutes": "120 mins",
       "bgColorClass": "bg-blue-100",
       "headerBgColorClass": "bg-primary-blue-2",
-      "points": [
-        "Dubai Marina",
-        "Bluewaters Island",
-        "Ain Dubai",
-        "JBR",
-        "Palm Jumeirah",
-        "Atlantis the palm"
-      ]
+      "points": ["Dubai Marina", "Bluewaters Island", "Ain Dubai", "JBR", "Palm Jumeirah", "Atlantis the palm"]
     },
     {
       "title": "Burj Al Arab Cruise",
@@ -79,15 +56,7 @@
       "minutes": "180 mins",
       "bgColorClass": "bg-green-100",
       "headerBgColorClass": "bg-green-700",
-      "points": [
-        "Dubai Marina",
-        "Bluewaters Island",
-        "Ain Dubai",
-        "JBR",
-        "Palm Jumeirah",
-        "Atlantis The Palm",
-        "Burj Al Arab"
-      ]
+      "points": ["Dubai Marina", "Bluewaters Island", "Ain Dubai", "JBR", "Palm Jumeirah", "Atlantis The Palm", "Burj Al Arab"]
     },
     {
       "title": "Dubai Canal",
@@ -95,17 +64,7 @@
       "minutes": "240 - 360 mins",
       "bgColorClass": "bg-yellow-100",
       "headerBgColorClass": "bg-primary-yellow-dark",
-      "points": [
-        "Dubai Marina",
-        "Bluewaters Island",
-        "Ain Dubai",
-        "JBR",
-        "Palm Jumeirah",
-        "Alantis the palm",
-        "Burj Al Arab",
-        "Dubai Canal",
-        "Burj Khalifa view <span>(from the Canal)</span>"
-      ]
+      "points": ["Dubai Marina", "Bluewaters Island", "Ain Dubai", "JBR", "Palm Jumeirah", "Alantis the palm", "Burj Al Arab", "Dubai Canal", "Burj Khalifa view <span>(from the Canal)</span>"]
     }
   ],
   "36ft-Storm": [
@@ -123,14 +82,7 @@
       "minutes": "120 mins",
       "bgColorClass": "bg-blue-100",
       "headerBgColorClass": "bg-primary-blue-2",
-      "points": [
-        "Dubai Marina",
-        "Bluewaters Island",
-        "Ain Dubai",
-        "JBR",
-        "Palm Jumeirah",
-        "Atlantis the palm"
-      ]
+      "points": ["Dubai Marina", "Bluewaters Island", "Ain Dubai", "JBR", "Palm Jumeirah", "Atlantis the palm"]
     },
     {
       "title": "Burj Al Arab Cruise",
@@ -138,15 +90,7 @@
       "minutes": "180 mins",
       "bgColorClass": "bg-green-100",
       "headerBgColorClass": "bg-green-700",
-      "points": [
-        "Dubai Marina",
-        "Bluewaters Island",
-        "Ain Dubai",
-        "JBR",
-        "Palm Jumeirah",
-        "Atlantis The Palm",
-        "Burj Al Arab"
-      ]
+      "points": ["Dubai Marina", "Bluewaters Island", "Ain Dubai", "JBR", "Palm Jumeirah", "Atlantis The Palm", "Burj Al Arab"]
     },
     {
       "title": "Dubai Canal",
@@ -154,17 +98,7 @@
       "minutes": "240 - 360 mins",
       "bgColorClass": "bg-yellow-100",
       "headerBgColorClass": "bg-primary-yellow-dark",
-      "points": [
-        "Dubai Marina",
-        "Bluewaters Island",
-        "Ain Dubai",
-        "JBR",
-        "Palm Jumeirah",
-        "Alantis the palm",
-        "Burj Al Arab",
-        "Dubai Canal",
-        "Burj Khalifa view <span>(from the Canal)</span>"
-      ]
+      "points": ["Dubai Marina", "Bluewaters Island", "Ain Dubai", "JBR", "Palm Jumeirah", "Alantis the palm", "Burj Al Arab", "Dubai Canal", "Burj Khalifa view <span>(from the Canal)</span>"]
     }
   ],
   "36ft-thunder": [
@@ -182,14 +116,7 @@
       "minutes": "120 mins",
       "bgColorClass": "bg-blue-100",
       "headerBgColorClass": "bg-primary-blue-2",
-      "points": [
-        "Dubai Marina",
-        "Bluewaters Island",
-        "Ain Dubai",
-        "JBR",
-        "Palm Jumeirah",
-        "Atlantis the palm"
-      ]
+      "points": ["Dubai Marina", "Bluewaters Island", "Ain Dubai", "JBR", "Palm Jumeirah", "Atlantis the palm"]
     },
     {
       "title": "Burj Al Arab Cruise",
@@ -197,15 +124,7 @@
       "minutes": "180 mins",
       "bgColorClass": "bg-green-100",
       "headerBgColorClass": "bg-green-700",
-      "points": [
-        "Dubai Marina",
-        "Bluewaters Island",
-        "Ain Dubai",
-        "JBR",
-        "Palm Jumeirah",
-        "Atlantis The Palm",
-        "Burj Al Arab"
-      ]
+      "points": ["Dubai Marina", "Bluewaters Island", "Ain Dubai", "JBR", "Palm Jumeirah", "Atlantis The Palm", "Burj Al Arab"]
     },
     {
       "title": "Dubai Canal",
@@ -213,17 +132,7 @@
       "minutes": "240 - 360 mins",
       "bgColorClass": "bg-yellow-100",
       "headerBgColorClass": "bg-primary-yellow-dark",
-      "points": [
-        "Dubai Marina",
-        "Bluewaters Island",
-        "Ain Dubai",
-        "JBR",
-        "Palm Jumeirah",
-        "Alantis the palm",
-        "Burj Al Arab",
-        "Dubai Canal",
-        "Burj Khalifa view <span>(from the Canal)</span>"
-      ]
+      "points": ["Dubai Marina", "Bluewaters Island", "Ain Dubai", "JBR", "Palm Jumeirah", "Alantis the palm", "Burj Al Arab", "Dubai Canal", "Burj Khalifa view <span>(from the Canal)</span>"]
     }
   ],
   "40ft-yacht-Riverside": [
@@ -241,14 +150,7 @@
       "minutes": "120 mins",
       "bgColorClass": "bg-blue-100",
       "headerBgColorClass": "bg-primary-blue-2",
-      "points": [
-        "Dubai Marina",
-        "Bluewaters Island",
-        "Ain Dubai",
-        "JBR",
-        "Palm Jumeirah",
-        "Atlantis the palm"
-      ]
+      "points": ["Dubai Marina", "Bluewaters Island", "Ain Dubai", "JBR", "Palm Jumeirah", "Atlantis the palm"]
     },
     {
       "title": "Burj Al Arab Cruise",
@@ -256,15 +158,7 @@
       "minutes": "180 mins",
       "bgColorClass": "bg-green-100",
       "headerBgColorClass": "bg-green-700",
-      "points": [
-        "Dubai Marina",
-        "Bluewaters Island",
-        "Ain Dubai",
-        "JBR",
-        "Palm Jumeirah",
-        "Atlantis The Palm",
-        "Burj Al Arab"
-      ]
+      "points": ["Dubai Marina", "Bluewaters Island", "Ain Dubai", "JBR", "Palm Jumeirah", "Atlantis The Palm", "Burj Al Arab"]
     },
     {
       "title": "Dubai Canal",
@@ -272,17 +166,7 @@
       "minutes": "240 - 360 mins",
       "bgColorClass": "bg-yellow-100",
       "headerBgColorClass": "bg-primary-yellow-dark",
-      "points": [
-        "Dubai Marina",
-        "Bluewaters Island",
-        "Ain Dubai",
-        "JBR",
-        "Palm Jumeirah",
-        "Alantis the palm",
-        "Burj Al Arab",
-        "Dubai Canal",
-        "Burj Khalifa view <span>(from the Canal)</span>"
-      ]
+      "points": ["Dubai Marina", "Bluewaters Island", "Ain Dubai", "JBR", "Palm Jumeirah", "Alantis the palm", "Burj Al Arab", "Dubai Canal", "Burj Khalifa view <span>(from the Canal)</span>"]
     }
   ],
   "56ft-vassia": [
@@ -300,14 +184,7 @@
       "minutes": "120 mins",
       "bgColorClass": "bg-blue-100",
       "headerBgColorClass": "bg-primary-blue-2",
-      "points": [
-        "Dubai Marina",
-        "Bluewaters Island",
-        "Ain Dubai",
-        "JBR",
-        "Palm Jumeirah",
-        "Atlantis the palm"
-      ]
+      "points": ["Dubai Marina", "Bluewaters Island", "Ain Dubai", "JBR", "Palm Jumeirah", "Atlantis the palm"]
     },
     {
       "title": "Burj Al Arab Cruise",
@@ -315,15 +192,7 @@
       "minutes": "180 mins",
       "bgColorClass": "bg-green-100",
       "headerBgColorClass": "bg-green-700",
-      "points": [
-        "Dubai Marina",
-        "Bluewaters Island",
-        "Ain Dubai",
-        "JBR",
-        "Palm Jumeirah",
-        "Atlantis The Palm",
-        "Burj Al Arab"
-      ]
+      "points": ["Dubai Marina", "Bluewaters Island", "Ain Dubai", "JBR", "Palm Jumeirah", "Atlantis The Palm", "Burj Al Arab"]
     },
     {
       "title": "Dubai Canal",
@@ -331,17 +200,7 @@
       "minutes": "240 - 360 mins",
       "bgColorClass": "bg-yellow-100",
       "headerBgColorClass": "bg-primary-yellow-dark",
-      "points": [
-        "Dubai Marina",
-        "Bluewaters Island",
-        "Ain Dubai",
-        "JBR",
-        "Palm Jumeirah",
-        "Alantis the palm",
-        "Burj Al Arab",
-        "Dubai Canal",
-        "Burj Khalifa view <span>(from the Canal)</span>"
-      ]
+      "points": ["Dubai Marina", "Bluewaters Island", "Ain Dubai", "JBR", "Palm Jumeirah", "Alantis the palm", "Burj Al Arab", "Dubai Canal", "Burj Khalifa view <span>(from the Canal)</span>"]
     }
   ],
   "58ft-etosha": [
@@ -359,14 +218,7 @@
       "minutes": "120 mins",
       "bgColorClass": "bg-blue-100",
       "headerBgColorClass": "bg-primary-blue-2",
-      "points": [
-        "Dubai Marina",
-        "Bluewaters Island",
-        "Ain Dubai",
-        "JBR",
-        "Palm Jumeirah",
-        "Atlantis the palm"
-      ]
+      "points": ["Dubai Marina", "Bluewaters Island", "Ain Dubai", "JBR", "Palm Jumeirah", "Atlantis the palm"]
     },
     {
       "title": "Burj Al Arab Cruise",
@@ -374,15 +226,7 @@
       "minutes": "180 mins",
       "bgColorClass": "bg-green-100",
       "headerBgColorClass": "bg-green-700",
-      "points": [
-        "Dubai Marina",
-        "Bluewaters Island",
-        "Ain Dubai",
-        "JBR",
-        "Palm Jumeirah",
-        "Atlantis The Palm",
-        "Burj Al Arab"
-      ]
+      "points": ["Dubai Marina", "Bluewaters Island", "Ain Dubai", "JBR", "Palm Jumeirah", "Atlantis The Palm", "Burj Al Arab"]
     },
     {
       "title": "Dubai Canal",
@@ -390,17 +234,7 @@
       "minutes": "240 - 360 mins",
       "bgColorClass": "bg-yellow-100",
       "headerBgColorClass": "bg-primary-yellow-dark",
-      "points": [
-        "Dubai Marina",
-        "Bluewaters Island",
-        "Ain Dubai",
-        "JBR",
-        "Palm Jumeirah",
-        "Alantis the palm",
-        "Burj Al Arab",
-        "Dubai Canal",
-        "Burj Khalifa view <span>(from the Canal)</span>"
-      ]
+      "points": ["Dubai Marina", "Bluewaters Island", "Ain Dubai", "JBR", "Palm Jumeirah", "Alantis the palm", "Burj Al Arab", "Dubai Canal", "Burj Khalifa view <span>(from the Canal)</span>"]
     }
   ],
   "61ft-silvercreek": [
@@ -418,14 +252,7 @@
       "minutes": "120 mins",
       "bgColorClass": "bg-blue-100",
       "headerBgColorClass": "bg-primary-blue-2",
-      "points": [
-        "Dubai Marina",
-        "Bluewaters Island",
-        "Ain Dubai",
-        "JBR",
-        "Palm Jumeirah",
-        "Atlantis the palm"
-      ]
+      "points": ["Dubai Marina", "Bluewaters Island", "Ain Dubai", "JBR", "Palm Jumeirah", "Atlantis the palm"]
     },
     {
       "title": "Burj Al Arab Cruise",
@@ -433,15 +260,7 @@
       "minutes": "180 mins",
       "bgColorClass": "bg-green-100",
       "headerBgColorClass": "bg-green-700",
-      "points": [
-        "Dubai Marina",
-        "Bluewaters Island",
-        "Ain Dubai",
-        "JBR",
-        "Palm Jumeirah",
-        "Atlantis The Palm",
-        "Burj Al Arab"
-      ]
+      "points": ["Dubai Marina", "Bluewaters Island", "Ain Dubai", "JBR", "Palm Jumeirah", "Atlantis The Palm", "Burj Al Arab"]
     },
     {
       "title": "Dubai Canal",
@@ -449,17 +268,7 @@
       "minutes": "240 - 360 mins",
       "bgColorClass": "bg-yellow-100",
       "headerBgColorClass": "bg-primary-yellow-dark",
-      "points": [
-        "Dubai Marina",
-        "Bluewaters Island",
-        "Ain Dubai",
-        "JBR",
-        "Palm Jumeirah",
-        "Alantis the palm",
-        "Burj Al Arab",
-        "Dubai Canal",
-        "Burj Khalifa view <span>(from the Canal)</span>"
-      ]
+      "points": ["Dubai Marina", "Bluewaters Island", "Ain Dubai", "JBR", "Palm Jumeirah", "Alantis the palm", "Burj Al Arab", "Dubai Canal", "Burj Khalifa view <span>(from the Canal)</span>"]
     }
   ],
   "77ft-dionysos": [
@@ -477,14 +286,7 @@
       "minutes": "120 mins",
       "bgColorClass": "bg-blue-100",
       "headerBgColorClass": "bg-primary-blue-2",
-      "points": [
-        "Dubai Marina",
-        "Bluewaters Island",
-        "Ain Dubai",
-        "JBR",
-        "Palm Jumeirah",
-        "Atlantis the palm"
-      ]
+      "points": ["Dubai Marina", "Bluewaters Island", "Ain Dubai", "JBR", "Palm Jumeirah", "Atlantis the palm"]
     },
     {
       "title": "Burj Al Arab Cruise",
@@ -492,15 +294,7 @@
       "minutes": "180 mins",
       "bgColorClass": "bg-green-100",
       "headerBgColorClass": "bg-green-700",
-      "points": [
-        "Dubai Marina",
-        "Bluewaters Island",
-        "Ain Dubai",
-        "JBR",
-        "Palm Jumeirah",
-        "Atlantis The Palm",
-        "Burj Al Arab"
-      ]
+      "points": ["Dubai Marina", "Bluewaters Island", "Ain Dubai", "JBR", "Palm Jumeirah", "Atlantis The Palm", "Burj Al Arab"]
     },
     {
       "title": "Dubai Canal",
@@ -508,17 +302,7 @@
       "minutes": "240 - 360 mins",
       "bgColorClass": "bg-yellow-100",
       "headerBgColorClass": "bg-primary-yellow-dark",
-      "points": [
-        "Dubai Marina",
-        "Bluewaters Island",
-        "Ain Dubai",
-        "JBR",
-        "Palm Jumeirah",
-        "Alantis the palm",
-        "Burj Al Arab",
-        "Dubai Canal",
-        "Burj Khalifa view <span>(from the Canal)</span>"
-      ]
+      "points": ["Dubai Marina", "Bluewaters Island", "Ain Dubai", "JBR", "Palm Jumeirah", "Alantis the palm", "Burj Al Arab", "Dubai Canal", "Burj Khalifa view <span>(from the Canal)</span>"]
     }
   ],
   "118ft-poseidon": [
@@ -536,14 +320,7 @@
       "minutes": "120 mins",
       "bgColorClass": "bg-blue-100",
       "headerBgColorClass": "bg-primary-blue-2",
-      "points": [
-        "Dubai Marina",
-        "Bluewaters Island",
-        "Ain Dubai",
-        "JBR",
-        "Palm Jumeirah",
-        "Atlantis the palm"
-      ]
+      "points": ["Dubai Marina", "Bluewaters Island", "Ain Dubai", "JBR", "Palm Jumeirah", "Atlantis the palm"]
     },
     {
       "title": "Burj Al Arab Cruise",
@@ -551,15 +328,7 @@
       "minutes": "180 mins",
       "bgColorClass": "bg-green-100",
       "headerBgColorClass": "bg-green-700",
-      "points": [
-        "Dubai Marina",
-        "Bluewaters Island",
-        "Ain Dubai",
-        "JBR",
-        "Palm Jumeirah",
-        "Atlantis The Palm",
-        "Burj Al Arab"
-      ]
+      "points": ["Dubai Marina", "Bluewaters Island", "Ain Dubai", "JBR", "Palm Jumeirah", "Atlantis The Palm", "Burj Al Arab"]
     },
     {
       "title": "Dubai Canal",
@@ -567,17 +336,7 @@
       "minutes": "240 - 360 mins",
       "bgColorClass": "bg-yellow-100",
       "headerBgColorClass": "bg-primary-yellow-dark",
-      "points": [
-        "Dubai Marina",
-        "Bluewaters Island",
-        "Ain Dubai",
-        "JBR",
-        "Palm Jumeirah",
-        "Alantis the palm",
-        "Burj Al Arab",
-        "Dubai Canal",
-        "Burj Khalifa view <span>(from the Canal)</span>"
-      ]
+      "points": ["Dubai Marina", "Bluewaters Island", "Ain Dubai", "JBR", "Palm Jumeirah", "Alantis the palm", "Burj Al Arab", "Dubai Canal", "Burj Khalifa view <span>(from the Canal)</span>"]
     }
   ]
 }

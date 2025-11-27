@@ -21,9 +21,7 @@ const ReachOutSection = () => {
 
       <div className="container bg-primary-yellow flex flex-col md:flex-row gap-3 items-center justify-between rounded-xl py-3">
         {/* Left Text */}
-        <span className="text-primary-blue font-bold text-base md:text-lg uppercase">
-          EXPLORE MORE YACHT OFFERS
-        </span>
+        <span className="text-primary-blue font-bold text-base md:text-lg uppercase">EXPLORE MORE YACHT OFFERS</span>
 
         {/* Right Button */}
         <Link href="/offers">
@@ -40,9 +38,7 @@ const ReachOutSection = () => {
         </Link>
       </div>
       <div className="flex flex-col md:flex-row rounded-xl px-5 items-center  gap-5 justify-center  md:justify-between bg-primary-blue py-3">
-        <button className="text-white font-bold px-5 py-3 text-xl rounded">
-          REACH OUT TO US
-        </button>
+        <button className="text-white font-bold px-5 py-3 text-xl rounded">REACH OUT TO US</button>
         <div className=" flex flex-col md:flex-row md:gap-10 gap-5">
           <Link href={'https://wa.link/eyg3by'}>
             <button className="flex items-center justify-center gap-3 px-4 py-2 bg-primary-blue text-primary-yellow border border-primary-yellow-dark  font-bold rounded-md  transition">
@@ -50,20 +46,12 @@ const ReachOutSection = () => {
               WHATSAPP US
             </button>
           </Link>
-          <button
-            onClick={handlequote}
-            className="hidden flex items-center justify-center gap-3 px-10 py-2 bg-primary-blue text-primary-yellow border border-primary-yellow-dark  font-bold rounded-md  transition"
-          >
+          <button onClick={handlequote} className="hidden flex items-center justify-center gap-3 px-10 py-2 bg-primary-blue text-primary-yellow border border-primary-yellow-dark  font-bold rounded-md  transition">
             SUMMER OFFERS
           </button>
         </div>
       </div>
-      <Modal2
-        isModalOpen={isModalOpen}
-        closeModal={closeModal}
-        idName="offers_id"
-        idValue="44"
-      />
+      <Modal2 isModalOpen={isModalOpen} closeModal={closeModal} idName="offers_id" idValue="44" />
     </section>
   );
 };

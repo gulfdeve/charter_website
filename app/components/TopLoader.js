@@ -41,13 +41,7 @@ const TopLoader = () => {
     const handleLinkClick = e => {
       // Only trigger for internal links
       const target = e.currentTarget;
-      if (
-        target.tagName === 'A' &&
-        target.href.startsWith(window.location.origin) &&
-        !target.target &&
-        !target.download &&
-        !(e.metaKey || e.ctrlKey || e.shiftKey || e.altKey)
-      ) {
+      if (target.tagName === 'A' && target.href.startsWith(window.location.origin) && !target.target && !target.download && !(e.metaKey || e.ctrlKey || e.shiftKey || e.altKey)) {
         setLoading(true);
         setProgress(10);
       }
@@ -55,9 +49,7 @@ const TopLoader = () => {
 
     // Add event listeners
     const addLinkListeners = () => {
-      const links = document.querySelectorAll(
-        'a[href^="/"], a[href^="' + window.location.origin + '"]'
-      );
+      const links = document.querySelectorAll('a[href^="/"], a[href^="' + window.location.origin + '"]');
       links.forEach(link => {
         link.addEventListener('click', handleLinkClick);
       });
@@ -81,9 +73,7 @@ const TopLoader = () => {
     });
 
     return () => {
-      const links = document.querySelectorAll(
-        'a[href^="/"], a[href^="' + window.location.origin + '"]'
-      );
+      const links = document.querySelectorAll('a[href^="/"], a[href^="' + window.location.origin + '"]');
       links.forEach(link => {
         link.removeEventListener('click', handleLinkClick);
       });

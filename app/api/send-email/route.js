@@ -33,8 +33,7 @@ export async function POST(request) {
     const defaultSubject = 'New contact form inquiry on centauruscharter.com';
 
     // Default recipients
-    const defaultRecipients =
-      'habibjutt868@gmail.com, sales@centauruscharter.com';
+    const defaultRecipients = 'habibjutt868@gmail.com, sales@centauruscharter.com';
 
     // Format the email content
     const emailContent = `
@@ -59,15 +58,9 @@ export async function POST(request) {
 
     await transporter.sendMail(mailOptions);
 
-    return NextResponse.json(
-      { message: 'Email sent successfully' },
-      { status: 200 }
-    );
+    return NextResponse.json({ message: 'Email sent successfully' }, { status: 200 });
   } catch (error) {
     console.error('Error sending email:', error);
-    return NextResponse.json(
-      { message: 'Error sending email', error: error.message },
-      { status: 500 }
-    );
+    return NextResponse.json({ message: 'Error sending email', error: error.message }, { status: 500 });
   }
 }

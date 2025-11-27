@@ -37,9 +37,7 @@ export default function OfferCarousel() {
   const scrollNext = () => emblaInstance.current?.scrollNext();
 
   // Filter offers to only include those with translations for the current locale
-  const filteredOffers = data?.offers?.filter(
-    offer => offer.translations && offer.translations[locale]
-  ) || [];
+  const filteredOffers = data?.offers?.filter(offer => offer.translations && offer.translations[locale]) || [];
 
   return (
     <div className="container mx-auto md:px-4 pb-16">
@@ -57,23 +55,15 @@ export default function OfferCarousel() {
                 <div className="flex flex-col justify-start lg:justify-between rounded-md bg-white h-full overflow-hidden border border-gray-400 md:border-none xl:p-10 shadow-none">
                   {/* offer Image */}
                   <Link href={`/offers/${offer.slug}`}>
-                    <img
-                      src={`https://www.centauruscharter.net/product/images/${offer.image}`}
-                      alt={offer.translations[locale].title}
-                      className="rounded-tl-md rounded-tr-md w-full object-cover"
-                    />
+                    <img src={`https://www.centauruscharter.net/product/images/${offer.image}`} alt={offer.translations[locale].title} className="rounded-tl-md rounded-tr-md w-full object-cover" />
                   </Link>
                   <div className="flex flex-col justify-start px-5 lg:px-5 flex-grow">
                     {/* offer Title */}
                     <h2 className="text-primary-black text-lg font-bold pt-4">
-                      <Link href={`/offers/${offer.slug}`}>
-                        {offer.translations[locale].title}
-                      </Link>
+                      <Link href={`/offers/${offer.slug}`}>{offer.translations[locale].title}</Link>
                     </h2>
                     {/* offer Heading */}
-                    <p className="text-primary-black font-semibold text-xs pt-2 pb-4">
-                      {offer.translations[locale].heading_2}
-                    </p>
+                    <p className="text-primary-black font-semibold text-xs pt-2 pb-4">{offer.translations[locale].heading_2}</p>
                     {/* Separator */}
                     <div className="bg-primary-black w-full h-[0.05rem]"></div>
                     {/* Validity Info */}
@@ -88,18 +78,11 @@ export default function OfferCarousel() {
                   <div className="flex flex-row items-center justify-between pb-5 px-5">
                     {/* Buttons */}
                     <div className="w-full flex flex-col sm:flex-row items-center justify-end gap-2">
-                      <a
-                        href={`${offer.whatsapp_url}`}
-                        target="_blank"
-                        className="w-full flex justify-center py-2 px-4 text-base md:text-sm xl:text-lg font-bold tracking-wider uppercase text-white bg-primary-blue-2 hover:scale-105 rounded-md shadow transition duration-150 ease-in-out transform items-center"
-                      >
+                      <a href={`${offer.whatsapp_url}`} target="_blank" className="w-full flex justify-center py-2 px-4 text-base md:text-sm xl:text-lg font-bold tracking-wider uppercase text-white bg-primary-blue-2 hover:scale-105 rounded-md shadow transition duration-150 ease-in-out transform items-center">
                         <FaWhatsapp className="xs:text-xl text-lg mr-1" />
                         WHATSAPP
                       </a>
-                      <Link
-                        href={`/offers/${offer.slug}`}
-                        className="w-full flex justify-center py-2 px-4 text-base md:text-sm xl:text-lg font-bold tracking-wider uppercase text-white bg-primary-blue-2 hover:scale-105 rounded-md shadow transition duration-150 ease-in-out transform items-center"
-                      >
+                      <Link href={`/offers/${offer.slug}`} className="w-full flex justify-center py-2 px-4 text-base md:text-sm xl:text-lg font-bold tracking-wider uppercase text-white bg-primary-blue-2 hover:scale-105 rounded-md shadow transition duration-150 ease-in-out transform items-center">
                         KNOW MORE
                       </Link>
                     </div>

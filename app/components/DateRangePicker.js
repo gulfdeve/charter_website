@@ -26,12 +26,5 @@ export default function DateRangePicker({ init, onChange }) {
     }
   };
 
-  return (
-    <DateRange
-      editableDateInputs={true}
-      onChange={handleChange}
-      moveRangeOnFirstSelection={false}
-      ranges={range}
-    />
-  );
+  return <DateRange editableDateInputs={true} onChange={handleChange} moveRangeOnFirstSelection={false} ranges={range} />;
 }

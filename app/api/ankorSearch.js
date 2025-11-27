@@ -54,9 +54,7 @@ export default async function handler(req, res) {
 
     if (!searchResponse.ok) {
       const errorText = await searchResponse.text();
-      throw new Error(
-        `Search API error: ${searchResponse.status} - ${errorText}`
-      );
+      throw new Error(`Search API error: ${searchResponse.status} - ${errorText}`);
     }
 
     const data = await searchResponse.json();

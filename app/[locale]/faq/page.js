@@ -9,20 +9,14 @@ export const revalidate = 86400; // 24 hours
 
 // Pre-generate all locale versions at build time
 export async function generateStaticParams() {
-  return [
-    { locale: 'en' },
-    { locale: 'ar' },
-    { locale: 'ru' },
-    { locale: 'zh' },
-  ];
+  return [{ locale: 'en' }, { locale: 'ar' }, { locale: 'ru' }, { locale: 'zh' }];
 }
 
 const page = () => {
   const faqs = [
     {
       question: 'How much does it cost to rent a yacht?',
-      answer:
-        'Centaurus yacht rental in Dubai offers private, crewed yachts starting from AED 805 per hour. The price depends on the size of the yacht.',
+      answer: 'Centaurus yacht rental in Dubai offers private, crewed yachts starting from AED 805 per hour. The price depends on the size of the yacht.',
     },
     {
       question: 'How do I book a yacht in Dubai?',
@@ -31,48 +25,39 @@ const page = () => {
     },
     {
       question: 'Do you have any special offers on yachts?',
-      answer:
-        'Yes, we offer special deals on yacht bookings, including summer promotions, birthday packages, and discounts for Emirates staff, YPO, and Fazaa card members. Check out all our current offers.',
+      answer: 'Yes, we offer special deals on yacht bookings, including summer promotions, birthday packages, and discounts for Emirates staff, YPO, and Fazaa card members. Check out all our current offers.',
     },
     {
       question: 'Do you have a female crew onboard?',
-      answer:
-        'Yes, we do have female crew members on our yachts. Cruise with us safely and comfortably.',
+      answer: 'Yes, we do have female crew members on our yachts. Cruise with us safely and comfortably.',
     },
     {
       question: 'What are the modes of payment?',
-      answer:
-        'We accept various payment methods including Visa, Mastercard (credit or debit), and cash upon arrival.',
+      answer: 'We accept various payment methods including Visa, Mastercard (credit or debit), and cash upon arrival.',
     },
     {
       question: 'Are we allowed to take photographs?',
-      answer:
-        'Yes, you are welcome to take photographs. Make sure your devices are fully charged. Please avoid photographing Arab women or girls without permission. Photography of government buildings or military sites is strictly prohibited.',
+      answer: 'Yes, you are welcome to take photographs. Make sure your devices are fully charged. Please avoid photographing Arab women or girls without permission. Photography of government buildings or military sites is strictly prohibited.',
     },
     {
       question: 'What should we wear?',
-      answer:
-        'Wear swimwear or casual clothing based on your comfort. We also recommend bringing a jacket or upper layer, especially during winter.',
+      answer: 'Wear swimwear or casual clothing based on your comfort. We also recommend bringing a jacket or upper layer, especially during winter.',
     },
     {
       question: 'Are we allowed to swim during the tour?',
-      answer:
-        'Yes, swimming is allowed during the tour, especially on trips longer than 3 hours. Our captain will guide you to safe swimming areas.',
+      answer: 'Yes, swimming is allowed during the tour, especially on trips longer than 3 hours. Our captain will guide you to safe swimming areas.',
     },
     {
       question: 'Is food and beverage included on the trip?',
-      answer:
-        'Complimentary soft drinks, coffee, and water are included. Food is not included, but catering can be arranged upon request. You are also welcome to bring your own food and beverages onboard.',
+      answer: 'Complimentary soft drinks, coffee, and water are included. Food is not included, but catering can be arranged upon request. You are also welcome to bring your own food and beverages onboard.',
     },
     {
       question: 'Where does the boat depart from?',
-      answer:
-        'Our boats depart from Marina Walk in Dubai Marina or from Dubai Harbour near Barasti Beach.',
+      answer: 'Our boats depart from Marina Walk in Dubai Marina or from Dubai Harbour near Barasti Beach.',
     },
     {
       question: 'What entertainment options are available on the boat?',
-      answer:
-        'Our yachts are equipped with high-quality music systems and TV screens. DJ setups and additional entertainment can be arranged upon request.',
+      answer: 'Our yachts are equipped with high-quality music systems and TV screens. DJ setups and additional entertainment can be arranged upon request.',
     },
     {
       question: 'Is smoking allowed on the yacht cruise?',
@@ -80,18 +65,15 @@ const page = () => {
     },
     {
       question: 'Do you offer transfers?',
-      answer:
-        'Yes, transfers can be arranged upon request for an additional charge.',
+      answer: 'Yes, transfers can be arranged upon request for an additional charge.',
     },
     {
       question: 'Do you offer water sports activities?',
-      answer:
-        'Yes, we offer a variety of water sports at an extra cost. Enhance your experience with activities like jet skiing, flyboarding, parasailing, fishing trips, banana boat rides, and swimming. Explore all our watersports add-ons.',
+      answer: 'Yes, we offer a variety of water sports at an extra cost. Enhance your experience with activities like jet skiing, flyboarding, parasailing, fishing trips, banana boat rides, and swimming. Explore all our watersports add-ons.',
     },
     {
       question: 'Does the yacht have BBQ equipment?',
-      answer:
-        'Yes, our yachts are equipped with electric BBQ grills. Our crew can assist you with grilling your food.',
+      answer: 'Yes, our yachts are equipped with electric BBQ grills. Our crew can assist you with grilling your food.',
     },
     {
       question: 'What should we consider after booking?',
@@ -100,8 +82,7 @@ const page = () => {
     },
     {
       question: 'What are the cancellation, refund, and rescheduling policies?',
-      answer:
-        'Cancellations or rescheduling made 72 hours before the booking are free of charge (excluding bank fees). Cancellations made less than 48 hours before will incur a 50% charge. No-shows or cancellations within 24 hours are non-refundable.',
+      answer: 'Cancellations or rescheduling made 72 hours before the booking are free of charge (excluding bank fees). Cancellations made less than 48 hours before will incur a 50% charge. No-shows or cancellations within 24 hours are non-refundable.',
     },
   ];
 
@@ -111,21 +92,10 @@ const page = () => {
         <img src="/FAQ.jpg" className="w-full" />
       </div>
       <div className="container m-auto flex flex-col items-center justify-center py-10">
-        <h1 className=" text-primary-blue text-center font-bold text-xl sm:text:2xl md:text-3xl lg:text-4xl">
-          {' '}
-          FREQUENTLY ASKED QUESTIONS
-        </h1>
-        <p className=" text-black text-center text-xl sm:text-2xl md:text-3xl lg:text-4xl py-3 px-3 md:px-10">
-          {' '}
-          Everything you need to know about yacht charter
-        </p>
+        <h1 className=" text-primary-blue text-center font-bold text-xl sm:text:2xl md:text-3xl lg:text-4xl"> FREQUENTLY ASKED QUESTIONS</h1>
+        <p className=" text-black text-center text-xl sm:text-2xl md:text-3xl lg:text-4xl py-3 px-3 md:px-10"> Everything you need to know about yacht charter</p>
         <p className=" text-primary-grey text-center  text-base ">
-          A luxury yacht rental is the perfect choice for anyone looking to
-          enjoy a day on the water in Dubai. From stunning skyline views to
-          Instagram-worthy photo spots, there’s no better way to explore the
-          coast. Got a question? We’ve answered the most frequently asked
-          questions about yacht chartering and bookings in Dubai below. If you
-          still don’t find what you’re looking for, feel free to{' '}
+          A luxury yacht rental is the perfect choice for anyone looking to enjoy a day on the water in Dubai. From stunning skyline views to Instagram-worthy photo spots, there’s no better way to explore the coast. Got a question? We’ve answered the most frequently asked questions about yacht chartering and bookings in Dubai below. If you still don’t find what you’re looking for, feel free to{' '}
           <Link href="/contact">
             <span className="text-blue-600">contact us</span>
           </Link>{' '}

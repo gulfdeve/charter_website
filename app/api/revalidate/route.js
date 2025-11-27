@@ -1,14 +1,14 @@
 /**
  * On-Demand Revalidation API Route
- * 
+ *
  * This endpoint triggers instant cache revalidation when your API data changes.
  * Call this after updating your backend API to see changes immediately.
- * 
+ *
  * Usage:
  *   GET /api/revalidate?secret=YOUR_SECRET
  *   GET /api/revalidate?secret=YOUR_SECRET&tag=data-cache
  *   GET /api/revalidate?secret=YOUR_SECRET&path=/offers
- * 
+ *
  * Security: Requires REVALIDATION_SECRET environment variable
  */
 
@@ -26,9 +26,9 @@ export async function GET(request) {
     // Security: Verify secret token
     if (!secret || secret !== process.env.REVALIDATION_SECRET) {
       return NextResponse.json(
-        { 
+        {
           success: false,
-          message: 'Invalid or missing secret token' 
+          message: 'Invalid or missing secret token',
         },
         { status: 401 }
       );
@@ -41,26 +41,26 @@ export async function GET(request) {
       revalidateTag(tag);
       revalidatedItems.push(`tag:${tag}`);
       console.log(`✅ Revalidated cache tag: ${tag}`);
-    } 
+    }
     // Option 2: Revalidate specific path
     else if (path) {
       const fullPath = locale ? `/${locale}${path}` : path;
       revalidatePath(fullPath);
       revalidatedItems.push(`path:${fullPath}`);
       console.log(`✅ Revalidated path: ${fullPath}`);
-    } 
+    }
     // Default: Revalidate the main data-cache tag (all pages using fetchData)
     else {
       // Step 1: Revalidate by tag (clears Data Cache)
       revalidateTag('data-cache');
       revalidatedItems.push('tag:data-cache');
       console.log('✅ Revalidated data-cache tag');
-      
+
       // Step 2: Revalidate API route
       revalidatePath('/api/get-data');
       revalidatedItems.push('path:/api/get-data');
       console.log('✅ Revalidated API route');
-      
+
       // Step 3: CRITICAL - Revalidate actual pages (Full Route Cache)
       // This clears the static HTML so pages regenerate with fresh data
       const locales = ['en', 'ar', 'ru', 'zh'];
@@ -79,7 +79,7 @@ export async function GET(request) {
         '/yacht-trips/yacht-wedding-trips',
         '/watersports',
       ];
-      
+
       // Revalidate all static pages
       pagesToRevalidate.forEach(page => {
         locales.forEach(loc => {
@@ -93,18 +93,10 @@ export async function GET(request) {
           }
         });
       });
-      
+
       // Also revalidate dynamic routes (this will revalidate ALL pages under these paths)
-      const dynamicRoutes = [
-        '/offers/[slug]',
-        '/blogs/[slug]',
-        '/yacht-rentals/[slug]',
-        '/yachts-for-sale-dubai/[slug]',
-        '/events/[slug]',
-        '/yacht-trips/[slug]',
-        '/watersports/[slug]',
-      ];
-      
+      const dynamicRoutes = ['/offers/[slug]', '/blogs/[slug]', '/yacht-rentals/[slug]', '/yachts-for-sale-dubai/[slug]', '/events/[slug]', '/yacht-trips/[slug]', '/watersports/[slug]'];
+
       dynamicRoutes.forEach(route => {
         locales.forEach(loc => {
           const path = loc === 'en' ? route : `/${loc}${route}`;
@@ -129,15 +121,11 @@ export async function GET(request) {
     });
 
     // Ensure this endpoint itself is never cached
-    response.headers.set(
-      'Cache-Control',
-      'no-cache, no-store, must-revalidate, max-age=0'
-    );
+    response.headers.set('Cache-Control', 'no-cache, no-store, must-revalidate, max-age=0');
     response.headers.set('Pragma', 'no-cache');
     response.headers.set('Expires', '0');
 
     return response;
-
   } catch (error) {
     console.error('❌ Revalidation error:', error);
     return NextResponse.json(

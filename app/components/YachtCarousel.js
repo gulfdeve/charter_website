@@ -43,44 +43,26 @@ export default function YachtCarousel() {
   const scrollNext = () => emblaInstance.current?.scrollNext();
 
   // Filter products to only include those with translations for the current locale
-  const filteredProducts = data?.products?.filter(
-    product => product.translations && product.translations[locale]
-  ) || [];
+  const filteredProducts = data?.products?.filter(product => product.translations && product.translations[locale]) || [];
 
   return (
     <div className="flex flex-col items-center justify-center bg-primary-blue-light">
-      <h2 className="text-primary-blue text-center font-bold text-2xl xl:text-4xl py-10">
-        EXPLORE OUR YACHTS
-      </h2>
+      <h2 className="text-primary-blue text-center font-bold text-2xl xl:text-4xl py-10">EXPLORE OUR YACHTS</h2>
 
       <div className="relative container h-full overflow-hidden mx-auto px-3">
         <div className="embla__viewport" ref={emblaRef}>
           <div className="embla__container flex">
             {!loading &&
               filteredProducts?.map(product => (
-                <div
-                  key={product.id}
-                  className="flex-[0_0_90%] md:flex-[0_0_calc(50%-10px)] lg:flex-[0_0_calc(33.33%-10px)] min-w-0 px-2"
-                >
+                <div key={product.id} className="flex-[0_0_90%] md:flex-[0_0_calc(50%-10px)] lg:flex-[0_0_calc(33.33%-10px)] min-w-0 px-2">
                   <div className="relative bg-transparent rounded-lg overflow-hidden h-[400px] w-full">
                     <div className="relative w-full h-full">
-                      <Image
-                        src={`https://www.centauruscharter.net/product/images/${product.thumbnail_image}`}
-                        alt={product.translations[locale].name_of_yacht}
-                        fill
-                        className="object-cover rounded-lg"
-                        loading="lazy"
-                        sizes="(max-width: 768px) 90vw, (max-width: 1024px) 45vw, 30vw"
-                      />
+                      <Image src={`https://www.centauruscharter.net/product/images/${product.thumbnail_image}`} alt={product.translations[locale].name_of_yacht} fill className="object-cover rounded-lg" loading="lazy" sizes="(max-width: 768px) 90vw, (max-width: 1024px) 45vw, 30vw" />
                       <Link href={`/yacht-rentals/${product.slug}`}>
                         <div className="absolute inset-0 bg-black-gradient rounded-lg" />
                         <div className="absolute bottom-0 left-0 w-full p-4 z-10">
-                          <h3 className="text-xl lg:text-2xl font-bold text-white mb-2">
-                            {product.translations[locale].name_of_yacht}
-                          </h3>
-                          <p className="text-sm text-white mb-4 line-clamp-2">
-                            {product.translations[locale].slider_text}
-                          </p>
+                          <h3 className="text-xl lg:text-2xl font-bold text-white mb-2">{product.translations[locale].name_of_yacht}</h3>
+                          <p className="text-sm text-white mb-4 line-clamp-2">{product.translations[locale].slider_text}</p>
                         </div>
                       </Link>
                     </div>
@@ -92,18 +74,10 @@ export default function YachtCarousel() {
 
         {/* Navigation Buttons - Hidden on mobile */}
         {/* Navigation Buttons - Hidden on mobile, visible on tablet and desktop */}
-        <button
-          aria-label="Previous slide"
-          className="hidden md:flex bg-primary-blue text-primary-blue-light transition duration-150 ease-in-out absolute left-2 top-1/2 -translate-y-1/2 w-14 aspect-square rounded-full items-center justify-center z-10"
-          onClick={scrollPrev}
-        >
+        <button aria-label="Previous slide" className="hidden md:flex bg-primary-blue text-primary-blue-light transition duration-150 ease-in-out absolute left-2 top-1/2 -translate-y-1/2 w-14 aspect-square rounded-full items-center justify-center z-10" onClick={scrollPrev}>
           <IoIosArrowBack size={30} />
         </button>
-        <button
-          aria-label="Next slide"
-          className="hidden md:flex bg-primary-blue text-primary-blue-light transition duration-150 ease-in-out absolute right-4 top-1/2 -translate-y-1/2 w-14 aspect-square rounded-full items-center justify-center z-10"
-          onClick={scrollNext}
-        >
+        <button aria-label="Next slide" className="hidden md:flex bg-primary-blue text-primary-blue-light transition duration-150 ease-in-out absolute right-4 top-1/2 -translate-y-1/2 w-14 aspect-square rounded-full items-center justify-center z-10" onClick={scrollNext}>
           <IoIosArrowForward size={30} />
         </button>
       </div>

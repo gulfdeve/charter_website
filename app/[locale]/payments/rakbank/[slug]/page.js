@@ -7,20 +7,13 @@ import Script from 'next/script';
 import Image from 'next/image';
 import { getTranslations } from 'next-intl/server';
 
-const {
-  CENTAURUS_API_KEY,
-  RAKBANK_CHECKOUT_SCRIPT,
-  RAKBANK_MPGS_MERCHANT,
-  NODE_ENV,
-} = process.env;
+const { CENTAURUS_API_KEY, RAKBANK_CHECKOUT_SCRIPT, RAKBANK_MPGS_MERCHANT, NODE_ENV } = process.env;
 
 export const dynamicParams = true;
 // export const runtime = "edge";
 
 async function fetchBooking(slug) {
-  const url = new URL(
-    `https://www.centauruscharter.net/api/api_new/booking_data/${slug}`
-  );
+  const url = new URL(`https://www.centauruscharter.net/api/api_new/booking_data/${slug}`);
   url.searchParams.set('token', CENTAURUS_API_KEY);
 
   const res = await fetch(url.toString(), {
@@ -52,13 +45,7 @@ export default async function PaymentTestPage({ params }) {
     error = err;
   }
 
-  let sessionId,
-    sessionVersion,
-    successIndicator,
-    scriptUrl,
-    cancelUrl,
-    merchantId,
-    parsedResponse;
+  let sessionId, sessionVersion, successIndicator, scriptUrl, cancelUrl, merchantId, parsedResponse;
   if (!error && booking) {
     const yachtPrice = parseFloat(booking.amount);
     const addons = booking.addons_price || 0;
@@ -96,17 +83,9 @@ export default async function PaymentTestPage({ params }) {
 
       //save the data here
       try {
-        const saveRes = await fetch(
-          `https://www.centauruscharter.net/api/api_new/payments/rakbank/${booking.id}?token=${CENTAURUS_API_KEY}` +
-            `&id=${booking.id}` +
-            `&status=initiated` +
-            `&session_id=${sessionId}` +
-            `&session_version=${sessionVersion}` +
-            `&success_indicator=${successIndicator}`,
-          {
-            method: 'POST',
-          }
-        );
+        const saveRes = await fetch(`https://www.centauruscharter.net/api/api_new/payments/rakbank/${booking.id}?token=${CENTAURUS_API_KEY}` + `&id=${booking.id}` + `&status=initiated` + `&session_id=${sessionId}` + `&session_version=${sessionVersion}` + `&success_indicator=${successIndicator}`, {
+          method: 'POST',
+        });
         const saveText = await saveRes.text();
         // console.log("Rakbank save payment response:", saveText);
       } catch (saveErr) {
@@ -181,23 +160,9 @@ export default async function PaymentTestPage({ params }) {
       <body>
         <div className="loading-container">
           <div className="logo-container">
-            <Image
-              src="/images/centaurus-charter-logo.webp"
-              alt="Centaurus Charter"
-              width={200}
-              height={60}
-              className="logo"
-              priority
-            />
+            <Image src="/images/centaurus-charter-logo.webp" alt="Centaurus Charter" width={200} height={60} className="logo" priority />
             <span className="arrow">→</span>
-            <Image
-              src="/rakbank.svg"
-              alt="Tabby"
-              width={200}
-              height={60}
-              className="logo"
-              priority
-            />
+            <Image src="/rakbank.svg" alt="Tabby" width={200} height={60} className="logo" priority />
           </div>
           <p className="loading-text">Redirecting to RakBank payment page...</p>
           <div className="container mx-auto p-10">
@@ -215,20 +180,8 @@ export default async function PaymentTestPage({ params }) {
           }
         `}
             </Script>
-            <ClientPaymentInitializer
-              slug={slug}
-              CENTAURUS_API_KEY={CENTAURUS_API_KEY}
-              sessionId={sessionId}
-              sessionVersion={sessionVersion}
-              successIndicator={successIndicator}
-            >
-              <PaymentWidget
-                slug={slug}
-                checkoutScriptUrl={scriptUrl}
-                sessionId={sessionId}
-                cancelUrl={cancelUrl}
-                merchantId={merchantId}
-              />
+            <ClientPaymentInitializer slug={slug} CENTAURUS_API_KEY={CENTAURUS_API_KEY} sessionId={sessionId} sessionVersion={sessionVersion} successIndicator={successIndicator}>
+              <PaymentWidget slug={slug} checkoutScriptUrl={scriptUrl} sessionId={sessionId} cancelUrl={cancelUrl} merchantId={merchantId} />
             </ClientPaymentInitializer>
           </div>
         </div>

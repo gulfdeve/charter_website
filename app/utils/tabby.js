@@ -1,20 +1,5 @@
-export async function createTabbySession(
-  booking,
-  locale = 'en',
-  merchantUrls = null
-) {
-  const {
-    first_name,
-    last_name,
-    amount,
-    order_no,
-    booking_date,
-    email,
-    mobile,
-    customer_id,
-    title,
-    past_booking = [],
-  } = booking;
+export async function createTabbySession(booking, locale = 'en', merchantUrls = null) {
+  const { first_name, last_name, amount, order_no, booking_date, email, mobile, customer_id, title, past_booking = [] } = booking;
 
   //   const phone = mobile?.startsWith('+') ? mobile : `+${mobile}`;
   const phone = mobile;
@@ -31,21 +16,12 @@ export async function createTabbySession(
     created_at: booking.created_at || booking.booking_date,
   });
   // Sort by created_at ascending (earliest first)
-  allBookings = allBookings
-    .filter(b => b.created_at)
-    .sort((a, b) => new Date(a.created_at) - new Date(b.created_at));
-  const firstOrderDate =
-    allBookings.length > 0
-      ? new Date(allBookings[0].created_at).toISOString()
-      : utcBookingDate;
+  allBookings = allBookings.filter(b => b.created_at).sort((a, b) => new Date(a.created_at) - new Date(b.created_at));
+  const firstOrderDate = allBookings.length > 0 ? new Date(allBookings[0].created_at).toISOString() : utcBookingDate;
 
   // Calculate loyalty_level and wishlist_count
   // If payment_status is available, use only paid bookings; otherwise, use all
-  let paidBookings = Array.isArray(past_booking)
-    ? past_booking.filter(b =>
-        b.payment_status ? b.payment_status === 'Completed' : true
-      )
-    : [];
+  let paidBookings = Array.isArray(past_booking) ? past_booking.filter(b => (b.payment_status ? b.payment_status === 'Completed' : true)) : [];
   const loyalty_level = paidBookings.length;
   const wishlist_count = paidBookings.reduce((sum, b) => {
     const amt = typeof b.amount === 'number' ? b.amount : parseFloat(b.amount);
@@ -64,50 +40,44 @@ export async function createTabbySession(
   // console.log("buyer_history: ", buyer_history);
 
   // --- Order History ---
-  const order_history = (Array.isArray(past_booking) ? past_booking : []).map(
-    pb => {
-      const origStatus = pb.status || pb.payment_status || 'unknown';
-      const bookingDate = pb.booking_date ? new Date(pb.booking_date) : null;
-      const now = new Date();
-      let status = origStatus;
-      if (origStatus.toLowerCase() === 'pending' && bookingDate) {
-        if (bookingDate < now) {
-          status = 'canceled';
-        } else {
-          status = 'new';
-        }
-      } else if (origStatus.toLowerCase() === 'completed') {
-        status = 'complete';
+  const order_history = (Array.isArray(past_booking) ? past_booking : []).map(pb => {
+    const origStatus = pb.status || pb.payment_status || 'unknown';
+    const bookingDate = pb.booking_date ? new Date(pb.booking_date) : null;
+    const now = new Date();
+    let status = origStatus;
+    if (origStatus.toLowerCase() === 'pending' && bookingDate) {
+      if (bookingDate < now) {
+        status = 'canceled';
+      } else {
+        status = 'new';
       }
-      return {
-        purchased_at: pb.created_at
-          ? new Date(pb.created_at).toISOString()
-          : new Date(pb.booking_date).toISOString(),
-        amount: pb.amount ? pb.amount.toString() : '0.00',
-        // payment_method: pb.payment_method || 'card',
-        payment_method: 'card',
-        status,
-        buyer: {
-          phone: pb.mobile || '',
-          email: pb.email || '',
-          name: `${pb.first_name || ''} ${pb.last_name || ''}`.trim(),
-        },
-        items: [
-          {
-            title: pb.title ? pb.title : `Booking ${pb.order_no}`,
-            description: `Yacht booking on ${
-              pb.booking_date ? new Date(pb.booking_date).toISOString() : ''
-            }`,
-            quantity: pb.hours || 1,
-            unit_price: pb.amount ? pb.amount.toString() : '0.00',
-            discount_amount: '0.00',
-            reference_id: pb.order_no || '',
-            category: 'yacht_booking',
-          },
-        ],
-      };
+    } else if (origStatus.toLowerCase() === 'completed') {
+      status = 'complete';
     }
-  );
+    return {
+      purchased_at: pb.created_at ? new Date(pb.created_at).toISOString() : new Date(pb.booking_date).toISOString(),
+      amount: pb.amount ? pb.amount.toString() : '0.00',
+      // payment_method: pb.payment_method || 'card',
+      payment_method: 'card',
+      status,
+      buyer: {
+        phone: pb.mobile || '',
+        email: pb.email || '',
+        name: `${pb.first_name || ''} ${pb.last_name || ''}`.trim(),
+      },
+      items: [
+        {
+          title: pb.title ? pb.title : `Booking ${pb.order_no}`,
+          description: `Yacht booking on ${pb.booking_date ? new Date(pb.booking_date).toISOString() : ''}`,
+          quantity: pb.hours || 1,
+          unit_price: pb.amount ? pb.amount.toString() : '0.00',
+          discount_amount: '0.00',
+          reference_id: pb.order_no || '',
+          category: 'yacht_booking',
+        },
+      ],
+    };
+  });
 
   const payload = {
     payment: {

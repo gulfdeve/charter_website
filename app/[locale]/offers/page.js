@@ -18,12 +18,7 @@ export const revalidate = 86400; // 24 hours
 
 // Pre-generate all locale versions at build time
 export async function generateStaticParams() {
-  return [
-    { locale: 'en' },
-    { locale: 'ar' },
-    { locale: 'ru' },
-    { locale: 'zh' },
-  ];
+  return [{ locale: 'en' }, { locale: 'ar' }, { locale: 'ru' }, { locale: 'zh' }];
 }
 
 export default async function OffersPage({ params }) {
@@ -34,16 +29,14 @@ export default async function OffersPage({ params }) {
 
   // Use the same fetchData utility
   const data = await fetchData();
-  console.log("offers data: ", data?.offers);
+  console.log('offers data: ', data?.offers);
 
   if (!data) {
     return <div>Loading...</div>;
   }
 
   // Filter offers to only include those with translations for the current language
-  const filteredOffers = data?.offers?.filter(
-    offer => offer.translations && offer.translations[language]
-  ) || [];
+  const filteredOffers = data?.offers?.filter(offer => offer.translations && offer.translations[language]) || [];
 
   return (
     <>
@@ -53,20 +46,9 @@ export default async function OffersPage({ params }) {
         <div className="md:block hidden">
           <div className="grid grid-col-1 md:grid-cols-2 gap-7 pb-8">
             {filteredOffers?.map(offer => (
-              <div
-                key={offer.id}
-                className="flex flex-col justify-start lg:justify-between rounded-md bg-white custom-shadow"
-              >
+              <div key={offer.id} className="flex flex-col justify-start lg:justify-between rounded-md bg-white custom-shadow">
                 <Link href={`/offers/${offer.slug}`}>
-                  <Image
-                    src={`https://www.centauruscharter.net/product/images/${offer.image}`}
-                    alt={offer.translations[language].title}
-                    className="rounded-t-md w-full object-cover"
-                    width={450}
-                    height={0}
-                    style={{ height: 'auto' }}
-                    priority={true}
-                  />
+                  <Image src={`https://www.centauruscharter.net/product/images/${offer.image}`} alt={offer.translations[language].title} className="rounded-t-md w-full object-cover" width={450} height={0} style={{ height: 'auto' }} priority={true} />
                 </Link>
                 <div className="flex flex-col justify-start px-5 lg:px-5 py-4">
                   <h2 className="text-primary-blue text-2xl font-bold">
@@ -74,12 +56,8 @@ export default async function OffersPage({ params }) {
                       {offer.translations[language].title}
                     </Link>
                   </h2>
-                  <p className="text-primary-black font-bold text-xs pt-2 pb-5">
-                    {offer.note}
-                  </p>
-                  <p className="text-sm py-2 font-bold">
-                    *SUBJECT TO AVAILABILITY{' '}
-                  </p>
+                  <p className="text-primary-black font-bold text-xs pt-2 pb-5">{offer.note}</p>
+                  <p className="text-sm py-2 font-bold">*SUBJECT TO AVAILABILITY </p>
                   <div className="bg-gray-300 w-full h-[0.05rem] mb-4"></div>
                   <div className="flex flex-row items-center justify-between">
                     <div className="flex flex-col items-start justify-start py-5 mb-4">
@@ -103,9 +81,7 @@ export default async function OffersPage({ params }) {
       <section className="container mx-auto">
         <div className="container mx-auto bg-primary-yellow flex flex-col md:flex-row gap-3 items-center justify-between rounded-xl py-3">
           {/* Left Text */}
-          <span className="text-center md:text-left text-primary-blue font-bold text-base md:text-lg uppercase">
-            EXPLORE OUR WINTER OFFER
-          </span>
+          <span className="text-center md:text-left text-primary-blue font-bold text-base md:text-lg uppercase">EXPLORE OUR WINTER OFFER</span>
 
           {/* Right Button */}
           <Link href="/offers/dubai-yachts-winter-offers">
@@ -124,15 +100,8 @@ export default async function OffersPage({ params }) {
       </section>
       <div className="container mx-auto px-3 py-5 pb-8">
         <p className="text-base text-primary-grey">
-          Centaurus Charter offers range of membership discounts &{' '}
-          <strong>yacht deals</strong> to adorn the beautiful yachting
-          destinations. The best way to enjoy your dream vacation is a day out
-          on the waters. Have fun in the sun, spend the day cruising or enjoy
-          weekend boat parties. Upgrade your cruising experience with our
-          extreme water sports activities, lip smacking BBQ or seafood platters,
-          tempting cakes, bubbly drinks, fresh flowers & balloon decoration
-          packages at extra cost. We offer a wide range of yachts for every
-          occasion. You deserve nothing but the best.
+          Centaurus Charter offers range of membership discounts & <strong>yacht deals</strong> to adorn the beautiful yachting destinations. The best way to enjoy your dream vacation is a day out on the waters. Have fun in the sun, spend the day cruising or enjoy weekend boat parties. Upgrade your cruising experience with our extreme water sports activities, lip smacking BBQ or seafood platters,
+          tempting cakes, bubbly drinks, fresh flowers & balloon decoration packages at extra cost. We offer a wide range of yachts for every occasion. You deserve nothing but the best.
           <br />
           <br /> <strong>Charter a yacht</strong> with our best deal.
         </p>

@@ -2,10 +2,7 @@ export async function POST(req) {
   try {
     const { email } = await req.json();
     if (!email.trim()) {
-      return Response.json(
-        { status: 'error', message: 'Email is required' },
-        { status: 400 }
-      );
+      return Response.json({ status: 'error', message: 'Email is required' }, { status: 400 });
     }
 
     const queryParams = new URLSearchParams({ email }).toString();
@@ -20,15 +17,9 @@ export async function POST(req) {
         message: 'Subscription successful',
       });
     } else {
-      return Response.json(
-        { status: 'error', message: 'Subscription failed' },
-        { status: 500 }
-      );
+      return Response.json({ status: 'error', message: 'Subscription failed' }, { status: 500 });
     }
   } catch (error) {
-    return Response.json(
-      { status: 'error', message: 'Server error' },
-      { status: 500 }
-    );
+    return Response.json({ status: 'error', message: 'Server error' }, { status: 500 });
   }
 }

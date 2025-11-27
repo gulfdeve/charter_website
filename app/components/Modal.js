@@ -110,24 +110,13 @@ const Modal = ({ show, onClose }) => {
   if (!isVisible) return null;
 
   return (
-    <div
-      className={`fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50 ${animationState}`}
-    >
+    <div className={`fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50 ${animationState}`}>
       {/* Success Bar: appears on successful submission, closes after 5s */}
-      {submissionSuccess && (
-        <div className="absolute top-0 left-0 right-0 bg-green-500 text-white p-3 text-center z-10">
-          You have successfully subscribed!
-        </div>
-      )}
+      {submissionSuccess && <div className="absolute top-0 left-0 right-0 bg-green-500 text-white p-3 text-center z-10">You have successfully subscribed!</div>}
 
-      <div
-        className={`modal-container w-full max-w-3xl h-[30rem] bg-white rounded-lg overflow-hidden shadow-lg transform transition-all duration-500 ${animationState}`}
-      >
+      <div className={`modal-container w-full max-w-3xl h-[30rem] bg-white rounded-lg overflow-hidden shadow-lg transform transition-all duration-500 ${animationState}`}>
         {/* Close Button */}
-        <button
-          onClick={closeWithAnimation}
-          className="absolute top-4 right-4 text-2xl p-3 w-12 h-12 rounded-full flex items-center justify-center bg-white text-gray-500 hover:text-gray-800"
-        >
+        <button onClick={closeWithAnimation} className="absolute top-4 right-4 text-2xl p-3 w-12 h-12 rounded-full flex items-center justify-center bg-white text-gray-500 hover:text-gray-800">
           &times;
         </button>
 
@@ -137,28 +126,15 @@ const Modal = ({ show, onClose }) => {
             <h2 className="text-3xl text-center text-primary-blue px-5">
               Join Our <span className="font-bold">Newsletter</span>
             </h2>
-            <p className="mt-4 text-primary-blue text-center text-xl px-7">
-              Get the latest updates &amp; special offers.
-            </p>
+            <p className="mt-4 text-primary-blue text-center text-xl px-7">Get the latest updates &amp; special offers.</p>
 
             {/* Newsletter Form */}
             <form className="mt-4 w-full" onSubmit={handleSubmit}>
-              <input
-                type="email"
-                name="email"
-                placeholder="Email"
-                className="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none ring-2 ring-primary-blue"
-                required
-              />
+              <input type="email" name="email" placeholder="Email" className="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none ring-2 ring-primary-blue" required />
               {/* Show validation error if any */}
-              {errors.email && (
-                <p className="text-red-600 text-sm mt-1">{errors.email}</p>
-              )}
+              {errors.email && <p className="text-red-600 text-sm mt-1">{errors.email}</p>}
 
-              <button
-                type="submit"
-                className="w-full px-4 py-2 p-3 mt-8 text-2xl text-white bg-primary-blue rounded-full"
-              >
+              <button type="submit" className="w-full px-4 py-2 p-3 mt-8 text-2xl text-white bg-primary-blue rounded-full">
                 Sign Up
               </button>
             </form>

@@ -27,12 +27,7 @@ export default function OfferClientActions({ offer }) {
           GET A QUOTE
         </button>
       </div>
-      <Modal2
-        isModalOpen={isModalOpen}
-        closeModal={closeModal}
-        idName="offers_id"
-        idValue={offer.id}
-      />
+      <Modal2 isModalOpen={isModalOpen} closeModal={closeModal} idName="offers_id" idValue={offer.id} />
     </>
   );
 }

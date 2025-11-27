@@ -19,11 +19,7 @@ export default function Video() {
     const loadWistiaScripts = async () => {
       try {
         await loadScript('https://fast.wistia.com/player.js');
-        await loadScript(
-          'https://fast.wistia.com/embed/rbm8fusw7r.js',
-          'module',
-          true
-        );
+        await loadScript('https://fast.wistia.com/embed/rbm8fusw7r.js', 'module', true);
         setScriptsLoaded(true);
 
         // Wait for the custom element to be defined
@@ -57,26 +53,16 @@ export default function Video() {
           }
         `}
       </style>
-      <div className="video-container">
-        {scriptsLoaded && playerReady ? (
-          <wistia-player media-id="rbm8fusw7r" seo="false"></wistia-player>
-        ) : (
-          <p className="text-white text-center">Loading video...</p>
-        )}
-      </div>
+      <div className="video-container">{scriptsLoaded && playerReady ? <wistia-player media-id="rbm8fusw7r" seo="false"></wistia-player> : <p className="text-white text-center">Loading video...</p>}</div>
 
       {/* Content Overlay */}
       <div className="absolute inset-0 z-10 flex flex-col items-center  justify-center top-[32%]  md:-top-[22%] lg:-top-[0%] xl:-top-[5%] text-white text-center p-2 md:px-14 lg:px-24 ">
         <h1 className="text-3xl font-bold mb-4 text-black md:text-primary-yellow  xl:text-3xl 2xl:text-4xl text-shadow">
           F1 GRAND PRIX ABU DHABI 2025 <br />
-          <span className="text-black md:text-white">
-            Private Yachts & Ticket Bookings
-          </span>
+          <span className="text-black md:text-white">Private Yachts & Ticket Bookings</span>
         </h1>
 
-        <p className="text-sm mb-6 xl:mb-8 text-center  md:text-white text-black  xl:text-lg 2xl:text-xl text-shadow">
-          4 days Yacht Rentals, Gourmet Delights, Exclusive Marina Access
-        </p>
+        <p className="text-sm mb-6 xl:mb-8 text-center  md:text-white text-black  xl:text-lg 2xl:text-xl text-shadow">4 days Yacht Rentals, Gourmet Delights, Exclusive Marina Access</p>
 
         <button className="blue-solid-button">BOOK NOW</button>
       </div>

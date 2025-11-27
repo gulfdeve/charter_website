@@ -26,13 +26,7 @@ import LandingNavbar from '@/app/components/LandingNavbar';
 //   variable: "--font-montserrat",
 // });
 
-export default async function RootLayout({
-  children,
-  params,
-}: {
-  children: React.ReactNode;
-  params: Promise<{ locale: string; slug?: string[] }>;
-}) {
+export default async function RootLayout({ children, params }: { children: React.ReactNode; params: Promise<{ locale: string; slug?: string[] }> }) {
   const { locale, slug } = await params;
   const serverData = await fetchData();
 
@@ -50,15 +44,10 @@ export default async function RootLayout({
   const currentPath = headersList.get('x-current-path');
 
   // Use the middleware header if available; otherwise, fallback to the slug-based path.
-  const canonicalUrl = currentPath
-    ? `${baseUrl}${currentPath}`
-    : slug
-      ? `${baseUrl}/${slug.join('/')}`
-      : baseUrl;
+  const canonicalUrl = currentPath ? `${baseUrl}${currentPath}` : slug ? `${baseUrl}/${slug.join('/')}` : baseUrl;
 
   // Check if the current page is the landing page
-  const isLandingPage =
-    currentPath?.includes('landing-abu-dhabi-race-yacht-charter') || false;
+  const isLandingPage = currentPath?.includes('landing-abu-dhabi-race-yacht-charter') || false;
 
   return (
     <html lang={locale}>
@@ -67,17 +56,10 @@ export default async function RootLayout({
         <link rel="preconnect" href="https://use.typekit.net" />
         <link rel="preconnect" href="https://p.typekit.net" />
         <link rel="dns-prefetch" href="https://use.typekit.net" />
-        
+
         {/* Preload critical font stylesheet */}
-        <link
-          rel="preload"
-          href="https://use.typekit.net/kkb1lse.css"
-          as="style"
-        />
-        <link
-          rel="stylesheet"
-          href="https://use.typekit.net/kkb1lse.css"
-        />
+        <link rel="preload" href="https://use.typekit.net/kkb1lse.css" as="style" />
+        <link rel="stylesheet" href="https://use.typekit.net/kkb1lse.css" />
         <Script
           id="gtm-script"
           strategy="afterInteractive"
@@ -111,12 +93,7 @@ export default async function RootLayout({
       </head>
       <body className={/* `${montserrat.variable}`*/ ''}>
         <noscript>
-          <iframe
-            src="https://www.googletagmanager.com/ns.html?id=GTM-NPBPZQ2"
-            height="0"
-            width="0"
-            style={{ display: 'none', visibility: 'hidden' }}
-          />
+          <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NPBPZQ2" height="0" width="0" style={{ display: 'none', visibility: 'hidden' }} />
         </noscript>
         <NProgressLoader />
         <NextIntlClientProvider locale={locale} messages={messages}>

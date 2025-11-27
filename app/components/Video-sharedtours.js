@@ -41,8 +41,7 @@ export default function Videosharedtours() {
         }
       };
 
-      playerScript.onerror = error =>
-        console.log('Error loading Wistia player script:', error);
+      playerScript.onerror = error => console.log('Error loading Wistia player script:', error);
       // embedScript.onerror = (error) => console.log("Error loading Wistia embed script:", error);
     };
 
@@ -68,23 +67,13 @@ export default function Videosharedtours() {
         `}
       </style>
       <div className="" style={{ pointerEvents: 'none' }}>
-        {scriptsLoaded && playerReady ? (
-          <wistia-player media-id="x5zlv6005o" seo="false"></wistia-player>
-        ) : (
-          <p className="text-white text-center">Loading video...</p>
-        )}
+        {scriptsLoaded && playerReady ? <wistia-player media-id="x5zlv6005o" seo="false"></wistia-player> : <p className="text-white text-center">Loading video...</p>}
       </div>
 
       <div className="block text-center mt-10 lg:absolute lg:-translate-x-2/4 lg:-translate-y-2/4 lg:left-2/4 lg:top-2/4 lg:mt-0">
-        <h1 className="text-4xl font-bold mb-4 text-primary-blue-2 lg:text-white  xl:text-xl 2xl:text-4xl text-shadow">
-          All-Inclusive Sharing Yacht Trips In Dubai
-        </h1>
-        <h1 className="text-sm xl:text-2xl mb-1  text-primary-blue-2 lg:text-white  2xl:text-3xl text-shadow">
-          Buy 1 Get 1 Free
-        </h1>
-        <h1 className="text-sm xl:text-2xl mb-4 text-primary-blue-2 lg:text-white  2xl:text-3xl text-shadow">
-          Starting AED 149
-        </h1>
+        <h1 className="text-4xl font-bold mb-4 text-primary-blue-2 lg:text-white  xl:text-xl 2xl:text-4xl text-shadow">All-Inclusive Sharing Yacht Trips In Dubai</h1>
+        <h1 className="text-sm xl:text-2xl mb-1  text-primary-blue-2 lg:text-white  2xl:text-3xl text-shadow">Buy 1 Get 1 Free</h1>
+        <h1 className="text-sm xl:text-2xl mb-4 text-primary-blue-2 lg:text-white  2xl:text-3xl text-shadow">Starting AED 149</h1>
         <button className="blue-solid-button">GET THE OFFER NOW!</button>
       </div>
     </div>

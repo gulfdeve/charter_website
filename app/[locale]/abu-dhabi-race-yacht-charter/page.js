@@ -13,12 +13,7 @@ export const revalidate = 86400; // 24 hours
 
 // Pre-generate all locale versions at build time
 export async function generateStaticParams() {
-  return [
-    { locale: 'en' },
-    { locale: 'ar' },
-    { locale: 'ru' },
-    { locale: 'zh' },
-  ];
+  return [{ locale: 'en' }, { locale: 'ar' }, { locale: 'ru' }, { locale: 'zh' }];
 }
 
 const yachtData = [
@@ -35,22 +30,8 @@ const yachtData = [
       { label: 'Sleeps', value: '8', icon: FaBed },
       { label: 'Marina Passes', value: '50', icon: FaIdCard },
     ],
-    inclusions: [
-      '4 days yacht rental',
-      'Crew service',
-      'Full board food',
-      'House drinks',
-      'Marina passes',
-    ],
-    addons: [
-      'Transfer',
-      'Live DJ',
-      'Alcohol',
-      'Catering',
-      'Premium drinks',
-      'Extra marina pass',
-      'Hostess',
-    ],
+    inclusions: ['4 days yacht rental', 'Crew service', 'Full board food', 'House drinks', 'Marina passes'],
+    addons: ['Transfer', 'Live DJ', 'Alcohol', 'Catering', 'Premium drinks', 'Extra marina pass', 'Hostess'],
     cta: 'INQUIRE NOW',
   },
   {
@@ -66,22 +47,8 @@ const yachtData = [
       { label: 'Sleeps', value: '8', icon: FaBed },
       { label: 'Marina Passes', value: '40', icon: FaIdCard },
     ],
-    inclusions: [
-      '4 days yacht rental',
-      'Crew service',
-      'Full board food',
-      'House drinks',
-      'Marina passes',
-    ],
-    addons: [
-      'Transfer',
-      'Live DJ',
-      'Alcohol',
-      'Catering',
-      'Premium drinks',
-      'Extra marina pass',
-      'Hostess',
-    ],
+    inclusions: ['4 days yacht rental', 'Crew service', 'Full board food', 'House drinks', 'Marina passes'],
+    addons: ['Transfer', 'Live DJ', 'Alcohol', 'Catering', 'Premium drinks', 'Extra marina pass', 'Hostess'],
     cta: 'INQUIRE NOW',
   },
   {
@@ -97,22 +64,8 @@ const yachtData = [
       { label: 'Sleeps', value: '12', icon: FaBed },
       { label: 'Marina Passes', value: '40', icon: FaIdCard },
     ],
-    inclusions: [
-      '4 days yacht rental',
-      'Crew service',
-      'Full board food',
-      'House drinks',
-      'Marina passes',
-    ],
-    addons: [
-      'Transfer',
-      'Live DJ',
-      'Alcohol',
-      'Catering',
-      'Premium drinks',
-      'Extra marina pass',
-      'Hostess',
-    ],
+    inclusions: ['4 days yacht rental', 'Crew service', 'Full board food', 'House drinks', 'Marina passes'],
+    addons: ['Transfer', 'Live DJ', 'Alcohol', 'Catering', 'Premium drinks', 'Extra marina pass', 'Hostess'],
     cta: 'INQUIRE NOW',
   },
   {
@@ -128,22 +81,8 @@ const yachtData = [
       { label: 'Sleeps', value: '10', icon: FaBed },
       { label: 'Marina Passes', value: '30', icon: FaIdCard },
     ],
-    inclusions: [
-      '4 days yacht rental',
-      'Crew service',
-      'Full board food',
-      'House drinks',
-      'Marina passes',
-    ],
-    addons: [
-      'Transfer',
-      'Live DJ',
-      'Alcohol',
-      'Catering',
-      'Premium drinks',
-      'Extra marina pass',
-      'Hostess',
-    ],
+    inclusions: ['4 days yacht rental', 'Crew service', 'Full board food', 'House drinks', 'Marina passes'],
+    addons: ['Transfer', 'Live DJ', 'Alcohol', 'Catering', 'Premium drinks', 'Extra marina pass', 'Hostess'],
     cta: 'INQUIRE NOW',
   },
   {
@@ -159,22 +98,8 @@ const yachtData = [
       { label: 'Sleeps', value: '8', icon: FaBed },
       { label: 'Marina Passes', value: '40', icon: FaIdCard },
     ],
-    inclusions: [
-      '4 days yacht rental',
-      'Crew service',
-      'Full board food',
-      'House drinks',
-      'Marina passes',
-    ],
-    addons: [
-      'Transfer',
-      'Live DJ',
-      'Alcohol',
-      'Catering',
-      'Premium drinks',
-      'Extra marina pass',
-      'Hostess',
-    ],
+    inclusions: ['4 days yacht rental', 'Crew service', 'Full board food', 'House drinks', 'Marina passes'],
+    addons: ['Transfer', 'Live DJ', 'Alcohol', 'Catering', 'Premium drinks', 'Extra marina pass', 'Hostess'],
     cta: 'INQUIRE NOW',
   },
   {
@@ -190,22 +115,8 @@ const yachtData = [
       { label: 'Sleeps', value: '8', icon: FaBed },
       { label: 'Marina Passes', value: '40', icon: FaIdCard },
     ],
-    inclusions: [
-      '4 days yacht rental',
-      'Crew service',
-      'Full board food',
-      'House drinks',
-      'Marina passes',
-    ],
-    addons: [
-      'Transfer',
-      'Live DJ',
-      'Alcohol',
-      'Catering',
-      'Premium drinks',
-      'Extra marina pass',
-      'Hostess',
-    ],
+    inclusions: ['4 days yacht rental', 'Crew service', 'Full board food', 'House drinks', 'Marina passes'],
+    addons: ['Transfer', 'Live DJ', 'Alcohol', 'Catering', 'Premium drinks', 'Extra marina pass', 'Hostess'],
     cta: 'INQUIRE NOW',
   },
   {
@@ -221,22 +132,8 @@ const yachtData = [
       { label: 'Sleeps', value: '8', icon: FaBed },
       { label: 'Marina Passes', value: '30', icon: FaIdCard },
     ],
-    inclusions: [
-      '4 days yacht rental',
-      'Crew service',
-      'Full board food',
-      'House drinks',
-      'Marina passes',
-    ],
-    addons: [
-      'Transfer',
-      'Live DJ',
-      'Alcohol',
-      'Catering',
-      'Premium drinks',
-      'Extra marina pass',
-      'Hostess',
-    ],
+    inclusions: ['4 days yacht rental', 'Crew service', 'Full board food', 'House drinks', 'Marina passes'],
+    addons: ['Transfer', 'Live DJ', 'Alcohol', 'Catering', 'Premium drinks', 'Extra marina pass', 'Hostess'],
     cta: 'INQUIRE NOW',
   },
   {
@@ -252,22 +149,8 @@ const yachtData = [
       { label: 'Sleeps', value: '8', icon: FaBed },
       { label: 'Marina Passes', value: '40', icon: FaIdCard },
     ],
-    inclusions: [
-      '4 days yacht rental',
-      'Crew service',
-      'Full board food',
-      'House drinks',
-      'Marina passes',
-    ],
-    addons: [
-      'Transfer',
-      'Live DJ',
-      'Alcohol',
-      'Catering',
-      'Premium drinks',
-      'Extra marina pass',
-      'Hostess',
-    ],
+    inclusions: ['4 days yacht rental', 'Crew service', 'Full board food', 'House drinks', 'Marina passes'],
+    addons: ['Transfer', 'Live DJ', 'Alcohol', 'Catering', 'Premium drinks', 'Extra marina pass', 'Hostess'],
     cta: 'INQUIRE NOW',
   },
   {
@@ -283,22 +166,8 @@ const yachtData = [
       { label: 'Sleeps', value: '6', icon: FaBed },
       { label: 'Marina Passes', value: '8', icon: FaIdCard },
     ],
-    inclusions: [
-      '4 days yacht rental',
-      'Crew service',
-      'Full board food',
-      'House drinks',
-      'Marina passes',
-    ],
-    addons: [
-      'Transfer',
-      'Live DJ',
-      'Alcohol',
-      'Catering',
-      'Premium drinks',
-      'Extra marina pass',
-      'Hostess',
-    ],
+    inclusions: ['4 days yacht rental', 'Crew service', 'Full board food', 'House drinks', 'Marina passes'],
+    addons: ['Transfer', 'Live DJ', 'Alcohol', 'Catering', 'Premium drinks', 'Extra marina pass', 'Hostess'],
     cta: 'INQUIRE NOW',
   },
   {
@@ -314,22 +183,8 @@ const yachtData = [
       { label: 'Sleeps', value: '6', icon: FaBed },
       { label: 'Marina Passes', value: '25', icon: FaIdCard },
     ],
-    inclusions: [
-      '4 days yacht rental',
-      'Crew service',
-      'Full board food',
-      'House drinks',
-      'Marina passes',
-    ],
-    addons: [
-      'Transfer',
-      'Live DJ',
-      'Alcohol',
-      'Catering',
-      'Premium drinks',
-      'Extra marina pass',
-      'Hostess',
-    ],
+    inclusions: ['4 days yacht rental', 'Crew service', 'Full board food', 'House drinks', 'Marina passes'],
+    addons: ['Transfer', 'Live DJ', 'Alcohol', 'Catering', 'Premium drinks', 'Extra marina pass', 'Hostess'],
     cta: 'INQUIRE NOW',
   },
   {
@@ -345,22 +200,8 @@ const yachtData = [
       { label: 'Sleeps', value: '6', icon: FaBed },
       { label: 'Marina Passes', value: '28', icon: FaIdCard },
     ],
-    inclusions: [
-      '4 days yacht rental',
-      'Crew service',
-      'Full board food',
-      'House drinks',
-      'Marina passes',
-    ],
-    addons: [
-      'Transfer',
-      'Live DJ',
-      'Alcohol',
-      'Catering',
-      'Premium drinks',
-      'Extra marina pass',
-      'Hostess',
-    ],
+    inclusions: ['4 days yacht rental', 'Crew service', 'Full board food', 'House drinks', 'Marina passes'],
+    addons: ['Transfer', 'Live DJ', 'Alcohol', 'Catering', 'Premium drinks', 'Extra marina pass', 'Hostess'],
     cta: 'INQUIRE NOW',
   },
   {
@@ -376,22 +217,8 @@ const yachtData = [
       { label: 'Sleeps', value: '6', icon: FaBed },
       { label: 'Marina Passes', value: '15', icon: FaIdCard },
     ],
-    inclusions: [
-      '4 days yacht rental',
-      'Crew service',
-      'Full board food',
-      'House drinks',
-      'Marina passes',
-    ],
-    addons: [
-      'Transfer',
-      'Live DJ',
-      'Alcohol',
-      'Catering',
-      'Premium drinks',
-      'Extra marina pass',
-      'Hostess',
-    ],
+    inclusions: ['4 days yacht rental', 'Crew service', 'Full board food', 'House drinks', 'Marina passes'],
+    addons: ['Transfer', 'Live DJ', 'Alcohol', 'Catering', 'Premium drinks', 'Extra marina pass', 'Hostess'],
     cta: 'INQUIRE NOW',
   },
   {
@@ -407,22 +234,8 @@ const yachtData = [
       { label: 'Sleeps', value: '6', icon: FaBed },
       { label: 'Marina Passes', value: '28', icon: FaIdCard },
     ],
-    inclusions: [
-      '4 days yacht rental',
-      'Crew service',
-      'Full board food',
-      'House drinks',
-      'Marina passes',
-    ],
-    addons: [
-      'Transfer',
-      'Live DJ',
-      'Alcohol',
-      'Catering',
-      'Premium drinks',
-      'Extra marina pass',
-      'Hostess',
-    ],
+    inclusions: ['4 days yacht rental', 'Crew service', 'Full board food', 'House drinks', 'Marina passes'],
+    addons: ['Transfer', 'Live DJ', 'Alcohol', 'Catering', 'Premium drinks', 'Extra marina pass', 'Hostess'],
     cta: 'INQUIRE NOW',
   },
   {
@@ -438,22 +251,8 @@ const yachtData = [
       { label: 'Sleeps', value: '6', icon: FaBed },
       { label: 'Marina Passes', value: '28', icon: FaIdCard },
     ],
-    inclusions: [
-      '4 days yacht rental',
-      'Crew service',
-      'Full board food',
-      'House drinks',
-      'Marina passes',
-    ],
-    addons: [
-      'Transfer',
-      'Live DJ',
-      'Alcohol',
-      'Catering',
-      'Premium drinks',
-      'Extra marina pass',
-      'Hostess',
-    ],
+    inclusions: ['4 days yacht rental', 'Crew service', 'Full board food', 'House drinks', 'Marina passes'],
+    addons: ['Transfer', 'Live DJ', 'Alcohol', 'Catering', 'Premium drinks', 'Extra marina pass', 'Hostess'],
     cta: 'INQUIRE NOW',
   },
 ];
@@ -546,43 +345,22 @@ const Page = () => {
       {/* <div>
         <Videof1 />
       </div> */}
-      <VideoLocal
-        filename="/F1 2023 720p.mp4"
-        section="f1"
-        ctaLink={whatsappLink}
-      />
-      <div className="hidden bg-red-900 text-white text-center py-2 text-sm font-semibold sticky top-14 lg:top-[4.5rem] z-20">
-        🎉 Promo: 10% OFF on All F1 Yacht Packages – Offer ends September 15,
-        2025!
-      </div>
+      <VideoLocal filename="/F1 2023 720p.mp4" section="f1" ctaLink={whatsappLink} />
+      <div className="hidden bg-red-900 text-white text-center py-2 text-sm font-semibold sticky top-14 lg:top-[4.5rem] z-20">🎉 Promo: 10% OFF on All F1 Yacht Packages – Offer ends September 15, 2025!</div>
       {/* Heading Section */}
       <section className="flex flex-col items-center py-20 bg-black">
         <div className="container mx-auto">
-          <img
-            src="/images/f1-grand-prix-abu-dhabi-2025.webp"
-            alt="F1 2025"
-            className=""
-          />
+          <img src="/images/f1-grand-prix-abu-dhabi-2025.webp" alt="F1 2025" className="" />
         </div>
-        <h2 className="text-3xl font-bold text-center text-red-700 pt-5">
-          FORMULA 1 ABU DHABI GP 2025
-        </h2>
-        <p className="font-medium text-center text-white my-3 tracking-[0.70rem]">
-          LUXURY YACHT CHARTER PACKAGES
-        </p>
-        <p className=" text-center font-bold text-white mt-2 ">
-          EVENT DATES: 04 - 07 DECEMBER 2025 | YAS MARINA, ABU DHABI
-        </p>
+        <h2 className="text-3xl font-bold text-center text-red-700 pt-5">FORMULA 1 ABU DHABI GP 2025</h2>
+        <p className="font-medium text-center text-white my-3 tracking-[0.70rem]">LUXURY YACHT CHARTER PACKAGES</p>
+        <p className=" text-center font-bold text-white mt-2 ">EVENT DATES: 04 - 07 DECEMBER 2025 | YAS MARINA, ABU DHABI</p>
         {/* Two-column (Image + Text) Section */}
         <div className="container mx-auto py-10">
           <div className="flex flex-col lg:flex-row items-center justify-center rounded-lg overflow-hidden lg:mx-20">
             {/* Left: Image */}
             <div className="rounded rounded-l-xl">
-              <img
-                src="/images/trackside.webp"
-                alt="F1 Trackside"
-                className="xl:w-[40rem] sm:w-[170rem] lg:w-[160rem] md:h-[543px] xl:h-[570px] lg:h-[504px]"
-              />
+              <img src="/images/trackside.webp" alt="F1 Trackside" className="xl:w-[40rem] sm:w-[170rem] lg:w-[160rem] md:h-[543px] xl:h-[570px] lg:h-[504px]" />
             </div>
 
             {/* Right: Text & Content */}
@@ -590,21 +368,12 @@ const Page = () => {
               {/* <h3 className="text-white uppercase md:text-2xl lg:text-4xl font-bold text-center pb-6">
 								F1 Yacht Charter Experience
 							</h3> */}
-              <h3 className="text-white uppercase md:text-2xl lg:text-4xl font-bold text-center pb-6">
-                FORMULA 1 YACHT PARTY HOSPITALITY PACKAGE
-              </h3>
+              <h3 className="text-white uppercase md:text-2xl lg:text-4xl font-bold text-center pb-6">FORMULA 1 YACHT PARTY HOSPITALITY PACKAGE</h3>
               <p className="text-white text-center text-sm md:text-base pb-8 px-2 md:px-2">
-                Join Centaurus Charter for an exclusive 4-day Formula 1 Yacht
-                Party experience. Enjoy a luxurious setting, breathtaking views,
-                and an unforgettable race weekend atmosphere. Perfect for
-                corporate events or private celebrations, this hospitality
-                package offers the ultimate way to enjoy the excitement of
-                Formula 1.
+                Join Centaurus Charter for an exclusive 4-day Formula 1 Yacht Party experience. Enjoy a luxurious setting, breathtaking views, and an unforgettable race weekend atmosphere. Perfect for corporate events or private celebrations, this hospitality package offers the ultimate way to enjoy the excitement of Formula 1.
               </p>
               <Link href={whatsappLink} target="_blank">
-                <button className="bg-white text-primary-blue font-bold px-7 py-4 rounded-xl shadow-md hover:bg-gray-200 transition-colors">
-                  INQUIRE NOW
-                </button>
+                <button className="bg-white text-primary-blue font-bold px-7 py-4 rounded-xl shadow-md hover:bg-gray-200 transition-colors">INQUIRE NOW</button>
               </Link>
               {/* <p className="mt-8 text-sm text-gray-200 text-center">
 								Only one yacht available remaining. T&Cs apply.
@@ -612,8 +381,7 @@ const Page = () => {
               <p className="mt-8 text-sm text-gray-200 text-center">
                 Limited tickets available — book early to secure your spot!
                 <br />
-                T&Cs apply. Inclusions may vary based on the date and package
-                selected
+                T&Cs apply. Inclusions may vary based on the date and package selected
               </p>
             </div>
           </div>
@@ -626,18 +394,14 @@ const Page = () => {
           {/* <h4 className="uppercase text-2xl md:text-3xl font-bold text-center text-white mb-8">
 						F1 Yacht Package Inclusions
 					</h4> */}
-          <h4 className="uppercase text-2xl md:text-3xl font-bold text-center text-white mb-8">
-            WHAT YOU CAN ENJOY WITH YOUR TICKET
-          </h4>
+          <h4 className="uppercase text-2xl md:text-3xl font-bold text-center text-white mb-8">WHAT YOU CAN ENJOY WITH YOUR TICKET</h4>
           <InclusionsCarousel slides={slidesone} />
         </div>
       </div>
 
       <section className="bg-[#010e1c] py-12">
         <div className="container mx-auto w-full">
-          <h3 className="text-2xl md:text-3xl font-bold text-center text-white mb-8">
-            TICKET RATES
-          </h3>
+          <h3 className="text-2xl md:text-3xl font-bold text-center text-white mb-8">TICKET RATES</h3>
           <div className="hidden md:block">
             <table className="bg-white w-full text-center table-auto rounded-lg overflow-hidden">
               <thead className="text-red-950">
@@ -671,60 +435,35 @@ const Page = () => {
               </thead>
               <tbody>
                 <tr>
-                  <td className="border border-gray-300 px-4 py-3">
-                    13,500 AED
-                  </td>
-                  <td className="border border-gray-300 px-4 py-3">
-                    12,500 AED
-                  </td>
-                  <td className="border border-gray-300 px-4 py-3">
-                    11,500 AED
-                  </td>
-                  <td className="border border-gray-300 px-4 py-3">
-                    6,000 AED
-                  </td>
-                  <td className="border border-gray-300 px-4 py-3">
-                    7,200 AED
-                  </td>
+                  <td className="border border-gray-300 px-4 py-3">13,500 AED</td>
+                  <td className="border border-gray-300 px-4 py-3">12,500 AED</td>
+                  <td className="border border-gray-300 px-4 py-3">11,500 AED</td>
+                  <td className="border border-gray-300 px-4 py-3">6,000 AED</td>
+                  <td className="border border-gray-300 px-4 py-3">7,200 AED</td>
                 </tr>
                 <tr>
                   <td className="border border-gray-300">
-                    <a
-                      className="font-bold rounded-lg w-full h-full block bg-red-950 text-white px-4 py-3 flex items-center justify-center"
-                      href="https://fareharbor.com/embeds/book/centauruscharter/items/507113/?full-items=yes&flow=1279218"
-                    >
+                    <a className="font-bold rounded-lg w-full h-full block bg-red-950 text-white px-4 py-3 flex items-center justify-center" href="https://fareharbor.com/embeds/book/centauruscharter/items/507113/?full-items=yes&flow=1279218">
                       BOOK NOW
                     </a>
                   </td>
                   <td className="border border-gray-300">
-                    <a
-                      className="font-bold rounded-lg w-full h-full block bg-red-950 text-white px-4 py-3 flex items-center justify-center"
-                      href="https://fareharbor.com/embeds/book/centauruscharter/items/507113/?full-items=yes&flow=1279218"
-                    >
+                    <a className="font-bold rounded-lg w-full h-full block bg-red-950 text-white px-4 py-3 flex items-center justify-center" href="https://fareharbor.com/embeds/book/centauruscharter/items/507113/?full-items=yes&flow=1279218">
                       BOOK NOW
                     </a>
                   </td>
                   <td className="border border-gray-300">
-                    <a
-                      className="font-bold rounded-lg w-full h-full block bg-red-950 text-white px-4 py-3 flex items-center justify-center"
-                      href="https://fareharbor.com/embeds/book/centauruscharter/items/507113/?full-items=yes&flow=1279218"
-                    >
+                    <a className="font-bold rounded-lg w-full h-full block bg-red-950 text-white px-4 py-3 flex items-center justify-center" href="https://fareharbor.com/embeds/book/centauruscharter/items/507113/?full-items=yes&flow=1279218">
                       BOOK NOW
                     </a>
                   </td>
                   <td className="border border-gray-300">
-                    <a
-                      className="font-bold rounded-lg w-full h-full block bg-red-950 text-white px-4 py-3 flex items-center justify-center"
-                      href="https://fareharbor.com/embeds/book/centauruscharter/items/507113/?full-items=yes&flow=1279218"
-                    >
+                    <a className="font-bold rounded-lg w-full h-full block bg-red-950 text-white px-4 py-3 flex items-center justify-center" href="https://fareharbor.com/embeds/book/centauruscharter/items/507113/?full-items=yes&flow=1279218">
                       BOOK NOW
                     </a>
                   </td>
                   <td className="border border-gray-300">
-                    <a
-                      className="font-bold rounded-lg w-full h-full block bg-red-950 text-white px-4 py-3 flex items-center justify-center"
-                      href="https://fareharbor.com/embeds/book/centauruscharter/items/507113/?full-items=yes&flow=1279218"
-                    >
+                    <a className="font-bold rounded-lg w-full h-full block bg-red-950 text-white px-4 py-3 flex items-center justify-center" href="https://fareharbor.com/embeds/book/centauruscharter/items/507113/?full-items=yes&flow=1279218">
                       BOOK NOW
                     </a>
                   </td>
@@ -744,10 +483,7 @@ const Page = () => {
               </div>
               <div className="px-4 pb-4 text-center">
                 <div className="text-lg font-bold mb-3">13,500 AED</div>
-                <a
-                  className="w-full block bg-red-950 text-white font-bold rounded-lg px-4 py-3 flex items-center justify-center"
-                  href="https://fareharbor.com/embeds/book/centauruscharter/items/507113/?full-items=yes&flow=1279218"
-                >
+                <a className="w-full block bg-red-950 text-white font-bold rounded-lg px-4 py-3 flex items-center justify-center" href="https://fareharbor.com/embeds/book/centauruscharter/items/507113/?full-items=yes&flow=1279218">
                   BOOK NOW
                 </a>
               </div>
@@ -762,10 +498,7 @@ const Page = () => {
               </div>
               <div className="px-4 pb-4 text-center">
                 <div className="text-lg font-bold mb-3">12,500 AED</div>
-                <a
-                  className="w-full block bg-red-950 text-white font-bold rounded-lg px-4 py-3 flex items-center justify-center"
-                  href="https://fareharbor.com/embeds/book/centauruscharter/items/507113/?full-items=yes&flow=1279218"
-                >
+                <a className="w-full block bg-red-950 text-white font-bold rounded-lg px-4 py-3 flex items-center justify-center" href="https://fareharbor.com/embeds/book/centauruscharter/items/507113/?full-items=yes&flow=1279218">
                   BOOK NOW
                 </a>
               </div>
@@ -780,10 +513,7 @@ const Page = () => {
               </div>
               <div className="px-4 pb-4 text-center">
                 <div className="text-lg font-bold mb-3">11,500 AED</div>
-                <a
-                  className="w-full block bg-red-950 text-white font-bold rounded-lg px-4 py-3 flex items-center justify-center"
-                  href="https://fareharbor.com/embeds/book/centauruscharter/items/507113/?full-items=yes&flow=1279218"
-                >
+                <a className="w-full block bg-red-950 text-white font-bold rounded-lg px-4 py-3 flex items-center justify-center" href="https://fareharbor.com/embeds/book/centauruscharter/items/507113/?full-items=yes&flow=1279218">
                   BOOK NOW
                 </a>
               </div>
@@ -798,10 +528,7 @@ const Page = () => {
               </div>
               <div className="px-4 pb-4 text-center">
                 <div className="text-lg font-bold mb-3">6,000 AED</div>
-                <a
-                  className="w-full block bg-red-950 text-white font-bold rounded-lg px-4 py-3 flex items-center justify-center"
-                  href="https://fareharbor.com/embeds/book/centauruscharter/items/507113/?full-items=yes&flow=1279218"
-                >
+                <a className="w-full block bg-red-950 text-white font-bold rounded-lg px-4 py-3 flex items-center justify-center" href="https://fareharbor.com/embeds/book/centauruscharter/items/507113/?full-items=yes&flow=1279218">
                   BOOK NOW
                 </a>
               </div>
@@ -816,10 +543,7 @@ const Page = () => {
               </div>
               <div className="px-4 pb-4 text-center">
                 <div className="text-lg font-bold mb-3">7,200 AED</div>
-                <a
-                  className="w-full block bg-red-950 text-white font-bold rounded-lg px-4 py-3 flex items-center justify-center"
-                  href="https://fareharbor.com/embeds/book/centauruscharter/items/507113/?full-items=yes&flow=1279218"
-                >
+                <a className="w-full block bg-red-950 text-white font-bold rounded-lg px-4 py-3 flex items-center justify-center" href="https://fareharbor.com/embeds/book/centauruscharter/items/507113/?full-items=yes&flow=1279218">
                   BOOK NOW
                 </a>
               </div>
@@ -830,48 +554,29 @@ const Page = () => {
 
       {/* Yacht Cards Section */}
       <section className="bg-[#010e1c] py-12">
-        <h3 className="text-2xl md:text-3xl font-bold text-center text-white mb-8">
-          F1 LUXURY YACHT CHARTER PACKAGES
-        </h3>
+        <h3 className="text-2xl md:text-3xl font-bold text-center text-white mb-8">F1 LUXURY YACHT CHARTER PACKAGES</h3>
         <div className="container mx-auto ">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 ">
             {yachtData.map(yacht => (
-              <div
-                key={yacht.id}
-                className="bg-[#09162a] rounded-lg overflow-hidden p-3 md:p-5"
-              >
+              <div key={yacht.id} className="bg-[#09162a] rounded-lg overflow-hidden p-3 md:p-5">
                 <h4 className=" font-bold text-white">{yacht.title}</h4>
                 {/* Yacht Image */}
                 <div className="relative">
-                  <Image
-                    src={yacht.imageSrc}
-                    alt={yacht.imageAlt}
-                    width={800}
-                    height={500}
-                    className="w-full h-auto object-cover rounded-lg mt-3"
-                  />
+                  <Image src={yacht.imageSrc} alt={yacht.imageAlt} width={800} height={500} className="w-full h-auto object-cover rounded-lg mt-3" />
                   {yacht.isSold ? (
                     <div className="absolute flex items-center gap-2 top-4 left-0 bg-primary-red text-white text-sm py-0.5 px-2 rounded-r-lg">
                       <p>Sold Out</p>
                     </div>
                   ) : (
-                    yacht.trackView && (
-                      <div className="absolute flex items-center gap-2 top-4 left-0 gradient-custom-2 text-white text-sm py-0.5 px-2 rounded-r-lg">
-                        {yacht.trackView}
-                      </div>
-                    )
+                    yacht.trackView && <div className="absolute flex items-center gap-2 top-4 left-0 gradient-custom-2 text-white text-sm py-0.5 px-2 rounded-r-lg">{yacht.trackView}</div>
                   )}
                   <div className="absolute grid grid-cols-4 gap-2  -bottom-5 left-0 right-0 mx-3 text-blue-900 rounded-lg bg-primary-blue-3">
                     {yacht.infoBoxes.map((box, index) => (
                       <div key={index} className="flex items-center">
                         <div className="hidden sm:block h-12" />
                         <div className="p-1 text-center flex-1">
-                          <div className="text-xs text-[#f2f2f2]">
-                            {box.label}
-                          </div>
-                          <div className="font-bold text-xs md:text-sm text-white">
-                            {box.value}
-                          </div>
+                          <div className="text-xs text-[#f2f2f2]">{box.label}</div>
+                          <div className="font-bold text-xs md:text-sm text-white">{box.value}</div>
                         </div>
                       </div>
                     ))}
@@ -900,10 +605,7 @@ const Page = () => {
                   </div>
                   {/* CTA Button */}
                   <div className="mt-10">
-                    <YachtBookingButtons
-                      whatsappLink={whatsappLink}
-                      isSold={yacht.isSold}
-                    />
+                    <YachtBookingButtons whatsappLink={whatsappLink} isSold={yacht.isSold} />
                   </div>
                 </div>
               </div>
@@ -914,9 +616,7 @@ const Page = () => {
       {/* Carousel Section */}
       <div className="bg-[#010e1c] pb-12">
         <div className="container mx-auto ">
-          <h4 className="uppercase text-2xl md:text-3xl font-bold text-center text-white mb-8">
-            F1 Yacht Package Add-Ons
-          </h4>
+          <h4 className="uppercase text-2xl md:text-3xl font-bold text-center text-white mb-8">F1 Yacht Package Add-Ons</h4>
           <InclusionsCarousel slides={slidestwo} />
         </div>
       </div>
@@ -924,78 +624,40 @@ const Page = () => {
         <div className="md:block hidden">
           <div className="flex items-center justify-center w-full xl:px-36 lg:px-20 py-20 ">
             <hr className="flex-grow border-red-700" />
-            <span className="font-primary px-4 text-2xl lg:text-3xl font-semibold  text-red-700">
-              TRACKSIDE YACHT HOSPITALITY INCLUSIONS
-            </span>
+            <span className="font-primary px-4 text-2xl lg:text-3xl font-semibold  text-red-700">TRACKSIDE YACHT HOSPITALITY INCLUSIONS</span>
             <hr className="flex-grow border-red-700" />
           </div>
         </div>
         <div className="container mx-auto flex flex-col md:flex-row items-center justify-center py-5">
           <div className="flex flex-col items-center justify-center">
-            <h2 className="block md:hidden text-red-700 text-center font-bold text-2xl xl:text-3xl py-7">
-              Trackside Yacht Hospitality Inclusions
-            </h2>
+            <h2 className="block md:hidden text-red-700 text-center font-bold text-2xl xl:text-3xl py-7">Trackside Yacht Hospitality Inclusions</h2>
             <div className="grid grid-cols-1 md:grid-cols-4 gap-4 lg:gap-0">
               <div>
                 <div className="flex flex-col items-center justify-center text-center gap-y-4 lg:px-10">
-                  <img
-                    alt=""
-                    className="w-16"
-                    src="/images/four-day-yacht-rental.png"
-                  />
-                  <h3 className="text-gray-300 text-base lg:text-lg text-center">
-                    4 Days Yacht Rental
-                  </h3>
-                  <p className="text-gray-300 text-center text-md sm:text-sm xl:text-md pb-10">
-                    Our all-inclusive package offers 4 days of unparalleled
-                    yacht rental, granting you the ultimate vantage point to
-                    witness the adrenaline-fueled action of the Formula 1 race.
-                  </p>
+                  <img alt="" className="w-16" src="/images/four-day-yacht-rental.png" />
+                  <h3 className="text-gray-300 text-base lg:text-lg text-center">4 Days Yacht Rental</h3>
+                  <p className="text-gray-300 text-center text-md sm:text-sm xl:text-md pb-10">Our all-inclusive package offers 4 days of unparalleled yacht rental, granting you the ultimate vantage point to witness the adrenaline-fueled action of the Formula 1 race.</p>
                 </div>
               </div>
               <div>
                 <div className="flex flex-col items-center justify-center text-center gap-y-4 lg:px-10">
                   <img alt="" className="w-16" src="/images/marina-view.png" />
-                  <h3 className="text-gray-300 text-base lg:text-lg text-center">
-                    Overnight Stay & Marina Views
-                  </h3>
-                  <p className="text-gray-300 text-center text-md sm:text-sm xl:text-md pb-10">
-                    During your overnight stay on board, you'll have the unique
-                    opportunity to relax and live the high life. Unwind in
-                    luxurious cabins and spacious lounges, experiencing the
-                    utmost comfort and tranquility at Yas Marina.
-                  </p>
+                  <h3 className="text-gray-300 text-base lg:text-lg text-center">Overnight Stay & Marina Views</h3>
+                  <p className="text-gray-300 text-center text-md sm:text-sm xl:text-md pb-10">During your overnight stay on board, you'll have the unique opportunity to relax and live the high life. Unwind in luxurious cabins and spacious lounges, experiencing the utmost comfort and tranquility at Yas Marina.</p>
                 </div>
               </div>
               <div>
                 <div className="flex flex-col items-center justify-center text-center gap-y-4 lg:px-10">
-                  <img
-                    alt=""
-                    className="w-16"
-                    src="/images/food-and-drinks.png"
-                  />
-                  <h3 className="text-gray-300 text-base lg:text-lg text-center">
-                    Canapes & Drinks
-                  </h3>
-                  <p className="text-gray-300 text-center text-md sm:text-sm xl:text-md lg:pb-10">
-                    Indulge in a delectable selection of canapés ensuring a
-                    delightful culinary experience throughout race weekend Savor
-                    the taste of house drinks adding a touch of sophistication
-                    to your onboard celebrations.
-                  </p>
+                  <img alt="" className="w-16" src="/images/food-and-drinks.png" />
+                  <h3 className="text-gray-300 text-base lg:text-lg text-center">Canapes & Drinks</h3>
+                  <p className="text-gray-300 text-center text-md sm:text-sm xl:text-md lg:pb-10">Indulge in a delectable selection of canapés ensuring a delightful culinary experience throughout race weekend Savor the taste of house drinks adding a touch of sophistication to your onboard celebrations.</p>
                 </div>
               </div>
               <div>
                 <div className="flex flex-col items-center justify-center text-center gap-y-4 lg:px-10">
                   <img alt="" className="w-16" src="/images/marina-pass.png" />
-                  <h3 className="text-gray-300 text-base lg:text-lg text-center">
-                    Marina Passes
-                  </h3>
-                  <p className="text-gray-300 text-center text-md sm:text-sm xl:text-md lg:pb-10">
-                    Get marina passes granting you access to prime viewing spots
-                    and an up-close look at the thrilling race action on Yas
-                    Marina circuit.
-                  </p>
+                  <h3 className="text-gray-300 text-base lg:text-lg text-center">Marina Passes</h3>
+                  <p className="text-gray-300 text-center text-md sm:text-sm xl:text-md lg:pb-10">Get marina passes granting you access to prime viewing spots and an up-close look at the thrilling race action on Yas Marina circuit.</p>
                 </div>
               </div>
             </div>
@@ -1004,10 +666,7 @@ const Page = () => {
         {/* Disclaimer & Contact */}
         <div className="text-center p-4 text-sm text-gray-300">
           <p className="">Formula 1 Hospitality Packages Disclaimer</p>
-          <p>
-            Inclusions, timings, places, etc. provided by the Formula 1
-            hospitality packages are subject to change without prior notice.
-          </p>
+          <p>Inclusions, timings, places, etc. provided by the Formula 1 hospitality packages are subject to change without prior notice.</p>
           <p className="mt-2 text-xl">
             For More Information and Viewing Feel Free To Contact:
             <br />{' '}
@@ -1018,78 +677,38 @@ const Page = () => {
         </div>
 
         <section className="container mx-auto py-12">
-          <h4 className="text-center text-white text-xl md:text-2xl font-bold mb-4">
-            ABU DHABI GRAND PRIX 2025
-          </h4>
+          <h4 className="text-center text-white text-xl md:text-2xl font-bold mb-4">ABU DHABI GRAND PRIX 2025</h4>
           <p className="text-center text-white mb-4 leading-relaxed text-sm">
-            <strong> Formula 1 </strong>is heading back to Abu Dhabi this
-            December. Catch the glamour, action and excitement!
+            <strong> Formula 1 </strong>is heading back to Abu Dhabi this December. Catch the glamour, action and excitement!
           </p>
           <div className="w-full flex flex-col lg:flex-row gap-4 items-center justify-center">
             <div className="w-full">
-              <Image
-                src="/images/yachts-formula-one.webp"
-                alt="Yachts at Marina"
-                width={900}
-                height={500}
-                className="w-full h-full object-cover"
-              />
+              <Image src="/images/yachts-formula-one.webp" alt="Yachts at Marina" width={900} height={500} className="w-full h-full object-cover" />
             </div>
 
             <div className=" w-full text-white  ">
               <p className="mb-4 leading-relaxed text-sm">
                 Step away from the everyday and dive into the thrill of the
-                <strong> Abu Dhabi Grand Prix 2025 </strong>. Watch the
-                electrifying <strong>Formula 1 </strong>action unfold at{' '}
-                <strong>Yas Marina Circuit</strong> with Centaurus F1 VIP Yacht
-                Hospitality. Our yachts are — all from the luxurious comfort of
-                your own <strong>Luxury private yacht</strong>. Entertain your
-                friends, family, or colleagues on board as you cheer for your
-                favorite F1 drivers, surrounded by the vibrant energy of race
-                weekend. With Centaurus
-                <strong> F1 VIP Yacht Hospitality</strong>, you’ll enjoy{' '}
-                <strong>unobstructed trackside views</strong>, exceptional
-                service, and a fully immersive experience. Our fleet of
-                <strong> spacious yachts</strong>, accommodating between{' '}
-                <strong>28 to 100 guests</strong>, offer{' '}
-                <strong>elegant interiors</strong>, open decks, and
-                <strong> premium amenities</strong>. Relax in stylish lounges,
-                sip your favorite drinks, and soak in{' '}
-                <strong>panoramic views </strong>of the marina and race
-                atmosphere in true <strong>luxury</strong>.
+                <strong> Abu Dhabi Grand Prix 2025 </strong>. Watch the electrifying <strong>Formula 1 </strong>action unfold at <strong>Yas Marina Circuit</strong> with Centaurus F1 VIP Yacht Hospitality. Our yachts are — all from the luxurious comfort of your own <strong>Luxury private yacht</strong>. Entertain your friends, family, or colleagues on board as you cheer for your favorite F1
+                drivers, surrounded by the vibrant energy of race weekend. With Centaurus
+                <strong> F1 VIP Yacht Hospitality</strong>, you’ll enjoy <strong>unobstructed trackside views</strong>, exceptional service, and a fully immersive experience. Our fleet of
+                <strong> spacious yachts</strong>, accommodating between <strong>28 to 100 guests</strong>, offer <strong>elegant interiors</strong>, open decks, and
+                <strong> premium amenities</strong>. Relax in stylish lounges, sip your favorite drinks, and soak in <strong>panoramic views </strong>of the marina and race atmosphere in true <strong>luxury</strong>.
               </p>
             </div>
           </div>
           <div className="w-full flex flex-col lg:flex-row gap-4 items-center justify-center">
             <div className="w-full text-white  ">
               <p className="leading-relaxed text-sm">
-                Impress your clients and elevate your business connections with
-                Centaurus corporate hospitality during the{' '}
-                <strong>Abu Dhabi F1 weekend</strong>. Stay aboard for{' '}
-                <strong>4 nights</strong>, complete with{' '}
-                <strong>delicious breakfast spreads</strong> and a{' '}
-                <strong>premium drinks package</strong>. More than just a race,
-                this is a<strong>one-of-a-kind experience</strong> for those who
-                appreciate <strong>privacy, elegance, </strong>and{' '}
-                <strong>high-end living</strong>. Feel the pulse of
-                <strong>Formula 1 </strong>under the Abu Dhabi sun, surrounded
-                by <strong>non-stop energy, exclusive yacht parties</strong>,
-                and pure <strong>luxury</strong>. Whether for{' '}
-                <strong>business or pleasure</strong>, our{' '}
-                <strong>F1 yacht charters</strong> offer the perfect escape —{' '}
-                <strong>reserve your private yacht</strong> now and create{' '}
+                Impress your clients and elevate your business connections with Centaurus corporate hospitality during the <strong>Abu Dhabi F1 weekend</strong>. Stay aboard for <strong>4 nights</strong>, complete with <strong>delicious breakfast spreads</strong> and a <strong>premium drinks package</strong>. More than just a race, this is a<strong>one-of-a-kind experience</strong> for those who
+                appreciate <strong>privacy, elegance, </strong>and <strong>high-end living</strong>. Feel the pulse of
+                <strong>Formula 1 </strong>under the Abu Dhabi sun, surrounded by <strong>non-stop energy, exclusive yacht parties</strong>, and pure <strong>luxury</strong>. Whether for <strong>business or pleasure</strong>, our <strong>F1 yacht charters</strong> offer the perfect escape — <strong>reserve your private yacht</strong> now and create{' '}
                 <strong>memories that will last a lifetime.</strong>{' '}
               </p>
             </div>
 
             <div className="w-full">
-              <Image
-                src="/images/race-formula-one.webp"
-                alt="Yachts at Marina"
-                width={900}
-                height={500}
-                className="w-full h-full object-cover"
-              />
+              <Image src="/images/race-formula-one.webp" alt="Yachts at Marina" width={900} height={500} className="w-full h-full object-cover" />
             </div>
           </div>
         </section>

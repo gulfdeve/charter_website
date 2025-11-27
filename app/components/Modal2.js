@@ -4,13 +4,7 @@ import PhoneInput from 'react-phone-input-2';
 import 'react-phone-input-2/lib/style.css';
 import { parsePhoneNumberFromString } from 'libphonenumber-js';
 
-const Modal2 = ({
-  isModalOpen,
-  closeModal,
-  idName,
-  idValue,
-  selectedVessel,
-}) => {
+const Modal2 = ({ isModalOpen, closeModal, idName, idValue, selectedVessel }) => {
   if (!isModalOpen) return null;
 
   const [fullName, setFullName] = useState('');
@@ -70,17 +64,8 @@ const Modal2 = ({
     // Build enquiry comments, including yacht details if provided
     let enquiryComments = message;
     if (selectedVessel) {
-      const { name, build, cabins, length, guests, year, price } =
-        selectedVessel;
-      enquiryComments +=
-        `<br><br>Yacht Details:<br>` +
-        `Name: ${name || 'N/A'}<br>` +
-        `Build: ${build || 'N/A'}<br>` +
-        `Cabins: ${cabins || 'N/A'}<br>` +
-        `Length: ${length || 'N/A'}<br>` +
-        `Guests: ${guests || 'N/A'}<br>` +
-        `Year: ${year || 'N/A'}<br>` +
-        `Price: ${price || 'N/A'}`;
+      const { name, build, cabins, length, guests, year, price } = selectedVessel;
+      enquiryComments += `<br><br>Yacht Details:<br>` + `Name: ${name || 'N/A'}<br>` + `Build: ${build || 'N/A'}<br>` + `Cabins: ${cabins || 'N/A'}<br>` + `Length: ${length || 'N/A'}<br>` + `Guests: ${guests || 'N/A'}<br>` + `Year: ${year || 'N/A'}<br>` + `Price: ${price || 'N/A'}`;
     }
 
     try {
@@ -119,11 +104,7 @@ const Modal2 = ({
 
       const bodyIsObject = typeof data === 'object' && data !== null;
       const bodyIsString = typeof data === 'string';
-      const serverSaysSuccess =
-        bodyIsObject &&
-        (data.success === true ||
-          data.status === 'success' ||
-          data.code === 200);
+      const serverSaysSuccess = bodyIsObject && (data.success === true || data.status === 'success' || data.code === 200);
       const textLooksOk = bodyIsString && /success|ok|saved/i.test(data);
 
       if (response.ok || serverSaysSuccess || textLooksOk) {
@@ -140,13 +121,8 @@ const Modal2 = ({
         }, 5000);
       } else {
         // surface helpful server message when possible
-        const serverMessage = bodyIsObject
-          ? data.message || JSON.stringify(data)
-          : data;
-        alert(
-          'Something went wrong while sending the form. Server replied: ' +
-            serverMessage
-        );
+        const serverMessage = bodyIsObject ? data.message || JSON.stringify(data) : data;
+        alert('Something went wrong while sending the form. Server replied: ' + serverMessage);
         console.warn('Non-success response', response.status, data);
       }
     } catch (error) {
@@ -160,43 +136,22 @@ const Modal2 = ({
   return (
     <div className="fixed inset-0 bg-primary-grey bg-opacity-50 flex items-center justify-center z-50">
       <div className="bg-white rounded-lg shadow-lg w-full max-w-6xl mx-5 p-9 lg:p-6 relative">
-        <button
-          onClick={closeModal}
-          className="absolute top-4 right-4 text-3xl p-3 w-10 h-10 rounded-full flex items-center justify-center text-primary-grey hover:text-primary-grey"
-          aria-label="Close modal"
-        >
+        <button onClick={closeModal} className="absolute top-4 right-4 text-3xl p-3 w-10 h-10 rounded-full flex items-center justify-center text-primary-grey hover:text-primary-grey" aria-label="Close modal">
           &times;
         </button>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
           <div className="rounded-lg overflow-hidden hidden md:block">
-            <img
-              src="/Get a Quote.webp"
-              alt="Get a Quote Yacht Image"
-              className="w-full h-full object-cover"
-            />
+            <img src="/Get a Quote.webp" alt="Get a Quote Yacht Image" className="w-full h-full object-cover" />
           </div>
 
           <div className="flex items-center w-full lg:pr-10 pr-0 pt-12">
             <form onSubmit={handleSubmit} className="space-y-4 w-full">
-              {submissionSuccess && (
-                <div className="mb-6 p-4 bg-green-100 border border-green-400 text-green-700 rounded-md">
-                  Your form has been successfully submitted. We will contact you
-                  shortly.
-                </div>
-              )}
+              {submissionSuccess && <div className="mb-6 p-4 bg-green-100 border border-green-400 text-green-700 rounded-md">Your form has been successfully submitted. We will contact you shortly.</div>}
 
               <div>
-                <input
-                  type="text"
-                  placeholder="Full Name"
-                  value={fullName}
-                  onChange={e => setFullName(e.target.value)}
-                  className="w-full border-l-4 rounded-md bg-[#f5f5f5] text-primary-grey focus:outline-none border-[#1b498f] focus:border-primary-yellow focus:bg-[#f3f7fd] transition duration-200 ease-in-out p-3"
-                />
-                {errors.fullName && (
-                  <p className="text-red-600 text-sm">{errors.fullName}</p>
-                )}
+                <input type="text" placeholder="Full Name" value={fullName} onChange={e => setFullName(e.target.value)} className="w-full border-l-4 rounded-md bg-[#f5f5f5] text-primary-grey focus:outline-none border-[#1b498f] focus:border-primary-yellow focus:bg-[#f3f7fd] transition duration-200 ease-in-out p-3" />
+                {errors.fullName && <p className="text-red-600 text-sm">{errors.fullName}</p>}
               </div>
 
               <div>
@@ -231,42 +186,20 @@ const Modal2 = ({
                     width: '60px',
                   }}
                 />
-                {errors.phoneNumber && (
-                  <p className="text-red-600 text-sm">{errors.phoneNumber}</p>
-                )}
+                {errors.phoneNumber && <p className="text-red-600 text-sm">{errors.phoneNumber}</p>}
               </div>
 
               <div>
-                <input
-                  type="email"
-                  placeholder="Email Address"
-                  value={email}
-                  onChange={e => setEmail(e.target.value)}
-                  className="w-full border-l-4 rounded-md bg-[#f5f5f5] text-primary-grey focus:outline-none border-[#1b498f] focus:border-primary-yellow focus:bg-[#f3f7fd] transition duration-200 ease-in-out p-3"
-                />
-                {errors.email && (
-                  <p className="text-red-600 text-sm">{errors.email}</p>
-                )}
+                <input type="email" placeholder="Email Address" value={email} onChange={e => setEmail(e.target.value)} className="w-full border-l-4 rounded-md bg-[#f5f5f5] text-primary-grey focus:outline-none border-[#1b498f] focus:border-primary-yellow focus:bg-[#f3f7fd] transition duration-200 ease-in-out p-3" />
+                {errors.email && <p className="text-red-600 text-sm">{errors.email}</p>}
               </div>
 
               <div>
-                <textarea
-                  placeholder="Comments"
-                  value={message}
-                  onChange={e => setMessage(e.target.value)}
-                  rows="8"
-                  className="w-full border-l-4 rounded-md bg-[#f5f5f5] text-primary-grey focus:outline-none border-[#1b498f] focus:border-primary-yellow focus:bg-[#f3f7fd] transition duration-200 ease-in-out p-3"
-                />
-                {errors.message && (
-                  <p className="text-red-600 text-sm">{errors.message}</p>
-                )}
+                <textarea placeholder="Comments" value={message} onChange={e => setMessage(e.target.value)} rows="8" className="w-full border-l-4 rounded-md bg-[#f5f5f5] text-primary-grey focus:outline-none border-[#1b498f] focus:border-primary-yellow focus:bg-[#f3f7fd] transition duration-200 ease-in-out p-3" />
+                {errors.message && <p className="text-red-600 text-sm">{errors.message}</p>}
               </div>
 
-              <button
-                type="submit"
-                className={`blue-solid-button ${isSubmitting ? 'opacity-60 cursor-not-allowed' : ''}`}
-                disabled={isSubmitting}
-              >
+              <button type="submit" className={`blue-solid-button ${isSubmitting ? 'opacity-60 cursor-not-allowed' : ''}`} disabled={isSubmitting}>
                 {isSubmitting ? 'SENDING...' : 'SEND'}
               </button>
             </form>

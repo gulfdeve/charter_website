@@ -25,9 +25,7 @@ export default function EventCarousel() {
   }, [embla]);
 
   // Filter events to only include those with translations for the current locale
-  const filteredEvents = data?.events?.filter(
-    event => event.translations && event.translations[locale]
-  ) || [];
+  const filteredEvents = data?.events?.filter(event => event.translations && event.translations[locale]) || [];
 
   return (
     <div className="md:px-4 pb-16">
@@ -45,27 +43,15 @@ export default function EventCarousel() {
                 <div className="flex flex-col justify-start lg:justify-between rounded-md bg-white h-full overflow-hidden border border-gray-400 md:border-none xl:p-10 shadow-none">
                   {/* Event Image */}
                   <Link href={`/events/${event.slug}`}>
-                    <Image
-                      src={`https://www.centauruscharter.net/product/images/${event.image}`}
-                      alt={event.translations[locale].title}
-                      className="rounded-tl-md rounded-tr-md w-full object-cover"
-                      width={1000}
-                      height={600}
-                      priority={index < 2}
-                      loading={index < 2 ? 'eager' : 'lazy'}
-                    />
+                    <Image src={`https://www.centauruscharter.net/product/images/${event.image}`} alt={event.translations[locale].title} className="rounded-tl-md rounded-tr-md w-full object-cover" width={1000} height={600} priority={index < 2} loading={index < 2 ? 'eager' : 'lazy'} />
                   </Link>
                   <div className="flex flex-col justify-start px-5 lg:px-5 flex-grow">
                     {/* Event Title */}
                     <h2 className="text-primary-black text-lg font-bold pt-4">
-                      <Link href={`/events/${event.slug}`}>
-                        {event.translations[locale].title}
-                      </Link>
+                      <Link href={`/events/${event.slug}`}>{event.translations[locale].title}</Link>
                     </h2>
                     {/* Event Heading */}
-                    <p className="text-primary-black font-bold text-xs pt-2 pb-4">
-                      {event.translations[locale].heading_2}
-                    </p>
+                    <p className="text-primary-black font-bold text-xs pt-2 pb-4">{event.translations[locale].heading_2}</p>
                     {/* Separator */}
                     <div className="bg-primary-black w-full h-[0.05rem]"></div>
                     {/* Validity Info */}
@@ -80,18 +66,11 @@ export default function EventCarousel() {
                   <div className="flex flex-row items-center justify-between px-5 pb-5">
                     {/* Buttons */}
                     <div className="w-full flex flex-col sm:flex-row items-center justify-end gap-2">
-                      <a
-                        href={`${event.whatsapp_url}`}
-                        target="_blank"
-                        className="w-full flex justify-center py-2 px-4 text-base md:text-sm xl:text-lg font-bold tracking-wider uppercase text-white bg-primary-blue-2 hover:scale-105 rounded-md shadow transition duration-150 ease-in-out transform items-center"
-                      >
+                      <a href={`${event.whatsapp_url}`} target="_blank" className="w-full flex justify-center py-2 px-4 text-base md:text-sm xl:text-lg font-bold tracking-wider uppercase text-white bg-primary-blue-2 hover:scale-105 rounded-md shadow transition duration-150 ease-in-out transform items-center">
                         <FaWhatsapp className="xs:text-xl text-lg mr-1" />
                         WHATSAPP
                       </a>
-                      <Link
-                        href={`/events/${event.slug}`}
-                        className="w-full flex justify-center py-2 px-4 text-base md:text-sm xl:text-lg font-bold tracking-wider uppercase text-white bg-primary-blue-2 hover:scale-105 rounded-md shadow transition duration-150 ease-in-out transform items-center"
-                      >
+                      <Link href={`/events/${event.slug}`} className="w-full flex justify-center py-2 px-4 text-base md:text-sm xl:text-lg font-bold tracking-wider uppercase text-white bg-primary-blue-2 hover:scale-105 rounded-md shadow transition duration-150 ease-in-out transform items-center">
                         KNOW MORE
                       </Link>
                     </div>

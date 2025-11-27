@@ -251,13 +251,7 @@ footer a:hover {
 }
 
 .bg-black-gradient {
-  background: linear-gradient(
-    to top,
-    rgba(0, 0, 0, 0.9) 0%,
-    rgba(0, 0, 0, 0.5) 40%,
-    rgba(0, 0, 0, 0.2) 60%,
-    rgba(0, 0, 0, 0) 70%
-  );
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.5) 40%, rgba(0, 0, 0, 0.2) 60%, rgba(0, 0, 0, 0) 70%);
 }
 
 .counter-container {
@@ -454,27 +448,15 @@ h6 {
 }
 .gradient-custom {
   background: #e8f1ff;
-  background: linear-gradient(
-    45deg,
-    rgba(232, 241, 255, 1) 0%,
-    rgba(255, 242, 206, 1) 100%
-  );
+  background: linear-gradient(45deg, rgba(232, 241, 255, 1) 0%, rgba(255, 242, 206, 1) 100%);
 }
 .gradient-custom-2 {
   background: #e8f1ff;
-  background: linear-gradient(
-    45deg,
-    rgba(27 73 143) 0%,
-    rgba(0, 48, 87, 1) 100%
-  );
+  background: linear-gradient(45deg, rgba(27 73 143) 0%, rgba(0, 48, 87, 1) 100%);
 }
 .gradient-custom-3 {
   background: #e8f1ff;
-  background: linear-gradient(
-    45deg,
-    rgb(255, 242, 206, 1) 0%,
-    rgba(225 186 77) 100%
-  );
+  background: linear-gradient(45deg, rgb(255, 242, 206, 1) 0%, rgba(225 186 77) 100%);
 }
 
 @media (max-width: 1023px) {

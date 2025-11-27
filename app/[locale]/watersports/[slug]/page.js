@@ -14,7 +14,7 @@ export async function generateStaticParams() {
   try {
     const data = await fetchData();
     const locales = ['en', 'ar', 'ru', 'zh'];
-    
+
     if (!data?.packages) {
       return [];
     }
@@ -108,8 +108,7 @@ export default async function Page({ params }) {
   }
 
   const settingsItem = data?.settings?.[0];
-  const { header_email, header_phone_number_url, header_whatsapp_url } =
-    settingsItem || {};
+  const { header_email, header_phone_number_url, header_whatsapp_url } = settingsItem || {};
 
   // Find the package matching the slug
   const packageItem = data?.packages?.find(pkg => pkg.slug === slug);
@@ -123,11 +122,7 @@ export default async function Page({ params }) {
     notFound();
   }
 
-  const waterSport = waterSportRate.find(
-    item =>
-      item.title.toLowerCase() ===
-      packageItem.translations[locale].title.toLowerCase()
-  );
+  const waterSport = waterSportRate.find(item => item.title.toLowerCase() === packageItem.translations[locale].title.toLowerCase());
 
   return (
     <>
@@ -135,19 +130,12 @@ export default async function Page({ params }) {
         <div className="flex flex-col lg:flex-row justify-between items-center gap-5 pt-6 md:mt-20 ">
           {/* First column (30%) */}
           <div className="flex items-start lg:w-7/12">
-            <img
-              src={`https://www.centauruscharter.net/product/images/${packageItem.image}`}
-              alt={packageItem.translations[locale].title}
-              className="w-full rounded-lg"
-            />
+            <img src={`https://www.centauruscharter.net/product/images/${packageItem.image}`} alt={packageItem.translations[locale].title} className="w-full rounded-lg" />
           </div>
 
           {/* Second column (70%) */}
           <div className="lg:w-5/12">
-            <PageTitleHeading
-              title={packageItem.translations[locale].title}
-              className="py-0 lg:pt-0 pb-0"
-            />
+            <PageTitleHeading title={packageItem.translations[locale].title} className="py-0 lg:pt-0 pb-0" />
             <h2 className="text-base text-primary-grey text-center font-bold mb-5">
               {packageItem.translations[locale].preview_text}
               <br />
@@ -180,30 +168,21 @@ export default async function Page({ params }) {
               {waterSport && (
                 <div className="text-center grid grid-cols-1  items-center gap-2  w-full overflow-hidden mb-7">
                   {waterSport.infoBoxes.map((rate, idx) => (
-                    <div
-                      key={rate.label + rate.duration + idx}
-                      className="grid grid-cols-3 bg-primary-blue-light rounded-lg text-primary-blue"
-                    >
+                    <div key={rate.label + rate.duration + idx} className="grid grid-cols-3 bg-primary-blue-light rounded-lg text-primary-blue">
                       {/* Ride Title */}
                       <div className=" p-2 flex flex-col items-center ">
                         <span className="font-bold text-sm">Ride:</span>
-                        <span className="font-semibold text-sm  xl:text-sm">
-                          {rate.label}
-                        </span>
+                        <span className="font-semibold text-sm  xl:text-sm">{rate.label}</span>
                       </div>
                       {/* Duration */}
                       <div className="  p-2 flex flex-col items-center">
                         <span className="font-bold text-sm">Duration:</span>
-                        <span className="font-semibold text-sm  xl:text-sm">
-                          {rate.duration} mins
-                        </span>
+                        <span className="font-semibold text-sm  xl:text-sm">{rate.duration} mins</span>
                       </div>
                       {/* Price */}
                       <div className="text-white bg-primary-blue rounded-r-lg p-2 flex flex-col items-center">
                         <span className="font-bold text-sm">Price:</span>
-                        <span className="font-semibold text-sm xl:text-sm">
-                          {rate.price} AED
-                        </span>
+                        <span className="font-semibold text-sm xl:text-sm">{rate.price} AED</span>
                       </div>
                     </div>
                   ))}
@@ -214,20 +193,14 @@ export default async function Page({ params }) {
             <div className="flex flex-col xl:flex-row items-stretch xl:items-center text-center w-full justify-center">
               {/* WhatsApp Button */}
               <div className=" p-1 flex flex-col items-center">
-                <a
-                  href={header_whatsapp_url || '#'}
-                  className="w-full blue-solid-button flex justify-center items-center gap-1 text-center"
-                >
+                <a href={header_whatsapp_url || '#'} className="w-full blue-solid-button flex justify-center items-center gap-1 text-center">
                   <FaWhatsapp size={20} />
                   WHATSAPP US
                 </a>
               </div>
               {/* Book Now Button */}
               <div className=" p-1 flex flex-col items-center xl:rounded-r-lg">
-                <a
-                  href="https://fareharbor.com/embeds/book/centauruscharter/?full-items=yes"
-                  className="w-full blue-solid-button"
-                >
+                <a href="https://fareharbor.com/embeds/book/centauruscharter/?full-items=yes" className="w-full blue-solid-button">
                   BOOK NOW WITH {packageItem.translations[locale].title}
                 </a>
               </div>

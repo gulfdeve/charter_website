@@ -12,8 +12,7 @@ export async function GET(request) {
 
     // Generate token
     const rawKey = process.env.ANKOR_PRIVATE_KEY;
-    const keyId =
-      process.env.ANKOR_KEY_ID || 'jSZNvbnPK03KXEEo0-bJw4XPF1z68eW_OpHFW_9XvLY';
+    const keyId = process.env.ANKOR_KEY_ID || 'jSZNvbnPK03KXEEo0-bJw4XPF1z68eW_OpHFW_9XvLY';
 
     if (!rawKey) {
       console.error('ANKOR_PRIVATE_KEY is missing');

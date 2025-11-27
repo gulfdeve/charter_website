@@ -18,23 +18,14 @@ export default function EventClient({ event, locale }) {
     <>
       <div className="py-10 w-full">
         <div className="flex flex-col md:flex-row rounded-lg items-center gap-5 justify-center md:justify-between bg-primary-blue p-5">
-          <p className="text-white text-center md:text-left font-bold bg-primary-blue text-xl rounded">
-            Validity Until: {event.validity}
-          </p>
+          <p className="text-white text-center md:text-left font-bold bg-primary-blue text-xl rounded">Validity Until: {event.validity}</p>
           <div className="flex flex-col md:flex-row md:gap-10 gap-5">
-            <a
-              target="_blank"
-              className="blue-lined-button"
-              href={event.whatsapp_url}
-            >
+            <a target="_blank" className="blue-lined-button" href={event.whatsapp_url}>
               <FaWhatsapp size={20} />
               WHATSAPP US
             </a>
             {event.id === 44 ? (
-              <a
-                className="blue-lined-button"
-                href="https://fareharbor.com/embeds/book/centauruscharter/items/469615/?full-items=yes&flow=645487"
-              >
+              <a className="blue-lined-button" href="https://fareharbor.com/embeds/book/centauruscharter/items/469615/?full-items=yes&flow=645487">
                 BOOK NOW
               </a>
             ) : (
@@ -46,13 +37,7 @@ export default function EventClient({ event, locale }) {
         </div>
       </div>
 
-      <Modal2
-        isModalOpen={isModalOpen}
-        closeModal={closeModal}
-        idName="events_id"
-        idValue={event.id}
-      />
+      <Modal2 isModalOpen={isModalOpen} closeModal={closeModal} idName="events_id" idValue={event.id} />
     </>
   );
 }
-

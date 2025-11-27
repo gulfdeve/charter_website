@@ -22,8 +22,7 @@ export default function YachtGallery({ gallery }) {
         const thumbnailWidth = thumbnail.offsetWidth;
         const containerWidth = container.offsetWidth;
         // Scroll so the selected thumbnail is centered
-        container.scrollLeft =
-          thumbnailLeft - (containerWidth - thumbnailWidth) / 2;
+        container.scrollLeft = thumbnailLeft - (containerWidth - thumbnailWidth) / 2;
       } else {
         // Vertical scroll for desktop
         const container = thumbnailRef.current;
@@ -31,8 +30,7 @@ export default function YachtGallery({ gallery }) {
         const thumbnailHeight = thumbnail.offsetHeight;
         const containerHeight = container.offsetHeight;
         // Scroll so the selected thumbnail is centered
-        container.scrollTop =
-          thumbnailTop - (containerHeight - thumbnailHeight) / 2;
+        container.scrollTop = thumbnailTop - (containerHeight - thumbnailHeight) / 2;
       }
     }
   }, [activeIndex]);
@@ -171,14 +169,7 @@ export default function YachtGallery({ gallery }) {
                 ${activeIndex === index ? 'border-primary-blue-2' : 'border-transparent'}`}
               style={{ minHeight: 70, minWidth: 0 }}
             >
-              <img
-                src={`https://www.centauruscharter.net/frontend/assets/yacht_sales/${item.image}`}
-                alt={`Thumbnail ${index + 1}`}
-                width={80}
-                height={50}
-                className="w-full h-full object-cover rounded"
-                priority={index === 0}
-              />
+              <img src={`https://www.centauruscharter.net/frontend/assets/yacht_sales/${item.image}`} alt={`Thumbnail ${index + 1}`} width={80} height={50} className="w-full h-full object-cover rounded" priority={index === 0} />
             </button>
           ))}
         </div>
@@ -186,42 +177,21 @@ export default function YachtGallery({ gallery }) {
 
       {/* Main Carousel */}
       <div className="relative flex-1">
-        <button
-          aria-label="go back"
-          className="absolute left-2 top-1/2 -translate-y-1/2 text-primary-grey bg-[#f1f1f1] bg-opacity-80 p-1 xl:p-2 rounded-full z-10"
-          onClick={scrollPrev}
-        >
+        <button aria-label="go back" className="absolute left-2 top-1/2 -translate-y-1/2 text-primary-grey bg-[#f1f1f1] bg-opacity-80 p-1 xl:p-2 rounded-full z-10" onClick={scrollPrev}>
           <IoIosArrowBack size={20} />
         </button>
 
-        <div
-          className="embla__viewport overflow-hidden rounded-lg"
-          ref={emblaRef}
-        >
+        <div className="embla__viewport overflow-hidden rounded-lg" ref={emblaRef}>
           <div className="embla__container flex">
             {gallery.map((item, index) => (
-              <div
-                key={index}
-                className="embla__slide min-w-full flex justify-center items-center lg:pb-0"
-              >
-                <img
-                  src={`https://www.centauruscharter.net/frontend/assets/yacht_sales/${item.image}`}
-                  alt={`Slide ${index + 1}`}
-                  width={1200}
-                  height={600}
-                  className="w-full h-auto max-w-7xl object-cover rounded-lg"
-                  priority={index === 0}
-                />
+              <div key={index} className="embla__slide min-w-full flex justify-center items-center lg:pb-0">
+                <img src={`https://www.centauruscharter.net/frontend/assets/yacht_sales/${item.image}`} alt={`Slide ${index + 1}`} width={1200} height={600} className="w-full h-auto max-w-7xl object-cover rounded-lg" priority={index === 0} />
               </div>
             ))}
           </div>
         </div>
 
-        <button
-          aria-label="go forward"
-          className="absolute right-2 top-1/2 -translate-y-1/2 text-primary-grey bg-[#f1f1f1] bg-opacity-80 p-1 xl:p-2 rounded-full z-10"
-          onClick={scrollNext}
-        >
+        <button aria-label="go forward" className="absolute right-2 top-1/2 -translate-y-1/2 text-primary-grey bg-[#f1f1f1] bg-opacity-80 p-1 xl:p-2 rounded-full z-10" onClick={scrollNext}>
           <IoIosArrowForward size={20} />
         </button>
       </div>

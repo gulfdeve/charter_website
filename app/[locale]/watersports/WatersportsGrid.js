@@ -4,33 +4,20 @@ import { Link } from '@/app/i18n/routing';
 
 export default function WatersportsGrid({ packages, language }) {
   // Filter packages to only include those with translations for the current language
-  const filteredPackages = packages?.filter(
-    pkg => pkg.translations && pkg.translations[language]
-  ) || [];
+  const filteredPackages = packages?.filter(pkg => pkg.translations && pkg.translations[language]) || [];
 
   return (
     <div className="grid grid-col-1 md:grid-cols-2 gap-7 pb-8">
       {filteredPackages?.map(package_a => (
-        <div
-          key={package_a.id}
-          className="flex flex-col justify-start lg:justify-between rounded-md bg-white custom-shadow"
-        >
+        <div key={package_a.id} className="flex flex-col justify-start lg:justify-between rounded-md bg-white custom-shadow">
           <Link href={`/watersports/${package_a.slug}`}>
-            <img
-              src={`https://www.centauruscharter.net/product/images/${package_a.image}`}
-              alt={package_a.translations[language].title}
-              className="rounded-t-md w-full object-cover"
-            />
+            <img src={`https://www.centauruscharter.net/product/images/${package_a.image}`} alt={package_a.translations[language].title} className="rounded-t-md w-full object-cover" />
           </Link>
           <div className="flex flex-col justify-start px-5 lg:px-5">
             <h2 className="text-primary-blue text-2xl font-bold pt-4">
-              <Link href={`/watersports/${package_a.slug}`}>
-                {package_a.translations[language].title}
-              </Link>
+              <Link href={`/watersports/${package_a.slug}`}>{package_a.translations[language].title}</Link>
             </h2>
-            <p className="text-primary-black text-base pt-2 pb-4">
-              {package_a.translations[language].preview_text}
-            </p>
+            <p className="text-primary-black text-base pt-2 pb-4">{package_a.translations[language].preview_text}</p>
             <div className="bg-primary-black w-full h-[0.05rem]"></div>
             <div className="flex flex-row items-center justify-between">
               <div className="flex flex-row items-center justify-evenly gap-4 py-5">
@@ -39,16 +26,11 @@ export default function WatersportsGrid({ packages, language }) {
                   <p className="text-primary-grey font-semibold text-sm xl:text-base">
                     Starting
                     <br />
-                    <span className="xl:text-xl text-primary-red font-bold">
-                      AED {package_a.amount.toLocaleString()}
-                    </span>
+                    <span className="xl:text-xl text-primary-red font-bold">AED {package_a.amount.toLocaleString()}</span>
                   </p>
                 </div>
               </div>
-              <Link
-                href={`/watersports/${package_a.slug}`}
-                className="blue-solid-button"
-              >
+              <Link href={`/watersports/${package_a.slug}`} className="blue-solid-button">
                 KNOW MORE
               </Link>
             </div>

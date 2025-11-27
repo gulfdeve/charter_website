@@ -48,9 +48,7 @@ export default function TabbyPromoSection({ total, locale = 'en' }) {
 
     // Cleanup function
     return () => {
-      const script = document.querySelector(
-        'script[src="https://checkout.tabby.ai/tabby-promo.js"]'
-      );
+      const script = document.querySelector('script[src="https://checkout.tabby.ai/tabby-promo.js"]');
       if (script) {
         script.remove();
       }

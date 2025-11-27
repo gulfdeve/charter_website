@@ -5,9 +5,7 @@ export default function BookNowButton({ fareharborId }) {
   const [bookingUrl, setBookingUrl] = useState('');
 
   useEffect(() => {
-    setBookingUrl(
-      `https://fareharbor.com/embeds/book/centauruscharter/items/${fareharborId}/?full-items=yes&flow=645487&back=${encodeURIComponent(window.location.href)}`
-    );
+    setBookingUrl(`https://fareharbor.com/embeds/book/centauruscharter/items/${fareharborId}/?full-items=yes&flow=645487&back=${encodeURIComponent(window.location.href)}`);
   }, [fareharborId]);
 
   // Return a basic URL without the 'back' parameter for initial render

@@ -36,25 +36,10 @@ const LengthRangeSlider = ({ min = 0, max = 54, step = 1, defaultValue }) => {
 
   return (
     <div className="w-full relative" ref={dropdownRef} style={{ zIndex: 10 }}>
-      <button
-        type="button"
-        className="block w-full border border-gray-300 rounded-md py-2 px-3 bg-white cursor-pointer focus:outline-none flex items-center justify-between"
-        onClick={handleButtonClick}
-      >
+      <button type="button" className="block w-full border border-gray-300 rounded-md py-2 px-3 bg-white cursor-pointer focus:outline-none flex items-center justify-between" onClick={handleButtonClick}>
         <span className="text-md">{label}</span>
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          className="h-5 w-5 ml-2 text-gray-500"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke="currentColor"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth={2}
-            d="M19 9l-7 7-7-7"
-          />
+        <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 ml-2 text-gray-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
         </svg>
       </button>
       {open && (

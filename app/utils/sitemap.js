@@ -1,11 +1,5 @@
 // Utility to generate all sitemap URLs as objects for XML or HTML rendering
-export default function generateSitemapLinks({
-  baseUrl,
-  data,
-  blogs,
-  buyYachtData,
-  languages = ['', 'ar', 'ru', 'zh'],
-}) {
+export default function generateSitemapLinks({ baseUrl, data, blogs, buyYachtData, languages = ['', 'ar', 'ru', 'zh'] }) {
   const now = new Date().toISOString();
   const staticUrls = [
     '/contact',
@@ -149,15 +143,5 @@ export default function generateSitemapLinks({
         })
       )
     : [];
-  return [
-    ...homeLinks,
-    ...staticLinks,
-    ...eventLinks,
-    ...offerLinks,
-    ...productLinks,
-    ...experiencesLinks,
-    ...watersportsLinks,
-    ...blogsLinks,
-    ...productsBuyLinks,
-  ];
+  return [...homeLinks, ...staticLinks, ...eventLinks, ...offerLinks, ...productLinks, ...experiencesLinks, ...watersportsLinks, ...blogsLinks, ...productsBuyLinks];
 }

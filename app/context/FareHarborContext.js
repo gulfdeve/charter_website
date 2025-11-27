@@ -23,9 +23,7 @@ export const FareHarborProvider = ({ children }) => {
   };
 
   const loadFareHarborScript = callback => {
-    const existingScript = document.querySelector(
-      'script[src="https://fareharbor.com/embeds/api/v1/?autolightframe=yes"]'
-    );
+    const existingScript = document.querySelector('script[src="https://fareharbor.com/embeds/api/v1/?autolightframe=yes"]');
 
     if (!existingScript) {
       const script = document.createElement('script');
@@ -46,11 +44,7 @@ export const FareHarborProvider = ({ children }) => {
     }
   };
 
-  return (
-    <FareHarborContext.Provider value={{ openFareHarborModal }}>
-      {children}
-    </FareHarborContext.Provider>
-  );
+  return <FareHarborContext.Provider value={{ openFareHarborModal }}>{children}</FareHarborContext.Provider>;
 };
 
 export const useFareHarbor = () => useContext(FareHarborContext);

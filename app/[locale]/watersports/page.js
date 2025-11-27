@@ -15,12 +15,7 @@ export const revalidate = 86400; // 24 hours
 
 // Pre-generate all locale versions at build time
 export async function generateStaticParams() {
-  return [
-    { locale: 'en' },
-    { locale: 'ar' },
-    { locale: 'ru' },
-    { locale: 'zh' },
-  ];
+  return [{ locale: 'en' }, { locale: 'ar' }, { locale: 'ru' }, { locale: 'zh' }];
 }
 
 export default async function WatersportsPage({ params }) {
@@ -50,18 +45,11 @@ export default async function WatersportsPage({ params }) {
 
       <div className="container mx-auto px-3 py-5 pb-8">
         <p className="text-base text-primary-grey">
-          Explore the beautiful coastline of the Arabian Gulf, the sun warming
-          your skin, water lapping at your feet, and a warm breeze whispering in
-          your ears. We have the best watersports activities with yacht
-          chartering to suit any time of year. No matter what you're looking
-          for, you can book online with complete ease. We offer a range of day
-          trips that take you off the beaten track to explore some of Dubai's
-          most exquisite sights. Whether you want an adrenaline-filled adventure
-          or an easygoing day on the water, we've got something for everyone.
+          Explore the beautiful coastline of the Arabian Gulf, the sun warming your skin, water lapping at your feet, and a warm breeze whispering in your ears. We have the best watersports activities with yacht chartering to suit any time of year. No matter what you're looking for, you can book online with complete ease. We offer a range of day trips that take you off the beaten track to explore
+          some of Dubai's most exquisite sights. Whether you want an adrenaline-filled adventure or an easygoing day on the water, we've got something for everyone.
           <br />
           <br />
-          For a perfect excursion with friends and family, book your yachts with
-          water sports activity in Dubai today.
+          For a perfect excursion with friends and family, book your yachts with water sports activity in Dubai today.
         </p>
       </div>
 

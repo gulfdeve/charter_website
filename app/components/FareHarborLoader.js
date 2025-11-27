@@ -22,13 +22,7 @@ const FareHarborLoader = () => {
       const target = event.target;
 
       // Check if the clicked element is a link and its href starts with the desired URL
-      if (
-        (target.tagName === 'A' &&
-          target.href.startsWith('https://fareharbor.com')) ||
-        (target.tagName === 'IMG' &&
-          target.closest('a') &&
-          target.closest('a').href.startsWith('https://fareharbor.com'))
-      ) {
+      if ((target.tagName === 'A' && target.href.startsWith('https://fareharbor.com')) || (target.tagName === 'IMG' && target.closest('a') && target.closest('a').href.startsWith('https://fareharbor.com'))) {
         event.preventDefault(); // Prevent the link from redirecting immediately
 
         // Load the FareHarbor script and wait for it to load

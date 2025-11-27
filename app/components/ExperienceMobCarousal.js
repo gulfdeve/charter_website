@@ -35,9 +35,7 @@ export default function YachtmobCarousel() {
   const scrollNext = () => emblaInstance.current?.scrollNext();
 
   // Filter experiences to only include those with translations for the current locale
-  const filteredExperiences = data?.experiences?.filter(
-    experience => experience.translations && experience.translations[locale]
-  ) || [];
+  const filteredExperiences = data?.experiences?.filter(experience => experience.translations && experience.translations[locale]) || [];
 
   return (
     <div className="container mx-auto md:px-4 pb-16 md:hidden">
@@ -55,32 +53,16 @@ export default function YachtmobCarousel() {
                   // Control how many cards appear at once (85%, 50%, 40%, etc.)
                   className="flex-[0_0_85%] md:flex-[0_0_50%] lg:flex-[0_0_40%]"
                 >
-                  <div
-                    key={experience.id}
-                    className="embla__slide p-3 w-full lg:basis-[calc(100%/3)] flex-none"
-                  >
+                  <div key={experience.id} className="embla__slide p-3 w-full lg:basis-[calc(100%/3)] flex-none">
                     <div className="relative bg-transparent rounded-lg overflow-hidden space-y-5">
-                      <Image
-                        src={`https://www.centauruscharter.net/product/images/${experience.thumbnail_image}`}
-                        alt={experience.translations[locale].title}
-                        width={450}
-                        height={0}
-                        className="w-full h-[24rem] rounded-lg object-cover"
-                        loading="lazy"
-                      />
+                      <Image src={`https://www.centauruscharter.net/product/images/${experience.thumbnail_image}`} alt={experience.translations[locale].title} width={450} height={0} className="w-full h-[24rem] rounded-lg object-cover" loading="lazy" />
                       <div className="absolute bottom-0 left-0 w-full bg-black-gradient p-4 text-white rounded-lg">
                         <h3 className="text-lg font-bold text-left mb-3">
-                          <Link href={`/yacht-trips/${experience.slug}`}>
-                            {experience.translations[locale].title}
-                          </Link>
+                          <Link href={`/yacht-trips/${experience.slug}`}>{experience.translations[locale].title}</Link>
                         </h3>
-                        <p className="text-md text-left mb-3">
-                          {experience.translations[locale].preivew_text}
-                        </p>
+                        <p className="text-md text-left mb-3">{experience.translations[locale].preivew_text}</p>
                         <Link href={`/yacht-trips/${experience.slug}`}>
-                          <button className="yellow-solid-button uppercase">
-                            Book Now
-                          </button>
+                          <button className="yellow-solid-button uppercase">Book Now</button>
                         </Link>
                       </div>
                     </div>

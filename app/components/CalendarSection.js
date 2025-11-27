@@ -46,16 +46,7 @@ const CalendarSection = () => {
 
   return (
     <div className="w-full lg:w-1/2 flex justify-center items-center">
-      <iframe
-        ref={iframeRef}
-        src="https://www.centauruscharter.net/calendar.html"
-        title="Centaurus Charter Calendar"
-        className="w-[450px] mx-auto"
-        style={{ height: `${iframeHeight}px` }}
-        frameBorder="0"
-        scrolling="auto"
-        allowFullScreen
-      />
+      <iframe ref={iframeRef} src="https://www.centauruscharter.net/calendar.html" title="Centaurus Charter Calendar" className="w-[450px] mx-auto" style={{ height: `${iframeHeight}px` }} frameBorder="0" scrolling="auto" allowFullScreen />
     </div>
   );
 };

@@ -5,8 +5,7 @@ import { redirect } from 'next/navigation';
 
 const PaymentCompleteRakBank = async ({ searchParams, params }) => {
   const { slug } = await params;
-  const { resultIndicator, sessionVersion, checkoutVersion } =
-    await searchParams;
+  const { resultIndicator, sessionVersion, checkoutVersion } = await searchParams;
 
   // console.log(resultIndicator, sessionVersion, checkoutVersion, slug);
 
@@ -15,18 +14,9 @@ const PaymentCompleteRakBank = async ({ searchParams, params }) => {
   // console.log(data);
 
   try {
-    const saveRes = await fetch(
-      `https://www.centauruscharter.net/api/api_new/payments/rakbank/${booking.id}?token=${process.env.CENTAURUS_API_KEY}` +
-        `&id=${booking.id}` +
-        `&status=${data.status}` +
-        `&session_id=` +
-        `&received_amount=${data.totalCapturedAmount}` +
-        `&session_version=${sessionVersion}` +
-        `&success_indicator=${resultIndicator}`,
-      {
-        method: 'POST',
-      }
-    );
+    const saveRes = await fetch(`https://www.centauruscharter.net/api/api_new/payments/rakbank/${booking.id}?token=${process.env.CENTAURUS_API_KEY}` + `&id=${booking.id}` + `&status=${data.status}` + `&session_id=` + `&received_amount=${data.totalCapturedAmount}` + `&session_version=${sessionVersion}` + `&success_indicator=${resultIndicator}`, {
+      method: 'POST',
+    });
     const saveText = await saveRes.text();
     // console.log("Rakbank save payment response:", saveText);
     // redirect to payment success page

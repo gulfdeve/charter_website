@@ -5,29 +5,19 @@ async function captureTabbyPayment(paymentId) {
   console.log(`[Tabby Webhook] Attempting to capture payment: ${paymentId}`);
   try {
     // First get payment details to use in capture
-    const paymentDetailsRes = await fetch(
-      `https://api.tabby.ai/api/v2/payments/${paymentId}`,
-      {
-        headers: { Authorization: `Bearer ${process.env.TABBY_SECRET_KEY}` },
-        cache: 'no-store',
-      }
-    );
+    const paymentDetailsRes = await fetch(`https://api.tabby.ai/api/v2/payments/${paymentId}`, {
+      headers: { Authorization: `Bearer ${process.env.TABBY_SECRET_KEY}` },
+      cache: 'no-store',
+    });
     if (!paymentDetailsRes.ok) {
-      throw new Error(
-        `Failed to get payment details: ${paymentDetailsRes.status}`
-      );
+      throw new Error(`Failed to get payment details: ${paymentDetailsRes.status}`);
     }
     const paymentDetails = await paymentDetailsRes.json();
     console.log('[Tabby Webhook] Payment details:', paymentDetails);
 
     // Check if payment is already captured
-    if (
-      paymentDetails.status === 'CLOSED' ||
-      paymentDetails.captures?.length > 0
-    ) {
-      console.log(
-        `[Tabby Webhook] Payment ${paymentId} is already captured, skipping capture`
-      );
+    if (paymentDetails.status === 'CLOSED' || paymentDetails.captures?.length > 0) {
+      console.log(`[Tabby Webhook] Payment ${paymentId} is already captured, skipping capture`);
       return paymentDetails;
     }
 
@@ -42,39 +32,27 @@ async function captureTabbyPayment(paymentId) {
     };
     console.log('[Tabby Webhook] Capture payload:', capturePayload);
 
-    const response = await fetch(
-      `https://api.tabby.ai/api/v2/payments/${paymentId}/captures`,
-      {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          Authorization: `Bearer ${process.env.TABBY_SECRET_KEY}`,
-        },
-        body: JSON.stringify(capturePayload),
-        cache: 'no-store',
-      }
-    );
+    const response = await fetch(`https://api.tabby.ai/api/v2/payments/${paymentId}/captures`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization: `Bearer ${process.env.TABBY_SECRET_KEY}`,
+      },
+      body: JSON.stringify(capturePayload),
+      cache: 'no-store',
+    });
 
     if (!response.ok) {
       const errorText = await response.text();
-      console.error(
-        `[Tabby Webhook] Payment capture failed for ${paymentId}:`,
-        errorText
-      );
+      console.error(`[Tabby Webhook] Payment capture failed for ${paymentId}:`, errorText);
       throw new Error(`Failed to capture payment: ${errorText}`);
     }
 
     const result = await response.json();
-    console.log(
-      `[Tabby Webhook] Payment ${paymentId} captured successfully:`,
-      result
-    );
+    console.log(`[Tabby Webhook] Payment ${paymentId} captured successfully:`, result);
     return result;
   } catch (error) {
-    console.error(
-      `[Tabby Webhook] Error capturing payment ${paymentId}:`,
-      error
-    );
+    console.error(`[Tabby Webhook] Error capturing payment ${paymentId}:`, error);
     throw error;
   }
 }
@@ -82,9 +60,7 @@ async function captureTabbyPayment(paymentId) {
 async function notifyCentaurus(slug, paymentId, paymentData) {
   console.log(`[Tabby Webhook] Notifying Centaurus for payment ${paymentId}`);
   try {
-    const url = new URL(
-      `https://www.centauruscharter.net/api/api_new/payments/tabby/${slug}`
-    );
+    const url = new URL(`https://www.centauruscharter.net/api/api_new/payments/tabby/${slug}`);
     url.searchParams.set('token', process.env.CENTAURUS_API_KEY);
     url.searchParams.set('id', slug);
     url.searchParams.set('payment_id', paymentId);
@@ -103,9 +79,7 @@ async function notifyCentaurus(slug, paymentId, paymentData) {
       cache: 'no-store',
     });
     console.log('[Tabby Webhook] Centaurus response status:', centRes.status);
-    const centResponse = centRes.ok
-      ? await centRes.json()
-      : { error: centRes.statusText };
+    const centResponse = centRes.ok ? await centRes.json() : { error: centRes.statusText };
     console.log('[Tabby Webhook] Centaurus response:', centResponse);
     return centResponse;
   } catch (err) {
@@ -116,38 +90,16 @@ async function notifyCentaurus(slug, paymentId, paymentData) {
 
 export async function POST(request) {
   const requestId = Math.random().toString(36).substring(7);
-  console.log(
-    `[Tabby Webhook] New webhook request received (ID: ${requestId})`
-  );
+  console.log(`[Tabby Webhook] New webhook request received (ID: ${requestId})`);
 
   try {
     // Log headers
     const headersList = headers();
 
     // Check for headers in different formats
-    const possibleTitleHeaders = [
-      'title',
-      'Title',
-      'TITLE',
-      'x-title',
-      'X-Title',
-      'X-TITLE',
-      'tabby-title',
-      'Tabby-Title',
-      'TABBY-TITLE',
-    ];
+    const possibleTitleHeaders = ['title', 'Title', 'TITLE', 'x-title', 'X-Title', 'X-TITLE', 'tabby-title', 'Tabby-Title', 'TABBY-TITLE'];
 
-    const possibleValueHeaders = [
-      'value',
-      'Value',
-      'VALUE',
-      'x-value',
-      'X-Value',
-      'X-VALUE',
-      'tabby-value',
-      'Tabby-Value',
-      'TABBY-VALUE',
-    ];
+    const possibleValueHeaders = ['value', 'Value', 'VALUE', 'x-value', 'X-Value', 'X-VALUE', 'tabby-value', 'Tabby-Value', 'TABBY-VALUE'];
 
     // Find the actual header names being used
     let titleHeader = null;
@@ -188,16 +140,11 @@ export async function POST(request) {
 
     // For now, let's accept the webhook without header verification
     // TODO: Once we confirm the correct header names, we'll add back the verification
-    console.log(
-      `[Tabby Webhook] Temporarily accepting webhook without header verification (ID: ${requestId})`
-    );
+    console.log(`[Tabby Webhook] Temporarily accepting webhook without header verification (ID: ${requestId})`);
 
     // Get the raw body
     const rawBody = await request.text();
-    console.log(
-      `[Tabby Webhook] Raw request body (ID: ${requestId}):`,
-      rawBody
-    );
+    console.log(`[Tabby Webhook] Raw request body (ID: ${requestId}):`, rawBody);
 
     // Parse the webhook payload
     const payload = JSON.parse(rawBody);
@@ -229,38 +176,26 @@ export async function POST(request) {
         eventType = `payment.${payload.status}`;
     }
 
-    console.log(
-      `[Tabby Webhook] Determined event type: ${eventType} (ID: ${requestId})`
-    );
+    console.log(`[Tabby Webhook] Determined event type: ${eventType} (ID: ${requestId})`);
 
     // Handle different event types
     switch (eventType) {
       case 'payment.authorized':
-        console.log(
-          `[Tabby Webhook] Processing payment.authorized event (ID: ${requestId})`
-        );
+        console.log(`[Tabby Webhook] Processing payment.authorized event (ID: ${requestId})`);
         try {
           // Capture the payment
           const captureResult = await captureTabbyPayment(payload.id);
-          console.log(
-            `[Tabby Webhook] Payment capture completed (ID: ${requestId}):`,
-            captureResult
-          );
+          console.log(`[Tabby Webhook] Payment capture completed (ID: ${requestId}):`, captureResult);
 
           // Get the latest payment details
-          const paymentDetailsRes = await fetch(
-            `https://api.tabby.ai/api/v2/payments/${payload.id}`,
-            {
-              headers: {
-                Authorization: `Bearer ${process.env.TABBY_SECRET_KEY}`,
-              },
-              cache: 'no-store',
-            }
-          );
+          const paymentDetailsRes = await fetch(`https://api.tabby.ai/api/v2/payments/${payload.id}`, {
+            headers: {
+              Authorization: `Bearer ${process.env.TABBY_SECRET_KEY}`,
+            },
+            cache: 'no-store',
+          });
           if (!paymentDetailsRes.ok) {
-            throw new Error(
-              `Failed to get payment details: ${paymentDetailsRes.status}`
-            );
+            throw new Error(`Failed to get payment details: ${paymentDetailsRes.status}`);
           }
           const paymentData = await paymentDetailsRes.json();
           console.log('[Tabby Webhook] Updated payment details:', paymentData);
@@ -270,9 +205,7 @@ export async function POST(request) {
           if (orderId) {
             await notifyCentaurus(orderId, payload.id, paymentData);
           } else {
-            console.warn(
-              '[Tabby Webhook] No order ID found in payload, skipping Centaurus notification'
-            );
+            console.warn('[Tabby Webhook] No order ID found in payload, skipping Centaurus notification');
           }
 
           return NextResponse.json({
@@ -280,36 +213,22 @@ export async function POST(request) {
             message: 'Payment captured and Centaurus notified successfully',
           });
         } catch (error) {
-          console.error(
-            `[Tabby Webhook] Failed to process payment (ID: ${requestId}):`,
-            error
-          );
-          return NextResponse.json(
-            { error: 'Failed to process payment' },
-            { status: 500 }
-          );
+          console.error(`[Tabby Webhook] Failed to process payment (ID: ${requestId}):`, error);
+          return NextResponse.json({ error: 'Failed to process payment' }, { status: 500 });
         }
 
       case 'payment.closed':
-        console.log(
-          `[Tabby Webhook] Processing payment.closed event (ID: ${requestId}):`,
-          payload
-        );
+        console.log(`[Tabby Webhook] Processing payment.closed event (ID: ${requestId}):`, payload);
         try {
           // Get payment details
-          const paymentDetailsRes = await fetch(
-            `https://api.tabby.ai/api/v2/payments/${payload.id}`,
-            {
-              headers: {
-                Authorization: `Bearer ${process.env.TABBY_SECRET_KEY}`,
-              },
-              cache: 'no-store',
-            }
-          );
+          const paymentDetailsRes = await fetch(`https://api.tabby.ai/api/v2/payments/${payload.id}`, {
+            headers: {
+              Authorization: `Bearer ${process.env.TABBY_SECRET_KEY}`,
+            },
+            cache: 'no-store',
+          });
           if (!paymentDetailsRes.ok) {
-            throw new Error(
-              `Failed to get payment details: ${paymentDetailsRes.status}`
-            );
+            throw new Error(`Failed to get payment details: ${paymentDetailsRes.status}`);
           }
           const paymentData = await paymentDetailsRes.json();
           console.log('[Tabby Webhook] Payment details:', paymentData);
@@ -319,9 +238,7 @@ export async function POST(request) {
           if (orderId) {
             await notifyCentaurus(orderId, payload.id, paymentData);
           } else {
-            console.warn(
-              '[Tabby Webhook] No order ID found in payload, skipping Centaurus notification'
-            );
+            console.warn('[Tabby Webhook] No order ID found in payload, skipping Centaurus notification');
           }
 
           return NextResponse.json({
@@ -329,61 +246,32 @@ export async function POST(request) {
             message: 'Payment closed and Centaurus notified successfully',
           });
         } catch (error) {
-          console.error(
-            `[Tabby Webhook] Failed to process closed payment (ID: ${requestId}):`,
-            error
-          );
-          return NextResponse.json(
-            { error: 'Failed to process closed payment' },
-            { status: 500 }
-          );
+          console.error(`[Tabby Webhook] Failed to process closed payment (ID: ${requestId}):`, error);
+          return NextResponse.json({ error: 'Failed to process closed payment' }, { status: 500 });
         }
 
       case 'payment.rejected':
-        console.log(
-          `[Tabby Webhook] Processing payment.rejected event (ID: ${requestId}):`,
-          payload
-        );
+        console.log(`[Tabby Webhook] Processing payment.rejected event (ID: ${requestId}):`, payload);
         // Notify Centaurus about rejection
         if (payload.order?.reference_id) {
-          await notifyCentaurus(
-            payload.order.reference_id,
-            payload.id,
-            payload
-          );
+          await notifyCentaurus(payload.order.reference_id, payload.id, payload);
         }
         return NextResponse.json({ status: 'success' });
 
       case 'payment.expired':
-        console.log(
-          `[Tabby Webhook] Processing payment.expired event (ID: ${requestId}):`,
-          payload
-        );
+        console.log(`[Tabby Webhook] Processing payment.expired event (ID: ${requestId}):`, payload);
         // Notify Centaurus about expiration
         if (payload.order?.reference_id) {
-          await notifyCentaurus(
-            payload.order.reference_id,
-            payload.id,
-            payload
-          );
+          await notifyCentaurus(payload.order.reference_id, payload.id, payload);
         }
         return NextResponse.json({ status: 'success' });
 
       default:
-        console.log(
-          `[Tabby Webhook] Unhandled payment status (ID: ${requestId}):`,
-          payload.status
-        );
+        console.log(`[Tabby Webhook] Unhandled payment status (ID: ${requestId}):`, payload.status);
         return NextResponse.json({ status: 'success' });
     }
   } catch (error) {
-    console.error(
-      `[Tabby Webhook] Error processing webhook (ID: ${requestId}):`,
-      error
-    );
-    return NextResponse.json(
-      { error: 'Internal server error' },
-      { status: 500 }
-    );
+    console.error(`[Tabby Webhook] Error processing webhook (ID: ${requestId}):`, error);
+    return NextResponse.json({ error: 'Internal server error' }, { status: 500 });
   }
 }

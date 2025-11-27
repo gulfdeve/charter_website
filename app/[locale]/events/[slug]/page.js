@@ -15,7 +15,7 @@ export async function generateStaticParams() {
   try {
     const data = await fetchData();
     const locales = ['en', 'ar', 'ru', 'zh'];
-    
+
     if (!data?.events) {
       return [];
     }
@@ -44,9 +44,9 @@ export async function generateStaticParams() {
 
 const page = async ({ params }) => {
   const { slug, locale } = await params;
-  
+
   const data = await fetchData();
-  
+
   if (!data) {
     return <div>Loading...</div>;
   }
@@ -69,9 +69,7 @@ const page = async ({ params }) => {
         {/* Container for title/heading with padding */}
         <div className="py-10 text-center text-primary-blue">
           <h1 className="">{event.translations?.[locale]?.title}</h1>
-          <h2 className="font-secondary text-primary-blue-2 text-center">
-            {event.translations?.[locale]?.heading_2}
-          </h2>
+          <h2 className="font-secondary text-primary-blue-2 text-center">{event.translations?.[locale]?.heading_2}</h2>
         </div>
 
         {/* Full width image container without horizontal padding */}

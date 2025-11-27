@@ -15,9 +15,7 @@ function getRealPaymentId(raw) {
 }
 
 async function fetchBooking(slug) {
-  const url = new URL(
-    `https://www.centauruscharter.net/api/api_new/booking_data/${slug}`
-  );
+  const url = new URL(`https://www.centauruscharter.net/api/api_new/booking_data/${slug}`);
   url.searchParams.set('token', process.env.CENTAURUS_API_KEY);
 
   const res = await fetch(url.toString(), {
@@ -43,14 +41,10 @@ export default async function PaymentResultPage({ searchParams }) {
 
   // Redirects based on callback
   if (callback === 'success') {
-    return redirect(
-      `${NEXT_PUBLIC_SITE_URL}/payments/success?slug=${slug}&payment_id=${paymentId}`
-    );
+    return redirect(`${NEXT_PUBLIC_SITE_URL}/payments/success?slug=${slug}&payment_id=${paymentId}`);
   }
   if (callback === 'cancel' || callback === 'failure') {
-    return redirect(
-      `${NEXT_PUBLIC_SITE_URL}/checkout/${slug}?callback=${callback}`
-    );
+    return redirect(`${NEXT_PUBLIC_SITE_URL}/checkout/${slug}?callback=${callback}`);
   }
 
   // Fetch booking data for any other states (unlikely)
@@ -65,13 +59,8 @@ export default async function PaymentResultPage({ searchParams }) {
   return (
     <div className="container mx-auto py-32 bg-white nav-space">
       <div className="flex flex-col items-center justify-center pt-32">
-        <h2 className="text-primary-blue-2 font-bold text-2xl mb-4">
-          Unknown Status
-        </h2>
-        <p className="max-w-xl text-primary-grey text-center italic">
-          We encountered an unexpected status. Please try again or contact
-          support.
-        </p>
+        <h2 className="text-primary-blue-2 font-bold text-2xl mb-4">Unknown Status</h2>
+        <p className="max-w-xl text-primary-grey text-center italic">We encountered an unexpected status. Please try again or contact support.</p>
       </div>
     </div>
   );

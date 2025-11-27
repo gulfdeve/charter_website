@@ -15,25 +15,16 @@ interface APIMetaData {
  * @param className Optional CSS class name for styling
  * @param includeCanonical Whether to include canonical URL in metadata (default: true)
  */
-export function createPageLayout(
-  pagePath: string,
-  className: string = '',
-  includeCanonical: boolean = true
-) {
+export function createPageLayout(pagePath: string, className: string = '', includeCanonical: boolean = true) {
   // Create the layout component
-  const PageLayout = ({
-    children,
-  }: {
-    children: React.ReactNode;
-  }): JSX.Element => {
+  const PageLayout = ({ children }: { children: React.ReactNode }): JSX.Element => {
     return <main className={className}>{children}</main>;
   };
 
   // This is properly typed for Next.js generateMetadata
   const generateMetadata = async (props: any): Promise<Metadata> => {
     // Next.js might provide params as a promise or direct object
-    const params =
-      props.params instanceof Promise ? await props.params : props.params;
+    const params = props.params instanceof Promise ? await props.params : props.params;
     const { locale, ...dynamicParams } = params;
     const resolvedLocale = locale || 'en'; // Default to English if locale is missing
     const baseUrl = 'https://www.centauruscharter.com';
@@ -55,18 +46,13 @@ export function createPageLayout(
       }
 
       // Construct canonical URL based on locale and page path
-      const canonicalUrl =
-        resolvedLocale === 'en'
-          ? `${baseUrl}/${resolvedPath}`
-          : `${baseUrl}/${resolvedLocale}/${resolvedPath}`;
+      const canonicalUrl = resolvedLocale === 'en' ? `${baseUrl}/${resolvedPath}` : `${baseUrl}/${resolvedLocale}/${resolvedPath}`;
 
       // Try to get metadata for the specific page
-      const pageMeta: APIMetaData | undefined =
-        data?.meta_tags?.[resolvedPath]?.[resolvedLocale]?.[0];
+      const pageMeta: APIMetaData | undefined = data?.meta_tags?.[resolvedPath]?.[resolvedLocale]?.[0];
 
       // Fall back to home page metadata if specific page metadata is not available
-      const homeMeta: APIMetaData | undefined =
-        data?.meta_tags?.['home']?.[resolvedLocale]?.[0];
+      const homeMeta: APIMetaData | undefined = data?.meta_tags?.['home']?.[resolvedLocale]?.[0];
 
       // Ensure we always have metadata to return
       const finalMeta: APIMetaData = pageMeta ||
@@ -78,10 +64,8 @@ export function createPageLayout(
 
       const metadata: Metadata = {
         title: finalMeta.meta_title || `Default ${resolvedPath} Title`,
-        description:
-          finalMeta.meta_description || `Default ${resolvedPath} Description`,
-        keywords:
-          finalMeta.meta_keywords || `${resolvedPath}, default, keywords`,
+        description: finalMeta.meta_description || `Default ${resolvedPath} Description`,
+        keywords: finalMeta.meta_keywords || `${resolvedPath}, default, keywords`,
       };
 
       // Only add canonical URLs if requested
@@ -103,10 +87,7 @@ export function createPageLayout(
 
       // Only add canonical URLs if requested
       if (includeCanonical) {
-        const fallbackCanonical =
-          resolvedLocale === 'en'
-            ? `${baseUrl}/${resolvedPath}`
-            : `${baseUrl}/${resolvedLocale}/${resolvedPath}`;
+        const fallbackCanonical = resolvedLocale === 'en' ? `${baseUrl}/${resolvedPath}` : `${baseUrl}/${resolvedLocale}/${resolvedPath}`;
 
         metadata.alternates = {
           canonical: fallbackCanonical,

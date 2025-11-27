@@ -18,7 +18,7 @@ export async function generateStaticParams() {
   try {
     const data = await fetchData();
     const locales = ['en', 'ar', 'ru', 'zh'];
-    
+
     if (!data?.offers) {
       return [];
     }
@@ -72,12 +72,8 @@ export default async function OfferDetailPage({ params }) {
       {/* Use full width container without padding for the image */}
       <div className="container mx-auto nav-space">
         <div className="py-10 text-center text-primary-blue">
-          <h1 className="font-bold text-center">
-            {offer.translations?.[language]?.title}
-          </h1>
-          <h2 className="font-secondary text-primary-blue-2">
-            {offer.translations?.[language]?.heading_2}
-          </h2>
+          <h1 className="font-bold text-center">{offer.translations?.[language]?.title}</h1>
+          <h2 className="font-secondary text-primary-blue-2">{offer.translations?.[language]?.heading_2}</h2>
         </div>
 
         {/* Move the image outside the padded container */}
@@ -104,9 +100,7 @@ export default async function OfferDetailPage({ params }) {
 
           <div className="py-10 w-full">
             <div className="flex flex-col md:flex-row rounded-lg items-center gap-5 justify-center md:justify-between bg-primary-blue p-5">
-              <p className="text-white text-center md:text-left font-bold bg-primary-blue text-xl rounded">
-                Validity Until: {offer.validity}
-              </p>
+              <p className="text-white text-center md:text-left font-bold bg-primary-blue text-xl rounded">Validity Until: {offer.validity}</p>
               <OfferClientActions offer={offer} />
             </div>
           </div>

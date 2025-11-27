@@ -11,12 +11,7 @@ export const revalidate = 86400; // 24 hours
 
 // Pre-generate all locale versions at build time
 export async function generateStaticParams() {
-  return [
-    { locale: 'en' },
-    { locale: 'ar' },
-    { locale: 'ru' },
-    { locale: 'zh' },
-  ];
+  return [{ locale: 'en' }, { locale: 'ar' }, { locale: 'ru' }, { locale: 'zh' }];
 }
 
 export default async function YachtRentalsPage({ params }) {
@@ -60,19 +55,10 @@ export default async function YachtRentalsPage({ params }) {
 
       <div className="container text-left mx-auto px-3 py-5 pb-8">
         <p className="text-base text-primary-grey">
-          A <strong>luxury yacht rental</strong> is the perfect way to enjoy an
-          experience tailored to your specific needs. We offer the best luxury
-          yacht experiences in UAE. Whether you're looking for a luxurious
-          getaway or want a boat for a special event like a wedding, honeymoon,
-          birthday party - we have just what you need. Centaurus offers
-          extensive fleet of yachts that offers something for every taste and
-          budget. Our experienced team with knowledge of the local waters can
-          help you plan an extraordinary experience.
+          A <strong>luxury yacht rental</strong> is the perfect way to enjoy an experience tailored to your specific needs. We offer the best luxury yacht experiences in UAE. Whether you're looking for a luxurious getaway or want a boat for a special event like a wedding, honeymoon, birthday party - we have just what you need. Centaurus offers extensive fleet of yachts that offers something for
+          every taste and budget. Our experienced team with knowledge of the local waters can help you plan an extraordinary experience.
           <br />
-          <br /> A wide range of itineraries and destinations available, from
-          the Dubai Marina to Burj Al Arab. <strong>Renting a yacht</strong> in
-          Dubai Marina or Dubai Harbor is made hassle free by booking online
-          instantly
+          <br /> A wide range of itineraries and destinations available, from the Dubai Marina to Burj Al Arab. <strong>Renting a yacht</strong> in Dubai Marina or Dubai Harbor is made hassle free by booking online instantly
         </p>
       </div>
 

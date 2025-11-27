@@ -24,8 +24,7 @@ export default function Navbar() {
   const { data, loading, error } = useData();
 
   const settingsItem = data?.settings?.[0];
-  const { header_email, header_phone_number_url, header_whatsapp_url } =
-    settingsItem || {};
+  const { header_email, header_phone_number_url, header_whatsapp_url } = settingsItem || {};
 
   const toggleSubmenu = index => {
     setSubmenuOpen(submenuOpen === index ? null : index);
@@ -64,14 +63,7 @@ export default function Navbar() {
   // Handle clicks outside dropdowns
   useEffect(() => {
     const handleClickOutside = event => {
-      if (
-        languageDropdownRef.current &&
-        !languageDropdownRef.current.contains(event.target) &&
-        privateYachtsRef.current &&
-        !privateYachtsRef.current.contains(event.target) &&
-        experiencesRef.current &&
-        !experiencesRef.current.contains(event.target)
-      ) {
+      if (languageDropdownRef.current && !languageDropdownRef.current.contains(event.target) && privateYachtsRef.current && !privateYachtsRef.current.contains(event.target) && experiencesRef.current && !experiencesRef.current.contains(event.target)) {
         setLanguageDropdownOpen(false);
         setPrivateYachtsOpen(false);
         setExperiencesOpen(false);
@@ -91,13 +83,7 @@ export default function Navbar() {
             {/* Logo */}
             <div className="flex items-center justify-center h-full">
               <Link href="/">
-                <Image
-                  src="/images/centaurus-charter-logo.webp"
-                  alt="Centaurus charter Logo"
-                  width={150}
-                  height={0}
-                  priority={true}
-                />
+                <Image src="/images/centaurus-charter-logo.webp" alt="Centaurus charter Logo" width={150} height={0} priority={true} />
               </Link>
             </div>
 
@@ -105,56 +91,21 @@ export default function Navbar() {
             <div className="flex h-full items-stretch text-xs xxl:text-base">
               <ul className="flex items-stretch h-full space-x-6 lg:space-x-8 text-xs xxl:text-base font-semibold">
                 {/* Private Yachts Dropdown */}
-                <li
-                  className="relative group h-full"
-                  ref={privateYachtsRef}
-                  onMouseEnter={() => setPrivateYachtsOpen(true)}
-                  onMouseLeave={() => setPrivateYachtsOpen(false)}
-                >
-                  <span
-                    className={`h-full flex items-center justify-between cursor-pointer gap-1 transition-all duration-200 font-primary ${
-                      pathname === '/yacht-rentals' ||
-                      pathname.startsWith('/yacht-rentals/')
-                        ? 'text-primary-blue border-primary-yellow font-semibold'
-                        : 'text-primary-blue border-transparent'
-                    }`}
-                  >
-                    <Link
-                      href="/yacht-rentals"
-                      className="tracking-[1px] uppercase h-full flex items-center py-2"
-                    >
+                <li className="relative group h-full" ref={privateYachtsRef} onMouseEnter={() => setPrivateYachtsOpen(true)} onMouseLeave={() => setPrivateYachtsOpen(false)}>
+                  <span className={`h-full flex items-center justify-between cursor-pointer gap-1 transition-all duration-200 font-primary ${pathname === '/yacht-rentals' || pathname.startsWith('/yacht-rentals/') ? 'text-primary-blue border-primary-yellow font-semibold' : 'text-primary-blue border-transparent'}`}>
+                    <Link href="/yacht-rentals" className="tracking-[1px] uppercase h-full flex items-center py-2">
                       {t('navbar.private-yachts')}
                     </Link>
-                    <svg
-                      className={`w-4 h-4 transform transition-transform duration-300 ${
-                        isPrivateYachtsOpen ? 'rotate-180' : ''
-                      }`}
-                      xmlns="http://www.w3.org/2000/svg"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth="2"
-                        d="M19 9l-7 7-7-7"
-                      />
+                    <svg className={`w-4 h-4 transform transition-transform duration-300 ${isPrivateYachtsOpen ? 'rotate-180' : ''}`} xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
                     </svg>
                   </span>
                   {isPrivateYachtsOpen && (
                     <ul className="absolute top-full left-0 w-60 bg-white text-black shadow-lg rounded-lg overflow-hidden border border-gray-200 z-50">
                       {!loading &&
                         data?.products?.map(product => (
-                          <li
-                            key={product.id}
-                            onClick={() => setPrivateYachtsOpen(false)}
-                            className="cursor-pointer text-xs font-medium text-primary-grey hover:text-white hover:bg-primary-blue transition-all duration-300 font-primary"
-                          >
-                            <Link
-                              href={`/yacht-rentals/${product.slug}`}
-                              className="py-2 px-4 block"
-                            >
+                          <li key={product.id} onClick={() => setPrivateYachtsOpen(false)} className="cursor-pointer text-xs font-medium text-primary-grey hover:text-white hover:bg-primary-blue transition-all duration-300 font-primary">
+                            <Link href={`/yacht-rentals/${product.slug}`} className="py-2 px-4 block">
                               {product.translations?.[locale]?.name_of_yacht}
                             </Link>
                           </li>
@@ -167,12 +118,7 @@ export default function Navbar() {
                 <li>
                   <Link
                     href="/yachts-for-sale-dubai"
-                    className={`h-full flex items-center tracking-[1px] uppercase underline decoration-2 underline-offset-8 transition-all duration-200 font-primary ${
-                      pathname === '/yachts-for-sale-dubai' ||
-                      pathname.startsWith('/yachts-for-sale-dubai/')
-                        ? 'text-primary-blue decoration-primary-yellow font-semibold'
-                        : 'text-primary-blue decoration-transparent hover:decoration-primary-yellow'
-                    }`}
+                    className={`h-full flex items-center tracking-[1px] uppercase underline decoration-2 underline-offset-8 transition-all duration-200 font-primary ${pathname === '/yachts-for-sale-dubai' || pathname.startsWith('/yachts-for-sale-dubai/') ? 'text-primary-blue decoration-primary-yellow font-semibold' : 'text-primary-blue decoration-transparent hover:decoration-primary-yellow'}`}
                   >
                     {t('navbar.buy-a-yacht')}
                   </Link>
@@ -183,10 +129,7 @@ export default function Navbar() {
                   <Link
                     href="/shared-yacht-tours-dubai"
                     className={`h-full flex items-center tracking-[1px] uppercase underline decoration-2 underline-offset-8 transition-all duration-200 font-primary ${
-                      pathname === '/shared-yacht-tours-dubai' ||
-                      pathname.startsWith('/shared-yacht-tours-dubai/')
-                        ? 'text-primary-blue decoration-primary-yellow font-semibold'
-                        : 'text-primary-blue decoration-transparent hover:decoration-primary-yellow'
+                      pathname === '/shared-yacht-tours-dubai' || pathname.startsWith('/shared-yacht-tours-dubai/') ? 'text-primary-blue decoration-primary-yellow font-semibold' : 'text-primary-blue decoration-transparent hover:decoration-primary-yellow'
                     }`}
                   >
                     {t('navbar.shared-tours')}
@@ -194,64 +137,26 @@ export default function Navbar() {
                 </li>
 
                 {/* Experiences Dropdown */}
-                <li
-                  className="relative group h-full"
-                  ref={experiencesRef}
-                  onMouseEnter={() => setExperiencesOpen(true)}
-                  onMouseLeave={() => setExperiencesOpen(false)}
-                >
-                  <span
-                    className={`h-full flex items-center justify-between cursor-pointer gap-1 transition-all duration-200 font-primary ${
-                      pathname === '/yacht-trips' ||
-                      pathname.startsWith('/yacht-trips/')
-                        ? 'text-primary-blue underline-primary-yellow font-semibold'
-                        : 'text-primary-blue underline-transparent'
-                    }`}
-                  >
-                    <Link
-                      href="/yacht-trips"
-                      className="tracking-[1px] uppercase h-full flex items-center py-2"
-                    >
+                <li className="relative group h-full" ref={experiencesRef} onMouseEnter={() => setExperiencesOpen(true)} onMouseLeave={() => setExperiencesOpen(false)}>
+                  <span className={`h-full flex items-center justify-between cursor-pointer gap-1 transition-all duration-200 font-primary ${pathname === '/yacht-trips' || pathname.startsWith('/yacht-trips/') ? 'text-primary-blue underline-primary-yellow font-semibold' : 'text-primary-blue underline-transparent'}`}>
+                    <Link href="/yacht-trips" className="tracking-[1px] uppercase h-full flex items-center py-2">
                       {t('navbar.experiences')}
                     </Link>
-                    <svg
-                      className={`w-4 h-4 transform transition-transform duration-300 ${
-                        isExperiencesOpen ? 'rotate-180' : ''
-                      }`}
-                      xmlns="http://www.w3.org/2000/svg"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth="2"
-                        d="M19 9l-7 7-7-7"
-                      />
+                    <svg className={`w-4 h-4 transform transition-transform duration-300 ${isExperiencesOpen ? 'rotate-180' : ''}`} xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
                     </svg>
                   </span>
                   {isExperiencesOpen && (
                     <ul className="absolute top-full left-0 w-60 bg-white text-black transition-all duration-150 shadow-lg rounded-lg overflow-hidden border border-gray-200 z-50">
-                      <li
-                        onClick={() => setExperiencesOpen(false)}
-                        className="cursor-pointer capitalize text-xs font-medium text-primary-grey hover:text-white hover:bg-primary-blue transition-all duration-300 font-primary"
-                      >
+                      <li onClick={() => setExperiencesOpen(false)} className="cursor-pointer capitalize text-xs font-medium text-primary-grey hover:text-white hover:bg-primary-blue transition-all duration-300 font-primary">
                         <Link href="/watersports" className="py-2 px-4 block">
                           {t('navbar.water-sports')}
                         </Link>
                       </li>
                       {!loading &&
                         data?.experiences?.map(experience => (
-                          <li
-                            key={experience.id}
-                            onClick={() => setExperiencesOpen(false)}
-                            className="cursor-pointer text-xs font-medium text-primary-grey hover:text-white hover:bg-primary-blue transition-all duration-300 font-primary"
-                          >
-                            <Link
-                              href={`/yacht-trips/${experience.slug}`}
-                              className="py-2 px-4 block capitalize"
-                            >
+                          <li key={experience.id} onClick={() => setExperiencesOpen(false)} className="cursor-pointer text-xs font-medium text-primary-grey hover:text-white hover:bg-primary-blue transition-all duration-300 font-primary">
+                            <Link href={`/yacht-trips/${experience.slug}`} className="py-2 px-4 block capitalize">
                               {experience.translations?.[locale]?.title}
                             </Link>
                           </li>
@@ -278,12 +183,7 @@ export default function Navbar() {
                 <li className="hidden">
                   <Link
                     href="/resident-offer"
-                    className={`h-full flex items-center tracking-[1px] uppercase underline decoration-2 underline-offset-8 transition-all duration-200 font-primary ${
-                      pathname === '/resident-offer' ||
-                      pathname.startsWith('/resident-offer/')
-                        ? 'text-primary-blue decoration-primary-yellow font-semibold'
-                        : 'text-primary-blue decoration-transparent hover:decoration-primary-yellow'
-                    }`}
+                    className={`h-full flex items-center tracking-[1px] uppercase underline decoration-2 underline-offset-8 transition-all duration-200 font-primary ${pathname === '/resident-offer' || pathname.startsWith('/resident-offer/') ? 'text-primary-blue decoration-primary-yellow font-semibold' : 'text-primary-blue decoration-transparent hover:decoration-primary-yellow'}`}
                   >
                     {t('navbar.summer-offers')}
                   </Link>
@@ -292,12 +192,7 @@ export default function Navbar() {
                 <li>
                   <Link
                     href="/offers/dubai-yachts-winter-offers"
-                    className={`h-full flex items-center tracking-[1px] uppercase underline decoration-2 underline-offset-8 transition-all duration-200 font-primary ${
-                      pathname === '/resident-offer' ||
-                      pathname.startsWith('/resident-offer/')
-                        ? 'text-primary-blue decoration-primary-yellow font-semibold'
-                        : 'text-primary-blue decoration-transparent hover:decoration-primary-yellow'
-                    }`}
+                    className={`h-full flex items-center tracking-[1px] uppercase underline decoration-2 underline-offset-8 transition-all duration-200 font-primary ${pathname === '/resident-offer' || pathname.startsWith('/resident-offer/') ? 'text-primary-blue decoration-primary-yellow font-semibold' : 'text-primary-blue decoration-transparent hover:decoration-primary-yellow'}`}
                   >
                     {t('navbar.winter-offer')}
                   </Link>
@@ -306,12 +201,7 @@ export default function Navbar() {
                 <li>
                   <Link
                     href="/abu-dhabi-race-yacht-charter"
-                    className={`h-full flex items-center tracking-[1px] uppercase underline decoration-2 underline-offset-8 transition-all duration-200 font-primary ${
-                      pathname === '/abu-dhabi-race-yacht-charter' ||
-                      pathname.startsWith('/abu-dhabi')
-                        ? 'text-primary-blue decoration-primary-yellow font-semibold'
-                        : 'text-primary-blue decoration-transparent hover:decoration-primary-yellow'
-                    }`}
+                    className={`h-full flex items-center tracking-[1px] uppercase underline decoration-2 underline-offset-8 transition-all duration-200 font-primary ${pathname === '/abu-dhabi-race-yacht-charter' || pathname.startsWith('/abu-dhabi') ? 'text-primary-blue decoration-primary-yellow font-semibold' : 'text-primary-blue decoration-transparent hover:decoration-primary-yellow'}`}
                   >
                     {t('navbar.formula-1')}
                   </Link>
@@ -333,12 +223,7 @@ export default function Navbar() {
                 <li>
                   <Link
                     href="/new-year-yacht-party"
-                    className={`h-full flex items-center tracking-[1px] uppercase underline decoration-2 underline-offset-8 transition-all duration-200 font-primary ${
-                      pathname === '/new-year-yacht-party' ||
-                      pathname.startsWith('/new-year-yacht-party/')
-                        ? 'text-primary-blue decoration-primary-yellow font-semibold'
-                        : 'text-primary-blue decoration-transparent hover:decoration-primary-yellow'
-                    }`}
+                    className={`h-full flex items-center tracking-[1px] uppercase underline decoration-2 underline-offset-8 transition-all duration-200 font-primary ${pathname === '/new-year-yacht-party' || pathname.startsWith('/new-year-yacht-party/') ? 'text-primary-blue decoration-primary-yellow font-semibold' : 'text-primary-blue decoration-transparent hover:decoration-primary-yellow'}`}
                   >
                     {t('navbar.new-year')}
                   </Link>
@@ -346,15 +231,7 @@ export default function Navbar() {
 
                 {/* Contact */}
                 <li>
-                  <Link
-                    href="/contact"
-                    className={`h-full flex items-center tracking-[1px] uppercase underline decoration-2 underline-offset-8 transition-all duration-200 font-primary ${
-                      pathname === '/contact' ||
-                      pathname.startsWith('/contact/')
-                        ? 'text-primary-blue decoration-primary-yellow font-semibold'
-                        : 'text-primary-blue decoration-transparent hover:decoration-primary-yellow'
-                    }`}
-                  >
+                  <Link href="/contact" className={`h-full flex items-center tracking-[1px] uppercase underline decoration-2 underline-offset-8 transition-all duration-200 font-primary ${pathname === '/contact' || pathname.startsWith('/contact/') ? 'text-primary-blue decoration-primary-yellow font-semibold' : 'text-primary-blue decoration-transparent hover:decoration-primary-yellow'}`}>
                     {t('navbar.contact-us')}
                   </Link>
                 </li>
@@ -370,29 +247,15 @@ export default function Navbar() {
               <Link href={header_phone_number_url || '#'} aria-label="Phone">
                 <FaPhoneAlt className="w-4 h-4 text-primary-blue-2 hover:text-primary-blue hover:scale-110 transition-transform duration-200 text-2xl" />
               </Link>
-              <Link
-                href={t('header.navbar_whatsapp_url')}
-                aria-label="WhatsApp"
-              >
+              <Link href={t('header.navbar_whatsapp_url')} aria-label="WhatsApp">
                 <IoLogoWhatsapp className="w-5 h-5 text-primary-blue-2 hover:text-primary-blue hover:scale-110 transition-transform duration-200 text-2xl" />
               </Link>
 
               {/* Language Dropdown */}
-              <div
-                className="relative group"
-                ref={languageDropdownRef}
-                onMouseEnter={() => setLanguageDropdownOpen(true)}
-                onMouseLeave={() => setLanguageDropdownOpen(false)}
-              >
+              <div className="relative group" ref={languageDropdownRef} onMouseEnter={() => setLanguageDropdownOpen(true)} onMouseLeave={() => setLanguageDropdownOpen(false)}>
                 <div className="p-2 cursor-pointer flex items-center gap-1">
-                  <img
-                    src={currentLanguage?.flag}
-                    alt={locale}
-                    className="w-5 h-5"
-                  />
-                  <span className="text-xs font-medium">
-                    {locale.toUpperCase()}
-                  </span>
+                  <img src={currentLanguage?.flag} alt={locale} className="w-5 h-5" />
+                  <span className="text-xs font-medium">{locale.toUpperCase()}</span>
                 </div>
                 {isLanguageDropdownOpen && (
                   <ul className="absolute right-0 w-36 bg-white text-primary-blue border rounded-md shadow-lg z-20 text-xs">
@@ -405,11 +268,7 @@ export default function Navbar() {
                         }}
                         className="flex items-center gap-2 p-2 cursor-pointer hover:bg-gray-100"
                       >
-                        <img
-                          src={lang.flag}
-                          alt={lang.name}
-                          className="w-4 h-4"
-                        />
+                        <img src={lang.flag} alt={lang.name} className="w-4 h-4" />
                         {lang.name.toUpperCase()} - {lang.code.toUpperCase()}
                       </li>
                     ))}

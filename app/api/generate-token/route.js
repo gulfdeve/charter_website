@@ -6,8 +6,7 @@ export async function GET() {
   try {
     // Get the private key
     const rawKey = process.env.ANKOR_PRIVATE_KEY;
-    const keyId =
-      process.env.ANKOR_KEY_ID || 'hxF8VcUaRO5CiwTLJ79bVIGHycQqlVQX_WL-yTKo8z4';
+    const keyId = process.env.ANKOR_KEY_ID || 'hxF8VcUaRO5CiwTLJ79bVIGHycQqlVQX_WL-yTKo8z4';
 
     if (!rawKey) {
       return NextResponse.json(

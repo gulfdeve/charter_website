@@ -52,10 +52,7 @@ export async function GET() {
 
       try {
         // Basic validation
-        if (
-          !keyVariation.includes('-----BEGIN PRIVATE KEY-----') ||
-          !keyVariation.includes('-----END PRIVATE KEY-----')
-        ) {
+        if (!keyVariation.includes('-----BEGIN PRIVATE KEY-----') || !keyVariation.includes('-----END PRIVATE KEY-----')) {
           results.push({
             variation: i,
             success: false,
@@ -106,11 +103,8 @@ export async function GET() {
     // Create a diagnostic JWT token bypass for testing
     try {
       // Try to make a direct fetch with a bypass key
-      const testUrl =
-        'https://api.ankor.io/website/search?currency=USD&priceMin=1000&priceMax=5000';
-      const keyId =
-        process.env.ANKOR_KEY_ID ||
-        'jSZNvbnPK03KXEEo0-bJw4XPF1z68eW_OpHFW_9XvLY';
+      const testUrl = 'https://api.ankor.io/website/search?currency=USD&priceMin=1000&priceMax=5000';
+      const keyId = process.env.ANKOR_KEY_ID || 'jSZNvbnPK03KXEEo0-bJw4XPF1z68eW_OpHFW_9XvLY';
 
       // Option 1: Use Key ID directly as bearer token
       const res1 = await fetch(testUrl, {
@@ -162,8 +156,7 @@ export async function GET() {
 function extractAndReformatKey(rawKey) {
   try {
     // Try to extract just the base64 content between BEGIN and END markers
-    const regex =
-      /-----BEGIN PRIVATE KEY-----([\s\S]*?)-----END PRIVATE KEY-----/;
+    const regex = /-----BEGIN PRIVATE KEY-----([\s\S]*?)-----END PRIVATE KEY-----/;
     const match = rawKey.match(regex);
 
     if (!match || !match[1]) {

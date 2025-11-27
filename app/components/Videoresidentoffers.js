@@ -20,11 +20,7 @@ export default function Videosharedtours() {
     const loadWistiaScripts = async () => {
       try {
         await loadScript('https://fast.wistia.com/player.js');
-        await loadScript(
-          'https://fast.wistia.com/embed/rbm8fusw7r.js',
-          'module',
-          true
-        );
+        await loadScript('https://fast.wistia.com/embed/rbm8fusw7r.js', 'module', true);
         setScriptsLoaded(true);
 
         // Wait for the custom element to be defined
@@ -59,24 +55,13 @@ export default function Videosharedtours() {
           }
         `}
         </style>
-        <div
-          className="lg:absolute inset-0 z-0"
-          style={{ pointerEvents: 'none' }}
-        >
-          {scriptsLoaded && playerReady ? (
-            <wistia-player media-id="x5zlv6005o" seo="false"></wistia-player>
-          ) : (
-            <p className="text-white text-center">Loading video...</p>
-          )}
+        <div className="lg:absolute inset-0 z-0" style={{ pointerEvents: 'none' }}>
+          {scriptsLoaded && playerReady ? <wistia-player media-id="x5zlv6005o" seo="false"></wistia-player> : <p className="text-white text-center">Loading video...</p>}
         </div>
 
         <div className="block text-center mt-10 lg:absolute lg:-translate-x-2/4 lg:-translate-y-2/4 lg:left-2/4 lg:top-2/4 lg:mt-0 z-40">
-          <h1 className="uppercase text-xl font-bold mb-4 text-primary-blue-2 lg:text-white lg:text-[32px] p-0 md:px-0 md:text-3xl 2xl:text-4xl">
-            UAE RESIDENTS SUMMER YACHTS OFFERS
-          </h1>
-          <h2 className="text-xl font-bold mb-4 text-primary-blue-2 lg:text-white lg:text-[24px] p-0 md:px-0 md:text-3xl 2xl:text-3xl">
-            Unmatched Discount for a Luxury Experience
-          </h2>
+          <h1 className="uppercase text-xl font-bold mb-4 text-primary-blue-2 lg:text-white lg:text-[32px] p-0 md:px-0 md:text-3xl 2xl:text-4xl">UAE RESIDENTS SUMMER YACHTS OFFERS</h1>
+          <h2 className="text-xl font-bold mb-4 text-primary-blue-2 lg:text-white lg:text-[24px] p-0 md:px-0 md:text-3xl 2xl:text-3xl">Unmatched Discount for a Luxury Experience</h2>
         </div>
       </div>
     </>

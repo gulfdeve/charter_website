@@ -44,9 +44,5 @@ export const DataProvider = ({ children, initialData = null }) => {
     loadData();
   }, [initialData]);
 
-  return (
-    <DataContext.Provider value={{ data, loading, error }}>
-      {children}
-    </DataContext.Provider>
-  );
+  return <DataContext.Provider value={{ data, loading, error }}>{children}</DataContext.Provider>;
 };

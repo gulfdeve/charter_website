@@ -3,6 +3,7 @@
 This guide explains how to instantly update your statically generated pages when your API data changes, without waiting for the 24-hour automatic revalidation.
 
 ## 📋 Table of Contents
+
 1. [Quick Start](#quick-start)
 2. [Setup](#setup)
 3. [Usage Examples](#usage-examples)
@@ -37,12 +38,14 @@ REVALIDATION_SECRET=your-super-secret-key-here-change-this
 Add the same to your `.env` (for production) or set it in your hosting platform (Vercel):
 
 **For Vercel:**
+
 1. Go to your project settings
 2. Navigate to "Environment Variables"
 3. Add: `REVALIDATION_SECRET` = `your-super-secret-key-here`
 4. Save and redeploy
 
 **Generate a secure secret:**
+
 ```bash
 # Option 1: Use openssl
 openssl rand -base64 32
@@ -79,11 +82,13 @@ curl "https://your-domain.com/api/revalidate?secret=YOUR_SECRET"
 ```
 
 **What it does:**
+
 - ✅ Revalidates: Home, Offers, FAQ, Yacht Rentals, Events, etc.
 - ✅ All locales (en, ar, ru, zh)
 - ✅ All dynamic pages (individual offers, yachts, etc.)
 
 **Response:**
+
 ```json
 {
   "success": true,
@@ -137,11 +142,9 @@ Add a "Publish Changes" button in your admin panel:
 // In your admin dashboard
 async function publishChanges() {
   try {
-    const response = await fetch(
-      'https://your-domain.com/api/revalidate?secret=YOUR_SECRET'
-    );
+    const response = await fetch('https://your-domain.com/api/revalidate?secret=YOUR_SECRET');
     const data = await response.json();
-    
+
     if (data.success) {
       alert('✅ Changes published successfully! Website will update on next visit.');
     } else {
@@ -164,18 +167,16 @@ Call the revalidation endpoint automatically after updating data:
 async function updateOffer(offerId, data) {
   // 1. Update your database
   await database.offers.update(offerId, data);
-  
+
   // 2. Trigger revalidation
   try {
-    await fetch(
-      `https://your-domain.com/api/revalidate?secret=${process.env.REVALIDATION_SECRET}`
-    );
+    await fetch(`https://your-domain.com/api/revalidate?secret=${process.env.REVALIDATION_SECRET}`);
     console.log('✅ Website cache revalidated');
   } catch (error) {
     console.error('❌ Failed to revalidate:', error);
     // Don't fail the update if revalidation fails
   }
-  
+
   return { success: true };
 }
 ```
@@ -195,6 +196,7 @@ Set up a cron job to revalidate periodically:
 ```
 
 Or use a service like **cron-job.org** or **EasyCron**:
+
 1. Create an account
 2. Add URL: `https://your-domain.com/api/revalidate?secret=YOUR_SECRET`
 3. Set schedule: Every 6 hours (or as needed)
@@ -208,6 +210,7 @@ Or use a service like **cron-job.org** or **EasyCron**:
 Many CMS systems support webhooks. Configure them to call your revalidation endpoint:
 
 **Example: Contentful Webhook**
+
 ```
 URL: https://your-domain.com/api/revalidate?secret=YOUR_SECRET
 Method: POST or GET
@@ -215,18 +218,16 @@ Trigger: On content publish/update
 ```
 
 **Example: Custom Backend Webhook**
+
 ```javascript
 // Express.js example
 app.post('/admin/publish', async (req, res) => {
   // Your update logic
   await updateDatabase(req.body);
-  
+
   // Trigger Next.js revalidation
-  await fetch(
-    `https://your-domain.com/api/revalidate?secret=${process.env.REVALIDATION_SECRET}`,
-    { method: 'POST' }
-  );
-  
+  await fetch(`https://your-domain.com/api/revalidate?secret=${process.env.REVALIDATION_SECRET}`, { method: 'POST' });
+
   res.json({ success: true });
 });
 ```
@@ -240,6 +241,7 @@ app.post('/admin/publish', async (req, res) => {
 **Problem:** The secret doesn't match or is missing.
 
 **Solution:**
+
 1. Check your environment variable is set: `REVALIDATION_SECRET`
 2. Verify you're passing the correct secret in the URL
 3. Restart your server after adding environment variables
@@ -255,6 +257,7 @@ app.post('/admin/publish', async (req, res) => {
 2. **Second visit:** Serves fresh regenerated page
 
 **To see changes immediately:**
+
 1. Visit the page once (triggers regeneration)
 2. Wait 2-3 seconds
 3. Hard refresh (Ctrl+Shift+R or Cmd+Shift+R)
@@ -286,6 +289,7 @@ curl "https://your-domain.com/api/revalidate?secret=YOUR_SECRET"
 ### Check Logs
 
 In your deployment platform (Vercel):
+
 1. Go to your project
 2. Click on "Deployments"
 3. Click on your active deployment
@@ -330,6 +334,7 @@ In your deployment platform (Vercel):
 ## 🎯 Best Practices
 
 ### ✅ DO:
+
 - Use the tag-based approach (revalidates all pages at once)
 - Set a strong random secret (32+ characters)
 - Store secret in environment variables (never in code)
@@ -337,6 +342,7 @@ In your deployment platform (Vercel):
 - Use webhooks for automatic revalidation
 
 ### ❌ DON'T:
+
 - Don't expose your secret in client-side code
 - Don't commit secrets to git
 - Don't call revalidation too frequently (rate limit if needed)
@@ -389,4 +395,3 @@ fetch('https://your-domain.com/api/revalidate?secret=YOUR_SECRET')
 ---
 
 **Need help?** Check the Next.js documentation on [On-Demand Revalidation](https://nextjs.org/docs/app/building-your-application/data-fetching/revalidating)
-

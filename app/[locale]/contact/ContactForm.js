@@ -38,8 +38,7 @@ export default function ContactForm() {
       }
     }
     if (!message) errs.message = 'Message is required';
-    if (!acceptedTerms)
-      errs.acceptedTerms = 'Please accept the Terms and Conditions';
+    if (!acceptedTerms) errs.acceptedTerms = 'Please accept the Terms and Conditions';
     setErrors(errs);
     return Object.keys(errs).length === 0;
   };
@@ -99,9 +98,7 @@ export default function ContactForm() {
         setAcceptedTerms(false);
         setErrors({});
         // Set success message
-        setSuccessMessage(
-          'Your form has been successfully submitted. We will contact you shortly.'
-        );
+        setSuccessMessage('Your form has been successfully submitted. We will contact you shortly.');
         // Scroll to the top of the form to make message visible
         window.scrollTo({
           top: document.getElementById('contact-form').offsetTop - 100,
@@ -122,35 +119,15 @@ export default function ContactForm() {
 
   return (
     <div id="contact-form" className="w-full xl:w-[40rem] p-0 md:p-6 bg-white">
-      {successMessage && (
-        <div className="mb-6 p-4 bg-green-100 border border-green-400 text-green-700 rounded-md">
-          {successMessage}
-        </div>
-      )}
+      {successMessage && <div className="mb-6 p-4 bg-green-100 border border-green-400 text-green-700 rounded-md">{successMessage}</div>}
       <form onSubmit={handleSubmit} className="space-y-4">
         <div>
-          <input
-            type="text"
-            placeholder="Your Name"
-            className="w-full p-3 border-l-4 rounded-md bg-[#f5f5f5] text-primary-grey focus:outline-none border-[#1b498f] focus:border-primary-yellow focus:bg-[#f3f7fd] transition duration-200 ease-in-out"
-            value={fullName}
-            onChange={e => setFullName(e.target.value)}
-          />
-          {errors.fullName && (
-            <p className="text-red-600 text-sm mt-1">{errors.fullName}</p>
-          )}
+          <input type="text" placeholder="Your Name" className="w-full p-3 border-l-4 rounded-md bg-[#f5f5f5] text-primary-grey focus:outline-none border-[#1b498f] focus:border-primary-yellow focus:bg-[#f3f7fd] transition duration-200 ease-in-out" value={fullName} onChange={e => setFullName(e.target.value)} />
+          {errors.fullName && <p className="text-red-600 text-sm mt-1">{errors.fullName}</p>}
         </div>
         <div>
-          <input
-            type="email"
-            placeholder="Your Email"
-            className="w-full p-3 border-l-4 rounded-md bg-[#f5f5f5] text-primary-grey focus:outline-none border-[#1b498f] focus:border-primary-yellow focus:bg-[#f3f7fd] transition duration-200 ease-in-out"
-            value={email}
-            onChange={e => setEmail(e.target.value)}
-          />
-          {errors.email && (
-            <p className="text-red-600 text-sm mt-1">{errors.email}</p>
-          )}
+          <input type="email" placeholder="Your Email" className="w-full p-3 border-l-4 rounded-md bg-[#f5f5f5] text-primary-grey focus:outline-none border-[#1b498f] focus:border-primary-yellow focus:bg-[#f3f7fd] transition duration-200 ease-in-out" value={email} onChange={e => setEmail(e.target.value)} />
+          {errors.email && <p className="text-red-600 text-sm mt-1">{errors.email}</p>}
         </div>
         <div>
           {/* PhoneInput replaces the standard phone input */}
@@ -185,74 +162,37 @@ export default function ContactForm() {
               width: '60px',
             }}
           />
-          {errors.phoneNumber && (
-            <p className="text-red-600 text-sm mt-1">{errors.phoneNumber}</p>
-          )}
+          {errors.phoneNumber && <p className="text-red-600 text-sm mt-1">{errors.phoneNumber}</p>}
         </div>
         <div>
-          <textarea
-            placeholder="Your Message"
-            rows={4}
-            className="w-full p-3 border-l-4 rounded-md bg-[#f5f5f5] text-primary-grey focus:outline-none border-[#1b498f] focus:border-primary-yellow focus:bg-[#f3f7fd] transition duration-200 ease-in-out"
-            value={message}
-            onChange={e => setMessage(e.target.value)}
-          ></textarea>
-          {errors.message && (
-            <p className="text-red-600 text-sm mt-1">{errors.message}</p>
-          )}
+          <textarea placeholder="Your Message" rows={4} className="w-full p-3 border-l-4 rounded-md bg-[#f5f5f5] text-primary-grey focus:outline-none border-[#1b498f] focus:border-primary-yellow focus:bg-[#f3f7fd] transition duration-200 ease-in-out" value={message} onChange={e => setMessage(e.target.value)}></textarea>
+          {errors.message && <p className="text-red-600 text-sm mt-1">{errors.message}</p>}
         </div>
         <div className="space-y-2 text-primary-grey">
           <div className="flex items-start space-x-2">
-            <input
-              type="checkbox"
-              id="updates"
-              className="mt-1 h-4 w-4 text-primary-blue focus:ring-2 focus:ring-[#0D2343] border-gray-300 rounded"
-              checked={subscribe}
-              onChange={e => setSubscribe(e.target.checked)}
-            />
+            <input type="checkbox" id="updates" className="mt-1 h-4 w-4 text-primary-blue focus:ring-2 focus:ring-[#0D2343] border-gray-300 rounded" checked={subscribe} onChange={e => setSubscribe(e.target.checked)} />
             <label htmlFor="updates" className="text-sm leading-5">
-              I would like to sign up to receive email updates from Centaurus
-              Charter. See our{' '}
-              <Link
-                href="/privacy-and-policy"
-                className="text-blue-500 underline"
-              >
+              I would like to sign up to receive email updates from Centaurus Charter. See our{' '}
+              <Link href="/privacy-and-policy" className="text-blue-500 underline">
                 Privacy Policy
               </Link>
               .
             </label>
           </div>
           <div className="flex items-start space-x-2">
-            <input
-              type="checkbox"
-              id="terms"
-              className="mt-1 h-4 w-4 text-primary-blue focus:ring-2 focus:ring-[#0D2343] border-gray-300 rounded"
-              checked={acceptedTerms}
-              onChange={e => setAcceptedTerms(e.target.checked)}
-            />
+            <input type="checkbox" id="terms" className="mt-1 h-4 w-4 text-primary-blue focus:ring-2 focus:ring-[#0D2343] border-gray-300 rounded" checked={acceptedTerms} onChange={e => setAcceptedTerms(e.target.checked)} />
             <label htmlFor="terms" className="text-sm leading-5">
               I can confirm I have read and accepted the{' '}
-              <Link
-                href="/terms-and-condition"
-                className="text-blue-500 underline"
-              >
+              <Link href="/terms-and-condition" className="text-blue-500 underline">
                 Terms and Conditions
               </Link>
               .
             </label>
-            {errors.acceptedTerms && (
-              <p className="text-red-600 text-sm mt-1">
-                {errors.acceptedTerms}
-              </p>
-            )}
+            {errors.acceptedTerms && <p className="text-red-600 text-sm mt-1">{errors.acceptedTerms}</p>}
           </div>
         </div>
         <div className="text-left">
-          <button
-            type="submit"
-            disabled={isSubmitting}
-            className="px-6 py-3 bg-primary-blue-2 text-white rounded-md hover:bg-primary-blue transition duration-200 disabled:opacity-50"
-          >
+          <button type="submit" disabled={isSubmitting} className="px-6 py-3 bg-primary-blue-2 text-white rounded-md hover:bg-primary-blue transition duration-200 disabled:opacity-50">
             {isSubmitting ? 'SENDING...' : 'SEND MESSAGE'}
           </button>
         </div>

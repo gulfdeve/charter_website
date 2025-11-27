@@ -18,18 +18,12 @@ const YachtCard = ({ yacht }) => {
     <>
       <div className="bg-white rounded-lg border-2 md:border-0 md:shadow-lg overflow-hidden flex flex-col h-full">
         <Link href={`/${locale}/yachts-for-sale-dubai/${yacht.slug}`}>
-          <img
-            src={yacht.image}
-            alt={yacht.name}
-            className="w-full object-cover"
-          />
+          <img src={yacht.image} alt={yacht.name} className="w-full object-cover" />
         </Link>
         <div className="p-6 flex flex-col justify-between flex-grow">
           <div>
             <Link href={`/${locale}/yachts-for-sale-dubai/${yacht.slug}`}>
-              <h2 className="text-base sm:text-xl font-bold text-navy-900 mb-4">
-                {yacht.name}
-              </h2>
+              <h2 className="text-base sm:text-xl font-bold text-navy-900 mb-4">{yacht.name}</h2>
             </Link>
             <div className="grid grid-cols-2 gap-6 mb-6">
               {/* Yacht detail items */}
@@ -60,10 +54,7 @@ const YachtCard = ({ yacht }) => {
             </div>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <Link
-              href={`/${locale}/yachts-for-sale-dubai/${yacht.slug}`}
-              className="blue-solid-button text-center"
-            >
+            <Link href={`/${locale}/yachts-for-sale-dubai/${yacht.slug}`} className="blue-solid-button text-center">
               KNOW MORE
             </Link>
             <button onClick={openModal} className="blue-solid-button">
@@ -73,13 +64,7 @@ const YachtCard = ({ yacht }) => {
         </div>
       </div>
 
-      <Modal2
-        isModalOpen={isModalOpen}
-        closeModal={closeModal}
-        idName="offers_id"
-        idValue="48"
-        selectedVessel={yacht}
-      />
+      <Modal2 isModalOpen={isModalOpen} closeModal={closeModal} idName="offers_id" idValue="48" selectedVessel={yacht} />
     </>
   );
 };

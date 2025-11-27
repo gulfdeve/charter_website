@@ -3,10 +3,7 @@
 import { useState, useEffect, useRef } from 'react';
 import SearchResultsClient from '@/app/components/SearchResultsClient';
 
-export default function ClientSearchResults({
-  searchParams: initialSearchParams,
-  hasParams: initialHasParams,
-}) {
+export default function ClientSearchResults({ searchParams: initialSearchParams, hasParams: initialHasParams }) {
   // State for API data and loading status
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(false);
@@ -101,9 +98,7 @@ export default function ClientSearchResults({
         clearTimeout(timeoutId);
         if (!response.ok) {
           const errorData = await response.json();
-          throw new Error(
-            errorData.error || `API Error: ${response.statusText}`
-          );
+          throw new Error(errorData.error || `API Error: ${response.statusText}`);
         }
         const responseData = await response.json();
         setData(responseData);
@@ -125,15 +120,9 @@ export default function ClientSearchResults({
   const pageSize = 20;
   const hits = data?.hits || [];
   // Get unique brands and years from hits
-  const uniqueBrands = Array.from(
-    new Set(hits.map(h => h.make).filter(Boolean))
-  );
-  const uniqueYears = Array.from(
-    new Set(hits.map(h => h.builtYear).filter(Boolean))
-  ).sort((a, b) => b - a);
-  const uniqueCabins = Array.from(
-    new Set(hits.map(h => h.cabins).filter(Boolean))
-  ).sort((a, b) => a - b);
+  const uniqueBrands = Array.from(new Set(hits.map(h => h.make).filter(Boolean)));
+  const uniqueYears = Array.from(new Set(hits.map(h => h.builtYear).filter(Boolean))).sort((a, b) => b - a);
+  const uniqueCabins = Array.from(new Set(hits.map(h => h.cabins).filter(Boolean))).sort((a, b) => a - b);
   // Filter hits by brand and year
   const filteredHits = hits.filter(h => {
     let brandMatch = true;
@@ -145,15 +134,10 @@ export default function ClientSearchResults({
     return brandMatch && yearMatch && cabinsMatch;
   });
   const totalPages = Math.ceil(filteredHits.length / pageSize);
-  const paginatedHits = filteredHits.slice(
-    (currentPage - 1) * pageSize,
-    currentPage * pageSize
-  );
+  const paginatedHits = filteredHits.slice((currentPage - 1) * pageSize, currentPage * pageSize);
 
   // Only show available cabins in the dropdown (after brand/year filter)
-  const availableCabins = Array.from(
-    new Set(filteredHits.map(h => h.cabins).filter(Boolean))
-  ).sort((a, b) => a - b);
+  const availableCabins = Array.from(new Set(filteredHits.map(h => h.cabins).filter(Boolean))).sort((a, b) => a - b);
 
   // Function to handle page change
   const handlePageChange = pageNum => {
@@ -182,9 +166,7 @@ export default function ClientSearchResults({
           <div className="bg-white p-8 rounded-lg shadow-xl">
             <div className="flex items-center space-x-4">
               <div className="animate-spin rounded-full h-8 w-8 border-t-2 border-b-2 border-primary-blue"></div>
-              <div className="text-lg font-semibold">
-                Searching for yachts...
-              </div>
+              <div className="text-lg font-semibold">Searching for yachts...</div>
             </div>
           </div>
         </div>
@@ -195,9 +177,7 @@ export default function ClientSearchResults({
         <div className="grid grid-cols-1 xs:grid-cols-3 gap-2 sm:gap-4 justify-center items-stretch my-4 sm:my-6 w-full max-w-2xl mx-auto px-4">
           {uniqueBrands.length > 1 && (
             <div className="relative w-full flex flex-col">
-              <label className="mb-1 font-semibold text-sm sm:text-base">
-                Brand:
-              </label>
+              <label className="mb-1 font-semibold text-sm sm:text-base">Brand:</label>
               <div className="relative">
                 <select
                   value={brandFilter}
@@ -214,28 +194,15 @@ export default function ClientSearchResults({
                     </option>
                   ))}
                 </select>
-                <svg
-                  className="h-5 w-5 text-gray-500 absolute right-3 top-1/2 transform -translate-y-1/2 pointer-events-none"
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M19 9l-7 7-7-7"
-                  />
+                <svg className="h-5 w-5 text-gray-500 absolute right-3 top-1/2 transform -translate-y-1/2 pointer-events-none" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                 </svg>
               </div>
             </div>
           )}
           {uniqueYears.length > 1 && (
             <div className="relative w-full flex flex-col">
-              <label className="mb-1 font-semibold text-sm sm:text-base">
-                Year:
-              </label>
+              <label className="mb-1 font-semibold text-sm sm:text-base">Year:</label>
               <div className="relative">
                 <select
                   value={yearFilter}
@@ -252,28 +219,15 @@ export default function ClientSearchResults({
                     </option>
                   ))}
                 </select>
-                <svg
-                  className="h-5 w-5 text-gray-500 absolute right-3 top-1/2 transform -translate-y-1/2 pointer-events-none"
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M19 9l-7 7-7-7"
-                  />
+                <svg className="h-5 w-5 text-gray-500 absolute right-3 top-1/2 transform -translate-y-1/2 pointer-events-none" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                 </svg>
               </div>
             </div>
           )}
           {uniqueCabins.length > 1 && (
             <div className="relative w-full flex flex-col">
-              <label className="mb-1 font-semibold text-sm sm:text-base">
-                Cabins:
-              </label>
+              <label className="mb-1 font-semibold text-sm sm:text-base">Cabins:</label>
               <div className="relative">
                 <select
                   value={cabinsFilter}
@@ -290,19 +244,8 @@ export default function ClientSearchResults({
                     </option>
                   ))}
                 </select>
-                <svg
-                  className="h-5 w-5 text-gray-500 absolute right-3 top-1/2 transform -translate-y-1/2 pointer-events-none"
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M19 9l-7 7-7-7"
-                  />
+                <svg className="h-5 w-5 text-gray-500 absolute right-3 top-1/2 transform -translate-y-1/2 pointer-events-none" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                 </svg>
               </div>
             </div>
@@ -367,22 +310,7 @@ export default function ClientSearchResults({
       )} */}
 
       {/* Results */}
-      <div ref={resultsContainerRef}>
-        {!loading && data && (
-          <SearchResultsClient
-            paginatedHits={paginatedHits}
-            currentPage={currentPage}
-            totalPages={totalPages}
-            previousPageLink={
-              currentPage > 1 ? `#page-${currentPage - 1}` : null
-            }
-            nextPageLink={
-              currentPage < totalPages ? `#page-${currentPage + 1}` : null
-            }
-            onPageChange={handlePageChange}
-          />
-        )}
-      </div>
+      <div ref={resultsContainerRef}>{!loading && data && <SearchResultsClient paginatedHits={paginatedHits} currentPage={currentPage} totalPages={totalPages} previousPageLink={currentPage > 1 ? `#page-${currentPage - 1}` : null} nextPageLink={currentPage < totalPages ? `#page-${currentPage + 1}` : null} onPageChange={handlePageChange} />}</div>
     </>
   );
 }

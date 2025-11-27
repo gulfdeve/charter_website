@@ -57,33 +57,16 @@ export default function MultiDatePicker({ name, init = [] }) {
 
   return (
     <div className="relative">
-      <button
-        type="button"
-        onClick={toggleCalendar}
-        className="block w-full  border border-gray-300 rounded-md px-3 pr-10 leading-tight bg-white text-gray-700 text-left relative z-10 h-10 overflow-hidden whitespace-nowrap truncate"
-      >
+      <button type="button" onClick={toggleCalendar} className="block w-full  border border-gray-300 rounded-md px-3 pr-10 leading-tight bg-white text-gray-700 text-left relative z-10 h-10 overflow-hidden whitespace-nowrap truncate">
         {renderDisplayText()}
       </button>
 
-      <div
-        onClick={toggleCalendar}
-        className="absolute inset-y-0 right-0 rounded-r-md flex items-center justify-center bg-primary-blue-2 px-2 cursor-pointer z-10"
-      >
+      <div onClick={toggleCalendar} className="absolute inset-y-0 right-0 rounded-r-md flex items-center justify-center bg-primary-blue-2 px-2 cursor-pointer z-10">
         <FaChevronDown className="text-white" />
       </div>
 
       <div className="absolute top-0 left-0 w-full h-full flex items-center">
-        <DatePicker
-          ref={datePickerRef}
-          range
-          value={selectedDates}
-          onChange={dates => setSelectedDates(dates)}
-          format="YYYY-MM-DD"
-          style={{ backgroundColor: 'white' }}
-          calendarClassName="bg-white"
-          onOpen={() => setIsOpen(true)}
-          onClose={() => setIsOpen(false)}
-        />
+        <DatePicker ref={datePickerRef} range value={selectedDates} onChange={dates => setSelectedDates(dates)} format="YYYY-MM-DD" style={{ backgroundColor: 'white' }} calendarClassName="bg-white" onOpen={() => setIsOpen(true)} onClose={() => setIsOpen(false)} />
       </div>
       <div className="hidden">
         <Modal3 rentalPeriod={selectedDates} />

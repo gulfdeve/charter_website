@@ -58,8 +58,7 @@ const Nycard = ({ whatsappLink }) => {
         { label: 'Cabins', value: '4' },
         { label: 'Timings', value: '9PM - 3AM' },
       ],
-      packageInclusions:
-        'GOURMET CANAPÉS, PREMIUM WINES, BEERS, SPIRITS & 10 BOTTLES OF CHAMPAGNE',
+      packageInclusions: 'GOURMET CANAPÉS, PREMIUM WINES, BEERS, SPIRITS & 10 BOTTLES OF CHAMPAGNE',
       price: 'AED 55,000 + VAT',
       rate: '6 HOURS RATE',
       isSold: 0,
@@ -171,8 +170,7 @@ const Nycard = ({ whatsappLink }) => {
         { label: 'Cabins', value: '3' },
         { label: 'Timings', value: '9PM - 3AM' },
       ],
-      packageInclusions:
-        'GOURMET CANAPÉS, PREMIUM WINES, BEERS, SPIRITS & 10 BOTTLES OF CHAMPAGNE',
+      packageInclusions: 'GOURMET CANAPÉS, PREMIUM WINES, BEERS, SPIRITS & 10 BOTTLES OF CHAMPAGNE',
       price: 'AED 60,000 + VAT',
       rate: '6 HOURS RATE',
       isSold: 1,
@@ -184,18 +182,11 @@ const Nycard = ({ whatsappLink }) => {
     <div className="container mx-auto py-8">
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
         {yachts.map(yacht => (
-          <div
-            key={yacht.id}
-            className="bg-[#09162a] rounded-lg overflow-hidden p-3 md:p-5"
-          >
+          <div key={yacht.id} className="bg-[#09162a] rounded-lg overflow-hidden p-3 md:p-5">
             {/* <div className="relative"> */}
             <h4 className="font-bold text-white">{yacht.name}</h4>
             <div className="relative">
-              <img
-                src={yacht.image}
-                alt={yacht.name}
-                className="w-full h-auto object-cover rounded-lg mt-3"
-              />
+              <img src={yacht.image} alt={yacht.name} className="w-full h-auto object-cover rounded-lg mt-3" />
 
               {yacht.isSold === 1 && (
                 <div className="absolute flex items-center gap-2 top-4 left-0 bg-primary-red text-white text-sm py-0.5 px-2 rounded-r-lg">
@@ -213,9 +204,7 @@ const Nycard = ({ whatsappLink }) => {
                     <div className="hidden sm:block h-12" />
                     <div className="p-1 text-center flex-1">
                       <div className="text-xs text-[#f2f2f2]">{box.label}</div>
-                      <div className="font-bold text-xs md:text-sm text-white">
-                        {box.value}
-                      </div>
+                      <div className="font-bold text-xs md:text-sm text-white">{box.value}</div>
                     </div>
                   </div>
                 ))}
@@ -223,62 +212,34 @@ const Nycard = ({ whatsappLink }) => {
             </div>
             <div className="mt-10">
               {/* add hidden class if yacht.id is 10 */}
-              <div
-                className={`${yacht.id === 10 || yacht.id === 9 ? 'invisible' : ''} bg-primary-blue rounded-lg p-4 space-y-2 py-5`}
-              >
-                <h5 className=" text-primary-yellow text-center font-bold text-xl">
-                  PACKAGE INCLUSIONS:
-                </h5>
-                <div className=" text-white text-center text-sm ">
-                  {yacht.packageInclusions}
-                </div>
+              <div className={`${yacht.id === 10 || yacht.id === 9 ? 'invisible' : ''} bg-primary-blue rounded-lg p-4 space-y-2 py-5`}>
+                <h5 className=" text-primary-yellow text-center font-bold text-xl">PACKAGE INCLUSIONS:</h5>
+                <div className=" text-white text-center text-sm ">{yacht.packageInclusions}</div>
               </div>
-              {yacht.isSold === 0 ? (
-                <div
-                  className={`${yacht.id === 10 || yacht.id === 9 ? 'hidden' : ''} flex gap-2 font-bold text-base lg:text-lg text-white items-center mt-5`}
-                >
-                  {yacht.price}
-                </div>
-              ) : (
-                <div className=""></div>
-              )}
+              {yacht.isSold === 0 ? <div className={`${yacht.id === 10 || yacht.id === 9 ? 'hidden' : ''} flex gap-2 font-bold text-base lg:text-lg text-white items-center mt-5`}>{yacht.price}</div> : <div className=""></div>}
 
               {/* CTA Button */}
               <div className="mt-5">
                 {yacht.isSold === 0 ? (
                   <div className="grid grid-cols-1 s:grid-cols-2 sm:grid-cols-1 lg:grid-cols-2 gap-2">
                     <Link href={whatsappLink} target="_blank">
-                      <button className="w-full yellow-solid-button">
-                        WhatsApp Us
-                      </button>
+                      <button className="w-full yellow-solid-button">WhatsApp Us</button>
                     </Link>
-                    <button
-                      onClick={handlequote}
-                      className="w-full yellow-solid-button"
-                    >
+                    <button onClick={handlequote} className="w-full yellow-solid-button">
                       Get a Quote
                     </button>
                   </div>
                 ) : (
                   <div className="grid grid-cols-1 s:grid-cols-2 sm:grid-cols-1 lg:grid-cols-2 gap-2">
-                    <button className="w-full yellow-solid-button cursor-not-allowed opacity-30">
-                      WhatsApp Us
-                    </button>
-                    <button className="w-full yellow-solid-button cursor-not-allowed opacity-30">
-                      Get a Quote
-                    </button>
+                    <button className="w-full yellow-solid-button cursor-not-allowed opacity-30">WhatsApp Us</button>
+                    <button className="w-full yellow-solid-button cursor-not-allowed opacity-30">Get a Quote</button>
                   </div>
                 )}
               </div>
             </div>
           </div>
         ))}
-        <Modal2
-          isModalOpen={isModalOpen}
-          closeModal={closeModal}
-          idName="offers_id"
-          idValue="51"
-        />
+        <Modal2 isModalOpen={isModalOpen} closeModal={closeModal} idName="offers_id" idValue="51" />
       </div>
     </div>
   );

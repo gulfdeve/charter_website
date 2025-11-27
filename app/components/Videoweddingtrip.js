@@ -20,11 +20,7 @@ export default function Videoweddingtrip() {
     const loadWistiaScripts = async () => {
       try {
         await loadScript('https://fast.wistia.com/player.js');
-        await loadScript(
-          'https://fast.wistia.com/embed/f8hk0oltm1.js',
-          'module',
-          true
-        );
+        await loadScript('https://fast.wistia.com/embed/f8hk0oltm1.js', 'module', true);
         setScriptsLoaded(true);
 
         // Wait for the custom element to be defined
@@ -59,11 +55,7 @@ export default function Videoweddingtrip() {
         `}
       </style>
       <div className="absolute inset-0 z-0" style={{ pointerEvents: 'none' }}>
-        {scriptsLoaded && playerReady ? (
-          <wistia-player media-id="x5zlv6005o" seo="false"></wistia-player>
-        ) : (
-          <p className="text-white text-center">Loading video...</p>
-        )}
+        {scriptsLoaded && playerReady ? <wistia-player media-id="x5zlv6005o" seo="false"></wistia-player> : <p className="text-white text-center">Loading video...</p>}
       </div>
 
       {/* Content Overlay */}

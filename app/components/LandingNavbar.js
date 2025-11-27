@@ -13,45 +13,24 @@ export default function LandingNavbar() {
           {/* Logo */}
           <div className="flex items-center">
             <Link href="/">
-              <Image
-                src="/images/centaurus-charter-logo.webp"
-                alt="Centaurus charter Logo"
-                width={150}
-                height={0}
-                priority={true}
-                className="w-[120px] lg:w-[150px]"
-              />
+              <Image src="/images/centaurus-charter-logo.webp" alt="Centaurus charter Logo" width={150} height={0} priority={true} className="w-[120px] lg:w-[150px]" />
             </Link>
           </div>
 
           {/* Contact Icons */}
           <div className="flex items-center gap-6 lg:gap-6">
             {/* WhatsApp Icon */}
-            <a
-              href="https://wa.link/k3yiet"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center justify-center"
-              aria-label="Contact via WhatsApp"
-            >
+            <a href="https://wa.link/k3yiet" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center" aria-label="Contact via WhatsApp">
               <IoLogoWhatsapp className="w-8 h-8 lg:w-8 lg:h-8 text-black" />
             </a>
 
             {/* Email Icon */}
-            <a
-              href="mailto:info@centauruscharter.com"
-              className="flex items-center justify-center"
-              aria-label="Send Email"
-            >
+            <a href="mailto:info@centauruscharter.com" className="flex items-center justify-center" aria-label="Send Email">
               <MdEmail className="w-8 h-8 lg:w-8 lg:h-8 text-black" />
             </a>
 
             {/* Phone Icon */}
-            <a
-              href="tel:+971544427786"
-              className="flex items-center justify-center"
-              aria-label="Call Us"
-            >
+            <a href="tel:+971544427786" className="flex items-center justify-center" aria-label="Call Us">
               <FaPhoneAlt className="w-8 h-8 lg:w-8 lg:h-8 text-black" />
             </a>
           </div>

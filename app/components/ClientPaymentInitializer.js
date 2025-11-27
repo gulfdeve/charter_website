@@ -2,14 +2,7 @@
 'use client';
 import { useEffect } from 'react';
 
-export default function ClientPaymentInitializer({
-  slug,
-  CENTAURUS_API_KEY,
-  sessionId,
-  sessionVersion,
-  successIndicator,
-  children,
-}) {
+export default function ClientPaymentInitializer({ slug, CENTAURUS_API_KEY, sessionId, sessionVersion, successIndicator, children }) {
   /*useEffect(() => {
 		// build the status URL exactly the same way you do on the server:
 		const statusUrl = new URL(

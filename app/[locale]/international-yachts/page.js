@@ -80,100 +80,51 @@ export default function VesselsPage() {
       {/* Hero */}
       <div className="relative bg-black ">
         <div className="relative w-full h-[500px] opacity-40">
-          <img
-            src="/international-yacht.jpeg"
-            alt="Hero"
-            className="w-full h-full object-cover"
-          />
+          <img src="/international-yacht.jpeg" alt="Hero" className="w-full h-full object-cover" />
         </div>
 
         {/* Header */}
         <div className="absolute top-10 bottom-10 left-0 right-0 text-center my-8">
-          <h1 className="text-xl font-bold mb-4 text-white lg:text-[32px] px-6 md:px-0 sm:text-2xl md:text-3xl 2xl:text-4xl">
-            International Yachts – Global Luxury on the Water
-          </h1>
-          <h2 className="text-sm font-semibold italic mb-4 text-white lg:text-[20px] px-5 md:px-0 sm:text-lg md:text-2xl 2xl:text-2xl">
-            Sail in style with exclusive yachts available for global adventures
-          </h2>
+          <h1 className="text-xl font-bold mb-4 text-white lg:text-[32px] px-6 md:px-0 sm:text-2xl md:text-3xl 2xl:text-4xl">International Yachts – Global Luxury on the Water</h1>
+          <h2 className="text-sm font-semibold italic mb-4 text-white lg:text-[20px] px-5 md:px-0 sm:text-lg md:text-2xl 2xl:text-2xl">Sail in style with exclusive yachts available for global adventures</h2>
         </div>
 
         {/* Search Form */}
         <div className="absolute bottom-0 md:bottom-[8rem] left-0 right-0 mb-8 px-4">
           <section className="max-w-6xl mx-auto ">
-            <form
-              id="searchForm"
-              className="text-sm grid grid-cols-2 md:grid-cols-4 gap-2 items-end p-3 md:p-5 rounded-md bg-primary-blue-light bg-opacity-50"
-            >
+            <form id="searchForm" className="text-sm grid grid-cols-2 md:grid-cols-4 gap-2 items-end p-3 md:p-5 rounded-md bg-primary-blue-light bg-opacity-50">
               {/* Always include these hidden fields for the required parameters */}
               <input type="hidden" name="currency" value="USD" />
               {/* Hidden fields for minLength and maxLength */}
-              <input
-                type="hidden"
-                name="minLength"
-                defaultValue={searchParamsObj.minLength || ''}
-              />
-              <input
-                type="hidden"
-                name="maxLength"
-                defaultValue={searchParamsObj.maxLength || ''}
-              />
+              <input type="hidden" name="minLength" defaultValue={searchParamsObj.minLength || ''} />
+              <input type="hidden" name="maxLength" defaultValue={searchParamsObj.maxLength || ''} />
 
               <div className="w-full md:mb-0 col-span-2 md:col-span-1">
-                <input
-                  name="name"
-                  placeholder="Vessel Name"
-                  defaultValue={searchParamsObj.name || ''}
-                  className="block w-full border border-gray-300 rounded-md py-2 px-3 focus:outline-none"
-                />
+                <input name="name" placeholder="Vessel Name" defaultValue={searchParamsObj.name || ''} className="block w-full border border-gray-300 rounded-md py-2 px-3 focus:outline-none" />
               </div>
 
               <div className="w-full relative">
-                <select
-                  name="region"
-                  defaultValue={searchParamsObj.region || ''}
-                  className="block w-full border border-gray-300 rounded-md py-2 px-3 pr-6 focus:outline-none appearance-none"
-                >
+                <select name="region" defaultValue={searchParamsObj.region || ''} className="block w-full border border-gray-300 rounded-md py-2 px-3 pr-6 focus:outline-none appearance-none">
                   <option value="">Destination</option>
                   <option value="Africa">Africa</option>
                   <option value="Antarctica">Antarctica</option>
                   <option value="Arabian Gulf">Arabian Gulf</option>
-                  <option value="Australasia & South Pacific">
-                    Australasia & South Pacific
-                  </option>
+                  <option value="Australasia & South Pacific">Australasia & South Pacific</option>
                   <option value="Caribbean">Caribbean</option>
                   <option value="East Mediterranean">East Mediterranean</option>
-                  <option value="Indian Ocean & South East Asia">
-                    Indian Ocean & South East Asia
-                  </option>
+                  <option value="Indian Ocean & South East Asia">Indian Ocean & South East Asia</option>
                   <option value="North America">North America</option>
                   <option value="Northern Europe">Northern Europe</option>
-                  <option value="South & Central America">
-                    South & Central America
-                  </option>
+                  <option value="South & Central America">South & Central America</option>
                   <option value="West Mediterranean">West Mediterranean</option>
                 </select>
-                <svg
-                  className="h-5 w-5 text-gray-500 absolute right-3 top-1/2 transform -translate-y-1/2 pointer-events-none"
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M19 9l-7 7-7-7"
-                  />
+                <svg className="h-5 w-5 text-gray-500 absolute right-3 top-1/2 transform -translate-y-1/2 pointer-events-none" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                 </svg>
               </div>
 
               <div className="w-full relative">
-                <select
-                  name="yachtType"
-                  defaultValue={searchParamsObj.yachtType || ''}
-                  className="block w-full border border-gray-300 rounded-md py-2 px-3 pr-6 focus:outline-none appearance-none"
-                >
+                <select name="yachtType" defaultValue={searchParamsObj.yachtType || ''} className="block w-full border border-gray-300 rounded-md py-2 px-3 pr-6 focus:outline-none appearance-none">
                   <option value="">Type of Boat</option>
                   <option value="Gulet">Gulet</option>
                   <option value="Sailing">Sailing</option>
@@ -184,72 +135,31 @@ export default function VesselsPage() {
                   <option value="Expedition">Expedition</option>
                   <option value="Sport fishing">Sport fishing</option>
                 </select>
-                <svg
-                  className="h-5 w-5 text-gray-500 absolute right-3 top-1/2 transform -translate-y-1/2 pointer-events-none"
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M19 9l-7 7-7-7"
-                  />
+                <svg className="h-5 w-5 text-gray-500 absolute right-3 top-1/2 transform -translate-y-1/2 pointer-events-none" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                 </svg>
               </div>
 
               <div className="w-full relative">
-                <select
-                  name="charterType"
-                  defaultValue={searchParamsObj.charterType || ''}
-                  className="block w-full border border-gray-300 rounded-md py-2 px-3 pr-6 focus:outline-none appearance-none"
-                >
+                <select name="charterType" defaultValue={searchParamsObj.charterType || ''} className="block w-full border border-gray-300 rounded-md py-2 px-3 pr-6 focus:outline-none appearance-none">
                   <option value="">Type of Charter</option>
                   <option value="Crewed">Crewed</option>
                   <option value="Bareboat">Bareboat</option>
                 </select>
-                <svg
-                  className="h-5 w-5 text-gray-500 absolute right-3 top-1/2 transform -translate-y-1/2 pointer-events-none"
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M19 9l-7 7-7-7"
-                  />
+                <svg className="h-5 w-5 text-gray-500 absolute right-3 top-1/2 transform -translate-y-1/2 pointer-events-none" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                 </svg>
               </div>
 
               <div className="w-full rounded-md">
-                <MultiDatePicker
-                  name="rentalPeriod"
-                  defaultDates={searchParamsObj.rentalPeriod || []}
-                />
+                <MultiDatePicker name="rentalPeriod" defaultDates={searchParamsObj.rentalPeriod || []} />
               </div>
 
               {/* Length Dropdown replaced with LengthRangeSlider */}
-              <LengthRangeSlider
-                min={0}
-                max={54}
-                step={1}
-                defaultValue={[
-                  Number(searchParamsObj.minLength) || 10,
-                  Number(searchParamsObj.maxLength) || 54,
-                ]}
-              />
+              <LengthRangeSlider min={0} max={54} step={1} defaultValue={[Number(searchParamsObj.minLength) || 10, Number(searchParamsObj.maxLength) || 54]} />
 
               <div className="w-full relative">
-                <select
-                  name="sleeps"
-                  defaultValue={searchParamsObj.sleeps || ''}
-                  className="block w-full border border-gray-300 rounded-md py-2 px-3 pr-6 focus:outline-none appearance-none"
-                >
+                <select name="sleeps" defaultValue={searchParamsObj.sleeps || ''} className="block w-full border border-gray-300 rounded-md py-2 px-3 pr-6 focus:outline-none appearance-none">
                   <option value="">Sleeps</option>
                   {Array.from({ length: 20 }, (_, i) => (
                     <option key={i + 1} value={i + 1}>
@@ -257,19 +167,8 @@ export default function VesselsPage() {
                     </option>
                   ))}
                 </select>
-                <svg
-                  className="h-5 w-5 text-gray-500 absolute right-3 top-1/2 transform -translate-y-1/2 pointer-events-none"
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M19 9l-7 7-7-7"
-                  />
+                <svg className="h-5 w-5 text-gray-500 absolute right-3 top-1/2 transform -translate-y-1/2 pointer-events-none" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                 </svg>
               </div>
 
@@ -286,10 +185,7 @@ export default function VesselsPage() {
             />
           </div> */}
 
-              <button
-                type="submit"
-                className="col-span-2 md:col-span-1 bg-primary-blue-2 text-white font-semibold py-2 px-6 rounded-md uppercase"
-              >
+              <button type="submit" className="col-span-2 md:col-span-1 bg-primary-blue-2 text-white font-semibold py-2 px-6 rounded-md uppercase">
                 SEARCH
               </button>
             </form>
@@ -298,10 +194,7 @@ export default function VesselsPage() {
       </div>
 
       {/* Client-side component to handle API calls */}
-      <ClientSearchResults
-        searchParams={searchParamsObj}
-        hasParams={hasParams}
-      />
+      <ClientSearchResults searchParams={searchParamsObj} hasParams={hasParams} />
     </div>
   );
 }

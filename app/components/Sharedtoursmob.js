@@ -45,44 +45,22 @@ export default function ToursCarousel({ toursData }) {
         {/* Carousel container with a horizontal flex layout */}
         <div className="flex gap-4 container ">
           {toursData.map((tour, index) => (
-            <div
-              key={index}
-              className="flex-[0_0_85%] md:flex-[0_0_50%] lg:flex-[0_0_40%] py-10"
-            >
+            <div key={index} className="flex-[0_0_85%] md:flex-[0_0_50%] lg:flex-[0_0_40%] py-10">
               <div className="bg-white rounded-lg shadow-custom duration-300 p-2 space-y-1 overflow-hidden ">
                 {/* Image Section */}
                 <div className="relative">
-                  <img
-                    src={tour.image}
-                    alt={tour.title}
-                    className="rounded-lg w-full object-cover"
-                  />
-                  {tour.id === 4 ? (
-                    <p className="text-[12px] text-center text-primary-blue-2 py-1 font-bold">
-                      Limited time offer! 15% OFF is valid on booking made
-                      between 18-30 November only
-                    </p>
-                  ) : (
-                    <p className="text-[12px] text-center text-primary-blue-2 py-1 font-bold">
-                      &nbsp;
-                    </p>
-                  )}
+                  <img src={tour.image} alt={tour.title} className="rounded-lg w-full object-cover" />
+                  {tour.id === 4 ? <p className="text-[12px] text-center text-primary-blue-2 py-1 font-bold">Limited time offer! 15% OFF is valid on booking made between 18-30 November only</p> : <p className="text-[12px] text-center text-primary-blue-2 py-1 font-bold">&nbsp;</p>}
                   <div className="absolute top-2 ">
                     {tour.yellowHeadline && (
                       <div className="bg-primary-blue-2 px-3 py-1">
-                        <div className="text-base font-bold uppercase text-white">
-                          {tour.yellowHeadline}
-                        </div>
-                        <div className="text-[11px] font-bold uppercase  text-white">
-                          {tour.smallHeadline}
-                        </div>
+                        <div className="text-base font-bold uppercase text-white">{tour.yellowHeadline}</div>
+                        <div className="text-[11px] font-bold uppercase  text-white">{tour.smallHeadline}</div>
                       </div>
                     )}
                     {tour.blueHeadline && (
                       <div className="bg-primary-yellow-light px-3 py-1">
-                        <p className="text-sm uppercase text-primary-blue-2 font-bold">
-                          {tour.blueHeadline}
-                        </p>
+                        <p className="text-sm uppercase text-primary-blue-2 font-bold">{tour.blueHeadline}</p>
                       </div>
                     )}
 
@@ -101,13 +79,8 @@ export default function ToursCarousel({ toursData }) {
 
                 {/* Title and Details Toggle */}
                 <div className="text-center">
-                  <h3 className="text-primary-blue-2 text-center py-2">
-                    {tour.title}
-                  </h3>
-                  <button
-                    onClick={() => toggleDetails(index)}
-                    className="bg-gray-100 text-gray-400 w-full py-2 rounded font-semibold text-sm hover:bg-gray-200 transition-colors duration-300 mb-2"
-                  >
+                  <h3 className="text-primary-blue-2 text-center py-2">{tour.title}</h3>
+                  <button onClick={() => toggleDetails(index)} className="bg-gray-100 text-gray-400 w-full py-2 rounded font-semibold text-sm hover:bg-gray-200 transition-colors duration-300 mb-2">
                     {showDetails[index] ? 'Hide Details' : 'Show Details'}
                   </button>
                 </div>
@@ -115,15 +88,12 @@ export default function ToursCarousel({ toursData }) {
                 {/* Info Section */}
                 <div className="relative">
                   {/* Gradient overlay applied when details are hidden */}
-                  {!showDetails[index] && (
-                    <div className="absolute bottom-0 left-0 right-0 h-full bg-gradient-to-b from-transparent via-white/0 to-white/90 pointer-events-none z-10"></div>
-                  )}
+                  {!showDetails[index] && <div className="absolute bottom-0 left-0 right-0 h-full bg-gradient-to-b from-transparent via-white/0 to-white/90 pointer-events-none z-10"></div>}
 
                   <div className="space-y-3">
                     <div className="flex flex-row gap-2 items-center mb-4">
                       <p className="text-primary-grey text-sm">
-                        <span className="font-bold">Cruising Time:</span>{' '}
-                        {tour.cruisingTime}
+                        <span className="font-bold">Cruising Time:</span> {tour.cruisingTime}
                       </p>
                     </div>
                     <div className="flex flex-row gap-2 items-center mb-4">
@@ -131,12 +101,7 @@ export default function ToursCarousel({ toursData }) {
                         <span className="font-bold">Adult (12+):</span>{' '}
                         {tour.adultPrice ? (
                           <>
-                            <span className="line-through">
-                              {tour.adultPrice}
-                            </span>{' '}
-                            <span className="text-primary-blue-2 font-bold">
-                              {tour.newAdultPrice}
-                            </span>
+                            <span className="line-through">{tour.adultPrice}</span> <span className="text-primary-blue-2 font-bold">{tour.newAdultPrice}</span>
                           </>
                         ) : (
                           tour.adultPrice
@@ -148,12 +113,7 @@ export default function ToursCarousel({ toursData }) {
                         <span className="font-bold">Child (4-11):</span>{' '}
                         {tour.childPrice ? (
                           <>
-                            <span className="line-through">
-                              {tour.childPrice}
-                            </span>{' '}
-                            <span className="text-primary-blue-2 font-bold">
-                              {tour.newChildPrice}
-                            </span>
+                            <span className="line-through">{tour.childPrice}</span> <span className="text-primary-blue-2 font-bold">{tour.newChildPrice}</span>
                           </>
                         ) : (
                           tour.childPrice
@@ -163,8 +123,7 @@ export default function ToursCarousel({ toursData }) {
 
                     <div className="flex flex-row gap-2.5 items-center">
                       <p className="text-primary-grey text-sm">
-                        <span className="font-bold">Cruising Route:</span>{' '}
-                        {tour.cruisingRoute}
+                        <span className="font-bold">Cruising Route:</span> {tour.cruisingRoute}
                       </p>
                     </div>
 
@@ -180,17 +139,13 @@ export default function ToursCarousel({ toursData }) {
                           <p className="text-primary-grey text-sm">
                             {/* <span className="font-bold">Live BBQ:</span>{" "}
                             {tour.liveBBQ} */}
-                            <span className="font-bold">Inclusions:</span>{' '}
-                            <span
-                              dangerouslySetInnerHTML={{ __html: tour.liveBBQ }}
-                            />
+                            <span className="font-bold">Inclusions:</span> <span dangerouslySetInnerHTML={{ __html: tour.liveBBQ }} />
                           </p>
                         </div>
 
                         <div className="flex flex-row gap-2 items-center">
                           <p className="text-primary-grey text-sm">
-                            <span className="font-bold">Meeting Point:</span>{' '}
-                            {tour.departurePoint}
+                            <span className="font-bold">Meeting Point:</span> {tour.departurePoint}
                           </p>
                         </div>
                       </div>
@@ -199,10 +154,7 @@ export default function ToursCarousel({ toursData }) {
                 </div>
 
                 {/* Book Now Button */}
-                <a
-                  href={tour.fareharborLink}
-                  className="blue-solid-button w-full block text-center"
-                >
+                <a href={tour.fareharborLink} className="blue-solid-button w-full block text-center">
                   Book Now
                 </a>
                 {/* <div

@@ -17,7 +17,7 @@ export async function generateStaticParams() {
   try {
     const data = await fetchData();
     const locales = ['en', 'ar', 'ru', 'zh'];
-    
+
     if (!data?.experiences) {
       return [];
     }
@@ -60,9 +60,7 @@ export async function generateMetadata({ params }) {
 
   return {
     title: experience.translations?.[locale]?.title || 'Yacht Experience',
-    description:
-      experience.translations?.[locale]?.preivew_text ||
-      'Luxury yacht experience in Dubai',
+    description: experience.translations?.[locale]?.preivew_text || 'Luxury yacht experience in Dubai',
   };
 }
 
@@ -95,46 +93,31 @@ const page = async ({ params }) => {
         <PageTitleHeading title={experience.translations?.[locale]?.title} />
         <div className="grid grid-col-1 md:grid-cols-2 gap-7 pb-10">
           {experience.yachts_data.map(yacht => (
-            <div
-              key={yacht.yacht_id}
-              className="flex flex-col p-3 sm:p-5 overflow-hidden rounded-md bg-white custom-shadow"
-            >
+            <div key={yacht.yacht_id} className="flex flex-col p-3 sm:p-5 overflow-hidden rounded-md bg-white custom-shadow">
               {/* Title with Link */}
               <Link href={`/yacht-rentals/${yacht.slug}`}>
-                <h2 className="text-primary-blue text-xl font-bold pb-4 hover:text-primary-blue-2 transition-all duration-300 cursor-pointer">
-                  {yacht.translations?.[locale]?.[0]?.name_of_yacht}
-                </h2>
+                <h2 className="text-primary-blue text-xl font-bold pb-4 hover:text-primary-blue-2 transition-all duration-300 cursor-pointer">{yacht.translations?.[locale]?.[0]?.name_of_yacht}</h2>
               </Link>
               {/* Image with object-cover for proper scaling */}
               <div className="relative">
                 <Link href={`/yacht-rentals/${yacht.slug}`}>
-                  <img
-                    src={`https://www.centauruscharter.net/product/images/${yacht.yacht_image}`}
-                    alt={yacht.translations?.[locale]?.[0]?.name_of_yacht}
-                    className="rounded-lg w-full object-cover"
-                  />
+                  <img src={`https://www.centauruscharter.net/product/images/${yacht.yacht_image}`} alt={yacht.translations?.[locale]?.[0]?.name_of_yacht} className="rounded-lg w-full object-cover" />
                 </Link>
                 <div className="lg:absolute grid grid-cols-2 sm:grid-cols-4 md:grid-cols-2 lg:grid-cols-4 items-center gap-0 bg-primary-blue-light rounded-lg center-absolute -bottom-5 left-0 right-0 lg:mx-5 mt-4 lg:mt-0">
                   {/* Model */}
                   <div className="text-primary-grey p-2 flex flex-col items-center justify-center text-center w-full h-full">
                     <span className="text-sm">Build:</span>
-                    <span className="font-semibold text-sm text-black">
-                      {yacht.translations?.[locale]?.[0]?.model}
-                    </span>
+                    <span className="font-semibold text-sm text-black">{yacht.translations?.[locale]?.[0]?.model}</span>
                   </div>
                   {/* Length */}
                   <div className="text-primary-grey p-2 flex flex-col items-center justify-center text-center w-full h-full">
                     <span className="text-sm">Length:</span>
-                    <span className="font-semibold text-sm text-black">
-                      {yacht.translations?.[locale]?.[0]?.size}
-                    </span>
+                    <span className="font-semibold text-sm text-black">{yacht.translations?.[locale]?.[0]?.size}</span>
                   </div>
                   {/* Guests */}
                   <div className="text-primary-grey p-2 flex flex-col items-center justify-center text-center w-full h-full">
                     <span className="text-sm">Guests:</span>
-                    <span className="font-semibold text-sm text-black">
-                      {yacht.translations?.[locale]?.[0]?.guests}
-                    </span>
+                    <span className="font-semibold text-sm text-black">{yacht.translations?.[locale]?.[0]?.guests}</span>
                   </div>
                   {/* Good For */}
                   <div className="text-primary-grey w-full p-2 flex flex-col items-center justify-center text-center h-full">
@@ -156,33 +139,19 @@ const page = async ({ params }) => {
                       <p className="text-primary-grey font-semibold s:text-sm text-xs xl:text-lg">
                         {yacht.hours} Hours Rate
                         <br />
-                        <span className="font-bold text-lg lg:text-xl text-primary-red">
-                          AED{' '}
-                          {(Number(yacht.yacht_price) || 0).toLocaleString()}
-                        </span>
-                        <span className="text-primary-blue-2 s:text-sm  text-xs">
-                          {' '}
-                          +VAT
-                        </span>
+                        <span className="font-bold text-lg lg:text-xl text-primary-red">AED {(Number(yacht.yacht_price) || 0).toLocaleString()}</span>
+                        <span className="text-primary-blue-2 s:text-sm  text-xs"> +VAT</span>
                       </p>
                     </div>
                   </div>
 
                   {/* Buttons Section */}
                   <div className="flex flex-col xs:flex-row md:flex-col lg:flex-row items-center gap-2 ml-auto text-right w-full sm:w-auto">
-                    <a
-                      href={experience.whatsapp_url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="w-full flex items-center justify-center py-2 px-4 text-base md:text-sm xl:text-lg font-bold tracking-wider uppercase text-white bg-primary-blue-2 hover:scale-105 rounded-md shadow transition duration-150 ease-in-out transform"
-                    >
+                    <a href={experience.whatsapp_url} target="_blank" rel="noopener noreferrer" className="w-full flex items-center justify-center py-2 px-4 text-base md:text-sm xl:text-lg font-bold tracking-wider uppercase text-white bg-primary-blue-2 hover:scale-105 rounded-md shadow transition duration-150 ease-in-out transform">
                       <FaWhatsapp className="sm:text-md  mr-1" />
                       WHATSAPP
                     </a>
-                    <a
-                      href={`https://fareharbor.com/embeds/book/centauruscharter/items/${yacht.fareharbor_id}/?full-items=yes&flow=645487`}
-                      className="w-full justify-center py-2 px-4 text-base md:text-sm xl:text-lg font-bold uppercase text-white bg-primary-blue-2 hover:scale-105 rounded-md shadow transition duration-150 ease-in-out transform flex flex-grow items-center"
-                    >
+                    <a href={`https://fareharbor.com/embeds/book/centauruscharter/items/${yacht.fareharbor_id}/?full-items=yes&flow=645487`} className="w-full justify-center py-2 px-4 text-base md:text-sm xl:text-lg font-bold uppercase text-white bg-primary-blue-2 hover:scale-105 rounded-md shadow transition duration-150 ease-in-out transform flex flex-grow items-center">
                       BOOK NOW
                     </a>
                   </div>

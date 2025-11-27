@@ -26,10 +26,7 @@ export default function NotFoundClient() {
           <Link href="/">
             <img src="/404 Page_wt.webp" alt="404 Not Found" className="" />
           </Link>
-          <Link
-            href="/"
-            className="block mx-auto w-full my-10 flex flex-row items-center justify-center yellow-solid-button"
-          >
+          <Link href="/" className="block mx-auto w-full my-10 flex flex-row items-center justify-center yellow-solid-button">
             SAIL BACK
           </Link>
         </div>

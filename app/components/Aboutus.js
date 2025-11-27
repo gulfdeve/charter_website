@@ -25,26 +25,16 @@ const Aboutus = () => {
 
       <div className="z-10 container mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
         <div className="flex flex-col order-2 md:order-1">
-          <h2 className="uppercase text-3xl py-5 xl:pb-10 xl:pt-2 text-primary-blue-2 font-bold text-center md:text-left">
-            {t('home.about-us')}
-          </h2>
-          <p className="text-center pb-7 md:text-left leading-8">
-            {t('home.about-us-description')}
-          </p>
+          <h2 className="uppercase text-3xl py-5 xl:pb-10 xl:pt-2 text-primary-blue-2 font-bold text-center md:text-left">{t('home.about-us')}</h2>
+          <p className="text-center pb-7 md:text-left leading-8">{t('home.about-us-description')}</p>
           <div className="mx-auto md:mx-0">
             <Link href="/aboutus">
-              <button className="blue-solid-button">
-                {t('button.read-more')}
-              </button>
+              <button className="blue-solid-button">{t('button.read-more')}</button>
             </Link>
           </div>
         </div>
         <div className="order-1 md:order-2">
-          <img
-            alt="about us"
-            src="images/poseidon.webp"
-            className="rounded-lg w-full"
-          />
+          <img alt="about us" src="images/poseidon.webp" className="rounded-lg w-full" />
         </div>
       </div>
     </div>

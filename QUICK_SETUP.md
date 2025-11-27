@@ -7,6 +7,7 @@ REVALIDATION_SECRET=your-super-secret-key-here-change-this
 ```
 
 **Generate a secure secret:**
+
 ```bash
 openssl rand -base64 32
 ```
@@ -45,4 +46,3 @@ Your website will update on the next page visit!
 ---
 
 **See [REVALIDATION_GUIDE.md](./REVALIDATION_GUIDE.md) for complete documentation.**
-
