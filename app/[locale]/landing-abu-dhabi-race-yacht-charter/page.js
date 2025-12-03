@@ -255,6 +255,7 @@ const yachtData = [
 
 const Page = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isGifOpen, setIsGifOpen] = useState(false);
   const [currentYachtIndex, setCurrentYachtIndex] = useState(0);
   const yachtCarouselRef = useRef(null);
   const [yachtEmblaApi, setYachtEmblaApi] = useState(null);
@@ -279,6 +280,15 @@ const Page = () => {
         embla.destroy();
       };
     }
+  }, []);
+
+  // Open GIF popup after 5 seconds
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsGifOpen(true);
+    }, 5000);
+
+    return () => clearTimeout(timer);
   }, []);
 
   const scrollYachtPrev = () => yachtEmblaApi?.scrollPrev();
@@ -800,6 +810,45 @@ const Page = () => {
       </section>
 
       {/* F1 Booking Modal */}
+      {/* Timed GIF Popup */}
+      {isGifOpen && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
+          <div
+            className="absolute inset-0 bg-black/70"
+            onClick={() => setIsGifOpen(false)}
+            aria-hidden="true"
+          />
+
+          <div className="relative w-full max-w-3xl mx-auto rounded-lg overflow-hidden shadow-lg">
+            <button
+              aria-label="Close video"
+              className="absolute top-3 right-3 z-20 bg-white text-black w-10 h-10 flex items-center justify-center rounded-full shadow hover:bg-gray-100"
+              onClick={() => setIsGifOpen(false)}
+            >
+              <span className="text-lg leading-none">✕</span>
+            </button>
+
+            <a
+              href="https://wa.link/k3yiet"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Open WhatsApp link"
+              onClick={() => setIsGifOpen(false)}
+              className="block"
+            >
+              <video
+                src="/F1_GIF.mp4"
+                autoPlay
+                muted
+                loop
+                playsInline
+                className="w-full h-auto block"
+              />
+            </a>
+          </div>
+        </div>
+      )}
+
       <F1BookingModal isOpen={isModalOpen} onClose={closeModal} idName="offers_id" idValue="49" />
     </>
   );
