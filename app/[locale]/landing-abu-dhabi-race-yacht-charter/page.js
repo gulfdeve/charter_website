@@ -397,13 +397,7 @@ const Page = () => {
         }}
       />
       <noscript>
-        <img
-          height="1"
-          width="1"
-          style={{ display: 'none' }}
-          src="https://www.facebook.com/tr?id=1154720100187780&ev=PageView&noscript=1"
-          alt=""
-        />
+        <img height="1" width="1" style={{ display: 'none' }} src="https://www.facebook.com/tr?id=1154720100187780&ev=PageView&noscript=1" alt="" />
       </noscript>
       {/* End Facebook Pixel Code */}
 
@@ -424,7 +418,7 @@ const Page = () => {
 
       <section className="bg-black py-12">
         <div className="container mx-auto w-full">
-          <h3 className="text-2xl md:text-3xl font-bold text-center text-white mb-8">TICKET RATES</h3>
+          <h3 className="text-2xl md:text-3xl font-bold text-center text-red-700 mb-8">24 HOURS FLASH SALE TICKET RATES</h3>
           <div className="hidden md:block">
             <table className="bg-white w-full text-center table-auto rounded-lg overflow-hidden">
               <thead className="text-red-700">
@@ -458,13 +452,23 @@ const Page = () => {
               </thead>
               <tbody>
                 <tr>
-                  <td className="border border-gray-300 px-4 py-3">13,500 AED</td>
-                  <td className="border border-gray-300 px-4 py-3">12,500 AED</td>
-                  <td className="border border-gray-300 px-4 py-3">11,500 AED</td>
-                  <td className="border border-gray-300 px-4 py-3">6,000 AED</td>
-                  <td className="border border-gray-300 px-4 py-3">7,200 AED</td>
+                  <td className="border border-gray-300 px-4 py-3">
+                    <strike>13,500 AED</strike> <strong className="font-bold">10,800 AED</strong>
+                  </td>
+                  <td className="border border-gray-300 px-4 py-3">
+                    <strike>12,500 AED</strike> <strong className="font-bold">10,000 AED</strong>
+                  </td>
+                  <td className="border border-gray-300 px-4 py-3">
+                    <strike>11,500 AED</strike> <strong className="font-bold">9,200 AED</strong>
+                  </td>
+                  <td className="border border-gray-300 px-4 py-3">
+                    <strike>6,000 AED</strike> <strong className="font-bold">4,800 AED</strong>
+                  </td>
+                  <td className="border border-gray-300 px-4 py-3">
+                    <strike>7,200 AED</strike> <strong className="font-bold">5,760 AED</strong>
+                  </td>
                 </tr>
-                <tr>
+                {/* <tr>
                   <td className="border border-gray-300">
                     <a className="font-bold rounded-lg w-full h-full block bg-red-700 hover:bg-red-800 text-white px-4 py-3 flex items-center justify-center" href="https://fareharbor.com/embeds/book/centauruscharter/items/507113/availability/1881752582/book/?full-items=yes&back=https://www.centauruscharter.com/abu-dhabi-race-yacht-charter&flow=1279218&g4=yes">
                       BOOK NOW
@@ -490,7 +494,7 @@ const Page = () => {
                       BOOK NOW
                     </a>
                   </td>
-                </tr>
+                </tr> */}
               </tbody>
             </table>
           </div>
@@ -505,7 +509,9 @@ const Page = () => {
                 <span className="text-xs text-gray-500">THURSDAY - SUNDAY</span>
               </div>
               <div className="px-4 pb-4 text-center">
-                <div className="text-lg font-bold mb-3">13,500 AED</div>
+                <div className="text-lg mb-3">
+                  <strike>13,500 AED</strike> <strong className="font-bold">10,800 AED</strong>
+                </div>
                 <a className="w-full block bg-red-700 hover:bg-red-800 text-white font-bold rounded-lg px-4 py-3 flex items-center justify-center" href="https://fareharbor.com/embeds/book/centauruscharter/items/507113/availability/1881752582/book/?full-items=yes&back=https://www.centauruscharter.com/abu-dhabi-race-yacht-charter&flow=1279218&g4=yes">
                   BOOK NOW
                 </a>
@@ -520,7 +526,9 @@ const Page = () => {
                 <span className="text-xs text-gray-500">FRIDAY - SUNDAY</span>
               </div>
               <div className="px-4 pb-4 text-center">
-                <div className="text-lg font-bold mb-3">12,500 AED</div>
+                <div className="text-lg mb-3">
+                  <strike>12,500 AED</strike> <strong className="font-bold">10,000 AED</strong>
+                </div>
                 <a className="w-full block bg-red-700 hover:bg-red-800 text-white font-bold rounded-lg px-4 py-3 flex items-center justify-center" href="https://fareharbor.com/embeds/book/centauruscharter/items/507113/availability/1881752582/book/?full-items=yes&back=https://www.centauruscharter.com/abu-dhabi-race-yacht-charter&flow=1279218&g4=yes">
                   BOOK NOW
                 </a>
@@ -535,7 +543,9 @@ const Page = () => {
                 <span className="text-xs text-gray-500">SATURDAY - SUNDAY</span>
               </div>
               <div className="px-4 pb-4 text-center">
-                <div className="text-lg font-bold mb-3">11,500 AED</div>
+                <div className="text-lg mb-3">
+                  <strike>11,500 AED</strike> <strong className="font-bold">9,200 AED</strong>
+                </div>
                 <a className="w-full block bg-red-700 hover:bg-red-800 text-white font-bold rounded-lg px-4 py-3 flex items-center justify-center" href="https://fareharbor.com/embeds/book/centauruscharter/items/507113/availability/1881756231/book/?full-items=yes&back=https://www.centauruscharter.com/abu-dhabi-race-yacht-charter&flow=1279218&g4=yes">
                   BOOK NOW
                 </a>
@@ -550,7 +560,9 @@ const Page = () => {
                 <span className="text-xs text-gray-500">SATURDAY</span>
               </div>
               <div className="px-4 pb-4 text-center">
-                <div className="text-lg font-bold mb-3">6,000 AED</div>
+                <div className="text-lg mb-3">
+                  <strike>6,000 AED</strike> <strong className="font-bold">4,800 AED</strong>
+                </div>
                 <a className="w-full block bg-red-700 hover:bg-red-800 text-white font-bold rounded-lg px-4 py-3 flex items-center justify-center" href="https://fareharbor.com/embeds/book/centauruscharter/items/507113/availability/1881756236/book/?full-items=yes&back=https://www.centauruscharter.com/abu-dhabi-race-yacht-charter&flow=1279218&g4=yes">
                   BOOK NOW
                 </a>
@@ -565,13 +577,21 @@ const Page = () => {
                 <span className="text-xs text-gray-500">SUNDAY</span>
               </div>
               <div className="px-4 pb-4 text-center">
-                <div className="text-lg font-bold mb-3">7,200 AED</div>
+                <div className="text-lg mb-3">
+                  <strike>7,200 AED</strike> <strong className="font-bold">5,760 AED</strong>
+                </div>
                 <a className="w-full block bg-red-700 hover:bg-red-800 text-white font-bold rounded-lg px-4 py-3 flex items-center justify-center" href="https://fareharbor.com/embeds/book/centauruscharter/items/507113/availability/1881756431/book/?full-items=yes&back=https://www.centauruscharter.com/abu-dhabi-race-yacht-charter&flow=1279218&g4=yes">
                   BOOK NOW
                 </a>
               </div>
             </div>
           </div>
+        </div>
+      </section>
+
+      <section className="bg-black py-2">
+        <div className="container mx-auto px-4 flex flex-col items-center text-center">
+          <a href="https://wa.link/k3yiet" target='_blank' class="red-solid-button">GET YOUR DISCOUNTED TICKETS HERE</a>
         </div>
       </section>
 
@@ -813,37 +833,15 @@ const Page = () => {
       {/* Timed GIF Popup */}
       {isGifOpen && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
-          <div
-            className="absolute inset-0 bg-black/70"
-            onClick={() => setIsGifOpen(false)}
-            aria-hidden="true"
-          />
+          <div className="absolute inset-0 bg-black/70" onClick={() => setIsGifOpen(false)} aria-hidden="true" />
 
           <div className="relative w-full max-w-3xl mx-auto rounded-lg overflow-hidden shadow-lg">
-            <button
-              aria-label="Close video"
-              className="absolute top-3 right-3 z-20 bg-white text-black w-10 h-10 flex items-center justify-center rounded-full shadow hover:bg-gray-100"
-              onClick={() => setIsGifOpen(false)}
-            >
+            <button aria-label="Close video" className="absolute top-3 right-3 z-20 bg-white text-black w-10 h-10 flex items-center justify-center rounded-full shadow hover:bg-gray-100" onClick={() => setIsGifOpen(false)}>
               <span className="text-lg leading-none">✕</span>
             </button>
 
-            <a
-              href="https://wa.link/k3yiet"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Open WhatsApp link"
-              onClick={() => setIsGifOpen(false)}
-              className="block"
-            >
-              <video
-                src="/F1_GIF.mp4"
-                autoPlay
-                muted
-                loop
-                playsInline
-                className="w-full h-auto block"
-              />
+            <a href="https://wa.link/k3yiet" target="_blank" rel="noopener noreferrer" aria-label="Open WhatsApp link" onClick={() => setIsGifOpen(false)} className="block">
+              <video src="/F1_GIF.mp4" autoPlay muted loop playsInline className="w-full h-auto block" />
             </a>
           </div>
         </div>
