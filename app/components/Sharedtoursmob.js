@@ -50,7 +50,7 @@ export default function ToursCarousel({ toursData }) {
                 {/* Image Section */}
                 <div className="relative">
                   <img src={tour.image} alt={tour.title} className="rounded-lg w-full object-cover" />
-                  {tour.id === 4 ? <p className="text-[12px] text-center text-primary-blue-2 py-1 font-bold">Limited time offer! 15% OFF is valid on booking made between 18-30 November only</p> : <p className="text-[12px] text-center text-primary-blue-2 py-1 font-bold">&nbsp;</p>}
+                  {tour.id === 4 && false ? <p className="text-[12px] text-center text-primary-blue-2 py-1 font-bold">Limited time offer! 15% OFF is valid on booking made between 18-30 November only</p> : <p className="text-[12px] text-center text-primary-blue-2 py-1 font-bold">&nbsp;</p>}
                   <div className="absolute top-2 ">
                     {tour.yellowHeadline && (
                       <div className="bg-primary-blue-2 px-3 py-1">
