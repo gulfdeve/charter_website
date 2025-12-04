@@ -10,7 +10,7 @@ export async function GET() {
   try {
     const url = `${process.env.API_DOMAIN}/api/api_new/basic`;
     console.log('✅ Fetching from external API:', url);
-    console.log('⏰ Request time:', new Date().toISOString());
+    // console.log('⏰ Request time:', new Date().toISOString());
 
     // ISR: Cache the FETCH (not the route) for 24 hours with tags
     // In development, always fetch fresh data for easier debugging
@@ -25,7 +25,7 @@ export async function GET() {
             },
           };
 
-    console.log('🔧 Fetch options:', JSON.stringify(fetchOptions, null, 2));
+    // console.log('🔧 Fetch options:', JSON.stringify(fetchOptions, null, 2));
 
     // Fetch from external API
     const response = await fetch(url, fetchOptions);
@@ -41,9 +41,9 @@ export async function GET() {
     console.log('✅ Data fetched from external API at:', new Date().toISOString());
 
     // Log a sample to verify we're getting fresh data
-    if (data?.offers?.[0]) {
-      console.log('📦 Sample offer validity:', data.offers[0].validity);
-    }
+    // if (data?.offers?.[0]) {
+    //   console.log('📦 Sample offer validity:', data.offers[0].validity);
+    // }
 
     // IMPORTANT: Don't cache the API route response itself
     // The fetch inside is cached with tags, but the route must be dynamic
