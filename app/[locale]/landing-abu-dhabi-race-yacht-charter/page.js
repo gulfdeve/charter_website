@@ -10,7 +10,7 @@ import InclusionsCarousel from '@/app/components/InclusionsCarousel';
 import YachtBookingButtons from '@/app/components/YachtBookingButtons';
 import F1BookingModal from '@/app/components/F1BookingModal';
 import EmblaCarousel from 'embla-carousel';
-const whatsappLink = 'https://wa.link/8nj51w';
+const whatsappLink = 'https://bit.ly/3KE93Hh';
 
 const yachtData = [
   {
@@ -405,7 +405,7 @@ const Page = () => {
       {/* <div>
         <Videof1 />
       </div> */}
-      <VideoLocal filename="/F1 2023 720p.mp4" section="f1-landing" ctaLink={`https://wa.link/k3yiet`} />
+      <VideoLocal filename="/F1 2023 720p.mp4" section="f1-landing" ctaLink={`https://bit.ly/3KE93Hh`} />
 
       <section className="bg-black py-12">
         <section className="container mx-auto text-center bg-black text-white">
@@ -591,7 +591,7 @@ const Page = () => {
 
       <section className="bg-black py-2">
         <div className="container mx-auto px-4 flex flex-col items-center text-center">
-          <a href="https://wa.link/k3yiet" target='_blank' class="red-solid-button">GET YOUR DISCOUNTED TICKETS HERE</a>
+          <a href="https://bit.ly/3KE93Hh" target='_blank' class="red-solid-button">GET YOUR DISCOUNTED TICKETS HERE</a>
         </div>
       </section>
 
@@ -840,7 +840,7 @@ const Page = () => {
               <span className="text-lg leading-none">✕</span>
             </button>
 
-            <a href="https://wa.link/k3yiet" target="_blank" rel="noopener noreferrer" aria-label="Open WhatsApp link" onClick={() => setIsGifOpen(false)} className="block">
+            <a href="https://bit.ly/3KE93Hh" target="_blank" rel="noopener noreferrer" aria-label="Open WhatsApp link" onClick={() => setIsGifOpen(false)} className="block">
               <video src="/F1_GIF.mp4" autoPlay muted loop playsInline className="w-full h-auto block" />
             </a>
           </div>
