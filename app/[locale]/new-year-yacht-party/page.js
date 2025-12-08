@@ -15,7 +15,7 @@ export async function generateStaticParams() {
   return [{ locale: 'en' }, { locale: 'ar' }, { locale: 'ru' }, { locale: 'zh' }];
 }
 
-const whatsappLink = 'https://wa.link/v9pn97';
+const whatsappLink = 'https://wa.link/zh1s2p';
 
 const slidesone = [
   { src: '/LIVE DJ & DANCE FLOOR.webp', text: 'LIVE DJ & DANCE FLOOR' },
