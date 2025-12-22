@@ -218,7 +218,7 @@ export default function FirstFooter() {
             </li>
             <li className="flex flex-col md:items-start items-center text-center md:text-left">
               <p className="font-semibold py-3">{t('footer.english-spanish-portuguese')}</p>
-              <p className="">Jhonathan</p>
+              <p className="">Yasser</p>
 
               <a className="mb-2 inline-block" href="tel:+971567277387">
                 +971 56 727 7387

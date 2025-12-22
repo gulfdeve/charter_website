@@ -99,7 +99,7 @@ export default function ToursCarousel({ toursData }) {
                     <div className="flex flex-row gap-2 items-center mb-4">
                       <p className="text-primary-grey text-sm">
                         <span className="font-bold">Adult (12+):</span>{' '}
-                        {tour.adultPrice ? (
+                        {tour.newAdultPrice ? (
                           <>
                             <span className="line-through">{tour.adultPrice}</span> <span className="text-primary-blue-2 font-bold">{tour.newAdultPrice}</span>
                           </>
@@ -111,7 +111,7 @@ export default function ToursCarousel({ toursData }) {
                     <div className="flex flex-row gap-2 items-center mb-3">
                       <p className="text-primary-grey text-sm">
                         <span className="font-bold">Child (4-11):</span>{' '}
-                        {tour.childPrice ? (
+                        {tour.newChildPrice ? (
                           <>
                             <span className="line-through">{tour.childPrice}</span> <span className="text-primary-blue-2 font-bold">{tour.newChildPrice}</span>
                           </>
