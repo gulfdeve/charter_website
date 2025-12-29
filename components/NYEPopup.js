@@ -20,7 +20,7 @@ const NYEPopup = ({ link = '/'} ) => {
           <span className="text-lg leading-none">✕</span>
         </button>
 
-        <a href='https://bit.ly/3XZU4dN' target="_blank" rel="noopener noreferrer" onClick={() => setIsOpen(false)} className="block">
+        <a href='https://bit.ly/3XZU7Gv' target="_blank" rel="noopener noreferrer" onClick={() => setIsOpen(false)} className="block">
           <img src="/NYE-promotion.png" alt="New Year Promotion" className="w-full h-auto block" />
         </a>
       </div>
