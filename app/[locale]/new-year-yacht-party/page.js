@@ -1,7 +1,7 @@
 import Image from 'next/image';
 // import Videonewyear from "@/app/components/Videonewyear";
 import Nycard from '@/app/components/Nycard';
-import NYEPopup from '@/components/NYEPopup';
+// import NYEPopup from '@/components/NYEPopup';
 import React from 'react';
 import Link from 'next/link';
 import VideoLocal from '@/app/components/VideoLocal';
@@ -105,7 +105,7 @@ const Page = () => {
             </div>
           </div>
         </div>
-        <NYEPopup link={whatsappLink} />
+        {/* <NYEPopup link={whatsappLink} /> */}
         <Nycard whatsappLink={whatsappLink} />
       </div>
       <div className="bg-black w-full h-full py-10">
