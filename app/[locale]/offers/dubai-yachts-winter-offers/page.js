@@ -228,7 +228,7 @@ const Page = () => {
           <div className="flex flex-col item-center justify-center py-10 px-5">
             <p className="text-black text-lg font-bold text-left">TERMS & CONDITIONS</p>
             <ul className="container mx-auto list-disc text-left text-primary-blue text-sm pl-4 pt-5">
-              <li>The UAE Residents offer is valid until 31 October 2025.</li>
+              <li>The UAE Residents offer is valid until 31 January 2026.</li>
               <li>This offer cannot be combined with other promotions.</li>
               <li>⁠A minimum booking duration of 4 hours is required.</li>
               <li>⁠The offer is exclusive to UAE residents (proof of residency may be required).</li>
