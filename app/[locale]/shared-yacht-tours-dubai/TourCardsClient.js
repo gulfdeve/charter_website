@@ -18,12 +18,16 @@ export default function TourCardsClient({ toursData }) {
           {/* Image Wrapper */}
           <div className="relative">
             <img src={tour.image} alt={tour.title} className="rounded-lg w-full" />
-            {tour.id === 4 && false ? <p className="text-[12px] text-center text-primary-blue-2 py-1 font-bold">Limited time offer! 15% OFF is valid on booking made between 18-30 November only</p> : <p className="text-[8px] text-center text-primary-blue-2 py-1 font-bold">&nbsp;</p>}
+            {tour.textUnderImage && <p className="text-[12px] text-center text-primary-blue-2 py-1 font-bold">{tour.textUnderImage}</p>}
             {/* Overlay Container */}
             <div className="absolute top-2">
               {tour.yellowHeadline && (
                 <div className="bg-primary-blue-2 px-3 py-1">
-                  <div className="text-base font-bold uppercase  text-white">{tour.yellowHeadline}</div>
+                  <div className="text-base font-bold uppercase  text-white">{tour.yellowHeadline}
+                    {
+                      tour.smallYellowHeadline && <span className='block text-[10px]'>{tour.smallYellowHeadline}</span>
+                    }
+                  </div>
                   <div className="text-[11px] font-bold uppercase  text-white">{tour.smallHeadline}</div>
                 </div>
               )}
