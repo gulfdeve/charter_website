@@ -220,14 +220,14 @@ export default function Navbar() {
                   </Link>
                 </li> */}
                 {/* New Year Party */}
-                <li>
+                {/* <li>
                   <Link
                     href="/new-year-yacht-party"
                     className={`h-full flex items-center tracking-[1px] uppercase underline decoration-2 underline-offset-8 transition-all duration-200 font-primary ${pathname === '/new-year-yacht-party' || pathname.startsWith('/new-year-yacht-party/') ? 'text-primary-blue decoration-primary-yellow font-semibold' : 'text-primary-blue decoration-transparent hover:decoration-primary-yellow'}`}
                   >
                     {t('navbar.new-year')}
                   </Link>
-                </li>
+                </li> */}
 
                 {/* Contact */}
                 <li>
