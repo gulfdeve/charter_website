@@ -18,7 +18,7 @@ export default function TourCardsClient({ toursData }) {
           {/* Image Wrapper */}
           <div className="relative">
             <img src={tour.image} alt={tour.title} className="rounded-lg w-full" />
-            {tour.textUnderImage && <p className="text-[12px] text-center text-primary-blue-2 py-1 font-bold">{tour.textUnderImage}</p>}
+            {tour.textUnderImage ? <p className="min-h-[44px] text-[12px] text-center text-primary-blue-2 py-1 font-bold">{tour.textUnderImage}</p> : <p className="min-h-[44px] text-[8px] text-center text-primary-blue-2 py-1 font-bold">&nbsp;</p>}
             {/* Overlay Container */}
             <div className="absolute top-2">
               {tour.yellowHeadline && (

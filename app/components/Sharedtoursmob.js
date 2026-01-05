@@ -50,7 +50,7 @@ export default function ToursCarousel({ toursData }) {
                 {/* Image Section */}
                 <div className="relative">
                   <img src={tour.image} alt={tour.title} className="rounded-lg w-full object-cover" />
-                  {tour.textUnderImage && <p className="text-[12px] text-center text-primary-blue-2 py-1 font-bold">{tour.textUnderImage}</p>}
+                  {tour.textUnderImage ? <p className="text-[12px] text-center text-primary-blue-2 py-1 font-bold">{tour.textUnderImage}</p> : <p className="text-[12px] text-center text-primary-blue-2 py-1 font-bold">&nbsp;</p>}
                   <div className="absolute top-2 ">
                     {tour.yellowHeadline && (
                       <div className="bg-primary-blue-2 px-3 py-1">
