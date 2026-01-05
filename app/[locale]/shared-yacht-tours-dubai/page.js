@@ -22,7 +22,9 @@ const toursData = [
     title: 'MORNING TOURS',
     cruisingTime: '11:00 AM - 1:00 PM',
     adultPrice: 'AED 219',
+    newAdultPrice: 'AED 199',
     childPrice: 'AED 159',
+    newChildPrice: 'AED 139',
     liveBBQ: 'Sandwiches, Assorted Croissants, Strawberry & Honey Jam, Muffins, & Fresh Fruits. Welcome Mimosa, Water, Tea, Coffee, Juices & Soft Drinks.<br/>*Vegetarian food available on request*',
     cruisingRoute: 'Dubai Marina, JBR and Burj Al Arab',
     departurePoint: 'Outside Dubai Harbour Office (Taxi drop-off area)',
@@ -176,6 +178,7 @@ const Page = () => {
             <li className="">Cruising times are subject to adjustments based on sunset timings.</li>
             <li className="">Rates cannot be combined with other offers.</li>
             <li className="">Guests under 18 years old must be accompanied by an adult.</li>
+            <li>Offer is valid for all bookings until 28 FEB 2026</li>
             {/* <li className="">The offer is valid until September 15, 2025</li> */}
           </ul>
         </div>
