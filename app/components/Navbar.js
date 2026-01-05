@@ -89,7 +89,7 @@ export default function Navbar() {
 
             {/* Main Menu Items */}
             <div className="flex h-full items-stretch text-xs xxl:text-base">
-              <ul className="flex items-stretch h-full space-x-6 lg:space-x-8 text-xs xxl:text-base font-semibold">
+              <ul className="flex items-stretch h-full space-x-6 lg:space-x-12 text-sm xxl:text-base font-semibold">
                 {/* Private Yachts Dropdown */}
                 <li className="relative group h-full" ref={privateYachtsRef} onMouseEnter={() => setPrivateYachtsOpen(true)} onMouseLeave={() => setPrivateYachtsOpen(false)}>
                   <span className={`h-full flex items-center justify-between cursor-pointer gap-1 transition-all duration-200 font-primary ${pathname === '/yacht-rentals' || pathname.startsWith('/yacht-rentals/') ? 'text-primary-blue border-primary-yellow font-semibold' : 'text-primary-blue border-transparent'}`}>
