@@ -55,7 +55,7 @@ const toursData = [
     id: 3,
     image: '/sunset.webp',
     title: 'SUNSET TOURS',
-    cruisingTime: '04:00 PM - 06:00 PM',
+    cruisingTime: '05:00 PM - 07:00 PM',
     adultPrice: 'AED 289',
     childPrice: 'AED 159',
     liveBBQ: 'Club Sandwich, Chicken & Beef Sliders, Vegetable Spring Rolls, Chicken Samosa & Fruit Platter. Water, Soft Drinks, Beer, Red Wine, White Wine & Sparkling Wine<br>*Vegetarian food available on request',
@@ -65,7 +65,7 @@ const toursData = [
     validity: '*Valid from July 1-September 15, 2025',
     yellowHeadline: '',
     smallYellowHeadline: '',
-    textUnderImage: 'NEW TIMING APPLIES TO ALL BOOKINGS FROM 12 JANUARY ONWARRS',
+    // textUnderImage: 'NEW TIMING APPLIES TO ALL BOOKINGS FROM 12 JANUARY ONWARRS',
     fareharborLink: 'https://fareharbor.com/embeds/book/centauruscharter/items/488868/?full-items=yes&flow=no',
   },
   {
