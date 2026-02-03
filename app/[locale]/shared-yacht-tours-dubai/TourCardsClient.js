@@ -23,10 +23,9 @@ export default function TourCardsClient({ toursData }) {
             <div className="absolute top-2">
               {tour.yellowHeadline && (
                 <div className="bg-primary-blue-2 px-3 py-1">
-                  <div className="text-base font-bold uppercase  text-white">{tour.yellowHeadline}
-                    {
-                      tour.smallYellowHeadline && <span className='block text-[10px]'>{tour.smallYellowHeadline}</span>
-                    }
+                  <div className="text-base font-bold uppercase  text-white">
+                    {tour.yellowHeadline}
+                    {tour.smallYellowHeadline && <span className="block text-[10px]">{tour.smallYellowHeadline}</span>}
                   </div>
                   <div className="text-[11px] font-bold uppercase  text-white">{tour.smallHeadline}</div>
                 </div>

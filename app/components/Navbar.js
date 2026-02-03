@@ -208,15 +208,8 @@ export default function Navbar() {
                 </li> */}
                 {/* Events */}
                 <li>
-                  <Link
-                    href="/events"
-                    className={`h-full flex items-center tracking-[1px] uppercase underline decoration-2 underline-offset-8 transition-all duration-200 font-primary ${
-                      pathname === "/events" || pathname.startsWith("/events/")
-                        ? "text-primary-blue decoration-primary-yellow font-semibold"
-                        : "text-primary-blue decoration-transparent hover:decoration-primary-yellow"
-                    }`}
-                  >
-                    {t("navbar.events")}
+                  <Link href="/events" className={`h-full flex items-center tracking-[1px] uppercase underline decoration-2 underline-offset-8 transition-all duration-200 font-primary ${pathname === '/events' || pathname.startsWith('/events/') ? 'text-primary-blue decoration-primary-yellow font-semibold' : 'text-primary-blue decoration-transparent hover:decoration-primary-yellow'}`}>
+                    {t('navbar.events')}
                   </Link>
                 </li>
                 {/* New Year Party */}

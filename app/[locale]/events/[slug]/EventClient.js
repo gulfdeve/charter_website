@@ -28,11 +28,11 @@ export default function EventClient({ event, locale }) {
               <a className="blue-lined-button" href="https://fareharbor.com/embeds/book/centauruscharter/items/469615/?full-items=yes&flow=645487">
                 BOOK NOW
               </a>
-            ) : (event.id == 50) ? (
+            ) : event.id == 50 ? (
               <a className="blue-lined-button" href="https://fareharbor.com/embeds/book/centauruscharter/items/695073/?full-items=yes&flow=1283212">
                 BOOK NOW
               </a>
-            ) : (event.id == 47) ? (
+            ) : event.id == 47 ? (
               <a className="blue-lined-button" href="https://fareharbor.com/embeds/book/centauruscharter/items/526178/?full-items=yes&flow=645487">
                 BOOK NOW
               </a>

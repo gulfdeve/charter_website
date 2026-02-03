@@ -591,7 +591,9 @@ const Page = () => {
 
       <section className="bg-black py-2">
         <div className="container mx-auto px-4 flex flex-col items-center text-center">
-          <a href="https://bit.ly/3KE93Hh" target='_blank' class="red-solid-button">GET YOUR DISCOUNTED TICKETS HERE</a>
+          <a href="https://bit.ly/3KE93Hh" target="_blank" class="red-solid-button">
+            GET YOUR DISCOUNTED TICKETS HERE
+          </a>
         </div>
       </section>
 
