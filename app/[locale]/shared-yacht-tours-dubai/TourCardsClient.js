@@ -21,15 +21,14 @@ export default function TourCardsClient({ toursData }) {
             {tour.textUnderImage ? <p className="min-h-[44px] text-[12px] text-center text-primary-blue-2 py-1 font-bold">{tour.textUnderImage}</p> : <p className="min-h-[44px] text-[8px] text-center text-primary-blue-2 py-1 font-bold">&nbsp;</p>}
             {/* Overlay Container */}
             <div className="absolute top-2">
-              {tour.yellowHeadline && (
-                <div className="bg-primary-blue-2 px-3 py-1">
-                  <div className="text-base font-bold uppercase  text-white">
-                    {tour.yellowHeadline}
-                    {tour.smallYellowHeadline && <span className="block text-[10px]">{tour.smallYellowHeadline}</span>}
-                  </div>
-                  <div className="text-[11px] font-bold uppercase  text-white">{tour.smallHeadline}</div>
+              <div className={`px-3 py-1 ${tour.yellowHeadline ? 'bg-primary-blue-2' : 'bg-transparent'}`}>
+                <div className="text-base font-bold uppercase  text-white">
+                  {tour.yellowHeadline || '\u00A0'}
+                  {tour.smallYellowHeadline && <span className="block text-[10px]">{tour.smallYellowHeadline}</span>}
                 </div>
-              )}
+                {tour.smallHeadline && (<div className="text-[11px] font-bold uppercase  text-white">{tour.smallHeadline || '\u00A0'}</div>)}
+                {/* <div className="text-[11px] font-bold uppercase  text-white">{tour.smallHeadline || '\u00A0'}</div> */}
+              </div>
               {tour.blueHeadline && (
                 <div className="bg-primary-yellow-light px-3 py-1">
                   <p className="text-xs lg:text-xs uppercase text-primary-blue-2 font-bold">{tour.blueHeadline}</p>

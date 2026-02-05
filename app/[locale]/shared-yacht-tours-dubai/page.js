@@ -80,7 +80,7 @@ const toursData = [
     liveBBQ: 'Club Sandwich, Chicken & Beef Sliders, Vegetable Spring Rolls, Chicken Samosa & Fruit Platter. Water, Soft Drinks, Beer, Red Wine, White Wine & Sparkling Wine<br>*Vegetarian food available on request',
     cruisingRoute: 'Dubai Marina, JBR and Burj Al Arab',
     departurePoint: 'Outside Dubai Harbour Office (Taxi drop-off area)',
-    blueHeadline: 'AVAILABLE ALL DAYS OF THE WEEK',
+    blueHeadline: 'AVAILABLE FROM MONDAY-FRIDAY',
     validity: '*Valid from July 1-September 15, 2025',
     yellowHeadline: '',
     smallYellowHeadline: '',
