@@ -24,8 +24,12 @@ export default function EventClient({ event, locale }) {
               <FaWhatsapp size={20} />
               WHATSAPP US
             </a>
-            {event.id === 44 ? (
+            {event.id == 44 ? (
               <a className="blue-lined-button" href="https://fareharbor.com/embeds/book/centauruscharter/items/469615/?full-items=yes&flow=645487">
+                BOOK NOW
+              </a>
+            ): event.id == 51 ? (
+              <a className="blue-lined-button" href="https://fareharbor.com/embeds/book/centauruscharter/items/705633/?full-items=yes&flow=1283212">
                 BOOK NOW
               </a>
             ) : event.id == 50 ? (
