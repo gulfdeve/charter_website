@@ -1,6 +1,8 @@
+// Use dub1 (Dublin) - widely supported. Avoid dxb1 (Dubai) as it can cause "Invalid region" on some Vercel plans.
+// For UAE latency, bom1 (Mumbai) is a supported alternative.
 export const config = {
   runtime: 'edge',
-  regions: ['dub1'], // Dubai - optimal for UAE users
+  regions: ['bom1'],
 };
 
 // Make this route dynamic (not cached) - only the fetch inside should be cached
