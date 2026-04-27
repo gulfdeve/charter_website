@@ -99,9 +99,10 @@ export default function MobileNavbar({ currentLanguage, mobileDropdownOpen, setM
                   {t('navbar.buy-a-yacht')}
                 </Link>
               </li>
-              <li onClick={() => setMobileDropdownOpen(false)} className="font-bold hover:text-primary-blue-2">
+              {/* Shared Tours - hidden */}
+              {/* <li onClick={() => setMobileDropdownOpen(false)} className="font-bold hover:text-primary-blue-2">
                 <Link href="/shared-yacht-tours-dubai">{t('navbar.shared-tours')}</Link>
-              </li>
+              </li> */}
               <li
                 className="font-bold cursor-pointer hover:text-primary-blue-2"
                 onClick={() => {

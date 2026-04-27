@@ -124,8 +124,8 @@ export default function Navbar() {
                   </Link>
                 </li>
 
-                {/* Shared Tours */}
-                <li>
+                {/* Shared Tours - hidden */}
+                {/* <li>
                   <Link
                     href="/shared-yacht-tours-dubai"
                     className={`h-full flex items-center tracking-[1px] uppercase underline decoration-2 underline-offset-8 transition-all duration-200 font-primary ${
@@ -134,7 +134,7 @@ export default function Navbar() {
                   >
                     {t('navbar.shared-tours')}
                   </Link>
-                </li>
+                </li> */}
 
                 {/* Experiences Dropdown */}
                 <li className="relative group h-full" ref={experiencesRef} onMouseEnter={() => setExperiencesOpen(true)} onMouseLeave={() => setExperiencesOpen(false)}>
