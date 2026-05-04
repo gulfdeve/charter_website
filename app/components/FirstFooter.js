@@ -230,23 +230,8 @@ export default function FirstFooter() {
               <a className="mb-2 inline-block" href="tel:+971524901269">
                 +971 52 490 1269
               </a>
-              {/* <p className="">May</p>
-              <a className="mb-2 inline-block" href="tel:+971565017057">
-                +971 56 501 7057
-              </a> */}
-              {/* <p className="">Vicky</p>
-            <a
-              className="mb-2 inline-block"
-              href="tel:+971544783156"
-            >
-              +971 54 478 3156
-            </a> */}
-            </li>
-            <li className="flex flex-col md:items-start items-center text-center md:text-left">
-              <p className="font-semibold pb-3">English / German / Arabic</p>
-              <p className="">Wael</p>
-              <a className="mb-2 inline-block" href="tel:+971565017057">
-                +971 56 501 7057
+              <a className="mb-2 inline-block" href="tel:+971567277387">
+                +971 56 727 7387
               </a>
               {/* <p className="">May</p>
               <a className="mb-2 inline-block" href="tel:+971565017057">
@@ -260,6 +245,13 @@ export default function FirstFooter() {
               +971 54 478 3156
             </a> */}
             </li>
+            {/* <li className="flex flex-col md:items-start items-center text-center md:text-left">
+              <p className="font-semibold pb-3">English / German / Arabic</p>
+              <p className="">Wael</p>
+              <a className="mb-2 inline-block" href="tel:+971565017057">
+                +971 56 501 7057
+              </a>
+            </li> */}
           </ul>
           <ul className="text-text-primary-white">
             <ul>
@@ -273,21 +265,20 @@ export default function FirstFooter() {
               +971 54 494 8573
             </a>
           </li> */}
-              <li className="flex flex-col md:items-start items-center text-center md:text-left">
+              {/* <li className="flex flex-col md:items-start items-center text-center md:text-left">
                 <p className="font-semibold pb-3">{t('footer.english-arabic')}</p>
                 <p className="">Hesham</p>
                 <a className="mb-2 inline-block" href="tel:+971565017078">
                   +971 56 501 7078
                 </a>
-              </li>
-              <li className="flex flex-col md:items-start items-center text-center md:text-left">
+              </li> */}
+              {/* <li className="flex flex-col md:items-start items-center text-center md:text-left">
                 <p className="font-semibold py-3">{t('footer.english-spanish-portuguese')}</p>
                 <p className="">Yasser</p>
-
                 <a className="mb-2 inline-block" href="tel:+971567277387">
                   +971 56 727 7387
                 </a>
-              </li>
+              </li> */}
             </ul>
             {/* <li className="flex flex-col md:items-start items-center text-center md:text-left">
             <p className="font-semibold py-3">English / Hindi</p>
