@@ -387,7 +387,7 @@ const page = () => {
         <p className="text-left md:text-center italic font-bold text-primary-blue pb-5">Premium drinks are available for purchase on board</p>
         <h3 className="text-black text-base text-center font-bold pb-5">DISCOUNTED RATES ARE VALID FOR BOOKINGS FROM 6AM-2PM (MORNING TRIPS) & 8 PM ONWARDS (NIGHT TRIPS)</h3>
         <p className=" text-left md:text-center italic text-primary-grey py-5">
-          Escape the ordinary and embark on a private yacht adventure with our limited-time 40% discount for UAE residents. To avail this exclusive offer, simply book a minimum 2-hours yacht tour and let us take care of the rest. Enjoy unlimited drinks and snacks during your private yacht tour. Watersports are also available on request.
+          Escape the ordinary and embark on a private yacht adventure with our limited-time 40% discount for UAE residents. To avail this exclusive offer, simply book a minimum 2-hours yacht tour and let us take care of the rest. Enjoy unlimited drinks on your private yacht tour, available for bookings of 4 hours and above. Watersports are also available on request.
         </p>
       </div>
       <div className="container mx-auto">
@@ -492,14 +492,14 @@ const page = () => {
         <p className="text-left md:text-center italic font-bold text-primary-blue pb-5">Premium drinks are available for purchase on board</p>
         <h3 className="text-black text-base text-center font-bold pb-2">DISCOUNTED RATES: VALID FOR BOOKINGS FROM 4 PM TO 8 PM (PRIMETIME).</h3>
         <p className="text-left md:text-center italic text-primary-grey py-5">
-          Escape the ordinary and set sail on a private yacht adventure with our limited-time 30% discount for UAE residents. To avail this exclusive offer, simply book a minimum 2-hours yacht tour and let us take care of the rest. Enjoy unlimited drinks and snacks during your private yacht tour. Watersports are also available on request.
+          Escape the ordinary and set sail on a private yacht adventure with our limited-time 30% discount for UAE residents. To avail this exclusive offer, simply book a minimum 2-hours yacht tour and let us take care of the rest. Enjoy unlimited drinks on your private yacht tour, available for bookings of 4 hours and above. Watersports are also available on request.
         </p>
       </div>
       <div className="container mx-auto">
         <div className=" flex flex-col item-center justify-center py-2 px-5">
           <h5 className=" text-black text-lg  text-left">TERMS & CONDITIONS</h5>
           <ul className="container mx-auto list-disc text-left text-primary-blue text-sm pl-4 pt-5">
-            <li className="mb-1">The summer offer is valid from June 1st to September 15th, 2025</li>
+            <li className="mb-1">The summer offer is valid from 15 May to 15 September 2026</li>
             <li className="mb-1">This offer cannot be combined with other promotions.</li>
             <li className="mb-1">⁠A minimum booking duration of 2 hours is required.</li>
             <li className="mb-1">⁠The offer is exclusive to UAE residents (proof of residency may be required).</li>
