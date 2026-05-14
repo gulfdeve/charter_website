@@ -180,7 +180,7 @@ export default function Navbar() {
                 </li> */}
 
                 {/* SUMMER Offers */}
-                <li className="hidden">
+                <li>
                   <Link
                     href="/resident-offer"
                     className={`h-full flex items-center tracking-[1px] uppercase underline decoration-2 underline-offset-8 transition-all duration-200 font-primary ${pathname === '/resident-offer' || pathname.startsWith('/resident-offer/') ? 'text-primary-blue decoration-primary-yellow font-semibold' : 'text-primary-blue decoration-transparent hover:decoration-primary-yellow'}`}
@@ -192,7 +192,7 @@ export default function Navbar() {
                 <li>
                   <Link
                     href="/offers/dubai-yachts-winter-offers"
-                    className={`h-full flex items-center tracking-[1px] uppercase underline decoration-2 underline-offset-8 transition-all duration-200 font-primary ${pathname === '/resident-offer' || pathname.startsWith('/resident-offer/') ? 'text-primary-blue decoration-primary-yellow font-semibold' : 'text-primary-blue decoration-transparent hover:decoration-primary-yellow'}`}
+                    className={`h-full flex items-center tracking-[1px] uppercase underline decoration-2 underline-offset-8 transition-all duration-200 font-primary ${pathname === '/offers/dubai-yachts-winter-offers' || pathname.startsWith('/offers/dubai-yachts-winter-offers/') ? 'text-primary-blue decoration-primary-yellow font-semibold' : 'text-primary-blue decoration-transparent hover:decoration-primary-yellow'}`}
                   >
                     {t('navbar.winter-offer')}
                   </Link>

@@ -116,7 +116,7 @@ export default function MobileNavbar({ currentLanguage, mobileDropdownOpen, setM
               {/* <li onClick={() => setMobileDropdownOpen(false)} className="font-bold hover:text-primary-blue-2">
                 <Link href="/offers">{t("navbar.offers")}</Link>
               </li> */}
-              <li onClick={() => setMobileDropdownOpen(false)} className="hidden font-bold hover:text-primary-blue-2">
+              <li onClick={() => setMobileDropdownOpen(false)} className="font-bold hover:text-primary-blue-2">
                 <Link href="/resident-offer">{t('navbar.summer-offers')}</Link>
               </li>
               <li onClick={() => setMobileDropdownOpen(false)} className="font-bold hover:text-primary-blue-2">

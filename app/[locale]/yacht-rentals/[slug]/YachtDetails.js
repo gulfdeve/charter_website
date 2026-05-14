@@ -16,8 +16,8 @@ export default function YachtDetails({ yachtDetails, product, locale, whatsappUr
       mapUrl: 'https://maps.app.goo.gl/QSj2E2dSANthgjSx9',
     },
     '58ft-etosha': {
-      berth: 'U-27 Berth, Dubai Marina Walk, Near Spinneys',
-      address: 'Dubai Marina, United Arab Emirates',
+      berth: 'Berth C02-Deira Island Marina',
+      address: 'Dubai, United Arab Emirates',
       mapUrl: 'https://maps.app.goo.gl/QSj2E2dSANthgjSx9',
     },
     '36ft-thunder': {
@@ -26,13 +26,13 @@ export default function YachtDetails({ yachtDetails, product, locale, whatsappUr
       mapUrl: 'https://maps.app.goo.gl/QSj2E2dSANthgjSx9',
     },
     '61ft-silvercreek': {
-      berth: 'B-B09 Berth, D Marin, Dubai Harbour',
-      address: 'Dubai Harbour, United Arab Emirates',
+      berth: 'Berth B11-Deira Island Marina',
+      address: 'Dubai, United Arab Emirates',
       mapUrl: 'https://maps.app.goo.gl/7XosKc57ijvNTVeY9',
     },
     '56ft-lagoona': {
-      berth: 'BB07 Berth, D Marin, Dubai Harbour',
-      address: 'United Arab Emirates',
+      berth: 'Berth C07-Deira Island Marina',
+      address: 'Dubai, United Arab Emirates',
       mapUrl: 'https://maps.app.goo.gl/7XosKc57ijvNTVeY9',
     },
     '40ft-yacht-Riverside': {
