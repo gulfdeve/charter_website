@@ -72,6 +72,11 @@ export default function FirstFooter() {
             </Link>
           </li>
           <li className="mb-2">
+            <Link href="/offers/dubai-yachts-winter-offers" onClick={scrollToTop} className="text-text-primary-white capitalize">
+              {t('navbar.winter-offer')}
+            </Link>
+          </li>
+          <li className="mb-2">
             <Link href="/events" onClick={scrollToTop} className="text-text-primary-white capitalize">
               {t('navbar.events')}
             </Link>

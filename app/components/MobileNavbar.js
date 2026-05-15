@@ -119,9 +119,9 @@ export default function MobileNavbar({ currentLanguage, mobileDropdownOpen, setM
               <li onClick={() => setMobileDropdownOpen(false)} className="font-bold hover:text-primary-blue-2">
                 <Link href="/resident-offer">{t('navbar.summer-offers')}</Link>
               </li>
-              <li onClick={() => setMobileDropdownOpen(false)} className="font-bold hover:text-primary-blue-2">
+              {/* <li onClick={() => setMobileDropdownOpen(false)} className="font-bold hover:text-primary-blue-2">
                 <Link href="/offers/dubai-yachts-winter-offers">{t('navbar.winter-offer')}</Link>
-              </li>
+              </li> */}
               {/* <li onClick={() => setMobileDropdownOpen(false)} className="font-bold hover:text-primary-blue-2">
                 <Link href="/abu-dhabi-race-yacht-charter">{t('navbar.formula-1')}</Link>
               </li> */}
