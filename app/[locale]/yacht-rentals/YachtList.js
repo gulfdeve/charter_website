@@ -7,7 +7,10 @@ import { FaArrowLeft, FaArrowRight, FaYoutube } from 'react-icons/fa';
 import BookNowButton from '@/app/components/BookNowButton';
 import { BsStars } from 'react-icons/bs';
 import { IoIosSunny } from 'react-icons/io';
+import { FiTool } from 'react-icons/fi';
 import { useTranslations } from 'next-intl';
+
+const UNDER_MAINTENANCE_SLUGS = ['56ft-lagoona', '58ft-etosha', '61ft-silvercreek'];
 
 const summeroffer = [
   {
@@ -128,18 +131,27 @@ const YachtCard = ({ yacht, t }) => {
           </>
         )}
 
-        {/* Category Badges */}
-        {yacht.category.includes('bestSellers') && (
-          <div className="absolute flex items-center gap-2 top-4 left-0 gradient-custom-2 text-primary-yellow-light text-sm py-0.5 px-2 rounded-r-lg">
-            <BsStars />
-            <p>{t('offers.best-seller')}</p>
+        {/* Status / Category Badges */}
+        {UNDER_MAINTENANCE_SLUGS.includes(yacht.slug) ? (
+          <div className="absolute z-20 flex items-center gap-2 top-4 left-0 bg-amber-500 text-white text-sm font-semibold py-0.5 px-2 rounded-r-lg">
+            <FiTool />
+            <p>Under Maintenance</p>
           </div>
-        )}
-        {yacht.category.includes('premium') && (
-          <div className="absolute flex items-center gap-2 top-4 left-0 gradient-custom-2 text-primary-yellow-light text-sm py-0.5 px-2 rounded-r-lg">
-            <BsStars />
-            <p>{t('offers.premium-yacht')}</p>
-          </div>
+        ) : (
+          <>
+            {yacht.category.includes('bestSellers') && (
+              <div className="absolute flex items-center gap-2 top-4 left-0 gradient-custom-2 text-primary-yellow-light text-sm py-0.5 px-2 rounded-r-lg">
+                <BsStars />
+                <p>{t('offers.best-seller')}</p>
+              </div>
+            )}
+            {yacht.category.includes('premium') && (
+              <div className="absolute flex items-center gap-2 top-4 left-0 gradient-custom-2 text-primary-yellow-light text-sm py-0.5 px-2 rounded-r-lg">
+                <BsStars />
+                <p>{t('offers.premium-yacht')}</p>
+              </div>
+            )}
+          </>
         )}
         {/* Summer Offer Tag */}
         {/* {yacht.id !== 20 && (

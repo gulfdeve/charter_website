@@ -7,7 +7,10 @@ import { useLocale } from 'next-intl';
 import { FaYoutube } from 'react-icons/fa';
 import { BsStars } from 'react-icons/bs';
 import { IoIosSunny } from 'react-icons/io';
+import { FiTool } from 'react-icons/fi';
 import { useTranslations } from 'next-intl';
+
+const UNDER_MAINTENANCE_SLUGS = ['56ft-lagoona', '58ft-etosha', '61ft-silvercreek'];
 
 export default function YachtmobileCarousal() {
   const t = useTranslations();
@@ -144,17 +147,26 @@ export default function YachtmobileCarousal() {
                     <IoIosSunny/>
                     <p>{t('offers.summer-offer-up-to-40')}</p>
                   </a>)} */}
-                    {['56ft-lagoona', '61ft-silvercreek'].includes(product.slug) && (
-                      <div className="absolute flex items-center gap-2 top-6 left-0 gradient-custom-2 text-primary-yellow-light text-xs s:text-md py-0.5 px-2 rounded-r-lg">
-                        <BsStars />
-                        <p>{t('offers.best-seller')}</p>
+                    {UNDER_MAINTENANCE_SLUGS.includes(product.slug) ? (
+                      <div className="absolute z-20 flex items-center gap-2 top-6 left-0 bg-amber-500 text-white text-xs s:text-md font-semibold py-0.5 px-2 rounded-r-lg">
+                        <FiTool />
+                        <p>Under Maintenance</p>
                       </div>
-                    )}
-                    {product.per_hour_price > 4000 && (
-                      <div className="absolute flex items-center gap-2 top-6 left-0 gradient-custom-2 text-primary-yellow-light text-xs s:text-md  py-0.5 px-2 rounded-r-lg">
-                        <BsStars />
-                        <p>{t('offers.premium-yacht')}</p>
-                      </div>
+                    ) : (
+                      <>
+                        {['56ft-lagoona', '61ft-silvercreek'].includes(product.slug) && (
+                          <div className="absolute flex items-center gap-2 top-6 left-0 gradient-custom-2 text-primary-yellow-light text-xs s:text-md py-0.5 px-2 rounded-r-lg">
+                            <BsStars />
+                            <p>{t('offers.best-seller')}</p>
+                          </div>
+                        )}
+                        {product.per_hour_price > 4000 && (
+                          <div className="absolute flex items-center gap-2 top-6 left-0 gradient-custom-2 text-primary-yellow-light text-xs s:text-md  py-0.5 px-2 rounded-r-lg">
+                            <BsStars />
+                            <p>{t('offers.premium-yacht')}</p>
+                          </div>
+                        )}
+                      </>
                     )}
 
                     {/* Model / Length / Guests */}
