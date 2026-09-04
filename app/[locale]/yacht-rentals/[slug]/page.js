@@ -136,7 +136,7 @@ export default async function YachtPage({ params: paramsPromise }) {
     { label: 'Location', value: product.translations?.[locale]?.location },
     {
       label: 'Inclusions',
-      value: 'Drinks (Bubbly drinks, Soft drinks, Coffee & Water) <br> <p className="text-gray-500 text-xs pt-2">Minimum booking duration applies. Terms and conditions may vary based on yacht and package selected.</p>',
+      value: 'Drinks (Soft drinks, Coffee & Water) <br> <p className="text-gray-500 text-xs pt-2">Minimum booking duration applies. Terms and conditions may vary based on yacht and package selected.</p>',
     },
   ];
 
