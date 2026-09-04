@@ -232,19 +232,12 @@ export default function Home() {
                       <div className="flex flex-row justify-between items-start z-10">
                         <div>
                           <div className="text-sm font-semibold mt-3 mb-2">
-                            Inclusion: <span className="text-xs text-primary-grey font-normal">(min. booking of 3 hrs)</span>
-                          </div>
-                          <div>
-                            <ol className="text-xs">
-                              <li>Hops & Grapes</li>
-                            </ol>
-                          </div>
-                          <div className="text-sm font-semibold mt-3 mb-2">
                             Extras: <span className="text-xs text-primary-grey font-normal">(additional charges apply)</span>
                           </div>
                           <div>
                             <ol className="text-xs">
-                              <li> Transfer</li>
+                              <li>Bubbly Drinks</li>
+                              <li>Transfer</li>
                               <li>Canapés & Snacks</li>
                               <li>DJ</li>
                             </ol>
