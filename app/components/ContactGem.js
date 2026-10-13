@@ -20,7 +20,7 @@ const ContactGem = () => {
   const [successMessage, setSuccessMessage] = useState('');
 
   const validateForm = () => {
-    let errs = {};
+    const errs = {};
     if (!fullName) errs.fullName = 'Name is required';
     if (!email) errs.email = 'Email is required';
     if (!phoneNumber.trim()) {
@@ -56,7 +56,7 @@ const ContactGem = () => {
     try {
       const queryParams = new URLSearchParams({
         name: fullName,
-        email: email,
+        email,
         phone: phoneNumber,
         comments: message,
       });

@@ -247,7 +247,7 @@ export default function Navbar() {
               {/* Language Dropdown */}
               <div className="relative group" ref={languageDropdownRef} onMouseEnter={() => setLanguageDropdownOpen(true)} onMouseLeave={() => setLanguageDropdownOpen(false)}>
                 <div className="p-2 cursor-pointer flex items-center gap-1">
-                  <img src={currentLanguage?.flag} alt={locale} className="w-5 h-5" />
+                  <Image src={currentLanguage?.flag} alt={locale} className="w-5 h-5" width={800} height={600} />
                   <span className="text-xs font-medium">{locale.toUpperCase()}</span>
                 </div>
                 {isLanguageDropdownOpen && (
@@ -261,7 +261,7 @@ export default function Navbar() {
                         }}
                         className="flex items-center gap-2 p-2 cursor-pointer hover:bg-gray-100"
                       >
-                        <img src={lang.flag} alt={lang.name} className="w-4 h-4" />
+                        <Image src={lang.flag} alt={lang.name} className="w-4 h-4" width={800} height={600} />
                         {lang.name.toUpperCase()} - {lang.code.toUpperCase()}
                       </li>
                     ))}

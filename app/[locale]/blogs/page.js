@@ -24,7 +24,7 @@ export default function BlogPage() {
     <>
       <div className="bg-white w-full h-full nav-space">
         <div className="hidden">
-          <img alt="contact header banner" src="/Contactheader.webp" className="w-full" />
+          <Image alt="contact header banner" src="/Contactheader.webp" className="w-full" width={800} height={600} />
         </div>
       </div>
 

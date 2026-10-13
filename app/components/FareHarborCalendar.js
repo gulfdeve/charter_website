@@ -6,19 +6,18 @@ function FareHarborCalendar() {
   const calendarRef = useRef(null);
 
   useEffect(() => {
-    if (!calendarRef.current) return;
+    const calendarEl = calendarRef.current;
+    if (!calendarEl) return;
 
     const script = document.createElement('script');
     script.src = 'https://fareharbor.com/embeds/script/calendar/centauruscharter/?fallback=simple&full-items=yes&flow=1354497';
     script.async = true;
 
-    // Append to the calendar div
-    calendarRef.current.appendChild(script);
+    calendarEl.appendChild(script);
 
     return () => {
-      // Cleanup
-      if (calendarRef.current && calendarRef.current.contains(script)) {
-        calendarRef.current.removeChild(script);
+      if (calendarEl.contains(script)) {
+        calendarEl.removeChild(script);
       }
     };
   }, []);

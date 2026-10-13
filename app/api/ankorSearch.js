@@ -29,7 +29,7 @@ export default async function handler(req, res) {
     const header = {
       alg: 'RS256',
       typ: 'JWT',
-      kid: kid,
+      kid,
     };
 
     // Generate the JWT token

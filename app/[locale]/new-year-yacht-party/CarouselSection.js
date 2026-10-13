@@ -2,6 +2,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { IoIosArrowBack, IoIosArrowForward } from 'react-icons/io';
 import EmblaCarousel from 'embla-carousel';
+import Image from 'next/image';
 
 const CarouselSection = ({ slides, showNavOnLargeScreens = false }) => {
   const emblaRef = useRef(null);
@@ -35,7 +36,7 @@ const CarouselSection = ({ slides, showNavOnLargeScreens = false }) => {
                             "
           >
             <div className="flex flex-col rounded-xl overflow-hidden">
-              <img src={item.src} className="w-full" alt={item.text} />
+              <Image src={item.src} className="w-full" alt={item.text} width={800} height={600} />
               <p className="font-bold text-sm bg-primary-blue text-white text-center p-7 h-20 flex items-center justify-center">{item.text}</p>
             </div>
           </div>

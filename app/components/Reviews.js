@@ -5,6 +5,7 @@ import { IoIosArrowBack, IoIosArrowForward } from 'react-icons/io';
 import { FcGoogle } from 'react-icons/fc';
 import { FaStar } from 'react-icons/fa';
 import { useLocale, useTranslations } from 'next-intl';
+import Image from 'next/image';
 
 const Reviews = () => {
   const t = useTranslations();
@@ -99,7 +100,7 @@ const Reviews = () => {
               <div key={slide.id} className="flex-none basis-full md:basis-1/2 lg:basis-1/3 p-2 px-3">
                 <div className="bg-white h-[290px] flex flex-col p-5 rounded-lg">
                   <div className="flex items-center gap-4 mb-2">
-                    <img src="/images/profile.svg" alt="Profile" className="w-14 rounded-full" />
+                    <Image src="/images/profile.svg" alt="Profile" className="w-14 rounded-full" width={800} height={600} />
                     <div>
                       <p className="font-bold">{slide.name}</p>
                       <p className="text-xs text-gray-600">{slide.date}</p>

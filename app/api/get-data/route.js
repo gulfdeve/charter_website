@@ -56,7 +56,7 @@ export async function GET() {
 
     return new Response(JSON.stringify(data), {
       status: 200,
-      headers: headers,
+      headers,
     });
   } catch (error) {
     return new Response(JSON.stringify({ error: error.message }), {

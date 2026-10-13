@@ -5,6 +5,7 @@ import { Link } from '@/app/i18n/routing';
 import { useData } from '@/app/context/DataContext';
 import { useLocale } from 'next-intl';
 import { IoIosPricetag } from 'react-icons/io'; // <-- Import your icon
+import Image from 'next/image';
 
 export default function WatersportCarousal({ packages, language }) {
   const emblaRef = useRef(null);
@@ -43,7 +44,7 @@ export default function WatersportCarousal({ packages, language }) {
               <div className="flex flex-col justify-start lg:justify-between rounded-md bg-white h-full overflow-hidden border border-gray-400 md:border-none xl:p-10 shadow-none">
                 {/* Image */}
                 <Link href={`/watersports/${package_a.slug}`}>
-                  <img src={`https://www.centauruscharter.net/product/images/${package_a.image}`} alt={package_a.translations[language].title} className="rounded-tl-md rounded-tr-md w-full object-cover" />
+                  <Image src={`https://www.centauruscharter.net/product/images/${package_a.image}`} alt={package_a.translations[language].title} className="rounded-tl-md rounded-tr-md w-full object-cover" width={800} height={600} />
                 </Link>
 
                 {/* Card Content */}

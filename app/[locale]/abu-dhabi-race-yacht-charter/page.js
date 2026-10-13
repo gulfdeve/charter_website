@@ -350,7 +350,7 @@ const Page = () => {
       {/* Heading Section */}
       <section className="flex flex-col items-center py-20 bg-black">
         <div className="container mx-auto">
-          <img src="/images/f1-grand-prix-abu-dhabi-2025.webp" alt="F1 2025" className="" />
+          <Image src="/images/f1-grand-prix-abu-dhabi-2025.webp" alt="F1 2025" className="" width={800} height={600} />
         </div>
         <h2 className="text-3xl font-bold text-center text-red-700 pt-5">FORMULA 1 ABU DHABI GP 2025</h2>
         <p className="font-medium text-center text-white my-3 tracking-[0.70rem]">LUXURY YACHT CHARTER PACKAGES</p>
@@ -360,7 +360,7 @@ const Page = () => {
           <div className="flex flex-col lg:flex-row items-center justify-center rounded-lg overflow-hidden lg:mx-20">
             {/* Left: Image */}
             <div className="rounded rounded-l-xl">
-              <img src="/images/trackside.webp" alt="F1 Trackside" className="xl:w-[40rem] sm:w-[170rem] lg:w-[160rem] md:h-[543px] xl:h-[570px] lg:h-[504px]" />
+              <Image src="/images/trackside.webp" alt="F1 Trackside" className="xl:w-[40rem] sm:w-[170rem] lg:w-[160rem] md:h-[543px] xl:h-[570px] lg:h-[504px]" width={800} height={600} />
             </div>
 
             {/* Right: Text & Content */}
@@ -634,28 +634,28 @@ const Page = () => {
             <div className="grid grid-cols-1 md:grid-cols-4 gap-4 lg:gap-0">
               <div>
                 <div className="flex flex-col items-center justify-center text-center gap-y-4 lg:px-10">
-                  <img alt="" className="w-16" src="/images/four-day-yacht-rental.png" />
+                  <Image alt="" className="w-16" src="/images/four-day-yacht-rental.png" width={800} height={600} />
                   <h3 className="text-gray-300 text-base lg:text-lg text-center">4 Days Yacht Rental</h3>
                   <p className="text-gray-300 text-center text-md sm:text-sm xl:text-md pb-10">Our all-inclusive package offers 4 days of unparalleled yacht rental, granting you the ultimate vantage point to witness the adrenaline-fueled action of the Formula 1 race.</p>
                 </div>
               </div>
               <div>
                 <div className="flex flex-col items-center justify-center text-center gap-y-4 lg:px-10">
-                  <img alt="" className="w-16" src="/images/marina-view.png" />
+                  <Image alt="" className="w-16" src="/images/marina-view.png" width={800} height={600} />
                   <h3 className="text-gray-300 text-base lg:text-lg text-center">Overnight Stay & Marina Views</h3>
-                  <p className="text-gray-300 text-center text-md sm:text-sm xl:text-md pb-10">During your overnight stay on board, you'll have the unique opportunity to relax and live the high life. Unwind in luxurious cabins and spacious lounges, experiencing the utmost comfort and tranquility at Yas Marina.</p>
+                  <p className="text-gray-300 text-center text-md sm:text-sm xl:text-md pb-10">During your overnight stay on board, you&apos;ll have the unique opportunity to relax and live the high life. Unwind in luxurious cabins and spacious lounges, experiencing the utmost comfort and tranquility at Yas Marina.</p>
                 </div>
               </div>
               <div>
                 <div className="flex flex-col items-center justify-center text-center gap-y-4 lg:px-10">
-                  <img alt="" className="w-16" src="/images/food-and-drinks.png" />
+                  <Image alt="" className="w-16" src="/images/food-and-drinks.png" width={800} height={600} />
                   <h3 className="text-gray-300 text-base lg:text-lg text-center">Canapes & Drinks</h3>
                   <p className="text-gray-300 text-center text-md sm:text-sm xl:text-md lg:pb-10">Indulge in a delectable selection of canapés ensuring a delightful culinary experience throughout race weekend Savor the taste of house drinks adding a touch of sophistication to your onboard celebrations.</p>
                 </div>
               </div>
               <div>
                 <div className="flex flex-col items-center justify-center text-center gap-y-4 lg:px-10">
-                  <img alt="" className="w-16" src="/images/marina-pass.png" />
+                  <Image alt="" className="w-16" src="/images/marina-pass.png" width={800} height={600} />
                   <h3 className="text-gray-300 text-base lg:text-lg text-center">Marina Passes</h3>
                   <p className="text-gray-300 text-center text-md sm:text-sm xl:text-md lg:pb-10">Get marina passes granting you access to prime viewing spots and an up-close look at the thrilling race action on Yas Marina circuit.</p>
                 </div>

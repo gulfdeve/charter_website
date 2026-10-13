@@ -6,6 +6,7 @@ import PriceRangeSlider from '@/app/components/PriceRangeSlider';
 import LengthRangeSlider from '@/app/components/LengthRangeSlider';
 import React, { useRef, useState, useEffect } from 'react';
 import { useSearchParams } from 'next/navigation';
+import Image from 'next/image';
 
 export default function VesselsPage() {
   const searchParamsObj = {};
@@ -80,7 +81,7 @@ export default function VesselsPage() {
       {/* Hero */}
       <div className="relative bg-black ">
         <div className="relative w-full h-[500px] opacity-40">
-          <img src="/international-yacht.jpeg" alt="Hero" className="w-full h-full object-cover" />
+          <Image src="/international-yacht.jpeg" alt="Hero" className="w-full h-full object-cover" width={800} height={600} />
         </div>
 
         {/* Header */}

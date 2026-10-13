@@ -2,6 +2,7 @@
 import React from 'react';
 import Link from 'next/link';
 import { useLocale, useTranslations } from 'next-intl';
+import Image from 'next/image';
 
 const Aboutus = () => {
   const t = useTranslations();
@@ -34,7 +35,7 @@ const Aboutus = () => {
           </div>
         </div>
         <div className="order-1 md:order-2">
-          <img alt="about us" src="images/poseidon.webp" className="rounded-lg w-full" />
+          <Image alt="about us" src="images/poseidon.webp" className="rounded-lg w-full" width={800} height={600} />
         </div>
       </div>
     </div>

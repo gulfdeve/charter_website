@@ -7,6 +7,7 @@ import { fetchData } from '@/app/lib/fetchData';
 import ExperienceCarousal from '@/app/components/ExperienceCarousal';
 import PageTitleHeading from '@/app/components/PageTitleHeading';
 import { notFound } from 'next/navigation';
+import Image from 'next/image';
 
 // Force static generation with ISR (24 hours revalidation)
 export const dynamic = 'force-static';
@@ -31,7 +32,7 @@ export async function generateStaticParams() {
         if (experience.translations && experience.translations[locale]) {
           params.push({
             slug: experience.slug,
-            locale: locale,
+            locale,
           });
         }
       });
@@ -101,7 +102,7 @@ const page = async ({ params }) => {
               {/* Image with object-cover for proper scaling */}
               <div className="relative">
                 <Link href={`/yacht-rentals/${yacht.slug}`}>
-                  <img src={`https://www.centauruscharter.net/product/images/${yacht.yacht_image}`} alt={yacht.translations?.[locale]?.[0]?.name_of_yacht} className="rounded-lg w-full object-cover" />
+                  <Image src={`https://www.centauruscharter.net/product/images/${yacht.yacht_image}`} alt={yacht.translations?.[locale]?.[0]?.name_of_yacht} className="rounded-lg w-full object-cover" width={800} height={600} />
                 </Link>
                 <div className="lg:absolute grid grid-cols-2 sm:grid-cols-4 md:grid-cols-2 lg:grid-cols-4 items-center gap-0 bg-primary-blue-light rounded-lg center-absolute -bottom-5 left-0 right-0 lg:mx-5 mt-4 lg:mt-0">
                   {/* Model */}

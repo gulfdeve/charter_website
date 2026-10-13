@@ -3,6 +3,7 @@ import { Link } from '@/app/i18n/routing';
 import React, { useState } from 'react';
 import { useLocale } from 'next-intl';
 import Modal2 from './Modal2';
+import Image from 'next/image';
 
 const YachtCard = ({ yacht }) => {
   const locale = useLocale();
@@ -18,7 +19,7 @@ const YachtCard = ({ yacht }) => {
     <>
       <div className="bg-white rounded-lg border-2 md:border-0 md:shadow-lg overflow-hidden flex flex-col h-full">
         <Link href={`/${locale}/yachts-for-sale-dubai/${yacht.slug}`}>
-          <img src={yacht.image} alt={yacht.name} className="w-full object-cover" />
+          <Image src={yacht.image} alt={yacht.name} className="w-full object-cover" width={800} height={600} />
         </Link>
         <div className="p-6 flex flex-col justify-between flex-grow">
           <div>

@@ -4,6 +4,7 @@ import YachtCarousal from '@/app/components/YachtCarousel';
 import ToursCarousel from '@/app/components/Sharedtoursmob';
 import TourCardsClient from './TourCardsClient';
 import CTAWithModalClient from './CTAWithModalClient';
+import Image from 'next/image';
 
 // Force static generation with ISR (24 hours revalidation)
 export const dynamic = 'force-static';
@@ -108,10 +109,10 @@ const Page = () => {
                 <br />
                 with Gourmet Bites & Drinks
               </h2>
-              <p className="text-primary-grey font-bold text-base text-center">Luxury Experience that's Affordable: Set Sail and Experience Dubai, From Morning till Night</p>
+              <p className="text-primary-grey font-bold text-base text-center">Luxury Experience that&apos;s Affordable: Set Sail and Experience Dubai, From Morning till Night</p>
               <p className="text-primary-grey text-base mt-4 text-center">
                 Experience the ultimate Dubai yacht tour with our exclusive daily cruises, available three times a day—morning, sunset, and night. Whether you want to soak up the sun, witness the breathtaking skyline at golden hour, or enjoy the city lights shimmering over the sea, our yacht tours offer the perfect escape. Each tour is designed to provide a luxurious and unforgettable experience
-                on the water. Below, you'll find detailed cards for each tour, covering everything from itinerary to inclusions. If you're ready to book, check the calendar beside for available dates and secure your spot today!
+                on the water. Below, you&apos;ll find detailed cards for each tour, covering everything from itinerary to inclusions. If you&apos;re ready to book, check the calendar beside for available dates and secure your spot today!
               </p>
             </div>
 
@@ -151,19 +152,19 @@ const Page = () => {
         </div>
         <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-5 px-4 py-5 md:py-10 container mx-auto">
           <div>
-            <img src="/Picturemoments.webp" className="rounded-t-lg" alt="Picture Moments" />
+            <Image src="/Picturemoments.webp" className="rounded-t-lg" alt="Picture Moments" width={800} height={600} />
             <h3 className="uppercase bg-primary-blue-2 text-white text-center text-xs lg:text-base font-bold p-2 rounded-b-lg">Picture Moments</h3>
           </div>
           <div>
-            <img src="/images/savory-bites.webp" className="rounded-t-lg" alt="Savory Bites" />
+            <Image src="/images/savory-bites.webp" className="rounded-t-lg" alt="Savory Bites" width={800} height={600} />
             <h3 className="uppercase bg-primary-blue-2 text-white text-center text-xs lg:text-base font-bold p-2 rounded-b-lg">Savory Bites</h3>
           </div>
           <div>
-            <img src="/Amazing-View.webp" className="rounded-t-lg" alt="Amazing View" />
+            <Image src="/Amazing-View.webp" className="rounded-t-lg" alt="Amazing View" width={800} height={600} />
             <h3 className="uppercase bg-primary-blue-2 text-white text-center text-xs lg:text-base font-bold p-2 rounded-b-lg">Amazing View</h3>
           </div>
           <div>
-            <img src="/images/bubbly-drinks-on-yacht-dubai.webp" className="rounded-t-lg" alt="Bubbly Drinks" />
+            <Image src="/images/bubbly-drinks-on-yacht-dubai.webp" className="rounded-t-lg" alt="Bubbly Drinks" width={800} height={600} />
             <h3 className="uppercase bg-primary-blue-2 text-white text-center text-xs lg:text-base font-bold p-2 rounded-b-lg">Bubbly Drinks</h3>
           </div>
         </div>
@@ -197,7 +198,7 @@ const Page = () => {
         >
           {/* Yacht image (only on large screens) */}
           <div className="hidden lg:block w-full h-full">
-            <img src="/royal.webp" alt="Shared Yacht Tour" className="object-cover object-center w-full h-full" />
+            <Image src="/royal.webp" alt="Shared Yacht Tour" className="object-cover object-center w-full h-full" width={800} height={600} />
           </div>
 
           {/* Text content */}
@@ -213,7 +214,7 @@ const Page = () => {
         "
           >
             <p className="text-white text-center sm:text-left text-md sm:text-sm xl:text-md py-10">
-              Experience Dubai's coastline in an entirely new light with our exclusive shared yacht tours. Uniting the thrill of luxury yachting with the ease of shared experiences, we offer you the chance to enjoy the opulence of Dubai's waters without the extravagant cost of chartering an entire yacht. Revel in the stunning vistas, relish in the flavors of delightful chicken and beef sliders,
+              Experience Dubai&apos;s coastline in an entirely new light with our exclusive shared yacht tours. Uniting the thrill of luxury yachting with the ease of shared experiences, we offer you the chance to enjoy the opulence of Dubai&apos;s waters without the extravagant cost of chartering an entire yacht. Revel in the stunning vistas, relish in the flavors of delightful chicken and beef sliders,
               crispy rolls, and fresh fruits. Savor complimentary refreshments—all while forging unforgettable memories with fellow adventurers.
             </p>
 

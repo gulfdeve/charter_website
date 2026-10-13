@@ -1,6 +1,7 @@
 import React from 'react';
 import { useTranslations } from 'next-intl';
 import routesData from '@/app/components/routesData.json';
+import Image from 'next/image';
 
 const Route = ({ product, slug, header_whatsapp_url }) => {
   const t = useTranslations();
@@ -63,7 +64,7 @@ const Route = ({ product, slug, header_whatsapp_url }) => {
           <p className="text-center text-white text-base px-4">Discover Dubai from the sea like never before. Enjoy our cruising options just for you:</p>
         </div>
         <div className="container mx-auto">
-          <img className="w-full" alt="route map of centaurus charter yachts" src={`https://www.centauruscharter.net/product/images/${product.map_image}`} />
+          <Image className="w-full" alt="route map of centaurus charter yachts" src={`https://www.centauruscharter.net/product/images/${product.map_image}`} width={800} height={600} />
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4">
             {routes.map((route, idx) => (
               <div key={idx} className={`flex flex-col items-start ${bodyColors[idx % bodyColors.length]}`}>

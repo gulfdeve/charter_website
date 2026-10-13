@@ -1,8 +1,5 @@
-import { Metadata } from 'next';
-
 export async function generateMetadata({ params }) {
-  const { slug } = params;
-  const locale = useLocale();
+  const { slug, locale } = await params;
 
   // Fetch the product data (you can reuse the fetch logic from your component)
   const response = await fetch('https://www.centauruscharter.net/api/api_new/basic');

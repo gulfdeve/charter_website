@@ -1,6 +1,7 @@
 import React from 'react';
 import { IoIosPricetag } from 'react-icons/io';
 import { Link } from '@/app/i18n/routing';
+import Image from 'next/image';
 
 export default function ExperiencesGrid({ experiences, locale }) {
   return (
@@ -8,13 +9,13 @@ export default function ExperiencesGrid({ experiences, locale }) {
       {/* Static Water Sports Card */}
       <div className="flex flex-col justify-start lg:justify-between rounded-md bg-white custom-shadow">
         <Link href="/watersports">
-          <img src="/images/watersports-cover.webp" alt="Water Sports" className="rounded-tl-md rounded-tr-md w-full object-cover" />
+          <Image src="/images/watersports-cover.webp" alt="Water Sports" className="rounded-tl-md rounded-tr-md w-full object-cover" width={800} height={600} />
         </Link>
         <div className="felx flex-col items-start justify-start px-5">
           <h2 className="text-primary-black text-2xl font-bold pt-6 transition-all duration-300 cursor-pointer">
             <Link href="/watersports">Water Sports</Link>
           </h2>
-          <p className="text-primary-grey text-md pt-2 pb-9">Experience thrilling water sports activities in Dubai's beautiful waters. From banana boat rides to jet skiing, we offer a variety of exciting water adventures.</p>
+          <p className="text-primary-grey text-md pt-2 pb-9">Experience thrilling water sports activities in Dubai&apos;s beautiful waters. From banana boat rides to jet skiing, we offer a variety of exciting water adventures.</p>
           <div className="bg-primary-black w-full h-[0.05rem]"></div>
           <div className="flex flex-row items-center justify-between py-4">
             <div className="flex flex-row items-center justify-evenly gap-4">
@@ -41,7 +42,7 @@ export default function ExperiencesGrid({ experiences, locale }) {
         return (
           <div key={experience.id} className="flex flex-col justify-start lg:justify-between rounded-md bg-white custom-shadow">
             <Link href={`/yacht-trips/${experience.slug}`}>
-              <img src={`https://www.centauruscharter.net/product/images/${experience.image}`} alt="yacht" className="rounded-tl-md rounded-tr-md w-full object-cover" />
+              <Image src={`https://www.centauruscharter.net/product/images/${experience.image}`} alt="yacht" className="rounded-tl-md rounded-tr-md w-full object-cover" width={800} height={600} />
             </Link>
             <div className="felx flex-col items-start justify-start px-5">
               <h2 className="text-primary-black text-2xl font-bold pt-6 transition-all duration-300 cursor-pointer">

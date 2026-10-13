@@ -15,7 +15,7 @@ export default function F1BookingModal({ isOpen, onClose, idName = 'offers_id', 
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   const validateForm = () => {
-    let errs = {};
+    const errs = {};
     if (!fullName.trim()) errs.fullName = 'Name is required';
     if (!email.trim()) errs.email = 'Email is required';
     else if (!/\S+@\S+\.\S+/.test(email)) errs.email = 'Email is invalid';
@@ -191,7 +191,7 @@ export default function F1BookingModal({ isOpen, onClose, idName = 'offers_id', 
               YACHT PARTY EXPERIENCE!
             </h2>
 
-            <p className="text-center text-gray-800 mb-8 text-sm md:text-base leading-relaxed">Secure your spot at the exclusive Formula 1 Abu Dhabi 2025 Yacht Party. Our team will get back to you shortly with confirmation. Don't miss this luxury race-day experience!</p>
+            <p className="text-center text-gray-800 mb-8 text-sm md:text-base leading-relaxed">Secure your spot at the exclusive Formula 1 Abu Dhabi 2025 Yacht Party. Our team will get back to you shortly with confirmation. Don&apos;t miss this luxury race-day experience!</p>
 
             {successMessage && <div className="mb-6 p-4 bg-green-100 border-l-4 border-green-500 text-green-700 rounded">{successMessage}</div>}
 

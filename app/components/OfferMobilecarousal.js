@@ -55,7 +55,7 @@ export default function OfferCarousel() {
                 <div className="flex flex-col justify-start lg:justify-between rounded-md bg-white h-full overflow-hidden border border-gray-400 md:border-none xl:p-10 shadow-none">
                   {/* offer Image */}
                   <Link href={`/offers/${offer.slug}`}>
-                    <img src={`https://www.centauruscharter.net/product/images/${offer.image}`} alt={offer.translations[locale].title} className="rounded-tl-md rounded-tr-md w-full object-cover" />
+                    <Image src={`https://www.centauruscharter.net/product/images/${offer.image}`} alt={offer.translations[locale].title} className="rounded-tl-md rounded-tr-md w-full object-cover" width={800} height={600} />
                   </Link>
                   <div className="flex flex-col justify-start px-5 lg:px-5 flex-grow">
                     {/* offer Title */}

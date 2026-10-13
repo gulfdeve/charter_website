@@ -6,6 +6,7 @@ import { createTabbySession } from '@/app/utils/tabby';
 import Script from 'next/script';
 import TabbyPromoSection from './TabbyPromoSection';
 import { getTranslations } from 'next-intl/server';
+import Image from 'next/image';
 
 // Make sure we import the environment variables at the top
 const { NEXT_PUBLIC_TABBY_MERCHANT_CODE, TABBY_SECRET_KEY, CENTAURUS_API_KEY } = process.env;
@@ -149,7 +150,7 @@ export default async function CheckoutPage({ params, searchParams }) {
             <label className="w-full sm:w-auto">
               <input type="radio" name="method" value="rakbank" defaultChecked={method === 'rakbank' || !method} className="peer hidden" />
               <div className="border-2 rounded-lg p-4 flex items-center gap-2 cursor-pointer peer-checked:border-primary-blue-2 peer-checked:bg-primary-blue-light">
-                <img src="/images/debit-credit.webp" alt="Debit/Credit Card" className="w-16" />
+                <Image src="/images/debit-credit.webp" alt="Debit/Credit Card" className="w-16" width={800} height={600} />
                 <p className="text-primary-grey text-xs">{t('checkout.debit-credit-card')}</p>
               </div>
             </label>
@@ -157,7 +158,7 @@ export default async function CheckoutPage({ params, searchParams }) {
               <label className="w-full sm:w-auto relative">
                 <input type="radio" name="method" value="tabby" defaultChecked={method === 'tabby'} className="peer hidden" />
                 <div className={`border-2 rounded-lg p-4 flex items-center gap-2 cursor-pointer peer-checked:border-primary-blue-2 peer-checked:bg-primary-blue-light`}>
-                  <img src="/images/tabby.webp" alt="Tabby" className="w-16" />
+                  <Image src="/images/tabby.webp" alt="Tabby" className="w-16" width={800} height={600} />
                   <div>
                     <p className="text-primary-grey text-xs">{t('checkout.pay-in-4-no-interest-no-fees')}</p>
                     <span className="text-green-600 text-xs block"></span>
@@ -180,7 +181,7 @@ export default async function CheckoutPage({ params, searchParams }) {
         <div className="w-full lg:w-1/3 bg-[#f5f5f5] rounded-lg p-4 md:p-5">
           <p className="text-xl font-bold text-primary-blue-2 pt-4 pb-3">{t('checkout.booking-information')}</p>
           <p className="text-lg font-bold pt-4 pb-3">{title}</p>
-          <img src={`https://www.centauruscharter.net/product/images/${image}`} alt="Yacht" className="w-24 md:w-32 rounded-lg mb-4" />
+          <Image src={`https://www.centauruscharter.net/product/images/${image}`} alt="Yacht" className="w-24 md:w-32 rounded-lg mb-4" width={800} height={600} />
           <p className="text-primary-grey text-xs">{t('checkout.trip-date-and-time')}</p>
           <p className="text-black mb-2">
             {/* {new Date(booking_date).toISOString()} */}

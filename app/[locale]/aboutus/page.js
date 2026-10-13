@@ -1,6 +1,7 @@
 import React from 'react';
 import YachtCarousal from '../../components/YachtCarousel';
 import LocationCarousel from '../../components/LocationCarousel';
+import Image from 'next/image';
 
 // Force static generation with ISR (24 hours revalidation)
 export const dynamic = 'force-static';
@@ -16,7 +17,7 @@ const AboutPage = () => {
     <>
       <div className="bg-white w-full h-full nav-space">
         <div>
-          <img alt="about us" src="/AboutUsHeader.png" className="w-full" />
+          <Image alt="about us" src="/AboutUsHeader.png" className="w-full" width={800} height={600} />
         </div>
         <div className="flex flex-col items-center justify-center py-10 ">
           <h1 className=" text-primary-blue text-center pb-4">ABOUT US</h1>
@@ -28,7 +29,7 @@ const AboutPage = () => {
         <div className="flex flex-col  md:flex-row items-center justify-center">
           <div>
             <div className="">
-              <img alt="about us" src="/About us 1.png" className="xl:w-[270rem] sm:w-[170rem] md:h-[443px] xl:h-[452px] lg:h-[404px] object-cover md:object-[80%_100%] lg:object-center" />
+              <Image alt="about us" src="/About us 1.png" className="xl:w-[270rem] sm:w-[170rem] md:h-[443px] xl:h-[452px] lg:h-[404px] object-cover md:object-[80%_100%] lg:object-center" width={800} height={600} />
             </div>
           </div>
           <div className="flex flex-col items-center sm:items-start sm:justify-start justify-center bg-primary-blue px-5 xl:px-32 xl:py-12 py-5 md:h-[443px] xl:h-[452px] lg:h-[404px]">
@@ -42,7 +43,7 @@ const AboutPage = () => {
         <div className="flex flex-col  md:flex-row-reverse items-center justify-center">
           <div>
             <div className="">
-              <img alt="about us group" src="/About us group.png" className="xl:w-[230rem] w-[100rem] sm:h-[50rem] md:w-[200rem] md:h-[643px] xl:h-[752px] lg:h-[604px] 2xl:h-[850px] p-4 xl:px-12 object-cover lg:object-bottom" />
+              <Image alt="about us group" src="/About us group.png" className="xl:w-[230rem] w-[100rem] sm:h-[50rem] md:w-[200rem] md:h-[643px] xl:h-[752px] lg:h-[604px] 2xl:h-[850px] p-4 xl:px-12 object-cover lg:object-bottom" width={800} height={600} />
             </div>
           </div>
           <div className="flex flex-col justify-center bg-transparent px-5 xl:px-32 xl:py-12 py-5 md:h-[643px] xl:h-[752px] lg:h-[604px] 2xl:h-[1052px]">

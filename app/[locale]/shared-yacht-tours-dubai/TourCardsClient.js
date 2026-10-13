@@ -1,5 +1,6 @@
 'use client';
 import React, { useState } from 'react';
+import Image from 'next/image';
 
 export default function TourCardsClient({ toursData }) {
   const [showDetails, setShowDetails] = useState(toursData.map(() => false));
@@ -17,7 +18,7 @@ export default function TourCardsClient({ toursData }) {
         <div key={index} className="bg-white rounded-lg shadow-custom duration-300 p-3 lg:p-5 space-y-3 flex flex-col h-full">
           {/* Image Wrapper */}
           <div className="relative">
-            <img src={tour.image} alt={tour.title} className="rounded-lg w-full" />
+            <Image src={tour.image} alt={tour.title} className="rounded-lg w-full" width={800} height={600} />
             {tour.textUnderImage ? <p className="min-h-[44px] text-[12px] text-center text-primary-blue-2 py-1 font-bold">{tour.textUnderImage}</p> : <p className="min-h-[44px] text-[8px] text-center text-primary-blue-2 py-1 font-bold">&nbsp;</p>}
             {/* Overlay Container */}
             <div className="absolute top-2">

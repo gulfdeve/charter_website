@@ -6,6 +6,7 @@ import { getLocale } from 'next-intl/server';
 import VideoLocal from '@/app/components/VideoLocal';
 import { fetchData } from '@/app/lib/fetchData';
 import WeddingTripsClient, { WeddingTripsQuoteButton } from './WeddingTripsClient';
+import Image from 'next/image';
 
 // Force static generation with ISR (24 hours revalidation)
 export const dynamic = 'force-static';
@@ -42,7 +43,7 @@ const page = async () => {
                     <h2 className="text-primary-blue text-xl font-bold pb-4 hover:text-primary-blue-2 transition-all duration-300 cursor-pointer">{product.translations?.[locale]?.name_of_yacht}</h2>
                   </Link>
                   <Link href={`/yacht-rentals/${product.slug}`}>
-                    <img src={`https://www.centauruscharter.net/product/images/${product.image}`} className="rounded-lg w-full object-contain" alt={product.translations?.[locale].name_of_yacht} />
+                    <Image src={`https://www.centauruscharter.net/product/images/${product.image}`} className="rounded-lg w-full object-contain" alt={product.translations?.[locale].name_of_yacht} width={800} height={600} />
                   </Link>
                   <div className="absolute grid grid-cols-3 items-center gap-0 rounded-lg center-absolute -bottom-5 left-0 right-0 px-3">
                     <div className="bg-primary-blue-light text-primary-grey p-1 xl:p-2 flex flex-col items-center rounded-l-lg">
@@ -81,7 +82,7 @@ const page = async () => {
         <div className="mt-10">
           <div className="flex flex-col  lg:flex-row-reverse items-center justify-center lg:justify-start lg:gap-0  rounded-lg bg-primary-blue overflow-hidden ">
             <div className="w-full lg:w-1/2 xl:w-1/2">
-              <img src="/Inquire-Now.webp" className="rounded-t-lg lg:rounded-l-xl  w-full h-full object-cover" />
+              <Image src="/Inquire-Now.webp" className="rounded-t-lg lg:rounded-l-xl  w-full h-full object-cover" alt="" width={800} height={600} />
             </div>
             <div className="w-full lg:w-1/2 flex flex-col items-center lg:rounded-r-xl lg:items-start justify-center text-center lg:text-left lg:px-16 px-6 py-5">
               <h2 className=" text-white font-bold text-2xl pt-5">Let Us Make Your Dream Wedding Come True</h2>
@@ -96,27 +97,27 @@ const page = async () => {
             <span className="font-primary px-4 text-2xl lg:text-3xl font-semibold  text-black">CUSTOMIZED YOUR WEDDING</span>
             <hr className="flex-grow border-primary-yellow-dark " />
           </div>
-          <p className=" text-primary-grey text-base pb-5 xl:px-36 lg:px-20 md:px-16 text-center">Tailor your celebration to perfection with our customizable yacht wedding packages. From intimate ceremonies to grand affairs, our expert team ensures every detail reflects your unique love story, creating a day that's truly yours.</p>
+          <p className=" text-primary-grey text-base pb-5 xl:px-36 lg:px-20 md:px-16 text-center">Tailor your celebration to perfection with our customizable yacht wedding packages. From intimate ceremonies to grand affairs, our expert team ensures every detail reflects your unique love story, creating a day that&apos;s truly yours.</p>
         </div>
         <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-5 gap-5 mt-10">
           <div>
-            <img className="rounded-t-lg" src="/images/decoration.webp" />
+            <Image className="rounded-t-lg" src="/images/decoration.webp" alt="" width={800} height={600} />
             <p className="bg-primary-blue-2 text-primary-yellow text-center  text-sm  font-bold p-2 rounded-b-lg md:px-10 lg:px-0 ">DECORATIONS</p>
           </div>
           <div>
-            <img className="rounded-t-lg" src="/images/catering.webp" />
+            <Image className="rounded-t-lg" src="/images/catering.webp" alt="" width={800} height={600} />
             <p className="bg-primary-blue-2 text-primary-yellow text-center  text-sm  font-bold p-2 rounded-b-lg ">CATERINGS</p>
           </div>
           <div>
-            <img className="rounded-t-lg" src="/images/premium-drinks.webp" />
+            <Image className="rounded-t-lg" src="/images/premium-drinks.webp" alt="" width={800} height={600} />
             <p className="bg-primary-blue-2 text-primary-yellow text-center  text-sm  font-bold p-2 rounded-b-lg ">PREMIUM DRINKS</p>
           </div>
           <div>
-            <img className="rounded-t-lg" src="/images/dj.webp" />
+            <Image className="rounded-t-lg" src="/images/dj.webp" alt="" width={800} height={600} />
             <p className="bg-primary-blue-2 text-primary-yellow text-center  text-sm  font-bold p-2 rounded-b-lg md:px-10 lg:px-0 ">DJ/MUSIC</p>
           </div>
           <div>
-            <img className="rounded-t-lg" src="/images/photography.webp" />
+            <Image className="rounded-t-lg" src="/images/photography.webp" alt="" width={800} height={600} />
             <p className="bg-primary-blue-2 text-primary-yellow text-center  text-sm font-bold p-2 rounded-b-lg ">PHOTOGRAPHY</p>
           </div>
         </div>
@@ -126,7 +127,7 @@ const page = async () => {
             <span className="font-primary px-4 text-2xl lg:text-3xl font-semibold  text-black">YACHT MARRIAGE PROPOSAL</span>
             <hr className="flex-grow border-primary-yellow-dark " />
           </div>
-          <p className=" text-primary-grey text-base pb-5 xl:px-36 lg:px-20 md:px-16 text-center">Elevate your proposal to new heights with our yacht marriage proposal experiences. Sail into the sunset with your beloved, surrounded by the beauty of the open sea, creating a moment that's as breathtaking as your commitment.</p>
+          <p className=" text-primary-grey text-base pb-5 xl:px-36 lg:px-20 md:px-16 text-center">Elevate your proposal to new heights with our yacht marriage proposal experiences. Sail into the sunset with your beloved, surrounded by the beauty of the open sea, creating a moment that&apos;s as breathtaking as your commitment.</p>
         </div>
         <div className="container mx-auto flex flex-col md:flex-row items-center justify-center py-5">
           <div className="flex flex-col items-center justify-center">
@@ -134,23 +135,23 @@ const page = async () => {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4 lg:gap-10">
               <div>
                 <div className="flex flex-col items-center justify-center text-center gap-y-4 lg:px-10">
-                  <img alt="" className="w-12" src="/images/unmatched-elegance.png" />
+                  <Image alt="" className="w-12" src="/images/unmatched-elegance.png" width={800} height={600} />
                   <h3 className="text-primary-grey text-base lg:text-lg text-center">Unmatched Elegance</h3>
                   <p className="text-primary-grey text-center text-md sm:text-sm xl:text-md pb-10">Step aboard our fleet of yachts, where unmatched elegance meets impeccable design. Each vessel is a testament to our commitment to providing the pinnacle of luxury, ensuring a setting as extraordinary as your love.</p>
                 </div>
               </div>
               <div>
                 <div className="flex flex-col items-center justify-center text-center gap-y-4 lg:px-10">
-                  <img alt="" className="w-16" src="/Certified Crew.png" />
+                  <Image alt="" className="w-16" src="/Certified Crew.png" width={800} height={600} />
                   <h3 className="text-primary-grey text-base lg:text-lg text-center">Experienced Crew</h3>
                   <p className="text-primary-grey text-center text-md sm:text-sm xl:text-md pb-10">Behind every successful event is a team of experts. Our crew and event planners bring a wealth of experience, ensuring your wedding day unfolds seamlessly. Trust us to navigate every detail, leaving you free to savor every moment.</p>
                 </div>
               </div>
               <div>
                 <div className="flex flex-col items-center justify-center text-center gap-y-4 lg:px-10">
-                  <img alt="" className="w-12" src="/images/reviews-from-couples.png" />
+                  <Image alt="" className="w-12" src="/images/reviews-from-couples.png" width={800} height={600} />
                   <h3 className="text-primary-grey text-base lg:text-lg text-center">Reviews from Couples</h3>
-                  <p className="text-primary-grey text-center text-md sm:text-sm xl:text-md lg:pb-10">Don't just take our word for it – our track record speaks for itself. Glowing testimonials from couples who have celebrated their love with us underscore our commitment to delivering exceptional experiences. Join the ranks of those who chose extraordinary for their special day.</p>
+                  <p className="text-primary-grey text-center text-md sm:text-sm xl:text-md lg:pb-10">Don&apos;t just take our word for it – our track record speaks for itself. Glowing testimonials from couples who have celebrated their love with us underscore our commitment to delivering exceptional experiences. Join the ranks of those who chose extraordinary for their special day.</p>
                 </div>
               </div>
             </div>
@@ -165,9 +166,9 @@ const page = async () => {
           <p className=" text-primary-grey text-base pb-5 xl:px-36 lg:px-20 md:px-16 text-center">Create lasting memories with our yacht charter for weddings. Our photography and videography services capture every breathtaking moment against the stunning backdrop of the open sea, ensuring your wedding day is etched in time.</p>
         </div>
         <div className="grid md:grid-cols-12 items-center gap-6">
-          <img src="/marryleft.webp" className="rounded-lg md:col-span-3" />
-          <img src="/marrycenter.webp" className="rounded-lg md:col-span-6 " />
-          <img src="/marryright.webp" className="rounded-lg md:col-span-3" />
+          <Image src="/marryleft.webp" className="rounded-lg md:col-span-3" alt="" width={800} height={600} />
+          <Image src="/marrycenter.webp" className="rounded-lg md:col-span-6 " alt="" width={800} height={600} />
+          <Image src="/marryright.webp" className="rounded-lg md:col-span-3" alt="" width={800} height={600} />
         </div>
         <div className="py-5 xl:px-32 ">
           <div className="flex flex-col md:flex-row rounded-lg md:px-10 items-center  gap-5 justify-center  md:justify-between bg-transparent md:bg-primary-blue py-5">

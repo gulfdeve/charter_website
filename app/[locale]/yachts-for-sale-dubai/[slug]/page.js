@@ -23,7 +23,7 @@ export async function generateStaticParams() {
       if (yacht.translations && yacht.translations[locale]) {
         params.push({
           slug: yacht.slug,
-          locale: locale,
+          locale,
         });
       }
     });

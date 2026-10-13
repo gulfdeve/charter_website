@@ -2,6 +2,7 @@
 import React from 'react';
 import { getTranslations } from 'next-intl/server';
 import Link from 'next/link';
+import Image from 'next/image';
 
 // Next.js App Router server component
 // export const runtime = "edge";
@@ -53,7 +54,7 @@ export default async function Page({ searchParams }) {
           <>
             <h2 className="text-primary-blue-2 font-bold text-2xl mb-4">{t('payment_success.payment-successful')}</h2>
             <p className="max-w-xl text-primary-grey text-center mb-6">{t('thank-you-paragraph.thank-you-for-your-booking-a-confirmation-and-invoice-have-been-sent-to-your-email')}</p>
-            <img src="/images/booking-confirmed.webp" alt="thank you" className="w-1/2 md:w-1/3 lg:w-1/6 my-5" />
+            <Image src="/images/booking-confirmed.webp" alt="thank you" className="w-1/2 md:w-1/3 lg:w-1/6 my-5" width={800} height={600} />
             {booking && (
               <div className="bg-[#f5f5f5] w-full max-w-2xl rounded-lg p-6 m-5">
                 {/* Booking Summary */}

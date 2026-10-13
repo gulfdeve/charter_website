@@ -51,7 +51,7 @@ const page = () => {
             <li>The promo code must be entered into the Promo Code field when checking out through www.centauruscharter.com and applied for the discount to be deducted from the booking price.</li>
             <li>If the promo code has a minimum purchase/booking requirement, taxes and additional package charges do not apply when determining the minimum purchase/booking amount.</li>
             <li>Each promo code applies only to qualifying services. Details are specified in the promotion.</li>
-            <li>Yachts already reduced in price, displaying a 'Was' and 'Now' price are also excluded from promo code offers.</li>
+            <li>Yachts already reduced in price, displaying a &apos;Was&apos; and &apos;Now&apos; price are also excluded from promo code offers.</li>
             <li>The promotion is subject to all restrictions set forth in the offer.</li>
             <li>The promo code can be transferable.</li>
             <li>Only one promo code can be used each time and therefore cannot be combined with any other offers using a promo code.</li>

@@ -3,6 +3,7 @@ import { Link } from '@/app/i18n/routing';
 import { useLocale, useTranslations } from 'next-intl';
 import TabbyPromoSection from '@/app/[locale]/checkout/[slug]/TabbyPromoSection';
 import summerRate from '../../resident-offer/tabby-rate.json';
+import Image from 'next/image';
 
 export default function YachtDetails({ yachtDetails, product, locale, whatsappUrl }) {
   const normalize = str => str?.toLowerCase().replace(/[^a-z0-9]/g, '');
@@ -101,7 +102,7 @@ export default function YachtDetails({ yachtDetails, product, locale, whatsappUr
             </ol>
             <div className="flex justify-start items-center">
               <div className="flex gap-2 rounded-full justify-center items-center p-4 mt-4 gradient-custom-2">
-                <img src="/images/crypto-coin.webp" alt="we-accept-crypto" className="w-8 object-cover rounded-full" />
+                <Image src="/images/crypto-coin.webp" alt="we-accept-crypto" className="w-8 object-cover rounded-full" width={800} height={600} />
                 <p className="font-bold text-white text-center text-xs ">We Accept Crypto Payment</p>
               </div>
             </div>
@@ -151,31 +152,31 @@ export default function YachtDetails({ yachtDetails, product, locale, whatsappUr
       </div>
       <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-7 gap-5 my-10">
         <div>
-          <img className="rounded-t-lg" src="/images/decoration.webp" />
+          <Image className="rounded-t-lg" src="/images/decoration.webp" alt="" width={800} height={600} />
           <p className="bg-primary-blue-2 text-white text-center  text-sm  font-bold p-2 rounded-b-lg md:px-10 lg:px-0 ">DECORATIONS</p>
         </div>
         <div>
-          <img className="rounded-t-lg" src="/images/watersports.webp" />
+          <Image className="rounded-t-lg" src="/images/watersports.webp" alt="" width={800} height={600} />
           <p className="uppercase bg-primary-blue-2 text-white text-center  text-sm  font-bold p-2 rounded-b-lg ">watersports</p>
         </div>
         <div>
-          <img className="rounded-t-lg" src="/images/flowers.webp" />
+          <Image className="rounded-t-lg" src="/images/flowers.webp" alt="" width={800} height={600} />
           <p className="uppercase bg-primary-blue-2 text-white text-center  text-sm  font-bold p-2 rounded-b-lg ">flowers</p>
         </div>
         <div>
-          <img className="rounded-t-lg" src="/images/premium-drinks.webp" />
+          <Image className="rounded-t-lg" src="/images/premium-drinks.webp" alt="" width={800} height={600} />
           <p className="uppercase bg-primary-blue-2 text-white text-center  text-sm  font-bold p-2 rounded-b-lg md:px-10 lg:px-0 ">premium drinks</p>
         </div>
         <div>
-          <img className="rounded-t-lg" src="/images/catering.webp" />
+          <Image className="rounded-t-lg" src="/images/catering.webp" alt="" width={800} height={600} />
           <p className="uppercase bg-primary-blue-2 text-white text-center  text-sm font-bold p-2 rounded-b-lg ">catering</p>
         </div>
         <div>
-          <img className="rounded-t-lg" src="/images/dj.webp" />
+          <Image className="rounded-t-lg" src="/images/dj.webp" alt="" width={800} height={600} />
           <p className="uppercase bg-primary-blue-2 text-white text-center  text-sm font-bold p-2 rounded-b-lg ">DJ/Music</p>
         </div>
         <div>
-          <img className="rounded-t-lg" src="/images/photography.webp" />
+          <Image className="rounded-t-lg" src="/images/photography.webp" alt="" width={800} height={600} />
           <p className="uppercase bg-primary-blue-2 text-white text-center  text-sm font-bold p-2 rounded-b-lg ">Photography</p>
         </div>
       </div>

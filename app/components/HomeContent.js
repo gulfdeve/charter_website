@@ -245,7 +245,7 @@ export default function Home() {
                         </div>
                         <div>
                           <Link href={'https://centaurusint.net/?utm_source=centauruscharter&utm_medium=logo_text&utm_campaign=branding'}>
-                            <img src="/centaurus_link.svg" alt="centaurus link" className="w-[10rem]" />
+                            <Image src="/centaurus_link.svg" alt="centaurus link" className="w-[10rem]" width={800} height={600} />
                           </Link>
                           <div className="flex flex-col items-center justify-center">
                             <span className=" text-primary-blue-2 text-xs text-center">
@@ -326,9 +326,9 @@ export default function Home() {
             {/* Grid Layout for 4 Boxes */}
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 auto-rows-fr">
               {/* Box 1 */}
-              <a href="/yacht-rentals" className="relative group bg-primary-blue-2 text-white py-8 px-5 md:py-8 md:px-10 rounded-lg shadow-lg overflow-hidden flex flex-col">
+              <Link href="/yacht-rentals" className="relative group bg-primary-blue-2 text-white py-8 px-5 md:py-8 md:px-10 rounded-lg shadow-lg overflow-hidden flex flex-col">
                 {/* Background Image */}
-                <img src="/LUXURY YACHT CHARTER.webp" alt="Luxury Yacht Rentals" className="absolute inset-0 w-full h-full object-cover opacity-20 md:opacity-60 md:group-hover:opacity-10 transition-opacity duration-300" />
+                <Image src="/LUXURY YACHT CHARTER.webp" alt="Luxury Yacht Rentals" className="absolute inset-0 w-full h-full object-cover opacity-20 md:opacity-60 md:group-hover:opacity-10 transition-opacity duration-300" fill />
                 {/* Content */}
                 <div className="relative z-10 flex flex-col h-full">
                   <h2 className="text-xl md:text-2xl xl:text-2xl font-bold mb-4">{t('home.luxury-yacht-rentals')}</h2>
@@ -343,12 +343,12 @@ export default function Home() {
                     <FiArrowRight size={20} className="text-lg transform md:group-hover:translate-x-4 transition-transform duration-300" />
                   </div>
                 </div>
-              </a>
+              </Link>
 
               {/* Box 2 */}
-              <a href="/yacht-trips" className="relative group bg-primary-blue-2 text-white py-8 px-5 md:py-8 md:px-10 rounded-lg shadow-lg overflow-hidden flex flex-col">
+              <Link href="/yacht-trips" className="relative group bg-primary-blue-2 text-white py-8 px-5 md:py-8 md:px-10 rounded-lg shadow-lg overflow-hidden flex flex-col">
                 {/* Background Image */}
-                <img src="/CUSTOMIZEDEXPERIENCES.webp" alt="Customized Yacht Trips" className="absolute inset-0 w-full h-full object-cover opacity-20 md:opacity-60 md:group-hover:opacity-10 transition-opacity duration-300" />
+                <Image src="/CUSTOMIZEDEXPERIENCES.webp" alt="Customized Yacht Trips" className="absolute inset-0 w-full h-full object-cover opacity-20 md:opacity-60 md:group-hover:opacity-10 transition-opacity duration-300" fill />
                 {/* Content */}
                 <div className="relative z-10 flex flex-col h-full">
                   <h2 className="text-xl md:text-2xl xl:text-2xl font-bold mb-4">{t('home.customized-yacht-trips')}</h2>
@@ -363,12 +363,12 @@ export default function Home() {
                     <FiArrowRight size={20} className="text-lg transform md:group-hover:translate-x-4 transition-transform duration-300" />
                   </div>
                 </div>
-              </a>
+              </Link>
 
               {/* Box 3 */}
-              <a href="/offers" className="relative group bg-primary-blue-2 text-white py-8 px-5 md:py-8 md:px-10 rounded-lg shadow-lg overflow-hidden flex flex-col">
+              <Link href="/offers" className="relative group bg-primary-blue-2 text-white py-8 px-5 md:py-8 md:px-10 rounded-lg shadow-lg overflow-hidden flex flex-col">
                 {/* Background Image */}
-                <img src="/EXCLUSIVEOFFERS.webp" alt="Exclusive Offers" className="absolute inset-0 w-full h-full object-cover opacity-20 md:opacity-60 md:group-hover:opacity-10 transition-opacity duration-300" />
+                <Image src="/EXCLUSIVEOFFERS.webp" alt="Exclusive Offers" className="absolute inset-0 w-full h-full object-cover opacity-20 md:opacity-60 md:group-hover:opacity-10 transition-opacity duration-300" fill />
                 {/* Content */}
                 <div className="relative z-10 flex flex-col h-full">
                   <h2 className="text-xl md:text-2xl xl:text-2xl font-bold mb-4">{t('home.exclusive-offers')}</h2>
@@ -383,12 +383,12 @@ export default function Home() {
                     <FiArrowRight size={20} className="text-lg transform md:group-hover:translate-x-4 transition-transform duration-300" />
                   </div>
                 </div>
-              </a>
+              </Link>
 
               {/* Box 4 */}
-              <a href="/watersports" className="relative group bg-primary-blue-2 text-white py-8 px-5 md:py-8 md:px-10 rounded-lg shadow-lg overflow-hidden flex flex-col">
+              <Link href="/watersports" className="relative group bg-primary-blue-2 text-white py-8 px-5 md:py-8 md:px-10 rounded-lg shadow-lg overflow-hidden flex flex-col">
                 {/* Background Image */}
-                <img src="/WATERACTIVITIES.webp" alt="Water Sports Add-ons" className="absolute inset-0 w-full h-full object-cover opacity-20 md:opacity-60 md:group-hover:opacity-10 transition-opacity duration-300" />
+                <Image src="/WATERACTIVITIES.webp" alt="Water Sports Add-ons" className="absolute inset-0 w-full h-full object-cover opacity-20 md:opacity-60 md:group-hover:opacity-10 transition-opacity duration-300" fill />
                 {/* Content */}
                 <div className="relative z-10 flex flex-col h-full">
                   <h2 className="text-xl md:text-2xl xl:text-2xl font-bold mb-4">{t('home.water-sports-add-ons')}</h2>
@@ -403,7 +403,7 @@ export default function Home() {
                     <FiArrowRight size={20} className="text-lg transform md:group-hover:translate-x-4 transition-transform duration-300" />
                   </div>
                 </div>
-              </a>
+              </Link>
             </div>
           </div>
         </div>

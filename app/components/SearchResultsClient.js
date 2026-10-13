@@ -3,6 +3,7 @@
 import React, { useRef, useState } from 'react';
 import { Link } from '@/app/i18n/routing';
 import Modal3 from '@/app/components/Modal3';
+import Image from 'next/image';
 
 export default function SearchResultsClient({ paginatedHits, currentPage, totalPages, previousPageLink, nextPageLink, rentalPeriod, onPageChange }) {
   const modalRef = useRef(null);
@@ -29,7 +30,7 @@ export default function SearchResultsClient({ paginatedHits, currentPage, totalP
               <div key={index} className="bg-white rounded-lg shadow-lg overflow-hidden max-w-sm w-full flex flex-col">
                 <Link href={`/yachts-for-sale-dubai/${vessel.slug || 'some-default'}`}>
                   <div className="w-full h-48 overflow-hidden">
-                    <img src={vessel.hero ? `https://radar.ankor.io${vessel.hero.replace('{imageVariant}', '2560w')}` : '/fallback-image.jpg'} alt={vessel.name || 'Yacht Image'} className="w-full h-full object-cover" />
+                    <Image src={vessel.hero ? `https://radar.ankor.io${vessel.hero.replace('{imageVariant}', '2560w')}` : '/fallback-image.jpg'} alt={vessel.name || 'Yacht Image'} className="w-full h-full object-cover" width={800} height={600} />
                   </div>
                 </Link>
 

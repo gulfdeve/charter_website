@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { Link } from '@/app/i18n/routing';
+import Image from 'next/image';
 
 /*
   YachtCard Component (No Carousel):
@@ -19,7 +20,7 @@ const YachtCard = ({ yacht }) => {
         {/* Image Container with relative positioning for badge overlay */}
         {firstImage && (
           <Link href={`yacht-rentals/${yacht.slug}`}>
-            <img src={`https://www.centauruscharter.net/product/galleryimages/${firstImage}`} alt={yacht.title} className="rounded-2xl h-[250px] md:h-[300px] w-full object-cover" />
+            <Image src={`https://www.centauruscharter.net/product/galleryimages/${firstImage}`} alt={yacht.title} className="rounded-2xl h-[250px] md:h-[300px] w-full object-cover" width={800} height={600} />
           </Link>
         )}
 

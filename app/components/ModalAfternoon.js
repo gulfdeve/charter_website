@@ -1,6 +1,7 @@
 'use client';
 import React, { useState, useEffect } from 'react';
 import { IoMdClose } from 'react-icons/io';
+import Image from 'next/image';
 
 const ImageModal = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -17,7 +18,7 @@ const ImageModal = () => {
       <div className="relative w-full max-w-[95%] md:max-w-[80%] lg:max-w-2xl">
         {/* Background Image with all content */}
         <a target="_blank" href="https://wa.me/971547928626?text=Hi!%20I%20came%20from%20your%20website%20Centaurus%20Charter%2C%20and%20would%20like%20to%20inquire%20about%20the%2030%25%20spring%20offer%20that%20you%20currently%20have.">
-          <img src="/Popupbanner.webp" alt="Special Offer" className="w-full h-auto" />
+          <Image src="/Popupbanner.webp" alt="Special Offer" className="w-full h-auto" width={800} height={600} />
         </a>
         {/* Close Button */}
         <button aria-label="Close Modal" onClick={() => setIsVisible(false)} className="absolute top-2 right-2 md:top-3 md:right-3 text-black bg-gray-200 rounded-full p-2 md:p-1.5 text-2xl md:text-3xl">

@@ -5,6 +5,7 @@ import { FaWhatsapp } from 'react-icons/fa';
 import { MdEmail } from 'react-icons/md';
 import { useTranslations } from 'next-intl';
 import ContactForm from './ContactForm';
+import Image from 'next/image';
 
 // Force static generation with ISR (24 hours revalidation)
 export const dynamic = 'force-static';
@@ -22,7 +23,7 @@ export default function Page() {
     <>
       <div className="bg-white w-full h-full nav-space">
         <div>
-          <img alt="contact header banner" src="/Contactheader.webp" className="w-full" />
+          <Image alt="contact header banner" src="/Contactheader.webp" className="w-full" width={800} height={600} />
         </div>
         <div className="flex flex-col items-center justify-center py-10 ">
           <h1 className="text-primary-blue text-center font-bold text-xl sm:text:2xl md:text-3xl lg:text-4xl pb-4">CONTACT US</h1>

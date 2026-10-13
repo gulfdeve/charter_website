@@ -3,10 +3,9 @@ import React, { useState } from 'react';
 import PhoneInput from 'react-phone-input-2';
 import 'react-phone-input-2/lib/style.css';
 import { parsePhoneNumberFromString } from 'libphonenumber-js';
+import Image from 'next/image';
 
 const Modal2 = ({ isModalOpen, closeModal, idName, idValue, selectedVessel }) => {
-  if (!isModalOpen) return null;
-
   const [fullName, setFullName] = useState('');
   const [phoneNumber, setPhoneNumber] = useState('');
   const [phoneCountry, setPhoneCountry] = useState({
@@ -18,6 +17,8 @@ const Modal2 = ({ isModalOpen, closeModal, idName, idValue, selectedVessel }) =>
   const [errors, setErrors] = useState({});
   const [submissionSuccess, setSubmissionSuccess] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
+
+  if (!isModalOpen) return null;
 
   const validateForm = () => {
     const newErrors = {};
@@ -142,7 +143,7 @@ const Modal2 = ({ isModalOpen, closeModal, idName, idValue, selectedVessel }) =>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
           <div className="rounded-lg overflow-hidden hidden md:block">
-            <img src="/Get a Quote.webp" alt="Get a Quote Yacht Image" className="w-full h-full object-cover" />
+            <Image src="/Get a Quote.webp" alt="Get a Quote Yacht Image" className="w-full h-full object-cover" width={800} height={600} />
           </div>
 
           <div className="flex items-center w-full lg:pr-10 pr-0 pt-12">

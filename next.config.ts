@@ -27,6 +27,11 @@ const nextConfig: NextConfig = {
         hostname: 'www.centauruscharter.net',
         pathname: '/**',
       },
+      {
+        protocol: 'https',
+        hostname: 'radar.ankor.io',
+        pathname: '/**',
+      },
     ],
     minimumCacheTTL: process.env.NODE_ENV === 'development' ? 0 : 2592000,
   },

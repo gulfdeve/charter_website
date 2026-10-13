@@ -21,7 +21,7 @@ export default function ContactForm() {
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   const validateForm = () => {
-    let errs = {};
+    const errs = {};
     if (!fullName) errs.fullName = 'Name is required';
     if (!email) errs.email = 'Email is required';
     else if (!/\S+@\S+\.\S+/.test(email)) errs.email = 'Email is invalid';
@@ -62,7 +62,7 @@ export default function ContactForm() {
       // Original API call
       const queryParams = new URLSearchParams({
         name: fullName,
-        email: email,
+        email,
         phone: phoneNumber,
         comments: message,
       });

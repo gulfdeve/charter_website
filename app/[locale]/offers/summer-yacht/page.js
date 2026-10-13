@@ -6,7 +6,7 @@ import PageTitleHeading from '@/app/components/PageTitleHeading';
 import Modal2 from '@/app/components/Modal2';
 import { FaWhatsapp } from 'react-icons/fa';
 import ExperienceCarousal from '@/app/components/ExperienceCarousal';
-const page = () => {
+const Page = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const handleQuote = () => {
     setIsModalOpen(true);
@@ -174,4 +174,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Page;

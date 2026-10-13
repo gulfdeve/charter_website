@@ -4,6 +4,7 @@ import { notFound } from 'next/navigation';
 import { fetchData } from '@/app/lib/fetchData';
 import PageTitleHeading from '../../../components/PageTitleHeading';
 import WaterSportCarousal2 from '../../../components/WaterSportCarousal2';
+import Image from 'next/image';
 
 // Force static generation with ISR (24 hours revalidation)
 export const dynamic = 'force-static';
@@ -28,7 +29,7 @@ export async function generateStaticParams() {
         if (packageItem.translations && packageItem.translations[locale]) {
           params.push({
             slug: packageItem.slug,
-            locale: locale,
+            locale,
           });
         }
       });
@@ -130,7 +131,7 @@ export default async function Page({ params }) {
         <div className="flex flex-col lg:flex-row justify-between items-center gap-5 pt-6 md:mt-20 ">
           {/* First column (30%) */}
           <div className="flex items-start lg:w-7/12">
-            <img src={`https://www.centauruscharter.net/product/images/${packageItem.image}`} alt={packageItem.translations[locale].title} className="w-full rounded-lg" />
+            <Image src={`https://www.centauruscharter.net/product/images/${packageItem.image}`} alt={packageItem.translations[locale].title} className="w-full rounded-lg" width={800} height={600} />
           </div>
 
           {/* Second column (70%) */}

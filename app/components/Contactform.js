@@ -154,7 +154,7 @@ export default function Contactform({ yachtName: initialYachtName = '' }) {
             <div className="flex items-center gap-2">
               <input type="checkbox" id="terms" className="w-5 h-5" />
               <label htmlFor="terms" className="text-sm text-primary-grey">
-                I'd like to receive updates on special offers, news and events
+                I&apos;d like to receive updates on special offers, news and events
               </label>
             </div>
             <button type="submit" className="w-full bg-primary-blue-2 text-white font-bold py-3 rounded-md">

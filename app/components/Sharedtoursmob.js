@@ -2,6 +2,7 @@
 import { useEffect, useRef, useState } from 'react';
 import EmblaCarousel from 'embla-carousel';
 import { Link } from '@/app/i18n/routing';
+import Image from 'next/image';
 // Import icons used in the tour cards
 import { FaClock, FaChild, FaCameraRetro } from 'react-icons/fa';
 import { IoMan, IoLocationSharp } from 'react-icons/io5';
@@ -49,7 +50,7 @@ export default function ToursCarousel({ toursData }) {
               <div className="bg-white rounded-lg shadow-custom duration-300 p-2 space-y-1 overflow-hidden ">
                 {/* Image Section */}
                 <div className="relative">
-                  <img src={tour.image} alt={tour.title} className="rounded-lg w-full object-cover" />
+                  <Image src={tour.image} alt={tour.title} className="rounded-lg w-full object-cover" width={800} height={600} />
                   {tour.textUnderImage ? <p className="min-h-[44px] text-[12px] text-center text-primary-blue-2 py-1 font-bold">{tour.textUnderImage}</p> : <p className="min-h-[44px] text-[12px] text-center text-primary-blue-2 py-1 font-bold">&nbsp;</p>}
                   <div className="absolute top-2 ">
                     <div className={`px-3 py-1 ${tour.yellowHeadline ? 'bg-primary-blue-2' : 'bg-transparent'}`}>

@@ -1,5 +1,6 @@
 'use client';
 import React, { useState, useEffect } from 'react';
+import Image from 'next/image';
 
 const Modal = ({ show, onClose }) => {
   const [isVisible, setIsVisible] = useState(false);
@@ -12,7 +13,7 @@ const Modal = ({ show, onClose }) => {
 
     const getCookie = name => {
       const cookieArr = document.cookie.split('; ');
-      for (let cookie of cookieArr) {
+      for (const cookie of cookieArr) {
         const [key, value] = cookie.split('=');
         if (key === name) return value;
       }
@@ -142,11 +143,7 @@ const Modal = ({ show, onClose }) => {
 
           {/* Right Section (Hidden on small screens) */}
           <div className="basis-1/2 hidden md:block">
-            <img
-              src="/yachtrentals6.webp" // Replace with your image path
-              alt="Yacht"
-              className="w-full h-full object-cover"
-            />
+            <Image src="/yachtrentals6.webp" alt="Yacht" className="w-full h-full object-cover" width={800} height={600} />
           </div>
         </div>
       </div>

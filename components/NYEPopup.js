@@ -1,5 +1,6 @@
 'use client';
 import React, { useEffect, useState } from 'react';
+import Image from 'next/image';
 
 const NYEPopup = ({ link = '/' }) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -21,7 +22,7 @@ const NYEPopup = ({ link = '/' }) => {
         </button>
 
         <a href="https://bit.ly/3XZU7Gv" target="_blank" rel="noopener noreferrer" onClick={() => setIsOpen(false)} className="block">
-          <img src="/NYE-promotion.png" alt="New Year Promotion" className="w-full h-auto block" />
+          <Image src="/NYE-promotion.png" alt="New Year Promotion" className="w-full h-auto block" width={800} height={600} />
         </a>
       </div>
     </div>

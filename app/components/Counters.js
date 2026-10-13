@@ -1,6 +1,7 @@
 'use client';
 import { useTranslations } from 'next-intl';
 import { useEffect, useState, useRef } from 'react';
+import Image from 'next/image';
 
 const Counters = () => {
   const [yearsCount, setYearsCount] = useState(0); // Start at 0 for the count effect
@@ -21,13 +22,14 @@ const Counters = () => {
       { threshold: 0.5 } // Adjust visibility threshold (50% visible)
     );
 
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
+    const section = sectionRef.current;
+    if (section) {
+      observer.observe(section);
     }
 
     return () => {
-      if (sectionRef.current) {
-        observer.unobserve(sectionRef.current);
+      if (section) {
+        observer.unobserve(section);
       }
     };
   }, [hasStarted]);
@@ -69,21 +71,21 @@ const Counters = () => {
         <div className="grid grid-cols-3 lg:grid-cols-3 gap-12">
           {/* Years in Business */}
           <div className="counter-item flex flex-col items-center gap-5">
-            <img alt="calendar icon" src="/calendar.png" className="h-6 sm:h-8 lg:h-12 mb-4" />
+            <Image alt="calendar icon" src="/calendar.png" className="h-6 sm:h-8 lg:h-12 mb-4" width={48} height={48} />
             <div className="text-2xl lg:text-6xl font-bold text-white">{yearsCount}</div>
             <div className="text-sm md:text-lg lg:text-2xl font-medium text-white text-center uppercase">{t('home.years-in-business')}</div>
           </div>
 
           {/* Happy Guests */}
           <div className="counter-item flex flex-col items-center gap-5">
-            <img alt="smiley icon" src="/smiley.png" className="h-6 sm:h-8 lg:h-12 mb-4" />
+            <Image alt="smiley icon" src="/smiley.png" className="h-6 sm:h-8 lg:h-12 mb-4" width={48} height={48} />
             <div className="text-2xl lg:text-6xl font-bold text-white">{guestsCount.toLocaleString()}</div>
             <div className="text-sm md:text-lg lg:text-2xl font-medium text-white text-center uppercase">{t('home.happy-guests')}</div>
           </div>
 
           {/* Service Rating */}
           <div className="counter-item flex flex-col items-center gap-5">
-            <img alt="stars icon" src="/stars.png" className="h-6 sm:h-8 lg:h-12 mb-4" />
+            <Image alt="stars icon" src="/stars.png" className="h-6 sm:h-8 lg:h-12 mb-4" width={48} height={48} />
             <div className="text-2xl lg:text-6xl font-bold text-white">{ratingCount.toFixed(1)}</div>
             <div className="text-sm md:text-lg lg:text-2xl font-medium text-white text-center uppercase">{t('home.service-rating')}</div>
           </div>

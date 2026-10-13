@@ -1,5 +1,5 @@
 'use client';
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { IoIosArrowBack, IoIosArrowForward } from 'react-icons/io';
@@ -23,10 +23,17 @@ export default function FeaturedBlogsCarousel({ featuredBlogs }) {
     changeSlide(newIndex);
   };
 
-  const nextSlide = () => {
-    const newIndex = (current + 1) % featuredBlogs.length;
-    changeSlide(newIndex);
-  };
+  const nextSlide = useCallback(() => {
+    setCurrent(prev => {
+      const newIndex = featuredBlogs.length ? (prev + 1) % featuredBlogs.length : 0;
+      setShow(false);
+      setTimeout(() => {
+        setDisplayedIndex(newIndex);
+        setShow(true);
+      }, 400);
+      return newIndex;
+    });
+  }, [featuredBlogs.length]);
 
   // Auto-scroll effect
   useEffect(() => {
@@ -34,7 +41,7 @@ export default function FeaturedBlogsCarousel({ featuredBlogs }) {
       nextSlide();
     }, 5000);
     return () => clearInterval(interval);
-  }, [current, featuredBlogs.length]);
+  }, [nextSlide]);
 
   return (
     <div className="md:container md:mx-auto md:mt-10 relative overflow-hidden h-64 md:h-[500px]">

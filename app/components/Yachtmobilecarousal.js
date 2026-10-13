@@ -206,7 +206,7 @@ export default function YachtmobileCarousal() {
                     </div>
                   </div>
                   <Link href={'https://centaurusint.net/?utm_source=centauruscharter&utm_medium=logo_text&utm_campaign=branding'}>
-                    <img src="/centaurus_link.svg" alt="centaurus link" className="w-[10rem] xl:mt-3" />
+                    <Image src="/centaurus_link.svg" alt="centaurus link" className="w-[10rem] xl:mt-3" width={800} height={600} />
                   </Link>
 
                   {/* Book Now & Pricing */}

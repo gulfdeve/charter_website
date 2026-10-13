@@ -4,6 +4,7 @@ import { IoIosPricetag } from 'react-icons/io';
 import { FaWhatsapp } from 'react-icons/fa';
 import { Link } from '@/app/i18n/routing';
 import ExperienceCarousal from '@/app/components/ExperienceCarousal';
+import Image from 'next/image';
 
 // Force static generation with ISR (24 hours revalidation)
 export const dynamic = 'force-static';
@@ -57,7 +58,7 @@ const page = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-3 my-8">
           <div className="grid grid-cols-12 place-items-center justify-center  bg-red-900 p-4 rounded-md">
             <div className="col-span-3 w-full md:w-1/2">
-              <img src="/icon-calendar.png"></img>
+              <Image src="/icon-calendar.png" alt="" width={800} height={600} />
             </div>
             <div className="col-span-9">
               <span className="font-bold text-primary-yellow-dark">Event Dates</span>
@@ -66,7 +67,7 @@ const page = () => {
           </div>
           <div className="grid grid-cols-12 place-items-center justify-center bg-red-900 p-4 rounded-md">
             <div className="col-span-3 w-full md:w-1/2">
-              <img src="/icon-yacht.png"></img>
+              <Image src="/icon-yacht.png" alt="" width={800} height={600} />
             </div>
             <div className="col-span-9">
               <span className="font-bold text-primary-yellow-dark">Yacht Sizes Available</span>
@@ -75,7 +76,7 @@ const page = () => {
           </div>
           <div className="grid grid-cols-12 place-items-center justify-center bg-red-900 p-4 rounded-md">
             <div className="col-span-3 w-full md:w-1/2">
-              <img src="/icon-view.png"></img>
+              <Image src="/icon-view.png" alt="" width={800} height={600} />
             </div>
             <div className="col-span-9">
               <span className="font-bold text-primary-yellow-dark">Viewing</span>
@@ -125,7 +126,7 @@ const page = () => {
               </div>
             </div>
             <div className="w-full">
-              <img src="/fifa-yacht.png"></img>
+              <Image src="/fifa-yacht.png" alt="" width={800} height={600} />
             </div>
           </div>
         </div>
@@ -141,7 +142,7 @@ const page = () => {
             <div className="grid grid-col-1 md:grid-cols-1 md:px-4 gap-7 container mx-auto pb-10">
               {yachts.map(yacht => (
                 <div key={yacht.yacht_id} className="flex flex-col md:flex-row justify-start rounded-md bg-white shadow-md">
-                  <img src={`${yacht.yacht_image}`} alt={yacht.name} className="rounded-md w-[35rem] md:w-[25rem] xl:w-[35rem] xl:h-[400px] h-[300px] md:h-full p-2 object-cover" />
+                  <Image src={`${yacht.yacht_image}`} alt={yacht.name} className="rounded-md w-[35rem] md:w-[25rem] xl:w-[35rem] xl:h-[400px] h-[300px] md:h-full p-2 object-cover" width={800} height={600} />
                   <div className="w-full flex flex-col justify-stretch px-3 xl:px-6 md:py-4">
                     <Link href="/">
                       <h1 className="text-primary-blue text-xl xl:text-2xl font-bold pt-6 md:pb-2 cursor-pointer">{yacht.name}</h1>

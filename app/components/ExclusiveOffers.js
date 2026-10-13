@@ -1,11 +1,12 @@
 import React from 'react';
 import { Link } from '../i18n/routing';
+import Image from 'next/image';
 
 const ExclusiveOffers = () => {
   return (
     <div className="flex  flex-col lg:flex-row items-center justify-between">
       <div className="overflow-hidden w-full lg:w-1/2 lg:h-[27rem] sm:h-[200px] md:h-[250px]">
-        <img src="/footer-exclusive-offer.webp" className="w-full  sm:h-full object-cover object-left" alt="Footer Exclusive Offer" />
+        <Image src="/footer-exclusive-offer.webp" className="w-full  sm:h-full object-cover object-left" alt="Footer Exclusive Offer" width={800} height={600} />
       </div>
       <div className="flex flex-col items-center lg:items-start py-8 sm:p-8 lg:p-12 justify-center bg-primary-blue w-full lg:w-1/2 lg:h-[27rem] ">
         <h2 className=" text-white text-3xl lg:text-4xl lg:pb-2 font-bold text-center px-6 lg:px-0">Exclusive Offers</h2>

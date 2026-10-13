@@ -29,7 +29,7 @@ export async function generateStaticParams() {
         if (event.translations && event.translations[locale]) {
           params.push({
             slug: event.slug,
-            locale: locale,
+            locale,
           });
         }
       });

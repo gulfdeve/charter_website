@@ -45,8 +45,8 @@ const Page = () => {
       <div className="bg-[url('/nye24.webp')] bg-cover bg-center bg-no-repeat min-h-screen ">
         <div className="container mx-auto">
           <div className="flex flex-col items-center justify-center pb-10 pt-10">
-            <h2 className="text-primary-yellow text-center font-bold text-4xl lg:px-5 xl:text-5xl pb-4 pt-12">NEW YEAR'S EVE CELEBRATION ON A LUXURY YACHT</h2>
-            <p className="text-white text-center text-xl px-3 lg:px-12 xl:px-56">New year's Offer on Yacht you don't want to miss</p>
+            <h2 className="text-primary-yellow text-center font-bold text-4xl lg:px-5 xl:text-5xl pb-4 pt-12">NEW YEAR&apos;S EVE CELEBRATION ON A LUXURY YACHT</h2>
+            <p className="text-white text-center text-xl px-3 lg:px-12 xl:px-56">New year&apos;s Offer on Yacht you don&apos;t want to miss</p>
           </div>
           <div className="flex flex-col md:flex-row items-center justify-center px-4 md:px-8 lg:px-20 py-8">
             {/* Container with a shadow and rounded corners */}
@@ -75,7 +75,7 @@ const Page = () => {
           <div className="lg:px-20 px-5">
             <div className="flex flex-col items-center justify-center w-full mt-10 mb-5 px-10">
               <h3 className="text-[20px] px-4 font-semibold text-primary-yellow">Dress Code</h3>
-              <p className="text-md text-white text-center">Glow Up, Show Up, And Sparkle All Night Long—It's A Night For Glitter, Shimmer, And Head-Turning Sparkle.</p>
+              <p className="text-md text-white text-center">Glow Up, Show Up, And Sparkle All Night Long—It&apos;s A Night For Glitter, Shimmer, And Head-Turning Sparkle.</p>
             </div>
             <div className="flex flex-col items-center justify-center w-full mt-5 mb-20 px-10">
               <h3 className="text-[20px] px-4 font-semibold text-primary-yellow">RSVP</h3>
@@ -84,13 +84,13 @@ const Page = () => {
             <div className="flex items-center justify-center w-full my-6">
               <hr className="flex-grow border-primary-yellow-dark" />
               <h2 className="px-4 text-2xl font-semibold text-primary-yellow text-center">
-                NEW YEAR'S EVE <br />
+                NEW YEAR&apos;S EVE <br />
                 PRIVATE YACHT RENTAL PACKAGES
               </h2>
               <hr className="flex-grow border-primary-yellow-dark" />
             </div>
             <p className="text-primary-yellow text-center text-md sm:text-sm xl:text-md pb-5">31 December 2025 | Dubai Harbour | 9 PM - 3 AM</p>
-            <p className="text-white text-center text-md sm:text-sm xl:text-md pb-5">Celebrate the most glamorous night of the year in style with our New Year's Eve Yacht Rental in Dubai. As the city lights up with dazzling fireworks and festivities, there's no better way to start the New Year than on a private luxury yacht.</p>
+            <p className="text-white text-center text-md sm:text-sm xl:text-md pb-5">Celebrate the most glamorous night of the year in style with our New Year&apos;s Eve Yacht Rental in Dubai. As the city lights up with dazzling fireworks and festivities, there&apos;s no better way to start the New Year than on a private luxury yacht.</p>
             <div className="flex flex-col items-center xl:px-48 lg:px-20">
               <div className="w-full pb-4">
                 <h3 className="text-[20px] px-4 text-left font-bold text-primary-yellow">AMENITIES</h3>
@@ -119,7 +119,7 @@ const Page = () => {
           <Link href={whatsappLink} target="_blank">
             <button className="yellow-solid-button">CONTACT US</button>
           </Link>
-          <p className="text-white font-light text-center py-4 px-3">To secure the best deal for your New Year's Eve celebration on the water, reach out to us today.</p>
+          <p className="text-white font-light text-center py-4 px-3">To secure the best deal for your New Year&apos;s Eve celebration on the water, reach out to us today.</p>
           <p className="text-white font-bold text-center py-4 px-3">New Year’s Eve Package Disclaimer</p>
           <p className="text-white font-light text-center py-1 px-3 italic">Inclusions, timings, prices, and capacity for the New Year’s Eve packages are subject to change without prior notice.</p>
         </div>
@@ -128,7 +128,7 @@ const Page = () => {
       <div>
         <div className="bg-[url('/atlantis-royal.jpg')] bg-cover bg-center bg-no-repeat min-h-screen">
           <div className="flex flex-col items-start justify-start mx-auto container lg:mx-0 py-10 lg:px-0 lg:pl-10 xl:w-1/2 md:w-10/12 lg:w-1/2">
-            <h3 className="text-white font-medium">Why Choose Our New Year's Eve Yacht Rental?</h3>
+            <h3 className="text-white font-medium">Why Choose Our New Year&apos;s Eve Yacht Rental?</h3>
             <ul className="list-disc text-sm pl-4 xl:pl-10 text-white py-5">
               <li>
                 <strong>Unforgettable Views:</strong> Sail through the heart of Dubai and witness the breathtaking fireworks display against the iconic skyline. Our yachts offer unrivaled panoramic views, ensuring you have the best seat in the house.
@@ -149,17 +149,17 @@ const Page = () => {
                 <strong>Select Your Yacht:</strong> Browse our impressive fleet and choose the yacht that suits your group size and preferences.
               </li>
               <li>
-                <strong>Choose Your Package:</strong> Tailor your New Year's Eve experience by selecting the package that best matches your desires. Our team is here to assist you with all your needs.
+                <strong>Choose Your Package:</strong> Tailor your New Year&apos;s Eve experience by selecting the package that best matches your desires. Our team is here to assist you with all your needs.
               </li>
               <li>
                 <strong>Confirm Your Reservation:</strong> Contact our booking team to confirm your reservation and make the necessary arrangements for your celebration.
               </li>
             </ul>
-            <h3 className="text-white font-medium">New Year's Eve in Dubai</h3>
-            <p className="text-white py-4 font-normal">Dubai is renowned for its extravagant New Year Event, and our yachts provide the ultimate vantage point to enjoy the festivities. From the mesmerizing fireworks at the Burj Khalifa to the spectacular shows along the Palm Jumeirah, you won't miss a moment of the action.</p>
+            <h3 className="text-white font-medium">New Year&apos;s Eve in Dubai</h3>
+            <p className="text-white py-4 font-normal">Dubai is renowned for its extravagant New Year Event, and our yachts provide the ultimate vantage point to enjoy the festivities. From the mesmerizing fireworks at the Burj Khalifa to the spectacular shows along the Palm Jumeirah, you won&apos;t miss a moment of the action.</p>
             <h3 className="text-white font-medium">Book Now and Make Your Reservation</h3>
             <p className="text-white text-sm py-4 font-normal">
-              Don't miss out on this exclusive opportunity to welcome the New Year in absolute luxury. Our New Year's Eve Yacht Rentals are in high demand, so make your reservation today to secure your spot. Contact us now to discuss your preferences and book your private New Year's Eve Yacht Rental in Dubai. Let's create memories that will last a lifetime as you sail into the New Year with style
+              Don&apos;t miss out on this exclusive opportunity to welcome the New Year in absolute luxury. Our New Year&apos;s Eve Yacht Rentals are in high demand, so make your reservation today to secure your spot. Contact us now to discuss your preferences and book your private New Year&apos;s Eve Yacht Rental in Dubai. Let&apos;s create memories that will last a lifetime as you sail into the New Year with style
               and opulence.
             </p>
           </div>

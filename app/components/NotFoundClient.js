@@ -9,6 +9,7 @@ import SecondFooter from '@/app/components/SecondFooter';
 import CopyrightFooter from '@/app/components/CopyrightFooter';
 import { Link } from '@/app/i18n/routing';
 import PageTitleHeading from '@/app/components/PageTitleHeading';
+import Image from 'next/image';
 export default function NotFoundClient() {
   const t = useTranslations();
 
@@ -24,7 +25,7 @@ export default function NotFoundClient() {
         <div className="container mx-auto nav-space">
           <PageTitleHeading title="OOPS! THIS PAGE WAS LOST AT SEA" />
           <Link href="/">
-            <img src="/404 Page_wt.webp" alt="404 Not Found" className="" />
+            <Image src="/404 Page_wt.webp" alt="404 Not Found" className="" width={800} height={600} />
           </Link>
           <Link href="/" className="block mx-auto w-full my-10 flex flex-row items-center justify-center yellow-solid-button">
             SAIL BACK

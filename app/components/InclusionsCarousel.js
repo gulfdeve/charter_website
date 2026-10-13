@@ -2,6 +2,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import EmblaCarousel from 'embla-carousel';
 import { IoIosArrowBack, IoIosArrowForward } from 'react-icons/io';
+import Image from 'next/image';
 
 const InclusionsCarousel = ({ slides }) => {
   const emblaRef = useRef(null);
@@ -35,7 +36,7 @@ const InclusionsCarousel = ({ slides }) => {
             "
           >
             <div className="flex flex-col rounded-xl overflow-hidden">
-              <img src={item.src} className="w-full" alt={item.text} />
+              <Image src={item.src} className="w-full" alt={item.text} width={800} height={600} />
               <p className="font-bold text-sm bg-red-700 text-white text-center p-7 h-20 flex items-center justify-center">
                 {item.text.split('<br />').map((line, index) => (
                   <React.Fragment key={index}>

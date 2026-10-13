@@ -2,6 +2,7 @@
 import { useEffect, useRef, useState } from 'react';
 import EmblaCarousel from 'embla-carousel';
 import { IoIosArrowBack, IoIosArrowForward } from 'react-icons/io';
+import Image from 'next/image';
 
 export default function YachtGallery({ gallery }) {
   const emblaRef = useRef(null);
@@ -169,7 +170,7 @@ export default function YachtGallery({ gallery }) {
                 ${activeIndex === index ? 'border-primary-blue-2' : 'border-transparent'}`}
               style={{ minHeight: 70, minWidth: 0 }}
             >
-              <img src={`https://www.centauruscharter.net/frontend/assets/yacht_sales/${item.image}`} alt={`Thumbnail ${index + 1}`} width={80} height={50} className="w-full h-full object-cover rounded" priority={index === 0} />
+              <Image src={`https://www.centauruscharter.net/frontend/assets/yacht_sales/${item.image}`} alt={`Thumbnail ${index + 1}`} width={80} height={50} className="w-full h-full object-cover rounded" priority={index === 0} />
             </button>
           ))}
         </div>
@@ -185,7 +186,7 @@ export default function YachtGallery({ gallery }) {
           <div className="embla__container flex">
             {gallery.map((item, index) => (
               <div key={index} className="embla__slide min-w-full flex justify-center items-center lg:pb-0">
-                <img src={`https://www.centauruscharter.net/frontend/assets/yacht_sales/${item.image}`} alt={`Slide ${index + 1}`} width={1200} height={600} className="w-full h-auto max-w-7xl object-cover rounded-lg" priority={index === 0} />
+                <Image src={`https://www.centauruscharter.net/frontend/assets/yacht_sales/${item.image}`} alt={`Slide ${index + 1}`} width={1200} height={600} className="w-full h-auto max-w-7xl object-cover rounded-lg" priority={index === 0} />
               </div>
             ))}
           </div>

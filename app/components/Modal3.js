@@ -2,6 +2,7 @@ import React, { useState, forwardRef, useImperativeHandle, useEffect } from 'rea
 import PhoneInput from 'react-phone-input-2';
 import 'react-phone-input-2/lib/style.css';
 import { isValidPhoneNumber, parsePhoneNumberFromString } from 'libphonenumber-js';
+import Image from 'next/image';
 
 const Modal3 = forwardRef(({ idName, idValue, selectedVessel, rentalPeriod }, ref) => {
   const [isVisible, setIsVisible] = useState(false);
@@ -68,7 +69,7 @@ const Modal3 = forwardRef(({ idName, idValue, selectedVessel, rentalPeriod }, re
     const queryParams = new URLSearchParams({
       name: fullName,
       phone: phoneNumber,
-      email: email,
+      email,
       comments: fullMessagePayload,
     });
 
@@ -118,7 +119,7 @@ const Modal3 = forwardRef(({ idName, idValue, selectedVessel, rentalPeriod }, re
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-5 ">
           <div className="rounded-lg overflow-hidden hidden md:block">
-            <img src="/modal2.jpg" alt="Yacht Image" className="w-[32rem] h-[31rem] object-cover" />
+            <Image src="/modal2.jpg" alt="Yacht Image" className="w-[32rem] h-[31rem] object-cover" width={800} height={600} />
           </div>
 
           <div className="lg:pr-10 pr-5">
@@ -184,5 +185,7 @@ const Modal3 = forwardRef(({ idName, idValue, selectedVessel, rentalPeriod }, re
     </div>
   );
 });
+
+Modal3.displayName = 'Modal3';
 
 export default Modal3;

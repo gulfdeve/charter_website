@@ -21,7 +21,7 @@ export async function createTabbySession(booking, locale = 'en', merchantUrls = 
 
   // Calculate loyalty_level and wishlist_count
   // If payment_status is available, use only paid bookings; otherwise, use all
-  let paidBookings = Array.isArray(past_booking) ? past_booking.filter(b => (b.payment_status ? b.payment_status === 'Completed' : true)) : [];
+  const paidBookings = Array.isArray(past_booking) ? past_booking.filter(b => (b.payment_status ? b.payment_status === 'Completed' : true)) : [];
   const loyalty_level = paidBookings.length;
   const wishlist_count = paidBookings.reduce((sum, b) => {
     const amt = typeof b.amount === 'number' ? b.amount : parseFloat(b.amount);
@@ -98,7 +98,7 @@ export async function createTabbySession(booking, locale = 'en', merchantUrls = 
         items: [
           {
             // title: `Booking ${order_no}`,
-            title: title,
+            title,
             description: `Yacht booking on ${utcBookingDate}`,
             quantity: 1,
             unit_price: amount.toString(),

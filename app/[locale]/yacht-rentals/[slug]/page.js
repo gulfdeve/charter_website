@@ -32,7 +32,7 @@ export async function generateStaticParams() {
         if (product.translations && product.translations[locale]) {
           params.push({
             slug: product.slug,
-            locale: locale,
+            locale,
           });
         }
       });

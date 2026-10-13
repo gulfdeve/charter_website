@@ -397,7 +397,8 @@ const Page = () => {
         }}
       />
       <noscript>
-        <img height="1" width="1" style={{ display: 'none' }} src="https://www.facebook.com/tr?id=1154720100187780&ev=PageView&noscript=1" alt="" />
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img height="1" width="1" style={{ display: 'none' }} src="https://www.facebook.com/tr?id=1154720100187780&ev=PageView&noscript=1" alt=""  />
       </noscript>
       {/* End Facebook Pixel Code */}
 
@@ -657,11 +658,9 @@ const Page = () => {
       {/* <section className="bg-black">
         <section className="container mx-auto flex flex-col items-center py-10 bg-black">
           <div className="container mx-auto">
-            <img
-              src="/images/f1-grand-prix-abu-dhabi-2025.webp"
+            <Image src="/images/f1-grand-prix-abu-dhabi-2025.webp"
               alt="F1 2025"
-              className=""
-            />
+              className="" width={800} height={600} />
           </div>
           <h2 className="text-3xl font-bold text-center text-red-700 pt-5">
             FORMULA 1 ABU DHABI GP 2025
@@ -675,11 +674,9 @@ const Page = () => {
           <div className="container mx-auto py-10">
             <div className="flex flex-col lg:flex-row items-center justify-center rounded-lg overflow-hidden lg:mx-20">
               <div className="rounded rounded-l-xl">
-                <img
-                  src="/images/trackside.webp"
+                <Image src="/images/trackside.webp"
                   alt="F1 Trackside"
-                  className="xl:w-[40rem] sm:w-[170rem] lg:w-[160rem] md:h-[543px] xl:h-[570px] lg:h-[504px]"
-                />
+                  className="xl:w-[40rem] sm:w-[170rem] lg:w-[160rem] md:h-[543px] xl:h-[570px] lg:h-[504px]" width={800} height={600} />
               </div>
               <div className="flex flex-col items-center justify-center bg-gradient-to-r from-[#010E1C] via-red-900 to-[#010E1C] px-5 py-5 xl:w-[40rem] lg:w-[160rem] md:h-[541px] xl:h-[570px] lg:h-[504px] p-5">
                 <h3 className="text-white uppercase md:text-2xl lg:text-4xl font-bold text-center pb-6">
@@ -745,14 +742,14 @@ const Page = () => {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4 lg:gap-0">
               <div>
                 <div className="flex flex-col items-center justify-center text-center gap-y-4 lg:px-10">
-                  <img alt="" className="w-16" src="/images/four-day-yacht-rental.png" />
+                  <Image alt="" className="w-16" src="/images/four-day-yacht-rental.png" width={800} height={600} />
                   <h3 className="text-gray-300 text-base lg:text-lg text-center">4 Days Yacht Rental</h3>
                   <p className="text-gray-300 text-center text-md sm:text-sm xl:text-md pb-10">Our all-inclusive package offers 4 days of unparalleled yacht party, granting you the ultimate vantage point to witness the adrenaline-fueled action of the Abu Dhabi race.</p>
                 </div>
               </div>
               {/* <div>
                 <div className="flex flex-col items-center justify-center text-center gap-y-4 lg:px-10">
-                  <img alt="" className="w-16" src="/images/marina-view.png" />
+                  <Image alt="" className="w-16" src="/images/marina-view.png" width={800} height={600} />
                   <h3 className="text-gray-300 text-base lg:text-lg text-center">
                     Overnight Stay & Marina Views
                   </h3>
@@ -766,14 +763,14 @@ const Page = () => {
               </div> */}
               <div>
                 <div className="flex flex-col items-center justify-center text-center gap-y-4 lg:px-10">
-                  <img alt="" className="w-16" src="/images/food-and-drinks.png" />
+                  <Image alt="" className="w-16" src="/images/food-and-drinks.png" width={800} height={600} />
                   <h3 className="text-gray-300 text-base lg:text-lg text-center">Canapes & Drinks</h3>
                   <p className="text-gray-300 text-center text-md sm:text-sm xl:text-md lg:pb-10">Indulge in a delectable selection of canapés ensuring a delightful culinary experience throughout race weekend Savor the taste of house drinks adding a touch of sophistication to your onboard celebrations.</p>
                 </div>
               </div>
               <div>
                 <div className="flex flex-col items-center justify-center text-center gap-y-4 lg:px-10">
-                  <img alt="" className="w-16" src="/images/marina-pass.png" />
+                  <Image alt="" className="w-16" src="/images/marina-pass.png" width={800} height={600} />
                   <h3 className="text-gray-300 text-base lg:text-lg text-center">Marina Passes</h3>
                   <p className="text-gray-300 text-center text-md sm:text-sm xl:text-md lg:pb-10">Get marina passes granting you access to prime viewing spots and an up-close look at the thrilling race action on Yas Marina circuit.</p>
                 </div>
@@ -811,7 +808,7 @@ const Page = () => {
 
             <div className=" w-full text-white  ">
               <p className="mb-4 leading-relaxed text-base text-center p-4">
-                Step away from the everyday and dive into the thrill of the Abu Dhabi Grand Prix 2025. Watch the electrifying race action unfold at Yas Marina Circuit with Centaurus VIP Yacht Hospitality. Enjoy with your friends, family, or colleagues on board as you cheer for your favorite drivers, surrounded by the vibrant energy of race weekend. With Centaurus VIP Yacht Hospitality, you'll
+                Step away from the everyday and dive into the thrill of the Abu Dhabi Grand Prix 2025. Watch the electrifying race action unfold at Yas Marina Circuit with Centaurus VIP Yacht Hospitality. Enjoy with your friends, family, or colleagues on board as you cheer for your favorite drivers, surrounded by the vibrant energy of race weekend. With Centaurus VIP Yacht Hospitality, you&apos;ll
                 enjoy unobstructed trackside views, exceptional service, and a fully immersive experience. Our spacious yacht, accommodates up to 100 guests, offer elegant interiors, open decks, and premium amenities. Relax in stylish lounges, sip your favorite drinks, and soak in panoramic views of the marina and race atmosphere in true luxury.
               </p>
             </div>

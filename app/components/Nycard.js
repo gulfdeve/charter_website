@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import Link from 'next/link';
 
 import Modal2 from './Modal2';
+import Image from 'next/image';
 const Nycard = ({ whatsappLink }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
@@ -186,7 +187,7 @@ const Nycard = ({ whatsappLink }) => {
             {/* <div className="relative"> */}
             <h4 className="font-bold text-white">{yacht.name}</h4>
             <div className="relative">
-              <img src={yacht.image} alt={yacht.name} className="w-full h-auto object-cover rounded-lg mt-3" />
+              <Image src={yacht.image} alt={yacht.name} className="w-full h-auto object-cover rounded-lg mt-3" width={800} height={600} />
 
               {yacht.isSold === 1 && (
                 <div className="absolute flex items-center gap-2 top-4 left-0 bg-primary-red text-white text-sm py-0.5 px-2 rounded-r-lg">

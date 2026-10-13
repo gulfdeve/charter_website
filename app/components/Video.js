@@ -62,7 +62,7 @@ export default function Video() {
         <h2 className="text-sm mb-6 xl:mb-8 text-center  md:text-white text-black  xl:text-lg 2xl:text-xl text-shadow">
           Hottest event this season
           <br />
-          NYE Party New Year's Eve 2024 On a Luxury Yacht
+          NYE Party New Year&apos;s Eve 2024 On a Luxury Yacht
         </h2>
         <h2 className="text-sm mb-6 xl:mb-8  text-black md:text-white xl:text-lg 2xl:text-xl md:text-shadow">Starting at AED1799</h2>
         <button className="blue-solid-button">GET OFFER</button>

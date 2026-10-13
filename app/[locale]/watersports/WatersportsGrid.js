@@ -1,6 +1,7 @@
 import React from 'react';
 import { IoIosPricetag } from 'react-icons/io';
 import { Link } from '@/app/i18n/routing';
+import Image from 'next/image';
 
 export default function WatersportsGrid({ packages, language }) {
   // Filter packages to only include those with translations for the current language
@@ -11,7 +12,7 @@ export default function WatersportsGrid({ packages, language }) {
       {filteredPackages?.map(package_a => (
         <div key={package_a.id} className="flex flex-col justify-start lg:justify-between rounded-md bg-white custom-shadow">
           <Link href={`/watersports/${package_a.slug}`}>
-            <img src={`https://www.centauruscharter.net/product/images/${package_a.image}`} alt={package_a.translations[language].title} className="rounded-t-md w-full object-cover" />
+            <Image src={`https://www.centauruscharter.net/product/images/${package_a.image}`} alt={package_a.translations[language].title} className="rounded-t-md w-full object-cover" width={800} height={600} />
           </Link>
           <div className="flex flex-col justify-start px-5 lg:px-5">
             <h2 className="text-primary-blue text-2xl font-bold pt-4">

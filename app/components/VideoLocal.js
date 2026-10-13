@@ -142,7 +142,7 @@ export default function VideoLocal({ filename, section, ctaLink }) {
           <div className="hidden lg:block absolute inset-0 bg-black opacity-50" style={{ pointerEvents: 'none' }}></div>
           <div className="bg-black">
             <div className="container mx-auto block text-center py-10 lg:absolute lg:-translate-x-2/4 lg:-translate-y-2/4 lg:left-2/4 lg:top-2/4 lg:mt-0">
-              <h1 className="text-4xl font-bold mb-4 text-white md:text-white  xl:text-xl 2xl:text-4xl text-shadow">NEW YEAR'S EVE YACHT PARTY IN DUBAI</h1>
+              <h1 className="text-4xl font-bold mb-4 text-white md:text-white  xl:text-xl 2xl:text-4xl text-shadow">NEW YEAR&apos;S EVE YACHT PARTY IN DUBAI</h1>
               <p className="text-sm xl:text-2xl font-bold mb-4 text-white md:text-white  2xl:text-3xl text-shadow">Celebrate the most glamorous night of the year</p>
               <a target="_blank" href={ctaLink}>
                 <button className="blue-solid-button">BOOK NOW</button>

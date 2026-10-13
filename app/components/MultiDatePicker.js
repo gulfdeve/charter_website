@@ -27,7 +27,7 @@ export default function MultiDatePicker({ name, init = [] }) {
     } else {
       setSelectedDates(init);
     }
-  }, []);
+  }, [init]);
 
   // Save to localStorage whenever it changes
   useEffect(() => {

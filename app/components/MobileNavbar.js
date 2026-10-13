@@ -52,7 +52,7 @@ export default function MobileNavbar({ currentLanguage, mobileDropdownOpen, setM
                 }}
                 className="flex items-center gap-2 p-1 rounded text-white text-sm"
               >
-                <img src={currentLanguage.flag} alt={currentLanguage.name} className="w-6 h-6" />
+                <Image src={currentLanguage.flag} alt={currentLanguage.name} className="w-6 h-6" width={800} height={600} />
               </button>
               {isLangOpen && (
                 <ul className="absolute right-0 top-11 w-48 bg-white border font-bold text-primary-blue shadow-lg z-60">

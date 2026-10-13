@@ -31,7 +31,7 @@ export default async function SpringOffer({ params }) {
 
   // Map each product to include its gallery images as an array.
   const yachts = data.products.map(item => {
-    let category = ['allYachts'];
+    const category = ['allYachts'];
     if (item.per_hour_price > 4000) category.push('premium');
     if (['56ft-lagoona', '61ft-silvercreek'].includes(item.slug)) {
       category.push('bestSellers');
