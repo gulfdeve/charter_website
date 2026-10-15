@@ -39,7 +39,7 @@ export default function Page() {
               <div className="p-3 rounded-full bg-primary-blue-2">
                 <MdLocationOn className="text-2xl text-primary-yellow" />{' '}
               </div>
-              <a href="https://maps.app.goo.gl/mFvSe2XsrVUDRdfK6" target="_blank" className="text-sm w-[16rem] xs:w-[19rem] pl-5 font-medium">
+              <a href="https://www.google.com/maps/search/?api=1&query=The+Bayswater+by+Omniyat+Marasi+Dr+Business+Bay&query_place_id=ChIJEecg8dFpXz4R7CTL8wQFnPE" target="_blank" className="text-sm w-[16rem] xs:w-[19rem] pl-5 font-medium">
                 {t('footer.office-location')}
               </a>
             </div>

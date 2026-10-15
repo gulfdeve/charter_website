@@ -152,7 +152,7 @@ export default function FirstFooter() {
             {[
               {
                 address: t('footer.office-location'),
-                link: 'https://maps.app.goo.gl/mFvSe2XsrVUDRdfK6',
+                link: 'https://www.google.com/maps/search/?api=1&query=The+Bayswater+by+Omniyat+Marasi+Dr+Business+Bay&query_place_id=ChIJEecg8dFpXz4R7CTL8wQFnPE',
               },
             ].map((item, index) => (
               <li key={index} className="flex items-start gap-2">
