@@ -2,18 +2,17 @@ import { cache } from 'react';
 
 export const fetchData = cache(async () => {
   try {
-    // Check if we're on the server or client
-    const baseUrl = typeof window === 'undefined' ? process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3000' : '';
+    const isServer = typeof window === 'undefined';
 
-    // Don't cache the API route call itself - let the route handle external API caching
-    // The API route is dynamic but caches the external API fetch with tags
-    // This ensures revalidateTag works correctly
-    const fetchOptions = {
-      cache: 'no-store', // Always call the API route fresh
-    };
-
-    console.log('📞 Calling /api/get-data from fetchData');
-    const response = await fetch(`${baseUrl}/api/get-data`, fetchOptions);
+    // Server: call the upstream API directly. Calling our own /api/get-data over HTTP
+    // fails on Vercel (localhost:3000 fallback) and the null result got cached by ISR.
+    // Same cache tag as the API route, so revalidateTag('data-cache') still works.
+    const response = isServer
+      ? await fetch(`${process.env.API_DOMAIN}/api/api_new/basic`, {
+          cache: process.env.NODE_ENV === 'development' ? 'no-store' : 'force-cache',
+          next: { revalidate: 86400, tags: ['data-cache'] },
+        })
+      : await fetch('/api/get-data', { cache: 'no-store' });
 
     if (!response.ok) {
       throw new Error('Failed to fetch data');
