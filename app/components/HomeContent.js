@@ -22,7 +22,15 @@ import ModalAfternoon from '@/app/components/ModalAfternoon';
 import { BsStars } from 'react-icons/bs';
 import { FiTool } from 'react-icons/fi';
 
-const UNDER_MAINTENANCE_SLUGS = ['56ft-lagoona', '58ft-etosha', '61ft-silvercreek'];
+const UNDER_MAINTENANCE_SLUGS = [
+  '56ft-lagoona',
+  '58ft-etosha',
+  '61ft-silvercreek',
+  '36ft-Storm',
+  '36ft-thunder',
+  '40ft-yacht-Riverside',
+  '56ft-vassia',
+];
 
 export default function Home() {
   const t = useTranslations();

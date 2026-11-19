@@ -10,7 +10,15 @@ import { IoIosSunny } from 'react-icons/io';
 import { FiTool } from 'react-icons/fi';
 import { useTranslations } from 'next-intl';
 
-const UNDER_MAINTENANCE_SLUGS = ['56ft-lagoona', '58ft-etosha', '61ft-silvercreek'];
+const UNDER_MAINTENANCE_SLUGS = [
+  '56ft-lagoona',
+  '58ft-etosha',
+  '61ft-silvercreek',
+  '36ft-Storm',
+  '36ft-thunder',
+  '40ft-yacht-Riverside',
+  '56ft-vassia',
+];
 
 export default function YachtmobileCarousal() {
   const t = useTranslations();
