@@ -10,8 +10,9 @@ import { IoIosSunny } from 'react-icons/io';
 import { FiTool } from 'react-icons/fi';
 import { useTranslations } from 'next-intl';
 
+const SOLD_SLUGS = ['56ft-lagoona'];
+
 const UNDER_MAINTENANCE_SLUGS = [
-  '56ft-lagoona',
   '58ft-etosha',
   '61ft-silvercreek',
   '36ft-thunder',
@@ -140,7 +141,11 @@ const YachtCard = ({ yacht, t }) => {
         )}
 
         {/* Status / Category Badges */}
-        {UNDER_MAINTENANCE_SLUGS.includes(yacht.slug) ? (
+        {SOLD_SLUGS.includes(yacht.slug) ? (
+          <div className="absolute z-20 flex items-center gap-2 top-4 left-0 bg-red-600 text-white text-sm font-semibold py-0.5 px-2 rounded-r-lg">
+            <p>Sold</p>
+          </div>
+        ) : UNDER_MAINTENANCE_SLUGS.includes(yacht.slug) ? (
           <div className="absolute z-20 flex items-center gap-2 top-4 left-0 bg-amber-500 text-white text-sm font-semibold py-0.5 px-2 rounded-r-lg">
             <FiTool />
             <p>Under Maintenance</p>
