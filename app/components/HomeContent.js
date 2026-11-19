@@ -26,10 +26,10 @@ const UNDER_MAINTENANCE_SLUGS = [
   '56ft-lagoona',
   '58ft-etosha',
   '61ft-silvercreek',
-  '36ft-Storm',
   '36ft-thunder',
   '40ft-yacht-Riverside',
   '56ft-vassia',
+  '77ft-dionysos',
 ];
 
 export default function Home() {
